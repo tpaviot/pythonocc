@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Quantity
-import Extrema
 import gp
 import Geom
+import Quantity
+import Extrema
 import Geom2d
 };

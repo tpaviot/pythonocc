@@ -52,6 +52,43 @@ $HeaderURL$
 
 
 
+%nodefaultctor Geom2dGcc_MyL2dTanObl;
+class Geom2dGcc_MyL2dTanObl {
+	public:
+		%feature("autodoc", "1");
+		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		gp_Lin2d ThisSolution() const;
+		%feature("autodoc", "1");
+		void WhichQualifier(GccEnt_Position & Qualif1) const;
+		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
+
+		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc","Intersection2() -> [Standard_Real, Standard_Real]");
+
+		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel2() const;
+
+};
+%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dGcc_MyL2dTanObl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2dGcc_Circ2d2TanOn;
 class Geom2dGcc_Circ2d2TanOn {
 	public:
@@ -383,38 +420,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
-class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Geom2dGcc_FuncTCuPtOfMyL2d2Tan(const Geom2dAdaptor_Curve &C, const gp_Pnt2d Point);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") Geom2dGcc_FuncTCuPtOfMyL2d2Tan::~Geom2dGcc_FuncTCuPtOfMyL2d2Tan %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Geom2dGcc_MyCurveTool;
 class Geom2dGcc_MyCurveTool {
 	public:
@@ -473,28 +478,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dGcc_MyL2dTanObl;
-class Geom2dGcc_MyL2dTanObl {
+%nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
+class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dGcc_MyL2dTanObl(const Geom2dGcc_MyQCurve &Qualified1, const gp_Lin2d TheLin, const Standard_Real Param1, const Standard_Real TolAng, const Standard_Real Angle=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		gp_Lin2d ThisSolution() const;
-		%feature("autodoc", "1");
-		void WhichQualifier(GccEnt_Position & Qualif1) const;
-		%feature("autodoc","Tangency1() -> [Standard_Real, Standard_Real]");
+		Geom2dGcc_FuncTCuPtOfMyL2d2Tan(const Geom2dAdaptor_Curve &C, const gp_Pnt2d Point);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
-		void Tangency1(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2() -> [Standard_Real, Standard_Real]");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 
-		void Intersection2(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel2() const;
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%feature("shadow") Geom2dGcc_MyL2dTanObl::~Geom2dGcc_MyL2dTanObl %{
+%feature("shadow") Geom2dGcc_FuncTCuPtOfMyL2d2Tan::~Geom2dGcc_FuncTCuPtOfMyL2d2Tan %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -503,7 +503,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Geom2dGcc_MyL2dTanObl {
+%extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
 	void _kill_pointed() {
 		delete $self;
 	}

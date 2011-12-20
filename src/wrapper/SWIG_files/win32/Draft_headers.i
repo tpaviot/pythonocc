@@ -119,7 +119,6 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Face.hxx>
-#include<gp_Pnt.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Dir.hxx>
@@ -127,6 +126,7 @@ $HeaderURL$
 #include<TopLoc_Location.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Draft.hxx>
 %}

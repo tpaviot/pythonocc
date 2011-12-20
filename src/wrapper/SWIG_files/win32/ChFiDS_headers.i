@@ -146,13 +146,12 @@ $HeaderURL$
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<TopoDS_Shape.hxx>
 #include<gp_XY.hxx>
 #include<Handle_Law_Function.hxx>
 #include<Handle_Law_Composite.hxx>
 #include<Handle_MMgt_TShared.hxx>
 #include<gp_Pnt2d.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
@@ -161,4 +160,5 @@ $HeaderURL$
 #include<gp_Parab.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
+#include<TopoDS_Shape.hxx>
 %}

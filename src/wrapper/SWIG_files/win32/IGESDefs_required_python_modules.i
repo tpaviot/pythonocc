@@ -27,9 +27,9 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import IGESData
 import Standard
+import TColStd
+import IGESData
 import TCollection
 import IGESGraph
-import TColStd
 };

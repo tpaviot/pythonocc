@@ -31,7 +31,7 @@ import ShapeBuild
 import ShapeExtend
 import Standard
 import TopoDS
-import ShapeAnalysis
 import Bnd
+import ShapeAnalysis
 import ShapeConstruct
 };

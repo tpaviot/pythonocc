@@ -51,16 +51,6 @@ $HeaderURL$
 
 typedef NCollection_Vector<Interface_FileParameter> Interface_VectorOfFileParameter;
 
-enum Interface_DataState {
-	Interface_StateOK,
-	Interface_LoadWarning,
-	Interface_LoadFail,
-	Interface_DataWarning,
-	Interface_DataFail,
-	Interface_StateUnloaded,
-	Interface_StateUnknown,
-	};
-
 enum Interface_ParamType {
 	Interface_ParamMisc,
 	Interface_ParamInteger,
@@ -82,6 +72,16 @@ enum Interface_CheckStatus {
 	Interface_CheckAny,
 	Interface_CheckMessage,
 	Interface_CheckNoFail,
+	};
+
+enum Interface_DataState {
+	Interface_StateOK,
+	Interface_LoadWarning,
+	Interface_LoadFail,
+	Interface_DataWarning,
+	Interface_DataFail,
+	Interface_StateUnloaded,
+	Interface_StateUnknown,
 	};
 
 
@@ -124,29 +124,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Interface_ReportEntity;
-class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Interface_NodeOfGeneralLib;
+class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity();
+		Handle_Interface_NodeOfGeneralLib();
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity(const Handle_Interface_ReportEntity &aHandle);
+		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity(const Interface_ReportEntity *anItem);
+		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity & operator=(const Handle_Interface_ReportEntity &aHandle);
+		Handle_Interface_NodeOfGeneralLib & operator=(const Handle_Interface_NodeOfGeneralLib &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_ReportEntity & operator=(const Interface_ReportEntity *anItem);
+		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Interface_ReportEntity DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Interface_NodeOfGeneralLib DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Interface_ReportEntity {
-	Interface_ReportEntity* GetObject() {
-	return (Interface_ReportEntity*)$self->Access();
+%extend Handle_Interface_NodeOfGeneralLib {
+	Interface_NodeOfGeneralLib* GetObject() {
+	return (Interface_NodeOfGeneralLib*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Interface_ReportEntity::~Handle_Interface_ReportEntity %{
+%feature("shadow") Handle_Interface_NodeOfGeneralLib::~Handle_Interface_NodeOfGeneralLib %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -155,7 +155,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Interface_ReportEntity {
+%extend Handle_Interface_NodeOfGeneralLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
+class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib();
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Interface_GlobalNodeOfGeneralLib DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
+	Interface_GlobalNodeOfGeneralLib* GetObject() {
+	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Interface_GlobalNodeOfGeneralLib::~Handle_Interface_GlobalNodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Interface_GlobalNodeOfGeneralLib {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -390,44 +428,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Interface_Check;
-class Handle_Interface_Check : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_Check();
-		%feature("autodoc", "1");
-		Handle_Interface_Check(const Handle_Interface_Check &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Check(const Interface_Check *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & operator=(const Handle_Interface_Check &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & operator=(const Interface_Check *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Interface_Check DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Check {
-	Interface_Check* GetObject() {
-	return (Interface_Check*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Interface_Check::~Handle_Interface_Check %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Interface_Check {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Interface_SignType;
 class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 	public:
@@ -504,29 +504,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Interface_CopyControl;
-class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Interface_GTool;
+class Handle_Interface_GTool : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl();
+		Handle_Interface_GTool();
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl(const Handle_Interface_CopyControl &aHandle);
+		Handle_Interface_GTool(const Handle_Interface_GTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl(const Interface_CopyControl *anItem);
+		Handle_Interface_GTool(const Interface_GTool *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl & operator=(const Handle_Interface_CopyControl &aHandle);
+		Handle_Interface_GTool & operator=(const Handle_Interface_GTool &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_CopyControl & operator=(const Interface_CopyControl *anItem);
+		Handle_Interface_GTool & operator=(const Interface_GTool *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Interface_CopyControl DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Interface_GTool DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Interface_CopyControl {
-	Interface_CopyControl* GetObject() {
-	return (Interface_CopyControl*)$self->Access();
+%extend Handle_Interface_GTool {
+	Interface_GTool* GetObject() {
+	return (Interface_GTool*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Interface_CopyControl::~Handle_Interface_CopyControl %{
+%feature("shadow") Handle_Interface_GTool::~Handle_Interface_GTool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -535,83 +535,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Interface_CopyControl {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Interface_NodeOfGeneralLib;
-class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Handle_Interface_NodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib(const Interface_NodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib & operator=(const Handle_Interface_NodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfGeneralLib & operator=(const Interface_NodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Interface_NodeOfGeneralLib DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_NodeOfGeneralLib {
-	Interface_NodeOfGeneralLib* GetObject() {
-	return (Interface_NodeOfGeneralLib*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Interface_NodeOfGeneralLib::~Handle_Interface_NodeOfGeneralLib %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Interface_NodeOfGeneralLib {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Interface_NodeOfReaderLib;
-class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib();
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib(const Handle_Interface_NodeOfReaderLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib & operator=(const Handle_Interface_NodeOfReaderLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_NodeOfReaderLib & operator=(const Interface_NodeOfReaderLib *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Interface_NodeOfReaderLib DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_NodeOfReaderLib {
-	Interface_NodeOfReaderLib* GetObject() {
-	return (Interface_NodeOfReaderLib*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Interface_NodeOfReaderLib::~Handle_Interface_NodeOfReaderLib %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Interface_NodeOfReaderLib {
+%extend Handle_Interface_GTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -694,6 +618,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Interface_CopyControl;
+class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl();
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl(const Handle_Interface_CopyControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl(const Interface_CopyControl *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl & operator=(const Handle_Interface_CopyControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl & operator=(const Interface_CopyControl *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Interface_CopyControl DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_CopyControl {
+	Interface_CopyControl* GetObject() {
+	return (Interface_CopyControl*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Interface_CopyControl::~Handle_Interface_CopyControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Interface_CopyControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Interface_CopyMap;
 class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	public:
@@ -726,6 +688,44 @@ def __del__(self):
 %}
 
 %extend Handle_Interface_CopyMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Interface_ReportEntity;
+class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_ReportEntity();
+		%feature("autodoc", "1");
+		Handle_Interface_ReportEntity(const Handle_Interface_ReportEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ReportEntity(const Interface_ReportEntity *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_ReportEntity & operator=(const Handle_Interface_ReportEntity &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_ReportEntity & operator=(const Interface_ReportEntity *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Interface_ReportEntity DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_ReportEntity {
+	Interface_ReportEntity* GetObject() {
+	return (Interface_ReportEntity*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Interface_ReportEntity::~Handle_Interface_ReportEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Interface_ReportEntity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -770,29 +770,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Interface_GTool;
-class Handle_Interface_GTool : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Interface_Check;
+class Handle_Interface_Check : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Interface_GTool();
+		Handle_Interface_Check();
 		%feature("autodoc", "1");
-		Handle_Interface_GTool(const Handle_Interface_GTool &aHandle);
+		Handle_Interface_Check(const Handle_Interface_Check &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_GTool(const Interface_GTool *anItem);
+		Handle_Interface_Check(const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		Handle_Interface_GTool & operator=(const Handle_Interface_GTool &aHandle);
+		Handle_Interface_Check & operator=(const Handle_Interface_Check &aHandle);
 		%feature("autodoc", "1");
-		Handle_Interface_GTool & operator=(const Interface_GTool *anItem);
+		Handle_Interface_Check & operator=(const Interface_Check *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Interface_GTool DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Interface_Check DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Interface_GTool {
-	Interface_GTool* GetObject() {
-	return (Interface_GTool*)$self->Access();
+%extend Handle_Interface_Check {
+	Interface_Check* GetObject() {
+	return (Interface_Check*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Interface_GTool::~Handle_Interface_GTool %{
+%feature("shadow") Handle_Interface_Check::~Handle_Interface_Check %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -801,7 +801,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Interface_GTool {
+%extend Handle_Interface_Check {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -840,6 +840,82 @@ def __del__(self):
 %}
 
 %extend Handle_Interface_InterfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Interface_NodeOfReaderLib;
+class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib();
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib(const Handle_Interface_NodeOfReaderLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib(const Interface_NodeOfReaderLib *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib & operator=(const Handle_Interface_NodeOfReaderLib &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_NodeOfReaderLib & operator=(const Interface_NodeOfReaderLib *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Interface_NodeOfReaderLib DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_NodeOfReaderLib {
+	Interface_NodeOfReaderLib* GetObject() {
+	return (Interface_NodeOfReaderLib*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Interface_NodeOfReaderLib::~Handle_Interface_NodeOfReaderLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Interface_NodeOfReaderLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Interface_Static;
+class Handle_Interface_Static : public Handle_Interface_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Handle_Interface_Static();
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Static(const Interface_Static *anItem);
+		%feature("autodoc", "1");
+		Handle_Interface_Static & operator=(const Handle_Interface_Static &aHandle);
+		%feature("autodoc", "1");
+		Handle_Interface_Static & operator=(const Interface_Static *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Interface_Static DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Interface_Static {
+	Interface_Static* GetObject() {
+	return (Interface_Static*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Interface_Static::~Handle_Interface_Static %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Interface_Static {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -922,44 +998,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Interface_Static;
-class Handle_Interface_Static : public Handle_Interface_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_Static();
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Handle_Interface_Static &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Static(const Interface_Static *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_Static & operator=(const Handle_Interface_Static &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_Static & operator=(const Interface_Static *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Interface_Static DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_Static {
-	Interface_Static* GetObject() {
-	return (Interface_Static*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Interface_Static::~Handle_Interface_Static %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Interface_Static {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Interface_FileReaderData;
 class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 	public:
@@ -1030,44 +1068,6 @@ def __del__(self):
 %}
 
 %extend Handle_Interface_IntVal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
-class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib();
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib(const Interface_GlobalNodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Handle_Interface_GlobalNodeOfGeneralLib &aHandle);
-		%feature("autodoc", "1");
-		Handle_Interface_GlobalNodeOfGeneralLib & operator=(const Interface_GlobalNodeOfGeneralLib *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Interface_GlobalNodeOfGeneralLib DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Interface_GlobalNodeOfGeneralLib {
-	Interface_GlobalNodeOfGeneralLib* GetObject() {
-	return (Interface_GlobalNodeOfGeneralLib*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Interface_GlobalNodeOfGeneralLib::~Handle_Interface_GlobalNodeOfGeneralLib %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Interface_GlobalNodeOfGeneralLib {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1326,7 +1326,7 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfReaderLib::~Interface_GlobalNodeOfReaderLib %{
@@ -1411,7 +1411,7 @@ class Interface_ReaderModule : public MMgt_TShared {
 };
 %extend Interface_ReaderModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ReaderModule::~Interface_ReaderModule %{
@@ -1424,6 +1424,49 @@ def __del__(self):
 %}
 
 %extend Interface_ReaderModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_NodeOfGeneralLib;
+class Interface_NodeOfGeneralLib : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_NodeOfGeneralLib();
+		%feature("autodoc", "1");
+		void AddNode(const Handle_Interface_GlobalNodeOfGeneralLib &anode);
+		%feature("autodoc", "1");
+		const Handle_Interface_GeneralModule & Module() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_Protocol & Protocol() const;
+		%feature("autodoc", "1");
+		const Handle_Interface_NodeOfGeneralLib & Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_NodeOfGeneralLib {
+	Handle_Interface_NodeOfGeneralLib GetHandle() {
+	return *(Handle_Interface_NodeOfGeneralLib*) &$self;
+	}
+};
+%extend Interface_NodeOfGeneralLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_NodeOfGeneralLib::~Interface_NodeOfGeneralLib %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_NodeOfGeneralLib {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1474,7 +1517,7 @@ class Interface_GeneralModule : public MMgt_TShared {
 };
 %extend Interface_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GeneralModule::~Interface_GeneralModule %{
@@ -1487,6 +1530,65 @@ def __del__(self):
 %}
 
 %extend Interface_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_CopyTool;
+class Interface_CopyTool {
+	public:
+		%feature("autodoc", "1");
+		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		void SetControl(const Handle_Interface_CopyControl &othermap);
+		%feature("autodoc", "1");
+		Handle_Interface_CopyControl Control() const;
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Transferred(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
+		%feature("autodoc", "1");
+		void ClearLastFlags();
+		%feature("autodoc", "1");
+		Standard_Integer LastCopiedAfter(const Standard_Integer numfrom, Handle_Standard_Transient & ent, Handle_Standard_Transient & res) const;
+		%feature("autodoc", "1");
+		void TransferEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void RenewImpliedRefs();
+		%feature("autodoc", "1");
+		void FillModel(const Handle_Interface_InterfaceModel &bmodel);
+		%feature("autodoc", "1");
+		Interface_EntityIterator CompleteResult(const Standard_Boolean withreports=0) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator RootResult(const Standard_Boolean withreports=0) const;
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+
+};
+%feature("shadow") Interface_CopyTool::~Interface_CopyTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_CopyTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1557,7 +1659,7 @@ class Interface_FileReaderData : public MMgt_TShared {
 };
 %extend Interface_FileReaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_FileReaderData::~Interface_FileReaderData %{
@@ -1636,7 +1738,7 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 };
 %extend Interface_HSequenceOfCheck {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HSequenceOfCheck::~Interface_HSequenceOfCheck %{
@@ -1649,6 +1751,71 @@ def __del__(self):
 %}
 
 %extend Interface_HSequenceOfCheck {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_FileReaderTool;
+class Interface_FileReaderTool {
+	public:
+		%feature("autodoc", "1");
+		void SetData(const Handle_Interface_FileReaderData &reader, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Handle_Interface_Protocol Protocol() const;
+		%feature("autodoc", "1");
+		Handle_Interface_FileReaderData Data() const;
+		%feature("autodoc", "1");
+		void SetModel(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		void SetMessenger(const Handle_Message_Messenger &messenger);
+		%feature("autodoc", "1");
+		Handle_Message_Messenger Messenger() const;
+		%feature("autodoc", "1");
+		void SetTraceLevel(const Standard_Integer tracelev);
+		%feature("autodoc", "1");
+		Standard_Integer TraceLevel() const;
+		%feature("autodoc", "1");
+		void SetErrorHandle(const Standard_Boolean err);
+		%feature("autodoc", "1");
+		Standard_Boolean ErrorHandle() const;
+		%feature("autodoc", "1");
+		void SetEntities();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeByLib(const Standard_Integer num, Interface_GeneralLib & glib, Interface_ReaderLib & rlib, Handle_Interface_Check & ach, Handle_Standard_Transient & ent) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient UnknownEntity() const;
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel NewModel() const;
+		%feature("autodoc", "1");
+		void LoadModel(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient LoadedEntity(const Standard_Integer num);
+		%feature("autodoc", "1");
+		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
+
+};
+%feature("shadow") Interface_FileReaderTool::~Interface_FileReaderTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_FileReaderTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1779,7 +1946,7 @@ class Interface_ParamList : public MMgt_TShared {
 };
 %extend Interface_ParamList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_ParamList::~Interface_ParamList %{
@@ -1792,6 +1959,61 @@ def __del__(self):
 %}
 
 %extend Interface_ParamList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_ReportEntity;
+class Interface_ReportEntity : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_ReportEntity(const Handle_Standard_Transient &unknown);
+		%feature("autodoc", "1");
+		Interface_ReportEntity(const Handle_Interface_Check &acheck, const Handle_Standard_Transient &concerned);
+		%feature("autodoc", "1");
+		void SetContent(const Handle_Standard_Transient &content);
+		%feature("autodoc", "1");
+		const Handle_Interface_Check & Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check & CCheck();
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Concerned() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasContent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasNewContent() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Content() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsError() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsUnknown() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_ReportEntity {
+	Handle_Interface_ReportEntity GetHandle() {
+	return *(Handle_Interface_ReportEntity*) &$self;
+	}
+};
+%extend Interface_ReportEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_ReportEntity::~Interface_ReportEntity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_ReportEntity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1853,7 +2075,7 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 };
 %extend Interface_GlobalNodeOfGeneralLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GlobalNodeOfGeneralLib::~Interface_GlobalNodeOfGeneralLib %{
@@ -1866,106 +2088,6 @@ def __del__(self):
 %}
 
 %extend Interface_GlobalNodeOfGeneralLib {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_CopyTool;
-class Interface_CopyTool {
-	public:
-		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_CopyTool(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		void SetControl(const Handle_Interface_CopyControl &othermap);
-		%feature("autodoc", "1");
-		Handle_Interface_CopyControl Control() const;
-		%feature("autodoc", "1");
-		virtual		void Clear();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Transferred(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Bind(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		Standard_Boolean Search(const Handle_Standard_Transient &ent, Handle_Standard_Transient & res) const;
-		%feature("autodoc", "1");
-		void ClearLastFlags();
-		%feature("autodoc", "1");
-		Standard_Integer LastCopiedAfter(const Standard_Integer numfrom, Handle_Standard_Transient & ent, Handle_Standard_Transient & res) const;
-		%feature("autodoc", "1");
-		void TransferEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void RenewImpliedRefs();
-		%feature("autodoc", "1");
-		void FillModel(const Handle_Interface_InterfaceModel &bmodel);
-		%feature("autodoc", "1");
-		Interface_EntityIterator CompleteResult(const Standard_Boolean withreports=0) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator RootResult(const Standard_Boolean withreports=0) const;
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-
-};
-%feature("shadow") Interface_CopyTool::~Interface_CopyTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_CopyTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_ShareFlags;
-class Interface_ShareFlags {
-	public:
-		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
-		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Interface_ShareFlags(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator RootEntities() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbRoots() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Root(const Standard_Integer num=1) const;
-
-};
-%feature("shadow") Interface_ShareFlags::~Interface_ShareFlags %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_ShareFlags {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1996,7 +2118,7 @@ class Interface_InterfaceError : public Standard_Failure {
 };
 %extend Interface_InterfaceError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceError::~Interface_InterfaceError %{
@@ -2015,28 +2137,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Interface_InterfaceMismatch;
-class Interface_InterfaceMismatch : public Interface_InterfaceError {
+%nodefaultctor Interface_CheckFailure;
+class Interface_CheckFailure : public Interface_InterfaceError {
 	public:
 		%feature("autodoc", "1");
-		Interface_InterfaceMismatch();
+		Interface_CheckFailure();
 		%feature("autodoc", "1");
-		Interface_InterfaceMismatch(const char * AString);
+		Interface_CheckFailure(const char * AString);
 		%feature("autodoc", "1");
-		static		Handle_Interface_InterfaceMismatch NewInstance(const char * aMessage="");
+		static		Handle_Interface_CheckFailure NewInstance(const char * aMessage="");
 
 };
-%extend Interface_InterfaceMismatch {
-	Handle_Interface_InterfaceMismatch GetHandle() {
-	return *(Handle_Interface_InterfaceMismatch*) &$self;
+%extend Interface_CheckFailure {
+	Handle_Interface_CheckFailure GetHandle() {
+	return *(Handle_Interface_CheckFailure*) &$self;
 	}
 };
-%extend Interface_InterfaceMismatch {
+%extend Interface_CheckFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Interface_InterfaceMismatch::~Interface_InterfaceMismatch %{
+%feature("shadow") Interface_CheckFailure::~Interface_CheckFailure %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2045,7 +2167,46 @@ def __del__(self):
 		pass
 %}
 
-%extend Interface_InterfaceMismatch {
+%extend Interface_CheckFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_FileParameter;
+class Interface_FileParameter {
+	public:
+		%feature("autodoc", "1");
+		Interface_FileParameter();
+		%feature("autodoc", "1");
+		void Init(const TCollection_AsciiString &val, const Interface_ParamType typ);
+		%feature("autodoc", "1");
+		void Init(const char * val, const Interface_ParamType typ);
+		%feature("autodoc", "1");
+		char * CValue() const;
+		%feature("autodoc", "1");
+		Interface_ParamType ParamType() const;
+		%feature("autodoc", "1");
+		void SetEntityNumber(const Standard_Integer num);
+		%feature("autodoc", "1");
+		Standard_Integer EntityNumber() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") Interface_FileParameter::~Interface_FileParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_FileParameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2072,7 +2233,7 @@ class Interface_CopyControl : public MMgt_TShared {
 };
 %extend Interface_CopyControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_CopyControl::~Interface_CopyControl %{
@@ -2085,6 +2246,55 @@ def __del__(self):
 %}
 
 %extend Interface_CopyControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_DataMapNodeOfDataMapOfTransientInteger;
+class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Standard_Transient &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
+	Handle_Interface_DataMapNodeOfDataMapOfTransientInteger GetHandle() {
+	return *(Handle_Interface_DataMapNodeOfDataMapOfTransientInteger*) &$self;
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_DataMapNodeOfDataMapOfTransientInteger::~Interface_DataMapNodeOfDataMapOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2189,6 +2399,114 @@ def __del__(self):
 };
 
 
+%nodefaultctor Interface_ShareTool;
+class Interface_ShareTool {
+	public:
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		Interface_ShareTool(const Handle_Interface_HGraph &ahgraph);
+		%feature("autodoc", "1");
+		void AddImplied(const Handle_Interface_GTool &gtool);
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		const Interface_Graph & Graph() const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator RootEntities() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient TypedSharing(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator All(const Handle_Standard_Transient &ent, const Standard_Boolean rootlast=1) const;
+		%feature("autodoc", "1");
+		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
+
+};
+%feature("shadow") Interface_ShareTool::~Interface_ShareTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_ShareTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_LineBuffer;
+class Interface_LineBuffer {
+	public:
+		%feature("autodoc", "1");
+		Interface_LineBuffer(const Standard_Integer size=10);
+		%feature("autodoc", "1");
+		void SetMax(const Standard_Integer max);
+		%feature("autodoc", "1");
+		void SetInitial(const Standard_Integer initial);
+		%feature("autodoc", "1");
+		void SetKeep();
+		%feature("autodoc", "1");
+		Standard_Boolean CanGet(const Standard_Integer more);
+		%feature("autodoc", "1");
+		char * Content() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void FreezeInitial();
+		%feature("autodoc", "1");
+		void Move(TCollection_AsciiString & str);
+		%feature("autodoc", "1");
+		void Move(const Handle_TCollection_HAsciiString &str);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Moved();
+		%feature("autodoc", "1");
+		void Add(const char * text);
+		%feature("autodoc", "1");
+		void Add(const char * text, const Standard_Integer lntext);
+		%feature("autodoc", "1");
+		void Add(const TCollection_AsciiString &text);
+		%feature("autodoc", "1");
+		void Add(const Standard_Character text);
+
+};
+%feature("shadow") Interface_LineBuffer::~Interface_LineBuffer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_LineBuffer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
 class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_MapNode {
 	public:
@@ -2221,7 +2539,7 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 };
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_IndexedMapNodeOfIndexedMapOfAsciiString::~Interface_IndexedMapNodeOfIndexedMapOfAsciiString %{
@@ -2264,7 +2582,7 @@ class Interface_CopyMap : public Interface_CopyControl {
 };
 %extend Interface_CopyMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_CopyMap::~Interface_CopyMap %{
@@ -2371,6 +2689,84 @@ def __del__(self):
 };
 
 
+%nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
+class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_Check &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Interface_Check & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	Handle_Interface_SequenceNodeOfSequenceOfCheck GetHandle() {
+	return *(Handle_Interface_SequenceNodeOfSequenceOfCheck*) &$self;
+	}
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_SequenceNodeOfSequenceOfCheck::~Interface_SequenceNodeOfSequenceOfCheck %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_SequenceNodeOfSequenceOfCheck {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_TypedValue;
+class Interface_TypedValue : public MoniTool_TypedValue {
+	public:
+		%feature("autodoc", "1");
+		Interface_TypedValue(const char * name, const Interface_ParamType type=Interface_ParamText, const char * init="");
+		%feature("autodoc", "1");
+		Interface_ParamType Type() const;
+		%feature("autodoc", "1");
+		static		MoniTool_ValueType ParamTypeToValueType(const Interface_ParamType typ);
+		%feature("autodoc", "1");
+		static		Interface_ParamType ValueTypeToParamType(const MoniTool_ValueType typ);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_TypedValue {
+	Handle_Interface_TypedValue GetHandle() {
+	return *(Handle_Interface_TypedValue*) &$self;
+	}
+};
+%extend Interface_TypedValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_TypedValue::~Interface_TypedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_TypedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Interface_Array1OfHAsciiString;
 class Interface_Array1OfHAsciiString {
 	public:
@@ -2416,102 +2812,6 @@ def __del__(self):
 %}
 
 %extend Interface_Array1OfHAsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_ShareTool;
-class Interface_ShareTool {
-	public:
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		Interface_ShareTool(const Handle_Interface_HGraph &ahgraph);
-		%feature("autodoc", "1");
-		void AddImplied(const Handle_Interface_GTool &gtool);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		const Interface_Graph & Graph() const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator RootEntities() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient TypedSharing(const Handle_Standard_Transient &ent, const Handle_Standard_Type &atype) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator All(const Handle_Standard_Transient &ent, const Standard_Boolean rootlast=1) const;
-		%feature("autodoc", "1");
-		void Print(const Interface_EntityIterator &iter, const Handle_Message_Messenger &S) const;
-
-};
-%feature("shadow") Interface_ShareTool::~Interface_ShareTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_ShareTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_TypedValue;
-class Interface_TypedValue : public MoniTool_TypedValue {
-	public:
-		%feature("autodoc", "1");
-		Interface_TypedValue(const char * name, const Interface_ParamType type=Interface_ParamText, const char * init="");
-		%feature("autodoc", "1");
-		Interface_ParamType Type() const;
-		%feature("autodoc", "1");
-		static		MoniTool_ValueType ParamTypeToValueType(const Interface_ParamType typ);
-		%feature("autodoc", "1");
-		static		Interface_ParamType ValueTypeToParamType(const MoniTool_ValueType typ);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_TypedValue {
-	Handle_Interface_TypedValue GetHandle() {
-	return *(Handle_Interface_TypedValue*) &$self;
-	}
-};
-%extend Interface_TypedValue {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_TypedValue::~Interface_TypedValue %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_TypedValue {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2582,7 +2882,7 @@ class Interface_Static : public Interface_TypedValue {
 };
 %extend Interface_Static {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Static::~Interface_Static %{
@@ -2631,7 +2931,7 @@ class Interface_IntVal : public MMgt_TShared {
 };
 %extend Interface_IntVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_IntVal::~Interface_IntVal %{
@@ -2650,34 +2950,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor Interface_NodeOfGeneralLib;
-class Interface_NodeOfGeneralLib : public MMgt_TShared {
+%nodefaultctor Interface_ShareFlags;
+class Interface_ShareFlags {
 	public:
 		%feature("autodoc", "1");
-		Interface_NodeOfGeneralLib();
+		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		void AddNode(const Handle_Interface_GlobalNodeOfGeneralLib &anode);
+		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
 		%feature("autodoc", "1");
-		const Handle_Interface_GeneralModule & Module() const;
+		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
 		%feature("autodoc", "1");
-		const Handle_Interface_Protocol & Protocol() const;
+		Interface_ShareFlags(const Handle_Interface_InterfaceModel &amodel);
 		%feature("autodoc", "1");
-		const Handle_Interface_NodeOfGeneralLib & Next() const;
+		Interface_ShareFlags(const Interface_Graph &agraph);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_Interface_InterfaceModel Model() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsShared(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator RootEntities() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbRoots() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Root(const Standard_Integer num=1) const;
 
 };
-%extend Interface_NodeOfGeneralLib {
-	Handle_Interface_NodeOfGeneralLib GetHandle() {
-	return *(Handle_Interface_NodeOfGeneralLib*) &$self;
-	}
-};
-%extend Interface_NodeOfGeneralLib {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_NodeOfGeneralLib::~Interface_NodeOfGeneralLib %{
+%feature("shadow") Interface_ShareFlags::~Interface_ShareFlags %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2686,7 +2984,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Interface_NodeOfGeneralLib {
+%extend Interface_ShareFlags {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2741,7 +3039,7 @@ class Interface_UndefinedContent : public MMgt_TShared {
 };
 %extend Interface_UndefinedContent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_UndefinedContent::~Interface_UndefinedContent %{
@@ -2754,6 +3052,45 @@ def __del__(self):
 %}
 
 %extend Interface_UndefinedContent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_SignLabel;
+class Interface_SignLabel : public MoniTool_SignText {
+	public:
+		%feature("autodoc", "1");
+		Interface_SignLabel();
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_SignLabel {
+	Handle_Interface_SignLabel GetHandle() {
+	return *(Handle_Interface_SignLabel*) &$self;
+	}
+};
+%extend Interface_SignLabel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_SignLabel::~Interface_SignLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_SignLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2814,43 +3151,6 @@ def __del__(self):
 %}
 
 %extend Interface_IntList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
-class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Interface_SequenceNodeOfSequenceOfCheck(const Handle_Interface_Check &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Interface_Check & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_SequenceNodeOfSequenceOfCheck {
-	Handle_Interface_SequenceNodeOfSequenceOfCheck GetHandle() {
-	return *(Handle_Interface_SequenceNodeOfSequenceOfCheck*) &$self;
-	}
-};
-%extend Interface_SequenceNodeOfSequenceOfCheck {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_SequenceNodeOfSequenceOfCheck::~Interface_SequenceNodeOfSequenceOfCheck %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_SequenceNodeOfSequenceOfCheck {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2947,7 +3247,7 @@ class Interface_HGraph : public MMgt_TShared {
 };
 %extend Interface_HGraph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HGraph::~Interface_HGraph %{
@@ -2960,71 +3260,6 @@ def __del__(self):
 %}
 
 %extend Interface_HGraph {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_FileReaderTool;
-class Interface_FileReaderTool {
-	public:
-		%feature("autodoc", "1");
-		void SetData(const Handle_Interface_FileReaderData &reader, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Handle_Interface_Protocol Protocol() const;
-		%feature("autodoc", "1");
-		Handle_Interface_FileReaderData Data() const;
-		%feature("autodoc", "1");
-		void SetModel(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model() const;
-		%feature("autodoc", "1");
-		void SetMessenger(const Handle_Message_Messenger &messenger);
-		%feature("autodoc", "1");
-		Handle_Message_Messenger Messenger() const;
-		%feature("autodoc", "1");
-		void SetTraceLevel(const Standard_Integer tracelev);
-		%feature("autodoc", "1");
-		Standard_Integer TraceLevel() const;
-		%feature("autodoc", "1");
-		void SetErrorHandle(const Standard_Boolean err);
-		%feature("autodoc", "1");
-		Standard_Boolean ErrorHandle() const;
-		%feature("autodoc", "1");
-		void SetEntities();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Standard_Integer num, Handle_Interface_Check & ach, Handle_Standard_Transient & ent);
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeByLib(const Standard_Integer num, Interface_GeneralLib & glib, Interface_ReaderLib & rlib, Handle_Interface_Check & ach, Handle_Standard_Transient & ent) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient UnknownEntity() const;
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel NewModel() const;
-		%feature("autodoc", "1");
-		void LoadModel(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient LoadedEntity(const Standard_Integer num);
-		%feature("autodoc", "1");
-		virtual		void BeginRead(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AnalyseRecord(const Standard_Integer num, const Handle_Standard_Transient &anent, Handle_Interface_Check & acheck);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void EndRead(const Handle_Interface_InterfaceModel &amodel);
-
-};
-%feature("shadow") Interface_FileReaderTool::~Interface_FileReaderTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_FileReaderTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3118,7 +3353,7 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 };
 %extend Interface_HArray1OfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_HArray1OfHAsciiString::~Interface_HArray1OfHAsciiString %{
@@ -3131,178 +3366,6 @@ def __del__(self):
 %}
 
 %extend Interface_HArray1OfHAsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_Graph;
-class Interface_Graph {
-	public:
-		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
-		%feature("autodoc", "1");
-		Interface_Graph(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		Interface_Graph(const Interface_Graph &agraph, const Standard_Boolean copied=0);
-		%feature("autodoc", "1");
-		void EvalSharings();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void ResetStatus();
-		%feature("autodoc", "1");
-		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		Standard_Integer EntityNumber(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPresent(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetCStatus(const Standard_Integer num) {
-				return (Standard_Integer) $self->CStatus(num);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetCStatus(Standard_Integer value ,const Standard_Integer num) {
-				$self->CStatus(num)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		void SetStatus(const Standard_Integer num, const Standard_Integer stat);
-		%feature("autodoc", "1");
-		void RemoveItem(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void ChangeStatus(const Standard_Integer oldstat, const Standard_Integer newstat);
-		%feature("autodoc", "1");
-		void RemoveStatus(const Standard_Integer stat);
-		%feature("autodoc", "1");
-		const Interface_BitMap & BitMap() const;
-		%feature("autodoc", "1");
-		Interface_BitMap & CBitMap();
-		%feature("autodoc", "1");
-		const Handle_Interface_InterfaceModel & Model() const;
-		%feature("autodoc", "1");
-		void GetFromModel();
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat=0);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
-		%feature("autodoc", "1");
-		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Integer newstat);
-		%feature("autodoc", "1");
-		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
-		%feature("autodoc", "1");
-		void GetFromGraph(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		void GetFromGraph(const Interface_Graph &agraph, const Standard_Integer stat);
-		%feature("autodoc", "1");
-		Standard_Boolean HasShareErrors(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasRedefinedShareds(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_IntList SharedNums(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Interface_IntList SharingNums(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator TypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &type) const;
-		%feature("autodoc", "1");
-		Interface_EntityIterator RootEntities() const;
-		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_EntityIterator &list);
-		%feature("autodoc", "1");
-		void SetShare(const Handle_Standard_Transient &ent, const Interface_IntList &list);
-		%feature("autodoc", "1");
-		void SetNoShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void SetNoShare(const Interface_EntityIterator &list);
-		%feature("autodoc", "1");
-		void AddShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
-		%feature("autodoc", "1");
-		void RemoveShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
-		%feature("autodoc", "1");
-		void ResetShare(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void ResetAllShare();
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
-
-};
-%feature("shadow") Interface_Graph::~Interface_Graph %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_Graph {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_DataMapNodeOfDataMapOfTransientInteger;
-class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Interface_DataMapNodeOfDataMapOfTransientInteger(const Handle_Standard_Transient &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
-	Handle_Interface_DataMapNodeOfDataMapOfTransientInteger GetHandle() {
-	return *(Handle_Interface_DataMapNodeOfDataMapOfTransientInteger*) &$self;
-	}
-};
-%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_DataMapNodeOfDataMapOfTransientInteger::~Interface_DataMapNodeOfDataMapOfTransientInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3409,7 +3472,7 @@ class Interface_Check : public MMgt_TShared {
 };
 %extend Interface_Check {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Check::~Interface_Check %{
@@ -3422,100 +3485,6 @@ def __del__(self):
 %}
 
 %extend Interface_Check {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_ReportEntity;
-class Interface_ReportEntity : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Standard_Transient &unknown);
-		%feature("autodoc", "1");
-		Interface_ReportEntity(const Handle_Interface_Check &acheck, const Handle_Standard_Transient &concerned);
-		%feature("autodoc", "1");
-		void SetContent(const Handle_Standard_Transient &content);
-		%feature("autodoc", "1");
-		const Handle_Interface_Check & Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check & CCheck();
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Concerned() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasContent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasNewContent() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Content() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsError() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsUnknown() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_ReportEntity {
-	Handle_Interface_ReportEntity GetHandle() {
-	return *(Handle_Interface_ReportEntity*) &$self;
-	}
-};
-%extend Interface_ReportEntity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_ReportEntity::~Interface_ReportEntity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_ReportEntity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_SignLabel;
-class Interface_SignLabel : public MoniTool_SignText {
-	public:
-		%feature("autodoc", "1");
-		Interface_SignLabel();
-		%feature("autodoc", "1");
-		virtual		char * Name() const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Text(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &context) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_SignLabel {
-	Handle_Interface_SignLabel GetHandle() {
-	return *(Handle_Interface_SignLabel*) &$self;
-	}
-};
-%extend Interface_SignLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_SignLabel::~Interface_SignLabel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_SignLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3566,7 +3535,7 @@ class Interface_Protocol : public MMgt_TShared {
 };
 %extend Interface_Protocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_Protocol::~Interface_Protocol %{
@@ -3677,6 +3646,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Interface_InterfaceMismatch;
+class Interface_InterfaceMismatch : public Interface_InterfaceError {
+	public:
+		%feature("autodoc", "1");
+		Interface_InterfaceMismatch();
+		%feature("autodoc", "1");
+		Interface_InterfaceMismatch(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Interface_InterfaceMismatch NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_InterfaceMismatch {
+	Handle_Interface_InterfaceMismatch GetHandle() {
+	return *(Handle_Interface_InterfaceMismatch*) &$self;
+	}
+};
+%extend Interface_InterfaceMismatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_InterfaceMismatch::~Interface_InterfaceMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_InterfaceMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Interface_GTool;
 class Interface_GTool : public MMgt_TShared {
 	public:
@@ -3716,7 +3728,7 @@ class Interface_GTool : public MMgt_TShared {
 };
 %extend Interface_GTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_GTool::~Interface_GTool %{
@@ -3885,7 +3897,7 @@ class Interface_SignType : public MoniTool_SignText {
 };
 %extend Interface_SignType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_SignType::~Interface_SignType %{
@@ -3898,6 +3910,57 @@ def __del__(self):
 %}
 
 %extend Interface_SignType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Interface_ParamSet;
+class Interface_ParamSet : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Interface_ParamSet(const Standard_Integer nres, const Standard_Integer nst=1);
+		%feature("autodoc", "1");
+		Standard_Integer Append(const char * val, const Standard_Integer lnval, const Interface_ParamType typ, const Standard_Integer nument);
+		%feature("autodoc", "1");
+		Standard_Integer Append(const Interface_FileParameter &FP);
+		%feature("autodoc", "1");
+		Standard_Integer NbParams() const;
+		%feature("autodoc", "1");
+		const Interface_FileParameter & Param(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Interface_FileParameter & ChangeParam(const Standard_Integer num);
+		%feature("autodoc", "1");
+		void SetParam(const Standard_Integer num, const Interface_FileParameter &FP);
+		%feature("autodoc", "1");
+		Handle_Interface_ParamList Params(const Standard_Integer num, const Standard_Integer nb) const;
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Interface_ParamSet {
+	Handle_Interface_ParamSet GetHandle() {
+	return *(Handle_Interface_ParamSet*) &$self;
+	}
+};
+%extend Interface_ParamSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Interface_ParamSet::~Interface_ParamSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Interface_ParamSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4004,49 +4067,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Interface_CheckFailure;
-class Interface_CheckFailure : public Interface_InterfaceError {
-	public:
-		%feature("autodoc", "1");
-		Interface_CheckFailure();
-		%feature("autodoc", "1");
-		Interface_CheckFailure(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Interface_CheckFailure NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_CheckFailure {
-	Handle_Interface_CheckFailure GetHandle() {
-	return *(Handle_Interface_CheckFailure*) &$self;
-	}
-};
-%extend Interface_CheckFailure {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_CheckFailure::~Interface_CheckFailure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_CheckFailure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Interface_CheckIterator;
 class Interface_CheckIterator {
 	public:
@@ -4146,7 +4166,7 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 };
 %extend Interface_NodeOfReaderLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_NodeOfReaderLib::~Interface_NodeOfReaderLib %{
@@ -4165,44 +4185,114 @@ def __del__(self):
 };
 
 
-%nodefaultctor Interface_LineBuffer;
-class Interface_LineBuffer {
+%nodefaultctor Interface_Graph;
+class Interface_Graph {
 	public:
 		%feature("autodoc", "1");
-		Interface_LineBuffer(const Standard_Integer size=10);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
 		%feature("autodoc", "1");
-		void SetMax(const Standard_Integer max);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
 		%feature("autodoc", "1");
-		void SetInitial(const Standard_Integer initial);
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_GTool &gtool);
 		%feature("autodoc", "1");
-		void SetKeep();
+		Interface_Graph(const Handle_Interface_InterfaceModel &amodel);
 		%feature("autodoc", "1");
-		Standard_Boolean CanGet(const Standard_Integer more);
+		Interface_Graph(const Interface_Graph &agraph, const Standard_Boolean copied=0);
 		%feature("autodoc", "1");
-		char * Content() const;
+		void EvalSharings();
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Reset();
 		%feature("autodoc", "1");
-		void Clear();
+		void ResetStatus();
 		%feature("autodoc", "1");
-		void FreezeInitial();
+		Standard_Integer Size() const;
 		%feature("autodoc", "1");
-		void Move(TCollection_AsciiString & str);
+		Standard_Integer EntityNumber(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Move(const Handle_TCollection_HAsciiString &str);
+		Standard_Boolean IsPresent(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Moved();
+		Standard_Boolean IsPresent(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Add(const char * text);
+		const Handle_Standard_Transient & Entity(const Standard_Integer num) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetCStatus(const Standard_Integer num) {
+				return (Standard_Integer) $self->CStatus(num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetCStatus(Standard_Integer value ,const Standard_Integer num) {
+				$self->CStatus(num)=value;
+				}
+		};
 		%feature("autodoc", "1");
-		void Add(const char * text, const Standard_Integer lntext);
+		void SetStatus(const Standard_Integer num, const Standard_Integer stat);
 		%feature("autodoc", "1");
-		void Add(const TCollection_AsciiString &text);
+		void RemoveItem(const Standard_Integer num);
 		%feature("autodoc", "1");
-		void Add(const Standard_Character text);
+		void ChangeStatus(const Standard_Integer oldstat, const Standard_Integer newstat);
+		%feature("autodoc", "1");
+		void RemoveStatus(const Standard_Integer stat);
+		%feature("autodoc", "1");
+		const Interface_BitMap & BitMap() const;
+		%feature("autodoc", "1");
+		Interface_BitMap & CBitMap();
+		%feature("autodoc", "1");
+		const Handle_Interface_InterfaceModel & Model() const;
+		%feature("autodoc", "1");
+		void GetFromModel();
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat=0);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent, const Standard_Boolean shared, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
+		%feature("autodoc", "1");
+		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Integer newstat);
+		%feature("autodoc", "1");
+		void GetFromIter(const Interface_EntityIterator &iter, const Standard_Integer newstat, const Standard_Integer overlapstat, const Standard_Boolean cumul);
+		%feature("autodoc", "1");
+		void GetFromGraph(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		void GetFromGraph(const Interface_Graph &agraph, const Standard_Integer stat);
+		%feature("autodoc", "1");
+		Standard_Boolean HasShareErrors(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasRedefinedShareds(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator Shareds(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_IntList SharedNums(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator Sharings(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Interface_IntList SharingNums(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator TypedSharings(const Handle_Standard_Transient &ent, const Handle_Standard_Type &type) const;
+		%feature("autodoc", "1");
+		Interface_EntityIterator RootEntities() const;
+		%feature("autodoc", "1");
+		void SetShare(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void SetShare(const Handle_Standard_Transient &ent, const Interface_EntityIterator &list);
+		%feature("autodoc", "1");
+		void SetShare(const Handle_Standard_Transient &ent, const Interface_IntList &list);
+		%feature("autodoc", "1");
+		void SetNoShare(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void SetNoShare(const Interface_EntityIterator &list);
+		%feature("autodoc", "1");
+		void AddShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
+		%feature("autodoc", "1");
+		void RemoveShared(const Handle_Standard_Transient &ent, const Handle_Standard_Transient &shared);
+		%feature("autodoc", "1");
+		void ResetShare(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void ResetAllShare();
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name(const Handle_Standard_Transient &ent) const;
 
 };
-%feature("shadow") Interface_LineBuffer::~Interface_LineBuffer %{
+%feature("shadow") Interface_Graph::~Interface_Graph %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4211,58 +4301,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Interface_LineBuffer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_ParamSet;
-class Interface_ParamSet : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Interface_ParamSet(const Standard_Integer nres, const Standard_Integer nst=1);
-		%feature("autodoc", "1");
-		Standard_Integer Append(const char * val, const Standard_Integer lnval, const Interface_ParamType typ, const Standard_Integer nument);
-		%feature("autodoc", "1");
-		Standard_Integer Append(const Interface_FileParameter &FP);
-		%feature("autodoc", "1");
-		Standard_Integer NbParams() const;
-		%feature("autodoc", "1");
-		const Interface_FileParameter & Param(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Interface_FileParameter & ChangeParam(const Standard_Integer num);
-		%feature("autodoc", "1");
-		void SetParam(const Standard_Integer num, const Interface_FileParameter &FP);
-		%feature("autodoc", "1");
-		Handle_Interface_ParamList Params(const Standard_Integer num, const Standard_Integer nb) const;
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Interface_ParamSet {
-	Handle_Interface_ParamSet GetHandle() {
-	return *(Handle_Interface_ParamSet*) &$self;
-	}
-};
-%extend Interface_ParamSet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Interface_ParamSet::~Interface_ParamSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_ParamSet {
+%extend Interface_Graph {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4413,7 +4452,7 @@ class Interface_InterfaceModel : public MMgt_TShared {
 };
 %extend Interface_InterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_InterfaceModel::~Interface_InterfaceModel %{
@@ -4468,7 +4507,7 @@ class Interface_EntityCluster : public MMgt_TShared {
 };
 %extend Interface_EntityCluster {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Interface_EntityCluster::~Interface_EntityCluster %{
@@ -4481,45 +4520,6 @@ def __del__(self):
 %}
 
 %extend Interface_EntityCluster {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Interface_FileParameter;
-class Interface_FileParameter {
-	public:
-		%feature("autodoc", "1");
-		Interface_FileParameter();
-		%feature("autodoc", "1");
-		void Init(const TCollection_AsciiString &val, const Interface_ParamType typ);
-		%feature("autodoc", "1");
-		void Init(const char * val, const Interface_ParamType typ);
-		%feature("autodoc", "1");
-		char * CValue() const;
-		%feature("autodoc", "1");
-		Interface_ParamType ParamType() const;
-		%feature("autodoc", "1");
-		void SetEntityNumber(const Standard_Integer num);
-		%feature("autodoc", "1");
-		Standard_Integer EntityNumber() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") Interface_FileParameter::~Interface_FileParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Interface_FileParameter {
 	void _kill_pointed() {
 		delete $self;
 	}

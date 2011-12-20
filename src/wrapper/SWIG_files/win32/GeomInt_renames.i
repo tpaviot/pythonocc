@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::DownCast;
+%rename(NbVertex) GeomInt_LineTool::NbVertex;
+%rename(Vertex) GeomInt_LineTool::Vertex;
+%rename(FirstParameter) GeomInt_LineTool::FirstParameter;
+%rename(LastParameter) GeomInt_LineTool::LastParameter;
+%rename(FirstPoint) GeomInt_TheMultiLineToolOfWLApprox::FirstPoint;
+%rename(LastPoint) GeomInt_TheMultiLineToolOfWLApprox::LastPoint;
+%rename(NbP2d) GeomInt_TheMultiLineToolOfWLApprox::NbP2d;
+%rename(NbP3d) GeomInt_TheMultiLineToolOfWLApprox::NbP3d;
+%rename(Value) GeomInt_TheMultiLineToolOfWLApprox::Value;
+%rename(Tangency) GeomInt_TheMultiLineToolOfWLApprox::Tangency;
+%rename(Curvature) GeomInt_TheMultiLineToolOfWLApprox::Curvature;
+%rename(MakeMLBetween) GeomInt_TheMultiLineToolOfWLApprox::MakeMLBetween;
+%rename(WhatStatus) GeomInt_TheMultiLineToolOfWLApprox::WhatStatus;

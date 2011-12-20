@@ -100,6 +100,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
+class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDM_StdMapNodeOfMapOfDocument();
+		%feature("autodoc", "1");
+		Handle_CDM_StdMapNodeOfMapOfDocument(const Handle_CDM_StdMapNodeOfMapOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_StdMapNodeOfMapOfDocument(const CDM_StdMapNodeOfMapOfDocument *anItem);
+		%feature("autodoc", "1");
+		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const Handle_CDM_StdMapNodeOfMapOfDocument &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const CDM_StdMapNodeOfMapOfDocument *anItem);
+		%feature("autodoc", "1");
+		static		Handle_CDM_StdMapNodeOfMapOfDocument DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDM_StdMapNodeOfMapOfDocument {
+	CDM_StdMapNodeOfMapOfDocument* GetObject() {
+	return (CDM_StdMapNodeOfMapOfDocument*)$self->Access();
+	}
+};
+%feature("shadow") Handle_CDM_StdMapNodeOfMapOfDocument::~Handle_CDM_StdMapNodeOfMapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_CDM_StdMapNodeOfMapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_CDM_Application;
 class Handle_CDM_Application : public Handle_Standard_Transient {
 	public:
@@ -132,44 +170,6 @@ def __del__(self):
 %}
 
 %extend Handle_CDM_Application {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
-class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument();
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument(const CDM_StackNodeOfStackOfDocument *anItem);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument & operator=(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDM_StackNodeOfStackOfDocument & operator=(const CDM_StackNodeOfStackOfDocument *anItem);
-		%feature("autodoc", "1");
-		static		Handle_CDM_StackNodeOfStackOfDocument DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDM_StackNodeOfStackOfDocument {
-	CDM_StackNodeOfStackOfDocument* GetObject() {
-	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
-	}
-};
-%feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_CDM_StackNodeOfStackOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -252,29 +252,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
-class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
+class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument();
+		Handle_CDM_StackNodeOfStackOfDocument();
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument(const Handle_CDM_StdMapNodeOfMapOfDocument &aHandle);
+		Handle_CDM_StackNodeOfStackOfDocument(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument(const CDM_StdMapNodeOfMapOfDocument *anItem);
+		Handle_CDM_StackNodeOfStackOfDocument(const CDM_StackNodeOfStackOfDocument *anItem);
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const Handle_CDM_StdMapNodeOfMapOfDocument &aHandle);
+		Handle_CDM_StackNodeOfStackOfDocument & operator=(const Handle_CDM_StackNodeOfStackOfDocument &aHandle);
 		%feature("autodoc", "1");
-		Handle_CDM_StdMapNodeOfMapOfDocument & operator=(const CDM_StdMapNodeOfMapOfDocument *anItem);
+		Handle_CDM_StackNodeOfStackOfDocument & operator=(const CDM_StackNodeOfStackOfDocument *anItem);
 		%feature("autodoc", "1");
-		static		Handle_CDM_StdMapNodeOfMapOfDocument DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_CDM_StackNodeOfStackOfDocument DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_CDM_StdMapNodeOfMapOfDocument {
-	CDM_StdMapNodeOfMapOfDocument* GetObject() {
-	return (CDM_StdMapNodeOfMapOfDocument*)$self->Access();
+%extend Handle_CDM_StackNodeOfStackOfDocument {
+	CDM_StackNodeOfStackOfDocument* GetObject() {
+	return (CDM_StackNodeOfStackOfDocument*)$self->Access();
 	}
 };
-%feature("shadow") Handle_CDM_StdMapNodeOfMapOfDocument::~Handle_CDM_StdMapNodeOfMapOfDocument %{
+%feature("shadow") Handle_CDM_StackNodeOfStackOfDocument::~Handle_CDM_StackNodeOfStackOfDocument %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -283,7 +283,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_CDM_StdMapNodeOfMapOfDocument {
+%extend Handle_CDM_StackNodeOfStackOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -556,6 +556,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor CDM_DocumentHasher;
+class CDM_DocumentHasher {
+	public:
+		%feature("autodoc", "1");
+		CDM_DocumentHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
+
+};
+%feature("shadow") CDM_DocumentHasher::~CDM_DocumentHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_DocumentHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor CDM_ListOfDocument;
 class CDM_ListOfDocument {
 	public:
@@ -650,6 +677,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor CDM_StackOfDocument;
+class CDM_StackOfDocument {
+	public:
+		%feature("autodoc", "1");
+		CDM_StackOfDocument();
+		%feature("autodoc", "1");
+		const CDM_StackOfDocument & Assign(const CDM_StackOfDocument &Other);
+		%feature("autodoc", "1");
+		const CDM_StackOfDocument & operator=(const CDM_StackOfDocument &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const Handle_CDM_Document & Top() const;
+		%feature("autodoc", "1");
+		void Push(const Handle_CDM_Document &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Handle_CDM_Document & ChangeTop();
+
+};
+%feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_StackOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor CDM_ListNodeOfListOfReferences;
 class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 	public:
@@ -668,7 +736,7 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfReferences {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_ListNodeOfListOfReferences::~CDM_ListNodeOfListOfReferences %{
@@ -752,7 +820,7 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_DataMapNodeOfPresentationDirectory::~CDM_DataMapNodeOfPresentationDirectory %{
@@ -789,7 +857,7 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_StdMapNodeOfMapOfDocument::~CDM_StdMapNodeOfMapOfDocument %{
@@ -861,7 +929,7 @@ class CDM_MessageDriver : public Standard_Transient {
 };
 %extend CDM_MessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_MessageDriver::~CDM_MessageDriver %{
@@ -894,7 +962,7 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_NullMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_NullMessageDriver::~CDM_NullMessageDriver %{
@@ -907,6 +975,45 @@ def __del__(self):
 %}
 
 %extend CDM_NullMessageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CDM_DataMapNodeOfMetaDataLookUpTable;
+class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		CDM_DataMapNodeOfMetaDataLookUpTable(const TCollection_ExtendedString &K, const Handle_CDM_MetaData &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		Handle_CDM_MetaData & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend CDM_DataMapNodeOfMetaDataLookUpTable {
+	Handle_CDM_DataMapNodeOfMetaDataLookUpTable GetHandle() {
+	return *(Handle_CDM_DataMapNodeOfMetaDataLookUpTable*) &$self;
+	}
+};
+%extend CDM_DataMapNodeOfMetaDataLookUpTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") CDM_DataMapNodeOfMetaDataLookUpTable::~CDM_DataMapNodeOfMetaDataLookUpTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_DataMapNodeOfMetaDataLookUpTable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -946,45 +1053,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDM_DataMapNodeOfMetaDataLookUpTable;
-class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		CDM_DataMapNodeOfMetaDataLookUpTable(const TCollection_ExtendedString &K, const Handle_CDM_MetaData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		Handle_CDM_MetaData & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDM_DataMapNodeOfMetaDataLookUpTable {
-	Handle_CDM_DataMapNodeOfMetaDataLookUpTable GetHandle() {
-	return *(Handle_CDM_DataMapNodeOfMetaDataLookUpTable*) &$self;
-	}
-};
-%extend CDM_DataMapNodeOfMetaDataLookUpTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") CDM_DataMapNodeOfMetaDataLookUpTable::~CDM_DataMapNodeOfMetaDataLookUpTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_DataMapNodeOfMetaDataLookUpTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor CDM_Application;
 class CDM_Application : public Standard_Transient {
 	public:
@@ -1009,7 +1077,7 @@ class CDM_Application : public Standard_Transient {
 };
 %extend CDM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_Application::~CDM_Application %{
@@ -1022,6 +1090,39 @@ def __del__(self):
 %}
 
 %extend CDM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CDM_ReferenceIterator;
+class CDM_ReferenceIterator {
+	public:
+		%feature("autodoc", "1");
+		CDM_ReferenceIterator(const Handle_CDM_Document &aDocument);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_CDM_Document Document() const;
+		%feature("autodoc", "1");
+		Standard_Integer ReferenceIdentifier() const;
+		%feature("autodoc", "1");
+		Standard_Integer DocumentVersion() const;
+
+};
+%feature("shadow") CDM_ReferenceIterator::~CDM_ReferenceIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_ReferenceIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1046,7 +1147,7 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StackNodeOfStackOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_StackNodeOfStackOfDocument::~CDM_StackNodeOfStackOfDocument %{
@@ -1143,47 +1244,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDM_StackOfDocument;
-class CDM_StackOfDocument {
-	public:
-		%feature("autodoc", "1");
-		CDM_StackOfDocument();
-		%feature("autodoc", "1");
-		const CDM_StackOfDocument & Assign(const CDM_StackOfDocument &Other);
-		%feature("autodoc", "1");
-		const CDM_StackOfDocument & operator=(const CDM_StackOfDocument &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		const Handle_CDM_Document & Top() const;
-		%feature("autodoc", "1");
-		void Push(const Handle_CDM_Document &I);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Handle_CDM_Document & ChangeTop();
-
-};
-%feature("shadow") CDM_StackOfDocument::~CDM_StackOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_StackOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor CDM_ListNodeOfListOfDocument;
 class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 	public:
@@ -1202,7 +1262,7 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_ListNodeOfListOfDocument::~CDM_ListNodeOfListOfDocument %{
@@ -1344,33 +1404,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDM_DocumentHasher;
-class CDM_DocumentHasher {
-	public:
-		%feature("autodoc", "1");
-		CDM_DocumentHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Handle_CDM_Document &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Handle_CDM_Document &K1, const Handle_CDM_Document &K2);
-
-};
-%feature("shadow") CDM_DocumentHasher::~CDM_DocumentHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_DocumentHasher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor CDM_COutMessageDriver;
 class CDM_COutMessageDriver : public CDM_MessageDriver {
 	public:
@@ -1389,7 +1422,7 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_COutMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_COutMessageDriver::~CDM_COutMessageDriver %{
@@ -1431,39 +1464,6 @@ def __del__(self):
 %}
 
 %extend CDM_MapIteratorOfMapOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_ReferenceIterator;
-class CDM_ReferenceIterator {
-	public:
-		%feature("autodoc", "1");
-		CDM_ReferenceIterator(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_CDM_Document Document() const;
-		%feature("autodoc", "1");
-		Standard_Integer ReferenceIdentifier() const;
-		%feature("autodoc", "1");
-		Standard_Integer DocumentVersion() const;
-
-};
-%feature("shadow") CDM_ReferenceIterator::~CDM_ReferenceIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_ReferenceIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1520,7 +1520,7 @@ class CDM_MetaData : public Standard_Transient {
 };
 %extend CDM_MetaData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_MetaData::~CDM_MetaData %{
@@ -1563,7 +1563,7 @@ class CDM_Reference : public Standard_Transient {
 };
 %extend CDM_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDM_Reference::~CDM_Reference %{

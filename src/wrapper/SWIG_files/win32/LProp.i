@@ -50,17 +50,17 @@ $HeaderURL$
 %include LProp_headers.i
 
 
-enum LProp_CIType {
-	LProp_Inflection,
-	LProp_MinCur,
-	LProp_MaxCur,
-	};
-
 enum LProp_Status {
 	LProp_Undecided,
 	LProp_Undefined,
 	LProp_Defined,
 	LProp_Computed,
+	};
+
+enum LProp_CIType {
+	LProp_Inflection,
+	LProp_MinCur,
+	LProp_MaxCur,
 	};
 
 
@@ -197,7 +197,7 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 };
 %extend LProp_SequenceNodeOfSequenceOfCIType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LProp_SequenceNodeOfSequenceOfCIType::~LProp_SequenceNodeOfSequenceOfCIType %{
@@ -281,16 +281,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor LProp_AnalyticCurInf;
-class LProp_AnalyticCurInf {
+%nodefaultctor LProp_BadContinuity;
+class LProp_BadContinuity : public Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		LProp_AnalyticCurInf();
+		LProp_BadContinuity();
 		%feature("autodoc", "1");
-		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
+		LProp_BadContinuity(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_LProp_BadContinuity NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") LProp_AnalyticCurInf::~LProp_AnalyticCurInf %{
+%extend LProp_BadContinuity {
+	Handle_LProp_BadContinuity GetHandle() {
+	return *(Handle_LProp_BadContinuity*) &$self;
+	}
+};
+%extend LProp_BadContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") LProp_BadContinuity::~LProp_BadContinuity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -299,7 +317,7 @@ def __del__(self):
 		pass
 %}
 
-%extend LProp_AnalyticCurInf {
+%extend LProp_BadContinuity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -343,6 +361,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor LProp_AnalyticCurInf;
+class LProp_AnalyticCurInf {
+	public:
+		%feature("autodoc", "1");
+		LProp_AnalyticCurInf();
+		%feature("autodoc", "1");
+		void Perform(const GeomAbs_CurveType T, const Standard_Real UFirst, const Standard_Real ULast, LProp_CurAndInf & Result);
+
+};
+%feature("shadow") LProp_AnalyticCurInf::~LProp_AnalyticCurInf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LProp_AnalyticCurInf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor LProp_NotDefined;
 class LProp_NotDefined : public Standard_Failure {
 	public:
@@ -367,7 +410,7 @@ class LProp_NotDefined : public Standard_Failure {
 };
 %extend LProp_NotDefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") LProp_NotDefined::~LProp_NotDefined %{
@@ -380,49 +423,6 @@ def __del__(self):
 %}
 
 %extend LProp_NotDefined {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor LProp_BadContinuity;
-class LProp_BadContinuity : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		LProp_BadContinuity();
-		%feature("autodoc", "1");
-		LProp_BadContinuity(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_LProp_BadContinuity NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend LProp_BadContinuity {
-	Handle_LProp_BadContinuity GetHandle() {
-	return *(Handle_LProp_BadContinuity*) &$self;
-	}
-};
-%extend LProp_BadContinuity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") LProp_BadContinuity::~LProp_BadContinuity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LProp_BadContinuity {
 	void _kill_pointed() {
 		delete $self;
 	}

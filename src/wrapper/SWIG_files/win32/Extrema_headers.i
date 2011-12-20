@@ -173,13 +173,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pnt2d.hxx>
 #include<Adaptor2d_Curve2d.hxx>
 #include<gp_Pnt.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<Adaptor3d_Surface.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
+#include<gp_Pnt2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Lin.hxx>
@@ -200,8 +200,8 @@ $HeaderURL$
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
 #include<Adaptor3d_SurfaceOfLinearExtrusion.hxx>
+#include<Adaptor3d_SurfaceOfRevolution.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Adaptor3d_SurfaceOfRevolution.hxx>
 %}

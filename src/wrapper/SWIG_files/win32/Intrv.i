@@ -106,53 +106,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Intrv_Intervals;
-class Intrv_Intervals {
-	public:
-		%feature("autodoc", "1");
-		Intrv_Intervals();
-		%feature("autodoc", "1");
-		Intrv_Intervals(const Intrv_Interval &Int);
-		%feature("autodoc", "1");
-		Intrv_Intervals(const Intrv_Intervals &Int);
-		%feature("autodoc", "1");
-		void Intersect(const Intrv_Interval &Tool);
-		%feature("autodoc", "1");
-		void Intersect(const Intrv_Intervals &Tool);
-		%feature("autodoc", "1");
-		void Subtract(const Intrv_Interval &Tool);
-		%feature("autodoc", "1");
-		void Subtract(const Intrv_Intervals &Tool);
-		%feature("autodoc", "1");
-		void Unite(const Intrv_Interval &Tool);
-		%feature("autodoc", "1");
-		void Unite(const Intrv_Intervals &Tool);
-		%feature("autodoc", "1");
-		void XUnite(const Intrv_Interval &Tool);
-		%feature("autodoc", "1");
-		void XUnite(const Intrv_Intervals &Tool);
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
-		const Intrv_Interval & Value(const Standard_Integer Index) const;
-
-};
-%feature("shadow") Intrv_Intervals::~Intrv_Intervals %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intrv_Intervals {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Intrv_Interval;
 class Intrv_Interval {
 	public:
@@ -316,7 +269,7 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 };
 %extend Intrv_SequenceNodeOfSequenceOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Intrv_SequenceNodeOfSequenceOfInterval::~Intrv_SequenceNodeOfSequenceOfInterval %{
@@ -329,6 +282,53 @@ def __del__(self):
 %}
 
 %extend Intrv_SequenceNodeOfSequenceOfInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intrv_Intervals;
+class Intrv_Intervals {
+	public:
+		%feature("autodoc", "1");
+		Intrv_Intervals();
+		%feature("autodoc", "1");
+		Intrv_Intervals(const Intrv_Interval &Int);
+		%feature("autodoc", "1");
+		Intrv_Intervals(const Intrv_Intervals &Int);
+		%feature("autodoc", "1");
+		void Intersect(const Intrv_Interval &Tool);
+		%feature("autodoc", "1");
+		void Intersect(const Intrv_Intervals &Tool);
+		%feature("autodoc", "1");
+		void Subtract(const Intrv_Interval &Tool);
+		%feature("autodoc", "1");
+		void Subtract(const Intrv_Intervals &Tool);
+		%feature("autodoc", "1");
+		void Unite(const Intrv_Interval &Tool);
+		%feature("autodoc", "1");
+		void Unite(const Intrv_Intervals &Tool);
+		%feature("autodoc", "1");
+		void XUnite(const Intrv_Interval &Tool);
+		%feature("autodoc", "1");
+		void XUnite(const Intrv_Intervals &Tool);
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals() const;
+		%feature("autodoc", "1");
+		const Intrv_Interval & Value(const Standard_Integer Index) const;
+
+};
+%feature("shadow") Intrv_Intervals::~Intrv_Intervals %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intrv_Intervals {
 	void _kill_pointed() {
 		delete $self;
 	}

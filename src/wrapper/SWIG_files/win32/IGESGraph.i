@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESGraph_ReadWriteModule;
+class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule();
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule(const Handle_IGESGraph_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule(const IGESGraph_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule & operator=(const Handle_IGESGraph_ReadWriteModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGraph_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGraph_ReadWriteModule {
+	IGESGraph_ReadWriteModule* GetObject() {
+	return (IGESGraph_ReadWriteModule*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGraph_ReadWriteModule::~Handle_IGESGraph_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGraph_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESGraph_Pick;
 class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	public:
@@ -166,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESGraph_UniformRectGrid;
+class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid();
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid(const Handle_IGESGraph_UniformRectGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid(const IGESGraph_UniformRectGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid & operator=(const Handle_IGESGraph_UniformRectGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGraph_UniformRectGrid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGraph_UniformRectGrid {
+	IGESGraph_UniformRectGrid* GetObject() {
+	return (IGESGraph_UniformRectGrid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGraph_UniformRectGrid::~Handle_IGESGraph_UniformRectGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGraph_UniformRectGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESGraph_Color;
 class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	public:
@@ -198,6 +274,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESGraph_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESGraph_GeneralModule;
+class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule();
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule(const Handle_IGESGraph_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule(const IGESGraph_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule & operator=(const Handle_IGESGraph_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGraph_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGraph_GeneralModule {
+	IGESGraph_GeneralModule* GetObject() {
+	return (IGESGraph_GeneralModule*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGraph_GeneralModule::~Handle_IGESGraph_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGraph_GeneralModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,44 +508,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGraph_GeneralModule;
-class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule(const Handle_IGESGraph_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule(const IGESGraph_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule & operator=(const Handle_IGESGraph_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_GeneralModule & operator=(const IGESGraph_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGraph_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGraph_GeneralModule {
-	IGESGraph_GeneralModule* GetObject() {
-	return (IGESGraph_GeneralModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGraph_GeneralModule::~Handle_IGESGraph_GeneralModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGraph_GeneralModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESGraph_HArray1OfColor;
 class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 	public:
@@ -546,82 +622,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGraph_SpecificModule;
-class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule(const Handle_IGESGraph_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule(const IGESGraph_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule & operator=(const Handle_IGESGraph_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGraph_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGraph_SpecificModule {
-	IGESGraph_SpecificModule* GetObject() {
-	return (IGESGraph_SpecificModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGraph_SpecificModule::~Handle_IGESGraph_SpecificModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGraph_SpecificModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESGraph_UniformRectGrid;
-class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid();
-		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid(const Handle_IGESGraph_UniformRectGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid(const IGESGraph_UniformRectGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid & operator=(const Handle_IGESGraph_UniformRectGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_UniformRectGrid & operator=(const IGESGraph_UniformRectGrid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGraph_UniformRectGrid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGraph_UniformRectGrid {
-	IGESGraph_UniformRectGrid* GetObject() {
-	return (IGESGraph_UniformRectGrid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGraph_UniformRectGrid::~Handle_IGESGraph_UniformRectGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGraph_UniformRectGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESGraph_HighLight;
 class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	public:
@@ -692,44 +692,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESGraph_LineFontDefTemplate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESGraph_ReadWriteModule;
-class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule();
-		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule(const Handle_IGESGraph_ReadWriteModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule(const IGESGraph_ReadWriteModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule & operator=(const Handle_IGESGraph_ReadWriteModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGraph_ReadWriteModule & operator=(const IGESGraph_ReadWriteModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGraph_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGraph_ReadWriteModule {
-	IGESGraph_ReadWriteModule* GetObject() {
-	return (IGESGraph_ReadWriteModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGraph_ReadWriteModule::~Handle_IGESGraph_ReadWriteModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGraph_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -812,6 +774,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESGraph_SpecificModule;
+class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule(const Handle_IGESGraph_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule(const IGESGraph_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule & operator=(const Handle_IGESGraph_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGraph_SpecificModule & operator=(const IGESGraph_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGraph_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGraph_SpecificModule {
+	IGESGraph_SpecificModule* GetObject() {
+	return (IGESGraph_SpecificModule*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGraph_SpecificModule::~Handle_IGESGraph_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGraph_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESGraph_LineFontPredefined;
 class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 	public:
@@ -872,7 +872,7 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 };
 %extend IGESGraph_LineFontPredefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
@@ -915,7 +915,7 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 };
 %extend IGESGraph_HighLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HighLight::~IGESGraph_HighLight %{
@@ -928,6 +928,45 @@ def __del__(self):
 %}
 
 %extend IGESGraph_HighLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGraph_ToolNominalSize;
+class IGESGraph_ToolNominalSize {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_ToolNominalSize();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGraph_NominalSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGraph_NominalSize &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGraph_NominalSize &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGraph_NominalSize &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_NominalSize &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGraph_NominalSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGraph_NominalSize &entfrom, const Handle_IGESGraph_NominalSize &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGraph_NominalSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGraph_ToolNominalSize::~IGESGraph_ToolNominalSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_ToolNominalSize {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -958,7 +997,7 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 };
 %extend IGESGraph_Pick {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_Pick::~IGESGraph_Pick %{
@@ -971,6 +1010,86 @@ def __del__(self):
 %}
 
 %extend IGESGraph_Pick {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGraph_ToolDrawingSize;
+class IGESGraph_ToolDrawingSize {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_ToolDrawingSize();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGraph_DrawingSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGraph_DrawingSize &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGraph_DrawingSize &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingSize &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingSize &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGraph_DrawingSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGraph_DrawingSize &entfrom, const Handle_IGESGraph_DrawingSize &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGraph_DrawingSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGraph_ToolDrawingSize::~IGESGraph_ToolDrawingSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_ToolDrawingSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGraph_IntercharacterSpacing;
+class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_IntercharacterSpacing();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbProps, const Standard_Real anISpace);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Real ISpace() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_IntercharacterSpacing {
+	Handle_IGESGraph_IntercharacterSpacing GetHandle() {
+	return *(Handle_IGESGraph_IntercharacterSpacing*) &$self;
+	}
+};
+%extend IGESGraph_IntercharacterSpacing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESGraph_IntercharacterSpacing::~IGESGraph_IntercharacterSpacing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_IntercharacterSpacing {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1042,7 +1161,7 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingUnits {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DrawingUnits::~IGESGraph_DrawingUnits %{
@@ -1055,6 +1174,45 @@ def __del__(self):
 %}
 
 %extend IGESGraph_DrawingUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGraph_SpecificModule;
+class IGESGraph_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_SpecificModule {
+	Handle_IGESGraph_SpecificModule GetHandle() {
+	return *(Handle_IGESGraph_SpecificModule*) &$self;
+	}
+};
+%extend IGESGraph_SpecificModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESGraph_SpecificModule::~IGESGraph_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1146,7 +1304,7 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 };
 %extend IGESGraph_UniformRectGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_UniformRectGrid::~IGESGraph_UniformRectGrid %{
@@ -1204,84 +1362,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGraph_ToolIntercharacterSpacing;
-class IGESGraph_ToolIntercharacterSpacing {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_ToolIntercharacterSpacing();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_IntercharacterSpacing &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_IntercharacterSpacing &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_IntercharacterSpacing &entfrom, const Handle_IGESGraph_IntercharacterSpacing &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_IntercharacterSpacing &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGraph_ToolIntercharacterSpacing::~IGESGraph_ToolIntercharacterSpacing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_ToolIntercharacterSpacing {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGraph_ToolNominalSize;
-class IGESGraph_ToolNominalSize {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_ToolNominalSize();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_NominalSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_NominalSize &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_NominalSize &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_NominalSize &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_NominalSize &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_NominalSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_NominalSize &entfrom, const Handle_IGESGraph_NominalSize &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_NominalSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGraph_ToolNominalSize::~IGESGraph_ToolNominalSize %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_ToolNominalSize {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESGraph_HArray1OfTextDisplayTemplate;
 class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 	public:
@@ -1318,7 +1398,7 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HArray1OfTextDisplayTemplate::~IGESGraph_HArray1OfTextDisplayTemplate %{
@@ -1337,30 +1417,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGraph_ToolDrawingSize;
-class IGESGraph_ToolDrawingSize {
+%nodefaultctor IGESGraph_ToolIntercharacterSpacing;
+class IGESGraph_ToolIntercharacterSpacing {
 	public:
 		%feature("autodoc", "1");
-		IGESGraph_ToolDrawingSize();
+		IGESGraph_ToolIntercharacterSpacing();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_DrawingSize &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_DrawingSize &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESGraph_IntercharacterSpacing &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_DrawingSize &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESGraph_IntercharacterSpacing &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGraph_DrawingSize &ent) const;
+		Standard_Boolean OwnCorrect(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_DrawingSize &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_IntercharacterSpacing &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_DrawingSize &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESGraph_IntercharacterSpacing &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_DrawingSize &entfrom, const Handle_IGESGraph_DrawingSize &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESGraph_IntercharacterSpacing &entfrom, const Handle_IGESGraph_IntercharacterSpacing &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_DrawingSize &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESGraph_IntercharacterSpacing &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESGraph_ToolDrawingSize::~IGESGraph_ToolDrawingSize %{
+%feature("shadow") IGESGraph_ToolIntercharacterSpacing::~IGESGraph_ToolIntercharacterSpacing %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1369,48 +1449,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGraph_ToolDrawingSize {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGraph_IntercharacterSpacing;
-class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_IntercharacterSpacing();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbProps, const Standard_Real anISpace);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Real ISpace() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_IntercharacterSpacing {
-	Handle_IGESGraph_IntercharacterSpacing GetHandle() {
-	return *(Handle_IGESGraph_IntercharacterSpacing*) &$self;
-	}
-};
-%extend IGESGraph_IntercharacterSpacing {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESGraph_IntercharacterSpacing::~IGESGraph_IntercharacterSpacing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_IntercharacterSpacing {
+%extend IGESGraph_ToolIntercharacterSpacing {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1480,7 +1519,7 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontDefTemplate::~IGESGraph_LineFontDefTemplate %{
@@ -1565,43 +1604,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGraph_ToolColor;
-class IGESGraph_ToolColor {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_ToolColor();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGraph_Color &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGraph_Color &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGraph_Color &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGraph_Color &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGraph_Color &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGraph_Color &entfrom, const Handle_IGESGraph_Color &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGraph_Color &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGraph_ToolColor::~IGESGraph_ToolColor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_ToolColor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESGraph_GeneralModule;
 class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 	public:
@@ -1630,7 +1632,7 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESGraph_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_GeneralModule::~IGESGraph_GeneralModule %{
@@ -1717,7 +1719,7 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 };
 %extend IGESGraph_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_Color::~IGESGraph_Color %{
@@ -1773,6 +1775,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESGraph_HArray1OfColor;
+class IGESGraph_HArray1OfColor : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGraph_Color &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESGraph_Color &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_Color &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESGraph_Color & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESGraph_Color & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const IGESGraph_Array1OfColor & Array1() const;
+		%feature("autodoc", "1");
+		IGESGraph_Array1OfColor & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGraph_HArray1OfColor {
+	Handle_IGESGraph_HArray1OfColor GetHandle() {
+	return *(Handle_IGESGraph_HArray1OfColor*) &$self;
+	}
+};
+%extend IGESGraph_HArray1OfColor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESGraph_HArray1OfColor::~IGESGraph_HArray1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_HArray1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESGraph_TextDisplayTemplate;
 class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 	public:
@@ -1817,7 +1874,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_TextDisplayTemplate::~IGESGraph_TextDisplayTemplate %{
@@ -1830,45 +1887,6 @@ def __del__(self):
 %}
 
 %extend IGESGraph_TextDisplayTemplate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGraph_SpecificModule;
-class IGESGraph_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean OwnCorrect(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_SpecificModule {
-	Handle_IGESGraph_SpecificModule GetHandle() {
-	return *(Handle_IGESGraph_SpecificModule*) &$self;
-	}
-};
-%extend IGESGraph_SpecificModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESGraph_SpecificModule::~IGESGraph_SpecificModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1926,6 +1944,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESGraph_ToolColor;
+class IGESGraph_ToolColor {
+	public:
+		%feature("autodoc", "1");
+		IGESGraph_ToolColor();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGraph_Color &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGraph_Color &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGraph_Color &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGraph_Color &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGraph_Color &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGraph_Color &entfrom, const Handle_IGESGraph_Color &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGraph_Color &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGraph_ToolColor::~IGESGraph_ToolColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGraph_ToolColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESGraph_DefinitionLevel;
 class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 	public:
@@ -1950,7 +2005,7 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 };
 %extend IGESGraph_DefinitionLevel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DefinitionLevel::~IGESGraph_DefinitionLevel %{
@@ -1991,7 +2046,7 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGraph_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_ReadWriteModule::~IGESGraph_ReadWriteModule %{
@@ -2075,7 +2130,7 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_NominalSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_NominalSize::~IGESGraph_NominalSize %{
@@ -2155,7 +2210,7 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DrawingSize::~IGESGraph_DrawingSize %{
@@ -2218,7 +2273,7 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextFontDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_TextFontDef::~IGESGraph_TextFontDef %{
@@ -2392,7 +2447,7 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontDefPattern::~IGESGraph_LineFontDefPattern %{
@@ -2405,61 +2460,6 @@ def __del__(self):
 %}
 
 %extend IGESGraph_LineFontDefPattern {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGraph_HArray1OfColor;
-class IGESGraph_HArray1OfColor : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESGraph_HArray1OfColor(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGraph_Color &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESGraph_Color &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGraph_Color &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESGraph_Color & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGraph_Color & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESGraph_Array1OfColor & Array1() const;
-		%feature("autodoc", "1");
-		IGESGraph_Array1OfColor & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGraph_HArray1OfColor {
-	Handle_IGESGraph_HArray1OfColor GetHandle() {
-	return *(Handle_IGESGraph_HArray1OfColor*) &$self;
-	}
-};
-%extend IGESGraph_HArray1OfColor {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESGraph_HArray1OfColor::~IGESGraph_HArray1OfColor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGraph_HArray1OfColor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2502,7 +2502,7 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextFontDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HArray1OfTextFontDef::~IGESGraph_HArray1OfTextFontDef %{

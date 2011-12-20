@@ -175,7 +175,7 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 };
 %extend Plugin_DataMapNodeOfMapOfFunctions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Plugin_DataMapNodeOfMapOfFunctions::~Plugin_DataMapNodeOfMapOfFunctions %{
@@ -218,7 +218,7 @@ class Plugin_Failure : public Standard_Failure {
 };
 %extend Plugin_Failure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Plugin_Failure::~Plugin_Failure %{

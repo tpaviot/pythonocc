@@ -318,84 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlTObjDrivers_ReferenceDriver;
-class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlTObjDrivers_ReferenceDriver {
-	Handle_XmlTObjDrivers_ReferenceDriver GetHandle() {
-	return *(Handle_XmlTObjDrivers_ReferenceDriver*) &$self;
-	}
-};
-%extend XmlTObjDrivers_ReferenceDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlTObjDrivers_ReferenceDriver::~XmlTObjDrivers_ReferenceDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlTObjDrivers_ReferenceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlTObjDrivers_DocumentRetrievalDriver;
-class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlTObjDrivers_DocumentRetrievalDriver {
-	Handle_XmlTObjDrivers_DocumentRetrievalDriver GetHandle() {
-	return *(Handle_XmlTObjDrivers_DocumentRetrievalDriver*) &$self;
-	}
-};
-%extend XmlTObjDrivers_DocumentRetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlTObjDrivers_DocumentRetrievalDriver::~XmlTObjDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlTObjDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XmlTObjDrivers;
 class XmlTObjDrivers {
 	public:
@@ -445,7 +367,7 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ModelDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_ModelDriver::~XmlTObjDrivers_ModelDriver %{
@@ -486,7 +408,7 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_IntSparseArrayDriver::~XmlTObjDrivers_IntSparseArrayDriver %{
@@ -523,7 +445,7 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_DocumentStorageDriver::~XmlTObjDrivers_DocumentStorageDriver %{
@@ -536,47 +458,6 @@ def __del__(self):
 %}
 
 %extend XmlTObjDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlTObjDrivers_ObjectDriver;
-class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlTObjDrivers_ObjectDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlTObjDrivers_ObjectDriver {
-	Handle_XmlTObjDrivers_ObjectDriver GetHandle() {
-	return *(Handle_XmlTObjDrivers_ObjectDriver*) &$self;
-	}
-};
-%extend XmlTObjDrivers_ObjectDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlTObjDrivers_ObjectDriver::~XmlTObjDrivers_ObjectDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlTObjDrivers_ObjectDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -605,7 +486,7 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_XYZDriver::~XmlTObjDrivers_XYZDriver %{
@@ -618,6 +499,125 @@ def __del__(self):
 %}
 
 %extend XmlTObjDrivers_XYZDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlTObjDrivers_DocumentRetrievalDriver;
+class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		XmlTObjDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlTObjDrivers_DocumentRetrievalDriver {
+	Handle_XmlTObjDrivers_DocumentRetrievalDriver GetHandle() {
+	return *(Handle_XmlTObjDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlTObjDrivers_DocumentRetrievalDriver::~XmlTObjDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlTObjDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlTObjDrivers_ReferenceDriver;
+class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	Handle_XmlTObjDrivers_ReferenceDriver GetHandle() {
+	return *(Handle_XmlTObjDrivers_ReferenceDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ReferenceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlTObjDrivers_ReferenceDriver::~XmlTObjDrivers_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlTObjDrivers_ReferenceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlTObjDrivers_ObjectDriver;
+class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlTObjDrivers_ObjectDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlTObjDrivers_ObjectDriver {
+	Handle_XmlTObjDrivers_ObjectDriver GetHandle() {
+	return *(Handle_XmlTObjDrivers_ObjectDriver*) &$self;
+	}
+};
+%extend XmlTObjDrivers_ObjectDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlTObjDrivers_ObjectDriver::~XmlTObjDrivers_ObjectDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlTObjDrivers_ObjectDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

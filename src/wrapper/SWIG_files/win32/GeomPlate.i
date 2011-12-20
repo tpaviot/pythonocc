@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
-class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_GeomPlate_PointConstraint;
+class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
+		Handle_GeomPlate_PointConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_PointConstraint(const Handle_GeomPlate_PointConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
+		Handle_GeomPlate_PointConstraint(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
+		Handle_GeomPlate_PointConstraint & operator=(const Handle_GeomPlate_PointConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
+		Handle_GeomPlate_PointConstraint & operator=(const GeomPlate_PointConstraint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_PointConstraint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
-	GeomPlate_SequenceNodeOfSequenceOfPointConstraint* GetObject() {
-	return (GeomPlate_SequenceNodeOfSequenceOfPointConstraint*)$self->Access();
+%extend Handle_GeomPlate_PointConstraint {
+	GeomPlate_PointConstraint* GetObject() {
+	return (GeomPlate_PointConstraint*)$self->Access();
 	}
 };
-%feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
+%feature("shadow") Handle_GeomPlate_PointConstraint::~Handle_GeomPlate_PointConstraint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+%extend Handle_GeomPlate_PointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -128,29 +128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GeomPlate_PointConstraint;
-class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
+%nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
+class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint();
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint();
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint(const Handle_GeomPlate_PointConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint(const GeomPlate_PointConstraint *anItem);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint & operator=(const Handle_GeomPlate_PointConstraint &aHandle);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint & operator=(const GeomPlate_PointConstraint *anItem);
+		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint & operator=(const GeomPlate_SequenceNodeOfSequenceOfPointConstraint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GeomPlate_PointConstraint DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GeomPlate_PointConstraint {
-	GeomPlate_PointConstraint* GetObject() {
-	return (GeomPlate_PointConstraint*)$self->Access();
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	GeomPlate_SequenceNodeOfSequenceOfPointConstraint* GetObject() {
+	return (GeomPlate_SequenceNodeOfSequenceOfPointConstraint*)$self->Access();
 	}
 };
-%feature("shadow") Handle_GeomPlate_PointConstraint::~Handle_GeomPlate_PointConstraint %{
+%feature("shadow") Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,45 +159,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_GeomPlate_PointConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
-class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface();
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GeomPlate_HArray1OfHCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
-	GeomPlate_HArray1OfHCurveOnSurface* GetObject() {
-	return (GeomPlate_HArray1OfHCurveOnSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GeomPlate_HArray1OfHCurveOnSurface::~Handle_GeomPlate_HArray1OfHCurveOnSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
+%extend Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,6 +356,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
+class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HArray1OfHCurveOnSurface();
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HArray1OfHCurveOnSurface(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HArray1OfHCurveOnSurface(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const Handle_GeomPlate_HArray1OfHCurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_HArray1OfHCurveOnSurface & operator=(const GeomPlate_HArray1OfHCurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomPlate_HArray1OfHCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
+	GeomPlate_HArray1OfHCurveOnSurface* GetObject() {
+	return (GeomPlate_HArray1OfHCurveOnSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomPlate_HArray1OfHCurveOnSurface::~Handle_GeomPlate_HArray1OfHCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomPlate_HArray1OfHCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
 class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 	public:
@@ -492,7 +492,7 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HSequenceOfCurveConstraint::~GeomPlate_HSequenceOfCurveConstraint %{
@@ -529,7 +529,7 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::~GeomPlate_SequenceNodeOfSequenceOfCurveConstraint %{
@@ -542,6 +542,43 @@ def __del__(self):
 %}
 
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
+class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_PointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_GeomPlate_PointConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint GetHandle() {
+	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint*) &$self;
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,7 +621,7 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfHCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HArray1OfHCurveOnSurface::~GeomPlate_HArray1OfHCurveOnSurface %{
@@ -668,6 +705,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomPlate_Aij;
+class GeomPlate_Aij {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_Aij();
+		%feature("autodoc", "1");
+		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec aVec);
+
+};
+%feature("shadow") GeomPlate_Aij::~GeomPlate_Aij %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomPlate_Aij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
 class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 	public:
@@ -704,7 +766,7 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HArray1OfSequenceOfReal::~GeomPlate_HArray1OfSequenceOfReal %{
@@ -717,6 +779,44 @@ def __del__(self):
 %}
 
 %extend GeomPlate_HArray1OfSequenceOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomPlate_BuildAveragePlane;
+class GeomPlate_BuildAveragePlane {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_BuildAveragePlane(const Handle_TColgp_HArray1OfPnt &Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
+		%feature("autodoc", "1");
+		GeomPlate_BuildAveragePlane(const TColgp_SequenceOfVec &Normals, const Handle_TColgp_HArray1OfPnt &Pts);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane Plane() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Line Line() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlane() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLine() const;
+		%feature("autodoc","MinMaxBox() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void MinMaxBox(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
+
+};
+%feature("shadow") GeomPlate_BuildAveragePlane::~GeomPlate_BuildAveragePlane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomPlate_BuildAveragePlane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -783,7 +883,7 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_HSequenceOfPointConstraint::~GeomPlate_HSequenceOfPointConstraint %{
@@ -827,43 +927,6 @@ def __del__(self):
 %}
 
 %extend GeomPlate_MakeApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
-class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfPointConstraint(const Handle_GeomPlate_PointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_GeomPlate_PointConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
-	Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint GetHandle() {
-	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint*) &$self;
-	}
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfPointConstraint::~GeomPlate_SequenceNodeOfSequenceOfPointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -934,7 +997,7 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_CurveConstraint::~GeomPlate_CurveConstraint %{
@@ -947,44 +1010,6 @@ def __del__(self):
 %}
 
 %extend GeomPlate_CurveConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomPlate_BuildAveragePlane;
-class GeomPlate_BuildAveragePlane {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_BuildAveragePlane(const Handle_TColgp_HArray1OfPnt &Pts, const Standard_Integer NbBoundPoints, const Standard_Real Tol, const Standard_Integer POption, const Standard_Integer NOption);
-		%feature("autodoc", "1");
-		GeomPlate_BuildAveragePlane(const TColgp_SequenceOfVec &Normals, const Handle_TColgp_HArray1OfPnt &Pts);
-		%feature("autodoc", "1");
-		Handle_Geom_Plane Plane() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Line Line() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlane() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLine() const;
-		%feature("autodoc","MinMaxBox() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void MinMaxBox(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean HalfSpace(const TColgp_SequenceOfVec &NewNormals, TColgp_SequenceOfVec & Normals, GeomPlate_SequenceOfAij & Bset, const Standard_Real LinTol, const Standard_Real AngTol);
-
-};
-%feature("shadow") GeomPlate_BuildAveragePlane::~GeomPlate_BuildAveragePlane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_BuildAveragePlane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1009,7 +1034,7 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfAij {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
@@ -1105,7 +1130,7 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 %extend GeomPlate_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomPlate_Surface::~GeomPlate_Surface %{
@@ -1216,138 +1241,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomPlate_PointConstraint;
-class GeomPlate_PointConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const gp_Pnt Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
-		%feature("autodoc", "1");
-		void SetOrder(const Standard_Integer Order);
-		%feature("autodoc", "1");
-		Standard_Integer Order() const;
-		%feature("autodoc", "1");
-		void SetG0Criterion(const Standard_Real TolDist);
-		%feature("autodoc", "1");
-		void SetG1Criterion(const Standard_Real TolAng);
-		%feature("autodoc", "1");
-		void SetG2Criterion(const Standard_Real TolCurv);
-		%feature("autodoc", "1");
-		Standard_Real G0Criterion() const;
-		%feature("autodoc", "1");
-		Standard_Real G1Criterion() const;
-		%feature("autodoc", "1");
-		Standard_Real G2Criterion() const;
-		%feature("autodoc", "1");
-		void D0(gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasPnt2dOnSurf() const;
-		%feature("autodoc", "1");
-		void SetPnt2dOnSurf(const gp_Pnt2d Pnt);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dOnSurf() const;
-		%feature("autodoc", "1");
-		GeomLProp_SLProps & LPropSurf();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_PointConstraint {
-	Handle_GeomPlate_PointConstraint GetHandle() {
-	return *(Handle_GeomPlate_PointConstraint*) &$self;
-	}
-};
-%extend GeomPlate_PointConstraint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomPlate_PointConstraint::~GeomPlate_PointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_PointConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomPlate_SequenceOfAij;
-class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_SequenceOfAij();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const GeomPlate_SequenceOfAij & Assign(const GeomPlate_SequenceOfAij &Other);
-		%feature("autodoc", "1");
-		const GeomPlate_SequenceOfAij & operator=(const GeomPlate_SequenceOfAij &Other);
-		%feature("autodoc", "1");
-		void Append(const GeomPlate_Aij &T);
-		%feature("autodoc", "1");
-		void Append(GeomPlate_SequenceOfAij & S);
-		%feature("autodoc", "1");
-		void Prepend(const GeomPlate_Aij &T);
-		%feature("autodoc", "1");
-		void Prepend(GeomPlate_SequenceOfAij & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const GeomPlate_Aij &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const GeomPlate_Aij &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
-		%feature("autodoc", "1");
-		const GeomPlate_Aij & First() const;
-		%feature("autodoc", "1");
-		const GeomPlate_Aij & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
-		%feature("autodoc", "1");
-		const GeomPlate_Aij & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const GeomPlate_Aij & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const GeomPlate_Aij &I);
-		%feature("autodoc", "1");
-		GeomPlate_Aij & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		GeomPlate_Aij & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") GeomPlate_SequenceOfAij::~GeomPlate_SequenceOfAij %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_SequenceOfAij {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomPlate_BuildPlateSurface;
 class GeomPlate_BuildPlateSurface {
 	public:
@@ -1419,16 +1312,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomPlate_Aij;
-class GeomPlate_Aij {
+%nodefaultctor GeomPlate_SequenceOfAij;
+class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_Aij();
+		GeomPlate_SequenceOfAij();
 		%feature("autodoc", "1");
-		GeomPlate_Aij(const Standard_Integer anInd1, const Standard_Integer anInd2, const gp_Vec aVec);
+		void Clear();
+		%feature("autodoc", "1");
+		const GeomPlate_SequenceOfAij & Assign(const GeomPlate_SequenceOfAij &Other);
+		%feature("autodoc", "1");
+		const GeomPlate_SequenceOfAij & operator=(const GeomPlate_SequenceOfAij &Other);
+		%feature("autodoc", "1");
+		void Append(const GeomPlate_Aij &T);
+		%feature("autodoc", "1");
+		void Append(GeomPlate_SequenceOfAij & S);
+		%feature("autodoc", "1");
+		void Prepend(const GeomPlate_Aij &T);
+		%feature("autodoc", "1");
+		void Prepend(GeomPlate_SequenceOfAij & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const GeomPlate_Aij &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const GeomPlate_Aij &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
+		%feature("autodoc", "1");
+		const GeomPlate_Aij & First() const;
+		%feature("autodoc", "1");
+		const GeomPlate_Aij & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, GeomPlate_SequenceOfAij & S);
+		%feature("autodoc", "1");
+		const GeomPlate_Aij & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const GeomPlate_Aij & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const GeomPlate_Aij &I);
+		%feature("autodoc", "1");
+		GeomPlate_Aij & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		GeomPlate_Aij & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") GeomPlate_Aij::~GeomPlate_Aij %{
+%feature("shadow") GeomPlate_SequenceOfAij::~GeomPlate_SequenceOfAij %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1437,7 +1370,74 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomPlate_Aij {
+%extend GeomPlate_SequenceOfAij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomPlate_PointConstraint;
+class GeomPlate_PointConstraint : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_PointConstraint(const gp_Pnt Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		%feature("autodoc", "1");
+		void SetOrder(const Standard_Integer Order);
+		%feature("autodoc", "1");
+		Standard_Integer Order() const;
+		%feature("autodoc", "1");
+		void SetG0Criterion(const Standard_Real TolDist);
+		%feature("autodoc", "1");
+		void SetG1Criterion(const Standard_Real TolAng);
+		%feature("autodoc", "1");
+		void SetG2Criterion(const Standard_Real TolCurv);
+		%feature("autodoc", "1");
+		Standard_Real G0Criterion() const;
+		%feature("autodoc", "1");
+		Standard_Real G1Criterion() const;
+		%feature("autodoc", "1");
+		Standard_Real G2Criterion() const;
+		%feature("autodoc", "1");
+		void D0(gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void D1(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		void D2(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPnt2dOnSurf() const;
+		%feature("autodoc", "1");
+		void SetPnt2dOnSurf(const gp_Pnt2d Pnt);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt2dOnSurf() const;
+		%feature("autodoc", "1");
+		GeomLProp_SLProps & LPropSurf();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomPlate_PointConstraint {
+	Handle_GeomPlate_PointConstraint GetHandle() {
+	return *(Handle_GeomPlate_PointConstraint*) &$self;
+	}
+};
+%extend GeomPlate_PointConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomPlate_PointConstraint::~GeomPlate_PointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomPlate_PointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}

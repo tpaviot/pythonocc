@@ -238,7 +238,7 @@ $HeaderURL$
 
 %import TCollection.i
 %import MMgt.i
-%import math.i
 %import Standard.i
-%import IntSurf.i
+%import math.i
 %import GeomAbs.i
+%import IntSurf.i

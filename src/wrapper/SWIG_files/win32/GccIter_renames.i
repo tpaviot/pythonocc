@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GccIter_IsParallel::DownCast;
+%rename(Raise) GccIter_IsParallel::Raise;
+%rename(NewInstance) GccIter_IsParallel::NewInstance;

@@ -241,9 +241,9 @@ $HeaderURL$
 %import Approx.i
 %import TCollection.i
 %import MMgt.i
+%import Blend.i
 %import Standard.i
 %import GeomAbs.i
-%import Blend.i
 %import BlendFunc.i
 %import AppBlend.i
 %import IntSurf.i

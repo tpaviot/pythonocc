@@ -29,10 +29,10 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TColStd
-import Aspect
 import Quantity
-import gp
 import TCollection
+import Aspect
+import gp
 import OSD
 import PlotMgt
 };

@@ -455,7 +455,6 @@ $HeaderURL$
 #include<Quantity_Weight.hxx>
 #include<Quantity_Work.hxx>
 #include<Xw.hxx>
-#include<Xw_Cextern.hxx>
 #include<Xw_ColorMap.hxx>
 #include<Xw_Driver.hxx>
 #include<Xw_FontMap.hxx>
@@ -476,24 +475,24 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Quantity_Color.hxx>
-#include<V3d.hxx>
-#include<Graphic3d_Vector.hxx>
-#include<Handle_Graphic3d_Group.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
-#include<gp_Ax3.hxx>
-#include<Handle_Visual3d_ViewManager.hxx>
-#include<Handle_Graphic3d_AspectMarker3d.hxx>
-#include<Handle_Aspect_Grid.hxx>
-#include<Aspect_GradientBackground.hxx>
 #include<Handle_Aspect_Window.hxx>
+#include<Quantity_Color.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Handle_Aspect_ColorScale.hxx>
 #include<Visual3d_ViewOrientation.hxx>
 #include<Visual3d_ViewMapping.hxx>
+#include<Aspect_GradientBackground.hxx>
 #include<Handle_Visual3d_View.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
+#include<gp_Ax3.hxx>
+#include<Handle_Aspect_Grid.hxx>
 #include<Handle_PlotMgt_PlotterDriver.hxx>
 #include<Handle_Image_PixMap.hxx>
+#include<V3d.hxx>
+#include<Graphic3d_Vector.hxx>
+#include<Handle_Graphic3d_Group.hxx>
+#include<Handle_Aspect_GraphicDevice.hxx>
+#include<Handle_Visual3d_ViewManager.hxx>
+#include<Handle_Graphic3d_AspectMarker3d.hxx>
 #include<TCollection_ExtendedString.hxx>
 %}

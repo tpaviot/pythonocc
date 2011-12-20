@@ -23,3 +23,23 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepTools_ReShape::DownCast;
+%rename(DownCast) Handle_BRepTools_Modification::DownCast;
+%rename(DownCast) Handle_BRepTools_TrsfModification::DownCast;
+%rename(DownCast) Handle_BRepTools_NurbsConvertModification::DownCast;
+%rename(DownCast) Handle_BRepTools_GTrsfModification::DownCast;
+%rename(DownCast) Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d::DownCast;
+%rename(UVBounds) BRepTools::UVBounds;
+%rename(AddUVBounds) BRepTools::AddUVBounds;
+%rename(Update) BRepTools::Update;
+%rename(UpdateFaceUVPoints) BRepTools::UpdateFaceUVPoints;
+%rename(Clean) BRepTools::Clean;
+%rename(Triangulation) BRepTools::Triangulation;
+%rename(Compare) BRepTools::Compare;
+%rename(OuterWire) BRepTools::OuterWire;
+%rename(OuterShell) BRepTools::OuterShell;
+%rename(Map3DEdges) BRepTools::Map3DEdges;
+%rename(IsReallyClosed) BRepTools::IsReallyClosed;
+%rename(Dump) BRepTools::Dump;
+%rename(Write) BRepTools::Write;
+%rename(Read) BRepTools::Read;

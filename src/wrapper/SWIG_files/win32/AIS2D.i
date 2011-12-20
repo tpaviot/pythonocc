@@ -59,6 +59,14 @@ enum AIS2D_TypeOfDetection {
 	AIS2D_TOD_NONE,
 	};
 
+enum AIS2D_StatusOfPick {
+	AIS2D_SOP_Error,
+	AIS2D_SOP_NothingSelected,
+	AIS2D_SOP_Removed,
+	AIS2D_SOP_OneSelected,
+	AIS2D_SOP_SeveralSelected,
+	};
+
 enum AIS2D_KindOfPrimitive {
 	AIS2D_KOP_NONE,
 	AIS2D_KOP_CIRCLE,
@@ -107,18 +115,18 @@ enum AIS2D_KindOfPrimitive {
 	AIS2D_KOP_TOLERANCEFRAME,
 	};
 
+enum AIS2D_TypeOfAxis {
+	AIS2D_TOAX_Unknown,
+	AIS2D_TOAX_XAxis,
+	AIS2D_TOAX_YAxis,
+	};
+
 enum AIS2D_DisplayStatus {
 	AIS2D_DS_Displayed,
 	AIS2D_DS_Erased,
 	AIS2D_DS_FullErased,
 	AIS2D_DS_Temporary,
 	AIS2D_DS_None,
-	};
-
-enum AIS2D_TypeOfAxis {
-	AIS2D_TOAX_Unknown,
-	AIS2D_TOAX_XAxis,
-	AIS2D_TOAX_YAxis,
 	};
 
 enum AIS2D_KindOfDimension {
@@ -152,14 +160,6 @@ enum AIS2D_KindOfIO {
 	AIS2D_KOI_SHAPE,
 	AIS2D_KOI_PROJSHAPE,
 	AIS2D_KOI_COMPOUND,
-	};
-
-enum AIS2D_StatusOfPick {
-	AIS2D_SOP_Error,
-	AIS2D_SOP_NothingSelected,
-	AIS2D_SOP_Removed,
-	AIS2D_SOP_OneSelected,
-	AIS2D_SOP_SeveralSelected,
 	};
 
 enum AIS2D_ClearMode {
@@ -241,44 +241,6 @@ def __del__(self):
 %}
 
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS2D_InteractiveContext;
-class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext();
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext(const Handle_AIS2D_InteractiveContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext(const AIS2D_InteractiveContext *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext & operator=(const Handle_AIS2D_InteractiveContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS2D_InteractiveContext & operator=(const AIS2D_InteractiveContext *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS2D_InteractiveContext DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS2D_InteractiveContext {
-	AIS2D_InteractiveContext* GetObject() {
-	return (AIS2D_InteractiveContext*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS2D_InteractiveContext::~Handle_AIS2D_InteractiveContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS2D_InteractiveContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -393,44 +355,6 @@ def __del__(self):
 %}
 
 %extend Handle_AIS2D_ProjShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLC;
-class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC();
-		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS2D_DataMapNodeOfDataMapOfLC DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
-	AIS2D_DataMapNodeOfDataMapOfLC* GetObject() {
-	return (AIS2D_DataMapNodeOfDataMapOfLC*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfLC::~Handle_AIS2D_DataMapNodeOfDataMapOfLC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -779,6 +703,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS2D_InteractiveContext;
+class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveContext();
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveContext(const Handle_AIS2D_InteractiveContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveContext(const AIS2D_InteractiveContext *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveContext & operator=(const Handle_AIS2D_InteractiveContext &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS2D_InteractiveContext & operator=(const AIS2D_InteractiveContext *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS2D_InteractiveContext DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS2D_InteractiveContext {
+	AIS2D_InteractiveContext* GetObject() {
+	return (AIS2D_InteractiveContext*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS2D_InteractiveContext::~Handle_AIS2D_InteractiveContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS2D_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLC;
+class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC();
+		%feature("autodoc", "1");
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const Handle_AIS2D_DataMapNodeOfDataMapOfLC &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS2D_DataMapNodeOfDataMapOfLC & operator=(const AIS2D_DataMapNodeOfDataMapOfLC *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS2D_DataMapNodeOfDataMapOfLC DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
+	AIS2D_DataMapNodeOfDataMapOfLC* GetObject() {
+	return (AIS2D_DataMapNodeOfDataMapOfLC*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS2D_DataMapNodeOfDataMapOfLC::~Handle_AIS2D_DataMapNodeOfDataMapOfLC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS2D_ListIteratorOfListOfIO;
 class AIS2D_ListIteratorOfListOfIO {
 	public:
@@ -812,71 +812,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS2D_SequenceOfPrimArchit;
-class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_SequenceOfPrimArchit();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AIS2D_SequenceOfPrimArchit & Assign(const AIS2D_SequenceOfPrimArchit &Other);
-		%feature("autodoc", "1");
-		const AIS2D_SequenceOfPrimArchit & operator=(const AIS2D_SequenceOfPrimArchit &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void Append(AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void Prepend(AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & First() const;
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
-		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") AIS2D_SequenceOfPrimArchit::~AIS2D_SequenceOfPrimArchit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS2D_SequenceOfPrimArchit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfIOStatus;
 class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	public:
@@ -897,7 +832,7 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfIOStatus::~AIS2D_DataMapNodeOfDataMapOfIOStatus %{
@@ -1054,7 +989,7 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 };
 %extend AIS2D_LocalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_LocalStatus::~AIS2D_LocalStatus %{
@@ -1093,7 +1028,7 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfLocStat::~AIS2D_DataMapNodeOfDataMapOfLocStat %{
@@ -1106,6 +1041,45 @@ def __del__(self):
 %}
 
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS2D_DataMapNodeOfDataMapOfPrimAspects;
+class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_DataMapNodeOfDataMapOfPrimAspects(const Handle_Graphic2d_Primitive &K, const Handle_Prs2d_AspectRoot &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Graphic2d_Primitive & Key() const;
+		%feature("autodoc", "1");
+		Handle_Prs2d_AspectRoot & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects GetHandle() {
+	return *(Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") AIS2D_DataMapNodeOfDataMapOfPrimAspects::~AIS2D_DataMapNodeOfDataMapOfPrimAspects %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1197,7 +1171,7 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 };
 %extend AIS2D_PrimitiveArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_PrimitiveArchit::~AIS2D_PrimitiveArchit %{
@@ -1210,6 +1184,146 @@ def __del__(self):
 %}
 
 %extend AIS2D_PrimitiveArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS2D_GlobalStatus;
+class AIS2D_GlobalStatus : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_GlobalStatus();
+		%feature("autodoc", "1");
+		AIS2D_GlobalStatus(const AIS2D_DisplayStatus aStat, const Standard_Integer aDMode, const Standard_Integer aSMode, const Standard_Boolean isHighlight=0, const Quantity_NameOfColor aHighlCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
+		%feature("autodoc", "1");
+		void SetGraphicStatus(const AIS2D_DisplayStatus aStat);
+		%feature("autodoc", "1");
+		void AddDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void RemoveDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		void AddSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void RemoveSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void ClearSelectionModes();
+		%feature("autodoc", "1");
+		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		void SetLayerIndex(const Standard_Integer AnIndex);
+		%feature("autodoc", "1");
+		void SetHighlightStatus(const Standard_Boolean aStat);
+		%feature("autodoc", "1");
+		void SetHighlightColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSubIntensityOn() const;
+		%feature("autodoc", "1");
+		void SubIntensityOn();
+		%feature("autodoc", "1");
+		void SubIntensityOff();
+		%feature("autodoc", "1");
+		AIS2D_DisplayStatus GraphicStatus() const;
+		%feature("autodoc", "1");
+		AIS2D_PToListOfInt DisplayedModes();
+		%feature("autodoc", "1");
+		AIS2D_PToListOfInt SelectionModes();
+		%feature("autodoc", "1");
+		Standard_Boolean IsHighlight() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor HighlightColor() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_GlobalStatus {
+	Handle_AIS2D_GlobalStatus GetHandle() {
+	return *(Handle_AIS2D_GlobalStatus*) &$self;
+	}
+};
+%extend AIS2D_GlobalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") AIS2D_GlobalStatus::~AIS2D_GlobalStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS2D_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS2D_SequenceOfPrimArchit;
+class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_SequenceOfPrimArchit();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const AIS2D_SequenceOfPrimArchit & Assign(const AIS2D_SequenceOfPrimArchit &Other);
+		%feature("autodoc", "1");
+		const AIS2D_SequenceOfPrimArchit & operator=(const AIS2D_SequenceOfPrimArchit &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_AIS2D_PrimitiveArchit &T);
+		%feature("autodoc", "1");
+		void Append(AIS2D_SequenceOfPrimArchit & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_AIS2D_PrimitiveArchit &T);
+		%feature("autodoc", "1");
+		void Prepend(AIS2D_SequenceOfPrimArchit & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
+		%feature("autodoc", "1");
+		const Handle_AIS2D_PrimitiveArchit & First() const;
+		%feature("autodoc", "1");
+		const Handle_AIS2D_PrimitiveArchit & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, AIS2D_SequenceOfPrimArchit & S);
+		%feature("autodoc", "1");
+		const Handle_AIS2D_PrimitiveArchit & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_AIS2D_PrimitiveArchit &I);
+		%feature("autodoc", "1");
+		Handle_AIS2D_PrimitiveArchit & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_AIS2D_PrimitiveArchit & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") AIS2D_SequenceOfPrimArchit::~AIS2D_SequenceOfPrimArchit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS2D_SequenceOfPrimArchit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1357,7 +1471,7 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 };
 %extend AIS2D_ListNodeOfListOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_ListNodeOfListOfIO::~AIS2D_ListNodeOfListOfIO %{
@@ -1370,45 +1484,6 @@ def __del__(self):
 %}
 
 %extend AIS2D_ListNodeOfListOfIO {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS2D_DataMapNodeOfDataMapOfPrimAspects;
-class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfPrimAspects(const Handle_Graphic2d_Primitive &K, const Handle_Prs2d_AspectRoot &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Graphic2d_Primitive & Key() const;
-		%feature("autodoc", "1");
-		Handle_Prs2d_AspectRoot & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
-	Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects GetHandle() {
-	return *(Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects*) &$self;
-	}
-};
-%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS2D_DataMapNodeOfDataMapOfPrimAspects::~AIS2D_DataMapNodeOfDataMapOfPrimAspects %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1640,7 +1715,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 };
 %extend AIS2D_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_InteractiveContext::~AIS2D_InteractiveContext %{
@@ -1737,7 +1812,7 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 };
 %extend AIS2D_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_InteractiveObject::~AIS2D_InteractiveObject %{
@@ -1794,7 +1869,7 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 };
 %extend AIS2D_ProjShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_ProjShape::~AIS2D_ProjShape %{
@@ -1813,66 +1888,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS2D_GlobalStatus;
-class AIS2D_GlobalStatus : public MMgt_TShared {
+%nodefaultctor AIS2D_DataMapOfLocStat;
+class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_GlobalStatus();
+		AIS2D_DataMapOfLocStat(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		AIS2D_GlobalStatus(const AIS2D_DisplayStatus aStat, const Standard_Integer aDMode, const Standard_Integer aSMode, const Standard_Boolean isHighlight=0, const Quantity_NameOfColor aHighlCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
+		AIS2D_DataMapOfLocStat & Assign(const AIS2D_DataMapOfLocStat &Other);
 		%feature("autodoc", "1");
-		void SetGraphicStatus(const AIS2D_DisplayStatus aStat);
+		AIS2D_DataMapOfLocStat & operator=(const AIS2D_DataMapOfLocStat &Other);
 		%feature("autodoc", "1");
-		void AddDisplayMode(const Standard_Integer aMode);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		void RemoveDisplayMode(const Standard_Integer aMode);
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
+		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I);
 		%feature("autodoc", "1");
-		void AddSelectionMode(const Standard_Integer aMode);
+		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		void RemoveSelectionMode(const Standard_Integer aMode);
+		Standard_Boolean UnBind(const Handle_AIS2D_InteractiveObject &K);
 		%feature("autodoc", "1");
-		void ClearSelectionModes();
+		const Handle_AIS2D_LocalStatus & Find(const Handle_AIS2D_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
+		const Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K) const;
 		%feature("autodoc", "1");
-		void SetLayerIndex(const Standard_Integer AnIndex);
+		Handle_AIS2D_LocalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
 		%feature("autodoc", "1");
-		void SetHighlightStatus(const Standard_Boolean aStat);
-		%feature("autodoc", "1");
-		void SetHighlightColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSubIntensityOn() const;
-		%feature("autodoc", "1");
-		void SubIntensityOn();
-		%feature("autodoc", "1");
-		void SubIntensityOff();
-		%feature("autodoc", "1");
-		AIS2D_DisplayStatus GraphicStatus() const;
-		%feature("autodoc", "1");
-		AIS2D_PToListOfInt DisplayedModes();
-		%feature("autodoc", "1");
-		AIS2D_PToListOfInt SelectionModes();
-		%feature("autodoc", "1");
-		Standard_Boolean IsHighlight() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor HighlightColor() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
 
 };
-%extend AIS2D_GlobalStatus {
-	Handle_AIS2D_GlobalStatus GetHandle() {
-	return *(Handle_AIS2D_GlobalStatus*) &$self;
-	}
-};
-%extend AIS2D_GlobalStatus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS2D_GlobalStatus::~AIS2D_GlobalStatus %{
+%feature("shadow") AIS2D_DataMapOfLocStat::~AIS2D_DataMapOfLocStat %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1881,7 +1926,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS2D_GlobalStatus {
+%extend AIS2D_DataMapOfLocStat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1951,7 +1996,7 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfIO::~AIS2D_SequenceNodeOfSequenceOfIO %{
@@ -2030,7 +2075,7 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_HSequenceOfIO::~AIS2D_HSequenceOfIO %{
@@ -2043,55 +2088,6 @@ def __del__(self):
 %}
 
 %extend AIS2D_HSequenceOfIO {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS2D_DataMapNodeOfDataMapOfLC;
-class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_DataMapNodeOfDataMapOfLC(const Standard_Integer &K, const Handle_AIS2D_LocalContext &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_AIS2D_LocalContext & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS2D_DataMapNodeOfDataMapOfLC {
-	Handle_AIS2D_DataMapNodeOfDataMapOfLC GetHandle() {
-	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLC*) &$self;
-	}
-};
-%extend AIS2D_DataMapNodeOfDataMapOfLC {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") AIS2D_DataMapNodeOfDataMapOfLC::~AIS2D_DataMapNodeOfDataMapOfLC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS2D_DataMapNodeOfDataMapOfLC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2188,7 +2184,7 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfPrimArchit::~AIS2D_SequenceNodeOfSequenceOfPrimArchit %{
@@ -2201,6 +2197,55 @@ def __del__(self):
 %}
 
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS2D_DataMapNodeOfDataMapOfLC;
+class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS2D_DataMapNodeOfDataMapOfLC(const Standard_Integer &K, const Handle_AIS2D_LocalContext &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_AIS2D_LocalContext & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
+	Handle_AIS2D_DataMapNodeOfDataMapOfLC GetHandle() {
+	return *(Handle_AIS2D_DataMapNodeOfDataMapOfLC*) &$self;
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") AIS2D_DataMapNodeOfDataMapOfLC::~AIS2D_DataMapNodeOfDataMapOfLC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2267,7 +2312,7 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_HSequenceOfPrimArchit::~AIS2D_HSequenceOfPrimArchit %{
@@ -2364,7 +2409,7 @@ class AIS2D_LocalContext : public MMgt_TShared {
 };
 %extend AIS2D_LocalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AIS2D_LocalContext::~AIS2D_LocalContext %{
@@ -2377,51 +2422,6 @@ def __del__(self):
 %}
 
 %extend AIS2D_LocalContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS2D_DataMapOfLocStat;
-class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS2D_DataMapOfLocStat(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS2D_DataMapOfLocStat & Assign(const AIS2D_DataMapOfLocStat &Other);
-		%feature("autodoc", "1");
-		AIS2D_DataMapOfLocStat & operator=(const AIS2D_DataMapOfLocStat &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS2D_InteractiveObject &K, const Handle_AIS2D_LocalStatus &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS2D_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS2D_InteractiveObject &K);
-		%feature("autodoc", "1");
-		const Handle_AIS2D_LocalStatus & Find(const Handle_AIS2D_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		const Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
-		%feature("autodoc", "1");
-		Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
-
-};
-%feature("shadow") AIS2D_DataMapOfLocStat::~AIS2D_DataMapOfLocStat %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS2D_DataMapOfLocStat {
 	void _kill_pointed() {
 		delete $self;
 	}

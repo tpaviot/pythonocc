@@ -69,6 +69,33 @@ enum gce_ErrorType {
 
 
 
+%nodefaultctor gce_MakeScale;
+class gce_MakeScale {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeScale(const gp_Pnt Point, const Standard_Real Scale);
+		%feature("autodoc", "1");
+		const gp_Trsf  Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf  Operator() const;
+
+};
+%feature("shadow") gce_MakeScale::~gce_MakeScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gce_MakeScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gce_Root;
 class gce_Root {
 	public:
@@ -331,43 +358,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor gce_MakeCylinder;
-class gce_MakeCylinder : public gce_Root {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Ax2 A2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Cylinder Cyl, const gp_Pnt Point);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Cylinder Cyl, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Ax1 Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		gce_MakeCylinder(const gp_Circ Circ);
-		%feature("autodoc", "1");
-		const gp_Cylinder  Value() const;
-		%feature("autodoc", "1");
-		const gp_Cylinder  Operator() const;
-
-};
-%feature("shadow") gce_MakeCylinder::~gce_MakeCylinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gce_MakeCylinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor gce_MakeElips2d;
 class gce_MakeElips2d : public gce_Root {
 	public:
@@ -393,6 +383,35 @@ def __del__(self):
 %}
 
 %extend gce_MakeElips2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gce_MakeHypr;
+class gce_MakeHypr : public gce_Root {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeHypr(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		gce_MakeHypr(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
+		%feature("autodoc", "1");
+		const gp_Hypr  Value() const;
+		%feature("autodoc", "1");
+		const gp_Hypr  Operator() const;
+
+};
+%feature("shadow") gce_MakeHypr::~gce_MakeHypr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gce_MakeHypr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -440,20 +459,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor gce_MakeHypr;
-class gce_MakeHypr : public gce_Root {
+%nodefaultctor gce_MakeRotation2d;
+class gce_MakeRotation2d {
 	public:
 		%feature("autodoc", "1");
-		gce_MakeHypr(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		gce_MakeRotation2d(const gp_Pnt2d Point, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		gce_MakeHypr(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
+		const gp_Trsf2d  Value() const;
 		%feature("autodoc", "1");
-		const gp_Hypr  Value() const;
-		%feature("autodoc", "1");
-		const gp_Hypr  Operator() const;
+		const gp_Trsf2d  Operator() const;
 
 };
-%feature("shadow") gce_MakeHypr::~gce_MakeHypr %{
+%feature("shadow") gce_MakeRotation2d::~gce_MakeRotation2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -462,63 +479,7 @@ def __del__(self):
 		pass
 %}
 
-%extend gce_MakeHypr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gce_MakeScale;
-class gce_MakeScale {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeScale(const gp_Pnt Point, const Standard_Real Scale);
-		%feature("autodoc", "1");
-		const gp_Trsf  Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf  Operator() const;
-
-};
-%feature("shadow") gce_MakeScale::~gce_MakeScale %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gce_MakeScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gce_MakeElips;
-class gce_MakeElips : public gce_Root {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeElips(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		gce_MakeElips(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
-		%feature("autodoc", "1");
-		const gp_Elips  Value() const;
-		%feature("autodoc", "1");
-		const gp_Elips  Operator() const;
-
-};
-%feature("shadow") gce_MakeElips::~gce_MakeElips %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gce_MakeElips {
+%extend gce_MakeRotation2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -552,62 +513,6 @@ def __del__(self):
 %}
 
 %extend gce_MakeDir {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gce_MakeRotation2d;
-class gce_MakeRotation2d {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeRotation2d(const gp_Pnt2d Point, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		const gp_Trsf2d  Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf2d  Operator() const;
-
-};
-%feature("shadow") gce_MakeRotation2d::~gce_MakeRotation2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gce_MakeRotation2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gce_MakeTranslation2d;
-class gce_MakeTranslation2d {
-	public:
-		%feature("autodoc", "1");
-		gce_MakeTranslation2d(const gp_Vec2d Vect);
-		%feature("autodoc", "1");
-		gce_MakeTranslation2d(const gp_Pnt2d Point1, const gp_Pnt2d Point2);
-		%feature("autodoc", "1");
-		const gp_Trsf2d  Value() const;
-		%feature("autodoc", "1");
-		const gp_Trsf2d  Operator() const;
-
-};
-%feature("shadow") gce_MakeTranslation2d::~gce_MakeTranslation2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gce_MakeTranslation2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -670,6 +575,35 @@ def __del__(self):
 %}
 
 %extend gce_MakeTranslation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gce_MakeElips;
+class gce_MakeElips : public gce_Root {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeElips(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		gce_MakeElips(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
+		%feature("autodoc", "1");
+		const gp_Elips  Value() const;
+		%feature("autodoc", "1");
+		const gp_Elips  Operator() const;
+
+};
+%feature("shadow") gce_MakeElips::~gce_MakeElips %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gce_MakeElips {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -808,6 +742,72 @@ def __del__(self):
 %}
 
 %extend gce_MakeLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gce_MakeCylinder;
+class gce_MakeCylinder : public gce_Root {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Ax2 A2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Cylinder Cyl, const gp_Pnt Point);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Cylinder Cyl, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Ax1 Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		gce_MakeCylinder(const gp_Circ Circ);
+		%feature("autodoc", "1");
+		const gp_Cylinder  Value() const;
+		%feature("autodoc", "1");
+		const gp_Cylinder  Operator() const;
+
+};
+%feature("shadow") gce_MakeCylinder::~gce_MakeCylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gce_MakeCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gce_MakeTranslation2d;
+class gce_MakeTranslation2d {
+	public:
+		%feature("autodoc", "1");
+		gce_MakeTranslation2d(const gp_Vec2d Vect);
+		%feature("autodoc", "1");
+		gce_MakeTranslation2d(const gp_Pnt2d Point1, const gp_Pnt2d Point2);
+		%feature("autodoc", "1");
+		const gp_Trsf2d  Value() const;
+		%feature("autodoc", "1");
+		const gp_Trsf2d  Operator() const;
+
+};
+%feature("shadow") gce_MakeTranslation2d::~gce_MakeTranslation2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gce_MakeTranslation2d {
 	void _kill_pointed() {
 		delete $self;
 	}

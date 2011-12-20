@@ -215,6 +215,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_IGESGeom_Point.hxx>
+#include<Handle_IGESGeom_Direction.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_IGESData_IGESReaderData.hxx>
 #include<IGESData_ParamReader.hxx>
 #include<IGESData_IGESWriter.hxx>
@@ -225,9 +228,6 @@ $HeaderURL$
 #include<Interface_CopyTool.hxx>
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
-#include<Handle_IGESGeom_Point.hxx>
-#include<Handle_IGESGeom_Direction.hxx>
-#include<gp_Pnt.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Dir.hxx>

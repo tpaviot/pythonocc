@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_AppStd_Application::DownCast;

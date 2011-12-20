@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlDrivers_DocumentStorageDriver::DownCast;
+%rename(DownCast) Handle_XmlDrivers_DocumentRetrievalDriver::DownCast;
+%rename(Factory) XmlDrivers::Factory;
+%rename(AttributeDrivers) XmlDrivers::AttributeDrivers;

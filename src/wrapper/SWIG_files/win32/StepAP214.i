@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_StepAP214_Class;
-class Handle_StepAP214_Class : public Handle_StepBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_Class();
-		%feature("autodoc", "1");
-		Handle_StepAP214_Class(const Handle_StepAP214_Class &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Class(const StepAP214_Class *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Class & operator=(const Handle_StepAP214_Class &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_Class & operator=(const StepAP214_Class *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_Class DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_Class {
-	StepAP214_Class* GetObject() {
-	return (StepAP214_Class*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_Class::~Handle_StepAP214_Class %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_Class {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepAP214_ExternallyDefinedGeneralProperty;
 class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasic_GeneralProperty {
 	public:
@@ -128,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDatedItem;
+class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_HArray1OfAutoDesignDatedItem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
+	StepAP214_HArray1OfAutoDesignDatedItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDatedItem::~Handle_StepAP214_HArray1OfAutoDesignDatedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_AppliedSecurityClassificationAssignment;
 class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_StepBasic_SecurityClassificationAssignment {
 	public:
@@ -160,6 +160,82 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_AppliedPersonAndOrganizationAssignment;
+class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_StepBasic_PersonAndOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_AppliedPersonAndOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
+	StepAP214_AppliedPersonAndOrganizationAssignment* GetObject() {
+	return (StepAP214_AppliedPersonAndOrganizationAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_AppliedPersonAndOrganizationAssignment::~Handle_StepAP214_AppliedPersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_HArray1OfDateItem;
+class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem(const Handle_StepAP214_HArray1OfDateItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem(const StepAP214_HArray1OfDateItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem & operator=(const Handle_StepAP214_HArray1OfDateItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfDateItem & operator=(const StepAP214_HArray1OfDateItem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_HArray1OfDateItem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfDateItem {
+	StepAP214_HArray1OfDateItem* GetObject() {
+	return (StepAP214_HArray1OfDateItem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_HArray1OfDateItem::~Handle_StepAP214_HArray1OfDateItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_HArray1OfDateItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -350,44 +426,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_HArray1OfSecurityClassificationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AppliedPersonAndOrganizationAssignment;
-class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_StepBasic_PersonAndOrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const Handle_StepAP214_AppliedPersonAndOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment & operator=(const StepAP214_AppliedPersonAndOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_AppliedPersonAndOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
-	StepAP214_AppliedPersonAndOrganizationAssignment* GetObject() {
-	return (StepAP214_AppliedPersonAndOrganizationAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_AppliedPersonAndOrganizationAssignment::~Handle_StepAP214_AppliedPersonAndOrganizationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -660,29 +698,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedDocumentReference;
-class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_DocumentReference {
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignReferencingItem;
+class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDocumentReference();
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDocumentReference(const Handle_StepAP214_AppliedDocumentReference &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDocumentReference(const StepAP214_AppliedDocumentReference *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDocumentReference & operator=(const Handle_StepAP214_AppliedDocumentReference &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedDocumentReference & operator=(const StepAP214_AppliedDocumentReference *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_AppliedDocumentReference DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_HArray1OfAutoDesignReferencingItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedDocumentReference {
-	StepAP214_AppliedDocumentReference* GetObject() {
-	return (StepAP214_AppliedDocumentReference*)$self->Access();
+%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
+	StepAP214_HArray1OfAutoDesignReferencingItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_AppliedDocumentReference::~Handle_StepAP214_AppliedDocumentReference %{
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignReferencingItem::~Handle_StepAP214_HArray1OfAutoDesignReferencingItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -691,7 +729,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_AppliedDocumentReference {
+%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -736,6 +774,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepAP214_Class;
+class Handle_StepAP214_Class : public Handle_StepBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class();
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class(const Handle_StepAP214_Class &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class(const StepAP214_Class *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class & operator=(const Handle_StepAP214_Class &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_Class & operator=(const StepAP214_Class *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_Class DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_Class {
+	StepAP214_Class* GetObject() {
+	return (StepAP214_Class*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_Class::~Handle_StepAP214_Class %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_Class {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_HArray1OfOrganizationItem;
 class Handle_StepAP214_HArray1OfOrganizationItem : public Handle_MMgt_TShared {
 	public:
@@ -774,29 +850,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignReferencingItem;
-class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepAP214_AppliedDocumentReference;
+class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_DocumentReference {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem();
+		Handle_StepAP214_AppliedDocumentReference();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
+		Handle_StepAP214_AppliedDocumentReference(const Handle_StepAP214_AppliedDocumentReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
+		Handle_StepAP214_AppliedDocumentReference(const StepAP214_AppliedDocumentReference *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignReferencingItem &aHandle);
+		Handle_StepAP214_AppliedDocumentReference & operator=(const Handle_StepAP214_AppliedDocumentReference &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignReferencingItem & operator=(const StepAP214_HArray1OfAutoDesignReferencingItem *anItem);
+		Handle_StepAP214_AppliedDocumentReference & operator=(const StepAP214_AppliedDocumentReference *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfAutoDesignReferencingItem DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_AppliedDocumentReference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
-	StepAP214_HArray1OfAutoDesignReferencingItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignReferencingItem*)$self->Access();
+%extend Handle_StepAP214_AppliedDocumentReference {
+	StepAP214_AppliedDocumentReference* GetObject() {
+	return (StepAP214_AppliedDocumentReference*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignReferencingItem::~Handle_StepAP214_HArray1OfAutoDesignReferencingItem %{
+%feature("shadow") Handle_StepAP214_AppliedDocumentReference::~Handle_StepAP214_AppliedDocumentReference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -805,7 +881,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
+%extend Handle_StepAP214_AppliedDocumentReference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -850,29 +926,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment;
-class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect;
+class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment();
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	StepAP214_AutoDesignNominalDateAndTimeAssignment* GetObject() {
-	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
+%extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
+	StepAP214_HArray1OfAutoDesignPresentedItemSelect* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignPresentedItemSelect*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment::~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect::~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -881,45 +957,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfDateItem;
-class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDateItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDateItem(const Handle_StepAP214_HArray1OfDateItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDateItem(const StepAP214_HArray1OfDateItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDateItem & operator=(const Handle_StepAP214_HArray1OfDateItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfDateItem & operator=(const StepAP214_HArray1OfDateItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfDateItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfDateItem {
-	StepAP214_HArray1OfDateItem* GetObject() {
-	return (StepAP214_HArray1OfDateItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_HArray1OfDateItem::~Handle_StepAP214_HArray1OfDateItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_HArray1OfDateItem {
+%extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -958,6 +996,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem;
+class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	StepAP214_HArray1OfAutoDesignDateAndTimeItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1034,44 +1110,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDatedItem;
-class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDatedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDatedItem & operator=(const StepAP214_HArray1OfAutoDesignDatedItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfAutoDesignDatedItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
-	StepAP214_HArray1OfAutoDesignDatedItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignDatedItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDatedItem::~Handle_StepAP214_HArray1OfAutoDesignDatedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1306,29 +1344,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem;
-class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepAP214_AppliedOrganizationAssignment;
+class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem();
+		Handle_StepAP214_AppliedOrganizationAssignment();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem &aHandle);
+		Handle_StepAP214_AppliedOrganizationAssignment(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
+		Handle_StepAP214_AppliedOrganizationAssignment(const StepAP214_AppliedOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem &aHandle);
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
+		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const StepAP214_AppliedOrganizationAssignment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_AppliedOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	StepAP214_HArray1OfAutoDesignDateAndPersonItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignDateAndPersonItem*)$self->Access();
+%extend Handle_StepAP214_AppliedOrganizationAssignment {
+	StepAP214_AppliedOrganizationAssignment* GetObject() {
+	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+%feature("shadow") Handle_StepAP214_AppliedOrganizationAssignment::~Handle_StepAP214_AppliedOrganizationAssignment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1337,7 +1375,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+%extend Handle_StepAP214_AppliedOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1382,6 +1420,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment;
+class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment & operator=(const StepAP214_AutoDesignNominalDateAndTimeAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	StepAP214_AutoDesignNominalDateAndTimeAssignment* GetObject() {
+	return (StepAP214_AutoDesignNominalDateAndTimeAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment::~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_HArray1OfExternalIdentificationItem;
 class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_TShared {
 	public:
@@ -1414,82 +1490,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_HArray1OfExternalIdentificationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_HArray1OfPersonAndOrganizationItem;
-class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfPersonAndOrganizationItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	StepAP214_HArray1OfPersonAndOrganizationItem* GetObject() {
-	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_HArray1OfPersonAndOrganizationItem::~Handle_StepAP214_HArray1OfPersonAndOrganizationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AppliedPresentedItem;
-class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_PresentedItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPresentedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPresentedItem(const Handle_StepAP214_AppliedPresentedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPresentedItem(const StepAP214_AppliedPresentedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPresentedItem & operator=(const Handle_StepAP214_AppliedPresentedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPresentedItem & operator=(const StepAP214_AppliedPresentedItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_AppliedPresentedItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AppliedPresentedItem {
-	StepAP214_AppliedPresentedItem* GetObject() {
-	return (StepAP214_AppliedPresentedItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_AppliedPresentedItem::~Handle_StepAP214_AppliedPresentedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_AppliedPresentedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1534,29 +1534,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem;
-class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepAP214_HArray1OfPersonAndOrganizationItem;
+class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem();
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem &aHandle);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const Handle_StepAP214_HArray1OfPersonAndOrganizationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndTimeItem *anItem);
+		Handle_StepAP214_HArray1OfPersonAndOrganizationItem & operator=(const StepAP214_HArray1OfPersonAndOrganizationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_HArray1OfPersonAndOrganizationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	StepAP214_HArray1OfAutoDesignDateAndTimeItem* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignDateAndTimeItem*)$self->Access();
+%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
+	StepAP214_HArray1OfPersonAndOrganizationItem* GetObject() {
+	return (StepAP214_HArray1OfPersonAndOrganizationItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+%feature("shadow") Handle_StepAP214_HArray1OfPersonAndOrganizationItem::~Handle_StepAP214_HArray1OfPersonAndOrganizationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1565,7 +1565,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+%extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1610,29 +1610,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect;
-class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepAP214_AppliedPresentedItem;
+class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_PresentedItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect();
+		Handle_StepAP214_AppliedPresentedItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aHandle);
+		Handle_StepAP214_AppliedPresentedItem(const Handle_StepAP214_AppliedPresentedItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
+		Handle_StepAP214_AppliedPresentedItem(const StepAP214_AppliedPresentedItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aHandle);
+		Handle_StepAP214_AppliedPresentedItem & operator=(const Handle_StepAP214_AppliedPresentedItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_HArray1OfAutoDesignPresentedItemSelect *anItem);
+		Handle_StepAP214_AppliedPresentedItem & operator=(const StepAP214_AppliedPresentedItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_AppliedPresentedItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
-	StepAP214_HArray1OfAutoDesignPresentedItemSelect* GetObject() {
-	return (StepAP214_HArray1OfAutoDesignPresentedItemSelect*)$self->Access();
+%extend Handle_StepAP214_AppliedPresentedItem {
+	StepAP214_AppliedPresentedItem* GetObject() {
+	return (StepAP214_AppliedPresentedItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect::~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
+%feature("shadow") Handle_StepAP214_AppliedPresentedItem::~Handle_StepAP214_AppliedPresentedItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1641,36 +1641,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
+%extend Handle_StepAP214_AppliedPresentedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepAP214_AppliedOrganizationAssignment;
-class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
+%nodefaultctor Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem;
+class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment();
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem();
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment(const StepAP214_AppliedOrganizationAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const Handle_StepAP214_AppliedOrganizationAssignment &aHandle);
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment & operator=(const StepAP214_AppliedOrganizationAssignment *anItem);
+		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem & operator=(const StepAP214_HArray1OfAutoDesignDateAndPersonItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepAP214_AppliedOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepAP214_AppliedOrganizationAssignment {
-	StepAP214_AppliedOrganizationAssignment* GetObject() {
-	return (StepAP214_AppliedOrganizationAssignment*)$self->Access();
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+	StepAP214_HArray1OfAutoDesignDateAndPersonItem* GetObject() {
+	return (StepAP214_HArray1OfAutoDesignDateAndPersonItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepAP214_AppliedOrganizationAssignment::~Handle_StepAP214_AppliedOrganizationAssignment %{
+%feature("shadow") Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem::~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1679,7 +1679,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepAP214_AppliedOrganizationAssignment {
+%extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1752,7 +1752,7 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 };
 %extend StepAP214_AppliedOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedOrganizationAssignment::~StepAP214_AppliedOrganizationAssignment %{
@@ -1765,80 +1765,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_AppliedOrganizationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_Class;
-class StepAP214_Class : public StepBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_Class();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_Class {
-	Handle_StepAP214_Class GetHandle() {
-	return *(Handle_StepAP214_Class*) &$self;
-	}
-};
-%extend StepAP214_Class {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_Class::~StepAP214_Class %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_Class {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_ExternallyDefinedClass;
-class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_ExternallyDefinedClass();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Standard_Boolean hasGroup_Description, const Handle_TCollection_HAsciiString &aGroup_Description, const StepBasic_SourceItem &aExternallyDefinedItem_ItemId, const Handle_StepBasic_ExternalSource &aExternallyDefinedItem_Source);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ExternallyDefinedItem ExternallyDefinedItem() const;
-		%feature("autodoc", "1");
-		void SetExternallyDefinedItem(const Handle_StepBasic_ExternallyDefinedItem &ExternallyDefinedItem);
-
-};
-%extend StepAP214_ExternallyDefinedClass {
-	Handle_StepAP214_ExternallyDefinedClass GetHandle() {
-	return *(Handle_StepAP214_ExternallyDefinedClass*) &$self;
-	}
-};
-%extend StepAP214_ExternallyDefinedClass {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_ExternallyDefinedClass::~StepAP214_ExternallyDefinedClass %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_ExternallyDefinedClass {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1894,69 +1820,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_Array1OfAutoDesignPresentedItemSelect;
-class StepAP214_Array1OfAutoDesignPresentedItemSelect {
+%nodefaultctor StepAP214_Class;
+class StepAP214_Class : public StepBasic_Group {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_Class();
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignPresentedItemSelect(const StepAP214_AutoDesignPresentedItemSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignPresentedItemSelect &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignPresentedItemSelect & Assign(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignPresentedItemSelect &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignPresentedItemSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItemSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") StepAP214_Array1OfAutoDesignPresentedItemSelect::~StepAP214_Array1OfAutoDesignPresentedItemSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
-	void _kill_pointed() {
-		delete $self;
+%extend StepAP214_Class {
+	Handle_StepAP214_Class GetHandle() {
+	return *(Handle_StepAP214_Class*) &$self;
 	}
 };
-
-
-%nodefaultctor StepAP214_PersonAndOrganizationItem;
-class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_PersonAndOrganizationItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
-
+%extend StepAP214_Class {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
 };
-%feature("shadow") StepAP214_PersonAndOrganizationItem::~StepAP214_PersonAndOrganizationItem %{
+%feature("shadow") StepAP214_Class::~StepAP214_Class %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1965,7 +1848,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_PersonAndOrganizationItem {
+%extend StepAP214_Class {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1994,7 +1877,7 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 };
 %extend StepAP214_ExternallyDefinedGeneralProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_ExternallyDefinedGeneralProperty::~StepAP214_ExternallyDefinedGeneralProperty %{
@@ -2049,7 +1932,7 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfExternalIdentificationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfExternalIdentificationItem::~StepAP214_HArray1OfExternalIdentificationItem %{
@@ -2211,6 +2094,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepAP214_HArray1OfAutoDesignReferencingItem;
+class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignReferencingItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignReferencingItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignReferencingItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_AutoDesignReferencingItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignReferencingItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignReferencingItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignReferencingItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignReferencingItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignReferencingItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfAutoDesignReferencingItem {
+	Handle_StepAP214_HArray1OfAutoDesignReferencingItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignReferencingItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignReferencingItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_HArray1OfAutoDesignReferencingItem::~StepAP214_HArray1OfAutoDesignReferencingItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_HArray1OfAutoDesignReferencingItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepAP214_Array1OfDateItem;
 class StepAP214_Array1OfDateItem {
 	public:
@@ -2256,6 +2194,57 @@ def __del__(self):
 %}
 
 %extend StepAP214_Array1OfDateItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_Array1OfGroupItem;
+class StepAP214_Array1OfGroupItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_Array1OfGroupItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_Array1OfGroupItem(const StepAP214_GroupItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_GroupItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfGroupItem & Assign(const StepAP214_Array1OfGroupItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfGroupItem & operator=(const StepAP214_Array1OfGroupItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_GroupItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_GroupItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP214_GroupItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_GroupItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP214_GroupItem & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepAP214_Array1OfGroupItem::~StepAP214_Array1OfGroupItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_Array1OfGroupItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2333,7 +2322,7 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 };
 %extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignNominalDateAndTimeAssignment::~StepAP214_AutoDesignNominalDateAndTimeAssignment %{
@@ -2388,7 +2377,7 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfGroupItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfGroupItem::~StepAP214_HArray1OfGroupItem %{
@@ -2443,7 +2432,7 @@ class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfApprovalItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfApprovalItem::~StepAP214_HArray1OfApprovalItem %{
@@ -2490,7 +2479,7 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AutoDesignGroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignGroupAssignment::~StepAP214_AutoDesignGroupAssignment %{
@@ -2537,7 +2526,7 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 };
 %extend StepAP214_AutoDesignDateAndPersonAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignDateAndPersonAssignment::~StepAP214_AutoDesignDateAndPersonAssignment %{
@@ -2584,7 +2573,7 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 };
 %extend StepAP214_AppliedApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedApprovalAssignment::~StepAP214_AppliedApprovalAssignment %{
@@ -2603,38 +2592,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_AutoDesignGroupedItem;
-class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
+%nodefaultctor StepAP214_HArray1OfDateAndTimeItem;
+class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignGroupedItem();
+		StepAP214_HArray1OfDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepAP214_HArray1OfDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_DateAndTimeItem &V);
 		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation AdvancedBrepShapeRepresentation() const;
+		void Init(const StepAP214_DateAndTimeItem &V);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgShapeRepresentation CsgShapeRepresentation() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_FacetedBrepShapeRepresentation FacetedBrepShapeRepresentation() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation GeometricallyBoundedSurfaceShapeRepresentation() const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation GeometricallyBoundedWireframeShapeRepresentation() const;
+		void SetValue(const Standard_Integer Index, const StepAP214_DateAndTimeItem &Value);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSurfaceShapeRepresentation ManifoldSurfaceShapeRepresentation() const;
+		const StepAP214_DateAndTimeItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
+		StepAP214_DateAndTimeItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem RepresentationItem() const;
+		const StepAP214_Array1OfDateAndTimeItem & Array1() const;
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect ShapeAspect() const;
+		StepAP214_Array1OfDateAndTimeItem & ChangeArray1();
 		%feature("autodoc", "1");
-		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_TemplateInstance TemplateInstance() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") StepAP214_AutoDesignGroupedItem::~StepAP214_AutoDesignGroupedItem %{
+%extend StepAP214_HArray1OfDateAndTimeItem {
+	Handle_StepAP214_HArray1OfDateAndTimeItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfDateAndTimeItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfDateAndTimeItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_HArray1OfDateAndTimeItem::~StepAP214_HArray1OfDateAndTimeItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2643,7 +2640,48 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_AutoDesignGroupedItem {
+%extend StepAP214_HArray1OfDateAndTimeItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_ExternallyDefinedClass;
+class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_ExternallyDefinedClass();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Standard_Boolean hasGroup_Description, const Handle_TCollection_HAsciiString &aGroup_Description, const StepBasic_SourceItem &aExternallyDefinedItem_ItemId, const Handle_StepBasic_ExternalSource &aExternallyDefinedItem_Source);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ExternallyDefinedItem ExternallyDefinedItem() const;
+		%feature("autodoc", "1");
+		void SetExternallyDefinedItem(const Handle_StepBasic_ExternallyDefinedItem &ExternallyDefinedItem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_ExternallyDefinedClass {
+	Handle_StepAP214_ExternallyDefinedClass GetHandle() {
+	return *(Handle_StepAP214_ExternallyDefinedClass*) &$self;
+	}
+};
+%extend StepAP214_ExternallyDefinedClass {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_ExternallyDefinedClass::~StepAP214_ExternallyDefinedClass %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_ExternallyDefinedClass {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2686,7 +2724,7 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDocumentReferenceItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfDocumentReferenceItem::~StepAP214_HArray1OfDocumentReferenceItem %{
@@ -2761,46 +2799,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignReferencingItem;
-class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
+%nodefaultctor StepAP214_DateAndTimeItem;
+class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignReferencingItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_DateAndTimeItem();
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignReferencingItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignReferencingItem &V);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignReferencingItem &V);
+		Handle_StepBasic_ApprovalPersonOrganization ApprovalPersonOrganization() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_StepAP214_AppliedPersonAndOrganizationAssignment AppliedPersonAndOrganizationAssignment() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignReferencingItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignReferencingItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignReferencingItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignReferencingItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignReferencingItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_StepBasic_Effectivity Effectivity() const;
 
 };
-%extend StepAP214_HArray1OfAutoDesignReferencingItem {
-	Handle_StepAP214_HArray1OfAutoDesignReferencingItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignReferencingItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignReferencingItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_HArray1OfAutoDesignReferencingItem::~StepAP214_HArray1OfAutoDesignReferencingItem %{
+%feature("shadow") StepAP214_DateAndTimeItem::~StepAP214_DateAndTimeItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2809,7 +2825,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_HArray1OfAutoDesignReferencingItem {
+%extend StepAP214_DateAndTimeItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2842,7 +2858,7 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 };
 %extend StepAP214_AppliedDocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDocumentReference::~StepAP214_AppliedDocumentReference %{
@@ -2861,15 +2877,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndPersonItem;
-class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
+%nodefaultctor StepAP214_Array1OfAutoDesignPresentedItemSelect;
+class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_Array1OfAutoDesignPresentedItemSelect(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndPersonItem &V);
+		StepAP214_Array1OfAutoDesignPresentedItemSelect(const StepAP214_AutoDesignPresentedItemSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignDateAndPersonItem &V);
+		void Init(const StepAP214_AutoDesignPresentedItemSelect &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignPresentedItemSelect & Assign(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignPresentedItemSelect & operator=(const StepAP214_Array1OfAutoDesignPresentedItemSelect &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -2877,30 +2901,18 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndPersonItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignPresentedItemSelect &Value);
 		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDateAndPersonItem & Value(const Standard_Integer Index) const;
+		const StepAP214_AutoDesignPresentedItemSelect & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndPersonItem & ChangeValue(const Standard_Integer Index);
+		const StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Array1() const;
+		StepAP214_AutoDesignPresentedItemSelect & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndPersonItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		StepAP214_AutoDesignPresentedItemSelect & operator()(const Standard_Integer Index);
 
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndPersonItem::~StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
+%feature("shadow") StepAP214_Array1OfAutoDesignPresentedItemSelect::~StepAP214_Array1OfAutoDesignPresentedItemSelect %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2909,7 +2921,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+%extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2952,7 +2964,7 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDateItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfDateItem::~StepAP214_HArray1OfDateItem %{
@@ -2965,6 +2977,57 @@ def __del__(self):
 %}
 
 %extend StepAP214_HArray1OfDateItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
+class StepAP214_Array1OfExternalIdentificationItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_Array1OfExternalIdentificationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_Array1OfExternalIdentificationItem(const StepAP214_ExternalIdentificationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_ExternalIdentificationItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfExternalIdentificationItem & Assign(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfExternalIdentificationItem & operator=(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_ExternalIdentificationItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_ExternalIdentificationItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_ExternalIdentificationItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepAP214_Array1OfExternalIdentificationItem::~StepAP214_Array1OfExternalIdentificationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_Array1OfExternalIdentificationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3032,7 +3095,7 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfSecurityClassificationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfSecurityClassificationItem::~StepAP214_HArray1OfSecurityClassificationItem %{
@@ -3128,7 +3191,7 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 };
 %extend StepAP214_AutoDesignDocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignDocumentReference::~StepAP214_AutoDesignDocumentReference %{
@@ -3234,7 +3297,7 @@ class StepAP214_HArray1OfAutoDesignDatedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDatedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignDatedItem::~StepAP214_HArray1OfAutoDesignDatedItem %{
@@ -3281,7 +3344,7 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 };
 %extend StepAP214_AutoDesignSecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignSecurityClassificationAssignment::~StepAP214_AutoDesignSecurityClassificationAssignment %{
@@ -3294,57 +3357,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_AutoDesignSecurityClassificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_Array1OfApprovalItem;
-class StepAP214_Array1OfApprovalItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_Array1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_Array1OfApprovalItem(const StepAP214_ApprovalItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_ApprovalItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfApprovalItem & Assign(const StepAP214_Array1OfApprovalItem &Other);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfApprovalItem & operator=(const StepAP214_Array1OfApprovalItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_ApprovalItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_ApprovalItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_ApprovalItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_ApprovalItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_ApprovalItem & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepAP214_Array1OfApprovalItem::~StepAP214_Array1OfApprovalItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_Array1OfApprovalItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3396,6 +3408,53 @@ def __del__(self):
 %}
 
 %extend StepAP214_Array1OfOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignGroupedItem;
+class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGroupedItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation AdvancedBrepShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_CsgShapeRepresentation CsgShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_FacetedBrepShapeRepresentation FacetedBrepShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation GeometricallyBoundedSurfaceShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation GeometricallyBoundedWireframeShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_ManifoldSurfaceShapeRepresentation ManifoldSurfaceShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_Representation Representation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem RepresentationItem() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect ShapeAspect() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeRepresentation ShapeRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_TemplateInstance TemplateInstance() const;
+
+};
+%feature("shadow") StepAP214_AutoDesignGroupedItem::~StepAP214_AutoDesignGroupedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_AutoDesignGroupedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3483,7 +3542,7 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 };
 %extend StepAP214_AppliedDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDateAndTimeAssignment::~StepAP214_AppliedDateAndTimeAssignment %{
@@ -3496,49 +3555,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_AppliedDateAndTimeAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_DocumentReferenceItem;
-class StepAP214_DocumentReferenceItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_DocumentReferenceItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Approval Approval() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_DescriptiveRepresentationItem DescriptiveRepresentationItem() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation Representation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-
-};
-%feature("shadow") StepAP214_DocumentReferenceItem::~StepAP214_DocumentReferenceItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_DocumentReferenceItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3637,7 +3653,7 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 };
 %extend StepAP214_AppliedSecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedSecurityClassificationAssignment::~StepAP214_AppliedSecurityClassificationAssignment %{
@@ -3692,7 +3708,7 @@ class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPersonAndOrganizationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfPersonAndOrganizationItem::~StepAP214_HArray1OfPersonAndOrganizationItem %{
@@ -3747,7 +3763,7 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPresentedItemSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfPresentedItemSelect::~StepAP214_HArray1OfPresentedItemSelect %{
@@ -3794,7 +3810,7 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 };
 %extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignPersonAndOrganizationAssignment::~StepAP214_AutoDesignPersonAndOrganizationAssignment %{
@@ -3807,57 +3823,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_Array1OfGroupItem;
-class StepAP214_Array1OfGroupItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_Array1OfGroupItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_Array1OfGroupItem(const StepAP214_GroupItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_GroupItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfGroupItem & Assign(const StepAP214_Array1OfGroupItem &Other);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfGroupItem & operator=(const StepAP214_Array1OfGroupItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_GroupItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_GroupItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepAP214_GroupItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_GroupItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepAP214_GroupItem & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepAP214_Array1OfGroupItem::~StepAP214_Array1OfGroupItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_Array1OfGroupItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3900,7 +3865,7 @@ class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignGroupedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignGroupedItem::~StepAP214_HArray1OfAutoDesignGroupedItem %{
@@ -3976,7 +3941,7 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 };
 %extend StepAP214_AutoDesignApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignApprovalAssignment::~StepAP214_AutoDesignApprovalAssignment %{
@@ -3995,56 +3960,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_DateAndTimeItem;
-class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
+%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndPersonItem;
+class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_DateAndTimeItem();
+		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepAP214_HArray1OfAutoDesignDateAndPersonItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndPersonItem &V);
 		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalPersonOrganization ApprovalPersonOrganization() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedPersonAndOrganizationAssignment AppliedPersonAndOrganizationAssignment() const;
-		%feature("autodoc", "1");
-		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Effectivity Effectivity() const;
-
-};
-%feature("shadow") StepAP214_DateAndTimeItem::~StepAP214_DateAndTimeItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_DateAndTimeItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_Array1OfExternalIdentificationItem;
-class StepAP214_Array1OfExternalIdentificationItem {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_Array1OfExternalIdentificationItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_Array1OfExternalIdentificationItem(const StepAP214_ExternalIdentificationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_ExternalIdentificationItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfExternalIdentificationItem & Assign(const StepAP214_Array1OfExternalIdentificationItem &Other);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfExternalIdentificationItem & operator=(const StepAP214_Array1OfExternalIdentificationItem &Other);
+		void Init(const StepAP214_AutoDesignDateAndPersonItem &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -4052,18 +3976,30 @@ class StepAP214_Array1OfExternalIdentificationItem {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_ExternalIdentificationItem &Value);
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndPersonItem &Value);
 		%feature("autodoc", "1");
-		const StepAP214_ExternalIdentificationItem & Value(const Standard_Integer Index) const;
+		const StepAP214_AutoDesignDateAndPersonItem & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index) const;
+		StepAP214_AutoDesignDateAndPersonItem & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		StepAP214_ExternalIdentificationItem & ChangeValue(const Standard_Integer Index);
+		const StepAP214_Array1OfAutoDesignDateAndPersonItem & Array1() const;
 		%feature("autodoc", "1");
-		StepAP214_ExternalIdentificationItem & operator()(const Standard_Integer Index);
+		StepAP214_Array1OfAutoDesignDateAndPersonItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") StepAP214_Array1OfExternalIdentificationItem::~StepAP214_Array1OfExternalIdentificationItem %{
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+	Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndPersonItem::~StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4072,7 +4008,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_Array1OfExternalIdentificationItem {
+%extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4105,7 +4041,7 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 };
 %extend StepAP214_AppliedPresentedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedPresentedItem::~StepAP214_AppliedPresentedItem %{
@@ -4152,7 +4088,7 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 };
 %extend StepAP214_AutoDesignOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignOrganizationAssignment::~StepAP214_AutoDesignOrganizationAssignment %{
@@ -4171,46 +4107,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndTimeItem;
-class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
+%nodefaultctor StepAP214_DocumentReferenceItem;
+class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_DocumentReferenceItem();
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndTimeItem &V);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
+		Handle_StepBasic_Approval Approval() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_StepRepr_DescriptiveRepresentationItem DescriptiveRepresentationItem() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_StepRepr_MaterialDesignation MaterialDesignation() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		Handle_StepBasic_ProductDefinition ProductDefinition() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndTimeItem &Value);
+		Handle_StepBasic_ProductDefinitionRelationship ProductDefinitionRelationship() const;
 		%feature("autodoc", "1");
-		const StepAP214_AutoDesignDateAndTimeItem & Value(const Standard_Integer Index) const;
+		Handle_StepRepr_PropertyDefinition PropertyDefinition() const;
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignDateAndTimeItem & ChangeValue(const Standard_Integer Index);
+		Handle_StepRepr_Representation Representation() const;
 		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Array1() const;
+		Handle_StepRepr_ShapeAspect ShapeAspect() const;
 		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignDateAndTimeItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
 
 };
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndTimeItem::~StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
+%feature("shadow") StepAP214_DocumentReferenceItem::~StepAP214_DocumentReferenceItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4219,7 +4143,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+%extend StepAP214_DocumentReferenceItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4277,47 +4201,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_AppliedExternalIdentificationAssignment;
-class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_ExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AppliedExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aIdentificationAssignment_AssignedId, const Handle_StepBasic_IdentificationRole &aIdentificationAssignment_Role, const Handle_StepBasic_ExternalSource &aExternalIdentificationAssignment_Source, const Handle_StepAP214_HArray1OfExternalIdentificationItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfExternalIdentificationItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfExternalIdentificationItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	Handle_StepAP214_AppliedExternalIdentificationAssignment GetHandle() {
-	return *(Handle_StepAP214_AppliedExternalIdentificationAssignment*) &$self;
-	}
-};
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepAP214_AutoDesignNominalDateAssignment;
 class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignment {
 	public:
@@ -4346,7 +4229,7 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 };
 %extend StepAP214_AutoDesignNominalDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignNominalDateAssignment::~StepAP214_AutoDesignNominalDateAssignment %{
@@ -4387,7 +4270,7 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AppliedGroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedGroupAssignment::~StepAP214_AppliedGroupAssignment %{
@@ -4428,7 +4311,7 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 };
 %extend StepAP214_RepItemGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_RepItemGroup::~StepAP214_RepItemGroup %{
@@ -4441,61 +4324,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_RepItemGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_HArray1OfDateAndTimeItem;
-class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepAP214_HArray1OfDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_DateAndTimeItem &V);
-		%feature("autodoc", "1");
-		void Init(const StepAP214_DateAndTimeItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_DateAndTimeItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_DateAndTimeItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_DateAndTimeItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfDateAndTimeItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfDateAndTimeItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_HArray1OfDateAndTimeItem {
-	Handle_StepAP214_HArray1OfDateAndTimeItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfDateAndTimeItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfDateAndTimeItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_HArray1OfDateAndTimeItem::~StepAP214_HArray1OfDateAndTimeItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_HArray1OfDateAndTimeItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4584,46 +4412,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_HArray1OfAutoDesignGeneralOrgItem;
-class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
+%nodefaultctor StepAP214_PersonAndOrganizationItem;
+class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Standard_Integer Low, const Standard_Integer Up);
+		StepAP214_PersonAndOrganizationItem();
 		%feature("autodoc", "1");
-		StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignGeneralOrgItem &V);
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
 		%feature("autodoc", "1");
-		void Init(const StepAP214_AutoDesignGeneralOrgItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGeneralOrgItem &Value);
-		%feature("autodoc", "1");
-		const StepAP214_AutoDesignGeneralOrgItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepAP214_AutoDesignGeneralOrgItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepAP214_Array1OfAutoDesignGeneralOrgItem & Array1() const;
-		%feature("autodoc", "1");
-		StepAP214_Array1OfAutoDesignGeneralOrgItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_StepAP214_AppliedOrganizationAssignment AppliedOrganizationAssignment() const;
 
 };
-%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem GetHandle() {
-	return *(Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem*) &$self;
-	}
-};
-%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepAP214_HArray1OfAutoDesignGeneralOrgItem::~StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+%feature("shadow") StepAP214_PersonAndOrganizationItem::~StepAP214_PersonAndOrganizationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4632,7 +4432,52 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+%extend StepAP214_PersonAndOrganizationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_AutoDesignPresentedItem;
+class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignPresentedItem();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect Items() const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignPresentedItemSelect ItemsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AutoDesignPresentedItem {
+	Handle_StepAP214_AutoDesignPresentedItem GetHandle() {
+	return *(Handle_StepAP214_AutoDesignPresentedItem*) &$self;
+	}
+};
+%extend StepAP214_AutoDesignPresentedItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_AutoDesignPresentedItem::~StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_AutoDesignPresentedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4757,7 +4602,7 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignPresentedItemSelect::~StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
@@ -4770,6 +4615,112 @@ def __del__(self):
 %}
 
 %extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_Array1OfApprovalItem;
+class StepAP214_Array1OfApprovalItem {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_Array1OfApprovalItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_Array1OfApprovalItem(const StepAP214_ApprovalItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_ApprovalItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfApprovalItem & Assign(const StepAP214_Array1OfApprovalItem &Other);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfApprovalItem & operator=(const StepAP214_Array1OfApprovalItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_ApprovalItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_ApprovalItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepAP214_ApprovalItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_ApprovalItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepAP214_ApprovalItem & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepAP214_Array1OfApprovalItem::~StepAP214_Array1OfApprovalItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_Array1OfApprovalItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_HArray1OfAutoDesignGeneralOrgItem;
+class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepAP214_HArray1OfAutoDesignGeneralOrgItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignGeneralOrgItem &V);
+		%feature("autodoc", "1");
+		void Init(const StepAP214_AutoDesignGeneralOrgItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignGeneralOrgItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignGeneralOrgItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignGeneralOrgItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignGeneralOrgItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignGeneralOrgItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+	Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem*) &$self;
+	}
+};
+%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_HArray1OfAutoDesignGeneralOrgItem::~StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4888,7 +4839,7 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 };
 %extend StepAP214_AppliedDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDateAssignment::~StepAP214_AppliedDateAssignment %{
@@ -4935,7 +4886,7 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 };
 %extend StepAP214_AppliedPersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedPersonAndOrganizationAssignment::~StepAP214_AppliedPersonAndOrganizationAssignment %{
@@ -5011,7 +4962,7 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 };
 %extend StepAP214_AutoDesignActualDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignActualDateAndTimeAssignment::~StepAP214_AutoDesignActualDateAndTimeAssignment %{
@@ -5058,7 +5009,7 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 };
 %extend StepAP214_AutoDesignActualDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignActualDateAssignment::~StepAP214_AutoDesignActualDateAssignment %{
@@ -5157,6 +5108,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepAP214_AppliedExternalIdentificationAssignment;
+class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_ExternalIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AppliedExternalIdentificationAssignment();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aIdentificationAssignment_AssignedId, const Handle_StepBasic_IdentificationRole &aIdentificationAssignment_Role, const Handle_StepBasic_ExternalSource &aExternalIdentificationAssignment_Source, const Handle_StepAP214_HArray1OfExternalIdentificationItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfExternalIdentificationItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfExternalIdentificationItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AppliedExternalIdentificationAssignment {
+	Handle_StepAP214_AppliedExternalIdentificationAssignment GetHandle() {
+	return *(Handle_StepAP214_AppliedExternalIdentificationAssignment*) &$self;
+	}
+};
+%extend StepAP214_AppliedExternalIdentificationAssignment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_AppliedExternalIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepAP214_HArray1OfOrganizationItem;
 class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 	public:
@@ -5193,7 +5185,7 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfOrganizationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfOrganizationItem::~StepAP214_HArray1OfOrganizationItem %{
@@ -5212,36 +5204,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP214_AutoDesignPresentedItem;
-class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
+%nodefaultctor StepAP214_HArray1OfAutoDesignDateAndTimeItem;
+class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItem();
+		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
+		StepAP214_HArray1OfAutoDesignDateAndTimeItem(const Standard_Integer Low, const Standard_Integer Up, const StepAP214_AutoDesignDateAndTimeItem &V);
 		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect &aItems);
+		void Init(const StepAP214_AutoDesignDateAndTimeItem &V);
 		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect Items() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		StepAP214_AutoDesignPresentedItemSelect ItemsValue(const Standard_Integer num) const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepAP214_AutoDesignDateAndTimeItem &Value);
+		%feature("autodoc", "1");
+		const StepAP214_AutoDesignDateAndTimeItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepAP214_AutoDesignDateAndTimeItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepAP214_Array1OfAutoDesignDateAndTimeItem & Array1() const;
+		%feature("autodoc", "1");
+		StepAP214_Array1OfAutoDesignDateAndTimeItem & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepAP214_AutoDesignPresentedItem {
-	Handle_StepAP214_AutoDesignPresentedItem GetHandle() {
-	return *(Handle_StepAP214_AutoDesignPresentedItem*) &$self;
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
+	Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem GetHandle() {
+	return *(Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem*) &$self;
 	}
 };
-%extend StepAP214_AutoDesignPresentedItem {
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepAP214_AutoDesignPresentedItem::~StepAP214_AutoDesignPresentedItem %{
+%feature("shadow") StepAP214_HArray1OfAutoDesignDateAndTimeItem::~StepAP214_HArray1OfAutoDesignDateAndTimeItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5250,7 +5252,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepAP214_AutoDesignPresentedItem {
+%extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	void _kill_pointed() {
 		delete $self;
 	}

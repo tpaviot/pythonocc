@@ -52,6 +52,35 @@ $HeaderURL$
 
 
 
+%nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
+class RWStepVisual_RWPresentationStyleAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPresentationStyleAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_PresentationStyleAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWPresentationStyleAssignment::~RWStepVisual_RWPresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWPresentationStyleAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepVisual_RWAreaInSet;
 class RWStepVisual_RWAreaInSet {
 	public:
@@ -75,6 +104,33 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWAreaInSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWCameraModel;
+class RWStepVisual_RWCameraModel {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWCameraModel();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModel &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModel &ent) const;
+
+};
+%feature("shadow") RWStepVisual_RWCameraModel::~RWStepVisual_RWCameraModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWCameraModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -253,35 +309,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
-class RWStepVisual_RWTextStyleWithBoxCharacteristics {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWTextStyleWithBoxCharacteristics();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWTextStyleWithBoxCharacteristics::~RWStepVisual_RWTextStyleWithBoxCharacteristics %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWSurfaceStyleSegmentationCurve;
 class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 	public:
@@ -334,64 +361,6 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
-class RWStepVisual_RWPresentedItemRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPresentedItemRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPresentedItemRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
-class RWStepVisual_RWSurfaceStyleUsage {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWSurfaceStyleUsage();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceStyleUsage &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWSurfaceStyleUsage::~RWStepVisual_RWSurfaceStyleUsage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWSurfaceStyleUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -475,6 +444,62 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWPreDefinedCurveFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWPlanarExtent;
+class RWStepVisual_RWPlanarExtent {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPlanarExtent();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarExtent &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarExtent &ent) const;
+
+};
+%feature("shadow") RWStepVisual_RWPlanarExtent::~RWStepVisual_RWPlanarExtent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWPlanarExtent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWPointStyle;
+class RWStepVisual_RWPointStyle {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPointStyle();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PointStyle &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PointStyle &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_PointStyle &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWPointStyle::~RWStepVisual_RWPointStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWPointStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -597,6 +622,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepVisual_RWPresentationSet;
+class RWStepVisual_RWPresentationSet {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPresentationSet();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSet &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSet &ent) const;
+
+};
+%feature("shadow") RWStepVisual_RWPresentationSet::~RWStepVisual_RWPresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWPresentationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepVisual_RWPresentationStyleByContext;
 class RWStepVisual_RWPresentationStyleByContext {
 	public:
@@ -653,33 +705,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWPresentationSet;
-class RWStepVisual_RWPresentationSet {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPresentationSet();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationSet &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationSet &ent) const;
-
-};
-%feature("shadow") RWStepVisual_RWPresentationSet::~RWStepVisual_RWPresentationSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPresentationSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWOverRidingStyledItem;
 class RWStepVisual_RWOverRidingStyledItem {
 	public:
@@ -709,20 +734,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWSurfaceSideStyle;
-class RWStepVisual_RWSurfaceSideStyle {
+%nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
+class RWStepVisual_RWSurfaceStyleUsage {
 	public:
 		%feature("autodoc", "1");
-		RWStepVisual_RWSurfaceSideStyle();
+		RWStepVisual_RWSurfaceStyleUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceSideStyle &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceSideStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceStyleUsage &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_SurfaceSideStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepVisual_SurfaceStyleUsage &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepVisual_RWSurfaceSideStyle::~RWStepVisual_RWSurfaceSideStyle %{
+%feature("shadow") RWStepVisual_RWSurfaceStyleUsage::~RWStepVisual_RWSurfaceStyleUsage %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -731,7 +756,121 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepVisual_RWSurfaceSideStyle {
+%extend RWStepVisual_RWSurfaceStyleUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
+class RWStepVisual_RWTextStyleWithBoxCharacteristics {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWTextStyleWithBoxCharacteristics();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_TextStyleWithBoxCharacteristics &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWTextStyleWithBoxCharacteristics::~RWStepVisual_RWTextStyleWithBoxCharacteristics %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWColour;
+class RWStepVisual_RWColour {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWColour();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Colour &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Colour &ent) const;
+
+};
+%feature("shadow") RWStepVisual_RWColour::~RWStepVisual_RWColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
+class RWStepVisual_RWContextDependentOverRidingStyledItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWContextDependentOverRidingStyledItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWContextDependentOverRidingStyledItem::~RWStepVisual_RWContextDependentOverRidingStyledItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWContextDependentOverRidingStyledItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWCurveStyle;
+class RWStepVisual_RWCurveStyle {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWCurveStyle();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyle &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWCurveStyle::~RWStepVisual_RWCurveStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWCurveStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -761,35 +900,6 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWTextStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWCameraImage;
-class RWStepVisual_RWCameraImage {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWCameraImage();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraImage &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraImage &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraImage &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWCameraImage::~RWStepVisual_RWCameraImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWCameraImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -848,33 +958,6 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWTextLiteral {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWPlanarExtent;
-class RWStepVisual_RWPlanarExtent {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPlanarExtent();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PlanarExtent &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PlanarExtent &ent) const;
-
-};
-%feature("shadow") RWStepVisual_RWPlanarExtent::~RWStepVisual_RWPlanarExtent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPlanarExtent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -962,6 +1045,35 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWSurfaceStyleBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWCameraImage;
+class RWStepVisual_RWCameraImage {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWCameraImage();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraImage &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraImage &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_CameraImage &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWCameraImage::~RWStepVisual_RWCameraImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWCameraImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1167,20 +1279,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWCurveStyle;
-class RWStepVisual_RWCurveStyle {
+%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
+class RWStepVisual_RWPresentedItemRepresentation {
 	public:
 		%feature("autodoc", "1");
-		RWStepVisual_RWCurveStyle();
+		RWStepVisual_RWPresentedItemRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CurveStyle &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CurveStyle &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CurveStyle &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepVisual_RWCurveStyle::~RWStepVisual_RWCurveStyle %{
+%feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1189,27 +1301,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepVisual_RWCurveStyle {
+%extend RWStepVisual_RWPresentedItemRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
-class RWStepVisual_RWContextDependentOverRidingStyledItem {
+%nodefaultctor RWStepVisual_RWSurfaceSideStyle;
+class RWStepVisual_RWSurfaceSideStyle {
 	public:
 		%feature("autodoc", "1");
-		RWStepVisual_RWContextDependentOverRidingStyledItem();
+		RWStepVisual_RWSurfaceSideStyle();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_SurfaceSideStyle &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_SurfaceSideStyle &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_ContextDependentOverRidingStyledItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepVisual_SurfaceSideStyle &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepVisual_RWContextDependentOverRidingStyledItem::~RWStepVisual_RWContextDependentOverRidingStyledItem %{
+%feature("shadow") RWStepVisual_RWSurfaceSideStyle::~RWStepVisual_RWSurfaceSideStyle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1218,36 +1330,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepVisual_RWContextDependentOverRidingStyledItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWPointStyle;
-class RWStepVisual_RWPointStyle {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPointStyle();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PointStyle &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PointStyle &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PointStyle &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWPointStyle::~RWStepVisual_RWPointStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPointStyle {
+%extend RWStepVisual_RWSurfaceSideStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1312,62 +1395,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWCameraModel;
-class RWStepVisual_RWCameraModel {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWCameraModel();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraModel &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraModel &ent) const;
-
-};
-%feature("shadow") RWStepVisual_RWCameraModel::~RWStepVisual_RWCameraModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWCameraModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWCameraUsage;
-class RWStepVisual_RWCameraUsage {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWCameraUsage();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraUsage &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraUsage &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_CameraUsage &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWCameraUsage::~RWStepVisual_RWCameraUsage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWCameraUsage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWTextStyleForDefinedFont;
 class RWStepVisual_RWTextStyleForDefinedFont {
 	public:
@@ -1397,18 +1424,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWColour;
-class RWStepVisual_RWColour {
+%nodefaultctor RWStepVisual_RWCameraUsage;
+class RWStepVisual_RWCameraUsage {
 	public:
 		%feature("autodoc", "1");
-		RWStepVisual_RWColour();
+		RWStepVisual_RWCameraUsage();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_Colour &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_CameraUsage &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_Colour &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_CameraUsage &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_CameraUsage &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepVisual_RWColour::~RWStepVisual_RWColour %{
+%feature("shadow") RWStepVisual_RWCameraUsage::~RWStepVisual_RWCameraUsage %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1417,7 +1446,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepVisual_RWColour {
+%extend RWStepVisual_RWCameraUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1561,35 +1590,6 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWDraughtingPreDefinedCurveFont {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
-class RWStepVisual_RWPresentationStyleAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPresentationStyleAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentationStyleAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentationStyleAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWPresentationStyleAssignment::~RWStepVisual_RWPresentationStyleAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPresentationStyleAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -844,8 +844,8 @@ $HeaderURL$
 %};
 
 %import StepRepr.i
-%import StepGeom.i
 %import MMgt.i
 %import StepBasic.i
 %import StepData.i
+%import StepGeom.i
 %import Standard.i

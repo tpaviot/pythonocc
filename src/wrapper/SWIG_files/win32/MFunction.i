@@ -152,7 +152,7 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 };
 %extend MFunction_FunctionStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFunction_FunctionStorageDriver::~MFunction_FunctionStorageDriver %{
@@ -165,6 +165,33 @@ def __del__(self):
 %}
 
 %extend MFunction_FunctionStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MFunction;
+class MFunction {
+	public:
+		%feature("autodoc", "1");
+		MFunction();
+		%feature("autodoc", "1");
+		static		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		static		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
+
+};
+%feature("shadow") MFunction::~MFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -195,7 +222,7 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 };
 %extend MFunction_FunctionRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFunction_FunctionRetrievalDriver::~MFunction_FunctionRetrievalDriver %{
@@ -208,33 +235,6 @@ def __del__(self):
 %}
 
 %extend MFunction_FunctionRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MFunction;
-class MFunction {
-	public:
-		%feature("autodoc", "1");
-		MFunction();
-		%feature("autodoc", "1");
-		static		void AddStorageDrivers(const Handle_MDF_ASDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		static		void AddRetrievalDrivers(const Handle_MDF_ARDriverHSequence &aDriverSeq, const Handle_CDM_MessageDriver &theMessageDriver);
-
-};
-%feature("shadow") MFunction::~MFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

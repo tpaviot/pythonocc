@@ -60,7 +60,6 @@ $HeaderURL$
 #include<TopoDS_Vertex.hxx>
 #include<Handle_Prs3d_Drawer.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
-#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<Handle_Geom_Point.hxx>
 #include<Adaptor3d_Surface.hxx>
 #include<TopoDS_Shape.hxx>
@@ -72,7 +71,8 @@ $HeaderURL$
 #include<Adaptor3d_Curve.hxx>
 #include<Handle_Prs3d_Projector.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
-#include<TColgp_SequenceOfPnt.hxx>
+#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<BRepAdaptor_Curve.hxx>
+#include<TColgp_SequenceOfPnt.hxx>
 %}

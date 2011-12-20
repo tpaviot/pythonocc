@@ -90,82 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_Surface;
-class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface();
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface(const Handle_PGeom_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface(const PGeom_Surface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface & operator=(const Handle_PGeom_Surface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Surface & operator=(const PGeom_Surface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_Surface DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Surface {
-	PGeom_Surface* GetObject() {
-	return (PGeom_Surface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_Surface::~Handle_PGeom_Surface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_Surface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_BoundedSurface;
-class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface(const Handle_PGeom_BoundedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface(const PGeom_BoundedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface & operator=(const Handle_PGeom_BoundedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_BoundedSurface & operator=(const PGeom_BoundedSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_BoundedSurface DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_BoundedSurface {
-	PGeom_BoundedSurface* GetObject() {
-	return (PGeom_BoundedSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_BoundedSurface::~Handle_PGeom_BoundedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_BoundedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_Curve;
 class Handle_PGeom_Curve : public Handle_PGeom_Geometry {
 	public:
@@ -274,44 +198,6 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom_TrimmedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_Transformation;
-class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Transformation();
-		%feature("autodoc", "1");
-		Handle_PGeom_Transformation(const Handle_PGeom_Transformation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Transformation(const PGeom_Transformation *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Transformation & operator=(const Handle_PGeom_Transformation &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Transformation & operator=(const PGeom_Transformation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_Transformation DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Transformation {
-	PGeom_Transformation* GetObject() {
-	return (PGeom_Transformation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_Transformation::~Handle_PGeom_Transformation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_Transformation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -470,29 +356,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_AxisPlacement;
-class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
+%nodefaultctor Handle_PGeom_Surface;
+class Handle_PGeom_Surface : public Handle_PGeom_Geometry {
 	public:
 		%feature("autodoc", "1");
-		Handle_PGeom_AxisPlacement();
+		Handle_PGeom_Surface();
 		%feature("autodoc", "1");
-		Handle_PGeom_AxisPlacement(const Handle_PGeom_AxisPlacement &aHandle);
+		Handle_PGeom_Surface(const Handle_PGeom_Surface &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom_AxisPlacement(const PGeom_AxisPlacement *anItem);
+		Handle_PGeom_Surface(const PGeom_Surface *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom_AxisPlacement & operator=(const Handle_PGeom_AxisPlacement &aHandle);
+		Handle_PGeom_Surface & operator=(const Handle_PGeom_Surface &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom_AxisPlacement & operator=(const PGeom_AxisPlacement *anItem);
+		Handle_PGeom_Surface & operator=(const PGeom_Surface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PGeom_AxisPlacement DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PGeom_Surface DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PGeom_AxisPlacement {
-	PGeom_AxisPlacement* GetObject() {
-	return (PGeom_AxisPlacement*)$self->Access();
+%extend Handle_PGeom_Surface {
+	PGeom_Surface* GetObject() {
+	return (PGeom_Surface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PGeom_AxisPlacement::~Handle_PGeom_AxisPlacement %{
+%feature("shadow") Handle_PGeom_Surface::~Handle_PGeom_Surface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -501,7 +387,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PGeom_AxisPlacement {
+%extend Handle_PGeom_Surface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -540,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom_SweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_BoundedSurface;
+class Handle_PGeom_BoundedSurface : public Handle_PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface(const Handle_PGeom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface(const PGeom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface & operator=(const Handle_PGeom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BoundedSurface & operator=(const PGeom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_BoundedSurface DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_BoundedSurface {
+	PGeom_BoundedSurface* GetObject() {
+	return (PGeom_BoundedSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_BoundedSurface::~Handle_PGeom_BoundedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_BoundedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -622,6 +546,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PGeom_Ellipse;
+class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse();
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse(const Handle_PGeom_Ellipse &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse(const PGeom_Ellipse *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse & operator=(const Handle_PGeom_Ellipse &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Ellipse & operator=(const PGeom_Ellipse *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_Ellipse DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Ellipse {
+	PGeom_Ellipse* GetObject() {
+	return (PGeom_Ellipse*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_Ellipse::~Handle_PGeom_Ellipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_Ellipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PGeom_Circle;
 class Handle_PGeom_Circle : public Handle_PGeom_Conic {
 	public:
@@ -698,44 +660,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_Line;
-class Handle_PGeom_Line : public Handle_PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Line();
-		%feature("autodoc", "1");
-		Handle_PGeom_Line(const Handle_PGeom_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line(const PGeom_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line & operator=(const Handle_PGeom_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Line & operator=(const PGeom_Line *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_Line DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Line {
-	PGeom_Line* GetObject() {
-	return (PGeom_Line*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_Line::~Handle_PGeom_Line %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_ElementarySurface;
 class Handle_PGeom_ElementarySurface : public Handle_PGeom_Surface {
 	public:
@@ -774,6 +698,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PGeom_CylindricalSurface;
+class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface();
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface(const Handle_PGeom_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface(const PGeom_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface & operator=(const Handle_PGeom_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_CylindricalSurface & operator=(const PGeom_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_CylindricalSurface DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_CylindricalSurface {
+	PGeom_CylindricalSurface* GetObject() {
+	return (PGeom_CylindricalSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_CylindricalSurface::~Handle_PGeom_CylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_CylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_BezierCurve;
+class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve(const Handle_PGeom_BezierCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve(const PGeom_BezierCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve & operator=(const Handle_PGeom_BezierCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_BezierCurve & operator=(const PGeom_BezierCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_BezierCurve DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_BezierCurve {
+	PGeom_BezierCurve* GetObject() {
+	return (PGeom_BezierCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_BezierCurve::~Handle_PGeom_BezierCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_BezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_Line;
+class Handle_PGeom_Line : public Handle_PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Line();
+		%feature("autodoc", "1");
+		Handle_PGeom_Line(const Handle_PGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line(const PGeom_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const Handle_PGeom_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Line & operator=(const PGeom_Line *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_Line DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Line {
+	PGeom_Line* GetObject() {
+	return (PGeom_Line*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_Line::~Handle_PGeom_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PGeom_Plane;
 class Handle_PGeom_Plane : public Handle_PGeom_ElementarySurface {
 	public:
@@ -806,44 +844,6 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom_Plane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_Hyperbola;
-class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Hyperbola();
-		%feature("autodoc", "1");
-		Handle_PGeom_Hyperbola(const Handle_PGeom_Hyperbola &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Hyperbola(const PGeom_Hyperbola *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Hyperbola & operator=(const Handle_PGeom_Hyperbola &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Hyperbola & operator=(const PGeom_Hyperbola *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_Hyperbola DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Hyperbola {
-	PGeom_Hyperbola* GetObject() {
-	return (PGeom_Hyperbola*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_Hyperbola::~Handle_PGeom_Hyperbola %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_Hyperbola {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -926,6 +926,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PGeom_OffsetCurve;
+class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve();
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve(const Handle_PGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve(const PGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const Handle_PGeom_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_OffsetCurve & operator=(const PGeom_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_OffsetCurve DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_OffsetCurve {
+	PGeom_OffsetCurve* GetObject() {
+	return (PGeom_OffsetCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_OffsetCurve::~Handle_PGeom_OffsetCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_OffsetCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PGeom_OffsetSurface;
 class Handle_PGeom_OffsetSurface : public Handle_PGeom_Surface {
 	public:
@@ -964,29 +1002,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_SurfaceOfRevolution;
-class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
+%nodefaultctor Handle_PGeom_AxisPlacement;
+class Handle_PGeom_AxisPlacement : public Handle_PGeom_Geometry {
 	public:
 		%feature("autodoc", "1");
-		Handle_PGeom_SurfaceOfRevolution();
+		Handle_PGeom_AxisPlacement();
 		%feature("autodoc", "1");
-		Handle_PGeom_SurfaceOfRevolution(const Handle_PGeom_SurfaceOfRevolution &aHandle);
+		Handle_PGeom_AxisPlacement(const Handle_PGeom_AxisPlacement &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom_SurfaceOfRevolution(const PGeom_SurfaceOfRevolution *anItem);
+		Handle_PGeom_AxisPlacement(const PGeom_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		Handle_PGeom_SurfaceOfRevolution & operator=(const Handle_PGeom_SurfaceOfRevolution &aHandle);
+		Handle_PGeom_AxisPlacement & operator=(const Handle_PGeom_AxisPlacement &aHandle);
 		%feature("autodoc", "1");
-		Handle_PGeom_SurfaceOfRevolution & operator=(const PGeom_SurfaceOfRevolution *anItem);
+		Handle_PGeom_AxisPlacement & operator=(const PGeom_AxisPlacement *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PGeom_SurfaceOfRevolution DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PGeom_AxisPlacement DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PGeom_SurfaceOfRevolution {
-	PGeom_SurfaceOfRevolution* GetObject() {
-	return (PGeom_SurfaceOfRevolution*)$self->Access();
+%extend Handle_PGeom_AxisPlacement {
+	PGeom_AxisPlacement* GetObject() {
+	return (PGeom_AxisPlacement*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PGeom_SurfaceOfRevolution::~Handle_PGeom_SurfaceOfRevolution %{
+%feature("shadow") Handle_PGeom_AxisPlacement::~Handle_PGeom_AxisPlacement %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -995,7 +1033,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PGeom_SurfaceOfRevolution {
+%extend Handle_PGeom_AxisPlacement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1078,44 +1116,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_OffsetCurve;
-class Handle_PGeom_OffsetCurve : public Handle_PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve(const Handle_PGeom_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve(const PGeom_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve & operator=(const Handle_PGeom_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_OffsetCurve & operator=(const PGeom_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_OffsetCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_OffsetCurve {
-	PGeom_OffsetCurve* GetObject() {
-	return (PGeom_OffsetCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_OffsetCurve::~Handle_PGeom_OffsetCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_OffsetCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_SurfaceOfLinearExtrusion;
 class Handle_PGeom_SurfaceOfLinearExtrusion : public Handle_PGeom_SweptSurface {
 	public:
@@ -1148,82 +1148,6 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom_SurfaceOfLinearExtrusion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_Ellipse;
-class Handle_PGeom_Ellipse : public Handle_PGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_Ellipse();
-		%feature("autodoc", "1");
-		Handle_PGeom_Ellipse(const Handle_PGeom_Ellipse &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Ellipse(const PGeom_Ellipse *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_Ellipse & operator=(const Handle_PGeom_Ellipse &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_Ellipse & operator=(const PGeom_Ellipse *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_Ellipse DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_Ellipse {
-	PGeom_Ellipse* GetObject() {
-	return (PGeom_Ellipse*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_Ellipse::~Handle_PGeom_Ellipse %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_Ellipse {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PGeom_CylindricalSurface;
-class Handle_PGeom_CylindricalSurface : public Handle_PGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface();
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface(const Handle_PGeom_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface(const PGeom_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface & operator=(const Handle_PGeom_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_CylindricalSurface & operator=(const PGeom_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_CylindricalSurface DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_CylindricalSurface {
-	PGeom_CylindricalSurface* GetObject() {
-	return (PGeom_CylindricalSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_CylindricalSurface::~Handle_PGeom_CylindricalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_CylindricalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1306,44 +1230,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PGeom_BezierCurve;
-class Handle_PGeom_BezierCurve : public Handle_PGeom_BoundedCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierCurve();
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierCurve(const Handle_PGeom_BezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierCurve(const PGeom_BezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierCurve & operator=(const Handle_PGeom_BezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PGeom_BezierCurve & operator=(const PGeom_BezierCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PGeom_BezierCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PGeom_BezierCurve {
-	PGeom_BezierCurve* GetObject() {
-	return (PGeom_BezierCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PGeom_BezierCurve::~Handle_PGeom_BezierCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PGeom_BezierCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PGeom_Axis1Placement;
 class Handle_PGeom_Axis1Placement : public Handle_PGeom_AxisPlacement {
 	public:
@@ -1382,6 +1268,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PGeom_Hyperbola;
+class Handle_PGeom_Hyperbola : public Handle_PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola();
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola(const Handle_PGeom_Hyperbola &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola(const PGeom_Hyperbola *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola & operator=(const Handle_PGeom_Hyperbola &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Hyperbola & operator=(const PGeom_Hyperbola *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_Hyperbola DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Hyperbola {
+	PGeom_Hyperbola* GetObject() {
+	return (PGeom_Hyperbola*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_Hyperbola::~Handle_PGeom_Hyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_Hyperbola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_SurfaceOfRevolution;
+class Handle_PGeom_SurfaceOfRevolution : public Handle_PGeom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution();
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution(const Handle_PGeom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution(const PGeom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution & operator=(const Handle_PGeom_SurfaceOfRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_SurfaceOfRevolution & operator=(const PGeom_SurfaceOfRevolution *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_SurfaceOfRevolution DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_SurfaceOfRevolution {
+	PGeom_SurfaceOfRevolution* GetObject() {
+	return (PGeom_SurfaceOfRevolution*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_SurfaceOfRevolution::~Handle_PGeom_SurfaceOfRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_SurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PGeom_ConicalSurface;
 class Handle_PGeom_ConicalSurface : public Handle_PGeom_ElementarySurface {
 	public:
@@ -1414,6 +1376,44 @@ def __del__(self):
 %}
 
 %extend Handle_PGeom_ConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PGeom_Transformation;
+class Handle_PGeom_Transformation : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation();
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation(const Handle_PGeom_Transformation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation(const PGeom_Transformation *anItem);
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation & operator=(const Handle_PGeom_Transformation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PGeom_Transformation & operator=(const PGeom_Transformation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PGeom_Transformation DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PGeom_Transformation {
+	PGeom_Transformation* GetObject() {
+	return (PGeom_Transformation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PGeom_Transformation::~Handle_PGeom_Transformation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PGeom_Transformation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1476,7 +1476,7 @@ class PGeom_Geometry : public Standard_Persistent {
 };
 %extend PGeom_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Geometry::~PGeom_Geometry %{
@@ -1511,7 +1511,7 @@ class PGeom_Curve : public PGeom_Geometry {
 };
 %extend PGeom_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Curve::~PGeom_Curve %{
@@ -1524,49 +1524,6 @@ def __del__(self):
 %}
 
 %extend PGeom_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom_Line;
-class PGeom_Line : public PGeom_Curve {
-	public:
-		%feature("autodoc", "1");
-		PGeom_Line();
-		%feature("autodoc", "1");
-		PGeom_Line(const gp_Ax1 aPosition);
-		%feature("autodoc", "1");
-		void Position(const gp_Ax1 aPosition);
-		%feature("autodoc", "1");
-		gp_Ax1 Position() const;
-		%feature("autodoc", "1");
-		PGeom_Line(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax1  _CSFDB_GetPGeom_Lineposition() const;
-
-};
-%extend PGeom_Line {
-	Handle_PGeom_Line GetHandle() {
-	return *(Handle_PGeom_Line*) &$self;
-	}
-};
-%extend PGeom_Line {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom_Line::~PGeom_Line %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom_Line {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1604,8 +1561,6 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 		Standard_Real _CSFDB_GetPGeom_OffsetCurveoffsetValue() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom_OffsetCurveoffsetValue(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom_OffsetCurve {
@@ -1615,7 +1570,7 @@ class PGeom_OffsetCurve : public PGeom_Curve {
 };
 %extend PGeom_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_OffsetCurve::~PGeom_OffsetCurve %{
@@ -1652,7 +1607,7 @@ class PGeom_Surface : public PGeom_Geometry {
 };
 %extend PGeom_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Surface::~PGeom_Surface %{
@@ -1687,7 +1642,7 @@ class PGeom_BoundedSurface : public PGeom_Surface {
 };
 %extend PGeom_BoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BoundedSurface::~PGeom_BoundedSurface %{
@@ -1700,6 +1655,95 @@ def __del__(self):
 %}
 
 %extend PGeom_BoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom_SweptSurface;
+class PGeom_SweptSurface : public PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve BasisCurve() const;
+		%feature("autodoc", "1");
+		void Direction(const gp_Dir aDirection);
+		%feature("autodoc", "1");
+		gp_Dir Direction() const;
+		%feature("autodoc", "1");
+		PGeom_SweptSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom_Curve _CSFDB_GetPGeom_SweptSurfacebasisCurve() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_SweptSurfacebasisCurve(const Handle_PGeom_Curve &p);
+		%feature("autodoc", "1");
+		const gp_Dir  _CSFDB_GetPGeom_SweptSurfacedirection() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_SweptSurface {
+	Handle_PGeom_SweptSurface GetHandle() {
+	return *(Handle_PGeom_SweptSurface*) &$self;
+	}
+};
+%extend PGeom_SweptSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom_SweptSurface::~PGeom_SweptSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom_SweptSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend PGeom_SweptSurface {
+	PGeom_SweptSurface () {}
+};
+
+
+%nodefaultctor PGeom_SurfaceOfLinearExtrusion;
+class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion();
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection);
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
+
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	Handle_PGeom_SurfaceOfLinearExtrusion GetHandle() {
+	return *(Handle_PGeom_SurfaceOfLinearExtrusion*) &$self;
+	}
+};
+%extend PGeom_SurfaceOfLinearExtrusion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom_SurfaceOfLinearExtrusion::~PGeom_SurfaceOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom_SurfaceOfLinearExtrusion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1732,7 +1776,7 @@ class PGeom_Transformation : public Standard_Persistent {
 };
 %extend PGeom_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Transformation::~PGeom_Transformation %{
@@ -1769,7 +1813,7 @@ class PGeom_Point : public PGeom_Geometry {
 };
 %extend PGeom_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Point::~PGeom_Point %{
@@ -1812,7 +1856,7 @@ class PGeom_CartesianPoint : public PGeom_Point {
 };
 %extend PGeom_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_CartesianPoint::~PGeom_CartesianPoint %{
@@ -1849,7 +1893,7 @@ class PGeom_BoundedCurve : public PGeom_Curve {
 };
 %extend PGeom_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BoundedCurve::~PGeom_BoundedCurve %{
@@ -1942,7 +1986,7 @@ class PGeom_BSplineCurve : public PGeom_BoundedCurve {
 };
 %extend PGeom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BSplineCurve::~PGeom_BSplineCurve %{
@@ -2077,7 +2121,7 @@ class PGeom_BSplineSurface : public PGeom_BoundedSurface {
 };
 %extend PGeom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BSplineSurface::~PGeom_BSplineSurface %{
@@ -2118,7 +2162,7 @@ class PGeom_Vector : public PGeom_Geometry {
 };
 %extend PGeom_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Vector::~PGeom_Vector %{
@@ -2158,7 +2202,7 @@ class PGeom_Direction : public PGeom_Vector {
 };
 %extend PGeom_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Direction::~PGeom_Direction %{
@@ -2199,7 +2243,7 @@ class PGeom_Conic : public PGeom_Curve {
 };
 %extend PGeom_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Conic::~PGeom_Conic %{
@@ -2247,7 +2291,7 @@ class PGeom_Parabola : public PGeom_Conic {
 };
 %extend PGeom_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Parabola::~PGeom_Parabola %{
@@ -2294,7 +2338,7 @@ class PGeom_Circle : public PGeom_Conic {
 };
 %extend PGeom_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Circle::~PGeom_Circle %{
@@ -2313,46 +2357,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor PGeom_Ellipse;
-class PGeom_Ellipse : public PGeom_Conic {
+%nodefaultctor PGeom_Line;
+class PGeom_Line : public PGeom_Curve {
 	public:
 		%feature("autodoc", "1");
-		PGeom_Ellipse();
+		PGeom_Line();
 		%feature("autodoc", "1");
-		PGeom_Ellipse(const gp_Ax2 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		PGeom_Line(const gp_Ax1 aPosition);
 		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
+		void Position(const gp_Ax1 aPosition);
 		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
+		gp_Ax1 Position() const;
 		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
+		PGeom_Line(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		const gp_Ax1  _CSFDB_GetPGeom_Lineposition() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_Ellipse {
-	Handle_PGeom_Ellipse GetHandle() {
-	return *(Handle_PGeom_Ellipse*) &$self;
+%extend PGeom_Line {
+	Handle_PGeom_Line GetHandle() {
+	return *(Handle_PGeom_Line*) &$self;
 	}
 };
-%extend PGeom_Ellipse {
+%extend PGeom_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PGeom_Ellipse::~PGeom_Ellipse %{
+%feature("shadow") PGeom_Line::~PGeom_Line %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2361,104 +2395,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PGeom_Ellipse {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom_ElementarySurface;
-class PGeom_ElementarySurface : public PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		void Position(const gp_Ax3 aPosition);
-		%feature("autodoc", "1");
-		gp_Ax3 Position() const;
-		%feature("autodoc", "1");
-		PGeom_ElementarySurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax3  _CSFDB_GetPGeom_ElementarySurfaceposition() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_ElementarySurface {
-	Handle_PGeom_ElementarySurface GetHandle() {
-	return *(Handle_PGeom_ElementarySurface*) &$self;
-	}
-};
-%extend PGeom_ElementarySurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom_ElementarySurface::~PGeom_ElementarySurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom_ElementarySurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend PGeom_ElementarySurface {
-	PGeom_ElementarySurface () {}
-};
-
-
-%nodefaultctor PGeom_ToroidalSurface;
-class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_ToroidalSurface();
-		%feature("autodoc", "1");
-		PGeom_ToroidalSurface(const gp_Ax3 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		void MajorRadius(const Standard_Real aMajorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		void MinorRadius(const Standard_Real aMinorRadius);
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		PGeom_ToroidalSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_ToroidalSurfacemajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_ToroidalSurfacemajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPGeom_ToroidalSurfaceminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_ToroidalSurfaceminorRadius(const Standard_Real p);
-
-};
-%extend PGeom_ToroidalSurface {
-	Handle_PGeom_ToroidalSurface GetHandle() {
-	return *(Handle_PGeom_ToroidalSurface*) &$self;
-	}
-};
-%extend PGeom_ToroidalSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom_ToroidalSurface::~PGeom_ToroidalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom_ToroidalSurface {
+%extend PGeom_Line {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2525,7 +2462,7 @@ class PGeom_RectangularTrimmedSurface : public PGeom_BoundedSurface {
 };
 %extend PGeom_RectangularTrimmedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_RectangularTrimmedSurface::~PGeom_RectangularTrimmedSurface %{
@@ -2541,6 +2478,50 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor PGeom_ElementarySurface;
+class PGeom_ElementarySurface : public PGeom_Surface {
+	public:
+		%feature("autodoc", "1");
+		void Position(const gp_Ax3 aPosition);
+		%feature("autodoc", "1");
+		gp_Ax3 Position() const;
+		%feature("autodoc", "1");
+		PGeom_ElementarySurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Ax3  _CSFDB_GetPGeom_ElementarySurfaceposition() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_ElementarySurface {
+	Handle_PGeom_ElementarySurface GetHandle() {
+	return *(Handle_PGeom_ElementarySurface*) &$self;
+	}
+};
+%extend PGeom_ElementarySurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom_ElementarySurface::~PGeom_ElementarySurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom_ElementarySurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend PGeom_ElementarySurface {
+	PGeom_ElementarySurface () {}
 };
 
 
@@ -2566,7 +2547,7 @@ class PGeom_AxisPlacement : public PGeom_Geometry {
 };
 %extend PGeom_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_AxisPlacement::~PGeom_AxisPlacement %{
@@ -2640,7 +2621,7 @@ class PGeom_BezierSurface : public PGeom_BoundedSurface {
 };
 %extend PGeom_BezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BezierSurface::~PGeom_BezierSurface %{
@@ -2653,6 +2634,51 @@ def __del__(self):
 %}
 
 %extend PGeom_BezierSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom_SurfaceOfRevolution;
+class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
+	public:
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfRevolution();
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfRevolution(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection, const gp_Pnt aLocation);
+		%feature("autodoc", "1");
+		void Location(const gp_Pnt aLocation);
+		%feature("autodoc", "1");
+		gp_Pnt Location() const;
+		%feature("autodoc", "1");
+		PGeom_SurfaceOfRevolution(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Pnt  _CSFDB_GetPGeom_SurfaceOfRevolutionlocation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_SurfaceOfRevolution {
+	Handle_PGeom_SurfaceOfRevolution GetHandle() {
+	return *(Handle_PGeom_SurfaceOfRevolution*) &$self;
+	}
+};
+%extend PGeom_SurfaceOfRevolution {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom_SurfaceOfRevolution::~PGeom_SurfaceOfRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom_SurfaceOfRevolution {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2685,7 +2711,7 @@ class PGeom_Axis2Placement : public PGeom_AxisPlacement {
 };
 %extend PGeom_Axis2Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Axis2Placement::~PGeom_Axis2Placement %{
@@ -2698,95 +2724,6 @@ def __del__(self):
 %}
 
 %extend PGeom_Axis2Placement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PGeom_SweptSurface;
-class PGeom_SweptSurface : public PGeom_Surface {
-	public:
-		%feature("autodoc", "1");
-		void BasisCurve(const Handle_PGeom_Curve &aBasisCurve);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve BasisCurve() const;
-		%feature("autodoc", "1");
-		void Direction(const gp_Dir aDirection);
-		%feature("autodoc", "1");
-		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		PGeom_SweptSurface(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom_Curve _CSFDB_GetPGeom_SweptSurfacebasisCurve() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPGeom_SweptSurfacebasisCurve(const Handle_PGeom_Curve &p);
-		%feature("autodoc", "1");
-		const gp_Dir  _CSFDB_GetPGeom_SweptSurfacedirection() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom_SweptSurface {
-	Handle_PGeom_SweptSurface GetHandle() {
-	return *(Handle_PGeom_SweptSurface*) &$self;
-	}
-};
-%extend PGeom_SweptSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom_SweptSurface::~PGeom_SweptSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom_SweptSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend PGeom_SweptSurface {
-	PGeom_SweptSurface () {}
-};
-
-
-%nodefaultctor PGeom_SurfaceOfLinearExtrusion;
-class PGeom_SurfaceOfLinearExtrusion : public PGeom_SweptSurface {
-	public:
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion();
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection);
-		%feature("autodoc", "1");
-		PGeom_SurfaceOfLinearExtrusion(const Storage_stCONSTclCOM &a);
-
-};
-%extend PGeom_SurfaceOfLinearExtrusion {
-	Handle_PGeom_SurfaceOfLinearExtrusion GetHandle() {
-	return *(Handle_PGeom_SurfaceOfLinearExtrusion*) &$self;
-	}
-};
-%extend PGeom_SurfaceOfLinearExtrusion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PGeom_SurfaceOfLinearExtrusion::~PGeom_SurfaceOfLinearExtrusion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom_SurfaceOfLinearExtrusion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2821,7 +2758,7 @@ class PGeom_CylindricalSurface : public PGeom_ElementarySurface {
 };
 %extend PGeom_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_CylindricalSurface::~PGeom_CylindricalSurface %{
@@ -2860,7 +2797,7 @@ class PGeom_Axis1Placement : public PGeom_AxisPlacement {
 };
 %extend PGeom_Axis1Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Axis1Placement::~PGeom_Axis1Placement %{
@@ -2907,7 +2844,7 @@ class PGeom_SphericalSurface : public PGeom_ElementarySurface {
 };
 %extend PGeom_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_SphericalSurface::~PGeom_SphericalSurface %{
@@ -2970,7 +2907,7 @@ class PGeom_TrimmedCurve : public PGeom_BoundedCurve {
 };
 %extend PGeom_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_TrimmedCurve::~PGeom_TrimmedCurve %{
@@ -3033,7 +2970,7 @@ class PGeom_BezierCurve : public PGeom_BoundedCurve {
 };
 %extend PGeom_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_BezierCurve::~PGeom_BezierCurve %{
@@ -3088,7 +3025,7 @@ class PGeom_OffsetSurface : public PGeom_Surface {
 };
 %extend PGeom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_OffsetSurface::~PGeom_OffsetSurface %{
@@ -3101,6 +3038,61 @@ def __del__(self):
 %}
 
 %extend PGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PGeom_Ellipse;
+class PGeom_Ellipse : public PGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		PGeom_Ellipse();
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const gp_Ax2 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		void MajorRadius(const Standard_Real aMajorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		void MinorRadius(const Standard_Real aMinorRadius);
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_Ellipse(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipsemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipsemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_EllipseminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_EllipseminorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom_Ellipse {
+	Handle_PGeom_Ellipse GetHandle() {
+	return *(Handle_PGeom_Ellipse*) &$self;
+	}
+};
+%extend PGeom_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PGeom_Ellipse::~PGeom_Ellipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom_Ellipse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3143,7 +3135,7 @@ class PGeom_ConicalSurface : public PGeom_ElementarySurface {
 };
 %extend PGeom_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_ConicalSurface::~PGeom_ConicalSurface %{
@@ -3162,36 +3154,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor PGeom_SurfaceOfRevolution;
-class PGeom_SurfaceOfRevolution : public PGeom_SweptSurface {
+%nodefaultctor PGeom_ToroidalSurface;
+class PGeom_ToroidalSurface : public PGeom_ElementarySurface {
 	public:
 		%feature("autodoc", "1");
-		PGeom_SurfaceOfRevolution();
+		PGeom_ToroidalSurface();
 		%feature("autodoc", "1");
-		PGeom_SurfaceOfRevolution(const Handle_PGeom_Curve &aBasisCurve, const gp_Dir aDirection, const gp_Pnt aLocation);
+		PGeom_ToroidalSurface(const gp_Ax3 aPosition, const Standard_Real aMajorRadius, const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
-		void Location(const gp_Pnt aLocation);
+		void MajorRadius(const Standard_Real aMajorRadius);
 		%feature("autodoc", "1");
-		gp_Pnt Location() const;
+		Standard_Real MajorRadius() const;
 		%feature("autodoc", "1");
-		PGeom_SurfaceOfRevolution(const Storage_stCONSTclCOM &a);
+		void MinorRadius(const Standard_Real aMinorRadius);
 		%feature("autodoc", "1");
-		const gp_Pnt  _CSFDB_GetPGeom_SurfaceOfRevolutionlocation() const;
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		PGeom_ToroidalSurface(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_ToroidalSurfacemajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_ToroidalSurfacemajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPGeom_ToroidalSurfaceminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPGeom_ToroidalSurfaceminorRadius(const Standard_Real p);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PGeom_SurfaceOfRevolution {
-	Handle_PGeom_SurfaceOfRevolution GetHandle() {
-	return *(Handle_PGeom_SurfaceOfRevolution*) &$self;
+%extend PGeom_ToroidalSurface {
+	Handle_PGeom_ToroidalSurface GetHandle() {
+	return *(Handle_PGeom_ToroidalSurface*) &$self;
 	}
 };
-%extend PGeom_SurfaceOfRevolution {
+%extend PGeom_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PGeom_SurfaceOfRevolution::~PGeom_SurfaceOfRevolution %{
+%feature("shadow") PGeom_ToroidalSurface::~PGeom_ToroidalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3200,7 +3202,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PGeom_SurfaceOfRevolution {
+%extend PGeom_ToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3243,7 +3245,7 @@ class PGeom_Hyperbola : public PGeom_Conic {
 };
 %extend PGeom_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Hyperbola::~PGeom_Hyperbola %{
@@ -3282,7 +3284,7 @@ class PGeom_Plane : public PGeom_ElementarySurface {
 };
 %extend PGeom_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_Plane::~PGeom_Plane %{
@@ -3321,7 +3323,7 @@ class PGeom_VectorWithMagnitude : public PGeom_Vector {
 };
 %extend PGeom_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PGeom_VectorWithMagnitude::~PGeom_VectorWithMagnitude %{

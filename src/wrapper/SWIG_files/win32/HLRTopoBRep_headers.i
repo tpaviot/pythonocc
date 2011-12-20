@@ -54,12 +54,12 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<HLRAlgo_Projector.hxx>
+#include<BRepTopAdaptor_MapOfShapeTool.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom2d_Line.hxx>
-#include<HLRAlgo_Projector.hxx>
-#include<BRepTopAdaptor_MapOfShapeTool.hxx>
 #include<Contap_Contour.hxx>
 %}

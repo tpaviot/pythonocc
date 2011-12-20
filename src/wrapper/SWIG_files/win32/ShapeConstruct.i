@@ -185,7 +185,7 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 };
 %extend ShapeConstruct_ProjectCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeConstruct_ProjectCurveOnSurface::~ShapeConstruct_ProjectCurveOnSurface %{
@@ -198,43 +198,6 @@ def __del__(self):
 %}
 
 %extend ShapeConstruct_ProjectCurveOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
-class ShapeConstruct_CompBezierCurvesToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
-		%feature("autodoc", "1");
-		void AddCurve(const TColgp_Array1OfPnt &Poles);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-
-};
-%feature("shadow") ShapeConstruct_CompBezierCurvesToBSplineCurve::~ShapeConstruct_CompBezierCurvesToBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -338,6 +301,43 @@ def __del__(self):
 %}
 
 %extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
+class ShapeConstruct_CompBezierCurvesToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void AddCurve(const TColgp_Array1OfPnt &Poles);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+
+};
+%feature("shadow") ShapeConstruct_CompBezierCurvesToBSplineCurve::~ShapeConstruct_CompBezierCurvesToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

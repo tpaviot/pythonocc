@@ -361,6 +361,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerNode;
+class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode();
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
+	MAT_DataMapNodeOfDataMapOfIntegerNode* GetObject() {
+	return (MAT_DataMapNodeOfDataMapOfIntegerNode*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MAT_ListOfEdge;
 class Handle_MAT_ListOfEdge : public Handle_MMgt_TShared {
 	public:
@@ -665,44 +703,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MAT_DataMapNodeOfDataMapOfIntegerNode;
-class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode();
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const Handle_MAT_DataMapNodeOfDataMapOfIntegerNode &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode & operator=(const MAT_DataMapNodeOfDataMapOfIntegerNode *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT_DataMapNodeOfDataMapOfIntegerNode DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
-	MAT_DataMapNodeOfDataMapOfIntegerNode* GetObject() {
-	return (MAT_DataMapNodeOfDataMapOfIntegerNode*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MAT_DataMapOfIntegerBasicElt;
 class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 	public:
@@ -766,7 +766,7 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 };
 %extend MAT_SequenceNodeOfSequenceOfArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_SequenceNodeOfSequenceOfArc::~MAT_SequenceNodeOfSequenceOfArc %{
@@ -779,6 +779,57 @@ def __del__(self):
 %}
 
 %extend MAT_SequenceNodeOfSequenceOfArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_TListNodeOfListOfEdge;
+class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT_TListNodeOfListOfEdge();
+		%feature("autodoc", "1");
+		MAT_TListNodeOfListOfEdge(const Handle_MAT_Edge &anitem);
+		%feature("autodoc", "1");
+		Handle_MAT_Edge GetItem() const;
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge Next() const;
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge Previous() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_MAT_Edge &anitem);
+		%feature("autodoc", "1");
+		void Next(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
+		%feature("autodoc", "1");
+		void Previous(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
+		%feature("autodoc", "1");
+		void Dummy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_TListNodeOfListOfEdge {
+	Handle_MAT_TListNodeOfListOfEdge GetHandle() {
+	return *(Handle_MAT_TListNodeOfListOfEdge*) &$self;
+	}
+};
+%extend MAT_TListNodeOfListOfEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_TListNodeOfListOfEdge::~MAT_TListNodeOfListOfEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_TListNodeOfListOfEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -828,7 +879,7 @@ class MAT_Graph : public MMgt_TShared {
 };
 %extend MAT_Graph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_Graph::~MAT_Graph %{
@@ -923,6 +974,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor MAT_SequenceOfBasicElt;
+class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		MAT_SequenceOfBasicElt();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const MAT_SequenceOfBasicElt & Assign(const MAT_SequenceOfBasicElt &Other);
+		%feature("autodoc", "1");
+		const MAT_SequenceOfBasicElt & operator=(const MAT_SequenceOfBasicElt &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void Append(MAT_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void Prepend(MAT_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_MAT_BasicElt &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & First() const;
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MAT_BasicElt & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") MAT_SequenceOfBasicElt::~MAT_SequenceOfBasicElt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_SequenceOfBasicElt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MAT_TListNodeOfListOfBisector;
 class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 	public:
@@ -955,7 +1071,7 @@ class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 };
 %extend MAT_TListNodeOfListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_TListNodeOfListOfBisector::~MAT_TListNodeOfListOfBisector %{
@@ -974,62 +1090,84 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT_Arc;
-class MAT_Arc : public MMgt_TShared {
+%nodefaultctor MAT_Bisector;
+class MAT_Bisector : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const Handle_MAT_BasicElt &FirstElement, const Handle_MAT_BasicElt &SecondElement);
+		MAT_Bisector();
 		%feature("autodoc", "1");
-		Standard_Integer Index() const;
+		void AddBisector(const Handle_MAT_Bisector &abisector) const;
 		%feature("autodoc", "1");
-		Standard_Integer GeomIndex() const;
+		Handle_MAT_ListOfBisector List() const;
 		%feature("autodoc", "1");
-		Handle_MAT_BasicElt FirstElement() const;
+		Handle_MAT_Bisector FirstBisector() const;
 		%feature("autodoc", "1");
-		Handle_MAT_BasicElt SecondElement() const;
+		Handle_MAT_Bisector LastBisector() const;
 		%feature("autodoc", "1");
-		Handle_MAT_Node FirstNode() const;
+		void BisectorNumber(const Standard_Integer anumber);
 		%feature("autodoc", "1");
-		Handle_MAT_Node SecondNode() const;
+		void IndexNumber(const Standard_Integer anumber);
 		%feature("autodoc", "1");
-		Handle_MAT_Node TheOtherNode(const Handle_MAT_Node &aNode) const;
+		void FirstEdge(const Handle_MAT_Edge &anedge);
 		%feature("autodoc", "1");
-		Standard_Boolean HasNeighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		void SecondEdge(const Handle_MAT_Edge &anedge);
 		%feature("autodoc", "1");
-		Handle_MAT_Arc Neighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		void IssuePoint(const Standard_Integer apoint);
 		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer anInteger);
+		void EndPoint(const Standard_Integer apoint);
 		%feature("autodoc", "1");
-		void SetGeomIndex(const Standard_Integer anInteger);
+		void DistIssuePoint(const Standard_Real areal);
 		%feature("autodoc", "1");
-		void SetFirstElement(const Handle_MAT_BasicElt &aBasicElt);
+		void FirstVector(const Standard_Integer avector);
 		%feature("autodoc", "1");
-		void SetSecondElement(const Handle_MAT_BasicElt &aBasicElt);
+		void SecondVector(const Standard_Integer avector);
 		%feature("autodoc", "1");
-		void SetFirstNode(const Handle_MAT_Node &aNode);
+		void Sense(const Standard_Real asense);
 		%feature("autodoc", "1");
-		void SetSecondNode(const Handle_MAT_Node &aNode);
+		void FirstParameter(const Standard_Real aparameter);
 		%feature("autodoc", "1");
-		void SetFirstArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		void SecondParameter(const Standard_Real aparameter);
 		%feature("autodoc", "1");
-		void SetSecondArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		Standard_Integer BisectorNumber() const;
 		%feature("autodoc", "1");
-		void SetNeighbour(const MAT_Side aSide, const Handle_MAT_Node &aNode, const Handle_MAT_Arc &anArc);
+		Standard_Integer IndexNumber() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Edge FirstEdge() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Edge SecondEdge() const;
+		%feature("autodoc", "1");
+		Standard_Integer IssuePoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer EndPoint() const;
+		%feature("autodoc", "1");
+		Standard_Real DistIssuePoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstVector() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondVector() const;
+		%feature("autodoc", "1");
+		Standard_Real Sense() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real SecondParameter() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MAT_Arc {
-	Handle_MAT_Arc GetHandle() {
-	return *(Handle_MAT_Arc*) &$self;
+%extend MAT_Bisector {
+	Handle_MAT_Bisector GetHandle() {
+	return *(Handle_MAT_Bisector*) &$self;
 	}
 };
-%extend MAT_Arc {
+%extend MAT_Bisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") MAT_Arc::~MAT_Arc %{
+%feature("shadow") MAT_Bisector::~MAT_Bisector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1038,7 +1176,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT_Arc {
+%extend MAT_Bisector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1111,7 +1249,7 @@ class MAT_ListOfBisector : public MMgt_TShared {
 };
 %extend MAT_ListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_ListOfBisector::~MAT_ListOfBisector %{
@@ -1168,7 +1306,7 @@ class MAT_Edge : public MMgt_TShared {
 };
 %extend MAT_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_Edge::~MAT_Edge %{
@@ -1344,7 +1482,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
@@ -1357,6 +1495,231 @@ def __del__(self):
 %}
 
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_BasicElt;
+class MAT_BasicElt : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT_BasicElt(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		Handle_MAT_Arc StartArc() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Arc EndArc() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		Standard_Integer GeomIndex() const;
+		%feature("autodoc", "1");
+		void SetStartArc(const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetEndArc(const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		void SetGeomIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_BasicElt {
+	Handle_MAT_BasicElt GetHandle() {
+	return *(Handle_MAT_BasicElt*) &$self;
+	}
+};
+%extend MAT_BasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_BasicElt::~MAT_BasicElt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_BasicElt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBisector;
+class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapNodeOfDataMapOfIntegerBisector(const Standard_Integer &K, const Handle_MAT_Bisector &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_MAT_Bisector & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
+	Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector GetHandle() {
+	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector*) &$self;
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBisector::~MAT_DataMapNodeOfDataMapOfIntegerBisector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_DataMapOfIntegerArc;
+class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerArc(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerArc & Assign(const MAT_DataMapOfIntegerArc &Other);
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerArc & operator=(const MAT_DataMapOfIntegerArc &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Arc &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_MAT_Arc & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_MAT_Arc & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_MAT_Arc & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_MAT_Arc & operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") MAT_DataMapOfIntegerArc::~MAT_DataMapOfIntegerArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_DataMapOfIntegerArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerArc;
+class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapNodeOfDataMapOfIntegerArc(const Standard_Integer &K, const Handle_MAT_Arc &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_MAT_Arc & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	Handle_MAT_DataMapNodeOfDataMapOfIntegerArc GetHandle() {
+	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerArc*) &$self;
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerArc::~MAT_DataMapNodeOfDataMapOfIntegerArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerNode;
+class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapIteratorOfDataMapOfIntegerNode();
+		%feature("autodoc", "1");
+		MAT_DataMapIteratorOfDataMapOfIntegerNode(const MAT_DataMapOfIntegerNode &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MAT_DataMapOfIntegerNode &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Handle_MAT_Node & Value() const;
+
+};
+%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerNode::~MAT_DataMapIteratorOfDataMapOfIntegerNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1399,7 +1762,7 @@ class MAT_Node : public MMgt_TShared {
 };
 %extend MAT_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_Node::~MAT_Node %{
@@ -1418,22 +1781,62 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT_DataMapIteratorOfDataMapOfIntegerNode;
-class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIterator {
+%nodefaultctor MAT_Arc;
+class MAT_Arc : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerNode();
+		MAT_Arc(const Standard_Integer ArcIndex, const Standard_Integer GeomIndex, const Handle_MAT_BasicElt &FirstElement, const Handle_MAT_BasicElt &SecondElement);
 		%feature("autodoc", "1");
-		MAT_DataMapIteratorOfDataMapOfIntegerNode(const MAT_DataMapOfIntegerNode &aMap);
+		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		void Initialize(const MAT_DataMapOfIntegerNode &aMap);
+		Standard_Integer GeomIndex() const;
 		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
+		Handle_MAT_BasicElt FirstElement() const;
 		%feature("autodoc", "1");
-		const Handle_MAT_Node & Value() const;
+		Handle_MAT_BasicElt SecondElement() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node FirstNode() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node SecondNode() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Node TheOtherNode(const Handle_MAT_Node &aNode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasNeighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		%feature("autodoc", "1");
+		Handle_MAT_Arc Neighbour(const Handle_MAT_Node &aNode, const MAT_Side aSide) const;
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		void SetGeomIndex(const Standard_Integer anInteger);
+		%feature("autodoc", "1");
+		void SetFirstElement(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		void SetSecondElement(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		void SetFirstNode(const Handle_MAT_Node &aNode);
+		%feature("autodoc", "1");
+		void SetSecondNode(const Handle_MAT_Node &aNode);
+		%feature("autodoc", "1");
+		void SetFirstArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetSecondArc(const MAT_Side aSide, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		void SetNeighbour(const MAT_Side aSide, const Handle_MAT_Node &aNode, const Handle_MAT_Arc &anArc);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MAT_DataMapIteratorOfDataMapOfIntegerNode::~MAT_DataMapIteratorOfDataMapOfIntegerNode %{
+%extend MAT_Arc {
+	Handle_MAT_Arc GetHandle() {
+	return *(Handle_MAT_Arc*) &$self;
+	}
+};
+%extend MAT_Arc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_Arc::~MAT_Arc %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1442,63 +1845,80 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
+%extend MAT_Arc {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor MAT_SequenceOfBasicElt;
-class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
+%nodefaultctor MAT_SequenceNodeOfSequenceOfBasicElt;
+class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		MAT_SequenceOfBasicElt();
+		MAT_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_SequenceNodeOfSequenceOfBasicElt {
+	Handle_MAT_SequenceNodeOfSequenceOfBasicElt GetHandle() {
+	return *(Handle_MAT_SequenceNodeOfSequenceOfBasicElt*) &$self;
+	}
+};
+%extend MAT_SequenceNodeOfSequenceOfBasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT_SequenceNodeOfSequenceOfBasicElt::~MAT_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_SequenceNodeOfSequenceOfBasicElt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT_DataMapOfIntegerNode;
+class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerNode(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerNode & Assign(const MAT_DataMapOfIntegerNode &Other);
+		%feature("autodoc", "1");
+		MAT_DataMapOfIntegerNode & operator=(const MAT_DataMapOfIntegerNode &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const MAT_SequenceOfBasicElt & Assign(const MAT_SequenceOfBasicElt &Other);
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Node &I);
 		%feature("autodoc", "1");
-		const MAT_SequenceOfBasicElt & operator=(const MAT_SequenceOfBasicElt &Other);
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		void Append(const Handle_MAT_BasicElt &T);
+		Standard_Boolean UnBind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		void Append(MAT_SequenceOfBasicElt & S);
+		const Handle_MAT_Node & Find(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT_BasicElt &T);
+		const Handle_MAT_Node & operator()(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		void Prepend(MAT_SequenceOfBasicElt & S);
+		Handle_MAT_Node & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT_BasicElt &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & First() const;
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, MAT_SequenceOfBasicElt & S);
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MAT_BasicElt & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT_BasicElt &I);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		Handle_MAT_Node & operator()(const Standard_Integer &K);
 
 };
-%feature("shadow") MAT_SequenceOfBasicElt::~MAT_SequenceOfBasicElt %{
+%feature("shadow") MAT_DataMapOfIntegerNode::~MAT_DataMapOfIntegerNode %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1507,47 +1927,45 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT_SequenceOfBasicElt {
+%extend MAT_DataMapOfIntegerNode {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBisector;
-class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
+%nodefaultctor MAT_Zone;
+class MAT_Zone : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		MAT_DataMapNodeOfDataMapOfIntegerBisector(const Standard_Integer &K, const Handle_MAT_Bisector &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
+		MAT_Zone();
 		%feature("autodoc", "1");
-		Handle_MAT_Bisector & Value() const;
+		MAT_Zone(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		void Perform(const Handle_MAT_BasicElt &aBasicElt);
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfArcs() const;
+		%feature("autodoc", "1");
+		Handle_MAT_Arc ArcOnFrontier(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean NoEmptyZone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Limited() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
-	Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector GetHandle() {
-	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector*) &$self;
+%extend MAT_Zone {
+	Handle_MAT_Zone GetHandle() {
+	return *(Handle_MAT_Zone*) &$self;
 	}
 };
-%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
+%extend MAT_Zone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBisector::~MAT_DataMapNodeOfDataMapOfIntegerBisector %{
+%feature("shadow") MAT_Zone::~MAT_Zone %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1556,56 +1974,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerArc;
-class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MAT_DataMapNodeOfDataMapOfIntegerArc(const Standard_Integer &K, const Handle_MAT_Arc &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_MAT_Arc & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	Handle_MAT_DataMapNodeOfDataMapOfIntegerArc GetHandle() {
-	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerArc*) &$self;
-	}
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerArc::~MAT_DataMapNodeOfDataMapOfIntegerArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+%extend MAT_Zone {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1678,7 +2047,7 @@ class MAT_ListOfEdge : public MMgt_TShared {
 };
 %extend MAT_ListOfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_ListOfEdge::~MAT_ListOfEdge %{
@@ -1691,282 +2060,6 @@ def __del__(self):
 %}
 
 %extend MAT_ListOfEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_SequenceNodeOfSequenceOfBasicElt;
-class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MAT_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_SequenceNodeOfSequenceOfBasicElt {
-	Handle_MAT_SequenceNodeOfSequenceOfBasicElt GetHandle() {
-	return *(Handle_MAT_SequenceNodeOfSequenceOfBasicElt*) &$self;
-	}
-};
-%extend MAT_SequenceNodeOfSequenceOfBasicElt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_SequenceNodeOfSequenceOfBasicElt::~MAT_SequenceNodeOfSequenceOfBasicElt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_SequenceNodeOfSequenceOfBasicElt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_DataMapOfIntegerNode;
-class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerNode(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerNode & Assign(const MAT_DataMapOfIntegerNode &Other);
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerNode & operator=(const MAT_DataMapOfIntegerNode &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Node &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_MAT_Node & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_MAT_Node & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_MAT_Node & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_MAT_Node & operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") MAT_DataMapOfIntegerNode::~MAT_DataMapOfIntegerNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_DataMapOfIntegerNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_BasicElt;
-class MAT_BasicElt : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_BasicElt(const Standard_Integer anInteger);
-		%feature("autodoc", "1");
-		Handle_MAT_Arc StartArc() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Arc EndArc() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		Standard_Integer GeomIndex() const;
-		%feature("autodoc", "1");
-		void SetStartArc(const Handle_MAT_Arc &anArc);
-		%feature("autodoc", "1");
-		void SetEndArc(const Handle_MAT_Arc &anArc);
-		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer anInteger);
-		%feature("autodoc", "1");
-		void SetGeomIndex(const Standard_Integer anInteger);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_BasicElt {
-	Handle_MAT_BasicElt GetHandle() {
-	return *(Handle_MAT_BasicElt*) &$self;
-	}
-};
-%extend MAT_BasicElt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_BasicElt::~MAT_BasicElt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_BasicElt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_Zone;
-class MAT_Zone : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_Zone();
-		%feature("autodoc", "1");
-		MAT_Zone(const Handle_MAT_BasicElt &aBasicElt);
-		%feature("autodoc", "1");
-		void Perform(const Handle_MAT_BasicElt &aBasicElt);
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfArcs() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Arc ArcOnFrontier(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean NoEmptyZone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Limited() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_Zone {
-	Handle_MAT_Zone GetHandle() {
-	return *(Handle_MAT_Zone*) &$self;
-	}
-};
-%extend MAT_Zone {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_Zone::~MAT_Zone %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_Zone {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_TListNodeOfListOfEdge;
-class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_TListNodeOfListOfEdge();
-		%feature("autodoc", "1");
-		MAT_TListNodeOfListOfEdge(const Handle_MAT_Edge &anitem);
-		%feature("autodoc", "1");
-		Handle_MAT_Edge GetItem() const;
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge Next() const;
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge Previous() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_MAT_Edge &anitem);
-		%feature("autodoc", "1");
-		void Next(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
-		%feature("autodoc", "1");
-		void Previous(const Handle_MAT_TListNodeOfListOfEdge &atlistnode);
-		%feature("autodoc", "1");
-		void Dummy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_TListNodeOfListOfEdge {
-	Handle_MAT_TListNodeOfListOfEdge GetHandle() {
-	return *(Handle_MAT_TListNodeOfListOfEdge*) &$self;
-	}
-};
-%extend MAT_TListNodeOfListOfEdge {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_TListNodeOfListOfEdge::~MAT_TListNodeOfListOfEdge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_TListNodeOfListOfEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_DataMapOfIntegerArc;
-class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerArc(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerArc & Assign(const MAT_DataMapOfIntegerArc &Other);
-		%feature("autodoc", "1");
-		MAT_DataMapOfIntegerArc & operator=(const MAT_DataMapOfIntegerArc &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_MAT_Arc &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_MAT_Arc & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_MAT_Arc & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_MAT_Arc & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_MAT_Arc & operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") MAT_DataMapOfIntegerArc::~MAT_DataMapOfIntegerArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_DataMapOfIntegerArc {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2003,7 +2096,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerNode::~MAT_DataMapNodeOfDataMapOfIntegerNode %{
@@ -2016,99 +2109,6 @@ def __del__(self):
 %}
 
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_Bisector;
-class MAT_Bisector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT_Bisector();
-		%feature("autodoc", "1");
-		void AddBisector(const Handle_MAT_Bisector &abisector) const;
-		%feature("autodoc", "1");
-		Handle_MAT_ListOfBisector List() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector FirstBisector() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Bisector LastBisector() const;
-		%feature("autodoc", "1");
-		void BisectorNumber(const Standard_Integer anumber);
-		%feature("autodoc", "1");
-		void IndexNumber(const Standard_Integer anumber);
-		%feature("autodoc", "1");
-		void FirstEdge(const Handle_MAT_Edge &anedge);
-		%feature("autodoc", "1");
-		void SecondEdge(const Handle_MAT_Edge &anedge);
-		%feature("autodoc", "1");
-		void IssuePoint(const Standard_Integer apoint);
-		%feature("autodoc", "1");
-		void EndPoint(const Standard_Integer apoint);
-		%feature("autodoc", "1");
-		void DistIssuePoint(const Standard_Real areal);
-		%feature("autodoc", "1");
-		void FirstVector(const Standard_Integer avector);
-		%feature("autodoc", "1");
-		void SecondVector(const Standard_Integer avector);
-		%feature("autodoc", "1");
-		void Sense(const Standard_Real asense);
-		%feature("autodoc", "1");
-		void FirstParameter(const Standard_Real aparameter);
-		%feature("autodoc", "1");
-		void SecondParameter(const Standard_Real aparameter);
-		%feature("autodoc", "1");
-		Standard_Integer BisectorNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexNumber() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Edge FirstEdge() const;
-		%feature("autodoc", "1");
-		Handle_MAT_Edge SecondEdge() const;
-		%feature("autodoc", "1");
-		Standard_Integer IssuePoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer EndPoint() const;
-		%feature("autodoc", "1");
-		Standard_Real DistIssuePoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstVector() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondVector() const;
-		%feature("autodoc", "1");
-		Standard_Real Sense() const;
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real SecondParameter() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer ashift, const Standard_Integer alevel) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_Bisector {
-	Handle_MAT_Bisector GetHandle() {
-	return *(Handle_MAT_Bisector*) &$self;
-	}
-};
-%extend MAT_Bisector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT_Bisector::~MAT_Bisector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_Bisector {
 	void _kill_pointed() {
 		delete $self;
 	}

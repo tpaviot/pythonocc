@@ -177,7 +177,7 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 };
 %extend Geom2dAdaptor_GHCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Geom2dAdaptor_GHCurve::~Geom2dAdaptor_GHCurve %{
@@ -207,6 +207,8 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S);
 		%feature("autodoc", "1");
 		Geom2dAdaptor_HCurve(const Handle_Geom2d_Curve &S, const Standard_Real UFirst, const Standard_Real ULast);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Geom2dAdaptor_HCurve {
@@ -216,7 +218,7 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 };
 %extend Geom2dAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Geom2dAdaptor_HCurve::~Geom2dAdaptor_HCurve %{

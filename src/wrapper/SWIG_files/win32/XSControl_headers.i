@@ -123,8 +123,10 @@ $HeaderURL$
 #include<Handle_IFSelect_WorkLibrary.hxx>
 #include<Handle_Transfer_ActorOfTransientProcess.hxx>
 #include<Handle_Transfer_ActorOfFinderProcess.hxx>
-#include<Handle_TColStd_HSequenceOfTransient.hxx>
+#include<Interface_Graph.hxx>
+#include<Interface_EntityIterator.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_TCollection_HExtendedString.hxx>
@@ -132,8 +134,6 @@ $HeaderURL$
 #include<Handle_TColStd_HSequenceOfHExtendedString.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
-#include<Interface_Graph.hxx>
-#include<Interface_EntityIterator.hxx>
 #include<Handle_Interface_HGraph.hxx>
 #include<Handle_Transfer_ResultFromModel.hxx>
 #include<XSControl.hxx>

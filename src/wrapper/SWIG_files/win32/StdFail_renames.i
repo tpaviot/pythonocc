@@ -23,3 +23,18 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_StdFail_UndefinedValue::DownCast;
+%rename(DownCast) Handle_StdFail_NotDone::DownCast;
+%rename(DownCast) Handle_StdFail_InfiniteSolutions::DownCast;
+%rename(DownCast) Handle_StdFail_Undefined::DownCast;
+%rename(DownCast) Handle_StdFail_UndefinedDerivative::DownCast;
+%rename(Raise) StdFail_UndefinedDerivative::Raise;
+%rename(NewInstance) StdFail_UndefinedDerivative::NewInstance;
+%rename(Raise) StdFail_InfiniteSolutions::Raise;
+%rename(NewInstance) StdFail_InfiniteSolutions::NewInstance;
+%rename(Raise) StdFail_NotDone::Raise;
+%rename(NewInstance) StdFail_NotDone::NewInstance;
+%rename(Raise) StdFail_Undefined::Raise;
+%rename(NewInstance) StdFail_Undefined::NewInstance;
+%rename(Raise) StdFail_UndefinedValue::Raise;
+%rename(NewInstance) StdFail_UndefinedValue::NewInstance;

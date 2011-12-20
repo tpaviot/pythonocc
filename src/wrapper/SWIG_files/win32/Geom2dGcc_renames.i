@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(TheType) Geom2dGcc_MyCurveTool::TheType;
+%rename(Line) Geom2dGcc_MyCurveTool::Line;
+%rename(Circle) Geom2dGcc_MyCurveTool::Circle;
+%rename(Ellipse) Geom2dGcc_MyCurveTool::Ellipse;
+%rename(Parabola) Geom2dGcc_MyCurveTool::Parabola;
+%rename(Hyperbola) Geom2dGcc_MyCurveTool::Hyperbola;
+%rename(FirstParameter) Geom2dGcc_MyCurveTool::FirstParameter;
+%rename(LastParameter) Geom2dGcc_MyCurveTool::LastParameter;
+%rename(EpsX) Geom2dGcc_MyCurveTool::EpsX;
+%rename(NbSamples) Geom2dGcc_MyCurveTool::NbSamples;
+%rename(Value) Geom2dGcc_MyCurveTool::Value;
+%rename(D1) Geom2dGcc_MyCurveTool::D1;
+%rename(D2) Geom2dGcc_MyCurveTool::D2;
+%rename(IsComposite) Geom2dGcc_MyCurveTool::IsComposite;
+%rename(GetIntervals) Geom2dGcc_MyCurveTool::GetIntervals;
+%rename(GetInterval) Geom2dGcc_MyCurveTool::GetInterval;
+%rename(SetCurrentInterval) Geom2dGcc_MyCurveTool::SetCurrentInterval;
+%rename(FirstParameter) Geom2dGcc_CurveTool::FirstParameter;
+%rename(LastParameter) Geom2dGcc_CurveTool::LastParameter;
+%rename(EpsX) Geom2dGcc_CurveTool::EpsX;
+%rename(NbSamples) Geom2dGcc_CurveTool::NbSamples;
+%rename(Value) Geom2dGcc_CurveTool::Value;
+%rename(D1) Geom2dGcc_CurveTool::D1;
+%rename(D2) Geom2dGcc_CurveTool::D2;
+%rename(D3) Geom2dGcc_CurveTool::D3;
+%rename(Unqualified) Geom2dGcc::Unqualified;
+%rename(Enclosing) Geom2dGcc::Enclosing;
+%rename(Enclosed) Geom2dGcc::Enclosed;
+%rename(Outside) Geom2dGcc::Outside;

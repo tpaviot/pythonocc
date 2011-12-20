@@ -30,9 +30,9 @@ import GarbageCollector
 import Standard
 import Adaptor3d
 import TopoDS
-import GeomAdaptor
-import gp
 import GeomAbs
+import gp
 import Geom
+import GeomAdaptor
 import Adaptor2d
 };

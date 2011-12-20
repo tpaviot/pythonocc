@@ -347,8 +347,8 @@ $HeaderURL$
 #include <TopOpeBRepTool_tol.hxx>
 %};
 
-%import TCollection.i
 %import MMgt.i
+%import TCollection.i
 %import Standard.i
 %import TopAbs.i
 %import TopOpeBRepDS.i

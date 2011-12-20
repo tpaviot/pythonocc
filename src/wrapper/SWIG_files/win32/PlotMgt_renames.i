@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PlotMgt_PlotterParameter::DownCast;
+%rename(DownCast) Handle_PlotMgt_PlotterDefinitionError::DownCast;
+%rename(DownCast) Handle_PlotMgt_TextManager::DownCast;
+%rename(DownCast) Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter::DownCast;
+%rename(DownCast) Handle_PlotMgt_HListOfMFTFonts::DownCast;
+%rename(DownCast) Handle_PlotMgt_HListOfPlotterParameter::DownCast;
+%rename(DownCast) Handle_PlotMgt_Plotter::DownCast;
+%rename(DownCast) Handle_PlotMgt_PlotterAccessError::DownCast;
+%rename(DownCast) Handle_PlotMgt_PlotterDriver::DownCast;
+%rename(DownCast) Handle_PlotMgt_ImageDriver::DownCast;
+%rename(Raise) PlotMgt_PlotterAccessError::Raise;
+%rename(NewInstance) PlotMgt_PlotterAccessError::NewInstance;
+%rename(Raise) PlotMgt_PlotterDefinitionError::Raise;
+%rename(NewInstance) PlotMgt_PlotterDefinitionError::NewInstance;
+%rename(ListPlotters) PlotMgt_Plotter::ListPlotters;
+%rename(DeviceList) PlotMgt::DeviceList;
+%rename(TypeFromString) PlotMgt::TypeFromString;
+%rename(StringFromType) PlotMgt::StringFromType;
+%rename(OriginFromString) PlotMgt::OriginFromString;
+%rename(StringFromOrigin) PlotMgt::StringFromOrigin;
+%rename(QualityFromString) PlotMgt::QualityFromString;
+%rename(StringFromQuality) PlotMgt::StringFromQuality;
+%rename(ImageFormatFromString) PlotMgt::ImageFormatFromString;
+%rename(StringFromImageFormat) PlotMgt::StringFromImageFormat;
+%rename(PlottingTypeFromString) PlotMgt::PlottingTypeFromString;
+%rename(StringFromPlottingType) PlotMgt::StringFromPlottingType;
+%rename(PaperFormatFromString) PlotMgt::PaperFormatFromString;
+%rename(StringFromPaperFormat) PlotMgt::StringFromPaperFormat;
+%rename(PaperSize) PlotMgt::PaperSize;

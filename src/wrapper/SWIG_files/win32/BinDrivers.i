@@ -153,7 +153,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 };
 %extend BinDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinDrivers_DocumentStorageDriver::~BinDrivers_DocumentStorageDriver %{
@@ -225,7 +225,7 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 };
 %extend BinDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinDrivers_DocumentRetrievalDriver::~BinDrivers_DocumentRetrievalDriver %{

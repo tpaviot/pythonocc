@@ -217,7 +217,7 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
@@ -384,47 +384,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
-class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent GetHandle() {
-	return *(Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*) &$self;
-	}
-};
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PTColStd_DataMapIteratorOfTransientPersistentMap;
 class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_BasicMapIterator {
 	public:
@@ -456,6 +415,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
+class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Key1() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent GetHandle() {
+	return *(Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*) &$self;
+	}
+};
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PTColStd_DataMapNodeOfTransientPersistentMap;
 class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode {
 	public:
@@ -476,7 +476,7 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTColStd_DataMapNodeOfTransientPersistentMap::~PTColStd_DataMapNodeOfTransientPersistentMap %{

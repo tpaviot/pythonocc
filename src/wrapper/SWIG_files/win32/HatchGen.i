@@ -67,44 +67,6 @@ enum HatchGen_ErrorStatus {
 
 
 
-%nodefaultctor Handle_HatchGen_SequenceNodeOfDomains;
-class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_HatchGen_SequenceNodeOfDomains();
-		%feature("autodoc", "1");
-		Handle_HatchGen_SequenceNodeOfDomains(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
-		%feature("autodoc", "1");
-		Handle_HatchGen_SequenceNodeOfDomains(const HatchGen_SequenceNodeOfDomains *anItem);
-		%feature("autodoc", "1");
-		Handle_HatchGen_SequenceNodeOfDomains & operator=(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
-		%feature("autodoc", "1");
-		Handle_HatchGen_SequenceNodeOfDomains & operator=(const HatchGen_SequenceNodeOfDomains *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HatchGen_SequenceNodeOfDomains DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HatchGen_SequenceNodeOfDomains {
-	HatchGen_SequenceNodeOfDomains* GetObject() {
-	return (HatchGen_SequenceNodeOfDomains*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HatchGen_SequenceNodeOfDomains::~Handle_HatchGen_SequenceNodeOfDomains %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HatchGen_SequenceNodeOfDomains {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnElement;
 class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_SeqNode {
 	public:
@@ -137,6 +99,44 @@ def __del__(self):
 %}
 
 %extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HatchGen_SequenceNodeOfDomains;
+class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains();
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains(const HatchGen_SequenceNodeOfDomains *anItem);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains & operator=(const Handle_HatchGen_SequenceNodeOfDomains &aHandle);
+		%feature("autodoc", "1");
+		Handle_HatchGen_SequenceNodeOfDomains & operator=(const HatchGen_SequenceNodeOfDomains *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HatchGen_SequenceNodeOfDomains DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HatchGen_SequenceNodeOfDomains {
+	HatchGen_SequenceNodeOfDomains* GetObject() {
+	return (HatchGen_SequenceNodeOfDomains*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HatchGen_SequenceNodeOfDomains::~Handle_HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HatchGen_SequenceNodeOfDomains {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -311,6 +311,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor HatchGen_Domain;
+class HatchGen_Domain {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_Domain();
+		%feature("autodoc", "1");
+		HatchGen_Domain(const HatchGen_PointOnHatching &P1, const HatchGen_PointOnHatching &P2);
+		%feature("autodoc", "1");
+		HatchGen_Domain(const HatchGen_PointOnHatching &P, const Standard_Boolean First);
+		%feature("autodoc", "1");
+		void SetPoints(const HatchGen_PointOnHatching &P1, const HatchGen_PointOnHatching &P2);
+		%feature("autodoc", "1");
+		void SetPoints();
+		%feature("autodoc", "1");
+		void SetFirstPoint(const HatchGen_PointOnHatching &P);
+		%feature("autodoc", "1");
+		void SetFirstPoint();
+		%feature("autodoc", "1");
+		void SetSecondPoint(const HatchGen_PointOnHatching &P);
+		%feature("autodoc", "1");
+		void SetSecondPoint();
+		%feature("autodoc", "1");
+		Standard_Boolean HasFirstPoint() const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnHatching & FirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasSecondPoint() const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnHatching & SecondPoint() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Index=0) const;
+
+};
+%feature("shadow") HatchGen_Domain::~HatchGen_Domain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_Domain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HatchGen_IntersectionPoint;
 class HatchGen_IntersectionPoint {
 	public:
@@ -407,6 +456,117 @@ def __del__(self):
 };
 
 
+%nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
+class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_SequenceNodeOfPointsOnElement(const HatchGen_PointOnElement &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		HatchGen_PointOnElement & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	Handle_HatchGen_SequenceNodeOfPointsOnElement GetHandle() {
+	return *(Handle_HatchGen_SequenceNodeOfPointsOnElement*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HatchGen_SequenceNodeOfDomains;
+class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_SequenceNodeOfDomains(const HatchGen_Domain &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		HatchGen_Domain & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HatchGen_SequenceNodeOfDomains {
+	Handle_HatchGen_SequenceNodeOfDomains GetHandle() {
+	return *(Handle_HatchGen_SequenceNodeOfDomains*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfDomains {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_SequenceNodeOfDomains {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;
+class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_SequenceNodeOfPointsOnHatching(const HatchGen_PointOnHatching &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		HatchGen_PointOnHatching & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HatchGen_SequenceNodeOfPointsOnHatching {
+	Handle_HatchGen_SequenceNodeOfPointsOnHatching GetHandle() {
+	return *(Handle_HatchGen_SequenceNodeOfPointsOnHatching*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfPointsOnHatching {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_SequenceNodeOfPointsOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HatchGen_PointOnElement;
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
@@ -438,43 +598,6 @@ def __del__(self):
 %}
 
 %extend HatchGen_PointOnElement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
-class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_SequenceNodeOfPointsOnElement(const HatchGen_PointOnElement &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HatchGen_SequenceNodeOfPointsOnElement {
-	Handle_HatchGen_SequenceNodeOfPointsOnElement GetHandle() {
-	return *(Handle_HatchGen_SequenceNodeOfPointsOnElement*) &$self;
-	}
-};
-%extend HatchGen_SequenceNodeOfPointsOnElement {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_SequenceNodeOfPointsOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -540,129 +663,6 @@ def __del__(self):
 %}
 
 %extend HatchGen_PointsOnElement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_SequenceNodeOfDomains;
-class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_SequenceNodeOfDomains(const HatchGen_Domain &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		HatchGen_Domain & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HatchGen_SequenceNodeOfDomains {
-	Handle_HatchGen_SequenceNodeOfDomains GetHandle() {
-	return *(Handle_HatchGen_SequenceNodeOfDomains*) &$self;
-	}
-};
-%extend HatchGen_SequenceNodeOfDomains {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_SequenceNodeOfDomains {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_Domain;
-class HatchGen_Domain {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_Domain();
-		%feature("autodoc", "1");
-		HatchGen_Domain(const HatchGen_PointOnHatching &P1, const HatchGen_PointOnHatching &P2);
-		%feature("autodoc", "1");
-		HatchGen_Domain(const HatchGen_PointOnHatching &P, const Standard_Boolean First);
-		%feature("autodoc", "1");
-		void SetPoints(const HatchGen_PointOnHatching &P1, const HatchGen_PointOnHatching &P2);
-		%feature("autodoc", "1");
-		void SetPoints();
-		%feature("autodoc", "1");
-		void SetFirstPoint(const HatchGen_PointOnHatching &P);
-		%feature("autodoc", "1");
-		void SetFirstPoint();
-		%feature("autodoc", "1");
-		void SetSecondPoint(const HatchGen_PointOnHatching &P);
-		%feature("autodoc", "1");
-		void SetSecondPoint();
-		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint() const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnHatching & FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasSecondPoint() const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnHatching & SecondPoint() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Index=0) const;
-
-};
-%feature("shadow") HatchGen_Domain::~HatchGen_Domain %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_Domain {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;
-class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_SequenceNodeOfPointsOnHatching(const HatchGen_PointOnHatching &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		HatchGen_PointOnHatching & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HatchGen_SequenceNodeOfPointsOnHatching {
-	Handle_HatchGen_SequenceNodeOfPointsOnHatching GetHandle() {
-	return *(Handle_HatchGen_SequenceNodeOfPointsOnHatching*) &$self;
-	}
-};
-%extend HatchGen_SequenceNodeOfPointsOnHatching {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_SequenceNodeOfPointsOnHatching {
 	void _kill_pointed() {
 		delete $self;
 	}

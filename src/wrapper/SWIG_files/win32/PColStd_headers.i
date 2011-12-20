@@ -119,7 +119,7 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Persistent.hxx>
-#include<Handle_PCollection_HExtendedString.hxx>
 #include<Storage_stCONSTclCOM.hxx>
+#include<Handle_PCollection_HExtendedString.hxx>
 #include<Handle_PCollection_HAsciiString.hxx>
 %}

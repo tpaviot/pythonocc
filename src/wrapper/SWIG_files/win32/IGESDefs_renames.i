@@ -23,3 +23,18 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESDefs_MacroDef::DownCast;
+%rename(DownCast) Handle_IGESDefs_GeneralModule::DownCast;
+%rename(DownCast) Handle_IGESDefs_AttributeTable::DownCast;
+%rename(DownCast) Handle_IGESDefs_GenericData::DownCast;
+%rename(DownCast) Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::DownCast;
+%rename(DownCast) Handle_IGESDefs_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESDefs_HArray1OfTabularData::DownCast;
+%rename(DownCast) Handle_IGESDefs_AssociativityDef::DownCast;
+%rename(DownCast) Handle_IGESDefs_AttributeDef::DownCast;
+%rename(DownCast) Handle_IGESDefs_Protocol::DownCast;
+%rename(DownCast) Handle_IGESDefs_UnitsData::DownCast;
+%rename(DownCast) Handle_IGESDefs_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_IGESDefs_TabularData::DownCast;
+%rename(Init) IGESDefs::Init;
+%rename(Protocol) IGESDefs::Protocol;

@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_TopExp_StackNodeOfStackOfIterator::DownCast;
+%rename(MapShapes) TopExp::MapShapes;
+%rename(MapShapesAndAncestors) TopExp::MapShapesAndAncestors;
+%rename(FirstVertex) TopExp::FirstVertex;
+%rename(LastVertex) TopExp::LastVertex;
+%rename(Vertices) TopExp::Vertices;
+%rename(CommonVertex) TopExp::CommonVertex;

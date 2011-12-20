@@ -27,11 +27,11 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import GeomAbs
-import gp
-import Geom2d
 import Bnd
+import Standard
+import gp
+import GeomAbs
+import Geom2d
 import IntSurf
 import IntAna
 import Adaptor2d

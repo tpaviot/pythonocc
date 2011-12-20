@@ -191,7 +191,7 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionPoint::~Intf_SequenceNodeOfSeqOfSectionPoint %{
@@ -228,7 +228,7 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionLine::~Intf_SequenceNodeOfSeqOfSectionLine %{
@@ -241,67 +241,6 @@ def __del__(self):
 %}
 
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Intf_SectionPoint;
-class Intf_SectionPoint {
-	public:
-		%feature("autodoc", "1");
-		const gp_Pnt  Pnt() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnSecond() const;
-		%feature("autodoc", "1");
-		Intf_PIType TypeOnFirst() const;
-		%feature("autodoc", "1");
-		Intf_PIType TypeOnSecond() const;
-		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Integer, Standard_Real]");
-
-		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real]");
-
-		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Integer, Standard_Real]");
-
-		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real]");
-
-		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real Incidence() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Intf_SectionPoint &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_SectionPoint &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOnSameEdge(const Intf_SectionPoint &Other) const;
-		%feature("autodoc", "1");
-		Intf_SectionPoint();
-		%feature("autodoc", "1");
-		Intf_SectionPoint(const gp_Pnt Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
-		%feature("autodoc", "1");
-		Intf_SectionPoint(const gp_Pnt2d Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
-		%feature("autodoc", "1");
-		void Merge(Intf_SectionPoint & Other);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Indent) const;
-
-};
-%feature("shadow") Intf_SectionPoint::~Intf_SectionPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf_SectionPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -373,6 +312,200 @@ def __del__(self):
 };
 
 
+%nodefaultctor Intf_SectionPoint;
+class Intf_SectionPoint {
+	public:
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnSecond() const;
+		%feature("autodoc", "1");
+		Intf_PIType TypeOnFirst() const;
+		%feature("autodoc", "1");
+		Intf_PIType TypeOnSecond() const;
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Integer, Standard_Real]");
+
+		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real]");
+
+		void InfoFirst(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Integer, Standard_Real]");
+
+		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real]");
+
+		void InfoSecond(Intf_PIType & Dim, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real Incidence() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Intf_SectionPoint &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_SectionPoint &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean IsOnSameEdge(const Intf_SectionPoint &Other) const;
+		%feature("autodoc", "1");
+		Intf_SectionPoint();
+		%feature("autodoc", "1");
+		Intf_SectionPoint(const gp_Pnt Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Integer AddrO2, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Integer AddrT2, const Standard_Real ParamT, const Standard_Real Incid);
+		%feature("autodoc", "1");
+		Intf_SectionPoint(const gp_Pnt2d Where, const Intf_PIType DimeO, const Standard_Integer AddrO1, const Standard_Real ParamO, const Intf_PIType DimeT, const Standard_Integer AddrT1, const Standard_Real ParamT, const Standard_Real Incid);
+		%feature("autodoc", "1");
+		void Merge(Intf_SectionPoint & Other);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+
+};
+%feature("shadow") Intf_SectionPoint::~Intf_SectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_SectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_TangentZone;
+class Intf_TangentZone {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfPoints() const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Intf_TangentZone &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_TangentZone &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
+		%feature("autodoc","ParamOnFirst() -> [Standard_Real, Standard_Real]");
+
+		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ParamOnSecond() -> [Standard_Real, Standard_Real]");
+
+		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+
+		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
+
+		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasCommonRange(const Intf_TangentZone &Other) const;
+		%feature("autodoc", "1");
+		Intf_TangentZone();
+		%feature("autodoc", "1");
+		Intf_TangentZone(const Intf_TangentZone &Other);
+		%feature("autodoc", "1");
+		void Append(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void Append(const Intf_TangentZone &Tzi);
+		%feature("autodoc", "1");
+		Standard_Boolean Insert(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void PolygonInsert(const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &Pi);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+
+};
+%feature("shadow") Intf_TangentZone::~Intf_TangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_TangentZone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_Interference;
+class Intf_Interference {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbSectionPoints() const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & PntValue(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSectionLines() const;
+		%feature("autodoc", "1");
+		const Intf_SectionLine & LineValue(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTangentZones() const;
+		%feature("autodoc", "1");
+		const Intf_TangentZone & ZoneValue(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real GetTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Intf_SectionPoint &ThePnt) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Insert(const Intf_TangentZone &TheZone);
+		%feature("autodoc", "1");
+		void Insert(const Intf_SectionPoint &pdeb, const Intf_SectionPoint &pfin);
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") Intf_Interference::~Intf_Interference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_Interference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Intf_Interference {
+	Intf_Interference () {}
+};
+
+
 %nodefaultctor Intf_SeqOfSectionLine;
 class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 	public:
@@ -438,34 +571,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor Intf_Interference;
-class Intf_Interference {
+%nodefaultctor Intf_Array1OfLin;
+class Intf_Array1OfLin {
 	public:
 		%feature("autodoc", "1");
-		Standard_Integer NbSectionPoints() const;
+		Intf_Array1OfLin(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		const Intf_SectionPoint & PntValue(const Standard_Integer Index) const;
+		Intf_Array1OfLin(const gp_Lin Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Standard_Integer NbSectionLines() const;
+		void Init(const gp_Lin V);
 		%feature("autodoc", "1");
-		const Intf_SectionLine & LineValue(const Standard_Integer Index) const;
+		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Integer NbTangentZones() const;
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		const Intf_TangentZone & ZoneValue(const Standard_Integer Index) const;
+		const Intf_Array1OfLin & Assign(const Intf_Array1OfLin &Other);
 		%feature("autodoc", "1");
-		Standard_Real GetTolerance() const;
+		const Intf_Array1OfLin & operator=(const Intf_Array1OfLin &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Intf_SectionPoint &ThePnt) const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Insert(const Intf_TangentZone &TheZone);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Insert(const Intf_SectionPoint &pdeb, const Intf_SectionPoint &pfin);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void Dump() const;
+		void SetValue(const Standard_Integer Index, const gp_Lin Value);
+		%feature("autodoc", "1");
+		const gp_Lin  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Lin  operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Lin  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Lin  operator()(const Standard_Integer Index);
 
 };
-%feature("shadow") Intf_Interference::~Intf_Interference %{
+%feature("shadow") Intf_Array1OfLin::~Intf_Array1OfLin %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -474,47 +615,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Intf_Interference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Intf_Interference {
-	Intf_Interference () {}
-};
-
-
-%nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
-class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Intf_SequenceNodeOfSeqOfTangentZone(const Intf_TangentZone &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Intf_TangentZone & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
-	Handle_Intf_SequenceNodeOfSeqOfTangentZone GetHandle() {
-	return *(Handle_Intf_SequenceNodeOfSeqOfTangentZone*) &$self;
-	}
-};
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Intf_SequenceNodeOfSeqOfTangentZone::~Intf_SequenceNodeOfSeqOfTangentZone %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf_SequenceNodeOfSeqOfTangentZone {
+%extend Intf_Array1OfLin {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -586,122 +687,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Intf_Array1OfLin;
-class Intf_Array1OfLin {
-	public:
-		%feature("autodoc", "1");
-		Intf_Array1OfLin(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Intf_Array1OfLin(const gp_Lin Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const gp_Lin V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Intf_Array1OfLin & Assign(const Intf_Array1OfLin &Other);
-		%feature("autodoc", "1");
-		const Intf_Array1OfLin & operator=(const Intf_Array1OfLin &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Lin Value);
-		%feature("autodoc", "1");
-		const gp_Lin  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Lin  operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Lin  ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Lin  operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Intf_Array1OfLin::~Intf_Array1OfLin %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf_Array1OfLin {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Intf_TangentZone;
-class Intf_TangentZone {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfPoints() const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc","ParamOnFirst() -> [Standard_Real, Standard_Real]");
-
-		void ParamOnFirst(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ParamOnSecond() -> [Standard_Real, Standard_Real]");
-
-		void ParamOnSecond(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoFirst() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
-
-		void InfoFirst(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","InfoSecond() -> [Standard_Integer, Standard_Real, Standard_Integer, Standard_Real]");
-
-		void InfoSecond(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RangeContains(const Intf_SectionPoint &ThePI) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasCommonRange(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Intf_TangentZone();
-		%feature("autodoc", "1");
-		Intf_TangentZone(const Intf_TangentZone &Other);
-		%feature("autodoc", "1");
-		void Append(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void Append(const Intf_TangentZone &Tzi);
-		%feature("autodoc", "1");
-		Standard_Boolean Insert(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void PolygonInsert(const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &Pi);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Indent) const;
-
-};
-%feature("shadow") Intf_TangentZone::~Intf_TangentZone %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf_TangentZone {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Intf_SectionLine;
 class Intf_SectionLine {
 	public:
@@ -717,8 +702,12 @@ class Intf_SectionLine {
 		Standard_Integer IsEnd(const Intf_SectionPoint &ThePI) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Intf_SectionLine &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_SectionLine &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_SectionLine &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Intf_SectionLine();
 		%feature("autodoc", "1");
@@ -737,6 +726,13 @@ class Intf_SectionLine {
 		void Close();
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Intf_SectionLine::~Intf_SectionLine %{
@@ -790,6 +786,43 @@ def __del__(self):
 %}
 
 %extend Intf_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
+class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Intf_SequenceNodeOfSeqOfTangentZone(const Intf_TangentZone &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Intf_TangentZone & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	Handle_Intf_SequenceNodeOfSeqOfTangentZone GetHandle() {
+	return *(Handle_Intf_SequenceNodeOfSeqOfTangentZone*) &$self;
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Intf_SequenceNodeOfSeqOfTangentZone::~Intf_SequenceNodeOfSeqOfTangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
 	void _kill_pointed() {
 		delete $self;
 	}

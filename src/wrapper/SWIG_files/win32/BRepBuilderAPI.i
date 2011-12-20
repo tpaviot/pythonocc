@@ -287,6 +287,123 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepBuilderAPI_Sewing;
+class BRepBuilderAPI_Sewing : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_Sewing(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  SewedShape() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbFreeEdges() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  FreeEdge(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbMultipleEdges() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  MultipleEdge(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbContigousEdges() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  ContigousEdge(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & ContigousEdgeCouple(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSectionBound(const TopoDS_Edge section) const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  SectionToBoundary(const TopoDS_Edge section) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDegeneratedShapes() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  DegeneratedShape(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDegenerated(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModified(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Modified(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModifiedSubShape(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape ModifiedSubShape(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDeletedFaces() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  DeletedFace(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		TopoDS_Face WhichFace(const TopoDS_Edge theEdg, const Standard_Integer index=1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SameParameterMode() const;
+		%feature("autodoc", "1");
+		void SetSameParameterMode(const Standard_Boolean SameParameterMode);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theToler);
+		%feature("autodoc", "1");
+		Standard_Real MinTolerance() const;
+		%feature("autodoc", "1");
+		void SetMinTolerance(const Standard_Real theMinToler);
+		%feature("autodoc", "1");
+		Standard_Real MaxTolerance() const;
+		%feature("autodoc", "1");
+		void SetMaxTolerance(const Standard_Real theMaxToler);
+		%feature("autodoc", "1");
+		Standard_Boolean FaceMode() const;
+		%feature("autodoc", "1");
+		void SetFaceMode(const Standard_Boolean theFaceMode);
+		%feature("autodoc", "1");
+		Standard_Boolean FloatingEdgesMode() const;
+		%feature("autodoc", "1");
+		void SetFloatingEdgesMode(const Standard_Boolean theFloatingEdgesMode);
+		%feature("autodoc", "1");
+		Standard_Boolean LocalTolerancesMode() const;
+		%feature("autodoc", "1");
+		void SetLocalTolerancesMode(const Standard_Boolean theLocalTolerancesMode);
+		%feature("autodoc", "1");
+		void SetNonManifoldMode(const Standard_Boolean theNonManifoldMode);
+		%feature("autodoc", "1");
+		Standard_Boolean NonManifoldMode() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepBuilderAPI_Sewing {
+	Handle_BRepBuilderAPI_Sewing GetHandle() {
+	return *(Handle_BRepBuilderAPI_Sewing*) &$self;
+	}
+};
+%extend BRepBuilderAPI_Sewing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBuilderAPI_Sewing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepBuilderAPI_MakeShell;
 class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 	public:
@@ -529,123 +646,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepBuilderAPI_Sewing;
-class BRepBuilderAPI_Sewing : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BRepBuilderAPI_Sewing(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  SewedShape() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbFreeEdges() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  FreeEdge(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMultipleEdges() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  MultipleEdge(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbContigousEdges() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  ContigousEdge(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & ContigousEdgeCouple(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSectionBound(const TopoDS_Edge section) const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  SectionToBoundary(const TopoDS_Edge section) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDegeneratedShapes() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  DegeneratedShape(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDegenerated(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModified(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Modified(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModifiedSubShape(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedSubShape(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDeletedFaces() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face  DeletedFace(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		TopoDS_Face WhichFace(const TopoDS_Edge theEdg, const Standard_Integer index=1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SameParameterMode() const;
-		%feature("autodoc", "1");
-		void SetSameParameterMode(const Standard_Boolean SameParameterMode);
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real theToler);
-		%feature("autodoc", "1");
-		Standard_Real MinTolerance() const;
-		%feature("autodoc", "1");
-		void SetMinTolerance(const Standard_Real theMinToler);
-		%feature("autodoc", "1");
-		Standard_Real MaxTolerance() const;
-		%feature("autodoc", "1");
-		void SetMaxTolerance(const Standard_Real theMaxToler);
-		%feature("autodoc", "1");
-		Standard_Boolean FaceMode() const;
-		%feature("autodoc", "1");
-		void SetFaceMode(const Standard_Boolean theFaceMode);
-		%feature("autodoc", "1");
-		Standard_Boolean FloatingEdgesMode() const;
-		%feature("autodoc", "1");
-		void SetFloatingEdgesMode(const Standard_Boolean theFloatingEdgesMode);
-		%feature("autodoc", "1");
-		Standard_Boolean LocalTolerancesMode() const;
-		%feature("autodoc", "1");
-		void SetLocalTolerancesMode(const Standard_Boolean theLocalTolerancesMode);
-		%feature("autodoc", "1");
-		void SetNonManifoldMode(const Standard_Boolean theNonManifoldMode);
-		%feature("autodoc", "1");
-		Standard_Boolean NonManifoldMode() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepBuilderAPI_Sewing {
-	Handle_BRepBuilderAPI_Sewing GetHandle() {
-	return *(Handle_BRepBuilderAPI_Sewing*) &$self;
-	}
-};
-%extend BRepBuilderAPI_Sewing {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBuilderAPI_Sewing {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepBuilderAPI_MakeEdge2d;
 class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 	public:
@@ -745,37 +745,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepBuilderAPI_Transform;
-class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
-	public:
-		%feature("autodoc", "1");
-		BRepBuilderAPI_Transform(const gp_Trsf T);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_Transform(const TopoDS_Shape S, const gp_Trsf T, const Standard_Boolean Copy=0);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape S, const Standard_Boolean Copy=0);
-		%feature("autodoc", "1");
-		virtual		const TopoDS_Shape  ModifiedShape(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
-
-};
-%feature("shadow") BRepBuilderAPI_Transform::~BRepBuilderAPI_Transform %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBuilderAPI_Transform {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepBuilderAPI_NurbsConvert;
 class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 	public:
@@ -828,6 +797,37 @@ def __del__(self):
 %}
 
 %extend BRepBuilderAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBuilderAPI_Transform;
+class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_Transform(const TopoDS_Shape S, const gp_Trsf T, const Standard_Boolean Copy=0);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape S, const Standard_Boolean Copy=0);
+		%feature("autodoc", "1");
+		virtual		const TopoDS_Shape  ModifiedShape(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
+
+};
+%feature("shadow") BRepBuilderAPI_Transform::~BRepBuilderAPI_Transform %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBuilderAPI_Transform {
 	void _kill_pointed() {
 		delete $self;
 	}

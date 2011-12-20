@@ -146,7 +146,7 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 %extend XCAFDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XCAFDrivers_DocumentRetrievalDriver::~XCAFDrivers_DocumentRetrievalDriver %{
@@ -159,43 +159,6 @@ def __del__(self):
 %}
 
 %extend XCAFDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFDrivers_DocumentStorageDriver;
-class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		XCAFDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFDrivers_DocumentStorageDriver {
-	Handle_XCAFDrivers_DocumentStorageDriver GetHandle() {
-	return *(Handle_XCAFDrivers_DocumentStorageDriver*) &$self;
-	}
-};
-%extend XCAFDrivers_DocumentStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XCAFDrivers_DocumentStorageDriver::~XCAFDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFDrivers_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -221,6 +184,43 @@ def __del__(self):
 %}
 
 %extend XCAFDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFDrivers_DocumentStorageDriver;
+class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		XCAFDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFDrivers_DocumentStorageDriver {
+	Handle_XCAFDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_XCAFDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XCAFDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XCAFDrivers_DocumentStorageDriver::~XCAFDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFDrivers_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

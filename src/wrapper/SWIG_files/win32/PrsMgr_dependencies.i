@@ -445,6 +445,7 @@ $HeaderURL$
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -466,5 +467,5 @@ $HeaderURL$
 %import MMgt.i
 %import TCollection.i
 %import Standard.i
-%import Graphic3d.i
 %import Quantity.i
+%import Graphic3d.i

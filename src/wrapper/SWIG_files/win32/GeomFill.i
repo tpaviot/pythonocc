@@ -50,11 +50,6 @@ $HeaderURL$
 %include GeomFill_headers.i
 
 
-enum GeomFill_ApproxStyle {
-	GeomFill_Section,
-	GeomFill_Location,
-	};
-
 enum GeomFill_Trihedron {
 	GeomFill_IsCorrectedFrenet,
 	GeomFill_IsFixed,
@@ -65,6 +60,11 @@ enum GeomFill_Trihedron {
 	GeomFill_IsGuidePlan,
 	GeomFill_IsGuideACWithContact,
 	GeomFill_IsGuidePlanWithContact,
+	};
+
+enum GeomFill_ApproxStyle {
+	GeomFill_Section,
+	GeomFill_Location,
 	};
 
 enum GeomFill_FillingStyle {
@@ -538,6 +538,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GeomFill_Fixed;
+class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed();
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed(const Handle_GeomFill_Fixed &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed(const GeomFill_Fixed *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed & operator=(const Handle_GeomFill_Fixed &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_Fixed & operator=(const GeomFill_Fixed *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomFill_Fixed DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_Fixed {
+	GeomFill_Fixed* GetObject() {
+	return (GeomFill_Fixed*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomFill_Fixed::~Handle_GeomFill_Fixed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomFill_Fixed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GeomFill_Line;
 class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	public:
@@ -722,44 +760,6 @@ def __del__(self):
 %}
 
 %extend Handle_GeomFill_ConstantBiNormal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_DegeneratedBound;
-class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_DegeneratedBound();
-		%feature("autodoc", "1");
-		Handle_GeomFill_DegeneratedBound(const Handle_GeomFill_DegeneratedBound &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_DegeneratedBound(const GeomFill_DegeneratedBound *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_DegeneratedBound & operator=(const Handle_GeomFill_DegeneratedBound &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_DegeneratedBound & operator=(const GeomFill_DegeneratedBound *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GeomFill_DegeneratedBound DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_DegeneratedBound {
-	GeomFill_DegeneratedBound* GetObject() {
-	return (GeomFill_DegeneratedBound*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GeomFill_DegeneratedBound::~Handle_GeomFill_DegeneratedBound %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GeomFill_DegeneratedBound {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1070,6 +1070,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GeomFill_DegeneratedBound;
+class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound();
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound(const Handle_GeomFill_DegeneratedBound &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound(const GeomFill_DegeneratedBound *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound & operator=(const Handle_GeomFill_DegeneratedBound &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DegeneratedBound & operator=(const GeomFill_DegeneratedBound *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomFill_DegeneratedBound DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_DegeneratedBound {
+	GeomFill_DegeneratedBound* GetObject() {
+	return (GeomFill_DegeneratedBound*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomFill_DegeneratedBound::~Handle_GeomFill_DegeneratedBound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomFill_DegeneratedBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GeomFill_EvolvedSection;
 class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	public:
@@ -1140,44 +1178,6 @@ def __del__(self):
 %}
 
 %extend Handle_GeomFill_DraftTrihedron {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GeomFill_Fixed;
-class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		Handle_GeomFill_Fixed();
-		%feature("autodoc", "1");
-		Handle_GeomFill_Fixed(const Handle_GeomFill_Fixed &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_Fixed(const GeomFill_Fixed *anItem);
-		%feature("autodoc", "1");
-		Handle_GeomFill_Fixed & operator=(const Handle_GeomFill_Fixed &aHandle);
-		%feature("autodoc", "1");
-		Handle_GeomFill_Fixed & operator=(const GeomFill_Fixed *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GeomFill_Fixed DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GeomFill_Fixed {
-	GeomFill_Fixed* GetObject() {
-	return (GeomFill_Fixed*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GeomFill_Fixed::~Handle_GeomFill_Fixed %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GeomFill_Fixed {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1260,90 +1260,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_TgtField;
-class GeomFill_TgtField : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsScalable() const;
-		%feature("autodoc", "1");
-		virtual		void Scale(const Handle_Law_BSpline &Func);
-		%feature("autodoc", "1");
-		virtual		gp_Vec Value(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec D1(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & V, gp_Vec & DV) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_TgtField {
-	Handle_GeomFill_TgtField GetHandle() {
-	return *(Handle_GeomFill_TgtField*) &$self;
-	}
-};
-%extend GeomFill_TgtField {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_TgtField {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_TgtOnCoons;
-class GeomFill_TgtOnCoons : public GeomFill_TgtField {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_TgtOnCoons(const Handle_GeomFill_CoonsAlgPatch &K, const Standard_Integer I);
-		%feature("autodoc", "1");
-		virtual		gp_Vec Value(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec D1(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_TgtOnCoons {
-	Handle_GeomFill_TgtOnCoons GetHandle() {
-	return *(Handle_GeomFill_TgtOnCoons*) &$self;
-	}
-};
-%extend GeomFill_TgtOnCoons {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_TgtOnCoons {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomFill_TrihedronLaw;
 class GeomFill_TrihedronLaw : public MMgt_TShared {
 	public:
@@ -1385,7 +1301,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 };
 %extend GeomFill_TrihedronLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
@@ -1404,26 +1320,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_Frenet;
-class GeomFill_Frenet : public GeomFill_TrihedronLaw {
+%nodefaultctor GeomFill_TgtField;
+class GeomFill_TgtField : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_Frenet();
+		virtual		Standard_Boolean IsScalable() const;
 		%feature("autodoc", "1");
-		void Init();
+		virtual		void Scale(const Handle_Law_BSpline &Func);
+		%feature("autodoc", "1");
+		virtual		gp_Vec Value(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec D1(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real W, gp_Vec & V, gp_Vec & DV) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_Frenet {
-	Handle_GeomFill_Frenet GetHandle() {
-	return *(Handle_GeomFill_Frenet*) &$self;
+%extend GeomFill_TgtField {
+	Handle_GeomFill_TgtField GetHandle() {
+	return *(Handle_GeomFill_TgtField*) &$self;
 	}
 };
-%extend GeomFill_Frenet {
+%extend GeomFill_TgtField {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
+%feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1432,77 +1356,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomFill_Frenet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_Profiler;
-class GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Profiler();
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void AddCurve(const Handle_Geom_Curve &Curve);
-		%feature("autodoc", "1");
-		virtual		void Perform(const Standard_Real PTol);
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(const Standard_Integer Index, TColgp_Array1OfPnt & Poles) const;
-		%feature("autodoc", "1");
-		void Weights(const Standard_Integer Index, TColStd_Array1OfReal & Weights) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
-
-};
-%feature("shadow") GeomFill_Profiler::~GeomFill_Profiler %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_Profiler {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_Generator;
-class GeomFill_Generator : public GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Generator();
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface() const;
-
-};
-%feature("shadow") GeomFill_Generator::~GeomFill_Generator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_Generator {
+%extend GeomFill_TgtField {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1597,7 +1451,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 };
 %extend GeomFill_Boundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_Boundary::~GeomFill_Boundary %{
@@ -1630,7 +1484,7 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 };
 %extend GeomFill_DegeneratedBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_DegeneratedBound::~GeomFill_DegeneratedBound %{
@@ -1643,6 +1497,218 @@ def __del__(self):
 %}
 
 %extend GeomFill_DegeneratedBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_TgtOnCoons;
+class GeomFill_TgtOnCoons : public GeomFill_TgtField {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_TgtOnCoons(const Handle_GeomFill_CoonsAlgPatch &K, const Standard_Integer I);
+		%feature("autodoc", "1");
+		virtual		gp_Vec Value(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec D1(const Standard_Real W) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_TgtOnCoons {
+	Handle_GeomFill_TgtOnCoons GetHandle() {
+	return *(Handle_GeomFill_TgtOnCoons*) &$self;
+	}
+};
+%extend GeomFill_TgtOnCoons {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_TgtOnCoons {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_Frenet;
+class GeomFill_Frenet : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Frenet();
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Frenet {
+	Handle_GeomFill_Frenet GetHandle() {
+	return *(Handle_GeomFill_Frenet*) &$self;
+	}
+};
+%extend GeomFill_Frenet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Frenet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_Profiler;
+class GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Profiler();
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void AddCurve(const Handle_Geom_Curve &Curve);
+		%feature("autodoc", "1");
+		virtual		void Perform(const Standard_Real PTol);
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(const Standard_Integer Index, TColgp_Array1OfPnt & Poles) const;
+		%feature("autodoc", "1");
+		void Weights(const Standard_Integer Index, TColStd_Array1OfReal & Weights) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Curve(const Standard_Integer Index) const;
+
+};
+%feature("shadow") GeomFill_Profiler::~GeomFill_Profiler %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Profiler {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_Generator;
+class GeomFill_Generator : public GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Generator();
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Surface() const;
+
+};
+%feature("shadow") GeomFill_Generator::~GeomFill_Generator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Generator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_CornerState;
+class GeomFill_CornerState {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_CornerState();
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		void Gap(const Standard_Real G);
+		%feature("autodoc", "1");
+		Standard_Real TgtAng() const;
+		%feature("autodoc", "1");
+		void TgtAng(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConstraint() const;
+		%feature("autodoc", "1");
+		void Constraint();
+		%feature("autodoc", "1");
+		Standard_Real NorAng() const;
+		%feature("autodoc", "1");
+		void NorAng(const Standard_Real Ang);
+		%feature("autodoc","IsToKill() -> Standard_Real");
+
+		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void DoKill(const Standard_Real Scal);
+
+};
+%feature("shadow") GeomFill_CornerState::~GeomFill_CornerState %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_CornerState {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1683,7 +1749,7 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Darboux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_Darboux::~GeomFill_Darboux %{
@@ -1753,6 +1819,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_PlanFunc;
+class GeomFill_PlanFunc : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_PlanFunc(const gp_Pnt P, const gp_Vec V, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV) -> Standard_Real");
+
+		void DEDT(const Standard_Real X, const gp_Vec DP, const gp_Vec DV, Standard_Real &OutValue);
+		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void D2E(const Standard_Real X, const gp_Vec DP, const gp_Vec D2P, const gp_Vec DV, const gp_Vec D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_PlanFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_CoonsAlgPatch;
 class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 	public:
@@ -1787,7 +1894,7 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 };
 %extend GeomFill_CoonsAlgPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_CoonsAlgPatch::~GeomFill_CoonsAlgPatch %{
@@ -1800,6 +1907,61 @@ def __del__(self):
 %}
 
 %extend GeomFill_CoonsAlgPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_ConstantBiNormal;
+class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_ConstantBiNormal(const gp_Dir BiNormal);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_ConstantBiNormal {
+	Handle_GeomFill_ConstantBiNormal GetHandle() {
+	return *(Handle_GeomFill_ConstantBiNormal*) &$self;
+	}
+};
+%extend GeomFill_ConstantBiNormal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_ConstantBiNormal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1916,7 +2078,7 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationLaw::~GeomFill_LocationLaw %{
@@ -1957,7 +2119,7 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationDraft {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationDraft::~GeomFill_LocationDraft %{
@@ -2009,6 +2171,77 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_Pipe;
+class GeomFill_Pipe {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Pipe();
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const GeomFill_Trihedron Option=GeomFill_IsCorrectedFrenet);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const TColGeom_SequenceOfCurve &NSections);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Adaptor3d_HCurve &Path, const Handle_Adaptor3d_HCurve &Curve1, const Handle_Adaptor3d_HCurve &Curve2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Adaptor3d_HCurve &Guide, const Handle_Geom_Curve &FirstSect, const Standard_Boolean ByACR, const Standard_Boolean rotat);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const GeomFill_Trihedron Option=GeomFill_IsCorrectedFrenet);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const TColGeom_SequenceOfCurve &NSections);
+		%feature("autodoc", "1");
+		void Init(const Handle_Adaptor3d_HCurve &Path, const Handle_Adaptor3d_HCurve &Curve1, const Handle_Adaptor3d_HCurve &Curve2, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Curve &Path, const Handle_Adaptor3d_HCurve &Guide, const Handle_Geom_Curve &FirstSect, const Standard_Boolean ByACR, const Standard_Boolean rotat);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Boolean WithParameters=0, const Standard_Boolean myPolynomial=0);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Tol, const Standard_Boolean Polynomial, const GeomAbs_Shape Conti=GeomAbs_C1, const Standard_Integer MaxDegree=11, const Standard_Integer NbMaxSegment=30);
+		%feature("autodoc", "1");
+		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ExchangeUV() const;
+		%feature("autodoc", "1");
+		void GenerateParticularCase(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean GenerateParticularCase() const;
+		%feature("autodoc", "1");
+		Standard_Real ErrorOnSurf() const;
+
+};
+%feature("shadow") GeomFill_Pipe::~GeomFill_Pipe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Pipe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_TrihedronWithGuide;
 class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 	public:
@@ -2027,7 +2260,7 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_TrihedronWithGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_TrihedronWithGuide::~GeomFill_TrihedronWithGuide %{
@@ -2084,7 +2317,7 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 };
 %extend GeomFill_GuideTrihedronAC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_GuideTrihedronAC::~GeomFill_GuideTrihedronAC %{
@@ -2234,7 +2467,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 };
 %extend GeomFill_CircularBlendFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_CircularBlendFunc::~GeomFill_CircularBlendFunc %{
@@ -2320,7 +2553,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_SectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_SectionLaw::~GeomFill_SectionLaw %{
@@ -2333,6 +2566,57 @@ def __del__(self):
 %}
 
 %extend GeomFill_SectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_Fixed;
+class GeomFill_Fixed : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Fixed(const gp_Vec Tangent, const gp_Vec Normal);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_Fixed {
+	Handle_GeomFill_Fixed GetHandle() {
+	return *(Handle_GeomFill_Fixed*) &$self;
+	}
+};
+%extend GeomFill_Fixed {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Fixed {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2375,7 +2659,7 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfLocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_HArray1OfLocationLaw::~GeomFill_HArray1OfLocationLaw %{
@@ -2436,66 +2720,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_CurveAndTrihedron;
-class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
+%nodefaultctor GeomFill_QuasiAngularConvertor;
+class GeomFill_QuasiAngularConvertor {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_CurveAndTrihedron(const Handle_GeomFill_TrihedronLaw &Trihedron);
+		GeomFill_QuasiAngularConvertor();
 		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		Standard_Boolean Initialized() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
+		void Init();
 		%feature("autodoc", "1");
-		virtual		void SetTrsf(const gp_Mat Transfo);
+		void Section(const gp_Pnt FirstPnt, const gp_Pnt Center, const gp_Vec Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
 		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_LocationLaw Copy() const;
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec Dir, const gp_Vec DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
-
-		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
-
-		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
-		%feature("autodoc","IsTranslation() -> Standard_Real");
-
-		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
-		%feature("autodoc","IsRotation() -> Standard_Real");
-
-		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Vec D2FirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec D2Center, const gp_Vec Dir, const gp_Vec DDir, const gp_Vec D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
 
 };
-%extend GeomFill_CurveAndTrihedron {
-	Handle_GeomFill_CurveAndTrihedron GetHandle() {
-	return *(Handle_GeomFill_CurveAndTrihedron*) &$self;
-	}
-};
-%extend GeomFill_CurveAndTrihedron {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
+%feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2504,44 +2746,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomFill_CurveAndTrihedron {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
-class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		gp_Trsf  Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	Handle_GeomFill_SequenceNodeOfSequenceOfTrsf GetHandle() {
-	return *(Handle_GeomFill_SequenceNodeOfSequenceOfTrsf*) &$self;
-	}
-};
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+%extend GeomFill_QuasiAngularConvertor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2600,7 +2805,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 };
 %extend GeomFill_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_SweepFunction::~GeomFill_SweepFunction %{
@@ -2619,43 +2824,37 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_BoundWithSurf;
-class GeomFill_BoundWithSurf : public GeomFill_Boundary {
+%nodefaultctor GeomFill_ConstrainedFilling;
+class GeomFill_ConstrainedFilling {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
+		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
 		%feature("autodoc", "1");
-		virtual		gp_Pnt Value(const Standard_Real U) const;
+		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Standard_Boolean NoCheck=0);
 		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4, const Standard_Boolean NoCheck=0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasNormals() const;
+		void SetDomain(const Standard_Real l, const Handle_GeomFill_BoundWithSurf &B);
 		%feature("autodoc", "1");
-		virtual		gp_Vec Norm(const Standard_Real U) const;
+		void ReBuild();
 		%feature("autodoc", "1");
-		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+		Handle_Geom_BSplineSurface Surface() const;
+		%feature("autodoc","Eval(Standard_Real W, Standard_Integer Ord) -> Standard_Real");
 
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDegenerated() const;
+		void CheckCoonsAlgPatch(const Standard_Integer I);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void CheckTgteField(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void CheckApprox(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void CheckResult(const Standard_Integer I);
 
 };
-%extend GeomFill_BoundWithSurf {
-	Handle_GeomFill_BoundWithSurf GetHandle() {
-	return *(Handle_GeomFill_BoundWithSurf*) &$self;
-	}
-};
-%extend GeomFill_BoundWithSurf {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
+%feature("shadow") GeomFill_ConstrainedFilling::~GeomFill_ConstrainedFilling %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2664,7 +2863,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomFill_BoundWithSurf {
+%extend GeomFill_ConstrainedFilling {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2762,162 +2961,6 @@ def __del__(self):
 %}
 
 %extend GeomFill_SequenceOfTrsf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_SectionGenerator;
-class GeomFill_SectionGenerator : public GeomFill_Profiler {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_SectionGenerator();
-		%feature("autodoc", "1");
-		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
-		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Knots(TColStd_Array1OfReal & TKnots) const;
-		%feature("autodoc", "1");
-		void Mults(TColStd_Array1OfInteger & TMults) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths) const;
-		%feature("autodoc", "1");
-		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter(const Standard_Integer P) const;
-
-};
-%feature("shadow") GeomFill_SectionGenerator::~GeomFill_SectionGenerator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_SectionGenerator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_ConstantBiNormal;
-class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_ConstantBiNormal(const gp_Dir BiNormal);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_ConstantBiNormal {
-	Handle_GeomFill_ConstantBiNormal GetHandle() {
-	return *(Handle_GeomFill_ConstantBiNormal*) &$self;
-	}
-};
-%extend GeomFill_ConstantBiNormal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_ConstantBiNormal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_GuideTrihedronPlan;
-class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_GuideTrihedronPlan(const Handle_Adaptor3d_HCurve &theGuide);
-		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &thePath);
-		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		GeomFill_PipeError ErrorStatus() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Adaptor3d_HCurve Guide() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
-		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
-		%feature("autodoc", "1");
-		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_GuideTrihedronPlan {
-	Handle_GeomFill_GuideTrihedronPlan GetHandle() {
-	return *(Handle_GeomFill_GuideTrihedronPlan*) &$self;
-	}
-};
-%extend GeomFill_GuideTrihedronPlan {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_GuideTrihedronPlan {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3058,52 +3101,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_ConstrainedFilling;
-class GeomFill_ConstrainedFilling {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_ConstrainedFilling(const Standard_Integer MaxDeg, const Standard_Integer MaxSeg);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Standard_Boolean NoCheck=0);
-		%feature("autodoc", "1");
-		void Init(const Handle_GeomFill_Boundary &B1, const Handle_GeomFill_Boundary &B2, const Handle_GeomFill_Boundary &B3, const Handle_GeomFill_Boundary &B4, const Standard_Boolean NoCheck=0);
-		%feature("autodoc", "1");
-		void SetDomain(const Standard_Real l, const Handle_GeomFill_BoundWithSurf &B);
-		%feature("autodoc", "1");
-		void ReBuild();
-		%feature("autodoc", "1");
-		Handle_GeomFill_Boundary Boundary(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface Surface() const;
-		%feature("autodoc","Eval(Standard_Real W, Standard_Integer Ord) -> Standard_Real");
-
-		Standard_Integer Eval(const Standard_Real W, const Standard_Integer Ord, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void CheckCoonsAlgPatch(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckTgteField(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckApprox(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void CheckResult(const Standard_Integer I);
-
-};
-%feature("shadow") GeomFill_ConstrainedFilling::~GeomFill_ConstrainedFilling %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_ConstrainedFilling {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomFill_UniformSection;
 class GeomFill_UniformSection : public GeomFill_SectionLaw {
 	public:
@@ -3166,7 +3163,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_UniformSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_UniformSection::~GeomFill_UniformSection %{
@@ -3216,47 +3213,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_PlanFunc;
-class GeomFill_PlanFunc : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_PlanFunc(const gp_Pnt P, const gp_Vec V, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","DEDT(Standard_Real X, const DP, const DV) -> Standard_Real");
-
-		void DEDT(const Standard_Real X, const gp_Vec DP, const gp_Vec DV, Standard_Real &OutValue);
-		%feature("autodoc","D2E(Standard_Real X, const DP, const D2P, const DV, const D2V) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void D2E(const Standard_Real X, const gp_Vec DP, const gp_Vec D2P, const gp_Vec DV, const gp_Vec D2V, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") GeomFill_PlanFunc::~GeomFill_PlanFunc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_PlanFunc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomFill_SimpleBound;
 class GeomFill_SimpleBound : public GeomFill_Boundary {
 	public:
@@ -3284,7 +3240,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 };
 %extend GeomFill_SimpleBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_SimpleBound::~GeomFill_SimpleBound %{
@@ -3334,83 +3290,6 @@ def __del__(self):
 %}
 
 %extend GeomFill_BSplineCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_CornerState;
-class GeomFill_CornerState {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_CornerState();
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		void Gap(const Standard_Real G);
-		%feature("autodoc", "1");
-		Standard_Real TgtAng() const;
-		%feature("autodoc", "1");
-		void TgtAng(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConstraint() const;
-		%feature("autodoc", "1");
-		void Constraint();
-		%feature("autodoc", "1");
-		Standard_Real NorAng() const;
-		%feature("autodoc", "1");
-		void NorAng(const Standard_Real Ang);
-		%feature("autodoc","IsToKill() -> Standard_Real");
-
-		Standard_Boolean IsToKill(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void DoKill(const Standard_Real Scal);
-
-};
-%feature("shadow") GeomFill_CornerState::~GeomFill_CornerState %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_CornerState {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_QuasiAngularConvertor;
-class GeomFill_QuasiAngularConvertor {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_QuasiAngularConvertor();
-		%feature("autodoc", "1");
-		Standard_Boolean Initialized() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt FirstPnt, const gp_Pnt Center, const gp_Vec Dir, const Standard_Real Angle, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights);
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec Dir, const gp_Vec DDir, const Standard_Real Angle, const Standard_Real DAngle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights);
-		%feature("autodoc", "1");
-		void Section(const gp_Pnt FirstPnt, const gp_Vec DFirstPnt, const gp_Vec D2FirstPnt, const gp_Pnt Center, const gp_Vec DCenter, const gp_Vec D2Center, const gp_Vec Dir, const gp_Vec DDir, const gp_Vec D2Dir, const Standard_Real Angle, const Standard_Real DAngle, const Standard_Real D2Angle, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weights, TColStd_Array1OfReal & DWeights, TColStd_Array1OfReal & D2Weights);
-
-};
-%feature("shadow") GeomFill_QuasiAngularConvertor::~GeomFill_QuasiAngularConvertor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_QuasiAngularConvertor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3470,6 +3349,69 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_GuideTrihedronPlan;
+class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_GuideTrihedronPlan(const Handle_Adaptor3d_HCurve &theGuide);
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &thePath);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		GeomFill_PipeError ErrorStatus() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Adaptor3d_HCurve Guide() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		void Origine(const Standard_Real OrACR1, const Standard_Real OrACR2);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_GuideTrihedronPlan {
+	Handle_GeomFill_GuideTrihedronPlan GetHandle() {
+	return *(Handle_GeomFill_GuideTrihedronPlan*) &$self;
+	}
+};
+%extend GeomFill_GuideTrihedronPlan {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_GuideTrihedronPlan {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_HArray1OfSectionLaw;
 class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	public:
@@ -3506,7 +3448,7 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfSectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_HArray1OfSectionLaw::~GeomFill_HArray1OfSectionLaw %{
@@ -3519,6 +3461,44 @@ def __del__(self):
 %}
 
 %extend GeomFill_HArray1OfSectionLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_SectionGenerator;
+class GeomFill_SectionGenerator : public GeomFill_Profiler {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SectionGenerator();
+		%feature("autodoc", "1");
+		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
+		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Knots(TColStd_Array1OfReal & TKnots) const;
+		%feature("autodoc", "1");
+		void Mults(TColStd_Array1OfInteger & TMults) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths) const;
+		%feature("autodoc", "1");
+		void Section(const Standard_Integer P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter(const Standard_Integer P) const;
+
+};
+%feature("shadow") GeomFill_SectionGenerator::~GeomFill_SectionGenerator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_SectionGenerator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3676,7 +3656,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_EvolvedSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_EvolvedSection::~GeomFill_EvolvedSection %{
@@ -3731,7 +3711,7 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_DraftTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_DraftTrihedron::~GeomFill_DraftTrihedron %{
@@ -3781,6 +3761,58 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_BoundWithSurf;
+class GeomFill_BoundWithSurf : public GeomFill_Boundary {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
+		%feature("autodoc", "1");
+		virtual		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec Norm(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		%feature("autodoc", "1");
+		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDegenerated() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_BoundWithSurf {
+	Handle_GeomFill_BoundWithSurf GetHandle() {
+	return *(Handle_GeomFill_BoundWithSurf*) &$self;
+	}
+};
+%extend GeomFill_BoundWithSurf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_BoundWithSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_BezierCurves;
 class GeomFill_BezierCurves {
 	public:
@@ -3818,6 +3850,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
+class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceNodeOfSequenceOfTrsf(const gp_Trsf I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Trsf  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	Handle_GeomFill_SequenceNodeOfSequenceOfTrsf GetHandle() {
+	return *(Handle_GeomFill_SequenceNodeOfSequenceOfTrsf*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_SequenceNodeOfSequenceOfTrsf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_Line;
 class GeomFill_Line : public MMgt_TShared {
 	public:
@@ -3840,7 +3909,7 @@ class GeomFill_Line : public MMgt_TShared {
 };
 %extend GeomFill_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_Line::~GeomFill_Line %{
@@ -3859,42 +3928,66 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_Fixed;
-class GeomFill_Fixed : public GeomFill_TrihedronLaw {
+%nodefaultctor GeomFill_CurveAndTrihedron;
+class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	public:
 		%feature("autodoc", "1");
-		GeomFill_Fixed(const gp_Vec Tangent, const gp_Vec Normal);
+		GeomFill_CurveAndTrihedron(const Handle_GeomFill_TrihedronLaw &Trihedron);
 		%feature("autodoc", "1");
-		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		virtual		const Handle_Adaptor3d_HCurve & GetCurve() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		virtual		Handle_GeomFill_LocationLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
+
+		virtual		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","GetDomain() -> [Standard_Real, Standard_Real]");
+
+		virtual		void GetDomain(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsConstant() const;
+		virtual		Standard_Real GetMaximalNorm();
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc","IsTranslation() -> Standard_Real");
+
+		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
+		%feature("autodoc","IsRotation() -> Standard_Real");
+
+		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void Rotation(gp_Pnt & Center) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend GeomFill_Fixed {
-	Handle_GeomFill_Fixed GetHandle() {
-	return *(Handle_GeomFill_Fixed*) &$self;
+%extend GeomFill_CurveAndTrihedron {
+	Handle_GeomFill_CurveAndTrihedron GetHandle() {
+	return *(Handle_GeomFill_CurveAndTrihedron*) &$self;
 	}
 };
-%extend GeomFill_Fixed {
+%extend GeomFill_CurveAndTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
+%feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3903,78 +3996,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomFill_Fixed {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_Pipe;
-class GeomFill_Pipe {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Pipe();
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const GeomFill_Trihedron Option=GeomFill_IsCorrectedFrenet);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const TColGeom_SequenceOfCurve &NSections);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &Curve1, const Handle_Geom_Curve &Curve2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Adaptor3d_HCurve &Path, const Handle_Adaptor3d_HCurve &Curve1, const Handle_Adaptor3d_HCurve &Curve2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GeomFill_Pipe(const Handle_Geom_Curve &Path, const Handle_Adaptor3d_HCurve &Guide, const Handle_Geom_Curve &FirstSect, const Standard_Boolean ByACR, const Standard_Boolean rotat);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const GeomFill_Trihedron Option=GeomFill_IsCorrectedFrenet);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &Path, const Handle_Geom_Surface &Support, const Handle_Geom_Curve &FirstSect);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const gp_Dir Dir);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Handle_Geom_Curve &FirstSect, const Handle_Geom_Curve &LastSect);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const TColGeom_SequenceOfCurve &NSections);
-		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HCurve &Path, const Handle_Adaptor3d_HCurve &Curve1, const Handle_Adaptor3d_HCurve &Curve2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Curve &Path, const Handle_Adaptor3d_HCurve &Guide, const Handle_Geom_Curve &FirstSect, const Standard_Boolean ByACR, const Standard_Boolean rotat);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Boolean WithParameters=0, const Standard_Boolean myPolynomial=0);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Tol, const Standard_Boolean Polynomial, const GeomAbs_Shape Conti=GeomAbs_C1, const Standard_Integer MaxDegree=11, const Standard_Integer NbMaxSegment=30);
-		%feature("autodoc", "1");
-		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ExchangeUV() const;
-		%feature("autodoc", "1");
-		void GenerateParticularCase(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean GenerateParticularCase() const;
-		%feature("autodoc", "1");
-		Standard_Real ErrorOnSurf() const;
-
-};
-%feature("shadow") GeomFill_Pipe::~GeomFill_Pipe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_Pipe {
+%extend GeomFill_CurveAndTrihedron {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4019,7 +4041,7 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_CorrectedFrenet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_CorrectedFrenet::~GeomFill_CorrectedFrenet %{
@@ -4032,53 +4054,6 @@ def __del__(self):
 %}
 
 %extend GeomFill_CorrectedFrenet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_Curved;
-class GeomFill_Curved : public GeomFill_Filling {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Curved();
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
-		%feature("autodoc", "1");
-		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
-
-};
-%feature("shadow") GeomFill_Curved::~GeomFill_Curved %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_Curved {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4130,6 +4105,53 @@ def __del__(self):
 %}
 
 %extend GeomFill_Array1OfLocationLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_Curved;
+class GeomFill_Curved : public GeomFill_Filling {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_Curved();
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		GeomFill_Curved(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColgp_Array1OfPnt &P4, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3, const TColStd_Array1OfReal &W4);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColgp_Array1OfPnt &P3, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2, const TColStd_Array1OfReal &W3);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2);
+		%feature("autodoc", "1");
+		void Init(const TColgp_Array1OfPnt &P1, const TColgp_Array1OfPnt &P2, const TColStd_Array1OfReal &W1, const TColStd_Array1OfReal &W2);
+
+};
+%feature("shadow") GeomFill_Curved::~GeomFill_Curved %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_Curved {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4216,7 +4238,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationGuide::~GeomFill_LocationGuide %{

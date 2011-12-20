@@ -23,3 +23,15 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Angular) Precision::Angular;
+%rename(Confusion) Precision::Confusion;
+%rename(Intersection) Precision::Intersection;
+%rename(Approximation) Precision::Approximation;
+%rename(Parametric) Precision::Parametric;
+%rename(PConfusion) Precision::PConfusion;
+%rename(PIntersection) Precision::PIntersection;
+%rename(PApproximation) Precision::PApproximation;
+%rename(IsInfinite) Precision::IsInfinite;
+%rename(IsPositiveInfinite) Precision::IsPositiveInfinite;
+%rename(IsNegativeInfinite) Precision::IsNegativeInfinite;
+%rename(Infinite) Precision::Infinite;

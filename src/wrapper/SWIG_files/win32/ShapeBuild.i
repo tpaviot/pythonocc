@@ -176,7 +176,7 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 };
 %extend ShapeBuild_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeBuild_ReShape::~ShapeBuild_ReShape %{

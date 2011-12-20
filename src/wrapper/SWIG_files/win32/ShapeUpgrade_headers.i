@@ -493,12 +493,12 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TColStd_HSequenceOfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<Handle_ShapeBuild_ReShape.hxx>
+#include<TopoDS_Face.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopTools_SequenceOfShape.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Edge.hxx>
-#include<TopoDS_Face.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<ShapeUpgrade.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>

@@ -178,29 +178,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PrsMgr_Presentation3d;
-class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
+%nodefaultctor Handle_PrsMgr_PresentationManager;
+class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d();
+		Handle_PrsMgr_PresentationManager();
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d(const Handle_PrsMgr_Presentation3d &aHandle);
+		Handle_PrsMgr_PresentationManager(const Handle_PrsMgr_PresentationManager &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d(const PrsMgr_Presentation3d *anItem);
+		Handle_PrsMgr_PresentationManager(const PrsMgr_PresentationManager *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d & operator=(const Handle_PrsMgr_Presentation3d &aHandle);
+		Handle_PrsMgr_PresentationManager & operator=(const Handle_PrsMgr_PresentationManager &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d & operator=(const PrsMgr_Presentation3d *anItem);
+		Handle_PrsMgr_PresentationManager & operator=(const PrsMgr_PresentationManager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PrsMgr_Presentation3d DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_PresentationManager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PrsMgr_Presentation3d {
-	PrsMgr_Presentation3d* GetObject() {
-	return (PrsMgr_Presentation3d*)$self->Access();
+%extend Handle_PrsMgr_PresentationManager {
+	PrsMgr_PresentationManager* GetObject() {
+	return (PrsMgr_PresentationManager*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PrsMgr_Presentation3d::~Handle_PrsMgr_Presentation3d %{
+%feature("shadow") Handle_PrsMgr_PresentationManager::~Handle_PrsMgr_PresentationManager %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -209,7 +209,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PrsMgr_Presentation3d {
+%extend Handle_PrsMgr_PresentationManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PrsMgr_PresentationManager3d;
+class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager3d();
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager3d(const Handle_PrsMgr_PresentationManager3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager3d(const PrsMgr_PresentationManager3d *anItem);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager3d & operator=(const Handle_PrsMgr_PresentationManager3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_PresentationManager3d & operator=(const PrsMgr_PresentationManager3d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PrsMgr_PresentationManager3d DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_PrsMgr_PresentationManager3d {
+	PrsMgr_PresentationManager3d* GetObject() {
+	return (PrsMgr_PresentationManager3d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PrsMgr_PresentationManager3d::~Handle_PrsMgr_PresentationManager3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PrsMgr_PresentationManager3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -254,29 +292,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PrsMgr_PresentationManager;
-class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
+%nodefaultctor Handle_PrsMgr_Presentation3d;
+class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 	public:
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager();
+		Handle_PrsMgr_Presentation3d();
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager(const Handle_PrsMgr_PresentationManager &aHandle);
+		Handle_PrsMgr_Presentation3d(const Handle_PrsMgr_Presentation3d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager(const PrsMgr_PresentationManager *anItem);
+		Handle_PrsMgr_Presentation3d(const PrsMgr_Presentation3d *anItem);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager & operator=(const Handle_PrsMgr_PresentationManager &aHandle);
+		Handle_PrsMgr_Presentation3d & operator=(const Handle_PrsMgr_Presentation3d &aHandle);
 		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager & operator=(const PrsMgr_PresentationManager *anItem);
+		Handle_PrsMgr_Presentation3d & operator=(const PrsMgr_Presentation3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PrsMgr_PresentationManager DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_PrsMgr_Presentation3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_PrsMgr_PresentationManager {
-	PrsMgr_PresentationManager* GetObject() {
-	return (PrsMgr_PresentationManager*)$self->Access();
+%extend Handle_PrsMgr_Presentation3d {
+	PrsMgr_Presentation3d* GetObject() {
+	return (PrsMgr_Presentation3d*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PrsMgr_PresentationManager::~Handle_PrsMgr_PresentationManager %{
+%feature("shadow") Handle_PrsMgr_Presentation3d::~Handle_PrsMgr_Presentation3d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -285,7 +323,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PrsMgr_PresentationManager {
+%extend Handle_PrsMgr_Presentation3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -324,44 +362,6 @@ def __del__(self):
 %}
 
 %extend Handle_PrsMgr_PresentationManager2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PrsMgr_PresentationManager3d;
-class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d();
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d(const Handle_PrsMgr_PresentationManager3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d(const PrsMgr_PresentationManager3d *anItem);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d & operator=(const Handle_PrsMgr_PresentationManager3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_PresentationManager3d & operator=(const PrsMgr_PresentationManager3d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PrsMgr_PresentationManager3d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_PrsMgr_PresentationManager3d {
-	PrsMgr_PresentationManager3d* GetObject() {
-	return (PrsMgr_PresentationManager3d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PrsMgr_PresentationManager3d::~Handle_PrsMgr_PresentationManager3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PrsMgr_PresentationManager3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -435,6 +435,140 @@ def __del__(self):
 };
 
 
+%nodefaultctor PrsMgr_PresentationManager;
+class PrsMgr_PresentationManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Is3D() const;
+		%feature("autodoc", "1");
+		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
+		%feature("autodoc", "1");
+		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		void BeginDraw();
+		%feature("autodoc", "1");
+		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsImmediateModeOn() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PrsMgr_PresentationManager {
+	Handle_PrsMgr_PresentationManager GetHandle() {
+	return *(Handle_PrsMgr_PresentationManager*) &$self;
+	}
+};
+%extend PrsMgr_PresentationManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PrsMgr_PresentationManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PrsMgr_PresentationManager3d;
+class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
+	public:
+		%feature("autodoc", "1");
+		PrsMgr_PresentationManager3d(const Handle_Graphic3d_StructureManager &aStructureManager);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Is3D() const;
+		%feature("autodoc", "1");
+		void Color(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_NameOfColor aColor=Quantity_NOC_YELLOW, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void BoundBox(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		void BeginDraw();
+		%feature("autodoc", "1");
+		void AddToImmediateList(const Handle_Prs3d_Presentation &aPrs);
+		%feature("autodoc", "1");
+		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
+		%feature("autodoc", "1");
+		void Connect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_PrsMgr_PresentableObject &anOtherObject, const Standard_Integer aMode=0, const Standard_Integer anOtherMode=0);
+		%feature("autodoc", "1");
+		void Transform(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Geom_Transformation &aTransformation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Place(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Multiply(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Geom_Transformation &aTransformation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Move(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_StructureManager & StructureManager() const;
+		%feature("autodoc", "1");
+		void SetShadingAspect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_NameOfColor aColor, const Graphic3d_NameOfMaterial aMaterial, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void SetShadingAspect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Prs3d_ShadingAspect &aShadingAspect, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		Handle_PrsMgr_Presentation3d CastPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PrsMgr_PresentationManager3d {
+	Handle_PrsMgr_PresentationManager3d GetHandle() {
+	return *(Handle_PrsMgr_PresentationManager3d*) &$self;
+	}
+};
+%extend PrsMgr_PresentationManager3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PrsMgr_PresentationManager3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PrsMgr_Presentation;
 class PrsMgr_Presentation : public MMgt_TShared {
 	public:
@@ -459,7 +593,7 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 %extend PrsMgr_Presentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation::~PrsMgr_Presentation %{
@@ -472,6 +606,45 @@ def __del__(self):
 %}
 
 %extend PrsMgr_Presentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PrsMgr_Presentation2d;
+class PrsMgr_Presentation2d : public PrsMgr_Presentation {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		void SetOffset(const Standard_Integer anOffset);
+		%feature("autodoc", "1");
+		Standard_Integer Offset() const;
+		%feature("autodoc", "1");
+		Handle_Graphic2d_GraphicObject Presentation() const;
+
+};
+%extend PrsMgr_Presentation2d {
+	Handle_PrsMgr_Presentation2d GetHandle() {
+	return *(Handle_PrsMgr_Presentation2d*) &$self;
+	}
+};
+%extend PrsMgr_Presentation2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PrsMgr_Presentation2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -561,7 +734,7 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_SequenceNodeOfPresentations::~PrsMgr_SequenceNodeOfPresentations %{
@@ -624,7 +797,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 };
 %extend PrsMgr_PresentableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentableObject::~PrsMgr_PresentableObject %{
@@ -643,51 +816,6 @@ def __del__(self):
 };
 %extend PrsMgr_PresentableObject {
 	PrsMgr_PresentableObject () {}
-};
-
-
-%nodefaultctor PrsMgr_Presentation2d;
-class PrsMgr_Presentation2d : public PrsMgr_Presentation {
-	public:
-		%feature("autodoc", "1");
-		virtual		PrsMgr_KindOfPrs KindOfPresentation() const;
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Clear();
-		%feature("autodoc", "1");
-		void SetOffset(const Standard_Integer anOffset);
-		%feature("autodoc", "1");
-		Standard_Integer Offset() const;
-		%feature("autodoc", "1");
-		Handle_Graphic2d_GraphicObject Presentation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_Presentation2d {
-	Handle_PrsMgr_Presentation2d GetHandle() {
-	return *(Handle_PrsMgr_Presentation2d*) &$self;
-	}
-};
-%extend PrsMgr_Presentation2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PrsMgr_Presentation2d::~PrsMgr_Presentation2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PrsMgr_Presentation2d {
-	void _kill_pointed() {
-		delete $self;
-	}
 };
 
 
@@ -715,7 +843,7 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 };
 %extend PrsMgr_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Prs::~PrsMgr_Prs %{
@@ -728,75 +856,6 @@ def __del__(self):
 %}
 
 %extend PrsMgr_Prs {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PrsMgr_PresentationManager;
-class PrsMgr_PresentationManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Is3D() const;
-		%feature("autodoc", "1");
-		void Display(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Erase(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void Clear(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Highlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Unhighlight(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode, const Standard_Integer aNewPrior) const;
-		%feature("autodoc", "1");
-		Standard_Integer DisplayPriority(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer amode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHighlighted(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		void Update(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		void Add(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Remove(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsImmediateModeOn() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation Presentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_PresentationManager {
-	Handle_PrsMgr_PresentationManager GetHandle() {
-	return *(Handle_PrsMgr_PresentationManager*) &$self;
-	}
-};
-%extend PrsMgr_PresentationManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PrsMgr_PresentationManager::~PrsMgr_PresentationManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PrsMgr_PresentationManager {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -856,7 +915,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_PresentationManager2d::~PrsMgr_PresentationManager2d %{
@@ -869,71 +928,6 @@ def __del__(self):
 %}
 
 %extend PrsMgr_PresentationManager2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PrsMgr_PresentationManager3d;
-class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
-	public:
-		%feature("autodoc", "1");
-		PrsMgr_PresentationManager3d(const Handle_Graphic3d_StructureManager &aStructureManager);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Is3D() const;
-		%feature("autodoc", "1");
-		void Color(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_NameOfColor aColor=Quantity_NOC_YELLOW, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void BoundBox(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		void BeginDraw();
-		%feature("autodoc", "1");
-		void AddToImmediateList(const Handle_Prs3d_Presentation &aPrs);
-		%feature("autodoc", "1");
-		virtual		void EndDraw(const Handle_Viewer_View &aView, const Standard_Boolean DoubleBuffer=0);
-		%feature("autodoc", "1");
-		void Connect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_PrsMgr_PresentableObject &anOtherObject, const Standard_Integer aMode=0, const Standard_Integer anOtherMode=0);
-		%feature("autodoc", "1");
-		void Transform(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Geom_Transformation &aTransformation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Place(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Multiply(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Geom_Transformation &aTransformation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Move(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_StructureManager & StructureManager() const;
-		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Quantity_NameOfColor aColor, const Graphic3d_NameOfMaterial aMaterial, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Handle_Prs3d_ShadingAspect &aShadingAspect, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		Handle_PrsMgr_Presentation3d CastPresentation(const Handle_PrsMgr_PresentableObject &aPresentableObject, const Standard_Integer aMode=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PrsMgr_PresentationManager3d {
-	Handle_PrsMgr_PresentationManager3d GetHandle() {
-	return *(Handle_PrsMgr_PresentationManager3d*) &$self;
-	}
-};
-%extend PrsMgr_PresentationManager3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PrsMgr_PresentationManager3d::~PrsMgr_PresentationManager3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PrsMgr_PresentationManager3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -960,7 +954,7 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PrsMgr_Presentation3d::~PrsMgr_Presentation3d %{

@@ -27,13 +27,13 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TDF
+import Standard
 import XSControl
 import IFSelect
-import Standard
 import TCollection
+import TDF
 import StepBasic
 import StepShape
-import TopoDS
 import STEPControl
+import TopoDS
 };

@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(ConcaveSide) ChFi3d::ConcaveSide;
+%rename(NextSide) ChFi3d::NextSide;
+%rename(SameSide) ChFi3d::SameSide;

@@ -58,6 +58,7 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<gp_Pnt.hxx>
 #include<gp_Ax2d.hxx>
 #include<gp_Ax22d.hxx>
 #include<gp_Pnt2d.hxx>
@@ -65,16 +66,15 @@ $HeaderURL$
 #include<gp_Lin2d.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Ax1.hxx>
-#include<gp_Pnt.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Ax2.hxx>
-#include<gp_Cylinder.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Vec.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_XY.hxx>
+#include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
 %}

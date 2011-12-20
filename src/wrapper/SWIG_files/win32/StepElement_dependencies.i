@@ -210,7 +210,7 @@ $HeaderURL$
 #include <StepData_WriterLib.hxx>
 %};
 
-%import StepData.i
 %import MMgt.i
+%import StepData.i
 %import TCollection.i
 %import Standard.i

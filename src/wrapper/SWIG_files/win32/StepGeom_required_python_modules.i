@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TColStd
 import StepData
+import TColStd
 import StepRepr
 import StepBasic
 };

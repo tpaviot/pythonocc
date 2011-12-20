@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GccAna_NoSolution::DownCast;
+%rename(Raise) GccAna_NoSolution::Raise;
+%rename(NewInstance) GccAna_NoSolution::NewInstance;

@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Value) BRepLProp_SurfaceTool::Value;
+%rename(D1) BRepLProp_SurfaceTool::D1;
+%rename(D2) BRepLProp_SurfaceTool::D2;
+%rename(DN) BRepLProp_SurfaceTool::DN;
+%rename(Continuity) BRepLProp_SurfaceTool::Continuity;
+%rename(Bounds) BRepLProp_SurfaceTool::Bounds;
+%rename(Value) BRepLProp_CurveTool::Value;
+%rename(D1) BRepLProp_CurveTool::D1;
+%rename(D2) BRepLProp_CurveTool::D2;
+%rename(D3) BRepLProp_CurveTool::D3;
+%rename(Continuity) BRepLProp_CurveTool::Continuity;
+%rename(FirstParameter) BRepLProp_CurveTool::FirstParameter;
+%rename(LastParameter) BRepLProp_CurveTool::LastParameter;
+%rename(Continuity) BRepLProp::Continuity;

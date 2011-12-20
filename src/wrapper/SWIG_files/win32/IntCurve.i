@@ -52,6 +52,89 @@ $HeaderURL$
 
 
 
+%nodefaultctor IntCurve_IntConicConic;
+class IntCurve_IntConicConic : public IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic();
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Lin2d L2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Lin2d L2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Circ2d C, const IntRes2d_Domain &DC, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Circ2d C1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Circ2d C1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Elips2d E1, const IntRes2d_Domain &D1, const gp_Elips2d E2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Elips2d E1, const IntRes2d_Domain &D1, const gp_Elips2d E2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Parab2d P1, const IntRes2d_Domain &D1, const gp_Parab2d P2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Parab2d P1, const IntRes2d_Domain &D1, const gp_Parab2d P2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Parab2d P, const IntRes2d_Domain &DP, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Parab2d P, const IntRes2d_Domain &DP, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntCurve_IntConicConic(const gp_Hypr2d H1, const IntRes2d_Domain &DH1, const gp_Hypr2d H2, const IntRes2d_Domain &DH2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const gp_Hypr2d H1, const IntRes2d_Domain &D1, const gp_Hypr2d H2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+
+};
+%feature("shadow") IntCurve_IntConicConic::~IntCurve_IntConicConic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurve_IntConicConic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntCurve_IntImpConicParConic;
 class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	public:
@@ -159,89 +242,6 @@ def __del__(self):
 %}
 
 %extend IntCurve_IConicTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurve_IntConicConic;
-class IntCurve_IntConicConic : public IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic();
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Lin2d L2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Lin2d L2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Lin2d L1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Circ2d C, const IntRes2d_Domain &DC, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L, const IntRes2d_Domain &DL, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Circ2d C1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d C1, const IntRes2d_Domain &D1, const gp_Circ2d C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Elips2d E, const IntRes2d_Domain &DE, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Circ2d C, const IntRes2d_Domain &DC, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Elips2d E1, const IntRes2d_Domain &D1, const gp_Elips2d E2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d E1, const IntRes2d_Domain &D1, const gp_Elips2d E2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Parab2d P, const IntRes2d_Domain &DP, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Elips2d E, const IntRes2d_Domain &DE, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Parab2d P1, const IntRes2d_Domain &D1, const gp_Parab2d P2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d P1, const IntRes2d_Domain &D1, const gp_Parab2d P2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Parab2d P, const IntRes2d_Domain &DP, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Parab2d P, const IntRes2d_Domain &DP, const gp_Hypr2d H, const IntRes2d_Domain &DH, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntCurve_IntConicConic(const gp_Hypr2d H1, const IntRes2d_Domain &DH1, const gp_Hypr2d H2, const IntRes2d_Domain &DH2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const gp_Hypr2d H1, const IntRes2d_Domain &D1, const gp_Hypr2d H2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-
-};
-%feature("shadow") IntCurve_IntConicConic::~IntCurve_IntConicConic %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurve_IntConicConic {
 	void _kill_pointed() {
 		delete $self;
 	}

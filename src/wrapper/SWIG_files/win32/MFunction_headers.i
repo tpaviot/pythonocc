@@ -65,8 +65,8 @@ $HeaderURL$
 #include<Handle_PDF_Attribute.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_MDF_SRelocationTable.hxx>
-#include<Handle_MDF_RRelocationTable.hxx>
 #include<MFunction.hxx>
 #include<Handle_MDF_ASDriverHSequence.hxx>
 #include<Handle_MDF_ARDriverHSequence.hxx>
+#include<Handle_MDF_RRelocationTable.hxx>
 %}

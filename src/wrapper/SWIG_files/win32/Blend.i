@@ -147,30 +147,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Blend_SurfPointFuncInv;
-class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
+%nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
+class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		Blend_SequenceNodeOfSequenceOfPoint(const Blend_Point &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
+		Blend_Point & Value() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const gp_Pnt P);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Blend_SurfPointFuncInv::~Blend_SurfPointFuncInv %{
+%extend Blend_SequenceNodeOfSequenceOfPoint {
+	Handle_Blend_SequenceNodeOfSequenceOfPoint GetHandle() {
+	return *(Handle_Blend_SequenceNodeOfSequenceOfPoint*) &$self;
+	}
+};
+%extend Blend_SequenceNodeOfSequenceOfPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Blend_SequenceNodeOfSequenceOfPoint::~Blend_SequenceNodeOfSequenceOfPoint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -179,7 +177,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Blend_SurfPointFuncInv {
+%extend Blend_SequenceNodeOfSequenceOfPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -437,6 +435,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Blend_SurfPointFuncInv;
+class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const gp_Pnt P);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") Blend_SurfPointFuncInv::~Blend_SurfPointFuncInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Blend_SurfPointFuncInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Blend_SequenceOfPoint;
 class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 	public:
@@ -535,43 +572,6 @@ def __del__(self):
 %}
 
 %extend Blend_FuncInv {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
-class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Blend_SequenceNodeOfSequenceOfPoint(const Blend_Point &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Blend_Point & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Blend_SequenceNodeOfSequenceOfPoint {
-	Handle_Blend_SequenceNodeOfSequenceOfPoint GetHandle() {
-	return *(Handle_Blend_SequenceNodeOfSequenceOfPoint*) &$self;
-	}
-};
-%extend Blend_SequenceNodeOfSequenceOfPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Blend_SequenceNodeOfSequenceOfPoint::~Blend_SequenceNodeOfSequenceOfPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Blend_SequenceNodeOfSequenceOfPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

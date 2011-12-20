@@ -27,12 +27,12 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopoDS
 import Standard
+import TopoDS
 import Transfer
+import StepGeom
 import Geom2d
 import TCollection
-import StepGeom
 import StepRepr
 import StepShape
 import gp

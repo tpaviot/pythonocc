@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopoDS
-import TColgp
 import gp
 import TCollection
+import TColgp
 };

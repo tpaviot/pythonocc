@@ -140,6 +140,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
 %import MMgt.i
+%import Standard.i
 %import TCollection.i

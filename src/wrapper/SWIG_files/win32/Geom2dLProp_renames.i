@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Value) Geom2dLProp_Curve2dTool::Value;
+%rename(D1) Geom2dLProp_Curve2dTool::D1;
+%rename(D2) Geom2dLProp_Curve2dTool::D2;
+%rename(D3) Geom2dLProp_Curve2dTool::D3;
+%rename(Continuity) Geom2dLProp_Curve2dTool::Continuity;
+%rename(FirstParameter) Geom2dLProp_Curve2dTool::FirstParameter;
+%rename(LastParameter) Geom2dLProp_Curve2dTool::LastParameter;

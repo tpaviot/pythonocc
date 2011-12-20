@@ -161,10 +161,10 @@ $HeaderURL$
 #include<TopoDS_Shape.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<IntTools_Range.hxx>
-#include<IntTools_CommonPrt.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<TColStd_SetOfInteger.hxx>
+#include<IntTools_CommonPrt.hxx>
 #include<IntTools_ShrunkRange.hxx>
 #include<BooleanOperations_ShapesDataStructure.hxx>
 #include<gp_Vec.hxx>

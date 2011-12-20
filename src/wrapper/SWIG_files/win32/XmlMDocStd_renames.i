@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlMDocStd_XLinkDriver::DownCast;
+%rename(AddDrivers) XmlMDocStd::AddDrivers;

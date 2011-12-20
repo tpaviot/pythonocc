@@ -135,82 +135,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AppParCurves_SmoothCriterion;
-class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion();
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AppParCurves_SmoothCriterion DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AppParCurves_SmoothCriterion {
-	AppParCurves_SmoothCriterion* GetObject() {
-	return (AppParCurves_SmoothCriterion*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AppParCurves_SmoothCriterion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
-class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve();
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AppParCurves_HArray1OfMultiBSpCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
-	AppParCurves_HArray1OfMultiBSpCurve* GetObject() {
-	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AppParCurves_HArray1OfMultiBSpCurve::~Handle_AppParCurves_HArray1OfMultiBSpCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiPoint;
 class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	public:
@@ -319,6 +243,82 @@ def __del__(self):
 %}
 
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AppParCurves_SmoothCriterion;
+class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion();
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion(const AppParCurves_SmoothCriterion *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const Handle_AppParCurves_SmoothCriterion &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_SmoothCriterion & operator=(const AppParCurves_SmoothCriterion *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AppParCurves_SmoothCriterion DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AppParCurves_SmoothCriterion {
+	AppParCurves_SmoothCriterion* GetObject() {
+	return (AppParCurves_SmoothCriterion*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AppParCurves_SmoothCriterion::~Handle_AppParCurves_SmoothCriterion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AppParCurves_SmoothCriterion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
+class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve();
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const Handle_AppParCurves_HArray1OfMultiBSpCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_AppParCurves_HArray1OfMultiBSpCurve & operator=(const AppParCurves_HArray1OfMultiBSpCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AppParCurves_HArray1OfMultiBSpCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
+	AppParCurves_HArray1OfMultiBSpCurve* GetObject() {
+	return (AppParCurves_HArray1OfMultiBSpCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AppParCurves_HArray1OfMultiBSpCurve::~Handle_AppParCurves_HArray1OfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -445,6 +445,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor AppParCurves_Array1OfMultiBSpCurve;
+class AppParCurves_Array1OfMultiBSpCurve {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiBSpCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiBSpCurve(const AppParCurves_MultiBSpCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const AppParCurves_MultiBSpCurve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiBSpCurve & Assign(const AppParCurves_Array1OfMultiBSpCurve &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiBSpCurve & operator=(const AppParCurves_Array1OfMultiBSpCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiBSpCurve &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiBSpCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") AppParCurves_Array1OfMultiBSpCurve::~AppParCurves_Array1OfMultiBSpCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppParCurves_Array1OfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AppParCurves_Array1OfMultiCurve;
 class AppParCurves_Array1OfMultiCurve {
 	public:
@@ -496,42 +547,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor AppParCurves_Array1OfMultiBSpCurve;
-class AppParCurves_Array1OfMultiBSpCurve {
+%nodefaultctor AppParCurves_SequenceOfMultiCurve;
+class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiBSpCurve(const Standard_Integer Low, const Standard_Integer Up);
+		AppParCurves_SequenceOfMultiCurve();
 		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiBSpCurve(const AppParCurves_MultiBSpCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		void Clear();
 		%feature("autodoc", "1");
-		void Init(const AppParCurves_MultiBSpCurve &V);
+		const AppParCurves_SequenceOfMultiCurve & Assign(const AppParCurves_SequenceOfMultiCurve &Other);
 		%feature("autodoc", "1");
-		void Destroy();
+		const AppParCurves_SequenceOfMultiCurve & operator=(const AppParCurves_SequenceOfMultiCurve &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		void Append(const AppParCurves_MultiCurve &T);
 		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiBSpCurve & Assign(const AppParCurves_Array1OfMultiBSpCurve &Other);
+		void Append(AppParCurves_SequenceOfMultiCurve & S);
 		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiBSpCurve & operator=(const AppParCurves_Array1OfMultiBSpCurve &Other);
+		void Prepend(const AppParCurves_MultiCurve &T);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Prepend(AppParCurves_SequenceOfMultiCurve & S);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void InsertBefore(const Standard_Integer Index, const AppParCurves_MultiCurve &I);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void InsertBefore(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiBSpCurve &Value);
+		void InsertAfter(const Standard_Integer Index, const AppParCurves_MultiCurve &T);
 		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & Value(const Standard_Integer Index) const;
+		void InsertAfter(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
 		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index) const;
+		const AppParCurves_MultiCurve & First() const;
 		%feature("autodoc", "1");
-		AppParCurves_MultiBSpCurve & ChangeValue(const Standard_Integer Index);
+		const AppParCurves_MultiCurve & Last() const;
 		%feature("autodoc", "1");
-		AppParCurves_MultiBSpCurve & operator()(const Standard_Integer Index);
+		void Split(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiCurve &I);
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") AppParCurves_Array1OfMultiBSpCurve::~AppParCurves_Array1OfMultiBSpCurve %{
+%feature("shadow") AppParCurves_SequenceOfMultiCurve::~AppParCurves_SequenceOfMultiCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -540,7 +605,58 @@ def __del__(self):
 		pass
 %}
 
-%extend AppParCurves_Array1OfMultiBSpCurve {
+%extend AppParCurves_SequenceOfMultiCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AppParCurves_Array1OfConstraintCouple;
+class AppParCurves_Array1OfConstraintCouple {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfConstraintCouple(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfConstraintCouple(const AppParCurves_ConstraintCouple &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const AppParCurves_ConstraintCouple &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfConstraintCouple & Assign(const AppParCurves_Array1OfConstraintCouple &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfConstraintCouple & operator=(const AppParCurves_Array1OfConstraintCouple &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_ConstraintCouple &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_ConstraintCouple & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_ConstraintCouple & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") AppParCurves_Array1OfConstraintCouple::~AppParCurves_Array1OfConstraintCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppParCurves_Array1OfConstraintCouple {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -598,7 +714,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiCurve %{
@@ -653,7 +769,7 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiCurve::~AppParCurves_HArray1OfMultiCurve %{
@@ -732,7 +848,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 };
 %extend AppParCurves_SmoothCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SmoothCriterion::~AppParCurves_SmoothCriterion %{
@@ -810,57 +926,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AppParCurves_Array1OfConstraintCouple;
-class AppParCurves_Array1OfConstraintCouple {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfConstraintCouple(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfConstraintCouple(const AppParCurves_ConstraintCouple &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const AppParCurves_ConstraintCouple &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfConstraintCouple & Assign(const AppParCurves_Array1OfConstraintCouple &Other);
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfConstraintCouple & operator=(const AppParCurves_Array1OfConstraintCouple &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_ConstraintCouple &Value);
-		%feature("autodoc", "1");
-		const AppParCurves_ConstraintCouple & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		AppParCurves_ConstraintCouple & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_ConstraintCouple & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") AppParCurves_Array1OfConstraintCouple::~AppParCurves_Array1OfConstraintCouple %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppParCurves_Array1OfConstraintCouple {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AppParCurves_SequenceOfMultiBSpCurve;
 class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 	public:
@@ -926,71 +991,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AppParCurves_SequenceOfMultiCurve;
-class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_SequenceOfMultiCurve();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AppParCurves_SequenceOfMultiCurve & Assign(const AppParCurves_SequenceOfMultiCurve &Other);
-		%feature("autodoc", "1");
-		const AppParCurves_SequenceOfMultiCurve & operator=(const AppParCurves_SequenceOfMultiCurve &Other);
-		%feature("autodoc", "1");
-		void Append(const AppParCurves_MultiCurve &T);
-		%feature("autodoc", "1");
-		void Append(AppParCurves_SequenceOfMultiCurve & S);
-		%feature("autodoc", "1");
-		void Prepend(const AppParCurves_MultiCurve &T);
-		%feature("autodoc", "1");
-		void Prepend(AppParCurves_SequenceOfMultiCurve & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const AppParCurves_MultiCurve &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const AppParCurves_MultiCurve &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & First() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AppParCurves_SequenceOfMultiCurve & S);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiCurve &I);
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") AppParCurves_SequenceOfMultiCurve::~AppParCurves_SequenceOfMultiCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppParCurves_SequenceOfMultiCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
 class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_SeqNode {
 	public:
@@ -1009,7 +1009,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve %{
@@ -1022,57 +1022,6 @@ def __del__(self):
 %}
 
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AppParCurves_Array1OfMultiPoint;
-class AppParCurves_Array1OfMultiPoint {
-	public:
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const AppParCurves_MultiPoint &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
-		%feature("autodoc", "1");
-		const AppParCurves_Array1OfMultiPoint & operator=(const AppParCurves_Array1OfMultiPoint &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") AppParCurves_Array1OfMultiPoint::~AppParCurves_Array1OfMultiPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppParCurves_Array1OfMultiPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1115,7 +1064,7 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfConstraintCouple::~AppParCurves_HArray1OfConstraintCouple %{
@@ -1170,7 +1119,7 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiPoint::~AppParCurves_HArray1OfMultiPoint %{
@@ -1256,7 +1205,7 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppParCurves_HArray1OfMultiBSpCurve::~AppParCurves_HArray1OfMultiBSpCurve %{
@@ -1269,6 +1218,57 @@ def __del__(self):
 %}
 
 %extend AppParCurves_HArray1OfMultiBSpCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AppParCurves_Array1OfMultiPoint;
+class AppParCurves_Array1OfMultiPoint {
+	public:
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		AppParCurves_Array1OfMultiPoint(const AppParCurves_MultiPoint &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const AppParCurves_MultiPoint &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & Assign(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		const AppParCurves_Array1OfMultiPoint & operator=(const AppParCurves_Array1OfMultiPoint &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AppParCurves_MultiPoint &Value);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AppParCurves_MultiPoint & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") AppParCurves_Array1OfMultiPoint::~AppParCurves_Array1OfMultiPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppParCurves_Array1OfMultiPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

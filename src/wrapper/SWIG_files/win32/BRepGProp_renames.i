@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(LinearProperties) BRepGProp::LinearProperties;
+%rename(SurfaceProperties) BRepGProp::SurfaceProperties;
+%rename(VolumeProperties) BRepGProp::VolumeProperties;
+%rename(VolumePropertiesGK) BRepGProp::VolumePropertiesGK;
+%rename(FirstParameter) BRepGProp_EdgeTool::FirstParameter;
+%rename(LastParameter) BRepGProp_EdgeTool::LastParameter;
+%rename(IntegrationOrder) BRepGProp_EdgeTool::IntegrationOrder;
+%rename(Value) BRepGProp_EdgeTool::Value;
+%rename(D1) BRepGProp_EdgeTool::D1;
+%rename(NbIntervals) BRepGProp_EdgeTool::NbIntervals;
+%rename(Intervals) BRepGProp_EdgeTool::Intervals;

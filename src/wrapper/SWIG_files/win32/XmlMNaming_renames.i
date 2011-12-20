@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlMNaming_NamingDriver::DownCast;
+%rename(DownCast) Handle_XmlMNaming_NamedShapeDriver::DownCast;
+%rename(AddDrivers) XmlMNaming::AddDrivers;
+%rename(SetDocumentVersion) XmlMNaming::SetDocumentVersion;
+%rename(DocumentVersion) XmlMNaming::DocumentVersion;

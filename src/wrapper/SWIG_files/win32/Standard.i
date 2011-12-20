@@ -55,19 +55,19 @@ typedef Standard_Character * Standard_PCharacter;
 typedef size_t Standard_Size;
 typedef Standard_ExtCharacter * Standard_PExtCharacter;
 typedef unsigned char Standard_Byte;
-typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef Standard_Persistent * Standard_OId;
 typedef double Standard_Real;
 typedef short int const * Standard_ExtString;
+typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef char Standard_Character;
 typedef short int Standard_ExtCharacter;
 typedef float Standard_ShortReal;
 typedef jmp_buf Standard_JmpBuf;
-typedef DWORD Standard_ThreadId;
-typedef int Standard_Integer;
-typedef Standard_Byte * Standard_PByte;
-typedef GUID Standard_UUID;
 typedef void * Standard_Address;
+typedef GUID Standard_UUID;
+typedef Standard_Byte * Standard_PByte;
+typedef int Standard_Integer;
+typedef DWORD Standard_ThreadId;
 
 enum Standard_InternalType {
 	Standard_Void,
@@ -132,14 +132,30 @@ class Handle_Standard_Transient {
 		Standard_Transient * Access();
 		%feature("autodoc", "1");
 		const Standard_Transient * Access() const;
-		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Transient &right) const;
-		%feature("autodoc", "1");
-		int operator==(const Standard_Transient *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Transient &right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Standard_Transient *right) const;
+		%extend{
+			bool __eq_wrapper__(const Handle_Standard_Transient &right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __eq_wrapper__(const Standard_Transient *right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Handle_Standard_Transient &right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Standard_Transient *right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		const Handle_Standard_Transient & DownCast(const Handle_Standard_Transient &AnObject);
 		%feature("autodoc", "1");
@@ -150,6 +166,20 @@ class Handle_Standard_Transient {
 			self->Dump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_Transient {
@@ -188,6 +218,20 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 		Handle_Standard_Failure & operator=(const Standard_Failure *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_Failure DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_Failure {
@@ -205,6 +249,110 @@ def __del__(self):
 %}
 
 %extend Handle_Standard_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Standard_NumericError;
+class Handle_Standard_NumericError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError();
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError(const Handle_Standard_NumericError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError(const Standard_NumericError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError & operator=(const Handle_Standard_NumericError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NumericError DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%extend Handle_Standard_NumericError {
+	Standard_NumericError* GetObject() {
+	return (Standard_NumericError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_NumericError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Standard_Overflow;
+class Handle_Standard_Overflow : public Handle_Standard_NumericError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow();
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Standard_Overflow *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow & operator=(const Handle_Standard_Overflow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_Overflow DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%extend Handle_Standard_Overflow {
+	Standard_Overflow* GetObject() {
+	return (Standard_Overflow*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_Overflow {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -363,82 +511,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_DimensionError;
-class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_DimensionError();
-		%feature("autodoc", "1");
-		Handle_Standard_DimensionError(const Handle_Standard_DimensionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_DimensionError(const Standard_DimensionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_DimensionError & operator=(const Handle_Standard_DimensionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_DimensionError & operator=(const Standard_DimensionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_DimensionError {
-	Standard_DimensionError* GetObject() {
-	return (Standard_DimensionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_DimensionError::~Handle_Standard_DimensionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_DimensionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Standard_TypeMismatch;
-class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch();
-		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch(const Handle_Standard_TypeMismatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch(const Standard_TypeMismatch *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch & operator=(const Handle_Standard_TypeMismatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_TypeMismatch & operator=(const Standard_TypeMismatch *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_TypeMismatch DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_TypeMismatch {
-	Standard_TypeMismatch* GetObject() {
-	return (Standard_TypeMismatch*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_TypeMismatch::~Handle_Standard_TypeMismatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_TypeMismatch {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Standard_NullValue;
 class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	public:
@@ -477,29 +549,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_ProgramError;
-class Handle_Standard_ProgramError : public Handle_Standard_Failure {
+%nodefaultctor Handle_Standard_NoSuchObject;
+class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError();
+		Handle_Standard_NoSuchObject();
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError(const Handle_Standard_ProgramError &aHandle);
+		Handle_Standard_NoSuchObject(const Handle_Standard_NoSuchObject &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError(const Standard_ProgramError *anItem);
+		Handle_Standard_NoSuchObject(const Standard_NoSuchObject *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError & operator=(const Handle_Standard_ProgramError &aHandle);
+		Handle_Standard_NoSuchObject & operator=(const Handle_Standard_NoSuchObject &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_ProgramError & operator=(const Standard_ProgramError *anItem);
+		Handle_Standard_NoSuchObject & operator=(const Standard_NoSuchObject *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_ProgramError DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_NoSuchObject DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Standard_ProgramError {
-	Standard_ProgramError* GetObject() {
-	return (Standard_ProgramError*)$self->Access();
+%extend Handle_Standard_NoSuchObject {
+	Standard_NoSuchObject* GetObject() {
+	return (Standard_NoSuchObject*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Standard_ProgramError::~Handle_Standard_ProgramError %{
+%feature("shadow") Handle_Standard_NoSuchObject::~Handle_Standard_NoSuchObject %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -508,36 +580,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Standard_ProgramError {
+%extend Handle_Standard_NoSuchObject {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_Standard_OutOfMemory;
-class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
+%nodefaultctor Handle_Standard_DimensionError;
+class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory();
+		Handle_Standard_DimensionError();
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory(const Handle_Standard_OutOfMemory &aHandle);
+		Handle_Standard_DimensionError(const Handle_Standard_DimensionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *anItem);
+		Handle_Standard_DimensionError(const Standard_DimensionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory & operator=(const Handle_Standard_OutOfMemory &aHandle);
+		Handle_Standard_DimensionError & operator=(const Handle_Standard_DimensionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Standard_OutOfMemory & operator=(const Standard_OutOfMemory *anItem);
+		Handle_Standard_DimensionError & operator=(const Standard_DimensionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfMemory DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Standard_DimensionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Standard_OutOfMemory {
-	Standard_OutOfMemory* GetObject() {
-	return (Standard_OutOfMemory*)$self->Access();
+%extend Handle_Standard_DimensionError {
+	Standard_DimensionError* GetObject() {
+	return (Standard_DimensionError*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Standard_OutOfMemory::~Handle_Standard_OutOfMemory %{
+%feature("shadow") Handle_Standard_DimensionError::~Handle_Standard_DimensionError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -546,45 +618,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Standard_OutOfMemory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Standard_NumericError;
-class Handle_Standard_NumericError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError();
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError(const Handle_Standard_NumericError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError(const Standard_NumericError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError & operator=(const Handle_Standard_NumericError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NumericError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_NumericError {
-	Standard_NumericError* GetObject() {
-	return (Standard_NumericError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_NumericError {
+%extend Handle_Standard_DimensionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -819,6 +853,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Standard_ProgramError;
+class Handle_Standard_ProgramError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError();
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError(const Handle_Standard_ProgramError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError(const Standard_ProgramError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError & operator=(const Handle_Standard_ProgramError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_ProgramError & operator=(const Standard_ProgramError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_ProgramError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_ProgramError {
+	Standard_ProgramError* GetObject() {
+	return (Standard_ProgramError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_ProgramError::~Handle_Standard_ProgramError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_ProgramError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Standard_NotImplemented;
 class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	public:
@@ -857,6 +929,96 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Standard_Persistent;
+class Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent();
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent(const Handle_Standard_Persistent &aTid);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent(const Standard_Persistent *anItem);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%extend{
+			bool __eq_wrapper__(const Handle_Standard_Persistent &right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __eq_wrapper__(const Standard_Persistent *right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Handle_Standard_Persistent &right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Standard_Persistent *right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		void Nullify();
+		%feature("autodoc", "1");
+		Standard_Boolean IsNull() const;
+		%feature("autodoc", "1");
+		Standard_Persistent * Access() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator=(const Handle_Standard_Persistent &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%extend Handle_Standard_Persistent {
+	Standard_Persistent* GetObject() {
+	return (Standard_Persistent*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_Persistent::~Handle_Standard_Persistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_Persistent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Standard_NullObject;
 class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 	public:
@@ -889,66 +1051,6 @@ def __del__(self):
 %}
 
 %extend Handle_Standard_NullObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Standard_Persistent;
-class Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent();
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent(const Handle_Standard_Persistent &aTid);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent(const Standard_Persistent *anItem);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator==(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		void Nullify();
-		%feature("autodoc", "1");
-		Standard_Boolean IsNull() const;
-		%feature("autodoc", "1");
-		Standard_Persistent * Access() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator=(const Handle_Standard_Persistent &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_Standard_Persistent {
-	Standard_Persistent* GetObject() {
-	return (Standard_Persistent*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_Persistent::~Handle_Standard_Persistent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_Persistent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1031,44 +1133,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_Overflow;
-class Handle_Standard_Overflow : public Handle_Standard_NumericError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow();
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Standard_Overflow *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow & operator=(const Handle_Standard_Overflow &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_Overflow DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_Overflow {
-	Standard_Overflow* GetObject() {
-	return (Standard_Overflow*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_Overflow {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Standard_DimensionMismatch;
 class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError {
 	public:
@@ -1145,44 +1209,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_NoSuchObject;
-class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject();
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject(const Handle_Standard_NoSuchObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject(const Standard_NoSuchObject *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject & operator=(const Handle_Standard_NoSuchObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NoSuchObject & operator=(const Standard_NoSuchObject *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NoSuchObject DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_NoSuchObject {
-	Standard_NoSuchObject* GetObject() {
-	return (Standard_NoSuchObject*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_NoSuchObject::~Handle_Standard_NoSuchObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_NoSuchObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Standard_ImmutableObject;
 class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	public:
@@ -1215,6 +1241,44 @@ def __del__(self):
 %}
 
 %extend Handle_Standard_ImmutableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Standard_TypeMismatch;
+class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_TypeMismatch();
+		%feature("autodoc", "1");
+		Handle_Standard_TypeMismatch(const Handle_Standard_TypeMismatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_TypeMismatch(const Standard_TypeMismatch *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_TypeMismatch & operator=(const Handle_Standard_TypeMismatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_TypeMismatch & operator=(const Standard_TypeMismatch *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_TypeMismatch DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_TypeMismatch {
+	Standard_TypeMismatch* GetObject() {
+	return (Standard_TypeMismatch*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_TypeMismatch::~Handle_Standard_TypeMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_TypeMismatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1259,51 +1323,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Standard_MMgrRoot;
-class Standard_MMgrRoot {
+%nodefaultctor Handle_Standard_OutOfMemory;
+class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Address Allocate(const Standard_Size theSize);
+		Handle_Standard_OutOfMemory();
 		%feature("autodoc", "1");
-		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size theSize);
+		Handle_Standard_OutOfMemory(const Handle_Standard_OutOfMemory &aHandle);
 		%feature("autodoc", "1");
-		virtual		void Free(Standard_Address & aPtr);
+		Handle_Standard_OutOfMemory(const Standard_OutOfMemory *anItem);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Purge(Standard_Boolean =0);
+		Handle_Standard_OutOfMemory & operator=(const Handle_Standard_OutOfMemory &aHandle);
 		%feature("autodoc", "1");
-		virtual		void SetReentrant(Standard_Boolean );
+		Handle_Standard_OutOfMemory & operator=(const Standard_OutOfMemory *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_OutOfMemory DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") Standard_MMgrRoot::~Standard_MMgrRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_MMgrRoot {
-	void _kill_pointed() {
-		delete $self;
+%extend Handle_Standard_OutOfMemory {
+	Standard_OutOfMemory* GetObject() {
+	return (Standard_OutOfMemory*)$self->Access();
 	}
 };
-
-
-%nodefaultctor Standard_MMgrOpt;
-class Standard_MMgrOpt : public Standard_MMgrRoot {
-	public:
-		%feature("autodoc", "1");
-		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Allocate(const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Purge(Standard_Boolean );
-
-};
-%feature("shadow") Standard_MMgrOpt::~Standard_MMgrOpt %{
+%feature("shadow") Handle_Standard_OutOfMemory::~Handle_Standard_OutOfMemory %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1312,7 +1354,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Standard_MMgrOpt {
+%extend Handle_Standard_OutOfMemory {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1359,7 +1401,7 @@ class Standard_Transient {
 };
 %extend Standard_Transient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Transient::~Standard_Transient %{
@@ -1426,7 +1468,7 @@ class Standard_Failure : public Standard_Transient {
 };
 %extend Standard_Failure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Failure::~Standard_Failure %{
@@ -1445,6 +1487,119 @@ def __del__(self):
 };
 
 
+%nodefaultctor Standard_DomainError;
+class Standard_DomainError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Standard_DomainError();
+		%feature("autodoc", "1");
+		Standard_DomainError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_DomainError NewInstance(const char * aMessage="");
+
+};
+%extend Standard_DomainError {
+	Handle_Standard_DomainError GetHandle() {
+	return *(Handle_Standard_DomainError*) &$self;
+	}
+};
+%extend Standard_DomainError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_DomainError::~Standard_DomainError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_DomainError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_RangeError;
+class Standard_RangeError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_RangeError();
+		%feature("autodoc", "1");
+		Standard_RangeError(const char * AString);
+		%feature("autodoc", "1");
+		static		Handle_Standard_RangeError NewInstance(const char * aMessage="");
+
+};
+%extend Standard_RangeError {
+	Handle_Standard_RangeError GetHandle() {
+	return *(Handle_Standard_RangeError*) &$self;
+	}
+};
+%extend Standard_RangeError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_RangeError::~Standard_RangeError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_RangeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_NegativeValue;
+class Standard_NegativeValue : public Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NegativeValue();
+		%feature("autodoc", "1");
+		Standard_NegativeValue(const char * AString);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NegativeValue NewInstance(const char * aMessage="");
+
+};
+%extend Standard_NegativeValue {
+	Handle_Standard_NegativeValue GetHandle() {
+	return *(Handle_Standard_NegativeValue*) &$self;
+	}
+};
+%extend Standard_NegativeValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_NegativeValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Standard_NumericError;
 class Standard_NumericError : public Standard_Failure {
 	public:
@@ -1453,9 +1608,13 @@ class Standard_NumericError : public Standard_Failure {
 		%feature("autodoc", "1");
 		Standard_NumericError(const char * AString);
 		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
 		static		Handle_Standard_NumericError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Standard_NumericError {
@@ -1465,7 +1624,7 @@ class Standard_NumericError : public Standard_Failure {
 };
 %extend Standard_NumericError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_NumericError::~Standard_NumericError %{
@@ -1502,7 +1661,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 };
 %extend Standard_DivideByZero {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_DivideByZero::~Standard_DivideByZero %{
@@ -1515,6 +1674,117 @@ def __del__(self):
 %}
 
 %extend Standard_DivideByZero {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_LicenseError;
+class Standard_LicenseError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Standard_LicenseError();
+		%feature("autodoc", "1");
+		Standard_LicenseError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_LicenseError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_LicenseError {
+	Handle_Standard_LicenseError GetHandle() {
+	return *(Handle_Standard_LicenseError*) &$self;
+	}
+};
+%extend Standard_LicenseError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_LicenseError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_TooManyUsers;
+class Standard_TooManyUsers : public Standard_LicenseError {
+	public:
+		%feature("autodoc", "1");
+		Standard_TooManyUsers();
+		%feature("autodoc", "1");
+		Standard_TooManyUsers(const char * AString);
+		%feature("autodoc", "1");
+		static		Handle_Standard_TooManyUsers NewInstance(const char * aMessage="");
+
+};
+%extend Standard_TooManyUsers {
+	Handle_Standard_TooManyUsers GetHandle() {
+	return *(Handle_Standard_TooManyUsers*) &$self;
+	}
+};
+%extend Standard_TooManyUsers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_TooManyUsers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_MMgrRoot;
+class Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size theSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size theSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & aPtr);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Purge(Standard_Boolean =0);
+		%feature("autodoc", "1");
+		virtual		void SetReentrant(Standard_Boolean );
+
+};
+%feature("shadow") Standard_MMgrRoot::~Standard_MMgrRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_MMgrRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1545,7 +1815,7 @@ class Standard_ProgramError : public Standard_Failure {
 };
 %extend Standard_ProgramError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_ProgramError::~Standard_ProgramError %{
@@ -1599,129 +1869,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Standard_DomainError;
-class Standard_DomainError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Standard_DomainError();
-		%feature("autodoc", "1");
-		Standard_DomainError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_DomainError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_DomainError {
-	Handle_Standard_DomainError GetHandle() {
-	return *(Handle_Standard_DomainError*) &$self;
-	}
-};
-%extend Standard_DomainError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_DomainError::~Standard_DomainError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_DomainError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_NoSuchObject;
-class Standard_NoSuchObject : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NoSuchObject();
-		%feature("autodoc", "1");
-		Standard_NoSuchObject(const char * AString);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NoSuchObject NewInstance(const char * aMessage="");
-
-};
-%extend Standard_NoSuchObject {
-	Handle_Standard_NoSuchObject GetHandle() {
-	return *(Handle_Standard_NoSuchObject*) &$self;
-	}
-};
-%extend Standard_NoSuchObject {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_NoSuchObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_RangeError;
-class Standard_RangeError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_RangeError();
-		%feature("autodoc", "1");
-		Standard_RangeError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_RangeError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_RangeError {
-	Handle_Standard_RangeError GetHandle() {
-	return *(Handle_Standard_RangeError*) &$self;
-	}
-};
-%extend Standard_RangeError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_RangeError::~Standard_RangeError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_RangeError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Standard_NotImplemented;
 class Standard_NotImplemented : public Standard_ProgramError {
 	public:
@@ -1746,7 +1893,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 %extend Standard_NotImplemented {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_NotImplemented::~Standard_NotImplemented %{
@@ -1789,7 +1936,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 };
 %extend Standard_AbortiveTransaction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_AbortiveTransaction::~Standard_AbortiveTransaction %{
@@ -1896,7 +2043,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 };
 %extend Standard_MultiplyDefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_MultiplyDefined::~Standard_MultiplyDefined %{
@@ -1939,7 +2086,7 @@ class Standard_Overflow : public Standard_NumericError {
 };
 %extend Standard_Overflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Overflow::~Standard_Overflow %{
@@ -1952,6 +2099,279 @@ def __del__(self):
 %}
 
 %extend Standard_Overflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_NullObject;
+class Standard_NullObject : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NullObject();
+		%feature("autodoc", "1");
+		Standard_NullObject(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NullObject NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_NullObject {
+	Handle_Standard_NullObject GetHandle() {
+	return *(Handle_Standard_NullObject*) &$self;
+	}
+};
+%extend Standard_NullObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_NullObject::~Standard_NullObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_NullObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_NullValue;
+class Standard_NullValue : public Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NullValue();
+		%feature("autodoc", "1");
+		Standard_NullValue(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NullValue NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_NullValue {
+	Handle_Standard_NullValue GetHandle() {
+	return *(Handle_Standard_NullValue*) &$self;
+	}
+};
+%extend Standard_NullValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_NullValue::~Standard_NullValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_NullValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_MMgrTBBalloc;
+class Standard_MMgrTBBalloc : public Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		Standard_MMgrTBBalloc(const Standard_Boolean aClear=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & arg0);
+
+};
+%feature("shadow") Standard_MMgrTBBalloc::~Standard_MMgrTBBalloc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_MMgrTBBalloc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_MMgrRaw;
+class Standard_MMgrRaw : public Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		Standard_MMgrRaw(const Standard_Boolean aClear=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & arg0);
+
+};
+%feature("shadow") Standard_MMgrRaw::~Standard_MMgrRaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_MMgrRaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_NoMoreObject;
+class Standard_NoMoreObject : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NoMoreObject();
+		%feature("autodoc", "1");
+		Standard_NoMoreObject(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NoMoreObject NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_NoMoreObject {
+	Handle_Standard_NoMoreObject GetHandle() {
+	return *(Handle_Standard_NoMoreObject*) &$self;
+	}
+};
+%extend Standard_NoMoreObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_NoMoreObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_TypeMismatch;
+class Standard_TypeMismatch : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_TypeMismatch();
+		%feature("autodoc", "1");
+		Standard_TypeMismatch(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_TypeMismatch NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_TypeMismatch {
+	Handle_Standard_TypeMismatch GetHandle() {
+	return *(Handle_Standard_TypeMismatch*) &$self;
+	}
+};
+%extend Standard_TypeMismatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_TypeMismatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_LicenseNotFound;
+class Standard_LicenseNotFound : public Standard_LicenseError {
+	public:
+		%feature("autodoc", "1");
+		Standard_LicenseNotFound();
+		%feature("autodoc", "1");
+		Standard_LicenseNotFound(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_LicenseNotFound {
+	Handle_Standard_LicenseNotFound GetHandle() {
+	return *(Handle_Standard_LicenseNotFound*) &$self;
+	}
+};
+%extend Standard_LicenseNotFound {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_LicenseNotFound {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1994,7 +2414,7 @@ class Standard_Persistent {
 };
 %extend Standard_Persistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Persistent::~Standard_Persistent %{
@@ -2013,295 +2433,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Standard_NullValue;
-class Standard_NullValue : public Standard_RangeError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NullValue();
-		%feature("autodoc", "1");
-		Standard_NullValue(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NullValue NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_NullValue {
-	Handle_Standard_NullValue GetHandle() {
-	return *(Handle_Standard_NullValue*) &$self;
-	}
-};
-%extend Standard_NullValue {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_NullValue::~Standard_NullValue %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_NullValue {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_NoMoreObject;
-class Standard_NoMoreObject : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NoMoreObject();
-		%feature("autodoc", "1");
-		Standard_NoMoreObject(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NoMoreObject NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_NoMoreObject {
-	Handle_Standard_NoMoreObject GetHandle() {
-	return *(Handle_Standard_NoMoreObject*) &$self;
-	}
-};
-%extend Standard_NoMoreObject {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_NoMoreObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_DimensionError;
-class Standard_DimensionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_DimensionError();
-		%feature("autodoc", "1");
-		Standard_DimensionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_DimensionError {
-	Handle_Standard_DimensionError GetHandle() {
-	return *(Handle_Standard_DimensionError*) &$self;
-	}
-};
-%extend Standard_DimensionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_DimensionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_DimensionMismatch;
-class Standard_DimensionMismatch : public Standard_DimensionError {
-	public:
-		%feature("autodoc", "1");
-		Standard_DimensionMismatch();
-		%feature("autodoc", "1");
-		Standard_DimensionMismatch(const char * AString);
-		%feature("autodoc", "1");
-		static		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage="");
-
-};
-%extend Standard_DimensionMismatch {
-	Handle_Standard_DimensionMismatch GetHandle() {
-	return *(Handle_Standard_DimensionMismatch*) &$self;
-	}
-};
-%extend Standard_DimensionMismatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_DimensionMismatch {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_TypeMismatch;
-class Standard_TypeMismatch : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_TypeMismatch();
-		%feature("autodoc", "1");
-		Standard_TypeMismatch(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_TypeMismatch NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_TypeMismatch {
-	Handle_Standard_TypeMismatch GetHandle() {
-	return *(Handle_Standard_TypeMismatch*) &$self;
-	}
-};
-%extend Standard_TypeMismatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_TypeMismatch {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_LicenseError;
-class Standard_LicenseError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Standard_LicenseError();
-		%feature("autodoc", "1");
-		Standard_LicenseError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_LicenseError {
-	Handle_Standard_LicenseError GetHandle() {
-	return *(Handle_Standard_LicenseError*) &$self;
-	}
-};
-%extend Standard_LicenseError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_LicenseError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_LicenseNotFound;
-class Standard_LicenseNotFound : public Standard_LicenseError {
-	public:
-		%feature("autodoc", "1");
-		Standard_LicenseNotFound();
-		%feature("autodoc", "1");
-		Standard_LicenseNotFound(const char * AString);
-		%feature("autodoc", "1");
-		static		Handle_Standard_LicenseNotFound NewInstance(const char * aMessage="");
-
-};
-%extend Standard_LicenseNotFound {
-	Handle_Standard_LicenseNotFound GetHandle() {
-	return *(Handle_Standard_LicenseNotFound*) &$self;
-	}
-};
-%extend Standard_LicenseNotFound {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_LicenseNotFound {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Standard_Storable;
 class Standard_Storable {
 	public:
@@ -2313,8 +2444,12 @@ class Standard_Storable {
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Storable &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_Storable &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_Storable &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsSimilar(const Standard_Storable &Other) const;
 		%feature("autodoc", "1");
@@ -2325,11 +2460,18 @@ class Standard_Storable {
 			self->ShallowDump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %extend Standard_Storable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Storable::~Standard_Storable %{
@@ -2372,7 +2514,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 };
 %extend Standard_ImmutableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_ImmutableObject::~Standard_ImmutableObject %{
@@ -2385,6 +2527,49 @@ def __del__(self):
 %}
 
 %extend Standard_ImmutableObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_NoSuchObject;
+class Standard_NoSuchObject : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Standard_NoSuchObject();
+		%feature("autodoc", "1");
+		Standard_NoSuchObject(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NoSuchObject NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_NoSuchObject {
+	Handle_Standard_NoSuchObject GetHandle() {
+	return *(Handle_Standard_NoSuchObject*) &$self;
+	}
+};
+%extend Standard_NoSuchObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_NoSuchObject {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2414,12 +2599,20 @@ class Standard_GUID {
 		void ToExtString(const Standard_PExtCharacter aStrGuid) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSame(const Standard_GUID &uid) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_GUID &uid) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_GUID &uid) {
+				if (*self==uid) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotSame(const Standard_GUID &uid) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Standard_GUID &uid) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_GUID &uid) {
+				if (*self!=uid) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		void Assign(const Standard_GUID &uid);
 		%feature("autodoc", "1");
@@ -2484,6 +2677,20 @@ class Standard_GUID {
 		Standard_Byte _CSFDB_GetStandard_GUIDmy8b6() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetStandard_GUIDmy8b6(const Standard_Byte p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Standard_GUID::~Standard_GUID %{
@@ -2575,34 +2782,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Standard_TooManyUsers;
-class Standard_TooManyUsers : public Standard_LicenseError {
+%nodefaultctor Standard_DimensionError;
+class Standard_DimensionError : public Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Standard_TooManyUsers();
+		Standard_DimensionError();
 		%feature("autodoc", "1");
-		Standard_TooManyUsers(const char * AString);
+		Standard_DimensionError(const char * AString);
 		%feature("autodoc", "1");
 		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Standard_TooManyUsers NewInstance(const char * aMessage="");
+		static		Handle_Standard_DimensionError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Standard_TooManyUsers {
-	Handle_Standard_TooManyUsers GetHandle() {
-	return *(Handle_Standard_TooManyUsers*) &$self;
+%extend Standard_DimensionError {
+	Handle_Standard_DimensionError GetHandle() {
+	return *(Handle_Standard_DimensionError*) &$self;
 	}
 };
-%extend Standard_TooManyUsers {
+%extend Standard_DimensionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
+%feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2611,41 +2818,35 @@ def __del__(self):
 		pass
 %}
 
-%extend Standard_TooManyUsers {
+%extend Standard_DimensionError {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Standard_NegativeValue;
-class Standard_NegativeValue : public Standard_RangeError {
+%nodefaultctor Standard_DimensionMismatch;
+class Standard_DimensionMismatch : public Standard_DimensionError {
 	public:
 		%feature("autodoc", "1");
-		Standard_NegativeValue();
+		Standard_DimensionMismatch();
 		%feature("autodoc", "1");
-		Standard_NegativeValue(const char * AString);
+		Standard_DimensionMismatch(const char * AString);
 		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NegativeValue NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_Standard_DimensionMismatch NewInstance(const char * aMessage="");
 
 };
-%extend Standard_NegativeValue {
-	Handle_Standard_NegativeValue GetHandle() {
-	return *(Handle_Standard_NegativeValue*) &$self;
+%extend Standard_DimensionMismatch {
+	Handle_Standard_DimensionMismatch GetHandle() {
+	return *(Handle_Standard_DimensionMismatch*) &$self;
 	}
 };
-%extend Standard_NegativeValue {
+%extend Standard_DimensionMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
+%feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2654,50 +2855,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Standard_NegativeValue {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_NullObject;
-class Standard_NullObject : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Standard_NullObject();
-		%feature("autodoc", "1");
-		Standard_NullObject(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NullObject NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_NullObject {
-	Handle_Standard_NullObject GetHandle() {
-	return *(Handle_Standard_NullObject*) &$self;
-	}
-};
-%extend Standard_NullObject {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_NullObject::~Standard_NullObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_NullObject {
+%extend Standard_DimensionMismatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2764,7 +2922,7 @@ class Standard_Type : public Standard_Transient {
 };
 %extend Standard_Type {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Type::~Standard_Type %{
@@ -2807,7 +2965,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 };
 %extend Standard_ConstructionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_ConstructionError::~Standard_ConstructionError %{
@@ -2820,78 +2978,6 @@ def __del__(self):
 %}
 
 %extend Standard_ConstructionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_OutOfRange;
-class Standard_OutOfRange : public Standard_RangeError {
-	public:
-		%feature("autodoc", "1");
-		Standard_OutOfRange();
-		%feature("autodoc", "1");
-		Standard_OutOfRange(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfRange NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_OutOfRange {
-	Handle_Standard_OutOfRange GetHandle() {
-	return *(Handle_Standard_OutOfRange*) &$self;
-	}
-};
-%extend Standard_OutOfRange {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_OutOfRange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_MMgrRaw;
-class Standard_MMgrRaw : public Standard_MMgrRoot {
-	public:
-		%feature("autodoc", "1");
-		Standard_MMgrRaw(const Standard_Boolean aClear=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Allocate(const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		void Free(Standard_Address & arg0);
-
-};
-%feature("shadow") Standard_MMgrRaw::~Standard_MMgrRaw %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_MMgrRaw {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2922,7 +3008,7 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 };
 %extend Standard_OutOfMemory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
@@ -2935,6 +3021,82 @@ def __del__(self):
 %}
 
 %extend Standard_OutOfMemory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_MMgrOpt;
+class Standard_MMgrOpt : public Standard_MMgrRoot {
+	public:
+		%feature("autodoc", "1");
+		Standard_MMgrOpt(const Standard_Boolean aClear=1, const Standard_Boolean aMMap=1, const Standard_Size aCellSize=200, const Standard_Integer aNbPages=10000, const Standard_Size aThreshold=40000, const Standard_Boolean isReentrant=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Allocate(const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
+		%feature("autodoc", "1");
+		virtual		void Free(Standard_Address & aPtr);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Purge(Standard_Boolean );
+		%feature("autodoc", "1");
+		virtual		void SetReentrant(Standard_Boolean );
+
+};
+%feature("shadow") Standard_MMgrOpt::~Standard_MMgrOpt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_MMgrOpt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_OutOfRange;
+class Standard_OutOfRange : public Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Standard_OutOfRange();
+		%feature("autodoc", "1");
+		Standard_OutOfRange(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_OutOfRange NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_OutOfRange {
+	Handle_Standard_OutOfRange GetHandle() {
+	return *(Handle_Standard_OutOfRange*) &$self;
+	}
+};
+%extend Standard_OutOfRange {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_OutOfRange {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2965,7 +3127,7 @@ class Standard_Underflow : public Standard_NumericError {
 };
 %extend Standard_Underflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Standard_Underflow::~Standard_Underflow %{
@@ -2978,35 +3140,6 @@ def __del__(self):
 %}
 
 %extend Standard_Underflow {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_MMgrTBBalloc;
-class Standard_MMgrTBBalloc : public Standard_MMgrRoot {
-	public:
-		%feature("autodoc", "1");
-		Standard_MMgrTBBalloc(const Standard_Boolean aClear=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Allocate(const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		Standard_Address Reallocate(Standard_Address & aPtr, const Standard_Size aSize);
-		%feature("autodoc", "1");
-		virtual		void Free(Standard_Address & arg0);
-
-};
-%feature("shadow") Standard_MMgrTBBalloc::~Standard_MMgrTBBalloc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_MMgrTBBalloc {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Adaptor2d_HCurve2d::DownCast;
+%rename(DownCast) Handle_Adaptor2d_HLine2d::DownCast;

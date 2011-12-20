@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinMNaming_NamingDriver::DownCast;
+%rename(DownCast) Handle_BinMNaming_NamedShapeDriver::DownCast;
+%rename(AddDrivers) BinMNaming::AddDrivers;
+%rename(SetDocumentVersion) BinMNaming::SetDocumentVersion;
+%rename(DocumentVersion) BinMNaming::DocumentVersion;

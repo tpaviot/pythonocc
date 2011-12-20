@@ -58,44 +58,6 @@ enum V2d_TypeOfWindowResizingEffect {
 
 
 
-%nodefaultctor Handle_V2d_BackgroundGraphicObject;
-class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_V2d_BackgroundGraphicObject();
-		%feature("autodoc", "1");
-		Handle_V2d_BackgroundGraphicObject(const Handle_V2d_BackgroundGraphicObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_BackgroundGraphicObject(const V2d_BackgroundGraphicObject *anItem);
-		%feature("autodoc", "1");
-		Handle_V2d_BackgroundGraphicObject & operator=(const Handle_V2d_BackgroundGraphicObject &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_BackgroundGraphicObject & operator=(const V2d_BackgroundGraphicObject *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V2d_BackgroundGraphicObject DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V2d_BackgroundGraphicObject {
-	V2d_BackgroundGraphicObject* GetObject() {
-	return (V2d_BackgroundGraphicObject*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V2d_BackgroundGraphicObject::~Handle_V2d_BackgroundGraphicObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V2d_BackgroundGraphicObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
 class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
@@ -128,6 +90,44 @@ def __del__(self):
 %}
 
 %extend Handle_V2d_RectangularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V2d_BackgroundGraphicObject;
+class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject();
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject(const Handle_V2d_BackgroundGraphicObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject(const V2d_BackgroundGraphicObject *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject & operator=(const Handle_V2d_BackgroundGraphicObject &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_BackgroundGraphicObject & operator=(const V2d_BackgroundGraphicObject *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V2d_BackgroundGraphicObject DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V2d_BackgroundGraphicObject {
+	V2d_BackgroundGraphicObject* GetObject() {
+	return (V2d_BackgroundGraphicObject*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V2d_BackgroundGraphicObject::~Handle_V2d_BackgroundGraphicObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V2d_BackgroundGraphicObject {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -210,44 +210,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_V2d_CircularGrid;
-class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
-	public:
-		%feature("autodoc", "1");
-		Handle_V2d_CircularGrid();
-		%feature("autodoc", "1");
-		Handle_V2d_CircularGrid(const Handle_V2d_CircularGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_CircularGrid(const V2d_CircularGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_V2d_CircularGrid & operator=(const Handle_V2d_CircularGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_V2d_CircularGrid & operator=(const V2d_CircularGrid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V2d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V2d_CircularGrid {
-	V2d_CircularGrid* GetObject() {
-	return (V2d_CircularGrid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V2d_CircularGrid::~Handle_V2d_CircularGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V2d_CircularGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_V2d_View;
 class Handle_V2d_View : public Handle_Viewer_View {
 	public:
@@ -280,6 +242,44 @@ def __del__(self):
 %}
 
 %extend Handle_V2d_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V2d_CircularGrid;
+class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
+	public:
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid();
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid(const Handle_V2d_CircularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid(const V2d_CircularGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid & operator=(const Handle_V2d_CircularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V2d_CircularGrid & operator=(const V2d_CircularGrid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V2d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V2d_CircularGrid {
+	V2d_CircularGrid* GetObject() {
+	return (V2d_CircularGrid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V2d_CircularGrid::~Handle_V2d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V2d_CircularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -348,7 +348,7 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V2d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_RectangularGrid::~V2d_RectangularGrid %{
@@ -392,49 +392,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor V2d_CircularGrid;
-class V2d_CircularGrid : public Aspect_CircularGrid {
-	public:
-		%feature("autodoc", "1");
-		V2d_CircularGrid(const V2d_ViewerPointer &aViewer, const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
-		%feature("autodoc", "1");
-		void SetColorIndices(const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		virtual		void Erase() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V2d_CircularGrid {
-	Handle_V2d_CircularGrid GetHandle() {
-	return *(Handle_V2d_CircularGrid*) &$self;
-	}
-};
-%extend V2d_CircularGrid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V2d_CircularGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor V2d_RectangularGraphicGrid;
 class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	public:
@@ -455,7 +412,7 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_RectangularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_RectangularGraphicGrid::~V2d_RectangularGraphicGrid %{
@@ -494,7 +451,7 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_CircularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_CircularGraphicGrid::~V2d_CircularGraphicGrid %{
@@ -507,6 +464,49 @@ def __del__(self):
 %}
 
 %extend V2d_CircularGraphicGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V2d_CircularGrid;
+class V2d_CircularGrid : public Aspect_CircularGrid {
+	public:
+		%feature("autodoc", "1");
+		V2d_CircularGrid(const V2d_ViewerPointer &aViewer, const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
+		%feature("autodoc", "1");
+		void SetColorIndices(const Standard_Integer aColorIndex1, const Standard_Integer aColorIndex2);
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		virtual		void Erase() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V2d_CircularGrid {
+	Handle_V2d_CircularGrid GetHandle() {
+	return *(Handle_V2d_CircularGrid*) &$self;
+	}
+};
+%extend V2d_CircularGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V2d_CircularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -531,7 +531,7 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 };
 %extend V2d_BackgroundGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_BackgroundGraphicObject::~V2d_BackgroundGraphicObject %{
@@ -544,6 +544,39 @@ def __del__(self):
 %}
 
 %extend V2d_BackgroundGraphicObject {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V2d_DefaultMap;
+class V2d_DefaultMap {
+	public:
+		%feature("autodoc", "1");
+		V2d_DefaultMap();
+		%feature("autodoc", "1");
+		static		Handle_Aspect_GenericColorMap ColorMap();
+		%feature("autodoc", "1");
+		static		Handle_Aspect_TypeMap TypeMap();
+		%feature("autodoc", "1");
+		static		Handle_Aspect_WidthMap WidthMap();
+		%feature("autodoc", "1");
+		static		Handle_Aspect_FontMap FontMap();
+		%feature("autodoc", "1");
+		static		Handle_Aspect_MarkMap MarkMap();
+
+};
+%feature("shadow") V2d_DefaultMap::~V2d_DefaultMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V2d_DefaultMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -689,7 +722,7 @@ class V2d_View : public Viewer_View {
 };
 %extend V2d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_View::~V2d_View %{
@@ -702,39 +735,6 @@ def __del__(self):
 %}
 
 %extend V2d_View {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V2d_DefaultMap;
-class V2d_DefaultMap {
-	public:
-		%feature("autodoc", "1");
-		V2d_DefaultMap();
-		%feature("autodoc", "1");
-		static		Handle_Aspect_GenericColorMap ColorMap();
-		%feature("autodoc", "1");
-		static		Handle_Aspect_TypeMap TypeMap();
-		%feature("autodoc", "1");
-		static		Handle_Aspect_WidthMap WidthMap();
-		%feature("autodoc", "1");
-		static		Handle_Aspect_FontMap FontMap();
-		%feature("autodoc", "1");
-		static		Handle_Aspect_MarkMap MarkMap();
-
-};
-%feature("shadow") V2d_DefaultMap::~V2d_DefaultMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V2d_DefaultMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -826,7 +826,7 @@ class V2d_Viewer : public Viewer_Viewer {
 };
 %extend V2d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") V2d_Viewer::~V2d_Viewer %{
