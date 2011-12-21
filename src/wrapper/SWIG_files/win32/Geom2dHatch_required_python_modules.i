@@ -30,7 +30,7 @@ import GarbageCollector
 import Geom2dAdaptor
 import TopAbs
 import Standard
-import IntRes2d
 import HatchGen
 import gp
+import IntRes2d
 };

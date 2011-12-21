@@ -23,3 +23,41 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Transfer_HSequenceOfFinder::DownCast;
+%rename(DownCast) Handle_Transfer_SequenceNodeOfSequenceOfBinder::DownCast;
+%rename(DownCast) Handle_Transfer_Binder::DownCast;
+%rename(DownCast) Handle_Transfer_VoidBinder::DownCast;
+%rename(DownCast) Handle_Transfer_Finder::DownCast;
+%rename(DownCast) Handle_Transfer_ResultFromTransient::DownCast;
+%rename(DownCast) Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::DownCast;
+%rename(DownCast) Handle_Transfer_ActorOfProcessForFinder::DownCast;
+%rename(DownCast) Handle_Transfer_ProcessForFinder::DownCast;
+%rename(DownCast) Handle_Transfer_TransientMapper::DownCast;
+%rename(DownCast) Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::DownCast;
+%rename(DownCast) Handle_Transfer_SimpleBinderOfTransient::DownCast;
+%rename(DownCast) Handle_Transfer_TransferFailure::DownCast;
+%rename(DownCast) Handle_Transfer_ProcessForTransient::DownCast;
+%rename(DownCast) Handle_Transfer_TransientProcess::DownCast;
+%rename(DownCast) Handle_Transfer_SequenceNodeOfSequenceOfFinder::DownCast;
+%rename(DownCast) Handle_Transfer_BinderOfTransientInteger::DownCast;
+%rename(DownCast) Handle_Transfer_ActorOfProcessForTransient::DownCast;
+%rename(DownCast) Handle_Transfer_ActorOfTransientProcess::DownCast;
+%rename(DownCast) Handle_Transfer_ActorDispatch::DownCast;
+%rename(DownCast) Handle_Transfer_DispatchControl::DownCast;
+%rename(DownCast) Handle_Transfer_FinderProcess::DownCast;
+%rename(DownCast) Handle_Transfer_HSequenceOfBinder::DownCast;
+%rename(DownCast) Handle_Transfer_MultipleBinder::DownCast;
+%rename(DownCast) Handle_Transfer_ResultFromModel::DownCast;
+%rename(DownCast) Handle_Transfer_MapContainer::DownCast;
+%rename(DownCast) Handle_Transfer_TransientListBinder::DownCast;
+%rename(DownCast) Handle_Transfer_ActorOfFinderProcess::DownCast;
+%rename(DownCast) Handle_Transfer_TransferDeadLoop::DownCast;
+%rename(Raise) Transfer_TransferFailure::Raise;
+%rename(NewInstance) Transfer_TransferFailure::NewInstance;
+%rename(Raise) Transfer_TransferDeadLoop::Raise;
+%rename(NewInstance) Transfer_TransferDeadLoop::NewInstance;
+%rename(HashCode) Transfer_FindHasher::HashCode;
+%rename(IsEqual) Transfer_FindHasher::IsEqual;
+%rename(GetTypedResult) Transfer_SimpleBinderOfTransient::GetTypedResult;
+%rename(Type) Transfer_DataInfo::Type;
+%rename(TypeName) Transfer_DataInfo::TypeName;

@@ -158,7 +158,7 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMNaming_NamedShapeDriver::~XmlMNaming_NamedShapeDriver %{
@@ -171,6 +171,35 @@ def __del__(self):
 %}
 
 %extend XmlMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMNaming;
+class XmlMNaming {
+	public:
+		%feature("autodoc", "1");
+		XmlMNaming();
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
+		%feature("autodoc", "1");
+		static		void SetDocumentVersion(const Standard_Integer DocVersion);
+		%feature("autodoc", "1");
+		static		Standard_Integer DocumentVersion();
+
+};
+%feature("shadow") XmlMNaming::~XmlMNaming %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMNaming {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -295,7 +324,7 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMNaming_NamingDriver::~XmlMNaming_NamingDriver %{
@@ -308,35 +337,6 @@ def __del__(self):
 %}
 
 %extend XmlMNaming_NamingDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMNaming;
-class XmlMNaming {
-	public:
-		%feature("autodoc", "1");
-		XmlMNaming();
-		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMessageDriver);
-		%feature("autodoc", "1");
-		static		void SetDocumentVersion(const Standard_Integer DocVersion);
-		%feature("autodoc", "1");
-		static		Standard_Integer DocumentVersion();
-
-};
-%feature("shadow") XmlMNaming::~XmlMNaming %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMNaming {
 	void _kill_pointed() {
 		delete $self;
 	}

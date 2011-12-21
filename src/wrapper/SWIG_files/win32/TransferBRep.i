@@ -128,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TransferBRep_ShapeMapper;
+class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
+	public:
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper();
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper(const Handle_TransferBRep_ShapeMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper(const TransferBRep_ShapeMapper *anItem);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper & operator=(const Handle_TransferBRep_ShapeMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_ShapeMapper & operator=(const TransferBRep_ShapeMapper *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TransferBRep_ShapeMapper DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TransferBRep_ShapeMapper {
+	TransferBRep_ShapeMapper* GetObject() {
+	return (TransferBRep_ShapeMapper*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TransferBRep_ShapeMapper::~Handle_TransferBRep_ShapeMapper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TransferBRep_ShapeMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TransferBRep_HSequenceOfTransferResultInfo;
 class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TShared {
 	public:
@@ -236,44 +274,6 @@ def __del__(self):
 %}
 
 %extend Handle_TransferBRep_ShapeListBinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TransferBRep_ShapeMapper;
-class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
-	public:
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper();
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper(const Handle_TransferBRep_ShapeMapper &aHandle);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper(const TransferBRep_ShapeMapper *anItem);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper & operator=(const Handle_TransferBRep_ShapeMapper &aHandle);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_ShapeMapper & operator=(const TransferBRep_ShapeMapper *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TransferBRep_ShapeMapper DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TransferBRep_ShapeMapper {
-	TransferBRep_ShapeMapper* GetObject() {
-	return (TransferBRep_ShapeMapper*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TransferBRep_ShapeMapper::~Handle_TransferBRep_ShapeMapper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TransferBRep_ShapeMapper {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -569,7 +569,7 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_TransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TransferBRep_TransferResultInfo::~TransferBRep_TransferResultInfo %{
@@ -612,7 +612,7 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 %extend TransferBRep_OrientedShapeMapper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TransferBRep_OrientedShapeMapper::~TransferBRep_OrientedShapeMapper %{
@@ -625,108 +625,6 @@ def __del__(self):
 %}
 
 %extend TransferBRep_OrientedShapeMapper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TransferBRep_BinderOfShape;
-class TransferBRep_BinderOfShape : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_BinderOfShape();
-		%feature("autodoc", "1");
-		TransferBRep_BinderOfShape(const TopoDS_Shape res);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		char * ResultTypeName() const;
-		%feature("autodoc", "1");
-		void SetResult(const TopoDS_Shape res);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Result() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  CResult();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TransferBRep_BinderOfShape {
-	Handle_TransferBRep_BinderOfShape GetHandle() {
-	return *(Handle_TransferBRep_BinderOfShape*) &$self;
-	}
-};
-%extend TransferBRep_BinderOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TransferBRep_BinderOfShape::~TransferBRep_BinderOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TransferBRep_BinderOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TransferBRep_ShapeBinder;
-class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_ShapeBinder();
-		%feature("autodoc", "1");
-		TransferBRep_ShapeBinder(const TopoDS_Shape res);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex Vertex() const;
-		%feature("autodoc", "1");
-		TopoDS_Edge Edge() const;
-		%feature("autodoc", "1");
-		TopoDS_Wire Wire() const;
-		%feature("autodoc", "1");
-		TopoDS_Face Face() const;
-		%feature("autodoc", "1");
-		TopoDS_Shell Shell() const;
-		%feature("autodoc", "1");
-		TopoDS_Solid Solid() const;
-		%feature("autodoc", "1");
-		TopoDS_CompSolid CompSolid() const;
-		%feature("autodoc", "1");
-		TopoDS_Compound Compound() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TransferBRep_ShapeBinder {
-	Handle_TransferBRep_ShapeBinder GetHandle() {
-	return *(Handle_TransferBRep_ShapeBinder*) &$self;
-	}
-};
-%extend TransferBRep_ShapeBinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TransferBRep_ShapeBinder::~TransferBRep_ShapeBinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TransferBRep_ShapeBinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -793,7 +691,7 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TransferBRep_HSequenceOfTransferResultInfo::~TransferBRep_HSequenceOfTransferResultInfo %{
@@ -812,18 +710,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor TransferBRep_ShapeInfo;
-class TransferBRep_ShapeInfo {
+%nodefaultctor TransferBRep_BinderOfShape;
+class TransferBRep_BinderOfShape : public Transfer_Binder {
 	public:
 		%feature("autodoc", "1");
-		TransferBRep_ShapeInfo();
+		TransferBRep_BinderOfShape();
 		%feature("autodoc", "1");
-		static		Handle_Standard_Type Type(const TopoDS_Shape ent);
+		TransferBRep_BinderOfShape(const TopoDS_Shape res);
 		%feature("autodoc", "1");
-		static		char * TypeName(const TopoDS_Shape ent);
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		void SetResult(const TopoDS_Shape res);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Result() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  CResult();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TransferBRep_ShapeInfo::~TransferBRep_ShapeInfo %{
+%extend TransferBRep_BinderOfShape {
+	Handle_TransferBRep_BinderOfShape GetHandle() {
+	return *(Handle_TransferBRep_BinderOfShape*) &$self;
+	}
+};
+%extend TransferBRep_BinderOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TransferBRep_BinderOfShape::~TransferBRep_BinderOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -832,7 +750,62 @@ def __del__(self):
 		pass
 %}
 
-%extend TransferBRep_ShapeInfo {
+%extend TransferBRep_BinderOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TransferBRep_ShapeBinder;
+class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
+	public:
+		%feature("autodoc", "1");
+		TransferBRep_ShapeBinder();
+		%feature("autodoc", "1");
+		TransferBRep_ShapeBinder(const TopoDS_Shape res);
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex Vertex() const;
+		%feature("autodoc", "1");
+		TopoDS_Edge Edge() const;
+		%feature("autodoc", "1");
+		TopoDS_Wire Wire() const;
+		%feature("autodoc", "1");
+		TopoDS_Face Face() const;
+		%feature("autodoc", "1");
+		TopoDS_Shell Shell() const;
+		%feature("autodoc", "1");
+		TopoDS_Solid Solid() const;
+		%feature("autodoc", "1");
+		TopoDS_CompSolid CompSolid() const;
+		%feature("autodoc", "1");
+		TopoDS_Compound Compound() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TransferBRep_ShapeBinder {
+	Handle_TransferBRep_ShapeBinder GetHandle() {
+	return *(Handle_TransferBRep_ShapeBinder*) &$self;
+	}
+};
+%extend TransferBRep_ShapeBinder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TransferBRep_ShapeBinder::~TransferBRep_ShapeBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TransferBRep_ShapeBinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -904,43 +877,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
-class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo(const Handle_TransferBRep_TransferResultInfo &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TransferBRep_TransferResultInfo & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
-	Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo GetHandle() {
-	return *(Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo*) &$self;
-	}
-};
-%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TransferBRep_ShapeListBinder;
 class TransferBRep_ShapeListBinder : public Transfer_Binder {
 	public:
@@ -993,7 +929,7 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 %extend TransferBRep_ShapeListBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TransferBRep_ShapeListBinder::~TransferBRep_ShapeListBinder %{
@@ -1006,6 +942,70 @@ def __del__(self):
 %}
 
 %extend TransferBRep_ShapeListBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TransferBRep_ShapeInfo;
+class TransferBRep_ShapeInfo {
+	public:
+		%feature("autodoc", "1");
+		TransferBRep_ShapeInfo();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Type Type(const TopoDS_Shape ent);
+		%feature("autodoc", "1");
+		static		char * TypeName(const TopoDS_Shape ent);
+
+};
+%feature("shadow") TransferBRep_ShapeInfo::~TransferBRep_ShapeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TransferBRep_ShapeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
+class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo(const Handle_TransferBRep_TransferResultInfo &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TransferBRep_TransferResultInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo GetHandle() {
+	return *(Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo*) &$self;
+	}
+};
+%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -34,9 +34,9 @@ import TCollection
 import TColStd
 import TopAbs
 import gp
+import Geom
+import Geom2d
 import GeomAdaptor
 import TopTools
-import Geom2d
-import Geom
 import BRepClass3d
 };

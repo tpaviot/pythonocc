@@ -281,51 +281,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDF_ADriverTable;
-class BinMDF_ADriverTable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_ADriverTable();
-		%feature("autodoc", "1");
-		void AddDriver(const Handle_BinMDF_ADriver &theDriver);
-		%feature("autodoc", "1");
-		void AssignIds(const TColStd_IndexedMapOfTransient &theTypes);
-		%feature("autodoc", "1");
-		void AssignIds(const TColStd_SequenceOfAsciiString &theTypeNames);
-		%feature("autodoc", "1");
-		Standard_Integer GetDriver(const Handle_Standard_Type &theType, Handle_BinMDF_ADriver & theDriver) const;
-		%feature("autodoc", "1");
-		Handle_BinMDF_ADriver GetDriver(const Standard_Integer theTypeId) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMDF_ADriverTable {
-	Handle_BinMDF_ADriverTable GetHandle() {
-	return *(Handle_BinMDF_ADriverTable*) &$self;
-	}
-};
-%extend BinMDF_ADriverTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDF_ADriverTable::~BinMDF_ADriverTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF_ADriverTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDF_ADriver;
 class BinMDF_ADriver : public MMgt_TShared {
 	public:
@@ -352,7 +307,7 @@ class BinMDF_ADriver : public MMgt_TShared {
 };
 %extend BinMDF_ADriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMDF_ADriver::~BinMDF_ADriver %{
@@ -365,6 +320,88 @@ def __del__(self):
 %}
 
 %extend BinMDF_ADriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMDF_TagSourceDriver;
+class BinMDF_TagSourceDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+
+};
+%extend BinMDF_TagSourceDriver {
+	Handle_BinMDF_TagSourceDriver GetHandle() {
+	return *(Handle_BinMDF_TagSourceDriver*) &$self;
+	}
+};
+%extend BinMDF_TagSourceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BinMDF_TagSourceDriver::~BinMDF_TagSourceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMDF_TagSourceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMDF_ADriverTable;
+class BinMDF_ADriverTable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_ADriverTable();
+		%feature("autodoc", "1");
+		void AddDriver(const Handle_BinMDF_ADriver &theDriver);
+		%feature("autodoc", "1");
+		void AssignIds(const TColStd_IndexedMapOfTransient &theTypes);
+		%feature("autodoc", "1");
+		void AssignIds(const TColStd_SequenceOfAsciiString &theTypeNames);
+		%feature("autodoc", "1");
+		Standard_Integer GetDriver(const Handle_Standard_Type &theType, Handle_BinMDF_ADriver & theDriver) const;
+		%feature("autodoc", "1");
+		Handle_BinMDF_ADriver GetDriver(const Standard_Integer theTypeId) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMDF_ADriverTable {
+	Handle_BinMDF_ADriverTable GetHandle() {
+	return *(Handle_BinMDF_ADriverTable*) &$self;
+	}
+};
+%extend BinMDF_ADriverTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BinMDF_ADriverTable::~BinMDF_ADriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMDF_ADriverTable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -391,7 +428,7 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMDF_DataMapNodeOfTypeADriverMap::~BinMDF_DataMapNodeOfTypeADriverMap %{
@@ -442,7 +479,7 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMDF_DoubleMapNodeOfTypeIdMap::~BinMDF_DoubleMapNodeOfTypeIdMap %{
@@ -461,32 +498,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDF_TagSourceDriver;
-class BinMDF_TagSourceDriver : public BinMDF_ADriver {
+%nodefaultctor BinMDF;
+class BinMDF {
 	public:
 		%feature("autodoc", "1");
-		BinMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		BinMDF();
 		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
 
 };
-%extend BinMDF_TagSourceDriver {
-	Handle_BinMDF_TagSourceDriver GetHandle() {
-	return *(Handle_BinMDF_TagSourceDriver*) &$self;
-	}
-};
-%extend BinMDF_TagSourceDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BinMDF_TagSourceDriver::~BinMDF_TagSourceDriver %{
+%feature("shadow") BinMDF::~BinMDF %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -495,7 +516,54 @@ def __del__(self):
 		pass
 %}
 
-%extend BinMDF_TagSourceDriver {
+%extend BinMDF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMDF_TypeIdMap;
+class BinMDF_TypeIdMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BinMDF_TypeIdMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BinMDF_TypeIdMap & Assign(const BinMDF_TypeIdMap &Other);
+		%feature("autodoc", "1");
+		BinMDF_TypeIdMap & operator=(const BinMDF_TypeIdMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Bind(const Handle_Standard_Type &K1, const Standard_Integer &K2);
+		%feature("autodoc", "1");
+		Standard_Boolean AreBound(const Handle_Standard_Type &K1, const Standard_Integer &K2) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound2(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Type & Find2(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind1(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind2(const Standard_Integer &K);
+
+};
+%feature("shadow") BinMDF_TypeIdMap::~BinMDF_TypeIdMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMDF_TypeIdMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -555,7 +623,7 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinMDF_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMDF_ReferenceDriver::~BinMDF_ReferenceDriver %{
@@ -644,78 +712,6 @@ def __del__(self):
 %}
 
 %extend BinMDF_DataMapIteratorOfTypeADriverMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDF_TypeIdMap;
-class BinMDF_TypeIdMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BinMDF_TypeIdMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BinMDF_TypeIdMap & Assign(const BinMDF_TypeIdMap &Other);
-		%feature("autodoc", "1");
-		BinMDF_TypeIdMap & operator=(const BinMDF_TypeIdMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Bind(const Handle_Standard_Type &K1, const Standard_Integer &K2);
-		%feature("autodoc", "1");
-		Standard_Boolean AreBound(const Handle_Standard_Type &K1, const Standard_Integer &K2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound1(const Handle_Standard_Type &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound2(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Find1(const Handle_Standard_Type &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Type & Find2(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind1(const Handle_Standard_Type &K);
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind2(const Standard_Integer &K);
-
-};
-%feature("shadow") BinMDF_TypeIdMap::~BinMDF_TypeIdMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF_TypeIdMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMDF;
-class BinMDF {
-	public:
-		%feature("autodoc", "1");
-		BinMDF();
-		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
-
-};
-%feature("shadow") BinMDF::~BinMDF %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDF {
 	void _kill_pointed() {
 		delete $self;
 	}

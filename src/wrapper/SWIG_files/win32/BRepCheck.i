@@ -89,6 +89,44 @@ enum BRepCheck_Status {
 
 
 
+%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
+class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	BRepCheck_DataMapNodeOfDataMapOfShapeResult* GetObject() {
+	return (BRepCheck_DataMapNodeOfDataMapOfShapeResult*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepCheck_Result;
 class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 	public:
@@ -165,44 +203,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
-class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult();
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult & operator=(const BRepCheck_DataMapNodeOfDataMapOfShapeResult *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	BRepCheck_DataMapNodeOfDataMapOfShapeResult* GetObject() {
-	return (BRepCheck_DataMapNodeOfDataMapOfShapeResult*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult::~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
 class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_TCollection_MapNode {
 	public:
@@ -241,29 +241,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepCheck_Wire;
-class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
+%nodefaultctor Handle_BRepCheck_Vertex;
+class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire();
+		Handle_BRepCheck_Vertex();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire(const Handle_BRepCheck_Wire &aHandle);
+		Handle_BRepCheck_Vertex(const Handle_BRepCheck_Vertex &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
+		Handle_BRepCheck_Vertex(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
+		Handle_BRepCheck_Vertex & operator=(const Handle_BRepCheck_Vertex &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
+		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Wire DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Vertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepCheck_Wire {
-	BRepCheck_Wire* GetObject() {
-	return (BRepCheck_Wire*)$self->Access();
+%extend Handle_BRepCheck_Vertex {
+	BRepCheck_Vertex* GetObject() {
+	return (BRepCheck_Vertex*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRepCheck_Wire::~Handle_BRepCheck_Wire %{
+%feature("shadow") Handle_BRepCheck_Vertex::~Handle_BRepCheck_Vertex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -272,7 +272,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepCheck_Wire {
+%extend Handle_BRepCheck_Vertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -355,29 +355,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepCheck_Vertex;
-class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
+%nodefaultctor Handle_BRepCheck_Wire;
+class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex();
+		Handle_BRepCheck_Wire();
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex(const Handle_BRepCheck_Vertex &aHandle);
+		Handle_BRepCheck_Wire(const Handle_BRepCheck_Wire &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex(const BRepCheck_Vertex *anItem);
+		Handle_BRepCheck_Wire(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex & operator=(const Handle_BRepCheck_Vertex &aHandle);
+		Handle_BRepCheck_Wire & operator=(const Handle_BRepCheck_Wire &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRepCheck_Vertex & operator=(const BRepCheck_Vertex *anItem);
+		Handle_BRepCheck_Wire & operator=(const BRepCheck_Wire *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRepCheck_Vertex DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRepCheck_Wire DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRepCheck_Vertex {
-	BRepCheck_Vertex* GetObject() {
-	return (BRepCheck_Vertex*)$self->Access();
+%extend Handle_BRepCheck_Wire {
+	BRepCheck_Wire* GetObject() {
+	return (BRepCheck_Wire*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRepCheck_Vertex::~Handle_BRepCheck_Vertex %{
+%feature("shadow") Handle_BRepCheck_Wire::~Handle_BRepCheck_Wire %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -386,7 +386,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepCheck_Vertex {
+%extend Handle_BRepCheck_Wire {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -425,43 +425,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepCheck_Face {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepCheck_ListNodeOfListOfStatus;
-class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_ListNodeOfListOfStatus(const BRepCheck_Status &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BRepCheck_Status & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepCheck_ListNodeOfListOfStatus {
-	Handle_BRepCheck_ListNodeOfListOfStatus GetHandle() {
-	return *(Handle_BRepCheck_ListNodeOfListOfStatus*) &$self;
-	}
-};
-%extend BRepCheck_ListNodeOfListOfStatus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepCheck_ListNodeOfListOfStatus::~BRepCheck_ListNodeOfListOfStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepCheck_ListNodeOfListOfStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -555,7 +518,7 @@ class BRepCheck_Result : public MMgt_TShared {
 };
 %extend BRepCheck_Result {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_Result::~BRepCheck_Result %{
@@ -598,7 +561,7 @@ class BRepCheck_Shell : public BRepCheck_Result {
 };
 %extend BRepCheck_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_Shell::~BRepCheck_Shell %{
@@ -684,7 +647,7 @@ class BRepCheck_Face : public BRepCheck_Result {
 };
 %extend BRepCheck_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_Face::~BRepCheck_Face %{
@@ -723,7 +686,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeResult::~BRepCheck_DataMapNodeOfDataMapOfShapeResult %{
@@ -736,6 +699,53 @@ def __del__(self):
 %}
 
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepCheck_Edge;
+class BRepCheck_Edge : public BRepCheck_Result {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_Edge(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		virtual		void InContext(const TopoDS_Shape ContextShape);
+		%feature("autodoc", "1");
+		virtual		void Minimum();
+		%feature("autodoc", "1");
+		virtual		void Blind();
+		%feature("autodoc", "1");
+		Standard_Boolean GeometricControls() const;
+		%feature("autodoc", "1");
+		void GeometricControls(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Real Tolerance();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepCheck_Edge {
+	Handle_BRepCheck_Edge GetHandle() {
+	return *(Handle_BRepCheck_Edge*) &$self;
+	}
+};
+%extend BRepCheck_Edge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepCheck_Edge::~BRepCheck_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepCheck_Edge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -805,7 +815,7 @@ class BRepCheck_Wire : public BRepCheck_Result {
 };
 %extend BRepCheck_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_Wire::~BRepCheck_Wire %{
@@ -848,7 +858,7 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 };
 %extend BRepCheck_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_Vertex::~BRepCheck_Vertex %{
@@ -912,53 +922,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepCheck_Edge;
-class BRepCheck_Edge : public BRepCheck_Result {
-	public:
-		%feature("autodoc", "1");
-		BRepCheck_Edge(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		virtual		void InContext(const TopoDS_Shape ContextShape);
-		%feature("autodoc", "1");
-		virtual		void Minimum();
-		%feature("autodoc", "1");
-		virtual		void Blind();
-		%feature("autodoc", "1");
-		Standard_Boolean GeometricControls() const;
-		%feature("autodoc", "1");
-		void GeometricControls(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Real Tolerance();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepCheck_Edge {
-	Handle_BRepCheck_Edge GetHandle() {
-	return *(Handle_BRepCheck_Edge*) &$self;
-	}
-};
-%extend BRepCheck_Edge {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepCheck_Edge::~BRepCheck_Edge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepCheck_Edge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
 class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_MapNode {
 	public:
@@ -979,7 +942,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus %{
@@ -1023,6 +986,43 @@ def __del__(self):
 %}
 
 %extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepCheck_ListNodeOfListOfStatus;
+class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepCheck_ListNodeOfListOfStatus(const BRepCheck_Status &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BRepCheck_Status & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepCheck_ListNodeOfListOfStatus {
+	Handle_BRepCheck_ListNodeOfListOfStatus GetHandle() {
+	return *(Handle_BRepCheck_ListNodeOfListOfStatus*) &$self;
+	}
+};
+%extend BRepCheck_ListNodeOfListOfStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepCheck_ListNodeOfListOfStatus::~BRepCheck_ListNodeOfListOfStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepCheck_ListNodeOfListOfStatus {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -256,22 +256,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
-class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
+%nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
+class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
+		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
 		%feature("autodoc", "1");
-		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString(const Resource_DataMapOfAsciiStringExtendedString &aMap);
+		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString(const Resource_DataMapOfAsciiStringAsciiString &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const Resource_DataMapOfAsciiStringExtendedString &aMap);
+		void Initialize(const Resource_DataMapOfAsciiStringAsciiString &aMap);
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Key() const;
 		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Value() const;
+		const TCollection_AsciiString & Value() const;
 
 };
-%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString::~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString %{
+%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString::~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -280,46 +280,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
-class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const TCollection_AsciiString &K, const TCollection_AsciiString &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
-	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
-	}
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -364,7 +325,7 @@ class Resource_Manager : public MMgt_TShared {
 };
 %extend Resource_Manager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Resource_Manager::~Resource_Manager %{
@@ -377,6 +338,37 @@ def __del__(self):
 %}
 
 %extend Resource_Manager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
+class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString();
+		%feature("autodoc", "1");
+		Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString(const Resource_DataMapOfAsciiStringExtendedString &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Resource_DataMapOfAsciiStringExtendedString &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Value() const;
+
+};
+%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString::~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -457,7 +449,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %extend Resource_NoSuchResource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Resource_NoSuchResource::~Resource_NoSuchResource %{
@@ -590,7 +582,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
@@ -609,22 +601,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
-class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollection_BasicMapIterator {
+%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
+class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString();
+		Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const TCollection_AsciiString &K, const TCollection_AsciiString &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString(const Resource_DataMapOfAsciiStringAsciiString &aMap);
+		TCollection_AsciiString & Key() const;
 		%feature("autodoc", "1");
-		void Initialize(const Resource_DataMapOfAsciiStringAsciiString &aMap);
+		TCollection_AsciiString & Value() const;
 		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString::~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString %{
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
+	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -633,7 +633,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	void _kill_pointed() {
 		delete $self;
 	}

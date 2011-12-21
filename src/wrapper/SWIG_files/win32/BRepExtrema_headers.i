@@ -28,7 +28,6 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<BRepExtrema_DistShapeShape.hxx>
-#include<BRepExtrema_DistanceSS.hxx>
 #include<BRepExtrema_ExtCC.hxx>
 #include<BRepExtrema_ExtCF.hxx>
 #include<BRepExtrema_ExtFF.hxx>
@@ -127,8 +126,7 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Pnt.hxx>
-#include<TopoDS_Vertex.hxx>
-#include<TopoDS_Face.hxx>
-#include<Bnd_Box.hxx>
 #include<TopoDS_Edge.hxx>
+#include<TopoDS_Face.hxx>
+#include<TopoDS_Vertex.hxx>
 %}

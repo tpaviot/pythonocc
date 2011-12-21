@@ -51,16 +51,16 @@ $HeaderURL$
 
 typedef BlendFunc_ChamfInv BRepBlend_ChamfInv;
 typedef BlendFunc_ConstRad BRepBlend_ConstRad;
+typedef BlendFunc_Ruled BRepBlend_Ruled;
 typedef BlendFunc_CSCircular BRepBlend_CSCircular;
 typedef BlendFunc_EvolRadInv BRepBlend_EvolRadInv;
 typedef BlendFunc_ChAsym BRepBlend_ChAsym;
 typedef BlendFunc_Chamfer BRepBlend_Chamfer;
-typedef BlendFunc_Ruled BRepBlend_Ruled;
 typedef BlendFunc_CSConstRad BRepBlend_CSConstRad;
 typedef BlendFunc_ConstRadInv BRepBlend_ConstRadInv;
+typedef BlendFunc_EvolRad BRepBlend_EvolRad;
 typedef BlendFunc_RuledInv BRepBlend_RuledInv;
 typedef BlendFunc_ChAsymInv BRepBlend_ChAsymInv;
-typedef BlendFunc_EvolRad BRepBlend_EvolRad;
 
 
 
@@ -216,44 +216,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepBlend_Line;
-class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line();
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line(const Handle_BRepBlend_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line(const BRepBlend_Line *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & operator=(const Handle_BRepBlend_Line &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepBlend_Line & operator=(const BRepBlend_Line *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepBlend_Line DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepBlend_Line {
-	BRepBlend_Line* GetObject() {
-	return (BRepBlend_Line*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepBlend_Line::~Handle_BRepBlend_Line %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepBlend_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepBlend_AppFunc;
 class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	public:
@@ -292,6 +254,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BRepBlend_Line;
+class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line();
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line(const Handle_BRepBlend_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line(const BRepBlend_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & operator=(const Handle_BRepBlend_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepBlend_Line & operator=(const BRepBlend_Line *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepBlend_Line DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepBlend_Line {
+	BRepBlend_Line* GetObject() {
+	return (BRepBlend_Line*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepBlend_Line::~Handle_BRepBlend_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepBlend_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepBlend_AppFuncRstRst;
 class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	public:
@@ -324,6 +324,88 @@ def __del__(self):
 %}
 
 %extend Handle_BRepBlend_AppFuncRstRst {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBlend_SurfCurvEvolRadInv;
+class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SurfCurvEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg, const Handle_Law_Function &Evol);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") BRepBlend_SurfCurvEvolRadInv::~BRepBlend_SurfCurvEvolRadInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_SurfCurvEvolRadInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBlend_SurfPointEvolRadInv;
+class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SurfPointEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Law_Function &Evol);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const gp_Pnt P);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") BRepBlend_SurfPointEvolRadInv::~BRepBlend_SurfPointEvolRadInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_SurfPointEvolRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -384,7 +466,7 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 };
 %extend BRepBlend_AppFuncRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRoot::~BRepBlend_AppFuncRoot %{
@@ -417,7 +499,7 @@ class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRst::~BRepBlend_AppFuncRst %{
@@ -430,43 +512,6 @@ def __del__(self):
 %}
 
 %extend BRepBlend_AppFuncRst {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
-class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const BRepBlend_PointOnRst &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		BRepBlend_PointOnRst & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
-	Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst GetHandle() {
-	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst*) &$self;
-	}
-};
-%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepBlend_SequenceNodeOfSequenceOfPointOnRst::~BRepBlend_SequenceNodeOfSequenceOfPointOnRst %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1037,7 +1082,7 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFunc::~BRepBlend_AppFunc %{
@@ -1121,37 +1166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepBlend_CSWalking;
-class BRepBlend_CSWalking {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_CSWalking(const Handle_Adaptor3d_HCurve &Curv, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &Domain);
-		%feature("autodoc", "1");
-		void Perform(Blend_CSFunction & F, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
-		%feature("autodoc", "1");
-		Standard_Boolean Complete(Blend_CSFunction & F, const Standard_Real Pmin);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & Line() const;
-
-};
-%feature("shadow") BRepBlend_CSWalking::~BRepBlend_CSWalking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_CSWalking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepBlend_Line;
 class BRepBlend_Line : public MMgt_TShared {
 	public:
@@ -1204,7 +1218,7 @@ class BRepBlend_Line : public MMgt_TShared {
 };
 %extend BRepBlend_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_Line::~BRepBlend_Line %{
@@ -1217,6 +1231,43 @@ def __del__(self):
 %}
 
 %extend BRepBlend_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
+class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SequenceNodeOfSequenceOfPointOnRst(const BRepBlend_PointOnRst &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		BRepBlend_PointOnRst & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst GetHandle() {
+	return *(Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst*) &$self;
+	}
+};
+%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepBlend_SequenceNodeOfSequenceOfPointOnRst::~BRepBlend_SequenceNodeOfSequenceOfPointOnRst %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1243,7 +1294,7 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRstRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRstRst::~BRepBlend_AppFuncRstRst %{
@@ -1256,47 +1307,6 @@ def __del__(self):
 %}
 
 %extend BRepBlend_AppFuncRstRst {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBlend_SurfPointConstRadInv;
-class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfPointConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real R, const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const gp_Pnt P);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%feature("shadow") BRepBlend_SurfPointConstRadInv::~BRepBlend_SurfPointConstRadInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_SurfPointConstRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1368,47 +1378,6 @@ def __del__(self):
 %}
 
 %extend BRepBlend_HCurve2dTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBlend_SurfPointEvolRadInv;
-class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfPointEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Law_Function &Evol);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const gp_Pnt P);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%feature("shadow") BRepBlend_SurfPointEvolRadInv::~BRepBlend_SurfPointEvolRadInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_SurfPointEvolRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1575,6 +1544,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepBlend_SurfPointConstRadInv;
+class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SurfPointConstRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real R, const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const gp_Pnt P);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") BRepBlend_SurfPointConstRadInv::~BRepBlend_SurfPointConstRadInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_SurfPointConstRadInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepBlend_PointOnRst;
 class BRepBlend_PointOnRst {
 	public:
@@ -1628,7 +1638,7 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepBlend_SequenceNodeOfSequenceOfLine::~BRepBlend_SequenceNodeOfSequenceOfLine %{
@@ -1641,47 +1651,6 @@ def __del__(self):
 %}
 
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBlend_SurfCurvEvolRadInv;
-class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfCurvEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg, const Handle_Law_Function &Evol);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%feature("shadow") BRepBlend_SurfCurvEvolRadInv::~BRepBlend_SurfCurvEvolRadInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_SurfCurvEvolRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1723,6 +1692,37 @@ def __del__(self):
 %}
 
 %extend BRepBlend_SurfRstLineBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBlend_CSWalking;
+class BRepBlend_CSWalking {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_CSWalking(const Handle_Adaptor3d_HCurve &Curv, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &Domain);
+		%feature("autodoc", "1");
+		void Perform(Blend_CSFunction & F, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
+		%feature("autodoc", "1");
+		Standard_Boolean Complete(Blend_CSFunction & F, const Standard_Real Pmin);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & Line() const;
+
+};
+%feature("shadow") BRepBlend_CSWalking::~BRepBlend_CSWalking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_CSWalking {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1878,62 +1878,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepBlend_Walking;
-class BRepBlend_Walking {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_Walking(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_TopolTool &Domain2);
-		%feature("autodoc", "1");
-		void SetDomainsToRecadre(const Handle_Adaptor3d_TopolTool &RecDomain1, const Handle_Adaptor3d_TopolTool &RecDomain2);
-		%feature("autodoc", "1");
-		void AddSingularPoint(const Blend_Point &P);
-		%feature("autodoc", "1");
-		void Perform(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
-		%feature("autodoc", "1");
-		Standard_Boolean PerformFirstSection(Blend_Function & F, const Standard_Real Pdep, math_Vector & ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, TopAbs_State & Pos1, TopAbs_State & Pos2);
-		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const ParDep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecOnS1, Standard_Boolean RecOnS2) -> Standard_Real");
-
-		Standard_Boolean PerformFirstSection(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pdep, const Standard_Real Pmax, const math_Vector &ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, const Standard_Boolean RecOnS1, const Standard_Boolean RecOnS2, Standard_Real &OutValue, math_Vector & ParSol);
-		%feature("autodoc", "1");
-		Standard_Boolean Continu(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real P);
-		%feature("autodoc", "1");
-		Standard_Boolean Continu(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real P, const Standard_Boolean OnS1);
-		%feature("autodoc", "1");
-		Standard_Boolean Complete(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pmin);
-		%feature("autodoc", "1");
-		void ClassificationOnS1(const Standard_Boolean C);
-		%feature("autodoc", "1");
-		void ClassificationOnS2(const Standard_Boolean C);
-		%feature("autodoc", "1");
-		void Check2d(const Standard_Boolean C);
-		%feature("autodoc", "1");
-		void Check(const Standard_Boolean C);
-		%feature("autodoc", "1");
-		Standard_Boolean TwistOnS1() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TwistOnS2() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const Handle_BRepBlend_Line & Line() const;
-
-};
-%feature("shadow") BRepBlend_Walking::~BRepBlend_Walking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_Walking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepBlend_SurfRstEvolRad;
 class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 	public:
@@ -2032,6 +1976,62 @@ def __del__(self):
 %}
 
 %extend BRepBlend_SurfRstEvolRad {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBlend_Walking;
+class BRepBlend_Walking {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_Walking(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2, const Handle_Adaptor3d_TopolTool &Domain1, const Handle_Adaptor3d_TopolTool &Domain2);
+		%feature("autodoc", "1");
+		void SetDomainsToRecadre(const Handle_Adaptor3d_TopolTool &RecDomain1, const Handle_Adaptor3d_TopolTool &RecDomain2);
+		%feature("autodoc", "1");
+		void AddSingularPoint(const Blend_Point &P);
+		%feature("autodoc", "1");
+		void Perform(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pdep, const Standard_Real Pmax, const Standard_Real MaxStep, const Standard_Real TolGuide, const math_Vector &Soldep, const Standard_Real Tolesp, const Standard_Real Fleche, const Standard_Boolean Appro=0);
+		%feature("autodoc", "1");
+		Standard_Boolean PerformFirstSection(Blend_Function & F, const Standard_Real Pdep, math_Vector & ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, TopAbs_State & Pos1, TopAbs_State & Pos2);
+		%feature("autodoc","PerformFirstSection(Standard_Real Pdep, Standard_Real Pmax, const ParDep, Standard_Real Tolesp, Standard_Real TolGuide, Standard_Boolean RecOnS1, Standard_Boolean RecOnS2) -> Standard_Real");
+
+		Standard_Boolean PerformFirstSection(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pdep, const Standard_Real Pmax, const math_Vector &ParDep, const Standard_Real Tolesp, const Standard_Real TolGuide, const Standard_Boolean RecOnS1, const Standard_Boolean RecOnS2, Standard_Real &OutValue, math_Vector & ParSol);
+		%feature("autodoc", "1");
+		Standard_Boolean Continu(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real P);
+		%feature("autodoc", "1");
+		Standard_Boolean Continu(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real P, const Standard_Boolean OnS1);
+		%feature("autodoc", "1");
+		Standard_Boolean Complete(Blend_Function & F, Blend_FuncInv & FInv, const Standard_Real Pmin);
+		%feature("autodoc", "1");
+		void ClassificationOnS1(const Standard_Boolean C);
+		%feature("autodoc", "1");
+		void ClassificationOnS2(const Standard_Boolean C);
+		%feature("autodoc", "1");
+		void Check2d(const Standard_Boolean C);
+		%feature("autodoc", "1");
+		void Check(const Standard_Boolean C);
+		%feature("autodoc", "1");
+		Standard_Boolean TwistOnS1() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TwistOnS2() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const Handle_BRepBlend_Line & Line() const;
+
+};
+%feature("shadow") BRepBlend_Walking::~BRepBlend_Walking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_Walking {
 	void _kill_pointed() {
 		delete $self;
 	}

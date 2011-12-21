@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopLoc
-import TopoDS
 import Geom2d
 import Geom
+import TopoDS
 };

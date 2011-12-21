@@ -65,7 +65,7 @@ $HeaderURL$
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
-#include<TopoDS_Shape.hxx>
 #include<XmlMNaming.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
+#include<TopoDS_Shape.hxx>
 %}

@@ -245,6 +245,7 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<Handle_BRepTopAdaptor_TopolTool.hxx>
 #include<TopOpeBRepDS_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Curve.hxx>
@@ -253,21 +254,20 @@ $HeaderURL$
 #include<TopOpeBRepTool_ShapeExplorer.hxx>
 #include<TopOpeBRepDS_Transition.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
+#include<gp_Pnt2d.hxx>
 #include<TopOpeBRepDS_Point.hxx>
-#include<Handle_BRepTopAdaptor_TopolTool.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<TopOpeBRepDS_ListIteratorOfListOfInterference.hxx>
 #include<TopOpeBRep.hxx>
 #include<IntSurf_PntOn2S.hxx>
-#include<gp_Pnt2d.hxx>
-#include<gp_Pnt.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<Bnd_Box.hxx>
+#include<TopoDS_Edge.hxx>
+#include<BRepAdaptor_Surface.hxx>
 #include<IntPatch_Point.hxx>
 #include<IntSurf_Transition.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<BRepAdaptor_Surface.hxx>
+#include<gp_Pnt.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<IntRes2d_IntersectionPoint.hxx>
 %}

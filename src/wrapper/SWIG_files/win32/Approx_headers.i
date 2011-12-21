@@ -61,16 +61,15 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
-#include<Handle_Adaptor2d_HCurve2d.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
-#include<AppCont_Function.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_Adaptor3d_HCurve.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<AppCont_Function.hxx>
 #include<AppParCurves_MultiCurve.hxx>
 #include<AppParCurves_SequenceOfMultiCurve.hxx>
 #include<gp_GTrsf2d.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
+#include<AppCont_Function2d.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
@@ -78,10 +77,11 @@ $HeaderURL$
 #include<TColgp_Array1OfVec2d.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<gp_Pnt.hxx>
+#include<Handle_Adaptor2d_HCurve2d.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>
-#include<AppCont_Function2d.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<TColgp_Array2OfPnt.hxx>
 #include<TColStd_Array2OfReal.hxx>

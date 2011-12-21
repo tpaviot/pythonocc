@@ -27,10 +27,11 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Quantity
 import Standard
-import Graphic3d
-import gp
-import Visual3d
 import Aspect
+import Quantity
+import Graphic3d
+import Visual3d
+import Image
+import gp
 };

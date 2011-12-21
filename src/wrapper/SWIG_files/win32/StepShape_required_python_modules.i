@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import StepGeom
-import StepRepr
 import TCollection
 import StepBasic
+import StepRepr
 };

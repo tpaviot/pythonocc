@@ -90,6 +90,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
+class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_ParameterAndOrientation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		GeomInt_ParameterAndOrientation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation GetHandle() {
+	return *(Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*) &$self;
+	}
+};
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
@@ -181,65 +218,6 @@ def __del__(self):
 %}
 
 %extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
-class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox();
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &PS);
-		%feature("autodoc", "1");
-		void SetImplicitSurface(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent();
-		%feature("autodoc", "1");
-		const gp_Vec  Direction3d();
-		%feature("autodoc", "1");
-		const gp_Dir2d  Direction2d();
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & PSurface() const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & ISurface() const;
-
-};
-%feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -529,11 +507,71 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
-class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
+%nodefaultctor GeomInt_TheComputeLineBezierOfWLApprox;
+class GeomInt_TheComputeLineBezierOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
+		GeomInt_TheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		GeomInt_TheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		GeomInt_TheComputeLineBezierOfWLApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		GeomInt_TheComputeLineBezierOfWLApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		void Perform(const GeomInt_TheMultiLineOfWLApprox &Line);
+		%feature("autodoc", "1");
+		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
+		%feature("autodoc", "1");
+		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
+		%feature("autodoc", "1");
+		void SetConstraints(const AppParCurves_Constraint firstC, const AppParCurves_Constraint lastC);
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllApproximated() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsToleranceReached() const;
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbMultiCurves() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value(const Standard_Integer Index=1) const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index=1);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & SplineValue();
+		%feature("autodoc", "1");
+		void Parametrization(Approx_ParametrizationType & partype) const;
+		%feature("autodoc", "1");
+		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
+
+};
+%feature("shadow") GeomInt_TheComputeLineBezierOfWLApprox::~GeomInt_TheComputeLineBezierOfWLApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_TheComputeLineBezierOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
+class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
+		%feature("autodoc", "1");
+		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
 		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
@@ -547,7 +585,7 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
-%feature("shadow") GeomInt_ThePrmPrmSvSurfacesOfWLApprox::~GeomInt_ThePrmPrmSvSurfacesOfWLApprox %{
+%feature("shadow") GeomInt_TheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheImpPrmSvSurfacesOfWLApprox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -556,7 +594,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
+%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -635,6 +673,65 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
+class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox();
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Handle_Adaptor3d_HSurface &PS);
+		%feature("autodoc", "1");
+		void SetImplicitSurface(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent();
+		%feature("autodoc", "1");
+		const gp_Vec  Direction3d();
+		%feature("autodoc", "1");
+		const gp_Dir2d  Direction2d();
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HSurface & PSurface() const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & ISurface() const;
+
+};
+%feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
 	public:
@@ -682,64 +779,6 @@ def __del__(self):
 %}
 
 %extend GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomInt_TheComputeLineBezierOfWLApprox;
-class GeomInt_TheComputeLineBezierOfWLApprox {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		GeomInt_TheComputeLineBezierOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		GeomInt_TheComputeLineBezierOfWLApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		GeomInt_TheComputeLineBezierOfWLApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		void Perform(const GeomInt_TheMultiLineOfWLApprox &Line);
-		%feature("autodoc", "1");
-		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
-		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
-		%feature("autodoc", "1");
-		void SetConstraints(const AppParCurves_Constraint firstC, const AppParCurves_Constraint lastC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllApproximated() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMultiCurves() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value(const Standard_Integer Index=1) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index=1);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & SplineValue();
-		%feature("autodoc", "1");
-		void Parametrization(Approx_ParametrizationType & partype) const;
-		%feature("autodoc", "1");
-		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
-
-};
-%feature("shadow") GeomInt_TheComputeLineBezierOfWLApprox::~GeomInt_TheComputeLineBezierOfWLApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_TheComputeLineBezierOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -811,28 +850,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
-class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
+%nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
+class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation(const GeomInt_ParameterAndOrientation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
 		%feature("autodoc", "1");
-		GeomInt_ParameterAndOrientation & Value() const;
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		AppParCurves_MultiCurve Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		Standard_Real AverageError() const;
 
 };
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation GetHandle() {
-	return *(Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation*) &$self;
-	}
-};
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{
+%feature("shadow") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -841,7 +878,41 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
+%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomInt_LineConstructor;
+class GeomInt_LineConstructor {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_LineConstructor();
+		%feature("autodoc", "1");
+		void Load(const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_TopolTool &D2, const Handle_GeomAdaptor_HSurface &S1, const Handle_GeomAdaptor_HSurface &S2);
+		%feature("autodoc", "1");
+		void Perform(const Handle_IntPatch_Line &L);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbParts() const;
+		%feature("autodoc","Part(Standard_Integer I) -> [Standard_Real, Standard_Real]");
+
+		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") GeomInt_LineConstructor::~GeomInt_LineConstructor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_LineConstructor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -904,26 +975,25 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
-class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+%nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
+class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
-		GeomInt_MyGradientbisOfTheComputeLineOfWLApprox(const GeomInt_TheMultiLineOfWLApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, math_Vector & Parameters, const Standard_Integer Deg, const Standard_Real Tol3d, const Standard_Real Tol2d, const Standard_Integer NbIterations=200);
+		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
 		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value() const;
+		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
 		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer Index) const;
+		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		Standard_Real AverageError() const;
+		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 
 };
-%feature("shadow") GeomInt_MyGradientbisOfTheComputeLineOfWLApprox::~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox %{
+%feature("shadow") GeomInt_ThePrmPrmSvSurfacesOfWLApprox::~GeomInt_ThePrmPrmSvSurfacesOfWLApprox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -932,7 +1002,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
+%extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1066,6 +1136,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
+class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox();
+		%feature("autodoc", "1");
+		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal &Param, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
+		%feature("autodoc", "1");
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		const IntSurf_PntOn2S & Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent() const;
+		%feature("autodoc", "1");
+		const gp_Dir  Direction() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  DirectionOnS1() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  DirectionOnS2() const;
+		%feature("autodoc", "1");
+		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox & Function();
+
+};
+%feature("shadow") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomInt_ParameterAndOrientation;
 class GeomInt_ParameterAndOrientation {
 	public:
@@ -1148,123 +1265,6 @@ def __del__(self):
 %}
 
 %extend GeomInt_TheMultiLineToolOfWLApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomInt_LineConstructor;
-class GeomInt_LineConstructor {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_LineConstructor();
-		%feature("autodoc", "1");
-		void Load(const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_TopolTool &D2, const Handle_GeomAdaptor_HSurface &S1, const Handle_GeomAdaptor_HSurface &S2);
-		%feature("autodoc", "1");
-		void Perform(const Handle_IntPatch_Line &L);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbParts() const;
-		%feature("autodoc","Part(Standard_Integer I) -> [Standard_Real, Standard_Real]");
-
-		void Part(const Standard_Integer I, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") GeomInt_LineConstructor::~GeomInt_LineConstructor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_LineConstructor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
-class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox();
-		%feature("autodoc", "1");
-		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const TColStd_Array1OfReal &Param, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent() const;
-		%feature("autodoc", "1");
-		const gp_Dir  Direction() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  DirectionOnS1() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  DirectionOnS2() const;
-		%feature("autodoc", "1");
-		GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox & Function();
-
-};
-%feature("shadow") GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox::~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
-class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
-		%feature("autodoc", "1");
-		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
-		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-		%feature("autodoc", "1");
-		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TangencyOnSurf2(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
-
-};
-%feature("shadow") GeomInt_TheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheImpPrmSvSurfacesOfWLApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}

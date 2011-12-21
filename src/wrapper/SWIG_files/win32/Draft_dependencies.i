@@ -165,7 +165,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import TCollection.i
 %import BRepTools.i
+%import TCollection.i
 %import Standard.i
 %import GeomAbs.i

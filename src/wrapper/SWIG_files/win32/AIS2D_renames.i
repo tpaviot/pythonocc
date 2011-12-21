@@ -23,3 +23,21 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_AIS2D_ListNodeOfListOfIO::DownCast;
+%rename(DownCast) Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit::DownCast;
+%rename(DownCast) Handle_AIS2D_LocalContext::DownCast;
+%rename(DownCast) Handle_AIS2D_InteractiveObject::DownCast;
+%rename(DownCast) Handle_AIS2D_ProjShape::DownCast;
+%rename(DownCast) Handle_AIS2D_HSequenceOfIO::DownCast;
+%rename(DownCast) Handle_AIS2D_SequenceNodeOfSequenceOfIO::DownCast;
+%rename(DownCast) Handle_AIS2D_LocalStatus::DownCast;
+%rename(DownCast) Handle_AIS2D_DataMapNodeOfDataMapOfLocStat::DownCast;
+%rename(DownCast) Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects::DownCast;
+%rename(DownCast) Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus::DownCast;
+%rename(DownCast) Handle_AIS2D_HSequenceOfPrimArchit::DownCast;
+%rename(DownCast) Handle_AIS2D_PrimitiveArchit::DownCast;
+%rename(DownCast) Handle_AIS2D_GlobalStatus::DownCast;
+%rename(DownCast) Handle_AIS2D_InteractiveContext::DownCast;
+%rename(DownCast) Handle_AIS2D_DataMapNodeOfDataMapOfLC::DownCast;
+%rename(Save) AIS2D::Save;
+%rename(Retrieve) AIS2D::Retrieve;

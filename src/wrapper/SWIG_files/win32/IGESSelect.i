@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_IGESSelect_ModelModifier;
+class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ModelModifier();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ModelModifier(const Handle_IGESSelect_ModelModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ModelModifier(const IGESSelect_ModelModifier *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ModelModifier & operator=(const Handle_IGESSelect_ModelModifier &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ModelModifier & operator=(const IGESSelect_ModelModifier *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_ModelModifier DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_ModelModifier {
+	IGESSelect_ModelModifier* GetObject() {
+	return (IGESSelect_ModelModifier*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_ModelModifier::~Handle_IGESSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSelect_SignLevelNumber;
 class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 	public:
@@ -204,44 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_ModelModifier;
-class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ModelModifier();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ModelModifier(const Handle_IGESSelect_ModelModifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ModelModifier(const IGESSelect_ModelModifier *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ModelModifier & operator=(const Handle_IGESSelect_ModelModifier &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ModelModifier & operator=(const IGESSelect_ModelModifier *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ModelModifier DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_ModelModifier {
-	IGESSelect_ModelModifier* GetObject() {
-	return (IGESSelect_ModelModifier*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_ModelModifier::~Handle_IGESSelect_ModelModifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_ModelModifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSelect_UpdateCreationDate;
 class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -356,6 +356,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESSelect_SelectSubordinate;
+class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectSubordinate();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectSubordinate(const Handle_IGESSelect_SelectSubordinate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectSubordinate(const IGESSelect_SelectSubordinate *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectSubordinate & operator=(const Handle_IGESSelect_SelectSubordinate &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectSubordinate & operator=(const IGESSelect_SelectSubordinate *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SelectSubordinate DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SelectSubordinate {
+	IGESSelect_SelectSubordinate* GetObject() {
+	return (IGESSelect_SelectSubordinate*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SelectSubordinate::~Handle_IGESSelect_SelectSubordinate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SelectSubordinate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSelect_IGESTypeForm;
 class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	public:
@@ -432,29 +470,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_SelectName;
-class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
+%nodefaultctor Handle_IGESSelect_DispPerSingleView;
+class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectName();
+		Handle_IGESSelect_DispPerSingleView();
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectName(const Handle_IGESSelect_SelectName &aHandle);
+		Handle_IGESSelect_DispPerSingleView(const Handle_IGESSelect_DispPerSingleView &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectName(const IGESSelect_SelectName *anItem);
+		Handle_IGESSelect_DispPerSingleView(const IGESSelect_DispPerSingleView *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectName & operator=(const Handle_IGESSelect_SelectName &aHandle);
+		Handle_IGESSelect_DispPerSingleView & operator=(const Handle_IGESSelect_DispPerSingleView &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectName & operator=(const IGESSelect_SelectName *anItem);
+		Handle_IGESSelect_DispPerSingleView & operator=(const IGESSelect_DispPerSingleView *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectName DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_DispPerSingleView DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSelect_SelectName {
-	IGESSelect_SelectName* GetObject() {
-	return (IGESSelect_SelectName*)$self->Access();
+%extend Handle_IGESSelect_DispPerSingleView {
+	IGESSelect_DispPerSingleView* GetObject() {
+	return (IGESSelect_DispPerSingleView*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSelect_SelectName::~Handle_IGESSelect_SelectName %{
+%feature("shadow") Handle_IGESSelect_DispPerSingleView::~Handle_IGESSelect_DispPerSingleView %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -463,7 +501,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSelect_SelectName {
+%extend Handle_IGESSelect_DispPerSingleView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -546,6 +584,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESSelect_SelectName;
+class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectName();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectName(const Handle_IGESSelect_SelectName &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectName(const IGESSelect_SelectName *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectName & operator=(const Handle_IGESSelect_SelectName &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectName & operator=(const IGESSelect_SelectName *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SelectName DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SelectName {
+	IGESSelect_SelectName* GetObject() {
+	return (IGESSelect_SelectName*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SelectName::~Handle_IGESSelect_SelectName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SelectName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSelect_DispPerDrawing;
 class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	public:
@@ -584,82 +660,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_SelectBypassGroup;
-class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassGroup();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassGroup(const Handle_IGESSelect_SelectBypassGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassGroup(const IGESSelect_SelectBypassGroup *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassGroup & operator=(const Handle_IGESSelect_SelectBypassGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassGroup & operator=(const IGESSelect_SelectBypassGroup *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectBypassGroup DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SelectBypassGroup {
-	IGESSelect_SelectBypassGroup* GetObject() {
-	return (IGESSelect_SelectBypassGroup*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_SelectBypassGroup::~Handle_IGESSelect_SelectBypassGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_SelectBypassGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSelect_ChangeLevelNumber;
-class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ChangeLevelNumber();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ChangeLevelNumber(const Handle_IGESSelect_ChangeLevelNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ChangeLevelNumber(const IGESSelect_ChangeLevelNumber *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ChangeLevelNumber & operator=(const Handle_IGESSelect_ChangeLevelNumber &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ChangeLevelNumber & operator=(const IGESSelect_ChangeLevelNumber *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ChangeLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_ChangeLevelNumber {
-	IGESSelect_ChangeLevelNumber* GetObject() {
-	return (IGESSelect_ChangeLevelNumber*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_ChangeLevelNumber::~Handle_IGESSelect_ChangeLevelNumber %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_ChangeLevelNumber {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSelect_SelectLevelNumber;
 class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract {
 	public:
@@ -692,44 +692,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSelect_SelectLevelNumber {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSelect_SelectSingleViewFrom;
-class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDeduct {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSingleViewFrom();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSingleViewFrom(const Handle_IGESSelect_SelectSingleViewFrom &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSingleViewFrom(const IGESSelect_SelectSingleViewFrom *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSingleViewFrom & operator=(const Handle_IGESSelect_SelectSingleViewFrom &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSingleViewFrom & operator=(const IGESSelect_SelectSingleViewFrom *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectSingleViewFrom DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SelectSingleViewFrom {
-	IGESSelect_SelectSingleViewFrom* GetObject() {
-	return (IGESSelect_SelectSingleViewFrom*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_SelectSingleViewFrom::~Handle_IGESSelect_SelectSingleViewFrom %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_SelectSingleViewFrom {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -812,29 +774,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_SetVersion5;
-class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
+%nodefaultctor Handle_IGESSelect_SelectSingleViewFrom;
+class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDeduct {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SetVersion5();
+		Handle_IGESSelect_SelectSingleViewFrom();
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SetVersion5(const Handle_IGESSelect_SetVersion5 &aHandle);
+		Handle_IGESSelect_SelectSingleViewFrom(const Handle_IGESSelect_SelectSingleViewFrom &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SetVersion5(const IGESSelect_SetVersion5 *anItem);
+		Handle_IGESSelect_SelectSingleViewFrom(const IGESSelect_SelectSingleViewFrom *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SetVersion5 & operator=(const Handle_IGESSelect_SetVersion5 &aHandle);
+		Handle_IGESSelect_SelectSingleViewFrom & operator=(const Handle_IGESSelect_SelectSingleViewFrom &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_SetVersion5 & operator=(const IGESSelect_SetVersion5 *anItem);
+		Handle_IGESSelect_SelectSingleViewFrom & operator=(const IGESSelect_SelectSingleViewFrom *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SetVersion5 DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_SelectSingleViewFrom DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSelect_SetVersion5 {
-	IGESSelect_SetVersion5* GetObject() {
-	return (IGESSelect_SetVersion5*)$self->Access();
+%extend Handle_IGESSelect_SelectSingleViewFrom {
+	IGESSelect_SelectSingleViewFrom* GetObject() {
+	return (IGESSelect_SelectSingleViewFrom*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSelect_SetVersion5::~Handle_IGESSelect_SetVersion5 %{
+%feature("shadow") Handle_IGESSelect_SelectSingleViewFrom::~Handle_IGESSelect_SelectSingleViewFrom %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -843,45 +805,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSelect_SetVersion5 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSelect_ComputeStatus;
-class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ComputeStatus();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ComputeStatus(const Handle_IGESSelect_ComputeStatus &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ComputeStatus(const IGESSelect_ComputeStatus *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ComputeStatus & operator=(const Handle_IGESSelect_ComputeStatus &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_ComputeStatus & operator=(const IGESSelect_ComputeStatus *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_ComputeStatus DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_ComputeStatus {
-	IGESSelect_ComputeStatus* GetObject() {
-	return (IGESSelect_ComputeStatus*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_ComputeStatus::~Handle_IGESSelect_ComputeStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_ComputeStatus {
+%extend Handle_IGESSelect_SelectSingleViewFrom {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1230,6 +1154,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESSelect_SetVersion5;
+class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetVersion5();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetVersion5(const Handle_IGESSelect_SetVersion5 &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetVersion5(const IGESSelect_SetVersion5 *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetVersion5 & operator=(const Handle_IGESSelect_SetVersion5 &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SetVersion5 & operator=(const IGESSelect_SetVersion5 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SetVersion5 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SetVersion5 {
+	IGESSelect_SetVersion5* GetObject() {
+	return (IGESSelect_SetVersion5*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SetVersion5::~Handle_IGESSelect_SetVersion5 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SetVersion5 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSelect_SelectBypassSubfigure;
+class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassSubfigure();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassSubfigure(const Handle_IGESSelect_SelectBypassSubfigure &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassSubfigure(const IGESSelect_SelectBypassSubfigure *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassSubfigure & operator=(const Handle_IGESSelect_SelectBypassSubfigure &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassSubfigure & operator=(const IGESSelect_SelectBypassSubfigure *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SelectBypassSubfigure DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SelectBypassSubfigure {
+	IGESSelect_SelectBypassSubfigure* GetObject() {
+	return (IGESSelect_SelectBypassSubfigure*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SelectBypassSubfigure::~Handle_IGESSelect_SelectBypassSubfigure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SelectBypassSubfigure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSelect_ViewSorter;
 class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 	public:
@@ -1306,44 +1306,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_SelectSubordinate;
-class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSubordinate();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSubordinate(const Handle_IGESSelect_SelectSubordinate &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSubordinate(const IGESSelect_SelectSubordinate *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSubordinate & operator=(const Handle_IGESSelect_SelectSubordinate &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectSubordinate & operator=(const IGESSelect_SelectSubordinate *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectSubordinate DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SelectSubordinate {
-	IGESSelect_SelectSubordinate* GetObject() {
-	return (IGESSelect_SelectSubordinate*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_SelectSubordinate::~Handle_IGESSelect_SelectSubordinate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_SelectSubordinate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSelect_EditDirPart;
 class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	public:
@@ -1376,6 +1338,82 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSelect_EditDirPart {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSelect_ChangeLevelNumber;
+class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ChangeLevelNumber();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ChangeLevelNumber(const Handle_IGESSelect_ChangeLevelNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ChangeLevelNumber(const IGESSelect_ChangeLevelNumber *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ChangeLevelNumber & operator=(const Handle_IGESSelect_ChangeLevelNumber &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_ChangeLevelNumber & operator=(const IGESSelect_ChangeLevelNumber *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_ChangeLevelNumber DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_ChangeLevelNumber {
+	IGESSelect_ChangeLevelNumber* GetObject() {
+	return (IGESSelect_ChangeLevelNumber*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_ChangeLevelNumber::~Handle_IGESSelect_ChangeLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_ChangeLevelNumber {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSelect_SelectBypassGroup;
+class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassGroup();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassGroup(const Handle_IGESSelect_SelectBypassGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassGroup(const IGESSelect_SelectBypassGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassGroup & operator=(const Handle_IGESSelect_SelectBypassGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SelectBypassGroup & operator=(const IGESSelect_SelectBypassGroup *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SelectBypassGroup DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SelectBypassGroup {
+	IGESSelect_SelectBypassGroup* GetObject() {
+	return (IGESSelect_SelectBypassGroup*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SelectBypassGroup::~Handle_IGESSelect_SelectBypassGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SelectBypassGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1420,29 +1458,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_DispPerSingleView;
-class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
+%nodefaultctor Handle_IGESSelect_ComputeStatus;
+class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSelect_DispPerSingleView();
+		Handle_IGESSelect_ComputeStatus();
 		%feature("autodoc", "1");
-		Handle_IGESSelect_DispPerSingleView(const Handle_IGESSelect_DispPerSingleView &aHandle);
+		Handle_IGESSelect_ComputeStatus(const Handle_IGESSelect_ComputeStatus &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_DispPerSingleView(const IGESSelect_DispPerSingleView *anItem);
+		Handle_IGESSelect_ComputeStatus(const IGESSelect_ComputeStatus *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_DispPerSingleView & operator=(const Handle_IGESSelect_DispPerSingleView &aHandle);
+		Handle_IGESSelect_ComputeStatus & operator=(const Handle_IGESSelect_ComputeStatus &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSelect_DispPerSingleView & operator=(const IGESSelect_DispPerSingleView *anItem);
+		Handle_IGESSelect_ComputeStatus & operator=(const IGESSelect_ComputeStatus *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSelect_DispPerSingleView DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSelect_ComputeStatus DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSelect_DispPerSingleView {
-	IGESSelect_DispPerSingleView* GetObject() {
-	return (IGESSelect_DispPerSingleView*)$self->Access();
+%extend Handle_IGESSelect_ComputeStatus {
+	IGESSelect_ComputeStatus* GetObject() {
+	return (IGESSelect_ComputeStatus*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSelect_DispPerSingleView::~Handle_IGESSelect_DispPerSingleView %{
+%feature("shadow") Handle_IGESSelect_ComputeStatus::~Handle_IGESSelect_ComputeStatus %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1451,7 +1489,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSelect_DispPerSingleView {
+%extend Handle_IGESSelect_ComputeStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1490,44 +1528,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSelect_UpdateLastChange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSelect_SelectBypassSubfigure;
-class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassSubfigure();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassSubfigure(const Handle_IGESSelect_SelectBypassSubfigure &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassSubfigure(const IGESSelect_SelectBypassSubfigure *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassSubfigure & operator=(const Handle_IGESSelect_SelectBypassSubfigure &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SelectBypassSubfigure & operator=(const IGESSelect_SelectBypassSubfigure *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SelectBypassSubfigure DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SelectBypassSubfigure {
-	IGESSelect_SelectBypassSubfigure* GetObject() {
-	return (IGESSelect_SelectBypassSubfigure*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_SelectBypassSubfigure::~Handle_IGESSelect_SelectBypassSubfigure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_SelectBypassSubfigure {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1648,44 +1648,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_SignColor;
-class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SignColor();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SignColor(const Handle_IGESSelect_SignColor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SignColor(const IGESSelect_SignColor *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SignColor & operator=(const Handle_IGESSelect_SignColor &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_SignColor & operator=(const IGESSelect_SignColor *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_SignColor DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_SignColor {
-	IGESSelect_SignColor* GetObject() {
-	return (IGESSelect_SignColor*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_SignColor::~Handle_IGESSelect_SignColor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_SignColor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSelect_SignStatus;
 class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 	public:
@@ -1718,6 +1680,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSelect_SignStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSelect_SignColor;
+class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SignColor();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SignColor(const Handle_IGESSelect_SignColor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SignColor(const IGESSelect_SignColor *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SignColor & operator=(const Handle_IGESSelect_SignColor &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_SignColor & operator=(const IGESSelect_SignColor *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_SignColor DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_SignColor {
+	IGESSelect_SignColor* GetObject() {
+	return (IGESSelect_SignColor*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_SignColor::~Handle_IGESSelect_SignColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_SignColor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1820,7 +1820,7 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend IGESSelect_ModelModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ModelModifier::~IGESSelect_ModelModifier %{
@@ -1855,7 +1855,7 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_UpdateLastChange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_UpdateLastChange::~IGESSelect_UpdateLastChange %{
@@ -1874,11 +1874,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSelect_UpdateCreationDate;
-class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
+%nodefaultctor IGESSelect_ChangeLevelList;
+class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 	public:
 		%feature("autodoc", "1");
-		IGESSelect_UpdateCreationDate();
+		IGESSelect_ChangeLevelList();
+		%feature("autodoc", "1");
+		Standard_Boolean HasOldNumber() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam OldNumber() const;
+		%feature("autodoc", "1");
+		void SetOldNumber(const Handle_IFSelect_IntParam &param);
+		%feature("autodoc", "1");
+		Standard_Boolean HasNewNumber() const;
+		%feature("autodoc", "1");
+		Handle_IFSelect_IntParam NewNumber() const;
+		%feature("autodoc", "1");
+		void SetNewNumber(const Handle_IFSelect_IntParam &param);
 		%feature("autodoc", "1");
 		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
@@ -1887,17 +1899,17 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSelect_UpdateCreationDate {
-	Handle_IGESSelect_UpdateCreationDate GetHandle() {
-	return *(Handle_IGESSelect_UpdateCreationDate*) &$self;
+%extend IGESSelect_ChangeLevelList {
+	Handle_IGESSelect_ChangeLevelList GetHandle() {
+	return *(Handle_IGESSelect_ChangeLevelList*) &$self;
 	}
 };
-%extend IGESSelect_UpdateCreationDate {
+%extend IGESSelect_ChangeLevelList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IGESSelect_UpdateCreationDate::~IGESSelect_UpdateCreationDate %{
+%feature("shadow") IGESSelect_ChangeLevelList::~IGESSelect_ChangeLevelList %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1906,7 +1918,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSelect_UpdateCreationDate {
+%extend IGESSelect_ChangeLevelList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1933,7 +1945,7 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectDrawingFrom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectDrawingFrom::~IGESSelect_SelectDrawingFrom %{
@@ -1976,7 +1988,7 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectName::~IGESSelect_SelectName %{
@@ -2015,7 +2027,7 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 };
 %extend IGESSelect_IGESTypeForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_IGESTypeForm::~IGESSelect_IGESTypeForm %{
@@ -2054,7 +2066,7 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 };
 %extend IGESSelect_SignStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
@@ -2067,51 +2079,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_SignStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_SetGlobalParameter;
-class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_SetGlobalParameter(const Standard_Integer numpar);
-		%feature("autodoc", "1");
-		Standard_Integer GlobalNumber() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_TCollection_HAsciiString &text);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Value() const;
-		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_SetGlobalParameter {
-	Handle_IGESSelect_SetGlobalParameter GetHandle() {
-	return *(Handle_IGESSelect_SetGlobalParameter*) &$self;
-	}
-};
-%extend IGESSelect_SetGlobalParameter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESSelect_SetGlobalParameter::~IGESSelect_SetGlobalParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_SetGlobalParameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2138,7 +2105,7 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RebuildGroups {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RebuildGroups::~IGESSelect_RebuildGroups %{
@@ -2151,45 +2118,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_RebuildGroups {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_AddGroup;
-class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_AddGroup();
-		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_AddGroup {
-	Handle_IGESSelect_AddGroup GetHandle() {
-	return *(Handle_IGESSelect_AddGroup*) &$self;
-	}
-};
-%extend IGESSelect_AddGroup {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESSelect_AddGroup::~IGESSelect_AddGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_AddGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2216,7 +2144,7 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectSingleViewFrom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectSingleViewFrom::~IGESSelect_SelectSingleViewFrom %{
@@ -2255,7 +2183,7 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_ComputeStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
@@ -2294,7 +2222,7 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RemoveCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RemoveCurves::~IGESSelect_RemoveCurves %{
@@ -2343,7 +2271,7 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_ChangeLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ChangeLevelNumber::~IGESSelect_ChangeLevelNumber %{
@@ -2382,7 +2310,7 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBypassGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBypassGroup::~IGESSelect_SelectBypassGroup %{
@@ -2421,7 +2349,7 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectPCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectPCurves::~IGESSelect_SelectPCurves %{
@@ -2460,7 +2388,7 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectFromDrawing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFromDrawing::~IGESSelect_SelectFromDrawing %{
@@ -2507,7 +2435,7 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 };
 %extend IGESSelect_EditHeader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_EditHeader::~IGESSelect_EditHeader %{
@@ -2550,7 +2478,7 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend IGESSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_WorkLibrary::~IGESSelect_WorkLibrary %{
@@ -2585,7 +2513,7 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %extend IGESSelect_FileModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_FileModifier::~IGESSelect_FileModifier %{
@@ -2604,42 +2532,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSelect_CounterOfLevelNumber;
-class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
+%nodefaultctor IGESSelect_UpdateCreationDate;
+class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	public:
 		%feature("autodoc", "1");
-		IGESSelect_CounterOfLevelNumber(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
+		IGESSelect_UpdateCreationDate();
 		%feature("autodoc", "1");
-		virtual		void Clear();
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		virtual		void AddSign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
-		%feature("autodoc", "1");
-		void AddLevel(const Handle_Standard_Transient &ent, const Standard_Integer level);
-		%feature("autodoc", "1");
-		Standard_Integer HighestLevel() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTimesLevel(const Standard_Integer level) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfInteger Levels() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Sign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		void PrintCount(const Handle_Message_Messenger &S) const;
+		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSelect_CounterOfLevelNumber {
-	Handle_IGESSelect_CounterOfLevelNumber GetHandle() {
-	return *(Handle_IGESSelect_CounterOfLevelNumber*) &$self;
+%extend IGESSelect_UpdateCreationDate {
+	Handle_IGESSelect_UpdateCreationDate GetHandle() {
+	return *(Handle_IGESSelect_UpdateCreationDate*) &$self;
 	}
 };
-%extend IGESSelect_CounterOfLevelNumber {
+%extend IGESSelect_UpdateCreationDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IGESSelect_CounterOfLevelNumber::~IGESSelect_CounterOfLevelNumber %{
+%feature("shadow") IGESSelect_UpdateCreationDate::~IGESSelect_UpdateCreationDate %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2648,7 +2564,46 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSelect_CounterOfLevelNumber {
+%extend IGESSelect_UpdateCreationDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_AddGroup;
+class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_AddGroup();
+		%feature("autodoc", "1");
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_AddGroup {
+	Handle_IGESSelect_AddGroup GetHandle() {
+	return *(Handle_IGESSelect_AddGroup*) &$self;
+	}
+};
+%extend IGESSelect_AddGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESSelect_AddGroup::~IGESSelect_AddGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_AddGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2675,7 +2630,7 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectFaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFaces::~IGESSelect_SelectFaces %{
@@ -2722,7 +2677,7 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 };
 %extend IGESSelect_EditDirPart {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_EditDirPart::~IGESSelect_EditDirPart %{
@@ -2763,7 +2718,7 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectSubordinate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectSubordinate::~IGESSelect_SelectSubordinate %{
@@ -2776,6 +2731,57 @@ def __del__(self):
 %}
 
 %extend IGESSelect_SelectSubordinate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_CounterOfLevelNumber;
+class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_CounterOfLevelNumber(const Standard_Boolean withmap=1, const Standard_Boolean withlist=0);
+		%feature("autodoc", "1");
+		virtual		void Clear();
+		%feature("autodoc", "1");
+		virtual		void AddSign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model);
+		%feature("autodoc", "1");
+		void AddLevel(const Handle_Standard_Transient &ent, const Standard_Integer level);
+		%feature("autodoc", "1");
+		Standard_Integer HighestLevel() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTimesLevel(const Standard_Integer level) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfInteger Levels() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TCollection_HAsciiString Sign(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		void PrintCount(const Handle_Message_Messenger &S) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_CounterOfLevelNumber {
+	Handle_IGESSelect_CounterOfLevelNumber GetHandle() {
+	return *(Handle_IGESSelect_CounterOfLevelNumber*) &$self;
+	}
+};
+%extend IGESSelect_CounterOfLevelNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESSelect_CounterOfLevelNumber::~IGESSelect_CounterOfLevelNumber %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_CounterOfLevelNumber {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2800,7 +2806,7 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 };
 %extend IGESSelect_IGESName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_IGESName::~IGESSelect_IGESName %{
@@ -2839,7 +2845,7 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 };
 %extend IGESSelect_Dumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_Dumper::~IGESSelect_Dumper %{
@@ -2852,34 +2858,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_Dumper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect;
-class IGESSelect {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect();
-		%feature("autodoc", "1");
-		static		void Run();
-		%feature("autodoc","WhatIges(const ent, const G) -> Standard_Integer");
-
-		static		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
-
-};
-%feature("shadow") IGESSelect::~IGESSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2906,7 +2884,7 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_AutoCorrect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_AutoCorrect::~IGESSelect_AutoCorrect %{
@@ -2919,45 +2897,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_AutoCorrect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_SelectVisibleStatus;
-class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_SelectVisibleStatus();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_SelectVisibleStatus {
-	Handle_IGESSelect_SelectVisibleStatus GetHandle() {
-	return *(Handle_IGESSelect_SelectVisibleStatus*) &$self;
-	}
-};
-%extend IGESSelect_SelectVisibleStatus {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESSelect_SelectVisibleStatus::~IGESSelect_SelectVisibleStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_SelectVisibleStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2984,7 +2923,7 @@ class IGESSelect_Activator : public IFSelect_Activator {
 };
 %extend IGESSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_Activator::~IGESSelect_Activator %{
@@ -3023,7 +2962,7 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_UpdateFileName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_UpdateFileName::~IGESSelect_UpdateFileName %{
@@ -3082,7 +3021,7 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 };
 %extend IGESSelect_ViewSorter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_ViewSorter::~IGESSelect_ViewSorter %{
@@ -3132,7 +3071,7 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 };
 %extend IGESSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_FloatFormat::~IGESSelect_FloatFormat %{
@@ -3169,7 +3108,7 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 };
 %extend IGESSelect_SignLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SignLevelNumber::~IGESSelect_SignLevelNumber %{
@@ -3212,7 +3151,7 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 };
 %extend IGESSelect_DispPerSingleView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_DispPerSingleView::~IGESSelect_DispPerSingleView %{
@@ -3253,7 +3192,7 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBasicGeom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBasicGeom::~IGESSelect_SelectBasicGeom %{
@@ -3292,7 +3231,7 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_SetVersion5 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SetVersion5::~IGESSelect_SetVersion5 %{
@@ -3331,7 +3270,7 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 };
 %extend IGESSelect_SelectBypassSubfigure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectBypassSubfigure::~IGESSelect_SelectBypassSubfigure %{
@@ -3350,34 +3289,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSelect_SplineToBSpline;
-class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
+%nodefaultctor IGESSelect_SignColor;
+class IGESSelect_SignColor : public IFSelect_Signature {
 	public:
 		%feature("autodoc", "1");
-		IGESSelect_SplineToBSpline(const Standard_Boolean tryC2);
+		IGESSelect_SignColor(const Standard_Integer mode);
 		%feature("autodoc", "1");
-		Standard_Boolean OptionTryC2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(const Interface_Graph &G, const Handle_Interface_Protocol &protocol, Interface_CheckIterator & checks, Handle_Interface_InterfaceModel & newmod);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Updated(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSelect_SplineToBSpline {
-	Handle_IGESSelect_SplineToBSpline GetHandle() {
-	return *(Handle_IGESSelect_SplineToBSpline*) &$self;
+%extend IGESSelect_SignColor {
+	Handle_IGESSelect_SignColor GetHandle() {
+	return *(Handle_IGESSelect_SignColor*) &$self;
 	}
 };
-%extend IGESSelect_SplineToBSpline {
+%extend IGESSelect_SignColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IGESSelect_SplineToBSpline::~IGESSelect_SplineToBSpline %{
+%feature("shadow") IGESSelect_SignColor::~IGESSelect_SignColor %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3386,58 +3319,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSelect_SplineToBSpline {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_ChangeLevelList;
-class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_ChangeLevelList();
-		%feature("autodoc", "1");
-		Standard_Boolean HasOldNumber() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam OldNumber() const;
-		%feature("autodoc", "1");
-		void SetOldNumber(const Handle_IFSelect_IntParam &param);
-		%feature("autodoc", "1");
-		Standard_Boolean HasNewNumber() const;
-		%feature("autodoc", "1");
-		Handle_IFSelect_IntParam NewNumber() const;
-		%feature("autodoc", "1");
-		void SetNewNumber(const Handle_IFSelect_IntParam &param);
-		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_ChangeLevelList {
-	Handle_IGESSelect_ChangeLevelList GetHandle() {
-	return *(Handle_IGESSelect_ChangeLevelList*) &$self;
-	}
-};
-%extend IGESSelect_ChangeLevelList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESSelect_ChangeLevelList::~IGESSelect_ChangeLevelList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_ChangeLevelList {
+%extend IGESSelect_SignColor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3464,7 +3346,7 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 };
 %extend IGESSelect_SelectFromSingleView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectFromSingleView::~IGESSelect_SelectFromSingleView %{
@@ -3503,7 +3385,7 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_RebuildDrawings {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_RebuildDrawings::~IGESSelect_RebuildDrawings %{
@@ -3542,7 +3424,7 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 };
 %extend IGESSelect_SetLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SetLabel::~IGESSelect_SetLabel %{
@@ -3555,6 +3437,159 @@ def __del__(self):
 %}
 
 %extend IGESSelect_SetLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_SelectVisibleStatus;
+class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_SelectVisibleStatus();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_SelectVisibleStatus {
+	Handle_IGESSelect_SelectVisibleStatus GetHandle() {
+	return *(Handle_IGESSelect_SelectVisibleStatus*) &$self;
+	}
+};
+%extend IGESSelect_SelectVisibleStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESSelect_SelectVisibleStatus::~IGESSelect_SelectVisibleStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_SelectVisibleStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_DispPerDrawing;
+class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_DispPerDrawing();
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean CanHaveRemainder() const;
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator Remainder(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_DispPerDrawing {
+	Handle_IGESSelect_DispPerDrawing GetHandle() {
+	return *(Handle_IGESSelect_DispPerDrawing*) &$self;
+	}
+};
+%extend IGESSelect_DispPerDrawing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESSelect_DispPerDrawing::~IGESSelect_DispPerDrawing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_DispPerDrawing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect;
+class IGESSelect {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect();
+		%feature("autodoc", "1");
+		static		void Run();
+		%feature("autodoc","WhatIges(const ent, const G) -> Standard_Integer");
+
+		static		Standard_Integer WhatIges(const Handle_IGESData_IGESEntity &ent, const Interface_Graph &G, Handle_IGESData_IGESEntity & sup, Standard_Integer &OutValue);
+
+};
+%feature("shadow") IGESSelect::~IGESSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_SplineToBSpline;
+class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_SplineToBSpline(const Standard_Boolean tryC2);
+		%feature("autodoc", "1");
+		Standard_Boolean OptionTryC2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform(const Interface_Graph &G, const Handle_Interface_Protocol &protocol, Interface_CheckIterator & checks, Handle_Interface_InterfaceModel & newmod);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Updated(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_SplineToBSpline {
+	Handle_IGESSelect_SplineToBSpline GetHandle() {
+	return *(Handle_IGESSelect_SplineToBSpline*) &$self;
+	}
+};
+%extend IGESSelect_SplineToBSpline {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESSelect_SplineToBSpline::~IGESSelect_SplineToBSpline %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_SplineToBSpline {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3593,7 +3628,7 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 };
 %extend IGESSelect_AddFileComment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_AddFileComment::~IGESSelect_AddFileComment %{
@@ -3606,49 +3641,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_AddFileComment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_DispPerDrawing;
-class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_DispPerDrawing();
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		void Packets(const Interface_Graph &G, IFGraph_SubPartsIterator & packs) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean CanHaveRemainder() const;
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator Remainder(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_DispPerDrawing {
-	Handle_IGESSelect_DispPerDrawing GetHandle() {
-	return *(Handle_IGESSelect_DispPerDrawing*) &$self;
-	}
-};
-%extend IGESSelect_DispPerDrawing {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESSelect_DispPerDrawing::~IGESSelect_DispPerDrawing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_DispPerDrawing {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3679,7 +3671,7 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 };
 %extend IGESSelect_SelectLevelNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESSelect_SelectLevelNumber::~IGESSelect_SelectLevelNumber %{
@@ -3698,28 +3690,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSelect_SignColor;
-class IGESSelect_SignColor : public IFSelect_Signature {
+%nodefaultctor IGESSelect_SetGlobalParameter;
+class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 	public:
 		%feature("autodoc", "1");
-		IGESSelect_SignColor(const Standard_Integer mode);
+		IGESSelect_SetGlobalParameter(const Standard_Integer numpar);
 		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		Standard_Integer GlobalNumber() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_TCollection_HAsciiString &text);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Value() const;
+		%feature("autodoc", "1");
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSelect_SignColor {
-	Handle_IGESSelect_SignColor GetHandle() {
-	return *(Handle_IGESSelect_SignColor*) &$self;
+%extend IGESSelect_SetGlobalParameter {
+	Handle_IGESSelect_SetGlobalParameter GetHandle() {
+	return *(Handle_IGESSelect_SetGlobalParameter*) &$self;
 	}
 };
-%extend IGESSelect_SignColor {
+%extend IGESSelect_SetGlobalParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IGESSelect_SignColor::~IGESSelect_SignColor %{
+%feature("shadow") IGESSelect_SetGlobalParameter::~IGESSelect_SetGlobalParameter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3728,7 +3728,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSelect_SignColor {
+%extend IGESSelect_SetGlobalParameter {
 	void _kill_pointed() {
 		delete $self;
 	}

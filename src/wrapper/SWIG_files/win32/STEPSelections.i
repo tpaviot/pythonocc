@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_STEPSelections_SelectGSCurves;
-class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves(const Handle_STEPSelections_SelectGSCurves &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves(const STEPSelections_SelectGSCurves *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves & operator=(const Handle_STEPSelections_SelectGSCurves &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectGSCurves & operator=(const STEPSelections_SelectGSCurves *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPSelections_SelectGSCurves DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_SelectGSCurves {
-	STEPSelections_SelectGSCurves* GetObject() {
-	return (STEPSelections_SelectGSCurves*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPSelections_SelectGSCurves::~Handle_STEPSelections_SelectGSCurves %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPSelections_SelectGSCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
 class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
 	public:
@@ -198,6 +160,44 @@ def __del__(self):
 %}
 
 %extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_STEPSelections_SelectGSCurves;
+class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectGSCurves();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectGSCurves(const Handle_STEPSelections_SelectGSCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectGSCurves(const STEPSelections_SelectGSCurves *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectGSCurves & operator=(const Handle_STEPSelections_SelectGSCurves &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectGSCurves & operator=(const STEPSelections_SelectGSCurves *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPSelections_SelectGSCurves DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_SelectGSCurves {
+	STEPSelections_SelectGSCurves* GetObject() {
+	return (STEPSelections_SelectGSCurves*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPSelections_SelectGSCurves::~Handle_STEPSelections_SelectGSCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPSelections_SelectGSCurves {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -470,6 +470,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
+class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SequenceOfAssemblyComponent();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const STEPSelections_SequenceOfAssemblyComponent & Assign(const STEPSelections_SequenceOfAssemblyComponent &Other);
+		%feature("autodoc", "1");
+		const STEPSelections_SequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceOfAssemblyComponent &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void Append(STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void Prepend(STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & First() const;
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") STEPSelections_SequenceOfAssemblyComponent::~STEPSelections_SequenceOfAssemblyComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SequenceOfAssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor STEPSelections_AssemblyExplorer;
 class STEPSelections_AssemblyExplorer {
 	public:
@@ -539,7 +604,7 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
@@ -618,7 +683,7 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
@@ -655,7 +720,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
@@ -692,7 +757,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
@@ -776,7 +841,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 };
 %extend STEPSelections_SelectDerived {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectDerived::~STEPSelections_SelectDerived %{
@@ -815,7 +880,7 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectGSCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
@@ -828,71 +893,6 @@ def __del__(self):
 %}
 
 %extend STEPSelections_SelectGSCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
-class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SequenceOfAssemblyComponent();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const STEPSelections_SequenceOfAssemblyComponent & Assign(const STEPSelections_SequenceOfAssemblyComponent &Other);
-		%feature("autodoc", "1");
-		const STEPSelections_SequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceOfAssemblyComponent &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void Append(STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void Prepend(STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & First() const;
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, STEPSelections_SequenceOfAssemblyComponent & S);
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_STEPSelections_AssemblyComponent &I);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") STEPSelections_SequenceOfAssemblyComponent::~STEPSelections_SequenceOfAssemblyComponent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SequenceOfAssemblyComponent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -986,7 +986,7 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectInstances {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
@@ -1025,7 +1025,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectAssembly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectAssembly::~STEPSelections_SelectAssembly %{
@@ -1064,7 +1064,7 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 };
 %extend STEPSelections_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
@@ -1113,7 +1113,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_AssemblyLink::~STEPSelections_AssemblyLink %{
@@ -1152,7 +1152,7 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectFaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{

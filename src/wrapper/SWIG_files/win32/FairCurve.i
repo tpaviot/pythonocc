@@ -86,31 +86,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor FairCurve_DistributionOfSagging;
-class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
-	public:
-		%feature("autodoc", "1");
-		FairCurve_DistributionOfSagging(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-
-};
-%feature("shadow") FairCurve_DistributionOfSagging::~FairCurve_DistributionOfSagging %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FairCurve_DistributionOfSagging {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor FairCurve_Newton;
 class FairCurve_Newton : public math_NewtonMinimum {
 	public:
@@ -212,6 +187,31 @@ def __del__(self):
 %}
 
 %extend FairCurve_Batten {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FairCurve_DistributionOfSagging;
+class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
+	public:
+		%feature("autodoc", "1");
+		FairCurve_DistributionOfSagging(const Standard_Integer BSplOrder, const Handle_TColStd_HArray1OfReal &FlatKnots, const Handle_TColgp_HArray1OfPnt2d &Poles, const Standard_Integer DerivativeOrder, const FairCurve_BattenLaw &Law, const Standard_Integer NbValAux=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+
+};
+%feature("shadow") FairCurve_DistributionOfSagging::~FairCurve_DistributionOfSagging %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FairCurve_DistributionOfSagging {
 	void _kill_pointed() {
 		delete $self;
 	}

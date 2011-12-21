@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import StepRepr
 import TCollection
 import StepBasic
 import StepGeom
-import StepRepr
 import StepData
 };

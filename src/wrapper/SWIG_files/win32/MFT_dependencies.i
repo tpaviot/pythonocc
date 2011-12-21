@@ -346,8 +346,8 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import Standard.i
+%import MMgt.i
 %import TCollection.i
 %import Quantity.i
 %import OSD.i

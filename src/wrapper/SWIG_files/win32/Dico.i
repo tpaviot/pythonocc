@@ -276,7 +276,7 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Dico_DictionaryOfInteger::~Dico_DictionaryOfInteger %{
@@ -356,7 +356,7 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfInteger::~Dico_StackItemOfDictionaryOfInteger %{
@@ -399,7 +399,7 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfTransient::~Dico_StackItemOfDictionaryOfTransient %{
@@ -412,43 +412,6 @@ def __del__(self):
 %}
 
 %extend Dico_StackItemOfDictionaryOfTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Dico_IteratorOfDictionaryOfInteger;
-class Dico_IteratorOfDictionaryOfInteger {
-	public:
-		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell);
-		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const char * basename);
-		%feature("autodoc", "1");
-		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const TCollection_AsciiString &basename);
-		%feature("autodoc", "1");
-		void Start();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString Name() const;
-
-};
-%feature("shadow") Dico_IteratorOfDictionaryOfInteger::~Dico_IteratorOfDictionaryOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Dico_IteratorOfDictionaryOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -505,7 +468,7 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Dico_DictionaryOfTransient::~Dico_DictionaryOfTransient %{
@@ -518,6 +481,43 @@ def __del__(self):
 %}
 
 %extend Dico_DictionaryOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Dico_IteratorOfDictionaryOfInteger;
+class Dico_IteratorOfDictionaryOfInteger {
+	public:
+		%feature("autodoc", "1");
+		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell);
+		%feature("autodoc", "1");
+		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const char * basename);
+		%feature("autodoc", "1");
+		Dico_IteratorOfDictionaryOfInteger(const Handle_Dico_DictionaryOfInteger &acell, const TCollection_AsciiString &basename);
+		%feature("autodoc", "1");
+		void Start();
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString Name() const;
+
+};
+%feature("shadow") Dico_IteratorOfDictionaryOfInteger::~Dico_IteratorOfDictionaryOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Dico_IteratorOfDictionaryOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NIS_SelectFilter;
-class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter();
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
-		%feature("autodoc", "1");
-		static		Handle_NIS_SelectFilter DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_NIS_SelectFilter {
-	NIS_SelectFilter* GetObject() {
-	return (NIS_SelectFilter*)$self->Access();
-	}
-};
-%feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_NIS_SelectFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_NIS_Drawer;
 class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	public:
@@ -198,6 +160,44 @@ def __del__(self):
 %}
 
 %extend Handle_NIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NIS_SurfaceDrawer;
+class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
+	public:
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer();
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer(const Handle_NIS_SurfaceDrawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer(const NIS_SurfaceDrawer *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer & operator=(const Handle_NIS_SurfaceDrawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SurfaceDrawer & operator=(const NIS_SurfaceDrawer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NIS_SurfaceDrawer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NIS_SurfaceDrawer {
+	NIS_SurfaceDrawer* GetObject() {
+	return (NIS_SurfaceDrawer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NIS_SurfaceDrawer::~Handle_NIS_SurfaceDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NIS_SurfaceDrawer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,6 +280,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_NIS_View;
+class Handle_NIS_View : public Handle_V3d_OrthographicView {
+	public:
+		%feature("autodoc", "1");
+		Handle_NIS_View();
+		%feature("autodoc", "1");
+		Handle_NIS_View(const Handle_NIS_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_View(const NIS_View *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_View & operator=(const Handle_NIS_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_View & operator=(const NIS_View *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NIS_View DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NIS_View {
+	NIS_View* GetObject() {
+	return (NIS_View*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NIS_View::~Handle_NIS_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NIS_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NIS_SelectFilter;
+class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter();
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NIS_SelectFilter DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NIS_SelectFilter {
+	NIS_SelectFilter* GetObject() {
+	return (NIS_SelectFilter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NIS_SelectFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_NIS_InteractiveContext;
 class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	public:
@@ -356,29 +432,55 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NIS_SurfaceDrawer;
-class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
+%nodefaultctor NIS_Drawer;
+class NIS_Drawer : public Standard_Transient {
 	public:
+		enum DrawType {
+			Draw_Normal,
+			Draw_Top,
+			Draw_Transparent,
+			Draw_Hilighted,
+			Draw_DynHilighted,
+		};
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer();
+		NIS_InteractiveContext * GetContext() const;
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer(const Handle_NIS_SurfaceDrawer &aHandle);
+		virtual		void Assign(const Handle_NIS_Drawer &theOther);
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer(const NIS_SurfaceDrawer *anItem);
+		virtual		const Bnd_B3f & GetBox(const NIS_View *pView=0l) const;
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer & operator=(const Handle_NIS_SurfaceDrawer &aHandle);
+		void SetUpdated(const NIS_Drawer::DrawType theType) const;
 		%feature("autodoc", "1");
-		Handle_NIS_SurfaceDrawer & operator=(const NIS_SurfaceDrawer *anItem);
+		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2) const;
 		%feature("autodoc", "1");
-		static		Handle_NIS_SurfaceDrawer DownCast(const Handle_Standard_Transient &AnObject);
+		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2, const NIS_Drawer::DrawType theType3) const;
+		%feature("autodoc", "1");
+		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2, const NIS_Drawer::DrawType theType3, const NIS_Drawer::DrawType theType4) const;
+		%feature("autodoc", "1");
+		void SetDynamicHilighted(const Standard_Boolean isHilighted, const Handle_NIS_InteractiveObject &theObj, const Handle_NIS_View &theView=0l);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer HashCode(const Standard_Integer theN) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
+		%feature("autodoc", "1");
+		TColStd_MapIteratorOfPackedMapOfInteger ObjectIterator() const;
+		%feature("autodoc", "1");
+		NCollection_List<NIS_DrawList*> GetLists() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_NIS_SurfaceDrawer {
-	NIS_SurfaceDrawer* GetObject() {
-	return (NIS_SurfaceDrawer*)$self->Access();
+%extend NIS_Drawer {
+	Handle_NIS_Drawer GetHandle() {
+	return *(Handle_NIS_Drawer*) &$self;
 	}
 };
-%feature("shadow") Handle_NIS_SurfaceDrawer::~Handle_NIS_SurfaceDrawer %{
+%extend NIS_Drawer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NIS_Drawer::~NIS_Drawer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -387,36 +489,49 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NIS_SurfaceDrawer {
+%extend NIS_Drawer {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_NIS_View;
-class Handle_NIS_View : public Handle_V3d_OrthographicView {
+%nodefaultctor NIS_SurfaceDrawer;
+class NIS_SurfaceDrawer : public NIS_Drawer {
 	public:
 		%feature("autodoc", "1");
-		Handle_NIS_View();
+		NIS_SurfaceDrawer(const Quantity_Color &theNormal, const Quantity_Color &theHilight=Quantity_NOC_GRAY65, const Quantity_Color &theDynHilight=Quantity_NOC_CYAN1);
 		%feature("autodoc", "1");
-		Handle_NIS_View(const Handle_NIS_View &aHandle);
+		void SetColor(const Quantity_Color &theColor);
 		%feature("autodoc", "1");
-		Handle_NIS_View(const NIS_View *anItem);
+		void SetBackColor(const Quantity_Color &theColor);
 		%feature("autodoc", "1");
-		Handle_NIS_View & operator=(const Handle_NIS_View &aHandle);
+		void SetTransformation(const gp_Trsf theTrsf);
 		%feature("autodoc", "1");
-		Handle_NIS_View & operator=(const NIS_View *anItem);
+		const gp_Trsf  GetTransformation() const;
 		%feature("autodoc", "1");
-		static		Handle_NIS_View DownCast(const Handle_Standard_Transient &AnObject);
+		void SetPolygonOffset(const Standard_Real theOffset);
+		%feature("autodoc", "1");
+		Standard_Real GetPolygonOffset() const;
+		%feature("autodoc", "1");
+		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
 
 };
-%extend Handle_NIS_View {
-	NIS_View* GetObject() {
-	return (NIS_View*)$self->Access();
+%extend NIS_SurfaceDrawer {
+	Handle_NIS_SurfaceDrawer GetHandle() {
+	return *(Handle_NIS_SurfaceDrawer*) &$self;
 	}
 };
-%feature("shadow") Handle_NIS_View::~Handle_NIS_View %{
+%extend NIS_SurfaceDrawer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -425,7 +540,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NIS_View {
+%extend NIS_SurfaceDrawer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -488,7 +603,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 };
 %extend NIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
@@ -606,7 +721,7 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 };
 %extend NIS_Triangulated {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_Triangulated::~NIS_Triangulated %{
@@ -672,121 +787,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor NIS_Drawer;
-class NIS_Drawer : public Standard_Transient {
-	public:
-		enum DrawType {
-			Draw_Normal,
-			Draw_Top,
-			Draw_Transparent,
-			Draw_Hilighted,
-			Draw_DynHilighted,
-		};
-		%feature("autodoc", "1");
-		NIS_InteractiveContext * GetContext() const;
-		%feature("autodoc", "1");
-		virtual		void Assign(const Handle_NIS_Drawer &theOther);
-		%feature("autodoc", "1");
-		virtual		const Bnd_B3f & GetBox(const NIS_View *pView=0l) const;
-		%feature("autodoc", "1");
-		void SetUpdated(const NIS_Drawer::DrawType theType) const;
-		%feature("autodoc", "1");
-		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2) const;
-		%feature("autodoc", "1");
-		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2, const NIS_Drawer::DrawType theType3) const;
-		%feature("autodoc", "1");
-		void SetUpdated(const NIS_Drawer::DrawType theType1, const NIS_Drawer::DrawType theType2, const NIS_Drawer::DrawType theType3, const NIS_Drawer::DrawType theType4) const;
-		%feature("autodoc", "1");
-		void SetDynamicHilighted(const Standard_Boolean isHilighted, const Handle_NIS_InteractiveObject &theObj, const Handle_NIS_View &theView=0l);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer HashCode(const Standard_Integer theN) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
-		%feature("autodoc", "1");
-		TColStd_MapIteratorOfPackedMapOfInteger ObjectIterator() const;
-		%feature("autodoc", "1");
-		NCollection_List<NIS_DrawList*> GetLists() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NIS_Drawer {
-	Handle_NIS_Drawer GetHandle() {
-	return *(Handle_NIS_Drawer*) &$self;
-	}
-};
-%extend NIS_Drawer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NIS_Drawer::~NIS_Drawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NIS_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NIS_SurfaceDrawer;
-class NIS_SurfaceDrawer : public NIS_Drawer {
-	public:
-		%feature("autodoc", "1");
-		NIS_SurfaceDrawer(const Quantity_Color &theNormal, const Quantity_Color &theHilight=Quantity_NOC_GRAY65, const Quantity_Color &theDynHilight=Quantity_NOC_CYAN1);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &theColor);
-		%feature("autodoc", "1");
-		void SetBackColor(const Quantity_Color &theColor);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Trsf theTrsf);
-		%feature("autodoc", "1");
-		const gp_Trsf  GetTransformation() const;
-		%feature("autodoc", "1");
-		void SetPolygonOffset(const Standard_Real theOffset);
-		%feature("autodoc", "1");
-		Standard_Real GetPolygonOffset() const;
-		%feature("autodoc", "1");
-		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-
-};
-%extend NIS_SurfaceDrawer {
-	Handle_NIS_SurfaceDrawer GetHandle() {
-	return *(Handle_NIS_SurfaceDrawer*) &$self;
-	}
-};
-%extend NIS_SurfaceDrawer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NIS_SurfaceDrawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor NIS_InteractiveContext;
 class NIS_InteractiveContext : public Standard_Transient {
 	public:
@@ -808,8 +808,6 @@ class NIS_InteractiveContext : public Standard_Transient {
 		Standard_Integer NbObjects();
 		%feature("autodoc", "1");
 		Standard_Integer NbDrawers();
-		%feature("autodoc", "1");
-		NCollection_Map<Handle_NIS_Drawer>::Iterator GetDrawers() const;
 		%feature("autodoc", "1");
 		void Display(Handle_NIS_InteractiveObject & theObj, const Handle_NIS_Drawer &theDrawer=0, const Standard_Boolean isUpdateViews=1);
 		%feature("autodoc", "1");
@@ -869,7 +867,7 @@ class NIS_InteractiveContext : public Standard_Transient {
 };
 %extend NIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_InteractiveContext::~NIS_InteractiveContext %{
@@ -948,7 +946,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 };
 %extend NIS_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_Surface::~NIS_Surface %{
@@ -1003,6 +1001,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor NIS_TriangulatedDrawer;
+class NIS_TriangulatedDrawer : public NIS_Drawer {
+	public:
+		%feature("autodoc", "1");
+		NIS_TriangulatedDrawer(const Quantity_Color theNormal, const Quantity_Color theHilight=Quantity_NOC_GRAY80, const Quantity_Color theDynHilight=Quantity_NOC_CYAN1);
+		%feature("autodoc", "1");
+		virtual		void Assign(const Handle_NIS_Drawer &theOther);
+		%feature("autodoc", "1");
+		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NIS_TriangulatedDrawer {
+	Handle_NIS_TriangulatedDrawer GetHandle() {
+	return *(Handle_NIS_TriangulatedDrawer*) &$self;
+	}
+};
+%extend NIS_TriangulatedDrawer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NIS_TriangulatedDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NIS_SelectFilter;
 class NIS_SelectFilter : public Standard_Transient {
 	public:
@@ -1021,7 +1064,7 @@ class NIS_SelectFilter : public Standard_Transient {
 };
 %extend NIS_SelectFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_SelectFilter::~NIS_SelectFilter %{
@@ -1087,7 +1130,7 @@ class NIS_View : public V3d_OrthographicView {
 };
 %extend NIS_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_View::~NIS_View %{
@@ -1132,7 +1175,7 @@ class NIS_Allocator : public NCollection_IncAllocator {
 };
 %extend NIS_Allocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NIS_Allocator::~NIS_Allocator %{
@@ -1145,51 +1188,6 @@ def __del__(self):
 %}
 
 %extend NIS_Allocator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NIS_TriangulatedDrawer;
-class NIS_TriangulatedDrawer : public NIS_Drawer {
-	public:
-		%feature("autodoc", "1");
-		NIS_TriangulatedDrawer(const Quantity_Color theNormal, const Quantity_Color theHilight=Quantity_NOC_GRAY80, const Quantity_Color theDynHilight=Quantity_NOC_CYAN1);
-		%feature("autodoc", "1");
-		virtual		void Assign(const Handle_NIS_Drawer &theOther);
-		%feature("autodoc", "1");
-		virtual		void BeforeDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		void AfterDraw(const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		void Draw(const Handle_NIS_InteractiveObject &arg0, const NIS_Drawer::DrawType theType, const NIS_DrawList &theDrawList);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEqual(const Handle_NIS_Drawer &theOth) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NIS_TriangulatedDrawer {
-	Handle_NIS_TriangulatedDrawer GetHandle() {
-	return *(Handle_NIS_TriangulatedDrawer*) &$self;
-	}
-};
-%extend NIS_TriangulatedDrawer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NIS_TriangulatedDrawer {
 	void _kill_pointed() {
 		delete $self;
 	}

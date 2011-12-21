@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
-class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError();
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError(const GGraphic2d_CurveDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError & operator=(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GGraphic2d_CurveDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GGraphic2d_CurveDefinitionError {
-	GGraphic2d_CurveDefinitionError* GetObject() {
-	return (GGraphic2d_CurveDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GGraphic2d_CurveDefinitionError::~Handle_GGraphic2d_CurveDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GGraphic2d_CurveDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
 class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	public:
@@ -166,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
+class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError();
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError(const GGraphic2d_CurveDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const Handle_GGraphic2d_CurveDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_GGraphic2d_CurveDefinitionError & operator=(const GGraphic2d_CurveDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GGraphic2d_CurveDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	GGraphic2d_CurveDefinitionError* GetObject() {
+	return (GGraphic2d_CurveDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GGraphic2d_CurveDefinitionError::~Handle_GGraphic2d_CurveDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GGraphic2d_CurveDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GGraphic2d_SetOfCurves;
 class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 	public:
@@ -188,7 +188,7 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 };
 %extend GGraphic2d_SetOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GGraphic2d_SetOfCurves::~GGraphic2d_SetOfCurves %{
@@ -201,45 +201,6 @@ def __del__(self):
 %}
 
 %extend GGraphic2d_SetOfCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GGraphic2d_Curve;
-class GGraphic2d_Curve : public Graphic2d_Line {
-	public:
-		%feature("autodoc", "1");
-		GGraphic2d_Curve(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Handle_Geom2d_Curve &aCurve);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve GeomCurve() const;
-		%feature("autodoc", "1");
-		static		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GGraphic2d_Curve {
-	Handle_GGraphic2d_Curve GetHandle() {
-	return *(Handle_GGraphic2d_Curve*) &$self;
-	}
-};
-%extend GGraphic2d_Curve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GGraphic2d_Curve::~GGraphic2d_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GGraphic2d_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -270,7 +231,7 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 };
 %extend GGraphic2d_CurveDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GGraphic2d_CurveDefinitionError::~GGraphic2d_CurveDefinitionError %{
@@ -283,6 +244,45 @@ def __del__(self):
 %}
 
 %extend GGraphic2d_CurveDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GGraphic2d_Curve;
+class GGraphic2d_Curve : public Graphic2d_Line {
+	public:
+		%feature("autodoc", "1");
+		GGraphic2d_Curve(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Handle_Geom2d_Curve &aCurve);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve GeomCurve() const;
+		%feature("autodoc", "1");
+		static		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GGraphic2d_Curve {
+	Handle_GGraphic2d_Curve GetHandle() {
+	return *(Handle_GGraphic2d_Curve*) &$self;
+	}
+};
+%extend GGraphic2d_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GGraphic2d_Curve::~GGraphic2d_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GGraphic2d_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}

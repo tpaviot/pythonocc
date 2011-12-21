@@ -112,7 +112,7 @@ class AppStd_Application : public TDocStd_Application {
 };
 %extend AppStd_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AppStd_Application::~AppStd_Application %{

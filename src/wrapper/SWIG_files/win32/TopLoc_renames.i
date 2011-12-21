@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation::DownCast;
+%rename(DownCast) Handle_TopLoc_SListNodeOfSListOfItemLocation::DownCast;
+%rename(DownCast) Handle_TopLoc_Datum3D::DownCast;
+%rename(DownCast) Handle_TopLoc_StdMapNodeOfMapOfLocation::DownCast;
+%rename(HashCode) TopLoc_MapLocationHasher::HashCode;
+%rename(IsEqual) TopLoc_MapLocationHasher::IsEqual;

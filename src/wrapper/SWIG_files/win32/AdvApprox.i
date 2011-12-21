@@ -52,55 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor AdvApprox_Cutting;
-class AdvApprox_Cutting {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") AdvApprox_Cutting::~AdvApprox_Cutting %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApprox_Cutting {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApprox_DichoCutting;
-class AdvApprox_DichoCutting : public AdvApprox_Cutting {
-	public:
-		%feature("autodoc", "1");
-		AdvApprox_DichoCutting();
-
-};
-%feature("shadow") AdvApprox_DichoCutting::~AdvApprox_DichoCutting %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApprox_DichoCutting {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AdvApprox_ApproxAFunction;
 class AdvApprox_ApproxAFunction {
 	public:
@@ -173,6 +124,83 @@ def __del__(self):
 };
 
 
+%nodefaultctor AdvApprox_Cutting;
+class AdvApprox_Cutting {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") AdvApprox_Cutting::~AdvApprox_Cutting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApprox_Cutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApprox_DichoCutting;
+class AdvApprox_DichoCutting : public AdvApprox_Cutting {
+	public:
+		%feature("autodoc", "1");
+		AdvApprox_DichoCutting();
+		%feature("autodoc","Value(Standard_Real a, Standard_Real b) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real a, const Standard_Real b, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") AdvApprox_DichoCutting::~AdvApprox_DichoCutting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApprox_DichoCutting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApprox_EvaluatorFunction;
+class AdvApprox_EvaluatorFunction {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Evaluate(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
+		%feature("autodoc", "1");
+		void operator()(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
+
+};
+%feature("shadow") AdvApprox_EvaluatorFunction::~AdvApprox_EvaluatorFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApprox_EvaluatorFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AdvApprox_PrefAndRec;
 class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	public:
@@ -219,31 +247,6 @@ def __del__(self):
 %}
 
 %extend AdvApprox_PrefCutting {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApprox_EvaluatorFunction;
-class AdvApprox_EvaluatorFunction {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Evaluate(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
-		%feature("autodoc", "1");
-		void operator()(Standard_Integer* Dimension, Standard_Real* StartEnd, Standard_Real* Parameter, Standard_Integer* DerivativeRequest, Standard_Real* Result, Standard_Integer* ErrorCode);
-
-};
-%feature("shadow") AdvApprox_EvaluatorFunction::~AdvApprox_EvaluatorFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApprox_EvaluatorFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

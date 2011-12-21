@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Compose) TopAbs::Compose;
+%rename(Reverse) TopAbs::Reverse;
+%rename(Complement) TopAbs::Complement;
+%rename(Print) TopAbs::Print;

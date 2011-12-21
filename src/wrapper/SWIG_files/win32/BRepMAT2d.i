@@ -186,7 +186,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt %{
@@ -248,28 +248,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
-class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
+%nodefaultctor BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
+class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & Value() const;
+		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & Assign(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepMAT2d_SequenceOfBasicElt &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const BRepMAT2d_SequenceOfBasicElt & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BRepMAT2d_SequenceOfBasicElt & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K);
 
 };
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt GetHandle() {
-	return *(Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*) &$self;
-	}
-};
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt %{
+%feature("shadow") BRepMAT2d_DataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -278,7 +286,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -381,51 +389,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
-class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & Assign(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
-		%feature("autodoc", "1");
-		BRepMAT2d_DataMapOfShapeSequenceOfBasicElt & operator=(const BRepMAT2d_DataMapOfShapeSequenceOfBasicElt &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const BRepMAT2d_SequenceOfBasicElt &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BRepMAT2d_SequenceOfBasicElt & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepMAT2d_DataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
 class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
 	public:
@@ -477,7 +440,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape %{
@@ -572,6 +535,43 @@ def __del__(self):
 %}
 
 %extend BRepMAT2d_LinkTopoBilo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
+class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		BRepMAT2d_SequenceNodeOfSequenceOfBasicElt(const Handle_MAT_BasicElt &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt GetHandle() {
+	return *(Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt*) &$self;
+	}
+};
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
 	void _kill_pointed() {
 		delete $self;
 	}

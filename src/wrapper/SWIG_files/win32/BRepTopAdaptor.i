@@ -53,44 +53,6 @@ typedef TColStd_SequenceOfAddress BRepTopAdaptor_SeqOfPtr;
 
 
 
-%nodefaultctor Handle_BRepTopAdaptor_TopolTool;
-class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool();
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool(const Handle_BRepTopAdaptor_TopolTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool(const BRepTopAdaptor_TopolTool *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool & operator=(const Handle_BRepTopAdaptor_TopolTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepTopAdaptor_TopolTool DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepTopAdaptor_TopolTool {
-	BRepTopAdaptor_TopolTool* GetObject() {
-	return (BRepTopAdaptor_TopolTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepTopAdaptor_TopolTool::~Handle_BRepTopAdaptor_TopolTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepTopAdaptor_TopolTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepTopAdaptor_HVertex;
 class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	public:
@@ -123,6 +85,44 @@ def __del__(self):
 %}
 
 %extend Handle_BRepTopAdaptor_HVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepTopAdaptor_TopolTool;
+class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool();
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool(const Handle_BRepTopAdaptor_TopolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool(const BRepTopAdaptor_TopolTool *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool & operator=(const Handle_BRepTopAdaptor_TopolTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool & operator=(const BRepTopAdaptor_TopolTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepTopAdaptor_TopolTool DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepTopAdaptor_TopolTool {
+	BRepTopAdaptor_TopolTool* GetObject() {
+	return (BRepTopAdaptor_TopolTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepTopAdaptor_TopolTool::~Handle_BRepTopAdaptor_TopolTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepTopAdaptor_TopolTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,7 +242,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %extend BRepTopAdaptor_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
@@ -261,22 +261,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
-class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
+%nodefaultctor BRepTopAdaptor_Tool;
+class BRepTopAdaptor_Tool {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
+		BRepTopAdaptor_Tool();
 		%feature("autodoc", "1");
-		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		BRepTopAdaptor_Tool(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		void Initialize(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
+		void Init(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		const BRepTopAdaptor_Tool & Value() const;
+		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
+		%feature("autodoc", "1");
+		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HSurface GetSurface();
+		%feature("autodoc", "1");
+		void Destroy();
 
 };
-%feature("shadow") BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool::~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool %{
+%feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -285,7 +293,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+%extend BRepTopAdaptor_Tool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -321,6 +329,37 @@ def __del__(self):
 %}
 
 %extend BRepTopAdaptor_FClass2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
+class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool();
+		%feature("autodoc", "1");
+		BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepTopAdaptor_MapOfShapeTool &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const BRepTopAdaptor_Tool & Value() const;
+
+};
+%feature("shadow") BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool::~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -399,7 +438,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
@@ -412,45 +451,6 @@ def __del__(self):
 %}
 
 %extend BRepTopAdaptor_TopolTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_Tool;
-class BRepTopAdaptor_Tool {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool();
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const TopoDS_Face F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
-		%feature("autodoc", "1");
-		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface GetSurface();
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepTopAdaptor_Tool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -477,7 +477,7 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{

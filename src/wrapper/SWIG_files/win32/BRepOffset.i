@@ -59,19 +59,19 @@ enum BRepOffset_Error {
 	BRepOffset_UnknownError,
 	};
 
-enum BRepOffset_Status {
-	BRepOffset_Good,
-	BRepOffset_Reversed,
-	BRepOffset_Degenerated,
-	BRepOffset_Unknown,
-	};
-
 enum BRepOffset_Type {
 	BRepOffset_Concave,
 	BRepOffset_Convex,
 	BRepOffset_Tangent,
 	BRepOffset_FreeBoundary,
 	BRepOffset_Other,
+	};
+
+enum BRepOffset_Status {
+	BRepOffset_Good,
+	BRepOffset_Reversed,
+	BRepOffset_Degenerated,
+	BRepOffset_Unknown,
 	};
 
 enum BRepOffset_Mode {
@@ -158,6 +158,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
+class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval* GetObject() {
+	return (BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval::~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TCollection_MapNode {
 	public:
@@ -196,29 +234,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
-class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
+%nodefaultctor BRepOffset_DataMapOfShapeOffset;
+class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval();
+		BRepOffset_DataMapOfShapeOffset(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		BRepOffset_DataMapOfShapeOffset & Assign(const BRepOffset_DataMapOfShapeOffset &Other);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
+		BRepOffset_DataMapOfShapeOffset & operator=(const BRepOffset_DataMapOfShapeOffset &Other);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval &aHandle);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval & operator=(const BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval *anItem);
+		void Clear();
 		%feature("autodoc", "1");
-		static		Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval DownCast(const Handle_Standard_Transient &AnObject);
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepOffset_Offset &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const BRepOffset_Offset & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BRepOffset_Offset & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BRepOffset_Offset & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		BRepOffset_Offset & operator()(const TopoDS_Shape K);
 
 };
-%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
-	BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval* GetObject() {
-	return (BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval::~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval %{
+%feature("shadow") BRepOffset_DataMapOfShapeOffset::~BRepOffset_DataMapOfShapeOffset %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -227,7 +272,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
+%extend BRepOffset_DataMapOfShapeOffset {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -273,57 +318,6 @@ def __del__(self):
 %}
 
 %extend BRepOffset_DataMapOfShapeMapOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffset_Analyse;
-class BRepOffset_Analyse {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_Analyse();
-		%feature("autodoc", "1");
-		BRepOffset_Analyse(const TopoDS_Shape S, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape S, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const BRepOffset_ListOfInterval & Type(const TopoDS_Edge E) const;
-		%feature("autodoc", "1");
-		void Edges(const TopoDS_Vertex V, const BRepOffset_Type T, TopTools_ListOfShape & L) const;
-		%feature("autodoc", "1");
-		void Edges(const TopoDS_Face F, const BRepOffset_Type T, TopTools_ListOfShape & L) const;
-		%feature("autodoc", "1");
-		void TangentEdges(const TopoDS_Edge Edge, const TopoDS_Vertex Vertex, TopTools_ListOfShape & Edges) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasAncestor(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Ancestors(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type) const;
-		%feature("autodoc", "1");
-		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type1, const BRepOffset_Type Type2) const;
-		%feature("autodoc", "1");
-		void AddFaces(const TopoDS_Face Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type) const;
-		%feature("autodoc", "1");
-		void AddFaces(const TopoDS_Face Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type1, const BRepOffset_Type Type2) const;
-
-};
-%feature("shadow") BRepOffset_Analyse::~BRepOffset_Analyse %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_Analyse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -439,6 +433,110 @@ def __del__(self):
 %}
 
 %extend BRepOffset_MakeOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepOffset_Offset;
+class BRepOffset_Offset {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_Offset();
+		%feature("autodoc", "1");
+		BRepOffset_Offset(const TopoDS_Face Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
+		%feature("autodoc", "1");
+		BRepOffset_Offset(const TopoDS_Face Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape &Created, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
+		%feature("autodoc", "1");
+		BRepOffset_Offset(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		BRepOffset_Offset(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const TopoDS_Edge FirstEdge, const TopoDS_Edge LastEdge, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		BRepOffset_Offset(const TopoDS_Vertex Vertex, const TopTools_ListOfShape &LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape &Created, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const TopoDS_Edge FirstEdge, const TopoDS_Edge LastEdge, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Vertex Vertex, const TopTools_ListOfShape &LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge Edge, const Standard_Real Offset);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  InitialShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  Face() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Generated(const TopoDS_Shape Shape) const;
+		%feature("autodoc", "1");
+		BRepOffset_Status Status() const;
+
+};
+%feature("shadow") BRepOffset_Offset::~BRepOffset_Offset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffset_Offset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepOffset_Analyse;
+class BRepOffset_Analyse {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_Analyse();
+		%feature("autodoc", "1");
+		BRepOffset_Analyse(const TopoDS_Shape S, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape S, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const BRepOffset_ListOfInterval & Type(const TopoDS_Edge E) const;
+		%feature("autodoc", "1");
+		void Edges(const TopoDS_Vertex V, const BRepOffset_Type T, TopTools_ListOfShape & L) const;
+		%feature("autodoc", "1");
+		void Edges(const TopoDS_Face F, const BRepOffset_Type T, TopTools_ListOfShape & L) const;
+		%feature("autodoc", "1");
+		void TangentEdges(const TopoDS_Edge Edge, const TopoDS_Vertex Vertex, TopTools_ListOfShape & Edges) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasAncestor(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Ancestors(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type) const;
+		%feature("autodoc", "1");
+		void Explode(TopTools_ListOfShape & L, const BRepOffset_Type Type1, const BRepOffset_Type Type2) const;
+		%feature("autodoc", "1");
+		void AddFaces(const TopoDS_Face Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type) const;
+		%feature("autodoc", "1");
+		void AddFaces(const TopoDS_Face Face, TopoDS_Compound & Co, TopTools_MapOfShape & Map, const BRepOffset_Type Type1, const BRepOffset_Type Type2) const;
+
+};
+%feature("shadow") BRepOffset_Analyse::~BRepOffset_Analyse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffset_Analyse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -596,7 +694,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval::~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval %{
@@ -646,6 +744,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
+class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const TopoDS_Shape K, const TopTools_MapOfShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
+	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
+	}
+};
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape::~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepOffset_Interval;
 class BRepOffset_Interval {
 	public:
@@ -683,88 +820,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepOffset_ListNodeOfListOfInterval;
-class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_ListNodeOfListOfInterval(const BRepOffset_Interval &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BRepOffset_Interval & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepOffset_ListNodeOfListOfInterval {
-	Handle_BRepOffset_ListNodeOfListOfInterval GetHandle() {
-	return *(Handle_BRepOffset_ListNodeOfListOfInterval*) &$self;
-	}
-};
-%extend BRepOffset_ListNodeOfListOfInterval {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepOffset_ListNodeOfListOfInterval::~BRepOffset_ListNodeOfListOfInterval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_ListNodeOfListOfInterval {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffset_DataMapOfShapeOffset;
-class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeOffset(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeOffset & Assign(const BRepOffset_DataMapOfShapeOffset &Other);
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeOffset & operator=(const BRepOffset_DataMapOfShapeOffset &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const BRepOffset_Offset &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const BRepOffset_Offset & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BRepOffset_Offset & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BRepOffset_Offset & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		BRepOffset_Offset & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepOffset_DataMapOfShapeOffset::~BRepOffset_DataMapOfShapeOffset %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_DataMapOfShapeOffset {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepOffset_MakeLoops;
 class BRepOffset_MakeLoops {
 	public:
@@ -788,6 +843,43 @@ def __del__(self):
 %}
 
 %extend BRepOffset_MakeLoops {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepOffset_ListNodeOfListOfInterval;
+class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_ListNodeOfListOfInterval(const BRepOffset_Interval &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BRepOffset_Interval & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepOffset_ListNodeOfListOfInterval {
+	Handle_BRepOffset_ListNodeOfListOfInterval GetHandle() {
+	return *(Handle_BRepOffset_ListNodeOfListOfInterval*) &$self;
+	}
+};
+%extend BRepOffset_ListNodeOfListOfInterval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") BRepOffset_ListNodeOfListOfInterval::~BRepOffset_ListNodeOfListOfInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffset_ListNodeOfListOfInterval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -845,7 +937,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeOffset::~BRepOffset_DataMapNodeOfDataMapOfShapeOffset %{
@@ -915,98 +1007,6 @@ def __del__(self):
 %}
 
 %extend BRepOffset_Tool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffset_Offset;
-class BRepOffset_Offset {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_Offset();
-		%feature("autodoc", "1");
-		BRepOffset_Offset(const TopoDS_Face Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
-		%feature("autodoc", "1");
-		BRepOffset_Offset(const TopoDS_Face Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape &Created, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
-		%feature("autodoc", "1");
-		BRepOffset_Offset(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		BRepOffset_Offset(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const TopoDS_Edge FirstEdge, const TopoDS_Edge LastEdge, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		BRepOffset_Offset(const TopoDS_Vertex Vertex, const TopTools_ListOfShape &LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face Face, const Standard_Real Offset, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face Face, const Standard_Real Offset, const TopTools_DataMapOfShapeShape &Created, const Standard_Boolean OffsetOutside=1, const GeomAbs_JoinType JoinType=GeomAbs_Arc);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge Path, const TopoDS_Edge Edge1, const TopoDS_Edge Edge2, const Standard_Real Offset, const TopoDS_Edge FirstEdge, const TopoDS_Edge LastEdge, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Vertex Vertex, const TopTools_ListOfShape &LEdge, const Standard_Real Offset, const Standard_Boolean Polynomial=0, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4, const GeomAbs_Shape Conti=GeomAbs_C1);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge Edge, const Standard_Real Offset);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  InitialShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face  Face() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Generated(const TopoDS_Shape Shape) const;
-		%feature("autodoc", "1");
-		BRepOffset_Status Status() const;
-
-};
-%feature("shadow") BRepOffset_Offset::~BRepOffset_Offset %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_Offset {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
-class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape(const TopoDS_Shape K, const TopTools_MapOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape GetHandle() {
-	return *(Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape*) &$self;
-	}
-};
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape::~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}

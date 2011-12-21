@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import StepData
 import Standard
 import Transfer
 import Interface
 import IFSelect
 import XSControl
+import StepData
 };

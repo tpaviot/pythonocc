@@ -49,8 +49,8 @@ $HeaderURL$
 
 %include TCollection_headers.i
 
-typedef TCollection_SeqNode * TCollection_SeqNodePtr;
 typedef TCollection_MapNode * TCollection_MapNodePtr;
+typedef TCollection_SeqNode * TCollection_SeqNodePtr;
 typedef TCollection_AVLBaseNode * TCollection_AVLBaseNodePtr;
 
 enum TCollection_Side {
@@ -353,20 +353,36 @@ class TCollection_AsciiString {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const char * other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const char * other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_CString other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_AsciiString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TCollection_AsciiString &other) const;
+		%extend{
+			bool __eq_wrapper__(const TCollection_AsciiString &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const char * other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const char * other) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_CString other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TCollection_AsciiString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TCollection_AsciiString &other) const;
+		%extend{
+			bool __ne_wrapper__(const TCollection_AsciiString &other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsLess(const char * other) const;
 		%feature("autodoc", "1");
@@ -472,6 +488,20 @@ class TCollection_AsciiString {
 		static		Standard_Integer HASHCODE(const TCollection_AsciiString &astring, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		static		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TCollection_AsciiString::~TCollection_AsciiString %{
@@ -487,6 +517,44 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor TCollection_BasicMap;
+class TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer NbBuckets() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string StatisticsToString() {
+			std::stringstream s;
+			self->Statistics(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") TCollection_BasicMap::~TCollection_BasicMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TCollection_BasicMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend TCollection_BasicMap {
+	TCollection_BasicMap () {}
 };
 
 
@@ -533,7 +601,7 @@ class TCollection_MapNode : public MMgt_TShared {
 };
 %extend TCollection_MapNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_MapNode::~TCollection_MapNode %{
@@ -552,20 +620,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor TCollection_PrivCompareOfInteger;
-class TCollection_PrivCompareOfInteger {
+%nodefaultctor TCollection_Array2Descriptor;
+class TCollection_Array2Descriptor {
 	public:
 		%feature("autodoc", "1");
-		TCollection_PrivCompareOfInteger();
+		Standard_Integer UpperRow() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		Standard_Integer LowerRow() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		Standard_Integer UpperCol() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Address Address() const;
 
 };
-%feature("shadow") TCollection_PrivCompareOfInteger::~TCollection_PrivCompareOfInteger %{
+%feature("shadow") TCollection_Array2Descriptor::~TCollection_Array2Descriptor %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -574,10 +644,13 @@ def __del__(self):
 		pass
 %}
 
-%extend TCollection_PrivCompareOfInteger {
+%extend TCollection_Array2Descriptor {
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+%extend TCollection_Array2Descriptor {
+	TCollection_Array2Descriptor () {}
 };
 
 
@@ -621,7 +694,7 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 };
 %extend TCollection_AVLBaseNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_AVLBaseNode::~TCollection_AVLBaseNode %{
@@ -634,6 +707,67 @@ def __del__(self):
 %}
 
 %extend TCollection_AVLBaseNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TCollection_BaseSequence;
+class TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer I, const Standard_Integer J);
+
+};
+%feature("shadow") TCollection_BaseSequence::~TCollection_BaseSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TCollection_BaseSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend TCollection_BaseSequence {
+	TCollection_BaseSequence () {}
+};
+
+
+%nodefaultctor TCollection_PrivCompareOfInteger;
+class TCollection_PrivCompareOfInteger {
+	public:
+		%feature("autodoc", "1");
+		TCollection_PrivCompareOfInteger();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsLower(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsGreater(const Standard_Integer &Left, const Standard_Integer &Right) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsEqual(const Standard_Integer &Left, const Standard_Integer &Right) const;
+
+};
+%feature("shadow") TCollection_PrivCompareOfInteger::~TCollection_PrivCompareOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TCollection_PrivCompareOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -769,20 +903,36 @@ class TCollection_ExtendedString {
 		void Insert(const Standard_Integer where, const TCollection_ExtendedString &what);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_ExtString other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_ExtString other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_ExtString other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_ExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TCollection_ExtendedString &other) const;
+		%extend{
+			bool __eq_wrapper__(const TCollection_ExtendedString &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Standard_ExtString other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Standard_ExtString other) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_ExtString other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TCollection_ExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TCollection_ExtendedString &other) const;
+		%extend{
+			bool __ne_wrapper__(const TCollection_ExtendedString &other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsLess(const Standard_ExtString other) const;
 		%feature("autodoc", "1");
@@ -841,6 +991,20 @@ class TCollection_ExtendedString {
 		Standard_Integer ToUTF8CString(Standard_PCharacter & theCString) const;
 		%feature("autodoc", "1");
 		Standard_Integer LengthOfCString() const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TCollection_ExtendedString::~TCollection_ExtendedString %{
@@ -856,40 +1020,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor TCollection_Array2Descriptor;
-class TCollection_Array2Descriptor {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Address Address() const;
-
-};
-%feature("shadow") TCollection_Array2Descriptor::~TCollection_Array2Descriptor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TCollection_Array2Descriptor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend TCollection_Array2Descriptor {
-	TCollection_Array2Descriptor () {}
 };
 
 
@@ -989,7 +1119,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 };
 %extend TCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_HExtendedString::~TCollection_HExtendedString %{
@@ -1002,77 +1132,6 @@ def __del__(self):
 %}
 
 %extend TCollection_HExtendedString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TCollection_BaseSequence;
-class TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer I, const Standard_Integer J);
-
-};
-%feature("shadow") TCollection_BaseSequence::~TCollection_BaseSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TCollection_BaseSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend TCollection_BaseSequence {
-	TCollection_BaseSequence () {}
-};
-
-
-%nodefaultctor TCollection_SeqNode;
-class TCollection_SeqNode : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TCollection_SeqNode(const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		TCollection_SeqNodePtr & Next() const;
-		%feature("autodoc", "1");
-		TCollection_SeqNodePtr & Previous() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TCollection_SeqNode {
-	Handle_TCollection_SeqNode GetHandle() {
-	return *(Handle_TCollection_SeqNode*) &$self;
-	}
-};
-%extend TCollection_SeqNode {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TCollection_SeqNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1133,44 +1192,6 @@ def __del__(self):
 };
 %extend TCollection_Array1Descriptor {
 	TCollection_Array1Descriptor () {}
-};
-
-
-%nodefaultctor TCollection_BasicMap;
-class TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer NbBuckets() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string StatisticsToString() {
-			std::stringstream s;
-			self->Statistics(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") TCollection_BasicMap::~TCollection_BasicMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TCollection_BasicMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend TCollection_BasicMap {
-	TCollection_BasicMap () {}
 };
 
 
@@ -1334,7 +1355,7 @@ class TCollection_HAsciiString : public MMgt_TShared {
 };
 %extend TCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TCollection_HAsciiString::~TCollection_HAsciiString %{
@@ -1347,6 +1368,45 @@ def __del__(self):
 %}
 
 %extend TCollection_HAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TCollection_SeqNode;
+class TCollection_SeqNode : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TCollection_SeqNode(const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		TCollection_SeqNodePtr & Next() const;
+		%feature("autodoc", "1");
+		TCollection_SeqNodePtr & Previous() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TCollection_SeqNode {
+	Handle_TCollection_SeqNode GetHandle() {
+	return *(Handle_TCollection_SeqNode*) &$self;
+	}
+};
+%extend TCollection_SeqNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TCollection_SeqNode {
 	void _kill_pointed() {
 		delete $self;
 	}

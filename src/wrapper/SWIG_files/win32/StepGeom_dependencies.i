@@ -331,7 +331,7 @@ $HeaderURL$
 #include <StepRepr_ValueRange.hxx>
 %};
 
-%import StepRepr.i
 %import MMgt.i
+%import StepRepr.i
 %import StepData.i
 %import Standard.i

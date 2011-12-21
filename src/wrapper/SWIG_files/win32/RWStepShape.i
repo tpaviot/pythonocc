@@ -52,35 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor RWStepShape_RWFacetedBrep;
-class RWStepShape_RWFacetedBrep {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWFacetedBrep();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FacetedBrep &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_FacetedBrep &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_FacetedBrep &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWFacetedBrep::~RWStepShape_RWFacetedBrep %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWFacetedBrep {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWAngularSize;
 class RWStepShape_RWAngularSize {
 	public:
@@ -342,6 +313,64 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWSubedge;
+class RWStepShape_RWSubedge {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWSubedge();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Subedge &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Subedge &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_Subedge &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWSubedge::~RWStepShape_RWSubedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWSubedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWDimensionalSize;
+class RWStepShape_RWDimensionalSize {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWDimensionalSize();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalSize &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_DimensionalSize &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_DimensionalSize &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWDimensionalSize::~RWStepShape_RWDimensionalSize %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWDimensionalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWManifoldSolidBrep;
 class RWStepShape_RWManifoldSolidBrep {
 	public:
@@ -452,35 +481,6 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
-class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWEdgeBasedWireframeShapeRepresentation::~RWStepShape_RWEdgeBasedWireframeShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -601,20 +601,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWExtrudedAreaSolid;
-class RWStepShape_RWExtrudedAreaSolid {
+%nodefaultctor RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
+class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWExtrudedAreaSolid();
+		RWStepShape_RWEdgeBasedWireframeShapeRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ExtrudedAreaSolid &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ExtrudedAreaSolid &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_ExtrudedAreaSolid &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_EdgeBasedWireframeShapeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWExtrudedAreaSolid::~RWStepShape_RWExtrudedAreaSolid %{
+%feature("shadow") RWStepShape_RWEdgeBasedWireframeShapeRepresentation::~RWStepShape_RWEdgeBasedWireframeShapeRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -623,7 +623,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWExtrudedAreaSolid {
+%extend RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -659,20 +659,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWSubedge;
-class RWStepShape_RWSubedge {
+%nodefaultctor RWStepShape_RWSubface;
+class RWStepShape_RWSubface {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWSubedge();
+		RWStepShape_RWSubface();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Subedge &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Subface &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Subedge &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Subface &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_Subedge &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_Subface &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWSubedge::~RWStepShape_RWSubedge %{
+%feature("shadow") RWStepShape_RWSubface::~RWStepShape_RWSubface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -681,7 +681,36 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWSubedge {
+%extend RWStepShape_RWSubface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWFacetedBrep;
+class RWStepShape_RWFacetedBrep {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWFacetedBrep();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FacetedBrep &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_FacetedBrep &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_FacetedBrep &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWFacetedBrep::~RWStepShape_RWFacetedBrep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWFacetedBrep {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -746,20 +775,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWAdvancedBrepShapeRepresentation;
-class RWStepShape_RWAdvancedBrepShapeRepresentation {
+%nodefaultctor RWStepShape_RWExtrudedAreaSolid;
+class RWStepShape_RWExtrudedAreaSolid {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWAdvancedBrepShapeRepresentation();
+		RWStepShape_RWExtrudedAreaSolid();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AdvancedBrepShapeRepresentation &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ExtrudedAreaSolid &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_AdvancedBrepShapeRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ExtrudedAreaSolid &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_AdvancedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_ExtrudedAreaSolid &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWAdvancedBrepShapeRepresentation::~RWStepShape_RWAdvancedBrepShapeRepresentation %{
+%feature("shadow") RWStepShape_RWExtrudedAreaSolid::~RWStepShape_RWExtrudedAreaSolid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -768,7 +797,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWAdvancedBrepShapeRepresentation {
+%extend RWStepShape_RWExtrudedAreaSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -862,35 +891,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWPointRepresentation;
-class RWStepShape_RWPointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWPointRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PointRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PointRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_PointRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWPointRepresentation::~RWStepShape_RWPointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWPointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWContextDependentShapeRepresentation;
 class RWStepShape_RWContextDependentShapeRepresentation {
 	public:
@@ -943,6 +943,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWAdvancedBrepShapeRepresentation;
+class RWStepShape_RWAdvancedBrepShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWAdvancedBrepShapeRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AdvancedBrepShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_AdvancedBrepShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_AdvancedBrepShapeRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWAdvancedBrepShapeRepresentation::~RWStepShape_RWAdvancedBrepShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWAdvancedBrepShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1036,6 +1065,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWSweptAreaSolid;
+class RWStepShape_RWSweptAreaSolid {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWSweptAreaSolid();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SweptAreaSolid &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SweptAreaSolid &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_SweptAreaSolid &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWSweptAreaSolid::~RWStepShape_RWSweptAreaSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWSweptAreaSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWFacetedBrepAndBrepWithVoids;
 class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 	public:
@@ -1088,64 +1146,6 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWOrientedEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWSweptAreaSolid;
-class RWStepShape_RWSweptAreaSolid {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWSweptAreaSolid();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SweptAreaSolid &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SweptAreaSolid &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_SweptAreaSolid &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWSweptAreaSolid::~RWStepShape_RWSweptAreaSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWSweptAreaSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem;
-class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem::~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1268,35 +1268,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
-class RWStepShape_RWFaceBasedSurfaceModel {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWFaceBasedSurfaceModel();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FaceBasedSurfaceModel &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_FaceBasedSurfaceModel &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_FaceBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWFaceBasedSurfaceModel::~RWStepShape_RWFaceBasedSurfaceModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWFaceBasedSurfaceModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWQualifiedRepresentationItem;
 class RWStepShape_RWQualifiedRepresentationItem {
 	public:
@@ -1320,6 +1291,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWQualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWSphere;
+class RWStepShape_RWSphere {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWSphere();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Sphere &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Sphere &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_Sphere &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWSphere::~RWStepShape_RWSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWSphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1469,35 +1469,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWSphere;
-class RWStepShape_RWSphere {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWSphere();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Sphere &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Sphere &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_Sphere &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWSphere::~RWStepShape_RWSphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWSphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWExtrudedFaceSolid;
 class RWStepShape_RWExtrudedFaceSolid {
 	public:
@@ -1527,6 +1498,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWShapeRepresentation;
+class RWStepShape_RWShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWShapeRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ShapeRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_ShapeRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWShapeRepresentation::~RWStepShape_RWShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWCsgShapeRepresentation;
 class RWStepShape_RWCsgShapeRepresentation {
 	public:
@@ -1550,35 +1550,6 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWCsgShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWAngularLocation;
-class RWStepShape_RWAngularLocation {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWAngularLocation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AngularLocation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_AngularLocation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_AngularLocation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWAngularLocation::~RWStepShape_RWAngularLocation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWAngularLocation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1757,6 +1728,64 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWPointRepresentation;
+class RWStepShape_RWPointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWPointRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_PointRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_PointRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_PointRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWPointRepresentation::~RWStepShape_RWPointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWPointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem;
+class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem::~RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWFaceOuterBound;
 class RWStepShape_RWFaceOuterBound {
 	public:
@@ -1809,6 +1838,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWRightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWBooleanResult;
+class RWStepShape_RWBooleanResult {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWBooleanResult();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_BooleanResult &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_BooleanResult &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_BooleanResult &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWBooleanResult::~RWStepShape_RWBooleanResult %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWBooleanResult {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1871,37 +1929,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWEdgeLoop;
-class RWStepShape_RWEdgeLoop {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWEdgeLoop();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_EdgeLoop &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_EdgeLoop &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_EdgeLoop &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		void Check(const Handle_StepShape_EdgeLoop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-
-};
-%feature("shadow") RWStepShape_RWEdgeLoop::~RWStepShape_RWEdgeLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWEdgeLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWTypeQualifier;
 class RWStepShape_RWTypeQualifier {
 	public:
@@ -1929,20 +1956,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWShapeRepresentation;
-class RWStepShape_RWShapeRepresentation {
+%nodefaultctor RWStepShape_RWSeamEdge;
+class RWStepShape_RWSeamEdge {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWShapeRepresentation();
+		RWStepShape_RWSeamEdge();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_ShapeRepresentation &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SeamEdge &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_ShapeRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SeamEdge &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_ShapeRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWShapeRepresentation::~RWStepShape_RWShapeRepresentation %{
+%feature("shadow") RWStepShape_RWSeamEdge::~RWStepShape_RWSeamEdge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1951,7 +1978,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWShapeRepresentation {
+%extend RWStepShape_RWSeamEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2016,20 +2043,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWSubface;
-class RWStepShape_RWSubface {
+%nodefaultctor RWStepShape_RWAngularLocation;
+class RWStepShape_RWAngularLocation {
 	public:
 		%feature("autodoc", "1");
-		RWStepShape_RWSubface();
+		RWStepShape_RWAngularLocation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_Subface &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_AngularLocation &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_Subface &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_AngularLocation &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_Subface &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepShape_AngularLocation &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepShape_RWSubface::~RWStepShape_RWSubface %{
+%feature("shadow") RWStepShape_RWAngularLocation::~RWStepShape_RWAngularLocation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2038,34 +2065,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepShape_RWSubface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWLimitsAndFits;
-class RWStepShape_RWLimitsAndFits {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWLimitsAndFits();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_LimitsAndFits &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_LimitsAndFits &ent) const;
-
-};
-%feature("shadow") RWStepShape_RWLimitsAndFits::~RWStepShape_RWLimitsAndFits %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWLimitsAndFits {
+%extend RWStepShape_RWAngularLocation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2161,35 +2161,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepShape_RWSeamEdge;
-class RWStepShape_RWSeamEdge {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWSeamEdge();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_SeamEdge &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_SeamEdge &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_SeamEdge &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWSeamEdge::~RWStepShape_RWSeamEdge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWSeamEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepShape_RWEdge;
 class RWStepShape_RWEdge {
 	public:
@@ -2219,6 +2190,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWLimitsAndFits;
+class RWStepShape_RWLimitsAndFits {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWLimitsAndFits();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_LimitsAndFits &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_LimitsAndFits &ent) const;
+
+};
+%feature("shadow") RWStepShape_RWLimitsAndFits::~RWStepShape_RWLimitsAndFits %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWLimitsAndFits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWRightCircularCone;
 class RWStepShape_RWRightCircularCone {
 	public:
@@ -2242,93 +2240,6 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWRightCircularCone {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWBooleanResult;
-class RWStepShape_RWBooleanResult {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWBooleanResult();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_BooleanResult &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_BooleanResult &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_BooleanResult &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWBooleanResult::~RWStepShape_RWBooleanResult %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWBooleanResult {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWRevolvedAreaSolid;
-class RWStepShape_RWRevolvedAreaSolid {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWRevolvedAreaSolid();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_RevolvedAreaSolid &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_RevolvedAreaSolid &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_RevolvedAreaSolid &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWRevolvedAreaSolid::~RWStepShape_RWRevolvedAreaSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWRevolvedAreaSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepShape_RWDimensionalSize;
-class RWStepShape_RWDimensionalSize {
-	public:
-		%feature("autodoc", "1");
-		RWStepShape_RWDimensionalSize();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_DimensionalSize &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_DimensionalSize &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepShape_DimensionalSize &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepShape_RWDimensionalSize::~RWStepShape_RWDimensionalSize %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepShape_RWDimensionalSize {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2389,6 +2300,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
+class RWStepShape_RWFaceBasedSurfaceModel {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWFaceBasedSurfaceModel();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_FaceBasedSurfaceModel &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_FaceBasedSurfaceModel &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_FaceBasedSurfaceModel &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWFaceBasedSurfaceModel::~RWStepShape_RWFaceBasedSurfaceModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWFaceBasedSurfaceModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2569,6 +2509,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepShape_RWEdgeLoop;
+class RWStepShape_RWEdgeLoop {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWEdgeLoop();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_EdgeLoop &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_EdgeLoop &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_EdgeLoop &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		void Check(const Handle_StepShape_EdgeLoop &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+
+};
+%feature("shadow") RWStepShape_RWEdgeLoop::~RWStepShape_RWEdgeLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWEdgeLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepShape_RWOrientedOpenShell;
 class RWStepShape_RWOrientedOpenShell {
 	public:
@@ -2621,6 +2592,35 @@ def __del__(self):
 %}
 
 %extend RWStepShape_RWShapeRepresentationWithParameters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepShape_RWRevolvedAreaSolid;
+class RWStepShape_RWRevolvedAreaSolid {
+	public:
+		%feature("autodoc", "1");
+		RWStepShape_RWRevolvedAreaSolid();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepShape_RevolvedAreaSolid &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepShape_RevolvedAreaSolid &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepShape_RevolvedAreaSolid &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepShape_RWRevolvedAreaSolid::~RWStepShape_RWRevolvedAreaSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepShape_RWRevolvedAreaSolid {
 	void _kill_pointed() {
 		delete $self;
 	}

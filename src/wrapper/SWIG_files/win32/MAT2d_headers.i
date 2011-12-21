@@ -83,13 +83,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<gp_Pnt2d.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Bisector_Bisec.hxx>
 #include<TColGeom2d_SequenceOfGeometry.hxx>
-#include<TColStd_SequenceOfBoolean.hxx>
-#include<Handle_Geom2d_Geometry.hxx>
-#include<gp_Vec2d.hxx>
 #include<Handle_MAT_Bisector.hxx>
+#include<Handle_Geom2d_Geometry.hxx>
+#include<TColStd_SequenceOfBoolean.hxx>
+#include<gp_Vec2d.hxx>
 #include<TColGeom2d_SequenceOfCurve.hxx>
-#include<gp_Pnt2d.hxx>
 %}

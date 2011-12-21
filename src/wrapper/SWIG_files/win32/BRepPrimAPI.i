@@ -147,32 +147,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepPrimAPI_MakeRevolution;
-class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
+%nodefaultctor BRepPrimAPI_MakeRevol;
+class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian);
+		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Real D, const Standard_Boolean Copy=0);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real angle);
+		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Boolean Copy=0);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
+		const BRepSweep_Revol & Revol() const;
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
+		virtual		void Build();
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian);
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real angle);
+		TopoDS_Shape FirstShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
+		TopoDS_Shape LastShape(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
+		Standard_Boolean HasDegenerated() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Address OneAxis();
-		%feature("autodoc", "1");
-		BRepPrim_Revolution & Revolution();
+		const TopTools_ListOfShape & Degenerated() const;
 
 };
-%feature("shadow") BRepPrimAPI_MakeRevolution::~BRepPrimAPI_MakeRevolution %{
+%feature("shadow") BRepPrimAPI_MakeRevol::~BRepPrimAPI_MakeRevol %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -181,7 +179,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepPrimAPI_MakeRevolution {
+%extend BRepPrimAPI_MakeRevol {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -221,40 +219,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepPrimAPI_MakeSphere;
-class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
+%nodefaultctor BRepPrimAPI_MakeRevolution;
+class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 	public:
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R);
+		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		BRepPrimAPI_MakeRevolution(const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real angle);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		BRepPrimAPI_MakeRevolution(const gp_Ax2 Axes, const Handle_Geom_Curve &Meridian, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real angle);
 		%feature("autodoc", "1");
 		virtual		Standard_Address OneAxis();
 		%feature("autodoc", "1");
-		BRepPrim_Sphere & Sphere();
+		BRepPrim_Revolution & Revolution();
 
 };
-%feature("shadow") BRepPrimAPI_MakeSphere::~BRepPrimAPI_MakeSphere %{
+%feature("shadow") BRepPrimAPI_MakeRevolution::~BRepPrimAPI_MakeRevolution %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -263,71 +253,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepPrimAPI_MakeSphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepPrimAPI_MakeWedge;
-class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
-		%feature("autodoc", "1");
-		BRepPrim_Wedge & Wedge();
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		const TopoDS_Shell  Shell();
-		%feature("autodoc", "1");
-		const TopoDS_Solid  Solid();
-
-};
-%feature("shadow") BRepPrimAPI_MakeWedge::~BRepPrimAPI_MakeWedge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeWedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepPrimAPI_MakeHalfSpace;
-class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeHalfSpace(const TopoDS_Face Face, const gp_Pnt RefPnt);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeHalfSpace(const TopoDS_Shell Shell, const gp_Pnt RefPnt);
-		%feature("autodoc", "1");
-		const TopoDS_Solid  Solid() const;
-
-};
-%feature("shadow") BRepPrimAPI_MakeHalfSpace::~BRepPrimAPI_MakeHalfSpace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeHalfSpace {
+%extend BRepPrimAPI_MakeRevolution {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -383,49 +309,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepPrimAPI_MakeRevol;
-class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Real D, const Standard_Boolean Copy=0);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeRevol(const TopoDS_Shape S, const gp_Ax1 A, const Standard_Boolean Copy=0);
-		%feature("autodoc", "1");
-		const BRepSweep_Revol & Revol() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape FirstShape();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape LastShape();
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		TopoDS_Shape FirstShape(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		TopoDS_Shape LastShape(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDegenerated() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Degenerated() const;
-
-};
-%feature("shadow") BRepPrimAPI_MakeRevol::~BRepPrimAPI_MakeRevol %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeRevol {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepPrimAPI_MakeCone;
 class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -453,6 +336,119 @@ def __del__(self):
 %}
 
 %extend BRepPrimAPI_MakeCone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepPrimAPI_MakeSphere;
+class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		virtual		Standard_Address OneAxis();
+		%feature("autodoc", "1");
+		BRepPrim_Sphere & Sphere();
+
+};
+%feature("shadow") BRepPrimAPI_MakeSphere::~BRepPrimAPI_MakeSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepPrimAPI_MakeHalfSpace;
+class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeHalfSpace(const TopoDS_Face Face, const gp_Pnt RefPnt);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeHalfSpace(const TopoDS_Shell Shell, const gp_Pnt RefPnt);
+		%feature("autodoc", "1");
+		const TopoDS_Solid  Solid() const;
+
+};
+%feature("shadow") BRepPrimAPI_MakeHalfSpace::~BRepPrimAPI_MakeHalfSpace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeHalfSpace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepPrimAPI_MakeWedge;
+class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real ltx);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeWedge(const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeWedge(const gp_Ax2 Axes, const Standard_Real dx, const Standard_Real dy, const Standard_Real dz, const Standard_Real xmin, const Standard_Real zmin, const Standard_Real xmax, const Standard_Real zmax);
+		%feature("autodoc", "1");
+		BRepPrim_Wedge & Wedge();
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		const TopoDS_Shell  Shell();
+		%feature("autodoc", "1");
+		const TopoDS_Solid  Solid();
+
+};
+%feature("shadow") BRepPrimAPI_MakeWedge::~BRepPrimAPI_MakeWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeWedge {
 	void _kill_pointed() {
 		delete $self;
 	}

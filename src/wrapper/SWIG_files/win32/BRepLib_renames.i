@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Precision) BRepLib::Precision;
+%rename(Plane) BRepLib::Plane;
+%rename(CheckSameRange) BRepLib::CheckSameRange;
+%rename(SameRange) BRepLib::SameRange;
+%rename(BuildCurve3d) BRepLib::BuildCurve3d;
+%rename(BuildCurves3d) BRepLib::BuildCurves3d;
+%rename(UpdateEdgeTol) BRepLib::UpdateEdgeTol;
+%rename(UpdateEdgeTolerance) BRepLib::UpdateEdgeTolerance;
+%rename(SameParameter) BRepLib::SameParameter;
+%rename(UpdateTolerances) BRepLib::UpdateTolerances;
+%rename(OrientClosedSolid) BRepLib::OrientClosedSolid;
+%rename(EncodeRegularity) BRepLib::EncodeRegularity;
+%rename(SortFaces) BRepLib::SortFaces;
+%rename(ReverseSortFaces) BRepLib::ReverseSortFaces;

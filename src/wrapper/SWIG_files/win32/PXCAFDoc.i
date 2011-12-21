@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_LayerTool;
-class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool(const Handle_PXCAFDoc_LayerTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool(const PXCAFDoc_LayerTool *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool & operator=(const Handle_PXCAFDoc_LayerTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_LayerTool & operator=(const PXCAFDoc_LayerTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_LayerTool DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_LayerTool {
-	PXCAFDoc_LayerTool* GetObject() {
-	return (PXCAFDoc_LayerTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PXCAFDoc_LayerTool::~Handle_PXCAFDoc_LayerTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PXCAFDoc_LayerTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PXCAFDoc_ShapeTool;
 class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 	public:
@@ -432,44 +394,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_Volume;
-class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume(const Handle_PXCAFDoc_Volume &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume(const PXCAFDoc_Volume *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume & operator=(const Handle_PXCAFDoc_Volume &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_Volume & operator=(const PXCAFDoc_Volume *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_Volume DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_Volume {
-	PXCAFDoc_Volume* GetObject() {
-	return (PXCAFDoc_Volume*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PXCAFDoc_Volume::~Handle_PXCAFDoc_Volume %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PXCAFDoc_Volume {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PXCAFDoc_Material;
 class Handle_PXCAFDoc_Material : public Handle_PDF_Attribute {
 	public:
@@ -502,44 +426,6 @@ def __del__(self):
 %}
 
 %extend Handle_PXCAFDoc_Material {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PXCAFDoc_DocumentTool;
-class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool & operator=(const Handle_PXCAFDoc_DocumentTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_DocumentTool DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_DocumentTool {
-	PXCAFDoc_DocumentTool* GetObject() {
-	return (PXCAFDoc_DocumentTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PXCAFDoc_DocumentTool::~Handle_PXCAFDoc_DocumentTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PXCAFDoc_DocumentTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,6 +470,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PXCAFDoc_Volume;
+class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Volume();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Volume(const Handle_PXCAFDoc_Volume &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Volume(const PXCAFDoc_Volume *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Volume & operator=(const Handle_PXCAFDoc_Volume &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_Volume & operator=(const PXCAFDoc_Volume *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_Volume DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_Volume {
+	PXCAFDoc_Volume* GetObject() {
+	return (PXCAFDoc_Volume*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_Volume::~Handle_PXCAFDoc_Volume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_Volume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PXCAFDoc_MaterialTool;
 class Handle_PXCAFDoc_MaterialTool : public Handle_PDF_Attribute {
 	public:
@@ -616,6 +540,82 @@ def __del__(self):
 %}
 
 %extend Handle_PXCAFDoc_MaterialTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_DocumentTool;
+class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool(const Handle_PXCAFDoc_DocumentTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool(const PXCAFDoc_DocumentTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool & operator=(const Handle_PXCAFDoc_DocumentTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_DocumentTool & operator=(const PXCAFDoc_DocumentTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_DocumentTool DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_DocumentTool {
+	PXCAFDoc_DocumentTool* GetObject() {
+	return (PXCAFDoc_DocumentTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_DocumentTool::~Handle_PXCAFDoc_DocumentTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_LayerTool;
+class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_LayerTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_LayerTool(const Handle_PXCAFDoc_LayerTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_LayerTool(const PXCAFDoc_LayerTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_LayerTool & operator=(const Handle_PXCAFDoc_LayerTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_LayerTool & operator=(const PXCAFDoc_LayerTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_LayerTool DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_LayerTool {
+	PXCAFDoc_LayerTool* GetObject() {
+	return (PXCAFDoc_LayerTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_LayerTool::~Handle_PXCAFDoc_LayerTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_LayerTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -726,7 +726,7 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 };
 %extend PXCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Volume::~PXCAFDoc_Volume %{
@@ -793,7 +793,7 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_SeqNodeOfGraphNodeSequence::~PXCAFDoc_SeqNodeOfGraphNodeSequence %{
@@ -806,6 +806,43 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_MaterialTool;
+class PXCAFDoc_MaterialTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_MaterialTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_MaterialTool {
+	Handle_PXCAFDoc_MaterialTool GetHandle() {
+	return *(Handle_PXCAFDoc_MaterialTool*) &$self;
+	}
+};
+%extend PXCAFDoc_MaterialTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_MaterialTool::~PXCAFDoc_MaterialTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_MaterialTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -840,7 +877,7 @@ class PXCAFDoc_Area : public PDF_Attribute {
 };
 %extend PXCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Area::~PXCAFDoc_Area %{
@@ -853,244 +890,6 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_Area {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_MaterialTool;
-class PXCAFDoc_MaterialTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_MaterialTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_MaterialTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_MaterialTool {
-	Handle_PXCAFDoc_MaterialTool GetHandle() {
-	return *(Handle_PXCAFDoc_MaterialTool*) &$self;
-	}
-};
-%extend PXCAFDoc_MaterialTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PXCAFDoc_MaterialTool::~PXCAFDoc_MaterialTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_MaterialTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_DimTolTool;
-class PXCAFDoc_DimTolTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_DimTolTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_DimTolTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_DimTolTool {
-	Handle_PXCAFDoc_DimTolTool GetHandle() {
-	return *(Handle_PXCAFDoc_DimTolTool*) &$self;
-	}
-};
-%extend PXCAFDoc_DimTolTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PXCAFDoc_DimTolTool::~PXCAFDoc_DimTolTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_DimTolTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_DocumentTool;
-class PXCAFDoc_DocumentTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_DocumentTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_DocumentTool {
-	Handle_PXCAFDoc_DocumentTool GetHandle() {
-	return *(Handle_PXCAFDoc_DocumentTool*) &$self;
-	}
-};
-%extend PXCAFDoc_DocumentTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_DocumentTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_SeqExplorerOfGraphNodeSequence;
-class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_SeqExplorerOfGraphNodeSequence(const Handle_PXCAFDoc_GraphNodeSequence &S);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_GraphNode Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_PXCAFDoc_GraphNode &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_PXCAFDoc_GraphNode &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_PXCAFDoc_GraphNode &T);
-
-};
-%feature("shadow") PXCAFDoc_SeqExplorerOfGraphNodeSequence::~PXCAFDoc_SeqExplorerOfGraphNodeSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_SeqExplorerOfGraphNodeSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_ColorTool;
-class PXCAFDoc_ColorTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_ColorTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_ColorTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_ColorTool {
-	Handle_PXCAFDoc_ColorTool GetHandle() {
-	return *(Handle_PXCAFDoc_ColorTool*) &$self;
-	}
-};
-%extend PXCAFDoc_ColorTool {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PXCAFDoc_ColorTool::~PXCAFDoc_ColorTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_ColorTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_Datum;
-class PXCAFDoc_Datum : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_Datum();
-		%feature("autodoc", "1");
-		PXCAFDoc_Datum(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString GetName() const;
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString GetDescription() const;
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString GetIdentification() const;
-		%feature("autodoc", "1");
-		void Set(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
-		%feature("autodoc", "1");
-		PXCAFDoc_Datum(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyName() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_DatummyName(const Handle_PCollection_HAsciiString &p);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyDescr() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_DatummyDescr(const Handle_PCollection_HAsciiString &p);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyId() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPXCAFDoc_DatummyId(const Handle_PCollection_HAsciiString &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_Datum {
-	Handle_PXCAFDoc_Datum GetHandle() {
-	return *(Handle_PXCAFDoc_Datum*) &$self;
-	}
-};
-%extend PXCAFDoc_Datum {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PXCAFDoc_Datum::~PXCAFDoc_Datum %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_Datum {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1143,7 +942,7 @@ class PXCAFDoc_DimTol : public PDF_Attribute {
 };
 %extend PXCAFDoc_DimTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_DimTol::~PXCAFDoc_DimTol %{
@@ -1156,6 +955,125 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_DimTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_Color;
+class PXCAFDoc_Color : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_Color();
+		%feature("autodoc", "1");
+		PXCAFDoc_Color(const Quantity_Color &Loc);
+		%feature("autodoc", "1");
+		void Set(const Quantity_Color &Loc);
+		%feature("autodoc", "1");
+		Quantity_Color Get() const;
+		%feature("autodoc", "1");
+		PXCAFDoc_Color(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const Quantity_Color & _CSFDB_GetPXCAFDoc_ColormyColor() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_Color {
+	Handle_PXCAFDoc_Color GetHandle() {
+	return *(Handle_PXCAFDoc_Color*) &$self;
+	}
+};
+%extend PXCAFDoc_Color {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_Color::~PXCAFDoc_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_DocumentTool;
+class PXCAFDoc_DocumentTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_DocumentTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_DocumentTool {
+	Handle_PXCAFDoc_DocumentTool GetHandle() {
+	return *(Handle_PXCAFDoc_DocumentTool*) &$self;
+	}
+};
+%extend PXCAFDoc_DocumentTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_ColorTool;
+class PXCAFDoc_ColorTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_ColorTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_ColorTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_ColorTool {
+	Handle_PXCAFDoc_ColorTool GetHandle() {
+	return *(Handle_PXCAFDoc_ColorTool*) &$self;
+	}
+};
+%extend PXCAFDoc_ColorTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_ColorTool::~PXCAFDoc_ColorTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_ColorTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1188,7 +1106,7 @@ class PXCAFDoc_Location : public PDF_Attribute {
 };
 %extend PXCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Location::~PXCAFDoc_Location %{
@@ -1201,6 +1119,65 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_Datum;
+class PXCAFDoc_Datum : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum();
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetDescription() const;
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString GetIdentification() const;
+		%feature("autodoc", "1");
+		void Set(const Handle_PCollection_HAsciiString &theName, const Handle_PCollection_HAsciiString &theDescr, const Handle_PCollection_HAsciiString &theId);
+		%feature("autodoc", "1");
+		PXCAFDoc_Datum(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyName() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyName(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyDescr() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyDescr(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString _CSFDB_GetPXCAFDoc_DatummyId() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPXCAFDoc_DatummyId(const Handle_PCollection_HAsciiString &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_Datum {
+	Handle_PXCAFDoc_Datum GetHandle() {
+	return *(Handle_PXCAFDoc_Datum*) &$self;
+	}
+};
+%extend PXCAFDoc_Datum {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_Datum::~PXCAFDoc_Datum %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_Datum {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1225,7 +1202,7 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_LayerTool::~PXCAFDoc_LayerTool %{
@@ -1262,7 +1239,7 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_ShapeTool::~PXCAFDoc_ShapeTool %{
@@ -1307,7 +1284,7 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 };
 %extend PXCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Centroid::~PXCAFDoc_Centroid %{
@@ -1378,7 +1355,7 @@ class PXCAFDoc_Material : public PDF_Attribute {
 };
 %extend PXCAFDoc_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Material::~PXCAFDoc_Material %{
@@ -1487,7 +1464,7 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 };
 %extend PXCAFDoc_GraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_GraphNodeSequence::~PXCAFDoc_GraphNodeSequence %{
@@ -1500,6 +1477,37 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_GraphNodeSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PXCAFDoc_SeqExplorerOfGraphNodeSequence;
+class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_SeqExplorerOfGraphNodeSequence(const Handle_PXCAFDoc_GraphNodeSequence &S);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_GraphNode Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_PXCAFDoc_GraphNode &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Handle_PXCAFDoc_GraphNode &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Handle_PXCAFDoc_GraphNode &T);
+
+};
+%feature("shadow") PXCAFDoc_SeqExplorerOfGraphNodeSequence::~PXCAFDoc_SeqExplorerOfGraphNodeSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1554,7 +1562,7 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 };
 %extend PXCAFDoc_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_GraphNode::~PXCAFDoc_GraphNode %{
@@ -1573,36 +1581,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor PXCAFDoc_Color;
-class PXCAFDoc_Color : public PDF_Attribute {
+%nodefaultctor PXCAFDoc_DimTolTool;
+class PXCAFDoc_DimTolTool : public PDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		PXCAFDoc_Color();
+		PXCAFDoc_DimTolTool();
 		%feature("autodoc", "1");
-		PXCAFDoc_Color(const Quantity_Color &Loc);
-		%feature("autodoc", "1");
-		void Set(const Quantity_Color &Loc);
-		%feature("autodoc", "1");
-		Quantity_Color Get() const;
-		%feature("autodoc", "1");
-		PXCAFDoc_Color(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const Quantity_Color & _CSFDB_GetPXCAFDoc_ColormyColor() const;
+		PXCAFDoc_DimTolTool(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend PXCAFDoc_Color {
-	Handle_PXCAFDoc_Color GetHandle() {
-	return *(Handle_PXCAFDoc_Color*) &$self;
+%extend PXCAFDoc_DimTolTool {
+	Handle_PXCAFDoc_DimTolTool GetHandle() {
+	return *(Handle_PXCAFDoc_DimTolTool*) &$self;
 	}
 };
-%extend PXCAFDoc_Color {
+%extend PXCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") PXCAFDoc_Color::~PXCAFDoc_Color %{
+%feature("shadow") PXCAFDoc_DimTolTool::~PXCAFDoc_DimTolTool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1611,7 +1611,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PXCAFDoc_Color {
+%extend PXCAFDoc_DimTolTool {
 	void _kill_pointed() {
 		delete $self;
 	}

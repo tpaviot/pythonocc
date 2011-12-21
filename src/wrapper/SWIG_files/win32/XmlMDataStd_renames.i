@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlMDataStd_AsciiStringDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_IntPackedMapDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_IntegerListDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_CommentDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ReferenceArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_NoteBookDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_TreeNodeDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ExtStringListDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ByteArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ExtStringArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_BooleanArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_RealDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_DirectoryDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_BooleanListDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_IntegerArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_UAttributeDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_TickDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ReferenceListDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_IntegerDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_NameDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ExpressionDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_RelationDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_NamedDataDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_VariableDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_RealListDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_RealArrayDriver::DownCast;
+%rename(AddDrivers) XmlMDataStd::AddDrivers;
+%rename(SetDocumentVersion) XmlMDataStd::SetDocumentVersion;
+%rename(DocumentVersion) XmlMDataStd::DocumentVersion;

@@ -52,13 +52,10 @@ $HeaderURL$
 typedef BooleanOperations_ShapesDataStructure * BooleanOperations_PShapesDataStructure;
 typedef BooleanOperations_ShapeAndInterferences * BooleanOperations_PShapeAndInterferences;
 
-enum BooleanOperations_StateOfShape {
-	BooleanOperations_IN,
-	BooleanOperations_OUT,
-	BooleanOperations_ON,
-	BooleanOperations_UNKNOWN,
-	BooleanOperations_INOROUT,
-	BooleanOperations_INTERSECTED,
+enum BooleanOperations_KindOfIntersection {
+	BooleanOperations_NoIntersection,
+	BooleanOperations_TrueIntersection,
+	BooleanOperations_SameDomain,
 	};
 
 enum BooleanOperations_KindOfInterference {
@@ -71,10 +68,13 @@ enum BooleanOperations_KindOfInterference {
 	BooleanOperations_UnknownInterference,
 	};
 
-enum BooleanOperations_KindOfIntersection {
-	BooleanOperations_NoIntersection,
-	BooleanOperations_TrueIntersection,
-	BooleanOperations_SameDomain,
+enum BooleanOperations_StateOfShape {
+	BooleanOperations_IN,
+	BooleanOperations_OUT,
+	BooleanOperations_ON,
+	BooleanOperations_UNKNOWN,
+	BooleanOperations_INOROUT,
+	BooleanOperations_INTERSECTED,
 	};
 
 
@@ -149,6 +149,47 @@ def __del__(self):
 %}
 
 %extend Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
+class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
+	public:
+		%feature("autodoc", "1");
+		BooleanOperations_AncestorsSeqAndSuccessorsSeq();
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetAncestor(const Standard_Integer AncestorIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer GetSuccessor(const Standard_Integer SuccessorIndex) const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation GetOrientation(const Standard_Integer OrientationIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfAncestors() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfSuccessors() const;
+		%feature("autodoc", "1");
+		void SetNewAncestor(const Standard_Integer AncestorNumber);
+		%feature("autodoc", "1");
+		void SetNewSuccessor(const Standard_Integer SuccessorNumber);
+		%feature("autodoc", "1");
+		void SetNewOrientation(const TopAbs_Orientation OrientationNumber);
+
+};
+%feature("shadow") BooleanOperations_AncestorsSeqAndSuccessorsSeq::~BooleanOperations_AncestorsSeqAndSuccessorsSeq %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -362,61 +403,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
-class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Assign(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
-		%feature("autodoc", "1");
-		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BooleanOperations_AncestorsSeqAndSuccessorsSeq & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape K);
-
-};
-%feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BooleanOperations_ShapesDataStructure;
 class BooleanOperations_ShapesDataStructure {
 	public:
@@ -530,32 +516,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
-class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
+%nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
+class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BooleanOperations_AncestorsSeqAndSuccessorsSeq();
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Dump() const;
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Assign(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
 		%feature("autodoc", "1");
-		Standard_Integer GetAncestor(const Standard_Integer AncestorIndex) const;
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & operator=(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &Other);
 		%feature("autodoc", "1");
-		Standard_Integer GetSuccessor(const Standard_Integer SuccessorIndex) const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		TopAbs_Orientation GetOrientation(const Standard_Integer OrientationIndex) const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer NumberOfAncestors() const;
+		Standard_Integer Add(const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &I);
 		%feature("autodoc", "1");
-		Standard_Integer NumberOfSuccessors() const;
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BooleanOperations_AncestorsSeqAndSuccessorsSeq &T);
 		%feature("autodoc", "1");
-		void SetNewAncestor(const Standard_Integer AncestorNumber);
+		void RemoveLast();
 		%feature("autodoc", "1");
-		void SetNewSuccessor(const Standard_Integer SuccessorNumber);
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		void SetNewOrientation(const TopAbs_Orientation OrientationNumber);
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BooleanOperations_AncestorsSeqAndSuccessorsSeq & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape K);
 
 };
-%feature("shadow") BooleanOperations_AncestorsSeqAndSuccessorsSeq::~BooleanOperations_AncestorsSeqAndSuccessorsSeq %{
+%feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -564,7 +564,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BooleanOperations_AncestorsSeqAndSuccessorsSeq {
+%extend BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -659,7 +659,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
@@ -722,7 +722,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{

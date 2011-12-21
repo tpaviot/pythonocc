@@ -23,3 +23,34 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PTopoDS_TShape::DownCast;
+%rename(DownCast) Handle_PTopoDS_TSolid::DownCast;
+%rename(DownCast) Handle_PTopoDS_TShell::DownCast;
+%rename(DownCast) Handle_PTopoDS_TVertex::DownCast;
+%rename(DownCast) Handle_PTopoDS_TCompound::DownCast;
+%rename(DownCast) Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::DownCast;
+%rename(DownCast) Handle_PTopoDS_TShape1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TShell1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TEdge1::DownCast;
+%rename(DownCast) Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TFace1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TCompSolid1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TFace::DownCast;
+%rename(DownCast) Handle_PTopoDS_TSolid1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TEdge::DownCast;
+%rename(DownCast) Handle_PTopoDS_HShape::DownCast;
+%rename(DownCast) Handle_PTopoDS_Face::DownCast;
+%rename(DownCast) Handle_PTopoDS_TWire::DownCast;
+%rename(DownCast) Handle_PTopoDS_Shell::DownCast;
+%rename(DownCast) Handle_PTopoDS_Vertex::DownCast;
+%rename(DownCast) Handle_PTopoDS_Edge::DownCast;
+%rename(DownCast) Handle_PTopoDS_Wire::DownCast;
+%rename(DownCast) Handle_PTopoDS_HArray1OfHShape::DownCast;
+%rename(DownCast) Handle_PTopoDS_TCompSolid::DownCast;
+%rename(DownCast) Handle_PTopoDS_TVertex1::DownCast;
+%rename(DownCast) Handle_PTopoDS_Compound::DownCast;
+%rename(DownCast) Handle_PTopoDS_HArray1OfShape1::DownCast;
+%rename(DownCast) Handle_PTopoDS_Solid::DownCast;
+%rename(DownCast) Handle_PTopoDS_CompSolid::DownCast;
+%rename(DownCast) Handle_PTopoDS_TCompound1::DownCast;
+%rename(DownCast) Handle_PTopoDS_TWire1::DownCast;

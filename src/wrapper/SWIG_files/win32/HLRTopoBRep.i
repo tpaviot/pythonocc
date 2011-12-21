@@ -224,7 +224,7 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 };
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData %{
@@ -282,6 +282,215 @@ def __del__(self):
 %}
 
 %extend HLRTopoBRep_MapOfShapeListOfVData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_ListOfVData;
+class HLRTopoBRep_ListOfVData {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListOfVData();
+		%feature("autodoc", "1");
+		void Assign(const HLRTopoBRep_ListOfVData &Other);
+		%feature("autodoc", "1");
+		void operator=(const HLRTopoBRep_ListOfVData &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const HLRTopoBRep_VData &I);
+		%feature("autodoc", "1");
+		void Prepend(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
+		%feature("autodoc", "1");
+		void Prepend(HLRTopoBRep_ListOfVData & Other);
+		%feature("autodoc", "1");
+		void Append(const HLRTopoBRep_VData &I);
+		%feature("autodoc", "1");
+		void Append(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
+		%feature("autodoc", "1");
+		void Append(HLRTopoBRep_ListOfVData & Other);
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & First() const;
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertBefore(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
+		%feature("autodoc", "1");
+		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
+
+};
+%feature("shadow") HLRTopoBRep_ListOfVData::~HLRTopoBRep_ListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_ListOfVData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_VData;
+class HLRTopoBRep_VData {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData();
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData(const Standard_Real P, const TopoDS_Shape V);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Vertex() const;
+
+};
+%feature("shadow") HLRTopoBRep_VData::~HLRTopoBRep_VData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_VData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_FaceData;
+class HLRTopoBRep_FaceData {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_FaceData();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FaceIntL() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FaceOutL() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FaceIsoL() const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & AddIntL();
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & AddOutL();
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & AddIsoL();
+
+};
+%feature("shadow") HLRTopoBRep_FaceData::~HLRTopoBRep_FaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_FaceData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_ListIteratorOfListOfVData;
+class HLRTopoBRep_ListIteratorOfListOfVData {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListIteratorOfListOfVData();
+		%feature("autodoc", "1");
+		HLRTopoBRep_ListIteratorOfListOfVData(const HLRTopoBRep_ListOfVData &L);
+		%feature("autodoc", "1");
+		void Initialize(const HLRTopoBRep_ListOfVData &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		HLRTopoBRep_VData & Value() const;
+
+};
+%feature("shadow") HLRTopoBRep_ListIteratorOfListOfVData::~HLRTopoBRep_ListIteratorOfListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_ListIteratorOfListOfVData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRTopoBRep_OutLiner;
+class HLRTopoBRep_OutLiner : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner();
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner(const TopoDS_Shape OriSh);
+		%feature("autodoc", "1");
+		HLRTopoBRep_OutLiner(const TopoDS_Shape OriS, const TopoDS_Shape OutS);
+		%feature("autodoc", "1");
+		void OriginalShape(const TopoDS_Shape OriS);
+		%feature("autodoc", "1");
+		TopoDS_Shape  OriginalShape();
+		%feature("autodoc", "1");
+		void OutLinedShape(const TopoDS_Shape OutS);
+		%feature("autodoc", "1");
+		TopoDS_Shape  OutLinedShape();
+		%feature("autodoc", "1");
+		HLRTopoBRep_Data & DataStructure();
+		%feature("autodoc", "1");
+		void Fill(const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRTopoBRep_OutLiner {
+	Handle_HLRTopoBRep_OutLiner GetHandle() {
+	return *(Handle_HLRTopoBRep_OutLiner*) &$self;
+	}
+};
+%extend HLRTopoBRep_OutLiner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") HLRTopoBRep_OutLiner::~HLRTopoBRep_OutLiner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_OutLiner {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -412,199 +621,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRTopoBRep_ListOfVData;
-class HLRTopoBRep_ListOfVData {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListOfVData();
-		%feature("autodoc", "1");
-		void Assign(const HLRTopoBRep_ListOfVData &Other);
-		%feature("autodoc", "1");
-		void operator=(const HLRTopoBRep_ListOfVData &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const HLRTopoBRep_VData &I);
-		%feature("autodoc", "1");
-		void Prepend(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
-		%feature("autodoc", "1");
-		void Prepend(HLRTopoBRep_ListOfVData & Other);
-		%feature("autodoc", "1");
-		void Append(const HLRTopoBRep_VData &I);
-		%feature("autodoc", "1");
-		void Append(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & theIt);
-		%feature("autodoc", "1");
-		void Append(HLRTopoBRep_ListOfVData & Other);
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & First() const;
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertBefore(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const HLRTopoBRep_VData &I, HLRTopoBRep_ListIteratorOfListOfVData & It);
-		%feature("autodoc", "1");
-		void InsertAfter(HLRTopoBRep_ListOfVData & Other, HLRTopoBRep_ListIteratorOfListOfVData & It);
-
-};
-%feature("shadow") HLRTopoBRep_ListOfVData::~HLRTopoBRep_ListOfVData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_ListOfVData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData;
-class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData();
-		%feature("autodoc", "1");
-		HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData(const HLRTopoBRep_MapOfShapeListOfVData &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const HLRTopoBRep_MapOfShapeListOfVData &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const HLRTopoBRep_ListOfVData & Value() const;
-
-};
-%feature("shadow") HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_VData;
-class HLRTopoBRep_VData {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData();
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData(const Standard_Real P, const TopoDS_Shape V);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Vertex() const;
-
-};
-%feature("shadow") HLRTopoBRep_VData::~HLRTopoBRep_VData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_VData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_FaceData;
-class HLRTopoBRep_FaceData {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_FaceData();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceIntL() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceOutL() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FaceIsoL() const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddIntL();
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddOutL();
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & AddIsoL();
-
-};
-%feature("shadow") HLRTopoBRep_FaceData::~HLRTopoBRep_FaceData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_FaceData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
-class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_VData &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		HLRTopoBRep_VData & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	Handle_HLRTopoBRep_ListNodeOfListOfVData GetHandle() {
-	return *(Handle_HLRTopoBRep_ListNodeOfListOfVData*) &$self;
-	}
-};
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") HLRTopoBRep_ListNodeOfListOfVData::~HLRTopoBRep_ListNodeOfListOfVData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_ListNodeOfListOfVData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRTopoBRep_FaceIsoLiner;
 class HLRTopoBRep_FaceIsoLiner {
 	public:
@@ -634,75 +650,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRTopoBRep_ListIteratorOfListOfVData;
-class HLRTopoBRep_ListIteratorOfListOfVData {
+%nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
+class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		HLRTopoBRep_ListIteratorOfListOfVData();
-		%feature("autodoc", "1");
-		HLRTopoBRep_ListIteratorOfListOfVData(const HLRTopoBRep_ListOfVData &L);
-		%feature("autodoc", "1");
-		void Initialize(const HLRTopoBRep_ListOfVData &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
+		HLRTopoBRep_ListNodeOfListOfVData(const HLRTopoBRep_VData &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		HLRTopoBRep_VData & Value() const;
-
-};
-%feature("shadow") HLRTopoBRep_ListIteratorOfListOfVData::~HLRTopoBRep_ListIteratorOfListOfVData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRTopoBRep_ListIteratorOfListOfVData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRTopoBRep_OutLiner;
-class HLRTopoBRep_OutLiner : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner();
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape OriSh);
-		%feature("autodoc", "1");
-		HLRTopoBRep_OutLiner(const TopoDS_Shape OriS, const TopoDS_Shape OutS);
-		%feature("autodoc", "1");
-		void OriginalShape(const TopoDS_Shape OriS);
-		%feature("autodoc", "1");
-		TopoDS_Shape  OriginalShape();
-		%feature("autodoc", "1");
-		void OutLinedShape(const TopoDS_Shape OutS);
-		%feature("autodoc", "1");
-		TopoDS_Shape  OutLinedShape();
-		%feature("autodoc", "1");
-		HLRTopoBRep_Data & DataStructure();
-		%feature("autodoc", "1");
-		void Fill(const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend HLRTopoBRep_OutLiner {
-	Handle_HLRTopoBRep_OutLiner GetHandle() {
-	return *(Handle_HLRTopoBRep_OutLiner*) &$self;
+%extend HLRTopoBRep_ListNodeOfListOfVData {
+	Handle_HLRTopoBRep_ListNodeOfListOfVData GetHandle() {
+	return *(Handle_HLRTopoBRep_ListNodeOfListOfVData*) &$self;
 	}
 };
-%extend HLRTopoBRep_OutLiner {
+%extend HLRTopoBRep_ListNodeOfListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") HLRTopoBRep_OutLiner::~HLRTopoBRep_OutLiner %{
+%feature("shadow") HLRTopoBRep_ListNodeOfListOfVData::~HLRTopoBRep_ListNodeOfListOfVData %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -711,7 +680,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HLRTopoBRep_OutLiner {
+%extend HLRTopoBRep_ListNodeOfListOfVData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -763,6 +732,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData;
+class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData();
+		%feature("autodoc", "1");
+		HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData(const HLRTopoBRep_MapOfShapeListOfVData &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const HLRTopoBRep_MapOfShapeListOfVData &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const HLRTopoBRep_ListOfVData & Value() const;
+
+};
+%feature("shadow") HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
 class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
 	public:
@@ -783,7 +783,7 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 };
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData %{

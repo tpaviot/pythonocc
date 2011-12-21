@@ -65,8 +65,8 @@ $HeaderURL$
 #include<TopoDS_Shell.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Face.hxx>
+#include<TopoDS_Edge.hxx>
 #include<BRepCheck.hxx>
 #include<TopoDS_Wire.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
 %}

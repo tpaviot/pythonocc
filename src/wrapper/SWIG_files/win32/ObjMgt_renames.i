@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ObjMgt_ExternRef::DownCast;
+%rename(DownCast) Handle_ObjMgt_PSeqOfExtRef::DownCast;
+%rename(DownCast) Handle_ObjMgt_ExternShareable::DownCast;
+%rename(DownCast) Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::DownCast;

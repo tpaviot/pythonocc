@@ -30,10 +30,10 @@ import GarbageCollector
 import TopoDS
 import TopTools
 import Standard
-import TColStd
-import GeomAbs
 import GeomFill
+import GeomAbs
 import MAT
+import TColStd
 import TColgp
 import gp
 import AppParCurves

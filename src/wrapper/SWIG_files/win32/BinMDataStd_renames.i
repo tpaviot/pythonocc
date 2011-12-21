@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinMDataStd_RealArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_NoteBookDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_IntPackedMapDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ReferenceArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_IntegerDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ByteArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_NamedDataDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ExtStringListDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_BooleanListDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_UAttributeDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ExtStringArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_VariableDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_TickDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ExpressionDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_IntegerArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_NameDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_TreeNodeDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_RealDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_ReferenceListDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_CommentDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_BooleanArrayDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_DirectoryDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_RelationDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_IntegerListDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_RealListDriver::DownCast;
+%rename(DownCast) Handle_BinMDataStd_AsciiStringDriver::DownCast;
+%rename(AddDrivers) BinMDataStd::AddDrivers;
+%rename(SetDocumentVersion) BinMDataStd::SetDocumentVersion;
+%rename(DocumentVersion) BinMDataStd::DocumentVersion;

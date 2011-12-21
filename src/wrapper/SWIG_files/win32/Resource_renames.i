@@ -23,3 +23,23 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::DownCast;
+%rename(DownCast) Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::DownCast;
+%rename(DownCast) Handle_Resource_Manager::DownCast;
+%rename(DownCast) Handle_Resource_NoSuchResource::DownCast;
+%rename(Sort) Resource_QuickSortOfArray1::Sort;
+%rename(Raise) Resource_NoSuchResource::Raise;
+%rename(NewInstance) Resource_NoSuchResource::NewInstance;
+%rename(ConvertSJISToUnicode) Resource_Unicode::ConvertSJISToUnicode;
+%rename(ConvertEUCToUnicode) Resource_Unicode::ConvertEUCToUnicode;
+%rename(ConvertGBToUnicode) Resource_Unicode::ConvertGBToUnicode;
+%rename(ConvertANSIToUnicode) Resource_Unicode::ConvertANSIToUnicode;
+%rename(ConvertUnicodeToSJIS) Resource_Unicode::ConvertUnicodeToSJIS;
+%rename(ConvertUnicodeToEUC) Resource_Unicode::ConvertUnicodeToEUC;
+%rename(ConvertUnicodeToGB) Resource_Unicode::ConvertUnicodeToGB;
+%rename(ConvertUnicodeToANSI) Resource_Unicode::ConvertUnicodeToANSI;
+%rename(SetFormat) Resource_Unicode::SetFormat;
+%rename(GetFormat) Resource_Unicode::GetFormat;
+%rename(ReadFormat) Resource_Unicode::ReadFormat;
+%rename(ConvertFormatToUnicode) Resource_Unicode::ConvertFormatToUnicode;
+%rename(ConvertUnicodeToFormat) Resource_Unicode::ConvertUnicodeToFormat;

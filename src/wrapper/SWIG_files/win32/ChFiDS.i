@@ -76,44 +76,6 @@ enum ChFiDS_State {
 
 
 
-%nodefaultctor Handle_ChFiDS_SecHArray1;
-class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1(const Handle_ChFiDS_SecHArray1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1(const ChFiDS_SecHArray1 *anItem);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1 & operator=(const Handle_ChFiDS_SecHArray1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1 & operator=(const ChFiDS_SecHArray1 *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ChFiDS_SecHArray1 DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ChFiDS_SecHArray1 {
-	ChFiDS_SecHArray1* GetObject() {
-	return (ChFiDS_SecHArray1*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ChFiDS_SecHArray1::~Handle_ChFiDS_SecHArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ChFiDS_SecHArray1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfStripe;
 class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	public:
@@ -152,29 +114,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ChFiDS_Stripe;
-class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
+%nodefaultctor Handle_ChFiDS_SecHArray1;
+class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe();
+		Handle_ChFiDS_SecHArray1();
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe(const Handle_ChFiDS_Stripe &aHandle);
+		Handle_ChFiDS_SecHArray1(const Handle_ChFiDS_SecHArray1 &aHandle);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe(const ChFiDS_Stripe *anItem);
+		Handle_ChFiDS_SecHArray1(const ChFiDS_SecHArray1 *anItem);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & operator=(const Handle_ChFiDS_Stripe &aHandle);
+		Handle_ChFiDS_SecHArray1 & operator=(const Handle_ChFiDS_SecHArray1 &aHandle);
 		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & operator=(const ChFiDS_Stripe *anItem);
+		Handle_ChFiDS_SecHArray1 & operator=(const ChFiDS_SecHArray1 *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ChFiDS_Stripe DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ChFiDS_SecHArray1 DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ChFiDS_Stripe {
-	ChFiDS_Stripe* GetObject() {
-	return (ChFiDS_Stripe*)$self->Access();
+%extend Handle_ChFiDS_SecHArray1 {
+	ChFiDS_SecHArray1* GetObject() {
+	return (ChFiDS_SecHArray1*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ChFiDS_Stripe::~Handle_ChFiDS_Stripe %{
+%feature("shadow") Handle_ChFiDS_SecHArray1::~Handle_ChFiDS_SecHArray1 %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -183,7 +145,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ChFiDS_Stripe {
+%extend Handle_ChFiDS_SecHArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ChFiDS_HData;
+class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData(const Handle_ChFiDS_HData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData(const ChFiDS_HData *anItem);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData & operator=(const Handle_ChFiDS_HData &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_HData & operator=(const ChFiDS_HData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ChFiDS_HData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ChFiDS_HData {
+	ChFiDS_HData* GetObject() {
+	return (ChFiDS_HData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ChFiDS_HData::~Handle_ChFiDS_HData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ChFiDS_HData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
+class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
+	ChFiDS_SequenceNodeOfSequenceOfSpine* GetObject() {
+	return (ChFiDS_SequenceNodeOfSequenceOfSpine*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSpine::~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -304,6 +342,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ChFiDS_Stripe;
+class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe();
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe(const Handle_ChFiDS_Stripe &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe(const ChFiDS_Stripe *anItem);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & operator=(const Handle_ChFiDS_Stripe &aHandle);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & operator=(const ChFiDS_Stripe *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ChFiDS_Stripe DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ChFiDS_Stripe {
+	ChFiDS_Stripe* GetObject() {
+	return (ChFiDS_Stripe*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ChFiDS_Stripe::~Handle_ChFiDS_Stripe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ChFiDS_Stripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public Handle_TCollection_MapNode {
 	public:
@@ -336,82 +412,6 @@ def __del__(self):
 %}
 
 %extend Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ChFiDS_HData;
-class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData(const Handle_ChFiDS_HData &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData(const ChFiDS_HData *anItem);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData & operator=(const Handle_ChFiDS_HData &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_HData & operator=(const ChFiDS_HData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ChFiDS_HData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ChFiDS_HData {
-	ChFiDS_HData* GetObject() {
-	return (ChFiDS_HData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ChFiDS_HData::~Handle_ChFiDS_HData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ChFiDS_HData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
-class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine();
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const Handle_ChFiDS_SequenceNodeOfSequenceOfSpine &aHandle);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine & operator=(const ChFiDS_SequenceNodeOfSequenceOfSpine *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ChFiDS_SequenceNodeOfSequenceOfSpine DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
-	ChFiDS_SequenceNodeOfSequenceOfSpine* GetObject() {
-	return (ChFiDS_SequenceNodeOfSequenceOfSpine*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ChFiDS_SequenceNodeOfSequenceOfSpine::~Handle_ChFiDS_SequenceNodeOfSequenceOfSpine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ChFiDS_SequenceNodeOfSequenceOfSpine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -608,57 +608,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ChFiDS_StripeArray1;
-class ChFiDS_StripeArray1 {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_StripeArray1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		ChFiDS_StripeArray1(const Handle_ChFiDS_Stripe &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_ChFiDS_Stripe &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const ChFiDS_StripeArray1 & Assign(const ChFiDS_StripeArray1 &Other);
-		%feature("autodoc", "1");
-		const ChFiDS_StripeArray1 & operator=(const ChFiDS_StripeArray1 &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_ChFiDS_Stripe &Value);
-		%feature("autodoc", "1");
-		const Handle_ChFiDS_Stripe & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") ChFiDS_StripeArray1::~ChFiDS_StripeArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_StripeArray1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ChFiDS_Spine;
 class ChFiDS_Spine : public MMgt_TShared {
 	public:
@@ -799,7 +748,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 };
 %extend ChFiDS_Spine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_Spine::~ChFiDS_Spine %{
@@ -863,59 +812,6 @@ def __del__(self):
 %}
 
 %extend ChFiDS_SecArray1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFiDS_FaceInterference;
-class ChFiDS_FaceInterference {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_FaceInterference();
-		%feature("autodoc", "1");
-		void SetInterference(const Standard_Integer LineIndex, const TopAbs_Orientation Trans, const Handle_Geom2d_Curve &PCurv1, const Handle_Geom2d_Curve &PCurv2);
-		%feature("autodoc", "1");
-		void SetTransition(const TopAbs_Orientation Trans);
-		%feature("autodoc", "1");
-		void SetFirstParameter(const Standard_Real U1);
-		%feature("autodoc", "1");
-		void SetLastParameter(const Standard_Real U1);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real U1, const Standard_Boolean IsFirst);
-		%feature("autodoc", "1");
-		Standard_Integer LineIndex() const;
-		%feature("autodoc", "1");
-		void SetLineIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Transition() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurveOnFace() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & PCurveOnSurf() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangePCurveOnFace();
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangePCurveOnSurf();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter(const Standard_Boolean IsFirst) const;
-
-};
-%feature("shadow") ChFiDS_FaceInterference::~ChFiDS_FaceInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_FaceInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1016,78 +912,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ChFiDS_ListNodeOfListOfStripe;
-class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_ListNodeOfListOfStripe(const Handle_ChFiDS_Stripe &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_ChFiDS_Stripe & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ChFiDS_ListNodeOfListOfStripe {
-	Handle_ChFiDS_ListNodeOfListOfStripe GetHandle() {
-	return *(Handle_ChFiDS_ListNodeOfListOfStripe*) &$self;
-	}
-};
-%extend ChFiDS_ListNodeOfListOfStripe {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ChFiDS_ListNodeOfListOfStripe::~ChFiDS_ListNodeOfListOfStripe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_ListNodeOfListOfStripe {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFiDS_Map;
-class ChFiDS_Map {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_Map();
-		%feature("autodoc", "1");
-		void Fill(const TopoDS_Shape S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromKey(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
-
-};
-%feature("shadow") ChFiDS_Map::~ChFiDS_Map %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_Map {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ChFiDS_ListNodeOfRegularities;
 class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 	public:
@@ -1106,7 +930,7 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfRegularities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ListNodeOfRegularities::~ChFiDS_ListNodeOfRegularities %{
@@ -1236,7 +1060,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_FilSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_FilSpine::~ChFiDS_FilSpine %{
@@ -1249,6 +1073,59 @@ def __del__(self):
 %}
 
 %extend ChFiDS_FilSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
+class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const TopoDS_Vertex K1, const Standard_Integer K2, const ChFiDS_ListOfStripe &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Vertex  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		ChFiDS_ListOfStripe & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe GetHandle() {
+	return *(Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe*) &$self;
+	}
+};
+%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1355,7 +1232,7 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_ChamfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ChamfSpine::~ChFiDS_ChamfSpine %{
@@ -1494,7 +1371,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 };
 %extend ChFiDS_SurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SurfData::~ChFiDS_SurfData %{
@@ -1507,6 +1384,59 @@ def __del__(self):
 %}
 
 %extend ChFiDS_SurfData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_FaceInterference;
+class ChFiDS_FaceInterference {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_FaceInterference();
+		%feature("autodoc", "1");
+		void SetInterference(const Standard_Integer LineIndex, const TopAbs_Orientation Trans, const Handle_Geom2d_Curve &PCurv1, const Handle_Geom2d_Curve &PCurv2);
+		%feature("autodoc", "1");
+		void SetTransition(const TopAbs_Orientation Trans);
+		%feature("autodoc", "1");
+		void SetFirstParameter(const Standard_Real U1);
+		%feature("autodoc", "1");
+		void SetLastParameter(const Standard_Real U1);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real U1, const Standard_Boolean IsFirst);
+		%feature("autodoc", "1");
+		Standard_Integer LineIndex() const;
+		%feature("autodoc", "1");
+		void SetLineIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Transition() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurveOnFace() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & PCurveOnSurf() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangePCurveOnFace();
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangePCurveOnSurf();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter(const Standard_Boolean IsFirst) const;
+
+};
+%feature("shadow") ChFiDS_FaceInterference::~ChFiDS_FaceInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_FaceInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1546,6 +1476,43 @@ def __del__(self):
 %}
 
 %extend ChFiDS_StripeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_ListNodeOfListOfStripe;
+class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_ListNodeOfListOfStripe(const Handle_ChFiDS_Stripe &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ChFiDS_ListNodeOfListOfStripe {
+	Handle_ChFiDS_ListNodeOfListOfStripe GetHandle() {
+	return *(Handle_ChFiDS_ListNodeOfListOfStripe*) &$self;
+	}
+};
+%extend ChFiDS_ListNodeOfListOfStripe {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ChFiDS_ListNodeOfListOfStripe::~ChFiDS_ListNodeOfListOfStripe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_ListNodeOfListOfStripe {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1612,7 +1579,7 @@ class ChFiDS_HData : public MMgt_TShared {
 };
 %extend ChFiDS_HData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_HData::~ChFiDS_HData %{
@@ -1649,7 +1616,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSurfData::~ChFiDS_SequenceNodeOfSequenceOfSurfData %{
@@ -1728,6 +1695,39 @@ def __del__(self):
 %}
 
 %extend ChFiDS_ListIteratorOfListOfStripe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_ListIteratorOfRegularities;
+class ChFiDS_ListIteratorOfRegularities {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_ListIteratorOfRegularities();
+		%feature("autodoc", "1");
+		ChFiDS_ListIteratorOfRegularities(const ChFiDS_Regularities &L);
+		%feature("autodoc", "1");
+		void Initialize(const ChFiDS_Regularities &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		ChFiDS_Regul & Value() const;
+
+};
+%feature("shadow") ChFiDS_ListIteratorOfRegularities::~ChFiDS_ListIteratorOfRegularities %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_ListIteratorOfRegularities {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1817,7 +1817,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSpine::~ChFiDS_SequenceNodeOfSequenceOfSpine %{
@@ -1830,51 +1830,6 @@ def __del__(self):
 %}
 
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFiDS_HElSpine;
-class ChFiDS_HElSpine : public Adaptor3d_HCurve {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_HElSpine();
-		%feature("autodoc", "1");
-		ChFiDS_HElSpine(const ChFiDS_ElSpine &C);
-		%feature("autodoc", "1");
-		void Set(const ChFiDS_ElSpine &C);
-		%feature("autodoc", "1");
-		virtual		const Adaptor3d_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		Adaptor3d_Curve & GetCurve();
-		%feature("autodoc", "1");
-		ChFiDS_ElSpine & ChangeCurve();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ChFiDS_HElSpine {
-	Handle_ChFiDS_HElSpine GetHandle() {
-	return *(Handle_ChFiDS_HElSpine*) &$self;
-	}
-};
-%extend ChFiDS_HElSpine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ChFiDS_HElSpine::~ChFiDS_HElSpine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_HElSpine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1968,6 +1923,106 @@ def __del__(self):
 %}
 
 %extend ChFiDS_ElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_HElSpine;
+class ChFiDS_HElSpine : public Adaptor3d_HCurve {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_HElSpine();
+		%feature("autodoc", "1");
+		ChFiDS_HElSpine(const ChFiDS_ElSpine &C);
+		%feature("autodoc", "1");
+		void Set(const ChFiDS_ElSpine &C);
+		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		Adaptor3d_Curve & GetCurve();
+		%feature("autodoc", "1");
+		ChFiDS_ElSpine & ChangeCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ChFiDS_HElSpine {
+	Handle_ChFiDS_HElSpine GetHandle() {
+	return *(Handle_ChFiDS_HElSpine*) &$self;
+	}
+};
+%extend ChFiDS_HElSpine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ChFiDS_HElSpine::~ChFiDS_HElSpine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_HElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_SecHArray1;
+class ChFiDS_SecHArray1 : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_SecHArray1(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		ChFiDS_SecHArray1(const Standard_Integer Low, const Standard_Integer Up, const ChFiDS_CircSection &V);
+		%feature("autodoc", "1");
+		void Init(const ChFiDS_CircSection &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const ChFiDS_CircSection &Value);
+		%feature("autodoc", "1");
+		const ChFiDS_CircSection & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		ChFiDS_CircSection & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const ChFiDS_SecArray1 & Array1() const;
+		%feature("autodoc", "1");
+		ChFiDS_SecArray1 & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ChFiDS_SecHArray1 {
+	Handle_ChFiDS_SecHArray1 GetHandle() {
+	return *(Handle_ChFiDS_SecHArray1*) &$self;
+	}
+};
+%extend ChFiDS_SecHArray1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ChFiDS_SecHArray1::~ChFiDS_SecHArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_SecHArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2068,59 +2123,6 @@ def __del__(self):
 %}
 
 %extend ChFiDS_Regul {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
-class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe(const TopoDS_Vertex K1, const Standard_Integer K2, const ChFiDS_ListOfStripe &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Vertex  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		ChFiDS_ListOfStripe & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
-	Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe GetHandle() {
-	return *(Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe*) &$self;
-	}
-};
-%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2248,7 +2250,7 @@ class ChFiDS_Stripe : public MMgt_TShared {
 };
 %extend ChFiDS_Stripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_Stripe::~ChFiDS_Stripe %{
@@ -2267,24 +2269,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor ChFiDS_ListIteratorOfRegularities;
-class ChFiDS_ListIteratorOfRegularities {
+%nodefaultctor ChFiDS_StripeArray1;
+class ChFiDS_StripeArray1 {
 	public:
 		%feature("autodoc", "1");
-		ChFiDS_ListIteratorOfRegularities();
+		ChFiDS_StripeArray1(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		ChFiDS_ListIteratorOfRegularities(const ChFiDS_Regularities &L);
+		ChFiDS_StripeArray1(const Handle_ChFiDS_Stripe &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Initialize(const ChFiDS_Regularities &L);
+		void Init(const Handle_ChFiDS_Stripe &V);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		void Next();
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		ChFiDS_Regul & Value() const;
+		const ChFiDS_StripeArray1 & Assign(const ChFiDS_StripeArray1 &Other);
+		%feature("autodoc", "1");
+		const ChFiDS_StripeArray1 & operator=(const ChFiDS_StripeArray1 &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_ChFiDS_Stripe &Value);
+		%feature("autodoc", "1");
+		const Handle_ChFiDS_Stripe & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_ChFiDS_Stripe & operator()(const Standard_Integer Index);
 
 };
-%feature("shadow") ChFiDS_ListIteratorOfRegularities::~ChFiDS_ListIteratorOfRegularities %{
+%feature("shadow") ChFiDS_StripeArray1::~ChFiDS_StripeArray1 %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2293,7 +2313,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ChFiDS_ListIteratorOfRegularities {
+%extend ChFiDS_StripeArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2318,7 +2338,7 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfListOfHElSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ListNodeOfListOfHElSpine::~ChFiDS_ListNodeOfListOfHElSpine %{
@@ -2331,6 +2351,41 @@ def __del__(self):
 %}
 
 %extend ChFiDS_ListNodeOfListOfHElSpine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ChFiDS_Map;
+class ChFiDS_Map {
+	public:
+		%feature("autodoc", "1");
+		ChFiDS_Map();
+		%feature("autodoc", "1");
+		void Fill(const TopoDS_Shape S, const TopAbs_ShapeEnum T1, const TopAbs_ShapeEnum T2);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FindFromKey(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & operator()(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & operator()(const Standard_Integer I) const;
+
+};
+%feature("shadow") ChFiDS_Map::~ChFiDS_Map %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFiDS_Map {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2447,61 +2502,6 @@ def __del__(self):
 %}
 
 %extend ChFiDS_Regularities {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFiDS_SecHArray1;
-class ChFiDS_SecHArray1 : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ChFiDS_SecHArray1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		ChFiDS_SecHArray1(const Standard_Integer Low, const Standard_Integer Up, const ChFiDS_CircSection &V);
-		%feature("autodoc", "1");
-		void Init(const ChFiDS_CircSection &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const ChFiDS_CircSection &Value);
-		%feature("autodoc", "1");
-		const ChFiDS_CircSection & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		ChFiDS_CircSection & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const ChFiDS_SecArray1 & Array1() const;
-		%feature("autodoc", "1");
-		ChFiDS_SecArray1 & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ChFiDS_SecHArray1 {
-	Handle_ChFiDS_SecHArray1 GetHandle() {
-	return *(Handle_ChFiDS_SecHArray1*) &$self;
-	}
-};
-%extend ChFiDS_SecHArray1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ChFiDS_SecHArray1::~ChFiDS_SecHArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFiDS_SecHArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}

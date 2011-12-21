@@ -195,39 +195,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_LengthPresentation;
-class DsgPrs_LengthPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_LengthPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pln PlaneOfFaces, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Handle_Geom_Surface &SecondSurf, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt Pt1, const gp_Pnt Pt2, const DsgPrs_ArrowSide ArrowSide);
-
-};
-%feature("shadow") DsgPrs_LengthPresentation::~DsgPrs_LengthPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_LengthPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DsgPrs_IdenticPresentation;
 class DsgPrs_IdenticPresentation {
 	public:
@@ -325,31 +292,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_FixPresentation;
-class DsgPrs_FixPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_FixPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPntAttach, const gp_Pnt aPntEnd, const gp_Dir aNormPln, const Standard_Real aSymbSize);
-
-};
-%feature("shadow") DsgPrs_FixPresentation::~DsgPrs_FixPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_FixPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DsgPrs_RadiusPresentation;
 class DsgPrs_RadiusPresentation {
 	public:
@@ -398,20 +340,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_EllipseRadiusPresentation;
-class DsgPrs_EllipseRadiusPresentation {
+%nodefaultctor DsgPrs_OffsetPresentation;
+class DsgPrs_OffsetPresentation {
 	public:
 		%feature("autodoc", "1");
-		DsgPrs_EllipseRadiusPresentation();
+		DsgPrs_OffsetPresentation();
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const gp_Elips anEllipse, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Real uFirst, const Standard_Boolean IsInDomain, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const Handle_Geom_OffsetCurve &aCurve, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Real uFirst, const Standard_Boolean IsInDomain, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
+		static		void AddAxes(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
 
 };
-%feature("shadow") DsgPrs_EllipseRadiusPresentation::~DsgPrs_EllipseRadiusPresentation %{
+%feature("shadow") DsgPrs_OffsetPresentation::~DsgPrs_OffsetPresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -420,7 +360,7 @@ def __del__(self):
 		pass
 %}
 
-%extend DsgPrs_EllipseRadiusPresentation {
+%extend DsgPrs_OffsetPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -610,33 +550,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_OffsetPresentation;
-class DsgPrs_OffsetPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_OffsetPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
-		%feature("autodoc", "1");
-		static		void AddAxes(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
-
-};
-%feature("shadow") DsgPrs_OffsetPresentation::~DsgPrs_OffsetPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_OffsetPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DsgPrs_PerpenPresentation;
 class DsgPrs_PerpenPresentation {
 	public:
@@ -704,20 +617,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_EqualDistancePresentation;
-class DsgPrs_EqualDistancePresentation {
+%nodefaultctor DsgPrs_FixPresentation;
+class DsgPrs_FixPresentation {
 	public:
 		%feature("autodoc", "1");
-		DsgPrs_EqualDistancePresentation();
+		DsgPrs_FixPresentation();
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt Point1, const gp_Pnt Point2, const gp_Pnt Point3, const gp_Pnt Point4, const Handle_Geom_Plane &Plane);
-		%feature("autodoc", "1");
-		static		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Dir aDir, const gp_Pnt aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt & anExtremePnt1, gp_Pnt & anExtremePnt2);
-		%feature("autodoc", "1");
-		static		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ aCircle1, const gp_Circ aCircle2, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Pnt aPoint3, const gp_Pnt aPoint4, const DsgPrs_ArrowSide anArrowSide);
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPntAttach, const gp_Pnt aPntEnd, const gp_Dir aNormPln, const Standard_Real aSymbSize);
 
 };
-%feature("shadow") DsgPrs_EqualDistancePresentation::~DsgPrs_EqualDistancePresentation %{
+%feature("shadow") DsgPrs_FixPresentation::~DsgPrs_FixPresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -726,7 +635,7 @@ def __del__(self):
 		pass
 %}
 
-%extend DsgPrs_EqualDistancePresentation {
+%extend DsgPrs_FixPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -760,6 +669,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor DsgPrs_LengthPresentation;
+class DsgPrs_LengthPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_LengthPresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pln PlaneOfFaces, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Handle_Geom_Surface &SecondSurf, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Pnt OffsetPoint, const DsgPrs_ArrowSide ArrowSide);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt Pt1, const gp_Pnt Pt2, const DsgPrs_ArrowSide ArrowSide);
+
+};
+%feature("shadow") DsgPrs_LengthPresentation::~DsgPrs_LengthPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_LengthPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor DsgPrs_ConcentricPresentation;
 class DsgPrs_ConcentricPresentation {
 	public:
@@ -779,6 +721,64 @@ def __del__(self):
 %}
 
 %extend DsgPrs_ConcentricPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DsgPrs_EqualDistancePresentation;
+class DsgPrs_EqualDistancePresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_EqualDistancePresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt Point1, const gp_Pnt Point2, const gp_Pnt Point3, const gp_Pnt Point4, const Handle_Geom_Plane &Plane);
+		%feature("autodoc", "1");
+		static		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Dir aDir, const gp_Pnt aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt & anExtremePnt1, gp_Pnt & anExtremePnt2);
+		%feature("autodoc", "1");
+		static		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ aCircle1, const gp_Circ aCircle2, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Pnt aPoint3, const gp_Pnt aPoint4, const DsgPrs_ArrowSide anArrowSide);
+
+};
+%feature("shadow") DsgPrs_EqualDistancePresentation::~DsgPrs_EqualDistancePresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_EqualDistancePresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DsgPrs_EllipseRadiusPresentation;
+class DsgPrs_EllipseRadiusPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_EllipseRadiusPresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const gp_Elips anEllipse, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Real uFirst, const Standard_Boolean IsInDomain, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real theval, const TCollection_ExtendedString &aText, const Handle_Geom_OffsetCurve &aCurve, const gp_Pnt AttachmentPoint, const gp_Pnt anEndOfArrow, const gp_Pnt aCenter, const Standard_Real uFirst, const Standard_Boolean IsInDomain, const Standard_Boolean IsMaxRadius, const DsgPrs_ArrowSide ArrowSide);
+
+};
+%feature("shadow") DsgPrs_EllipseRadiusPresentation::~DsgPrs_EllipseRadiusPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_EllipseRadiusPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}

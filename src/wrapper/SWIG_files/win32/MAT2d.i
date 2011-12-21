@@ -166,6 +166,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
+class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger* GetObject() {
+	return (MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollection_MapNode {
 	public:
@@ -280,82 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
-class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
-	MAT2d_SequenceNodeOfSequenceOfConnexion* GetObject() {
-	return (MAT2d_SequenceNodeOfSequenceOfConnexion*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfConnexion::~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
-class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
-	MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion* GetObject() {
-	return (MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TCollection_SeqNode {
 	public:
@@ -432,29 +394,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
-class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
+class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger();
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion();
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger &aHandle);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const Handle_MAT2d_SequenceNodeOfSequenceOfConnexion &aHandle);
 		%feature("autodoc", "1");
-		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger & operator=(const MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger *anItem);
+		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion & operator=(const MAT2d_SequenceNodeOfSequenceOfConnexion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MAT2d_SequenceNodeOfSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
-	MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger* GetObject() {
-	return (MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger*)$self->Access();
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
+	MAT2d_SequenceNodeOfSequenceOfConnexion* GetObject() {
+	return (MAT2d_SequenceNodeOfSequenceOfConnexion*)$self->Access();
 	}
 };
-%feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
+%feature("shadow") Handle_MAT2d_SequenceNodeOfSequenceOfConnexion::~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -463,7 +425,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
+%extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -508,6 +470,75 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
+class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion();
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion & operator=(const MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion* GetObject() {
+	return (MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
+class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger();
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger(const MAT2d_DataMapOfBiIntInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MAT2d_DataMapOfBiIntInteger &aMap);
+		%feature("autodoc", "1");
+		const MAT2d_BiInt & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 	public:
@@ -538,7 +569,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntInteger %{
@@ -551,6 +582,85 @@ def __del__(self):
 %}
 
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_Connexion;
+class MAT2d_Connexion : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_Connexion();
+		%feature("autodoc", "1");
+		MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d PointA, const gp_Pnt2d PointB);
+		%feature("autodoc", "1");
+		Standard_Integer IndexFirstLine() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexSecondLine() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexItemOnFirst() const;
+		%feature("autodoc", "1");
+		Standard_Integer IndexItemOnSecond() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnSecond() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d PointOnFirst() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d PointOnSecond() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		void IndexFirstLine(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void IndexSecondLine(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void IndexItemOnFirst(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void IndexItemOnSecond(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void ParameterOnFirst(const Standard_Real aParameter);
+		%feature("autodoc", "1");
+		void ParameterOnSecond(const Standard_Real aParameter);
+		%feature("autodoc", "1");
+		void PointOnFirst(const gp_Pnt2d aPoint);
+		%feature("autodoc", "1");
+		void PointOnSecond(const gp_Pnt2d aPoint);
+		%feature("autodoc", "1");
+		void Distance(const Standard_Real aDistance);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion Reverse() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAfter(const Handle_MAT2d_Connexion &aConnexion, const Standard_Real aSense) const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT2d_Connexion {
+	Handle_MAT2d_Connexion GetHandle() {
+	return *(Handle_MAT2d_Connexion*) &$self;
+	}
+};
+%extend MAT2d_Connexion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT2d_Connexion::~MAT2d_Connexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_Connexion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -577,7 +687,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger %{
@@ -657,7 +767,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerBisec::~MAT2d_DataMapNodeOfDataMapOfIntegerBisec %{
@@ -691,8 +801,19 @@ class MAT2d_BiInt {
 		void SecondIndex(const Standard_Integer I2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const MAT2d_BiInt &B) const;
+		%extend{
+			bool __eq_wrapper__(const MAT2d_BiInt &B) {
+				if (*self==B) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") MAT2d_BiInt::~MAT2d_BiInt %{
@@ -756,7 +877,7 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfConnexion::~MAT2d_SequenceNodeOfSequenceOfConnexion %{
@@ -840,6 +961,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
+class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerBisec();
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerBisec(const MAT2d_DataMapOfIntegerBisec &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MAT2d_DataMapOfIntegerBisec &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const Bisector_Bisec & Value() const;
+
+};
+%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerBisec::~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
 	public:
@@ -858,7 +1010,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
@@ -871,131 +1023,6 @@ def __del__(self):
 %}
 
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
-class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion();
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapOfIntegerSequenceOfConnexion &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MAT2d_DataMapOfIntegerSequenceOfConnexion &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfConnexion & Value() const;
-
-};
-%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_Circuit;
-class MAT2d_Circuit : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_Circuit();
-		%feature("autodoc", "1");
-		void Perform(MAT2d_SequenceOfSequenceOfGeometry & aFigure, const TColStd_SequenceOfBoolean &IsClosed, const Standard_Integer IndRefLine, const Standard_Boolean Trigo);
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfItems() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer LineLength(const Standard_Integer IndexLine) const;
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfInteger & RefToEqui(const Standard_Integer IndLine, const Standard_Integer IndCurve) const;
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion Connexion(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean ConnexionOn(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_Circuit {
-	Handle_MAT2d_Circuit GetHandle() {
-	return *(Handle_MAT2d_Circuit*) &$self;
-	}
-};
-%extend MAT2d_Circuit {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT2d_Circuit::~MAT2d_Circuit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_Circuit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_DataMapOfIntegerVec2d;
-class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerVec2d(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerVec2d & Assign(const MAT2d_DataMapOfIntegerVec2d &Other);
-		%feature("autodoc", "1");
-		MAT2d_DataMapOfIntegerVec2d & operator=(const MAT2d_DataMapOfIntegerVec2d &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec2d I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const gp_Vec2d  Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const gp_Vec2d  operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		gp_Vec2d  ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		gp_Vec2d  operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") MAT2d_DataMapOfIntegerVec2d::~MAT2d_DataMapOfIntegerVec2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_DataMapOfIntegerVec2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1063,6 +1090,196 @@ def __del__(self):
 %}
 
 %extend MAT2d_Tool2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
+class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion();
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion(const MAT2d_DataMapOfIntegerSequenceOfConnexion &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MAT2d_DataMapOfIntegerSequenceOfConnexion &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const MAT2d_SequenceOfConnexion & Value() const;
+
+};
+%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_SequenceOfConnexion;
+class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_SequenceOfConnexion();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
+		%feature("autodoc", "1");
+		const MAT2d_SequenceOfConnexion & operator=(const MAT2d_SequenceOfConnexion &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void Append(MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void Prepend(MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_MAT2d_Connexion &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & First() const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MAT2d_Connexion & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") MAT2d_SequenceOfConnexion::~MAT2d_SequenceOfConnexion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_SequenceOfConnexion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_Circuit;
+class MAT2d_Circuit : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_Circuit();
+		%feature("autodoc", "1");
+		void Perform(MAT2d_SequenceOfSequenceOfGeometry & aFigure, const TColStd_SequenceOfBoolean &IsClosed, const Standard_Integer IndRefLine, const Standard_Boolean Trigo);
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfItems() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Geometry Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer LineLength(const Standard_Integer IndexLine) const;
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfInteger & RefToEqui(const Standard_Integer IndLine, const Standard_Integer IndCurve) const;
+		%feature("autodoc", "1");
+		Handle_MAT2d_Connexion Connexion(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean ConnexionOn(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT2d_Circuit {
+	Handle_MAT2d_Circuit GetHandle() {
+	return *(Handle_MAT2d_Circuit*) &$self;
+	}
+};
+%extend MAT2d_Circuit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT2d_Circuit::~MAT2d_Circuit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_Circuit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_DataMapOfIntegerVec2d;
+class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerVec2d(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerVec2d & Assign(const MAT2d_DataMapOfIntegerVec2d &Other);
+		%feature("autodoc", "1");
+		MAT2d_DataMapOfIntegerVec2d & operator=(const MAT2d_DataMapOfIntegerVec2d &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const gp_Vec2d I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const gp_Vec2d  Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const gp_Vec2d  operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		gp_Vec2d  ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		gp_Vec2d  operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") MAT2d_DataMapOfIntegerVec2d::~MAT2d_DataMapOfIntegerVec2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_DataMapOfIntegerVec2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1189,6 +1406,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
+class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d();
+		%feature("autodoc", "1");
+		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d(const MAT2d_DataMapOfIntegerPnt2d &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const MAT2d_DataMapOfIntegerPnt2d &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Value() const;
+
+};
+%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
 class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollection_MapNode {
 	public:
@@ -1219,7 +1467,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion %{
@@ -1358,7 +1606,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerVec2d::~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d %{
@@ -1371,37 +1619,6 @@ def __del__(self):
 %}
 
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
-class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d();
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d(const MAT2d_DataMapOfIntegerPnt2d &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MAT2d_DataMapOfIntegerPnt2d &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Value() const;
-
-};
-%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d::~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1463,55 +1680,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
-class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Standard_Integer &K, const Handle_MAT2d_Connexion &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
-	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion GetHandle() {
-	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*) &$self;
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_BasicMapIterator {
 	public:
@@ -1543,85 +1711,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT2d_Connexion;
-class MAT2d_Connexion : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_Connexion();
-		%feature("autodoc", "1");
-		MAT2d_Connexion(const Standard_Integer LineA, const Standard_Integer LineB, const Standard_Integer ItemA, const Standard_Integer ItemB, const Standard_Real Distance, const Standard_Real ParameterOnA, const Standard_Real ParameterOnB, const gp_Pnt2d PointA, const gp_Pnt2d PointB);
-		%feature("autodoc", "1");
-		Standard_Integer IndexFirstLine() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexSecondLine() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexItemOnFirst() const;
-		%feature("autodoc", "1");
-		Standard_Integer IndexItemOnSecond() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnSecond() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d PointOnFirst() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d PointOnSecond() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		void IndexFirstLine(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void IndexSecondLine(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void IndexItemOnFirst(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void IndexItemOnSecond(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void ParameterOnFirst(const Standard_Real aParameter);
-		%feature("autodoc", "1");
-		void ParameterOnSecond(const Standard_Real aParameter);
-		%feature("autodoc", "1");
-		void PointOnFirst(const gp_Pnt2d aPoint);
-		%feature("autodoc", "1");
-		void PointOnSecond(const gp_Pnt2d aPoint);
-		%feature("autodoc", "1");
-		void Distance(const Standard_Real aDistance);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion Reverse() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAfter(const Handle_MAT2d_Connexion &aConnexion, const Standard_Real aSense) const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_Connexion {
-	Handle_MAT2d_Connexion GetHandle() {
-	return *(Handle_MAT2d_Connexion*) &$self;
-	}
-};
-%extend MAT2d_Connexion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT2d_Connexion::~MAT2d_Connexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_Connexion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode {
 	public:
@@ -1640,7 +1729,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve %{
@@ -1794,22 +1883,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
-class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMapIterator {
+%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
+class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger();
+		MAT2d_DataMapNodeOfDataMapOfIntegerConnexion(const Standard_Integer &K, const Handle_MAT2d_Connexion &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfBiIntInteger(const MAT2d_DataMapOfBiIntInteger &aMap);
+		Handle_MAT2d_Connexion & Value() const;
 		%feature("autodoc", "1");
-		void Initialize(const MAT2d_DataMapOfBiIntInteger &aMap);
-		%feature("autodoc", "1");
-		const MAT2d_BiInt & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger %{
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion GetHandle() {
+	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion*) &$self;
+	}
+};
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1818,60 +1925,47 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT2d_DataMapIteratorOfDataMapOfBiIntInteger {
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
-class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollection_BasicMapIterator {
+%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
+class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger();
+		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapOfBiIntSequenceOfInteger &aMap);
+		gp_Pnt2d  Value() const;
 		%feature("autodoc", "1");
-		void Initialize(const MAT2d_DataMapOfBiIntSequenceOfInteger &aMap);
-		%feature("autodoc", "1");
-		const MAT2d_BiInt & Key() const;
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfInteger & Value() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
-	void _kill_pointed() {
-		delete $self;
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
+	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
 	}
 };
-
-
-%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
-class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerBisec();
-		%feature("autodoc", "1");
-		MAT2d_DataMapIteratorOfDataMapOfIntegerBisec(const MAT2d_DataMapOfIntegerBisec &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MAT2d_DataMapOfIntegerBisec &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const Bisector_Bisec & Value() const;
-
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
 };
-%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfIntegerBisec::~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec %{
+%feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1880,7 +1974,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
+%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1924,40 +2018,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
-class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
+%nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
+class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d(const Standard_Integer &K, const gp_Pnt2d I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
+		MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger();
 		%feature("autodoc", "1");
-		gp_Pnt2d  Value() const;
+		MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger(const MAT2d_DataMapOfBiIntSequenceOfInteger &aMap);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Initialize(const MAT2d_DataMapOfBiIntSequenceOfInteger &aMap);
+		%feature("autodoc", "1");
+		const MAT2d_BiInt & Key() const;
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfInteger & Value() const;
 
 };
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d GetHandle() {
-	return *(Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d*) &$self;
-	}
-};
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d %{
+%feature("shadow") MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger::~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1966,72 +2042,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT2d_SequenceOfConnexion;
-class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_SequenceOfConnexion();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfConnexion & Assign(const MAT2d_SequenceOfConnexion &Other);
-		%feature("autodoc", "1");
-		const MAT2d_SequenceOfConnexion & operator=(const MAT2d_SequenceOfConnexion &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void Append(MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void Prepend(MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_MAT2d_Connexion &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & First() const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, MAT2d_SequenceOfConnexion & S);
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MAT2d_Connexion & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MAT2d_Connexion &I);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MAT2d_Connexion & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") MAT2d_SequenceOfConnexion::~MAT2d_SequenceOfConnexion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_SequenceOfConnexion {
+%extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

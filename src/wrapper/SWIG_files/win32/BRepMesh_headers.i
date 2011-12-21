@@ -127,9 +127,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<gp_XY.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<gp_XY.hxx>
 #include<BRepMesh.hxx>
 #include<gp_Circ2d.hxx>
 #include<Handle_Poly_PolygonOnTriangulation.hxx>

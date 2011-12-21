@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XmlMFunction_FunctionDriver::DownCast;
+%rename(DownCast) Handle_XmlMFunction_GraphNodeDriver::DownCast;
+%rename(DownCast) Handle_XmlMFunction_ScopeDriver::DownCast;
+%rename(AddDrivers) XmlMFunction::AddDrivers;

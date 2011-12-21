@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DetermineTransition) IntImpParGen::DetermineTransition;
+%rename(DeterminePosition) IntImpParGen::DeterminePosition;
+%rename(NormalizeOnDomain) IntImpParGen::NormalizeOnDomain;

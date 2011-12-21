@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TColStd
 import Interface
 import TCollection
+import TColStd
 };

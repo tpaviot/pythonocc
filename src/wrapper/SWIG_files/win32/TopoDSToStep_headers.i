@@ -62,9 +62,9 @@ $HeaderURL$
 #include<MoniTool_DataMapOfShapeTransient.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<TopoDS_Shell.hxx>
-#include<TopoDS_Solid.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopoDS_Solid.hxx>
+#include<TopoDS_Shell.hxx>
 #include<Handle_StepShape_TopologicalRepresentationItem.hxx>
 #include<TopoDSToStep.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>

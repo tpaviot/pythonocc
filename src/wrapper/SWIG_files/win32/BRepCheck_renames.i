@@ -23,3 +23,15 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult::DownCast;
+%rename(DownCast) Handle_BRepCheck_Result::DownCast;
+%rename(DownCast) Handle_BRepCheck_Shell::DownCast;
+%rename(DownCast) Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus::DownCast;
+%rename(DownCast) Handle_BRepCheck_Vertex::DownCast;
+%rename(DownCast) Handle_BRepCheck_ListNodeOfListOfStatus::DownCast;
+%rename(DownCast) Handle_BRepCheck_Edge::DownCast;
+%rename(DownCast) Handle_BRepCheck_Wire::DownCast;
+%rename(DownCast) Handle_BRepCheck_Face::DownCast;
+%rename(Add) BRepCheck::Add;
+%rename(Print) BRepCheck::Print;
+%rename(SelfIntersection) BRepCheck::SelfIntersection;

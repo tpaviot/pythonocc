@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_XmlMDataStd_AsciiStringDriver;
+class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver(const Handle_XmlMDataStd_AsciiStringDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver(const XmlMDataStd_AsciiStringDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver & operator=(const Handle_XmlMDataStd_AsciiStringDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_AsciiStringDriver & operator=(const XmlMDataStd_AsciiStringDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_AsciiStringDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_AsciiStringDriver {
+	XmlMDataStd_AsciiStringDriver* GetObject() {
+	return (XmlMDataStd_AsciiStringDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_AsciiStringDriver::~Handle_XmlMDataStd_AsciiStringDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_AsciiStringDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_IntPackedMapDriver;
 class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -90,29 +128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_RealListDriver;
-class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_IntegerListDriver;
+class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_RealListDriver();
+		Handle_XmlMDataStd_IntegerListDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_RealListDriver(const Handle_XmlMDataStd_RealListDriver &aHandle);
+		Handle_XmlMDataStd_IntegerListDriver(const Handle_XmlMDataStd_IntegerListDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_RealListDriver(const XmlMDataStd_RealListDriver *anItem);
+		Handle_XmlMDataStd_IntegerListDriver(const XmlMDataStd_IntegerListDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_RealListDriver & operator=(const Handle_XmlMDataStd_RealListDriver &aHandle);
+		Handle_XmlMDataStd_IntegerListDriver & operator=(const Handle_XmlMDataStd_IntegerListDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_RealListDriver & operator=(const XmlMDataStd_RealListDriver *anItem);
+		Handle_XmlMDataStd_IntegerListDriver & operator=(const XmlMDataStd_IntegerListDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_RealListDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDataStd_IntegerListDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_RealListDriver {
-	XmlMDataStd_RealListDriver* GetObject() {
-	return (XmlMDataStd_RealListDriver*)$self->Access();
+%extend Handle_XmlMDataStd_IntegerListDriver {
+	XmlMDataStd_IntegerListDriver* GetObject() {
+	return (XmlMDataStd_IntegerListDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMDataStd_RealListDriver::~Handle_XmlMDataStd_RealListDriver %{
+%feature("shadow") Handle_XmlMDataStd_IntegerListDriver::~Handle_XmlMDataStd_IntegerListDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -121,45 +159,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMDataStd_RealListDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_AsciiStringDriver;
-class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_AsciiStringDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_AsciiStringDriver(const Handle_XmlMDataStd_AsciiStringDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_AsciiStringDriver(const XmlMDataStd_AsciiStringDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_AsciiStringDriver & operator=(const Handle_XmlMDataStd_AsciiStringDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_AsciiStringDriver & operator=(const XmlMDataStd_AsciiStringDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_AsciiStringDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_AsciiStringDriver {
-	XmlMDataStd_AsciiStringDriver* GetObject() {
-	return (XmlMDataStd_AsciiStringDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_AsciiStringDriver::~Handle_XmlMDataStd_AsciiStringDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_AsciiStringDriver {
+%extend Handle_XmlMDataStd_IntegerListDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -236,6 +236,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMDataStd_ReferenceArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMDataStd_NoteBookDriver;
+class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver(const XmlMDataStd_NoteBookDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver & operator=(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_NoteBookDriver & operator=(const XmlMDataStd_NoteBookDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_NoteBookDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_NoteBookDriver {
+	XmlMDataStd_NoteBookDriver* GetObject() {
+	return (XmlMDataStd_NoteBookDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_NoteBookDriver::~Handle_XmlMDataStd_NoteBookDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_NoteBookDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,6 +432,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XmlMDataStd_BooleanArrayDriver;
+class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver(const Handle_XmlMDataStd_BooleanArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver(const XmlMDataStd_BooleanArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const Handle_XmlMDataStd_BooleanArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const XmlMDataStd_BooleanArrayDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_BooleanArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_BooleanArrayDriver {
+	XmlMDataStd_BooleanArrayDriver* GetObject() {
+	return (XmlMDataStd_BooleanArrayDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_BooleanArrayDriver::~Handle_XmlMDataStd_BooleanArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_BooleanArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XmlMDataStd_RealDriver;
 class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -470,44 +546,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_IntegerArrayDriver;
-class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerArrayDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerArrayDriver(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerArrayDriver(const XmlMDataStd_IntegerArrayDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const XmlMDataStd_IntegerArrayDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_IntegerArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_IntegerArrayDriver {
-	XmlMDataStd_IntegerArrayDriver* GetObject() {
-	return (XmlMDataStd_IntegerArrayDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_IntegerArrayDriver::~Handle_XmlMDataStd_IntegerArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_IntegerArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMDataStd_BooleanListDriver;
 class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -540,6 +578,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMDataStd_BooleanListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMDataStd_IntegerArrayDriver;
+class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver(const XmlMDataStd_IntegerArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const Handle_XmlMDataStd_IntegerArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_IntegerArrayDriver & operator=(const XmlMDataStd_IntegerArrayDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_IntegerArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_IntegerArrayDriver {
+	XmlMDataStd_IntegerArrayDriver* GetObject() {
+	return (XmlMDataStd_IntegerArrayDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_IntegerArrayDriver::~Handle_XmlMDataStd_IntegerArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_IntegerArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,44 +660,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_IntegerDriver;
-class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerDriver(const Handle_XmlMDataStd_IntegerDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerDriver(const XmlMDataStd_IntegerDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerDriver & operator=(const Handle_XmlMDataStd_IntegerDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerDriver & operator=(const XmlMDataStd_IntegerDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_IntegerDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_IntegerDriver {
-	XmlMDataStd_IntegerDriver* GetObject() {
-	return (XmlMDataStd_IntegerDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_IntegerDriver::~Handle_XmlMDataStd_IntegerDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_IntegerDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMDataStd_TickDriver;
 class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -654,82 +692,6 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMDataStd_TickDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_IntegerListDriver;
-class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerListDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerListDriver(const Handle_XmlMDataStd_IntegerListDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerListDriver(const XmlMDataStd_IntegerListDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerListDriver & operator=(const Handle_XmlMDataStd_IntegerListDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_IntegerListDriver & operator=(const XmlMDataStd_IntegerListDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_IntegerListDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_IntegerListDriver {
-	XmlMDataStd_IntegerListDriver* GetObject() {
-	return (XmlMDataStd_IntegerListDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_IntegerListDriver::~Handle_XmlMDataStd_IntegerListDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_IntegerListDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XmlMDataStd_NoteBookDriver;
-class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NoteBookDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NoteBookDriver(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NoteBookDriver(const XmlMDataStd_NoteBookDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NoteBookDriver & operator=(const Handle_XmlMDataStd_NoteBookDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NoteBookDriver & operator=(const XmlMDataStd_NoteBookDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_NoteBookDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_NoteBookDriver {
-	XmlMDataStd_NoteBookDriver* GetObject() {
-	return (XmlMDataStd_NoteBookDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_NoteBookDriver::~Handle_XmlMDataStd_NoteBookDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_NoteBookDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -774,29 +736,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_NamedDataDriver;
-class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_IntegerDriver;
+class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NamedDataDriver();
+		Handle_XmlMDataStd_IntegerDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NamedDataDriver(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
+		Handle_XmlMDataStd_IntegerDriver(const Handle_XmlMDataStd_IntegerDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NamedDataDriver(const XmlMDataStd_NamedDataDriver *anItem);
+		Handle_XmlMDataStd_IntegerDriver(const XmlMDataStd_IntegerDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NamedDataDriver & operator=(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
+		Handle_XmlMDataStd_IntegerDriver & operator=(const Handle_XmlMDataStd_IntegerDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NamedDataDriver & operator=(const XmlMDataStd_NamedDataDriver *anItem);
+		Handle_XmlMDataStd_IntegerDriver & operator=(const XmlMDataStd_IntegerDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_NamedDataDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDataStd_IntegerDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_NamedDataDriver {
-	XmlMDataStd_NamedDataDriver* GetObject() {
-	return (XmlMDataStd_NamedDataDriver*)$self->Access();
+%extend Handle_XmlMDataStd_IntegerDriver {
+	XmlMDataStd_IntegerDriver* GetObject() {
+	return (XmlMDataStd_IntegerDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMDataStd_NamedDataDriver::~Handle_XmlMDataStd_NamedDataDriver %{
+%feature("shadow") Handle_XmlMDataStd_IntegerDriver::~Handle_XmlMDataStd_IntegerDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -805,36 +767,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMDataStd_NamedDataDriver {
+%extend Handle_XmlMDataStd_IntegerDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_BooleanArrayDriver;
-class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_NameDriver;
+class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_BooleanArrayDriver();
+		Handle_XmlMDataStd_NameDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_BooleanArrayDriver(const Handle_XmlMDataStd_BooleanArrayDriver &aHandle);
+		Handle_XmlMDataStd_NameDriver(const Handle_XmlMDataStd_NameDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_BooleanArrayDriver(const XmlMDataStd_BooleanArrayDriver *anItem);
+		Handle_XmlMDataStd_NameDriver(const XmlMDataStd_NameDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const Handle_XmlMDataStd_BooleanArrayDriver &aHandle);
+		Handle_XmlMDataStd_NameDriver & operator=(const Handle_XmlMDataStd_NameDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_BooleanArrayDriver & operator=(const XmlMDataStd_BooleanArrayDriver *anItem);
+		Handle_XmlMDataStd_NameDriver & operator=(const XmlMDataStd_NameDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_BooleanArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDataStd_NameDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_BooleanArrayDriver {
-	XmlMDataStd_BooleanArrayDriver* GetObject() {
-	return (XmlMDataStd_BooleanArrayDriver*)$self->Access();
+%extend Handle_XmlMDataStd_NameDriver {
+	XmlMDataStd_NameDriver* GetObject() {
+	return (XmlMDataStd_NameDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMDataStd_BooleanArrayDriver::~Handle_XmlMDataStd_BooleanArrayDriver %{
+%feature("shadow") Handle_XmlMDataStd_NameDriver::~Handle_XmlMDataStd_NameDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -843,7 +805,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMDataStd_BooleanArrayDriver {
+%extend Handle_XmlMDataStd_NameDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -926,29 +888,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_NameDriver;
-class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
+%nodefaultctor Handle_XmlMDataStd_NamedDataDriver;
+class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NameDriver();
+		Handle_XmlMDataStd_NamedDataDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NameDriver(const Handle_XmlMDataStd_NameDriver &aHandle);
+		Handle_XmlMDataStd_NamedDataDriver(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NameDriver(const XmlMDataStd_NameDriver *anItem);
+		Handle_XmlMDataStd_NamedDataDriver(const XmlMDataStd_NamedDataDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NameDriver & operator=(const Handle_XmlMDataStd_NameDriver &aHandle);
+		Handle_XmlMDataStd_NamedDataDriver & operator=(const Handle_XmlMDataStd_NamedDataDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDataStd_NameDriver & operator=(const XmlMDataStd_NameDriver *anItem);
+		Handle_XmlMDataStd_NamedDataDriver & operator=(const XmlMDataStd_NamedDataDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_NameDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDataStd_NamedDataDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDataStd_NameDriver {
-	XmlMDataStd_NameDriver* GetObject() {
-	return (XmlMDataStd_NameDriver*)$self->Access();
+%extend Handle_XmlMDataStd_NamedDataDriver {
+	XmlMDataStd_NamedDataDriver* GetObject() {
+	return (XmlMDataStd_NamedDataDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMDataStd_NameDriver::~Handle_XmlMDataStd_NameDriver %{
+%feature("shadow") Handle_XmlMDataStd_NamedDataDriver::~Handle_XmlMDataStd_NamedDataDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -957,7 +919,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMDataStd_NameDriver {
+%extend Handle_XmlMDataStd_NamedDataDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -996,6 +958,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMDataStd_RealListDriver;
+class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver(const Handle_XmlMDataStd_RealListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver(const XmlMDataStd_RealListDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver & operator=(const Handle_XmlMDataStd_RealListDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_RealListDriver & operator=(const XmlMDataStd_RealListDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_RealListDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_RealListDriver {
+	XmlMDataStd_RealListDriver* GetObject() {
+	return (XmlMDataStd_RealListDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_RealListDriver::~Handle_XmlMDataStd_RealListDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_RealListDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1062,7 +1062,7 @@ class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_DirectoryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_DirectoryDriver::~XmlMDataStd_DirectoryDriver %{
@@ -1103,7 +1103,7 @@ class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntegerListDriver::~XmlMDataStd_IntegerListDriver %{
@@ -1116,6 +1116,47 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_IntegerListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_ReferenceArrayDriver;
+class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_ReferenceArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_ReferenceArrayDriver {
+	Handle_XmlMDataStd_ReferenceArrayDriver GetHandle() {
+	return *(Handle_XmlMDataStd_ReferenceArrayDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_ReferenceArrayDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_ReferenceArrayDriver::~XmlMDataStd_ReferenceArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_ReferenceArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1144,7 +1185,7 @@ class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExpressionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExpressionDriver::~XmlMDataStd_ExpressionDriver %{
@@ -1185,7 +1226,7 @@ class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_BooleanListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_BooleanListDriver::~XmlMDataStd_BooleanListDriver %{
@@ -1226,7 +1267,7 @@ class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_VariableDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_VariableDriver::~XmlMDataStd_VariableDriver %{
@@ -1267,7 +1308,7 @@ class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NamedDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NamedDataDriver::~XmlMDataStd_NamedDataDriver %{
@@ -1286,11 +1327,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMDataStd_IntegerDriver;
-class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlMDataStd_TreeNodeDriver;
+class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMDataStd_IntegerDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMDataStd_TreeNodeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
@@ -1301,17 +1342,17 @@ class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XmlMDataStd_IntegerDriver {
-	Handle_XmlMDataStd_IntegerDriver GetHandle() {
-	return *(Handle_XmlMDataStd_IntegerDriver*) &$self;
+%extend XmlMDataStd_TreeNodeDriver {
+	Handle_XmlMDataStd_TreeNodeDriver GetHandle() {
+	return *(Handle_XmlMDataStd_TreeNodeDriver*) &$self;
 	}
 };
-%extend XmlMDataStd_IntegerDriver {
+%extend XmlMDataStd_TreeNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") XmlMDataStd_IntegerDriver::~XmlMDataStd_IntegerDriver %{
+%feature("shadow") XmlMDataStd_TreeNodeDriver::~XmlMDataStd_TreeNodeDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1320,7 +1361,48 @@ def __del__(self):
 		pass
 %}
 
-%extend XmlMDataStd_IntegerDriver {
+%extend XmlMDataStd_TreeNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_IntegerArrayDriver;
+class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_IntegerArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_IntegerArrayDriver {
+	Handle_XmlMDataStd_IntegerArrayDriver GetHandle() {
+	return *(Handle_XmlMDataStd_IntegerArrayDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_IntegerArrayDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_IntegerArrayDriver::~XmlMDataStd_IntegerArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_IntegerArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1349,7 +1431,7 @@ class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RealArrayDriver::~XmlMDataStd_RealArrayDriver %{
@@ -1362,6 +1444,47 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_RealArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_IntegerDriver;
+class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_IntegerDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_IntegerDriver {
+	Handle_XmlMDataStd_IntegerDriver GetHandle() {
+	return *(Handle_XmlMDataStd_IntegerDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_IntegerDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_IntegerDriver::~XmlMDataStd_IntegerDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_IntegerDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1390,7 +1513,7 @@ class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExtStringListDriver::~XmlMDataStd_ExtStringListDriver %{
@@ -1431,7 +1554,7 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RelationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RelationDriver::~XmlMDataStd_RelationDriver %{
@@ -1444,47 +1567,6 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_RelationDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_IntegerArrayDriver;
-class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_IntegerArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_IntegerArrayDriver {
-	Handle_XmlMDataStd_IntegerArrayDriver GetHandle() {
-	return *(Handle_XmlMDataStd_IntegerArrayDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_IntegerArrayDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMDataStd_IntegerArrayDriver::~XmlMDataStd_IntegerArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_IntegerArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1513,7 +1595,7 @@ class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_TickDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_TickDriver::~XmlMDataStd_TickDriver %{
@@ -1554,7 +1636,7 @@ class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RealListDriver::~XmlMDataStd_RealListDriver %{
@@ -1595,7 +1677,7 @@ class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_AsciiStringDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_AsciiStringDriver::~XmlMDataStd_AsciiStringDriver %{
@@ -1636,7 +1718,7 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_UAttributeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_UAttributeDriver::~XmlMDataStd_UAttributeDriver %{
@@ -1649,6 +1731,47 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_UAttributeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_ReferenceListDriver;
+class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_ReferenceListDriver {
+	Handle_XmlMDataStd_ReferenceListDriver GetHandle() {
+	return *(Handle_XmlMDataStd_ReferenceListDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_ReferenceListDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_ReferenceListDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1684,170 +1807,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMDataStd_ReferenceListDriver;
-class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_ReferenceListDriver {
-	Handle_XmlMDataStd_ReferenceListDriver GetHandle() {
-	return *(Handle_XmlMDataStd_ReferenceListDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_ReferenceListDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_ReferenceListDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_ReferenceArrayDriver;
-class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_ReferenceArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_ReferenceArrayDriver {
-	Handle_XmlMDataStd_ReferenceArrayDriver GetHandle() {
-	return *(Handle_XmlMDataStd_ReferenceArrayDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_ReferenceArrayDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMDataStd_ReferenceArrayDriver::~XmlMDataStd_ReferenceArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_ReferenceArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_RealDriver;
-class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_RealDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_RealDriver {
-	Handle_XmlMDataStd_RealDriver GetHandle() {
-	return *(Handle_XmlMDataStd_RealDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_RealDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMDataStd_RealDriver::~XmlMDataStd_RealDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_RealDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_BooleanArrayDriver;
-class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_BooleanArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_BooleanArrayDriver {
-	Handle_XmlMDataStd_BooleanArrayDriver GetHandle() {
-	return *(Handle_XmlMDataStd_BooleanArrayDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_BooleanArrayDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XmlMDataStd_BooleanArrayDriver::~XmlMDataStd_BooleanArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_BooleanArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XmlMDataStd_ByteArrayDriver;
 class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -1870,7 +1829,7 @@ class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ByteArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ByteArrayDriver::~XmlMDataStd_ByteArrayDriver %{
@@ -1911,7 +1870,7 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntPackedMapDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntPackedMapDriver::~XmlMDataStd_IntPackedMapDriver %{
@@ -1924,6 +1883,47 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_IntPackedMapDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDataStd_RealDriver;
+class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_RealDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_RealDriver {
+	Handle_XmlMDataStd_RealDriver GetHandle() {
+	return *(Handle_XmlMDataStd_RealDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_RealDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_RealDriver::~XmlMDataStd_RealDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_RealDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1952,7 +1952,7 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExtStringArrayDriver::~XmlMDataStd_ExtStringArrayDriver %{
@@ -1993,7 +1993,7 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NameDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NameDriver::~XmlMDataStd_NameDriver %{
@@ -2034,7 +2034,7 @@ class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NoteBookDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NoteBookDriver::~XmlMDataStd_NoteBookDriver %{
@@ -2075,7 +2075,7 @@ class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_CommentDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_CommentDriver::~XmlMDataStd_CommentDriver %{
@@ -2094,11 +2094,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMDataStd_TreeNodeDriver;
-class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
+%nodefaultctor XmlMDataStd_BooleanArrayDriver;
+class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		XmlMDataStd_TreeNodeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		XmlMDataStd_BooleanArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
@@ -2109,17 +2109,17 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XmlMDataStd_TreeNodeDriver {
-	Handle_XmlMDataStd_TreeNodeDriver GetHandle() {
-	return *(Handle_XmlMDataStd_TreeNodeDriver*) &$self;
+%extend XmlMDataStd_BooleanArrayDriver {
+	Handle_XmlMDataStd_BooleanArrayDriver GetHandle() {
+	return *(Handle_XmlMDataStd_BooleanArrayDriver*) &$self;
 	}
 };
-%extend XmlMDataStd_TreeNodeDriver {
+%extend XmlMDataStd_BooleanArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") XmlMDataStd_TreeNodeDriver::~XmlMDataStd_TreeNodeDriver %{
+%feature("shadow") XmlMDataStd_BooleanArrayDriver::~XmlMDataStd_BooleanArrayDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2128,7 +2128,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XmlMDataStd_TreeNodeDriver {
+%extend XmlMDataStd_BooleanArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

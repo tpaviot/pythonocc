@@ -568,7 +568,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %extend Message_ProgressIndicator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_ProgressIndicator::~Message_ProgressIndicator %{
@@ -607,7 +607,7 @@ class Message_Printer : public MMgt_TShared {
 };
 %extend Message_Printer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_Printer::~Message_Printer %{
@@ -644,7 +644,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfPrinters::~Message_SequenceNodeOfSequenceOfPrinters %{
@@ -697,7 +697,7 @@ class Message_Messenger : public MMgt_TShared {
 };
 %extend Message_Messenger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_Messenger::~Message_Messenger %{
@@ -737,67 +737,6 @@ def __del__(self):
 %}
 
 %extend Message {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_ListOfMsg;
-class Message_ListOfMsg {
-	public:
-		%feature("autodoc", "1");
-		Message_ListOfMsg();
-		%feature("autodoc", "1");
-		void Assign(const Message_ListOfMsg &Other);
-		%feature("autodoc", "1");
-		void operator=(const Message_ListOfMsg &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Message_Msg &I);
-		%feature("autodoc", "1");
-		void Prepend(const Message_Msg &I, Message_ListIteratorOfListOfMsg & theIt);
-		%feature("autodoc", "1");
-		void Prepend(Message_ListOfMsg & Other);
-		%feature("autodoc", "1");
-		void Append(const Message_Msg &I);
-		%feature("autodoc", "1");
-		void Append(const Message_Msg &I, Message_ListIteratorOfListOfMsg & theIt);
-		%feature("autodoc", "1");
-		void Append(Message_ListOfMsg & Other);
-		%feature("autodoc", "1");
-		Message_Msg & First() const;
-		%feature("autodoc", "1");
-		Message_Msg & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(Message_ListIteratorOfListOfMsg & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Message_Msg &I, Message_ListIteratorOfListOfMsg & It);
-		%feature("autodoc", "1");
-		void InsertBefore(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Message_Msg &I, Message_ListIteratorOfListOfMsg & It);
-		%feature("autodoc", "1");
-		void InsertAfter(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
-
-};
-%feature("shadow") Message_ListOfMsg::~Message_ListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_ListOfMsg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -863,6 +802,104 @@ def __del__(self):
 %}
 
 %extend Message_SequenceOfPrinters {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
+class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Message_ProgressScale & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
+	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_ListOfMsg;
+class Message_ListOfMsg {
+	public:
+		%feature("autodoc", "1");
+		Message_ListOfMsg();
+		%feature("autodoc", "1");
+		void Assign(const Message_ListOfMsg &Other);
+		%feature("autodoc", "1");
+		void operator=(const Message_ListOfMsg &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Message_Msg &I);
+		%feature("autodoc", "1");
+		void Prepend(const Message_Msg &I, Message_ListIteratorOfListOfMsg & theIt);
+		%feature("autodoc", "1");
+		void Prepend(Message_ListOfMsg & Other);
+		%feature("autodoc", "1");
+		void Append(const Message_Msg &I);
+		%feature("autodoc", "1");
+		void Append(const Message_Msg &I, Message_ListIteratorOfListOfMsg & theIt);
+		%feature("autodoc", "1");
+		void Append(Message_ListOfMsg & Other);
+		%feature("autodoc", "1");
+		Message_Msg & First() const;
+		%feature("autodoc", "1");
+		Message_Msg & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(Message_ListIteratorOfListOfMsg & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Message_Msg &I, Message_ListIteratorOfListOfMsg & It);
+		%feature("autodoc", "1");
+		void InsertBefore(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Message_Msg &I, Message_ListIteratorOfListOfMsg & It);
+		%feature("autodoc", "1");
+		void InsertAfter(Message_ListOfMsg & Other, Message_ListIteratorOfListOfMsg & It);
+
+};
+%feature("shadow") Message_ListOfMsg::~Message_ListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_ListOfMsg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -963,43 +1000,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
-class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Message_ProgressScale & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
-	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
-	}
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Message_ListNodeOfListOfMsg;
 class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 	public:
@@ -1018,7 +1018,7 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 %extend Message_ListNodeOfListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
@@ -1138,7 +1138,7 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %extend Message_PrinterOStream {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Message_PrinterOStream::~Message_PrinterOStream %{

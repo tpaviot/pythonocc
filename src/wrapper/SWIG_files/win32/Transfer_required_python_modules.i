@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import Interface
 import Dico
+import TColStd
 import Message
 import TCollection
-import TColStd
 };

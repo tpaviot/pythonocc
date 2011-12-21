@@ -57,44 +57,6 @@ enum MgtBRep_TriangleMode {
 
 
 
-%nodefaultctor Handle_MgtBRep_TranslateTool1;
-class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
-	public:
-		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1();
-		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1(const Handle_MgtBRep_TranslateTool1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1(const MgtBRep_TranslateTool1 *anItem);
-		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1 & operator=(const Handle_MgtBRep_TranslateTool1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MgtBRep_TranslateTool1 DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MgtBRep_TranslateTool1 {
-	MgtBRep_TranslateTool1* GetObject() {
-	return (MgtBRep_TranslateTool1*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MgtBRep_TranslateTool1::~Handle_MgtBRep_TranslateTool1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MgtBRep_TranslateTool1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MgtBRep_TranslateTool;
 class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 	public:
@@ -127,6 +89,44 @@ def __del__(self):
 %}
 
 %extend Handle_MgtBRep_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MgtBRep_TranslateTool1;
+class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
+	public:
+		%feature("autodoc", "1");
+		Handle_MgtBRep_TranslateTool1();
+		%feature("autodoc", "1");
+		Handle_MgtBRep_TranslateTool1(const Handle_MgtBRep_TranslateTool1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MgtBRep_TranslateTool1(const MgtBRep_TranslateTool1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MgtBRep_TranslateTool1 & operator=(const Handle_MgtBRep_TranslateTool1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MgtBRep_TranslateTool1 & operator=(const MgtBRep_TranslateTool1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MgtBRep_TranslateTool1 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MgtBRep_TranslateTool1 {
+	MgtBRep_TranslateTool1* GetObject() {
+	return (MgtBRep_TranslateTool1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MgtBRep_TranslateTool1::~Handle_MgtBRep_TranslateTool1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MgtBRep_TranslateTool1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -195,7 +195,7 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 %extend MgtBRep_TranslateTool1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool1::~MgtBRep_TranslateTool1 %{
@@ -276,7 +276,7 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 };
 %extend MgtBRep_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MgtBRep_TranslateTool::~MgtBRep_TranslateTool %{

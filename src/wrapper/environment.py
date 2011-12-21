@@ -116,6 +116,8 @@ except:
 SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
+    OCC_INC = 'Z:\\oce-0.8.0-win\\include\\oce'
+    OCC_LIB = 'Z:\\oce-0.8.0-win\\Win32\\lib'
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','win32')
     # Try to find OCC paths from environment analysis
 

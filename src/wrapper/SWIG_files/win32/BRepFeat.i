@@ -600,6 +600,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFeat_MakeRevol;
+class BRepFeat_MakeRevol : public BRepFeat_Form {
+	public:
+		%feature("autodoc", "1");
+		BRepFeat_MakeRevol();
+		%feature("autodoc", "1");
+		BRepFeat_MakeRevol(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Angle);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape Until);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
+		%feature("autodoc", "1");
+		void PerformThruAll();
+		%feature("autodoc", "1");
+		void PerformUntilAngle(const TopoDS_Shape Until, const Standard_Real Angle);
+		%feature("autodoc", "1");
+		virtual		void Curves(TColGeom_SequenceOfCurve & S);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom_Curve BarycCurve();
+
+};
+%feature("shadow") BRepFeat_MakeRevol::~BRepFeat_MakeRevol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFeat_MakeRevol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFeat_MakeCylindricalHole;
 class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 	public:
@@ -639,49 +682,6 @@ def __del__(self):
 %}
 
 %extend BRepFeat_MakeCylindricalHole {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFeat_MakeRevol;
-class BRepFeat_MakeRevol : public BRepFeat_Form {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat_MakeRevol();
-		%feature("autodoc", "1");
-		BRepFeat_MakeRevol(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape Sbase, const TopoDS_Shape Pbase, const TopoDS_Face Skface, const gp_Ax1 Axis, const Standard_Integer Fuse, const Standard_Boolean Modify);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge E, const TopoDS_Face OnFace);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Angle);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape Until);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape From, const TopoDS_Shape Until);
-		%feature("autodoc", "1");
-		void PerformThruAll();
-		%feature("autodoc", "1");
-		void PerformUntilAngle(const TopoDS_Shape Until, const Standard_Real Angle);
-		%feature("autodoc", "1");
-		virtual		void Curves(TColGeom_SequenceOfCurve & S);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom_Curve BarycCurve();
-
-};
-%feature("shadow") BRepFeat_MakeRevol::~BRepFeat_MakeRevol %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFeat_MakeRevol {
 	void _kill_pointed() {
 		delete $self;
 	}

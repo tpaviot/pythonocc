@@ -65,22 +65,19 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<Handle_Geom_SurfaceOfLinearExtrusion.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Lin2d.hxx>
 #include<Handle_Geom_Line.hxx>
 #include<Handle_Geom2d_Line.hxx>
-#include<Handle_Geom_SurfaceOfLinearExtrusion.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2d.hxx>
 #include<Handle_Geom_Axis1Placement.hxx>
 #include<Handle_Geom2d_AxisPlacement.hxx>
-#include<Handle_Geom_ElementarySurface.hxx>
+#include<TColgp_Array1OfPnt.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
 #include<Handle_Geom_CylindricalSurface.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Dir2d.hxx>
-#include<Handle_Geom_Direction.hxx>
-#include<Handle_Geom2d_Direction.hxx>
 #include<Handle_Geom_SweptSurface.hxx>
 #include<Handle_Geom_SurfaceOfRevolution.hxx>
 #include<gp_Pln.hxx>
@@ -97,21 +94,19 @@ $HeaderURL$
 #include<Handle_Geom_Axis2Placement.hxx>
 #include<Handle_Geom2d_Parabola.hxx>
 #include<Handle_Geom_Parabola.hxx>
-#include<Handle_Geom_RectangularTrimmedSurface.hxx>
+#include<Handle_Geom_ToroidalSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Geom_CartesianPoint.hxx>
 #include<Handle_Geom2d_CartesianPoint.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
-#include<Handle_Geom_ToroidalSurface.hxx>
 #include<Handle_Geom_SphericalSurface.hxx>
 #include<gp_Circ.hxx>
 #include<Handle_Geom_Circle.hxx>
 #include<Handle_Geom2d_Circle.hxx>
 #include<Handle_Geom_BoundedSurface.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
+#include<Handle_Geom_RectangularTrimmedSurface.hxx>
 #include<gp_Elips.hxx>
 #include<Handle_Geom_Ellipse.hxx>
 #include<Handle_Geom2d_Ellipse.hxx>
@@ -120,6 +115,11 @@ $HeaderURL$
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_Conic.hxx>
 #include<Handle_Geom2d_Conic.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Dir2d.hxx>
+#include<Handle_Geom_Direction.hxx>
+#include<Handle_Geom2d_Direction.hxx>
+#include<Handle_Geom_ElementarySurface.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Geom_Vector.hxx>

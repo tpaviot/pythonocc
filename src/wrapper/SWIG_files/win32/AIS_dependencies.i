@@ -746,8 +746,8 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import TCollection.i
 %import SelectMgr.i
+%import TCollection.i
 %import MMgt.i
 %import Prs3d.i
 %import Aspect.i
@@ -755,5 +755,5 @@ $HeaderURL$
 %import Standard.i
 %import Graphic3d.i
 %import DsgPrs.i
-%import PrsMgr.i
 %import TopAbs.i
+%import PrsMgr.i

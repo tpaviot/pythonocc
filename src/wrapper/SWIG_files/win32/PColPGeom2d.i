@@ -204,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PColPGeom2d_HArray1OfBoundedCurve;
+class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColPGeom2d_HArray1OfBoundedCurve();
+		%feature("autodoc", "1");
+		Handle_PColPGeom2d_HArray1OfBoundedCurve(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom2d_HArray1OfBoundedCurve(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PColPGeom2d_HArray1OfBoundedCurve DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
+	PColPGeom2d_HArray1OfBoundedCurve* GetObject() {
+	return (PColPGeom2d_HArray1OfBoundedCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PColPGeom2d_HArray1OfBoundedCurve::~Handle_PColPGeom2d_HArray1OfBoundedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBezierCurve;
 class Handle_PColPGeom2d_HArray1OfBezierCurve : public Handle_Standard_Persistent {
 	public:
@@ -318,73 +356,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PColPGeom2d_HArray1OfBoundedCurve;
-class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve();
-		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const Handle_PColPGeom2d_HArray1OfBoundedCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom2d_HArray1OfBoundedCurve & operator=(const PColPGeom2d_HArray1OfBoundedCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PColPGeom2d_HArray1OfBoundedCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
-	PColPGeom2d_HArray1OfBoundedCurve* GetObject() {
-	return (PColPGeom2d_HArray1OfBoundedCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PColPGeom2d_HArray1OfBoundedCurve::~Handle_PColPGeom2d_HArray1OfBoundedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PColPGeom2d_HArray1OfBoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve;
-class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve();
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve(const Handle_PGeom2d_Curve &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_Curve &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PColPGeom2d_HArray1OfBoundedCurve;
 class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 	public:
@@ -437,7 +408,7 @@ class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfBoundedCurve::~PColPGeom2d_HArray1OfBoundedCurve %{
@@ -479,6 +450,77 @@ def __del__(self):
 %}
 
 %extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PColPGeom2d_HArray1OfBezierCurve;
+class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_BezierCurve &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BezierCurve &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BezierCurve Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PColPGeom2d_HArray1OfBezierCurve();
+		%feature("autodoc", "1");
+		PColPGeom2d_HArray1OfBezierCurve(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColPGeom2d_HArray1OfBezierCurveLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColPGeom2d_HArray1OfBezierCurveUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PColPGeom2d_FieldOfHArray1OfBezierCurve & _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColPGeom2d_HArray1OfBezierCurve {
+	Handle_PColPGeom2d_HArray1OfBezierCurve GetHandle() {
+	return *(Handle_PColPGeom2d_HArray1OfBezierCurve*) &$self;
+	}
+};
+%extend PColPGeom2d_HArray1OfBezierCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PColPGeom2d_HArray1OfBezierCurve::~PColPGeom2d_HArray1OfBezierCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PColPGeom2d_HArray1OfBezierCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -555,53 +597,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
-class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PGeom2d_BoundedCurve &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BoundedCurve &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BoundedCurve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue(const Handle_PGeom2d_BoundedCurve &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
-	Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve GetHandle() {
-	return *(Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve*) &$self;
-	}
-};
-%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBezierCurve;
 class PColPGeom2d_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 	public:
@@ -671,7 +666,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve %{
@@ -783,7 +778,7 @@ class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfCurve::~PColPGeom2d_HArray1OfCurve %{
@@ -831,6 +826,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
+class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve();
+		%feature("autodoc", "1");
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Handle_PGeom2d_BoundedCurve &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PGeom2d_BoundedCurve &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_BoundedCurve _CSFDB_GetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurvemyValue(const Handle_PGeom2d_BoundedCurve &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve GetHandle() {
+	return *(Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve*) &$self;
+	}
+};
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_ArrayNode {
 	public:
@@ -859,7 +901,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve %{
@@ -930,7 +972,7 @@ class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfBSplineCurve::~PColPGeom2d_HArray1OfBSplineCurve %{
@@ -1018,7 +1060,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve %{
@@ -1037,62 +1079,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor PColPGeom2d_HArray1OfBezierCurve;
-class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {
+%nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve;
+class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 	public:
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_PGeom2d_BezierCurve &V);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve(const Handle_PGeom2d_Curve &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void SetValue(const Handle_PGeom2d_Curve &aValue);
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_BezierCurve &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Handle_PGeom2d_BezierCurve Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBezierCurve();
-		%feature("autodoc", "1");
-		PColPGeom2d_HArray1OfBezierCurve(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_HArray1OfBezierCurveLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColPGeom2d_HArray1OfBezierCurveUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PColPGeom2d_FieldOfHArray1OfBezierCurve & _CSFDB_GetPColPGeom2d_HArray1OfBezierCurveData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Value() const;
 
 };
-%extend PColPGeom2d_HArray1OfBezierCurve {
-	Handle_PColPGeom2d_HArray1OfBezierCurve GetHandle() {
-	return *(Handle_PColPGeom2d_HArray1OfBezierCurve*) &$self;
-	}
-};
-%extend PColPGeom2d_HArray1OfBezierCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PColPGeom2d_HArray1OfBezierCurve::~PColPGeom2d_HArray1OfBezierCurve %{
+%feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1101,7 +1101,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PColPGeom2d_HArray1OfBezierCurve {
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

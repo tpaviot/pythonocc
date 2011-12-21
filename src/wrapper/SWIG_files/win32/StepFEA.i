@@ -156,6 +156,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_FeaGroup;
+class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaGroup();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaGroup(const Handle_StepFEA_FeaGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaGroup(const StepFEA_FeaGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaGroup & operator=(const Handle_StepFEA_FeaGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaGroup & operator=(const StepFEA_FeaGroup *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_FeaGroup DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaGroup {
+	StepFEA_FeaGroup* GetObject() {
+	return (StepFEA_FeaGroup*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_FeaGroup::~Handle_StepFEA_FeaGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_FeaGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_NodeGroup;
+class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeGroup();
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeGroup(const Handle_StepFEA_NodeGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeGroup(const StepFEA_NodeGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeGroup & operator=(const Handle_StepFEA_NodeGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeGroup & operator=(const StepFEA_NodeGroup *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_NodeGroup DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_NodeGroup {
+	StepFEA_NodeGroup* GetObject() {
+	return (StepFEA_NodeGroup*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_NodeGroup::~Handle_StepFEA_NodeGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_NodeGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_ElementRepresentation;
 class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representation {
 	public:
@@ -422,82 +498,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_FeaModel;
-class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel(const Handle_StepFEA_FeaModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel(const StepFEA_FeaModel *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel & operator=(const Handle_StepFEA_FeaModel &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel & operator=(const StepFEA_FeaModel *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModel DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaModel {
-	StepFEA_FeaModel* GetObject() {
-	return (StepFEA_FeaModel*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaModel::~Handle_StepFEA_FeaModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_FeaModel3d;
-class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d(const Handle_StepFEA_FeaModel3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d(const StepFEA_FeaModel3d *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d & operator=(const Handle_StepFEA_FeaModel3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d & operator=(const StepFEA_FeaModel3d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModel3d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaModel3d {
-	StepFEA_FeaModel3d* GetObject() {
-	return (StepFEA_FeaModel3d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaModel3d::~Handle_StepFEA_FeaModel3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaModel3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
 class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Handle_TCollection_SeqNode {
 	public:
@@ -574,44 +574,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_HArray1OfElementRepresentation;
-class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfElementRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfElementRepresentation(const Handle_StepFEA_HArray1OfElementRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfElementRepresentation(const StepFEA_HArray1OfElementRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfElementRepresentation & operator=(const Handle_StepFEA_HArray1OfElementRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfElementRepresentation & operator=(const StepFEA_HArray1OfElementRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_HArray1OfElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_HArray1OfElementRepresentation {
-	StepFEA_HArray1OfElementRepresentation* GetObject() {
-	return (StepFEA_HArray1OfElementRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_HArray1OfElementRepresentation::~Handle_StepFEA_HArray1OfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_HArray1OfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_FeaSurfaceSectionGeometricRelationship;
 class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt_TShared {
 	public:
@@ -682,44 +644,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_FeaGroup;
-class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaGroup();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaGroup(const Handle_StepFEA_FeaGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaGroup(const StepFEA_FeaGroup *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaGroup & operator=(const Handle_StepFEA_FeaGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaGroup & operator=(const StepFEA_FeaGroup *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaGroup DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaGroup {
-	StepFEA_FeaGroup* GetObject() {
-	return (StepFEA_FeaGroup*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaGroup::~Handle_StepFEA_FeaGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -878,29 +802,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_FeaMoistureAbsorption;
-class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+%nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
+class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaMoistureAbsorption();
+		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty();
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaMoistureAbsorption(const Handle_StepFEA_FeaMoistureAbsorption &aHandle);
+		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaMoistureAbsorption(const StepFEA_FeaMoistureAbsorption *anItem);
+		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaMoistureAbsorption & operator=(const Handle_StepFEA_FeaMoistureAbsorption &aHandle);
+		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty & operator=(const Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaMoistureAbsorption & operator=(const StepFEA_FeaMoistureAbsorption *anItem);
+		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty & operator=(const StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaMoistureAbsorption DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_FeaMoistureAbsorption {
-	StepFEA_FeaMoistureAbsorption* GetObject() {
-	return (StepFEA_FeaMoistureAbsorption*)$self->Access();
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty* GetObject() {
+	return (StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_FeaMoistureAbsorption::~Handle_StepFEA_FeaMoistureAbsorption %{
+%feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -909,7 +833,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_FeaMoistureAbsorption {
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -954,29 +878,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_NodeDefinition;
-class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
+%nodefaultctor Handle_StepFEA_FeaMoistureAbsorption;
+class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_NodeDefinition();
+		Handle_StepFEA_FeaMoistureAbsorption();
 		%feature("autodoc", "1");
-		Handle_StepFEA_NodeDefinition(const Handle_StepFEA_NodeDefinition &aHandle);
+		Handle_StepFEA_FeaMoistureAbsorption(const Handle_StepFEA_FeaMoistureAbsorption &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_NodeDefinition(const StepFEA_NodeDefinition *anItem);
+		Handle_StepFEA_FeaMoistureAbsorption(const StepFEA_FeaMoistureAbsorption *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_NodeDefinition & operator=(const Handle_StepFEA_NodeDefinition &aHandle);
+		Handle_StepFEA_FeaMoistureAbsorption & operator=(const Handle_StepFEA_FeaMoistureAbsorption &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_NodeDefinition & operator=(const StepFEA_NodeDefinition *anItem);
+		Handle_StepFEA_FeaMoistureAbsorption & operator=(const StepFEA_FeaMoistureAbsorption *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeDefinition DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaMoistureAbsorption DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_NodeDefinition {
-	StepFEA_NodeDefinition* GetObject() {
-	return (StepFEA_NodeDefinition*)$self->Access();
+%extend Handle_StepFEA_FeaMoistureAbsorption {
+	StepFEA_FeaMoistureAbsorption* GetObject() {
+	return (StepFEA_FeaMoistureAbsorption*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_NodeDefinition::~Handle_StepFEA_NodeDefinition %{
+%feature("shadow") Handle_StepFEA_FeaMoistureAbsorption::~Handle_StepFEA_FeaMoistureAbsorption %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -985,36 +909,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_NodeDefinition {
+%extend Handle_StepFEA_FeaMoistureAbsorption {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepFEA_FeaAreaDensity;
-class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+%nodefaultctor Handle_StepFEA_FeaModel;
+class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAreaDensity();
+		Handle_StepFEA_FeaModel();
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAreaDensity(const Handle_StepFEA_FeaAreaDensity &aHandle);
+		Handle_StepFEA_FeaModel(const Handle_StepFEA_FeaModel &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAreaDensity(const StepFEA_FeaAreaDensity *anItem);
+		Handle_StepFEA_FeaModel(const StepFEA_FeaModel *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAreaDensity & operator=(const Handle_StepFEA_FeaAreaDensity &aHandle);
+		Handle_StepFEA_FeaModel & operator=(const Handle_StepFEA_FeaModel &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAreaDensity & operator=(const StepFEA_FeaAreaDensity *anItem);
+		Handle_StepFEA_FeaModel & operator=(const StepFEA_FeaModel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaAreaDensity DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaModel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_FeaAreaDensity {
-	StepFEA_FeaAreaDensity* GetObject() {
-	return (StepFEA_FeaAreaDensity*)$self->Access();
+%extend Handle_StepFEA_FeaModel {
+	StepFEA_FeaModel* GetObject() {
+	return (StepFEA_FeaModel*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_FeaAreaDensity::~Handle_StepFEA_FeaAreaDensity %{
+%feature("shadow") Handle_StepFEA_FeaModel::~Handle_StepFEA_FeaModel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1023,7 +947,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_FeaAreaDensity {
+%extend Handle_StepFEA_FeaModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1296,29 +1220,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_CurveElementLocation;
-class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
+class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation();
+		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion();
 		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation(const Handle_StepFEA_CurveElementLocation &aHandle);
+		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion(const Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation(const StepFEA_CurveElementLocation *anItem);
+		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion(const StepFEA_FeaSecantCoefficientOfLinearThermalExpansion *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation & operator=(const Handle_StepFEA_CurveElementLocation &aHandle);
+		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion & operator=(const Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation & operator=(const StepFEA_CurveElementLocation *anItem);
+		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion & operator=(const StepFEA_FeaSecantCoefficientOfLinearThermalExpansion *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementLocation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_CurveElementLocation {
-	StepFEA_CurveElementLocation* GetObject() {
-	return (StepFEA_CurveElementLocation*)$self->Access();
+%extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
+	StepFEA_FeaSecantCoefficientOfLinearThermalExpansion* GetObject() {
+	return (StepFEA_FeaSecantCoefficientOfLinearThermalExpansion*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_CurveElementLocation::~Handle_StepFEA_CurveElementLocation %{
+%feature("shadow") Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1327,45 +1251,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_CurveElementLocation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
-class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty();
-		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty(const StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty & operator=(const Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty & operator=(const StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
-	StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty* GetObject() {
-	return (StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+%extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1410,6 +1296,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_GeometricNode;
+class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_GeometricNode();
+		%feature("autodoc", "1");
+		Handle_StepFEA_GeometricNode(const Handle_StepFEA_GeometricNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_GeometricNode(const StepFEA_GeometricNode *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_GeometricNode & operator=(const Handle_StepFEA_GeometricNode &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_GeometricNode & operator=(const StepFEA_GeometricNode *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_GeometricNode DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_GeometricNode {
+	StepFEA_GeometricNode* GetObject() {
+	return (StepFEA_GeometricNode*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_GeometricNode::~Handle_StepFEA_GeometricNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_GeometricNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_HArray1OfElementRepresentation;
+class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfElementRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfElementRepresentation(const Handle_StepFEA_HArray1OfElementRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfElementRepresentation(const StepFEA_HArray1OfElementRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfElementRepresentation & operator=(const Handle_StepFEA_HArray1OfElementRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfElementRepresentation & operator=(const StepFEA_HArray1OfElementRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_HArray1OfElementRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_HArray1OfElementRepresentation {
+	StepFEA_HArray1OfElementRepresentation* GetObject() {
+	return (StepFEA_HArray1OfElementRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_HArray1OfElementRepresentation::~Handle_StepFEA_HArray1OfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_HArray1OfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
+class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const StepFEA_SequenceNodeOfSequenceOfNodeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation & operator=(const Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation & operator=(const StepFEA_SequenceNodeOfSequenceOfNodeRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	StepFEA_SequenceNodeOfSequenceOfNodeRepresentation* GetObject() {
+	return (StepFEA_SequenceNodeOfSequenceOfNodeRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_FeaMassDensity;
 class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -1442,44 +1442,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepFEA_FeaMassDensity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_FeaModelDefinition;
-class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition(const Handle_StepFEA_FeaModelDefinition &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition(const StepFEA_FeaModelDefinition *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition & operator=(const Handle_StepFEA_FeaModelDefinition &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModelDefinition & operator=(const StepFEA_FeaModelDefinition *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaModelDefinition DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaModelDefinition {
-	StepFEA_FeaModelDefinition* GetObject() {
-	return (StepFEA_FeaModelDefinition*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaModelDefinition::~Handle_StepFEA_FeaModelDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaModelDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1600,44 +1562,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_CurveElementEndRelease;
-class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease();
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease(const Handle_StepFEA_CurveElementEndRelease &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease(const StepFEA_CurveElementEndRelease *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease & operator=(const Handle_StepFEA_CurveElementEndRelease &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease & operator=(const StepFEA_CurveElementEndRelease *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementEndRelease DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_CurveElementEndRelease {
-	StepFEA_CurveElementEndRelease* GetObject() {
-	return (StepFEA_CurveElementEndRelease*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_CurveElementEndRelease::~Handle_StepFEA_CurveElementEndRelease %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_CurveElementEndRelease {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_FreedomAndCoefficient;
 class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 	public:
@@ -1676,29 +1600,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
-class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+%nodefaultctor Handle_StepFEA_NodeDefinition;
+class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion();
+		Handle_StepFEA_NodeDefinition();
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion(const Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion &aHandle);
+		Handle_StepFEA_NodeDefinition(const Handle_StepFEA_NodeDefinition &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion(const StepFEA_FeaSecantCoefficientOfLinearThermalExpansion *anItem);
+		Handle_StepFEA_NodeDefinition(const StepFEA_NodeDefinition *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion & operator=(const Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion &aHandle);
+		Handle_StepFEA_NodeDefinition & operator=(const Handle_StepFEA_NodeDefinition &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion & operator=(const StepFEA_FeaSecantCoefficientOfLinearThermalExpansion *anItem);
+		Handle_StepFEA_NodeDefinition & operator=(const StepFEA_NodeDefinition *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_NodeDefinition DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
-	StepFEA_FeaSecantCoefficientOfLinearThermalExpansion* GetObject() {
-	return (StepFEA_FeaSecantCoefficientOfLinearThermalExpansion*)$self->Access();
+%extend Handle_StepFEA_NodeDefinition {
+	StepFEA_NodeDefinition* GetObject() {
+	return (StepFEA_NodeDefinition*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
+%feature("shadow") Handle_StepFEA_NodeDefinition::~Handle_StepFEA_NodeDefinition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1707,7 +1631,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
+%extend Handle_StepFEA_NodeDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1828,6 +1752,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_CurveElementEndRelease;
+class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease();
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease(const Handle_StepFEA_CurveElementEndRelease &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease(const StepFEA_CurveElementEndRelease *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease & operator=(const Handle_StepFEA_CurveElementEndRelease &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease & operator=(const StepFEA_CurveElementEndRelease *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_CurveElementEndRelease DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_CurveElementEndRelease {
+	StepFEA_CurveElementEndRelease* GetObject() {
+	return (StepFEA_CurveElementEndRelease*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_CurveElementEndRelease::~Handle_StepFEA_CurveElementEndRelease %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_CurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_SymmetricTensor23dMember;
 class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArrReal {
 	public:
@@ -1866,82 +1828,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_HSequenceOfCurve3dElementProperty;
-class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfCurve3dElementProperty();
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfCurve3dElementProperty(const Handle_StepFEA_HSequenceOfCurve3dElementProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfCurve3dElementProperty(const StepFEA_HSequenceOfCurve3dElementProperty *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfCurve3dElementProperty & operator=(const Handle_StepFEA_HSequenceOfCurve3dElementProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfCurve3dElementProperty & operator=(const StepFEA_HSequenceOfCurve3dElementProperty *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_HSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
-	StepFEA_HSequenceOfCurve3dElementProperty* GetObject() {
-	return (StepFEA_HSequenceOfCurve3dElementProperty*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_HSequenceOfCurve3dElementProperty::~Handle_StepFEA_HSequenceOfCurve3dElementProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
-class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness();
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness(const StepFEA_FeaShellBendingStiffness *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness & operator=(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaShellBendingStiffness & operator=(const StepFEA_FeaShellBendingStiffness *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_FeaShellBendingStiffness DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_FeaShellBendingStiffness {
-	StepFEA_FeaShellBendingStiffness* GetObject() {
-	return (StepFEA_FeaShellBendingStiffness*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_FeaShellBendingStiffness::~Handle_StepFEA_FeaShellBendingStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_FeaShellBendingStiffness {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateSystem;
 class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
 	public:
@@ -1974,44 +1860,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepFEA_CurveElementEndOffset;
-class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndOffset();
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndOffset(const Handle_StepFEA_CurveElementEndOffset &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndOffset(const StepFEA_CurveElementEndOffset *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndOffset & operator=(const Handle_StepFEA_CurveElementEndOffset &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndOffset & operator=(const StepFEA_CurveElementEndOffset *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_CurveElementEndOffset DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_CurveElementEndOffset {
-	StepFEA_CurveElementEndOffset* GetObject() {
-	return (StepFEA_CurveElementEndOffset*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_CurveElementEndOffset::~Handle_StepFEA_CurveElementEndOffset %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_CurveElementEndOffset {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2094,6 +1942,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_FreedomsList;
+class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_FreedomsList();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FreedomsList(const Handle_StepFEA_FreedomsList &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FreedomsList(const StepFEA_FreedomsList *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FreedomsList & operator=(const Handle_StepFEA_FreedomsList &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FreedomsList & operator=(const StepFEA_FreedomsList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_FreedomsList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FreedomsList {
+	StepFEA_FreedomsList* GetObject() {
+	return (StepFEA_FreedomsList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_FreedomsList::~Handle_StepFEA_FreedomsList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_FreedomsList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_HSequenceOfElementRepresentation;
 class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -2126,6 +2012,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepFEA_HSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
+class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness(const StepFEA_FeaShellBendingStiffness *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness & operator=(const Handle_StepFEA_FeaShellBendingStiffness &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaShellBendingStiffness & operator=(const StepFEA_FeaShellBendingStiffness *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_FeaShellBendingStiffness DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaShellBendingStiffness {
+	StepFEA_FeaShellBendingStiffness* GetObject() {
+	return (StepFEA_FeaShellBendingStiffness*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_FeaShellBendingStiffness::~Handle_StepFEA_FeaShellBendingStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_FeaShellBendingStiffness {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2170,6 +2094,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepFEA_CurveElementEndOffset;
+class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndOffset();
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndOffset(const Handle_StepFEA_CurveElementEndOffset &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndOffset(const StepFEA_CurveElementEndOffset *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndOffset & operator=(const Handle_StepFEA_CurveElementEndOffset &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndOffset & operator=(const StepFEA_CurveElementEndOffset *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_CurveElementEndOffset DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_CurveElementEndOffset {
+	StepFEA_CurveElementEndOffset* GetObject() {
+	return (StepFEA_CurveElementEndOffset*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_CurveElementEndOffset::~Handle_StepFEA_CurveElementEndOffset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_CurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_FeaModelDefinition;
+class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition();
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition(const Handle_StepFEA_FeaModelDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition(const StepFEA_FeaModelDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition & operator=(const Handle_StepFEA_FeaModelDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModelDefinition & operator=(const StepFEA_FeaModelDefinition *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_FeaModelDefinition DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_FeaModelDefinition {
+	StepFEA_FeaModelDefinition* GetObject() {
+	return (StepFEA_FeaModelDefinition*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_FeaModelDefinition::~Handle_StepFEA_FeaModelDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_FeaModelDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepFEA_FeaAxis2Placement3d;
 class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement3d {
 	public:
@@ -2208,29 +2208,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_FreedomsList;
-class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepFEA_HSequenceOfCurve3dElementProperty;
+class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_FreedomsList();
+		Handle_StepFEA_HSequenceOfCurve3dElementProperty();
 		%feature("autodoc", "1");
-		Handle_StepFEA_FreedomsList(const Handle_StepFEA_FreedomsList &aHandle);
+		Handle_StepFEA_HSequenceOfCurve3dElementProperty(const Handle_StepFEA_HSequenceOfCurve3dElementProperty &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FreedomsList(const StepFEA_FreedomsList *anItem);
+		Handle_StepFEA_HSequenceOfCurve3dElementProperty(const StepFEA_HSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FreedomsList & operator=(const Handle_StepFEA_FreedomsList &aHandle);
+		Handle_StepFEA_HSequenceOfCurve3dElementProperty & operator=(const Handle_StepFEA_HSequenceOfCurve3dElementProperty &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_FreedomsList & operator=(const StepFEA_FreedomsList *anItem);
+		Handle_StepFEA_HSequenceOfCurve3dElementProperty & operator=(const StepFEA_HSequenceOfCurve3dElementProperty *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_FreedomsList DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_HSequenceOfCurve3dElementProperty DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_FreedomsList {
-	StepFEA_FreedomsList* GetObject() {
-	return (StepFEA_FreedomsList*)$self->Access();
+%extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
+	StepFEA_HSequenceOfCurve3dElementProperty* GetObject() {
+	return (StepFEA_HSequenceOfCurve3dElementProperty*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_FreedomsList::~Handle_StepFEA_FreedomsList %{
+%feature("shadow") Handle_StepFEA_HSequenceOfCurve3dElementProperty::~Handle_StepFEA_HSequenceOfCurve3dElementProperty %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2239,36 +2239,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_FreedomsList {
+%extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepFEA_GeometricNode;
-class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
+%nodefaultctor Handle_StepFEA_FeaModel3d;
+class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_GeometricNode();
+		Handle_StepFEA_FeaModel3d();
 		%feature("autodoc", "1");
-		Handle_StepFEA_GeometricNode(const Handle_StepFEA_GeometricNode &aHandle);
+		Handle_StepFEA_FeaModel3d(const Handle_StepFEA_FeaModel3d &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_GeometricNode(const StepFEA_GeometricNode *anItem);
+		Handle_StepFEA_FeaModel3d(const StepFEA_FeaModel3d *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_GeometricNode & operator=(const Handle_StepFEA_GeometricNode &aHandle);
+		Handle_StepFEA_FeaModel3d & operator=(const Handle_StepFEA_FeaModel3d &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_GeometricNode & operator=(const StepFEA_GeometricNode *anItem);
+		Handle_StepFEA_FeaModel3d & operator=(const StepFEA_FeaModel3d *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_GeometricNode DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaModel3d DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_GeometricNode {
-	StepFEA_GeometricNode* GetObject() {
-	return (StepFEA_GeometricNode*)$self->Access();
+%extend Handle_StepFEA_FeaModel3d {
+	StepFEA_FeaModel3d* GetObject() {
+	return (StepFEA_FeaModel3d*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_GeometricNode::~Handle_StepFEA_GeometricNode %{
+%feature("shadow") Handle_StepFEA_FeaModel3d::~Handle_StepFEA_FeaModel3d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2277,7 +2277,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_GeometricNode {
+%extend Handle_StepFEA_FeaModel3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2322,29 +2322,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
-class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_StepFEA_FeaAreaDensity;
+class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation();
+		Handle_StepFEA_FeaAreaDensity();
 		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation &aHandle);
+		Handle_StepFEA_FeaAreaDensity(const Handle_StepFEA_FeaAreaDensity &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const StepFEA_SequenceNodeOfSequenceOfNodeRepresentation *anItem);
+		Handle_StepFEA_FeaAreaDensity(const StepFEA_FeaAreaDensity *anItem);
 		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation & operator=(const Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation &aHandle);
+		Handle_StepFEA_FeaAreaDensity & operator=(const Handle_StepFEA_FeaAreaDensity &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation & operator=(const StepFEA_SequenceNodeOfSequenceOfNodeRepresentation *anItem);
+		Handle_StepFEA_FeaAreaDensity & operator=(const StepFEA_FeaAreaDensity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepFEA_FeaAreaDensity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
-	StepFEA_SequenceNodeOfSequenceOfNodeRepresentation* GetObject() {
-	return (StepFEA_SequenceNodeOfSequenceOfNodeRepresentation*)$self->Access();
+%extend Handle_StepFEA_FeaAreaDensity {
+	StepFEA_FeaAreaDensity* GetObject() {
+	return (StepFEA_FeaAreaDensity*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
+%feature("shadow") Handle_StepFEA_FeaAreaDensity::~Handle_StepFEA_FeaAreaDensity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2353,7 +2353,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+%extend Handle_StepFEA_FeaAreaDensity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2392,6 +2392,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepFEA_CurveElementLocation;
+class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation();
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation(const Handle_StepFEA_CurveElementLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation(const StepFEA_CurveElementLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation & operator=(const Handle_StepFEA_CurveElementLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation & operator=(const StepFEA_CurveElementLocation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepFEA_CurveElementLocation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepFEA_CurveElementLocation {
+	StepFEA_CurveElementLocation* GetObject() {
+	return (StepFEA_CurveElementLocation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepFEA_CurveElementLocation::~Handle_StepFEA_CurveElementLocation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepFEA_CurveElementLocation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2664,118 +2702,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepFEA_NodeGroup;
-class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeGroup();
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeGroup(const Handle_StepFEA_NodeGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeGroup(const StepFEA_NodeGroup *anItem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeGroup & operator=(const Handle_StepFEA_NodeGroup &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeGroup & operator=(const StepFEA_NodeGroup *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepFEA_NodeGroup DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepFEA_NodeGroup {
-	StepFEA_NodeGroup* GetObject() {
-	return (StepFEA_NodeGroup*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepFEA_NodeGroup::~Handle_StepFEA_NodeGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepFEA_NodeGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaMaterialPropertyRepresentationItem;
-class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaMaterialPropertyRepresentationItem();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaMaterialPropertyRepresentationItem {
-	Handle_StepFEA_FeaMaterialPropertyRepresentationItem GetHandle() {
-	return *(Handle_StepFEA_FeaMaterialPropertyRepresentationItem*) &$self;
-	}
-};
-%extend StepFEA_FeaMaterialPropertyRepresentationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaMaterialPropertyRepresentationItem::~StepFEA_FeaMaterialPropertyRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaMaterialPropertyRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaShellMembraneBendingCouplingStiffness;
-class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaShellMembraneBendingCouplingStiffness();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor42d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
-
-};
-%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
-	Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness GetHandle() {
-	return *(Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness*) &$self;
-	}
-};
-%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaShellMembraneBendingCouplingStiffness::~StepFEA_FeaShellMembraneBendingCouplingStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepFEA_Array1OfCurveElementEndOffset;
 class StepFEA_Array1OfCurveElementEndOffset {
 	public:
@@ -2827,6 +2753,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepFEA_SymmetricTensor43dMember;
+class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor43dMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_SymmetricTensor43dMember {
+	Handle_StepFEA_SymmetricTensor43dMember GetHandle() {
+	return *(Handle_StepFEA_SymmetricTensor43dMember*) &$self;
+	}
+};
+%extend StepFEA_SymmetricTensor43dMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_SymmetricTensor43dMember::~StepFEA_SymmetricTensor43dMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SymmetricTensor43dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepFEA_HArray1OfCurveElementEndOffset;
 class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 	public:
@@ -2863,7 +2832,7 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementEndOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementEndOffset::~StepFEA_HArray1OfCurveElementEndOffset %{
@@ -2882,40 +2851,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepFEA_ElementGeometricRelationship;
-class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
+%nodefaultctor StepFEA_FeaMaterialPropertyRepresentationItem;
+class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_RepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepFEA_ElementGeometricRelationship();
-		%feature("autodoc", "1");
-		void Init(const StepFEA_ElementOrElementGroup &aElementRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem, const StepElement_ElementAspect &aAspect);
-		%feature("autodoc", "1");
-		StepFEA_ElementOrElementGroup ElementRef() const;
-		%feature("autodoc", "1");
-		void SetElementRef(const StepFEA_ElementOrElementGroup &ElementRef);
-		%feature("autodoc", "1");
-		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
-		%feature("autodoc", "1");
-		StepElement_ElementAspect Aspect() const;
-		%feature("autodoc", "1");
-		void SetAspect(const StepElement_ElementAspect &Aspect);
+		StepFEA_FeaMaterialPropertyRepresentationItem();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepFEA_ElementGeometricRelationship {
-	Handle_StepFEA_ElementGeometricRelationship GetHandle() {
-	return *(Handle_StepFEA_ElementGeometricRelationship*) &$self;
+%extend StepFEA_FeaMaterialPropertyRepresentationItem {
+	Handle_StepFEA_FeaMaterialPropertyRepresentationItem GetHandle() {
+	return *(Handle_StepFEA_FeaMaterialPropertyRepresentationItem*) &$self;
 	}
 };
-%extend StepFEA_ElementGeometricRelationship {
+%extend StepFEA_FeaMaterialPropertyRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepFEA_ElementGeometricRelationship::~StepFEA_ElementGeometricRelationship %{
+%feature("shadow") StepFEA_FeaMaterialPropertyRepresentationItem::~StepFEA_FeaMaterialPropertyRepresentationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2924,7 +2879,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepFEA_ElementGeometricRelationship {
+%extend StepFEA_FeaMaterialPropertyRepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2957,7 +2912,7 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_FeaSurfaceSectionGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaSurfaceSectionGeometricRelationship::~StepFEA_FeaSurfaceSectionGeometricRelationship %{
@@ -3036,7 +2991,7 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfElementRepresentation::~StepFEA_HSequenceOfElementRepresentation %{
@@ -3049,6 +3004,94 @@ def __del__(self):
 %}
 
 %extend StepFEA_HSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
+class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SequenceNodeOfSequenceOfElementRepresentation(const Handle_StepFEA_ElementRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation GetHandle() {
+	return *(Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation*) &$self;
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementRepresentation::~StepFEA_SequenceNodeOfSequenceOfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Array1OfElementRepresentation;
+class StepFEA_Array1OfElementRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Array1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_Array1OfElementRepresentation(const Handle_StepFEA_ElementRepresentation &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_ElementRepresentation &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfElementRepresentation & Assign(const StepFEA_Array1OfElementRepresentation &Other);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfElementRepresentation & operator=(const StepFEA_Array1OfElementRepresentation &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepFEA_Array1OfElementRepresentation::~StepFEA_Array1OfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Array1OfElementRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3081,7 +3124,7 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 };
 %extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
@@ -3122,7 +3165,7 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 };
 %extend StepFEA_FeaParametricPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaParametricPoint::~StepFEA_FeaParametricPoint %{
@@ -3167,7 +3210,7 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementEndRelease {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementEndRelease::~StepFEA_CurveElementEndRelease %{
@@ -3202,7 +3245,7 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepFEA_FeaRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaRepresentationItem::~StepFEA_FeaRepresentationItem %{
@@ -3245,7 +3288,7 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 };
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_ParametricSurface3dElementCoordinateSystem::~StepFEA_ParametricSurface3dElementCoordinateSystem %{
@@ -3258,6 +3301,41 @@ def __del__(self):
 %}
 
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaMaterialPropertyRepresentation;
+class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialPropertyRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaMaterialPropertyRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaMaterialPropertyRepresentation {
+	Handle_StepFEA_FeaMaterialPropertyRepresentation GetHandle() {
+	return *(Handle_StepFEA_FeaMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepFEA_FeaMaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaMaterialPropertyRepresentation::~StepFEA_FeaMaterialPropertyRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaMaterialPropertyRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3286,7 +3364,7 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementLocation::~StepFEA_CurveElementLocation %{
@@ -3299,963 +3377,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_CurveElementLocation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_DegreeOfFreedomMember;
-class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_DegreeOfFreedomMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		char * Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_DegreeOfFreedomMember {
-	Handle_StepFEA_DegreeOfFreedomMember GetHandle() {
-	return *(Handle_StepFEA_DegreeOfFreedomMember*) &$self;
-	}
-};
-%extend StepFEA_DegreeOfFreedomMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_DegreeOfFreedomMember::~StepFEA_DegreeOfFreedomMember %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_DegreeOfFreedomMember {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_NodeRepresentation;
-class StepFEA_NodeRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_NodeRepresentation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_FeaModel &aModelRef);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel ModelRef() const;
-		%feature("autodoc", "1");
-		void SetModelRef(const Handle_StepFEA_FeaModel &ModelRef);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_NodeRepresentation {
-	Handle_StepFEA_NodeRepresentation GetHandle() {
-	return *(Handle_StepFEA_NodeRepresentation*) &$self;
-	}
-};
-%extend StepFEA_NodeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_NodeRepresentation::~StepFEA_NodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_NodeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Node;
-class StepFEA_Node : public StepFEA_NodeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Node();
-
-};
-%extend StepFEA_Node {
-	Handle_StepFEA_Node GetHandle() {
-	return *(Handle_StepFEA_Node*) &$self;
-	}
-};
-%extend StepFEA_Node {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_Node::~StepFEA_Node %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Node {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SequenceOfNodeRepresentation;
-class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceOfNodeRepresentation();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfNodeRepresentation & Assign(const StepFEA_SequenceOfNodeRepresentation &Other);
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfNodeRepresentation & operator=(const StepFEA_SequenceOfNodeRepresentation &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_NodeRepresentation &T);
-		%feature("autodoc", "1");
-		void Append(StepFEA_SequenceOfNodeRepresentation & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_NodeRepresentation &T);
-		%feature("autodoc", "1");
-		void Prepend(StepFEA_SequenceOfNodeRepresentation & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & First() const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &I);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") StepFEA_SequenceOfNodeRepresentation::~StepFEA_SequenceOfNodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SequenceOfNodeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HArray1OfCurveElementInterval;
-class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementInterval &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementInterval &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfCurveElementInterval & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfCurveElementInterval & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HArray1OfCurveElementInterval {
-	Handle_StepFEA_HArray1OfCurveElementInterval GetHandle() {
-	return *(Handle_StepFEA_HArray1OfCurveElementInterval*) &$self;
-	}
-};
-%extend StepFEA_HArray1OfCurveElementInterval {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HArray1OfCurveElementInterval::~StepFEA_HArray1OfCurveElementInterval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HArray1OfCurveElementInterval {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SequenceOfElementRepresentation;
-class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceOfElementRepresentation();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfElementRepresentation & Assign(const StepFEA_SequenceOfElementRepresentation &Other);
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfElementRepresentation & operator=(const StepFEA_SequenceOfElementRepresentation &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_ElementRepresentation &T);
-		%feature("autodoc", "1");
-		void Append(StepFEA_SequenceOfElementRepresentation & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_ElementRepresentation &T);
-		%feature("autodoc", "1");
-		void Prepend(StepFEA_SequenceOfElementRepresentation & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & First() const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &I);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") StepFEA_SequenceOfElementRepresentation::~StepFEA_SequenceOfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SequenceOfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HArray1OfElementRepresentation;
-class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_ElementRepresentation &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_ElementRepresentation &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfElementRepresentation & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfElementRepresentation & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HArray1OfElementRepresentation {
-	Handle_StepFEA_HArray1OfElementRepresentation GetHandle() {
-	return *(Handle_StepFEA_HArray1OfElementRepresentation*) &$self;
-	}
-};
-%extend StepFEA_HArray1OfElementRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HArray1OfElementRepresentation::~StepFEA_HArray1OfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HArray1OfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_AlignedSurface3dElementCoordinateSystem;
-class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_AlignedSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
-	Handle_StepFEA_AlignedSurface3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_AlignedSurface3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_AlignedSurface3dElementCoordinateSystem::~StepFEA_AlignedSurface3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HArray1OfDegreeOfFreedom;
-class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfDegreeOfFreedom(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfDegreeOfFreedom(const Standard_Integer Low, const Standard_Integer Up, const StepFEA_DegreeOfFreedom &V);
-		%feature("autodoc", "1");
-		void Init(const StepFEA_DegreeOfFreedom &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepFEA_DegreeOfFreedom &Value);
-		%feature("autodoc", "1");
-		const StepFEA_DegreeOfFreedom & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepFEA_DegreeOfFreedom & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfDegreeOfFreedom & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfDegreeOfFreedom & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HArray1OfDegreeOfFreedom {
-	Handle_StepFEA_HArray1OfDegreeOfFreedom GetHandle() {
-	return *(Handle_StepFEA_HArray1OfDegreeOfFreedom*) &$self;
-	}
-};
-%extend StepFEA_HArray1OfDegreeOfFreedom {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HArray1OfDegreeOfFreedom::~StepFEA_HArray1OfDegreeOfFreedom %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HArray1OfDegreeOfFreedom {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SymmetricTensor23d;
-class StepFEA_SymmetricTensor23d : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor23d();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_SelectMember NewMember() const;
-		%feature("autodoc", "1");
-		void SetIsotropicSymmetricTensor23d(const Standard_Real aVal);
-		%feature("autodoc", "1");
-		Standard_Real IsotropicSymmetricTensor23d() const;
-		%feature("autodoc", "1");
-		void SetOrthotropicSymmetricTensor23d(const Handle_TColStd_HArray1OfReal &aVal);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal OrthotropicSymmetricTensor23d() const;
-		%feature("autodoc", "1");
-		void SetAnisotropicSymmetricTensor23d(const Handle_TColStd_HArray1OfReal &aVal);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor23d() const;
-
-};
-%feature("shadow") StepFEA_SymmetricTensor23d::~StepFEA_SymmetricTensor23d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SymmetricTensor23d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaLinearElasticity;
-class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaLinearElasticity();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor43d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor43d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor43d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaLinearElasticity {
-	Handle_StepFEA_FeaLinearElasticity GetHandle() {
-	return *(Handle_StepFEA_FeaLinearElasticity*) &$self;
-	}
-};
-%extend StepFEA_FeaLinearElasticity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaLinearElasticity::~StepFEA_FeaLinearElasticity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaLinearElasticity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
-class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const Handle_StepFEA_NodeRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
-	Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation GetHandle() {
-	return *(Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation*) &$self;
-	}
-};
-%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_CurveElementInterval;
-class StepFEA_CurveElementInterval : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_CurveElementInterval();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementLocation &aFinishPosition, const Handle_StepBasic_EulerAngles &aEuAngles);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementLocation FinishPosition() const;
-		%feature("autodoc", "1");
-		void SetFinishPosition(const Handle_StepFEA_CurveElementLocation &FinishPosition);
-		%feature("autodoc", "1");
-		Handle_StepBasic_EulerAngles EuAngles() const;
-		%feature("autodoc", "1");
-		void SetEuAngles(const Handle_StepBasic_EulerAngles &EuAngles);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_CurveElementInterval {
-	Handle_StepFEA_CurveElementInterval GetHandle() {
-	return *(Handle_StepFEA_CurveElementInterval*) &$self;
-	}
-};
-%extend StepFEA_CurveElementInterval {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_CurveElementInterval::~StepFEA_CurveElementInterval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_CurveElementInterval {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_CurveElementIntervalLinearlyVarying;
-class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementInterval {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_CurveElementIntervalLinearlyVarying();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementLocation &aCurveElementInterval_FinishPosition, const Handle_StepBasic_EulerAngles &aCurveElementInterval_EuAngles, const Handle_StepElement_HArray1OfCurveElementSectionDefinition &aSections);
-		%feature("autodoc", "1");
-		Handle_StepElement_HArray1OfCurveElementSectionDefinition Sections() const;
-		%feature("autodoc", "1");
-		void SetSections(const Handle_StepElement_HArray1OfCurveElementSectionDefinition &Sections);
-
-};
-%extend StepFEA_CurveElementIntervalLinearlyVarying {
-	Handle_StepFEA_CurveElementIntervalLinearlyVarying GetHandle() {
-	return *(Handle_StepFEA_CurveElementIntervalLinearlyVarying*) &$self;
-	}
-};
-%extend StepFEA_CurveElementIntervalLinearlyVarying {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_CurveElementIntervalLinearlyVarying::~StepFEA_CurveElementIntervalLinearlyVarying %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_CurveElementIntervalLinearlyVarying {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_NodeDefinition;
-class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_NodeDefinition();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_NodeDefinition {
-	Handle_StepFEA_NodeDefinition GetHandle() {
-	return *(Handle_StepFEA_NodeDefinition*) &$self;
-	}
-};
-%extend StepFEA_NodeDefinition {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_NodeDefinition::~StepFEA_NodeDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_NodeDefinition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SymmetricTensor42d;
-class StepFEA_SymmetricTensor42d : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor42d();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor42d() const;
-
-};
-%feature("shadow") StepFEA_SymmetricTensor42d::~StepFEA_SymmetricTensor42d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SymmetricTensor42d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaMoistureAbsorption;
-class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaMoistureAbsorption();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor23d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor23d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor23d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaMoistureAbsorption {
-	Handle_StepFEA_FeaMoistureAbsorption GetHandle() {
-	return *(Handle_StepFEA_FeaMoistureAbsorption*) &$self;
-	}
-};
-%extend StepFEA_FeaMoistureAbsorption {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaMoistureAbsorption::~StepFEA_FeaMoistureAbsorption %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaMoistureAbsorption {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_ElementRepresentation;
-class StepFEA_ElementRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_ElementRepresentation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodeList);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfNodeRepresentation NodeList() const;
-		%feature("autodoc", "1");
-		void SetNodeList(const Handle_StepFEA_HArray1OfNodeRepresentation &NodeList);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_ElementRepresentation {
-	Handle_StepFEA_ElementRepresentation GetHandle() {
-	return *(Handle_StepFEA_ElementRepresentation*) &$self;
-	}
-};
-%extend StepFEA_ElementRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_ElementRepresentation::~StepFEA_ElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_ElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Curve3dElementRepresentation;
-class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Curve3dElementRepresentation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aElementRepresentation_NodeList, const Handle_StepFEA_FeaModel3d &aModelRef, const Handle_StepElement_Curve3dElementDescriptor &aElementDescriptor, const Handle_StepFEA_Curve3dElementProperty &aProperty, const Handle_StepElement_ElementMaterial &aMaterial);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d ModelRef() const;
-		%feature("autodoc", "1");
-		void SetModelRef(const Handle_StepFEA_FeaModel3d &ModelRef);
-		%feature("autodoc", "1");
-		Handle_StepElement_Curve3dElementDescriptor ElementDescriptor() const;
-		%feature("autodoc", "1");
-		void SetElementDescriptor(const Handle_StepElement_Curve3dElementDescriptor &ElementDescriptor);
-		%feature("autodoc", "1");
-		Handle_StepFEA_Curve3dElementProperty Property() const;
-		%feature("autodoc", "1");
-		void SetProperty(const Handle_StepFEA_Curve3dElementProperty &Property);
-		%feature("autodoc", "1");
-		Handle_StepElement_ElementMaterial Material() const;
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_StepElement_ElementMaterial &Material);
-
-};
-%extend StepFEA_Curve3dElementRepresentation {
-	Handle_StepFEA_Curve3dElementRepresentation GetHandle() {
-	return *(Handle_StepFEA_Curve3dElementRepresentation*) &$self;
-	}
-};
-%extend StepFEA_Curve3dElementRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_Curve3dElementRepresentation::~StepFEA_Curve3dElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Curve3dElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Array1OfNodeRepresentation;
-class StepFEA_Array1OfNodeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Array1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_Array1OfNodeRepresentation(const Handle_StepFEA_NodeRepresentation &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_NodeRepresentation &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfNodeRepresentation & Assign(const StepFEA_Array1OfNodeRepresentation &Other);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfNodeRepresentation & operator=(const StepFEA_Array1OfNodeRepresentation &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepFEA_Array1OfNodeRepresentation::~StepFEA_Array1OfNodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Array1OfNodeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HArray1OfNodeRepresentation;
-class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_NodeRepresentation &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_NodeRepresentation &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfNodeRepresentation & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfNodeRepresentation & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HArray1OfNodeRepresentation {
-	Handle_StepFEA_HArray1OfNodeRepresentation GetHandle() {
-	return *(Handle_StepFEA_HArray1OfNodeRepresentation*) &$self;
-	}
-};
-%extend StepFEA_HArray1OfNodeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HArray1OfNodeRepresentation::~StepFEA_HArray1OfNodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HArray1OfNodeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4327,6 +3448,494 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepFEA_DegreeOfFreedomMember;
+class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_DegreeOfFreedomMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_DegreeOfFreedomMember {
+	Handle_StepFEA_DegreeOfFreedomMember GetHandle() {
+	return *(Handle_StepFEA_DegreeOfFreedomMember*) &$self;
+	}
+};
+%extend StepFEA_DegreeOfFreedomMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_DegreeOfFreedomMember::~StepFEA_DegreeOfFreedomMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_DegreeOfFreedomMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HSequenceOfElementGeometricRelationship;
+class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HSequenceOfElementGeometricRelationship();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_ElementGeometricRelationship &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_ElementGeometricRelationship &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementGeometricRelationship Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementGeometricRelationship & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementGeometricRelationship & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfElementGeometricRelationship & Sequence() const;
+		%feature("autodoc", "1");
+		StepFEA_SequenceOfElementGeometricRelationship & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfElementGeometricRelationship ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HSequenceOfElementGeometricRelationship {
+	Handle_StepFEA_HSequenceOfElementGeometricRelationship GetHandle() {
+	return *(Handle_StepFEA_HSequenceOfElementGeometricRelationship*) &$self;
+	}
+};
+%extend StepFEA_HSequenceOfElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HSequenceOfElementGeometricRelationship::~StepFEA_HSequenceOfElementGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Array1OfCurveElementInterval;
+class StepFEA_Array1OfCurveElementInterval {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Array1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_Array1OfCurveElementInterval(const Handle_StepFEA_CurveElementInterval &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementInterval &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfCurveElementInterval & Assign(const StepFEA_Array1OfCurveElementInterval &Other);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfCurveElementInterval & operator=(const StepFEA_Array1OfCurveElementInterval &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepFEA_Array1OfCurveElementInterval::~StepFEA_Array1OfCurveElementInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Array1OfCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_NodeRepresentation;
+class StepFEA_NodeRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_NodeRepresentation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_FeaModel &aModelRef);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModel ModelRef() const;
+		%feature("autodoc", "1");
+		void SetModelRef(const Handle_StepFEA_FeaModel &ModelRef);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_NodeRepresentation {
+	Handle_StepFEA_NodeRepresentation GetHandle() {
+	return *(Handle_StepFEA_NodeRepresentation*) &$self;
+	}
+};
+%extend StepFEA_NodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_NodeRepresentation::~StepFEA_NodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_NodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Node;
+class StepFEA_Node : public StepFEA_NodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Node();
+
+};
+%extend StepFEA_Node {
+	Handle_StepFEA_Node GetHandle() {
+	return *(Handle_StepFEA_Node*) &$self;
+	}
+};
+%extend StepFEA_Node {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_Node::~StepFEA_Node %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HArray1OfCurveElementInterval;
+class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementInterval &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementInterval &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfCurveElementInterval & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfCurveElementInterval & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HArray1OfCurveElementInterval {
+	Handle_StepFEA_HArray1OfCurveElementInterval GetHandle() {
+	return *(Handle_StepFEA_HArray1OfCurveElementInterval*) &$self;
+	}
+};
+%extend StepFEA_HArray1OfCurveElementInterval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HArray1OfCurveElementInterval::~StepFEA_HArray1OfCurveElementInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HArray1OfCurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HArray1OfElementRepresentation;
+class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_ElementRepresentation &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_ElementRepresentation &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfElementRepresentation & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfElementRepresentation & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HArray1OfElementRepresentation {
+	Handle_StepFEA_HArray1OfElementRepresentation GetHandle() {
+	return *(Handle_StepFEA_HArray1OfElementRepresentation*) &$self;
+	}
+};
+%extend StepFEA_HArray1OfElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HArray1OfElementRepresentation::~StepFEA_HArray1OfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HArray1OfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaShellMembraneStiffness;
+class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaShellMembraneStiffness();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor42d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaShellMembraneStiffness {
+	Handle_StepFEA_FeaShellMembraneStiffness GetHandle() {
+	return *(Handle_StepFEA_FeaShellMembraneStiffness*) &$self;
+	}
+};
+%extend StepFEA_FeaShellMembraneStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaShellMembraneStiffness::~StepFEA_FeaShellMembraneStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaShellMembraneStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ElementGeometricRelationship;
+class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ElementGeometricRelationship();
+		%feature("autodoc", "1");
+		void Init(const StepFEA_ElementOrElementGroup &aElementRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem, const StepElement_ElementAspect &aAspect);
+		%feature("autodoc", "1");
+		StepFEA_ElementOrElementGroup ElementRef() const;
+		%feature("autodoc", "1");
+		void SetElementRef(const StepFEA_ElementOrElementGroup &ElementRef);
+		%feature("autodoc", "1");
+		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
+		%feature("autodoc", "1");
+		StepElement_ElementAspect Aspect() const;
+		%feature("autodoc", "1");
+		void SetAspect(const StepElement_ElementAspect &Aspect);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_ElementGeometricRelationship {
+	Handle_StepFEA_ElementGeometricRelationship GetHandle() {
+	return *(Handle_StepFEA_ElementGeometricRelationship*) &$self;
+	}
+};
+%extend StepFEA_ElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_ElementGeometricRelationship::~StepFEA_ElementGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SymmetricTensor23d;
+class StepFEA_SymmetricTensor23d : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor23d();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_SelectMember NewMember() const;
+		%feature("autodoc", "1");
+		void SetIsotropicSymmetricTensor23d(const Standard_Real aVal);
+		%feature("autodoc", "1");
+		Standard_Real IsotropicSymmetricTensor23d() const;
+		%feature("autodoc", "1");
+		void SetOrthotropicSymmetricTensor23d(const Handle_TColStd_HArray1OfReal &aVal);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal OrthotropicSymmetricTensor23d() const;
+		%feature("autodoc", "1");
+		void SetAnisotropicSymmetricTensor23d(const Handle_TColStd_HArray1OfReal &aVal);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor23d() const;
+
+};
+%feature("shadow") StepFEA_SymmetricTensor23d::~StepFEA_SymmetricTensor23d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SymmetricTensor23d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepFEA_Array1OfCurveElementEndRelease;
 class StepFEA_Array1OfCurveElementEndRelease {
 	public:
@@ -4378,34 +3987,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepFEA_SymmetricTensor43dMember;
-class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
+%nodefaultctor StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
+class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor43dMember();
+		StepFEA_SequenceNodeOfSequenceOfNodeRepresentation(const Handle_StepFEA_NodeRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		char * Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
+		Handle_StepFEA_NodeRepresentation & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepFEA_SymmetricTensor43dMember {
-	Handle_StepFEA_SymmetricTensor43dMember GetHandle() {
-	return *(Handle_StepFEA_SymmetricTensor43dMember*) &$self;
+%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation GetHandle() {
+	return *(Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation*) &$self;
 	}
 };
-%extend StepFEA_SymmetricTensor43dMember {
+%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepFEA_SymmetricTensor43dMember::~StepFEA_SymmetricTensor43dMember %{
+%feature("shadow") StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4414,7 +4017,453 @@ def __del__(self):
 		pass
 %}
 
-%extend StepFEA_SymmetricTensor43dMember {
+%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_CurveElementInterval;
+class StepFEA_CurveElementInterval : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_CurveElementInterval();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementLocation &aFinishPosition, const Handle_StepBasic_EulerAngles &aEuAngles);
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementLocation FinishPosition() const;
+		%feature("autodoc", "1");
+		void SetFinishPosition(const Handle_StepFEA_CurveElementLocation &FinishPosition);
+		%feature("autodoc", "1");
+		Handle_StepBasic_EulerAngles EuAngles() const;
+		%feature("autodoc", "1");
+		void SetEuAngles(const Handle_StepBasic_EulerAngles &EuAngles);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_CurveElementInterval {
+	Handle_StepFEA_CurveElementInterval GetHandle() {
+	return *(Handle_StepFEA_CurveElementInterval*) &$self;
+	}
+};
+%extend StepFEA_CurveElementInterval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_CurveElementInterval::~StepFEA_CurveElementInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_CurveElementInterval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_NodeDefinition;
+class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_NodeDefinition();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_NodeDefinition {
+	Handle_StepFEA_NodeDefinition GetHandle() {
+	return *(Handle_StepFEA_NodeDefinition*) &$self;
+	}
+};
+%extend StepFEA_NodeDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_NodeDefinition::~StepFEA_NodeDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_NodeDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HArray1OfDegreeOfFreedom;
+class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfDegreeOfFreedom(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfDegreeOfFreedom(const Standard_Integer Low, const Standard_Integer Up, const StepFEA_DegreeOfFreedom &V);
+		%feature("autodoc", "1");
+		void Init(const StepFEA_DegreeOfFreedom &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepFEA_DegreeOfFreedom &Value);
+		%feature("autodoc", "1");
+		const StepFEA_DegreeOfFreedom & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepFEA_DegreeOfFreedom & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfDegreeOfFreedom & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfDegreeOfFreedom & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HArray1OfDegreeOfFreedom {
+	Handle_StepFEA_HArray1OfDegreeOfFreedom GetHandle() {
+	return *(Handle_StepFEA_HArray1OfDegreeOfFreedom*) &$self;
+	}
+};
+%extend StepFEA_HArray1OfDegreeOfFreedom {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HArray1OfDegreeOfFreedom::~StepFEA_HArray1OfDegreeOfFreedom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HArray1OfDegreeOfFreedom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaMoistureAbsorption;
+class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaMoistureAbsorption();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor23d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor23d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor23d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaMoistureAbsorption {
+	Handle_StepFEA_FeaMoistureAbsorption GetHandle() {
+	return *(Handle_StepFEA_FeaMoistureAbsorption*) &$self;
+	}
+};
+%extend StepFEA_FeaMoistureAbsorption {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaMoistureAbsorption::~StepFEA_FeaMoistureAbsorption %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaMoistureAbsorption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ElementRepresentation;
+class StepFEA_ElementRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ElementRepresentation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodeList);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfNodeRepresentation NodeList() const;
+		%feature("autodoc", "1");
+		void SetNodeList(const Handle_StepFEA_HArray1OfNodeRepresentation &NodeList);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_ElementRepresentation {
+	Handle_StepFEA_ElementRepresentation GetHandle() {
+	return *(Handle_StepFEA_ElementRepresentation*) &$self;
+	}
+};
+%extend StepFEA_ElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_ElementRepresentation::~StepFEA_ElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Curve3dElementRepresentation;
+class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Curve3dElementRepresentation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aElementRepresentation_NodeList, const Handle_StepFEA_FeaModel3d &aModelRef, const Handle_StepElement_Curve3dElementDescriptor &aElementDescriptor, const Handle_StepFEA_Curve3dElementProperty &aProperty, const Handle_StepElement_ElementMaterial &aMaterial);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModel3d ModelRef() const;
+		%feature("autodoc", "1");
+		void SetModelRef(const Handle_StepFEA_FeaModel3d &ModelRef);
+		%feature("autodoc", "1");
+		Handle_StepElement_Curve3dElementDescriptor ElementDescriptor() const;
+		%feature("autodoc", "1");
+		void SetElementDescriptor(const Handle_StepElement_Curve3dElementDescriptor &ElementDescriptor);
+		%feature("autodoc", "1");
+		Handle_StepFEA_Curve3dElementProperty Property() const;
+		%feature("autodoc", "1");
+		void SetProperty(const Handle_StepFEA_Curve3dElementProperty &Property);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementMaterial Material() const;
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_StepElement_ElementMaterial &Material);
+
+};
+%extend StepFEA_Curve3dElementRepresentation {
+	Handle_StepFEA_Curve3dElementRepresentation GetHandle() {
+	return *(Handle_StepFEA_Curve3dElementRepresentation*) &$self;
+	}
+};
+%extend StepFEA_Curve3dElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_Curve3dElementRepresentation::~StepFEA_Curve3dElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Curve3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaShellMembraneBendingCouplingStiffness;
+class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaShellMembraneBendingCouplingStiffness();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor42d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness GetHandle() {
+	return *(Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness*) &$self;
+	}
+};
+%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaShellMembraneBendingCouplingStiffness::~StepFEA_FeaShellMembraneBendingCouplingStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Array1OfNodeRepresentation;
+class StepFEA_Array1OfNodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Array1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_Array1OfNodeRepresentation(const Handle_StepFEA_NodeRepresentation &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_NodeRepresentation &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfNodeRepresentation & Assign(const StepFEA_Array1OfNodeRepresentation &Other);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfNodeRepresentation & operator=(const StepFEA_Array1OfNodeRepresentation &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepFEA_Array1OfNodeRepresentation::~StepFEA_Array1OfNodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Array1OfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ConstantSurface3dElementCoordinateSystem;
+class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ConstantSurface3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Standard_Integer aAxis, const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		Standard_Integer Axis() const;
+		%feature("autodoc", "1");
+		void SetAxis(const Standard_Integer Axis);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real Angle);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
+	Handle_StepFEA_ConstantSurface3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_ConstantSurface3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_ConstantSurface3dElementCoordinateSystem::~StepFEA_ConstantSurface3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaLinearElasticity;
+class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaLinearElasticity();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor43d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor43d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor43d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaLinearElasticity {
+	Handle_StepFEA_FeaLinearElasticity GetHandle() {
+	return *(Handle_StepFEA_FeaLinearElasticity*) &$self;
+	}
+};
+%extend StepFEA_FeaLinearElasticity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaLinearElasticity::~StepFEA_FeaLinearElasticity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaLinearElasticity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4506,7 +4555,7 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 };
 %extend StepFEA_Surface3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_Surface3dElementRepresentation::~StepFEA_Surface3dElementRepresentation %{
@@ -4592,7 +4641,7 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_Curve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_Curve3dElementProperty::~StepFEA_Curve3dElementProperty %{
@@ -4605,47 +4654,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_Curve3dElementProperty {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaShellMembraneStiffness;
-class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaShellMembraneStiffness();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor42d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaShellMembraneStiffness {
-	Handle_StepFEA_FeaShellMembraneStiffness GetHandle() {
-	return *(Handle_StepFEA_FeaShellMembraneStiffness*) &$self;
-	}
-};
-%extend StepFEA_FeaShellMembraneStiffness {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaShellMembraneStiffness::~StepFEA_FeaShellMembraneStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaShellMembraneStiffness {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4668,7 +4676,7 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 };
 %extend StepFEA_FeaModelDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaModelDefinition::~StepFEA_FeaModelDefinition %{
@@ -4703,7 +4711,7 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithSolutionCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeWithSolutionCoordinateSystem::~StepFEA_NodeWithSolutionCoordinateSystem %{
@@ -4744,7 +4752,7 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_ParametricCurve3dElementCoordinateDirection::~StepFEA_ParametricCurve3dElementCoordinateDirection %{
@@ -4757,57 +4765,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Array1OfCurveElementInterval;
-class StepFEA_Array1OfCurveElementInterval {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Array1OfCurveElementInterval(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_Array1OfCurveElementInterval(const Handle_StepFEA_CurveElementInterval &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementInterval &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfCurveElementInterval & Assign(const StepFEA_Array1OfCurveElementInterval &Other);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfCurveElementInterval & operator=(const StepFEA_Array1OfCurveElementInterval &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementInterval &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_CurveElementInterval & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementInterval & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementInterval & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepFEA_Array1OfCurveElementInterval::~StepFEA_Array1OfCurveElementInterval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Array1OfCurveElementInterval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4836,7 +4793,7 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 };
 %extend StepFEA_FeaGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaGroup::~StepFEA_FeaGroup %{
@@ -4849,6 +4806,47 @@ def __del__(self):
 %}
 
 %extend StepFEA_FeaGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FreedomsList;
+class StepFEA_FreedomsList : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FreedomsList();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_HArray1OfDegreeOfFreedom &aFreedoms);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfDegreeOfFreedom Freedoms() const;
+		%feature("autodoc", "1");
+		void SetFreedoms(const Handle_StepFEA_HArray1OfDegreeOfFreedom &Freedoms);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FreedomsList {
+	Handle_StepFEA_FreedomsList GetHandle() {
+	return *(Handle_StepFEA_FreedomsList*) &$self;
+	}
+};
+%extend StepFEA_FreedomsList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FreedomsList::~StepFEA_FreedomsList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FreedomsList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4908,7 +4906,7 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepFEA_NodeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeSet::~StepFEA_NodeSet %{
@@ -4949,7 +4947,7 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %extend StepFEA_FeaMassDensity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaMassDensity::~StepFEA_FeaMassDensity %{
@@ -4962,41 +4960,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_FeaMassDensity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaMaterialPropertyRepresentation;
-class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialPropertyRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaMaterialPropertyRepresentation {
-	Handle_StepFEA_FeaMaterialPropertyRepresentation GetHandle() {
-	return *(Handle_StepFEA_FeaMaterialPropertyRepresentation*) &$self;
-	}
-};
-%extend StepFEA_FeaMaterialPropertyRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaMaterialPropertyRepresentation::~StepFEA_FeaMaterialPropertyRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaMaterialPropertyRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5025,7 +4988,7 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 };
 %extend StepFEA_CurveElementIntervalConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementIntervalConstant::~StepFEA_CurveElementIntervalConstant %{
@@ -5060,7 +5023,7 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeWithVector::~StepFEA_NodeWithVector %{
@@ -5097,7 +5060,7 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 };
 %extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
@@ -5138,7 +5101,7 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 };
 %extend StepFEA_ElementGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_ElementGroup::~StepFEA_ElementGroup %{
@@ -5151,1041 +5114,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_ElementGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_ParametricCurve3dElementCoordinateSystem;
-class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_ParametricCurve3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &aDirection);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection Direction() const;
-		%feature("autodoc", "1");
-		void SetDirection(const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &Direction);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
-	Handle_StepFEA_ParametricCurve3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_ParametricCurve3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_ParametricCurve3dElementCoordinateSystem::~StepFEA_ParametricCurve3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Volume3dElementRepresentation;
-class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Volume3dElementRepresentation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aElementRepresentation_NodeList, const Handle_StepFEA_FeaModel3d &aModelRef, const Handle_StepElement_Volume3dElementDescriptor &aElementDescriptor, const Handle_StepElement_ElementMaterial &aMaterial);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaModel3d ModelRef() const;
-		%feature("autodoc", "1");
-		void SetModelRef(const Handle_StepFEA_FeaModel3d &ModelRef);
-		%feature("autodoc", "1");
-		Handle_StepElement_Volume3dElementDescriptor ElementDescriptor() const;
-		%feature("autodoc", "1");
-		void SetElementDescriptor(const Handle_StepElement_Volume3dElementDescriptor &ElementDescriptor);
-		%feature("autodoc", "1");
-		Handle_StepElement_ElementMaterial Material() const;
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_StepElement_ElementMaterial &Material);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_Volume3dElementRepresentation {
-	Handle_StepFEA_Volume3dElementRepresentation GetHandle() {
-	return *(Handle_StepFEA_Volume3dElementRepresentation*) &$self;
-	}
-};
-%extend StepFEA_Volume3dElementRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_Volume3dElementRepresentation::~StepFEA_Volume3dElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Volume3dElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FreedomAndCoefficient;
-class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FreedomAndCoefficient();
-		%feature("autodoc", "1");
-		void Init(const StepFEA_DegreeOfFreedom &aFreedom, const StepElement_MeasureOrUnspecifiedValue &aA);
-		%feature("autodoc", "1");
-		StepFEA_DegreeOfFreedom Freedom() const;
-		%feature("autodoc", "1");
-		void SetFreedom(const StepFEA_DegreeOfFreedom &Freedom);
-		%feature("autodoc", "1");
-		StepElement_MeasureOrUnspecifiedValue A() const;
-		%feature("autodoc", "1");
-		void SetA(const StepElement_MeasureOrUnspecifiedValue &A);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FreedomAndCoefficient {
-	Handle_StepFEA_FreedomAndCoefficient GetHandle() {
-	return *(Handle_StepFEA_FreedomAndCoefficient*) &$self;
-	}
-};
-%extend StepFEA_FreedomAndCoefficient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FreedomAndCoefficient::~StepFEA_FreedomAndCoefficient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FreedomAndCoefficient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_Array1OfElementRepresentation;
-class StepFEA_Array1OfElementRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_Array1OfElementRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_Array1OfElementRepresentation(const Handle_StepFEA_ElementRepresentation &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_ElementRepresentation &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfElementRepresentation & Assign(const StepFEA_Array1OfElementRepresentation &Other);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfElementRepresentation & operator=(const StepFEA_Array1OfElementRepresentation &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepFEA_Array1OfElementRepresentation::~StepFEA_Array1OfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_Array1OfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HSequenceOfNodeRepresentation;
-class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HSequenceOfNodeRepresentation();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_NodeRepresentation &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_NodeRepresentation &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfNodeRepresentation Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfNodeRepresentation & Sequence() const;
-		%feature("autodoc", "1");
-		StepFEA_SequenceOfNodeRepresentation & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfNodeRepresentation ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HSequenceOfNodeRepresentation {
-	Handle_StepFEA_HSequenceOfNodeRepresentation GetHandle() {
-	return *(Handle_StepFEA_HSequenceOfNodeRepresentation*) &$self;
-	}
-};
-%extend StepFEA_HSequenceOfNodeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HSequenceOfNodeRepresentation::~StepFEA_HSequenceOfNodeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HSequenceOfNodeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FreedomsList;
-class StepFEA_FreedomsList : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FreedomsList();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_HArray1OfDegreeOfFreedom &aFreedoms);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfDegreeOfFreedom Freedoms() const;
-		%feature("autodoc", "1");
-		void SetFreedoms(const Handle_StepFEA_HArray1OfDegreeOfFreedom &Freedoms);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FreedomsList {
-	Handle_StepFEA_FreedomsList GetHandle() {
-	return *(Handle_StepFEA_FreedomsList*) &$self;
-	}
-};
-%extend StepFEA_FreedomsList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FreedomsList::~StepFEA_FreedomsList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FreedomsList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaShellBendingStiffness;
-class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaShellBendingStiffness();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor42d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaShellBendingStiffness {
-	Handle_StepFEA_FeaShellBendingStiffness GetHandle() {
-	return *(Handle_StepFEA_FeaShellBendingStiffness*) &$self;
-	}
-};
-%extend StepFEA_FeaShellBendingStiffness {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaShellBendingStiffness::~StepFEA_FeaShellBendingStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaShellBendingStiffness {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_CurveElementEndOffset;
-class StepFEA_CurveElementEndOffset : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_CurveElementEndOffset();
-		%feature("autodoc", "1");
-		void Init(const StepFEA_CurveElementEndCoordinateSystem &aCoordinateSystem, const Handle_TColStd_HArray1OfReal &aOffsetVector);
-		%feature("autodoc", "1");
-		StepFEA_CurveElementEndCoordinateSystem CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const StepFEA_CurveElementEndCoordinateSystem &CoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal OffsetVector() const;
-		%feature("autodoc", "1");
-		void SetOffsetVector(const Handle_TColStd_HArray1OfReal &OffsetVector);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_CurveElementEndOffset {
-	Handle_StepFEA_CurveElementEndOffset GetHandle() {
-	return *(Handle_StepFEA_CurveElementEndOffset*) &$self;
-	}
-};
-%extend StepFEA_CurveElementEndOffset {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_CurveElementEndOffset::~StepFEA_CurveElementEndOffset %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_CurveElementEndOffset {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaAxis2Placement3d;
-class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaAxis2Placement3d();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepGeom_CartesianPoint &aPlacement_Location, const Standard_Boolean hasAxis2Placement3d_Axis, const Handle_StepGeom_Direction &aAxis2Placement3d_Axis, const Standard_Boolean hasAxis2Placement3d_RefDirection, const Handle_StepGeom_Direction &aAxis2Placement3d_RefDirection, const StepFEA_CoordinateSystemType aSystemType, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		StepFEA_CoordinateSystemType SystemType() const;
-		%feature("autodoc", "1");
-		void SetSystemType(const StepFEA_CoordinateSystemType SystemType);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaAxis2Placement3d {
-	Handle_StepFEA_FeaAxis2Placement3d GetHandle() {
-	return *(Handle_StepFEA_FeaAxis2Placement3d*) &$self;
-	}
-};
-%extend StepFEA_FeaAxis2Placement3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaAxis2Placement3d::~StepFEA_FeaAxis2Placement3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaAxis2Placement3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
-class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship(const Handle_StepFEA_ElementGeometricRelationship &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementGeometricRelationship & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
-	Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship GetHandle() {
-	return *(Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship*) &$self;
-	}
-};
-%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship::~StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_GeometricNode;
-class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_GeometricNode();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_GeometricNode {
-	Handle_StepFEA_GeometricNode GetHandle() {
-	return *(Handle_StepFEA_GeometricNode*) &$self;
-	}
-};
-%extend StepFEA_GeometricNode {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_GeometricNode::~StepFEA_GeometricNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_GeometricNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_NodeGroup;
-class StepFEA_NodeGroup : public StepFEA_FeaGroup {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_NodeGroup();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aFeaGroup_ModelRef, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodes);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HArray1OfNodeRepresentation Nodes() const;
-		%feature("autodoc", "1");
-		void SetNodes(const Handle_StepFEA_HArray1OfNodeRepresentation &Nodes);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_NodeGroup {
-	Handle_StepFEA_NodeGroup GetHandle() {
-	return *(Handle_StepFEA_NodeGroup*) &$self;
-	}
-};
-%extend StepFEA_NodeGroup {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_NodeGroup::~StepFEA_NodeGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_NodeGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
-class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor23d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor23d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor23d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
-	Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion GetHandle() {
-	return *(Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion*) &$self;
-	}
-};
-%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion::~StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaShellShearStiffness;
-class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaShellShearStiffness();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor22d &aFeaConstants);
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor22d FeaConstants() const;
-		%feature("autodoc", "1");
-		void SetFeaConstants(const StepFEA_SymmetricTensor22d &FeaConstants);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaShellShearStiffness {
-	Handle_StepFEA_FeaShellShearStiffness GetHandle() {
-	return *(Handle_StepFEA_FeaShellShearStiffness*) &$self;
-	}
-};
-%extend StepFEA_FeaShellShearStiffness {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaShellShearStiffness::~StepFEA_FeaShellShearStiffness %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaShellShearStiffness {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SymmetricTensor23dMember;
-class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor23dMember();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasName() const;
-		%feature("autodoc", "1");
-		virtual		char * Name() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetName(const char * name);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const char * name) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_SymmetricTensor23dMember {
-	Handle_StepFEA_SymmetricTensor23dMember GetHandle() {
-	return *(Handle_StepFEA_SymmetricTensor23dMember*) &$self;
-	}
-};
-%extend StepFEA_SymmetricTensor23dMember {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_SymmetricTensor23dMember::~StepFEA_SymmetricTensor23dMember %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SymmetricTensor23dMember {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HSequenceOfElementGeometricRelationship;
-class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HSequenceOfElementGeometricRelationship();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_ElementGeometricRelationship &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_ElementGeometricRelationship &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfElementGeometricRelationship &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementGeometricRelationship Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_StepFEA_ElementGeometricRelationship &anItem);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_ElementGeometricRelationship & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementGeometricRelationship & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const StepFEA_SequenceOfElementGeometricRelationship & Sequence() const;
-		%feature("autodoc", "1");
-		StepFEA_SequenceOfElementGeometricRelationship & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_StepFEA_HSequenceOfElementGeometricRelationship ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HSequenceOfElementGeometricRelationship {
-	Handle_StepFEA_HSequenceOfElementGeometricRelationship GetHandle() {
-	return *(Handle_StepFEA_HSequenceOfElementGeometricRelationship*) &$self;
-	}
-};
-%extend StepFEA_HSequenceOfElementGeometricRelationship {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HSequenceOfElementGeometricRelationship::~StepFEA_HSequenceOfElementGeometricRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HSequenceOfElementGeometricRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SymmetricTensor22d;
-class StepFEA_SymmetricTensor22d : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SymmetricTensor22d();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor22d() const;
-
-};
-%feature("shadow") StepFEA_SymmetricTensor22d::~StepFEA_SymmetricTensor22d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SymmetricTensor22d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_DummyNode;
-class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_DummyNode();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_DummyNode {
-	Handle_StepFEA_DummyNode GetHandle() {
-	return *(Handle_StepFEA_DummyNode*) &$self;
-	}
-};
-%extend StepFEA_DummyNode {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_DummyNode::~StepFEA_DummyNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_DummyNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaModel;
-class StepFEA_FeaModel : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaModel();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_TCollection_HAsciiString &aCreatingSoftware, const Handle_TColStd_HArray1OfAsciiString &aIntendedAnalysisCode, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &aAnalysisType);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString CreatingSoftware() const;
-		%feature("autodoc", "1");
-		void SetCreatingSoftware(const Handle_TCollection_HAsciiString &CreatingSoftware);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfAsciiString IntendedAnalysisCode() const;
-		%feature("autodoc", "1");
-		void SetIntendedAnalysisCode(const Handle_TColStd_HArray1OfAsciiString &IntendedAnalysisCode);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString AnalysisType() const;
-		%feature("autodoc", "1");
-		void SetAnalysisType(const Handle_TCollection_HAsciiString &AnalysisType);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaModel {
-	Handle_StepFEA_FeaModel GetHandle() {
-	return *(Handle_StepFEA_FeaModel*) &$self;
-	}
-};
-%extend StepFEA_FeaModel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaModel::~StepFEA_FeaModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaModel3d;
-class StepFEA_FeaModel3d : public StepFEA_FeaModel {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaModel3d();
-
-};
-%extend StepFEA_FeaModel3d {
-	Handle_StepFEA_FeaModel3d GetHandle() {
-	return *(Handle_StepFEA_FeaModel3d*) &$self;
-	}
-};
-%extend StepFEA_FeaModel3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaModel3d::~StepFEA_FeaModel3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaModel3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaAreaDensity;
-class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaAreaDensity();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Standard_Real aFeaConstant);
-		%feature("autodoc", "1");
-		Standard_Real FeaConstant() const;
-		%feature("autodoc", "1");
-		void SetFeaConstant(const Standard_Real FeaConstant);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaAreaDensity {
-	Handle_StepFEA_FeaAreaDensity GetHandle() {
-	return *(Handle_StepFEA_FeaAreaDensity*) &$self;
-	}
-};
-%extend StepFEA_FeaAreaDensity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaAreaDensity::~StepFEA_FeaAreaDensity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaAreaDensity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
-class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_SequenceNodeOfSequenceOfElementRepresentation(const Handle_StepFEA_ElementRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepFEA_ElementRepresentation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
-	Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation GetHandle() {
-	return *(Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation*) &$self;
-	}
-};
-%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementRepresentation::~StepFEA_SequenceNodeOfSequenceOfElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_HArray1OfCurveElementEndRelease;
-class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementEndRelease(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepFEA_HArray1OfCurveElementEndRelease(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementEndRelease &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepFEA_CurveElementEndRelease &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementEndRelease &Value);
-		%feature("autodoc", "1");
-		const Handle_StepFEA_CurveElementEndRelease & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepFEA_CurveElementEndRelease & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepFEA_Array1OfCurveElementEndRelease & Array1() const;
-		%feature("autodoc", "1");
-		StepFEA_Array1OfCurveElementEndRelease & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_HArray1OfCurveElementEndRelease {
-	Handle_StepFEA_HArray1OfCurveElementEndRelease GetHandle() {
-	return *(Handle_StepFEA_HArray1OfCurveElementEndRelease*) &$self;
-	}
-};
-%extend StepFEA_HArray1OfCurveElementEndRelease {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_HArray1OfCurveElementEndRelease::~StepFEA_HArray1OfCurveElementEndRelease %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_HArray1OfCurveElementEndRelease {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6252,7 +5180,7 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfCurve3dElementProperty::~StepFEA_HSequenceOfCurve3dElementProperty %{
@@ -6265,6 +5193,1105 @@ def __del__(self):
 %}
 
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_Volume3dElementRepresentation;
+class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_Volume3dElementRepresentation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_StepFEA_HArray1OfNodeRepresentation &aElementRepresentation_NodeList, const Handle_StepFEA_FeaModel3d &aModelRef, const Handle_StepElement_Volume3dElementDescriptor &aElementDescriptor, const Handle_StepElement_ElementMaterial &aMaterial);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaModel3d ModelRef() const;
+		%feature("autodoc", "1");
+		void SetModelRef(const Handle_StepFEA_FeaModel3d &ModelRef);
+		%feature("autodoc", "1");
+		Handle_StepElement_Volume3dElementDescriptor ElementDescriptor() const;
+		%feature("autodoc", "1");
+		void SetElementDescriptor(const Handle_StepElement_Volume3dElementDescriptor &ElementDescriptor);
+		%feature("autodoc", "1");
+		Handle_StepElement_ElementMaterial Material() const;
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_StepElement_ElementMaterial &Material);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_Volume3dElementRepresentation {
+	Handle_StepFEA_Volume3dElementRepresentation GetHandle() {
+	return *(Handle_StepFEA_Volume3dElementRepresentation*) &$self;
+	}
+};
+%extend StepFEA_Volume3dElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_Volume3dElementRepresentation::~StepFEA_Volume3dElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_Volume3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FreedomAndCoefficient;
+class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FreedomAndCoefficient();
+		%feature("autodoc", "1");
+		void Init(const StepFEA_DegreeOfFreedom &aFreedom, const StepElement_MeasureOrUnspecifiedValue &aA);
+		%feature("autodoc", "1");
+		StepFEA_DegreeOfFreedom Freedom() const;
+		%feature("autodoc", "1");
+		void SetFreedom(const StepFEA_DegreeOfFreedom &Freedom);
+		%feature("autodoc", "1");
+		StepElement_MeasureOrUnspecifiedValue A() const;
+		%feature("autodoc", "1");
+		void SetA(const StepElement_MeasureOrUnspecifiedValue &A);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FreedomAndCoefficient {
+	Handle_StepFEA_FreedomAndCoefficient GetHandle() {
+	return *(Handle_StepFEA_FreedomAndCoefficient*) &$self;
+	}
+};
+%extend StepFEA_FreedomAndCoefficient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FreedomAndCoefficient::~StepFEA_FreedomAndCoefficient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FreedomAndCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HSequenceOfNodeRepresentation;
+class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HSequenceOfNodeRepresentation();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_NodeRepresentation &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_NodeRepresentation &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepFEA_HSequenceOfNodeRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfNodeRepresentation Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_StepFEA_NodeRepresentation &anItem);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfNodeRepresentation & Sequence() const;
+		%feature("autodoc", "1");
+		StepFEA_SequenceOfNodeRepresentation & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_StepFEA_HSequenceOfNodeRepresentation ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HSequenceOfNodeRepresentation {
+	Handle_StepFEA_HSequenceOfNodeRepresentation GetHandle() {
+	return *(Handle_StepFEA_HSequenceOfNodeRepresentation*) &$self;
+	}
+};
+%extend StepFEA_HSequenceOfNodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HSequenceOfNodeRepresentation::~StepFEA_HSequenceOfNodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HSequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaShellBendingStiffness;
+class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaShellBendingStiffness();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor42d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor42d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor42d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaShellBendingStiffness {
+	Handle_StepFEA_FeaShellBendingStiffness GetHandle() {
+	return *(Handle_StepFEA_FeaShellBendingStiffness*) &$self;
+	}
+};
+%extend StepFEA_FeaShellBendingStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaShellBendingStiffness::~StepFEA_FeaShellBendingStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaShellBendingStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ParametricCurve3dElementCoordinateSystem;
+class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ParametricCurve3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &aDirection);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ParametricCurve3dElementCoordinateDirection Direction() const;
+		%feature("autodoc", "1");
+		void SetDirection(const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &Direction);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
+	Handle_StepFEA_ParametricCurve3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_ParametricCurve3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_ParametricCurve3dElementCoordinateSystem::~StepFEA_ParametricCurve3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_CurveElementEndOffset;
+class StepFEA_CurveElementEndOffset : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_CurveElementEndOffset();
+		%feature("autodoc", "1");
+		void Init(const StepFEA_CurveElementEndCoordinateSystem &aCoordinateSystem, const Handle_TColStd_HArray1OfReal &aOffsetVector);
+		%feature("autodoc", "1");
+		StepFEA_CurveElementEndCoordinateSystem CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const StepFEA_CurveElementEndCoordinateSystem &CoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal OffsetVector() const;
+		%feature("autodoc", "1");
+		void SetOffsetVector(const Handle_TColStd_HArray1OfReal &OffsetVector);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_CurveElementEndOffset {
+	Handle_StepFEA_CurveElementEndOffset GetHandle() {
+	return *(Handle_StepFEA_CurveElementEndOffset*) &$self;
+	}
+};
+%extend StepFEA_CurveElementEndOffset {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_CurveElementEndOffset::~StepFEA_CurveElementEndOffset %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_CurveElementEndOffset {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_CurveElementIntervalLinearlyVarying;
+class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementInterval {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_CurveElementIntervalLinearlyVarying();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementLocation &aCurveElementInterval_FinishPosition, const Handle_StepBasic_EulerAngles &aCurveElementInterval_EuAngles, const Handle_StepElement_HArray1OfCurveElementSectionDefinition &aSections);
+		%feature("autodoc", "1");
+		Handle_StepElement_HArray1OfCurveElementSectionDefinition Sections() const;
+		%feature("autodoc", "1");
+		void SetSections(const Handle_StepElement_HArray1OfCurveElementSectionDefinition &Sections);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_CurveElementIntervalLinearlyVarying {
+	Handle_StepFEA_CurveElementIntervalLinearlyVarying GetHandle() {
+	return *(Handle_StepFEA_CurveElementIntervalLinearlyVarying*) &$self;
+	}
+};
+%extend StepFEA_CurveElementIntervalLinearlyVarying {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_CurveElementIntervalLinearlyVarying::~StepFEA_CurveElementIntervalLinearlyVarying %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_CurveElementIntervalLinearlyVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
+class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship(const Handle_StepFEA_ElementGeometricRelationship &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementGeometricRelationship & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship GetHandle() {
+	return *(Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship*) &$self;
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship::~StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaAxis2Placement3d;
+class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaAxis2Placement3d();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepGeom_CartesianPoint &aPlacement_Location, const Standard_Boolean hasAxis2Placement3d_Axis, const Handle_StepGeom_Direction &aAxis2Placement3d_Axis, const Standard_Boolean hasAxis2Placement3d_RefDirection, const Handle_StepGeom_Direction &aAxis2Placement3d_RefDirection, const StepFEA_CoordinateSystemType aSystemType, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		StepFEA_CoordinateSystemType SystemType() const;
+		%feature("autodoc", "1");
+		void SetSystemType(const StepFEA_CoordinateSystemType SystemType);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaAxis2Placement3d {
+	Handle_StepFEA_FeaAxis2Placement3d GetHandle() {
+	return *(Handle_StepFEA_FeaAxis2Placement3d*) &$self;
+	}
+};
+%extend StepFEA_FeaAxis2Placement3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaAxis2Placement3d::~StepFEA_FeaAxis2Placement3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaAxis2Placement3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_ArbitraryVolume3dElementCoordinateSystem;
+class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_ArbitraryVolume3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_ArbitraryVolume3dElementCoordinateSystem::~StepFEA_ArbitraryVolume3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_GeometricNode;
+class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_GeometricNode();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_GeometricNode {
+	Handle_StepFEA_GeometricNode GetHandle() {
+	return *(Handle_StepFEA_GeometricNode*) &$self;
+	}
+};
+%extend StepFEA_GeometricNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_GeometricNode::~StepFEA_GeometricNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_GeometricNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaShellShearStiffness;
+class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaShellShearStiffness();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor22d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor22d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor22d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaShellShearStiffness {
+	Handle_StepFEA_FeaShellShearStiffness GetHandle() {
+	return *(Handle_StepFEA_FeaShellShearStiffness*) &$self;
+	}
+};
+%extend StepFEA_FeaShellShearStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaShellShearStiffness::~StepFEA_FeaShellShearStiffness %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaShellShearStiffness {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_NodeGroup;
+class StepFEA_NodeGroup : public StepFEA_FeaGroup {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_NodeGroup();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aGroup_Name, const Handle_TCollection_HAsciiString &aGroup_Description, const Handle_StepFEA_FeaModel &aFeaGroup_ModelRef, const Handle_StepFEA_HArray1OfNodeRepresentation &aNodes);
+		%feature("autodoc", "1");
+		Handle_StepFEA_HArray1OfNodeRepresentation Nodes() const;
+		%feature("autodoc", "1");
+		void SetNodes(const Handle_StepFEA_HArray1OfNodeRepresentation &Nodes);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_NodeGroup {
+	Handle_StepFEA_NodeGroup GetHandle() {
+	return *(Handle_StepFEA_NodeGroup*) &$self;
+	}
+};
+%extend StepFEA_NodeGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_NodeGroup::~StepFEA_NodeGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_NodeGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
+class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const StepFEA_SymmetricTensor23d &aFeaConstants);
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor23d FeaConstants() const;
+		%feature("autodoc", "1");
+		void SetFeaConstants(const StepFEA_SymmetricTensor23d &FeaConstants);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion GetHandle() {
+	return *(Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion*) &$self;
+	}
+};
+%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion::~StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SymmetricTensor23dMember;
+class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor23dMember();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasName() const;
+		%feature("autodoc", "1");
+		virtual		char * Name() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetName(const char * name);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const char * name) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_SymmetricTensor23dMember {
+	Handle_StepFEA_SymmetricTensor23dMember GetHandle() {
+	return *(Handle_StepFEA_SymmetricTensor23dMember*) &$self;
+	}
+};
+%extend StepFEA_SymmetricTensor23dMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_SymmetricTensor23dMember::~StepFEA_SymmetricTensor23dMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SymmetricTensor23dMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SymmetricTensor42d;
+class StepFEA_SymmetricTensor42d : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor42d();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor42d() const;
+
+};
+%feature("shadow") StepFEA_SymmetricTensor42d::~StepFEA_SymmetricTensor42d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SymmetricTensor42d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SymmetricTensor22d;
+class StepFEA_SymmetricTensor22d : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SymmetricTensor22d();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal AnisotropicSymmetricTensor22d() const;
+
+};
+%feature("shadow") StepFEA_SymmetricTensor22d::~StepFEA_SymmetricTensor22d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SymmetricTensor22d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_DummyNode;
+class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_DummyNode();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_DummyNode {
+	Handle_StepFEA_DummyNode GetHandle() {
+	return *(Handle_StepFEA_DummyNode*) &$self;
+	}
+};
+%extend StepFEA_DummyNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_DummyNode::~StepFEA_DummyNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_DummyNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SequenceOfNodeRepresentation;
+class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SequenceOfNodeRepresentation();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfNodeRepresentation & Assign(const StepFEA_SequenceOfNodeRepresentation &Other);
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfNodeRepresentation & operator=(const StepFEA_SequenceOfNodeRepresentation &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_NodeRepresentation &T);
+		%feature("autodoc", "1");
+		void Append(StepFEA_SequenceOfNodeRepresentation & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_NodeRepresentation &T);
+		%feature("autodoc", "1");
+		void Prepend(StepFEA_SequenceOfNodeRepresentation & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & First() const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, StepFEA_SequenceOfNodeRepresentation & S);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &I);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") StepFEA_SequenceOfNodeRepresentation::~StepFEA_SequenceOfNodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SequenceOfNodeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaModel;
+class StepFEA_FeaModel : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaModel();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentation_Name, const Handle_StepRepr_HArray1OfRepresentationItem &aRepresentation_Items, const Handle_StepRepr_RepresentationContext &aRepresentation_ContextOfItems, const Handle_TCollection_HAsciiString &aCreatingSoftware, const Handle_TColStd_HArray1OfAsciiString &aIntendedAnalysisCode, const Handle_TCollection_HAsciiString &aDescription, const Handle_TCollection_HAsciiString &aAnalysisType);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString CreatingSoftware() const;
+		%feature("autodoc", "1");
+		void SetCreatingSoftware(const Handle_TCollection_HAsciiString &CreatingSoftware);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfAsciiString IntendedAnalysisCode() const;
+		%feature("autodoc", "1");
+		void SetIntendedAnalysisCode(const Handle_TColStd_HArray1OfAsciiString &IntendedAnalysisCode);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString AnalysisType() const;
+		%feature("autodoc", "1");
+		void SetAnalysisType(const Handle_TCollection_HAsciiString &AnalysisType);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaModel {
+	Handle_StepFEA_FeaModel GetHandle() {
+	return *(Handle_StepFEA_FeaModel*) &$self;
+	}
+};
+%extend StepFEA_FeaModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaModel::~StepFEA_FeaModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaAreaDensity;
+class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaAreaDensity();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Standard_Real aFeaConstant);
+		%feature("autodoc", "1");
+		Standard_Real FeaConstant() const;
+		%feature("autodoc", "1");
+		void SetFeaConstant(const Standard_Real FeaConstant);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaAreaDensity {
+	Handle_StepFEA_FeaAreaDensity GetHandle() {
+	return *(Handle_StepFEA_FeaAreaDensity*) &$self;
+	}
+};
+%extend StepFEA_FeaAreaDensity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaAreaDensity::~StepFEA_FeaAreaDensity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaAreaDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HArray1OfCurveElementEndRelease;
+class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementEndRelease(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfCurveElementEndRelease(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_CurveElementEndRelease &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_CurveElementEndRelease &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_CurveElementEndRelease &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_CurveElementEndRelease & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_CurveElementEndRelease & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfCurveElementEndRelease & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfCurveElementEndRelease & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HArray1OfCurveElementEndRelease {
+	Handle_StepFEA_HArray1OfCurveElementEndRelease GetHandle() {
+	return *(Handle_StepFEA_HArray1OfCurveElementEndRelease*) &$self;
+	}
+};
+%extend StepFEA_HArray1OfCurveElementEndRelease {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HArray1OfCurveElementEndRelease::~StepFEA_HArray1OfCurveElementEndRelease %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HArray1OfCurveElementEndRelease {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_FeaModel3d;
+class StepFEA_FeaModel3d : public StepFEA_FeaModel {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaModel3d();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaModel3d {
+	Handle_StepFEA_FeaModel3d GetHandle() {
+	return *(Handle_StepFEA_FeaModel3d*) &$self;
+	}
+};
+%extend StepFEA_FeaModel3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaModel3d::~StepFEA_FeaModel3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaModel3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_AlignedSurface3dElementCoordinateSystem;
+class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_AlignedSurface3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
+	Handle_StepFEA_AlignedSurface3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_AlignedSurface3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_AlignedSurface3dElementCoordinateSystem::~StepFEA_AlignedSurface3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_HArray1OfNodeRepresentation;
+class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepFEA_HArray1OfNodeRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepFEA_NodeRepresentation &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepFEA_NodeRepresentation &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_NodeRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_NodeRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepFEA_NodeRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepFEA_Array1OfNodeRepresentation & Array1() const;
+		%feature("autodoc", "1");
+		StepFEA_Array1OfNodeRepresentation & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_HArray1OfNodeRepresentation {
+	Handle_StepFEA_HArray1OfNodeRepresentation GetHandle() {
+	return *(Handle_StepFEA_HArray1OfNodeRepresentation*) &$self;
+	}
+};
+%extend StepFEA_HArray1OfNodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_HArray1OfNodeRepresentation::~StepFEA_HArray1OfNodeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_HArray1OfNodeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6336,6 +6363,157 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepFEA_FeaCurveSectionGeometricRelationship;
+class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_FeaCurveSectionGeometricRelationship();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepElement_CurveElementSectionDefinition &aSectionRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_CurveElementSectionDefinition SectionRef() const;
+		%feature("autodoc", "1");
+		void SetSectionRef(const Handle_StepElement_CurveElementSectionDefinition &SectionRef);
+		%feature("autodoc", "1");
+		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
+		%feature("autodoc", "1");
+		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_FeaCurveSectionGeometricRelationship {
+	Handle_StepFEA_FeaCurveSectionGeometricRelationship GetHandle() {
+	return *(Handle_StepFEA_FeaCurveSectionGeometricRelationship*) &$self;
+	}
+};
+%extend StepFEA_FeaCurveSectionGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_FeaCurveSectionGeometricRelationship::~StepFEA_FeaCurveSectionGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_FeaCurveSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_SequenceOfElementRepresentation;
+class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_SequenceOfElementRepresentation();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfElementRepresentation & Assign(const StepFEA_SequenceOfElementRepresentation &Other);
+		%feature("autodoc", "1");
+		const StepFEA_SequenceOfElementRepresentation & operator=(const StepFEA_SequenceOfElementRepresentation &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepFEA_ElementRepresentation &T);
+		%feature("autodoc", "1");
+		void Append(StepFEA_SequenceOfElementRepresentation & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepFEA_ElementRepresentation &T);
+		%feature("autodoc", "1");
+		void Prepend(StepFEA_SequenceOfElementRepresentation & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & First() const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, StepFEA_SequenceOfElementRepresentation & S);
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepFEA_ElementRepresentation &I);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepFEA_ElementRepresentation & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") StepFEA_SequenceOfElementRepresentation::~StepFEA_SequenceOfElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_SequenceOfElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
+class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepFEA_AlignedCurve3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
+		%feature("autodoc", "1");
+		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
+		%feature("autodoc", "1");
+		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	Handle_StepFEA_AlignedCurve3dElementCoordinateSystem GetHandle() {
+	return *(Handle_StepFEA_AlignedCurve3dElementCoordinateSystem*) &$self;
+	}
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepFEA_AlignedCurve3dElementCoordinateSystem::~StepFEA_AlignedCurve3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepFEA_DegreeOfFreedom;
 class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 	public:
@@ -6367,178 +6545,6 @@ def __del__(self):
 %}
 
 %extend StepFEA_DegreeOfFreedom {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_FeaCurveSectionGeometricRelationship;
-class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_FeaCurveSectionGeometricRelationship();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepElement_CurveElementSectionDefinition &aSectionRef, const Handle_StepElement_AnalysisItemWithinRepresentation &aItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_CurveElementSectionDefinition SectionRef() const;
-		%feature("autodoc", "1");
-		void SetSectionRef(const Handle_StepElement_CurveElementSectionDefinition &SectionRef);
-		%feature("autodoc", "1");
-		Handle_StepElement_AnalysisItemWithinRepresentation Item() const;
-		%feature("autodoc", "1");
-		void SetItem(const Handle_StepElement_AnalysisItemWithinRepresentation &Item);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_FeaCurveSectionGeometricRelationship {
-	Handle_StepFEA_FeaCurveSectionGeometricRelationship GetHandle() {
-	return *(Handle_StepFEA_FeaCurveSectionGeometricRelationship*) &$self;
-	}
-};
-%extend StepFEA_FeaCurveSectionGeometricRelationship {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_FeaCurveSectionGeometricRelationship::~StepFEA_FeaCurveSectionGeometricRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_FeaCurveSectionGeometricRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
-class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_AlignedCurve3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	Handle_StepFEA_AlignedCurve3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_AlignedCurve3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_AlignedCurve3dElementCoordinateSystem::~StepFEA_AlignedCurve3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_ArbitraryVolume3dElementCoordinateSystem;
-class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_ArbitraryVolume3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepFEA_FeaAxis2Placement3d &aCoordinateSystem);
-		%feature("autodoc", "1");
-		Handle_StepFEA_FeaAxis2Placement3d CoordinateSystem() const;
-		%feature("autodoc", "1");
-		void SetCoordinateSystem(const Handle_StepFEA_FeaAxis2Placement3d &CoordinateSystem);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
-	Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_ArbitraryVolume3dElementCoordinateSystem::~StepFEA_ArbitraryVolume3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepFEA_ConstantSurface3dElementCoordinateSystem;
-class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepFEA_ConstantSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Standard_Integer aAxis, const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		Standard_Integer Axis() const;
-		%feature("autodoc", "1");
-		void SetAxis(const Standard_Integer Axis);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real Angle);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
-	Handle_StepFEA_ConstantSurface3dElementCoordinateSystem GetHandle() {
-	return *(Handle_StepFEA_ConstantSurface3dElementCoordinateSystem*) &$self;
-	}
-};
-%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepFEA_ConstantSurface3dElementCoordinateSystem::~StepFEA_ConstantSurface3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
 	void _kill_pointed() {
 		delete $self;
 	}

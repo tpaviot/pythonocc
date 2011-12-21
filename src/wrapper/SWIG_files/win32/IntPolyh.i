@@ -226,6 +226,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPolyh_Couple;
+class IntPolyh_Couple {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Couple();
+		%feature("autodoc", "1");
+		IntPolyh_Couple(const Standard_Integer i1, const Standard_Integer i2);
+		%feature("autodoc", "1");
+		Standard_Integer FirstValue() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondValue() const;
+		%feature("autodoc", "1");
+		Standard_Integer AnalyseFlagValue() const;
+		%feature("autodoc", "1");
+		Standard_Real AngleValue() const;
+		%feature("autodoc", "1");
+		void SetCoupleValue(const Standard_Integer v, const Standard_Integer w);
+		%feature("autodoc", "1");
+		void SetAnalyseFlag(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetAngleValue(const Standard_Real ang);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer v) const;
+
+};
+%feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_Couple {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPolyh_ArrayOfCouples;
 class IntPolyh_ArrayOfCouples {
 	public:
@@ -265,43 +306,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_ArrayOfCouples {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_SequenceNodeOfSeqOfStartPoints;
-class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_SequenceNodeOfSeqOfStartPoints(const IntPolyh_StartPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
-	Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints GetHandle() {
-	return *(Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints*) &$self;
-	}
-};
-%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -408,47 +412,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPolyh_Couple;
-class IntPolyh_Couple {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_Couple();
-		%feature("autodoc", "1");
-		IntPolyh_Couple(const Standard_Integer i1, const Standard_Integer i2);
-		%feature("autodoc", "1");
-		Standard_Integer FirstValue() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondValue() const;
-		%feature("autodoc", "1");
-		Standard_Integer AnalyseFlagValue() const;
-		%feature("autodoc", "1");
-		Standard_Real AngleValue() const;
-		%feature("autodoc", "1");
-		void SetCoupleValue(const Standard_Integer v, const Standard_Integer w);
-		%feature("autodoc", "1");
-		void SetAnalyseFlag(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetAngleValue(const Standard_Real ang);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer v) const;
-
-};
-%feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_Couple {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPolyh_ArrayOfEdges;
 class IntPolyh_ArrayOfEdges {
 	public:
@@ -494,6 +457,43 @@ def __del__(self):
 %}
 
 %extend IntPolyh_ArrayOfEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPolyh_SequenceNodeOfSeqOfStartPoints;
+class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_SequenceNodeOfSeqOfStartPoints(const IntPolyh_StartPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints GetHandle() {
+	return *(Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints*) &$self;
+	}
+};
+%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -726,6 +726,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPolyh_ArrayOfTriangles;
+class IntPolyh_ArrayOfTriangles {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTriangles();
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTriangles(const Standard_Integer nn);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nn);
+		%feature("autodoc", "1");
+		Standard_Integer const GetN() const;
+		%feature("autodoc", "1");
+		Standard_Integer const NbTriangles() const;
+		%feature("autodoc", "1");
+		void SetNbTriangles(const Standard_Integer endaot);
+		%feature("autodoc", "1");
+		void IncNbTriangles();
+		%feature("autodoc", "1");
+		const IntPolyh_Triangle & Value(const Standard_Integer nn) const;
+		%feature("autodoc", "1");
+		const IntPolyh_Triangle & operator[](const Standard_Integer nn) const;
+		%feature("autodoc", "1");
+		IntPolyh_Triangle & ChangeValue(const Standard_Integer nn);
+		%feature("autodoc", "1");
+		IntPolyh_Triangle & operator[](const Standard_Integer nn);
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTriangles & Copy(const IntPolyh_ArrayOfTriangles &Other);
+		%feature("autodoc", "1");
+		IntPolyh_ArrayOfTriangles & operator=(const IntPolyh_ArrayOfTriangles &Other);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void DumpFleches() const;
+
+};
+%feature("shadow") IntPolyh_ArrayOfTriangles::~IntPolyh_ArrayOfTriangles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_ArrayOfTriangles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPolyh_SeqOfStartPoints;
 class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 	public:
@@ -836,59 +889,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_ArrayOfPoints {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_ArrayOfTriangles;
-class IntPolyh_ArrayOfTriangles {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles();
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		Standard_Integer const GetN() const;
-		%feature("autodoc", "1");
-		Standard_Integer const NbTriangles() const;
-		%feature("autodoc", "1");
-		void SetNbTriangles(const Standard_Integer endaot);
-		%feature("autodoc", "1");
-		void IncNbTriangles();
-		%feature("autodoc", "1");
-		const IntPolyh_Triangle & Value(const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		const IntPolyh_Triangle & operator[](const Standard_Integer nn) const;
-		%feature("autodoc", "1");
-		IntPolyh_Triangle & ChangeValue(const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_Triangle & operator[](const Standard_Integer nn);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles & Copy(const IntPolyh_ArrayOfTriangles &Other);
-		%feature("autodoc", "1");
-		IntPolyh_ArrayOfTriangles & operator=(const IntPolyh_ArrayOfTriangles &Other);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void DumpFleches() const;
-
-};
-%feature("shadow") IntPolyh_ArrayOfTriangles::~IntPolyh_ArrayOfTriangles %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_ArrayOfTriangles {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -438,7 +438,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_HArray1OfDataMapOfGUIDDriver::~TFunction_HArray1OfDataMapOfGUIDDriver %{
@@ -477,7 +477,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel %{
@@ -490,53 +490,6 @@ def __del__(self):
 %}
 
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TFunction_DoubleMapOfIntegerLabel;
-class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & Assign(const TFunction_DoubleMapOfIntegerLabel &Other);
-		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapOfIntegerLabel &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
-		%feature("autodoc", "1");
-		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound2(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_Label & Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Find2(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind1(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind2(const TDF_Label &K);
-
-};
-%feature("shadow") TFunction_DoubleMapOfIntegerLabel::~TFunction_DoubleMapOfIntegerLabel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TFunction_DoubleMapOfIntegerLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -605,7 +558,7 @@ class TFunction_Scope : public TDF_Attribute {
 };
 %extend TFunction_Scope {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_Scope::~TFunction_Scope %{
@@ -726,42 +679,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor TFunction_Array1OfDataMapOfGUIDDriver;
-class TFunction_Array1OfDataMapOfGUIDDriver {
+%nodefaultctor TFunction_DoubleMapOfIntegerLabel;
+class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TFunction_Array1OfDataMapOfGUIDDriver(const Standard_Integer Low, const Standard_Integer Up);
+		TFunction_DoubleMapOfIntegerLabel(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TFunction_Array1OfDataMapOfGUIDDriver(const TFunction_DataMapOfGUIDDriver &Item, const Standard_Integer Low, const Standard_Integer Up);
+		TFunction_DoubleMapOfIntegerLabel & Assign(const TFunction_DoubleMapOfIntegerLabel &Other);
 		%feature("autodoc", "1");
-		void Init(const TFunction_DataMapOfGUIDDriver &V);
+		TFunction_DoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapOfIntegerLabel &Other);
 		%feature("autodoc", "1");
-		void Destroy();
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		void Clear();
 		%feature("autodoc", "1");
-		const TFunction_Array1OfDataMapOfGUIDDriver & Assign(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
+		void Bind(const Standard_Integer &K1, const TDF_Label &K2);
 		%feature("autodoc", "1");
-		const TFunction_Array1OfDataMapOfGUIDDriver & operator=(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
+		Standard_Boolean AreBound(const Standard_Integer &K1, const TDF_Label &K2) const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Standard_Boolean IsBound1(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Standard_Boolean IsBound2(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		const TDF_Label & Find1(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TFunction_DataMapOfGUIDDriver &Value);
+		const Standard_Integer & Find2(const TDF_Label &K) const;
 		%feature("autodoc", "1");
-		const TFunction_DataMapOfGUIDDriver & Value(const Standard_Integer Index) const;
+		Standard_Boolean UnBind1(const Standard_Integer &K);
 		%feature("autodoc", "1");
-		const TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TFunction_DataMapOfGUIDDriver & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index);
+		Standard_Boolean UnBind2(const TDF_Label &K);
 
 };
-%feature("shadow") TFunction_Array1OfDataMapOfGUIDDriver::~TFunction_Array1OfDataMapOfGUIDDriver %{
+%feature("shadow") TFunction_DoubleMapOfIntegerLabel::~TFunction_DoubleMapOfIntegerLabel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -770,7 +719,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TFunction_Array1OfDataMapOfGUIDDriver {
+%extend TFunction_DoubleMapOfIntegerLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -827,7 +776,7 @@ class TFunction_Function : public TDF_Attribute {
 };
 %extend TFunction_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_Function::~TFunction_Function %{
@@ -840,6 +789,57 @@ def __del__(self):
 %}
 
 %extend TFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TFunction_Array1OfDataMapOfGUIDDriver;
+class TFunction_Array1OfDataMapOfGUIDDriver {
+	public:
+		%feature("autodoc", "1");
+		TFunction_Array1OfDataMapOfGUIDDriver(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TFunction_Array1OfDataMapOfGUIDDriver(const TFunction_DataMapOfGUIDDriver &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const TFunction_DataMapOfGUIDDriver &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TFunction_Array1OfDataMapOfGUIDDriver & Assign(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
+		%feature("autodoc", "1");
+		const TFunction_Array1OfDataMapOfGUIDDriver & operator=(const TFunction_Array1OfDataMapOfGUIDDriver &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TFunction_DataMapOfGUIDDriver &Value);
+		%feature("autodoc", "1");
+		const TFunction_DataMapOfGUIDDriver & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TFunction_DataMapOfGUIDDriver & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TFunction_DataMapOfGUIDDriver & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") TFunction_Array1OfDataMapOfGUIDDriver::~TFunction_Array1OfDataMapOfGUIDDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TFunction_Array1OfDataMapOfGUIDDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1009,7 +1009,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %extend TFunction_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_DriverTable::~TFunction_DriverTable %{
@@ -1079,7 +1079,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfGUIDDriver::~TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
@@ -1130,7 +1130,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
@@ -1215,7 +1215,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %extend TFunction_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_GraphNode::~TFunction_GraphNode %{
@@ -1262,7 +1262,7 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %extend TFunction_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TFunction_Driver::~TFunction_Driver %{

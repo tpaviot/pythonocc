@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESToBRep_AlgoContainer;
-class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer();
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer & operator=(const Handle_IGESToBRep_AlgoContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESToBRep_AlgoContainer {
-	IGESToBRep_AlgoContainer* GetObject() {
-	return (IGESToBRep_AlgoContainer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESToBRep_AlgoContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESToBRep_IGESBoundary;
 class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	public:
@@ -198,6 +160,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESToBRep_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESToBRep_AlgoContainer;
+class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer();
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESToBRep_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESToBRep_AlgoContainer {
+	IGESToBRep_AlgoContainer* GetObject() {
+	return (IGESToBRep_AlgoContainer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESToBRep_AlgoContainer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -404,7 +404,7 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 };
 %extend IGESToBRep_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
@@ -451,7 +451,7 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 };
 %extend IGESToBRep_Actor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_Actor::~IGESToBRep_Actor %{
@@ -602,7 +602,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 };
 %extend IGESToBRep_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_IGESBoundary::~IGESToBRep_IGESBoundary %{

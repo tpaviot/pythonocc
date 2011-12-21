@@ -134,7 +134,6 @@ $HeaderURL$
 
 #include<InterfaceGraphic.hxx>
 #include<InterfaceGraphic_Aspect.hxx>
-#include<InterfaceGraphic_Cextern.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
 #include<InterfaceGraphic_Labels.hxx>
 #include<InterfaceGraphic_Portability.hxx>
@@ -151,9 +150,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Handle_Standard_Type.hxx>
-#include<Handle_Message_Messenger.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>

@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomPlate_PointConstraint::DownCast;
+%rename(DownCast) Handle_GeomPlate_SequenceNodeOfSequenceOfAij::DownCast;
+%rename(DownCast) Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint::DownCast;
+%rename(DownCast) Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint::DownCast;
+%rename(DownCast) Handle_GeomPlate_Surface::DownCast;
+%rename(DownCast) Handle_GeomPlate_HArray1OfSequenceOfReal::DownCast;
+%rename(DownCast) Handle_GeomPlate_HSequenceOfPointConstraint::DownCast;
+%rename(DownCast) Handle_GeomPlate_CurveConstraint::DownCast;
+%rename(DownCast) Handle_GeomPlate_HArray1OfHCurveOnSurface::DownCast;
+%rename(DownCast) Handle_GeomPlate_HSequenceOfCurveConstraint::DownCast;
+%rename(HalfSpace) GeomPlate_BuildAveragePlane::HalfSpace;

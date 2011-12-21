@@ -71,14 +71,6 @@ enum OSD_WhoAmI {
 	OSD_WEnvironmentIterator,
 	};
 
-enum OSD_KindFile {
-	OSD_FILE,
-	OSD_DIRECTORY,
-	OSD_LINK,
-	OSD_SOCKET,
-	OSD_UNKNOWN,
-	};
-
 enum OSD_SysType {
 	OSD_Unknown,
 	OSD_Default,
@@ -131,6 +123,14 @@ enum OSD_FromWhere {
 	OSD_FromBeginning,
 	OSD_FromHere,
 	OSD_FromEnd,
+	};
+
+enum OSD_KindFile {
+	OSD_FILE,
+	OSD_DIRECTORY,
+	OSD_LINK,
+	OSD_SOCKET,
+	OSD_UNKNOWN,
 	};
 
 enum OSD_LoadMode {
@@ -332,44 +332,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_OSD_SIGHUP;
-class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP(const Handle_OSD_SIGHUP &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP(const OSD_SIGHUP *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP & operator=(const Handle_OSD_SIGHUP &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGHUP & operator=(const OSD_SIGHUP *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_SIGHUP DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SIGHUP {
-	OSD_SIGHUP* GetObject() {
-	return (OSD_SIGHUP*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_SIGHUP::~Handle_OSD_SIGHUP %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_SIGHUP {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_OSD_Exception_ILLEGAL_INSTRUCTION;
 class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	public:
@@ -440,6 +402,44 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_OSDError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_OSD_SIGHUP;
+class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_SIGHUP();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGHUP(const Handle_OSD_SIGHUP &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGHUP(const OSD_SIGHUP *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGHUP & operator=(const Handle_OSD_SIGHUP &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGHUP & operator=(const OSD_SIGHUP *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_SIGHUP DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SIGHUP {
+	OSD_SIGHUP* GetObject() {
+	return (OSD_SIGHUP*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_SIGHUP::~Handle_OSD_SIGHUP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_SIGHUP {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -674,44 +674,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_OSD_SIGQUIT;
-class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT();
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT(const Handle_OSD_SIGQUIT &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT(const OSD_SIGQUIT *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT & operator=(const Handle_OSD_SIGQUIT &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SIGQUIT & operator=(const OSD_SIGQUIT *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_SIGQUIT DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SIGQUIT {
-	OSD_SIGQUIT* GetObject() {
-	return (OSD_SIGQUIT*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_SIGQUIT::~Handle_OSD_SIGQUIT %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_SIGQUIT {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_OSD_Exception_INVALID_DISPOSITION;
 class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	public:
@@ -820,44 +782,6 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_Exception_INT_OVERFLOW {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
-class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK();
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const OSD_Exception_FLT_STACK_CHECK *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_FLT_STACK_CHECK DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
-	OSD_Exception_FLT_STACK_CHECK* GetObject() {
-	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_Exception_FLT_STACK_CHECK {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1168,6 +1092,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_OSD_SIGQUIT;
+class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT();
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT(const Handle_OSD_SIGQUIT &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT(const OSD_SIGQUIT *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT & operator=(const Handle_OSD_SIGQUIT &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_SIGQUIT & operator=(const OSD_SIGQUIT *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_SIGQUIT DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_SIGQUIT {
+	OSD_SIGQUIT* GetObject() {
+	return (OSD_SIGQUIT*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_SIGQUIT::~Handle_OSD_SIGQUIT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_SIGQUIT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_OSD_SystemFont;
 class Handle_OSD_SystemFont : public Handle_MMgt_TShared {
 	public:
@@ -1276,6 +1238,44 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
+class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK();
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK(const OSD_Exception_FLT_STACK_CHECK *anItem);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const Handle_OSD_Exception_FLT_STACK_CHECK &aHandle);
+		%feature("autodoc", "1");
+		Handle_OSD_Exception_FLT_STACK_CHECK & operator=(const OSD_Exception_FLT_STACK_CHECK *anItem);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_FLT_STACK_CHECK DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
+	OSD_Exception_FLT_STACK_CHECK* GetObject() {
+	return (OSD_Exception_FLT_STACK_CHECK*)$self->Access();
+	}
+};
+%feature("shadow") Handle_OSD_Exception_FLT_STACK_CHECK::~Handle_OSD_Exception_FLT_STACK_CHECK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_OSD_Exception_FLT_STACK_CHECK {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1506,7 +1506,7 @@ class OSD_Exception : public Standard_Failure {
 };
 %extend OSD_Exception {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception::~OSD_Exception %{
@@ -1543,7 +1543,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 %extend OSD_Exception_CTRL_BREAK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_CTRL_BREAK::~OSD_Exception_CTRL_BREAK %{
@@ -1614,7 +1614,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 };
 %extend OSD_Exception_INVALID_DISPOSITION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INVALID_DISPOSITION::~OSD_Exception_INVALID_DISPOSITION %{
@@ -1657,7 +1657,7 @@ class OSD_Signal : public Standard_Failure {
 };
 %extend OSD_Signal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Signal::~OSD_Signal %{
@@ -1694,7 +1694,7 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 %extend OSD_SIGKILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGKILL::~OSD_SIGKILL %{
@@ -1782,7 +1782,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INEXACT_RESULT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INEXACT_RESULT::~OSD_Exception_FLT_INEXACT_RESULT %{
@@ -1795,49 +1795,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_FLT_INEXACT_RESULT {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_Exception_INT_DIVIDE_BY_ZERO;
-class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_INT_DIVIDE_BY_ZERO();
-		%feature("autodoc", "1");
-		OSD_Exception_INT_DIVIDE_BY_ZERO(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
-	Handle_OSD_Exception_INT_DIVIDE_BY_ZERO GetHandle() {
-	return *(Handle_OSD_Exception_INT_DIVIDE_BY_ZERO*) &$self;
-	}
-};
-%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1868,7 +1825,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_STACK_CHECK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_STACK_CHECK::~OSD_Exception_FLT_STACK_CHECK %{
@@ -1887,34 +1844,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
-class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
+%nodefaultctor OSD_PerfMeter;
+class OSD_PerfMeter {
 	public:
 		%feature("autodoc", "1");
-		OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
+		OSD_PerfMeter();
 		%feature("autodoc", "1");
-		OSD_Exception_ARRAY_BOUNDS_EXCEEDED(const char * AString);
+		OSD_PerfMeter(const char *meter, int unsigned constautoStart=1);
 		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
+		void Init(const char *meter);
 		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
+		void Start() const;
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage="");
+		void Stop() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Tick() const;
+		%feature("autodoc", "1");
+		void Flush() const;
 
 };
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED GetHandle() {
-	return *(Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED*) &$self;
-	}
-};
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
+%feature("shadow") OSD_PerfMeter::~OSD_PerfMeter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1923,7 +1872,7 @@ def __del__(self):
 		pass
 %}
 
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+%extend OSD_PerfMeter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2004,49 +1953,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_SIGSYS;
-class OSD_SIGSYS : public OSD_Signal {
-	public:
-		%feature("autodoc", "1");
-		OSD_SIGSYS();
-		%feature("autodoc", "1");
-		OSD_SIGSYS(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_OSD_SIGSYS NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_SIGSYS {
-	Handle_OSD_SIGSYS GetHandle() {
-	return *(Handle_OSD_SIGSYS*) &$self;
-	}
-};
-%extend OSD_SIGSYS {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_SIGSYS {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor OSD_Exception_FLT_UNDERFLOW;
 class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 	public:
@@ -2071,7 +1977,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_UNDERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_UNDERFLOW::~OSD_Exception_FLT_UNDERFLOW %{
@@ -2114,7 +2020,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 };
 %extend OSD_Exception_IN_PAGE_ERROR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_IN_PAGE_ERROR::~OSD_Exception_IN_PAGE_ERROR %{
@@ -2127,49 +2033,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_IN_PAGE_ERROR {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
-class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_STATUS_NO_MEMORY();
-		%feature("autodoc", "1");
-		OSD_Exception_STATUS_NO_MEMORY(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_STATUS_NO_MEMORY {
-	Handle_OSD_Exception_STATUS_NO_MEMORY GetHandle() {
-	return *(Handle_OSD_Exception_STATUS_NO_MEMORY*) &$self;
-	}
-};
-%extend OSD_Exception_STATUS_NO_MEMORY {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Exception_STATUS_NO_MEMORY {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2200,7 +2063,7 @@ class OSD_OSDError : public Standard_Failure {
 };
 %extend OSD_OSDError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_OSDError::~OSD_OSDError %{
@@ -2344,6 +2207,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_SharedLibrary;
+class OSD_SharedLibrary {
+	public:
+		%feature("autodoc", "1");
+		OSD_SharedLibrary();
+		%feature("autodoc", "1");
+		OSD_SharedLibrary(const char * aFilename);
+		%feature("autodoc", "1");
+		void SetName(const char * aName);
+		%feature("autodoc", "1");
+		char * Name() const;
+		%feature("autodoc", "1");
+		Standard_Boolean DlOpen(const OSD_LoadMode Mode);
+		%feature("autodoc", "1");
+		void DlClose() const;
+		%feature("autodoc", "1");
+		char * DlError() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") OSD_SharedLibrary::~OSD_SharedLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_SharedLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Thread;
 class OSD_Thread {
 	public:
@@ -2417,7 +2317,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 };
 %extend OSD_SIGQUIT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGQUIT::~OSD_SIGQUIT %{
@@ -2460,7 +2360,7 @@ class OSD_SIGBUS : public OSD_Signal {
 };
 %extend OSD_SIGBUS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGBUS::~OSD_SIGBUS %{
@@ -2636,7 +2536,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 };
 %extend OSD_SIGSEGV {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGSEGV::~OSD_SIGSEGV %{
@@ -2649,6 +2549,102 @@ def __del__(self):
 %}
 
 %extend OSD_SIGSEGV {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor OSD_Chronometer;
+class OSD_Chronometer {
+	public:
+		%feature("autodoc", "1");
+		OSD_Chronometer(const Standard_Boolean ThisThreadOnly=0);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		void Reset();
+		%feature("autodoc", "1");
+		virtual		void Stop();
+		%feature("autodoc", "1");
+		virtual		void Start();
+		%feature("autodoc", "1");
+		virtual		void Show();
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShowToString() {
+			std::stringstream s;
+			self->Show(s);
+			return s.str();}
+		};
+		%feature("autodoc","Show() -> Standard_Real");
+
+		void Show(Standard_Real &OutValue);
+		%feature("autodoc","Show() -> [Standard_Real, Standard_Real]");
+
+		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","GetProcessCPU() -> [Standard_Real, Standard_Real]");
+
+		static		void GetProcessCPU(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","GetThreadCPU() -> [Standard_Real, Standard_Real]");
+
+		static		void GetThreadCPU(Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") OSD_Chronometer::~OSD_Chronometer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Chronometer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
+class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_STATUS_NO_MEMORY();
+		%feature("autodoc", "1");
+		OSD_Exception_STATUS_NO_MEMORY(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_STATUS_NO_MEMORY NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	Handle_OSD_Exception_STATUS_NO_MEMORY GetHandle() {
+	return *(Handle_OSD_Exception_STATUS_NO_MEMORY*) &$self;
+	}
+};
+%extend OSD_Exception_STATUS_NO_MEMORY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Exception_STATUS_NO_MEMORY {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2685,7 +2681,7 @@ class OSD_SystemFont : public MMgt_TShared {
 };
 %extend OSD_SystemFont {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SystemFont::~OSD_SystemFont %{
@@ -2698,6 +2694,49 @@ def __del__(self):
 %}
 
 %extend OSD_SystemFont {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
+class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
+		%feature("autodoc", "1");
+		OSD_Exception_ARRAY_BOUNDS_EXCEEDED(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED GetHandle() {
+	return *(Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED*) &$self;
+	}
+};
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2728,7 +2767,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_PRIV_INSTRUCTION::~OSD_Exception_PRIV_INSTRUCTION %{
@@ -2854,34 +2893,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_Exception_ACCESS_VIOLATION;
-class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
+%nodefaultctor OSD_SIGSYS;
+class OSD_SIGSYS : public OSD_Signal {
 	public:
 		%feature("autodoc", "1");
-		OSD_Exception_ACCESS_VIOLATION();
+		OSD_SIGSYS();
 		%feature("autodoc", "1");
-		OSD_Exception_ACCESS_VIOLATION(const char * AString);
+		OSD_SIGSYS(const char * AString);
 		%feature("autodoc", "1");
 		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage="");
+		static		Handle_OSD_SIGSYS NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend OSD_Exception_ACCESS_VIOLATION {
-	Handle_OSD_Exception_ACCESS_VIOLATION GetHandle() {
-	return *(Handle_OSD_Exception_ACCESS_VIOLATION*) &$self;
+%extend OSD_SIGSYS {
+	Handle_OSD_SIGSYS GetHandle() {
+	return *(Handle_OSD_SIGSYS*) &$self;
 	}
 };
-%extend OSD_Exception_ACCESS_VIOLATION {
+%extend OSD_SIGSYS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
+%feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2890,7 +2929,7 @@ def __del__(self):
 		pass
 %}
 
-%extend OSD_Exception_ACCESS_VIOLATION {
+%extend OSD_SIGSYS {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2943,6 +2982,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_Exception_ACCESS_VIOLATION;
+class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_ACCESS_VIOLATION();
+		%feature("autodoc", "1");
+		OSD_Exception_ACCESS_VIOLATION(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_ACCESS_VIOLATION NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_ACCESS_VIOLATION {
+	Handle_OSD_Exception_ACCESS_VIOLATION GetHandle() {
+	return *(Handle_OSD_Exception_ACCESS_VIOLATION*) &$self;
+	}
+};
+%extend OSD_Exception_ACCESS_VIOLATION {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Exception_ACCESS_VIOLATION {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Exception_ILLEGAL_INSTRUCTION;
 class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 	public:
@@ -2967,7 +3049,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ILLEGAL_INSTRUCTION::~OSD_Exception_ILLEGAL_INSTRUCTION %{
@@ -3010,7 +3092,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INVALID_OPERATION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INVALID_OPERATION::~OSD_Exception_FLT_INVALID_OPERATION %{
@@ -3053,7 +3135,7 @@ class OSD_SIGINT : public OSD_Signal {
 };
 %extend OSD_SIGINT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGINT::~OSD_SIGINT %{
@@ -3066,6 +3148,49 @@ def __del__(self):
 %}
 
 %extend OSD_SIGINT {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor OSD_Exception_INT_DIVIDE_BY_ZERO;
+class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_INT_DIVIDE_BY_ZERO();
+		%feature("autodoc", "1");
+		OSD_Exception_INT_DIVIDE_BY_ZERO(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_INT_DIVIDE_BY_ZERO NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
+	Handle_OSD_Exception_INT_DIVIDE_BY_ZERO GetHandle() {
+	return *(Handle_OSD_Exception_INT_DIVIDE_BY_ZERO*) &$self;
+	}
+};
+%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3096,7 +3221,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_STACK_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_STACK_OVERFLOW::~OSD_Exception_STACK_OVERFLOW %{
@@ -3109,59 +3234,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_STACK_OVERFLOW {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_Chronometer;
-class OSD_Chronometer {
-	public:
-		%feature("autodoc", "1");
-		OSD_Chronometer(const Standard_Boolean ThisThreadOnly=0);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		void Reset();
-		%feature("autodoc", "1");
-		virtual		void Stop();
-		%feature("autodoc", "1");
-		virtual		void Start();
-		%feature("autodoc", "1");
-		virtual		void Show();
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShowToString() {
-			std::stringstream s;
-			self->Show(s);
-			return s.str();}
-		};
-		%feature("autodoc","Show() -> Standard_Real");
-
-		void Show(Standard_Real &OutValue);
-		%feature("autodoc","Show() -> [Standard_Real, Standard_Real]");
-
-		void Show(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","GetProcessCPU() -> [Standard_Real, Standard_Real]");
-
-		static		void GetProcessCPU(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","GetThreadCPU() -> [Standard_Real, Standard_Real]");
-
-		static		void GetThreadCPU(Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") OSD_Chronometer::~OSD_Chronometer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Chronometer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3192,7 +3264,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_INT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INT_OVERFLOW::~OSD_Exception_INT_OVERFLOW %{
@@ -3205,41 +3277,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_INT_OVERFLOW {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_PerfMeter;
-class OSD_PerfMeter {
-	public:
-		%feature("autodoc", "1");
-		OSD_PerfMeter();
-		%feature("autodoc", "1");
-		OSD_PerfMeter(const char *meter, int unsigned constautoStart=1);
-		%feature("autodoc", "1");
-		void Init(const char *meter);
-		%feature("autodoc", "1");
-		void Start() const;
-		%feature("autodoc", "1");
-		void Stop() const;
-		%feature("autodoc", "1");
-		void Tick() const;
-		%feature("autodoc", "1");
-		void Flush() const;
-
-};
-%feature("shadow") OSD_PerfMeter::~OSD_PerfMeter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_PerfMeter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3353,7 +3390,7 @@ class OSD_SIGHUP : public OSD_Signal {
 };
 %extend OSD_SIGHUP {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGHUP::~OSD_SIGHUP %{
@@ -3432,7 +3469,7 @@ class OSD_FontMgr : public MMgt_TShared {
 };
 %extend OSD_FontMgr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_FontMgr::~OSD_FontMgr %{
@@ -3524,7 +3561,7 @@ class OSD_SIGILL : public OSD_Signal {
 };
 %extend OSD_SIGILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_SIGILL::~OSD_SIGILL %{
@@ -3537,43 +3574,6 @@ def __del__(self):
 %}
 
 %extend OSD_SIGILL {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_SharedLibrary;
-class OSD_SharedLibrary {
-	public:
-		%feature("autodoc", "1");
-		OSD_SharedLibrary();
-		%feature("autodoc", "1");
-		OSD_SharedLibrary(const char * aFilename);
-		%feature("autodoc", "1");
-		void SetName(const char * aName);
-		%feature("autodoc", "1");
-		char * Name() const;
-		%feature("autodoc", "1");
-		Standard_Boolean DlOpen(const OSD_LoadMode Mode);
-		%feature("autodoc", "1");
-		void DlClose() const;
-		%feature("autodoc", "1");
-		char * DlError() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") OSD_SharedLibrary::~OSD_SharedLibrary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_SharedLibrary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3604,7 +3604,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DENORMAL_OPERAND::~OSD_Exception_FLT_DENORMAL_OPERAND %{
@@ -3647,7 +3647,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_OVERFLOW::~OSD_Exception_FLT_OVERFLOW %{
@@ -3690,7 +3690,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DIVIDE_BY_ZERO::~OSD_Exception_FLT_DIVIDE_BY_ZERO %{
@@ -3733,7 +3733,7 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 };
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_NONCONTINUABLE_EXCEPTION::~OSD_Exception_NONCONTINUABLE_EXCEPTION %{

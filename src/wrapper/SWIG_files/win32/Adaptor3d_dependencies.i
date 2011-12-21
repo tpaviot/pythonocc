@@ -214,7 +214,7 @@ $HeaderURL$
 
 %import MMgt.i
 %import Adaptor2d.i
-%import Standard.i
-%import GeomAbs.i
-%import TopAbs.i
 %import math.i
+%import Standard.i
+%import TopAbs.i
+%import GeomAbs.i

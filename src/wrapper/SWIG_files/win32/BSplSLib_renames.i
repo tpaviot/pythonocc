@@ -23,3 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(RationalDerivative) BSplSLib::RationalDerivative;
+%rename(D0) BSplSLib::D0;
+%rename(D1) BSplSLib::D1;
+%rename(D2) BSplSLib::D2;
+%rename(D3) BSplSLib::D3;
+%rename(DN) BSplSLib::DN;
+%rename(Iso) BSplSLib::Iso;
+%rename(Reverse) BSplSLib::Reverse;
+%rename(HomogeneousD0) BSplSLib::HomogeneousD0;
+%rename(HomogeneousD1) BSplSLib::HomogeneousD1;
+%rename(IsRational) BSplSLib::IsRational;
+%rename(SetPoles) BSplSLib::SetPoles;
+%rename(GetPoles) BSplSLib::GetPoles;
+%rename(MovePoint) BSplSLib::MovePoint;
+%rename(InsertKnots) BSplSLib::InsertKnots;
+%rename(RemoveKnot) BSplSLib::RemoveKnot;
+%rename(IncreaseDegree) BSplSLib::IncreaseDegree;
+%rename(Unperiodize) BSplSLib::Unperiodize;
+%rename(NoWeights) BSplSLib::NoWeights;
+%rename(BuildCache) BSplSLib::BuildCache;
+%rename(CacheD0) BSplSLib::CacheD0;
+%rename(CoefsD0) BSplSLib::CoefsD0;
+%rename(CacheD1) BSplSLib::CacheD1;
+%rename(CoefsD1) BSplSLib::CoefsD1;
+%rename(CacheD2) BSplSLib::CacheD2;
+%rename(CoefsD2) BSplSLib::CoefsD2;
+%rename(PolesCoefficients) BSplSLib::PolesCoefficients;
+%rename(Resolution) BSplSLib::Resolution;
+%rename(Interpolate) BSplSLib::Interpolate;

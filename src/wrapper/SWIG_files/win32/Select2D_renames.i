@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Select2D_SensitiveEntity::DownCast;
+%rename(DownCast) Handle_Select2D_Projector::DownCast;
+%rename(DownCast) Handle_Select2D_SensitivePoint::DownCast;
+%rename(DownCast) Handle_Select2D_SensitiveArc::DownCast;
+%rename(DownCast) Handle_Select2D_SensitiveSegment::DownCast;
+%rename(DownCast) Handle_Select2D_SensitiveCircle::DownCast;
+%rename(DownCast) Handle_Select2D_SensitiveBox::DownCast;

@@ -323,5 +323,5 @@ $HeaderURL$
 %import TCollection.i
 %import STEPControl.i
 %import MMgt.i
-%import IFSelect.i
 %import Standard.i
+%import IFSelect.i

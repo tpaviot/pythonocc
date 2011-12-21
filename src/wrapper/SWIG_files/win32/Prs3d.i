@@ -49,15 +49,53 @@ $HeaderURL$
 
 %include Prs3d_headers.i
 
-typedef NCollection_TListIterator<TColgp_SequenceOfPnt> Prs3d_NListIteratorOfListOfSequenceOfPnt;
-typedef NCollection_List<TColgp_SequenceOfPnt> Prs3d_NListOfSequenceOfPnt;
 typedef NCollection_BaseCollection<TColgp_SequenceOfPnt> Prs3d_BaseCollListOfSequenceOfPnt;
+typedef NCollection_List<TColgp_SequenceOfPnt> Prs3d_NListOfSequenceOfPnt;
+typedef NCollection_TListIterator<TColgp_SequenceOfPnt> Prs3d_NListIteratorOfListOfSequenceOfPnt;
 
 enum Prs3d_TypeOfLinePicking {
 	Prs3d_TOLP_Point,
 	Prs3d_TOLP_Segment,
 	};
 
+
+
+%nodefaultctor Handle_Prs3d_InvalidAngle;
+class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle();
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle & operator=(const Handle_Prs3d_InvalidAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Prs3d_InvalidAngle DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_InvalidAngle {
+	Prs3d_InvalidAngle* GetObject() {
+	return (Prs3d_InvalidAngle*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Prs3d_InvalidAngle::~Handle_Prs3d_InvalidAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Prs3d_InvalidAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Prs3d_Drawer;
@@ -364,6 +402,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Prs3d_PlaneAspect;
+class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_Prs3d_PlaneAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_PlaneAspect(const Handle_Prs3d_PlaneAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PlaneAspect(const Prs3d_PlaneAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PlaneAspect & operator=(const Handle_Prs3d_PlaneAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_PlaneAspect & operator=(const Prs3d_PlaneAspect *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Prs3d_PlaneAspect DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Prs3d_PlaneAspect {
+	Prs3d_PlaneAspect* GetObject() {
+	return (Prs3d_PlaneAspect*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Prs3d_PlaneAspect::~Handle_Prs3d_PlaneAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Prs3d_PlaneAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Prs3d_AngleAspect;
 class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 	public:
@@ -478,44 +554,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Prs3d_InvalidAngle;
-class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle();
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Handle_Prs3d_InvalidAngle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle(const Prs3d_InvalidAngle *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle & operator=(const Handle_Prs3d_InvalidAngle &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_InvalidAngle & operator=(const Prs3d_InvalidAngle *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Prs3d_InvalidAngle DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_InvalidAngle {
-	Prs3d_InvalidAngle* GetObject() {
-	return (Prs3d_InvalidAngle*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Prs3d_InvalidAngle::~Handle_Prs3d_InvalidAngle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Prs3d_InvalidAngle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Prs3d_DatumAspect;
 class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 	public:
@@ -548,44 +586,6 @@ def __del__(self):
 %}
 
 %extend Handle_Prs3d_DatumAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Prs3d_PlaneAspect;
-class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect(const Handle_Prs3d_PlaneAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect(const Prs3d_PlaneAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect & operator=(const Handle_Prs3d_PlaneAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_PlaneAspect & operator=(const Prs3d_PlaneAspect *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Prs3d_PlaneAspect DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Prs3d_PlaneAspect {
-	Prs3d_PlaneAspect* GetObject() {
-	return (Prs3d_PlaneAspect*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Prs3d_PlaneAspect::~Handle_Prs3d_PlaneAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Prs3d_PlaneAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -771,110 +771,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Prs3d_Text;
-class Prs3d_Text : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_Text();
-		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
-		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
-
-};
-%feature("shadow") Prs3d_Text::~Prs3d_Text %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_Text {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Prs3d_Presentation;
-class Prs3d_Presentation : public Graphic3d_Structure {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_Presentation(const Handle_Graphic3d_StructureManager &aStructureManager, const Standard_Boolean Init=1);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
-		%feature("autodoc", "1");
-		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & aStructure);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
-		%feature("autodoc", "1");
-		void Highlight();
-		%feature("autodoc", "1");
-		void Color(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		void BoundBox();
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &aShadingAspect);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPickable() const;
-		%feature("autodoc", "1");
-		void Transform(const Handle_Geom_Transformation &aTransformation);
-		%feature("autodoc", "1");
-		void Place(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
-		%feature("autodoc", "1");
-		void Multiply(const Handle_Geom_Transformation &aTransformation);
-		%feature("autodoc", "1");
-		void Move(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation Transformation() const;
-		%feature("autodoc", "1");
-		virtual		void Clear(const Standard_Boolean WithDestruction=1);
-		%feature("autodoc", "1");
-		void Connect(const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		void Remove(const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		void RemoveAll();
-		%feature("autodoc", "1");
-		void SetPickable();
-		%feature("autodoc", "1");
-		void SetUnPickable();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_Presentation {
-	Handle_Prs3d_Presentation GetHandle() {
-	return *(Handle_Prs3d_Presentation*) &$self;
-	}
-};
-%extend Prs3d_Presentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Prs3d_Presentation::~Prs3d_Presentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_Presentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Prs3d_AnglePresentation;
 class Prs3d_AnglePresentation : public Prs3d_Root {
 	public:
@@ -916,7 +812,7 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 };
 %extend Prs3d_CompositeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_CompositeAspect::~Prs3d_CompositeAspect %{
@@ -949,7 +845,7 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_RadiusAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_RadiusAspect::~Prs3d_RadiusAspect %{
@@ -962,184 +858,6 @@ def __del__(self):
 %}
 
 %extend Prs3d_RadiusAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Prs3d_BasicAspect;
-class Prs3d_BasicAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_BasicAspect();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_BasicAspect {
-	Handle_Prs3d_BasicAspect GetHandle() {
-	return *(Handle_Prs3d_BasicAspect*) &$self;
-	}
-};
-%extend Prs3d_BasicAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Prs3d_BasicAspect::~Prs3d_BasicAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_BasicAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Prs3d_LineAspect;
-class Prs3d_LineAspect : public Prs3d_BasicAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_LineAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Prs3d_LineAspect(const Quantity_Color &aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		void SetTypeOfLine(const Aspect_TypeOfLine aType);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_AspectLine3d Aspect() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-
-};
-%extend Prs3d_LineAspect {
-	Handle_Prs3d_LineAspect GetHandle() {
-	return *(Handle_Prs3d_LineAspect*) &$self;
-	}
-};
-%extend Prs3d_LineAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Prs3d_LineAspect::~Prs3d_LineAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_LineAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Prs3d_LengthPresentation;
-class Prs3d_LengthPresentation : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_LengthPresentation();
-		%feature("autodoc", "1");
-		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pnt OffsetPoint);
-
-};
-%feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_LengthPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Prs3d_DatumAspect;
-class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
-	public:
-		%feature("autodoc", "1");
-		Prs3d_DatumAspect();
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect FirstAxisAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect SecondAxisAspect() const;
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect ThirdAxisAspect() const;
-		%feature("autodoc", "1");
-		void SetDrawFirstAndSecondAxis(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawFirstAndSecondAxis() const;
-		%feature("autodoc", "1");
-		void SetDrawThirdAxis(const Standard_Boolean draw);
-		%feature("autodoc", "1");
-		Standard_Boolean DrawThirdAxis() const;
-		%feature("autodoc", "1");
-		void SetAxisLength(const Standard_Real L1, const Standard_Real L2, const Standard_Real L3);
-		%feature("autodoc", "1");
-		Quantity_Length FirstAxisLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length SecondAxisLength() const;
-		%feature("autodoc", "1");
-		Quantity_Length ThirdAxisLength() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Prs3d_DatumAspect {
-	Handle_Prs3d_DatumAspect GetHandle() {
-	return *(Handle_Prs3d_DatumAspect*) &$self;
-	}
-};
-%extend Prs3d_DatumAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Prs3d_DatumAspect::~Prs3d_DatumAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Prs3d_DatumAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1182,7 +900,7 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_AngleAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_AngleAspect::~Prs3d_AngleAspect %{
@@ -1201,17 +919,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor Prs3d;
-class Prs3d {
+%nodefaultctor Prs3d_BasicAspect;
+class Prs3d_BasicAspect : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Prs3d();
-		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2) -> Standard_Real");
-
-		static		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt p1, const gp_Pnt p2, Standard_Real &OutValue);
+		Prs3d_BasicAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Prs3d::~Prs3d %{
+%extend Prs3d_BasicAspect {
+	Handle_Prs3d_BasicAspect GetHandle() {
+	return *(Handle_Prs3d_BasicAspect*) &$self;
+	}
+};
+%extend Prs3d_BasicAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Prs3d_BasicAspect::~Prs3d_BasicAspect %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1220,7 +947,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Prs3d {
+%extend Prs3d_BasicAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1252,8 +979,6 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 		Standard_Real Transparency(const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_FRONT_SIDE) const;
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectFillArea3d Aspect() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Prs3d_ShadingAspect {
@@ -1263,7 +988,7 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_ShadingAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_ShadingAspect::~Prs3d_ShadingAspect %{
@@ -1276,6 +1001,61 @@ def __del__(self):
 %}
 
 %extend Prs3d_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d_LineAspect;
+class Prs3d_LineAspect : public Prs3d_BasicAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_LineAspect(const Quantity_NameOfColor aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Prs3d_LineAspect(const Quantity_Color &aColor, const Aspect_TypeOfLine aType, const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		void SetTypeOfLine(const Aspect_TypeOfLine aType);
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_AspectLine3d Aspect() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_LineAspect {
+	Handle_Prs3d_LineAspect GetHandle() {
+	return *(Handle_Prs3d_LineAspect*) &$self;
+	}
+};
+%extend Prs3d_LineAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Prs3d_LineAspect::~Prs3d_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d_LineAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1325,7 +1105,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_PointAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_PointAspect::~Prs3d_PointAspect %{
@@ -1338,6 +1118,32 @@ def __del__(self):
 %}
 
 %extend Prs3d_PointAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d;
+class Prs3d {
+	public:
+		%feature("autodoc", "1");
+		Prs3d();
+		%feature("autodoc","MatchSegment(Quantity_Length X, Quantity_Length Y, Quantity_Length Z, Quantity_Length aDistance, const p1, const p2) -> Standard_Real");
+
+		static		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt p1, const gp_Pnt p2, Standard_Real &OutValue);
+
+};
+%feature("shadow") Prs3d::~Prs3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1384,7 +1190,7 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_ArrowAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_ArrowAspect::~Prs3d_ArrowAspect %{
@@ -1423,7 +1229,7 @@ class Prs3d_Projector : public MMgt_TShared {
 };
 %extend Prs3d_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_Projector::~Prs3d_Projector %{
@@ -1604,7 +1410,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 };
 %extend Prs3d_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_Drawer::~Prs3d_Drawer %{
@@ -1746,7 +1552,7 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_TextAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_TextAspect::~Prs3d_TextAspect %{
@@ -1795,7 +1601,7 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 };
 %extend Prs3d_IsoAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_IsoAspect::~Prs3d_IsoAspect %{
@@ -1808,6 +1614,83 @@ def __del__(self):
 %}
 
 %extend Prs3d_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d_Presentation;
+class Prs3d_Presentation : public Graphic3d_Structure {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Presentation(const Handle_Graphic3d_StructureManager &aStructureManager, const Standard_Boolean Init=1);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector);
+		%feature("autodoc", "1");
+		virtual		Handle_Graphic3d_Structure Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, Handle_Graphic3d_Structure & aStructure);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Graphic3d_DataStructureManager &aProjector, const TColStd_Array2OfReal &AMatrix, Handle_Graphic3d_Structure & aStructure);
+		%feature("autodoc", "1");
+		void Highlight();
+		%feature("autodoc", "1");
+		void Color(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		void BoundBox();
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		void SetShadingAspect(const Handle_Prs3d_ShadingAspect &aShadingAspect);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPickable() const;
+		%feature("autodoc", "1");
+		void Transform(const Handle_Geom_Transformation &aTransformation);
+		%feature("autodoc", "1");
+		void Place(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
+		%feature("autodoc", "1");
+		void Multiply(const Handle_Geom_Transformation &aTransformation);
+		%feature("autodoc", "1");
+		void Move(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z);
+		%feature("autodoc", "1");
+		Handle_Geom_Transformation Transformation() const;
+		%feature("autodoc", "1");
+		virtual		void Clear(const Standard_Boolean WithDestruction=1);
+		%feature("autodoc", "1");
+		void Connect(const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		void Remove(const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		void RemoveAll();
+		%feature("autodoc", "1");
+		void SetPickable();
+		%feature("autodoc", "1");
+		void SetUnPickable();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_Presentation {
+	Handle_Prs3d_Presentation GetHandle() {
+	return *(Handle_Prs3d_Presentation*) &$self;
+	}
+};
+%extend Prs3d_Presentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Prs3d_Presentation::~Prs3d_Presentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d_Presentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1838,7 +1721,7 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 };
 %extend Prs3d_InvalidAngle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_InvalidAngle::~Prs3d_InvalidAngle %{
@@ -1889,7 +1772,7 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 };
 %extend Prs3d_PlaneSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_PlaneSet::~Prs3d_PlaneSet %{
@@ -1902,6 +1785,98 @@ def __del__(self):
 %}
 
 %extend Prs3d_PlaneSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d_Text;
+class Prs3d_Text : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_Text();
+		%feature("autodoc", "1");
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
+		%feature("autodoc", "1");
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_TextAspect &anAspect, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint);
+
+};
+%feature("shadow") Prs3d_Text::~Prs3d_Text %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d_Text {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d_DatumAspect;
+class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_DatumAspect();
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect FirstAxisAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect SecondAxisAspect() const;
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect ThirdAxisAspect() const;
+		%feature("autodoc", "1");
+		void SetDrawFirstAndSecondAxis(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawFirstAndSecondAxis() const;
+		%feature("autodoc", "1");
+		void SetDrawThirdAxis(const Standard_Boolean draw);
+		%feature("autodoc", "1");
+		Standard_Boolean DrawThirdAxis() const;
+		%feature("autodoc", "1");
+		void SetAxisLength(const Standard_Real L1, const Standard_Real L2, const Standard_Real L3);
+		%feature("autodoc", "1");
+		Quantity_Length FirstAxisLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length SecondAxisLength() const;
+		%feature("autodoc", "1");
+		Quantity_Length ThirdAxisLength() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Prs3d_DatumAspect {
+	Handle_Prs3d_DatumAspect GetHandle() {
+	return *(Handle_Prs3d_DatumAspect*) &$self;
+	}
+};
+%extend Prs3d_DatumAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Prs3d_DatumAspect::~Prs3d_DatumAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d_DatumAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1929,6 +1904,31 @@ def __del__(self):
 %}
 
 %extend Prs3d_Arrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Prs3d_LengthPresentation;
+class Prs3d_LengthPresentation : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		Prs3d_LengthPresentation();
+		%feature("autodoc", "1");
+		static		void Draw(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Pnt OffsetPoint);
+
+};
+%feature("shadow") Prs3d_LengthPresentation::~Prs3d_LengthPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Prs3d_LengthPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1995,7 +1995,7 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_PlaneAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_PlaneAspect::~Prs3d_PlaneAspect %{
@@ -2062,7 +2062,7 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_LengthAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Prs3d_LengthAspect::~Prs3d_LengthAspect %{

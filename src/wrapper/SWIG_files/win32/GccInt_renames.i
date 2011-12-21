@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GccInt_Bisec::DownCast;
+%rename(DownCast) Handle_GccInt_BLine::DownCast;
+%rename(DownCast) Handle_GccInt_BParab::DownCast;
+%rename(DownCast) Handle_GccInt_BElips::DownCast;
+%rename(DownCast) Handle_GccInt_BHyper::DownCast;
+%rename(DownCast) Handle_GccInt_BPoint::DownCast;
+%rename(DownCast) Handle_GccInt_BCirc::DownCast;

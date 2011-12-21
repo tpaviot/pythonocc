@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepAdaptor_HCompCurve::DownCast;
+%rename(DownCast) Handle_BRepAdaptor_HCurve::DownCast;
+%rename(DownCast) Handle_BRepAdaptor_HSurface::DownCast;
+%rename(DownCast) Handle_BRepAdaptor_HCurve2d::DownCast;
+%rename(DownCast) Handle_BRepAdaptor_HArray1OfCurve::DownCast;

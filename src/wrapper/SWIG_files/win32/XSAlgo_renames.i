@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XSAlgo_ToolContainer::DownCast;
+%rename(DownCast) Handle_XSAlgo_AlgoContainer::DownCast;
+%rename(Init) XSAlgo::Init;
+%rename(SetAlgoContainer) XSAlgo::SetAlgoContainer;
+%rename(AlgoContainer) XSAlgo::AlgoContainer;

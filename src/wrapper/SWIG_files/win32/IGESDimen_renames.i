@@ -23,3 +23,34 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESDimen_DiameterDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionDisplayData::DownCast;
+%rename(DownCast) Handle_IGESDimen_GeneralSymbol::DownCast;
+%rename(DownCast) Handle_IGESDimen_LeaderArrow::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionTolerance::DownCast;
+%rename(DownCast) Handle_IGESDimen_HArray1OfGeneralNote::DownCast;
+%rename(DownCast) Handle_IGESDimen_SectionedArea::DownCast;
+%rename(DownCast) Handle_IGESDimen_GeneralLabel::DownCast;
+%rename(DownCast) Handle_IGESDimen_RadiusDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_WitnessLine::DownCast;
+%rename(DownCast) Handle_IGESDimen_CurveDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_GeneralModule::DownCast;
+%rename(DownCast) Handle_IGESDimen_BasicDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_Section::DownCast;
+%rename(DownCast) Handle_IGESDimen_OrdinateDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_IGESDimen_Protocol::DownCast;
+%rename(DownCast) Handle_IGESDimen_FlagNote::DownCast;
+%rename(DownCast) Handle_IGESDimen_NewDimensionedGeometry::DownCast;
+%rename(DownCast) Handle_IGESDimen_AngularDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_HArray1OfLeaderArrow::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionedGeometry::DownCast;
+%rename(DownCast) Handle_IGESDimen_PointDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_NewGeneralNote::DownCast;
+%rename(DownCast) Handle_IGESDimen_GeneralNote::DownCast;
+%rename(DownCast) Handle_IGESDimen_LinearDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionUnits::DownCast;
+%rename(DownCast) Handle_IGESDimen_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESDimen_CenterLine::DownCast;
+%rename(Init) IGESDimen::Init;
+%rename(Protocol) IGESDimen::Protocol;

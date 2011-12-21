@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
-class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt* GetObject() {
-	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
 class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollection_MapNode {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
+class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt & operator=(const IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt* GetObject() {
+	return (IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -247,6 +247,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
+class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		gp_Pnt2d  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d GetHandle() {
+	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*) &$self;
+	}
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPoly_ShapeSection;
 class IntPoly_ShapeSection {
 	public:
@@ -293,6 +344,51 @@ def __del__(self):
 %}
 
 %extend IntPoly_ShapeSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPoly_IndexedMapOfPnt2d;
+class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapOfPnt2d(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapOfPnt2d & Assign(const IntPoly_IndexedMapOfPnt2d &Other);
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapOfPnt2d &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const gp_Pnt2d K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const gp_Pnt2d K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const gp_Pnt2d K) const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const gp_Pnt2d K) const;
+
+};
+%feature("shadow") IntPoly_IndexedMapOfPnt2d::~IntPoly_IndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPoly_IndexedMapOfPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -391,43 +487,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
-class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const TColgp_SequenceOfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt2d & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
-	Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d GetHandle() {
-	return *(Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d*) &$self;
-	}
-};
-%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt2d;
 class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 	public:
@@ -493,87 +552,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPoly_IndexedMapOfPnt2d;
-class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
+%nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
+class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		IntPoly_IndexedMapOfPnt2d(const Standard_Integer NbBuckets=1);
+		IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d(const TColgp_SequenceOfPnt2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		IntPoly_IndexedMapOfPnt2d & Assign(const IntPoly_IndexedMapOfPnt2d &Other);
-		%feature("autodoc", "1");
-		IntPoly_IndexedMapOfPnt2d & operator=(const IntPoly_IndexedMapOfPnt2d &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const gp_Pnt2d K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const gp_Pnt2d K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt2d K) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const gp_Pnt2d K) const;
-
-};
-%feature("shadow") IntPoly_IndexedMapOfPnt2d::~IntPoly_IndexedMapOfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPoly_IndexedMapOfPnt2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
-class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		gp_Pnt2d  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		TColgp_SequenceOfPnt2d & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d GetHandle() {
-	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*) &$self;
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
+	Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d GetHandle() {
+	return *(Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d*) &$self;
 	}
 };
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
+%feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -582,7 +582,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+%extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -607,7 +607,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
@@ -703,7 +703,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{

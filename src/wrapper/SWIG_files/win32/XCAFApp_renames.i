@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_XCAFApp_Application::DownCast;
+%rename(GetApplication) XCAFApp_Application::GetApplication;

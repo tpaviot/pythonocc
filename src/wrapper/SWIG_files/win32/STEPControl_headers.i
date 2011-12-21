@@ -129,19 +129,19 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_XSControl_WorkSession.hxx>
-#include<Handle_StepData_StepModel.hxx>
-#include<Handle_Transfer_Binder.hxx>
-#include<Handle_Transfer_TransientProcess.hxx>
-#include<Handle_StepRepr_Representation.hxx>
-#include<Handle_StepGeom_Axis2Placement3d.hxx>
-#include<gp_Trsf.hxx>
-#include<Handle_StepRepr_RepresentationRelationship.hxx>
 #include<Handle_Transfer_Finder.hxx>
+#include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
+#include<Handle_StepGeom_Axis2Placement3d.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Transfer_ActorOfTransientProcess.hxx>
+#include<Handle_XSControl_WorkSession.hxx>
+#include<Handle_StepData_StepModel.hxx>
+#include<Handle_Transfer_TransientProcess.hxx>
+#include<Handle_StepRepr_Representation.hxx>
+#include<gp_Trsf.hxx>
+#include<Handle_StepRepr_RepresentationRelationship.hxx>
 %}

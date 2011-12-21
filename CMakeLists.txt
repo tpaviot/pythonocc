@@ -72,24 +72,18 @@ INCLUDE(${SWIG_USE_FILE})
 # OpenCASCADE include and lib location #
 ########################################
 # Find OpenCASCADE library, set include and lib path
-FIND_PACKAGE(OCE)
-IF(OCE_FOUND)
-    SET(OCC_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
-ELSE(OCE_FOUND)
-    IF(WIN32)
-        # Under Windows, check the CASROOT env variable
-        SET(OCC_INCLUDE_PATH "$ENV{CASROOT}\\inc")
-        SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-    ELSE(WIN32) #Unix
-		IF(DEFINED ENV{CASROOT})
-        	SET(OCC_INCLUDE_PATH "$ENV{CASROOT}/include/oce")
-        	SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
-		ELSE(DEFINED ENV{CASROOT})
-			SET(OCC_INCLUDE_PATH /usr/local/include/oce CACHE STRING "OCE include path")
-			SET(OCC_LIB_PATH /usr/local/lib CACHE STRING "OCE library path")
-		ENDIF(DEFINED ENV{CASROOT})
-    ENDIF(WIN32)
-ENDIF(OCE_FOUND)
+IF(UNIX)
+    FIND_PACKAGE(OCE)
+    IF(OCE_FOUND)
+        SET(OCE_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
+    ELSE(OCE_FOUND)
+        SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
+        SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
+    ENDIF(OCE_FOUND)
+ELSE(UNIX)
+SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
+SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
+ENDIF(UNIX)
 
 ##############################################
 # Installation directory                     #
@@ -114,8 +108,8 @@ SET(OCC_LIBRARIES PTKernel
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
-INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCC_LIB_PATH})
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
+LINK_DIRECTORIES(${OCE_LIB_PATH})
 
 #######################################
 # salomegeom include and lib location #

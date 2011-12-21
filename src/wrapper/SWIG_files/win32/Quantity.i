@@ -51,35 +51,43 @@ $HeaderURL$
 
 typedef double Quantity_Momentum;
 typedef double Quantity_Factor;
+typedef double Quantity_Luminance;
+typedef double Quantity_Illuminance;
+typedef double Quantity_Activity;
+typedef double Quantity_Resistivity;
 typedef double Quantity_Mass;
 typedef double Quantity_ElectricCharge;
+typedef double Quantity_LuminousExposition;
 typedef double Quantity_Work;
 typedef double Quantity_Energy;
 typedef double Quantity_Normality;
 typedef double Quantity_SpecificHeatCapacity;
+typedef double Quantity_Pressure;
 typedef double Quantity_SurfaceTension;
 typedef double Quantity_Constant;
 typedef double Quantity_PlaneAngle;
+typedef double Quantity_Enthalpy;
+typedef double Quantity_MagneticFlux;
 typedef double Quantity_Molarity;
-typedef double Quantity_Weight;
+typedef double Quantity_SolidAngle;
 typedef double Quantity_Velocity;
-typedef double Quantity_AmountOfSubstance;
 typedef double Quantity_LuminousEfficacity;
 typedef double Quantity_MolarConcentration;
 typedef double Quantity_MagneticFieldStrength;
 typedef double Quantity_Parameter;
 typedef double Quantity_ThermalConductivity;
 typedef double Quantity_AngularVelocity;
-typedef double Quantity_MagneticFlux;
+typedef double Quantity_Scalaire;
 typedef double Quantity_VolumeFlow;
-typedef double Quantity_ElectricCapacitance;
 typedef double Quantity_KineticMoment;
 typedef double Quantity_Index;
 typedef double Quantity_CoefficientOfExpansion;
+typedef double Quantity_Area;
+typedef double Quantity_Speed;
 typedef double Quantity_MomentOfInertia;
+typedef double Quantity_Consumption;
 typedef double Quantity_Temperature;
 typedef double Quantity_MomentOfAForce;
-typedef double Quantity_Pressure;
 typedef double Quantity_Content;
 typedef double Quantity_ElectricCurrent;
 typedef double Quantity_DoseEquivalent;
@@ -88,42 +96,34 @@ typedef double Quantity_Rate;
 typedef double Quantity_Ratio;
 typedef double Quantity_MolarMass;
 typedef double Quantity_Conductivity;
-typedef double Quantity_Capacitance;
+typedef double Quantity_Coefficient;
 typedef double Quantity_Reluctance;
 typedef double Quantity_Concentration;
 typedef double Quantity_ElectricFieldStrength;
 typedef double Quantity_MolarVolume;
-typedef double Quantity_SolidAngle;
 typedef double Quantity_KinematicViscosity;
 typedef double Quantity_Power;
 typedef double Quantity_MagneticFluxDensity;
 typedef double Quantity_Quotient;
-typedef double Quantity_Illuminance;
-typedef double Quantity_Consumption;
+typedef double Quantity_MassFlow;
+typedef double Quantity_AmountOfSubstance;
 typedef double Quantity_Entropy;
 typedef double Quantity_Volume;
 typedef double Quantity_Frequency;
 typedef double Quantity_AbsorbedDose;
-typedef double Quantity_MassFlow;
-typedef double Quantity_Area;
-typedef double Quantity_Resistivity;
+typedef double Quantity_Weight;
+typedef double Quantity_AcousticIntensity;
 typedef double Quantity_SoundIntensity;
 typedef double Quantity_Acceleration;
 typedef double Quantity_Admittance;
 typedef double Quantity_Torque;
 typedef double Quantity_Viscosity;
-typedef double Quantity_AcousticIntensity;
-typedef double Quantity_Activity;
-typedef double Quantity_LuminousExposition;
 typedef double Quantity_Force;
 typedef double Quantity_LuminousFlux;
-typedef double Quantity_Enthalpy;
-typedef double Quantity_Luminance;
-typedef double Quantity_Coefficient;
+typedef double Quantity_Capacitance;
 typedef double Quantity_Impedance;
-typedef double Quantity_Speed;
+typedef double Quantity_ElectricCapacitance;
 typedef double Quantity_Length;
-typedef double Quantity_Scalaire;
 typedef double Quantity_LuminousIntensity;
 typedef double Quantity_Resistance;
 typedef double Quantity_ElectricPotential;
@@ -879,6 +879,349 @@ def __del__(self):
 };
 
 
+%nodefaultctor Quantity_Period;
+class Quantity_Period {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		Quantity_Period(const Standard_Integer ss, const Standard_Integer mics=0);
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer]");
+
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void SetValues(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		void SetValues(const Standard_Integer ss, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		Quantity_Period Subtract(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Quantity_Period operator-(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Quantity_Period Add(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Quantity_Period operator+(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Quantity_Period &anOther) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Period &anOther) {
+				if (*self==anOther) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean IsShorter(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator<(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLonger(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator>(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsValid(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsValid(const Standard_Integer ss, const Standard_Integer mics=0);
+		%feature("autodoc", "1");
+		Quantity_Period();
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetQuantity_PeriodmySec() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_PeriodmySec(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetQuantity_PeriodmyUSec() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+
+};
+%feature("shadow") Quantity_Period::~Quantity_Period %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Quantity_Period {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Quantity_ColorDefinitionError;
+class Quantity_ColorDefinitionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Quantity_ColorDefinitionError();
+		%feature("autodoc", "1");
+		Quantity_ColorDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Quantity_ColorDefinitionError {
+	Handle_Quantity_ColorDefinitionError GetHandle() {
+	return *(Handle_Quantity_ColorDefinitionError*) &$self;
+	}
+};
+%extend Quantity_ColorDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Quantity_ColorDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Quantity_PeriodDefinitionError;
+class Quantity_PeriodDefinitionError : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Quantity_PeriodDefinitionError();
+		%feature("autodoc", "1");
+		Quantity_PeriodDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Quantity_PeriodDefinitionError {
+	Handle_Quantity_PeriodDefinitionError GetHandle() {
+	return *(Handle_Quantity_PeriodDefinitionError*) &$self;
+	}
+};
+%extend Quantity_PeriodDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Quantity_PeriodDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Quantity_Array1OfColor;
+class Quantity_Array1OfColor {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Array1OfColor(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Quantity_Array1OfColor(const Quantity_Color &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Quantity_Color &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
+		%feature("autodoc", "1");
+		const Quantity_Array1OfColor & operator=(const Quantity_Array1OfColor &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Quantity_Color &Value);
+		%feature("autodoc", "1");
+		const Quantity_Color & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Quantity_Color & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Quantity_Color & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Quantity_Color & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Quantity_Array1OfColor::~Quantity_Array1OfColor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Quantity_Array1OfColor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Quantity_Color;
+class Quantity_Color {
+	public:
+		%feature("autodoc", "1");
+		Quantity_Color();
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc", "1");
+		Quantity_Color & Assign(const Quantity_Color &Other);
+		%feature("autodoc", "1");
+		Quantity_Color & operator=(const Quantity_Color &Other);
+		%feature("autodoc", "1");
+		void ChangeContrast(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void ChangeIntensity(const Quantity_Rate ADelta);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_NameOfColor AName);
+		%feature("autodoc", "1");
+		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
+		%feature("autodoc","Delta(const AColor) -> [Standard_Real, Standard_Real]");
+
+		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Blue() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Green() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Hue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Quantity_Color &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Color &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Quantity_Parameter Light() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Name() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Red() const;
+		%feature("autodoc", "1");
+		Quantity_Parameter Saturation() const;
+		%feature("autodoc","Values(Quantity_TypeOfColor AType) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
+		%feature("autodoc", "1");
+		static		void SetEpsilon(const Quantity_Parameter AnEpsilon);
+		%feature("autodoc", "1");
+		static		Quantity_Parameter Epsilon();
+		%feature("autodoc", "1");
+		static		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
+		%feature("autodoc", "1");
+		static		char * StringName(const Quantity_NameOfColor AColor);
+		%feature("autodoc","HlsRgb(Quantity_Parameter H, Quantity_Parameter L, Quantity_Parameter S) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","Color2argb(const theColor) -> Standard_Integer");
+
+		static		void Color2argb(const Quantity_Color &theColor, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		static		void Argb2color(const Standard_Integer theARGB, Quantity_Color & theColor);
+		%feature("autodoc", "1");
+		static		void Test();
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
+		%feature("autodoc", "1");
+		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%feature("shadow") Quantity_Color::~Quantity_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Quantity_Color {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
 	public:
@@ -985,316 +1328,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Quantity_Period;
-class Quantity_Period {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Period(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		Quantity_Period(const Standard_Integer ss, const Standard_Integer mics=0);
-		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Values() -> [Standard_Integer, Standard_Integer]");
-
-		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void SetValues(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		void SetValues(const Standard_Integer ss, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		Quantity_Period Subtract(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Quantity_Period operator-(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Quantity_Period Add(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Quantity_Period operator+(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsShorter(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator<(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLonger(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator>(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const Standard_Integer ss, const Standard_Integer mics=0);
-		%feature("autodoc", "1");
-		Quantity_Period();
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetQuantity_PeriodmySec() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_PeriodmySec(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetQuantity_PeriodmyUSec() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
-
-};
-%feature("shadow") Quantity_Period::~Quantity_Period %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Quantity_Period {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Quantity_ColorDefinitionError;
-class Quantity_ColorDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_ColorDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Quantity_ColorDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Quantity_ColorDefinitionError {
-	Handle_Quantity_ColorDefinitionError GetHandle() {
-	return *(Handle_Quantity_ColorDefinitionError*) &$self;
-	}
-};
-%extend Quantity_ColorDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Quantity_ColorDefinitionError::~Quantity_ColorDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Quantity_ColorDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Quantity_PeriodDefinitionError;
-class Quantity_PeriodDefinitionError : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Quantity_PeriodDefinitionError();
-		%feature("autodoc", "1");
-		Quantity_PeriodDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Quantity_PeriodDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Quantity_PeriodDefinitionError {
-	Handle_Quantity_PeriodDefinitionError GetHandle() {
-	return *(Handle_Quantity_PeriodDefinitionError*) &$self;
-	}
-};
-%extend Quantity_PeriodDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Quantity_PeriodDefinitionError::~Quantity_PeriodDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Quantity_PeriodDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Quantity_Array1OfColor;
-class Quantity_Array1OfColor {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Array1OfColor(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Quantity_Array1OfColor(const Quantity_Color &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Quantity_Color &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Quantity_Array1OfColor & Assign(const Quantity_Array1OfColor &Other);
-		%feature("autodoc", "1");
-		const Quantity_Array1OfColor & operator=(const Quantity_Array1OfColor &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Quantity_Color &Value);
-		%feature("autodoc", "1");
-		const Quantity_Color & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Quantity_Color & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Quantity_Color & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Quantity_Color & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Quantity_Array1OfColor::~Quantity_Array1OfColor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Quantity_Array1OfColor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Quantity_Color;
-class Quantity_Color {
-	public:
-		%feature("autodoc", "1");
-		Quantity_Color();
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		Quantity_Color(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc", "1");
-		Quantity_Color & Assign(const Quantity_Color &Other);
-		%feature("autodoc", "1");
-		Quantity_Color & operator=(const Quantity_Color &Other);
-		%feature("autodoc", "1");
-		void ChangeContrast(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void ChangeIntensity(const Quantity_Rate ADelta);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_NameOfColor AName);
-		%feature("autodoc", "1");
-		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
-		%feature("autodoc","Delta(const AColor) -> [Standard_Real, Standard_Real]");
-
-		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Quantity_Color &AColor) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Blue() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Green() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Hue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Light() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Name() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Red() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Saturation() const;
-		%feature("autodoc","Values(Quantity_TypeOfColor AType) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
-		%feature("autodoc", "1");
-		static		void SetEpsilon(const Quantity_Parameter AnEpsilon);
-		%feature("autodoc", "1");
-		static		Quantity_Parameter Epsilon();
-		%feature("autodoc", "1");
-		static		Quantity_NameOfColor Name(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B);
-		%feature("autodoc", "1");
-		static		char * StringName(const Quantity_NameOfColor AColor);
-		%feature("autodoc","HlsRgb(Quantity_Parameter H, Quantity_Parameter L, Quantity_Parameter S) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","RgbHls(Quantity_Parameter R, Quantity_Parameter G, Quantity_Parameter B) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Color2argb(const theColor) -> Standard_Integer");
-
-		static		void Color2argb(const Quantity_Color &theColor, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		static		void Argb2color(const Standard_Integer theARGB, Quantity_Color & theColor);
-		%feature("autodoc", "1");
-		static		void Test();
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyRed() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyRed(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyGreen() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyGreen(const Standard_ShortReal p);
-		%feature("autodoc", "1");
-		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
-
-};
-%feature("shadow") Quantity_Color::~Quantity_Color %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Quantity_Color {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
 	public:
@@ -1335,8 +1368,12 @@ class Quantity_Date {
 		Standard_Integer MicroSecond();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Date &anOther) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Date &anOther) {
+				if (*self==anOther) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEarlier(const Quantity_Date &anOther) const;
 		%feature("autodoc", "1");
@@ -1357,6 +1394,13 @@ class Quantity_Date {
 		Standard_Integer _CSFDB_GetQuantity_DatemyUSec() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Quantity_Date::~Quantity_Date %{
@@ -1399,7 +1443,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_DateDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_DateDefinitionError::~Quantity_DateDefinitionError %{
@@ -1454,7 +1498,7 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 };
 %extend Quantity_HArray1OfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Quantity_HArray1OfColor::~Quantity_HArray1OfColor %{

@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Intrv_SequenceNodeOfSequenceOfInterval::DownCast;

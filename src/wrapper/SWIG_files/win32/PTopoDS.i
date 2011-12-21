@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PTopoDS_TSolid;
+class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TSolid();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TSolid(const Handle_PTopoDS_TSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TSolid(const PTopoDS_TSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TSolid & operator=(const Handle_PTopoDS_TSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TSolid & operator=(const PTopoDS_TSolid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_TSolid DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TSolid {
+	PTopoDS_TSolid* GetObject() {
+	return (PTopoDS_TSolid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PTopoDS_TSolid::~Handle_PTopoDS_TSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PTopoDS_TSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PTopoDS_TShell;
 class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 	public:
@@ -122,6 +160,44 @@ def __del__(self):
 %}
 
 %extend Handle_PTopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PTopoDS_TVertex;
+class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TVertex();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TVertex(const Handle_PTopoDS_TVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TVertex(const PTopoDS_TVertex *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TVertex & operator=(const Handle_PTopoDS_TVertex &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TVertex & operator=(const PTopoDS_TVertex *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_TVertex DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TVertex {
+	PTopoDS_TVertex* GetObject() {
+	return (PTopoDS_TVertex*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PTopoDS_TVertex::~Handle_PTopoDS_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PTopoDS_TVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -356,6 +432,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PTopoDS_TFace1;
+class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace1();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace1(const Handle_PTopoDS_TFace1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace1(const PTopoDS_TFace1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace1 & operator=(const Handle_PTopoDS_TFace1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace1 & operator=(const PTopoDS_TFace1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_TFace1 DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TFace1 {
+	PTopoDS_TFace1* GetObject() {
+	return (PTopoDS_TFace1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PTopoDS_TFace1::~Handle_PTopoDS_TFace1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PTopoDS_TFace1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PTopoDS_TCompSolid1;
 class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 	public:
@@ -388,6 +502,44 @@ def __del__(self):
 %}
 
 %extend Handle_PTopoDS_TCompSolid1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PTopoDS_TFace;
+class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace(const Handle_PTopoDS_TFace &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace(const PTopoDS_TFace *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace & operator=(const Handle_PTopoDS_TFace &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TFace & operator=(const PTopoDS_TFace *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_TFace DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TFace {
+	PTopoDS_TFace* GetObject() {
+	return (PTopoDS_TFace*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PTopoDS_TFace::~Handle_PTopoDS_TFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PTopoDS_TFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -622,82 +774,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PTopoDS_TVertex;
-class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex(const Handle_PTopoDS_TVertex &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex(const PTopoDS_TVertex *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex & operator=(const Handle_PTopoDS_TVertex &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TVertex & operator=(const PTopoDS_TVertex *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PTopoDS_TVertex DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TVertex {
-	PTopoDS_TVertex* GetObject() {
-	return (PTopoDS_TVertex*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PTopoDS_TVertex::~Handle_PTopoDS_TVertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PTopoDS_TVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PTopoDS_TCompound1;
-class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
-	public:
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1(const Handle_PTopoDS_TCompound1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1(const PTopoDS_TCompound1 *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1 & operator=(const Handle_PTopoDS_TCompound1 &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TCompound1 & operator=(const PTopoDS_TCompound1 *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PTopoDS_TCompound1 DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TCompound1 {
-	PTopoDS_TCompound1* GetObject() {
-	return (PTopoDS_TCompound1*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PTopoDS_TCompound1::~Handle_PTopoDS_TCompound1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PTopoDS_TCompound1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PTopoDS_Vertex;
 class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 	public:
@@ -844,44 +920,6 @@ def __del__(self):
 %}
 
 %extend Handle_PTopoDS_HArray1OfHShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PTopoDS_TSolid;
-class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid(const Handle_PTopoDS_TSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid(const PTopoDS_TSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid & operator=(const Handle_PTopoDS_TSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TSolid & operator=(const PTopoDS_TSolid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PTopoDS_TSolid DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TSolid {
-	PTopoDS_TSolid* GetObject() {
-	return (PTopoDS_TSolid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PTopoDS_TSolid::~Handle_PTopoDS_TSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PTopoDS_TSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1116,6 +1154,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PTopoDS_TCompound1;
+class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
+	public:
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1();
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1(const Handle_PTopoDS_TCompound1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1(const PTopoDS_TCompound1 *anItem);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1 & operator=(const Handle_PTopoDS_TCompound1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_PTopoDS_TCompound1 & operator=(const PTopoDS_TCompound1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PTopoDS_TCompound1 DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PTopoDS_TCompound1 {
+	PTopoDS_TCompound1* GetObject() {
+	return (PTopoDS_TCompound1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PTopoDS_TCompound1::~Handle_PTopoDS_TCompound1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PTopoDS_TCompound1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PTopoDS_TWire1;
 class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 	public:
@@ -1154,29 +1230,62 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PTopoDS_TFace1;
-class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
+%nodefaultctor PTopoDS_HArray1OfShape1;
+class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1();
+		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1(const Handle_PTopoDS_TFace1 &aHandle);
+		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up, const PTopoDS_Shape1 &V);
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1(const PTopoDS_TFace1 *anItem);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1 & operator=(const Handle_PTopoDS_TFace1 &aHandle);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace1 & operator=(const PTopoDS_TFace1 *anItem);
+		void SetValue(const Standard_Integer Index, const PTopoDS_Shape1 &Value);
 		%feature("autodoc", "1");
-		static		Handle_PTopoDS_TFace1 DownCast(const Handle_Standard_Persistent &AnObject);
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		PTopoDS_Shape1 Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1();
+		%feature("autodoc", "1");
+		PTopoDS_HArray1OfShape1(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1LowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopoDS_HArray1OfShape1LowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1UpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopoDS_HArray1OfShape1UpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PTopoDS_FieldOfHArray1OfShape1 & _CSFDB_GetPTopoDS_HArray1OfShape1Data() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_PTopoDS_TFace1 {
-	PTopoDS_TFace1* GetObject() {
-	return (PTopoDS_TFace1*)$self->Access();
+%extend PTopoDS_HArray1OfShape1 {
+	Handle_PTopoDS_HArray1OfShape1 GetHandle() {
+	return *(Handle_PTopoDS_HArray1OfShape1*) &$self;
 	}
 };
-%feature("shadow") Handle_PTopoDS_TFace1::~Handle_PTopoDS_TFace1 %{
+%extend PTopoDS_HArray1OfShape1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PTopoDS_HArray1OfShape1::~PTopoDS_HArray1OfShape1 %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1185,45 +1294,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PTopoDS_TFace1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PTopoDS_TFace;
-class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace();
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace(const Handle_PTopoDS_TFace &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace(const PTopoDS_TFace *anItem);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace & operator=(const Handle_PTopoDS_TFace &aHandle);
-		%feature("autodoc", "1");
-		Handle_PTopoDS_TFace & operator=(const PTopoDS_TFace *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PTopoDS_TFace DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PTopoDS_TFace {
-	PTopoDS_TFace* GetObject() {
-	return (PTopoDS_TFace*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PTopoDS_TFace::~Handle_PTopoDS_TFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PTopoDS_TFace {
+%extend PTopoDS_HArray1OfShape1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1258,7 +1329,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
@@ -1297,7 +1368,7 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 };
 %extend PTopoDS_TWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TWire::~PTopoDS_TWire %{
@@ -1336,7 +1407,7 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 };
 %extend PTopoDS_TShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TShell::~PTopoDS_TShell %{
@@ -1395,7 +1466,7 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 %extend PTopoDS_HShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_HShape::~PTopoDS_HShape %{
@@ -1430,7 +1501,7 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 };
 %extend PTopoDS_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Shell::~PTopoDS_Shell %{
@@ -1469,7 +1540,7 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TEdge1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TEdge1::~PTopoDS_TEdge1 %{
@@ -1514,7 +1585,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
@@ -1527,6 +1598,45 @@ def __del__(self):
 %}
 
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PTopoDS_TCompound1;
+class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
+	public:
+		%feature("autodoc", "1");
+		PTopoDS_TCompound1();
+		%feature("autodoc", "1");
+		virtual		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		PTopoDS_TCompound1(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_TCompound1 {
+	Handle_PTopoDS_TCompound1 GetHandle() {
+	return *(Handle_PTopoDS_TCompound1*) &$self;
+	}
+};
+%extend PTopoDS_TCompound1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PTopoDS_TCompound1::~PTopoDS_TCompound1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTopoDS_TCompound1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1551,7 +1661,7 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 };
 %extend PTopoDS_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Wire::~PTopoDS_Wire %{
@@ -1590,7 +1700,7 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 %extend PTopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TEdge::~PTopoDS_TEdge %{
@@ -1629,7 +1739,7 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TShell1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TShell1::~PTopoDS_TShell1 %{
@@ -1666,7 +1776,7 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 };
 %extend PTopoDS_Compound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Compound::~PTopoDS_Compound %{
@@ -1703,7 +1813,7 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 };
 %extend PTopoDS_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Edge::~PTopoDS_Edge %{
@@ -1742,7 +1852,7 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TSolid::~PTopoDS_TSolid %{
@@ -1781,7 +1891,7 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompSolid::~PTopoDS_TCompSolid %{
@@ -1820,7 +1930,7 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompound::~PTopoDS_TCompound %{
@@ -1859,7 +1969,7 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TSolid1::~PTopoDS_TSolid1 %{
@@ -1898,7 +2008,7 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TVertex1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TVertex1::~PTopoDS_TVertex1 %{
@@ -1964,7 +2074,7 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 };
 %extend PTopoDS_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Solid::~PTopoDS_Solid %{
@@ -2024,43 +2134,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PTopoDS_Vertex;
-class PTopoDS_Vertex : public PTopoDS_HShape {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_Vertex();
-		%feature("autodoc", "1");
-		PTopoDS_Vertex(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_Vertex {
-	Handle_PTopoDS_Vertex GetHandle() {
-	return *(Handle_PTopoDS_Vertex*) &$self;
-	}
-};
-%extend PTopoDS_Vertex {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PTopoDS_Vertex::~PTopoDS_Vertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopoDS_Vertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1;
 class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 	public:
@@ -2108,7 +2181,7 @@ class PTopoDS_Face : public PTopoDS_HShape {
 };
 %extend PTopoDS_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Face::~PTopoDS_Face %{
@@ -2179,7 +2252,7 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_HArray1OfHShape::~PTopoDS_HArray1OfHShape %{
@@ -2218,7 +2291,7 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TWire1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TWire1::~PTopoDS_TWire1 %{
@@ -2231,84 +2304,6 @@ def __del__(self):
 %}
 
 %extend PTopoDS_TWire1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTopoDS_TCompound1;
-class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_TCompound1();
-		%feature("autodoc", "1");
-		virtual		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		PTopoDS_TCompound1(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_TCompound1 {
-	Handle_PTopoDS_TCompound1 GetHandle() {
-	return *(Handle_PTopoDS_TCompound1*) &$self;
-	}
-};
-%extend PTopoDS_TCompound1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PTopoDS_TCompound1::~PTopoDS_TCompound1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopoDS_TCompound1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTopoDS_TVertex;
-class PTopoDS_TVertex : public PTopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		virtual		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		PTopoDS_TVertex(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		PTopoDS_TVertex();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_TVertex {
-	Handle_PTopoDS_TVertex GetHandle() {
-	return *(Handle_PTopoDS_TVertex*) &$self;
-	}
-};
-%extend PTopoDS_TVertex {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PTopoDS_TVertex::~PTopoDS_TVertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopoDS_TVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2356,6 +2351,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor PTopoDS_Vertex;
+class PTopoDS_Vertex : public PTopoDS_HShape {
+	public:
+		%feature("autodoc", "1");
+		PTopoDS_Vertex();
+		%feature("autodoc", "1");
+		PTopoDS_Vertex(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_Vertex {
+	Handle_PTopoDS_Vertex GetHandle() {
+	return *(Handle_PTopoDS_Vertex*) &$self;
+	}
+};
+%extend PTopoDS_Vertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PTopoDS_Vertex::~PTopoDS_Vertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTopoDS_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PTopoDS_CompSolid;
 class PTopoDS_CompSolid : public PTopoDS_HShape {
 	public:
@@ -2374,7 +2406,7 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 %extend PTopoDS_CompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_CompSolid::~PTopoDS_CompSolid %{
@@ -2387,6 +2419,45 @@ def __del__(self):
 %}
 
 %extend PTopoDS_CompSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PTopoDS_TVertex;
+class PTopoDS_TVertex : public PTopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		virtual		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		PTopoDS_TVertex(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		PTopoDS_TVertex();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopoDS_TVertex {
+	Handle_PTopoDS_TVertex GetHandle() {
+	return *(Handle_PTopoDS_TVertex*) &$self;
+	}
+};
+%extend PTopoDS_TVertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") PTopoDS_TVertex::~PTopoDS_TVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTopoDS_TVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2413,7 +2484,7 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 };
 %extend PTopoDS_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TFace::~PTopoDS_TFace %{
@@ -2452,7 +2523,7 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompSolid1::~PTopoDS_TCompSolid1 %{
@@ -2518,77 +2589,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PTopoDS_HArray1OfShape1;
-class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Standard_Integer Low, const Standard_Integer Up, const PTopoDS_Shape1 &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const PTopoDS_Shape1 &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		PTopoDS_Shape1 Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1();
-		%feature("autodoc", "1");
-		PTopoDS_HArray1OfShape1(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1LowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopoDS_HArray1OfShape1LowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPTopoDS_HArray1OfShape1UpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopoDS_HArray1OfShape1UpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PTopoDS_FieldOfHArray1OfShape1 & _CSFDB_GetPTopoDS_HArray1OfShape1Data() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopoDS_HArray1OfShape1 {
-	Handle_PTopoDS_HArray1OfShape1 GetHandle() {
-	return *(Handle_PTopoDS_HArray1OfShape1*) &$self;
-	}
-};
-%extend PTopoDS_HArray1OfShape1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") PTopoDS_HArray1OfShape1::~PTopoDS_HArray1OfShape1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopoDS_HArray1OfShape1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PTopoDS_TFace1;
 class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	public:
@@ -2609,7 +2609,7 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TFace1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TFace1::~PTopoDS_TFace1 %{

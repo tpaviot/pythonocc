@@ -27,12 +27,12 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
 import TopoDS
-import ChFiDS
-import TopOpeBRepBuild
+import Standard
 import TopTools
 import ChFi2d
+import ChFiDS
+import TopOpeBRepBuild
 import Law
 import ChFi3d
 import Geom

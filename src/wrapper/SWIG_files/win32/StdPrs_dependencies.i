@@ -380,6 +380,6 @@ $HeaderURL$
 %import Prs3d.i
 %import Standard.i
 %import Quantity.i
+%import BRepMesh.i
 %import Adaptor2d.i
 %import TopAbs.i
-%import BRepMesh.i

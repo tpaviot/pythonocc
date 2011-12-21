@@ -192,12 +192,12 @@ $HeaderURL$
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_IGESData_IGESEntity.hxx>
 #include<gp_XY.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>
 #include<IGESGraph.hxx>
-#include<Handle_IGESData_IGESEntity.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>

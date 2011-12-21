@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
+class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_ObjMgt_PSeqOfExtRef();
+		%feature("autodoc", "1");
+		Handle_ObjMgt_PSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_PSeqOfExtRef(const ObjMgt_PSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_PSeqOfExtRef & operator=(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_PSeqOfExtRef & operator=(const ObjMgt_PSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ObjMgt_PSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_ObjMgt_PSeqOfExtRef {
+	ObjMgt_PSeqOfExtRef* GetObject() {
+	return (ObjMgt_PSeqOfExtRef*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ObjMgt_PSeqOfExtRef::~Handle_ObjMgt_PSeqOfExtRef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ObjMgt_PSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ObjMgt_ExternShareable;
 class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 	public:
@@ -160,75 +198,6 @@ def __del__(self):
 %}
 
 %extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
-class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef();
-		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef(const ObjMgt_PSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef & operator=(const Handle_ObjMgt_PSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_PSeqOfExtRef & operator=(const ObjMgt_PSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ObjMgt_PSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_ObjMgt_PSeqOfExtRef {
-	ObjMgt_PSeqOfExtRef* GetObject() {
-	return (ObjMgt_PSeqOfExtRef*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ObjMgt_PSeqOfExtRef::~Handle_ObjMgt_PSeqOfExtRef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ObjMgt_PSeqOfExtRef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
-class ObjMgt_SeqExplorerOfPSeqOfExtRef {
-	public:
-		%feature("autodoc", "1");
-		ObjMgt_SeqExplorerOfPSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &S);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef Value(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_ObjMgt_ExternRef &T);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-		%feature("autodoc", "1");
-		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T);
-
-};
-%feature("shadow") ObjMgt_SeqExplorerOfPSeqOfExtRef::~ObjMgt_SeqExplorerOfPSeqOfExtRef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -325,7 +294,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %extend ObjMgt_PSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ObjMgt_PSeqOfExtRef::~ObjMgt_PSeqOfExtRef %{
@@ -392,7 +361,7 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
@@ -437,7 +406,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %extend ObjMgt_ExternRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternRef::~ObjMgt_ExternRef %{
@@ -478,7 +447,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %extend ObjMgt_ExternShareable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternShareable::~ObjMgt_ExternShareable %{
@@ -491,6 +460,37 @@ def __del__(self):
 %}
 
 %extend ObjMgt_ExternShareable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
+class ObjMgt_SeqExplorerOfPSeqOfExtRef {
+	public:
+		%feature("autodoc", "1");
+		ObjMgt_SeqExplorerOfPSeqOfExtRef(const Handle_ObjMgt_PSeqOfExtRef &S);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_ExternRef Value(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_ObjMgt_ExternRef &T);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T, const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		%feature("autodoc", "1");
+		Standard_Integer Location(const Standard_Integer N, const Handle_ObjMgt_ExternRef &T);
+
+};
+%feature("shadow") ObjMgt_SeqExplorerOfPSeqOfExtRef::~ObjMgt_SeqExplorerOfPSeqOfExtRef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Vrml_Coordinate3::DownCast;
+%rename(DownCast) Handle_Vrml_AsciiText::DownCast;
+%rename(DownCast) Handle_Vrml_IndexedLineSet::DownCast;
+%rename(DownCast) Handle_Vrml_SFImage::DownCast;
+%rename(DownCast) Handle_Vrml_Normal::DownCast;
+%rename(DownCast) Handle_Vrml_Material::DownCast;
+%rename(DownCast) Handle_Vrml_LOD::DownCast;
+%rename(DownCast) Handle_Vrml_IndexedFaceSet::DownCast;
+%rename(DownCast) Handle_Vrml_TextureCoordinate2::DownCast;
+%rename(VrmlHeaderWriter) Vrml::VrmlHeaderWriter;
+%rename(CommentWriter) Vrml::CommentWriter;

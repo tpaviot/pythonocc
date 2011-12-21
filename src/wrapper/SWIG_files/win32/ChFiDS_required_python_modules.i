@@ -33,11 +33,11 @@ import gp
 import BRepAdaptor
 import GeomAbs
 import TopAbs
-import Geom2d
-import TopTools
 import Law
+import TCollection
 import MMgt
+import Geom2d
 import Adaptor3d
 import Geom
-import TCollection
+import TopTools
 };

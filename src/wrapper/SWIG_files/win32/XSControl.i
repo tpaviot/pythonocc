@@ -384,7 +384,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %extend XSControl_SignTransferStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_SignTransferStatus::~XSControl_SignTransferStatus %{
@@ -481,7 +481,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %extend XSControl_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_WorkSession::~XSControl_WorkSession %{
@@ -593,7 +593,7 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %extend XSControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_Controller::~XSControl_Controller %{
@@ -653,16 +653,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor XSControl_Functions;
-class XSControl_Functions {
+%nodefaultctor XSControl_ConnectedShapes;
+class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	public:
 		%feature("autodoc", "1");
-		XSControl_Functions();
+		XSControl_ConnectedShapes();
 		%feature("autodoc", "1");
-		static		void Init();
+		XSControl_ConnectedShapes(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetReader(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		static		Handle_TColStd_HSequenceOfTransient AdjacentEntities(const TopoDS_Shape ashape, const Handle_Transfer_TransientProcess &TP, const TopAbs_ShapeEnum type);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") XSControl_Functions::~XSControl_Functions %{
+%extend XSControl_ConnectedShapes {
+	Handle_XSControl_ConnectedShapes GetHandle() {
+	return *(Handle_XSControl_ConnectedShapes*) &$self;
+	}
+};
+%extend XSControl_ConnectedShapes {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -671,7 +691,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XSControl_Functions {
+%extend XSControl_ConnectedShapes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -780,7 +800,7 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 };
 %extend XSControl_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
@@ -953,7 +973,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 };
 %extend XSControl_TransferWriter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
@@ -966,51 +986,6 @@ def __del__(self):
 %}
 
 %extend XSControl_TransferWriter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_ConnectedShapes;
-class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		XSControl_ConnectedShapes();
-		%feature("autodoc", "1");
-		XSControl_ConnectedShapes(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetReader(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		static		Handle_TColStd_HSequenceOfTransient AdjacentEntities(const TopoDS_Shape ashape, const Handle_Transfer_TransientProcess &TP, const TopAbs_ShapeEnum type);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSControl_ConnectedShapes {
-	Handle_XSControl_ConnectedShapes GetHandle() {
-	return *(Handle_XSControl_ConnectedShapes*) &$self;
-	}
-};
-%extend XSControl_ConnectedShapes {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_ConnectedShapes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1125,7 +1100,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %extend XSControl_TransferReader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") XSControl_TransferReader::~XSControl_TransferReader %{
@@ -1138,6 +1113,31 @@ def __del__(self):
 %}
 
 %extend XSControl_TransferReader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_Functions;
+class XSControl_Functions {
+	public:
+		%feature("autodoc", "1");
+		XSControl_Functions();
+		%feature("autodoc", "1");
+		static		void Init();
+
+};
+%feature("shadow") XSControl_Functions::~XSControl_Functions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_Functions {
 	void _kill_pointed() {
 		delete $self;
 	}

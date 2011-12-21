@@ -50,6 +50,13 @@ $HeaderURL$
 %include CDF_headers.i
 
 
+enum CDF_SubComponentStatus {
+	CDF_SCS_Consistent,
+	CDF_SCS_Unconsistent,
+	CDF_SCS_Stored,
+	CDF_SCS_Modified,
+	};
+
 enum CDF_StoreStatus {
 	CDF_SS_OK,
 	CDF_SS_DriverFailure,
@@ -87,6 +94,12 @@ enum CDF_StoreSetNameStatus {
 	CDF_SSNS_OpenDocument,
 	};
 
+enum CDF_TypeOfActivation {
+	CDF_TOA_New,
+	CDF_TOA_Modified,
+	CDF_TOA_Unchanged,
+	};
+
 enum CDF_TryStoreStatus {
 	CDF_TS_OK,
 	CDF_TS_NoCurrentDocument,
@@ -94,57 +107,6 @@ enum CDF_TryStoreStatus {
 	CDF_TS_NoSubComponentDriver,
 	};
 
-enum CDF_SubComponentStatus {
-	CDF_SCS_Consistent,
-	CDF_SCS_Unconsistent,
-	CDF_SCS_Stored,
-	CDF_SCS_Modified,
-	};
-
-enum CDF_TypeOfActivation {
-	CDF_TOA_New,
-	CDF_TOA_Modified,
-	CDF_TOA_Unchanged,
-	};
-
-
-
-%nodefaultctor Handle_CDF_MetaDataDriver;
-class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver();
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_CDF_MetaDataDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_CDF_MetaDataDriver {
-	CDF_MetaDataDriver* GetObject() {
-	return (CDF_MetaDataDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_CDF_MetaDataDriver::~Handle_CDF_MetaDataDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_CDF_MetaDataDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
 
 
 %nodefaultctor Handle_CDF_MetaDataDriverError;
@@ -299,6 +261,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_CDF_MetaDataDriver;
+class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver();
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver(const Handle_CDF_MetaDataDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver(const CDF_MetaDataDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver & operator=(const Handle_CDF_MetaDataDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_CDF_MetaDataDriver & operator=(const CDF_MetaDataDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_CDF_MetaDataDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_CDF_MetaDataDriver {
+	CDF_MetaDataDriver* GetObject() {
+	return (CDF_MetaDataDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_CDF_MetaDataDriver::~Handle_CDF_MetaDataDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_CDF_MetaDataDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_CDF_MetaDataDriverFactory;
 class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	public:
@@ -399,7 +399,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %extend CDF_MetaDataDriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverError::~CDF_MetaDataDriverError %{
@@ -495,7 +495,7 @@ class CDF_Application : public CDM_Application {
 };
 %extend CDF_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_Application::~CDF_Application %{
@@ -571,7 +571,7 @@ class CDF_StoreList : public Standard_Transient {
 };
 %extend CDF_StoreList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_StoreList::~CDF_StoreList %{
@@ -636,7 +636,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %extend CDF_MetaDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriver::~CDF_MetaDataDriver %{
@@ -671,7 +671,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %extend CDF_MetaDataDriverFactory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverFactory::~CDF_MetaDataDriverFactory %{
@@ -684,53 +684,6 @@ def __del__(self):
 %}
 
 %extend CDF_MetaDataDriverFactory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDF_Directory;
-class CDF_Directory : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		CDF_Directory();
-		%feature("autodoc", "1");
-		void Add(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		void Remove(const Handle_CDM_Document &aDocument);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
-		%feature("autodoc", "1");
-		Handle_CDM_Document Last();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend CDF_Directory {
-	Handle_CDF_Directory GetHandle() {
-	return *(Handle_CDF_Directory*) &$self;
-	}
-};
-%extend CDF_Directory {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") CDF_Directory::~CDF_Directory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDF_Directory {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -771,7 +724,7 @@ class CDF_Session : public Standard_Transient {
 };
 %extend CDF_Session {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") CDF_Session::~CDF_Session %{
@@ -790,22 +743,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDF_DirectoryIterator;
-class CDF_DirectoryIterator {
+%nodefaultctor CDF_Directory;
+class CDF_Directory : public Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		CDF_DirectoryIterator();
+		CDF_Directory();
 		%feature("autodoc", "1");
-		CDF_DirectoryIterator(const Handle_CDF_Directory &aDirectory);
+		void Add(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
-		Standard_Boolean MoreDocument();
+		void Remove(const Handle_CDM_Document &aDocument);
 		%feature("autodoc", "1");
-		void NextDocument();
+		Standard_Boolean Contains(const Handle_CDM_Document &aDocument) const;
 		%feature("autodoc", "1");
-		Handle_CDM_Document Document();
+		Handle_CDM_Document Last();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
+%extend CDF_Directory {
+	Handle_CDF_Directory GetHandle() {
+	return *(Handle_CDF_Directory*) &$self;
+	}
+};
+%extend CDF_Directory {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") CDF_Directory::~CDF_Directory %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -814,7 +783,7 @@ def __del__(self):
 		pass
 %}
 
-%extend CDF_DirectoryIterator {
+%extend CDF_Directory {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -906,6 +875,37 @@ def __del__(self):
 %}
 
 %extend CDF_Store {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CDF_DirectoryIterator;
+class CDF_DirectoryIterator {
+	public:
+		%feature("autodoc", "1");
+		CDF_DirectoryIterator();
+		%feature("autodoc", "1");
+		CDF_DirectoryIterator(const Handle_CDF_Directory &aDirectory);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreDocument();
+		%feature("autodoc", "1");
+		void NextDocument();
+		%feature("autodoc", "1");
+		Handle_CDM_Document Document();
+
+};
+%feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDF_DirectoryIterator {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TColStd
 import gp
+import TColStd
 import Bisector
 import TColGeom2d
 import Geom2d
