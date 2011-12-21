@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_BinMPrsStd_PositionDriver;
-class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver();
-		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver(const Handle_BinMPrsStd_PositionDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver(const BinMPrsStd_PositionDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver & operator=(const Handle_BinMPrsStd_PositionDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMPrsStd_PositionDriver & operator=(const BinMPrsStd_PositionDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMPrsStd_PositionDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMPrsStd_PositionDriver {
-	BinMPrsStd_PositionDriver* GetObject() {
-	return (BinMPrsStd_PositionDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMPrsStd_PositionDriver::~Handle_BinMPrsStd_PositionDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMPrsStd_PositionDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMPrsStd_AISPresentationDriver;
 class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -128,16 +90,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMPrsStd;
-class BinMPrsStd {
+%nodefaultctor Handle_BinMPrsStd_PositionDriver;
+class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		BinMPrsStd();
+		Handle_BinMPrsStd_PositionDriver();
 		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		Handle_BinMPrsStd_PositionDriver(const Handle_BinMPrsStd_PositionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_PositionDriver(const BinMPrsStd_PositionDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_PositionDriver & operator=(const Handle_BinMPrsStd_PositionDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMPrsStd_PositionDriver & operator=(const BinMPrsStd_PositionDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMPrsStd_PositionDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") BinMPrsStd::~BinMPrsStd %{
+%extend Handle_BinMPrsStd_PositionDriver {
+	BinMPrsStd_PositionDriver* GetObject() {
+	return (BinMPrsStd_PositionDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMPrsStd_PositionDriver::~Handle_BinMPrsStd_PositionDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -146,7 +121,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BinMPrsStd {
+%extend Handle_BinMPrsStd_PositionDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -175,7 +150,7 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_AISPresentationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMPrsStd_AISPresentationDriver::~BinMPrsStd_AISPresentationDriver %{
@@ -188,6 +163,31 @@ def __del__(self):
 %}
 
 %extend BinMPrsStd_AISPresentationDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMPrsStd;
+class BinMPrsStd {
+	public:
+		%feature("autodoc", "1");
+		BinMPrsStd();
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+
+};
+%feature("shadow") BinMPrsStd::~BinMPrsStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMPrsStd {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -216,7 +216,7 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMPrsStd_PositionDriver::~BinMPrsStd_PositionDriver %{

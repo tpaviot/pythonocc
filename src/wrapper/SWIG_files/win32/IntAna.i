@@ -103,6 +103,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntAna_IntLinTorus;
+class IntAna_IntLinTorus {
+	public:
+		%feature("autodoc", "1");
+		IntAna_IntLinTorus();
+		%feature("autodoc", "1");
+		IntAna_IntLinTorus(const gp_Lin L, const gp_Torus T);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin L, const gp_Torus T);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnLine(const Standard_Integer Index) const;
+		%feature("autodoc","ParamOnTorus(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") IntAna_IntLinTorus::~IntAna_IntLinTorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntAna_IntLinTorus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntAna_Quadric;
 class IntAna_Quadric {
 	public:
@@ -251,7 +289,7 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 };
 %extend IntAna_ListNodeOfListOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntAna_ListNodeOfListOfCurve::~IntAna_ListNodeOfListOfCurve %{
@@ -318,6 +356,60 @@ def __del__(self):
 %}
 
 %extend IntAna_IntQuadQuad {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntAna_Curve;
+class IntAna_Curve {
+	public:
+		%feature("autodoc", "1");
+		IntAna_Curve();
+		%feature("autodoc", "1");
+		void SetCylinderQuadValues(const gp_Cylinder Cylinder, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
+		%feature("autodoc", "1");
+		void SetConeQuadValues(const gp_Cone Cone, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOpen() const;
+		%feature("autodoc","Domain() -> [Standard_Real, Standard_Real]");
+
+		void Domain(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFirstOpen() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLastOpen() const;
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Real Theta);
+		%feature("autodoc", "1");
+		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
+		%feature("autodoc","FindParameter(const P) -> Standard_Real");
+
+		Standard_Boolean FindParameter(const gp_Pnt P, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetIsFirstOpen(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		void SetIsLastOpen(const Standard_Boolean Flag);
+		%feature("autodoc","InternalUVValue(Standard_Real Param) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void InternalUVValue(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
+
+};
+%feature("shadow") IntAna_Curve::~IntAna_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntAna_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -520,98 +612,6 @@ def __del__(self):
 %}
 
 %extend IntAna_Int3Pln {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntAna_Curve;
-class IntAna_Curve {
-	public:
-		%feature("autodoc", "1");
-		IntAna_Curve();
-		%feature("autodoc", "1");
-		void SetCylinderQuadValues(const gp_Cylinder Cylinder, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
-		%feature("autodoc", "1");
-		void SetConeQuadValues(const gp_Cone Cone, const Standard_Real Qxx, const Standard_Real Qyy, const Standard_Real Qzz, const Standard_Real Qxy, const Standard_Real Qxz, const Standard_Real Qyz, const Standard_Real Qx, const Standard_Real Qy, const Standard_Real Qz, const Standard_Real Q1, const Standard_Real Tol, const Standard_Real DomInf, const Standard_Real DomSup, const Standard_Boolean TwoZForATheta, const Standard_Boolean ZIsPositive);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpen() const;
-		%feature("autodoc","Domain() -> [Standard_Real, Standard_Real]");
-
-		void Domain(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFirstOpen() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLastOpen() const;
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Real Theta);
-		%feature("autodoc", "1");
-		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc","FindParameter(const P) -> Standard_Real");
-
-		Standard_Boolean FindParameter(const gp_Pnt P, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetIsFirstOpen(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		void SetIsLastOpen(const Standard_Boolean Flag);
-		%feature("autodoc","InternalUVValue(Standard_Real Param) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void InternalUVValue(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetDomain(const Standard_Real Theta1, const Standard_Real Theta2);
-
-};
-%feature("shadow") IntAna_Curve::~IntAna_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntAna_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntAna_IntLinTorus;
-class IntAna_IntLinTorus {
-	public:
-		%feature("autodoc", "1");
-		IntAna_IntLinTorus();
-		%feature("autodoc", "1");
-		IntAna_IntLinTorus(const gp_Lin L, const gp_Torus T);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin L, const gp_Torus T);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnLine(const Standard_Integer Index) const;
-		%feature("autodoc","ParamOnTorus(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void ParamOnTorus(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") IntAna_IntLinTorus::~IntAna_IntLinTorus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntAna_IntLinTorus {
 	void _kill_pointed() {
 		delete $self;
 	}

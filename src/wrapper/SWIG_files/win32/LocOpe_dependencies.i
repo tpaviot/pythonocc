@@ -213,8 +213,8 @@ $HeaderURL$
 #include <TopOpeBRepBuild_kpresu.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import TopOpeBRepBuild.i
 %import Standard.i
 %import TopAbs.i

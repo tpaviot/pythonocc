@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Intf_SequenceNodeOfSeqOfTangentZone::DownCast;
+%rename(DownCast) Handle_Intf_SequenceNodeOfSeqOfSectionLine::DownCast;
+%rename(DownCast) Handle_Intf_SequenceNodeOfSeqOfSectionPoint::DownCast;
+%rename(PlaneEquation) Intf::PlaneEquation;
+%rename(Contain) Intf::Contain;

@@ -33,8 +33,8 @@ import Dico
 import Interface
 import IFSelect
 import TColStd
-import TopoDS
 import TCollection
+import TopoDS
 import TopAbs
 import TopTools
 };

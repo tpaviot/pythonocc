@@ -23,3 +23,41 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomFill_TrihedronLaw::DownCast;
+%rename(DownCast) Handle_GeomFill_TrihedronWithGuide::DownCast;
+%rename(DownCast) Handle_GeomFill_GuideTrihedronAC::DownCast;
+%rename(DownCast) Handle_GeomFill_CircularBlendFunc::DownCast;
+%rename(DownCast) Handle_GeomFill_CoonsAlgPatch::DownCast;
+%rename(DownCast) Handle_GeomFill_HArray1OfLocationLaw::DownCast;
+%rename(DownCast) Handle_GeomFill_GuideTrihedronPlan::DownCast;
+%rename(DownCast) Handle_GeomFill_LocationLaw::DownCast;
+%rename(DownCast) Handle_GeomFill_CurveAndTrihedron::DownCast;
+%rename(DownCast) Handle_GeomFill_LocationDraft::DownCast;
+%rename(DownCast) Handle_GeomFill_Boundary::DownCast;
+%rename(DownCast) Handle_GeomFill_BoundWithSurf::DownCast;
+%rename(DownCast) Handle_GeomFill_Fixed::DownCast;
+%rename(DownCast) Handle_GeomFill_Line::DownCast;
+%rename(DownCast) Handle_GeomFill_TgtField::DownCast;
+%rename(DownCast) Handle_GeomFill_Frenet::DownCast;
+%rename(DownCast) Handle_GeomFill_Darboux::DownCast;
+%rename(DownCast) Handle_GeomFill_ConstantBiNormal::DownCast;
+%rename(DownCast) Handle_GeomFill_CorrectedFrenet::DownCast;
+%rename(DownCast) Handle_GeomFill_SimpleBound::DownCast;
+%rename(DownCast) Handle_GeomFill_TgtOnCoons::DownCast;
+%rename(DownCast) Handle_GeomFill_HArray1OfSectionLaw::DownCast;
+%rename(DownCast) Handle_GeomFill_SectionLaw::DownCast;
+%rename(DownCast) Handle_GeomFill_NSections::DownCast;
+%rename(DownCast) Handle_GeomFill_UniformSection::DownCast;
+%rename(DownCast) Handle_GeomFill_SequenceNodeOfSequenceOfTrsf::DownCast;
+%rename(DownCast) Handle_GeomFill_DegeneratedBound::DownCast;
+%rename(DownCast) Handle_GeomFill_EvolvedSection::DownCast;
+%rename(DownCast) Handle_GeomFill_DraftTrihedron::DownCast;
+%rename(DownCast) Handle_GeomFill_SweepFunction::DownCast;
+%rename(DownCast) Handle_GeomFill_LocationGuide::DownCast;
+%rename(Surface) GeomFill::Surface;
+%rename(GetCircle) GeomFill::GetCircle;
+%rename(GetShape) GeomFill::GetShape;
+%rename(Knots) GeomFill::Knots;
+%rename(Mults) GeomFill::Mults;
+%rename(GetMinimalWeights) GeomFill::GetMinimalWeights;
+%rename(GetTolerance) GeomFill::GetTolerance;

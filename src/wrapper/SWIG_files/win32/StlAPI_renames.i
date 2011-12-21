@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Write) StlAPI::Write;
+%rename(Read) StlAPI::Read;

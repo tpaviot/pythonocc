@@ -128,6 +128,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor StdLDrivers_DocumentStorageDriver;
+class StdLDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		StdLDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		virtual		void Make(const Handle_CDM_Document &aDocument, PCDM_SequenceOfDocument & Documents);
+		%feature("autodoc", "1");
+		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StdLDrivers_DocumentStorageDriver {
+	Handle_StdLDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_StdLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend StdLDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StdLDrivers_DocumentStorageDriver::~StdLDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdLDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StdLDrivers;
 class StdLDrivers {
 	public:
@@ -153,45 +192,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdLDrivers_DocumentStorageDriver;
-class StdLDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		StdLDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		virtual		void Make(const Handle_CDM_Document &aDocument, PCDM_SequenceOfDocument & Documents);
-		%feature("autodoc", "1");
-		virtual		Handle_MDF_ASDriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdLDrivers_DocumentStorageDriver {
-	Handle_StdLDrivers_DocumentStorageDriver GetHandle() {
-	return *(Handle_StdLDrivers_DocumentStorageDriver*) &$self;
-	}
-};
-%extend StdLDrivers_DocumentStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StdLDrivers_DocumentStorageDriver::~StdLDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdLDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdLDrivers_DocumentRetrievalDriver;
 class StdLDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriver {
 	public:
@@ -210,7 +210,7 @@ class StdLDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 %extend StdLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdLDrivers_DocumentRetrievalDriver::~StdLDrivers_DocumentRetrievalDriver %{

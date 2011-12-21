@@ -55,11 +55,12 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pnt.hxx>
+#include<IntSurf_Quadric.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Bnd_BoundSortBox.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
@@ -70,7 +71,6 @@ $HeaderURL$
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<math_FunctionSetRoot.hxx>
-#include<IntSurf_Quadric.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 #include<Intf_Array1OfLin.hxx>

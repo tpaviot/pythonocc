@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint::DownCast;
+%rename(DownCast) Handle_Plate_HArray1OfPinpointConstraint::DownCast;
+%rename(DownCast) Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint::DownCast;
+%rename(DownCast) Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint::DownCast;

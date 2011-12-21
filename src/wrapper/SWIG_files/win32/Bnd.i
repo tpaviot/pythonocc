@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_Bnd_SequenceNodeOfSeqOfBox;
-class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox();
-		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox(const Bnd_SequenceNodeOfSeqOfBox *anItem);
-		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Bnd_SequenceNodeOfSeqOfBox DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
-	Bnd_SequenceNodeOfSeqOfBox* GetObject() {
-	return (Bnd_SequenceNodeOfSeqOfBox*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Bnd_SequenceNodeOfSeqOfBox::~Handle_Bnd_SequenceNodeOfSeqOfBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Bnd_HArray1OfBox2d;
 class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_Bnd_HArray1OfBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Bnd_SequenceNodeOfSeqOfBox;
+class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox();
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox(const Bnd_SequenceNodeOfSeqOfBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Handle_Bnd_SequenceNodeOfSeqOfBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_SequenceNodeOfSeqOfBox & operator=(const Bnd_SequenceNodeOfSeqOfBox *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Bnd_SequenceNodeOfSeqOfBox DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
+	Bnd_SequenceNodeOfSeqOfBox* GetObject() {
+	return (Bnd_SequenceNodeOfSeqOfBox*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Bnd_SequenceNodeOfSeqOfBox::~Handle_Bnd_SequenceNodeOfSeqOfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Bnd_SequenceNodeOfSeqOfBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -356,7 +356,7 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_SequenceNodeOfSeqOfBox::~Bnd_SequenceNodeOfSeqOfBox %{
@@ -369,6 +369,73 @@ def __del__(self):
 %}
 
 %extend Bnd_SequenceNodeOfSeqOfBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_B3f;
+class Bnd_B3f {
+	public:
+		%feature("autodoc", "1");
+		Bnd_B3f();
+		%feature("autodoc", "1");
+		Bnd_B3f(const gp_XYZ theCenter, const gp_XYZ theHSize);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Add(const gp_XYZ thePnt);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt thePnt);
+		%feature("autodoc", "1");
+		void Add(const Bnd_B3f &theBox);
+		%feature("autodoc", "1");
+		gp_XYZ CornerMin() const;
+		%feature("autodoc", "1");
+		gp_XYZ CornerMax() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+		%feature("autodoc", "1");
+		void Enlarge(const Standard_Real aDiff);
+		%feature("autodoc", "1");
+		Standard_Boolean Limit(const Bnd_B3f &theOtherBox);
+		%feature("autodoc", "1");
+		Bnd_B3f Transformed(const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3f &theOtherBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3f &theBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_XYZ theCenter);
+		%feature("autodoc", "1");
+		void SetHSize(const gp_XYZ theHSize);
+
+};
+%feature("shadow") Bnd_B3f::~Bnd_B3f %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_B3f {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -585,140 +652,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bnd_B3d;
-class Bnd_B3d {
-	public:
-		%feature("autodoc", "1");
-		Bnd_B3d();
-		%feature("autodoc", "1");
-		Bnd_B3d(const gp_XYZ theCenter, const gp_XYZ theHSize);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Add(const gp_XYZ thePnt);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt thePnt);
-		%feature("autodoc", "1");
-		void Add(const Bnd_B3d &theBox);
-		%feature("autodoc", "1");
-		gp_XYZ CornerMin() const;
-		%feature("autodoc", "1");
-		gp_XYZ CornerMax() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
-		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real aDiff);
-		%feature("autodoc", "1");
-		Standard_Boolean Limit(const Bnd_B3d &theOtherBox);
-		%feature("autodoc", "1");
-		Bnd_B3d Transformed(const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3d &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3d &theOtherBox, const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3d &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3d &theBox, const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_XYZ theCenter);
-		%feature("autodoc", "1");
-		void SetHSize(const gp_XYZ theHSize);
-
-};
-%feature("shadow") Bnd_B3d::~Bnd_B3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_B3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_B3f;
-class Bnd_B3f {
-	public:
-		%feature("autodoc", "1");
-		Bnd_B3f();
-		%feature("autodoc", "1");
-		Bnd_B3f(const gp_XYZ theCenter, const gp_XYZ theHSize);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Add(const gp_XYZ thePnt);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt thePnt);
-		%feature("autodoc", "1");
-		void Add(const Bnd_B3f &theBox);
-		%feature("autodoc", "1");
-		gp_XYZ CornerMin() const;
-		%feature("autodoc", "1");
-		gp_XYZ CornerMax() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
-		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real aDiff);
-		%feature("autodoc", "1");
-		Standard_Boolean Limit(const Bnd_B3f &theOtherBox);
-		%feature("autodoc", "1");
-		Bnd_B3f Transformed(const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3f &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3f &theOtherBox, const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3f &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3f &theBox, const gp_Trsf theTrsf) const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_XYZ theCenter);
-		%feature("autodoc", "1");
-		void SetHSize(const gp_XYZ theHSize);
-
-};
-%feature("shadow") Bnd_B3f::~Bnd_B3f %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_B3f {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Bnd_Sphere;
 class Bnd_Sphere {
 	public:
@@ -814,7 +747,7 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfBox2d::~Bnd_HArray1OfBox2d %{
@@ -920,7 +853,7 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
@@ -972,6 +905,73 @@ def __del__(self):
 %}
 
 %extend Bnd_BoundSortBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_B3d;
+class Bnd_B3d {
+	public:
+		%feature("autodoc", "1");
+		Bnd_B3d();
+		%feature("autodoc", "1");
+		Bnd_B3d(const gp_XYZ theCenter, const gp_XYZ theHSize);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Add(const gp_XYZ thePnt);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt thePnt);
+		%feature("autodoc", "1");
+		void Add(const Bnd_B3d &theBox);
+		%feature("autodoc", "1");
+		gp_XYZ CornerMin() const;
+		%feature("autodoc", "1");
+		gp_XYZ CornerMax() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+		%feature("autodoc", "1");
+		void Enlarge(const Standard_Real aDiff);
+		%feature("autodoc", "1");
+		Standard_Boolean Limit(const Bnd_B3d &theOtherBox);
+		%feature("autodoc", "1");
+		Bnd_B3d Transformed(const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3d &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3d &theOtherBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3d &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3d &theBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_XYZ theCenter);
+		%feature("autodoc", "1");
+		void SetHSize(const gp_XYZ theHSize);
+
+};
+%feature("shadow") Bnd_B3d::~Bnd_B3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_B3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1200,7 +1200,7 @@ class Bnd_HArray1OfSphere : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfSphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bnd_HArray1OfSphere::~Bnd_HArray1OfSphere %{

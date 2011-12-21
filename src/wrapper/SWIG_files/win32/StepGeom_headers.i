@@ -491,9 +491,9 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_StepRepr_ParametricRepresentationContext.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_StepRepr_DefinitionalRepresentation.hxx>
 #include<Handle_StepData_SelectMember.hxx>

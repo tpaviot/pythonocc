@@ -66,23 +66,20 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<math_Vector.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<TColStd_Array1OfInteger.hxx>
-#include<AppParCurves_MultiCurve.hxx>
 #include<math_MultipleVarFunctionWithGradient.hxx>
+#include<math_Vector.hxx>
 #include<Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
+#include<AppParCurves_MultiCurve.hxx>
 #include<math_Matrix.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Handle_IntSurf_LineOn2S.hxx>
-#include<IntSurf_PntOn2S.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<math_FunctionSetRoot.hxx>
+#include<TColStd_Array1OfInteger.hxx>
 #include<AppParCurves_MultiBSpCurve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Vec2d.hxx>
+#include<IntSurf_Quadric.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec.hxx>
@@ -98,6 +95,9 @@ $HeaderURL$
 #include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
+#include<Handle_IntSurf_LineOn2S.hxx>
+#include<IntSurf_PntOn2S.hxx>
 #include<gp_Dir2d.hxx>
-#include<IntSurf_Quadric.hxx>
 %}

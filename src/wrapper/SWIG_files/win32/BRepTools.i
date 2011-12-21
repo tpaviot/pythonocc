@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_BRepTools_ReShape;
+class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape();
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape(const Handle_BRepTools_ReShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape(const BRepTools_ReShape *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape & operator=(const Handle_BRepTools_ReShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepTools_ReShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepTools_ReShape {
+	BRepTools_ReShape* GetObject() {
+	return (BRepTools_ReShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepTools_ReShape::~Handle_BRepTools_ReShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepTools_ReShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepTools_Modification;
 class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	public:
@@ -84,44 +122,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepTools_Modification {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepTools_GTrsfModification;
-class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification();
-		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification(const Handle_BRepTools_GTrsfModification &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification(const BRepTools_GTrsfModification *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification & operator=(const Handle_BRepTools_GTrsfModification &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepTools_GTrsfModification DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepTools_GTrsfModification {
-	BRepTools_GTrsfModification* GetObject() {
-	return (BRepTools_GTrsfModification*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepTools_GTrsfModification::~Handle_BRepTools_GTrsfModification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepTools_GTrsfModification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -166,44 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRepTools_ReShape;
-class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape();
-		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape(const Handle_BRepTools_ReShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape(const BRepTools_ReShape *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape & operator=(const Handle_BRepTools_ReShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepTools_ReShape & operator=(const BRepTools_ReShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepTools_ReShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepTools_ReShape {
-	BRepTools_ReShape* GetObject() {
-	return (BRepTools_ReShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepTools_ReShape::~Handle_BRepTools_ReShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepTools_ReShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepTools_NurbsConvertModification;
 class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modification {
 	public:
@@ -236,6 +198,44 @@ def __del__(self):
 %}
 
 %extend Handle_BRepTools_NurbsConvertModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRepTools_GTrsfModification;
+class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification();
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification(const Handle_BRepTools_GTrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification(const BRepTools_GTrsfModification *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification & operator=(const Handle_BRepTools_GTrsfModification &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepTools_GTrsfModification & operator=(const BRepTools_GTrsfModification *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepTools_GTrsfModification DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepTools_GTrsfModification {
+	BRepTools_GTrsfModification* GetObject() {
+	return (BRepTools_GTrsfModification*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepTools_GTrsfModification::~Handle_BRepTools_GTrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepTools_GTrsfModification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -459,7 +459,7 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %extend BRepTools_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_Modification::~BRepTools_Modification %{
@@ -472,51 +472,6 @@ def __del__(self):
 %}
 
 %extend BRepTools_Modification {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepTools_MapOfVertexPnt2d;
-class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepTools_MapOfVertexPnt2d(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepTools_MapOfVertexPnt2d & Assign(const BRepTools_MapOfVertexPnt2d &Other);
-		%feature("autodoc", "1");
-		BRepTools_MapOfVertexPnt2d & operator=(const BRepTools_MapOfVertexPnt2d &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TColgp_SequenceOfPnt2d &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt2d & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt2d & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepTools_MapOfVertexPnt2d::~BRepTools_MapOfVertexPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepTools_MapOfVertexPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -642,7 +597,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_GTrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_GTrsfModification::~BRepTools_GTrsfModification %{
@@ -731,7 +686,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_TrsfModification::~BRepTools_TrsfModification %{
@@ -744,6 +699,51 @@ def __del__(self):
 %}
 
 %extend BRepTools_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepTools_MapOfVertexPnt2d;
+class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepTools_MapOfVertexPnt2d(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepTools_MapOfVertexPnt2d & Assign(const BRepTools_MapOfVertexPnt2d &Other);
+		%feature("autodoc", "1");
+		BRepTools_MapOfVertexPnt2d & operator=(const BRepTools_MapOfVertexPnt2d &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TColgp_SequenceOfPnt2d &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt2d & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt2d & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepTools_MapOfVertexPnt2d::~BRepTools_MapOfVertexPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepTools_MapOfVertexPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -849,7 +849,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %extend BRepTools_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_ReShape::~BRepTools_ReShape %{
@@ -901,7 +901,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %extend BRepTools_NurbsConvertModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_NurbsConvertModification::~BRepTools_NurbsConvertModification %{
@@ -1004,7 +1004,7 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepTools_DataMapNodeOfMapOfVertexPnt2d::~BRepTools_DataMapNodeOfMapOfVertexPnt2d %{

@@ -23,3 +23,21 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_NIS_InteractiveObject::DownCast;
+%rename(DownCast) Handle_NIS_Triangulated::DownCast;
+%rename(DownCast) Handle_NIS_Drawer::DownCast;
+%rename(DownCast) Handle_NIS_SurfaceDrawer::DownCast;
+%rename(DownCast) Handle_NIS_TriangulatedDrawer::DownCast;
+%rename(DownCast) Handle_NIS_Allocator::DownCast;
+%rename(DownCast) Handle_NIS_View::DownCast;
+%rename(DownCast) Handle_NIS_SelectFilter::DownCast;
+%rename(DownCast) Handle_NIS_InteractiveContext::DownCast;
+%rename(DownCast) Handle_NIS_Surface::DownCast;
+%rename(tri2d_line_intersect) NIS_Triangulated::tri2d_line_intersect;
+%rename(seg2d_line_intersect) NIS_Triangulated::seg2d_line_intersect;
+%rename(seg_box_intersect) NIS_Triangulated::seg_box_intersect;
+%rename(seg_box_included) NIS_Triangulated::seg_box_included;
+%rename(seg_polygon_intersect) NIS_Triangulated::seg_polygon_intersect;
+%rename(seg_polygon_included) NIS_Triangulated::seg_polygon_included;
+%rename(ComputeBox) NIS_Triangulated::ComputeBox;
+%rename(IsIn) NIS_Triangulated::IsIn;

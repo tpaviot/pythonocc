@@ -23,3 +23,18 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Message_Printer::DownCast;
+%rename(DownCast) Handle_Message_PrinterOStream::DownCast;
+%rename(DownCast) Handle_Message_Messenger::DownCast;
+%rename(DownCast) Handle_Message_SequenceNodeOfSequenceOfPrinters::DownCast;
+%rename(DownCast) Handle_Message_ListNodeOfListOfMsg::DownCast;
+%rename(DownCast) Handle_Message_ProgressIndicator::DownCast;
+%rename(DownCast) Handle_Message_SequenceNodeOfSequenceOfProgressScale::DownCast;
+%rename(DownCast) Handle_Message_Algorithm::DownCast;
+%rename(DefaultMessenger) Message::DefaultMessenger;
+%rename(FillTime) Message::FillTime;
+%rename(Load) Message_MsgFile::Load;
+%rename(LoadFile) Message_MsgFile::LoadFile;
+%rename(LoadFromEnv) Message_MsgFile::LoadFromEnv;
+%rename(AddMsg) Message_MsgFile::AddMsg;
+%rename(Msg) Message_MsgFile::Msg;

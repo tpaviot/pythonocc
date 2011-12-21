@@ -134,36 +134,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntCurveSurface_ThePolyhedronToolOfHInter;
-class IntCurveSurface_ThePolyhedronToolOfHInter {
+%nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
+class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_ThePolyhedronToolOfHInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box & Bounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc", "1");
-		static		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbTriangles(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
 
-		static		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		static		const gp_Pnt  Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
-		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge) -> [Standard_Integer, Standard_Integer]");
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
 
-		static		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsOnBound(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
-		%feature("autodoc", "1");
-		static		Standard_Real GetBorderDeflection(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
-		%feature("autodoc", "1");
-		static		void Dump(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%feature("shadow") IntCurveSurface_ThePolyhedronToolOfHInter::~IntCurveSurface_ThePolyhedronToolOfHInter %{
+%feature("shadow") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -172,7 +159,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntCurveSurface_ThePolyhedronToolOfHInter {
+%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -212,113 +199,6 @@ def __del__(self):
 };
 %extend IntCurveSurface_Intersection {
 	IntCurveSurface_Intersection () {}
-};
-
-
-%nodefaultctor IntCurveSurface_SequenceOfPnt;
-class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_SequenceOfPnt();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IntCurveSurface_SequenceOfPnt & Assign(const IntCurveSurface_SequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		const IntCurveSurface_SequenceOfPnt & operator=(const IntCurveSurface_SequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		void Append(const IntCurveSurface_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void Append(IntCurveSurface_SequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void Prepend(const IntCurveSurface_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void Prepend(IntCurveSurface_SequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & First() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &I);
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") IntCurveSurface_SequenceOfPnt::~IntCurveSurface_SequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_SequenceOfPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_IntersectionPoint;
-class IntCurveSurface_IntersectionPoint {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint();
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
-		%feature("autodoc", "1");
-		void SetValues(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Pnt() const;
-		%feature("autodoc", "1");
-		Standard_Real U() const;
-		%feature("autodoc", "1");
-		Standard_Real V() const;
-		%feature("autodoc", "1");
-		Standard_Real W() const;
-		%feature("autodoc", "1");
-		IntCurveSurface_TransitionOnCurve Transition() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%feature("shadow") IntCurveSurface_IntersectionPoint::~IntCurveSurface_IntersectionPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_IntersectionPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
 };
 
 
@@ -428,6 +308,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntCurveSurface_IntersectionSegment;
+class IntCurveSurface_IntersectionSegment {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionSegment();
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
+		%feature("autodoc", "1");
+		void SetValues(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
+		%feature("autodoc", "1");
+		void Values(IntCurveSurface_IntersectionPoint & P1, IntCurveSurface_IntersectionPoint & P2) const;
+		%feature("autodoc", "1");
+		void FirstPoint(IntCurveSurface_IntersectionPoint & P1) const;
+		%feature("autodoc", "1");
+		void SecondPoint(IntCurveSurface_IntersectionPoint & P2) const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & FirstPoint() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & SecondPoint() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") IntCurveSurface_IntersectionSegment::~IntCurveSurface_IntersectionSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_IntersectionSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
@@ -502,23 +421,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
-class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
+%nodefaultctor IntCurveSurface_ThePolyhedronToolOfHInter;
+class IntCurveSurface_ThePolyhedronToolOfHInter {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
+		IntCurveSurface_ThePolyhedronToolOfHInter();
+		%feature("autodoc", "1");
+		static		const Bnd_Box & Bounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		%feature("autodoc", "1");
+		static		const Handle_Bnd_HArray1OfBox & ComponentsBounding(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		%feature("autodoc", "1");
+		static		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbTriangles(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		%feature("autodoc","Triangle(const thePolyh, Standard_Integer Index) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
 
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
+		static		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		static		const gp_Pnt  Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
+		%feature("autodoc","TriConnex(const thePolyh, Standard_Integer Triang, Standard_Integer Pivot, Standard_Integer Pedge) -> [Standard_Integer, Standard_Integer]");
 
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsOnBound(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
+		%feature("autodoc", "1");
+		static		Standard_Real GetBorderDeflection(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
+		%feature("autodoc", "1");
+		static		void Dump(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 
 };
-%feature("shadow") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter %{
+%feature("shadow") IntCurveSurface_ThePolyhedronToolOfHInter::~IntCurveSurface_ThePolyhedronToolOfHInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -527,7 +459,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
+%extend IntCurveSurface_ThePolyhedronToolOfHInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -565,45 +497,6 @@ def __del__(self):
 %}
 
 %extend IntCurveSurface_ThePolygonToolOfHInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_IntersectionSegment;
-class IntCurveSurface_IntersectionSegment {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionSegment();
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionSegment(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
-		%feature("autodoc", "1");
-		void SetValues(const IntCurveSurface_IntersectionPoint &P1, const IntCurveSurface_IntersectionPoint &P2);
-		%feature("autodoc", "1");
-		void Values(IntCurveSurface_IntersectionPoint & P1, IntCurveSurface_IntersectionPoint & P2) const;
-		%feature("autodoc", "1");
-		void FirstPoint(IntCurveSurface_IntersectionPoint & P1) const;
-		%feature("autodoc", "1");
-		void SecondPoint(IntCurveSurface_IntersectionPoint & P2) const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & FirstPoint() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & SecondPoint() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%feature("shadow") IntCurveSurface_IntersectionSegment::~IntCurveSurface_IntersectionSegment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_IntersectionSegment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -661,6 +554,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntCurveSurface_SequenceOfPnt;
+class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_SequenceOfPnt();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IntCurveSurface_SequenceOfPnt & Assign(const IntCurveSurface_SequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		const IntCurveSurface_SequenceOfPnt & operator=(const IntCurveSurface_SequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		void Append(const IntCurveSurface_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void Append(IntCurveSurface_SequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void Prepend(const IntCurveSurface_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void Prepend(IntCurveSurface_SequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & First() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IntCurveSurface_SequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const IntCurveSurface_IntersectionPoint &I);
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IntCurveSurface_SequenceOfPnt::~IntCurveSurface_SequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_SequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfSeg;
 class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 	public:
@@ -679,7 +637,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfSeg::~IntCurveSurface_SequenceNodeOfSequenceOfSeg %{
@@ -873,7 +831,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfPnt::~IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
@@ -886,6 +844,48 @@ def __del__(self):
 %}
 
 %extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_IntersectionPoint;
+class IntCurveSurface_IntersectionPoint {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint();
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
+		%feature("autodoc", "1");
+		void SetValues(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
+		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt() const;
+		%feature("autodoc", "1");
+		Standard_Real U() const;
+		%feature("autodoc", "1");
+		Standard_Real V() const;
+		%feature("autodoc", "1");
+		Standard_Real W() const;
+		%feature("autodoc", "1");
+		IntCurveSurface_TransitionOnCurve Transition() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") IntCurveSurface_IntersectionPoint::~IntCurveSurface_IntersectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_IntersectionPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

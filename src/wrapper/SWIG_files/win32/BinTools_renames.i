@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(PutReal) BinTools::PutReal;
+%rename(PutInteger) BinTools::PutInteger;
+%rename(PutBool) BinTools::PutBool;
+%rename(PutExtChar) BinTools::PutExtChar;
+%rename(GetReal) BinTools::GetReal;
+%rename(GetInteger) BinTools::GetInteger;
+%rename(GetBool) BinTools::GetBool;
+%rename(GetExtChar) BinTools::GetExtChar;
+%rename(WriteCurve2d) BinTools_Curve2dSet::WriteCurve2d;
+%rename(ReadCurve2d) BinTools_Curve2dSet::ReadCurve2d;
+%rename(WriteCurve) BinTools_CurveSet::WriteCurve;
+%rename(ReadCurve) BinTools_CurveSet::ReadCurve;
+%rename(WriteSurface) BinTools_SurfaceSet::WriteSurface;
+%rename(ReadSurface) BinTools_SurfaceSet::ReadSurface;

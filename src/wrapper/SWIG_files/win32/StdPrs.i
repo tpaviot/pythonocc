@@ -106,43 +106,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdPrs_ToolRFace;
-class StdPrs_ToolRFace {
-	public:
-		%feature("autodoc", "1");
-		StdPrs_ToolRFace();
-		%feature("autodoc", "1");
-		StdPrs_ToolRFace(const Handle_BRepAdaptor_HSurface &aSurface);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOriented() const;
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Adaptor2d_Curve2dPtr Value() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-
-};
-%feature("shadow") StdPrs_ToolRFace::~StdPrs_ToolRFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdPrs_ToolRFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdPrs_ToolVertex;
 class StdPrs_ToolVertex {
 	public:
@@ -192,45 +155,6 @@ def __del__(self):
 %}
 
 %extend StdPrs_Point {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdPrs_WFRestrictedFace;
-class StdPrs_WFRestrictedFace : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		StdPrs_WFRestrictedFace();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void AddUIso(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void AddVIso(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_Prs3d_Drawer &aDrawer, Prs3d_NListOfSequenceOfPnt & Curves);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean MatchUIso(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean MatchVIso(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_Prs3d_Drawer &aDrawer);
-
-};
-%feature("shadow") StdPrs_WFRestrictedFace::~StdPrs_WFRestrictedFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdPrs_WFRestrictedFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -347,31 +271,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdPrs_WFPoleSurface;
-class StdPrs_WFPoleSurface : public Prs3d_Root {
-	public:
-		%feature("autodoc", "1");
-		StdPrs_WFPoleSurface();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Surface &aSurface, const Handle_Prs3d_Drawer &aDrawer);
-
-};
-%feature("shadow") StdPrs_WFPoleSurface::~StdPrs_WFPoleSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdPrs_WFPoleSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdPrs_HLRPolyShape;
 class StdPrs_HLRPolyShape : public Prs3d_Root {
 	public:
@@ -391,6 +290,61 @@ def __del__(self):
 %}
 
 %extend StdPrs_HLRPolyShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdPrs_ToolPoint;
+class StdPrs_ToolPoint {
+	public:
+		%feature("autodoc", "1");
+		StdPrs_ToolPoint();
+		%feature("autodoc","Coord(const aPoint) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void Coord(const Handle_Geom_Point &aPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") StdPrs_ToolPoint::~StdPrs_ToolPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdPrs_ToolPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdPrs_WFDeflectionShape;
+class StdPrs_WFDeflectionShape : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		StdPrs_WFDeflectionShape();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_HSequenceOfShape PickCurve(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_HSequenceOfShape PickPatch(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+
+};
+%feature("shadow") StdPrs_WFDeflectionShape::~StdPrs_WFDeflectionShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdPrs_WFDeflectionShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -447,20 +401,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdPrs_WFDeflectionShape;
-class StdPrs_WFDeflectionShape : public Prs3d_Root {
+%nodefaultctor StdPrs_ToolRFace;
+class StdPrs_ToolRFace {
 	public:
 		%feature("autodoc", "1");
-		StdPrs_WFDeflectionShape();
+		StdPrs_ToolRFace();
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		StdPrs_ToolRFace(const Handle_BRepAdaptor_HSurface &aSurface);
 		%feature("autodoc", "1");
-		static		Handle_TopTools_HSequenceOfShape PickCurve(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		Standard_Boolean IsOriented() const;
 		%feature("autodoc", "1");
-		static		Handle_TopTools_HSequenceOfShape PickPatch(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Adaptor2d_Curve2dPtr Value() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
 
 };
-%feature("shadow") StdPrs_WFDeflectionShape::~StdPrs_WFDeflectionShape %{
+%feature("shadow") StdPrs_ToolRFace::~StdPrs_ToolRFace %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -469,37 +431,23 @@ def __del__(self):
 		pass
 %}
 
-%extend StdPrs_WFDeflectionShape {
+%extend StdPrs_ToolRFace {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor StdPrs_Curve;
-class StdPrs_Curve : public Prs3d_Root {
+%nodefaultctor StdPrs_WFPoleSurface;
+class StdPrs_WFPoleSurface : public Prs3d_Root {
 	public:
 		%feature("autodoc", "1");
-		StdPrs_Curve();
+		StdPrs_WFPoleSurface();
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean drawCurve=1);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean drawCurve=1);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Quantity_Length aDeflection, const Handle_Prs3d_Drawer &aDrawer, TColgp_SequenceOfPnt & Points, const Standard_Boolean drawCurve=1);
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Quantity_Length aDeflection, TColgp_SequenceOfPnt & Points, const Standard_Integer aNbPoints=30, const Standard_Boolean drawCurve=1);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Quantity_Length aDeflection, const Standard_Real aLimit, const Standard_Integer aNbPoints);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Quantity_Length aDeflection, const Standard_Integer aNbPoints);
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Surface &aSurface, const Handle_Prs3d_Drawer &aDrawer);
 
 };
-%feature("shadow") StdPrs_Curve::~StdPrs_Curve %{
+%feature("shadow") StdPrs_WFPoleSurface::~StdPrs_WFPoleSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -508,7 +456,46 @@ def __del__(self):
 		pass
 %}
 
-%extend StdPrs_Curve {
+%extend StdPrs_WFPoleSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdPrs_WFRestrictedFace;
+class StdPrs_WFRestrictedFace : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		StdPrs_WFRestrictedFace();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void AddUIso(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void AddVIso(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_Prs3d_Drawer &aDrawer, Prs3d_NListOfSequenceOfPnt & Curves);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean MatchUIso(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean MatchVIso(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Handle_BRepAdaptor_HSurface &aFace, const Standard_Boolean DrawUIso, const Standard_Boolean DrawVIso, const Quantity_Length Deflection, const Standard_Integer NBUiso, const Standard_Integer NBViso, const Handle_Prs3d_Drawer &aDrawer);
+
+};
+%feature("shadow") StdPrs_WFRestrictedFace::~StdPrs_WFRestrictedFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdPrs_WFRestrictedFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -583,32 +570,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdPrs_ToolPoint;
-class StdPrs_ToolPoint {
-	public:
-		%feature("autodoc", "1");
-		StdPrs_ToolPoint();
-		%feature("autodoc","Coord(const aPoint) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void Coord(const Handle_Geom_Point &aPoint, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") StdPrs_ToolPoint::~StdPrs_ToolPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdPrs_ToolPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdPrs_WFDeflectionRestrictedFace;
 class StdPrs_WFDeflectionRestrictedFace : public Prs3d_Root {
 	public:
@@ -675,6 +636,45 @@ def __del__(self):
 %}
 
 %extend StdPrs_DeflectionCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdPrs_Curve;
+class StdPrs_Curve : public Prs3d_Root {
+	public:
+		%feature("autodoc", "1");
+		StdPrs_Curve();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean drawCurve=1);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean drawCurve=1);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Quantity_Length aDeflection, const Handle_Prs3d_Drawer &aDrawer, TColgp_SequenceOfPnt & Points, const Standard_Boolean drawCurve=1);
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Quantity_Length aDeflection, TColgp_SequenceOfPnt & Points, const Standard_Integer aNbPoints=30, const Standard_Boolean drawCurve=1);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Quantity_Length aDeflection, const Standard_Real aLimit, const Standard_Integer aNbPoints);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Match(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Quantity_Length aDeflection, const Standard_Integer aNbPoints);
+
+};
+%feature("shadow") StdPrs_Curve::~StdPrs_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdPrs_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}

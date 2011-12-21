@@ -23,3 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinLDrivers_DocumentRetrievalDriver::DownCast;
+%rename(DownCast) Handle_BinLDrivers_DocumentStorageDriver::DownCast;
+%rename(ReadTOC) BinLDrivers_DocumentSection::ReadTOC;
+%rename(Factory) BinLDrivers::Factory;
+%rename(AttributeDrivers) BinLDrivers::AttributeDrivers;
+%rename(StorageVersion) BinLDrivers::StorageVersion;

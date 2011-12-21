@@ -52,66 +52,27 @@ $HeaderURL$
 
 
 
-%nodefaultctor CPnts_UniformDeflection;
-class CPnts_UniformDeflection {
+%nodefaultctor CPnts_MyRootFunction;
+class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		CPnts_UniformDeflection();
+		CPnts_MyRootFunction();
 		%feature("autodoc", "1");
-		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		void Init(const Standard_Real X0, const Standard_Real L);
 		%feature("autodoc", "1");
-		CPnts_UniformDeflection(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		CPnts_UniformDeflection(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllDone() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-
-};
-%feature("shadow") CPnts_UniformDeflection::~CPnts_UniformDeflection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CPnts_UniformDeflection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CPnts_MyGaussFunction;
-class CPnts_MyGaussFunction : public math_Function {
-	public:
-		%feature("autodoc", "1");
-		CPnts_MyGaussFunction();
+		void Init(const Standard_Real X0, const Standard_Real L, const Standard_Real Tol);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%feature("shadow") CPnts_MyGaussFunction::~CPnts_MyGaussFunction %{
+%feature("shadow") CPnts_MyRootFunction::~CPnts_MyRootFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -120,7 +81,7 @@ def __del__(self):
 		pass
 %}
 
-%extend CPnts_MyGaussFunction {
+%extend CPnts_MyRootFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -202,27 +163,17 @@ def __del__(self):
 };
 
 
-%nodefaultctor CPnts_MyRootFunction;
-class CPnts_MyRootFunction : public math_FunctionWithDerivative {
+%nodefaultctor CPnts_MyGaussFunction;
+class CPnts_MyGaussFunction : public math_Function {
 	public:
 		%feature("autodoc", "1");
-		CPnts_MyRootFunction();
-		%feature("autodoc", "1");
-		void Init(const Standard_Real X0, const Standard_Real L);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real X0, const Standard_Real L, const Standard_Real Tol);
+		CPnts_MyGaussFunction();
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 
 };
-%feature("shadow") CPnts_MyRootFunction::~CPnts_MyRootFunction %{
+%feature("shadow") CPnts_MyGaussFunction::~CPnts_MyGaussFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -231,7 +182,56 @@ def __del__(self):
 		pass
 %}
 
-%extend CPnts_MyRootFunction {
+%extend CPnts_MyGaussFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CPnts_UniformDeflection;
+class CPnts_UniformDeflection {
+	public:
+		%feature("autodoc", "1");
+		CPnts_UniformDeflection();
+		%feature("autodoc", "1");
+		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		CPnts_UniformDeflection(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		CPnts_UniformDeflection(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		CPnts_UniformDeflection(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Real Resolution, const Standard_Boolean WithControl);
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllDone() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+
+};
+%feature("shadow") CPnts_UniformDeflection::~CPnts_UniformDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CPnts_UniformDeflection {
 	void _kill_pointed() {
 		delete $self;
 	}

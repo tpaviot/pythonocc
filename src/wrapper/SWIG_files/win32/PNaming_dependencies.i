@@ -168,6 +168,6 @@ $HeaderURL$
 %};
 
 %import Standard.i
-%import PStandard.i
 %import PDF.i
+%import PStandard.i
 %import DBC.i

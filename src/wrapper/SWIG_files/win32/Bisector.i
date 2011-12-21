@@ -231,42 +231,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bisector_FunctionInter;
-class Bisector_FunctionInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Bisector_FunctionInter();
-		%feature("autodoc", "1");
-		Bisector_FunctionInter(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") Bisector_FunctionInter::~Bisector_FunctionInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_FunctionInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Bisector_Curve;
 class Bisector_Curve : public Geom2d_Curve {
 	public:
@@ -293,7 +257,7 @@ class Bisector_Curve : public Geom2d_Curve {
 };
 %extend Bisector_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_Curve::~Bisector_Curve %{
@@ -382,7 +346,7 @@ class Bisector_BisecCC : public Bisector_Curve {
 };
 %extend Bisector_BisecCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecCC::~Bisector_BisecCC %{
@@ -477,7 +441,7 @@ class Bisector_BisecPC : public Bisector_Curve {
 };
 %extend Bisector_BisecPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecPC::~Bisector_BisecPC %{
@@ -576,7 +540,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %extend Bisector_BisecAna {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecAna::~Bisector_BisecAna %{
@@ -634,6 +598,109 @@ def __del__(self):
 };
 
 
+%nodefaultctor Bisector_FunctionInter;
+class Bisector_FunctionInter : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Bisector_FunctionInter();
+		%feature("autodoc", "1");
+		Bisector_FunctionInter(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &C, const Handle_Bisector_Curve &Bis1, const Handle_Bisector_Curve &Bis2);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") Bisector_FunctionInter::~Bisector_FunctionInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_FunctionInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector_Bisec;
+class Bisector_Bisec {
+	public:
+		%feature("autodoc", "1");
+		Bisector_Bisec();
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & ChangeValue();
+
+};
+%feature("shadow") Bisector_Bisec::~Bisector_Bisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_Bisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector_FunctionH;
+class Bisector_FunctionH : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d P1, const gp_Vec2d T1);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") Bisector_FunctionH::~Bisector_FunctionH %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_FunctionH {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Bisector_PointOnBis;
 class Bisector_PointOnBis {
 	public:
@@ -685,41 +752,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bisector_Bisec;
-class Bisector_Bisec {
-	public:
-		%feature("autodoc", "1");
-		Bisector_Bisec();
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & ChangeValue();
-
-};
-%feature("shadow") Bisector_Bisec::~Bisector_Bisec %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_Bisec {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Bisector;
 class Bisector {
 	public:
@@ -739,38 +771,6 @@ def __del__(self):
 %}
 
 %extend Bisector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bisector_FunctionH;
-class Bisector_FunctionH : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d P1, const gp_Vec2d T1);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") Bisector_FunctionH::~Bisector_FunctionH %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_FunctionH {
 	void _kill_pointed() {
 		delete $self;
 	}

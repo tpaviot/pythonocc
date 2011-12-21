@@ -90,6 +90,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
+class TopBas_ListIteratorOfListOfTestInterference {
+	public:
+		%feature("autodoc", "1");
+		TopBas_ListIteratorOfListOfTestInterference();
+		%feature("autodoc", "1");
+		TopBas_ListIteratorOfListOfTestInterference(const TopBas_ListOfTestInterference &L);
+		%feature("autodoc", "1");
+		void Initialize(const TopBas_ListOfTestInterference &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopBas_TestInterference & Value() const;
+
+};
+%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopBas_ListIteratorOfListOfTestInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopBas_ListOfTestInterference;
 class TopBas_ListOfTestInterference {
 	public:
@@ -151,39 +184,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopBas_ListIteratorOfListOfTestInterference;
-class TopBas_ListIteratorOfListOfTestInterference {
-	public:
-		%feature("autodoc", "1");
-		TopBas_ListIteratorOfListOfTestInterference();
-		%feature("autodoc", "1");
-		TopBas_ListIteratorOfListOfTestInterference(const TopBas_ListOfTestInterference &L);
-		%feature("autodoc", "1");
-		void Initialize(const TopBas_ListOfTestInterference &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopBas_TestInterference & Value() const;
-
-};
-%feature("shadow") TopBas_ListIteratorOfListOfTestInterference::~TopBas_ListIteratorOfListOfTestInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopBas_ListIteratorOfListOfTestInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopBas_ListNodeOfListOfTestInterference;
 class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 	public:
@@ -202,7 +202,7 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 };
 %extend TopBas_ListNodeOfListOfTestInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopBas_ListNodeOfListOfTestInterference::~TopBas_ListNodeOfListOfTestInterference %{

@@ -123,50 +123,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepExtrema_ExtPF;
-class BRepExtrema_ExtPF {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_ExtPF();
-		%feature("autodoc", "1");
-		BRepExtrema_ExtPF(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Standard_Integer N) const;
-		%feature("autodoc","Parameter(Standard_Integer N) -> [Standard_Real, Standard_Real]");
-
-		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void SetFlag(const Extrema_ExtFlag F);
-		%feature("autodoc", "1");
-		void SetAlgo(const Extrema_ExtAlgo A);
-
-};
-%feature("shadow") BRepExtrema_ExtPF::~BRepExtrema_ExtPF %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_ExtPF {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepExtrema_UnCompatibleShape;
 class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 	public:
@@ -191,7 +147,7 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 };
 %extend BRepExtrema_UnCompatibleShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
@@ -204,43 +160,6 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_UnCompatibleShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepExtrema_DistanceSS;
-class BRepExtrema_DistanceSS {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real DistValue() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq1Value() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq2Value() const;
-		%feature("autodoc", "1");
-		void SetFlag(const Extrema_ExtFlag F);
-		%feature("autodoc", "1");
-		void SetAlgo(const Extrema_ExtAlgo A);
-
-};
-%feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_DistanceSS {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -295,52 +214,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepExtrema_ExtCF;
-class BRepExtrema_ExtCF {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_ExtCF();
-		%feature("autodoc", "1");
-		BRepExtrema_ExtCF(const TopoDS_Edge V, const TopoDS_Face E);
-		%feature("autodoc", "1");
-		void Initialize(const TopoDS_Face E);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Edge V, const TopoDS_Face F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnEdge(const Standard_Integer N) const;
-		%feature("autodoc","ParameterOnFace(Standard_Integer N) -> [Standard_Real, Standard_Real]");
-
-		void ParameterOnFace(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		gp_Pnt PointOnEdge(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		gp_Pnt PointOnFace(const Standard_Integer N) const;
-
-};
-%feature("shadow") BRepExtrema_ExtCF::~BRepExtrema_ExtCF %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_ExtCF {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepExtrema_ExtFF;
 class BRepExtrema_ExtFF {
 	public:
@@ -388,6 +261,52 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepExtrema_ExtCF;
+class BRepExtrema_ExtCF {
+	public:
+		%feature("autodoc", "1");
+		BRepExtrema_ExtCF();
+		%feature("autodoc", "1");
+		BRepExtrema_ExtCF(const TopoDS_Edge V, const TopoDS_Face E);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Face E);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Edge V, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		Standard_Real ParameterOnEdge(const Standard_Integer N) const;
+		%feature("autodoc","ParameterOnFace(Standard_Integer N) -> [Standard_Real, Standard_Real]");
+
+		void ParameterOnFace(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Pnt PointOnEdge(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		gp_Pnt PointOnFace(const Standard_Integer N) const;
+
+};
+%feature("shadow") BRepExtrema_ExtCF::~BRepExtrema_ExtCF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepExtrema_ExtCF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepExtrema_ExtPC;
 class BRepExtrema_ExtPC {
 	public:
@@ -426,6 +345,50 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_ExtPC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepExtrema_ExtPF;
+class BRepExtrema_ExtPF {
+	public:
+		%feature("autodoc", "1");
+		BRepExtrema_ExtPF();
+		%feature("autodoc", "1");
+		BRepExtrema_ExtPF(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Face TheFace, const Extrema_ExtFlag TheFlag=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo TheAlgo=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Vertex TheVertex, const TopoDS_Face TheFace);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc","Parameter(Standard_Integer N) -> [Standard_Real, Standard_Real]");
+
+		void Parameter(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
+
+};
+%feature("shadow") BRepExtrema_ExtPF::~BRepExtrema_ExtPF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepExtrema_ExtPF {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::DownCast;
+%rename(DownCast) Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::DownCast;

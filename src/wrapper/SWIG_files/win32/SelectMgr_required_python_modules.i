@@ -30,6 +30,6 @@ import GarbageCollector
 import Standard
 import SelectBasics
 import TopLoc
-import Prs3d
 import TCollection
+import Prs3d
 };

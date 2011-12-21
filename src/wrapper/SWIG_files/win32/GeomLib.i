@@ -60,6 +60,37 @@ enum GeomLib_InterpolationErrors {
 
 
 
+%nodefaultctor GeomLib_CheckBSplineCurve;
+class GeomLib_CheckBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+
+};
+%feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_CheckBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomLib_LogSample;
 class GeomLib_LogSample : public math_FunctionSample {
 	public:
@@ -136,57 +167,6 @@ def __del__(self):
 %}
 
 %extend GeomLib_Tool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_Array1OfMat;
-class GeomLib_Array1OfMat {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_Array1OfMat(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		GeomLib_Array1OfMat(const gp_Mat Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const gp_Mat V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const GeomLib_Array1OfMat & Assign(const GeomLib_Array1OfMat &Other);
-		%feature("autodoc", "1");
-		const GeomLib_Array1OfMat & operator=(const GeomLib_Array1OfMat &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Mat Value);
-		%feature("autodoc", "1");
-		const gp_Mat  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Mat  operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Mat  ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		gp_Mat  operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") GeomLib_Array1OfMat::~GeomLib_Array1OfMat %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_Array1OfMat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -322,6 +302,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomLib_Array1OfMat;
+class GeomLib_Array1OfMat {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_Array1OfMat(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		GeomLib_Array1OfMat(const gp_Mat Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const gp_Mat V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const GeomLib_Array1OfMat & Assign(const GeomLib_Array1OfMat &Other);
+		%feature("autodoc", "1");
+		const GeomLib_Array1OfMat & operator=(const GeomLib_Array1OfMat &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Mat Value);
+		%feature("autodoc", "1");
+		const gp_Mat  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Mat  operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Mat  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Mat  operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") GeomLib_Array1OfMat::~GeomLib_Array1OfMat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_Array1OfMat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomLib_Check2dBSplineCurve;
 class GeomLib_Check2dBSplineCurve {
 	public:
@@ -406,37 +437,6 @@ def __del__(self):
 %}
 
 %extend GeomLib {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_CheckBSplineCurve;
-class GeomLib_CheckBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-};
-%feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_CheckBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

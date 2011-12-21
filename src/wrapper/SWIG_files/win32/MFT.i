@@ -49,12 +49,12 @@ $HeaderURL$
 
 %include MFT_headers.i
 
-typedef Standard_Integer MFT_FileHandle;
-typedef _MFT_FileRecord MFT_FileRecord;
-typedef TColStd_SequenceOfAsciiString MFT_ListOfFontName;
-typedef Standard_Integer MFT_FilePosition;
-typedef TColStd_SequenceOfInteger MFT_ListOfFontReference;
 typedef unsigned int MFT_CommandDescriptor;
+typedef Standard_Integer MFT_FilePosition;
+typedef Standard_Integer MFT_FileHandle;
+typedef TColStd_SequenceOfAsciiString MFT_ListOfFontName;
+typedef TColStd_SequenceOfInteger MFT_ListOfFontReference;
+typedef _MFT_FileRecord MFT_FileRecord;
 
 enum MFT_TypeOfValue {
 	MFT_TOV_UNKNOWN,
@@ -90,6 +90,44 @@ enum MFT_TypeOfCommand {
 	MFT_TOC_MINMAX,
 	};
 
+
+
+%nodefaultctor Handle_MFT_FontManagerError;
+class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
+	public:
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError();
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError(const Handle_MFT_FontManagerError &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError(const MFT_FontManagerError *anItem);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError & operator=(const Handle_MFT_FontManagerError &aHandle);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManagerError & operator=(const MFT_FontManagerError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MFT_FontManagerError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MFT_FontManagerError {
+	MFT_FontManagerError* GetObject() {
+	return (MFT_FontManagerError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MFT_FontManagerError::~Handle_MFT_FontManagerError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MFT_FontManagerError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_MFT_TextManager;
@@ -162,44 +200,6 @@ def __del__(self):
 %}
 
 %extend Handle_MFT_FontManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MFT_FontManagerError;
-class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
-	public:
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError();
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError(const Handle_MFT_FontManagerError &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError(const MFT_FontManagerError *anItem);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError & operator=(const Handle_MFT_FontManagerError &aHandle);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManagerError & operator=(const MFT_FontManagerError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MFT_FontManagerError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MFT_FontManagerError {
-	MFT_FontManagerError* GetObject() {
-	return (MFT_FontManagerError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MFT_FontManagerError::~Handle_MFT_FontManagerError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MFT_FontManagerError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -347,43 +347,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MFT_SequenceNodeOfListOfFontHandle;
-class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MFT_SequenceNodeOfListOfFontHandle(const MFT_FileHandle &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		MFT_FileHandle & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MFT_SequenceNodeOfListOfFontHandle {
-	Handle_MFT_SequenceNodeOfListOfFontHandle GetHandle() {
-	return *(Handle_MFT_SequenceNodeOfListOfFontHandle*) &$self;
-	}
-};
-%extend MFT_SequenceNodeOfListOfFontHandle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") MFT_SequenceNodeOfListOfFontHandle::~MFT_SequenceNodeOfListOfFontHandle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MFT_SequenceNodeOfListOfFontHandle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MFT_TextManager;
 class MFT_TextManager : public MMgt_TShared {
 	public:
@@ -420,7 +383,7 @@ class MFT_TextManager : public MMgt_TShared {
 };
 %extend MFT_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFT_TextManager::~MFT_TextManager %{
@@ -433,6 +396,43 @@ def __del__(self):
 %}
 
 %extend MFT_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MFT_SequenceNodeOfListOfFontHandle;
+class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		MFT_SequenceNodeOfListOfFontHandle(const MFT_FileHandle &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		MFT_FileHandle & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MFT_SequenceNodeOfListOfFontHandle {
+	Handle_MFT_SequenceNodeOfListOfFontHandle GetHandle() {
+	return *(Handle_MFT_SequenceNodeOfListOfFontHandle*) &$self;
+	}
+};
+%extend MFT_SequenceNodeOfListOfFontHandle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") MFT_SequenceNodeOfListOfFontHandle::~MFT_SequenceNodeOfListOfFontHandle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MFT_SequenceNodeOfListOfFontHandle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -463,7 +463,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 };
 %extend MFT_FontManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFT_FontManagerDefinitionError::~MFT_FontManagerDefinitionError %{
@@ -506,7 +506,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 };
 %extend MFT_FontManagerError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFT_FontManagerError::~MFT_FontManagerError %{
@@ -642,7 +642,7 @@ class MFT_FontManager : public MMgt_TShared {
 };
 %extend MFT_FontManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") MFT_FontManager::~MFT_FontManager %{

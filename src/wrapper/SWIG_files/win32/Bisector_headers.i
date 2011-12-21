@@ -71,8 +71,8 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<IntRes2d_Domain.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pnt2d.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<gp_Trsf2d.hxx>
 #include<gp_Vec2d.hxx>

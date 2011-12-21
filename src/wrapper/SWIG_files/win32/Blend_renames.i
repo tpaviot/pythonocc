@@ -23,3 +23,4 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Blend_SequenceNodeOfSequenceOfPoint::DownCast;

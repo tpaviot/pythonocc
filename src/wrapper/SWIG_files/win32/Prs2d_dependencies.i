@@ -534,8 +534,8 @@ $HeaderURL$
 %};
 
 %import Graphic2d.i
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import Aspect.i
 %import Quantity.i

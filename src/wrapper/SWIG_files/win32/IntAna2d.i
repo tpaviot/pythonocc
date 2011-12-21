@@ -96,6 +96,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntAna2d_IntPoint;
+class IntAna2d_IntPoint {
+	public:
+		%feature("autodoc", "1");
+		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
+		%feature("autodoc", "1");
+		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
+		%feature("autodoc", "1");
+		IntAna2d_IntPoint();
+		%feature("autodoc", "1");
+		virtual		void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
+		%feature("autodoc", "1");
+		virtual		void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SecondIsImplicit() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnSecond() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetIntAna2d_IntPointmyu1() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetIntAna2d_IntPointmyu1(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetIntAna2d_IntPointmyu2() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetIntAna2d_IntPointmyu2(const Standard_Real p);
+		%feature("autodoc", "1");
+		const gp_Pnt2d  _CSFDB_GetIntAna2d_IntPointmyp() const;
+		%feature("autodoc", "1");
+		Standard_Boolean _CSFDB_GetIntAna2d_IntPointmyimplicit() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
+
+};
+%feature("shadow") IntAna2d_IntPoint::~IntAna2d_IntPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntAna2d_IntPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntAna2d_AnaIntersection;
 class IntAna2d_AnaIntersection {
 	public:
@@ -157,59 +210,6 @@ def __del__(self):
 %}
 
 %extend IntAna2d_AnaIntersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntAna2d_IntPoint;
-class IntAna2d_IntPoint {
-	public:
-		%feature("autodoc", "1");
-		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
-		%feature("autodoc", "1");
-		IntAna2d_IntPoint(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
-		%feature("autodoc", "1");
-		IntAna2d_IntPoint();
-		%feature("autodoc", "1");
-		virtual		void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1, const Standard_Real U2);
-		%feature("autodoc", "1");
-		virtual		void SetValue(const Standard_Real X, const Standard_Real Y, const Standard_Real U1);
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SecondIsImplicit() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnSecond() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetIntAna2d_IntPointmyu1() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetIntAna2d_IntPointmyu1(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetIntAna2d_IntPointmyu2() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetIntAna2d_IntPointmyu2(const Standard_Real p);
-		%feature("autodoc", "1");
-		const gp_Pnt2d  _CSFDB_GetIntAna2d_IntPointmyp() const;
-		%feature("autodoc", "1");
-		Standard_Boolean _CSFDB_GetIntAna2d_IntPointmyimplicit() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetIntAna2d_IntPointmyimplicit(const Standard_Boolean p);
-
-};
-%feature("shadow") IntAna2d_IntPoint::~IntAna2d_IntPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntAna2d_IntPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

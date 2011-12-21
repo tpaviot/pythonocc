@@ -79,11 +79,11 @@ $HeaderURL$
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
 #include<Adaptor3d_Curve.hxx>
-#include<TopoDS_Wire.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<TopoDS_Wire.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<BRepAlgo.hxx>
 %}

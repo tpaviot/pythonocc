@@ -234,8 +234,8 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_StepData_SelectMember.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_StepRepr_HArray1OfMaterialPropertyRepresentation.hxx>
 #include<Handle_StepRepr_RepresentationItem.hxx>
 #include<Handle_StepRepr_Representation.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
+#include<Handle_StepRepr_HArray1OfMaterialPropertyRepresentation.hxx>
 %}

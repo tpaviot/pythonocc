@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(To2d) GeomAPI::To2d;
+%rename(To3d) GeomAPI::To3d;

@@ -191,6 +191,6 @@ $HeaderURL$
 %import TCollection.i
 %import TopAbs.i
 %import Standard.i
-%import IntRes2d.i
 %import Geom2dInt.i
 %import HatchGen.i
+%import IntRes2d.i

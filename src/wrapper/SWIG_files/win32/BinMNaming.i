@@ -128,35 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMNaming;
-class BinMNaming {
-	public:
-		%feature("autodoc", "1");
-		BinMNaming();
-		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
-		%feature("autodoc", "1");
-		static		void SetDocumentVersion(const Standard_Integer DocVersion);
-		%feature("autodoc", "1");
-		static		Standard_Integer DocumentVersion();
-
-};
-%feature("shadow") BinMNaming::~BinMNaming %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMNaming {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMNaming_NamingDriver;
 class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	public:
@@ -179,7 +150,7 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMNaming_NamingDriver::~BinMNaming_NamingDriver %{
@@ -243,7 +214,7 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BinMNaming_NamedShapeDriver::~BinMNaming_NamedShapeDriver %{
@@ -256,6 +227,35 @@ def __del__(self):
 %}
 
 %extend BinMNaming_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMNaming;
+class BinMNaming {
+	public:
+		%feature("autodoc", "1");
+		BinMNaming();
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		%feature("autodoc", "1");
+		static		void SetDocumentVersion(const Standard_Integer DocVersion);
+		%feature("autodoc", "1");
+		static		Standard_Integer DocumentVersion();
+
+};
+%feature("shadow") BinMNaming::~BinMNaming %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMNaming {
 	void _kill_pointed() {
 		delete $self;
 	}

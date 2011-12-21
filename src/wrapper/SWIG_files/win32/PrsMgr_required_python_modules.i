@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Graphic3d
+import Graphic2d
 import gp
 import TopLoc
-import Graphic2d
 import Prs3d
 };

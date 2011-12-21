@@ -63,44 +63,6 @@ enum STEPControl_StepModelType {
 
 
 
-%nodefaultctor Handle_STEPControl_ActorRead;
-class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead();
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPControl_ActorRead DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPControl_ActorRead {
-	STEPControl_ActorRead* GetObject() {
-	return (STEPControl_ActorRead*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPControl_ActorRead::~Handle_STEPControl_ActorRead %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPControl_ActorRead {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_STEPControl_ActorWrite;
 class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProcess {
 	public:
@@ -133,6 +95,44 @@ def __del__(self):
 %}
 
 %extend Handle_STEPControl_ActorWrite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_STEPControl_ActorRead;
+class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead();
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPControl_ActorRead DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPControl_ActorRead {
+	STEPControl_ActorRead* GetObject() {
+	return (STEPControl_ActorRead*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPControl_ActorRead::~Handle_STEPControl_ActorRead %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPControl_ActorRead {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -177,86 +177,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor STEPControl_Reader;
-class STEPControl_Reader : public XSControl_Reader {
-	public:
-		%feature("autodoc", "1");
-		STEPControl_Reader();
-		%feature("autodoc", "1");
-		STEPControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		Handle_StepData_StepModel StepModel() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TransferRoot(const Standard_Integer num=1);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbRootsForTransfer();
-
-};
-%feature("shadow") STEPControl_Reader::~STEPControl_Reader %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPControl_Reader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPControl_ActorRead;
-class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		STEPControl_ActorRead();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP, const Standard_Boolean isManifold=1);
-		%feature("autodoc", "1");
-		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		void ResetUnits();
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeTransformation(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target, const Handle_StepRepr_Representation &OrigContext, const Handle_StepRepr_Representation &TargContext, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPControl_ActorRead {
-	Handle_STEPControl_ActorRead GetHandle() {
-	return *(Handle_STEPControl_ActorRead*) &$self;
-	}
-};
-%extend STEPControl_ActorRead {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPControl_ActorRead {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor STEPControl_ActorWrite;
 class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	public:
@@ -295,7 +215,7 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend STEPControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{
@@ -340,7 +260,7 @@ class STEPControl_Controller : public XSControl_Controller {
 };
 %extend STEPControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
@@ -394,6 +314,86 @@ def __del__(self):
 %}
 
 %extend STEPControl_Writer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPControl_ActorRead;
+class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		STEPControl_ActorRead();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder TransferShape(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP, const Standard_Boolean isManifold=1);
+		%feature("autodoc", "1");
+		void PrepareUnits(const Handle_StepRepr_Representation &rep, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		void ResetUnits();
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeTransformation(const Handle_StepGeom_Axis2Placement3d &Origin, const Handle_StepGeom_Axis2Placement3d &Target, const Handle_StepRepr_Representation &OrigContext, const Handle_StepRepr_Representation &TargContext, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeSRRWT(const Handle_StepRepr_RepresentationRelationship &SRR, const Handle_Transfer_TransientProcess &TP, gp_Trsf & Trsf);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPControl_ActorRead {
+	Handle_STEPControl_ActorRead GetHandle() {
+	return *(Handle_STEPControl_ActorRead*) &$self;
+	}
+};
+%extend STEPControl_ActorRead {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPControl_ActorRead {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPControl_Reader;
+class STEPControl_Reader : public XSControl_Reader {
+	public:
+		%feature("autodoc", "1");
+		STEPControl_Reader();
+		%feature("autodoc", "1");
+		STEPControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		%feature("autodoc", "1");
+		Handle_StepData_StepModel StepModel() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TransferRoot(const Standard_Integer num=1);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbRootsForTransfer();
+
+};
+%feature("shadow") STEPControl_Reader::~STEPControl_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPControl_Reader {
 	void _kill_pointed() {
 		delete $self;
 	}

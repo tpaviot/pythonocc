@@ -81,12 +81,11 @@ $HeaderURL$
 #include<Handle_TDF_RelocationTable.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Standard_GUID.hxx>
-#include<Handle_TDF_DataSet.hxx>
 #include<Quantity_Color.hxx>
+#include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TDF_LabelSequence.hxx>
 #include<XCAFDoc.hxx>
+#include<Standard_GUID.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_TColStd_HSequenceOfExtendedString.hxx>
 #include<TopLoc_Location.hxx>
@@ -94,4 +93,5 @@ $HeaderURL$
 #include<TDF_AttributeSequence.hxx>
 #include<TopTools_SequenceOfShape.hxx>
 #include<Handle_TDocStd_Document.hxx>
+#include<Handle_TDF_DataSet.hxx>
 %}

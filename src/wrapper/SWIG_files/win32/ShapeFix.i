@@ -166,82 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeFix_ComposeShell;
-class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell(const Handle_ShapeFix_ComposeShell &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell(const ShapeFix_ComposeShell *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell & operator=(const Handle_ShapeFix_ComposeShell &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_ComposeShell & operator=(const ShapeFix_ComposeShell *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeFix_ComposeShell DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_ComposeShell {
-	ShapeFix_ComposeShell* GetObject() {
-	return (ShapeFix_ComposeShell*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeFix_ComposeShell::~Handle_ShapeFix_ComposeShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeFix_ComposeShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeFix_SplitCommonVertex;
-class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex & operator=(const Handle_ShapeFix_SplitCommonVertex &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_SplitCommonVertex & operator=(const ShapeFix_SplitCommonVertex *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeFix_SplitCommonVertex DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_SplitCommonVertex {
-	ShapeFix_SplitCommonVertex* GetObject() {
-	return (ShapeFix_SplitCommonVertex*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeFix_SplitCommonVertex::~Handle_ShapeFix_SplitCommonVertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeFix_SplitCommonVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeFix_Edge;
 class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	public:
@@ -274,6 +198,44 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeFix_Edge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeFix_ComposeShell;
+class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell(const Handle_ShapeFix_ComposeShell &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell(const ShapeFix_ComposeShell *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell & operator=(const Handle_ShapeFix_ComposeShell &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_ComposeShell & operator=(const ShapeFix_ComposeShell *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeFix_ComposeShell DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_ComposeShell {
+	ShapeFix_ComposeShell* GetObject() {
+	return (ShapeFix_ComposeShell*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeFix_ComposeShell::~Handle_ShapeFix_ComposeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeFix_ComposeShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,29 +356,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
-class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_ShapeFix_SplitCommonVertex;
+class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
+		Handle_ShapeFix_SplitCommonVertex();
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		Handle_ShapeFix_SplitCommonVertex(const Handle_ShapeFix_SplitCommonVertex &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
+		Handle_ShapeFix_SplitCommonVertex(const ShapeFix_SplitCommonVertex *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		Handle_ShapeFix_SplitCommonVertex & operator=(const Handle_ShapeFix_SplitCommonVertex &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
+		Handle_ShapeFix_SplitCommonVertex & operator=(const ShapeFix_SplitCommonVertex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeFix_SplitCommonVertex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	ShapeFix_SequenceNodeOfSequenceOfWireSegment* GetObject() {
-	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
+%extend Handle_ShapeFix_SplitCommonVertex {
+	ShapeFix_SplitCommonVertex* GetObject() {
+	return (ShapeFix_SplitCommonVertex*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+%feature("shadow") Handle_ShapeFix_SplitCommonVertex::~Handle_ShapeFix_SplitCommonVertex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -425,45 +387,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeFix_Wireframe;
-class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe(const Handle_ShapeFix_Wireframe &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe(const ShapeFix_Wireframe *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe & operator=(const Handle_ShapeFix_Wireframe &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_Wireframe & operator=(const ShapeFix_Wireframe *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeFix_Wireframe DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_Wireframe {
-	ShapeFix_Wireframe* GetObject() {
-	return (ShapeFix_Wireframe*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeFix_Wireframe::~Handle_ShapeFix_Wireframe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeFix_Wireframe {
+%extend Handle_ShapeFix_SplitCommonVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -502,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeFix_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
+class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment & operator=(const ShapeFix_SequenceNodeOfSequenceOfWireSegment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
+	ShapeFix_SequenceNodeOfSequenceOfWireSegment* GetObject() {
+	return (ShapeFix_SequenceNodeOfSequenceOfWireSegment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::~Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,6 +546,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeFix_Wireframe;
+class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe(const Handle_ShapeFix_Wireframe &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe(const ShapeFix_Wireframe *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe & operator=(const Handle_ShapeFix_Wireframe &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_Wireframe & operator=(const ShapeFix_Wireframe *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeFix_Wireframe DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_Wireframe {
+	ShapeFix_Wireframe* GetObject() {
+	return (ShapeFix_Wireframe*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeFix_Wireframe::~Handle_ShapeFix_Wireframe %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeFix_Wireframe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeFix_Root;
 class ShapeFix_Root : public MMgt_TShared {
 	public:
@@ -636,7 +636,7 @@ class ShapeFix_Root : public MMgt_TShared {
 };
 %extend ShapeFix_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Root::~ShapeFix_Root %{
@@ -649,69 +649,6 @@ def __del__(self):
 %}
 
 %extend ShapeFix_Root {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeFix_ComposeShell;
-class ShapeFix_ComposeShell : public ShapeFix_Root {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_ComposeShell();
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_CompositeSurface &Grid, const TopLoc_Location &L, const TopoDS_Face Face, const Standard_Real Prec);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetClosedMode() {
-				return (Standard_Boolean) $self->ClosedMode();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetClosedMode(Standard_Boolean value ) {
-				$self->ClosedMode()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		void SplitEdges();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Result() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void DispatchWires(TopTools_SequenceOfShape & faces, ShapeFix_SequenceOfWireSegment & wires) const;
-		%feature("autodoc", "1");
-		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeFix_ComposeShell {
-	Handle_ShapeFix_ComposeShell GetHandle() {
-	return *(Handle_ShapeFix_ComposeShell*) &$self;
-	}
-};
-%extend ShapeFix_ComposeShell {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeFix_ComposeShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -750,7 +687,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 };
 %extend ShapeFix_EdgeProjAux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_EdgeProjAux::~ShapeFix_EdgeProjAux %{
@@ -1005,7 +942,7 @@ class ShapeFix_Face : public ShapeFix_Root {
 };
 %extend ShapeFix_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Face::~ShapeFix_Face %{
@@ -1484,7 +1421,7 @@ class ShapeFix_Wire : public ShapeFix_Root {
 };
 %extend ShapeFix_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wire::~ShapeFix_Wire %{
@@ -1567,7 +1504,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 };
 %extend ShapeFix_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Solid::~ShapeFix_Solid %{
@@ -1604,7 +1541,7 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SequenceNodeOfSequenceOfWireSegment::~ShapeFix_SequenceNodeOfSequenceOfWireSegment %{
@@ -1734,7 +1671,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 };
 %extend ShapeFix_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Edge::~ShapeFix_Edge %{
@@ -1818,7 +1755,7 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
@@ -1831,6 +1768,69 @@ def __del__(self):
 %}
 
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeFix_ComposeShell;
+class ShapeFix_ComposeShell : public ShapeFix_Root {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_ComposeShell();
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeExtend_CompositeSurface &Grid, const TopLoc_Location &L, const TopoDS_Face Face, const Standard_Real Prec);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetClosedMode() {
+				return (Standard_Boolean) $self->ClosedMode();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetClosedMode(Standard_Boolean value ) {
+				$self->ClosedMode()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		void SplitEdges();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Result() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void DispatchWires(TopTools_SequenceOfShape & faces, ShapeFix_SequenceOfWireSegment & wires) const;
+		%feature("autodoc", "1");
+		void SetTransferParamTool(const Handle_ShapeAnalysis_TransferParameters &TransferParam);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_TransferParameters GetTransferParamTool() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeFix_ComposeShell {
+	Handle_ShapeFix_ComposeShell GetHandle() {
+	return *(Handle_ShapeFix_ComposeShell*) &$self;
+	}
+};
+%extend ShapeFix_ComposeShell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeFix_ComposeShell::~ShapeFix_ComposeShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeFix_ComposeShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1889,7 +1889,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 };
 %extend ShapeFix_Wireframe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Wireframe::~ShapeFix_Wireframe %{
@@ -1902,6 +1902,35 @@ def __del__(self):
 %}
 
 %extend ShapeFix_Wireframe {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeFix_FaceConnect;
+class ShapeFix_FaceConnect {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_FaceConnect();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const TopoDS_Face aFirst, const TopoDS_Face aSecond);
+		%feature("autodoc", "1");
+		TopoDS_Shell Build(const TopoDS_Shell shell, const Standard_Real sewtoler, const Standard_Real fixtoler);
+		%feature("autodoc", "1");
+		void Clear();
+
+};
+%feature("shadow") ShapeFix_FaceConnect::~ShapeFix_FaceConnect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeFix_FaceConnect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1969,6 +1998,45 @@ def __del__(self):
 %}
 
 %extend ShapeFix_IntersectionTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeFix_WireVertex;
+class ShapeFix_WireVertex {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_WireVertex();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Wire wire, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Init(const Handle_ShapeExtend_WireData &sbwd, const Standard_Real preci);
+		%feature("autodoc", "1");
+		void Init(const ShapeAnalysis_WireVertex &sawv);
+		%feature("autodoc", "1");
+		const ShapeAnalysis_WireVertex & Analyzer() const;
+		%feature("autodoc", "1");
+		const Handle_ShapeExtend_WireData & WireData() const;
+		%feature("autodoc", "1");
+		TopoDS_Wire Wire() const;
+		%feature("autodoc", "1");
+		Standard_Integer FixSame();
+		%feature("autodoc", "1");
+		Standard_Integer Fix();
+
+};
+%feature("shadow") ShapeFix_WireVertex::~ShapeFix_WireVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeFix_WireVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2056,7 +2124,7 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 };
 %extend ShapeFix_FixSmallFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_FixSmallFace::~ShapeFix_FixSmallFace %{
@@ -2096,77 +2164,6 @@ def __del__(self):
 %}
 
 %extend ShapeFix_ShapeTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeFix_SplitTool;
-class ShapeFix_SplitTool {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_SplitTool();
-		%feature("autodoc", "1");
-		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real param, const TopoDS_Vertex vert, const TopoDS_Face face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real param1, const Standard_Real param2, const TopoDS_Vertex vert, const TopoDS_Face face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CutEdge(const TopoDS_Edge edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face face, Standard_Boolean & iscutline) const;
-		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d) -> Standard_Integer");
-
-		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real fp, const TopoDS_Vertex V1, const Standard_Real lp, const TopoDS_Vertex V2, const TopoDS_Face face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
-
-};
-%feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeFix_SplitTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeFix_WireVertex;
-class ShapeFix_WireVertex {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_WireVertex();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Wire wire, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const Handle_ShapeExtend_WireData &sbwd, const Standard_Real preci);
-		%feature("autodoc", "1");
-		void Init(const ShapeAnalysis_WireVertex &sawv);
-		%feature("autodoc", "1");
-		const ShapeAnalysis_WireVertex & Analyzer() const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_WireData & WireData() const;
-		%feature("autodoc", "1");
-		TopoDS_Wire Wire() const;
-		%feature("autodoc", "1");
-		Standard_Integer FixSame();
-		%feature("autodoc", "1");
-		Standard_Integer Fix();
-
-};
-%feature("shadow") ShapeFix_WireVertex::~ShapeFix_WireVertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeFix_WireVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2241,7 +2238,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 };
 %extend ShapeFix_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shell::~ShapeFix_Shell %{
@@ -2254,6 +2251,38 @@ def __del__(self):
 %}
 
 %extend ShapeFix_Shell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeFix_SplitTool;
+class ShapeFix_SplitTool {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_SplitTool();
+		%feature("autodoc", "1");
+		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real param, const TopoDS_Vertex vert, const TopoDS_Face face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real param1, const Standard_Real param2, const TopoDS_Vertex vert, const TopoDS_Face face, TopoDS_Edge & newE1, TopoDS_Edge & newE2, const Standard_Real tol3d, const Standard_Real tol2d) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CutEdge(const TopoDS_Edge edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face face, Standard_Boolean & iscutline) const;
+		%feature("autodoc","SplitEdge(const edge, Standard_Real fp, const V1, Standard_Real lp, const V2, const face, const context, Standard_Real tol3d, Standard_Real tol2d) -> Standard_Integer");
+
+		Standard_Boolean SplitEdge(const TopoDS_Edge edge, const Standard_Real fp, const TopoDS_Vertex V1, const Standard_Real lp, const TopoDS_Vertex V2, const TopoDS_Face face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
+
+};
+%feature("shadow") ShapeFix_SplitTool::~ShapeFix_SplitTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeFix_SplitTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2376,7 +2405,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 };
 %extend ShapeFix_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_Shape::~ShapeFix_Shape %{
@@ -2389,35 +2418,6 @@ def __del__(self):
 %}
 
 %extend ShapeFix_Shape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeFix_FaceConnect;
-class ShapeFix_FaceConnect {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_FaceConnect();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const TopoDS_Face aFirst, const TopoDS_Face aSecond);
-		%feature("autodoc", "1");
-		TopoDS_Shell Build(const TopoDS_Shell shell, const Standard_Real sewtoler, const Standard_Real fixtoler);
-		%feature("autodoc", "1");
-		void Clear();
-
-};
-%feature("shadow") ShapeFix_FaceConnect::~ShapeFix_FaceConnect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeFix_FaceConnect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2446,7 +2446,7 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 };
 %extend ShapeFix_SplitCommonVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeFix_SplitCommonVertex::~ShapeFix_SplitCommonVertex %{

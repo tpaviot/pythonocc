@@ -83,11 +83,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
-class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
+%nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
+class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
+		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -97,11 +97,9 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean IsMinKC(const Standard_Real Param) const;
 
 };
-%feature("shadow") Geom2dLProp_FCurExtOfNumericCurInf2d::~Geom2dLProp_FCurExtOfNumericCurInf2d %{
+%feature("shadow") Geom2dLProp_FCurNulOfNumericCurInf2d::~Geom2dLProp_FCurNulOfNumericCurInf2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -110,7 +108,40 @@ def __del__(self):
 		pass
 %}
 
-%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
+%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dLProp_NumericCurInf2d;
+class Geom2dLProp_NumericCurInf2d {
+	public:
+		%feature("autodoc", "1");
+		Geom2dLProp_NumericCurInf2d();
+		%feature("autodoc", "1");
+		void PerformCurExt(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
+		%feature("autodoc", "1");
+		void PerformInf(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
+		%feature("autodoc", "1");
+		void PerformCurExt(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
+		%feature("autodoc", "1");
+		void PerformInf(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+
+};
+%feature("shadow") Geom2dLProp_NumericCurInf2d::~Geom2dLProp_NumericCurInf2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dLProp_NumericCurInf2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -203,11 +234,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
-class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
+%nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
+class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dLProp_FCurNulOfNumericCurInf2d(const Handle_Geom2d_Curve &C);
+		Geom2dLProp_FCurExtOfNumericCurInf2d(const Handle_Geom2d_Curve &C, const Standard_Real Tol);
 		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
 		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
@@ -217,9 +248,11 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
 
 		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean IsMinKC(const Standard_Real Param) const;
 
 };
-%feature("shadow") Geom2dLProp_FCurNulOfNumericCurInf2d::~Geom2dLProp_FCurNulOfNumericCurInf2d %{
+%feature("shadow") Geom2dLProp_FCurExtOfNumericCurInf2d::~Geom2dLProp_FCurExtOfNumericCurInf2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -228,40 +261,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Geom2dLProp_FCurNulOfNumericCurInf2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dLProp_NumericCurInf2d;
-class Geom2dLProp_NumericCurInf2d {
-	public:
-		%feature("autodoc", "1");
-		Geom2dLProp_NumericCurInf2d();
-		%feature("autodoc", "1");
-		void PerformCurExt(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
-		%feature("autodoc", "1");
-		void PerformInf(const Handle_Geom2d_Curve &C, LProp_CurAndInf & Result);
-		%feature("autodoc", "1");
-		void PerformCurExt(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
-		%feature("autodoc", "1");
-		void PerformInf(const Handle_Geom2d_Curve &C, const Standard_Real UMin, const Standard_Real UMax, LProp_CurAndInf & Result);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%feature("shadow") Geom2dLProp_NumericCurInf2d::~Geom2dLProp_NumericCurInf2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dLProp_NumericCurInf2d {
+%extend Geom2dLProp_FCurExtOfNumericCurInf2d {
 	void _kill_pointed() {
 		delete $self;
 	}

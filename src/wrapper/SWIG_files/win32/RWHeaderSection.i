@@ -209,6 +209,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWHeaderSection;
+class RWHeaderSection {
+	public:
+		%feature("autodoc", "1");
+		RWHeaderSection();
+		%feature("autodoc", "1");
+		static		void Init();
+
+};
+%feature("shadow") RWHeaderSection::~RWHeaderSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWHeaderSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWHeaderSection_ReadWriteModule;
 class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 	public:
@@ -237,7 +262,7 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWHeaderSection_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_ReadWriteModule::~RWHeaderSection_ReadWriteModule %{
@@ -250,31 +275,6 @@ def __del__(self):
 %}
 
 %extend RWHeaderSection_ReadWriteModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWHeaderSection;
-class RWHeaderSection {
-	public:
-		%feature("autodoc", "1");
-		RWHeaderSection();
-		%feature("autodoc", "1");
-		static		void Init();
-
-};
-%feature("shadow") RWHeaderSection::~RWHeaderSection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWHeaderSection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -305,7 +305,7 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 };
 %extend RWHeaderSection_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_GeneralModule::~RWHeaderSection_GeneralModule %{

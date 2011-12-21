@@ -259,14 +259,14 @@ $HeaderURL$
 #include<gp_Dir.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
-#include<TColStd_Array1OfInteger.hxx>
-#include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_AlienImage_AlienImage.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<Handle_TColStd_HArray1OfByte.hxx>
+#include<TColStd_Array1OfInteger.hxx>
 #include<Aspect_Array1OfEdge.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
+#include<Handle_TColStd_HArray1OfByte.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
 %}

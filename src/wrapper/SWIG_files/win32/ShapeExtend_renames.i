@@ -23,3 +23,13 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeExtend_BasicMsgRegistrator::DownCast;
+%rename(DownCast) Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::DownCast;
+%rename(DownCast) Handle_ShapeExtend_MsgRegistrator::DownCast;
+%rename(DownCast) Handle_ShapeExtend_ComplexCurve::DownCast;
+%rename(DownCast) Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::DownCast;
+%rename(DownCast) Handle_ShapeExtend_CompositeSurface::DownCast;
+%rename(DownCast) Handle_ShapeExtend_WireData::DownCast;
+%rename(Init) ShapeExtend::Init;
+%rename(EncodeStatus) ShapeExtend::EncodeStatus;
+%rename(DecodeStatus) ShapeExtend::DecodeStatus;

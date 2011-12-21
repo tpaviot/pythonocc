@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GProp_UndefinedAxis::DownCast;
+%rename(Barycentre) GProp_PGProps::Barycentre;
+%rename(Raise) GProp_UndefinedAxis::Raise;
+%rename(NewInstance) GProp_UndefinedAxis::NewInstance;
+%rename(HOperator) GProp::HOperator;

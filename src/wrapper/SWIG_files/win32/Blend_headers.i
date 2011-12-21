@@ -68,7 +68,6 @@ $HeaderURL$
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
-#include<gp_Pnt.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColgp_Array1OfPnt.hxx>
@@ -76,5 +75,6 @@ $HeaderURL$
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Vec2d.hxx>
 %}

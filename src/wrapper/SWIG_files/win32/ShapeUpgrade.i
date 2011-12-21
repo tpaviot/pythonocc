@@ -318,6 +318,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_SplitCurve;
+class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve(const Handle_ShapeUpgrade_SplitCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve(const ShapeUpgrade_SplitCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve & operator=(const Handle_ShapeUpgrade_SplitCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve & operator=(const ShapeUpgrade_SplitCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitCurve {
+	ShapeUpgrade_SplitCurve* GetObject() {
+	return (ShapeUpgrade_SplitCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitCurve::~Handle_ShapeUpgrade_SplitCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
+class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve3d();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve3d(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve3d(const ShapeUpgrade_SplitCurve3d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve3d & operator=(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitCurve3d & operator=(const ShapeUpgrade_SplitCurve3d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitCurve3d DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitCurve3d {
+	ShapeUpgrade_SplitCurve3d* GetObject() {
+	return (ShapeUpgrade_SplitCurve3d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitCurve3d::~Handle_ShapeUpgrade_SplitCurve3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitCurve3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
+class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_SplitCurve3d {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_ConvertCurve3dToBezier DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
+	ShapeUpgrade_ConvertCurve3dToBezier* GetObject() {
+	return (ShapeUpgrade_ConvertCurve3dToBezier*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_ConvertCurve3dToBezier::~Handle_ShapeUpgrade_ConvertCurve3dToBezier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis;
 class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgrade_SplitSurface {
 	public:
@@ -394,44 +508,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_SplitCurve;
-class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve(const Handle_ShapeUpgrade_SplitCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve(const ShapeUpgrade_SplitCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve & operator=(const Handle_ShapeUpgrade_SplitCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve & operator=(const ShapeUpgrade_SplitCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitCurve {
-	ShapeUpgrade_SplitCurve* GetObject() {
-	return (ShapeUpgrade_SplitCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitCurve::~Handle_ShapeUpgrade_SplitCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeUpgrade_RemoveInternalWires;
 class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -464,82 +540,6 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeUpgrade_RemoveInternalWires {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
-class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitSurfaceArea DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceArea {
-	ShapeUpgrade_SplitSurfaceArea* GetObject() {
-	return (ShapeUpgrade_SplitSurfaceArea*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceArea::~Handle_ShapeUpgrade_SplitSurfaceArea %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitSurfaceArea {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
-class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitSurfaceContinuity DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
-	ShapeUpgrade_SplitSurfaceContinuity* GetObject() {
-	return (ShapeUpgrade_SplitSurfaceContinuity*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceContinuity::~Handle_ShapeUpgrade_SplitSurfaceContinuity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -616,6 +616,82 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
+class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea(const ShapeUpgrade_SplitSurfaceArea *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const Handle_ShapeUpgrade_SplitSurfaceArea &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceArea & operator=(const ShapeUpgrade_SplitSurfaceArea *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitSurfaceArea DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceArea {
+	ShapeUpgrade_SplitSurfaceArea* GetObject() {
+	return (ShapeUpgrade_SplitSurfaceArea*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceArea::~Handle_ShapeUpgrade_SplitSurfaceArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
+class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const Handle_ShapeUpgrade_SplitSurfaceContinuity &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceContinuity & operator=(const ShapeUpgrade_SplitSurfaceContinuity *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitSurfaceContinuity DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
+	ShapeUpgrade_SplitSurfaceContinuity* GetObject() {
+	return (ShapeUpgrade_SplitSurfaceContinuity*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceContinuity::~Handle_ShapeUpgrade_SplitSurfaceContinuity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -736,120 +812,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
-class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d(const ShapeUpgrade_SplitCurve3d *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d & operator=(const Handle_ShapeUpgrade_SplitCurve3d &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitCurve3d & operator=(const ShapeUpgrade_SplitCurve3d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitCurve3d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitCurve3d {
-	ShapeUpgrade_SplitCurve3d* GetObject() {
-	return (ShapeUpgrade_SplitCurve3d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitCurve3d::~Handle_ShapeUpgrade_SplitCurve3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitCurve3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
-class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_SplitCurve3d {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const Handle_ShapeUpgrade_ConvertCurve3dToBezier &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ConvertCurve3dToBezier & operator=(const ShapeUpgrade_ConvertCurve3dToBezier *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_ConvertCurve3dToBezier DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
-	ShapeUpgrade_ConvertCurve3dToBezier* GetObject() {
-	return (ShapeUpgrade_ConvertCurve3dToBezier*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_ConvertCurve3dToBezier::~Handle_ShapeUpgrade_ConvertCurve3dToBezier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_ClosedFaceDivide;
-class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivide {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide(const ShapeUpgrade_ClosedFaceDivide *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const ShapeUpgrade_ClosedFaceDivide *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_ClosedFaceDivide DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_ClosedFaceDivide {
-	ShapeUpgrade_ClosedFaceDivide* GetObject() {
-	return (ShapeUpgrade_ClosedFaceDivide*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_ClosedFaceDivide::~Handle_ShapeUpgrade_ClosedFaceDivide %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_ClosedFaceDivide {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3dContinuity;
 class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_SplitCurve3d {
 	public:
@@ -926,6 +888,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_ClosedFaceDivide;
+class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivide {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedFaceDivide();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedFaceDivide(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedFaceDivide(const ShapeUpgrade_ClosedFaceDivide *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const Handle_ShapeUpgrade_ClosedFaceDivide &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_ClosedFaceDivide & operator=(const ShapeUpgrade_ClosedFaceDivide *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_ClosedFaceDivide DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_ClosedFaceDivide {
+	ShapeUpgrade_ClosedFaceDivide* GetObject() {
+	return (ShapeUpgrade_ClosedFaceDivide*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_ClosedFaceDivide::~Handle_ShapeUpgrade_ClosedFaceDivide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_ClosedFaceDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeUpgrade_SplitCurve;
 class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 	public:
@@ -956,7 +956,7 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 };
 %extend ShapeUpgrade_SplitCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve::~ShapeUpgrade_SplitCurve %{
@@ -995,7 +995,7 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3d::~ShapeUpgrade_SplitCurve3d %{
@@ -1042,7 +1042,7 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ConvertCurve3dToBezier::~ShapeUpgrade_ConvertCurve3dToBezier %{
@@ -1055,6 +1055,102 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_SplitSurface;
+class ShapeUpgrade_SplitSurface : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitSurface();
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
+		%feature("autodoc", "1");
+		void SetUSplitValues(const Handle_TColStd_HSequenceOfReal &UValues);
+		%feature("autodoc", "1");
+		void SetVSplitValues(const Handle_TColStd_HSequenceOfReal &VValues);
+		%feature("autodoc", "1");
+		virtual		void Build(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment=1);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Boolean Segment=1);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HSequenceOfReal & USplitValues() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HSequenceOfReal & VSplitValues() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		const Handle_ShapeExtend_CompositeSurface & ResSurfaces() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_SplitSurface {
+	Handle_ShapeUpgrade_SplitSurface GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurface*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_SplitSurface::~ShapeUpgrade_SplitSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_SplitSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
+class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_SplitSurfaceContinuity();
+		%feature("autodoc", "1");
+		void SetCriterion(const GeomAbs_Shape Criterion);
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	Handle_ShapeUpgrade_SplitSurfaceContinuity GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurfaceContinuity*) &$self;
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_SplitSurfaceContinuity::~ShapeUpgrade_SplitSurfaceContinuity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_SplitSurfaceContinuity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1097,7 +1193,7 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 };
 %extend ShapeUpgrade_Tool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_Tool::~ShapeUpgrade_Tool %{
@@ -1110,6 +1206,61 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_FaceDivide;
+class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivide();
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivide(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitSurface();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SplitCurves();
+		%feature("autodoc", "1");
+		TopoDS_Shape Result() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
+		%feature("autodoc", "1");
+		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
+		%feature("autodoc", "1");
+		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
+
+};
+%extend ShapeUpgrade_FaceDivide {
+	Handle_ShapeUpgrade_FaceDivide GetHandle() {
+	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
+	}
+};
+%extend ShapeUpgrade_FaceDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_FaceDivide::~ShapeUpgrade_FaceDivide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_FaceDivide {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1161,6 +1312,8 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 		const TopTools_SequenceOfShape & RemovedWires() const;
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status theStatus) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend ShapeUpgrade_RemoveInternalWires {
@@ -1170,7 +1323,7 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_RemoveInternalWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_RemoveInternalWires::~ShapeUpgrade_RemoveInternalWires %{
@@ -1213,7 +1366,7 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_SplitCurve3dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3dContinuity::~ShapeUpgrade_SplitCurve3dContinuity %{
@@ -1226,102 +1379,6 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_SplitCurve3dContinuity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_SplitSurface;
-class ShapeUpgrade_SplitSurface : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurface();
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UFirst, const Standard_Real ULast, const Standard_Real VFirst, const Standard_Real VLast);
-		%feature("autodoc", "1");
-		void SetUSplitValues(const Handle_TColStd_HSequenceOfReal &UValues);
-		%feature("autodoc", "1");
-		void SetVSplitValues(const Handle_TColStd_HSequenceOfReal &VValues);
-		%feature("autodoc", "1");
-		virtual		void Build(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment=1);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Boolean Segment=1);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HSequenceOfReal & USplitValues() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HSequenceOfReal & VSplitValues() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		const Handle_ShapeExtend_CompositeSurface & ResSurfaces() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurface {
-	Handle_ShapeUpgrade_SplitSurface GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurface*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeUpgrade_SplitSurface::~ShapeUpgrade_SplitSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_SplitSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
-class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		void SetMaxAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		Standard_Real MaxAngle() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceAngle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeUpgrade_SplitSurfaceAngle::~ShapeUpgrade_SplitSurfaceAngle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_SplitSurfaceAngle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1414,37 +1471,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeUpgrade_FixSmallCurves;
-class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
+%nodefaultctor ShapeUpgrade_RemoveLocations;
+class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_FixSmallCurves();
+		ShapeUpgrade_RemoveLocations();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Edge theEdge, const TopoDS_Face theFace);
-		%feature("autodoc","Approx() -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean Remove(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		TopoDS_Shape GetResult() const;
 		%feature("autodoc", "1");
-		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		void SetRemoveLevel(const TopAbs_ShapeEnum theLevel);
 		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		TopAbs_ShapeEnum RemoveLevel() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape ModifiedShape(const TopoDS_Shape theInitShape) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_FixSmallCurves {
-	Handle_ShapeUpgrade_FixSmallCurves GetHandle() {
-	return *(Handle_ShapeUpgrade_FixSmallCurves*) &$self;
+%extend ShapeUpgrade_RemoveLocations {
+	Handle_ShapeUpgrade_RemoveLocations GetHandle() {
+	return *(Handle_ShapeUpgrade_RemoveLocations*) &$self;
 	}
 };
-%extend ShapeUpgrade_FixSmallCurves {
+%extend ShapeUpgrade_RemoveLocations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") ShapeUpgrade_FixSmallCurves::~ShapeUpgrade_FixSmallCurves %{
+%feature("shadow") ShapeUpgrade_RemoveLocations::~ShapeUpgrade_RemoveLocations %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1453,7 +1509,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeUpgrade_FixSmallCurves {
+%extend ShapeUpgrade_RemoveLocations {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1498,7 +1554,7 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_EdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_EdgeDivide::~ShapeUpgrade_EdgeDivide %{
@@ -1533,7 +1589,7 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ClosedEdgeDivide::~ShapeUpgrade_ClosedEdgeDivide %{
@@ -1546,6 +1602,134 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_ClosedEdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ShapeDivideAngle;
+class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle);
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void InitTool(const Standard_Real MaxAngle);
+		%feature("autodoc", "1");
+		void SetMaxAngle(const Standard_Real MaxAngle);
+		%feature("autodoc", "1");
+		Standard_Real MaxAngle() const;
+
+};
+%feature("shadow") ShapeUpgrade_ShapeDivideAngle::~ShapeUpgrade_ShapeDivideAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_ShapeDivideAngle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_FixSmallCurves;
+class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FixSmallCurves();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Edge theEdge, const TopoDS_Face theFace);
+		%feature("autodoc","Approx() -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Approx(Handle_Geom_Curve & Curve3d, Handle_Geom2d_Curve & Curve2d, Handle_Geom2d_Curve & Curve2dR, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void SetSplitCurve3dTool(const Handle_ShapeUpgrade_SplitCurve3d &splitCurve3dTool);
+		%feature("autodoc", "1");
+		void SetSplitCurve2dTool(const Handle_ShapeUpgrade_SplitCurve2d &splitCurve2dTool);
+		%feature("autodoc", "1");
+		Standard_Boolean Status(const ShapeExtend_Status status) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_FixSmallCurves {
+	Handle_ShapeUpgrade_FixSmallCurves GetHandle() {
+	return *(Handle_ShapeUpgrade_FixSmallCurves*) &$self;
+	}
+};
+%extend ShapeUpgrade_FixSmallCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_FixSmallCurves::~ShapeUpgrade_FixSmallCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_FixSmallCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_FaceDivideArea;
+class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivideArea();
+		%feature("autodoc", "1");
+		ShapeUpgrade_FaceDivideArea(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Perform();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetMaxArea() {
+				return (Standard_Real) $self->MaxArea();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetMaxArea(Standard_Real value ) {
+				$self->MaxArea()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_FaceDivideArea {
+	Handle_ShapeUpgrade_FaceDivideArea GetHandle() {
+	return *(Handle_ShapeUpgrade_FaceDivideArea*) &$self;
+	}
+};
+%extend ShapeUpgrade_FaceDivideArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_FaceDivideArea::~ShapeUpgrade_FaceDivideArea %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_FaceDivideArea {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1579,135 +1763,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeUpgrade_ShellSewing;
-class ShapeUpgrade_ShellSewing {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShellSewing();
-		%feature("autodoc", "1");
-		TopoDS_Shape ApplySewing(const TopoDS_Shape shape, const Standard_Real tol=0.0);
-
-};
-%feature("shadow") ShapeUpgrade_ShellSewing::~ShapeUpgrade_ShellSewing %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_ShellSewing {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_FaceDivide;
-class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide();
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivide(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void SetSurfaceSegmentMode(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitSurface();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SplitCurves();
-		%feature("autodoc", "1");
-		TopoDS_Shape Result() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Status(const ShapeExtend_Status status) const;
-		%feature("autodoc", "1");
-		void SetSplitSurfaceTool(const Handle_ShapeUpgrade_SplitSurface &splitSurfaceTool);
-		%feature("autodoc", "1");
-		void SetWireDivideTool(const Handle_ShapeUpgrade_WireDivide &wireDivideTool);
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeUpgrade_WireDivide GetWireDivideTool() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_FaceDivide {
-	Handle_ShapeUpgrade_FaceDivide GetHandle() {
-	return *(Handle_ShapeUpgrade_FaceDivide*) &$self;
-	}
-};
-%extend ShapeUpgrade_FaceDivide {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeUpgrade_FaceDivide::~ShapeUpgrade_FaceDivide %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_FaceDivide {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_FaceDivideArea;
-class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivideArea();
-		%feature("autodoc", "1");
-		ShapeUpgrade_FaceDivideArea(const TopoDS_Face F);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetMaxArea() {
-				return (Standard_Real) $self->MaxArea();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetMaxArea(Standard_Real value ) {
-				$self->MaxArea()=value;
-				}
-		};
-
-};
-%extend ShapeUpgrade_FaceDivideArea {
-	Handle_ShapeUpgrade_FaceDivideArea GetHandle() {
-	return *(Handle_ShapeUpgrade_FaceDivideArea*) &$self;
-	}
-};
-%extend ShapeUpgrade_FaceDivideArea {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeUpgrade_FaceDivideArea::~ShapeUpgrade_FaceDivideArea %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_FaceDivideArea {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_FixSmallBezierCurves;
 class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 	public:
@@ -1727,7 +1782,7 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 };
 %extend ShapeUpgrade_FixSmallBezierCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_FixSmallBezierCurves::~ShapeUpgrade_FixSmallBezierCurves %{
@@ -1801,7 +1856,7 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceArea::~ShapeUpgrade_SplitSurfaceArea %{
@@ -1814,6 +1869,31 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_SplitSurfaceArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_ShellSewing;
+class ShapeUpgrade_ShellSewing {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_ShellSewing();
+		%feature("autodoc", "1");
+		TopoDS_Shape ApplySewing(const TopoDS_Shape shape, const Standard_Real tol=0.0);
+
+};
+%feature("shadow") ShapeUpgrade_ShellSewing::~ShapeUpgrade_ShellSewing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_ShellSewing {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1844,7 +1924,7 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2d::~ShapeUpgrade_SplitCurve2d %{
@@ -1863,28 +1943,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
-class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
+%nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
+class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_ConvertCurve2dToBezier();
+		ShapeUpgrade_SplitSurfaceAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
-		virtual		void Compute();
+		void SetMaxAngle(const Standard_Real MaxAngle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfReal SplitParams() const;
+		Standard_Real MaxAngle() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Standard_Boolean Segment);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_ConvertCurve2dToBezier {
-	Handle_ShapeUpgrade_ConvertCurve2dToBezier GetHandle() {
-	return *(Handle_ShapeUpgrade_ConvertCurve2dToBezier*) &$self;
+%extend ShapeUpgrade_SplitSurfaceAngle {
+	Handle_ShapeUpgrade_SplitSurfaceAngle GetHandle() {
+	return *(Handle_ShapeUpgrade_SplitSurfaceAngle*) &$self;
 	}
 };
-%extend ShapeUpgrade_ConvertCurve2dToBezier {
+%extend ShapeUpgrade_SplitSurfaceAngle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") ShapeUpgrade_ConvertCurve2dToBezier::~ShapeUpgrade_ConvertCurve2dToBezier %{
+%feature("shadow") ShapeUpgrade_SplitSurfaceAngle::~ShapeUpgrade_SplitSurfaceAngle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1893,7 +1977,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeUpgrade_ConvertCurve2dToBezier {
+%extend ShapeUpgrade_SplitSurfaceAngle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1924,7 +2008,7 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 };
 %extend ShapeUpgrade_ClosedFaceDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ClosedFaceDivide::~ShapeUpgrade_ClosedFaceDivide %{
@@ -2010,47 +2094,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
-class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_SplitSurfaceContinuity();
-		%feature("autodoc", "1");
-		void SetCriterion(const GeomAbs_Shape Criterion);
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Standard_Boolean Segment);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	Handle_ShapeUpgrade_SplitSurfaceContinuity GetHandle() {
-	return *(Handle_ShapeUpgrade_SplitSurfaceContinuity*) &$self;
-	}
-};
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") ShapeUpgrade_SplitSurfaceContinuity::~ShapeUpgrade_SplitSurfaceContinuity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_SplitSurfaceContinuity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeUpgrade_WireDivide;
 class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 	public:
@@ -2105,7 +2148,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_WireDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_WireDivide::~ShapeUpgrade_WireDivide %{
@@ -2118,37 +2161,6 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_WireDivide {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeUpgrade_ShapeDivideAngle;
-class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
-	public:
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		ShapeUpgrade_ShapeDivideAngle(const Standard_Real MaxAngle, const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void InitTool(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		void SetMaxAngle(const Standard_Real MaxAngle);
-		%feature("autodoc", "1");
-		Standard_Real MaxAngle() const;
-
-};
-%feature("shadow") ShapeUpgrade_ShapeDivideAngle::~ShapeUpgrade_ShapeDivideAngle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeUpgrade_ShapeDivideAngle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2177,7 +2189,7 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShapeUpgrade_SplitCurve2dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2dContinuity::~ShapeUpgrade_SplitCurve2dContinuity %{
@@ -2234,7 +2246,7 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 };
 %extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ConvertSurfaceToBezierBasis::~ShapeUpgrade_ConvertSurfaceToBezierBasis %{
@@ -2315,36 +2327,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeUpgrade_RemoveLocations;
-class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
+%nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
+class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	public:
 		%feature("autodoc", "1");
-		ShapeUpgrade_RemoveLocations();
+		ShapeUpgrade_ConvertCurve2dToBezier();
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopoDS_Shape theShape);
+		virtual		void Compute();
 		%feature("autodoc", "1");
-		TopoDS_Shape GetResult() const;
+		virtual		void Build(const Standard_Boolean Segment);
 		%feature("autodoc", "1");
-		void SetRemoveLevel(const TopAbs_ShapeEnum theLevel);
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum RemoveLevel() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ModifiedShape(const TopoDS_Shape theInitShape) const;
+		Handle_TColStd_HSequenceOfReal SplitParams() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ShapeUpgrade_RemoveLocations {
-	Handle_ShapeUpgrade_RemoveLocations GetHandle() {
-	return *(Handle_ShapeUpgrade_RemoveLocations*) &$self;
+%extend ShapeUpgrade_ConvertCurve2dToBezier {
+	Handle_ShapeUpgrade_ConvertCurve2dToBezier GetHandle() {
+	return *(Handle_ShapeUpgrade_ConvertCurve2dToBezier*) &$self;
 	}
 };
-%extend ShapeUpgrade_RemoveLocations {
+%extend ShapeUpgrade_ConvertCurve2dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") ShapeUpgrade_RemoveLocations::~ShapeUpgrade_RemoveLocations %{
+%feature("shadow") ShapeUpgrade_ConvertCurve2dToBezier::~ShapeUpgrade_ConvertCurve2dToBezier %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2353,7 +2361,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeUpgrade_RemoveLocations {
+%extend ShapeUpgrade_ConvertCurve2dToBezier {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GraphTools_SC::DownCast;
+%rename(DownCast) Handle_GraphTools_ListNodeOfListOfSequenceOfInteger::DownCast;
+%rename(DownCast) Handle_GraphTools_ListNodeOfSCList::DownCast;

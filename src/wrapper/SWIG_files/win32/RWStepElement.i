@@ -52,6 +52,35 @@ $HeaderURL$
 
 
 
+%nodefaultctor RWStepElement_RWSurfaceSectionFieldVarying;
+class RWStepElement_RWSurfaceSectionFieldVarying {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWSurfaceSectionFieldVarying();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSectionFieldVarying &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSectionFieldVarying &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_SurfaceSectionFieldVarying &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepElement_RWSurfaceSectionFieldVarying::~RWStepElement_RWSurfaceSectionFieldVarying %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepElement_RWSurfaceSectionFieldVarying {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepElement_RWAnalysisItemWithinRepresentation;
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
@@ -75,35 +104,6 @@ def __del__(self):
 %}
 
 %extend RWStepElement_RWAnalysisItemWithinRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWSurfaceSectionField;
-class RWStepElement_RWSurfaceSectionField {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurfaceSectionField();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSectionField &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSectionField &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_SurfaceSectionField &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepElement_RWSurfaceSectionField::~RWStepElement_RWSurfaceSectionField %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepElement_RWSurfaceSectionField {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -168,20 +168,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepElement_RWSurfaceSectionFieldVarying;
-class RWStepElement_RWSurfaceSectionFieldVarying {
+%nodefaultctor RWStepElement_RWSurfaceSectionField;
+class RWStepElement_RWSurfaceSectionField {
 	public:
 		%feature("autodoc", "1");
-		RWStepElement_RWSurfaceSectionFieldVarying();
+		RWStepElement_RWSurfaceSectionField();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSectionFieldVarying &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSectionField &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSectionFieldVarying &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSectionField &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_SurfaceSectionFieldVarying &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepElement_SurfaceSectionField &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepElement_RWSurfaceSectionFieldVarying::~RWStepElement_RWSurfaceSectionFieldVarying %{
+%feature("shadow") RWStepElement_RWSurfaceSectionField::~RWStepElement_RWSurfaceSectionField %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -190,7 +190,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepElement_RWSurfaceSectionFieldVarying {
+%extend RWStepElement_RWSurfaceSectionField {
 	void _kill_pointed() {
 		delete $self;
 	}

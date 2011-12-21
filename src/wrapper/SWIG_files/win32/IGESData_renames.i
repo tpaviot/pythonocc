@@ -23,3 +23,43 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESData_IGESEntity::DownCast;
+%rename(DownCast) Handle_IGESData_FileRecognizer::DownCast;
+%rename(DownCast) Handle_IGESData_GeneralModule::DownCast;
+%rename(DownCast) Handle_IGESData_ToolLocation::DownCast;
+%rename(DownCast) Handle_IGESData_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESData_DefaultSpecific::DownCast;
+%rename(DownCast) Handle_IGESData_NodeOfWriterLib::DownCast;
+%rename(DownCast) Handle_IGESData_GlobalNodeOfSpecificLib::DownCast;
+%rename(DownCast) Handle_IGESData_LevelListEntity::DownCast;
+%rename(DownCast) Handle_IGESData_ColorEntity::DownCast;
+%rename(DownCast) Handle_IGESData_LineFontEntity::DownCast;
+%rename(DownCast) Handle_IGESData_TransfEntity::DownCast;
+%rename(DownCast) Handle_IGESData_SingleParentEntity::DownCast;
+%rename(DownCast) Handle_IGESData_NodeOfSpecificLib::DownCast;
+%rename(DownCast) Handle_IGESData_Protocol::DownCast;
+%rename(DownCast) Handle_IGESData_FileProtocol::DownCast;
+%rename(DownCast) Handle_IGESData_GlobalNodeOfWriterLib::DownCast;
+%rename(DownCast) Handle_IGESData_HArray1OfIGESEntity::DownCast;
+%rename(DownCast) Handle_IGESData_ViewKindEntity::DownCast;
+%rename(DownCast) Handle_IGESData_LabelDisplayEntity::DownCast;
+%rename(DownCast) Handle_IGESData_NameEntity::DownCast;
+%rename(DownCast) Handle_IGESData_UndefinedEntity::DownCast;
+%rename(DownCast) Handle_IGESData_DefaultGeneral::DownCast;
+%rename(DownCast) Handle_IGESData_FreeFormatEntity::DownCast;
+%rename(DownCast) Handle_IGESData_ReadWriteModule::DownCast;
+%rename(DownCast) Handle_IGESData_IGESModel::DownCast;
+%rename(DownCast) Handle_IGESData_IGESReaderData::DownCast;
+%rename(ConvertLocation) IGESData_ToolLocation::ConvertLocation;
+%rename(Init) IGESData::Init;
+%rename(Protocol) IGESData::Protocol;
+%rename(SetGlobal) IGESData_WriterLib::SetGlobal;
+%rename(UnitNameFlag) IGESData_BasicEditor::UnitNameFlag;
+%rename(UnitFlagValue) IGESData_BasicEditor::UnitFlagValue;
+%rename(UnitFlagName) IGESData_BasicEditor::UnitFlagName;
+%rename(IGESVersionName) IGESData_BasicEditor::IGESVersionName;
+%rename(IGESVersionMax) IGESData_BasicEditor::IGESVersionMax;
+%rename(DraftingName) IGESData_BasicEditor::DraftingName;
+%rename(DraftingMax) IGESData_BasicEditor::DraftingMax;
+%rename(SetGlobal) IGESData_SpecificLib::SetGlobal;
+%rename(NewDateString) IGESData_GlobalSection::NewDateString;

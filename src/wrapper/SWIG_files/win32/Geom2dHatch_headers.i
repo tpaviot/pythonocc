@@ -135,8 +135,8 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Geom2dAdaptor_Curve.hxx>
-#include<gp_Lin2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Lin2d.hxx>
 #include<gp_Dir2d.hxx>
 #include<HatchGen_PointOnHatching.hxx>
 #include<HatchGen_Domain.hxx>

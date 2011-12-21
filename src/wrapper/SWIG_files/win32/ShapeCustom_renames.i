@@ -23,3 +23,16 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeCustom_BSplineRestriction::DownCast;
+%rename(DownCast) Handle_ShapeCustom_TrsfModification::DownCast;
+%rename(DownCast) Handle_ShapeCustom_SweptToElementary::DownCast;
+%rename(DownCast) Handle_ShapeCustom_ConvertToBSpline::DownCast;
+%rename(DownCast) Handle_ShapeCustom_DirectModification::DownCast;
+%rename(DownCast) Handle_ShapeCustom_ConvertToRevolution::DownCast;
+%rename(DownCast) Handle_ShapeCustom_RestrictionParameters::DownCast;
+%rename(ApplyModifier) ShapeCustom::ApplyModifier;
+%rename(DirectFaces) ShapeCustom::DirectFaces;
+%rename(ScaleShape) ShapeCustom::ScaleShape;
+%rename(IsLinear) ShapeCustom_Curve2d::IsLinear;
+%rename(ConvertToLine2d) ShapeCustom_Curve2d::ConvertToLine2d;
+%rename(SimplifyBSpline2d) ShapeCustom_Curve2d::SimplifyBSpline2d;

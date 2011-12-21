@@ -112,8 +112,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Pnt.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Edge.hxx>
+#include<TopoDS_Face.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Vertex.hxx>
@@ -125,15 +126,14 @@ $HeaderURL$
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Plane.hxx>
-#include<TopoDS_Face.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
-#include<gp_Trsf.hxx>
 #include<BRepBuilderAPI.hxx>
+#include<gp_Trsf.hxx>
 #include<gp_GTrsf.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Shell.hxx>

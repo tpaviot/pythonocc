@@ -171,42 +171,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_DoubleTabOfReal;
-class math_DoubleTabOfReal {
+%nodefaultctor math_FunctionRoot;
+class math_FunctionRoot {
 	public:
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const Standard_Real &Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		void Init(const Standard_Real &InitValue);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		math_DoubleTabOfReal(const math_DoubleTabOfReal &Other);
+		Standard_Real Root() const;
 		%feature("autodoc", "1");
-		void Copy(math_DoubleTabOfReal & Other) const;
+		Standard_Real Derivative() const;
 		%feature("autodoc", "1");
-		void SetLowerRow(const Standard_Integer LowerRow);
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void SetLowerCol(const Standard_Integer LowerCol);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue(const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
-				return (Standard_Real) $self->Value(RowIndex,ColIndex);
-				}
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
 		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ,const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
-				$self->Value(RowIndex,ColIndex)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
-		%feature("autodoc", "1");
-		void Free();
 
 };
-%feature("shadow") math_DoubleTabOfReal::~math_DoubleTabOfReal %{
+%feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -215,7 +207,37 @@ def __del__(self):
 		pass
 %}
 
-%extend math_DoubleTabOfReal {
+%extend math_FunctionRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_FunctionSample;
+class math_FunctionSample {
+	public:
+		%feature("autodoc", "1");
+		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
+
+};
+%feature("shadow") math_FunctionSample::~math_FunctionSample %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FunctionSample {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -246,7 +268,7 @@ class math_SingularMatrix : public Standard_Failure {
 };
 %extend math_SingularMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") math_SingularMatrix::~math_SingularMatrix %{
@@ -679,49 +701,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_FunctionRoot;
-class math_FunctionRoot {
-	public:
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Derivative() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_Array1OfValueAndWeight;
 class math_Array1OfValueAndWeight {
 	public:
@@ -1041,163 +1020,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_Matrix;
-class math_Matrix {
-	public:
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
-		%feature("autodoc", "1");
-		math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
-		%feature("autodoc", "1");
-		math_Matrix(const math_Matrix &Other);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real InitialValue);
-		%feature("autodoc", "1");
-		Standard_Integer RowNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer ColNumber() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Real Determinant() const;
-		%feature("autodoc", "1");
-		void Transpose();
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Real Right);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Real Right);
-		%feature("autodoc", "1");
-		math_Matrix Multiplied(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator*(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix TMultiplied(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		void Divide(const Standard_Real Right);
-		%feature("autodoc", "1");
-		void operator/=(const Standard_Real Right);
-		%feature("autodoc", "1");
-		math_Matrix Divided(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator/(const Standard_Real Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator+=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Added(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator+(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator-=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Subtracted(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator-(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer J1, const Standard_Integer J2, const math_Matrix &M);
-		%feature("autodoc", "1");
-		void SetRow(const Standard_Integer Row, const math_Vector &V);
-		%feature("autodoc", "1");
-		void SetCol(const Standard_Integer Col, const math_Vector &V);
-		%feature("autodoc", "1");
-		void SetDiag(const Standard_Real Value);
-		%feature("autodoc", "1");
-		math_Vector Row(const Standard_Integer Row) const;
-		%feature("autodoc", "1");
-		math_Vector Col(const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		void SwapRow(const Standard_Integer Row1, const Standard_Integer Row2);
-		%feature("autodoc", "1");
-		void SwapCol(const Standard_Integer Col1, const Standard_Integer Col2);
-		%feature("autodoc", "1");
-		math_Matrix Transposed() const;
-		%feature("autodoc", "1");
-		math_Matrix Inverse() const;
-		%feature("autodoc", "1");
-		math_Matrix TMultiply(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		void Multiply(const math_Vector &Left, const math_Vector &Right);
-		%feature("autodoc", "1");
-		void Multiply(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void TMultiply(const math_Matrix &TLeft, const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_Matrix &Left, const math_Matrix &Right);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue(const Standard_Integer Row, const Standard_Integer Col) {
-				return (Standard_Real) $self->Value(Row,Col);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
-				$self->Value(Row,Col)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		math_Matrix & Initialized(const math_Matrix &Other);
-		%feature("autodoc", "1");
-		math_Matrix & operator=(const math_Matrix &Other);
-		%feature("autodoc", "1");
-		void Multiply(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		void operator*=(const math_Matrix &Right);
-		%feature("autodoc", "1");
-		math_Matrix Multiplied(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix operator*(const math_Matrix &Right) const;
-		%feature("autodoc", "1");
-		math_Vector Multiplied(const math_Vector &Right) const;
-		%feature("autodoc", "1");
-		math_Vector operator*(const math_Vector &Right) const;
-		%feature("autodoc", "1");
-		math_Matrix Opposite();
-		%feature("autodoc", "1");
-		math_Matrix operator-();
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_Matrix::~math_Matrix %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_Matrix {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_Gauss;
 class math_Gauss {
 	public:
@@ -1233,6 +1055,125 @@ def __del__(self):
 %}
 
 %extend math_Gauss {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_IntegerVector;
+class math_IntegerVector {
+	public:
+		%feature("autodoc", "1");
+		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last);
+		%feature("autodoc", "1");
+		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last, const Standard_Integer InitialValue);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer InitialValue);
+		%feature("autodoc", "1");
+		math_IntegerVector(const Standard_Address Tab, const Standard_Integer First, const Standard_Integer Last);
+		%feature("autodoc", "1");
+		math_IntegerVector(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Standard_Real Norm() const;
+		%feature("autodoc", "1");
+		Standard_Real Norm2() const;
+		%feature("autodoc", "1");
+		Standard_Integer Max() const;
+		%feature("autodoc", "1");
+		Standard_Integer Min() const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		math_IntegerVector Inverse() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer I1, const Standard_Integer I2, const math_IntegerVector &V);
+		%feature("autodoc", "1");
+		math_IntegerVector Slice(const Standard_Integer I1, const Standard_Integer I2) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Integer Right);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Integer Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Multiplied(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator*(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector TMultiplied(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void operator+=(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Added(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator+(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_IntegerVector &Left, const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_IntegerVector &Left, const math_IntegerVector &Right);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Num) {
+				return (Standard_Integer) $self->Value(Num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Num) {
+				$self->Value(Num)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Num) const;
+		%feature("autodoc", "1");
+		math_IntegerVector & Initialized(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		math_IntegerVector & operator=(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Multiplied(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		Standard_Integer operator*(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector Opposite();
+		%feature("autodoc", "1");
+		math_IntegerVector operator-();
+		%feature("autodoc", "1");
+		void Subtract(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void operator-=(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Subtracted(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator-(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_IntegerVector::~math_IntegerVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_IntegerVector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1294,6 +1235,59 @@ def __del__(self):
 %}
 
 %extend math_GaussSetIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_FRPR;
+class math_FRPR {
+	public:
+		%feature("autodoc", "1");
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		%feature("autodoc", "1");
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Vector & Location() const;
+		%feature("autodoc", "1");
+		void Location(math_Vector & Loc) const;
+		%feature("autodoc", "1");
+		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		const math_Vector & Gradient() const;
+		%feature("autodoc", "1");
+		void Gradient(math_Vector & Grad) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_FRPR::~math_FRPR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FRPR {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1560,41 +1554,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_GaussMultipleIntegration;
-class math_GaussMultipleIntegration {
-	public:
-		%feature("autodoc", "1");
-		math_GaussMultipleIntegration(math_MultipleVarFunction & F, const math_Vector &Lower, const math_Vector &Upper, const math_IntegerVector &Order);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_GaussMultipleIntegration::~math_GaussMultipleIntegration %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_GaussMultipleIntegration {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_NotSquare;
 class math_NotSquare : public Standard_DimensionError {
 	public:
@@ -1619,7 +1578,7 @@ class math_NotSquare : public Standard_DimensionError {
 };
 %extend math_NotSquare {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") math_NotSquare::~math_NotSquare %{
@@ -1714,6 +1673,212 @@ def __del__(self):
 };
 
 
+%nodefaultctor math_SingleTabOfInteger;
+class math_SingleTabOfInteger {
+	public:
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const Standard_Integer &Tab, const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer &InitValue);
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const math_SingleTabOfInteger &Other);
+		%feature("autodoc", "1");
+		void Copy(math_SingleTabOfInteger & Other) const;
+		%feature("autodoc", "1");
+		void SetLower(const Standard_Integer LowerIndex);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Free();
+
+};
+%feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_SingleTabOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_Matrix;
+class math_Matrix {
+	public:
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol, const Standard_Real InitialValue);
+		%feature("autodoc", "1");
+		math_Matrix(const Standard_Address Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_Matrix(const math_Matrix &Other);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real InitialValue);
+		%feature("autodoc", "1");
+		Standard_Integer RowNumber() const;
+		%feature("autodoc", "1");
+		Standard_Integer ColNumber() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Real Determinant() const;
+		%feature("autodoc", "1");
+		void Transpose();
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Real Right);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Real Right);
+		%feature("autodoc", "1");
+		math_Matrix Multiplied(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator*(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix TMultiplied(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		void Divide(const Standard_Real Right);
+		%feature("autodoc", "1");
+		void operator/=(const Standard_Real Right);
+		%feature("autodoc", "1");
+		math_Matrix Divided(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator/(const Standard_Real Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator+=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Added(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator+(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator-=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Subtracted(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator-(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer J1, const Standard_Integer J2, const math_Matrix &M);
+		%feature("autodoc", "1");
+		void SetRow(const Standard_Integer Row, const math_Vector &V);
+		%feature("autodoc", "1");
+		void SetCol(const Standard_Integer Col, const math_Vector &V);
+		%feature("autodoc", "1");
+		void SetDiag(const Standard_Real Value);
+		%feature("autodoc", "1");
+		math_Vector Row(const Standard_Integer Row) const;
+		%feature("autodoc", "1");
+		math_Vector Col(const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		void SwapRow(const Standard_Integer Row1, const Standard_Integer Row2);
+		%feature("autodoc", "1");
+		void SwapCol(const Standard_Integer Col1, const Standard_Integer Col2);
+		%feature("autodoc", "1");
+		math_Matrix Transposed() const;
+		%feature("autodoc", "1");
+		math_Matrix Inverse() const;
+		%feature("autodoc", "1");
+		math_Matrix TMultiply(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		void Multiply(const math_Vector &Left, const math_Vector &Right);
+		%feature("autodoc", "1");
+		void Multiply(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void TMultiply(const math_Matrix &TLeft, const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_Matrix &Left, const math_Matrix &Right);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->Value(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->Value(Row,Col)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		math_Matrix & Initialized(const math_Matrix &Other);
+		%feature("autodoc", "1");
+		math_Matrix & operator=(const math_Matrix &Other);
+		%feature("autodoc", "1");
+		void Multiply(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		void operator*=(const math_Matrix &Right);
+		%feature("autodoc", "1");
+		math_Matrix Multiplied(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix operator*(const math_Matrix &Right) const;
+		%feature("autodoc", "1");
+		math_Vector Multiplied(const math_Vector &Right) const;
+		%feature("autodoc", "1");
+		math_Vector operator*(const math_Vector &Right) const;
+		%feature("autodoc", "1");
+		math_Matrix Opposite();
+		%feature("autodoc", "1");
+		math_Matrix operator-();
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_Matrix::~math_Matrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_Matrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor math_FunctionSetRoot;
 class math_FunctionSetRoot {
 	public:
@@ -1771,125 +1936,6 @@ def __del__(self):
 %}
 
 %extend math_FunctionSetRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_IntegerVector;
-class math_IntegerVector {
-	public:
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last);
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last, const Standard_Integer InitialValue);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer InitialValue);
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Address Tab, const Standard_Integer First, const Standard_Integer Last);
-		%feature("autodoc", "1");
-		math_IntegerVector(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Real Norm() const;
-		%feature("autodoc", "1");
-		Standard_Real Norm2() const;
-		%feature("autodoc", "1");
-		Standard_Integer Max() const;
-		%feature("autodoc", "1");
-		Standard_Integer Min() const;
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		math_IntegerVector Inverse() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer I1, const Standard_Integer I2, const math_IntegerVector &V);
-		%feature("autodoc", "1");
-		math_IntegerVector Slice(const Standard_Integer I1, const Standard_Integer I2) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Integer Right);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Integer Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Multiplied(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator*(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector TMultiplied(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void operator+=(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Added(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator+(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_IntegerVector &Left, const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_IntegerVector &Left, const math_IntegerVector &Right);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue(const Standard_Integer Num) {
-				return (Standard_Integer) $self->Value(Num);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ,const Standard_Integer Num) {
-				$self->Value(Num)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Num) const;
-		%feature("autodoc", "1");
-		math_IntegerVector & Initialized(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		math_IntegerVector & operator=(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Multiplied(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		Standard_Integer operator*(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector Opposite();
-		%feature("autodoc", "1");
-		math_IntegerVector operator-();
-		%feature("autodoc", "1");
-		void Subtract(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void operator-=(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Subtracted(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator-(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_IntegerVector::~math_IntegerVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_IntegerVector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2078,6 +2124,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor math_DoubleTabOfReal;
+class math_DoubleTabOfReal {
+	public:
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const Standard_Real &Tab, const Standard_Integer LowerRow, const Standard_Integer UpperRow, const Standard_Integer LowerCol, const Standard_Integer UpperCol);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real &InitValue);
+		%feature("autodoc", "1");
+		math_DoubleTabOfReal(const math_DoubleTabOfReal &Other);
+		%feature("autodoc", "1");
+		void Copy(math_DoubleTabOfReal & Other) const;
+		%feature("autodoc", "1");
+		void SetLowerRow(const Standard_Integer LowerRow);
+		%feature("autodoc", "1");
+		void SetLowerCol(const Standard_Integer LowerCol);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue(const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
+				return (Standard_Real) $self->Value(RowIndex,ColIndex);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ,const Standard_Integer RowIndex, const Standard_Integer ColIndex) {
+				$self->Value(RowIndex,ColIndex)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer RowIndex, const Standard_Integer ColIndex) const;
+		%feature("autodoc", "1");
+		void Free();
+
+};
+%feature("shadow") math_DoubleTabOfReal::~math_DoubleTabOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_DoubleTabOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor math_FunctionRoots;
 class math_FunctionRoots {
 	public:
@@ -2212,89 +2309,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_FRPR;
-class math_FRPR {
-	public:
-		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Vector & Location() const;
-		%feature("autodoc", "1");
-		void Location(math_Vector & Loc) const;
-		%feature("autodoc", "1");
-		Standard_Real Minimum() const;
-		%feature("autodoc", "1");
-		const math_Vector & Gradient() const;
-		%feature("autodoc", "1");
-		void Gradient(math_Vector & Grad) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_FRPR::~math_FRPR %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FRPR {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FunctionSample;
-class math_FunctionSample {
-	public:
-		%feature("autodoc", "1");
-		math_FunctionSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
-
-};
-%feature("shadow") math_FunctionSample::~math_FunctionSample %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionSample {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_NewtonFunctionRoot;
 class math_NewtonFunctionRoot {
 	public:
@@ -2369,40 +2383,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_SingleTabOfInteger;
-class math_SingleTabOfInteger {
+%nodefaultctor math_GaussMultipleIntegration;
+class math_GaussMultipleIntegration {
 	public:
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		math_GaussMultipleIntegration(math_MultipleVarFunction & F, const math_Vector &Lower, const math_Vector &Upper, const math_IntegerVector &Order);
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const Standard_Integer &Tab, const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer &InitValue);
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const math_SingleTabOfInteger &Other);
 		%feature("autodoc", "1");
-		void Copy(math_SingleTabOfInteger & Other) const;
-		%feature("autodoc", "1");
-		void SetLower(const Standard_Integer LowerIndex);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue(const Standard_Integer Index) {
-				return (Standard_Integer) $self->Value(Index);
-				}
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
 		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
-				$self->Value(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Free();
 
 };
-%feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
+%feature("shadow") math_GaussMultipleIntegration::~math_GaussMultipleIntegration %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2411,7 +2411,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_SingleTabOfInteger {
+%extend math_GaussMultipleIntegration {
 	void _kill_pointed() {
 		delete $self;
 	}

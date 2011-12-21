@@ -65,6 +65,55 @@ enum GCPnts_DeflectionType {
 
 
 
+%nodefaultctor GCPnts_UniformDeflection;
+class GCPnts_UniformDeflection {
+	public:
+		%feature("autodoc", "1");
+		GCPnts_UniformDeflection();
+		%feature("autodoc", "1");
+		GCPnts_UniformDeflection(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		GCPnts_UniformDeflection(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		GCPnts_UniformDeflection(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		GCPnts_UniformDeflection(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void Initialize(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void Initialize(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void Initialize(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void Initialize(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+
+};
+%feature("shadow") GCPnts_UniformDeflection::~GCPnts_UniformDeflection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GCPnts_UniformDeflection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GCPnts_TangentialDeflection;
 class GCPnts_TangentialDeflection {
 	public:
@@ -169,55 +218,6 @@ def __del__(self):
 %}
 
 %extend GCPnts_UniformAbscissa {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GCPnts_UniformDeflection;
-class GCPnts_UniformDeflection {
-	public:
-		%feature("autodoc", "1");
-		GCPnts_UniformDeflection();
-		%feature("autodoc", "1");
-		GCPnts_UniformDeflection(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		GCPnts_UniformDeflection(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		GCPnts_UniformDeflection(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		GCPnts_UniformDeflection(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void Initialize(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void Initialize(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void Initialize(Adaptor3d_Curve & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void Initialize(Adaptor2d_Curve2d & C, const Standard_Real Deflection, const Standard_Real U1, const Standard_Real U2, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-
-};
-%feature("shadow") GCPnts_UniformDeflection::~GCPnts_UniformDeflection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GCPnts_UniformDeflection {
 	void _kill_pointed() {
 		delete $self;
 	}

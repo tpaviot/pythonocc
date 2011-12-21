@@ -129,7 +129,6 @@ $HeaderURL$
 
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
-#include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Trsf.hxx>
 #include<gp_Pnt.hxx>
@@ -140,5 +139,6 @@ $HeaderURL$
 #include<Handle_PColStd_HArray2OfReal.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Ax2.hxx>
+#include<gp_Ax1.hxx>
 #include<gp_Ax3.hxx>
 %}

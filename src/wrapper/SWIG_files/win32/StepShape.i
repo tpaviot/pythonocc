@@ -596,6 +596,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_AdvancedBrepShapeRepresentation;
+class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation(const Handle_StepShape_AdvancedBrepShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation(const StepShape_AdvancedBrepShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation & operator=(const Handle_StepShape_AdvancedBrepShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_AdvancedBrepShapeRepresentation & operator=(const StepShape_AdvancedBrepShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_AdvancedBrepShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_AdvancedBrepShapeRepresentation {
+	StepShape_AdvancedBrepShapeRepresentation* GetObject() {
+	return (StepShape_AdvancedBrepShapeRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_AdvancedBrepShapeRepresentation::~Handle_StepShape_AdvancedBrepShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_AdvancedBrepShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_HArray1OfFaceBound;
 class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
 	public:
@@ -634,29 +672,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_SweptFaceSolid;
-class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
+%nodefaultctor Handle_StepShape_HArray1OfOrientedEdge;
+class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid();
+		Handle_StepShape_HArray1OfOrientedEdge();
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid(const Handle_StepShape_SweptFaceSolid &aHandle);
+		Handle_StepShape_HArray1OfOrientedEdge(const Handle_StepShape_HArray1OfOrientedEdge &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid(const StepShape_SweptFaceSolid *anItem);
+		Handle_StepShape_HArray1OfOrientedEdge(const StepShape_HArray1OfOrientedEdge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid & operator=(const Handle_StepShape_SweptFaceSolid &aHandle);
+		Handle_StepShape_HArray1OfOrientedEdge & operator=(const Handle_StepShape_HArray1OfOrientedEdge &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_SweptFaceSolid & operator=(const StepShape_SweptFaceSolid *anItem);
+		Handle_StepShape_HArray1OfOrientedEdge & operator=(const StepShape_HArray1OfOrientedEdge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_SweptFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfOrientedEdge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_SweptFaceSolid {
-	StepShape_SweptFaceSolid* GetObject() {
-	return (StepShape_SweptFaceSolid*)$self->Access();
+%extend Handle_StepShape_HArray1OfOrientedEdge {
+	StepShape_HArray1OfOrientedEdge* GetObject() {
+	return (StepShape_HArray1OfOrientedEdge*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_SweptFaceSolid::~Handle_StepShape_SweptFaceSolid %{
+%feature("shadow") Handle_StepShape_HArray1OfOrientedEdge::~Handle_StepShape_HArray1OfOrientedEdge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -665,36 +703,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_SweptFaceSolid {
+%extend Handle_StepShape_HArray1OfOrientedEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
-class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSolid {
+%nodefaultctor Handle_StepShape_Path;
+class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid();
+		Handle_StepShape_Path();
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
+		Handle_StepShape_Path(const Handle_StepShape_Path &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid(const StepShape_ExtrudedFaceSolid *anItem);
+		Handle_StepShape_Path(const StepShape_Path *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid & operator=(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
+		Handle_StepShape_Path & operator=(const Handle_StepShape_Path &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedFaceSolid & operator=(const StepShape_ExtrudedFaceSolid *anItem);
+		Handle_StepShape_Path & operator=(const StepShape_Path *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_ExtrudedFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_Path DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_ExtrudedFaceSolid {
-	StepShape_ExtrudedFaceSolid* GetObject() {
-	return (StepShape_ExtrudedFaceSolid*)$self->Access();
+%extend Handle_StepShape_Path {
+	StepShape_Path* GetObject() {
+	return (StepShape_Path*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_ExtrudedFaceSolid::~Handle_StepShape_ExtrudedFaceSolid %{
+%feature("shadow") Handle_StepShape_Path::~Handle_StepShape_Path %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -703,36 +741,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_ExtrudedFaceSolid {
+%extend Handle_StepShape_Path {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepShape_HArray1OfValueQualifier;
-class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepShape_EdgeCurve;
+class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier();
+		Handle_StepShape_EdgeCurve();
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier(const Handle_StepShape_HArray1OfValueQualifier &aHandle);
+		Handle_StepShape_EdgeCurve(const Handle_StepShape_EdgeCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier(const StepShape_HArray1OfValueQualifier *anItem);
+		Handle_StepShape_EdgeCurve(const StepShape_EdgeCurve *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier & operator=(const Handle_StepShape_HArray1OfValueQualifier &aHandle);
+		Handle_StepShape_EdgeCurve & operator=(const Handle_StepShape_EdgeCurve &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier & operator=(const StepShape_HArray1OfValueQualifier *anItem);
+		Handle_StepShape_EdgeCurve & operator=(const StepShape_EdgeCurve *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_HArray1OfValueQualifier DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_EdgeCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_HArray1OfValueQualifier {
-	StepShape_HArray1OfValueQualifier* GetObject() {
-	return (StepShape_HArray1OfValueQualifier*)$self->Access();
+%extend Handle_StepShape_EdgeCurve {
+	StepShape_EdgeCurve* GetObject() {
+	return (StepShape_EdgeCurve*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_HArray1OfValueQualifier::~Handle_StepShape_HArray1OfValueQualifier %{
+%feature("shadow") Handle_StepShape_EdgeCurve::~Handle_StepShape_EdgeCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -741,7 +779,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_HArray1OfValueQualifier {
+%extend Handle_StepShape_EdgeCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -976,44 +1014,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_HArray1OfGeometricSetSelect;
-class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect();
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect(const Handle_StepShape_HArray1OfGeometricSetSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect(const StepShape_HArray1OfGeometricSetSelect *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect & operator=(const Handle_StepShape_HArray1OfGeometricSetSelect &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfGeometricSetSelect & operator=(const StepShape_HArray1OfGeometricSetSelect *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_HArray1OfGeometricSetSelect DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_HArray1OfGeometricSetSelect {
-	StepShape_HArray1OfGeometricSetSelect* GetObject() {
-	return (StepShape_HArray1OfGeometricSetSelect*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_HArray1OfGeometricSetSelect::~Handle_StepShape_HArray1OfGeometricSetSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_HArray1OfGeometricSetSelect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepShape_SolidReplica;
 class Handle_StepShape_SolidReplica : public Handle_StepShape_SolidModel {
 	public:
@@ -1128,29 +1128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_BooleanResult;
-class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresentationItem {
+%nodefaultctor Handle_StepShape_HArray1OfOrientedClosedShell;
+class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult();
+		Handle_StepShape_HArray1OfOrientedClosedShell();
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult(const Handle_StepShape_BooleanResult &aHandle);
+		Handle_StepShape_HArray1OfOrientedClosedShell(const Handle_StepShape_HArray1OfOrientedClosedShell &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult(const StepShape_BooleanResult *anItem);
+		Handle_StepShape_HArray1OfOrientedClosedShell(const StepShape_HArray1OfOrientedClosedShell *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult & operator=(const Handle_StepShape_BooleanResult &aHandle);
+		Handle_StepShape_HArray1OfOrientedClosedShell & operator=(const Handle_StepShape_HArray1OfOrientedClosedShell &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_BooleanResult & operator=(const StepShape_BooleanResult *anItem);
+		Handle_StepShape_HArray1OfOrientedClosedShell & operator=(const StepShape_HArray1OfOrientedClosedShell *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_BooleanResult DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfOrientedClosedShell DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_BooleanResult {
-	StepShape_BooleanResult* GetObject() {
-	return (StepShape_BooleanResult*)$self->Access();
+%extend Handle_StepShape_HArray1OfOrientedClosedShell {
+	StepShape_HArray1OfOrientedClosedShell* GetObject() {
+	return (StepShape_HArray1OfOrientedClosedShell*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_BooleanResult::~Handle_StepShape_BooleanResult %{
+%feature("shadow") Handle_StepShape_HArray1OfOrientedClosedShell::~Handle_StepShape_HArray1OfOrientedClosedShell %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1159,7 +1159,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_BooleanResult {
+%extend Handle_StepShape_HArray1OfOrientedClosedShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
+class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation(const StepShape_GeometricallyBoundedSurfaceShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation & operator=(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation & operator=(const StepShape_GeometricallyBoundedSurfaceShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
+	StepShape_GeometricallyBoundedSurfaceShapeRepresentation* GetObject() {
+	return (StepShape_GeometricallyBoundedSurfaceShapeRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation::~Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1280,44 +1318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_Path;
-class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_Path();
-		%feature("autodoc", "1");
-		Handle_StepShape_Path(const Handle_StepShape_Path &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_Path(const StepShape_Path *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_Path & operator=(const Handle_StepShape_Path &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_Path & operator=(const StepShape_Path *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_Path DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_Path {
-	StepShape_Path* GetObject() {
-	return (StepShape_Path*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_Path::~Handle_StepShape_Path %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_Path {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepShape_OrientedPath;
 class Handle_StepShape_OrientedPath : public Handle_StepShape_Path {
 	public:
@@ -1426,6 +1426,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_FaceOuterBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
+class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel();
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel(const StepShape_EdgeBasedWireframeModel *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel & operator=(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_EdgeBasedWireframeModel & operator=(const StepShape_EdgeBasedWireframeModel *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_EdgeBasedWireframeModel DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_EdgeBasedWireframeModel {
+	StepShape_EdgeBasedWireframeModel* GetObject() {
+	return (StepShape_EdgeBasedWireframeModel*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_EdgeBasedWireframeModel::~Handle_StepShape_EdgeBasedWireframeModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_EdgeBasedWireframeModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1546,6 +1584,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_HArray1OfGeometricSetSelect;
+class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfGeometricSetSelect();
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfGeometricSetSelect(const Handle_StepShape_HArray1OfGeometricSetSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfGeometricSetSelect(const StepShape_HArray1OfGeometricSetSelect *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfGeometricSetSelect & operator=(const Handle_StepShape_HArray1OfGeometricSetSelect &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfGeometricSetSelect & operator=(const StepShape_HArray1OfGeometricSetSelect *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_HArray1OfGeometricSetSelect DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_HArray1OfGeometricSetSelect {
+	StepShape_HArray1OfGeometricSetSelect* GetObject() {
+	return (StepShape_HArray1OfGeometricSetSelect*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_HArray1OfGeometricSetSelect::~Handle_StepShape_HArray1OfGeometricSetSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_HArray1OfGeometricSetSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_ShapeRepresentationWithParameters;
 class Handle_StepShape_ShapeRepresentationWithParameters : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -1660,6 +1736,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_BooleanResult;
+class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_BooleanResult();
+		%feature("autodoc", "1");
+		Handle_StepShape_BooleanResult(const Handle_StepShape_BooleanResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_BooleanResult(const StepShape_BooleanResult *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_BooleanResult & operator=(const Handle_StepShape_BooleanResult &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_BooleanResult & operator=(const StepShape_BooleanResult *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_BooleanResult DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_BooleanResult {
+	StepShape_BooleanResult* GetObject() {
+	return (StepShape_BooleanResult*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_BooleanResult::~Handle_StepShape_BooleanResult %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_BooleanResult {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_FaceSurface;
 class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
 	public:
@@ -1736,6 +1850,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation;
+class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation(const StepShape_GeometricallyBoundedWireframeShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation & operator=(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation & operator=(const StepShape_GeometricallyBoundedWireframeShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
+	StepShape_GeometricallyBoundedWireframeShapeRepresentation* GetObject() {
+	return (StepShape_GeometricallyBoundedWireframeShapeRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation::~Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_FaceBasedSurfaceModel;
 class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1806,44 +1958,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_ConnectedFaceSubSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_RevolvedFaceSolid;
-class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSolid {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid(const Handle_StepShape_RevolvedFaceSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid(const StepShape_RevolvedFaceSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid & operator=(const Handle_StepShape_RevolvedFaceSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_RevolvedFaceSolid & operator=(const StepShape_RevolvedFaceSolid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_RevolvedFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_RevolvedFaceSolid {
-	StepShape_RevolvedFaceSolid* GetObject() {
-	return (StepShape_RevolvedFaceSolid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_RevolvedFaceSolid::~Handle_StepShape_RevolvedFaceSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_RevolvedFaceSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2078,6 +2192,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_ShapeDimensionRepresentation;
+class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDimensionRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDimensionRepresentation(const Handle_StepShape_ShapeDimensionRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDimensionRepresentation(const StepShape_ShapeDimensionRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDimensionRepresentation & operator=(const Handle_StepShape_ShapeDimensionRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDimensionRepresentation & operator=(const StepShape_ShapeDimensionRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_ShapeDimensionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_ShapeDimensionRepresentation {
+	StepShape_ShapeDimensionRepresentation* GetObject() {
+	return (StepShape_ShapeDimensionRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_ShapeDimensionRepresentation::~Handle_StepShape_ShapeDimensionRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_ShapeDimensionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_HArray1OfConnectedFaceSet;
 class Handle_StepShape_HArray1OfConnectedFaceSet : public Handle_MMgt_TShared {
 	public:
@@ -2116,29 +2268,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_ManifoldSolidBrep;
-class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
+%nodefaultctor Handle_StepShape_SweptFaceSolid;
+class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep();
+		Handle_StepShape_SweptFaceSolid();
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep(const Handle_StepShape_ManifoldSolidBrep &aHandle);
+		Handle_StepShape_SweptFaceSolid(const Handle_StepShape_SweptFaceSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep(const StepShape_ManifoldSolidBrep *anItem);
+		Handle_StepShape_SweptFaceSolid(const StepShape_SweptFaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep & operator=(const Handle_StepShape_ManifoldSolidBrep &aHandle);
+		Handle_StepShape_SweptFaceSolid & operator=(const Handle_StepShape_SweptFaceSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_ManifoldSolidBrep & operator=(const StepShape_ManifoldSolidBrep *anItem);
+		Handle_StepShape_SweptFaceSolid & operator=(const StepShape_SweptFaceSolid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_ManifoldSolidBrep DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_SweptFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_ManifoldSolidBrep {
-	StepShape_ManifoldSolidBrep* GetObject() {
-	return (StepShape_ManifoldSolidBrep*)$self->Access();
+%extend Handle_StepShape_SweptFaceSolid {
+	StepShape_SweptFaceSolid* GetObject() {
+	return (StepShape_SweptFaceSolid*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_ManifoldSolidBrep::~Handle_StepShape_ManifoldSolidBrep %{
+%feature("shadow") Handle_StepShape_SweptFaceSolid::~Handle_StepShape_SweptFaceSolid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2147,83 +2299,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_ManifoldSolidBrep {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_ExtrudedAreaSolid;
-class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSolid {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid();
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid(const Handle_StepShape_ExtrudedAreaSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid(const StepShape_ExtrudedAreaSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid & operator=(const Handle_StepShape_ExtrudedAreaSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ExtrudedAreaSolid & operator=(const StepShape_ExtrudedAreaSolid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_ExtrudedAreaSolid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ExtrudedAreaSolid {
-	StepShape_ExtrudedAreaSolid* GetObject() {
-	return (StepShape_ExtrudedAreaSolid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_ExtrudedAreaSolid::~Handle_StepShape_ExtrudedAreaSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_ExtrudedAreaSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_ConnectedEdgeSet;
-class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet();
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet(const Handle_StepShape_ConnectedEdgeSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet(const StepShape_ConnectedEdgeSet *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet & operator=(const Handle_StepShape_ConnectedEdgeSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedEdgeSet & operator=(const StepShape_ConnectedEdgeSet *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_ConnectedEdgeSet DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ConnectedEdgeSet {
-	StepShape_ConnectedEdgeSet* GetObject() {
-	return (StepShape_ConnectedEdgeSet*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_ConnectedEdgeSet::~Handle_StepShape_ConnectedEdgeSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_ConnectedEdgeSet {
+%extend Handle_StepShape_SweptFaceSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2306,29 +2382,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
-class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_GeometricRepresentationItem {
+%nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
+class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSolid {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel();
+		Handle_StepShape_ExtrudedFaceSolid();
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
+		Handle_StepShape_ExtrudedFaceSolid(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel(const StepShape_EdgeBasedWireframeModel *anItem);
+		Handle_StepShape_ExtrudedFaceSolid(const StepShape_ExtrudedFaceSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel & operator=(const Handle_StepShape_EdgeBasedWireframeModel &aHandle);
+		Handle_StepShape_ExtrudedFaceSolid & operator=(const Handle_StepShape_ExtrudedFaceSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeBasedWireframeModel & operator=(const StepShape_EdgeBasedWireframeModel *anItem);
+		Handle_StepShape_ExtrudedFaceSolid & operator=(const StepShape_ExtrudedFaceSolid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_EdgeBasedWireframeModel DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ExtrudedFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_EdgeBasedWireframeModel {
-	StepShape_EdgeBasedWireframeModel* GetObject() {
-	return (StepShape_EdgeBasedWireframeModel*)$self->Access();
+%extend Handle_StepShape_ExtrudedFaceSolid {
+	StepShape_ExtrudedFaceSolid* GetObject() {
+	return (StepShape_ExtrudedFaceSolid*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_EdgeBasedWireframeModel::~Handle_StepShape_EdgeBasedWireframeModel %{
+%feature("shadow") Handle_StepShape_ExtrudedFaceSolid::~Handle_StepShape_ExtrudedFaceSolid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2337,7 +2413,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_EdgeBasedWireframeModel {
+%extend Handle_StepShape_ExtrudedFaceSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2382,29 +2458,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_EdgeCurve;
-class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
+%nodefaultctor Handle_StepShape_ManifoldSolidBrep;
+class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve();
+		Handle_StepShape_ManifoldSolidBrep();
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve(const Handle_StepShape_EdgeCurve &aHandle);
+		Handle_StepShape_ManifoldSolidBrep(const Handle_StepShape_ManifoldSolidBrep &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve(const StepShape_EdgeCurve *anItem);
+		Handle_StepShape_ManifoldSolidBrep(const StepShape_ManifoldSolidBrep *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve & operator=(const Handle_StepShape_EdgeCurve &aHandle);
+		Handle_StepShape_ManifoldSolidBrep & operator=(const Handle_StepShape_ManifoldSolidBrep &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_EdgeCurve & operator=(const StepShape_EdgeCurve *anItem);
+		Handle_StepShape_ManifoldSolidBrep & operator=(const StepShape_ManifoldSolidBrep *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_EdgeCurve DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ManifoldSolidBrep DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_EdgeCurve {
-	StepShape_EdgeCurve* GetObject() {
-	return (StepShape_EdgeCurve*)$self->Access();
+%extend Handle_StepShape_ManifoldSolidBrep {
+	StepShape_ManifoldSolidBrep* GetObject() {
+	return (StepShape_ManifoldSolidBrep*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_EdgeCurve::~Handle_StepShape_EdgeCurve %{
+%feature("shadow") Handle_StepShape_ManifoldSolidBrep::~Handle_StepShape_ManifoldSolidBrep %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2413,36 +2489,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_EdgeCurve {
+%extend Handle_StepShape_ManifoldSolidBrep {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation;
-class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+%nodefaultctor Handle_StepShape_BrepWithVoids;
+class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation();
+		Handle_StepShape_BrepWithVoids();
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &aHandle);
+		Handle_StepShape_BrepWithVoids(const Handle_StepShape_BrepWithVoids &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation(const StepShape_GeometricallyBoundedWireframeShapeRepresentation *anItem);
+		Handle_StepShape_BrepWithVoids(const StepShape_BrepWithVoids *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation & operator=(const Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation &aHandle);
+		Handle_StepShape_BrepWithVoids & operator=(const Handle_StepShape_BrepWithVoids &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation & operator=(const StepShape_GeometricallyBoundedWireframeShapeRepresentation *anItem);
+		Handle_StepShape_BrepWithVoids & operator=(const StepShape_BrepWithVoids *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_BrepWithVoids DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
-	StepShape_GeometricallyBoundedWireframeShapeRepresentation* GetObject() {
-	return (StepShape_GeometricallyBoundedWireframeShapeRepresentation*)$self->Access();
+%extend Handle_StepShape_BrepWithVoids {
+	StepShape_BrepWithVoids* GetObject() {
+	return (StepShape_BrepWithVoids*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation::~Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation %{
+%feature("shadow") Handle_StepShape_BrepWithVoids::~Handle_StepShape_BrepWithVoids %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2451,36 +2527,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation {
+%extend Handle_StepShape_BrepWithVoids {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepShape_CsgSolid;
-class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
+%nodefaultctor Handle_StepShape_RightAngularWedge;
+class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid();
+		Handle_StepShape_RightAngularWedge();
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid(const Handle_StepShape_CsgSolid &aHandle);
+		Handle_StepShape_RightAngularWedge(const Handle_StepShape_RightAngularWedge &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid(const StepShape_CsgSolid *anItem);
+		Handle_StepShape_RightAngularWedge(const StepShape_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid & operator=(const Handle_StepShape_CsgSolid &aHandle);
+		Handle_StepShape_RightAngularWedge & operator=(const Handle_StepShape_RightAngularWedge &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_CsgSolid & operator=(const StepShape_CsgSolid *anItem);
+		Handle_StepShape_RightAngularWedge & operator=(const StepShape_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_CsgSolid DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_RightAngularWedge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_CsgSolid {
-	StepShape_CsgSolid* GetObject() {
-	return (StepShape_CsgSolid*)$self->Access();
+%extend Handle_StepShape_RightAngularWedge {
+	StepShape_RightAngularWedge* GetObject() {
+	return (StepShape_RightAngularWedge*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_CsgSolid::~Handle_StepShape_CsgSolid %{
+%feature("shadow") Handle_StepShape_RightAngularWedge::~Handle_StepShape_RightAngularWedge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2489,7 +2565,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_CsgSolid {
+%extend Handle_StepShape_RightAngularWedge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2572,44 +2648,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_AdvancedBrepShapeRepresentation;
-class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation(const Handle_StepShape_AdvancedBrepShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation(const StepShape_AdvancedBrepShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation & operator=(const Handle_StepShape_AdvancedBrepShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_AdvancedBrepShapeRepresentation & operator=(const StepShape_AdvancedBrepShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_AdvancedBrepShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_AdvancedBrepShapeRepresentation {
-	StepShape_AdvancedBrepShapeRepresentation* GetObject() {
-	return (StepShape_AdvancedBrepShapeRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_AdvancedBrepShapeRepresentation::~Handle_StepShape_AdvancedBrepShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_AdvancedBrepShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepShape_BoxDomain;
 class Handle_StepShape_BoxDomain : public Handle_MMgt_TShared {
 	public:
@@ -2642,44 +2680,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_BoxDomain {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_NonManifoldSurfaceShapeRepresentation;
-class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation(const StepShape_NonManifoldSurfaceShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation & operator=(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_NonManifoldSurfaceShapeRepresentation & operator=(const StepShape_NonManifoldSurfaceShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_NonManifoldSurfaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
-	StepShape_NonManifoldSurfaceShapeRepresentation* GetObject() {
-	return (StepShape_NonManifoldSurfaceShapeRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_NonManifoldSurfaceShapeRepresentation::~Handle_StepShape_NonManifoldSurfaceShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2838,44 +2838,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_ConnectedFaceShapeRepresentation;
-class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation(const Handle_StepShape_ConnectedFaceShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation(const StepShape_ConnectedFaceShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation & operator=(const Handle_StepShape_ConnectedFaceShapeRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ConnectedFaceShapeRepresentation & operator=(const StepShape_ConnectedFaceShapeRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_ConnectedFaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ConnectedFaceShapeRepresentation {
-	StepShape_ConnectedFaceShapeRepresentation* GetObject() {
-	return (StepShape_ConnectedFaceShapeRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_ConnectedFaceShapeRepresentation::~Handle_StepShape_ConnectedFaceShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_ConnectedFaceShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepShape_ShellBasedSurfaceModel;
 class Handle_StepShape_ShellBasedSurfaceModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -2908,6 +2870,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_ShellBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepShape_ExtrudedAreaSolid;
+class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSolid {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedAreaSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedAreaSolid(const Handle_StepShape_ExtrudedAreaSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedAreaSolid(const StepShape_ExtrudedAreaSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedAreaSolid & operator=(const Handle_StepShape_ExtrudedAreaSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_ExtrudedAreaSolid & operator=(const StepShape_ExtrudedAreaSolid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_ExtrudedAreaSolid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_ExtrudedAreaSolid {
+	StepShape_ExtrudedAreaSolid* GetObject() {
+	return (StepShape_ExtrudedAreaSolid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_ExtrudedAreaSolid::~Handle_StepShape_ExtrudedAreaSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_ExtrudedAreaSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3104,29 +3104,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
-class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+%nodefaultctor Handle_StepShape_CsgSolid;
+class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation();
+		Handle_StepShape_CsgSolid();
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &aHandle);
+		Handle_StepShape_CsgSolid(const Handle_StepShape_CsgSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation(const StepShape_GeometricallyBoundedSurfaceShapeRepresentation *anItem);
+		Handle_StepShape_CsgSolid(const StepShape_CsgSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation & operator=(const Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation &aHandle);
+		Handle_StepShape_CsgSolid & operator=(const Handle_StepShape_CsgSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation & operator=(const StepShape_GeometricallyBoundedSurfaceShapeRepresentation *anItem);
+		Handle_StepShape_CsgSolid & operator=(const StepShape_CsgSolid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_CsgSolid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
-	StepShape_GeometricallyBoundedSurfaceShapeRepresentation* GetObject() {
-	return (StepShape_GeometricallyBoundedSurfaceShapeRepresentation*)$self->Access();
+%extend Handle_StepShape_CsgSolid {
+	StepShape_CsgSolid* GetObject() {
+	return (StepShape_CsgSolid*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation::~Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation %{
+%feature("shadow") Handle_StepShape_CsgSolid::~Handle_StepShape_CsgSolid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3135,7 +3135,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
+%extend Handle_StepShape_CsgSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepShape_RevolvedFaceSolid;
+class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSolid {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedFaceSolid();
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedFaceSolid(const Handle_StepShape_RevolvedFaceSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedFaceSolid(const StepShape_RevolvedFaceSolid *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedFaceSolid & operator=(const Handle_StepShape_RevolvedFaceSolid &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_RevolvedFaceSolid & operator=(const StepShape_RevolvedFaceSolid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_RevolvedFaceSolid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_RevolvedFaceSolid {
+	StepShape_RevolvedFaceSolid* GetObject() {
+	return (StepShape_RevolvedFaceSolid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_RevolvedFaceSolid::~Handle_StepShape_RevolvedFaceSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_RevolvedFaceSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3370,6 +3408,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepShape_VertexLoop;
+class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_VertexLoop();
+		%feature("autodoc", "1");
+		Handle_StepShape_VertexLoop(const Handle_StepShape_VertexLoop &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_VertexLoop(const StepShape_VertexLoop *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_VertexLoop & operator=(const Handle_StepShape_VertexLoop &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_VertexLoop & operator=(const StepShape_VertexLoop *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_VertexLoop DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_VertexLoop {
+	StepShape_VertexLoop* GetObject() {
+	return (StepShape_VertexLoop*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_VertexLoop::~Handle_StepShape_VertexLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_VertexLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
 class Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -3440,44 +3516,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_EdgeLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_BrepWithVoids;
-class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids();
-		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids(const Handle_StepShape_BrepWithVoids &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids(const StepShape_BrepWithVoids *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids & operator=(const Handle_StepShape_BrepWithVoids &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_BrepWithVoids & operator=(const StepShape_BrepWithVoids *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_BrepWithVoids DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_BrepWithVoids {
-	StepShape_BrepWithVoids* GetObject() {
-	return (StepShape_BrepWithVoids*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_BrepWithVoids::~Handle_StepShape_BrepWithVoids %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_BrepWithVoids {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3560,29 +3598,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_VertexLoop;
-class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
+%nodefaultctor Handle_StepShape_HArray1OfValueQualifier;
+class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop();
+		Handle_StepShape_HArray1OfValueQualifier();
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop(const Handle_StepShape_VertexLoop &aHandle);
+		Handle_StepShape_HArray1OfValueQualifier(const Handle_StepShape_HArray1OfValueQualifier &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop(const StepShape_VertexLoop *anItem);
+		Handle_StepShape_HArray1OfValueQualifier(const StepShape_HArray1OfValueQualifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop & operator=(const Handle_StepShape_VertexLoop &aHandle);
+		Handle_StepShape_HArray1OfValueQualifier & operator=(const Handle_StepShape_HArray1OfValueQualifier &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_VertexLoop & operator=(const StepShape_VertexLoop *anItem);
+		Handle_StepShape_HArray1OfValueQualifier & operator=(const StepShape_HArray1OfValueQualifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_VertexLoop DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_HArray1OfValueQualifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_VertexLoop {
-	StepShape_VertexLoop* GetObject() {
-	return (StepShape_VertexLoop*)$self->Access();
+%extend Handle_StepShape_HArray1OfValueQualifier {
+	StepShape_HArray1OfValueQualifier* GetObject() {
+	return (StepShape_HArray1OfValueQualifier*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_VertexLoop::~Handle_StepShape_VertexLoop %{
+%feature("shadow") Handle_StepShape_HArray1OfValueQualifier::~Handle_StepShape_HArray1OfValueQualifier %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3591,7 +3629,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_VertexLoop {
+%extend Handle_StepShape_HArray1OfValueQualifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3674,29 +3712,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepShape_RightAngularWedge;
-class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepresentationItem {
+%nodefaultctor Handle_StepShape_ConnectedFaceShapeRepresentation;
+class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr_Representation {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge();
+		Handle_StepShape_ConnectedFaceShapeRepresentation();
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge(const Handle_StepShape_RightAngularWedge &aHandle);
+		Handle_StepShape_ConnectedFaceShapeRepresentation(const Handle_StepShape_ConnectedFaceShapeRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge(const StepShape_RightAngularWedge *anItem);
+		Handle_StepShape_ConnectedFaceShapeRepresentation(const StepShape_ConnectedFaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge & operator=(const Handle_StepShape_RightAngularWedge &aHandle);
+		Handle_StepShape_ConnectedFaceShapeRepresentation & operator=(const Handle_StepShape_ConnectedFaceShapeRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_RightAngularWedge & operator=(const StepShape_RightAngularWedge *anItem);
+		Handle_StepShape_ConnectedFaceShapeRepresentation & operator=(const StepShape_ConnectedFaceShapeRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_RightAngularWedge DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedFaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_RightAngularWedge {
-	StepShape_RightAngularWedge* GetObject() {
-	return (StepShape_RightAngularWedge*)$self->Access();
+%extend Handle_StepShape_ConnectedFaceShapeRepresentation {
+	StepShape_ConnectedFaceShapeRepresentation* GetObject() {
+	return (StepShape_ConnectedFaceShapeRepresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_RightAngularWedge::~Handle_StepShape_RightAngularWedge %{
+%feature("shadow") Handle_StepShape_ConnectedFaceShapeRepresentation::~Handle_StepShape_ConnectedFaceShapeRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3705,36 +3743,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_RightAngularWedge {
+%extend Handle_StepShape_ConnectedFaceShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepShape_HArray1OfOrientedClosedShell;
-class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepShape_ConnectedEdgeSet;
+class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell();
+		Handle_StepShape_ConnectedEdgeSet();
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell(const Handle_StepShape_HArray1OfOrientedClosedShell &aHandle);
+		Handle_StepShape_ConnectedEdgeSet(const Handle_StepShape_ConnectedEdgeSet &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell(const StepShape_HArray1OfOrientedClosedShell *anItem);
+		Handle_StepShape_ConnectedEdgeSet(const StepShape_ConnectedEdgeSet *anItem);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell & operator=(const Handle_StepShape_HArray1OfOrientedClosedShell &aHandle);
+		Handle_StepShape_ConnectedEdgeSet & operator=(const Handle_StepShape_ConnectedEdgeSet &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedClosedShell & operator=(const StepShape_HArray1OfOrientedClosedShell *anItem);
+		Handle_StepShape_ConnectedEdgeSet & operator=(const StepShape_ConnectedEdgeSet *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepShape_HArray1OfOrientedClosedShell DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepShape_ConnectedEdgeSet DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepShape_HArray1OfOrientedClosedShell {
-	StepShape_HArray1OfOrientedClosedShell* GetObject() {
-	return (StepShape_HArray1OfOrientedClosedShell*)$self->Access();
+%extend Handle_StepShape_ConnectedEdgeSet {
+	StepShape_ConnectedEdgeSet* GetObject() {
+	return (StepShape_ConnectedEdgeSet*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepShape_HArray1OfOrientedClosedShell::~Handle_StepShape_HArray1OfOrientedClosedShell %{
+%feature("shadow") Handle_StepShape_ConnectedEdgeSet::~Handle_StepShape_ConnectedEdgeSet %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3743,83 +3781,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepShape_HArray1OfOrientedClosedShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_HArray1OfOrientedEdge;
-class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge();
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge(const Handle_StepShape_HArray1OfOrientedEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge(const StepShape_HArray1OfOrientedEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge & operator=(const Handle_StepShape_HArray1OfOrientedEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge & operator=(const StepShape_HArray1OfOrientedEdge *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_HArray1OfOrientedEdge DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_HArray1OfOrientedEdge {
-	StepShape_HArray1OfOrientedEdge* GetObject() {
-	return (StepShape_HArray1OfOrientedEdge*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_HArray1OfOrientedEdge::~Handle_StepShape_HArray1OfOrientedEdge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_HArray1OfOrientedEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepShape_ShapeDimensionRepresentation;
-class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_ShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation(const Handle_StepShape_ShapeDimensionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation(const StepShape_ShapeDimensionRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation & operator=(const Handle_StepShape_ShapeDimensionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDimensionRepresentation & operator=(const StepShape_ShapeDimensionRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepShape_ShapeDimensionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepShape_ShapeDimensionRepresentation {
-	StepShape_ShapeDimensionRepresentation* GetObject() {
-	return (StepShape_ShapeDimensionRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepShape_ShapeDimensionRepresentation::~Handle_StepShape_ShapeDimensionRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepShape_ShapeDimensionRepresentation {
+%extend Handle_StepShape_ConnectedEdgeSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3858,6 +3820,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepShape_QualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepShape_NonManifoldSurfaceShapeRepresentation;
+class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepShape_NonManifoldSurfaceShapeRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepShape_NonManifoldSurfaceShapeRepresentation(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_NonManifoldSurfaceShapeRepresentation(const StepShape_NonManifoldSurfaceShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepShape_NonManifoldSurfaceShapeRepresentation & operator=(const Handle_StepShape_NonManifoldSurfaceShapeRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepShape_NonManifoldSurfaceShapeRepresentation & operator=(const StepShape_NonManifoldSurfaceShapeRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepShape_NonManifoldSurfaceShapeRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
+	StepShape_NonManifoldSurfaceShapeRepresentation* GetObject() {
+	return (StepShape_NonManifoldSurfaceShapeRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepShape_NonManifoldSurfaceShapeRepresentation::~Handle_StepShape_NonManifoldSurfaceShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepShape_NonManifoldSurfaceShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3945,125 +3945,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_SolidModel;
-class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_SolidModel();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_SolidModel {
-	Handle_StepShape_SolidModel GetHandle() {
-	return *(Handle_StepShape_SolidModel*) &$self;
-	}
-};
-%extend StepShape_SolidModel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_SolidModel::~StepShape_SolidModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_SolidModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_SweptFaceSolid;
-class StepShape_SweptFaceSolid : public StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		StepShape_SweptFaceSolid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea);
-		%feature("autodoc", "1");
-		virtual		void SetSweptFace(const Handle_StepShape_FaceSurface &aSweptArea);
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_FaceSurface SweptFace() const;
-
-};
-%extend StepShape_SweptFaceSolid {
-	Handle_StepShape_SweptFaceSolid GetHandle() {
-	return *(Handle_StepShape_SweptFaceSolid*) &$self;
-	}
-};
-%extend StepShape_SweptFaceSolid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_SweptFaceSolid::~StepShape_SweptFaceSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_SweptFaceSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_RevolvedFaceSolid;
-class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
-	public:
-		%feature("autodoc", "1");
-		StepShape_RevolvedFaceSolid();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea, const Handle_StepGeom_Axis1Placement &aAxis, const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		void SetAxis(const Handle_StepGeom_Axis1Placement &aAxis);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Axis1Placement Axis() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real aAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-
-};
-%extend StepShape_RevolvedFaceSolid {
-	Handle_StepShape_RevolvedFaceSolid GetHandle() {
-	return *(Handle_StepShape_RevolvedFaceSolid*) &$self;
-	}
-};
-%extend StepShape_RevolvedFaceSolid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_RevolvedFaceSolid::~StepShape_RevolvedFaceSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_RevolvedFaceSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepShape_HArray1OfFaceBound;
 class StepShape_HArray1OfFaceBound : public MMgt_TShared {
 	public:
@@ -4100,7 +3981,7 @@ class StepShape_HArray1OfFaceBound : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfFaceBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfFaceBound::~StepShape_HArray1OfFaceBound %{
@@ -4155,7 +4036,7 @@ class StepShape_HArray1OfEdge : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfEdge::~StepShape_HArray1OfEdge %{
@@ -4190,7 +4071,7 @@ class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationIt
 };
 %extend StepShape_TopologicalRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_TopologicalRepresentationItem::~StepShape_TopologicalRepresentationItem %{
@@ -4223,7 +4104,7 @@ class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Loop::~StepShape_Loop %{
@@ -4268,7 +4149,7 @@ class StepShape_PolyLoop : public StepShape_Loop {
 };
 %extend StepShape_PolyLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_PolyLoop::~StepShape_PolyLoop %{
@@ -4303,7 +4184,7 @@ class StepShape_ShapeRepresentation : public StepRepr_Representation {
 };
 %extend StepShape_ShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ShapeRepresentation::~StepShape_ShapeRepresentation %{
@@ -4336,7 +4217,7 @@ class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepSh
 };
 %extend StepShape_GeometricallyBoundedWireframeShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_GeometricallyBoundedWireframeShapeRepresentation::~StepShape_GeometricallyBoundedWireframeShapeRepresentation %{
@@ -4371,7 +4252,7 @@ class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShap
 };
 %extend StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_GeometricallyBoundedSurfaceShapeRepresentation::~StepShape_GeometricallyBoundedSurfaceShapeRepresentation %{
@@ -4418,7 +4299,7 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_FaceBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FaceBound::~StepShape_FaceBound %{
@@ -4453,7 +4334,7 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 };
 %extend StepShape_TransitionalShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_TransitionalShapeRepresentation::~StepShape_TransitionalShapeRepresentation %{
@@ -4466,6 +4347,41 @@ def __del__(self):
 %}
 
 %extend StepShape_TransitionalShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_SolidModel;
+class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_SolidModel();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_SolidModel {
+	Handle_StepShape_SolidModel GetHandle() {
+	return *(Handle_StepShape_SolidModel*) &$self;
+	}
+};
+%extend StepShape_SolidModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_SolidModel::~StepShape_SolidModel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_SolidModel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4489,8 +4405,6 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 		void SetTransformation(const Handle_StepGeom_CartesianTransformationOperator3d &aTransformation);
 		%feature("autodoc", "1");
 		Handle_StepGeom_CartesianTransformationOperator3d Transformation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepShape_SolidReplica {
@@ -4500,7 +4414,7 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 };
 %extend StepShape_SolidReplica {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_SolidReplica::~StepShape_SolidReplica %{
@@ -4519,13 +4433,54 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepShape_SweptFaceSolid;
+class StepShape_SweptFaceSolid : public StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		StepShape_SweptFaceSolid();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea);
+		%feature("autodoc", "1");
+		virtual		void SetSweptFace(const Handle_StepShape_FaceSurface &aSweptArea);
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_FaceSurface SweptFace() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_SweptFaceSolid {
+	Handle_StepShape_SweptFaceSolid GetHandle() {
+	return *(Handle_StepShape_SweptFaceSolid*) &$self;
+	}
+};
+%extend StepShape_SweptFaceSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_SweptFaceSolid::~StepShape_SweptFaceSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_SweptFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepShape_ExtrudedFaceSolid;
 class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 	public:
 		%feature("autodoc", "1");
 		StepShape_ExtrudedFaceSolid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea);
 		%feature("autodoc", "1");
 		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea, const Handle_StepGeom_Direction &aExtrudedDirection, const Standard_Real aDepth);
 		%feature("autodoc", "1");
@@ -4536,8 +4491,6 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 		void SetDepth(const Standard_Real aDepth);
 		%feature("autodoc", "1");
 		Standard_Real Depth() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepShape_ExtrudedFaceSolid {
@@ -4547,7 +4500,7 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 };
 %extend StepShape_ExtrudedFaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ExtrudedFaceSolid::~StepShape_ExtrudedFaceSolid %{
@@ -4560,6 +4513,53 @@ def __del__(self):
 %}
 
 %extend StepShape_ExtrudedFaceSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_Face;
+class StepShape_Face : public StepShape_TopologicalRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Face();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbBounds() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_Face {
+	Handle_StepShape_Face GetHandle() {
+	return *(Handle_StepShape_Face*) &$self;
+	}
+};
+%extend StepShape_Face {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_Face::~StepShape_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_Face {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4598,7 +4598,7 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_BooleanResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_BooleanResult::~StepShape_BooleanResult %{
@@ -4645,7 +4645,7 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Path {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Path::~StepShape_Path %{
@@ -4698,7 +4698,7 @@ class StepShape_BoxDomain : public MMgt_TShared {
 };
 %extend StepShape_BoxDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_BoxDomain::~StepShape_BoxDomain %{
@@ -4717,26 +4717,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_ShapeDimensionRepresentation;
-class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentation {
+%nodefaultctor StepShape_TypeQualifier;
+class StepShape_TypeQualifier : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepShape_ShapeDimensionRepresentation();
+		StepShape_TypeQualifier();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_ShapeDimensionRepresentation {
-	Handle_StepShape_ShapeDimensionRepresentation GetHandle() {
-	return *(Handle_StepShape_ShapeDimensionRepresentation*) &$self;
+%extend StepShape_TypeQualifier {
+	Handle_StepShape_TypeQualifier GetHandle() {
+	return *(Handle_StepShape_TypeQualifier*) &$self;
 	}
 };
-%extend StepShape_ShapeDimensionRepresentation {
+%extend StepShape_TypeQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_ShapeDimensionRepresentation::~StepShape_ShapeDimensionRepresentation %{
+%feature("shadow") StepShape_TypeQualifier::~StepShape_TypeQualifier %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4745,7 +4751,97 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_ShapeDimensionRepresentation {
+%extend StepShape_TypeQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_RightCircularCone;
+class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_RightCircularCone();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis1Placement &aPosition, const Standard_Real aHeight, const Standard_Real aRadius, const Standard_Real aSemiAngle);
+		%feature("autodoc", "1");
+		void SetPosition(const Handle_StepGeom_Axis1Placement &aPosition);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Axis1Placement Position() const;
+		%feature("autodoc", "1");
+		void SetHeight(const Standard_Real aHeight);
+		%feature("autodoc", "1");
+		Standard_Real Height() const;
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		void SetSemiAngle(const Standard_Real aSemiAngle);
+		%feature("autodoc", "1");
+		Standard_Real SemiAngle() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_RightCircularCone {
+	Handle_StepShape_RightCircularCone GetHandle() {
+	return *(Handle_StepShape_RightCircularCone*) &$self;
+	}
+};
+%extend StepShape_RightCircularCone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_RightCircularCone::~StepShape_RightCircularCone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_RightCircularCone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_PointRepresentation;
+class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepShape_PointRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_PointRepresentation {
+	Handle_StepShape_PointRepresentation GetHandle() {
+	return *(Handle_StepShape_PointRepresentation*) &$self;
+	}
+};
+%extend StepShape_PointRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_PointRepresentation::~StepShape_PointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_PointRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4776,7 +4872,7 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 };
 %extend StepShape_ManifoldSolidBrep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ManifoldSolidBrep::~StepShape_ManifoldSolidBrep %{
@@ -4831,7 +4927,7 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_Block {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Block::~StepShape_Block %{
@@ -4866,7 +4962,7 @@ class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRe
 };
 %extend StepShape_NonManifoldSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_NonManifoldSurfaceShapeRepresentation::~StepShape_NonManifoldSurfaceShapeRepresentation %{
@@ -4913,7 +5009,7 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_HalfSpaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HalfSpaceSolid::~StepShape_HalfSpaceSolid %{
@@ -4960,7 +5056,7 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Edge::~StepShape_Edge %{
@@ -5003,7 +5099,7 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 };
 %extend StepShape_EdgeCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_EdgeCurve::~StepShape_EdgeCurve %{
@@ -5016,6 +5112,252 @@ def __del__(self):
 %}
 
 %extend StepShape_EdgeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_ConnectedFaceSet;
+class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_ConnectedFaceSet();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFace &aCfsFaces);
+		%feature("autodoc", "1");
+		virtual		void SetCfsFaces(const Handle_StepShape_HArray1OfFace &aCfsFaces);
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_HArray1OfFace CfsFaces() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepShape_Face CfsFacesValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbCfsFaces() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_ConnectedFaceSet {
+	Handle_StepShape_ConnectedFaceSet GetHandle() {
+	return *(Handle_StepShape_ConnectedFaceSet*) &$self;
+	}
+};
+%extend StepShape_ConnectedFaceSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_ConnectedFaceSet::~StepShape_ConnectedFaceSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_ConnectedFaceSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_OpenShell;
+class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
+	public:
+		%feature("autodoc", "1");
+		StepShape_OpenShell();
+
+};
+%extend StepShape_OpenShell {
+	Handle_StepShape_OpenShell GetHandle() {
+	return *(Handle_StepShape_OpenShell*) &$self;
+	}
+};
+%extend StepShape_OpenShell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_OpenShell::~StepShape_OpenShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_OpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
+class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_MeasureValueMember &aValueComponent, const StepBasic_Unit &aUnitComponent, const Handle_StepShape_HArray1OfValueQualifier &qualifiers);
+		%feature("autodoc", "1");
+		void SetMeasure(const Handle_StepBasic_MeasureWithUnit &Measure);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Measure() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfValueQualifier Qualifiers() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbQualifiers() const;
+		%feature("autodoc", "1");
+		void SetQualifiers(const Handle_StepShape_HArray1OfValueQualifier &qualifiers);
+		%feature("autodoc", "1");
+		StepShape_ValueQualifier QualifiersValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void SetQualifiersValue(const Standard_Integer num, const StepShape_ValueQualifier &aqualifier);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
+	Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem GetHandle() {
+	return *(Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem*) &$self;
+	}
+};
+%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem::~StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_ShapeDimensionRepresentation;
+class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepShape_ShapeDimensionRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_ShapeDimensionRepresentation {
+	Handle_StepShape_ShapeDimensionRepresentation GetHandle() {
+	return *(Handle_StepShape_ShapeDimensionRepresentation*) &$self;
+	}
+};
+%extend StepShape_ShapeDimensionRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_ShapeDimensionRepresentation::~StepShape_ShapeDimensionRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_ShapeDimensionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_FaceSurface;
+class StepShape_FaceSurface : public StepShape_Face {
+	public:
+		%feature("autodoc", "1");
+		StepShape_FaceSurface();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds, const Handle_StepGeom_Surface &aFaceGeometry, const Standard_Boolean aSameSense);
+		%feature("autodoc", "1");
+		void SetFaceGeometry(const Handle_StepGeom_Surface &aFaceGeometry);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface FaceGeometry() const;
+		%feature("autodoc", "1");
+		void SetSameSense(const Standard_Boolean aSameSense);
+		%feature("autodoc", "1");
+		Standard_Boolean SameSense() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_FaceSurface {
+	Handle_StepShape_FaceSurface GetHandle() {
+	return *(Handle_StepShape_FaceSurface*) &$self;
+	}
+};
+%extend StepShape_FaceSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_FaceSurface::~StepShape_FaceSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_FaceSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_AdvancedFace;
+class StepShape_AdvancedFace : public StepShape_FaceSurface {
+	public:
+		%feature("autodoc", "1");
+		StepShape_AdvancedFace();
+
+};
+%extend StepShape_AdvancedFace {
+	Handle_StepShape_AdvancedFace GetHandle() {
+	return *(Handle_StepShape_AdvancedFace*) &$self;
+	}
+};
+%extend StepShape_AdvancedFace {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_AdvancedFace::~StepShape_AdvancedFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_AdvancedFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5044,7 +5386,7 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 };
 %extend StepShape_EdgeBasedWireframeModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_EdgeBasedWireframeModel::~StepShape_EdgeBasedWireframeModel %{
@@ -5079,7 +5421,7 @@ class StepShape_FaceOuterBound : public StepShape_FaceBound {
 };
 %extend StepShape_FaceOuterBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FaceOuterBound::~StepShape_FaceOuterBound %{
@@ -5138,7 +5480,7 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 };
 %extend StepShape_RightAngularWedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_RightAngularWedge::~StepShape_RightAngularWedge %{
@@ -5151,41 +5493,6 @@ def __del__(self):
 %}
 
 %extend StepShape_RightAngularWedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_ShapeRepresentationWithParameters;
-class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepShape_ShapeRepresentationWithParameters();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_ShapeRepresentationWithParameters {
-	Handle_StepShape_ShapeRepresentationWithParameters GetHandle() {
-	return *(Handle_StepShape_ShapeRepresentationWithParameters*) &$self;
-	}
-};
-%extend StepShape_ShapeRepresentationWithParameters {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_ShapeRepresentationWithParameters::~StepShape_ShapeRepresentationWithParameters %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_ShapeRepresentationWithParameters {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5208,7 +5515,7 @@ class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
 };
 %extend StepShape_CsgShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_CsgShapeRepresentation::~StepShape_CsgShapeRepresentation %{
@@ -5256,38 +5563,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_ConnectedFaceSet;
-class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationItem {
+%nodefaultctor StepShape_DimensionalSize;
+class StepShape_DimensionalSize : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepShape_ConnectedFaceSet();
+		StepShape_DimensionalSize();
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		void Init(const Handle_StepRepr_ShapeAspect &aAppliesTo, const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFace &aCfsFaces);
+		Handle_StepRepr_ShapeAspect AppliesTo() const;
 		%feature("autodoc", "1");
-		virtual		void SetCfsFaces(const Handle_StepShape_HArray1OfFace &aCfsFaces);
+		void SetAppliesTo(const Handle_StepRepr_ShapeAspect &AppliesTo);
 		%feature("autodoc", "1");
-		virtual		Handle_StepShape_HArray1OfFace CfsFaces() const;
+		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
-		virtual		Handle_StepShape_Face CfsFacesValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbCfsFaces() const;
+		void SetName(const Handle_TCollection_HAsciiString &Name);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_ConnectedFaceSet {
-	Handle_StepShape_ConnectedFaceSet GetHandle() {
-	return *(Handle_StepShape_ConnectedFaceSet*) &$self;
+%extend StepShape_DimensionalSize {
+	Handle_StepShape_DimensionalSize GetHandle() {
+	return *(Handle_StepShape_DimensionalSize*) &$self;
 	}
 };
-%extend StepShape_ConnectedFaceSet {
+%extend StepShape_DimensionalSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_ConnectedFaceSet::~StepShape_ConnectedFaceSet %{
+%feature("shadow") StepShape_DimensionalSize::~StepShape_DimensionalSize %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5296,7 +5601,46 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_ConnectedFaceSet {
+%extend StepShape_DimensionalSize {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_DimensionalSizeWithPath;
+class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
+	public:
+		%feature("autodoc", "1");
+		StepShape_DimensionalSizeWithPath();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_ShapeAspect &aDimensionalSize_AppliesTo, const Handle_TCollection_HAsciiString &aDimensionalSize_Name, const Handle_StepRepr_ShapeAspect &aPath);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect Path() const;
+		%feature("autodoc", "1");
+		void SetPath(const Handle_StepRepr_ShapeAspect &Path);
+
+};
+%extend StepShape_DimensionalSizeWithPath {
+	Handle_StepShape_DimensionalSizeWithPath GetHandle() {
+	return *(Handle_StepShape_DimensionalSizeWithPath*) &$self;
+	}
+};
+%extend StepShape_DimensionalSizeWithPath {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_DimensionalSizeWithPath::~StepShape_DimensionalSizeWithPath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_DimensionalSizeWithPath {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5308,6 +5652,8 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 	public:
 		%feature("autodoc", "1");
 		StepShape_ClosedShell();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepShape_ClosedShell {
@@ -5317,7 +5663,7 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 };
 %extend StepShape_ClosedShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ClosedShell::~StepShape_ClosedShell %{
@@ -5362,7 +5708,7 @@ class StepShape_PlusMinusTolerance : public MMgt_TShared {
 };
 %extend StepShape_PlusMinusTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_PlusMinusTolerance::~StepShape_PlusMinusTolerance %{
@@ -5407,7 +5753,7 @@ class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 };
 %extend StepShape_DimensionalCharacteristicRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_DimensionalCharacteristicRepresentation::~StepShape_DimensionalCharacteristicRepresentation %{
@@ -5477,96 +5823,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_Face;
-class StepShape_Face : public StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Face();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		void SetBounds(const Handle_StepShape_HArray1OfFaceBound &aBounds);
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_HArray1OfFaceBound Bounds() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepShape_FaceBound BoundsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbBounds() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_Face {
-	Handle_StepShape_Face GetHandle() {
-	return *(Handle_StepShape_Face*) &$self;
-	}
-};
-%extend StepShape_Face {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_Face::~StepShape_Face %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_Face {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_FaceSurface;
-class StepShape_FaceSurface : public StepShape_Face {
-	public:
-		%feature("autodoc", "1");
-		StepShape_FaceSurface();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfFaceBound &aBounds, const Handle_StepGeom_Surface &aFaceGeometry, const Standard_Boolean aSameSense);
-		%feature("autodoc", "1");
-		void SetFaceGeometry(const Handle_StepGeom_Surface &aFaceGeometry);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface FaceGeometry() const;
-		%feature("autodoc", "1");
-		void SetSameSense(const Standard_Boolean aSameSense);
-		%feature("autodoc", "1");
-		Standard_Boolean SameSense() const;
-
-};
-%extend StepShape_FaceSurface {
-	Handle_StepShape_FaceSurface GetHandle() {
-	return *(Handle_StepShape_FaceSurface*) &$self;
-	}
-};
-%extend StepShape_FaceSurface {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_FaceSurface::~StepShape_FaceSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_FaceSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepShape_Array1OfConnectedEdgeSet;
 class StepShape_Array1OfConnectedEdgeSet {
 	public:
@@ -5618,49 +5874,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_CsgSolid;
-class StepShape_CsgSolid : public StepShape_SolidModel {
-	public:
-		%feature("autodoc", "1");
-		StepShape_CsgSolid();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepShape_CsgSelect &aTreeRootExpression);
-		%feature("autodoc", "1");
-		void SetTreeRootExpression(const StepShape_CsgSelect &aTreeRootExpression);
-		%feature("autodoc", "1");
-		StepShape_CsgSelect TreeRootExpression() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_CsgSolid {
-	Handle_StepShape_CsgSolid GetHandle() {
-	return *(Handle_StepShape_CsgSolid*) &$self;
-	}
-};
-%extend StepShape_CsgSolid {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_CsgSolid::~StepShape_CsgSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_CsgSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepShape_CompoundShapeRepresentation;
 class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -5677,7 +5890,7 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 };
 %extend StepShape_CompoundShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_CompoundShapeRepresentation::~StepShape_CompoundShapeRepresentation %{
@@ -5732,7 +5945,7 @@ class StepShape_OrientedFace : public StepShape_Face {
 };
 %extend StepShape_OrientedFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_OrientedFace::~StepShape_OrientedFace %{
@@ -5787,7 +6000,7 @@ class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfConnectedEdgeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfConnectedEdgeSet::~StepShape_HArray1OfConnectedEdgeSet %{
@@ -5800,104 +6013,6 @@ def __del__(self):
 %}
 
 %extend StepShape_HArray1OfConnectedEdgeSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_LoopAndPath;
-class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_LoopAndPath();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Loop &aLoop, const Handle_StepShape_Path &aPath);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
-		%feature("autodoc", "1");
-		void SetLoop(const Handle_StepShape_Loop &aLoop);
-		%feature("autodoc", "1");
-		Handle_StepShape_Loop Loop() const;
-		%feature("autodoc", "1");
-		void SetPath(const Handle_StepShape_Path &aPath);
-		%feature("autodoc", "1");
-		Handle_StepShape_Path Path() const;
-		%feature("autodoc", "1");
-		void SetEdgeList(const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfOrientedEdge EdgeList() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_OrientedEdge EdgeListValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbEdgeList() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_LoopAndPath {
-	Handle_StepShape_LoopAndPath GetHandle() {
-	return *(Handle_StepShape_LoopAndPath*) &$self;
-	}
-};
-%extend StepShape_LoopAndPath {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_LoopAndPath::~StepShape_LoopAndPath %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_LoopAndPath {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_ConnectedEdgeSet;
-class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_ConnectedEdgeSet();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepShape_HArray1OfEdge &aCesEdges);
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfEdge CesEdges() const;
-		%feature("autodoc", "1");
-		void SetCesEdges(const Handle_StepShape_HArray1OfEdge &CesEdges);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_ConnectedEdgeSet {
-	Handle_StepShape_ConnectedEdgeSet GetHandle() {
-	return *(Handle_StepShape_ConnectedEdgeSet*) &$self;
-	}
-};
-%extend StepShape_ConnectedEdgeSet {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_ConnectedEdgeSet::~StepShape_ConnectedEdgeSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_ConnectedEdgeSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5928,7 +6043,7 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 };
 %extend StepShape_SweptAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_SweptAreaSolid::~StepShape_SweptAreaSolid %{
@@ -5971,7 +6086,7 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %extend StepShape_RevolvedAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_RevolvedAreaSolid::~StepShape_RevolvedAreaSolid %{
@@ -6006,7 +6121,7 @@ class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefiniti
 };
 %extend StepShape_ShapeDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ShapeDefinitionRepresentation::~StepShape_ShapeDefinitionRepresentation %{
@@ -6025,26 +6140,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_AdvancedFace;
-class StepShape_AdvancedFace : public StepShape_FaceSurface {
+%nodefaultctor StepShape_ContextDependentShapeRepresentation;
+class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepShape_AdvancedFace();
+		StepShape_ContextDependentShapeRepresentation();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_ShapeRepresentationRelationship &aRepRel, const Handle_StepRepr_ProductDefinitionShape &aProRel);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship RepresentationRelation() const;
+		%feature("autodoc", "1");
+		void SetRepresentationRelation(const Handle_StepRepr_ShapeRepresentationRelationship &aRepRel);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape RepresentedProductRelation() const;
+		%feature("autodoc", "1");
+		void SetRepresentedProductRelation(const Handle_StepRepr_ProductDefinitionShape &aProRel);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_AdvancedFace {
-	Handle_StepShape_AdvancedFace GetHandle() {
-	return *(Handle_StepShape_AdvancedFace*) &$self;
+%extend StepShape_ContextDependentShapeRepresentation {
+	Handle_StepShape_ContextDependentShapeRepresentation GetHandle() {
+	return *(Handle_StepShape_ContextDependentShapeRepresentation*) &$self;
 	}
 };
-%extend StepShape_AdvancedFace {
+%extend StepShape_ContextDependentShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_AdvancedFace::~StepShape_AdvancedFace %{
+%feature("shadow") StepShape_ContextDependentShapeRepresentation::~StepShape_ContextDependentShapeRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -6053,7 +6178,62 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_AdvancedFace {
+%extend StepShape_ContextDependentShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_HArray1OfOrientedClosedShell;
+class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepShape_HArray1OfOrientedClosedShell(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepShape_HArray1OfOrientedClosedShell(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepShape_OrientedClosedShell &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_OrientedClosedShell &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepShape_OrientedClosedShell &Value);
+		%feature("autodoc", "1");
+		const Handle_StepShape_OrientedClosedShell & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepShape_OrientedClosedShell & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepShape_Array1OfOrientedClosedShell & Array1() const;
+		%feature("autodoc", "1");
+		StepShape_Array1OfOrientedClosedShell & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_HArray1OfOrientedClosedShell {
+	Handle_StepShape_HArray1OfOrientedClosedShell GetHandle() {
+	return *(Handle_StepShape_HArray1OfOrientedClosedShell*) &$self;
+	}
+};
+%extend StepShape_HArray1OfOrientedClosedShell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_HArray1OfOrientedClosedShell::~StepShape_HArray1OfOrientedClosedShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_HArray1OfOrientedClosedShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6076,7 +6256,7 @@ class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 };
 %extend StepShape_DimensionalLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_DimensionalLocation::~StepShape_DimensionalLocation %{
@@ -6109,7 +6289,7 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 };
 %extend StepShape_DirectedDimensionalLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_DirectedDimensionalLocation::~StepShape_DirectedDimensionalLocation %{
@@ -6122,6 +6302,53 @@ def __del__(self):
 %}
 
 %extend StepShape_DirectedDimensionalLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_RevolvedFaceSolid;
+class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
+	public:
+		%feature("autodoc", "1");
+		StepShape_RevolvedFaceSolid();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea);
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_FaceSurface &aSweptArea, const Handle_StepGeom_Axis1Placement &aAxis, const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		void SetAxis(const Handle_StepGeom_Axis1Placement &aAxis);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Axis1Placement Axis() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real aAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_RevolvedFaceSolid {
+	Handle_StepShape_RevolvedFaceSolid GetHandle() {
+	return *(Handle_StepShape_RevolvedFaceSolid*) &$self;
+	}
+};
+%extend StepShape_RevolvedFaceSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_RevolvedFaceSolid::~StepShape_RevolvedFaceSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_RevolvedFaceSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6144,7 +6371,7 @@ class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Vertex::~StepShape_Vertex %{
@@ -6163,26 +6390,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_PointRepresentation;
-class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
+%nodefaultctor StepShape_ConnectedEdgeSet;
+class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepShape_PointRepresentation();
+		StepShape_ConnectedEdgeSet();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aRepresentationItem_Name, const Handle_StepShape_HArray1OfEdge &aCesEdges);
+		%feature("autodoc", "1");
+		Handle_StepShape_HArray1OfEdge CesEdges() const;
+		%feature("autodoc", "1");
+		void SetCesEdges(const Handle_StepShape_HArray1OfEdge &CesEdges);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_PointRepresentation {
-	Handle_StepShape_PointRepresentation GetHandle() {
-	return *(Handle_StepShape_PointRepresentation*) &$self;
+%extend StepShape_ConnectedEdgeSet {
+	Handle_StepShape_ConnectedEdgeSet GetHandle() {
+	return *(Handle_StepShape_ConnectedEdgeSet*) &$self;
 	}
 };
-%extend StepShape_PointRepresentation {
+%extend StepShape_ConnectedEdgeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_PointRepresentation::~StepShape_PointRepresentation %{
+%feature("shadow") StepShape_ConnectedEdgeSet::~StepShape_ConnectedEdgeSet %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -6191,7 +6424,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_PointRepresentation {
+%extend StepShape_ConnectedEdgeSet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6220,7 +6453,7 @@ class StepShape_PrecisionQualifier : public MMgt_TShared {
 };
 %extend StepShape_PrecisionQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_PrecisionQualifier::~StepShape_PrecisionQualifier %{
@@ -6341,41 +6574,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_OpenShell;
-class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
-	public:
-		%feature("autodoc", "1");
-		StepShape_OpenShell();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_OpenShell {
-	Handle_StepShape_OpenShell GetHandle() {
-	return *(Handle_StepShape_OpenShell*) &$self;
-	}
-};
-%extend StepShape_OpenShell {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_OpenShell::~StepShape_OpenShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_OpenShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepShape_OrientedOpenShell;
 class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 	public:
@@ -6401,6 +6599,8 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 		virtual		Handle_StepShape_Face CfsFacesValue(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCfsFaces() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepShape_OrientedOpenShell {
@@ -6410,7 +6610,7 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 };
 %extend StepShape_OrientedOpenShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_OrientedOpenShell::~StepShape_OrientedOpenShell %{
@@ -6423,6 +6623,53 @@ def __del__(self):
 %}
 
 %extend StepShape_OrientedOpenShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_Sphere;
+class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Sphere();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aRadius, const Handle_StepGeom_Point &aCentre);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real aRadius);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		void SetCentre(const Handle_StepGeom_Point &aCentre);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Point Centre() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_Sphere {
+	Handle_StepShape_Sphere GetHandle() {
+	return *(Handle_StepShape_Sphere*) &$self;
+	}
+};
+%extend StepShape_Sphere {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_Sphere::~StepShape_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_Sphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6445,7 +6692,7 @@ class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresent
 };
 %extend StepShape_FacetedBrepShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FacetedBrepShapeRepresentation::~StepShape_FacetedBrepShapeRepresentation %{
@@ -6458,106 +6705,6 @@ def __del__(self):
 %}
 
 %extend StepShape_FacetedBrepShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_ContextDependentShapeRepresentation;
-class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepShape_ContextDependentShapeRepresentation();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_ShapeRepresentationRelationship &aRepRel, const Handle_StepRepr_ProductDefinitionShape &aProRel);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship RepresentationRelation() const;
-		%feature("autodoc", "1");
-		void SetRepresentationRelation(const Handle_StepRepr_ShapeRepresentationRelationship &aRepRel);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape RepresentedProductRelation() const;
-		%feature("autodoc", "1");
-		void SetRepresentedProductRelation(const Handle_StepRepr_ProductDefinitionShape &aProRel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_ContextDependentShapeRepresentation {
-	Handle_StepShape_ContextDependentShapeRepresentation GetHandle() {
-	return *(Handle_StepShape_ContextDependentShapeRepresentation*) &$self;
-	}
-};
-%extend StepShape_ContextDependentShapeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_ContextDependentShapeRepresentation::~StepShape_ContextDependentShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_ContextDependentShapeRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_HArray1OfOrientedClosedShell;
-class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepShape_HArray1OfOrientedClosedShell(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepShape_HArray1OfOrientedClosedShell(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepShape_OrientedClosedShell &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_OrientedClosedShell &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepShape_OrientedClosedShell &Value);
-		%feature("autodoc", "1");
-		const Handle_StepShape_OrientedClosedShell & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepShape_OrientedClosedShell & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepShape_Array1OfOrientedClosedShell & Array1() const;
-		%feature("autodoc", "1");
-		StepShape_Array1OfOrientedClosedShell & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_HArray1OfOrientedClosedShell {
-	Handle_StepShape_HArray1OfOrientedClosedShell GetHandle() {
-	return *(Handle_StepShape_HArray1OfOrientedClosedShell*) &$self;
-	}
-};
-%extend StepShape_HArray1OfOrientedClosedShell {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_HArray1OfOrientedClosedShell::~StepShape_HArray1OfOrientedClosedShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_HArray1OfOrientedClosedShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6600,7 +6747,7 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 };
 %extend StepShape_OrientedClosedShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_OrientedClosedShell::~StepShape_OrientedClosedShell %{
@@ -6613,57 +6760,6 @@ def __del__(self):
 %}
 
 %extend StepShape_OrientedClosedShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_Array1OfShell;
-class StepShape_Array1OfShell {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Array1OfShell(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepShape_Array1OfShell(const StepShape_Shell &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepShape_Shell &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepShape_Array1OfShell & Assign(const StepShape_Array1OfShell &Other);
-		%feature("autodoc", "1");
-		const StepShape_Array1OfShell & operator=(const StepShape_Array1OfShell &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepShape_Shell &Value);
-		%feature("autodoc", "1");
-		const StepShape_Shell & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepShape_Shell & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepShape_Shell & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepShape_Shell & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepShape_Array1OfShell::~StepShape_Array1OfShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_Array1OfShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6692,7 +6788,7 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 };
 %extend StepShape_ConnectedFaceSubSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ConnectedFaceSubSet::~StepShape_ConnectedFaceSubSet %{
@@ -6805,7 +6901,7 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 };
 %extend StepShape_FacetedBrepAndBrepWithVoids {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FacetedBrepAndBrepWithVoids::~StepShape_FacetedBrepAndBrepWithVoids %{
@@ -6856,7 +6952,7 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 };
 %extend StepShape_RightCircularCylinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_RightCircularCylinder::~StepShape_RightCircularCylinder %{
@@ -6869,51 +6965,6 @@ def __del__(self):
 %}
 
 %extend StepShape_RightCircularCylinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_DimensionalSize;
-class StepShape_DimensionalSize : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepShape_DimensionalSize();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_ShapeAspect &aAppliesTo, const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect AppliesTo() const;
-		%feature("autodoc", "1");
-		void SetAppliesTo(const Handle_StepRepr_ShapeAspect &AppliesTo);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_DimensionalSize {
-	Handle_StepShape_DimensionalSize GetHandle() {
-	return *(Handle_StepShape_DimensionalSize*) &$self;
-	}
-};
-%extend StepShape_DimensionalSize {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_DimensionalSize::~StepShape_DimensionalSize %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_DimensionalSize {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6948,7 +6999,7 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_GeometricSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_GeometricSet::~StepShape_GeometricSet %{
@@ -6961,61 +7012,6 @@ def __del__(self):
 %}
 
 %extend StepShape_GeometricSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_HArray1OfFace;
-class StepShape_HArray1OfFace : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepShape_HArray1OfFace(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepShape_HArray1OfFace(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepShape_Face &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_Face &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepShape_Face &Value);
-		%feature("autodoc", "1");
-		const Handle_StepShape_Face & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepShape_Face & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepShape_Array1OfFace & Array1() const;
-		%feature("autodoc", "1");
-		StepShape_Array1OfFace & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_HArray1OfFace {
-	Handle_StepShape_HArray1OfFace GetHandle() {
-	return *(Handle_StepShape_HArray1OfFace*) &$self;
-	}
-};
-%extend StepShape_HArray1OfFace {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_HArray1OfFace::~StepShape_HArray1OfFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_HArray1OfFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7038,7 +7034,7 @@ class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresen
 };
 %extend StepShape_AdvancedBrepShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_AdvancedBrepShapeRepresentation::~StepShape_AdvancedBrepShapeRepresentation %{
@@ -7079,7 +7075,7 @@ class StepShape_Subedge : public StepShape_Edge {
 };
 %extend StepShape_Subedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Subedge::~StepShape_Subedge %{
@@ -7185,7 +7181,7 @@ class StepShape_HArray1OfValueQualifier : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfValueQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfValueQualifier::~StepShape_HArray1OfValueQualifier %{
@@ -7226,7 +7222,7 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 };
 %extend StepShape_FaceBasedSurfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FaceBasedSurfaceModel::~StepShape_FaceBasedSurfaceModel %{
@@ -7239,6 +7235,41 @@ def __del__(self):
 %}
 
 %extend StepShape_FaceBasedSurfaceModel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_EdgeBasedWireframeShapeRepresentation;
+class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepShape_EdgeBasedWireframeShapeRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_EdgeBasedWireframeShapeRepresentation {
+	Handle_StepShape_EdgeBasedWireframeShapeRepresentation GetHandle() {
+	return *(Handle_StepShape_EdgeBasedWireframeShapeRepresentation*) &$self;
+	}
+};
+%extend StepShape_EdgeBasedWireframeShapeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_EdgeBasedWireframeShapeRepresentation::~StepShape_EdgeBasedWireframeShapeRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_EdgeBasedWireframeShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7269,7 +7300,7 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 };
 %extend StepShape_BoxedHalfSpace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_BoxedHalfSpace::~StepShape_BoxedHalfSpace %{
@@ -7288,28 +7319,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_ReversibleTopologyItem;
-class StepShape_ReversibleTopologyItem : public StepData_SelectType {
+%nodefaultctor StepShape_Array1OfShell;
+class StepShape_Array1OfShell {
 	public:
 		%feature("autodoc", "1");
-		StepShape_ReversibleTopologyItem();
+		StepShape_Array1OfShell(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		StepShape_Array1OfShell(const StepShape_Shell &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_StepShape_Edge Edge() const;
+		void Init(const StepShape_Shell &V);
 		%feature("autodoc", "1");
-		Handle_StepShape_Path Path() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		Handle_StepShape_Face Face() const;
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		Handle_StepShape_FaceBound FaceBound() const;
+		const StepShape_Array1OfShell & Assign(const StepShape_Array1OfShell &Other);
 		%feature("autodoc", "1");
-		Handle_StepShape_ClosedShell ClosedShell() const;
+		const StepShape_Array1OfShell & operator=(const StepShape_Array1OfShell &Other);
 		%feature("autodoc", "1");
-		Handle_StepShape_OpenShell OpenShell() const;
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepShape_Shell &Value);
+		%feature("autodoc", "1");
+		const StepShape_Shell & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepShape_Shell & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepShape_Shell & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepShape_Shell & operator()(const Standard_Integer Index);
 
 };
-%feature("shadow") StepShape_ReversibleTopologyItem::~StepShape_ReversibleTopologyItem %{
+%feature("shadow") StepShape_Array1OfShell::~StepShape_Array1OfShell %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7318,7 +7363,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_ReversibleTopologyItem {
+%extend StepShape_Array1OfShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7353,7 +7398,7 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 };
 %extend StepShape_QualifiedRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_QualifiedRepresentationItem::~StepShape_QualifiedRepresentationItem %{
@@ -7372,46 +7417,48 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_RightCircularCone;
-class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem {
+%nodefaultctor StepShape_LoopAndPath;
+class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepShape_RightCircularCone();
+		StepShape_LoopAndPath();
 		%feature("autodoc", "1");
 		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Axis1Placement &aPosition, const Standard_Real aHeight, const Standard_Real aRadius, const Standard_Real aSemiAngle);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Loop &aLoop, const Handle_StepShape_Path &aPath);
 		%feature("autodoc", "1");
-		void SetPosition(const Handle_StepGeom_Axis1Placement &aPosition);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
 		%feature("autodoc", "1");
-		Handle_StepGeom_Axis1Placement Position() const;
+		void SetLoop(const Handle_StepShape_Loop &aLoop);
 		%feature("autodoc", "1");
-		void SetHeight(const Standard_Real aHeight);
+		Handle_StepShape_Loop Loop() const;
 		%feature("autodoc", "1");
-		Standard_Real Height() const;
+		void SetPath(const Handle_StepShape_Path &aPath);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real aRadius);
+		Handle_StepShape_Path Path() const;
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		void SetEdgeList(const Handle_StepShape_HArray1OfOrientedEdge &aEdgeList);
 		%feature("autodoc", "1");
-		void SetSemiAngle(const Standard_Real aSemiAngle);
+		Handle_StepShape_HArray1OfOrientedEdge EdgeList() const;
 		%feature("autodoc", "1");
-		Standard_Real SemiAngle() const;
+		Handle_StepShape_OrientedEdge EdgeListValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEdgeList() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_RightCircularCone {
-	Handle_StepShape_RightCircularCone GetHandle() {
-	return *(Handle_StepShape_RightCircularCone*) &$self;
+%extend StepShape_LoopAndPath {
+	Handle_StepShape_LoopAndPath GetHandle() {
+	return *(Handle_StepShape_LoopAndPath*) &$self;
 	}
 };
-%extend StepShape_RightCircularCone {
+%extend StepShape_LoopAndPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_RightCircularCone::~StepShape_RightCircularCone %{
+%feature("shadow") StepShape_LoopAndPath::~StepShape_LoopAndPath %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -7420,7 +7467,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_RightCircularCone {
+%extend StepShape_LoopAndPath {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7455,7 +7502,7 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 };
 %extend StepShape_EdgeLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_EdgeLoop::~StepShape_EdgeLoop %{
@@ -7496,7 +7543,7 @@ class StepShape_Subface : public StepShape_Face {
 };
 %extend StepShape_Subface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Subface::~StepShape_Subface %{
@@ -7551,7 +7598,7 @@ class StepShape_HArray1OfOrientedEdge : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfOrientedEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfOrientedEdge::~StepShape_HArray1OfOrientedEdge %{
@@ -7564,6 +7611,49 @@ def __del__(self):
 %}
 
 %extend StepShape_HArray1OfOrientedEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_CsgSolid;
+class StepShape_CsgSolid : public StepShape_SolidModel {
+	public:
+		%feature("autodoc", "1");
+		StepShape_CsgSolid();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepShape_CsgSelect &aTreeRootExpression);
+		%feature("autodoc", "1");
+		void SetTreeRootExpression(const StepShape_CsgSelect &aTreeRootExpression);
+		%feature("autodoc", "1");
+		StepShape_CsgSelect TreeRootExpression() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_CsgSolid {
+	Handle_StepShape_CsgSolid GetHandle() {
+	return *(Handle_StepShape_CsgSolid*) &$self;
+	}
+};
+%extend StepShape_CsgSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_CsgSolid::~StepShape_CsgSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_CsgSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7586,7 +7676,7 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 };
 %extend StepShape_ConnectedFaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ConnectedFaceShapeRepresentation::~StepShape_ConnectedFaceShapeRepresentation %{
@@ -7599,6 +7689,57 @@ def __del__(self):
 %}
 
 %extend StepShape_ConnectedFaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_Array1OfGeometricSetSelect;
+class StepShape_Array1OfGeometricSetSelect {
+	public:
+		%feature("autodoc", "1");
+		StepShape_Array1OfGeometricSetSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepShape_Array1OfGeometricSetSelect(const StepShape_GeometricSetSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const StepShape_GeometricSetSelect &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepShape_Array1OfGeometricSetSelect & Assign(const StepShape_Array1OfGeometricSetSelect &Other);
+		%feature("autodoc", "1");
+		const StepShape_Array1OfGeometricSetSelect & operator=(const StepShape_Array1OfGeometricSetSelect &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepShape_GeometricSetSelect &Value);
+		%feature("autodoc", "1");
+		const StepShape_GeometricSetSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const StepShape_GeometricSetSelect & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepShape_GeometricSetSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		StepShape_GeometricSetSelect & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepShape_Array1OfGeometricSetSelect::~StepShape_Array1OfGeometricSetSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_Array1OfGeometricSetSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7656,7 +7797,7 @@ class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 };
 %extend StepShape_GeometricCurveSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_GeometricCurveSet::~StepShape_GeometricCurveSet %{
@@ -7669,6 +7810,43 @@ def __del__(self):
 %}
 
 %extend StepShape_GeometricCurveSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_ReversibleTopologyItem;
+class StepShape_ReversibleTopologyItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepShape_ReversibleTopologyItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepShape_Edge Edge() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_Path Path() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_Face Face() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_FaceBound FaceBound() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_ClosedShell ClosedShell() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_OpenShell OpenShell() const;
+
+};
+%feature("shadow") StepShape_ReversibleTopologyItem::~StepShape_ReversibleTopologyItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_ReversibleTopologyItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7697,7 +7875,7 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 };
 %extend StepShape_AngularSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_AngularSize::~StepShape_AngularSize %{
@@ -7710,57 +7888,6 @@ def __del__(self):
 %}
 
 %extend StepShape_AngularSize {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_Array1OfGeometricSetSelect;
-class StepShape_Array1OfGeometricSetSelect {
-	public:
-		%feature("autodoc", "1");
-		StepShape_Array1OfGeometricSetSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepShape_Array1OfGeometricSetSelect(const StepShape_GeometricSetSelect &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const StepShape_GeometricSetSelect &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepShape_Array1OfGeometricSetSelect & Assign(const StepShape_Array1OfGeometricSetSelect &Other);
-		%feature("autodoc", "1");
-		const StepShape_Array1OfGeometricSetSelect & operator=(const StepShape_Array1OfGeometricSetSelect &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepShape_GeometricSetSelect &Value);
-		%feature("autodoc", "1");
-		const StepShape_GeometricSetSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const StepShape_GeometricSetSelect & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepShape_GeometricSetSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		StepShape_GeometricSetSelect & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepShape_Array1OfGeometricSetSelect::~StepShape_Array1OfGeometricSetSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_Array1OfGeometricSetSelect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7869,49 +7996,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_VertexPoint;
-class StepShape_VertexPoint : public StepShape_Vertex {
-	public:
-		%feature("autodoc", "1");
-		StepShape_VertexPoint();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Point &aVertexGeometry);
-		%feature("autodoc", "1");
-		void SetVertexGeometry(const Handle_StepGeom_Point &aVertexGeometry);
-		%feature("autodoc", "1");
-		Handle_StepGeom_Point VertexGeometry() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_VertexPoint {
-	Handle_StepShape_VertexPoint GetHandle() {
-	return *(Handle_StepShape_VertexPoint*) &$self;
-	}
-};
-%extend StepShape_VertexPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_VertexPoint::~StepShape_VertexPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_VertexPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepShape_HArray1OfGeometricSetSelect;
 class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
 	public:
@@ -7948,7 +8032,7 @@ class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfGeometricSetSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfGeometricSetSelect::~StepShape_HArray1OfGeometricSetSelect %{
@@ -8003,7 +8087,7 @@ class StepShape_HArray1OfShell : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfShell::~StepShape_HArray1OfShell %{
@@ -8016,41 +8100,6 @@ def __del__(self):
 %}
 
 %extend StepShape_HArray1OfShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_EdgeBasedWireframeShapeRepresentation;
-class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepShape_EdgeBasedWireframeShapeRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_EdgeBasedWireframeShapeRepresentation {
-	Handle_StepShape_EdgeBasedWireframeShapeRepresentation GetHandle() {
-	return *(Handle_StepShape_EdgeBasedWireframeShapeRepresentation*) &$self;
-	}
-};
-%extend StepShape_EdgeBasedWireframeShapeRepresentation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_EdgeBasedWireframeShapeRepresentation::~StepShape_EdgeBasedWireframeShapeRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_EdgeBasedWireframeShapeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8073,7 +8122,7 @@ class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
 };
 %extend StepShape_FacetedBrep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_FacetedBrep::~StepShape_FacetedBrep %{
@@ -8086,6 +8135,49 @@ def __del__(self):
 %}
 
 %extend StepShape_FacetedBrep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_VertexPoint;
+class StepShape_VertexPoint : public StepShape_Vertex {
+	public:
+		%feature("autodoc", "1");
+		StepShape_VertexPoint();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepGeom_Point &aVertexGeometry);
+		%feature("autodoc", "1");
+		void SetVertexGeometry(const Handle_StepGeom_Point &aVertexGeometry);
+		%feature("autodoc", "1");
+		Handle_StepGeom_Point VertexGeometry() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_VertexPoint {
+	Handle_StepShape_VertexPoint GetHandle() {
+	return *(Handle_StepShape_VertexPoint*) &$self;
+	}
+};
+%extend StepShape_VertexPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_VertexPoint::~StepShape_VertexPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_VertexPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8161,7 +8253,7 @@ class StepShape_MeasureQualification : public MMgt_TShared {
 };
 %extend StepShape_MeasureQualification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_MeasureQualification::~StepShape_MeasureQualification %{
@@ -8233,7 +8325,7 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 };
 %extend StepShape_ManifoldSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ManifoldSurfaceShapeRepresentation::~StepShape_ManifoldSurfaceShapeRepresentation %{
@@ -8246,6 +8338,49 @@ def __del__(self):
 %}
 
 %extend StepShape_ManifoldSurfaceShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_VertexLoop;
+class StepShape_VertexLoop : public StepShape_Loop {
+	public:
+		%feature("autodoc", "1");
+		StepShape_VertexLoop();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Vertex &aLoopVertex);
+		%feature("autodoc", "1");
+		void SetLoopVertex(const Handle_StepShape_Vertex &aLoopVertex);
+		%feature("autodoc", "1");
+		Handle_StepShape_Vertex LoopVertex() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepShape_VertexLoop {
+	Handle_StepShape_VertexLoop GetHandle() {
+	return *(Handle_StepShape_VertexLoop*) &$self;
+	}
+};
+%extend StepShape_VertexLoop {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepShape_VertexLoop::~StepShape_VertexLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_VertexLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8286,7 +8421,7 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 };
 %extend StepShape_OrientedEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_OrientedEdge::~StepShape_OrientedEdge %{
@@ -8299,35 +8434,6 @@ def __del__(self):
 %}
 
 %extend StepShape_OrientedEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_ToleranceMethodDefinition;
-class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepShape_ToleranceMethodDefinition();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepShape_ToleranceValue ToleranceValue() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_LimitsAndFits LimitsAndFits() const;
-
-};
-%feature("shadow") StepShape_ToleranceMethodDefinition::~StepShape_ToleranceMethodDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_ToleranceMethodDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8366,7 +8472,7 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_Torus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_Torus::~StepShape_Torus %{
@@ -8379,47 +8485,6 @@ def __del__(self):
 %}
 
 %extend StepShape_Torus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_DimensionalSizeWithPath;
-class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
-	public:
-		%feature("autodoc", "1");
-		StepShape_DimensionalSizeWithPath();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_ShapeAspect &aDimensionalSize_AppliesTo, const Handle_TCollection_HAsciiString &aDimensionalSize_Name, const Handle_StepRepr_ShapeAspect &aPath);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect Path() const;
-		%feature("autodoc", "1");
-		void SetPath(const Handle_StepRepr_ShapeAspect &Path);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_DimensionalSizeWithPath {
-	Handle_StepShape_DimensionalSizeWithPath GetHandle() {
-	return *(Handle_StepShape_DimensionalSizeWithPath*) &$self;
-	}
-};
-%extend StepShape_DimensionalSizeWithPath {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_DimensionalSizeWithPath::~StepShape_DimensionalSizeWithPath %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_DimensionalSizeWithPath {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8462,7 +8527,7 @@ class StepShape_HArray1OfConnectedFaceSet : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfConnectedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_HArray1OfConnectedFaceSet::~StepShape_HArray1OfConnectedFaceSet %{
@@ -8475,57 +8540,6 @@ def __del__(self):
 %}
 
 %extend StepShape_HArray1OfConnectedFaceSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
-class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_MeasureValueMember &aValueComponent, const StepBasic_Unit &aUnitComponent, const Handle_StepShape_HArray1OfValueQualifier &qualifiers);
-		%feature("autodoc", "1");
-		void SetMeasure(const Handle_StepBasic_MeasureWithUnit &Measure);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Measure() const;
-		%feature("autodoc", "1");
-		Handle_StepShape_HArray1OfValueQualifier Qualifiers() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbQualifiers() const;
-		%feature("autodoc", "1");
-		void SetQualifiers(const Handle_StepShape_HArray1OfValueQualifier &qualifiers);
-		%feature("autodoc", "1");
-		StepShape_ValueQualifier QualifiersValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void SetQualifiersValue(const Standard_Integer num, const StepShape_ValueQualifier &aqualifier);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
-	Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem GetHandle() {
-	return *(Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem*) &$self;
-	}
-};
-%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem::~StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8548,7 +8562,7 @@ class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRe
 };
 %extend StepShape_DefinitionalRepresentationAndShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_DefinitionalRepresentationAndShapeRepresentation::~StepShape_DefinitionalRepresentationAndShapeRepresentation %{
@@ -8561,6 +8575,35 @@ def __del__(self):
 %}
 
 %extend StepShape_DefinitionalRepresentationAndShapeRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepShape_ToleranceMethodDefinition;
+class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepShape_ToleranceMethodDefinition();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepShape_ToleranceValue ToleranceValue() const;
+		%feature("autodoc", "1");
+		Handle_StepShape_LimitsAndFits LimitsAndFits() const;
+
+};
+%feature("shadow") StepShape_ToleranceMethodDefinition::~StepShape_ToleranceMethodDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepShape_ToleranceMethodDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8595,7 +8638,7 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %extend StepShape_ExtrudedAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ExtrudedAreaSolid::~StepShape_ExtrudedAreaSolid %{
@@ -8693,7 +8736,7 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 };
 %extend StepShape_BrepWithVoids {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_BrepWithVoids::~StepShape_BrepWithVoids %{
@@ -8765,7 +8808,7 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 };
 %extend StepShape_SeamEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_SeamEdge::~StepShape_SeamEdge %{
@@ -8810,7 +8853,7 @@ class StepShape_ToleranceValue : public MMgt_TShared {
 };
 %extend StepShape_ToleranceValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ToleranceValue::~StepShape_ToleranceValue %{
@@ -8829,38 +8872,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepShape_Sphere;
-class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
+%nodefaultctor StepShape_HArray1OfFace;
+class StepShape_HArray1OfFace : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepShape_Sphere();
+		StepShape_HArray1OfFace(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		StepShape_HArray1OfFace(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepShape_Face &V);
 		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Real aRadius, const Handle_StepGeom_Point &aCentre);
+		void Init(const Handle_StepShape_Face &V);
 		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real aRadius);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void SetCentre(const Handle_StepGeom_Point &aCentre);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Handle_StepGeom_Point Centre() const;
+		void SetValue(const Standard_Integer Index, const Handle_StepShape_Face &Value);
+		%feature("autodoc", "1");
+		const Handle_StepShape_Face & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepShape_Face & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepShape_Array1OfFace & Array1() const;
+		%feature("autodoc", "1");
+		StepShape_Array1OfFace & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_Sphere {
-	Handle_StepShape_Sphere GetHandle() {
-	return *(Handle_StepShape_Sphere*) &$self;
+%extend StepShape_HArray1OfFace {
+	Handle_StepShape_HArray1OfFace GetHandle() {
+	return *(Handle_StepShape_HArray1OfFace*) &$self;
 	}
 };
-%extend StepShape_Sphere {
+%extend StepShape_HArray1OfFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_Sphere::~StepShape_Sphere %{
+%feature("shadow") StepShape_HArray1OfFace::~StepShape_HArray1OfFace %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -8869,39 +8920,33 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_Sphere {
+%extend StepShape_HArray1OfFace {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor StepShape_TypeQualifier;
-class StepShape_TypeQualifier : public MMgt_TShared {
+%nodefaultctor StepShape_ShapeRepresentationWithParameters;
+class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		StepShape_TypeQualifier();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &name);
+		StepShape_ShapeRepresentationWithParameters();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepShape_TypeQualifier {
-	Handle_StepShape_TypeQualifier GetHandle() {
-	return *(Handle_StepShape_TypeQualifier*) &$self;
+%extend StepShape_ShapeRepresentationWithParameters {
+	Handle_StepShape_ShapeRepresentationWithParameters GetHandle() {
+	return *(Handle_StepShape_ShapeRepresentationWithParameters*) &$self;
 	}
 };
-%extend StepShape_TypeQualifier {
+%extend StepShape_ShapeRepresentationWithParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") StepShape_TypeQualifier::~StepShape_TypeQualifier %{
+%feature("shadow") StepShape_ShapeRepresentationWithParameters::~StepShape_ShapeRepresentationWithParameters %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -8910,7 +8955,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepShape_TypeQualifier {
+%extend StepShape_ShapeRepresentationWithParameters {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8939,7 +8984,7 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 };
 %extend StepShape_DimensionalLocationWithPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_DimensionalLocationWithPath::~StepShape_DimensionalLocationWithPath %{
@@ -8992,7 +9037,7 @@ class StepShape_LimitsAndFits : public MMgt_TShared {
 };
 %extend StepShape_LimitsAndFits {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_LimitsAndFits::~StepShape_LimitsAndFits %{
@@ -9005,49 +9050,6 @@ def __del__(self):
 %}
 
 %extend StepShape_LimitsAndFits {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepShape_VertexLoop;
-class StepShape_VertexLoop : public StepShape_Loop {
-	public:
-		%feature("autodoc", "1");
-		StepShape_VertexLoop();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepShape_Vertex &aLoopVertex);
-		%feature("autodoc", "1");
-		void SetLoopVertex(const Handle_StepShape_Vertex &aLoopVertex);
-		%feature("autodoc", "1");
-		Handle_StepShape_Vertex LoopVertex() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepShape_VertexLoop {
-	Handle_StepShape_VertexLoop GetHandle() {
-	return *(Handle_StepShape_VertexLoop*) &$self;
-	}
-};
-%extend StepShape_VertexLoop {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepShape_VertexLoop::~StepShape_VertexLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepShape_VertexLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -9076,7 +9078,7 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 };
 %extend StepShape_AngularLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_AngularLocation::~StepShape_AngularLocation %{
@@ -9131,7 +9133,7 @@ class StepShape_OrientedPath : public StepShape_Path {
 };
 %extend StepShape_OrientedPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_OrientedPath::~StepShape_OrientedPath %{
@@ -9178,7 +9180,7 @@ class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentation
 };
 %extend StepShape_ShellBasedSurfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepShape_ShellBasedSurfaceModel::~StepShape_ShellBasedSurfaceModel %{

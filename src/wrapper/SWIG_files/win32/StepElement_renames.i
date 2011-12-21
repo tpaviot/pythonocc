@@ -23,3 +23,43 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_StepElement_CurveElementSectionDefinition::DownCast;
+%rename(DownCast) Handle_StepElement_CurveElementSectionDerivedDefinitions::DownCast;
+%rename(DownCast) Handle_StepElement_ElementDescriptor::DownCast;
+%rename(DownCast) Handle_StepElement_Surface3dElementDescriptor::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceSection::DownCast;
+%rename(DownCast) Handle_StepElement_HSequenceOfElementMaterial::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial::DownCast;
+%rename(DownCast) Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_HArray2OfSurfaceElementPurpose::DownCast;
+%rename(DownCast) Handle_StepElement_HArray2OfSurfaceElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue::DownCast;
+%rename(DownCast) Handle_StepElement_ElementAspectMember::DownCast;
+%rename(DownCast) Handle_StepElement_CurveElementFreedomMember::DownCast;
+%rename(DownCast) Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceElementProperty::DownCast;
+%rename(DownCast) Handle_StepElement_HArray2OfCurveElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceSectionField::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceSectionFieldConstant::DownCast;
+%rename(DownCast) Handle_StepElement_HSequenceOfCurveElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfCurveElementEndReleasePacket::DownCast;
+%rename(DownCast) Handle_StepElement_UniformSurfaceSection::DownCast;
+%rename(DownCast) Handle_StepElement_VolumeElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_CurveElementEndReleasePacket::DownCast;
+%rename(DownCast) Handle_StepElement_MeasureOrUnspecifiedValueMember::DownCast;
+%rename(DownCast) Handle_StepElement_HSequenceOfCurveElementSectionDefinition::DownCast;
+%rename(DownCast) Handle_StepElement_HSequenceOfSurfaceElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfSurfaceSection::DownCast;
+%rename(DownCast) Handle_StepElement_CurveElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_Volume3dElementDescriptor::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceSectionFieldVarying::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfCurveElementSectionDefinition::DownCast;
+%rename(DownCast) Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition::DownCast;
+%rename(DownCast) Handle_StepElement_AnalysisItemWithinRepresentation::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfVolumeElementPurposeMember::DownCast;
+%rename(DownCast) Handle_StepElement_ElementMaterial::DownCast;
+%rename(DownCast) Handle_StepElement_Curve3dElementDescriptor::DownCast;
+%rename(DownCast) Handle_StepElement_HArray1OfVolumeElementPurpose::DownCast;

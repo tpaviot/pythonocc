@@ -166,6 +166,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;
+class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_ListNodeOfListOfSequenceOfInteger(const TColStd_SequenceOfInteger &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TColStd_SequenceOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	Handle_GraphTools_ListNodeOfListOfSequenceOfInteger GetHandle() {
+	return *(Handle_GraphTools_ListNodeOfListOfSequenceOfInteger*) &$self;
+	}
+};
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GraphTools_ListNodeOfListOfSequenceOfInteger::~GraphTools_ListNodeOfListOfSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GraphTools_ListOfSequenceOfInteger;
 class GraphTools_ListOfSequenceOfInteger {
 	public:
@@ -266,6 +303,76 @@ def __del__(self):
 };
 
 
+%nodefaultctor GraphTools_TSNode;
+class GraphTools_TSNode {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_TSNode();
+		%feature("autodoc", "1");
+		void Reset();
+		%feature("autodoc", "1");
+		void IncreaseRef();
+		%feature("autodoc", "1");
+		void DecreaseRef();
+		%feature("autodoc", "1");
+		Standard_Integer NbRef() const;
+		%feature("autodoc", "1");
+		void AddSuccessor(const Standard_Integer s);
+		%feature("autodoc", "1");
+		Standard_Integer NbSuccessors() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetSuccessor(const Standard_Integer index) const;
+
+};
+%feature("shadow") GraphTools_TSNode::~GraphTools_TSNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GraphTools_TSNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
+class GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	public:
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfListOfSequenceOfInteger();
+		%feature("autodoc", "1");
+		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
+		%feature("autodoc", "1");
+		void Initialize(const GraphTools_ListOfSequenceOfInteger &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TColStd_SequenceOfInteger & Value() const;
+
+};
+%feature("shadow") GraphTools_ListIteratorOfListOfSequenceOfInteger::~GraphTools_ListIteratorOfListOfSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GraphTools_SCList;
 class GraphTools_SCList {
 	public:
@@ -327,76 +434,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
-class GraphTools_ListIteratorOfListOfSequenceOfInteger {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfListOfSequenceOfInteger();
-		%feature("autodoc", "1");
-		GraphTools_ListIteratorOfListOfSequenceOfInteger(const GraphTools_ListOfSequenceOfInteger &L);
-		%feature("autodoc", "1");
-		void Initialize(const GraphTools_ListOfSequenceOfInteger &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TColStd_SequenceOfInteger & Value() const;
-
-};
-%feature("shadow") GraphTools_ListIteratorOfListOfSequenceOfInteger::~GraphTools_ListIteratorOfListOfSequenceOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GraphTools_TSNode;
-class GraphTools_TSNode {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_TSNode();
-		%feature("autodoc", "1");
-		void Reset();
-		%feature("autodoc", "1");
-		void IncreaseRef();
-		%feature("autodoc", "1");
-		void DecreaseRef();
-		%feature("autodoc", "1");
-		Standard_Integer NbRef() const;
-		%feature("autodoc", "1");
-		void AddSuccessor(const Standard_Integer s);
-		%feature("autodoc", "1");
-		Standard_Integer NbSuccessors() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetSuccessor(const Standard_Integer index) const;
-
-};
-%feature("shadow") GraphTools_TSNode::~GraphTools_TSNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GraphTools_TSNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GraphTools_ListNodeOfSCList;
 class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	public:
@@ -415,7 +452,7 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 };
 %extend GraphTools_ListNodeOfSCList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GraphTools_ListNodeOfSCList::~GraphTools_ListNodeOfSCList %{
@@ -499,7 +536,7 @@ class GraphTools_SC : public MMgt_TShared {
 };
 %extend GraphTools_SC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GraphTools_SC::~GraphTools_SC %{
@@ -512,43 +549,6 @@ def __del__(self):
 %}
 
 %extend GraphTools_SC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;
-class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GraphTools_ListNodeOfListOfSequenceOfInteger(const TColStd_SequenceOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TColStd_SequenceOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
-	Handle_GraphTools_ListNodeOfListOfSequenceOfInteger GetHandle() {
-	return *(Handle_GraphTools_ListNodeOfListOfSequenceOfInteger*) &$self;
-	}
-};
-%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GraphTools_ListNodeOfListOfSequenceOfInteger::~GraphTools_ListNodeOfListOfSequenceOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

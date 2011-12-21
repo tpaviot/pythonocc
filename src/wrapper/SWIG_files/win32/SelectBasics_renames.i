@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_SelectBasics_ListNodeOfListOfBox2d::DownCast;
+%rename(DownCast) Handle_SelectBasics_EntityOwner::DownCast;
+%rename(DownCast) Handle_SelectBasics_ListNodeOfListOfSensitive::DownCast;
+%rename(DownCast) Handle_SelectBasics_SensitiveEntity::DownCast;
+%rename(DownCast) Handle_SelectBasics_SequenceNodeOfSequenceOfOwner::DownCast;
+%rename(MatchSegments) SelectBasics_BasicTool::MatchSegments;
+%rename(MatchSegment) SelectBasics_BasicTool::MatchSegment;
+%rename(AutoInter) SelectBasics_BasicTool::AutoInter;
+%rename(MatchPolyg2d) SelectBasics_BasicTool::MatchPolyg2d;
+%rename(MaxOwnerPriority) SelectBasics::MaxOwnerPriority;
+%rename(MinOwnerPriority) SelectBasics::MinOwnerPriority;

@@ -166,44 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESControl_IGESBoundary;
-class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary();
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary(const Handle_IGESControl_IGESBoundary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary & operator=(const Handle_IGESControl_IGESBoundary &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESControl_IGESBoundary DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESControl_IGESBoundary {
-	IGESControl_IGESBoundary* GetObject() {
-	return (IGESControl_IGESBoundary*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESControl_IGESBoundary::~Handle_IGESControl_IGESBoundary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESControl_IGESBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESControl_ToolContainer;
 class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer {
 	public:
@@ -242,26 +204,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESControl_Reader;
-class IGESControl_Reader : public XSControl_Reader {
+%nodefaultctor Handle_IGESControl_IGESBoundary;
+class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	public:
 		%feature("autodoc", "1");
-		IGESControl_Reader();
+		Handle_IGESControl_IGESBoundary();
 		%feature("autodoc", "1");
-		IGESControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		Handle_IGESControl_IGESBoundary(const Handle_IGESControl_IGESBoundary &aHandle);
 		%feature("autodoc", "1");
-		void SetReadVisible(const Standard_Boolean ReadRoot);
+		Handle_IGESControl_IGESBoundary(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean GetReadVisible() const;
+		Handle_IGESControl_IGESBoundary & operator=(const Handle_IGESControl_IGESBoundary &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESModel IGESModel() const;
+		Handle_IGESControl_IGESBoundary & operator=(const IGESControl_IGESBoundary *anItem);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbRootsForTransfer();
-		%feature("autodoc", "1");
-		void PrintTransferInfo(const IFSelect_PrintFail failwarn, const IFSelect_PrintCount mode) const;
+		static		Handle_IGESControl_IGESBoundary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") IGESControl_Reader::~IGESControl_Reader %{
+%extend Handle_IGESControl_IGESBoundary {
+	IGESControl_IGESBoundary* GetObject() {
+	return (IGESControl_IGESBoundary*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESControl_IGESBoundary::~Handle_IGESControl_IGESBoundary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -270,7 +235,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESControl_Reader {
+%extend Handle_IGESControl_IGESBoundary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -295,7 +260,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %extend IGESControl_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
@@ -340,7 +305,7 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %extend IGESControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESControl_Controller::~IGESControl_Controller %{
@@ -375,7 +340,7 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 };
 %extend IGESControl_AlgoContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
@@ -414,7 +379,7 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 };
 %extend IGESControl_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
@@ -427,6 +392,41 @@ def __del__(self):
 %}
 
 %extend IGESControl_IGESBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESControl_Reader;
+class IGESControl_Reader : public XSControl_Reader {
+	public:
+		%feature("autodoc", "1");
+		IGESControl_Reader();
+		%feature("autodoc", "1");
+		IGESControl_Reader(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		%feature("autodoc", "1");
+		void SetReadVisible(const Standard_Boolean ReadRoot);
+		%feature("autodoc", "1");
+		Standard_Boolean GetReadVisible() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESModel IGESModel() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbRootsForTransfer();
+		%feature("autodoc", "1");
+		void PrintTransferInfo(const IFSelect_PrintFail failwarn, const IFSelect_PrintCount mode) const;
+
+};
+%feature("shadow") IGESControl_Reader::~IGESControl_Reader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESControl_Reader {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -500,7 +500,7 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend IGESControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{

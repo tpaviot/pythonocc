@@ -47,11 +47,11 @@ $HeaderURL$
 
 #include<gp_Ax2.hxx>
 #include<TopoDS_Shape.hxx>
+#include<gp_Ax1.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Shell.hxx>
-#include<gp_Ax1.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 %}

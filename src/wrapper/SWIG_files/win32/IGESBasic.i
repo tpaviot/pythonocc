@@ -356,6 +356,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXYZ;
+class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ(const Handle_IGESBasic_HArray1OfHArray1OfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const Handle_IGESBasic_HArray1OfHArray1OfXYZ &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESBasic_HArray1OfHArray1OfXYZ DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
+	IGESBasic_HArray1OfHArray1OfXYZ* GetObject() {
+	return (IGESBasic_HArray1OfHArray1OfXYZ*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfXYZ::~Handle_IGESBasic_HArray1OfHArray1OfXYZ %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESBasic_Hierarchy;
 class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 	public:
@@ -394,44 +432,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfInteger;
-class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfInteger();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfInteger(const Handle_IGESBasic_HArray1OfHArray1OfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfInteger(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const Handle_IGESBasic_HArray1OfHArray1OfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESBasic_HArray1OfHArray1OfInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
-	IGESBasic_HArray1OfHArray1OfInteger* GetObject() {
-	return (IGESBasic_HArray1OfHArray1OfInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfInteger::~Handle_IGESBasic_HArray1OfHArray1OfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESBasic_SingularSubfigure;
 class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 	public:
@@ -464,6 +464,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESBasic_SingularSubfigure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfInteger;
+class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger(const Handle_IGESBasic_HArray1OfHArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const Handle_IGESBasic_HArray1OfHArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_HArray1OfHArray1OfInteger & operator=(const IGESBasic_HArray1OfHArray1OfInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESBasic_HArray1OfHArray1OfInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
+	IGESBasic_HArray1OfHArray1OfInteger* GetObject() {
+	return (IGESBasic_HArray1OfHArray1OfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfInteger::~Handle_IGESBasic_HArray1OfHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -540,6 +578,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESBasic_ExternalRefFileName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESBasic_OrderedGroupWithoutBackP;
+class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP(const IGESBasic_OrderedGroupWithoutBackP *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const IGESBasic_OrderedGroupWithoutBackP *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESBasic_OrderedGroupWithoutBackP DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_OrderedGroupWithoutBackP {
+	IGESBasic_OrderedGroupWithoutBackP* GetObject() {
+	return (IGESBasic_OrderedGroupWithoutBackP*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESBasic_OrderedGroupWithoutBackP::~Handle_IGESBasic_OrderedGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESBasic_OrderedGroupWithoutBackP {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -698,29 +774,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXYZ;
-class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
+%nodefaultctor Handle_IGESBasic_ExternalRefFileIndex;
+class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfXYZ();
+		Handle_IGESBasic_ExternalRefFileIndex();
 		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfXYZ(const Handle_IGESBasic_HArray1OfHArray1OfXYZ &aHandle);
+		Handle_IGESBasic_ExternalRefFileIndex(const Handle_IGESBasic_ExternalRefFileIndex &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfXYZ(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
+		Handle_IGESBasic_ExternalRefFileIndex(const IGESBasic_ExternalRefFileIndex *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const Handle_IGESBasic_HArray1OfHArray1OfXYZ &aHandle);
+		Handle_IGESBasic_ExternalRefFileIndex & operator=(const Handle_IGESBasic_ExternalRefFileIndex &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESBasic_HArray1OfHArray1OfXYZ & operator=(const IGESBasic_HArray1OfHArray1OfXYZ *anItem);
+		Handle_IGESBasic_ExternalRefFileIndex & operator=(const IGESBasic_ExternalRefFileIndex *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESBasic_HArray1OfHArray1OfXYZ DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESBasic_ExternalRefFileIndex DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
-	IGESBasic_HArray1OfHArray1OfXYZ* GetObject() {
-	return (IGESBasic_HArray1OfHArray1OfXYZ*)$self->Access();
+%extend Handle_IGESBasic_ExternalRefFileIndex {
+	IGESBasic_ExternalRefFileIndex* GetObject() {
+	return (IGESBasic_ExternalRefFileIndex*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESBasic_HArray1OfHArray1OfXYZ::~Handle_IGESBasic_HArray1OfHArray1OfXYZ %{
+%feature("shadow") Handle_IGESBasic_ExternalRefFileIndex::~Handle_IGESBasic_ExternalRefFileIndex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -729,7 +805,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
+%extend Handle_IGESBasic_ExternalRefFileIndex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESBasic_SubfigureDef;
+class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef(const Handle_IGESBasic_SubfigureDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef(const IGESBasic_SubfigureDef *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef & operator=(const Handle_IGESBasic_SubfigureDef &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef & operator=(const IGESBasic_SubfigureDef *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESBasic_SubfigureDef DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_SubfigureDef {
+	IGESBasic_SubfigureDef* GetObject() {
+	return (IGESBasic_SubfigureDef*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESBasic_SubfigureDef::~Handle_IGESBasic_SubfigureDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESBasic_SubfigureDef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -806,82 +920,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESBasic_ExternalRefName {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESBasic_OrderedGroupWithoutBackP;
-class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESBasic_OrderedGroupWithoutBackP();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_OrderedGroupWithoutBackP(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_OrderedGroupWithoutBackP(const IGESBasic_OrderedGroupWithoutBackP *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const Handle_IGESBasic_OrderedGroupWithoutBackP &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_OrderedGroupWithoutBackP & operator=(const IGESBasic_OrderedGroupWithoutBackP *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESBasic_OrderedGroupWithoutBackP DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_OrderedGroupWithoutBackP {
-	IGESBasic_OrderedGroupWithoutBackP* GetObject() {
-	return (IGESBasic_OrderedGroupWithoutBackP*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESBasic_OrderedGroupWithoutBackP::~Handle_IGESBasic_OrderedGroupWithoutBackP %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESBasic_OrderedGroupWithoutBackP {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESBasic_SubfigureDef;
-class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef(const Handle_IGESBasic_SubfigureDef &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef(const IGESBasic_SubfigureDef *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef & operator=(const Handle_IGESBasic_SubfigureDef &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef & operator=(const IGESBasic_SubfigureDef *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESBasic_SubfigureDef DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_SubfigureDef {
-	IGESBasic_SubfigureDef* GetObject() {
-	return (IGESBasic_SubfigureDef*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESBasic_SubfigureDef::~Handle_IGESBasic_SubfigureDef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESBasic_SubfigureDef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1002,44 +1040,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESBasic_ExternalRefFileIndex;
-class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESBasic_ExternalRefFileIndex();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_ExternalRefFileIndex(const Handle_IGESBasic_ExternalRefFileIndex &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_ExternalRefFileIndex(const IGESBasic_ExternalRefFileIndex *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_ExternalRefFileIndex & operator=(const Handle_IGESBasic_ExternalRefFileIndex &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_ExternalRefFileIndex & operator=(const IGESBasic_ExternalRefFileIndex *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESBasic_ExternalRefFileIndex DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_ExternalRefFileIndex {
-	IGESBasic_ExternalRefFileIndex* GetObject() {
-	return (IGESBasic_ExternalRefFileIndex*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESBasic_ExternalRefFileIndex::~Handle_IGESBasic_ExternalRefFileIndex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESBasic_ExternalRefFileIndex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESBasic_ExternalRefFile;
 class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 	public:
@@ -1117,6 +1117,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESBasic_GeneralModule;
+class IGESBasic_GeneralModule : public IGESData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_GeneralModule();
+		%feature("autodoc", "1");
+		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
+		%feature("autodoc", "1");
+		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_GeneralModule {
+	Handle_IGESBasic_GeneralModule GetHandle() {
+	return *(Handle_IGESBasic_GeneralModule*) &$self;
+	}
+};
+%extend IGESBasic_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_GeneralModule::~IGESBasic_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESBasic_ExternalRefName;
 class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 	public:
@@ -1137,7 +1184,7 @@ class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 };
 %extend IGESBasic_ExternalRefName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ExternalRefName::~IGESBasic_ExternalRefName %{
@@ -1150,100 +1197,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_ExternalRefName {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_Array2OfHArray1OfReal;
-class IGESBasic_Array2OfHArray1OfReal {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_Array2OfHArray1OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		IGESBasic_Array2OfHArray1OfReal(const Handle_TColStd_HArray1OfReal &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfReal &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const IGESBasic_Array2OfHArray1OfReal & Assign(const IGESBasic_Array2OfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		const IGESBasic_Array2OfHArray1OfReal & operator=(const IGESBasic_Array2OfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfReal &Value);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") IGESBasic_Array2OfHArray1OfReal::~IGESBasic_Array2OfHArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_Array2OfHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_ToolGroup;
-class IGESBasic_ToolGroup {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_ToolGroup();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESBasic_Group &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESBasic_Group &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESBasic_Group &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESBasic_Group &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESBasic_Group &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESBasic_Group &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESBasic_Group &entfrom, const Handle_IGESBasic_Group &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESBasic_Group &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESBasic_ToolGroup::~IGESBasic_ToolGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_ToolGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1276,7 +1229,7 @@ class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 };
 %extend IGESBasic_HArray1OfHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray1OfHArray1OfReal::~IGESBasic_HArray1OfHArray1OfReal %{
@@ -1289,98 +1242,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_HArray1OfHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_Group;
-class IGESBasic_Group : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_Group();
-		%feature("autodoc", "1");
-		IGESBasic_Group(const Standard_Integer nb);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &allEntities);
-		%feature("autodoc", "1");
-		void SetOrdered(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		void SetWithoutBackP(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOrdered() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsWithoutBackP() const;
-		%feature("autodoc", "1");
-		void SetUser(const Standard_Integer type, const Standard_Integer form);
-		%feature("autodoc", "1");
-		void SetNb(const Standard_Integer nb);
-		%feature("autodoc", "1");
-		Standard_Integer NbEntities() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Entity(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESData_IGESEntity &ent);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESBasic_Group {
-	Handle_IGESBasic_Group GetHandle() {
-	return *(Handle_IGESBasic_Group*) &$self;
-	}
-};
-%extend IGESBasic_Group {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_Group::~IGESBasic_Group %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_Group {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_GroupWithoutBackP;
-class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_GroupWithoutBackP();
-
-};
-%extend IGESBasic_GroupWithoutBackP {
-	Handle_IGESBasic_GroupWithoutBackP GetHandle() {
-	return *(Handle_IGESBasic_GroupWithoutBackP*) &$self;
-	}
-};
-%extend IGESBasic_GroupWithoutBackP {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_GroupWithoutBackP::~IGESBasic_GroupWithoutBackP %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_GroupWithoutBackP {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1407,7 +1268,7 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESBasic_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_SpecificModule::~IGESBasic_SpecificModule %{
@@ -1463,6 +1324,65 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESBasic_Group;
+class IGESBasic_Group : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_Group();
+		%feature("autodoc", "1");
+		IGESBasic_Group(const Standard_Integer nb);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &allEntities);
+		%feature("autodoc", "1");
+		void SetOrdered(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		void SetWithoutBackP(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOrdered() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsWithoutBackP() const;
+		%feature("autodoc", "1");
+		void SetUser(const Standard_Integer type, const Standard_Integer form);
+		%feature("autodoc", "1");
+		void SetNb(const Standard_Integer nb);
+		%feature("autodoc", "1");
+		Standard_Integer NbEntities() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Entity(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESData_IGESEntity &ent);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_Group {
+	Handle_IGESBasic_Group GetHandle() {
+	return *(Handle_IGESBasic_Group*) &$self;
+	}
+};
+%extend IGESBasic_Group {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_Group::~IGESBasic_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_Group {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESBasic_HArray1OfHArray1OfXYZ;
 class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 	public:
@@ -1489,7 +1409,7 @@ class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 };
 %extend IGESBasic_HArray1OfHArray1OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray1OfHArray1OfXYZ::~IGESBasic_HArray1OfHArray1OfXYZ %{
@@ -1534,7 +1454,7 @@ class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 };
 %extend IGESBasic_HArray1OfHArray1OfIGESEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray1OfHArray1OfIGESEntity::~IGESBasic_HArray1OfHArray1OfIGESEntity %{
@@ -1553,38 +1473,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESBasic_GeneralModule;
-class IGESBasic_GeneralModule : public IGESData_GeneralModule {
+%nodefaultctor IGESBasic_HArray1OfHArray1OfInteger;
+class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		IGESBasic_GeneralModule();
+		IGESBasic_HArray1OfHArray1OfInteger(const Standard_Integer low, const Standard_Integer up);
 		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
+		void SetValue(const Standard_Integer num, const Handle_TColStd_HArray1OfInteger &val);
 		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		Handle_TColStd_HArray1OfInteger Value(const Standard_Integer num) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESBasic_GeneralModule {
-	Handle_IGESBasic_GeneralModule GetHandle() {
-	return *(Handle_IGESBasic_GeneralModule*) &$self;
+%extend IGESBasic_HArray1OfHArray1OfInteger {
+	Handle_IGESBasic_HArray1OfHArray1OfInteger GetHandle() {
+	return *(Handle_IGESBasic_HArray1OfHArray1OfInteger*) &$self;
 	}
 };
-%extend IGESBasic_GeneralModule {
+%extend IGESBasic_HArray1OfHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") IGESBasic_GeneralModule::~IGESBasic_GeneralModule %{
+%feature("shadow") IGESBasic_HArray1OfHArray1OfInteger::~IGESBasic_HArray1OfHArray1OfInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1593,7 +1511,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESBasic_GeneralModule {
+%extend IGESBasic_HArray1OfHArray1OfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1616,7 +1534,7 @@ class IGESBasic_OrderedGroup : public IGESBasic_Group {
 };
 %extend IGESBasic_OrderedGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_OrderedGroup::~IGESBasic_OrderedGroup %{
@@ -1629,49 +1547,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_OrderedGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_AssocGroupType;
-class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_AssocGroupType();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbDataFields, const Standard_Integer aType, const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Standard_Integer NbData() const;
-		%feature("autodoc", "1");
-		Standard_Integer AssocType() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESBasic_AssocGroupType {
-	Handle_IGESBasic_AssocGroupType GetHandle() {
-	return *(Handle_IGESBasic_AssocGroupType*) &$self;
-	}
-};
-%extend IGESBasic_AssocGroupType {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_AssocGroupType::~IGESBasic_AssocGroupType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_AssocGroupType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1700,7 +1575,7 @@ class IGESBasic_Name : public IGESData_NameEntity {
 };
 %extend IGESBasic_Name {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_Name::~IGESBasic_Name %{
@@ -1713,6 +1588,43 @@ def __del__(self):
 %}
 
 %extend IGESBasic_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_ToolExternalRefFileName;
+class IGESBasic_ToolExternalRefFileName {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_ToolExternalRefFileName();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESBasic_ExternalRefFileName &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESBasic_ExternalRefFileName &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESBasic_ExternalRefFileName &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESBasic_ExternalRefFileName &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESBasic_ExternalRefFileName &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESBasic_ExternalRefFileName &entfrom, const Handle_IGESBasic_ExternalRefFileName &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESBasic_ExternalRefFileName &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESBasic_ToolExternalRefFileName::~IGESBasic_ToolExternalRefFileName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_ToolExternalRefFileName {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1747,7 +1659,7 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 };
 %extend IGESBasic_SubfigureDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_SubfigureDef::~IGESBasic_SubfigureDef %{
@@ -1760,6 +1672,45 @@ def __del__(self):
 %}
 
 %extend IGESBasic_SubfigureDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_ToolName;
+class IGESBasic_ToolName {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_ToolName();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESBasic_Name &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESBasic_Name &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESBasic_Name &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESBasic_Name &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESBasic_Name &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESBasic_Name &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESBasic_Name &entfrom, const Handle_IGESBasic_Name &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESBasic_Name &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESBasic_ToolName::~IGESBasic_ToolName %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_ToolName {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1842,6 +1793,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESBasic_AssocGroupType;
+class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_AssocGroupType();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbDataFields, const Standard_Integer aType, const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Standard_Integer NbData() const;
+		%feature("autodoc", "1");
+		Standard_Integer AssocType() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_AssocGroupType {
+	Handle_IGESBasic_AssocGroupType GetHandle() {
+	return *(Handle_IGESBasic_AssocGroupType*) &$self;
+	}
+};
+%extend IGESBasic_AssocGroupType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_AssocGroupType::~IGESBasic_AssocGroupType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_AssocGroupType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESBasic_ToolSubfigureDef;
 class IGESBasic_ToolSubfigureDef {
 	public:
@@ -1918,51 +1912,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESBasic_HArray1OfHArray1OfInteger;
-class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_HArray1OfHArray1OfInteger(const Standard_Integer low, const Standard_Integer up);
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer num, const Handle_TColStd_HArray1OfInteger &val);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger Value(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESBasic_HArray1OfHArray1OfInteger {
-	Handle_IGESBasic_HArray1OfHArray1OfInteger GetHandle() {
-	return *(Handle_IGESBasic_HArray1OfHArray1OfInteger*) &$self;
-	}
-};
-%extend IGESBasic_HArray1OfHArray1OfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_HArray1OfHArray1OfInteger::~IGESBasic_HArray1OfHArray1OfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_HArray1OfHArray1OfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESBasic_ToolOrderedGroupWithoutBackP;
 class IGESBasic_ToolOrderedGroupWithoutBackP {
 	public:
@@ -1996,6 +1945,45 @@ def __del__(self):
 %}
 
 %extend IGESBasic_ToolOrderedGroupWithoutBackP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_ToolGroup;
+class IGESBasic_ToolGroup {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_ToolGroup();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESBasic_Group &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESBasic_Group &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESBasic_Group &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESBasic_Group &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESBasic_Group &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESBasic_Group &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESBasic_Group &entfrom, const Handle_IGESBasic_Group &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESBasic_Group &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESBasic_ToolGroup::~IGESBasic_ToolGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_ToolGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2069,7 +2057,7 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 };
 %extend IGESBasic_SingularSubfigure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_SingularSubfigure::~IGESBasic_SingularSubfigure %{
@@ -2133,6 +2121,61 @@ def __del__(self):
 %}
 
 %extend IGESBasic_Array1OfLineFontEntity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_Array2OfHArray1OfReal;
+class IGESBasic_Array2OfHArray1OfReal {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_Array2OfHArray1OfReal(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		IGESBasic_Array2OfHArray1OfReal(const Handle_TColStd_HArray1OfReal &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfReal &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const IGESBasic_Array2OfHArray1OfReal & Assign(const IGESBasic_Array2OfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		const IGESBasic_Array2OfHArray1OfReal & operator=(const IGESBasic_Array2OfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfReal &Value);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%feature("shadow") IGESBasic_Array2OfHArray1OfReal::~IGESBasic_Array2OfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_Array2OfHArray1OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2212,7 +2255,7 @@ class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
 };
 %extend IGESBasic_HArray1OfLineFontEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray1OfLineFontEntity::~IGESBasic_HArray1OfLineFontEntity %{
@@ -2253,7 +2296,7 @@ class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESBasic_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ReadWriteModule::~IGESBasic_ReadWriteModule %{
@@ -2296,7 +2339,7 @@ class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
 };
 %extend IGESBasic_ExternalRefFileName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ExternalRefFileName::~IGESBasic_ExternalRefFileName %{
@@ -2309,6 +2352,47 @@ def __del__(self):
 %}
 
 %extend IGESBasic_ExternalRefFileName {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_ExternalReferenceFile;
+class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_ExternalReferenceFile();
+		%feature("autodoc", "1");
+		void Init(const Handle_Interface_HArray1OfHAsciiString &aNameArray);
+		%feature("autodoc", "1");
+		Standard_Integer NbListEntries() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_ExternalReferenceFile {
+	Handle_IGESBasic_ExternalReferenceFile GetHandle() {
+	return *(Handle_IGESBasic_ExternalReferenceFile*) &$self;
+	}
+};
+%extend IGESBasic_ExternalReferenceFile {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_ExternalReferenceFile::~IGESBasic_ExternalReferenceFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_ExternalReferenceFile {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2335,7 +2419,7 @@ class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 };
 %extend IGESBasic_ExternalRefFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ExternalRefFile::~IGESBasic_ExternalRefFile %{
@@ -2386,7 +2470,7 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 };
 %extend IGESBasic_Hierarchy {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_Hierarchy::~IGESBasic_Hierarchy %{
@@ -2436,47 +2520,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_ToolExternalRefFileIndex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_ExternalReferenceFile;
-class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_ExternalReferenceFile();
-		%feature("autodoc", "1");
-		void Init(const Handle_Interface_HArray1OfHAsciiString &aNameArray);
-		%feature("autodoc", "1");
-		Standard_Integer NbListEntries() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESBasic_ExternalReferenceFile {
-	Handle_IGESBasic_ExternalReferenceFile GetHandle() {
-	return *(Handle_IGESBasic_ExternalReferenceFile*) &$self;
-	}
-};
-%extend IGESBasic_ExternalReferenceFile {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_ExternalReferenceFile::~IGESBasic_ExternalReferenceFile %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_ExternalReferenceFile {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2534,7 +2577,7 @@ class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
 };
 %extend IGESBasic_ExternalRefFileIndex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ExternalRefFileIndex::~IGESBasic_ExternalRefFileIndex %{
@@ -2579,7 +2622,7 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 };
 %extend IGESBasic_SingleParent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_SingleParent::~IGESBasic_SingleParent %{
@@ -2635,43 +2678,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESBasic_ToolExternalRefFileName;
-class IGESBasic_ToolExternalRefFileName {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_ToolExternalRefFileName();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESBasic_ExternalRefFileName &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESBasic_ExternalRefFileName &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESBasic_ExternalRefFileName &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESBasic_ExternalRefFileName &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESBasic_ExternalRefFileName &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESBasic_ExternalRefFileName &entfrom, const Handle_IGESBasic_ExternalRefFileName &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESBasic_ExternalRefFileName &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESBasic_ToolExternalRefFileName::~IGESBasic_ToolExternalRefFileName %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_ToolExternalRefFileName {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESBasic_HArray2OfHArray1OfReal;
 class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 	public:
@@ -2714,7 +2720,7 @@ class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 };
 %extend IGESBasic_HArray2OfHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray2OfHArray1OfReal::~IGESBasic_HArray2OfHArray1OfReal %{
@@ -2727,41 +2733,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_HArray2OfHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_OrderedGroupWithoutBackP;
-class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_OrderedGroupWithoutBackP();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESBasic_OrderedGroupWithoutBackP {
-	Handle_IGESBasic_OrderedGroupWithoutBackP GetHandle() {
-	return *(Handle_IGESBasic_OrderedGroupWithoutBackP*) &$self;
-	}
-};
-%extend IGESBasic_OrderedGroupWithoutBackP {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") IGESBasic_OrderedGroupWithoutBackP::~IGESBasic_OrderedGroupWithoutBackP %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_OrderedGroupWithoutBackP {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2794,7 +2765,7 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 };
 %extend IGESBasic_HArray1OfHArray1OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_HArray1OfHArray1OfXY::~IGESBasic_HArray1OfHArray1OfXY %{
@@ -2852,6 +2823,76 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESBasic_GroupWithoutBackP;
+class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_GroupWithoutBackP();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_GroupWithoutBackP {
+	Handle_IGESBasic_GroupWithoutBackP GetHandle() {
+	return *(Handle_IGESBasic_GroupWithoutBackP*) &$self;
+	}
+};
+%extend IGESBasic_GroupWithoutBackP {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_GroupWithoutBackP::~IGESBasic_GroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_GroupWithoutBackP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESBasic_OrderedGroupWithoutBackP;
+class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
+	public:
+		%feature("autodoc", "1");
+		IGESBasic_OrderedGroupWithoutBackP();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESBasic_OrderedGroupWithoutBackP {
+	Handle_IGESBasic_OrderedGroupWithoutBackP GetHandle() {
+	return *(Handle_IGESBasic_OrderedGroupWithoutBackP*) &$self;
+	}
+};
+%extend IGESBasic_OrderedGroupWithoutBackP {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") IGESBasic_OrderedGroupWithoutBackP::~IGESBasic_OrderedGroupWithoutBackP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESBasic_OrderedGroupWithoutBackP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESBasic_ExternalRefLibName;
 class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 	public:
@@ -2874,7 +2915,7 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 };
 %extend IGESBasic_ExternalRefLibName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") IGESBasic_ExternalRefLibName::~IGESBasic_ExternalRefLibName %{
@@ -2924,45 +2965,6 @@ def __del__(self):
 %}
 
 %extend IGESBasic_ToolExternalReferenceFile {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESBasic_ToolName;
-class IGESBasic_ToolName {
-	public:
-		%feature("autodoc", "1");
-		IGESBasic_ToolName();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESBasic_Name &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESBasic_Name &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESBasic_Name &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESBasic_Name &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESBasic_Name &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESBasic_Name &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESBasic_Name &entfrom, const Handle_IGESBasic_Name &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESBasic_Name &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESBasic_ToolName::~IGESBasic_ToolName %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESBasic_ToolName {
 	void _kill_pointed() {
 		delete $self;
 	}

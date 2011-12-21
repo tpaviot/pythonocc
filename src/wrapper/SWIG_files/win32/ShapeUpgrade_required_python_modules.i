@@ -30,12 +30,12 @@ import GarbageCollector
 import TColStd
 import Standard
 import TColGeom
+import ShapeExtend
 import ShapeBuild
 import TopoDS
 import TopTools
 import Geom
-import ShapeExtend
+import TopAbs
 import TColGeom2d
 import ShapeAnalysis
-import TopAbs
 };

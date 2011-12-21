@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Add) BndLib_AddSurface::Add;
+%rename(Add) BndLib_Add3dCurve::Add;
+%rename(Add) BndLib::Add;
+%rename(Add) BndLib_Add2dCurve::Add;

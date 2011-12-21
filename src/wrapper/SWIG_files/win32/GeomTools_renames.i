@@ -23,3 +23,15 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomTools_UndefinedTypeHandler::DownCast;
+%rename(PrintCurve) GeomTools_CurveSet::PrintCurve;
+%rename(ReadCurve) GeomTools_CurveSet::ReadCurve;
+%rename(PrintSurface) GeomTools_SurfaceSet::PrintSurface;
+%rename(ReadSurface) GeomTools_SurfaceSet::ReadSurface;
+%rename(PrintCurve2d) GeomTools_Curve2dSet::PrintCurve2d;
+%rename(ReadCurve2d) GeomTools_Curve2dSet::ReadCurve2d;
+%rename(Dump) GeomTools::Dump;
+%rename(Write) GeomTools::Write;
+%rename(Read) GeomTools::Read;
+%rename(SetUndefinedTypeHandler) GeomTools::SetUndefinedTypeHandler;
+%rename(GetUndefinedTypeHandler) GeomTools::GetUndefinedTypeHandler;

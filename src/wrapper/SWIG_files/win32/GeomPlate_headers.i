@@ -66,19 +66,19 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Adaptor3d_HCurveOnSurface.hxx>
+#include<gp_Vec.hxx>
 #include<TColStd_SequenceOfReal.hxx>
+#include<Handle_TColgp_HArray1OfPnt.hxx>
+#include<TColgp_SequenceOfVec.hxx>
+#include<Handle_Geom_Plane.hxx>
+#include<Handle_Geom_Line.hxx>
 #include<AdvApp2Var_Criterion.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<Handle_Law_Function.hxx>
 #include<gp_Pnt.hxx>
-#include<gp_Vec.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
-#include<Handle_TColgp_HArray1OfPnt.hxx>
-#include<TColgp_SequenceOfVec.hxx>
-#include<Handle_Geom_Plane.hxx>
-#include<Handle_Geom_Line.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Plate_Plate.hxx>
 #include<gp_Trsf.hxx>
@@ -89,7 +89,7 @@ $HeaderURL$
 #include<TColgp_SequenceOfXYZ.hxx>
 #include<AdvApp2Var_Patch.hxx>
 #include<AdvApp2Var_Context.hxx>
-#include<gp_Pnt2d.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColGeom2d_HArray1OfCurve.hxx>
+#include<gp_Pnt2d.hxx>
 %}

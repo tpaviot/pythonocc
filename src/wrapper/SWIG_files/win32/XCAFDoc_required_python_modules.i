@@ -32,8 +32,8 @@ import gp
 import TDF
 import TopTools
 import TCollection
+import Quantity
 import TColStd
 import TopoDS
 import TopLoc
-import Quantity
 };

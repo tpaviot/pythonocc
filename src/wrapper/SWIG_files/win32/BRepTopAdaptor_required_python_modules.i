@@ -31,6 +31,6 @@ import Standard
 import TopoDS
 import gp
 import TopAbs
-import Adaptor2d
 import Adaptor3d
+import Adaptor2d
 };

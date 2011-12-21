@@ -129,6 +129,97 @@ def __del__(self):
 };
 
 
+%nodefaultctor Adaptor2d_HCurve2d;
+class Adaptor2d_HCurve2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		const Adaptor2d_Curve2d & Curve2d() const;
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		Handle_Adaptor2d_HCurve2d Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, gp_Pnt2d & P) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
+		%feature("autodoc", "1");
+		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
+		%feature("autodoc", "1");
+		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Standard_Real R3d) const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType() const;
+		%feature("autodoc", "1");
+		gp_Lin2d Line() const;
+		%feature("autodoc", "1");
+		gp_Circ2d Circle() const;
+		%feature("autodoc", "1");
+		gp_Elips2d Ellipse() const;
+		%feature("autodoc", "1");
+		gp_Hypr2d Hyperbola() const;
+		%feature("autodoc", "1");
+		gp_Parab2d Parabola() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Adaptor2d_HCurve2d {
+	Handle_Adaptor2d_HCurve2d GetHandle() {
+	return *(Handle_Adaptor2d_HCurve2d*) &$self;
+	}
+};
+%extend Adaptor2d_HCurve2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Adaptor2d_HCurve2d::~Adaptor2d_HCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Adaptor2d_HCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Adaptor2d_Curve2d;
 class Adaptor2d_Curve2d {
 	public:
@@ -249,97 +340,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Adaptor2d_HCurve2d;
-class Adaptor2d_HCurve2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		const Adaptor2d_Curve2d & Curve2d() const;
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		Handle_Adaptor2d_HCurve2d Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt2d & P) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
-		%feature("autodoc", "1");
-		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
-		%feature("autodoc", "1");
-		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		gp_Lin2d Line() const;
-		%feature("autodoc", "1");
-		gp_Circ2d Circle() const;
-		%feature("autodoc", "1");
-		gp_Elips2d Ellipse() const;
-		%feature("autodoc", "1");
-		gp_Hypr2d Hyperbola() const;
-		%feature("autodoc", "1");
-		gp_Parab2d Parabola() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Adaptor2d_HCurve2d {
-	Handle_Adaptor2d_HCurve2d GetHandle() {
-	return *(Handle_Adaptor2d_HCurve2d*) &$self;
-	}
-};
-%extend Adaptor2d_HCurve2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Adaptor2d_HCurve2d::~Adaptor2d_HCurve2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Adaptor2d_HCurve2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Adaptor2d_HLine2d;
 class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 	public:
@@ -364,7 +364,7 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 };
 %extend Adaptor2d_HLine2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Adaptor2d_HLine2d::~Adaptor2d_HLine2d %{

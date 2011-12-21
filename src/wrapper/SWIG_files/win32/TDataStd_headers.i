@@ -153,13 +153,13 @@ $HeaderURL$
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfExtendedString.hxx>
 #include<Handle_TDF_DeltaOnModification.hxx>
-#include<TDataStd.hxx>
-#include<TDF_IDList.hxx>
 #include<Standard_GUID.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
 #include<TColStd_DataMapOfStringInteger.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TColStd_HPackedMapOfInteger.hxx>
+#include<TDataStd.hxx>
+#include<TDF_IDList.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_TColStd_HArray1OfByte.hxx>
 %}

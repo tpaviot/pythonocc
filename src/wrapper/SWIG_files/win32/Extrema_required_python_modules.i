@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import gp
 import Standard
-import GeomAbs
-import Geom
 import TColgp
+import GeomAbs
+import gp
+import Geom
 import Geom2d
 };

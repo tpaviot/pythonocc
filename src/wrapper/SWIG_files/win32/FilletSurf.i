@@ -50,12 +50,6 @@ $HeaderURL$
 %include FilletSurf_headers.i
 
 
-enum FilletSurf_StatusType {
-	FilletSurf_TwoExtremityOnEdge,
-	FilletSurf_OneExtremityOnEdge,
-	FilletSurf_NoExtremityOnEdge,
-	};
-
 enum FilletSurf_ErrorTypeStatus {
 	FilletSurf_EmptyList,
 	FilletSurf_EdgeNotG1,
@@ -63,6 +57,12 @@ enum FilletSurf_ErrorTypeStatus {
 	FilletSurf_EdgeNotOnShape,
 	FilletSurf_NotSharpEdge,
 	FilletSurf_PbFilletCompute,
+	};
+
+enum FilletSurf_StatusType {
+	FilletSurf_TwoExtremityOnEdge,
+	FilletSurf_OneExtremityOnEdge,
+	FilletSurf_NoExtremityOnEdge,
 	};
 
 enum FilletSurf_StatusDone {

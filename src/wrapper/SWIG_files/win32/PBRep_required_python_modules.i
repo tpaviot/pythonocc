@@ -29,9 +29,9 @@ $HeaderURL$
 import GarbageCollector
 import PTopLoc
 import Standard
-import PPoly
-import gp
 import PGeom
 import PGeom2d
+import gp
 import GeomAbs
+import PPoly
 };

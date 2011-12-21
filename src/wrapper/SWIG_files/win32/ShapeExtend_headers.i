@@ -212,6 +212,7 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<ShapeExtend.hxx>
 #include<gp_Trsf.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
@@ -220,7 +221,6 @@ $HeaderURL$
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
-#include<ShapeExtend.hxx>
 #include<Message_ListOfMsg.hxx>
 #include<Message_Msg.hxx>
 #include<Handle_TColGeom_HArray2OfSurface.hxx>

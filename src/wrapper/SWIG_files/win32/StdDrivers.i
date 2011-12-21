@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_StdDrivers_DocumentStorageDriver;
-class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver(const StdDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver & operator=(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdDrivers_DocumentStorageDriver & operator=(const StdDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StdDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdDrivers_DocumentStorageDriver {
-	StdDrivers_DocumentStorageDriver* GetObject() {
-	return (StdDrivers_DocumentStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StdDrivers_DocumentStorageDriver::~Handle_StdDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StdDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StdDrivers_DocumentRetrievalDriver;
 class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_DocumentRetrievalDriver {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_StdDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StdDrivers_DocumentStorageDriver;
+class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver(const StdDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver & operator=(const Handle_StdDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdDrivers_DocumentStorageDriver & operator=(const StdDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StdDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StdDrivers_DocumentStorageDriver {
+	StdDrivers_DocumentStorageDriver* GetObject() {
+	return (StdDrivers_DocumentStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StdDrivers_DocumentStorageDriver::~Handle_StdDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StdDrivers_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -173,7 +173,7 @@ class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 };
 %extend StdDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdDrivers_DocumentStorageDriver::~StdDrivers_DocumentStorageDriver %{
@@ -210,7 +210,7 @@ class StdDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDrive
 };
 %extend StdDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StdDrivers_DocumentRetrievalDriver::~StdDrivers_DocumentRetrievalDriver %{

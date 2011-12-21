@@ -71,9 +71,9 @@ $HeaderURL$
 #include<Handle_TDF_Data.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_RelocationTable.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<TDF_Label.hxx>
 #include<TDF_IDMap.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_TDF_DataSet.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_CDM_Document.hxx>

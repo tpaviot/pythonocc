@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Add) BRepBndLib::Add;
+%rename(AddClose) BRepBndLib::AddClose;

@@ -23,3 +23,5 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_PTopLoc_Datum3D::DownCast;
+%rename(DownCast) Handle_PTopLoc_ItemLocation::DownCast;

@@ -100,13 +100,13 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<gp_Lin2d.hxx>
+#include<gp_Pnt2d.hxx>
 #include<Geom2dAdaptor_Curve.hxx>
 #include<Handle_Geom2d_Point.hxx>
 #include<GccAna_Circ2d2TanOn.hxx>
 #include<gp_Circ2d.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Dir2d.hxx>
-#include<gp_Lin2d.hxx>
 #include<math_Vector.hxx>
 #include<gp_Vec2d.hxx>
 #include<math_Matrix.hxx>

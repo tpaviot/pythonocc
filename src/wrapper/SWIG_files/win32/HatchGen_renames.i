@@ -23,3 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_HatchGen_SequenceNodeOfPointsOnElement::DownCast;
+%rename(DownCast) Handle_HatchGen_SequenceNodeOfDomains::DownCast;
+%rename(DownCast) Handle_HatchGen_SequenceNodeOfPointsOnHatching::DownCast;

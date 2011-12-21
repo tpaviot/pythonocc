@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TCollection
+import Message
 import TColStd
 import MoniTool
-import Message
 };

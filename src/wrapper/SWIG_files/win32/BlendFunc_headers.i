@@ -63,10 +63,10 @@ $HeaderURL$
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
-#include<Handle_Law_Function.hxx>
-#include<gp_Circ.hxx>
 #include<BlendFunc.hxx>
 #include<gp_Pnt2d.hxx>
+#include<Handle_Law_Function.hxx>
+#include<gp_Circ.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_Ax1.hxx>
 %}

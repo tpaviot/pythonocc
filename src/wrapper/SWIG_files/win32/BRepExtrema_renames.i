@@ -23,3 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BRepExtrema_UnCompatibleShape::DownCast;
+%rename(Distance) BRepExtrema_Poly::Distance;
+%rename(Raise) BRepExtrema_UnCompatibleShape::Raise;
+%rename(NewInstance) BRepExtrema_UnCompatibleShape::NewInstance;

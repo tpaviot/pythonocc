@@ -100,44 +100,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip;
-class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip();
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
-		%feature("autodoc", "1");
-		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	AdvApp2Var_SequenceNodeOfSequenceOfStrip* GetObject() {
-	return (AdvApp2Var_SequenceNodeOfSequenceOfStrip*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip::~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection_SeqNode {
 	public:
@@ -214,6 +176,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip;
+class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip();
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip &aHandle);
+		%feature("autodoc", "1");
+		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip & operator=(const AdvApp2Var_SequenceNodeOfSequenceOfStrip *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	AdvApp2Var_SequenceNodeOfSequenceOfStrip* GetObject() {
+	return (AdvApp2Var_SequenceNodeOfSequenceOfStrip*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip::~Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_SequenceOfNode;
 class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 	public:
@@ -273,6 +273,136 @@ def __del__(self):
 %}
 
 %extend AdvApp2Var_SequenceOfNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApp2Var_SequenceOfPatch;
+class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceOfPatch();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfPatch & Assign(const AdvApp2Var_SequenceOfPatch &Other);
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfPatch & operator=(const AdvApp2Var_SequenceOfPatch &Other);
+		%feature("autodoc", "1");
+		void Append(const AdvApp2Var_Patch &T);
+		%feature("autodoc", "1");
+		void Append(AdvApp2Var_SequenceOfPatch & S);
+		%feature("autodoc", "1");
+		void Prepend(const AdvApp2Var_Patch &T);
+		%feature("autodoc", "1");
+		void Prepend(AdvApp2Var_SequenceOfPatch & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const AdvApp2Var_Patch &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const AdvApp2Var_Patch &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
+		%feature("autodoc", "1");
+		const AdvApp2Var_Patch & First() const;
+		%feature("autodoc", "1");
+		const AdvApp2Var_Patch & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
+		%feature("autodoc", "1");
+		const AdvApp2Var_Patch & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AdvApp2Var_Patch & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AdvApp2Var_Patch &I);
+		%feature("autodoc", "1");
+		AdvApp2Var_Patch & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AdvApp2Var_Patch & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") AdvApp2Var_SequenceOfPatch::~AdvApp2Var_SequenceOfPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_SequenceOfPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApp2Var_SequenceOfStrip;
+class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceOfStrip();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfStrip & Assign(const AdvApp2Var_SequenceOfStrip &Other);
+		%feature("autodoc", "1");
+		const AdvApp2Var_SequenceOfStrip & operator=(const AdvApp2Var_SequenceOfStrip &Other);
+		%feature("autodoc", "1");
+		void Append(const AdvApp2Var_Strip &T);
+		%feature("autodoc", "1");
+		void Append(AdvApp2Var_SequenceOfStrip & S);
+		%feature("autodoc", "1");
+		void Prepend(const AdvApp2Var_Strip &T);
+		%feature("autodoc", "1");
+		void Prepend(AdvApp2Var_SequenceOfStrip & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const AdvApp2Var_Strip &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const AdvApp2Var_Strip &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
+		%feature("autodoc", "1");
+		const AdvApp2Var_Strip & First() const;
+		%feature("autodoc", "1");
+		const AdvApp2Var_Strip & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
+		%feature("autodoc", "1");
+		const AdvApp2Var_Strip & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const AdvApp2Var_Strip & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const AdvApp2Var_Strip &I);
+		%feature("autodoc", "1");
+		AdvApp2Var_Strip & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		AdvApp2Var_Strip & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") AdvApp2Var_SequenceOfStrip::~AdvApp2Var_SequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_SequenceOfStrip {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -350,7 +480,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfNode::~AdvApp2Var_SequenceNodeOfSequenceOfNode %{
@@ -689,7 +819,7 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfStrip::~AdvApp2Var_SequenceNodeOfStrip %{
@@ -702,71 +832,6 @@ def __del__(self):
 %}
 
 %extend AdvApp2Var_SequenceNodeOfStrip {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_SequenceOfPatch;
-class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_SequenceOfPatch();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AdvApp2Var_SequenceOfPatch & Assign(const AdvApp2Var_SequenceOfPatch &Other);
-		%feature("autodoc", "1");
-		const AdvApp2Var_SequenceOfPatch & operator=(const AdvApp2Var_SequenceOfPatch &Other);
-		%feature("autodoc", "1");
-		void Append(const AdvApp2Var_Patch &T);
-		%feature("autodoc", "1");
-		void Append(AdvApp2Var_SequenceOfPatch & S);
-		%feature("autodoc", "1");
-		void Prepend(const AdvApp2Var_Patch &T);
-		%feature("autodoc", "1");
-		void Prepend(AdvApp2Var_SequenceOfPatch & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const AdvApp2Var_Patch &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const AdvApp2Var_Patch &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
-		%feature("autodoc", "1");
-		const AdvApp2Var_Patch & First() const;
-		%feature("autodoc", "1");
-		const AdvApp2Var_Patch & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AdvApp2Var_SequenceOfPatch & S);
-		%feature("autodoc", "1");
-		const AdvApp2Var_Patch & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AdvApp2Var_Patch & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AdvApp2Var_Patch &I);
-		%feature("autodoc", "1");
-		AdvApp2Var_Patch & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AdvApp2Var_Patch & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") AdvApp2Var_SequenceOfPatch::~AdvApp2Var_SequenceOfPatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApp2Var_SequenceOfPatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -791,7 +856,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfPatch::~AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
@@ -891,7 +956,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfStrip::~AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
@@ -980,71 +1045,6 @@ def __del__(self):
 %}
 
 %extend AdvApp2Var_Criterion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_SequenceOfStrip;
-class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_SequenceOfStrip();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AdvApp2Var_SequenceOfStrip & Assign(const AdvApp2Var_SequenceOfStrip &Other);
-		%feature("autodoc", "1");
-		const AdvApp2Var_SequenceOfStrip & operator=(const AdvApp2Var_SequenceOfStrip &Other);
-		%feature("autodoc", "1");
-		void Append(const AdvApp2Var_Strip &T);
-		%feature("autodoc", "1");
-		void Append(AdvApp2Var_SequenceOfStrip & S);
-		%feature("autodoc", "1");
-		void Prepend(const AdvApp2Var_Strip &T);
-		%feature("autodoc", "1");
-		void Prepend(AdvApp2Var_SequenceOfStrip & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const AdvApp2Var_Strip &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const AdvApp2Var_Strip &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
-		%feature("autodoc", "1");
-		const AdvApp2Var_Strip & First() const;
-		%feature("autodoc", "1");
-		const AdvApp2Var_Strip & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AdvApp2Var_SequenceOfStrip & S);
-		%feature("autodoc", "1");
-		const AdvApp2Var_Strip & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const AdvApp2Var_Strip & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const AdvApp2Var_Strip &I);
-		%feature("autodoc", "1");
-		AdvApp2Var_Strip & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		AdvApp2Var_Strip & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") AdvApp2Var_SequenceOfStrip::~AdvApp2Var_SequenceOfStrip %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApp2Var_SequenceOfStrip {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -220,7 +220,6 @@ $HeaderURL$
 #include<gp_Pnt2d.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Wire.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Shell.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TopOpeBRepDS_BuildTool.hxx>
@@ -230,6 +229,7 @@ $HeaderURL$
 #include<TopOpeBRepDS_SurfaceIterator.hxx>
 #include<TopOpeBRepDS_CurveIterator.hxx>
 #include<TopOpeBRepDS_PointIterator.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<TCollection_AsciiString.hxx>

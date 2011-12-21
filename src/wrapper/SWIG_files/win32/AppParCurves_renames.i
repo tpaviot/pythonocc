@@ -23,3 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_AppParCurves_HArray1OfMultiCurve::DownCast;
+%rename(DownCast) Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve::DownCast;
+%rename(DownCast) Handle_AppParCurves_HArray1OfMultiPoint::DownCast;
+%rename(DownCast) Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve::DownCast;
+%rename(DownCast) Handle_AppParCurves_HArray1OfConstraintCouple::DownCast;
+%rename(DownCast) Handle_AppParCurves_SmoothCriterion::DownCast;
+%rename(DownCast) Handle_AppParCurves_HArray1OfMultiBSpCurve::DownCast;
+%rename(BernsteinMatrix) AppParCurves::BernsteinMatrix;
+%rename(Bernstein) AppParCurves::Bernstein;
+%rename(SecondDerivativeBernstein) AppParCurves::SecondDerivativeBernstein;
+%rename(SplineFunction) AppParCurves::SplineFunction;

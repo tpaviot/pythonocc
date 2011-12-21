@@ -53,6 +53,44 @@ typedef gp_Trsf * TopLoc_TrsfPtr;
 
 
 
+%nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
+class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	TopLoc_IndexedMapNodeOfIndexedMapOfLocation* GetObject() {
+	return (TopLoc_IndexedMapNodeOfIndexedMapOfLocation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TopLoc_SListNodeOfSListOfItemLocation;
 class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared {
 	public:
@@ -167,29 +205,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
-class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollection_MapNode {
+%nodefaultctor TopLoc_MapOfLocation;
+class TopLoc_MapOfLocation : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation();
+		TopLoc_MapOfLocation(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		TopLoc_MapOfLocation & Assign(const TopLoc_MapOfLocation &Other);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
+		TopLoc_MapOfLocation & operator=(const TopLoc_MapOfLocation &Other);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation &aHandle);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation & operator=(const TopLoc_IndexedMapNodeOfIndexedMapOfLocation *anItem);
+		void Clear();
 		%feature("autodoc", "1");
-		static		Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation DownCast(const Handle_Standard_Transient &AnObject);
+		Standard_Boolean Add(const TopLoc_Location &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopLoc_Location &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const TopLoc_Location &aKey);
 
 };
-%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	TopLoc_IndexedMapNodeOfIndexedMapOfLocation* GetObject() {
-	return (TopLoc_IndexedMapNodeOfIndexedMapOfLocation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
+%feature("shadow") TopLoc_MapOfLocation::~TopLoc_MapOfLocation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -198,7 +235,81 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
+%extend TopLoc_MapOfLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopLoc_Datum3D;
+class TopLoc_Datum3D : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_Datum3D();
+		%feature("autodoc", "1");
+		TopLoc_Datum3D(const gp_Trsf T);
+		%feature("autodoc", "1");
+		const gp_Trsf  Transformation() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopLoc_Datum3D {
+	Handle_TopLoc_Datum3D GetHandle() {
+	return *(Handle_TopLoc_Datum3D*) &$self;
+	}
+};
+%extend TopLoc_Datum3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") TopLoc_Datum3D::~TopLoc_Datum3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopLoc_MapLocationHasher;
+class TopLoc_MapLocationHasher {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_MapLocationHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
+
+};
+%feature("shadow") TopLoc_MapLocationHasher::~TopLoc_MapLocationHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopLoc_MapLocationHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -237,7 +348,7 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_IndexedMapNodeOfIndexedMapOfLocation::~TopLoc_IndexedMapNodeOfIndexedMapOfLocation %{
@@ -250,43 +361,6 @@ def __del__(self):
 %}
 
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopLoc_MapOfLocation;
-class TopLoc_MapOfLocation : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_MapOfLocation(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopLoc_MapOfLocation & Assign(const TopLoc_MapOfLocation &Other);
-		%feature("autodoc", "1");
-		TopLoc_MapOfLocation & operator=(const TopLoc_MapOfLocation &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const TopLoc_Location &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopLoc_Location &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopLoc_Location &aKey);
-
-};
-%feature("shadow") TopLoc_MapOfLocation::~TopLoc_MapOfLocation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopLoc_MapOfLocation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -338,62 +412,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
-class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_MapIteratorOfMapOfLocation();
-		%feature("autodoc", "1");
-		TopLoc_MapIteratorOfMapOfLocation(const TopLoc_MapOfLocation &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopLoc_MapOfLocation &aMap);
-		%feature("autodoc", "1");
-		const TopLoc_Location & Key() const;
-
-};
-%feature("shadow") TopLoc_MapIteratorOfMapOfLocation::~TopLoc_MapIteratorOfMapOfLocation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopLoc_MapIteratorOfMapOfLocation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopLoc_MapLocationHasher;
-class TopLoc_MapLocationHasher {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_MapLocationHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const TopLoc_Location &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const TopLoc_Location &K1, const TopLoc_Location &K2);
-
-};
-%feature("shadow") TopLoc_MapLocationHasher::~TopLoc_MapLocationHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopLoc_MapLocationHasher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopLoc_Location;
 class TopLoc_Location {
 	public:
@@ -433,12 +451,20 @@ class TopLoc_Location {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TopLoc_Location &Other) const;
+		%extend{
+			bool __eq_wrapper__(const TopLoc_Location &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TopLoc_Location &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TopLoc_Location &Other) const;
+		%extend{
+			bool __ne_wrapper__(const TopLoc_Location &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -447,11 +473,25 @@ class TopLoc_Location {
 			self->ShallowDump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend TopLoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_Location::~TopLoc_Location %{
@@ -464,6 +504,35 @@ def __del__(self):
 %}
 
 %extend TopLoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
+class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopLoc_MapIteratorOfMapOfLocation();
+		%feature("autodoc", "1");
+		TopLoc_MapIteratorOfMapOfLocation(const TopLoc_MapOfLocation &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopLoc_MapOfLocation &aMap);
+		%feature("autodoc", "1");
+		const TopLoc_Location & Key() const;
+
+};
+%feature("shadow") TopLoc_MapIteratorOfMapOfLocation::~TopLoc_MapIteratorOfMapOfLocation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopLoc_MapIteratorOfMapOfLocation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -488,7 +557,7 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopLoc_StdMapNodeOfMapOfLocation::~TopLoc_StdMapNodeOfMapOfLocation %{
@@ -591,53 +660,6 @@ def __del__(self):
 %}
 
 %extend TopLoc_ItemLocation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopLoc_Datum3D;
-class TopLoc_Datum3D : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopLoc_Datum3D();
-		%feature("autodoc", "1");
-		TopLoc_Datum3D(const gp_Trsf T);
-		%feature("autodoc", "1");
-		const gp_Trsf  Transformation() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopLoc_Datum3D {
-	Handle_TopLoc_Datum3D GetHandle() {
-	return *(Handle_TopLoc_Datum3D*) &$self;
-	}
-};
-%extend TopLoc_Datum3D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") TopLoc_Datum3D::~TopLoc_Datum3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopLoc_Datum3D {
 	void _kill_pointed() {
 		delete $self;
 	}

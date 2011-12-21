@@ -23,3 +23,22 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::DownCast;
+%rename(DownCast) Handle_SelectMgr_Filter::DownCast;
+%rename(DownCast) Handle_SelectMgr_CompositionFilter::DownCast;
+%rename(DownCast) Handle_SelectMgr_SelectionManager::DownCast;
+%rename(DownCast) Handle_SelectMgr_ViewerSelector::DownCast;
+%rename(DownCast) Handle_SelectMgr_EntityOwner::DownCast;
+%rename(DownCast) Handle_SelectMgr_SequenceNodeOfSequenceOfSelection::DownCast;
+%rename(DownCast) Handle_SelectMgr_SequenceNodeOfSequenceOfFilter::DownCast;
+%rename(DownCast) Handle_SelectMgr_OrFilter::DownCast;
+%rename(DownCast) Handle_SelectMgr_SelectableObject::DownCast;
+%rename(DownCast) Handle_SelectMgr_AndFilter::DownCast;
+%rename(DownCast) Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::DownCast;
+%rename(DownCast) Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::DownCast;
+%rename(DownCast) Handle_SelectMgr_SequenceNodeOfSequenceOfOwner::DownCast;
+%rename(DownCast) Handle_SelectMgr_ListNodeOfListOfFilter::DownCast;
+%rename(DownCast) Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::DownCast;
+%rename(DownCast) Handle_SelectMgr_Selection::DownCast;
+%rename(DownCast) Handle_SelectMgr_SequenceNodeOfSequenceOfSelector::DownCast;
+%rename(DownCast) Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion::DownCast;

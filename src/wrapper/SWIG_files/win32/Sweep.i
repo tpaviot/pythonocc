@@ -52,6 +52,39 @@ $HeaderURL$
 
 
 
+%nodefaultctor Sweep_NumShapeIterator;
+class Sweep_NumShapeIterator {
+	public:
+		%feature("autodoc", "1");
+		Sweep_NumShapeIterator();
+		%feature("autodoc", "1");
+		void Init(const Sweep_NumShape &aShape);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Sweep_NumShape & Value() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+
+};
+%feature("shadow") Sweep_NumShapeIterator::~Sweep_NumShapeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Sweep_NumShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Sweep_NumShape;
 class Sweep_NumShape {
 	public:
@@ -126,39 +159,6 @@ def __del__(self):
 %}
 
 %extend Sweep_NumShapeTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Sweep_NumShapeIterator;
-class Sweep_NumShapeIterator {
-	public:
-		%feature("autodoc", "1");
-		Sweep_NumShapeIterator();
-		%feature("autodoc", "1");
-		void Init(const Sweep_NumShape &aShape);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Sweep_NumShape & Value() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-
-};
-%feature("shadow") Sweep_NumShapeIterator::~Sweep_NumShapeIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Sweep_NumShapeIterator {
 	void _kill_pointed() {
 		delete $self;
 	}

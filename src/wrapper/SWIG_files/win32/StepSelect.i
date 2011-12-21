@@ -280,41 +280,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepSelect_FileModifier;
-class StepSelect_FileModifier : public IFSelect_GeneralModifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepSelect_FileModifier {
-	Handle_StepSelect_FileModifier GetHandle() {
-	return *(Handle_StepSelect_FileModifier*) &$self;
-	}
-};
-%extend StepSelect_FileModifier {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepSelect_FileModifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepSelect_WorkLibrary;
 class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	public:
@@ -341,7 +306,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend StepSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
@@ -354,6 +319,119 @@ def __del__(self):
 %}
 
 %extend StepSelect_WorkLibrary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepSelect_FileModifier;
+class StepSelect_FileModifier : public IFSelect_GeneralModifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepSelect_FileModifier {
+	Handle_StepSelect_FileModifier GetHandle() {
+	return *(Handle_StepSelect_FileModifier*) &$self;
+	}
+};
+%extend StepSelect_FileModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepSelect_FileModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepSelect_Activator;
+class StepSelect_Activator : public IFSelect_Activator {
+	public:
+		%feature("autodoc", "1");
+		StepSelect_Activator();
+		%feature("autodoc", "1");
+		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
+		%feature("autodoc", "1");
+		virtual		char * Help(const Standard_Integer number) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepSelect_Activator {
+	Handle_StepSelect_Activator GetHandle() {
+	return *(Handle_StepSelect_Activator*) &$self;
+	}
+};
+%extend StepSelect_Activator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepSelect_Activator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepSelect_ModelModifier;
+class StepSelect_ModelModifier : public IFSelect_Modifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		void PerformProtocol(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, const Handle_StepData_Protocol &proto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepSelect_ModelModifier {
+	Handle_StepSelect_ModelModifier GetHandle() {
+	return *(Handle_StepSelect_ModelModifier*) &$self;
+	}
+};
+%extend StepSelect_ModelModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepSelect_ModelModifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -380,7 +458,7 @@ class StepSelect_StepType : public IFSelect_Signature {
 };
 %extend StepSelect_StepType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
@@ -430,7 +508,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %extend StepSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{
@@ -443,84 +521,6 @@ def __del__(self):
 %}
 
 %extend StepSelect_FloatFormat {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepSelect_ModelModifier;
-class StepSelect_ModelModifier : public IFSelect_Modifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextModif & ctx, const Handle_Interface_InterfaceModel &target, const Handle_Interface_Protocol &protocol, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		void PerformProtocol(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, const Handle_StepData_Protocol &proto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_StepData_StepModel &target, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepSelect_ModelModifier {
-	Handle_StepSelect_ModelModifier GetHandle() {
-	return *(Handle_StepSelect_ModelModifier*) &$self;
-	}
-};
-%extend StepSelect_ModelModifier {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepSelect_ModelModifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepSelect_Activator;
-class StepSelect_Activator : public IFSelect_Activator {
-	public:
-		%feature("autodoc", "1");
-		StepSelect_Activator();
-		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
-		%feature("autodoc", "1");
-		virtual		char * Help(const Standard_Integer number) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepSelect_Activator {
-	Handle_StepSelect_Activator GetHandle() {
-	return *(Handle_StepSelect_Activator*) &$self;
-	}
-};
-%extend StepSelect_Activator {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepSelect_Activator {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,3 +23,30 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeAnalysis_TransferParameters::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_TransferParametersProj::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_Surface::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_FreeBoundData::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_HSequenceOfFreeBounds::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_Wire::DownCast;
+%rename(ConnectEdgesToWires) ShapeAnalysis_FreeBounds::ConnectEdgesToWires;
+%rename(ConnectWiresToWires) ShapeAnalysis_FreeBounds::ConnectWiresToWires;
+%rename(SplitWires) ShapeAnalysis_FreeBounds::SplitWires;
+%rename(DispatchWires) ShapeAnalysis_FreeBounds::DispatchWires;
+%rename(OuterWire) ShapeAnalysis::OuterWire;
+%rename(TotCross2D) ShapeAnalysis::TotCross2D;
+%rename(ContourArea) ShapeAnalysis::ContourArea;
+%rename(IsOuterBound) ShapeAnalysis::IsOuterBound;
+%rename(AdjustByPeriod) ShapeAnalysis::AdjustByPeriod;
+%rename(AdjustToPeriod) ShapeAnalysis::AdjustToPeriod;
+%rename(FindBounds) ShapeAnalysis::FindBounds;
+%rename(GetFaceUVBounds) ShapeAnalysis::GetFaceUVBounds;
+%rename(IsPlanar) ShapeAnalysis_Curve::IsPlanar;
+%rename(GetSamplePoints) ShapeAnalysis_Curve::GetSamplePoints;
+%rename(IsClosed) ShapeAnalysis_Curve::IsClosed;
+%rename(IsPeriodic) ShapeAnalysis_Curve::IsPeriodic;
+%rename(CopyNMVertex) ShapeAnalysis_TransferParametersProj::CopyNMVertex;
+%rename(NearestPlane) ShapeAnalysis_Geom::NearestPlane;
+%rename(PositionTrsf) ShapeAnalysis_Geom::PositionTrsf;

@@ -52,7 +52,6 @@ $HeaderURL$
 typedef CALL_DEF_PICK Graphic3d_CPick;
 typedef Graphic3d_Structure * Graphic3d_StructPtr;
 typedef CALL_DEF_GROUP Graphic3d_CGroup;
-typedef CALL_DEF_TRANSFORM_PERSISTENCE Graphic3d_CTransPersStruct;
 typedef CALL_DEF_INIT_TEXTURE Graphic3d_CInitTexture;
 typedef CALL_DEF_GRADUATEDTRIHEDRON Graphic3d_CGraduatedTrihedron;
 typedef CALL_DEF_VIEW Graphic3d_CView;
@@ -62,6 +61,7 @@ typedef Graphic3d_FrameBuffer * Graphic3d_PtrFrameBuffer;
 typedef CALL_DEF_LIGHT Graphic3d_CLight;
 typedef CALL_DEF_BOUNDS Graphic3d_CBounds;
 typedef CALL_DEF_USERDRAW Graphic3d_CUserDraw;
+typedef CALL_DEF_TRANSFORM_PERSISTENCE Graphic3d_CTransPersStruct;
 typedef CALL_DEF_PARRAY * Graphic3d_PrimitiveArray;
 typedef CALL_DEF_TEXTURE Graphic3d_CTexture;
 typedef CALL_DEF_PLANE Graphic3d_CPlane;
@@ -117,13 +117,6 @@ enum Graphic3d_ExportFormat {
 	Graphic3d_EF_PGF,
 	};
 
-enum Graphic3d_GroupAspect {
-	Graphic3d_ASPECT_LINE,
-	Graphic3d_ASPECT_TEXT,
-	Graphic3d_ASPECT_MARKER,
-	Graphic3d_ASPECT_FILL_AREA,
-	};
-
 enum Graphic3d_TypeOfTexture {
 	Graphic3d_TOT_1D,
 	Graphic3d_TOT_2D,
@@ -142,11 +135,31 @@ enum Graphic3d_TypeOfReflection {
 	Graphic3d_TOR_EMISSION,
 	};
 
+enum Graphic3d_TypeOfPolygon {
+	Graphic3d_TOP_UNKNOWN,
+	Graphic3d_TOP_COMPLEX,
+	Graphic3d_TOP_CONCAVE,
+	Graphic3d_TOP_CONVEX,
+	};
+
 enum Graphic3d_TypeOfStructure {
 	Graphic3d_TOS_WIREFRAME,
 	Graphic3d_TOS_SHADING,
 	Graphic3d_TOS_COMPUTED,
 	Graphic3d_TOS_ALL,
+	};
+
+enum Graphic3d_VerticalTextAlignment {
+	Graphic3d_VTA_BOTTOM,
+	Graphic3d_VTA_CENTER,
+	Graphic3d_VTA_TOP,
+	};
+
+enum Graphic3d_TextPath {
+	Graphic3d_TP_UP,
+	Graphic3d_TP_DOWN,
+	Graphic3d_TP_LEFT,
+	Graphic3d_TP_RIGHT,
 	};
 
 enum Graphic3d_TypeOfPrimitiveArray {
@@ -174,23 +187,16 @@ enum Graphic3d_TypeOfComposition {
 	Graphic3d_TOC_POSTCONCATENATE,
 	};
 
-enum Graphic3d_TextPath {
-	Graphic3d_TP_UP,
-	Graphic3d_TP_DOWN,
-	Graphic3d_TP_LEFT,
-	Graphic3d_TP_RIGHT,
-	};
-
 enum Graphic3d_TypeOfMaterial {
 	Graphic3d_MATERIAL_ASPECT,
 	Graphic3d_MATERIAL_PHYSIC,
 	};
 
-enum Graphic3d_TypeOfPolygon {
-	Graphic3d_TOP_UNKNOWN,
-	Graphic3d_TOP_COMPLEX,
-	Graphic3d_TOP_CONCAVE,
-	Graphic3d_TOP_CONVEX,
+enum Graphic3d_GroupAspect {
+	Graphic3d_ASPECT_LINE,
+	Graphic3d_ASPECT_TEXT,
+	Graphic3d_ASPECT_MARKER,
+	Graphic3d_ASPECT_FILL_AREA,
 	};
 
 enum Graphic3d_NameOfTextureEnv {
@@ -212,15 +218,15 @@ enum Graphic3d_TypeOfTextureMode {
 	Graphic3d_TOTM_MANUAL,
 	};
 
+enum Graphic3d_SortType {
+	Graphic3d_ST_Simple,
+	Graphic3d_ST_BSP_Tree,
+	};
+
 enum Graphic3d_HorizontalTextAlignment {
 	Graphic3d_HTA_LEFT,
 	Graphic3d_HTA_CENTER,
 	Graphic3d_HTA_RIGHT,
-	};
-
-enum Graphic3d_SortType {
-	Graphic3d_ST_Simple,
-	Graphic3d_ST_BSP_Tree,
 	};
 
 enum Graphic3d_NameOfMaterial {
@@ -245,12 +251,6 @@ enum Graphic3d_NameOfMaterial {
 	Graphic3d_NOM_JADE,
 	Graphic3d_NOM_DEFAULT,
 	Graphic3d_NOM_UserDefined,
-	};
-
-enum Graphic3d_VerticalTextAlignment {
-	Graphic3d_VTA_BOTTOM,
-	Graphic3d_VTA_CENTER,
-	Graphic3d_VTA_TOP,
 	};
 
 
@@ -825,44 +825,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Graphic3d_PlotterDefinitionError;
-class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PlotterDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PlotterDefinitionError(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PlotterDefinitionError(const Graphic3d_PlotterDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PlotterDefinitionError & operator=(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PlotterDefinitionError & operator=(const Graphic3d_PlotterDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_PlotterDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_PlotterDefinitionError {
-	Graphic3d_PlotterDefinitionError* GetObject() {
-	return (Graphic3d_PlotterDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_PlotterDefinitionError::~Handle_Graphic3d_PlotterDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_PlotterDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Graphic3d_StdMapNodeOfMapOfStructure;
 class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_MapNode {
 	public:
@@ -977,44 +939,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Graphic3d_PickIdDefinitionError;
-class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PickIdDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PickIdDefinitionError(const Handle_Graphic3d_PickIdDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PickIdDefinitionError(const Graphic3d_PickIdDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PickIdDefinitionError & operator=(const Handle_Graphic3d_PickIdDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_PickIdDefinitionError & operator=(const Graphic3d_PickIdDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_PickIdDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_PickIdDefinitionError {
-	Graphic3d_PickIdDefinitionError* GetObject() {
-	return (Graphic3d_PickIdDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_PickIdDefinitionError::~Handle_Graphic3d_PickIdDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_PickIdDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Graphic3d_GroupDefinitionError;
 class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1047,6 +971,44 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_GroupDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Graphic3d_PickIdDefinitionError;
+class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError(const Handle_Graphic3d_PickIdDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError(const Graphic3d_PickIdDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError & operator=(const Handle_Graphic3d_PickIdDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PickIdDefinitionError & operator=(const Graphic3d_PickIdDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_PickIdDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_PickIdDefinitionError {
+	Graphic3d_PickIdDefinitionError* GetObject() {
+	return (Graphic3d_PickIdDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_PickIdDefinitionError::~Handle_Graphic3d_PickIdDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_PickIdDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1161,6 +1123,44 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_ArrayOfSegments {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Graphic3d_HSequenceOfStructure;
+class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure(const Graphic3d_HSequenceOfStructure *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure & operator=(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure & operator=(const Graphic3d_HSequenceOfStructure *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_HSequenceOfStructure DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_HSequenceOfStructure {
+	Graphic3d_HSequenceOfStructure* GetObject() {
+	return (Graphic3d_HSequenceOfStructure*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_HSequenceOfStructure::~Handle_Graphic3d_HSequenceOfStructure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_HSequenceOfStructure {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1433,6 +1433,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Graphic3d_PlotterDefinitionError;
+class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError(const Graphic3d_PlotterDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError & operator=(const Handle_Graphic3d_PlotterDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_PlotterDefinitionError & operator=(const Graphic3d_PlotterDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_PlotterDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_PlotterDefinitionError {
+	Graphic3d_PlotterDefinitionError* GetObject() {
+	return (Graphic3d_PlotterDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_PlotterDefinitionError::~Handle_Graphic3d_PlotterDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_PlotterDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Graphic3d_AspectLine3d;
 class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
 	public:
@@ -1585,6 +1623,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfGroup;
+class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
+	Graphic3d_SequenceNodeOfSequenceOfGroup* GetObject() {
+	return (Graphic3d_SequenceNodeOfSequenceOfGroup*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_SequenceNodeOfSequenceOfGroup::~Handle_Graphic3d_SequenceNodeOfSequenceOfGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Graphic3d_AspectMarker3d;
 class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 	public:
@@ -1693,44 +1769,6 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_Texture2Dplane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Graphic3d_StructureDefinitionError;
-class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError(const Handle_Graphic3d_StructureDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError(const Graphic3d_StructureDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError & operator=(const Handle_Graphic3d_StructureDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_StructureDefinitionError & operator=(const Graphic3d_StructureDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_StructureDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_StructureDefinitionError {
-	Graphic3d_StructureDefinitionError* GetObject() {
-	return (Graphic3d_StructureDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_StructureDefinitionError::~Handle_Graphic3d_StructureDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_StructureDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1851,44 +1889,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Graphic3d_HSequenceOfStructure;
-class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure(const Graphic3d_HSequenceOfStructure *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure & operator=(const Handle_Graphic3d_HSequenceOfStructure &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure & operator=(const Graphic3d_HSequenceOfStructure *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_HSequenceOfStructure DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_HSequenceOfStructure {
-	Graphic3d_HSequenceOfStructure* GetObject() {
-	return (Graphic3d_HSequenceOfStructure*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_HSequenceOfStructure::~Handle_Graphic3d_HSequenceOfStructure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_HSequenceOfStructure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Graphic3d_AspectText3d;
 class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
 	public:
@@ -2003,29 +2003,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfGroup;
-class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_Graphic3d_StructureDefinitionError;
+class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup();
+		Handle_Graphic3d_StructureDefinitionError();
 		%feature("autodoc", "1");
-		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
+		Handle_Graphic3d_StructureDefinitionError(const Handle_Graphic3d_StructureDefinitionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
+		Handle_Graphic3d_StructureDefinitionError(const Graphic3d_StructureDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Handle_Graphic3d_SequenceNodeOfSequenceOfGroup &aHandle);
+		Handle_Graphic3d_StructureDefinitionError & operator=(const Handle_Graphic3d_StructureDefinitionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup & operator=(const Graphic3d_SequenceNodeOfSequenceOfGroup *anItem);
+		Handle_Graphic3d_StructureDefinitionError & operator=(const Graphic3d_StructureDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Graphic3d_SequenceNodeOfSequenceOfGroup DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Graphic3d_StructureDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
-	Graphic3d_SequenceNodeOfSequenceOfGroup* GetObject() {
-	return (Graphic3d_SequenceNodeOfSequenceOfGroup*)$self->Access();
+%extend Handle_Graphic3d_StructureDefinitionError {
+	Graphic3d_StructureDefinitionError* GetObject() {
+	return (Graphic3d_StructureDefinitionError*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Graphic3d_SequenceNodeOfSequenceOfGroup::~Handle_Graphic3d_SequenceNodeOfSequenceOfGroup %{
+%feature("shadow") Handle_Graphic3d_StructureDefinitionError::~Handle_Graphic3d_StructureDefinitionError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2034,7 +2034,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
+%extend Handle_Graphic3d_StructureDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2356,7 +2356,7 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 };
 %extend Graphic3d_ArrayOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfPrimitives::~Graphic3d_ArrayOfPrimitives %{
@@ -2375,29 +2375,6 @@ def __del__(self):
 };
 %extend Graphic3d_ArrayOfPrimitives {
 	Graphic3d_ArrayOfPrimitives () {}
-};
-
-
-%nodefaultctor Graphic3d_CBitFields8;
-class Graphic3d_CBitFields8 {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_CBitFields8();
-
-};
-%feature("shadow") Graphic3d_CBitFields8::~Graphic3d_CBitFields8 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_CBitFields8 {
-	void _kill_pointed() {
-		delete $self;
-	}
 };
 
 
@@ -2425,7 +2402,7 @@ class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_GroupDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_GroupDefinitionError::~Graphic3d_GroupDefinitionError %{
@@ -2468,7 +2445,7 @@ class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PlotterDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_PlotterDefinitionError::~Graphic3d_PlotterDefinitionError %{
@@ -2714,7 +2691,7 @@ class Graphic3d_WNTGraphicDevice : public WNT_GraphicDevice {
 };
 %extend Graphic3d_WNTGraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_WNTGraphicDevice::~Graphic3d_WNTGraphicDevice %{
@@ -2727,45 +2704,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_WNTGraphicDevice {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_Strips;
-class Graphic3d_Strips {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Strips();
-		%feature("autodoc", "1");
-		static		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
-		%feature("autodoc","STRIPT_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		static		void STRIPT_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc","STRIPT_GET_VERTEX() -> [Standard_Integer, Standard_Integer]");
-
-		static		void STRIPT_GET_VERTEX(Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		static		void STRIPQ_INIT(const Standard_Integer NBVERTICES, const Standard_Integer NBQUADRANG, const TColStd_SequenceOfInteger &TABQUADRANGLES);
-		%feature("autodoc","STRIPQ_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		static		void STRIPQ_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc","STRIPQ_GET_NEXT() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		static		void STRIPQ_GET_NEXT(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-
-};
-%feature("shadow") Graphic3d_Strips::~Graphic3d_Strips %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Strips {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2881,7 +2819,7 @@ class Graphic3d_HSetOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSetOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_HSetOfGroup::~Graphic3d_HSetOfGroup %{
@@ -2960,7 +2898,7 @@ class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_HSequenceOfGroup::~Graphic3d_HSequenceOfGroup %{
@@ -2973,505 +2911,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_HSequenceOfGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_TextureRoot;
-class Graphic3d_TextureRoot : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		void Destroy() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const OSD_Path & Path() const;
-		%feature("autodoc", "1");
-		Graphic3d_TypeOfTexture Type() const;
-		%feature("autodoc", "1");
-		void LoadTexture(const Handle_AlienImage_AlienImage &anImage);
-		%feature("autodoc", "1");
-		Standard_Integer TextureId() const;
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage Image() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal GetTexUpperBounds() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_TextureRoot {
-	Handle_Graphic3d_TextureRoot GetHandle() {
-	return *(Handle_Graphic3d_TextureRoot*) &$self;
-	}
-};
-%extend Graphic3d_TextureRoot {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_TextureRoot::~Graphic3d_TextureRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_TextureRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Graphic3d_TextureRoot {
-	Graphic3d_TextureRoot () {}
-};
-
-
-%nodefaultctor Graphic3d_TextureMap;
-class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
-	public:
-		%feature("autodoc", "1");
-		void EnableSmooth();
-		%feature("autodoc", "1");
-		Standard_Boolean IsSmoothed() const;
-		%feature("autodoc", "1");
-		void DisableSmooth();
-		%feature("autodoc", "1");
-		void EnableModulate();
-		%feature("autodoc", "1");
-		void DisableModulate();
-		%feature("autodoc", "1");
-		Standard_Boolean IsModulate() const;
-		%feature("autodoc", "1");
-		void EnableRepeat();
-		%feature("autodoc", "1");
-		void DisableRepeat();
-		%feature("autodoc", "1");
-		Standard_Boolean IsRepeat() const;
-
-};
-%extend Graphic3d_TextureMap {
-	Handle_Graphic3d_TextureMap GetHandle() {
-	return *(Handle_Graphic3d_TextureMap*) &$self;
-	}
-};
-%extend Graphic3d_TextureMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_TextureMap::~Graphic3d_TextureMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_TextureMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Graphic3d_TextureMap {
-	Graphic3d_TextureMap () {}
-};
-
-
-%nodefaultctor Graphic3d_Texture1D;
-class Graphic3d_Texture1D : public Graphic3d_TextureMap {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_NameOfTexture1D Name() const;
-		%feature("autodoc", "1");
-		static		Standard_Integer NumberOfTextures();
-		%feature("autodoc", "1");
-		static		char * TextureName(const Standard_Integer aRank);
-
-};
-%extend Graphic3d_Texture1D {
-	Handle_Graphic3d_Texture1D GetHandle() {
-	return *(Handle_Graphic3d_Texture1D*) &$self;
-	}
-};
-%extend Graphic3d_Texture1D {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_Texture1D::~Graphic3d_Texture1D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Texture1D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Graphic3d_Texture1D {
-	Graphic3d_Texture1D () {}
-};
-
-
-%nodefaultctor Graphic3d_AspectMarker3d;
-class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_AspectMarker3d();
-		%feature("autodoc", "1");
-		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId);
-		%feature("autodoc", "1");
-		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_TColStd_HArray1OfByte &ATexture);
-		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
-
-		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfByte & GetTexture();
-		%feature("autodoc", "1");
-		void SetTexture(const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_TColStd_HArray1OfByte &ATexture);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_AspectMarker3d {
-	Handle_Graphic3d_AspectMarker3d GetHandle() {
-	return *(Handle_Graphic3d_AspectMarker3d*) &$self;
-	}
-};
-%extend Graphic3d_AspectMarker3d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_AspectMarker3d::~Graphic3d_AspectMarker3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_AspectMarker3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_ListNodeOfListOfShortReal;
-class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ListNodeOfListOfShortReal(const Standard_ShortReal &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_ShortReal & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ListNodeOfListOfShortReal {
-	Handle_Graphic3d_ListNodeOfListOfShortReal GetHandle() {
-	return *(Handle_Graphic3d_ListNodeOfListOfShortReal*) &$self;
-	}
-};
-%extend Graphic3d_ListNodeOfListOfShortReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_ListNodeOfListOfShortReal::~Graphic3d_ListNodeOfListOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ListNodeOfListOfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_AspectTextDefinitionError;
-class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_AspectTextDefinitionError();
-		%feature("autodoc", "1");
-		Graphic3d_AspectTextDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_AspectTextDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_AspectTextDefinitionError {
-	Handle_Graphic3d_AspectTextDefinitionError GetHandle() {
-	return *(Handle_Graphic3d_AspectTextDefinitionError*) &$self;
-	}
-};
-%extend Graphic3d_AspectTextDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_AspectTextDefinitionError::~Graphic3d_AspectTextDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_AspectTextDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_DataStructureManager;
-class Graphic3d_DataStructureManager : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_DataStructureManager {
-	Handle_Graphic3d_DataStructureManager GetHandle() {
-	return *(Handle_Graphic3d_DataStructureManager*) &$self;
-	}
-};
-%extend Graphic3d_DataStructureManager {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_DataStructureManager::~Graphic3d_DataStructureManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_DataStructureManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Graphic3d_DataStructureManager {
-	Graphic3d_DataStructureManager () {}
-};
-
-
-%nodefaultctor Graphic3d_ArrayOfTriangles;
-class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ArrayOfTriangles(const Standard_Integer maxVertexs, const Standard_Integer maxEdges=0, const Standard_Boolean hasVNormals=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasTexels=0, const Standard_Boolean hasEdgeInfos=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ArrayOfTriangles {
-	Handle_Graphic3d_ArrayOfTriangles GetHandle() {
-	return *(Handle_Graphic3d_ArrayOfTriangles*) &$self;
-	}
-};
-%extend Graphic3d_ArrayOfTriangles {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_ArrayOfTriangles::~Graphic3d_ArrayOfTriangles %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ArrayOfTriangles {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_PriorityDefinitionError;
-class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_PriorityDefinitionError();
-		%feature("autodoc", "1");
-		Graphic3d_PriorityDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_PriorityDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_PriorityDefinitionError {
-	Handle_Graphic3d_PriorityDefinitionError GetHandle() {
-	return *(Handle_Graphic3d_PriorityDefinitionError*) &$self;
-	}
-};
-%extend Graphic3d_PriorityDefinitionError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_PriorityDefinitionError::~Graphic3d_PriorityDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_PriorityDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_ListNodeOfListOfPArray;
-class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ListNodeOfListOfPArray(const Handle_Graphic3d_ArrayOfPrimitives &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPrimitives & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ListNodeOfListOfPArray {
-	Handle_Graphic3d_ListNodeOfListOfPArray GetHandle() {
-	return *(Handle_Graphic3d_ListNodeOfListOfPArray*) &$self;
-	}
-};
-%extend Graphic3d_ListNodeOfListOfPArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_ListNodeOfListOfPArray::~Graphic3d_ListNodeOfListOfPArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ListNodeOfListOfPArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_TextureEnv;
-class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const char * aFileName);
-		%feature("autodoc", "1");
-		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTextureEnv aName);
-		%feature("autodoc", "1");
-		Graphic3d_NameOfTextureEnv Name() const;
-		%feature("autodoc", "1");
-		static		Standard_Integer NumberOfTextures();
-		%feature("autodoc", "1");
-		static		char * TextureName(const Standard_Integer aRank);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_TextureEnv {
-	Handle_Graphic3d_TextureEnv GetHandle() {
-	return *(Handle_Graphic3d_TextureEnv*) &$self;
-	}
-};
-%extend Graphic3d_TextureEnv {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_TextureEnv::~Graphic3d_TextureEnv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_TextureEnv {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_ListIteratorOfListOfShortReal;
-class Graphic3d_ListIteratorOfListOfShortReal {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ListIteratorOfListOfShortReal();
-		%feature("autodoc", "1");
-		Graphic3d_ListIteratorOfListOfShortReal(const Graphic3d_ListOfShortReal &L);
-		%feature("autodoc", "1");
-		void Initialize(const Graphic3d_ListOfShortReal &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Standard_ShortReal & Value() const;
-
-};
-%feature("shadow") Graphic3d_ListIteratorOfListOfShortReal::~Graphic3d_ListIteratorOfListOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ListIteratorOfListOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3534,6 +2973,600 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_MapOfStructure;
+class Graphic3d_MapOfStructure : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_MapOfStructure(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Graphic3d_MapOfStructure & Assign(const Graphic3d_MapOfStructure &Other);
+		%feature("autodoc", "1");
+		Graphic3d_MapOfStructure & operator=(const Graphic3d_MapOfStructure &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Graphic3d_Structure &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Graphic3d_Structure &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_Graphic3d_Structure &aKey);
+
+};
+%feature("shadow") Graphic3d_MapOfStructure::~Graphic3d_MapOfStructure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_MapOfStructure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_SequenceOfAddress;
+class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_SequenceOfAddress();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfAddress & Assign(const Graphic3d_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfAddress & operator=(const Graphic3d_SequenceOfAddress &Other);
+		%feature("autodoc", "1");
+		void Append(const Standard_Address &T);
+		%feature("autodoc", "1");
+		void Append(Graphic3d_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Address &T);
+		%feature("autodoc", "1");
+		void Prepend(Graphic3d_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		const Standard_Address & First() const;
+		%feature("autodoc", "1");
+		const Standard_Address & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
+		%feature("autodoc", "1");
+		const Standard_Address & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Standard_Address & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Address &I);
+		%feature("autodoc", "1");
+		Standard_Address & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Address & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Graphic3d_SequenceOfAddress::~Graphic3d_SequenceOfAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_SequenceOfAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_ListNodeOfListOfShortReal;
+class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ListNodeOfListOfShortReal(const Standard_ShortReal &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_ShortReal & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ListNodeOfListOfShortReal {
+	Handle_Graphic3d_ListNodeOfListOfShortReal GetHandle() {
+	return *(Handle_Graphic3d_ListNodeOfListOfShortReal*) &$self;
+	}
+};
+%extend Graphic3d_ListNodeOfListOfShortReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_ListNodeOfListOfShortReal::~Graphic3d_ListNodeOfListOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ListNodeOfListOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_AspectTextDefinitionError;
+class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_AspectTextDefinitionError();
+		%feature("autodoc", "1");
+		Graphic3d_AspectTextDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_AspectTextDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_AspectTextDefinitionError {
+	Handle_Graphic3d_AspectTextDefinitionError GetHandle() {
+	return *(Handle_Graphic3d_AspectTextDefinitionError*) &$self;
+	}
+};
+%extend Graphic3d_AspectTextDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_AspectTextDefinitionError::~Graphic3d_AspectTextDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_AspectTextDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_DataStructureManager;
+class Graphic3d_DataStructureManager : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_DataStructureManager {
+	Handle_Graphic3d_DataStructureManager GetHandle() {
+	return *(Handle_Graphic3d_DataStructureManager*) &$self;
+	}
+};
+%extend Graphic3d_DataStructureManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_DataStructureManager::~Graphic3d_DataStructureManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_DataStructureManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Graphic3d_DataStructureManager {
+	Graphic3d_DataStructureManager () {}
+};
+
+
+%nodefaultctor Graphic3d_ArrayOfTriangles;
+class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ArrayOfTriangles(const Standard_Integer maxVertexs, const Standard_Integer maxEdges=0, const Standard_Boolean hasVNormals=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasTexels=0, const Standard_Boolean hasEdgeInfos=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ArrayOfTriangles {
+	Handle_Graphic3d_ArrayOfTriangles GetHandle() {
+	return *(Handle_Graphic3d_ArrayOfTriangles*) &$self;
+	}
+};
+%extend Graphic3d_ArrayOfTriangles {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_ArrayOfTriangles::~Graphic3d_ArrayOfTriangles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ArrayOfTriangles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_PriorityDefinitionError;
+class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_PriorityDefinitionError();
+		%feature("autodoc", "1");
+		Graphic3d_PriorityDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_PriorityDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_PriorityDefinitionError {
+	Handle_Graphic3d_PriorityDefinitionError GetHandle() {
+	return *(Handle_Graphic3d_PriorityDefinitionError*) &$self;
+	}
+};
+%extend Graphic3d_PriorityDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_PriorityDefinitionError::~Graphic3d_PriorityDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_PriorityDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_ListNodeOfListOfPArray;
+class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ListNodeOfListOfPArray(const Handle_Graphic3d_ArrayOfPrimitives &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPrimitives & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ListNodeOfListOfPArray {
+	Handle_Graphic3d_ListNodeOfListOfPArray GetHandle() {
+	return *(Handle_Graphic3d_ListNodeOfListOfPArray*) &$self;
+	}
+};
+%extend Graphic3d_ListNodeOfListOfPArray {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_ListNodeOfListOfPArray::~Graphic3d_ListNodeOfListOfPArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ListNodeOfListOfPArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_TextureRoot;
+class Graphic3d_TextureRoot : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		void Destroy() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const OSD_Path & Path() const;
+		%feature("autodoc", "1");
+		Graphic3d_TypeOfTexture Type() const;
+		%feature("autodoc", "1");
+		void LoadTexture(const Handle_AlienImage_AlienImage &anImage);
+		%feature("autodoc", "1");
+		Standard_Integer TextureId() const;
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienImage Image() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal GetTexUpperBounds() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_TextureRoot {
+	Handle_Graphic3d_TextureRoot GetHandle() {
+	return *(Handle_Graphic3d_TextureRoot*) &$self;
+	}
+};
+%extend Graphic3d_TextureRoot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_TextureRoot::~Graphic3d_TextureRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_TextureRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Graphic3d_TextureRoot {
+	Graphic3d_TextureRoot () {}
+};
+
+
+%nodefaultctor Graphic3d_TextureEnv;
+class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const char * aFileName);
+		%feature("autodoc", "1");
+		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTextureEnv aName);
+		%feature("autodoc", "1");
+		Graphic3d_NameOfTextureEnv Name() const;
+		%feature("autodoc", "1");
+		static		Standard_Integer NumberOfTextures();
+		%feature("autodoc", "1");
+		static		char * TextureName(const Standard_Integer aRank);
+
+};
+%extend Graphic3d_TextureEnv {
+	Handle_Graphic3d_TextureEnv GetHandle() {
+	return *(Handle_Graphic3d_TextureEnv*) &$self;
+	}
+};
+%extend Graphic3d_TextureEnv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_TextureEnv::~Graphic3d_TextureEnv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_TextureEnv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_ListIteratorOfListOfShortReal;
+class Graphic3d_ListIteratorOfListOfShortReal {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ListIteratorOfListOfShortReal();
+		%feature("autodoc", "1");
+		Graphic3d_ListIteratorOfListOfShortReal(const Graphic3d_ListOfShortReal &L);
+		%feature("autodoc", "1");
+		void Initialize(const Graphic3d_ListOfShortReal &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Standard_ShortReal & Value() const;
+
+};
+%feature("shadow") Graphic3d_ListIteratorOfListOfShortReal::~Graphic3d_ListIteratorOfListOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ListIteratorOfListOfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_TextureMap;
+class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
+	public:
+		%feature("autodoc", "1");
+		void EnableSmooth();
+		%feature("autodoc", "1");
+		Standard_Boolean IsSmoothed() const;
+		%feature("autodoc", "1");
+		void DisableSmooth();
+		%feature("autodoc", "1");
+		void EnableModulate();
+		%feature("autodoc", "1");
+		void DisableModulate();
+		%feature("autodoc", "1");
+		Standard_Boolean IsModulate() const;
+		%feature("autodoc", "1");
+		void EnableRepeat();
+		%feature("autodoc", "1");
+		void DisableRepeat();
+		%feature("autodoc", "1");
+		Standard_Boolean IsRepeat() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_TextureMap {
+	Handle_Graphic3d_TextureMap GetHandle() {
+	return *(Handle_Graphic3d_TextureMap*) &$self;
+	}
+};
+%extend Graphic3d_TextureMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_TextureMap::~Graphic3d_TextureMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_TextureMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Graphic3d_TextureMap {
+	Graphic3d_TextureMap () {}
+};
+
+
+%nodefaultctor Graphic3d_Texture1D;
+class Graphic3d_Texture1D : public Graphic3d_TextureMap {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_NameOfTexture1D Name() const;
+		%feature("autodoc", "1");
+		static		Standard_Integer NumberOfTextures();
+		%feature("autodoc", "1");
+		static		char * TextureName(const Standard_Integer aRank);
+
+};
+%extend Graphic3d_Texture1D {
+	Handle_Graphic3d_Texture1D GetHandle() {
+	return *(Handle_Graphic3d_Texture1D*) &$self;
+	}
+};
+%extend Graphic3d_Texture1D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_Texture1D::~Graphic3d_Texture1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_Texture1D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Graphic3d_Texture1D {
+	Graphic3d_Texture1D () {}
+};
+
+
+%nodefaultctor Graphic3d_Texture1Dsegment;
+class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const char * FileName);
+		%feature("autodoc", "1");
+		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const Graphic3d_NameOfTexture1D NOT);
+		%feature("autodoc", "1");
+		void SetSegment(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal Z1, const Standard_ShortReal X2, const Standard_ShortReal Y2, const Standard_ShortReal Z2);
+		%feature("autodoc", "1");
+		void Segment(Standard_ShortReal & X1, Standard_ShortReal & Y1, Standard_ShortReal & Z1, Standard_ShortReal & X2, Standard_ShortReal & Y2, Standard_ShortReal & Z2) const;
+
+};
+%extend Graphic3d_Texture1Dsegment {
+	Handle_Graphic3d_Texture1Dsegment GetHandle() {
+	return *(Handle_Graphic3d_Texture1Dsegment*) &$self;
+	}
+};
+%extend Graphic3d_Texture1Dsegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_Texture1Dsegment::~Graphic3d_Texture1Dsegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_Texture1Dsegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_AspectLine3d;
 class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 	public:
@@ -3552,7 +3585,7 @@ class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 };
 %extend Graphic3d_AspectLine3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_AspectLine3d::~Graphic3d_AspectLine3d %{
@@ -3591,7 +3624,7 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 };
 %extend Graphic3d_Texture2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Texture2D::~Graphic3d_Texture2D %{
@@ -3661,7 +3694,7 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dplane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Texture2Dplane::~Graphic3d_Texture2Dplane %{
@@ -3697,6 +3730,29 @@ def __del__(self):
 %}
 
 %extend Graphic3d_CBitFields16 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_CBitFields8;
+class Graphic3d_CBitFields8 {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields8();
+
+};
+%feature("shadow") Graphic3d_CBitFields8::~Graphic3d_CBitFields8 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_CBitFields8 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3783,43 +3839,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_MapOfStructure;
-class Graphic3d_MapOfStructure : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_MapOfStructure(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Graphic3d_MapOfStructure & Assign(const Graphic3d_MapOfStructure &Other);
-		%feature("autodoc", "1");
-		Graphic3d_MapOfStructure & operator=(const Graphic3d_MapOfStructure &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Graphic3d_Structure &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Graphic3d_Structure &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_Graphic3d_Structure &aKey);
-
-};
-%feature("shadow") Graphic3d_MapOfStructure::~Graphic3d_MapOfStructure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_MapOfStructure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfStructure;
 class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 	public:
@@ -3838,7 +3857,7 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_SequenceNodeOfSequenceOfStructure::~Graphic3d_SequenceNodeOfSequenceOfStructure %{
@@ -3875,7 +3894,7 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dmanual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Texture2Dmanual::~Graphic3d_Texture2Dmanual %{
@@ -4047,7 +4066,7 @@ class Graphic3d_Group : public MMgt_TShared {
 };
 %extend Graphic3d_Group {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Group::~Graphic3d_Group %{
@@ -4084,7 +4103,7 @@ class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ListNodeOfSetListOfSetOfGroup::~Graphic3d_ListNodeOfSetListOfSetOfGroup %{
@@ -4097,6 +4116,49 @@ def __del__(self):
 %}
 
 %extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_VectorError;
+class Graphic3d_VectorError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_VectorError();
+		%feature("autodoc", "1");
+		Graphic3d_VectorError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_VectorError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_VectorError {
+	Handle_Graphic3d_VectorError GetHandle() {
+	return *(Handle_Graphic3d_VectorError*) &$self;
+	}
+};
+%extend Graphic3d_VectorError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_VectorError::~Graphic3d_VectorError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_VectorError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4121,7 +4183,7 @@ class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_SequenceNodeOfSequenceOfGroup::~Graphic3d_SequenceNodeOfSequenceOfGroup %{
@@ -4134,6 +4196,39 @@ def __del__(self):
 %}
 
 %extend Graphic3d_SequenceNodeOfSequenceOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
+class Graphic3d_SetIteratorOfSetOfGroup {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_SetIteratorOfSetOfGroup();
+		%feature("autodoc", "1");
+		Graphic3d_SetIteratorOfSetOfGroup(const Graphic3d_SetOfGroup &S);
+		%feature("autodoc", "1");
+		void Initialize(const Graphic3d_SetOfGroup &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & Value() const;
+
+};
+%feature("shadow") Graphic3d_SetIteratorOfSetOfGroup::~Graphic3d_SetIteratorOfSetOfGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_SetIteratorOfSetOfGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4158,7 +4253,7 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 };
 %extend Graphic3d_Texture1Dmanual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Texture1Dmanual::~Graphic3d_Texture1Dmanual %{
@@ -4171,29 +4266,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_Texture1Dmanual {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_CBitFields4;
-class Graphic3d_CBitFields4 {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_CBitFields4();
-
-};
-%feature("shadow") Graphic3d_CBitFields4::~Graphic3d_CBitFields4 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_CBitFields4 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4224,7 +4296,7 @@ class Graphic3d_CycleError : public Standard_DomainError {
 };
 %extend Graphic3d_CycleError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_CycleError::~Graphic3d_CycleError %{
@@ -4276,18 +4348,6 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 		void SetTextFontAspect(const OSD_FontAspect AFontAspect);
 		%feature("autodoc", "1");
 		OSD_FontAspect GetTextFontAspect() const;
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
-
-		void Values(Quantity_Color & AColor, char * & AFont, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real]");
-
-		void Values(Quantity_Color & AColor, char * & AFont, Standard_Real &OutValue, Standard_Real &OutValue, Aspect_TypeOfStyleText & AStyle, Aspect_TypeOfDisplayText & ADisplayType, Quantity_Color & AColorSubTitle) const;
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Values(Quantity_Color & AColor, char * & AFont, Standard_Real &OutValue, Standard_Real &OutValue, Aspect_TypeOfStyleText & AStyle, Aspect_TypeOfDisplayText & ADisplayType, Quantity_Color & AColorSubTitle, Standard_Boolean & ATextZoomable, Standard_Real &OutValue) const;
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Values(Quantity_Color & AColor, char * & AFont, Standard_Real &OutValue, Standard_Real &OutValue, Aspect_TypeOfStyleText & AStyle, Aspect_TypeOfDisplayText & ADisplayType, Quantity_Color & AColorSubTitle, Standard_Boolean & ATextZoomable, Standard_Real &OutValue, OSD_FontAspect & ATextFontAspect) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4299,7 +4359,7 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 };
 %extend Graphic3d_AspectText3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_AspectText3d::~Graphic3d_AspectText3d %{
@@ -4534,9 +4594,6 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		virtual		void TriedronErase(const Graphic3d_CView &ACView);
 		%feature("autodoc", "1");
 		virtual		void TriedronEcho(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
-		%feature("autodoc","GetGraduatedTrihedron(const view) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		virtual		void GetGraduatedTrihedron(const Graphic3d_CView &view, char * & xname, char * & yname, char * & zname, Standard_Boolean & xdrawname, Standard_Boolean & ydrawname, Standard_Boolean & zdrawname, Standard_Boolean & xdrawvalues, Standard_Boolean & ydrawvalues, Standard_Boolean & zdrawvalues, Standard_Boolean & drawgrid, Standard_Boolean & drawaxes, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & xdrawtickmarks, Standard_Boolean & ydrawtickmarks, Standard_Boolean & zdrawtickmarks, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Quantity_Color & gridcolor, Quantity_Color & xnamecolor, Quantity_Color & ynamecolor, Quantity_Color & znamecolor, Quantity_Color & xcolor, Quantity_Color & ycolor, Quantity_Color & zcolor, char * & fontOfNames, OSD_FontAspect & styleOfNames, Standard_Integer &OutValue, char * & fontOfValues, OSD_FontAspect & styleOfValues, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void GraduatedTrihedronDisplay(const Graphic3d_CView &view, Graphic3d_CGraduatedTrihedron & cubic, const char * xname, const char * yname, const char * zname, const Standard_Boolean xdrawname, const Standard_Boolean ydrawname, const Standard_Boolean zdrawname, const Standard_Boolean xdrawvalues, const Standard_Boolean ydrawvalues, const Standard_Boolean zdrawvalues, const Standard_Boolean drawgrid, const Standard_Boolean drawaxes, const Standard_Integer nbx, const Standard_Integer nby, const Standard_Integer nbz, const Standard_Integer xoffset, const Standard_Integer yoffset, const Standard_Integer zoffset, const Standard_Integer xaxisoffset, const Standard_Integer yaxisoffset, const Standard_Integer zaxisoffset, const Standard_Boolean xdrawtickmarks, const Standard_Boolean ydrawtickmarks, const Standard_Boolean zdrawtickmarks, const Standard_Integer xtickmarklength, const Standard_Integer ytickmarklength, const Standard_Integer ztickmarklength, const Quantity_Color &gridcolor, const Quantity_Color &xnamecolor, const Quantity_Color &ynamecolor, const Quantity_Color &znamecolor, const Quantity_Color &xcolor, const Quantity_Color &ycolor, const Quantity_Color &zcolor, const char * fontOfNames, const OSD_FontAspect styleOfNames, const Standard_Integer sizeOfNames, const char * fontOfValues, const OSD_FontAspect styleOfValues, const Standard_Integer sizeOfValues);
 		%feature("autodoc", "1");
@@ -4701,7 +4758,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 };
 %extend Graphic3d_GraphicDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_GraphicDriver::~Graphic3d_GraphicDriver %{
@@ -4799,7 +4856,7 @@ class Graphic3d_InitialisationError : public Standard_OutOfRange {
 };
 %extend Graphic3d_InitialisationError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_InitialisationError::~Graphic3d_InitialisationError %{
@@ -4836,7 +4893,7 @@ class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_SequenceNodeOfSequenceOfAddress::~Graphic3d_SequenceNodeOfSequenceOfAddress %{
@@ -4879,7 +4936,7 @@ class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PickIdDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_PickIdDefinitionError::~Graphic3d_PickIdDefinitionError %{
@@ -4979,7 +5036,7 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPoints {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfPoints::~Graphic3d_ArrayOfPoints %{
@@ -4992,71 +5049,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_ArrayOfPoints {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_SequenceOfAddress;
-class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_SequenceOfAddress();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfAddress & Assign(const Graphic3d_SequenceOfAddress &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfAddress & operator=(const Graphic3d_SequenceOfAddress &Other);
-		%feature("autodoc", "1");
-		void Append(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Append(Graphic3d_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Address &T);
-		%feature("autodoc", "1");
-		void Prepend(Graphic3d_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & First() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Graphic3d_SequenceOfAddress & S);
-		%feature("autodoc", "1");
-		const Standard_Address & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Address & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Graphic3d_SequenceOfAddress::~Graphic3d_SequenceOfAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_SequenceOfAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5123,7 +5115,7 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
@@ -5447,7 +5439,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 };
 %extend Graphic3d_Structure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Structure::~Graphic3d_Structure %{
@@ -5576,41 +5568,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_ArrayOfTriangleFans;
-class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ArrayOfTriangleFans(const Standard_Integer maxVertexs, const Standard_Integer maxFans=0, const Standard_Boolean hasVNormals=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasFColors=0, const Standard_Boolean hasTexels=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ArrayOfTriangleFans {
-	Handle_Graphic3d_ArrayOfTriangleFans GetHandle() {
-	return *(Handle_Graphic3d_ArrayOfTriangleFans*) &$self;
-	}
-};
-%extend Graphic3d_ArrayOfTriangleFans {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_ArrayOfTriangleFans::~Graphic3d_ArrayOfTriangleFans %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ArrayOfTriangleFans {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_TransformError;
 class Graphic3d_TransformError : public Standard_OutOfRange {
 	public:
@@ -5635,7 +5592,7 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 };
 %extend Graphic3d_TransformError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_TransformError::~Graphic3d_TransformError %{
@@ -5715,6 +5672,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_Strips;
+class Graphic3d_Strips {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_Strips();
+		%feature("autodoc", "1");
+		static		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
+		%feature("autodoc","STRIPT_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		static		void STRIPT_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc","STRIPT_GET_VERTEX() -> [Standard_Integer, Standard_Integer]");
+
+		static		void STRIPT_GET_VERTEX(Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		static		void STRIPQ_INIT(const Standard_Integer NBVERTICES, const Standard_Integer NBQUADRANG, const TColStd_SequenceOfInteger &TABQUADRANGLES);
+		%feature("autodoc","STRIPQ_GET_STRIP() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		static		void STRIPQ_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc","STRIPQ_GET_NEXT() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		static		void STRIPQ_GET_NEXT(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+
+};
+%feature("shadow") Graphic3d_Strips::~Graphic3d_Strips %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_Strips {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_VertexC;
 class Graphic3d_VertexC : public Graphic3d_Vertex {
 	public:
@@ -5778,38 +5774,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_VertexNT;
-class Graphic3d_VertexNT : public Graphic3d_VertexN {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT();
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		void SetTextureCoordinate(const Standard_Real ATX, const Standard_Real ATY=0.0);
-		%feature("autodoc","TextureCoordinate() -> [Standard_Real, Standard_Real]");
-
-		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Graphic3d_VertexNT::~Graphic3d_VertexNT %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexNT {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_ArrayOfTriangleStrips;
 class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -5826,7 +5790,7 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangleStrips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfTriangleStrips::~Graphic3d_ArrayOfTriangleStrips %{
@@ -5861,7 +5825,7 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolylines {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
@@ -6051,7 +6015,7 @@ class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_MaterialDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_MaterialDefinitionError::~Graphic3d_MaterialDefinitionError %{
@@ -6064,6 +6028,29 @@ def __del__(self):
 %}
 
 %extend Graphic3d_MaterialDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_CBitFields4;
+class Graphic3d_CBitFields4 {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_CBitFields4();
+
+};
+%feature("shadow") Graphic3d_CBitFields4::~Graphic3d_CBitFields4 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_CBitFields4 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6086,7 +6073,7 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfSegments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfSegments::~Graphic3d_ArrayOfSegments %{
@@ -6180,12 +6167,20 @@ class Graphic3d_MaterialAspect {
 		Graphic3d_NameOfMaterial Name() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Graphic3d_MaterialAspect &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Graphic3d_MaterialAspect &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Graphic3d_MaterialAspect &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Graphic3d_MaterialAspect &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Graphic3d_MaterialAspect &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Graphic3d_MaterialAspect &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		Standard_Integer NumberOfMaterials();
 		%feature("autodoc", "1");
@@ -6194,6 +6189,20 @@ class Graphic3d_MaterialAspect {
 		char * MaterialName() const;
 		%feature("autodoc", "1");
 		static		Graphic3d_TypeOfMaterial MaterialType(const Standard_Integer aRank);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Graphic3d_MaterialAspect::~Graphic3d_MaterialAspect %{
@@ -6206,6 +6215,52 @@ def __del__(self):
 %}
 
 %extend Graphic3d_MaterialAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_AspectMarker3d;
+class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_AspectMarker3d();
+		%feature("autodoc", "1");
+		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId);
+		%feature("autodoc", "1");
+		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_TColStd_HArray1OfByte &ATexture);
+		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
+
+		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfByte & GetTexture();
+		%feature("autodoc", "1");
+		void SetTexture(const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_TColStd_HArray1OfByte &ATexture);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_AspectMarker3d {
+	Handle_Graphic3d_AspectMarker3d GetHandle() {
+	return *(Handle_Graphic3d_AspectMarker3d*) &$self;
+	}
+};
+%extend Graphic3d_AspectMarker3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") Graphic3d_AspectMarker3d::~Graphic3d_AspectMarker3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_AspectMarker3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6228,7 +6283,7 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangleStrips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfQuadrangleStrips::~Graphic3d_ArrayOfQuadrangleStrips %{
@@ -6359,34 +6414,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_VectorError;
-class Graphic3d_VectorError : public Standard_OutOfRange {
+%nodefaultctor Graphic3d_ArrayOfTriangleFans;
+class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_VectorError();
-		%feature("autodoc", "1");
-		Graphic3d_VectorError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_VectorError NewInstance(const char * aMessage="");
+		Graphic3d_ArrayOfTriangleFans(const Standard_Integer maxVertexs, const Standard_Integer maxFans=0, const Standard_Boolean hasVNormals=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasFColors=0, const Standard_Boolean hasTexels=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Graphic3d_VectorError {
-	Handle_Graphic3d_VectorError GetHandle() {
-	return *(Handle_Graphic3d_VectorError*) &$self;
+%extend Graphic3d_ArrayOfTriangleFans {
+	Handle_Graphic3d_ArrayOfTriangleFans GetHandle() {
+	return *(Handle_Graphic3d_ArrayOfTriangleFans*) &$self;
 	}
 };
-%extend Graphic3d_VectorError {
+%extend Graphic3d_ArrayOfTriangleFans {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
-%feature("shadow") Graphic3d_VectorError::~Graphic3d_VectorError %{
+%feature("shadow") Graphic3d_ArrayOfTriangleFans::~Graphic3d_ArrayOfTriangleFans %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -6395,7 +6442,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_VectorError {
+%extend Graphic3d_ArrayOfTriangleFans {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6427,6 +6474,38 @@ def __del__(self):
 %}
 
 %extend Graphic3d_VertexNC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_VertexNT;
+class Graphic3d_VertexNT : public Graphic3d_VertexN {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_VertexNT();
+		%feature("autodoc", "1");
+		Graphic3d_VertexNT(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
+		%feature("autodoc", "1");
+		Graphic3d_VertexNT(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
+		%feature("autodoc", "1");
+		void SetTextureCoordinate(const Standard_Real ATX, const Standard_Real ATY=0.0);
+		%feature("autodoc","TextureCoordinate() -> [Standard_Real, Standard_Real]");
+
+		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Graphic3d_VertexNT::~Graphic3d_VertexNT %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_VertexNT {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6494,47 +6573,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Texture1Dsegment;
-class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const char * FileName);
-		%feature("autodoc", "1");
-		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const Graphic3d_NameOfTexture1D NOT);
-		%feature("autodoc", "1");
-		void SetSegment(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal Z1, const Standard_ShortReal X2, const Standard_ShortReal Y2, const Standard_ShortReal Z2);
-		%feature("autodoc", "1");
-		void Segment(Standard_ShortReal & X1, Standard_ShortReal & Y1, Standard_ShortReal & Z1, Standard_ShortReal & X2, Standard_ShortReal & Y2, Standard_ShortReal & Z2) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_Texture1Dsegment {
-	Handle_Graphic3d_Texture1Dsegment GetHandle() {
-	return *(Handle_Graphic3d_Texture1Dsegment*) &$self;
-	}
-};
-%extend Graphic3d_Texture1Dsegment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") Graphic3d_Texture1Dsegment::~Graphic3d_Texture1Dsegment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Texture1Dsegment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_Plotter;
 class Graphic3d_Plotter : public MMgt_TShared {
 	public:
@@ -6557,7 +6595,7 @@ class Graphic3d_Plotter : public MMgt_TShared {
 };
 %extend Graphic3d_Plotter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_Plotter::~Graphic3d_Plotter %{
@@ -6661,7 +6699,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 };
 %extend Graphic3d_StructureManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_StructureManager::~Graphic3d_StructureManager %{
@@ -6674,39 +6712,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_StructureManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
-class Graphic3d_SetIteratorOfSetOfGroup {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_SetIteratorOfSetOfGroup();
-		%feature("autodoc", "1");
-		Graphic3d_SetIteratorOfSetOfGroup(const Graphic3d_SetOfGroup &S);
-		%feature("autodoc", "1");
-		void Initialize(const Graphic3d_SetOfGroup &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & Value() const;
-
-};
-%feature("shadow") Graphic3d_SetIteratorOfSetOfGroup::~Graphic3d_SetIteratorOfSetOfGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_SetIteratorOfSetOfGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6780,7 +6785,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 };
 %extend Graphic3d_AspectFillArea3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_AspectFillArea3d::~Graphic3d_AspectFillArea3d %{
@@ -6815,7 +6820,7 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfQuadrangles::~Graphic3d_ArrayOfQuadrangles %{
@@ -6850,7 +6855,7 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolygons {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_ArrayOfPolygons::~Graphic3d_ArrayOfPolygons %{
@@ -6887,7 +6892,7 @@ class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
 };
 %extend Graphic3d_StdMapNodeOfMapOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_StdMapNodeOfMapOfStructure::~Graphic3d_StdMapNodeOfMapOfStructure %{
@@ -6930,7 +6935,7 @@ class Graphic3d_StructureDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_StructureDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") Graphic3d_StructureDefinitionError::~Graphic3d_StructureDefinitionError %{

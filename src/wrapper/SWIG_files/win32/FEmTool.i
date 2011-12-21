@@ -204,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
+class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors();
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors(const FEmTool_ListNodeOfListOfVectors *anItem);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
+		%feature("autodoc", "1");
+		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
+		%feature("autodoc", "1");
+		static		Handle_FEmTool_ListNodeOfListOfVectors DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_FEmTool_ListNodeOfListOfVectors {
+	FEmTool_ListNodeOfListOfVectors* GetObject() {
+	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
+	}
+};
+%feature("shadow") Handle_FEmTool_ListNodeOfListOfVectors::~Handle_FEmTool_ListNodeOfListOfVectors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_FEmTool_ListNodeOfListOfVectors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_FEmTool_LinearJerk;
 class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -394,44 +432,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
-class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors();
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors(const FEmTool_ListNodeOfListOfVectors *anItem);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const Handle_FEmTool_ListNodeOfListOfVectors &aHandle);
-		%feature("autodoc", "1");
-		Handle_FEmTool_ListNodeOfListOfVectors & operator=(const FEmTool_ListNodeOfListOfVectors *anItem);
-		%feature("autodoc", "1");
-		static		Handle_FEmTool_ListNodeOfListOfVectors DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_FEmTool_ListNodeOfListOfVectors {
-	FEmTool_ListNodeOfListOfVectors* GetObject() {
-	return (FEmTool_ListNodeOfListOfVectors*)$self->Access();
-	}
-};
-%feature("shadow") Handle_FEmTool_ListNodeOfListOfVectors::~Handle_FEmTool_ListNodeOfListOfVectors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_FEmTool_ListNodeOfListOfVectors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor FEmTool_ListNodeOfListOfVectors;
 class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	public:
@@ -450,7 +450,7 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 };
 %extend FEmTool_ListNodeOfListOfVectors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_ListNodeOfListOfVectors::~FEmTool_ListNodeOfListOfVectors %{
@@ -495,7 +495,7 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 };
 %extend FEmTool_ElementaryCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_ElementaryCriterion::~FEmTool_ElementaryCriterion %{
@@ -538,7 +538,7 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearFlexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearFlexion::~FEmTool_LinearFlexion %{
@@ -581,7 +581,7 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearJerk {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearJerk::~FEmTool_LinearJerk %{
@@ -655,51 +655,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor FEmTool_Assembly;
-class FEmTool_Assembly {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_Assembly(const TColStd_Array2OfInteger &Dependence, const Handle_FEmTool_HAssemblyTable &Table);
-		%feature("autodoc", "1");
-		void NullifyMatrix();
-		%feature("autodoc", "1");
-		void AddMatrix(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, const math_Matrix &Mat);
-		%feature("autodoc", "1");
-		void NullifyVector();
-		%feature("autodoc", "1");
-		void AddVector(const Standard_Integer Element, const Standard_Integer Dimension, const math_Vector &Vec);
-		%feature("autodoc", "1");
-		void ResetConstraint();
-		%feature("autodoc", "1");
-		void NullifyConstraint();
-		%feature("autodoc", "1");
-		void AddConstraint(const Standard_Integer IndexofConstraint, const Standard_Integer Element, const Standard_Integer Dimension, const math_Vector &LinearForm, const Standard_Real Value);
-		%feature("autodoc", "1");
-		Standard_Boolean Solve();
-		%feature("autodoc", "1");
-		void Solution(math_Vector & Solution) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbGlobVar() const;
-		%feature("autodoc", "1");
-		void GetAssemblyTable(Handle_FEmTool_HAssemblyTable & AssTable) const;
-
-};
-%feature("shadow") FEmTool_Assembly::~FEmTool_Assembly %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FEmTool_Assembly {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor FEmTool_LinearTension;
 class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	public:
@@ -724,7 +679,7 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearTension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearTension::~FEmTool_LinearTension %{
@@ -822,7 +777,7 @@ class FEmTool_Curve : public MMgt_TShared {
 };
 %extend FEmTool_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_Curve::~FEmTool_Curve %{
@@ -883,7 +838,7 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 };
 %extend FEmTool_SparseMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_SparseMatrix::~FEmTool_SparseMatrix %{
@@ -934,7 +889,7 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 };
 %extend FEmTool_ProfileMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_ProfileMatrix::~FEmTool_ProfileMatrix %{
@@ -947,6 +902,141 @@ def __del__(self):
 %}
 
 %extend FEmTool_ProfileMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FEmTool_Assembly;
+class FEmTool_Assembly {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_Assembly(const TColStd_Array2OfInteger &Dependence, const Handle_FEmTool_HAssemblyTable &Table);
+		%feature("autodoc", "1");
+		void NullifyMatrix();
+		%feature("autodoc", "1");
+		void AddMatrix(const Standard_Integer Element, const Standard_Integer Dimension1, const Standard_Integer Dimension2, const math_Matrix &Mat);
+		%feature("autodoc", "1");
+		void NullifyVector();
+		%feature("autodoc", "1");
+		void AddVector(const Standard_Integer Element, const Standard_Integer Dimension, const math_Vector &Vec);
+		%feature("autodoc", "1");
+		void ResetConstraint();
+		%feature("autodoc", "1");
+		void NullifyConstraint();
+		%feature("autodoc", "1");
+		void AddConstraint(const Standard_Integer IndexofConstraint, const Standard_Integer Element, const Standard_Integer Dimension, const math_Vector &LinearForm, const Standard_Real Value);
+		%feature("autodoc", "1");
+		Standard_Boolean Solve();
+		%feature("autodoc", "1");
+		void Solution(math_Vector & Solution) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbGlobVar() const;
+		%feature("autodoc", "1");
+		void GetAssemblyTable(Handle_FEmTool_HAssemblyTable & AssTable) const;
+
+};
+%feature("shadow") FEmTool_Assembly::~FEmTool_Assembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FEmTool_Assembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FEmTool_HAssemblyTable;
+class FEmTool_HAssemblyTable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_HAssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		FEmTool_HAssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_TColStd_HArray1OfInteger &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_TColStd_HArray1OfInteger &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfInteger &Value);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const FEmTool_AssemblyTable & Array2() const;
+		%feature("autodoc", "1");
+		FEmTool_AssemblyTable & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend FEmTool_HAssemblyTable {
+	Handle_FEmTool_HAssemblyTable GetHandle() {
+	return *(Handle_FEmTool_HAssemblyTable*) &$self;
+	}
+};
+%extend FEmTool_HAssemblyTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") FEmTool_HAssemblyTable::~FEmTool_HAssemblyTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FEmTool_HAssemblyTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor FEmTool_ElementsOfRefMatrix;
+class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
+	public:
+		%feature("autodoc", "1");
+		FEmTool_ElementsOfRefMatrix(const Handle_PLib_Base &TheBase, const Standard_Integer DerOrder);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+
+};
+%feature("shadow") FEmTool_ElementsOfRefMatrix::~FEmTool_ElementsOfRefMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend FEmTool_ElementsOfRefMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1008,96 +1098,6 @@ def __del__(self):
 %}
 
 %extend FEmTool_ListOfVectors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor FEmTool_HAssemblyTable;
-class FEmTool_HAssemblyTable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_HAssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		FEmTool_HAssemblyTable(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Handle_TColStd_HArray1OfInteger &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_TColStd_HArray1OfInteger &V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_TColStd_HArray1OfInteger &Value);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const FEmTool_AssemblyTable & Array2() const;
-		%feature("autodoc", "1");
-		FEmTool_AssemblyTable & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend FEmTool_HAssemblyTable {
-	Handle_FEmTool_HAssemblyTable GetHandle() {
-	return *(Handle_FEmTool_HAssemblyTable*) &$self;
-	}
-};
-%extend FEmTool_HAssemblyTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") FEmTool_HAssemblyTable::~FEmTool_HAssemblyTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FEmTool_HAssemblyTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor FEmTool_ElementsOfRefMatrix;
-class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
-	public:
-		%feature("autodoc", "1");
-		FEmTool_ElementsOfRefMatrix(const Handle_PLib_Base &TheBase, const Standard_Integer DerOrder);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-
-};
-%feature("shadow") FEmTool_ElementsOfRefMatrix::~FEmTool_ElementsOfRefMatrix %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend FEmTool_ElementsOfRefMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1187,7 +1187,7 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 };
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") FEmTool_SequenceNodeOfSeqOfLinConstr::~FEmTool_SequenceNodeOfSeqOfLinConstr %{

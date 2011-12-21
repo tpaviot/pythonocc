@@ -65,8 +65,8 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom2d_BoundedCurve.hxx>
-#include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_Geometry.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 %}

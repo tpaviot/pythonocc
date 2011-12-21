@@ -28,10 +28,10 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import GeomAbs
-import gp
-import Geom
 import Adaptor2d
 import TopAbs
+import gp
+import GeomAbs
+import Geom
 import Geom2d
 };

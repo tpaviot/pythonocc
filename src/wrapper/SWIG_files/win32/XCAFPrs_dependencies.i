@@ -284,6 +284,7 @@ $HeaderURL$
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -318,8 +319,8 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import AIS.i
 %import TCollection.i
 %import TPrsStd.i
+%import AIS.i
 %import Standard.i
 %import TopAbs.i

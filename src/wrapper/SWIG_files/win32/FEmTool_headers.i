@@ -66,9 +66,9 @@ $HeaderURL$
 #include<math_Matrix.hxx>
 #include<math_Vector.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
-#include<TColStd_Array2OfInteger.hxx>
 #include<Handle_PLib_Base.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<TColStd_Array2OfInteger.hxx>
 %}

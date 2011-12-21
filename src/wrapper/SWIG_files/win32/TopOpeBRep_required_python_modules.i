@@ -28,17 +28,17 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TopoDS
+import BRepTopAdaptor
 import Geom
 import Geom2d
 import TopOpeBRepTool
-import TopoDS
 import TopOpeBRepDS
 import BRepAdaptor
 import TopAbs
-import BRepTopAdaptor
 import gp
 import TopTools
-import IntSurf
 import Geom2dAdaptor
 import IntRes2d
+import IntSurf
 };

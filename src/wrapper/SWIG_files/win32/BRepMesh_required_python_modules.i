@@ -31,7 +31,6 @@ import Standard
 import TopoDS
 import TCollection
 import gp
-import NCollection
 import Poly
 import TopAbs
 import Bnd

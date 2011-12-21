@@ -30,13 +30,13 @@ import GarbageCollector
 import Standard
 import AppParCurves
 import math
-import IntSurf
 import IntImp
+import IntSurf
 import gp
+import BRepAdaptor
 import TColStd
 import Approx
 import Adaptor3d
 import GeomAbs
 import Geom
-import BRepAdaptor
 };
