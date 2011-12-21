@@ -1178,6 +1178,11 @@ class ModularBuilder(object):
         elif sys.platform == 'win32':
             HXX_TO_EXCLUDE.append('SMESH_ControlsDef.hxx') #SMESH pygccxml error
             HXX_TO_EXCLUDE.append('Standard_Real_Original.hxx')
+            HXX_TO_EXCLUDE.append('Image_PixelFieldOfDColorImage.hxx')
+            HXX_TO_EXCLUDE.append('BRepExtrema_DistanceSS.hxx')
+            HXX_TO_EXCLUDE.append('InterfaceGraphic_Cextern.hxx')
+            HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
+            HXX_TO_EXCLUDE.append('OSD_WNT_1.hxx')
             for hxx_file in HXX_FILES: # Under Windows, remove all X11/Xfw headers
                 if ('X11' in hxx_file) or ('XWD' in hxx_file):
                     HXX_TO_EXCLUDE.append(hxx_file)
