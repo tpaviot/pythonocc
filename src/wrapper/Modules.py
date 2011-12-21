@@ -215,7 +215,7 @@ COMMON_MODULES = [
            ('BRep',['Adaptor3d'],[]),
            ('BRepAdaptor',['math'],[]),
            ('BRepPrimAPI',[],[]),    
-           ('BRepMesh',[],['BRepMesh_DiscretFactory'],{'BRepMesh_SurfaceGrid':['SetTrianglesOnPlane']}),
+           ('BRepMesh',[],['BRepMesh_DiscretFactory','BRepMesh_CircleInspector'],{'BRepMesh_SurfaceGrid':['SetTrianglesOnPlane']}),
            ('BRepBlend',['math','Contap','Convert','AppParCurves','Adaptor3d'],[]),
            ('BRepBuilderAPI',['TopoDS'],[]),
            ('BRepCheck',[],[]),
@@ -482,24 +482,27 @@ COMMON_MODULES = [
 WIN_MODULES = [
              ('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
-             {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast']}),
+             {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast'],\
+             'Graphic3d_AspectText3d':['Values'],'Graphic3d_GraphicDriver':['GetGraduatedTrihedron']}),
              ('Prs2d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),             
-             ('Prs3d',['TopoDS','Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),
-             ('PrsMgr',['Graphic3d','gp','Aspect','Handle_TCollection'],[]),
-             ('SelectMgr',['TCollection','Prs3d','Graphic3d','Aspect','Quantity'],[]),
-             ('StdSelect',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','SelectBasics'],[],\
+             ('Prs3d',['TopoDS','Graphic3d','Bnd_Box','Aspect','Handle_TCollection','Image','OSD'],[]),
+             ('PrsMgr',['Graphic3d','gp','Aspect','Handle_TCollection','Image','OSD'],[]),
+             ('SelectMgr',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','Image','OSD'],[]),
+             ('StdSelect',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','SelectBasics','Image','OSD'],[],\
              {'StdSelect_Shape':['Shape'],'StdSelect_BRepOwner':['Set']}),
              ('DsgPrs',[],[],{'DsgPrs_RadiusPresentation':['Add']}),
-             ('AIS',['Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr',],[],{"AIS_LocalContext":["Reactivate"]}),
-             ('NIS',['TCollection','Quantity','Viewer','TColStd','Aspect'],[],{'NIS_InteractiveObject':['SetAttribute'],\
-                                             'NIS_Triangulated':['Polygon','tri_line_intersect','seg_line_intersect']}),
+             ('AIS',['Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image','OSD'],[],{"AIS_LocalContext":["Reactivate"]}),
+             ('NIS',['Graphic3d','TCollection','Quantity','Viewer','TColStd','Aspect','Image','Visual3d','OSD'],[],{'NIS_InteractiveObject':['SetAttribute'],\
+                                             'NIS_Triangulated':['Polygon','tri_line_intersect','seg_line_intersect'],\
+                                             'NIS_InteractiveContext':['GetDrawers']}),
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
-                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics',],[]),
-             ('Visual3d',[],[]),
-             ('TPrsStd',['Aspect',],[]),
-             ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity'],[]),
+                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics','Image','OSD'],[]),
+             ('Visual3d',[],[],{'Visual3d_View':['GetGraduatedTrihedron']}),
+             ('TPrsStd',['Aspect','Image','OSD'],[]),
+             ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity','Image','OSD'],[]),
              #('WNT',[],[]), gccxml error
-             ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d'],[]),
+             ('Image',[],[]),
+             ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d','Image','OSD'],[]),
              ]
 
 UNIX_MODULES = [
