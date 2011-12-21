@@ -6,8 +6,11 @@ import Modules
 fp = open("OCE_Modules_Unix.cmake","w")
 fp.write("LIST(APPEND OCC_MODULES\n")
 # write all module names
+unix_module_names = []
 for module in (Modules.COMMON_MODULES+Modules.UNIX_MODULES):
-    module_name = module[0]
+    unix_module_names.append(module[0])
+unix_module_names.sort()
+for module_name in unix_module_names:
     fp.write("\t%s\n"%module_name)
 fp.write(")\n")
 fp.close()
@@ -16,8 +19,11 @@ fp.close()
 fp = open("OCE_Modules_Win.cmake","w")
 fp.write("LIST(APPEND OCC_MODULES\n")
 # write all module names
+win_module_names = []
 for module in (Modules.COMMON_MODULES+Modules.WIN_MODULES):
-    module_name = module[0]
+    win_module_names.append(module[0])
+win_module_names.sort()
+for module_name in win_module_names:
     fp.write("\t%s\n"%module_name)
 fp.write(")\n")
 fp.close()
