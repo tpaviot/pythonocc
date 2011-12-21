@@ -46,30 +46,30 @@ def check_paths():
         if not os.path.isfile(standard_real_header):
             print "%s not found."%standard_real_header
             sys.exit(0)
-        else:
-            import shutil
-            fp = open(standard_real_header,"r")
-            file_content = fp.read()
-            fp.close()
-            if not '__SWIG_GENERATION__' in file_content:#need rewriting
-                key = raw_input("Original Standard_Real.hxx header file needs to be modified. Original file will be available with the name Standard_Real_Original.hxx.\nEnter 'y' or 'Y' if you whish to continue.'n' otherwise:")# first mode Standard_Real.hxx to Standard_Real_Original.hxx
-                if key.lower()=='y':
-                    shutil.copy(standard_real_header, os.path.join(environment.OCC_INC,"Standard_Real_Original.hxx"))
-                    #replacing string
-                    file_content = file_content.replace("#if defined(WNT)","#if defined(WNT) && !defined(__SWIG_GENERATION__)")
-                    fp = open(standard_real_header,"w")
-                    fp.write(file_content)
-                    fp.close()
-                else:
-                    sys.exit(0)
-            else:
-                print "Found modified Standard_Real.hxx header file."
+       # else:
+        #    import shutil
+        #    fp = open(standard_real_header,"r")
+        #    file_content = fp.read()
+        #    fp.close()
+        #    if not '__SWIG_GENERATION__' in file_content:#need rewriting
+        #        key = raw_input("Original Standard_Real.hxx header file needs to be modified. Original file will be available with the name Standard_Real_Original.hxx.\nEnter 'y' or 'Y' if you whish to continue.'n' otherwise:")# first mode Standard_Real.hxx to Standard_Real_Original.hxx
+        #        if key.lower()=='y':
+        #            shutil.copy(standard_real_header, os.path.join(environment.OCC_INC,"Standard_Real_Original.hxx"))
+        #            #replacing string
+        #            file_content = file_content.replace("#if defined(WNT)","#if defined(WNT) && !defined(__SWIG_GENERATION__)")
+        #            fp = open(standard_real_header,"w")
+        #            fp.write(file_content)
+        #            fp.close()
+        #        else:
+        #            sys.exit(0)
+        #    else:
+        #        print "Found modified Standard_Real.hxx header file."
     #
     # Remove all files from OCC folder
     #
-    files_to_remove = glob.glob(os.path.join(os.getcwd(),'OCC','*'))
-    for file_to_remove in files_to_remove:
-        os.remove(file_to_remove) 
+    #files_to_remove = glob.glob(os.path.join(os.getcwd(),'OCC','*'))
+    #for file_to_remove in files_to_remove:
+    #    os.remove(file_to_remove) 
     #
     # Create paths
     #
@@ -135,8 +135,8 @@ if __name__ == '__main__':
             modules_to_wrap = Modules.COMMON_MODULES + Modules.UNIX_MODULES
         
     if MULTI_PROCESS_GENERATION:
-        raw_input('You''re about to generate pythonOCC SWIG files (MultiProcess mode). Hit a key to continue')
+        print "Generating pythonOCC SWIG files (MultiProcess mode)."
         generate_swig_multiprocess(modules_to_wrap)
     else:
-        raw_input('You''re about to generate pythonOCC SWIG files (Single process mode). Hit a key to continue')
+        print "Generating pythonOCC SWIG files (Single process mode)."
         generate_swig_single_process(modules_to_wrap)
