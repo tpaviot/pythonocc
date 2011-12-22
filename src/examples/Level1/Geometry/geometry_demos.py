@@ -42,13 +42,9 @@ from OCC.Geom2dAPI import *
 from OCC.GCPnts import *
 
 
-# gui
-#from examples_gui import display, loop
 from OCC.Geom import *
 from OCC.GeomAPI import *
-
 from OCC.Precision import *
-# stands for intersections analytical
 from OCC.IntAna import *
 from OCC.GC import *
 from OCC.GCE2d import *
@@ -106,23 +102,6 @@ def point_list_to_TColgp_Array1OfPnt(li):
 def point2d_list_to_TColgp_Array1OfPnt2d(li):
     return _Tcol_dim_1(li, TColgp_Array1OfPnt2d)
 
-# graphic; point annotations
-#def circle_marker(pnt):
-#    aGraphObj = Graphic2d_GraphicObject()
-#    return Graphic2d_CircleMarker(aGraphObj.GetHandle(), i.X(), i.Y(), 0, 0, 1)
-#
-#def text_marker_2d(txt):
-#    aGraphObj = Graphic2d_GraphicObject()
-#    string = TCollection_ExtendedString('jelle')
-#    return Graphic2d_Text(aGraphObj.GetHandle(), string, 0, 1)
-#
-#def text_marker_3d(txt):
-#    pass
-
-# This is all crap that should not be here.
-# It should be cleaned up the moment we have a Visual3d wrapper
-
-
 def make_text(string, pnt, height):
     '''
     render a bunch of text
@@ -135,11 +114,7 @@ def make_text(string, pnt, height):
     # returns a Handle_Visual3d_ViewManager instance
     # the only thing is that you need the Visual3d class to make this work well
     # now we have to make a presenation for a stupid sphere as a workaround to get to the object
-#    viewer = display.GetContext().GetObject().CurrentViewer().GetObject().Viewer()
-#    hstruct = Graphic3d_Structure(viewer)
-
 #===============================================================================
-#    STOOPID!!
 #     The reason for recreating is that myGroup is gone after an EraseAll call
 #===============================================================================
     stupid_sphere = BRepPrimAPI_MakeSphere(1,1,1,1)
@@ -159,8 +134,6 @@ def make_text(string, pnt, height):
     else:
         _vertex = Graphic3d_Vertex(pnt.X(), pnt.Y(), pnt.Z())
     myGroup.Text(_string, _vertex, height)
-
-
 
 def make_edge2d(shape):
     spline = BRepBuilderAPI_MakeEdge2d(shape)
@@ -185,11 +158,9 @@ def make_face(shape):
     face.Build()
     return face.Shape()
 
-
 #===============================================================================
 # Examples
 #===============================================================================
-
 
 def point_from_curve( event=None ):
     '''
@@ -215,7 +186,7 @@ def point_from_curve( event=None ):
     assert abscissa == Abscissa, 'abscissas dont match up...'
     
     # convert analytic to bspline
-    display.DisplayShape( make_edge2d( C.Circ2d() ) )
+    display.DisplayShape( make_edge2d( C.Circ2d() ) , update=True )
     
     i = 0
     for P in aSequence:
@@ -254,17 +225,15 @@ def project_point_on_curve(event=None):
             # do something with Q or distance here
                 
     make_text("P", P, 6)
-    display.DisplayShape(make_vertex(P))
+    display.DisplayShape(make_vertex(P) , update=True)
     
     pstring = "N : at Distance : " + `PPC.LowerDistance()`       
-    #display.DisplayPoint(N,pstring,0,0,0,1,0.5)
     make_text(pstring, N, 6)
     if NbResults > 0:
         for i in range(1,NbResults+1):
             Q = PPC.Point(i)
             distance = PPC.Distance(i)
             pstring = "Q" + `i` + ": at Distance :" + `PPC.Distance(i)`
-#            display.DisplayPoint(Q,pstring,0.0,-0.5,0.3,1,0.5)
             make_text(pstring, Q, 6)
             display.DisplayShape(make_vertex(Q))
     print 'completed project_point_on_curve, moving on...'
@@ -287,27 +256,15 @@ def point_from_projections(event=None):
         for i in range(1,NbResults+1):
             Q = PPS.Point(i)
             distance = PPS.Distance(i)
-            # do something with Q or distance here
-            
-    display.DisplayShape(make_vertex(P))
+
+    display.DisplayShape(make_vertex(P) , update=True)
     make_text("P", P, 6)
     
     pstring = "N  : at Distance : " + `PPS.LowerDistance()`
     
     display.DisplayShape(make_vertex(N))
     make_text(pstring, N, 6)
-    
-    
-    # TODO
-    #aSurface = ISession_Surface(SP)
-    #CurDrawer = aSurface.Attributes()
-    #uisoaspect = CurDrawer.UIsoAspect()
-    #visoaspect = CurDrawer.VIsoAspect()
-    #uisoaspect.SetNumber(10)
-    #visoaspect.SetNumber(10)
-    #self.interactive_context.SetLocalAttributes(aSurface, CurDrawer,1)       
-    #self.interactive_context.Display(aSurface,1)
-    
+
     if NbResults > 0:
         for i in range(1,NbResults+1):
             Q = PPS.Point(i)
@@ -338,7 +295,7 @@ def points_from_intersection(event=None):
    
     aPlane = GC_MakePlane( PL ).Value()
     aSurface = Geom_RectangularTrimmedSurface( aPlane, - 8., 8., - 12., 12., 1, 1 )
-    display.DisplayShape(make_face(aSurface.GetHandle()))
+    display.DisplayShape(make_face(aSurface.GetHandle()) , update=True)
         
     anEllips = GC_MakeEllipse( EL ).Value()
     display.DisplayShape(make_edge(anEllips))
@@ -366,25 +323,17 @@ def parabola(event=None):
     Para = gp_Parab2d(A,6)                    
     display.DisplayShape(make_vertex(P))
     make_text("P", P, 6)
-    # TODO
-    #aDirection = ISession_Direction(P,D,200)
-    #display.myISessionContext.Display(aDirection,1)
-    
+
     aParabola = GCE2d_MakeParabola(Para)
     gParabola = aParabola.Value()
     
     aTrimmedCurve = Geom2d_TrimmedCurve(gParabola,-100,100,1);
     
-    display.DisplayShape(make_edge2d(aTrimmedCurve.GetHandle()))
-    
-    #display.DisplayCurve(aTrimmedCurve,4,1)
-               
+    display.DisplayShape(make_edge2d(aTrimmedCurve.GetHandle()) , update=True)
+                   
     print " The entity A of type gp_Ax22d is not displayable \n "
     print " The entity D of type gp_Dir2d is displayed as a vector \n    ( mean with a length != 1 ) \n "
 
-
-# TODO
-# Didnt find an equivalent of the direction element...
 def axis(event=None):
     '''
     @param display:
@@ -407,37 +356,12 @@ def axis(event=None):
     A2XDirection = A2.XDirection()     
     A2YDirection = A2.YDirection()
      
-    #display.DisplayPoint(P1,"P1",0.0,0.0,0.0,0,0.1)
-    
-    display.DisplayShape(make_vertex(P1))
+    display.DisplayShape(make_vertex(P1) , update=True)
     make_text("P1", P1, 6)
 
-    # TODO
-    #aDirection = ISession_Direction(P1,D,2,0)
-    #self.interactive_context.Display(aDirection,1)
-     
-    #aDirection2 = ISession_Direction(P1,AXDirection,2,1)
-    #aDirection2.SetText("A.XDirection")
-    #self.interactive_context.Display(aDirection2,1)
-    #               
-    #aDirection3 = ISession_Direction(P1,AYDirection,2,1)
-    #aDirection3.SetText("A.YDirection");
-    #self.interactive_context.Display(aDirection3,1)
-     
-#display.DisplayPoint(P2,"P2",0.0,0.0,0.0,0,0.1)
-    display.DisplayShape(make_vertex(P2))
+   
+    display.DisplayShape(make_vertex(P2) , update=True)
     make_text("P2", P2, 6)
-
-    #aDirection4 = ISession_Direction(P2,D,2,1)
-    #self.interactive_context.Display(aDirection4,1)
-     
-    #aDirection5 = ISession_Direction(P2,A2XDirection,2,1)
-    #aDirection5.SetText("A2 XDirection")
-    #self.interactive_context.Display(aDirection5,1)
-    # 
-    #aDirection6 = ISession_Direction(P2,A2YDirection,2,1)
-    #aDirection6.SetText("A2 YDirection")
-    #self.interactive_context.Display(aDirection6,1)
     
 def bspline(event=None):
     '''
@@ -451,16 +375,8 @@ def bspline(event=None):
     array.append(gp_Pnt2d (4,3))
     array.append(gp_Pnt2d (5,5))
     
-    xxx = point2d_list_to_TColgp_Array1OfPnt2d(array)
-    SPL1 = Geom2dAPI_PointsToBSpline(xxx).Curve()
-    display.DisplayShape(make_edge2d(SPL1))
-        
-    #harray = []
-    #harray.append(gp_Pnt2d (7+ 0,0))
-    #harray.append(gp_Pnt2d (7+ 1,2))
-    #harray.append(gp_Pnt2d (7+ 2,3))
-    #harray.append(gp_Pnt2d (7+ 4,3))
-    #harray.append(gp_Pnt2d (7+ 5,5))
+    pt2d_list = point2d_list_to_TColgp_Array1OfPnt2d(array)
+    SPL1 = Geom2dAPI_PointsToBSpline(pt2d_list).Curve()
     
     harray  = TColgp_HArray1OfPnt2d (1,5)                
     harray.SetValue(1,gp_Pnt2d (7+ 0,0))                               
@@ -469,39 +385,25 @@ def bspline(event=None):
     harray.SetValue(4,gp_Pnt2d (7+ 4,3))                               
     harray.SetValue(5,gp_Pnt2d (7+ 5,5))   
     
-    #yyy = _Tcol_dim_1(harray, TColgp_HArray1OfPnt2d).GetHandle()
-    #anInterpolation = Geom2dAPI_Interpolate(yyy, False, 0.01)
     anInterpolation = Geom2dAPI_Interpolate(harray.GetHandle(), False, 0.01)
     anInterpolation.Perform()
     SPL2 = anInterpolation.Curve()
-    display.DisplayShape(make_edge2d(SPL2))
-    
-    
-    # conversion of the lists fails, really weird since the call to the converter should be fine...
-    #harray2 = []
-    #harray2.append(gp_Pnt2d (11+ 0,0))
-    #harray2.append(gp_Pnt2d (11+ 1,2))
-    #harray2.append(gp_Pnt2d (11+ 2,3))
-    #harray2.append(gp_Pnt2d (11+ 4,3))
-    #harray2.append(gp_Pnt2d (11+ 5,5))
     
     harray2  = TColgp_HArray1OfPnt2d (1,5)                
-    harray2.SetValue(1,gp_Pnt2d (11+ 0,0))
-    harray2.SetValue(2,gp_Pnt2d (11+ 1,2))
-    harray2.SetValue(3,gp_Pnt2d (11+ 2,3))
-    harray2.SetValue(4,gp_Pnt2d (11+ 4,3))
-    harray2.SetValue(5,gp_Pnt2d (11+ 5,5))
+    harray2.SetValue(1,gp_Pnt2d (11,0))
+    harray2.SetValue(2,gp_Pnt2d (12,2))
+    harray2.SetValue(3,gp_Pnt2d (13,3))
+    harray2.SetValue(4,gp_Pnt2d (15,3))
+    harray2.SetValue(5,gp_Pnt2d (16,5))
     
     anInterpolation2 = Geom2dAPI_Interpolate(harray2.GetHandle(),1,0.01)
     anInterpolation2.Perform()
-    SPL3 = anInterpolation2.Curve()         
-    display.DisplayShape(make_edge2d(SPL3))
+    SPL3 = anInterpolation2.Curve()
     
     i = 0
     for P in array:
         i = i+1
         pstring = 'array'+`i`
-    #        display.DisplayPoint(P,pstring,0,0,0,0.05)
         make_vertex(P); make_text(pstring, P, 6)
      
     for j in range(harray.Lower(), harray.Upper()+1):
@@ -514,8 +416,11 @@ def bspline(event=None):
         i = i+1
         pstring = 'harray2'+`i`
         P = harray2.Value(j)
-        make_vertex(P); make_text(pstring, P, 6)    
-
+        make_vertex(P); make_text(pstring, P, 6)
+    
+    display.DisplayShape(make_edge2d(SPL1) , update=True)
+    display.DisplayShape(make_edge2d(SPL2) , update=True)   
+    display.DisplayShape(make_edge2d(SPL3) , update=True)
 
 def curves2d_from_curves(event=None):
     '''
@@ -531,12 +436,7 @@ def curves2d_from_curves(event=None):
     TC = Geom2d_TrimmedCurve(E,-1,2,1)
     SPL = Geom2dConvert_CurveToBSplineCurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
     
-    display.DisplayShape(make_edge2d(SPL))
-
-    # TODO
-    #session_curve = ISession2D_Curve(E,Aspect_TOL_DOTDASH,Aspect_WOL_MEDIUM,4)
-    #session_curve.SetColorIndex(3)
-    #self.myISessionContext.Display(session_curve,1)
+    display.DisplayShape(make_edge2d(SPL) , update=True)
 
 def curves2d_from_offset(event=None):
     '''
@@ -561,14 +461,10 @@ def curves2d_from_offset(event=None):
     dist2 = 1.5
     OC2 = Geom2d_OffsetCurve(SPL1,dist2)
     result2 = OC2.IsCN(2)
-    
-    # extra arguments??       
-    #    display.DisplayCurve(OC2,3,0)
-                
-    
-    display.DisplayShape( make_edge2d(SPL1) )
-    display.DisplayShape( make_edge2d(OC.GetHandle()) )
-    display.DisplayShape( make_edge2d(OC2.GetHandle()) )
+              
+    display.DisplayShape( make_edge2d(SPL1), update=True )
+    display.DisplayShape( make_edge2d(OC.GetHandle()) , update=True)
+    display.DisplayShape( make_edge2d(OC2.GetHandle()), update=True )
 
 def circles2d_from_curves(event=None):
     '''
@@ -607,10 +503,7 @@ def circles2d_from_curves(event=None):
     make_text("P4", P4, 6)
     make_text("P5", P5, 6)
     [display.DisplayShape(make_vertex(i)) for i in [P1,P2,P3,P4,P5]]
-     
-#    aCircle = Geom2d_Circle(C)
-#    display.DisplayShape(make_edge2d(aCircle.GetHandle()))
-    # BUG: this circle is not rendered somehow
+    
     display.DisplayShape(make_edge2d(C))
     
      
@@ -623,20 +516,16 @@ def circles2d_from_curves(event=None):
         for k in range(1,NbSol+1):
             circ = TR.ThisSolution(k)
             aCircle = Geom2d_Circle(circ)
-            display.DisplayShape(make_edge2d(aCircle.GetHandle()))
+            display.DisplayShape(make_edge2d(aCircle.GetHandle()), update=True)
             # find the solution circle ( index, outvalue, outvalue, gp_Pnt2d )
             pnt3 = gp_Pnt2d()                         
             parsol,pararg = TR.Tangency1(k, pnt3)
             # find the first tangent point                                    
-    #        display.DisplayPoint(pnt3,"tangentpoint1",0,0.1,0,0.05)
-            make_text("tangentpoint1", pnt3, 6)
-            
+            make_text("tangentpoint1", pnt3, 6)            
             pnt4 = gp_Pnt2d()                         
             parsol,pararg = TR.Tangency2(k, pnt4)
-    #        display.DisplayPoint(pnt4,"tangentpoint2",0,0.1,0,0.05)
             make_text("tangentpoint2", pnt4, 6)
-            # find the second tangent point                                         
-
+  
 def curves3d_from_points(event=None):
     '''
     @param display:
@@ -663,7 +552,7 @@ def curves3d_from_points(event=None):
         pstring = "P"+`i+1`
         if i == 0:
             pstring = pstring + " (array)  "
-        display.DisplayShape(make_vertex(P))
+        display.DisplayShape(make_vertex(P), update=True)
         make_text(pstring, P, 6)
            
 def surface_from_curves(event=None):
@@ -678,8 +567,8 @@ def surface_from_curves(event=None):
     array.append(gp_Pnt(-4,3,-1))                                                                      
     array.append(gp_Pnt(-3,5,-2))
 
-    aaa = point_list_to_TColgp_Array1OfPnt(array) 
-    SPL1 = GeomAPI_PointsToBSpline(aaa).Curve()
+    pt_list1 = point_list_to_TColgp_Array1OfPnt(array) 
+    SPL1 = GeomAPI_PointsToBSpline(pt_list1).Curve()
     SPL1_c = SPL1.GetObject()
     
     a2 = []
@@ -688,8 +577,8 @@ def surface_from_curves(event=None):
     a2.append(gp_Pnt(2,3,-1 ))                                                                      
     a2.append(gp_Pnt(3,7,-2))                                                                       
     a2.append(gp_Pnt(4,9,-1))
-    bbb = point_list_to_TColgp_Array1OfPnt(a2)
-    SPL2 = GeomAPI_PointsToBSpline(bbb).Curve()
+    pt_list2 = point_list_to_TColgp_Array1OfPnt(a2)
+    SPL2 = GeomAPI_PointsToBSpline(pt_list2).Curve()
     SPL2_c = SPL2.GetObject()
     
     aGeomFill1 = GeomFill_BSplineCurves(SPL1,
@@ -709,29 +598,17 @@ def surface_from_curves(event=None):
                                         GeomFill_CurvedStyle)
     
     aBSplineSurface1 = aGeomFill1.Surface()
-    display.DisplayShape(make_face(aBSplineSurface1))
     aBSplineSurface2 = aGeomFill2.Surface()
-    display.DisplayShape(make_face(aBSplineSurface2))
     aBSplineSurface3 = aGeomFill3.Surface()
-    display.DisplayShape(make_face(aBSplineSurface3))
     
     # annotate
     make_text("GeomFill_StretchStyle", SPL1_c.StartPoint(), 6)
     make_text("GeomFill_CoonsStyle", SPL3.GetObject().StartPoint(), 6)
     make_text("GeomFill_CurvedStyle", SPL5.GetObject().StartPoint(), 6)
 
-
-    #for i in range(0,3):
-    #    aCurve1 = ISession_Curve(Geom_Curve().DownCast(SPL1.Translated(gp_Vec(i * 10,0,0))))
-    #    display.interactive_context.SetDisplayMode(aCurve1,0,1)
-    #    display.interactive_context.SetColor(aCurve1,Quantity_NOC_RED,1)
-    #    aCurve1.Attributes().LineAspect().SetColor(Quantity_NOC_RED)
-    #    display.interactive_context.Display(aCurve1,1)
-    #    aCurve2 = ISession_Curve(Geom_Curve().DownCast(SPL2.Translated(gp_Vec(i * 10,0,0))))
-    #    display.interactive_context.SetDisplayMode(aCurve2,0,1)
-    #    display.interactive_context.SetColor(aCurve2,Quantity_NOC_GREEN,1)
-    #    aCurve1.Attributes().LineAspect().SetColor(Quantity_NOC_GREEN)
-    #    display.interactive_context.Display(aCurve2,1)
+    display.DisplayShape(make_face(aBSplineSurface1))
+    display.DisplayShape(make_face(aBSplineSurface2))
+    display.DisplayShape(make_face(aBSplineSurface3), update=True )
 
 def pipes(event=None):
     '''
@@ -745,8 +622,8 @@ def pipes(event=None):
     a1.append(gp_Pnt(-5,4,-7))                                                                      
     a1.append(gp_Pnt(-3,5,-12))
      
-    xxx = point_list_to_TColgp_Array1OfPnt(a1)
-    SPL1 = GeomAPI_PointsToBSpline(xxx).Curve()
+    pt_list1 = point_list_to_TColgp_Array1OfPnt(a1)
+    SPL1 = GeomAPI_PointsToBSpline(pt_list1).Curve()
     display.DisplayShape(make_edge(SPL1))
     
     aPipe = GeomFill_Pipe(SPL1,1)
@@ -784,11 +661,10 @@ def pipes(event=None):
             aPipe2.Perform(0,0)                                  
             aSurface2= aPipe2.Surface()
             aSurface2.GetObject().Translate(gp_Vec(5,5,0))
-            display.DisplayShape(make_face(aSurface2))
+            display.DisplayShape(make_face(aSurface2), update=True )
         except RuntimeError:
             print 'failed with mode:', mode
-            pass
-
+            
 def bezier_surfaces(event=None):
     '''
     @param display:
@@ -861,70 +737,7 @@ def bezier_surfaces(event=None):
         BSPLSURF = Geom_BSplineSurface( poles, uknots, vknots, umult, vmult, udeg, vdeg, 0, 0 )
         BSPLSURF.Translate(gp_Vec(0,0,2))
            
-    display.DisplayShape(make_face(BSPLSURF.GetHandle()))
-    
-    
-    
-    #
-    #
-    #
-#    a1,a2,a3,a4 = [],[],[],[]
-#     
-#    a1.append([gp_Pnt(1,1,1),gp_Pnt(2,1,2),gp_Pnt(3,1,1)])
-#    a1.append([gp_Pnt(1,2,1),gp_Pnt(2,2,2),gp_Pnt(3,2,0)])
-#    a1.append([gp_Pnt(1,3,2),gp_Pnt(2,3,1),gp_Pnt(3,3,0)])      
-#    
-#    a2.append([gp_Pnt(3,1,1),gp_Pnt(4,1,1),gp_Pnt(5,1,2)])
-#    a2.append([gp_Pnt(3,2,0),gp_Pnt(4,2,1),gp_Pnt(5,2,2)])
-#    a2.append([gp_Pnt(3,3,0),gp_Pnt(4,3,0),gp_Pnt(5,3,1)])
-#    
-#    a3.append([gp_Pnt(1,3,2),gp_Pnt(2,3,1),gp_Pnt(3,3,0)])
-#    a3.append([gp_Pnt(1,4,1),gp_Pnt(2,4,0),gp_Pnt(3,4,1)])
-#    a3.append([gp_Pnt(1,5,1),gp_Pnt(2,5,1),gp_Pnt(3,5,2)])
-#    
-#    a4.append([gp_Pnt(3,3,0),gp_Pnt(4,3,0),gp_Pnt(5,3,1)])
-#    a4.append([gp_Pnt(3,4,1),gp_Pnt(4,4,1),gp_Pnt(5,4,1)])
-#    a4.append([gp_Pnt(3,5,2),gp_Pnt(4,5,2),gp_Pnt(5,5,1)])
-
-    #
-#    bezier_input = [_Tcol_dim_2(i, TColgp_Array2OfPnt) for i in [a1,a2,a3,a4]]
-#    BZ1, BZ2, BZ3, BZ4 = map( Geom_BezierSurface, bezier_input ) 
-    #BZ1, BZ2, BZ3, BZ4 = [Geom_BezierSurface(i) for i in bezier_input] 
-    #BZ1, BZ2, BZ3, BZ4 = Geom_BezierSurface(bezier_input[0]),Geom_BezierSurface(bezier_input[1]),Geom_BezierSurface(bezier_input[2]),Geom_BezierSurface(bezier_input[3]) 
-    
-    
-    #for i in [BZ1,BZ2,BZ3,BZ4]:
-    #    display.DisplayShape(make_face(i.GetHandle()))
-    
-    #display.DisplayShape(make_face(BZ1.GetHandle()))
-    
-    
-    
-    # building the array is ok, but crashed when coupling the surfaces together ( line 905 ) 
-#    ttt = [[BZ1.GetHandle(),BZ2.GetHandle()],[BZ3.GetHandle(),BZ4.GetHandle()]]
-
-#    bezierarray = _Tcol_dim_2(ttt, TColGeom_Array2OfBezierSurface)
-#    
-#    bezierarray = TColGeom_Array2OfBezierSurface(0,1,0,1)
-    #bezierarray.SetValue(0,0,BZ1.GetHandle())
-    #bezierarray.SetValue(0,1,BZ2.GetHandle())
-    #bezierarray.SetValue(1,0,BZ3.GetHandle())
-    #bezierarray.SetValue(0,1,BZ4.GetHandle())
-    #
-    #
-    # SEGFAULTS HERE!!!
-#    BB = GeomConvert_CompBezierSurfacesToBSplineSurface(bezierarray)
-    #if BB.IsDone():
-    #    BSPLSURF = Geom_BSplineSurface(BB.Poles(),BB.UKnots(),BB.VKnots(),BB.UMultiplicities(),BB.VMultiplicities(),BB.UDegree(),BB.VDegree(),0,0 )    
-    #    BSPLSURF.Translate(gp_Vec(0,0,2))
-    #       
-    #display.DisplaySurface(BZ1,1,color = Quantity_NOC_RED)
-    #display.DisplaySurface(BZ2,1,color = Quantity_NOC_GREEN)
-    #display.DisplaySurface(BZ3,1,color = Quantity_NOC_BLUE1)
-    #display.DisplaySurface(BZ4,1,color = Quantity_NOC_BROWN)
-    # 
-    #if BB.IsDone():
-    #    display.DisplaySurface(BSPLSURF,1,color = Quantity_NOC_HOTPINK)
+    display.DisplayShape(make_face(BSPLSURF.GetHandle()), update=True )
 
 def surfaces_from_offsets(event=None):
     display.EraseAll()
@@ -957,7 +770,7 @@ def surfaces_from_offsets(event=None):
     display.DisplayShape(make_face(aGeomSurface))
     display.DisplayShape(make_face(GOS.GetHandle()))
     display.DisplayShape(make_face(GOS1.GetHandle()))
-    display.DisplayShape(make_face(GOS2.GetHandle()))
+    display.DisplayShape(make_face(GOS2.GetHandle()), update=True )
     
 def surfaces_from_revolution(event=None):
     display.EraseAll()
@@ -973,7 +786,7 @@ def surfaces_from_revolution(event=None):
     SOR =Geom_SurfaceOfRevolution(aCurve, gp_OX())
     
     display.DisplayShape(make_edge(aCurve))
-    display.DisplayShape(make_face(SOR.GetHandle()))
+    display.DisplayShape(make_face(SOR.GetHandle()), update=True )
  
 def distances(event=None):
     display.EraseAll()
@@ -1029,7 +842,6 @@ def distances(event=None):
     array3.SetValue(5,4,gp_Pnt (4,2,6))
     array3.SetValue(5,5,gp_Pnt (4,5,5))
     
-
     aSurf2 = GeomAPI_PointsToBSplineSurface(array3).Surface()
     
     ESS = GeomAPI_ExtremaSurfaceSurface(aSurf1,aSurf2)
@@ -1057,7 +869,7 @@ def distances(event=None):
     make_text("P1", a, 6)
     make_text("P2", b, 6)
     display.DisplayShape(make_vertex(a))
-    display.DisplayShape(make_vertex(b))
+    display.DisplayShape(make_vertex(b), update=True )
 
 def exit(event=None):
     sys.exit() 

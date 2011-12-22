@@ -19,6 +19,7 @@
 ##
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
 import os
 from OCC.Utils.Construct import make_closed_polygon, make_n_sided, make_vertex, make_face, make_wire
 
@@ -177,9 +178,6 @@ def solve_radius(event=None):
         print 'Goal: %s radius: %s' % ( i, rcs.curr_radius )
         time.sleep(0.5)
 
-#===============================================================================
-# 
-#===============================================================================
 
 def build_geom_plate(edges):
     bpSrf = GeomPlate_BuildPlateSurface(3,9,12)
@@ -203,7 +201,6 @@ def build_geom_plate(edges):
     dmax = max([tol,10*bpSrf.G0Error()])
     
     srf = bpSrf.Surface()
-#    plate = GeomPlate_MakeApprox(srf, tol, maxSeg, maxDeg, dmax, critOrder)
     plate = GeomPlate_MakeApprox(srf, 1e-04, 100, 9, 1e-03, 0)
     
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
@@ -221,8 +218,7 @@ def build_curve_network(event=None):
     iges = IGESImporter(pth)
     iges.read_file()
     print 'done.'
-    # GetShapes returns 36 TopoDS_Shape, while the TopoDS_Compound contains
-    # just the 6 curves I made in rhino... hmmm...
+    
     print 'Building geomplate...',
     topo = Topo(iges.get_compound())
     edges_list = list(topo.edges())
@@ -230,31 +226,12 @@ def build_curve_network(event=None):
     print 'done.'
     display.EraseAll()
     display.DisplayShape(edges_list)
-   
+    display.FitAll()
     print 'Cutting out of edges...',
     # Make a wire from outer edges
     _edges = [edges_list[2], edges_list[3], edges_list[4], edges_list[5]]
     outer_wire = make_wire(_edges)
 
-    ################ --- ################
-
-#    for i in edges_list:
-#        if i not in _edges:
-#            _edges.append(i)
-#
-#    import ipdb; ipdb.set_trace()
-#    f = make_n_sided(_edges)
-
-
-    # TODO: cut out the shape from the edges in _edges
-
-#    if outer_wire:
-#        splitter = GEOMAlgo_Splitter()
-#        splitter.AddTool(outer_wire)
-#        splitter.AddShape(face)
-#        splitter.Perform()
-#        shp = splitter.Shape()
-#        display.DisplayShape(shp)
 
 def exit(event=None):
     sys.exit()
