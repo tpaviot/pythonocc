@@ -1,4 +1,12 @@
 ==================================================================
+CHANGES FROM 0.5 to 0.6-alpha
+- Upgrade OCE support to 0.8.0
+- Upgrade GEOM support to 6.3.1
+- New CMake based build system
+_ improved __eq__ and __ne__ wrapper
+- Many misc fixes and improvements
+
+==================================================================
 CHANGES FROM 0.4 to 0.5:
 - Wrappers for C++ static methods have been implemented in a SWIG
 compliant way. Static methods like:
