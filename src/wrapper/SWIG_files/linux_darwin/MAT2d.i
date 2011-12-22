@@ -697,8 +697,19 @@ class MAT2d_BiInt {
 		void SecondIndex(const Standard_Integer I2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &B) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const MAT2d_BiInt &B) const;
+		%extend{
+			bool __eq_wrapper__(const MAT2d_BiInt &B) {
+				if (*self==B) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") MAT2d_BiInt::~MAT2d_BiInt %{

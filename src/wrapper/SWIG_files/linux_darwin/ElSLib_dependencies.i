@@ -24,16 +24,6 @@ $HeaderURL$
 
 */
 %{
-#include <GeomAbs_BSplKnotDistribution.hxx>
-#include <GeomAbs_CurveForm.hxx>
-#include <GeomAbs_CurveType.hxx>
-#include <GeomAbs_IsoType.hxx>
-#include <GeomAbs_JoinType.hxx>
-#include <GeomAbs_Shape.hxx>
-#include <GeomAbs_SurfaceForm.hxx>
-#include <GeomAbs_SurfaceType.hxx>
-#include <GeomAbs_UVSense.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -63,13 +53,6 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <Handle_TCollection_AVLBaseNode.hxx>
-#include <Handle_TCollection_HAsciiString.hxx>
-#include <Handle_TCollection_HExtendedString.hxx>
-#include <Handle_TCollection_MapNode.hxx>
-#include <Handle_TCollection_SeqNode.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -147,13 +130,6 @@ $HeaderURL$
 #include <Standard_WayOfLife.hxx>
 #include <Standard_ctype.hxx>
 #include <Standard_math.hxx>
-#include <TopAbs_Orientation.hxx>
-#include <TopAbs_ShapeEnum.hxx>
-#include <TopAbs_State.hxx>
 %};
 
-%import TCollection.i
-%import MMgt.i
 %import Standard.i
-%import TopAbs.i
-%import GeomAbs.i

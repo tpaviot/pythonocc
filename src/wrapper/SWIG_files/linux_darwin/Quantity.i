@@ -1012,8 +1012,12 @@ class Quantity_Period {
 		Quantity_Period operator+(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Period &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Period &anOther) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Period &anOther) {
+				if (*self==anOther) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsShorter(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
@@ -1036,6 +1040,13 @@ class Quantity_Period {
 		Standard_Integer _CSFDB_GetQuantity_PeriodmyUSec() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_PeriodmyUSec(const Standard_Integer p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Quantity_Period::~Quantity_Period %{
@@ -1227,12 +1238,20 @@ class Quantity_Color {
 		Quantity_Parameter Hue() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Quantity_Color &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Quantity_Color &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Color &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Color &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Quantity_Parameter Light() const;
 		%feature("autodoc", "1");
@@ -1277,6 +1296,20 @@ class Quantity_Color {
 		Standard_ShortReal _CSFDB_GetQuantity_ColorMyBlue() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_ColorMyBlue(const Standard_ShortReal p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Quantity_Color::~Quantity_Color %{
@@ -1390,8 +1423,12 @@ class Quantity_Date {
 		Standard_Integer MicroSecond();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Date &anOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Quantity_Date &anOther) const;
+		%extend{
+			bool __eq_wrapper__(const Quantity_Date &anOther) {
+				if (*self==anOther) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEarlier(const Quantity_Date &anOther) const;
 		%feature("autodoc", "1");
@@ -1412,6 +1449,13 @@ class Quantity_Date {
 		Standard_Integer _CSFDB_GetQuantity_DatemyUSec() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetQuantity_DatemyUSec(const Standard_Integer p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Quantity_Date::~Quantity_Date %{

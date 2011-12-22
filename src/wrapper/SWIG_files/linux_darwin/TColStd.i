@@ -5772,14 +5772,25 @@ class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
 		TColStd_PackedMapOfInteger & operator^=(const TColStd_PackedMapOfInteger &MM);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TColStd_PackedMapOfInteger &arg0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TColStd_PackedMapOfInteger &MM) const;
+		%extend{
+			bool __eq_wrapper__(const TColStd_PackedMapOfInteger &MM) {
+				if (*self==MM) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsSubset(const TColStd_PackedMapOfInteger &arg0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean operator<=(const TColStd_PackedMapOfInteger &MM) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasIntersection(const TColStd_PackedMapOfInteger &arg0) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") TColStd_PackedMapOfInteger::~TColStd_PackedMapOfInteger %{

@@ -353,20 +353,36 @@ class TCollection_AsciiString {
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const char * other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const char * other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_CString other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_AsciiString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TCollection_AsciiString &other) const;
+		%extend{
+			bool __eq_wrapper__(const TCollection_AsciiString &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const char * other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const char * other) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_CString other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TCollection_AsciiString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TCollection_AsciiString &other) const;
+		%extend{
+			bool __ne_wrapper__(const TCollection_AsciiString &other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsLess(const char * other) const;
 		%feature("autodoc", "1");
@@ -472,6 +488,20 @@ class TCollection_AsciiString {
 		static		Standard_Integer HASHCODE(const TCollection_AsciiString &astring, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		static		Standard_Boolean ISSIMILAR(const TCollection_AsciiString &string1, const TCollection_AsciiString &string2);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TCollection_AsciiString::~TCollection_AsciiString %{
@@ -842,20 +872,36 @@ class TCollection_ExtendedString {
 		void Insert(const Standard_Integer where, const TCollection_ExtendedString &what);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_ExtString other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_ExtString other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_ExtString other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_ExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TCollection_ExtendedString &other) const;
+		%extend{
+			bool __eq_wrapper__(const TCollection_ExtendedString &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Standard_ExtString other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Standard_ExtString other) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_ExtString other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TCollection_ExtendedString &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TCollection_ExtendedString &other) const;
+		%extend{
+			bool __ne_wrapper__(const TCollection_ExtendedString &other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsLess(const Standard_ExtString other) const;
 		%feature("autodoc", "1");
@@ -914,6 +960,20 @@ class TCollection_ExtendedString {
 		Standard_Integer ToUTF8CString(Standard_PCharacter & theCString) const;
 		%feature("autodoc", "1");
 		Standard_Integer LengthOfCString() const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TCollection_ExtendedString::~TCollection_ExtendedString %{

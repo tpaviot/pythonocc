@@ -1980,8 +1980,19 @@ class IntTools_CArray1OfInteger {
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CArray1OfInteger &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const IntTools_CArray1OfInteger &Other) const;
+		%extend{
+			bool __eq_wrapper__(const IntTools_CArray1OfInteger &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") IntTools_CArray1OfInteger::~IntTools_CArray1OfInteger %{
@@ -3101,8 +3112,19 @@ class IntTools_CArray1OfReal {
 		Standard_Real & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CArray1OfReal &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const IntTools_CArray1OfReal &Other) const;
+		%extend{
+			bool __eq_wrapper__(const IntTools_CArray1OfReal &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") IntTools_CArray1OfReal::~IntTools_CArray1OfReal %{

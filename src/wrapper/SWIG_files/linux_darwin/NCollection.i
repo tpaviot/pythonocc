@@ -422,6 +422,8 @@ class NCollection_ListNode {
 		%feature("autodoc", "1");
 		NCollection_ListNode(NCollection_ListNode* theNext);
 		%feature("autodoc", "1");
+		* NCollection_ListNode & Next();
+		%feature("autodoc", "1");
 		NCollection_ListNode * Next() const;
 
 };

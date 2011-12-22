@@ -2779,16 +2779,38 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_IndexPixel &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_IndexPixel &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_IndexPixel &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_IndexPixel &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_IndexPixel &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_IndexPixel &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetAspect_IndexPixelmyIndex() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetAspect_IndexPixelmyIndex(const Standard_Integer p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Aspect_IndexPixel {
@@ -4257,14 +4279,36 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_ColorPixel &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_ColorPixel &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_ColorPixel &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_ColorPixel &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_ColorPixel &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_ColorPixel &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		const Quantity_Color & _CSFDB_GetAspect_ColorPixelmyColor() const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Aspect_ColorPixel {
@@ -4792,12 +4836,34 @@ class Aspect_FontStyle {
 		void Dump() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
@@ -5274,12 +5340,34 @@ class Aspect_LineStyle {
 		const TColQuantity_Array1OfLength & Values() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_LineStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_LineStyle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_LineStyle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_LineStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_LineStyle &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Aspect_LineStyle::~Aspect_LineStyle %{
@@ -5328,12 +5416,34 @@ class Aspect_MarkerStyle {
 		const TColStd_Array1OfBoolean & SValues() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_MarkerStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Aspect_MarkerStyle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_MarkerStyle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_MarkerStyle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Aspect_MarkerStyle &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_MarkerStyle &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Aspect_MarkerStyle::~Aspect_MarkerStyle %{

@@ -1662,10 +1662,21 @@ class IGESData_IGESType {
 		Standard_Integer Form() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IGESData_IGESType &another) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const IGESData_IGESType &another) const;
+		%extend{
+			bool __eq_wrapper__(const IGESData_IGESType &another) {
+				if (*self==another) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		void Nullify();
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") IGESData_IGESType::~IGESData_IGESType %{

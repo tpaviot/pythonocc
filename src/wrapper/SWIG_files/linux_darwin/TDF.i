@@ -2106,12 +2106,20 @@ class TDF_Label {
 		Standard_Boolean IsImported() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TDF_Label &aLabel) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TDF_Label &aLabel) const;
+		%extend{
+			bool __eq_wrapper__(const TDF_Label &aLabel) {
+				if (*self==aLabel) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TDF_Label &aLabel) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TDF_Label &aLabel) const;
+		%extend{
+			bool __ne_wrapper__(const TDF_Label &aLabel) {
+				if (*self!=aLabel) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsRoot() const;
 		%feature("autodoc", "1");
@@ -2176,6 +2184,20 @@ class TDF_Label {
 			self->EntryDump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TDF_Label::~TDF_Label %{

@@ -42,7 +42,6 @@ $HeaderURL$
 %rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal::DownCast;
 %rename(Sort) BRepMesh_HeapSortIndexedVertexOfDelaun::Sort;
 %rename(Mesh) BRepMesh::Mesh;
-%rename(IsEqual) BRepMesh_CircleInspector::IsEqual;
 %rename(Orientation) BRepMesh_ShapeTool::Orientation;
 %rename(Bound) BRepMesh_ShapeTool::Bound;
 %rename(FirstVertex) BRepMesh_ShapeTool::FirstVertex;

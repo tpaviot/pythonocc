@@ -4604,10 +4604,21 @@ class Graphic2d_Vertex {
 		Quantity_Length Y() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Graphic2d_Vertex &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Graphic2d_Vertex &other) const;
+		%extend{
+			bool __eq_wrapper__(const Graphic2d_Vertex &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		Quantity_Length Distance(const Graphic2d_Vertex &AV1, const Graphic2d_Vertex &AV2);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Graphic2d_Vertex::~Graphic2d_Vertex %{

@@ -132,14 +132,30 @@ class Handle_Standard_Transient {
 		Standard_Transient * Access();
 		%feature("autodoc", "1");
 		const Standard_Transient * Access() const;
-		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Transient &right) const;
-		%feature("autodoc", "1");
-		int operator==(const Standard_Transient *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Transient &right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Standard_Transient *right) const;
+		%extend{
+			bool __eq_wrapper__(const Handle_Standard_Transient &right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __eq_wrapper__(const Standard_Transient *right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Handle_Standard_Transient &right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Standard_Transient *right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		const Handle_Standard_Transient & DownCast(const Handle_Standard_Transient &AnObject);
 		%feature("autodoc", "1");
@@ -150,6 +166,20 @@ class Handle_Standard_Transient {
 			self->Dump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_Transient {
@@ -188,6 +218,20 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 		Handle_Standard_Failure & operator=(const Standard_Failure *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_Failure DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_Failure {
@@ -226,6 +270,20 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 		Handle_Standard_DomainError & operator=(const Standard_DomainError *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_DomainError DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_DomainError {
@@ -264,6 +322,20 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 		Handle_Standard_RangeError & operator=(const Standard_RangeError *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_RangeError DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_RangeError {
@@ -302,6 +374,20 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 		Handle_Standard_NullValue & operator=(const Standard_NullValue *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_NullValue DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_NullValue {
@@ -684,14 +770,30 @@ class Handle_Standard_Persistent {
 			self->Dump(s);
 			return s.str();}
 		};
-		%feature("autodoc", "1");
-		int operator==(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator==(const Standard_Persistent *right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Handle_Standard_Persistent &right) const;
-		%feature("autodoc", "1");
-		int operator!=(const Standard_Persistent *right) const;
+		%extend{
+			bool __eq_wrapper__(const Handle_Standard_Persistent &right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __eq_wrapper__(const Standard_Persistent *right) {
+				if (*self==right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Handle_Standard_Persistent &right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
+		%extend{
+			bool __ne_wrapper__(const Standard_Persistent *right) {
+				if (*self!=right) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		void Nullify();
 		%feature("autodoc", "1");
@@ -704,6 +806,20 @@ class Handle_Standard_Persistent {
 		Handle_Standard_Persistent & operator=(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_Persistent const DownCast(const Handle_Standard_Persistent &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_Persistent {
@@ -1897,8 +2013,12 @@ class Standard_Storable {
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_Storable &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_Storable &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_Storable &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsSimilar(const Standard_Storable &Other) const;
 		%feature("autodoc", "1");
@@ -1909,6 +2029,13 @@ class Standard_Storable {
 			self->ShallowDump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %extend Standard_Storable {
@@ -2666,12 +2793,20 @@ class Standard_GUID {
 		void ToExtString(const Standard_PExtCharacter aStrGuid) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsSame(const Standard_GUID &uid) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Standard_GUID &uid) const;
+		%extend{
+			bool __eq_wrapper__(const Standard_GUID &uid) {
+				if (*self==uid) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotSame(const Standard_GUID &uid) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Standard_GUID &uid) const;
+		%extend{
+			bool __ne_wrapper__(const Standard_GUID &uid) {
+				if (*self!=uid) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		void Assign(const Standard_GUID &uid);
 		%feature("autodoc", "1");
@@ -2736,6 +2871,20 @@ class Standard_GUID {
 		Standard_Byte _CSFDB_GetStandard_GUIDmy8b6() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetStandard_GUIDmy8b6(const Standard_Byte p);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Standard_GUID::~Standard_GUID %{
