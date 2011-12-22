@@ -4411,12 +4411,20 @@ class Graphic3d_MaterialAspect {
 		Graphic3d_NameOfMaterial Name() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Graphic3d_MaterialAspect &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const Graphic3d_MaterialAspect &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Graphic3d_MaterialAspect &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Graphic3d_MaterialAspect &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Graphic3d_MaterialAspect &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Graphic3d_MaterialAspect &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		Standard_Integer NumberOfMaterials();
 		%feature("autodoc", "1");
@@ -4425,6 +4433,20 @@ class Graphic3d_MaterialAspect {
 		char * MaterialName() const;
 		%feature("autodoc", "1");
 		static		Graphic3d_TypeOfMaterial MaterialType(const Standard_Integer aRank);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") Graphic3d_MaterialAspect::~Graphic3d_MaterialAspect %{

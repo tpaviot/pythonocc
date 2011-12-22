@@ -276,8 +276,12 @@ class Intf_SectionPoint {
 		Standard_Real Incidence() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Intf_SectionPoint &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_SectionPoint &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_SectionPoint &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnSameEdge(const Intf_SectionPoint &Other) const;
 		%feature("autodoc", "1");
@@ -290,6 +294,13 @@ class Intf_SectionPoint {
 		void Merge(Intf_SectionPoint & Other);
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Intf_SectionPoint::~Intf_SectionPoint %{
@@ -652,8 +663,12 @@ class Intf_SectionLine {
 		Standard_Integer IsEnd(const Intf_SectionPoint &ThePI) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Intf_SectionLine &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_SectionLine &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_SectionLine &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Intf_SectionLine();
 		%feature("autodoc", "1");
@@ -672,6 +687,13 @@ class Intf_SectionLine {
 		void Close();
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Intf_SectionLine::~Intf_SectionLine %{
@@ -768,8 +790,12 @@ class Intf_TangentZone {
 		const Intf_SectionPoint & GetPoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Intf_TangentZone &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const Intf_TangentZone &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Intf_TangentZone &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Intf_SectionPoint &ThePI) const;
 		%feature("autodoc","ParamOnFirst() -> [Standard_Real, Standard_Real]");
@@ -806,6 +832,13 @@ class Intf_TangentZone {
 		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &Pi);
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer Indent) const;
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") Intf_TangentZone::~Intf_TangentZone %{

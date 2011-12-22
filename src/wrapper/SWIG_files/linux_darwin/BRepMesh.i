@@ -1305,45 +1305,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepMesh_CircleInspector;
-class BRepMesh_CircleInspector : public NCollection_CellFilter_InspectorXY {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_CircleInspector(Standard_Real , Standard_Integer , const BRepMesh_BaseAllocator &theAlloc);
-		%feature("autodoc", "1");
-		void Add(Standard_Integer , const BRepMesh_Circ &theCircle);
-		%feature("autodoc", "1");
-		void ClerResList();
-		%feature("autodoc", "1");
-		CircVector & MapOfCirc();
-		%feature("autodoc", "1");
-		BRepMesh_Circ & GetCirc(Standard_Integer );
-		%feature("autodoc", "1");
-		void SetCurrent(const gp_XY theCurCircle);
-		%feature("autodoc", "1");
-		BRepMesh_ListOfInteger & GetCoincidentInd();
-		%feature("autodoc", "1");
-		NCollection_CellFilter_Action Inspect(const Standard_Integer theTarget);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(Standard_Integer , const Standard_Integer theTarget);
-
-};
-%feature("shadow") BRepMesh_CircleInspector::~BRepMesh_CircleInspector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_CircleInspector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY;
 class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNode {
 	public:
@@ -1654,8 +1615,19 @@ class BRepMesh_Vertex {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const BRepMesh_Vertex &Other) const;
+		%extend{
+			bool __eq_wrapper__(const BRepMesh_Vertex &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %extend BRepMesh_Vertex {
@@ -3462,8 +3434,19 @@ class BRepMesh_Edge {
 		Standard_Boolean SameOrientation(const BRepMesh_Edge &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Edge &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const BRepMesh_Edge &Other) const;
+		%extend{
+			bool __eq_wrapper__(const BRepMesh_Edge &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %extend BRepMesh_Edge {
@@ -3552,8 +3535,19 @@ class BRepMesh_Triangle {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Triangle &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const BRepMesh_Triangle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const BRepMesh_Triangle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %extend BRepMesh_Triangle {

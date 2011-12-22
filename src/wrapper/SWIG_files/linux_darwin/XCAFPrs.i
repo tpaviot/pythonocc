@@ -618,12 +618,23 @@ class XCAFPrs_Style {
 		Standard_Boolean IsVisible() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const XCAFPrs_Style &other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const XCAFPrs_Style &other) const;
+		%extend{
+			bool __eq_wrapper__(const XCAFPrs_Style &other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		static		Standard_Integer HashCode(const XCAFPrs_Style &S, const Standard_Integer Upper);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsEqual(const XCAFPrs_Style &S1, const XCAFPrs_Style &S2);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") XCAFPrs_Style::~XCAFPrs_Style %{
