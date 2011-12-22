@@ -662,12 +662,20 @@ class TopoDS_Shape {
 		Standard_Boolean IsSame(const TopoDS_Shape other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopoDS_Shape other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TopoDS_Shape other) const;
+		%extend{
+			bool __eq_wrapper__(const TopoDS_Shape other) {
+				if (*self==other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const TopoDS_Shape other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TopoDS_Shape other) const;
+		%extend{
+			bool __ne_wrapper__(const TopoDS_Shape other) {
+				if (*self!=other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
@@ -676,6 +684,20 @@ class TopoDS_Shape {
 		TopoDS_Shape EmptyCopied() const;
 		%feature("autodoc", "1");
 		void TShape(const Handle_TopoDS_TShape &TS);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend TopoDS_Shape {
@@ -726,6 +748,20 @@ class TopoDS_Vertex : public TopoDS_Shape {
 		TopoDS_Vertex(const TopoDS_Vertex arg0);
 		%feature("autodoc", "1");
 		TopoDS_Vertex();
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %feature("shadow") TopoDS_Vertex::~TopoDS_Vertex %{

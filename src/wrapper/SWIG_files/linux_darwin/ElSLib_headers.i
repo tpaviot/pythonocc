@@ -23,16 +23,26 @@ $Author$
 $HeaderURL$
 
 */
+%{
 
-%pythoncode {
-#importing required modules
-import GarbageCollector
-import Standard
-import TopoDS
-import gp
-import Poly
-import TopAbs
-import Bnd
-import TCollection
-import TopTools
-};
+// Headers necessary to define wrapped classes.
+
+#include<ElSLib.hxx>
+
+// Additional headers necessary for compilation.
+
+
+// Needed headers necessary for compilation.
+
+#include<ElSLib.hxx>
+#include<gp_Pnt.hxx>
+#include<gp_Pln.hxx>
+#include<gp_Cone.hxx>
+#include<gp_Cylinder.hxx>
+#include<gp_Sphere.hxx>
+#include<gp_Torus.hxx>
+#include<gp_Vec.hxx>
+#include<gp_Ax3.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+%}

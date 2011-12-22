@@ -369,12 +369,20 @@ class TopLoc_Location {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TopLoc_Location &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const TopLoc_Location &Other) const;
+		%extend{
+			bool __eq_wrapper__(const TopLoc_Location &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const TopLoc_Location &Other) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator!=(const TopLoc_Location &Other) const;
+		%extend{
+			bool __ne_wrapper__(const TopLoc_Location &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -383,6 +391,20 @@ class TopLoc_Location {
 			self->ShallowDump(s);
 			return s.str();}
 		};
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend TopLoc_Location {
