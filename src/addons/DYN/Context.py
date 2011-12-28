@@ -148,7 +148,7 @@ class DynamicSimulationContext(ode.World):
                 print('Warning : collision detection enabled for this shape but no geometry provided.')
     
         if self._DISPLAY_INITIALIZED:
-            ais_shape = self._display.DisplayShape(dynamic_shape.get_shape(), update=True)
+            ais_shape = self._display.DisplayShape(dynamic_shape.get_shape(), update=False)
             dynamic_shape.set_ais_shape(ais_shape)
         # store the dynamic shape
         self._dynamic_shapes.append(dynamic_shape)
@@ -189,6 +189,11 @@ class DynamicSimulationContext(ode.World):
         frame_delta = int ( (1/self._delta_t) / float(self._frame_rate) )
         # Create the shape transformer outside the loop to have an faster algorithm
         shape_trsf = gp_Trsf()
+        # fitting the viewer is only performed at the beginning of the simulation
+        # this way the user can move through the scene, while the simulation is running
+        # its a very expensive call, if you appreciate it, use the "register_post_step_callback" method
+        # to call it after each simulation step
+        self._display.FitAll()
         while t<self._duration:
             #i = i+1
             if self._COLLISION_DETECTION: 
@@ -219,7 +224,7 @@ class DynamicSimulationContext(ode.World):
                         xg=shape.x_g#
                         yg=shape.y_g# COG coordinated in the local referential
                         zg=shape.z_g#
-                        print 'xg,yg,zg',xg,yg,zg
+                        #print 'xg,yg,zg',xg,yg,zg
                         u=x-(xg*a11+yg*a12+zg*a13)
                         v=y-(xg*a21+yg*a22+zg*a23)#COG coordinate in the global referential
                         w=z-(xg*a31+yg*a32+zg*a33)
@@ -239,14 +244,11 @@ class DynamicSimulationContext(ode.World):
                         # Not necessary by default : shape.store_cog_position([x,y,z])
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
-                self._display.FitAll()
 
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
             t += self._delta_t
-            print 't',t
-            print 'redisply, disp init',MUST_REDISPLAY, self._DISPLAY_INITIALIZED
             # increment the step index
             current_time_step_index += 1
         # When the simulation is finished, draw cog positions for each shape

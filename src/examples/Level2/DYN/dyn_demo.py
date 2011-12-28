@@ -22,8 +22,9 @@ from OCC.GC import *
 from OCC.Geom import *
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
-from OCC.Utils.Image import Texture
+from OCC.Display.Image import Texture
 from OCC.Graphic3d import *
+from OCC.Quantity import *
 from OCC.Utils.Construct import *
 from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
 from OCC.DYN.Joints import *
@@ -32,6 +33,76 @@ import ode
 from OCC.Display.SimpleGui import *
 from OCC.Utils.Construct import translate_topods_from_vector, make_plane
 display, start_display, add_menu, add_function_to_menu = init_display(1600,1020)
+
+def floor(pnt, vec, dyn_context, references, u1, u2, v1, v2):
+    """
+    :param pnt: origin of the floor
+    :param vec: floor up vector
+    :param dyn_context: DynamicSimulationContext instance
+    :param references: somehow a reference to a list outside of the scope of this function is required
+    otherwise the floor ode.GeomPlane object is GC'd before being used...
+    :param u1: extents u
+    :param u2: extents u
+    :param v1: extents v
+    :param v2: extents v
+    """
+    PL = gp_Pln(pnt,gp_Dir(vec))
+    aPlane = GC_MakePlane(PL).Value()
+    aSurface = Geom_RectangularTrimmedSurface( aPlane, u1, u2, v1, v2, 1, 1 )
+    face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
+    face.Build()
+    floor = ode.GeomPlane(dyn_context._space, vec.Coord(), pnt.Z())
+    # there is a real need to have a reference to a list outside the scope of this function
+    # somehow ode objects are GC'd overly aggresively somehow?
+    references.append(floor)
+    display.DisplayColoredShape(face.Shape(),'RED')
+    display.FitAll()
+
+class Pilars(object):
+    def __init__(self, nx,ny,nz,
+                  dx,dy,dz,
+                   spacex,spacey,spacez,
+                    dyn_context
+                    ):
+        self.n=0
+        # number of grid
+        self.nx=nx
+        self.ny=ny
+        self.nz=nz
+        # distance between grid members
+        self.dx=dx
+        self.dy=dy
+        self.dz=dz
+        # space between grid members
+        self.spacex=spacex
+        self.spacey=spacey
+        self.spacez=spacez
+        # current z level in grid
+        self.level = 0
+        self.iX, self.iY, self.iZ = 0,0,0
+        self.dyn_context = dyn_context
+
+    def add_boxes(self):
+        for i in range(self.nx):
+            self.iX +=1
+            for j in range(self.ny):
+                self.iY +=1
+                for k in range(self.nz):
+                    self.n +=1
+                    if (self.iX*self.iY) % (self.nx-1*self.ny-1) == 0:
+                        self.level += 1
+                        self.iX, self.iY = 0,0
+
+                    new_box = BRepPrimAPI_MakeBox(self.dx,self.dy,self.dz).Shape()
+                    _x = self.dx*i + self.spacex*i
+                    _y = self.dy*j + self.spacey*j
+                    _z = ( self.dz*k + self.spacez*k )
+                    print '_x,_y,_z',_x,_y,_z
+                    v = gp_Vec(_x,_y,_z)
+                    new_box_translated = translate_topods_from_vector(new_box, v, False)
+                    d = self.dyn_context.register_shape(new_box_translated,enable_collision_detection=True,use_boundingbox=True)
+
+
 
 def rotating_box(event=None):
     display.EraseAll()
@@ -44,6 +115,9 @@ def rotating_box(event=None):
     d.setAngularVel([-1,0,0])
     dyn_context.register_post_step_callback(safe_yield)
     dyn_context.start_open_loop()
+    dyn_context.set_animation_frame_rate(30)
+    dyn_context.set_simulation_duration(3)
+    dyn_context.set_time_step(0.1)
     dyn_context.clear()
 
 #def display_cog_trajectory(event=None):
@@ -80,6 +154,7 @@ def box_plane_collision(event=None):
     display.FitAll()
     #Starts the simulation
     dyn_context.set_animation_frame_rate(60)
+    dyn_context.set_time_step(0.001)
     dyn_context.start_open_loop()
 
 def two_boxes_sphere_plane_collision(event=None):
@@ -176,21 +251,8 @@ def collisions(event=None):
     # Then create a geom for this plane
     # Create a plane geom which prevent the objects from falling forever
     references=[] #a list that stores ode instances before they are removed from memory
-    
-    def floor():
-        P1 = gp_Pnt(0,0,-100)
-        V1 = gp_Vec(0,0,1)
-        PL = gp_Pln(P1,gp_Dir(V1))                     
-        aPlane = GC_MakePlane(PL).Value()
-        aSurface = Geom_RectangularTrimmedSurface( aPlane, -100., 100., -60., 60., 1, 1 )
-        face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-        face.Build()
-        floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
-        references.append(floor)
-        display.DisplayColoredShape(face.Shape(),'RED')
-        display.FitAll()
-    
-    floor()
+
+    floor(gp_Pnt(0,0,-100), gp_Vec(0,0,1), dyn_context, references, -10,10,-10,10)
     
     def add_box(i):
         import random
@@ -228,75 +290,20 @@ def pillars(event=None):
     # Create a plane geom which prevent the objects from falling forever
     references=[] #a list that stores ode instances before they are removed from memory
 
-    def floor():
-        Z = -100
-        P1 = gp_Pnt(0,0,Z)
-        V1 = gp_Vec(0,0,1)
-        PL = gp_Pln(P1,gp_Dir(V1))
-        aPlane = GC_MakePlane(PL).Value()
-        aSurface = Geom_RectangularTrimmedSurface( aPlane, -10., 10., -6., 6., 1, 1 )
-        face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-        face.Build()
-        floor = ode.GeomPlane(dyn_context._space, (0,0,1), Z)
-        references.append(floor)
-        display.DisplayColoredShape(face.Shape(),'RED')
-        display.FitAll()
+    floor(gp_Pnt(0,0,-100), gp_Vec(0,0,1), dyn_context, references, -10,10,-10,10)
 
-    floor()
-
-    class Pilars(object):
-        def __init__(self, nx,ny,nz,\
-                            dx,dy,dz,\
-                             spacex,spacey,spacez
-                                                ):
-            self.n=0
-            # number of grid
-            self.nx=nx
-            self.ny=ny
-            self.nz=nz
-            # distance between grid members
-            self.dx=dx
-            self.dy=dy
-            self.dz=dz
-            # space between grid members
-            self.spacex=spacex
-            self.spacey=spacey
-            self.spacez=spacez
-            # current z level in grid
-            self.level = 0
-            self.iX, self.iY, self.iZ = 0,0,0
-
-        def add_boxes(self):
-            for i in range(self.nx):
-                self.iX +=1
-                for j in range(self.ny):
-                    self.iY +=1
-                    for k in range(self.nz):
-                        self.n +=1
-                        if (self.iX*self.iY) % (self.nx-1*self.ny-1) == 0:
-                            self.level += 1
-                            self.iX, self.iY = 0,0
-
-                        new_box = BRepPrimAPI_MakeBox(self.dx,self.dy,self.dz).Shape()
-                        _x = self.dx*i + self.spacex*i
-                        _y = self.dy*j + self.spacey*j
-                        _z = ( self.dz*k + self.spacez*k ) 
-                        print '_x,_y,_z',_x,_y,_z
-                        v = gp_Vec(_x,_y,_z)
-                        new_box_translated = translate_topods_from_vector(new_box, v, False)
-                        d = dyn_context.register_shape(new_box_translated,enable_collision_detection=True,use_boundingbox=True)
-
-    p = Pilars(6,6,6,\
-                 1,1,3,\
-                    0.1,0.1,0.1)
-                    #1,1,1)
+    p = Pilars(6,6,6,
+                 1,1,3,
+                    0.1,0.1,0.1,
+                     dyn_context
+                    )
     p.add_boxes()
 
     dyn_context.setERP(0.6) # 0.2 default
     dyn_context.setCFM(1e-10) # 1e-10 default
     dyn_context.set_simulation_duration(20.)
     dyn_context.set_time_step(0.001)
-    dyn_context.set_animation_frame_rate(24)
+    dyn_context.set_animation_frame_rate(60)
     dyn_context.start_open_loop(True)
 
 def hinge(event=None):
@@ -335,8 +342,10 @@ def hinge(event=None):
         center = center_boundingbox(table_shape)
         bj.attach_shapes(prev, dyn_shape)
         if i%2 == 0:
+            # add another block to the right
             bj.set_anchor( (prev_center.as_vec() - gp_Vec(2,0,0.5)).as_pnt() )
         else:
+            # add another block to the left
             bj.set_anchor( (prev_center.as_vec() - gp_Vec(-2,0,0.5)).as_pnt() )
         dyn_context.register_joint(bj)
         prev=dyn_shape
@@ -371,7 +380,7 @@ def hinge(event=None):
     dyn_context.setERP(0.8) # 0.2 default
     dyn_context.setCFM(1e-12) # 1e-10 default
     dyn_context.set_simulation_duration(1200.)
-    dyn_context.set_animation_frame_rate(60)
+    dyn_context.set_animation_frame_rate(30)
     dyn_context.set_time_step(0.01)
     dyn_context.register_post_step_callback(f)
     dyn_context.start_open_loop(True)
@@ -447,9 +456,45 @@ def adhesion(event=None):
     dyn_context.mu = 0 # icey!!!
     dyn_context.setERP(0.1) # 0.2 default
     dyn_context.setCFM(1e-12) # 1e-10 default
-    dyn_context.set_simulation_duration(1.2)
-    dyn_context.set_animation_frame_rate(60)
+    dyn_context.set_simulation_duration(3)
+    dyn_context.set_animation_frame_rate(30)
     dyn_context.set_time_step(0.01)
+    dyn_context.start_open_loop(True)
+
+def pushover(event=None):
+    display.EraseAll()
+    dyn_context = DynamicSimulationContext()
+    dyn_context.set_display(display, safe_yield)
+    dyn_context.enable_collision_detection()
+    dyn_context.enable_gravity()
+
+    references=[]
+    floor(gp_Pnt(0,0,0), gp_Vec(0,0,1), dyn_context, references, -10,10,-10,10)
+
+    p = Pilars(5,5,10,
+                1,1,2,
+                 0,0,0,
+                  dyn_context
+                    )
+    p.add_boxes()
+    pushing_block = p.dyn_context._dynamic_shapes[0]
+    callback_block = p.dyn_context._dynamic_shapes[-1]
+    pushing_block.setForce((0,120000,0))
+    ais1 = pushing_block.get_ais_shape().GetObject()
+    ais2 = callback_block.get_ais_shape().GetObject()
+    ais1.SetMaterial(Graphic3d_MaterialAspect(Graphic3d_NOM_ALUMINIUM))
+    ais2.SetMaterial(Graphic3d_MaterialAspect(Graphic3d_NOM_ALUMINIUM))
+
+    def f():
+        # how is a block on top of the pile keeping up?
+        print sum(callback_block.getLinearVel())
+
+    dyn_context.setERP(0.6) # 0.2 default
+    dyn_context.setCFM(1e-10) # 1e-10 default
+    dyn_context.set_simulation_duration(8.)
+    dyn_context.set_time_step(0.01)
+    dyn_context.set_animation_frame_rate(24)
+    dyn_context.register_post_step_callback(f)
     dyn_context.start_open_loop(True)
 
 
@@ -457,7 +502,6 @@ def exit(event=None):
     sys.exit()  
     
 if __name__=='__main__':
-    adhesion()
     add_menu('rigid body simulation sample')
     add_function_to_menu('rigid body simulation sample', rotating_box)
     add_function_to_menu('rigid body simulation sample', box_plane_collision)
@@ -467,4 +511,6 @@ if __name__=='__main__':
     add_function_to_menu('rigid body simulation sample', collisions)
     add_function_to_menu('rigid body simulation sample', hinge)
     add_function_to_menu('rigid body simulation sample', adhesion)
+    add_function_to_menu('rigid body simulation sample', pushover)
+    add_function_to_menu('rigid body simulation sample', exit)
     start_display()
