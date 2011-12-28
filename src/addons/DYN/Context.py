@@ -98,7 +98,7 @@ class DynamicSimulationContext(ode.World):
         self._DISPLAY_INITIALIZED = True
         # Register a callback so that it's possible to move the view with the mouse
         # during the simulation.
-        if yield_function is not None:
+        if callable(yield_function):
             self.register_post_step_callback(yield_function)
 
     def set_animation_frame_rate(self, frame_rate):

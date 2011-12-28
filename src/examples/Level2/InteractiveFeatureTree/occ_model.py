@@ -18,11 +18,11 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from enthought.traits.api import (HasTraits, Property, Bool, 
+from traits.api import (HasTraits, Property, Bool,
                         on_trait_change, cached_property, Instance,
                         List, Str, Enum)
 
-from enthought.traits.ui.api import View, Item
+from traitsui.api import View, Item
 
 from utils import Tuple, EditorTraits, Int, Float, Range
 
@@ -90,9 +90,11 @@ class ProcessObject(HasTraits):
         self._inputs.append(vnew)
         
     def _parent_label_changed(self, old_label, new_label):
-        ts = TDF.TDF_TagSource()
-        self.label = ts.NewChild(new_label)
-        
+#        ts = TDF.TDF_TagSource()
+#        self.label = ts.NewChild(new_label)
+        from framework import root
+        self.label = root.NewChild()
+
     def on_modify(self, vnew):
         if vnew:
             self.modified = False
@@ -390,13 +392,12 @@ class ChamferFilter(FilterSource):
         
         if not ret:
             raise Exception("Failed to solve for edge")
-            #print "Failed to solve for edge"
-        
+
         nt = TNaming.TNaming_Tool()
         selected_shape = nt.CurrentShape(selector.NamedShape())
         
-        selected_edge = TopoDS.TopoDS().Edge(selected_shape)
-        
+        selected_edge = TopoDS.TopoDS_edge(selected_shape)
+
         try:
             face = Topo(input_shape).faces_from_edge(selected_edge).next()
         except RuntimeError:

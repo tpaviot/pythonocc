@@ -320,7 +320,7 @@ def Test3d():
     wx.InitAllImageHandlers()
     frame = AppFrame(None)
     frame.Show(True)
-    wx.SafeYield()
+    wx.SafeYield(win=frame)
     frame.canva.InitDriver()
     frame.runTests()
     app.SetTopWindow(frame)
@@ -376,7 +376,7 @@ def Test2d():
     wx.InitAllImageHandlers()
     frame = AppFrame(None)
     frame.Show(True)
-    wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
+    wx.SafeYield(win=frame) #under Linux, frame must be shown before Display3D is initialized
     frame.canva.InitDriver()
     frame.runTests()
     app.SetTopWindow(frame)
