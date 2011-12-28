@@ -387,6 +387,24 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
         display.DisplayShape(make_vertex(pnt))
     return pnt
 
+def intersect_shape_by_line(topods_shape, line):
+    """
+    finds the intersection of a shape and a line
+
+    :param shape: any TopoDS_*
+    :param line: gp_Lin
+    :return: a list with a number of tuples that corresponds to the number of intersections found
+    the tuple contains ( gp_Pnt, TopoDS_Face, u,v,w ), respectively the intersection point, the intersecting face
+    and the u,v,w parameters of the intersection point
+    :raise:
+    """
+    from OCC.IntCurvesFace import IntCurvesFace_ShapeIntersector
+    iii = IntCurvesFace_ShapeIntersector()
+    iii.Load(topods_shape, TOLERANCE)
+    iii.Perform(line, 0,1)
+    return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
+
+
 #def split_edge(edge, pnt):
 #    '''
 #    
