@@ -59,6 +59,11 @@ SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
 INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
 INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
 
+###############################################
+# Boost headers are required to compile smesh #
+###############################################
+SET(BOOST_INCLUDE_PATH /usr/local/include/boost CACHE PATH "boost include path" )
+INCLUDE_DIRECTORIES(${BOOST_INCLUDE_PATH})
 
 ##########
 # Python #
@@ -134,6 +139,14 @@ IF(${PROJECT_NAME}_WRAP_GEOM)
 		ShHealOper Sketcher)
 	LINK_DIRECTORIES(${GEOM_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
+
+##############
+# salomesmesh #
+##############
+IF(${PROJECT_NAME}_WRAP_SMESH)
+	SET(SMESH_LIBRARIES SMDSAbs SMDS SMESHDS SMESH StdMeshers)
+	LINK_DIRECTORIES(${SMESH_LIB_PATH})
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 ######################################################
 # Configure Build settings according to the platform #
@@ -234,7 +247,7 @@ IF(${PROJECT_NAME}_WRAP_GEOM)
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
 # salomesmesh
-IF(WRAP_SMESH)
+IF(${PROJECT_NAME}_WRAP_SMESH)
 	FOREACH(SMESH_MODULE ${SMESH_MODULES})
 	  IF(SMESHMODULES_WRAP_${SMESH_MODULE})
 	    SET(FILE ${SWIG_FILES_PATH}/${SMESH_MODULE}.i)
@@ -243,7 +256,7 @@ IF(WRAP_SMESH)
 	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${SMESH_LIBRARIES})
       ENDIF(SMESHMODULES_WRAP_${SMESH_MODULE})
     ENDFOREACH(SMESH_MODULE)
-ENDIF(WRAP_SMESH)
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 # Build third part modules
 # TODO : the following line is strange but necessary
