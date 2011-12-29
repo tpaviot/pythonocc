@@ -23,3 +23,10 @@ $Author$
 $HeaderURL$
 
 */
+%rename(GetName) StdMeshers_Propagation::GetName;
+%rename(SetPropagationMgr) StdMeshers_Propagation::SetPropagationMgr;
+%rename(GetPropagationSource) StdMeshers_Propagation::GetPropagationSource;
+%rename(IsForwardEdge) StdMeshers_PrismAsBlock::IsForwardEdge;
+%rename(GetWallFaces) StdMeshers_PrismAsBlock::GetWallFaces;
+%rename(AddPrisms) StdMeshers_Prism_3D::AddPrisms;
+%rename(GetFaceWires) StdMeshers_FaceSide::GetFaceWires;

@@ -188,77 +188,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMESHDS_Command;
-class SMESHDS_Command {
-	public:
-		%feature("autodoc", "1");
-		SMESHDS_Command(const SMESHDS_CommandType aType);
-		%feature("autodoc", "1");
-		void AddNode(int , double , double , double );
-		%feature("autodoc", "1");
-		void AddEdge(int , int , int );
-		%feature("autodoc", "1");
-		void AddFace(int , int , int , int );
-		%feature("autodoc", "1");
-		void AddFace(int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddEdge(int , int , int , int );
-		%feature("autodoc", "1");
-		void AddFace(int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddFace(int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int );
-		%feature("autodoc", "1");
-		void MoveNode(int , double , double , double );
-		%feature("autodoc", "1");
-		void RemoveNode(int );
-		%feature("autodoc", "1");
-		void RemoveElement(int );
-		%feature("autodoc", "1");
-		void ChangeElementNodes(int , int* nodes, int );
-		%feature("autodoc", "1");
-		void Renumber(const bool isNodes, const int startID, const int deltaID);
-		%feature("autodoc", "1");
-		SMESHDS_CommandType GetType();
-		%feature("autodoc", "1");
-		int GetNumber();
-		%feature("autodoc", "1");
-		std::list<int, std::allocator<int> > const & GetIndexes();
-		%feature("autodoc", "1");
-		std::list<double, std::allocator<double> > const & GetCoords();
-
-};
-%feature("shadow") SMESHDS_Command::~SMESHDS_Command %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESHDS_Command {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SMESHDS_Document;
 class SMESHDS_Document {
 	public:
@@ -304,6 +233,49 @@ def __del__(self):
 %}
 
 %extend SMESHDS_Document {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESHDS_Hypothesis;
+class SMESHDS_Hypothesis {
+	public:
+		enum hypothesis_type {
+			PARAM_ALGO,
+			ALGO_0D,
+			ALGO_1D,
+			ALGO_2D,
+			ALGO_3D,
+		};
+		%feature("autodoc", "1");
+		const char * GetName() const;
+		%feature("autodoc", "1");
+		int GetID() const;
+		%feature("autodoc", "1");
+		int GetType() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+
+};
+%feature("shadow") SMESHDS_Hypothesis::~SMESHDS_Hypothesis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESHDS_Hypothesis {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -383,34 +355,62 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMESHDS_Hypothesis;
-class SMESHDS_Hypothesis {
+%nodefaultctor SMESHDS_Command;
+class SMESHDS_Command {
 	public:
-		enum hypothesis_type {
-			PARAM_ALGO,
-			ALGO_0D,
-			ALGO_1D,
-			ALGO_2D,
-			ALGO_3D,
-		};
 		%feature("autodoc", "1");
-		const char * GetName() const;
+		SMESHDS_Command(const SMESHDS_CommandType aType);
 		%feature("autodoc", "1");
-		int GetID() const;
+		void AddNode(int , double , double , double );
 		%feature("autodoc", "1");
-		int GetType() const;
+		void AddEdge(int , int , int );
 		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
+		void AddFace(int , int , int , int );
 		%feature("autodoc", "1");
+		void AddFace(int , int , int , int , int );
 		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
+		void AddVolume(int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddEdge(int , int , int , int );
+		%feature("autodoc", "1");
+		void AddFace(int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddFace(int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void AddVolume(int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int , int );
+		%feature("autodoc", "1");
+		void MoveNode(int , double , double , double );
+		%feature("autodoc", "1");
+		void RemoveNode(int );
+		%feature("autodoc", "1");
+		void RemoveElement(int );
+		%feature("autodoc", "1");
+		void ChangeElementNodes(int , int* nodes, int );
+		%feature("autodoc", "1");
+		void Renumber(const bool isNodes, const int startID, const int deltaID);
+		%feature("autodoc", "1");
+		SMESHDS_CommandType GetType();
+		%feature("autodoc", "1");
+		int GetNumber();
+		%feature("autodoc", "1");
+		std::list<int, std::allocator<int> > const & GetIndexes();
+		%feature("autodoc", "1");
+		std::list<double, std::allocator<double> > const & GetCoords();
 
 };
-%feature("shadow") SMESHDS_Hypothesis::~SMESHDS_Hypothesis %{
+%feature("shadow") SMESHDS_Command::~SMESHDS_Command %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -419,7 +419,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMESHDS_Hypothesis {
+%extend SMESHDS_Command {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -67,6 +67,10 @@ class Sketcher_Profile {
 		const TopoDS_Shape  GetShape();
 		%feature("autodoc", "1");
 		bool IsDone();
+		%feature("autodoc", "1");
+		std::string ErrMsg();
+		%feature("autodoc", "1");
+		double Error();
 
 };
 %feature("shadow") Sketcher_Profile::~Sketcher_Profile %{

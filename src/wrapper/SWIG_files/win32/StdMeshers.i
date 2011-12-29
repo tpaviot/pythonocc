@@ -53,102 +53,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor StdMeshers_MaxElementVolume;
-class StdMeshers_MaxElementVolume : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_MaxElementVolume(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetMaxVolume(double );
-		%feature("autodoc", "1");
-		double GetMaxVolume() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_MaxElementVolume::~StdMeshers_MaxElementVolume %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_MaxElementVolume {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_ProjectionSource3D;
-class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_ProjectionSource3D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetSource3DShape(const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		TopoDS_Shape GetSource3DShape() const;
-		%feature("autodoc", "1");
-		void SetSourceMesh(SMESH_Mesh* mesh);
-		%feature("autodoc", "1");
-		SMESH_Mesh * GetSourceMesh() const;
-		%feature("autodoc", "1");
-		void SetVertexAssociation(const TopoDS_Shape sourceVertex1, const TopoDS_Shape sourceVertex2, const TopoDS_Shape targetVertex1, const TopoDS_Shape targetVertex2);
-		%feature("autodoc", "1");
-		TopoDS_Vertex GetSourceVertex(int ) const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex GetTargetVertex(int ) const;
-		%feature("autodoc", "1");
-		bool HasVertexAssociation() const;
-		%feature("autodoc", "1");
-		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3, TopoDS_Shape & s4, TopoDS_Shape & s5) const;
-		%feature("autodoc", "1");
-		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, const TopoDS_Shape s4, const TopoDS_Shape s5, SMESH_Mesh* mesh);
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_ProjectionSource3D::~StdMeshers_ProjectionSource3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_ProjectionSource3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdMeshers_NumberOfSegments;
 class StdMeshers_NumberOfSegments : public SMESH_Hypothesis {
 	public:
@@ -219,39 +123,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdMeshers_Regular_1D;
-class StdMeshers_Regular_1D : public SMESH_1D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_Regular_1D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool arg2=true);
-		%feature("autodoc", "1");
-		virtual		void SetEventListener(SMESH_subMesh* subMesh);
-		%feature("autodoc", "1");
-		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
-
-};
-%feature("shadow") StdMeshers_Regular_1D::~StdMeshers_Regular_1D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_Regular_1D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdMeshers_MaxElementArea;
 class StdMeshers_MaxElementArea : public SMESH_Hypothesis {
 	public:
@@ -292,116 +163,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdMeshers_RadialPrism_3D;
-class StdMeshers_RadialPrism_3D : public SMESH_3D_Algo {
+%nodefaultctor StdMeshers_MaxElementVolume;
+class StdMeshers_MaxElementVolume : public SMESH_Hypothesis {
 	public:
 		%feature("autodoc", "1");
-		StdMeshers_RadialPrism_3D(int , int , SMESH_Gen* gen);
+		StdMeshers_MaxElementVolume(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		void SetMaxVolume(double );
 		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-
-};
-%feature("shadow") StdMeshers_RadialPrism_3D::~StdMeshers_RadialPrism_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_RadialPrism_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_PrismAsBlock;
-class StdMeshers_PrismAsBlock : public SMESH_Block {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_PrismAsBlock();
-		%feature("autodoc", "1");
-		bool Init(SMESH_MesherHelper* helper, const TopoDS_Shape shape3D);
-		%feature("autodoc", "1");
-		SMESH_ComputeErrorPtr GetError() const;
-		%feature("autodoc", "1");
-		int VerticalSize() const;
-		%feature("autodoc", "1");
-		bool HasNotQuadElemOnTop() const;
-		%feature("autodoc", "1");
-		const TNodeColumn * GetNodeColumn(const SMDS_MeshNode *node) const;
-		%feature("autodoc", "1");
-		const TParam2ColumnMap & GetParam2ColumnMap(const int baseEdgeID, bool & isReverse);
-		%feature("autodoc", "1");
-		SMESH_Mesh * Mesh() const;
-		%feature("autodoc", "1");
-		SMESHDS_Mesh * MeshDS() const;
-		%feature("autodoc", "1");
-		SMESH_subMesh * SubMesh(const int shapeID) const;
-		%feature("autodoc", "1");
-		SMESHDS_SubMesh * SubMeshDS(const int shapeID) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape(const int shapeID) const;
-		%feature("autodoc", "1");
-		int ShapeID(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge bottomEdge, const int sideFaceID);
-		%feature("autodoc", "1");
-		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape mainShape, const TopoDS_Shape bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
-
-};
-%feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_PrismAsBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_Hexa_3D;
-class StdMeshers_Hexa_3D : public SMESH_3D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_Hexa_3D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-
-};
-%feature("shadow") StdMeshers_Hexa_3D::~StdMeshers_Hexa_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_Hexa_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_TrianglePreference;
-class StdMeshers_TrianglePreference : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_TrianglePreference(int , int , SMESH_Gen* gen);
+		double GetMaxVolume() const;
 		%feature("autodoc", "1");
 		virtual		std::ostream & SaveTo(std::ostream & save);
 		%feature("autodoc", "1");
@@ -417,7 +187,7 @@ class StdMeshers_TrianglePreference : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
-%feature("shadow") StdMeshers_TrianglePreference::~StdMeshers_TrianglePreference %{
+%feature("shadow") StdMeshers_MaxElementVolume::~StdMeshers_MaxElementVolume %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -426,65 +196,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StdMeshers_TrianglePreference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_Prism_3D;
-class StdMeshers_Prism_3D : public SMESH_3D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_Prism_3D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		void ProjectTriangles();
-		%feature("autodoc", "1");
-		static		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
-
-};
-%feature("shadow") StdMeshers_Prism_3D::~StdMeshers_Prism_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_Prism_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_UseExisting_2D;
-class StdMeshers_UseExisting_2D : public SMESH_2D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_UseExisting_2D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-
-};
-%feature("shadow") StdMeshers_UseExisting_2D::~StdMeshers_UseExisting_2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_UseExisting_2D {
+%extend StdMeshers_MaxElementVolume {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -572,46 +284,6 @@ def __del__(self):
 %}
 
 %extend StdMeshers_Projection_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_LayerDistribution;
-class StdMeshers_LayerDistribution : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_LayerDistribution(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetLayerDistribution(SMESH_Hypothesis* hyp1D);
-		%feature("autodoc", "1");
-		SMESH_Hypothesis * GetLayerDistribution() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_LayerDistribution::~StdMeshers_LayerDistribution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_LayerDistribution {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -707,6 +379,62 @@ def __del__(self):
 };
 
 
+%nodefaultctor StdMeshers_ProjectionSource3D;
+class StdMeshers_ProjectionSource3D : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_ProjectionSource3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetSource3DShape(const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		TopoDS_Shape GetSource3DShape() const;
+		%feature("autodoc", "1");
+		void SetSourceMesh(SMESH_Mesh* mesh);
+		%feature("autodoc", "1");
+		SMESH_Mesh * GetSourceMesh() const;
+		%feature("autodoc", "1");
+		void SetVertexAssociation(const TopoDS_Shape sourceVertex1, const TopoDS_Shape sourceVertex2, const TopoDS_Shape targetVertex1, const TopoDS_Shape targetVertex2);
+		%feature("autodoc", "1");
+		TopoDS_Vertex GetSourceVertex(int ) const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex GetTargetVertex(int ) const;
+		%feature("autodoc", "1");
+		bool HasVertexAssociation() const;
+		%feature("autodoc", "1");
+		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3, TopoDS_Shape & s4, TopoDS_Shape & s5) const;
+		%feature("autodoc", "1");
+		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, const TopoDS_Shape s4, const TopoDS_Shape s5, SMESH_Mesh* mesh);
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_ProjectionSource3D::~StdMeshers_ProjectionSource3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_ProjectionSource3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StdMeshers_Propagation;
 class StdMeshers_Propagation : public SMESH_Hypothesis {
 	public:
@@ -749,6 +477,195 @@ def __del__(self):
 };
 
 
+%nodefaultctor StdMeshers_TrianglePreference;
+class StdMeshers_TrianglePreference : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_TrianglePreference(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_TrianglePreference::~StdMeshers_TrianglePreference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_TrianglePreference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_LocalLength;
+class StdMeshers_LocalLength : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_LocalLength(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetLength(double );
+		%feature("autodoc", "1");
+		void SetPrecision(double );
+		%feature("autodoc", "1");
+		double GetLength() const;
+		%feature("autodoc", "1");
+		double GetPrecision() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_LocalLength::~StdMeshers_LocalLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_LocalLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_NumberOfLayers;
+class StdMeshers_NumberOfLayers : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_NumberOfLayers(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetNumberOfLayers(int );
+		%feature("autodoc", "1");
+		int GetNumberOfLayers() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_NumberOfLayers::~StdMeshers_NumberOfLayers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_NumberOfLayers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_LengthFromEdges;
+class StdMeshers_LengthFromEdges : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_LengthFromEdges(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetMode(int );
+		%feature("autodoc", "1");
+		int GetMode();
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_LengthFromEdges::~StdMeshers_LengthFromEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_LengthFromEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_Quadrangle_2D;
+class StdMeshers_Quadrangle_2D : public SMESH_2D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_Quadrangle_2D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		FaceQuadStruct * CheckAnd2Dcompute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool CreateQuadratic);
+
+};
+%feature("shadow") StdMeshers_Quadrangle_2D::~StdMeshers_Quadrangle_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_Quadrangle_2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StdMeshers_Deflection1D;
 class StdMeshers_Deflection1D : public SMESH_Hypothesis {
 	public:
@@ -783,6 +700,441 @@ def __del__(self):
 %}
 
 %extend StdMeshers_Deflection1D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_PrismAsBlock;
+class StdMeshers_PrismAsBlock : public SMESH_Block {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_PrismAsBlock();
+		%feature("autodoc", "1");
+		bool Init(SMESH_MesherHelper* helper, const TopoDS_Shape shape3D);
+		%feature("autodoc", "1");
+		SMESH_ComputeErrorPtr GetError() const;
+		%feature("autodoc", "1");
+		int VerticalSize() const;
+		%feature("autodoc", "1");
+		bool HasNotQuadElemOnTop() const;
+		%feature("autodoc", "1");
+		const TNodeColumn * GetNodeColumn(const SMDS_MeshNode *node) const;
+		%feature("autodoc", "1");
+		const TParam2ColumnMap & GetParam2ColumnMap(const int baseEdgeID, bool & isReverse);
+		%feature("autodoc", "1");
+		SMESH_Mesh * Mesh() const;
+		%feature("autodoc", "1");
+		SMESHDS_Mesh * MeshDS() const;
+		%feature("autodoc", "1");
+		SMESH_subMesh * SubMesh(const int shapeID) const;
+		%feature("autodoc", "1");
+		SMESHDS_SubMesh * SubMeshDS(const int shapeID) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape(const int shapeID) const;
+		%feature("autodoc", "1");
+		int ShapeID(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		static		bool IsForwardEdge(SMESHDS_Mesh* meshDS, const TParam2ColumnMap &columnsMap, const TopoDS_Edge bottomEdge, const int sideFaceID);
+		%feature("autodoc", "1");
+		static		bool GetWallFaces(SMESH_Mesh* mesh, const TopoDS_Shape mainShape, const TopoDS_Shape bottomFace, std::list<TopoDS_Edge>, std::list<TopoDS_Face>);
+
+};
+%feature("shadow") StdMeshers_PrismAsBlock::~StdMeshers_PrismAsBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_PrismAsBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_SMESHBlock;
+class StdMeshers_SMESHBlock {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_SMESHBlock();
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Shell theShell);
+		%feature("autodoc", "1");
+		void Load(const TopoDS_Shell theShell, const TopoDS_Vertex theV000, const TopoDS_Vertex theV001);
+		%feature("autodoc", "1");
+		void ComputeParameters(const gp_Pnt thePnt, gp_XYZ & theXYZ);
+		%feature("autodoc", "1");
+		void ComputeParameters(const gp_Pnt thePnt, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
+		%feature("autodoc", "1");
+		void ComputeParameters(const double &theU, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
+		%feature("autodoc", "1");
+		void Point(const gp_XYZ theParams, gp_Pnt & thePnt);
+		%feature("autodoc", "1");
+		void Point(const gp_XYZ theParams, const TopoDS_Shape theShape, gp_Pnt & thePnt);
+		%feature("autodoc", "1");
+		int ShapeID(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape(const int theID);
+		%feature("autodoc", "1");
+		SMESH_Block & Block();
+		%feature("autodoc", "1");
+		bool IsForwadEdge(const int theEdgeID);
+		%feature("autodoc", "1");
+		int ErrorStatus() const;
+		%feature("autodoc", "1");
+		SMESH_ComputeErrorPtr GetError() const;
+
+};
+%feature("shadow") StdMeshers_SMESHBlock::~StdMeshers_SMESHBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_SMESHBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_ProjectionSource1D;
+class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_ProjectionSource1D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetSourceEdge(const TopoDS_Shape edge);
+		%feature("autodoc", "1");
+		TopoDS_Shape GetSourceEdge() const;
+		%feature("autodoc", "1");
+		bool IsCompoundSource() const;
+		%feature("autodoc", "1");
+		void SetSourceMesh(SMESH_Mesh* mesh);
+		%feature("autodoc", "1");
+		SMESH_Mesh * GetSourceMesh() const;
+		%feature("autodoc", "1");
+		void SetVertexAssociation(const TopoDS_Shape sourceVertex, const TopoDS_Shape targetVertex);
+		%feature("autodoc", "1");
+		TopoDS_Vertex GetSourceVertex() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex GetTargetVertex() const;
+		%feature("autodoc", "1");
+		bool HasVertexAssociation() const;
+		%feature("autodoc", "1");
+		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3) const;
+		%feature("autodoc", "1");
+		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, SMESH_Mesh* mesh);
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_ProjectionSource1D::~StdMeshers_ProjectionSource1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_ProjectionSource1D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_StartEndLength;
+class StdMeshers_StartEndLength : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_StartEndLength(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetLength(double , bool );
+		%feature("autodoc", "1");
+		double GetLength(bool ) const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_StartEndLength::~StdMeshers_StartEndLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_StartEndLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_Prism_3D;
+class StdMeshers_Prism_3D : public SMESH_3D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_Prism_3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		void ProjectTriangles();
+		%feature("autodoc", "1");
+		static		void AddPrisms(std::vector<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*,std::allocator<const std::vector<const SMDS_MeshNode*, std::allocator<const SMDS_MeshNode*> >*> > & nodeColumns, SMESH_MesherHelper* helper);
+
+};
+%feature("shadow") StdMeshers_Prism_3D::~StdMeshers_Prism_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_Prism_3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_AutomaticLength;
+class StdMeshers_AutomaticLength : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_AutomaticLength(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		double GetLength(const SMESH_Mesh *aMesh, const TopoDS_Shape anEdge);
+		%feature("autodoc", "1");
+		double GetLength(const SMESH_Mesh *aMesh, const double edgeLength);
+		%feature("autodoc", "1");
+		void SetFineness(double );
+		%feature("autodoc", "1");
+		double GetFineness() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_AutomaticLength::~StdMeshers_AutomaticLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_AutomaticLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_Regular_1D;
+class StdMeshers_Regular_1D : public SMESH_1D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_Regular_1D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool arg2=true);
+		%feature("autodoc", "1");
+		virtual		void SetEventListener(SMESH_subMesh* subMesh);
+		%feature("autodoc", "1");
+		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
+
+};
+%feature("shadow") StdMeshers_Regular_1D::~StdMeshers_Regular_1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_Regular_1D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_Penta_3D;
+class StdMeshers_Penta_3D {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_Penta_3D();
+		%feature("autodoc", "1");
+		bool Compute(SMESH_Mesh & arg0, const TopoDS_Shape arg1);
+		%feature("autodoc", "1");
+		int ErrorStatus() const;
+		%feature("autodoc", "1");
+		SMESH_ComputeErrorPtr GetComputeError() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const double theTol3D);
+		%feature("autodoc", "1");
+		double Tolerance() const;
+		%feature("autodoc", "1");
+		bool LoadIJNodes(StdMeshers_IJNodeMap & theIJNodes, const TopoDS_Face theFace, const TopoDS_Edge theBaseEdge, SMESHDS_Mesh* theMesh);
+
+};
+%feature("shadow") StdMeshers_Penta_3D::~StdMeshers_Penta_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_Penta_3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_RadialPrism_3D;
+class StdMeshers_RadialPrism_3D : public SMESH_3D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_RadialPrism_3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+
+};
+%feature("shadow") StdMeshers_RadialPrism_3D::~StdMeshers_RadialPrism_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_RadialPrism_3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_SegmentLengthAroundVertex;
+class StdMeshers_SegmentLengthAroundVertex : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_SegmentLengthAroundVertex(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetLength(double );
+		%feature("autodoc", "1");
+		double GetLength() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_SegmentLengthAroundVertex::~StdMeshers_SegmentLengthAroundVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_SegmentLengthAroundVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_Hexa_3D;
+class StdMeshers_Hexa_3D : public SMESH_3D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_Hexa_3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+
+};
+%feature("shadow") StdMeshers_Hexa_3D::~StdMeshers_Hexa_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_Hexa_3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -866,6 +1218,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor StdMeshers_UseExisting_2D;
+class StdMeshers_UseExisting_2D : public SMESH_2D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_UseExisting_2D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+
+};
+%feature("shadow") StdMeshers_UseExisting_2D::~StdMeshers_UseExisting_2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_UseExisting_2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StdMeshers_Arithmetic1D;
 class StdMeshers_Arithmetic1D : public SMESH_Hypothesis {
 	public:
@@ -935,15 +1314,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdMeshers_LengthFromEdges;
-class StdMeshers_LengthFromEdges : public SMESH_Hypothesis {
+%nodefaultctor StdMeshers_QuadranglePreference;
+class StdMeshers_QuadranglePreference : public SMESH_Hypothesis {
 	public:
 		%feature("autodoc", "1");
-		StdMeshers_LengthFromEdges(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetMode(int );
-		%feature("autodoc", "1");
-		int GetMode();
+		StdMeshers_QuadranglePreference(int , int , SMESH_Gen* gen);
 		%feature("autodoc", "1");
 		virtual		std::ostream & SaveTo(std::ostream & save);
 		%feature("autodoc", "1");
@@ -959,7 +1334,7 @@ class StdMeshers_LengthFromEdges : public SMESH_Hypothesis {
 		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
 
 };
-%feature("shadow") StdMeshers_LengthFromEdges::~StdMeshers_LengthFromEdges %{
+%feature("shadow") StdMeshers_QuadranglePreference::~StdMeshers_QuadranglePreference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -968,7 +1343,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StdMeshers_LengthFromEdges {
+%extend StdMeshers_QuadranglePreference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1014,448 +1389,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdMeshers_SegmentLengthAroundVertex;
-class StdMeshers_SegmentLengthAroundVertex : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_SegmentLengthAroundVertex(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetLength(double );
-		%feature("autodoc", "1");
-		double GetLength() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_SegmentLengthAroundVertex::~StdMeshers_SegmentLengthAroundVertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_SegmentLengthAroundVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_CompositeHexa_3D;
-class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_CompositeHexa_3D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-
-};
-%feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_CompositeHexa_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_ProjectionSource1D;
-class StdMeshers_ProjectionSource1D : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_ProjectionSource1D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetSourceEdge(const TopoDS_Shape edge);
-		%feature("autodoc", "1");
-		TopoDS_Shape GetSourceEdge() const;
-		%feature("autodoc", "1");
-		bool IsCompoundSource() const;
-		%feature("autodoc", "1");
-		void SetSourceMesh(SMESH_Mesh* mesh);
-		%feature("autodoc", "1");
-		SMESH_Mesh * GetSourceMesh() const;
-		%feature("autodoc", "1");
-		void SetVertexAssociation(const TopoDS_Shape sourceVertex, const TopoDS_Shape targetVertex);
-		%feature("autodoc", "1");
-		TopoDS_Vertex GetSourceVertex() const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex GetTargetVertex() const;
-		%feature("autodoc", "1");
-		bool HasVertexAssociation() const;
-		%feature("autodoc", "1");
-		void GetStoreParams(TopoDS_Shape & s1, TopoDS_Shape & s2, TopoDS_Shape & s3) const;
-		%feature("autodoc", "1");
-		void RestoreParams(const TopoDS_Shape s1, const TopoDS_Shape s2, const TopoDS_Shape s3, SMESH_Mesh* mesh);
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_ProjectionSource1D::~StdMeshers_ProjectionSource1D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_ProjectionSource1D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_NumberOfLayers;
-class StdMeshers_NumberOfLayers : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_NumberOfLayers(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetNumberOfLayers(int );
-		%feature("autodoc", "1");
-		int GetNumberOfLayers() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_NumberOfLayers::~StdMeshers_NumberOfLayers %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_NumberOfLayers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_Quadrangle_2D;
-class StdMeshers_Quadrangle_2D : public SMESH_2D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_Quadrangle_2D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		FaceQuadStruct * CheckAnd2Dcompute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool CreateQuadratic);
-
-};
-%feature("shadow") StdMeshers_Quadrangle_2D::~StdMeshers_Quadrangle_2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_Quadrangle_2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_Penta_3D;
-class StdMeshers_Penta_3D {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_Penta_3D();
-		%feature("autodoc", "1");
-		bool Compute(SMESH_Mesh & arg0, const TopoDS_Shape arg1);
-		%feature("autodoc", "1");
-		int ErrorStatus() const;
-		%feature("autodoc", "1");
-		SMESH_ComputeErrorPtr GetComputeError() const;
-		%feature("autodoc", "1");
-		void SetTolerance(const double theTol3D);
-		%feature("autodoc", "1");
-		double Tolerance() const;
-		%feature("autodoc", "1");
-		bool LoadIJNodes(StdMeshers_IJNodeMap & theIJNodes, const TopoDS_Face theFace, const TopoDS_Edge theBaseEdge, SMESHDS_Mesh* theMesh);
-
-};
-%feature("shadow") StdMeshers_Penta_3D::~StdMeshers_Penta_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_Penta_3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_QuadranglePreference;
-class StdMeshers_QuadranglePreference : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_QuadranglePreference(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_QuadranglePreference::~StdMeshers_QuadranglePreference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_QuadranglePreference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_StartEndLength;
-class StdMeshers_StartEndLength : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_StartEndLength(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetLength(double , bool );
-		%feature("autodoc", "1");
-		double GetLength(bool ) const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_StartEndLength::~StdMeshers_StartEndLength %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_StartEndLength {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_LocalLength;
-class StdMeshers_LocalLength : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_LocalLength(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		void SetLength(double );
-		%feature("autodoc", "1");
-		void SetPrecision(double );
-		%feature("autodoc", "1");
-		double GetLength() const;
-		%feature("autodoc", "1");
-		double GetPrecision() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_LocalLength::~StdMeshers_LocalLength %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_LocalLength {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_AutomaticLength;
-class StdMeshers_AutomaticLength : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_AutomaticLength(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		double GetLength(const SMESH_Mesh *aMesh, const TopoDS_Shape anEdge);
-		%feature("autodoc", "1");
-		double GetLength(const SMESH_Mesh *aMesh, const double edgeLength);
-		%feature("autodoc", "1");
-		void SetFineness(double );
-		%feature("autodoc", "1");
-		double GetFineness() const;
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_AutomaticLength::~StdMeshers_AutomaticLength %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_AutomaticLength {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_SMESHBlock;
-class StdMeshers_SMESHBlock {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_SMESHBlock();
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Shell theShell);
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Shell theShell, const TopoDS_Vertex theV000, const TopoDS_Vertex theV001);
-		%feature("autodoc", "1");
-		void ComputeParameters(const gp_Pnt thePnt, gp_XYZ & theXYZ);
-		%feature("autodoc", "1");
-		void ComputeParameters(const gp_Pnt thePnt, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
-		%feature("autodoc", "1");
-		void ComputeParameters(const double &theU, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
-		%feature("autodoc", "1");
-		void Point(const gp_XYZ theParams, gp_Pnt & thePnt);
-		%feature("autodoc", "1");
-		void Point(const gp_XYZ theParams, const TopoDS_Shape theShape, gp_Pnt & thePnt);
-		%feature("autodoc", "1");
-		int ShapeID(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape(const int theID);
-		%feature("autodoc", "1");
-		SMESH_Block & Block();
-		%feature("autodoc", "1");
-		bool IsForwadEdge(const int theEdgeID);
-		%feature("autodoc", "1");
-		int ErrorStatus() const;
-		%feature("autodoc", "1");
-		SMESH_ComputeErrorPtr GetError() const;
-
-};
-%feature("shadow") StdMeshers_SMESHBlock::~StdMeshers_SMESHBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_SMESHBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdMeshers_QuadraticMesh;
 class StdMeshers_QuadraticMesh : public SMESH_Hypothesis {
 	public:
@@ -1492,42 +1425,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdMeshers_NotConformAllowed;
-class StdMeshers_NotConformAllowed : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_NotConformAllowed(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-
-};
-%feature("shadow") StdMeshers_NotConformAllowed::~StdMeshers_NotConformAllowed %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_NotConformAllowed {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdMeshers_SegmentAroundVertex_0D;
 class StdMeshers_SegmentAroundVertex_0D : public SMESH_0D_Algo {
 	public:
@@ -1549,6 +1446,33 @@ def __del__(self):
 %}
 
 %extend StdMeshers_SegmentAroundVertex_0D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_CompositeHexa_3D;
+class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_CompositeHexa_3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+
+};
+%feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_CompositeHexa_3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1616,6 +1540,82 @@ def __del__(self):
 %}
 
 %extend StdMeshers_FaceSide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_NotConformAllowed;
+class StdMeshers_NotConformAllowed : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_NotConformAllowed(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_NotConformAllowed::~StdMeshers_NotConformAllowed %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_NotConformAllowed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdMeshers_LayerDistribution;
+class StdMeshers_LayerDistribution : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_LayerDistribution(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		void SetLayerDistribution(SMESH_Hypothesis* hyp1D);
+		%feature("autodoc", "1");
+		SMESH_Hypothesis * GetLayerDistribution() const;
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+
+};
+%feature("shadow") StdMeshers_LayerDistribution::~StdMeshers_LayerDistribution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_LayerDistribution {
 	void _kill_pointed() {
 		delete $self;
 	}
