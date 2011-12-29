@@ -50,16 +50,16 @@ $HeaderURL$
 
 %include SMESH_headers.i
 
-typedef NCollection_IndexedMap<TopoDS_Shape> SMESH_IndexedMapOfShape;
 typedef NCollection_DataMap<const SMDS_MeshElement*,NCollection_Sequence<const SMDS_MeshElement*> > SMESH_DataMapOfElemPtrSequenceOfElemPtr;
 typedef NCollection_BaseCollection<SMDS_MeshElement const*> SMESH_BaseCollectionElemPtr;
-typedef SMDS_Iterator<SMESH_OctreeNode*> SMESH_OctreeNodeIterator;
 typedef NCollection_Sequence<SMDS_MeshElement const*> SMESH_SequenceOfElemPtr;
-typedef NCollection_Sequence<SMDS_MeshNode const*> SMESH_SequenceOfNode;
 typedef NCollection_BaseCollection<SMDS_MeshNode const*> SMESH_BaseCollectionNodePtr;
+typedef NCollection_Sequence<SMDS_MeshNode const*> SMESH_SequenceOfNode;
 typedef NCollection_BaseCollection<TopoDS_Shape> SMESH_BaseCollectionShape;
-typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape> > SMESH_BaseCollectionIndexedMapOfShape;
 typedef NCollection_BaseCollection<NCollection_Sequence<const SMDS_MeshElement*> > SMESH_BaseCollectionSequenceOfElemPtr;
+typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape> > SMESH_BaseCollectionIndexedMapOfShape;
+typedef SMDS_Iterator<SMESH_OctreeNode*> SMESH_OctreeNodeIterator;
+typedef NCollection_IndexedMap<TopoDS_Shape> SMESH_IndexedMapOfShape;
 typedef NCollection_IndexedDataMap<TopoDS_Shape,NCollection_IndexedMap<TopoDS_Shape> > SMESH_IndexedDataMapOfShapeIndexedMapOfShape;
 
 enum SMESH_ComputeErrorName {
@@ -114,6 +114,650 @@ def __del__(self):
 };
 
 
+%nodefaultctor SMESH_MeshVSLink;
+class SMESH_MeshVSLink : public MeshVS_DataSource3D {
+	public:
+		%feature("autodoc", "1");
+		SMESH_MeshVSLink(const SMESH_Mesh *aMesh);
+		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement) -> Standard_Integer");
+
+		virtual		Standard_Boolean GetGeom(const Standard_Integer ID, const Standard_Boolean IsElement, TColStd_Array1OfReal & Coords, Standard_Integer &OutValue, MeshVS_EntityType & Type) const;
+		%feature("autodoc","Get3DGeom(Standard_Integer ID) -> Standard_Integer");
+
+		virtual		Standard_Boolean Get3DGeom(const Standard_Integer ID, Standard_Integer &OutValue, Handle_MeshVS_HArray1OfSequenceOfInteger & Data) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean GetGeomType(const Standard_Integer ID, const Standard_Boolean IsElement, MeshVS_EntityType & Type) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Address GetAddr(const Standard_Integer ID, const Standard_Boolean IsElement) const;
+		%feature("autodoc","GetNodesByElement(Standard_Integer ID) -> Standard_Integer");
+
+		virtual		Standard_Boolean GetNodesByElement(const Standard_Integer ID, TColStd_Array1OfInteger & NodeIDs, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_PackedMapOfInteger & GetAllNodes() const;
+		%feature("autodoc", "1");
+		virtual		const TColStd_PackedMapOfInteger & GetAllElements() const;
+		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean GetNormal(const Standard_Integer Id, const Standard_Integer Max, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void GetAllGroups(TColStd_PackedMapOfInteger & Ids) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend SMESH_MeshVSLink {
+	Handle_SMESH_MeshVSLink GetHandle() {
+	return *(Handle_SMESH_MeshVSLink*) &$self;
+	}
+};
+%extend SMESH_MeshVSLink {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") SMESH_MeshVSLink::~SMESH_MeshVSLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_MeshVSLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Block;
+class SMESH_Block : public math_FunctionSetWithDerivatives {
+	public:
+		enum TShapeID {
+			ID_NONE,
+			ID_V000,
+			ID_V100,
+			ID_V010,
+			ID_V110,
+			ID_V001,
+			ID_V101,
+			ID_V011,
+			ID_V111,
+			ID_Ex00,
+			ID_Ex10,
+			ID_Ex01,
+			ID_Ex11,
+			ID_E0y0,
+			ID_E1y0,
+			ID_E0y1,
+			ID_E1y1,
+			ID_E00z,
+			ID_E10z,
+			ID_E01z,
+			ID_E11z,
+			ID_Fxy0,
+			ID_Fxy1,
+			ID_Fx0z,
+			ID_Fx1z,
+			ID_F0yz,
+			ID_F1yz,
+			ID_Shell,
+		};
+		%feature("autodoc", "1");
+		static		int NbVertices();
+		%feature("autodoc", "1");
+		static		int NbEdges();
+		%feature("autodoc", "1");
+		static		int NbFaces();
+		%feature("autodoc", "1");
+		static		int NbSubShapes();
+		%feature("autodoc", "1");
+		static		bool IsVertexID(int );
+		%feature("autodoc", "1");
+		static		bool IsEdgeID(int );
+		%feature("autodoc", "1");
+		static		bool IsFaceID(int );
+		%feature("autodoc", "1");
+		static		int ShapeIndex(int );
+		%feature("autodoc", "1");
+		static		int GetCoordIndOnEdge(const int theEdgeID);
+		%feature("autodoc", "1");
+		static		double * GetShapeCoef(const int theShapeID);
+		%feature("autodoc", "1");
+		static		int GetShapeIDByParams(const gp_XYZ theParams);
+		%feature("autodoc", "1");
+		static		std::ostream & DumpShapeID(const int theBlockShapeID, std::ostream & stream);
+		%feature("autodoc", "1");
+		SMESH_Block();
+		%feature("autodoc", "1");
+		bool LoadBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		%feature("autodoc", "1");
+		bool LoadBlockShapes(const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
+		%feature("autodoc", "1");
+		bool LoadMeshBlock(const SMDS_MeshVolume *theVolume, const int theNode000Index, const int theNode001Index, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & theOrderedNodes);
+		%feature("autodoc", "1");
+		bool LoadFace(const TopoDS_Face theFace, const int theFaceID, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
+		%feature("autodoc", "1");
+		static		bool Insert(const TopoDS_Shape theShape, const int theShapeID, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		%feature("autodoc", "1");
+		static		bool FindBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
+		%feature("autodoc", "1");
+		bool VertexPoint(const int theVertexID, gp_XYZ & thePoint) const;
+		%feature("autodoc", "1");
+		bool EdgePoint(const int theEdgeID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
+		%feature("autodoc", "1");
+		bool EdgeU(const int theEdgeID, const gp_XYZ theParams, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		bool FacePoint(const int theFaceID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
+		%feature("autodoc", "1");
+		bool FaceUV(const int theFaceID, const gp_XYZ theParams, gp_XY & theUV) const;
+		%feature("autodoc", "1");
+		bool ShellPoint(const gp_XYZ theParams, gp_XYZ & thePoint) const;
+		%feature("autodoc", "1");
+		static		bool ShellPoint(const gp_XYZ theParams, std::vector<gp_XYZ, std::allocator<gp_XYZ> > const & thePointOnShape, gp_XYZ & thePoint);
+		%feature("autodoc", "1");
+		bool ComputeParameters(const gp_Pnt thePoint, gp_XYZ & theParams, const int theShapeID=(int const)(::SMESH_Block::ID_Shell), const gp_XYZ theParamsHint=gp_XYZ( -1.0e+0, -1.0e+0, -1.0e+0 ));
+		%feature("autodoc", "1");
+		bool VertexParameters(const int theVertexID, gp_XYZ & theParams);
+		%feature("autodoc", "1");
+		bool EdgeParameters(const int theEdgeID, const double theU, gp_XYZ & theParams);
+		%feature("autodoc", "1");
+		static		bool IsForwardEdge(const TopoDS_Edge theEdge, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
+		%feature("autodoc", "1");
+		static		int GetOrderedEdges(const TopoDS_Face theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%feature("shadow") SMESH_Block::~SMESH_Block %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Block {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Pattern;
+class SMESH_Pattern {
+	public:
+		enum ErrorCode {
+			ERR_OK,
+			ERR_READ_NB_POINTS,
+			ERR_READ_POINT_COORDS,
+			ERR_READ_TOO_FEW_POINTS,
+			ERR_READ_3D_COORD,
+			ERR_READ_NO_KEYPOINT,
+			ERR_READ_BAD_INDEX,
+			ERR_READ_ELEM_POINTS,
+			ERR_READ_NO_ELEMS,
+			ERR_READ_BAD_KEY_POINT,
+			ERR_SAVE_NOT_LOADED,
+			ERR_LOAD_EMPTY_SUBMESH,
+			ERR_LOADF_NARROW_FACE,
+			ERR_LOADF_CLOSED_FACE,
+			ERR_LOADF_CANT_PROJECT,
+			ERR_LOADV_BAD_SHAPE,
+			ERR_LOADV_COMPUTE_PARAMS,
+			ERR_APPL_NOT_COMPUTED,
+			ERR_APPL_NOT_LOADED,
+			ERR_APPL_BAD_DIMENTION,
+			ERR_APPL_BAD_NB_VERTICES,
+			ERR_APPLF_BAD_TOPOLOGY,
+			ERR_APPLF_BAD_VERTEX,
+			ERR_APPLF_INTERNAL_EEROR,
+			ERR_APPLV_BAD_SHAPE,
+			ERR_APPLF_BAD_FACE_GEOM,
+			ERR_MAKEM_NOT_COMPUTED,
+		};
+		%feature("autodoc", "1");
+		SMESH_Pattern();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		bool Load(const char *theFileContents);
+		%feature("autodoc", "1");
+		bool Load(SMESH_Mesh* theMesh, const TopoDS_Face theFace, bool =false);
+		%feature("autodoc", "1");
+		bool Load(SMESH_Mesh* theMesh, const TopoDS_Shell theBlock);
+		%feature("autodoc", "1");
+		bool Save(std::ostream & theFile);
+		%feature("autodoc", "1");
+		bool MakeMesh(SMESH_Mesh* theMesh, const bool toCreatePolygons=false, const bool toCreatePolyedrs=false);
+		%feature("autodoc", "1");
+		SMESH_Pattern::ErrorCode GetErrorCode() const;
+		%feature("autodoc", "1");
+		bool IsLoaded() const;
+		%feature("autodoc", "1");
+		bool Is2D() const;
+		%feature("autodoc", "1");
+		std::list<int, std::allocator<int> > const & GetKeyPointIDs() const;
+		%feature("autodoc", "1");
+		std::list<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > const & GetElementPointIDs(bool ) const;
+		%feature("autodoc", "1");
+		void DumpPoints() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape GetSubShape(const int i) const;
+
+};
+%feature("shadow") SMESH_Pattern::~SMESH_Pattern %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Pattern {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Hypothesis;
+class SMESH_Hypothesis : public SMESHDS_Hypothesis {
+	public:
+		enum Hypothesis_Status {
+			HYP_OK,
+			HYP_MISSING,
+			HYP_CONCURENT,
+			HYP_BAD_PARAMETER,
+			HYP_HIDDEN_ALGO,
+			HYP_HIDING_ALGO,
+			HYP_UNKNOWN_FATAL,
+			HYP_INCOMPATIBLE,
+			HYP_NOTCONFORM,
+			HYP_ALREADY_EXIST,
+			HYP_BAD_DIM,
+			HYP_BAD_SUBSHAPE,
+			HYP_BAD_GEOMETRY,
+			HYP_NEED_SHAPE,
+		};
+		%feature("autodoc", "1");
+		static		bool IsStatusFatal(SMESH_Hypothesis::Hypothesis_Status );
+		%feature("autodoc", "1");
+		virtual		int GetDim() const;
+		%feature("autodoc", "1");
+		int GetStudyId() const;
+		%feature("autodoc", "1");
+		virtual		void NotifySubMeshesHypothesisModification();
+		%feature("autodoc", "1");
+		virtual		int GetShapeType() const;
+		%feature("autodoc", "1");
+		virtual		const char * GetLibName() const;
+		%feature("autodoc", "1");
+		void SetLibName(const char *theLibName);
+		%feature("autodoc", "1");
+		void SetParameters(const char *theParameters);
+		%feature("autodoc", "1");
+		char * GetParameters() const;
+		%feature("autodoc", "1");
+		void SetLastParameters(const char *theParameters);
+		%feature("autodoc", "1");
+		char * GetLastParameters() const;
+		%feature("autodoc", "1");
+		void ClearParameters();
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
+		%feature("autodoc", "1");
+		virtual		bool IsAuxiliary() const;
+
+};
+%feature("shadow") SMESH_Hypothesis::~SMESH_Hypothesis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Hypothesis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Algo;
+class SMESH_Algo : public SMESH_Hypothesis {
+	public:
+		%feature("autodoc", "1");
+		virtual		std::ostream & SaveTo(std::ostream & save);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void LoadFromFromString(std::string src) {
+			std::stringstream s(src);
+			self->LoadFrom(s);}
+		};
+		%feature("autodoc", "1");
+		std::vector<std::string, std::allocator<std::string> > const & GetCompatibleHypothesis();
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, SMESH_MesherHelper* aHelper);
+		%feature("autodoc", "1");
+		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
+		%feature("autodoc", "1");
+		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetAppliedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
+		%feature("autodoc", "1");
+		bool InitCompatibleHypoFilter(SMESH_HypoFilter & theFilter, const bool ignoreAuxiliary) const;
+		%feature("autodoc", "1");
+		SMESH_ComputeErrorPtr GetComputeError() const;
+		%feature("autodoc", "1");
+		void InitComputeError();
+		%feature("autodoc", "1");
+		bool OnlyUnaryInput() const;
+		%feature("autodoc", "1");
+		bool NeedDescretBoundary() const;
+		%feature("autodoc", "1");
+		bool NeedShape() const;
+		%feature("autodoc", "1");
+		bool SupportSubmeshes() const;
+		%feature("autodoc", "1");
+		virtual		void SetEventListener(SMESH_subMesh* subMesh);
+		%feature("autodoc", "1");
+		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
+		%feature("autodoc", "1");
+		static		bool IsReversedSubMesh(const TopoDS_Face theFace, SMESHDS_Mesh* theMeshDS);
+		%feature("autodoc", "1");
+		static		double EdgeLength(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		static		GeomAbs_Shape Continuity(const TopoDS_Edge E1, const TopoDS_Edge E2);
+		%feature("autodoc", "1");
+		static		bool IsContinuous(const TopoDS_Edge E1, const TopoDS_Edge E2);
+		%feature("autodoc", "1");
+		static		const SMDS_MeshNode * VertexNode(const TopoDS_Vertex V, const SMESHDS_Mesh *meshDS);
+
+};
+%feature("shadow") SMESH_Algo::~SMESH_Algo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Algo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_NodeSearcher;
+class SMESH_NodeSearcher {
+	public:
+		%feature("autodoc", "1");
+		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt pnt);
+
+};
+%feature("shadow") SMESH_NodeSearcher::~SMESH_NodeSearcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_NodeSearcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Gen;
+class SMESH_Gen {
+	public:
+		%feature("autodoc", "1");
+		SMESH_Gen();
+		%feature("autodoc", "1");
+		SMESH_Mesh * CreateMesh(int , bool );
+		%feature("autodoc", "1");
+		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool anUpward=false, const MeshDimension aDim=MeshDim_3D, TSetOfInt* aShapesId=0);
+		%feature("autodoc", "1");
+		bool CheckAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		void SetBoundaryBoxSegmentation(int );
+		%feature("autodoc", "1");
+		int GetBoundaryBoxSegmentation() const;
+		%feature("autodoc", "1");
+		void SetDefaultNbSegments(int );
+		%feature("autodoc", "1");
+		int GetDefaultNbSegments() const;
+		%feature("autodoc", "1");
+		bool GetAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, std::list<SMESH_Gen::TAlgoStateError>);
+		%feature("autodoc", "1");
+		StudyContextStruct * GetStudyContext(int );
+		%feature("autodoc", "1");
+		static		int GetShapeDim(const TopAbs_ShapeEnum &aShapeType);
+		%feature("autodoc", "1");
+		static		int GetShapeDim(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		SMESH_Algo * GetAlgo(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, TopoDS_Shape* assignedTo=0);
+		%feature("autodoc", "1");
+		static		bool IsGlobalHypothesis(const SMESH_Hypothesis *theHyp, SMESH_Mesh & aMesh);
+		%feature("autodoc", "1");
+		int GetANewId();
+
+};
+%feature("shadow") SMESH_Gen::~SMESH_Gen %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Gen {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_Mesh;
+class SMESH_Mesh {
+	public:
+		%feature("autodoc", "1");
+		SMESH_Mesh(int , int , SMESH_Gen* theGen, bool , SMESHDS_Document* theDocument);
+		%feature("autodoc", "1");
+		void ShapeToMesh(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		TopoDS_Shape GetShapeToMesh() const;
+		%feature("autodoc", "1");
+		bool HasShapeToMesh() const;
+		%feature("autodoc", "1");
+		double GetShapeDiagonalSize() const;
+		%feature("autodoc", "1");
+		static		double GetShapeDiagonalSize(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		static		const TopoDS_Solid  PseudoShape();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void ClearSubMesh(const int theShapeId);
+		%feature("autodoc", "1");
+		int UNVToMesh(const char *theFileName);
+		%feature("autodoc", "1");
+		int MEDToMesh(const char *theFileName, const char *theMeshName);
+		%feature("autodoc", "1");
+		int STLToMesh(const char *theFileName);
+		%feature("autodoc", "1");
+		int DATToMesh(const char *theFileName);
+		%feature("autodoc", "1");
+		SMESH_Hypothesis::Hypothesis_Status AddHypothesis(const TopoDS_Shape aSubShape, int );
+		%feature("autodoc", "1");
+		SMESH_Hypothesis::Hypothesis_Status RemoveHypothesis(const TopoDS_Shape aSubShape, int );
+		%feature("autodoc", "1");
+		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetHypothesisList(const TopoDS_Shape aSubShape) const;
+		%feature("autodoc", "1");
+		const SMESH_Hypothesis * GetHypothesis(const TopoDS_Shape aSubShape, const SMESH_HypoFilter &aFilter, const bool andAncestors, TopoDS_Shape* assignedTo=0) const;
+		%feature("autodoc", "1");
+		std::list<SMESHDS_Command*, std::allocator<SMESHDS_Command*> > const & GetLog();
+		%feature("autodoc", "1");
+		void ClearLog();
+		%feature("autodoc", "1");
+		int GetId();
+		%feature("autodoc", "1");
+		SMESHDS_Mesh * GetMeshDS();
+		%feature("autodoc", "1");
+		SMESH_Gen * GetGen();
+		%feature("autodoc", "1");
+		SMESH_subMesh * GetSubMesh(const TopoDS_Shape aSubShape);
+		%feature("autodoc", "1");
+		SMESH_subMesh * GetSubMeshContaining(const TopoDS_Shape aSubShape) const;
+		%feature("autodoc", "1");
+		SMESH_subMesh * GetSubMeshContaining(const int aShapeID) const;
+		%feature("autodoc", "1");
+		void NotifySubMeshesHypothesisModification(const SMESH_Hypothesis *theChangedHyp);
+		%feature("autodoc", "1");
+		std::list<SMESH_subMesh*, std::allocator<SMESH_subMesh*> > const & GetSubMeshUsingHypothesis(SMESHDS_Hypothesis* anHyp);
+		%feature("autodoc", "1");
+		bool IsUsedHypothesis(SMESHDS_Hypothesis* anHyp, const SMESH_subMesh *aSubMesh);
+		%feature("autodoc", "1");
+		bool IsNotConformAllowed() const;
+		%feature("autodoc", "1");
+		bool IsMainShape(const TopoDS_Shape theShape) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & GetAncestors(const TopoDS_Shape theSubShape) const;
+		%feature("autodoc", "1");
+		void SetAutoColor(bool );
+		%feature("autodoc", "1");
+		bool GetAutoColor();
+		%feature("autodoc", "1");
+		const TopTools_IndexedDataMapOfShapeListOfShape & GetAncestorMap() const;
+		%feature("autodoc", "1");
+		bool HasDuplicatedGroupNamesMED();
+		%feature("autodoc", "1");
+		void ExportMED(const char *file, const char *theMeshName=0, bool =true, int =0);
+		%feature("autodoc", "1");
+		void ExportDAT(const char *file);
+		%feature("autodoc", "1");
+		void ExportUNV(const char *file);
+		%feature("autodoc", "1");
+		void ExportSTL(const char *file, const bool __isascii);
+		%feature("autodoc", "1");
+		int NbNodes();
+		%feature("autodoc", "1");
+		int NbEdges(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbFaces(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbTriangles(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbQuadrangles(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbPolygons();
+		%feature("autodoc", "1");
+		int NbVolumes(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbTetras(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbHexas(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbPyramids(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbPrisms(SMDSAbs_ElementOrder =ORDER_ANY);
+		%feature("autodoc", "1");
+		int NbPolyhedrons();
+		%feature("autodoc", "1");
+		int NbSubMesh();
+		%feature("autodoc", "1");
+		int NbGroup() const;
+		%feature("autodoc", "1");
+		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, Standard_Integer &OutValue, const TopoDS_Shape theShape=TopoDS_Shape( ));
+		%feature("autodoc", "1");
+		boost::shared_ptr<SMDS_Iterator<SMESH_Group*> > GetGroups() const;
+		%feature("autodoc", "1");
+		SMESH_Group * GetGroup(const int theGroupID);
+		%feature("autodoc", "1");
+		void RemoveGroup(const int theGroupID);
+		%feature("autodoc", "1");
+		SMESH_Group * ConvertToStandalone(int );
+		%feature("autodoc", "1");
+		SMDSAbs_ElementType GetElementType(const int id, const bool iselem);
+		%feature("autodoc", "1");
+		std::ostream & Dump(std::ostream & save);
+
+};
+%feature("shadow") SMESH_Mesh::~SMESH_Mesh %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Mesh {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend SMESH_Mesh {
+	SMESH_Mesh () {}
+};
+
+
+%nodefaultctor SMESH_Group;
+class SMESH_Group {
+	public:
+		%feature("autodoc", "1");
+		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape theShape=TopoDS_Shape( ));
+		%feature("autodoc", "1");
+		void SetName(const char *theName);
+		%feature("autodoc", "1");
+		const char * GetName() const;
+		%feature("autodoc", "1");
+		SMESHDS_GroupBase * GetGroupDS();
+
+};
+%feature("shadow") SMESH_Group::~SMESH_Group %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_Group {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SMESH_ComputeError;
 class SMESH_ComputeError {
 	public:
@@ -139,6 +783,33 @@ def __del__(self):
 %}
 
 %extend SMESH_ComputeError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMESH_subMeshEventListener;
+class SMESH_subMeshEventListener {
+	public:
+		%feature("autodoc", "1");
+		SMESH_subMeshEventListener(bool );
+		%feature("autodoc", "1");
+		bool IsDeletable() const;
+		%feature("autodoc", "1");
+		virtual		void ProcessEvent(const int event, const int eventType, SMESH_subMesh* subMesh, SMESH_subMeshEventListenerData* data, const SMESH_Hypothesis *hyp=0);
+
+};
+%feature("shadow") SMESH_subMeshEventListener::~SMESH_subMeshEventListener %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMESH_subMeshEventListener {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -334,20 +1005,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMESH_Group;
-class SMESH_Group {
+%nodefaultctor SMESH_TLink;
+class SMESH_TLink : public pair<SMDS_MeshNode const*, SMDS_MeshNode const*> {
 	public:
 		%feature("autodoc", "1");
-		SMESH_Group(int , const SMESH_Mesh *theMesh, const SMDSAbs_ElementType theType, const char *theName, const TopoDS_Shape theShape=TopoDS_Shape( ));
+		SMESH_TLink(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2);
 		%feature("autodoc", "1");
-		void SetName(const char *theName);
-		%feature("autodoc", "1");
-		const char * GetName() const;
-		%feature("autodoc", "1");
-		SMESHDS_GroupBase * GetGroupDS();
+		SMESH_TLink(const NLink &link);
 
 };
-%feature("shadow") SMESH_Group::~SMESH_Group %{
+%feature("shadow") SMESH_TLink::~SMESH_TLink %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -356,7 +1023,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMESH_Group {
+%extend SMESH_TLink {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -387,548 +1054,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor SMESH_MeshVSLink;
-class SMESH_MeshVSLink : public MeshVS_DataSource3D {
-	public:
-		%feature("autodoc", "1");
-		SMESH_MeshVSLink(const SMESH_Mesh *aMesh);
-		%feature("autodoc","GetGeom(Standard_Integer ID, Standard_Boolean IsElement) -> Standard_Integer");
-
-		virtual		Standard_Boolean GetGeom(const Standard_Integer ID, const Standard_Boolean IsElement, TColStd_Array1OfReal & Coords, Standard_Integer &OutValue, MeshVS_EntityType & Type) const;
-		%feature("autodoc","Get3DGeom(Standard_Integer ID) -> Standard_Integer");
-
-		virtual		Standard_Boolean Get3DGeom(const Standard_Integer ID, Standard_Integer &OutValue, Handle_MeshVS_HArray1OfSequenceOfInteger & Data) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean GetGeomType(const Standard_Integer ID, const Standard_Boolean IsElement, MeshVS_EntityType & Type) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Address GetAddr(const Standard_Integer ID, const Standard_Boolean IsElement) const;
-		%feature("autodoc","GetNodesByElement(Standard_Integer ID) -> Standard_Integer");
-
-		virtual		Standard_Boolean GetNodesByElement(const Standard_Integer ID, TColStd_Array1OfInteger & NodeIDs, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_PackedMapOfInteger & GetAllNodes() const;
-		%feature("autodoc", "1");
-		virtual		const TColStd_PackedMapOfInteger & GetAllElements() const;
-		%feature("autodoc","GetNormal(Standard_Integer Id, Standard_Integer Max) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean GetNormal(const Standard_Integer Id, const Standard_Integer Max, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void GetAllGroups(TColStd_PackedMapOfInteger & Ids) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend SMESH_MeshVSLink {
-	Handle_SMESH_MeshVSLink GetHandle() {
-	return *(Handle_SMESH_MeshVSLink*) &$self;
-	}
-};
-%extend SMESH_MeshVSLink {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") SMESH_MeshVSLink::~SMESH_MeshVSLink %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_MeshVSLink {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Block;
-class SMESH_Block : public math_FunctionSetWithDerivatives {
-	public:
-		enum TShapeID {
-			ID_NONE,
-			ID_V000,
-			ID_V100,
-			ID_V010,
-			ID_V110,
-			ID_V001,
-			ID_V101,
-			ID_V011,
-			ID_V111,
-			ID_Ex00,
-			ID_Ex10,
-			ID_Ex01,
-			ID_Ex11,
-			ID_E0y0,
-			ID_E1y0,
-			ID_E0y1,
-			ID_E1y1,
-			ID_E00z,
-			ID_E10z,
-			ID_E01z,
-			ID_E11z,
-			ID_Fxy0,
-			ID_Fxy1,
-			ID_Fx0z,
-			ID_Fx1z,
-			ID_F0yz,
-			ID_F1yz,
-			ID_Shell,
-		};
-		%feature("autodoc", "1");
-		static		int NbVertices();
-		%feature("autodoc", "1");
-		static		int NbEdges();
-		%feature("autodoc", "1");
-		static		int NbFaces();
-		%feature("autodoc", "1");
-		static		int NbSubShapes();
-		%feature("autodoc", "1");
-		static		bool IsVertexID(int );
-		%feature("autodoc", "1");
-		static		bool IsEdgeID(int );
-		%feature("autodoc", "1");
-		static		bool IsFaceID(int );
-		%feature("autodoc", "1");
-		static		int ShapeIndex(int );
-		%feature("autodoc", "1");
-		static		int GetCoordIndOnEdge(const int theEdgeID);
-		%feature("autodoc", "1");
-		static		double * GetShapeCoef(const int theShapeID);
-		%feature("autodoc", "1");
-		static		int GetShapeIDByParams(const gp_XYZ theParams);
-		%feature("autodoc", "1");
-		static		std::ostream & DumpShapeID(const int theBlockShapeID, std::ostream & stream);
-		%feature("autodoc", "1");
-		SMESH_Block();
-		%feature("autodoc", "1");
-		bool LoadBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
-		%feature("autodoc", "1");
-		bool LoadBlockShapes(const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
-		%feature("autodoc", "1");
-		bool LoadMeshBlock(const SMDS_MeshVolume *theVolume, const int theNode000Index, const int theNode001Index, std::vector<SMDS_MeshNode const*, std::allocator<SMDS_MeshNode const*> > & theOrderedNodes);
-		%feature("autodoc", "1");
-		bool LoadFace(const TopoDS_Face theFace, const int theFaceID, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
-		%feature("autodoc", "1");
-		static		bool Insert(const TopoDS_Shape theShape, const int theShapeID, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
-		%feature("autodoc", "1");
-		static		bool FindBlockShapes(const TopoDS_Shell theShell, const TopoDS_Vertex theVertex000, const TopoDS_Vertex theVertex001, TopTools_IndexedMapOfOrientedShape & theShapeIDMap);
-		%feature("autodoc", "1");
-		bool VertexPoint(const int theVertexID, gp_XYZ & thePoint) const;
-		%feature("autodoc", "1");
-		bool EdgePoint(const int theEdgeID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
-		%feature("autodoc", "1");
-		bool EdgeU(const int theEdgeID, const gp_XYZ theParams, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		bool FacePoint(const int theFaceID, const gp_XYZ theParams, gp_XYZ & thePoint) const;
-		%feature("autodoc", "1");
-		bool FaceUV(const int theFaceID, const gp_XYZ theParams, gp_XY & theUV) const;
-		%feature("autodoc", "1");
-		bool ShellPoint(const gp_XYZ theParams, gp_XYZ & thePoint) const;
-		%feature("autodoc", "1");
-		static		bool ShellPoint(const gp_XYZ theParams, std::vector<gp_XYZ, std::allocator<gp_XYZ> > const & thePointOnShape, gp_XYZ & thePoint);
-		%feature("autodoc", "1");
-		bool ComputeParameters(const gp_Pnt thePoint, gp_XYZ & theParams, const int theShapeID=(int const)(::SMESH_Block::ID_Shell), const gp_XYZ theParamsHint=gp_XYZ( -1.0e+0, -1.0e+0, -1.0e+0 ));
-		%feature("autodoc", "1");
-		bool VertexParameters(const int theVertexID, gp_XYZ & theParams);
-		%feature("autodoc", "1");
-		bool EdgeParameters(const int theEdgeID, const double theU, gp_XYZ & theParams);
-		%feature("autodoc", "1");
-		static		bool IsForwardEdge(const TopoDS_Edge theEdge, const TopTools_IndexedMapOfOrientedShape &theShapeIDMap);
-		%feature("autodoc", "1");
-		static		int GetOrderedEdges(const TopoDS_Face theFace, TopoDS_Vertex , std::list<TopoDS_Edge>, std::list<int>);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%feature("shadow") SMESH_Block::~SMESH_Block %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Block {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_subMeshEventListener;
-class SMESH_subMeshEventListener {
-	public:
-		%feature("autodoc", "1");
-		SMESH_subMeshEventListener(bool );
-		%feature("autodoc", "1");
-		bool IsDeletable() const;
-		%feature("autodoc", "1");
-		virtual		void ProcessEvent(const int event, const int eventType, SMESH_subMesh* subMesh, SMESH_subMeshEventListenerData* data, const SMESH_Hypothesis *hyp=0);
-
-};
-%feature("shadow") SMESH_subMeshEventListener::~SMESH_subMeshEventListener %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_subMeshEventListener {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_TLink;
-class SMESH_TLink : public pair<SMDS_MeshNode const*, SMDS_MeshNode const*> {
-	public:
-		%feature("autodoc", "1");
-		SMESH_TLink(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2);
-		%feature("autodoc", "1");
-		SMESH_TLink(const NLink &link);
-
-};
-%feature("shadow") SMESH_TLink::~SMESH_TLink %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_TLink {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Exception;
-class SMESH_Exception : public exception {
-	public:
-		%feature("autodoc", "1");
-		SMESH_Exception(const char *text, const char *fileName=0, int unsigned constlineNumber=0);
-		%feature("autodoc", "1");
-		SMESH_Exception(const SMESH_Exception &ex);
-		%feature("autodoc", "1");
-		virtual		const char * what() const;
-
-};
-%feature("shadow") SMESH_Exception::~SMESH_Exception %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Exception {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Hypothesis;
-class SMESH_Hypothesis : public SMESHDS_Hypothesis {
-	public:
-		enum Hypothesis_Status {
-			HYP_OK,
-			HYP_MISSING,
-			HYP_CONCURENT,
-			HYP_BAD_PARAMETER,
-			HYP_HIDDEN_ALGO,
-			HYP_HIDING_ALGO,
-			HYP_UNKNOWN_FATAL,
-			HYP_INCOMPATIBLE,
-			HYP_NOTCONFORM,
-			HYP_ALREADY_EXIST,
-			HYP_BAD_DIM,
-			HYP_BAD_SUBSHAPE,
-			HYP_BAD_GEOMETRY,
-			HYP_NEED_SHAPE,
-		};
-		%feature("autodoc", "1");
-		static		bool IsStatusFatal(SMESH_Hypothesis::Hypothesis_Status );
-		%feature("autodoc", "1");
-		virtual		int GetDim() const;
-		%feature("autodoc", "1");
-		int GetStudyId() const;
-		%feature("autodoc", "1");
-		virtual		void NotifySubMeshesHypothesisModification();
-		%feature("autodoc", "1");
-		virtual		int GetShapeType() const;
-		%feature("autodoc", "1");
-		virtual		const char * GetLibName() const;
-		%feature("autodoc", "1");
-		void SetLibName(const char *theLibName);
-		%feature("autodoc", "1");
-		void SetParameters(const char *theParameters);
-		%feature("autodoc", "1");
-		char * GetParameters() const;
-		%feature("autodoc", "1");
-		void SetLastParameters(const char *theParameters);
-		%feature("autodoc", "1");
-		char * GetLastParameters() const;
-		%feature("autodoc", "1");
-		void ClearParameters();
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByMesh(const SMESH_Mesh *theMesh, const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		bool SetParametersByDefaults(const SMESH_Hypothesis::TDefaults &dflts, const SMESH_Mesh *theMesh=0);
-		%feature("autodoc", "1");
-		virtual		bool IsAuxiliary() const;
-
-};
-%feature("shadow") SMESH_Hypothesis::~SMESH_Hypothesis %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Hypothesis {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Algo;
-class SMESH_Algo : public SMESH_Hypothesis {
-	public:
-		%feature("autodoc", "1");
-		virtual		std::ostream & SaveTo(std::ostream & save);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void LoadFromFromString(std::string src) {
-			std::stringstream s(src);
-			self->LoadFrom(s);}
-		};
-		%feature("autodoc", "1");
-		std::vector<std::string, std::allocator<std::string> > const & GetCompatibleHypothesis();
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, SMESH_MesherHelper* aHelper);
-		%feature("autodoc", "1");
-		virtual		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetUsedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
-		%feature("autodoc", "1");
-		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetAppliedHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool ignoreAuxiliary=true);
-		%feature("autodoc", "1");
-		bool InitCompatibleHypoFilter(SMESH_HypoFilter & theFilter, const bool ignoreAuxiliary) const;
-		%feature("autodoc", "1");
-		SMESH_ComputeErrorPtr GetComputeError() const;
-		%feature("autodoc", "1");
-		void InitComputeError();
-		%feature("autodoc", "1");
-		bool OnlyUnaryInput() const;
-		%feature("autodoc", "1");
-		bool NeedDescretBoundary() const;
-		%feature("autodoc", "1");
-		bool NeedShape() const;
-		%feature("autodoc", "1");
-		bool SupportSubmeshes() const;
-		%feature("autodoc", "1");
-		virtual		void SetEventListener(SMESH_subMesh* subMesh);
-		%feature("autodoc", "1");
-		virtual		void SubmeshRestored(SMESH_subMesh* subMesh);
-		%feature("autodoc", "1");
-		static		bool IsReversedSubMesh(const TopoDS_Face theFace, SMESHDS_Mesh* theMeshDS);
-		%feature("autodoc", "1");
-		static		double EdgeLength(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		static		GeomAbs_Shape Continuity(const TopoDS_Edge E1, const TopoDS_Edge E2);
-		%feature("autodoc", "1");
-		static		bool IsContinuous(const TopoDS_Edge E1, const TopoDS_Edge E2);
-		%feature("autodoc", "1");
-		static		const SMDS_MeshNode * VertexNode(const TopoDS_Vertex V, const SMESHDS_Mesh *meshDS);
-
-};
-%feature("shadow") SMESH_Algo::~SMESH_Algo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Algo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Mesh;
-class SMESH_Mesh {
-	public:
-		%feature("autodoc", "1");
-		SMESH_Mesh(int , int , SMESH_Gen* theGen, bool , SMESHDS_Document* theDocument);
-		%feature("autodoc", "1");
-		void ShapeToMesh(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		TopoDS_Shape GetShapeToMesh() const;
-		%feature("autodoc", "1");
-		bool HasShapeToMesh() const;
-		%feature("autodoc", "1");
-		double GetShapeDiagonalSize() const;
-		%feature("autodoc", "1");
-		static		double GetShapeDiagonalSize(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		static		const TopoDS_Solid  PseudoShape();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void ClearSubMesh(const int theShapeId);
-		%feature("autodoc", "1");
-		int UNVToMesh(const char *theFileName);
-		%feature("autodoc", "1");
-		int MEDToMesh(const char *theFileName, const char *theMeshName);
-		%feature("autodoc", "1");
-		int STLToMesh(const char *theFileName);
-		%feature("autodoc", "1");
-		int DATToMesh(const char *theFileName);
-		%feature("autodoc", "1");
-		SMESH_Hypothesis::Hypothesis_Status AddHypothesis(const TopoDS_Shape aSubShape, int );
-		%feature("autodoc", "1");
-		SMESH_Hypothesis::Hypothesis_Status RemoveHypothesis(const TopoDS_Shape aSubShape, int );
-		%feature("autodoc", "1");
-		std::list<SMESHDS_Hypothesis const*, std::allocator<SMESHDS_Hypothesis const*> > const & GetHypothesisList(const TopoDS_Shape aSubShape) const;
-		%feature("autodoc", "1");
-		const SMESH_Hypothesis * GetHypothesis(const TopoDS_Shape aSubShape, const SMESH_HypoFilter &aFilter, const bool andAncestors, TopoDS_Shape* assignedTo=0) const;
-		%feature("autodoc", "1");
-		std::list<SMESHDS_Command*, std::allocator<SMESHDS_Command*> > const & GetLog();
-		%feature("autodoc", "1");
-		void ClearLog();
-		%feature("autodoc", "1");
-		int GetId();
-		%feature("autodoc", "1");
-		SMESHDS_Mesh * GetMeshDS();
-		%feature("autodoc", "1");
-		SMESH_Gen * GetGen();
-		%feature("autodoc", "1");
-		SMESH_subMesh * GetSubMesh(const TopoDS_Shape aSubShape);
-		%feature("autodoc", "1");
-		SMESH_subMesh * GetSubMeshContaining(const TopoDS_Shape aSubShape) const;
-		%feature("autodoc", "1");
-		SMESH_subMesh * GetSubMeshContaining(const int aShapeID) const;
-		%feature("autodoc", "1");
-		void NotifySubMeshesHypothesisModification(const SMESH_Hypothesis *theChangedHyp);
-		%feature("autodoc", "1");
-		std::list<SMESH_subMesh*, std::allocator<SMESH_subMesh*> > const & GetSubMeshUsingHypothesis(SMESHDS_Hypothesis* anHyp);
-		%feature("autodoc", "1");
-		bool IsUsedHypothesis(SMESHDS_Hypothesis* anHyp, const SMESH_subMesh *aSubMesh);
-		%feature("autodoc", "1");
-		bool IsNotConformAllowed() const;
-		%feature("autodoc", "1");
-		bool IsMainShape(const TopoDS_Shape theShape) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetAncestors(const TopoDS_Shape theSubShape) const;
-		%feature("autodoc", "1");
-		void SetAutoColor(bool );
-		%feature("autodoc", "1");
-		bool GetAutoColor();
-		%feature("autodoc", "1");
-		const TopTools_IndexedDataMapOfShapeListOfShape & GetAncestorMap() const;
-		%feature("autodoc", "1");
-		bool HasDuplicatedGroupNamesMED();
-		%feature("autodoc", "1");
-		void ExportMED(const char *file, const char *theMeshName=0, bool =true, int =0);
-		%feature("autodoc", "1");
-		void ExportDAT(const char *file);
-		%feature("autodoc", "1");
-		void ExportUNV(const char *file);
-		%feature("autodoc", "1");
-		void ExportSTL(const char *file, const bool __isascii);
-		%feature("autodoc", "1");
-		int NbNodes();
-		%feature("autodoc", "1");
-		int NbEdges(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbFaces(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbTriangles(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbQuadrangles(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbPolygons();
-		%feature("autodoc", "1");
-		int NbVolumes(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbTetras(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbHexas(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbPyramids(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbPrisms(SMDSAbs_ElementOrder =ORDER_ANY);
-		%feature("autodoc", "1");
-		int NbPolyhedrons();
-		%feature("autodoc", "1");
-		int NbSubMesh();
-		%feature("autodoc", "1");
-		int NbGroup() const;
-		%feature("autodoc", "1");
-		SMESH_Group * AddGroup(const SMDSAbs_ElementType theType, const char *theName, Standard_Integer &OutValue, const TopoDS_Shape theShape=TopoDS_Shape( ));
-		%feature("autodoc", "1");
-		boost::shared_ptr<SMDS_Iterator<SMESH_Group*> > GetGroups() const;
-		%feature("autodoc", "1");
-		SMESH_Group * GetGroup(const int theGroupID);
-		%feature("autodoc", "1");
-		void RemoveGroup(const int theGroupID);
-		%feature("autodoc", "1");
-		SMESH_Group * ConvertToStandalone(int );
-		%feature("autodoc", "1");
-		SMDSAbs_ElementType GetElementType(const int id, const bool iselem);
-		%feature("autodoc", "1");
-		std::ostream & Dump(std::ostream & save);
-
-};
-%feature("shadow") SMESH_Mesh::~SMESH_Mesh %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Mesh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend SMESH_Mesh {
-	SMESH_Mesh () {}
 };
 
 
@@ -1044,42 +1169,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMESH_Gen;
-class SMESH_Gen {
+%nodefaultctor SMESH_Exception;
+class SMESH_Exception : public exception {
 	public:
 		%feature("autodoc", "1");
-		SMESH_Gen();
+		SMESH_Exception(const char *text, const char *fileName=0, int unsigned constlineNumber=0);
 		%feature("autodoc", "1");
-		SMESH_Mesh * CreateMesh(int , bool );
+		SMESH_Exception(const SMESH_Exception &ex);
 		%feature("autodoc", "1");
-		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, const bool anUpward=false, const MeshDimension aDim=MeshDim_3D, TSetOfInt* aShapesId=0);
-		%feature("autodoc", "1");
-		bool CheckAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		void SetBoundaryBoxSegmentation(int );
-		%feature("autodoc", "1");
-		int GetBoundaryBoxSegmentation() const;
-		%feature("autodoc", "1");
-		void SetDefaultNbSegments(int );
-		%feature("autodoc", "1");
-		int GetDefaultNbSegments() const;
-		%feature("autodoc", "1");
-		bool GetAlgoState(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, std::list<SMESH_Gen::TAlgoStateError>);
-		%feature("autodoc", "1");
-		StudyContextStruct * GetStudyContext(int );
-		%feature("autodoc", "1");
-		static		int GetShapeDim(const TopAbs_ShapeEnum &aShapeType);
-		%feature("autodoc", "1");
-		static		int GetShapeDim(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		SMESH_Algo * GetAlgo(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, TopoDS_Shape* assignedTo=0);
-		%feature("autodoc", "1");
-		static		bool IsGlobalHypothesis(const SMESH_Hypothesis *theHyp, SMESH_Mesh & aMesh);
-		%feature("autodoc", "1");
-		int GetANewId();
+		virtual		const char * what() const;
 
 };
-%feature("shadow") SMESH_Gen::~SMESH_Gen %{
+%feature("shadow") SMESH_Exception::~SMESH_Exception %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1088,108 +1189,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMESH_Gen {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_NodeSearcher;
-class SMESH_NodeSearcher {
-	public:
-		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * FindClosestTo(const gp_Pnt pnt);
-
-};
-%feature("shadow") SMESH_NodeSearcher::~SMESH_NodeSearcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_NodeSearcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMESH_Pattern;
-class SMESH_Pattern {
-	public:
-		enum ErrorCode {
-			ERR_OK,
-			ERR_READ_NB_POINTS,
-			ERR_READ_POINT_COORDS,
-			ERR_READ_TOO_FEW_POINTS,
-			ERR_READ_3D_COORD,
-			ERR_READ_NO_KEYPOINT,
-			ERR_READ_BAD_INDEX,
-			ERR_READ_ELEM_POINTS,
-			ERR_READ_NO_ELEMS,
-			ERR_READ_BAD_KEY_POINT,
-			ERR_SAVE_NOT_LOADED,
-			ERR_LOAD_EMPTY_SUBMESH,
-			ERR_LOADF_NARROW_FACE,
-			ERR_LOADF_CLOSED_FACE,
-			ERR_LOADF_CANT_PROJECT,
-			ERR_LOADV_BAD_SHAPE,
-			ERR_LOADV_COMPUTE_PARAMS,
-			ERR_APPL_NOT_COMPUTED,
-			ERR_APPL_NOT_LOADED,
-			ERR_APPL_BAD_DIMENTION,
-			ERR_APPL_BAD_NB_VERTICES,
-			ERR_APPLF_BAD_TOPOLOGY,
-			ERR_APPLF_BAD_VERTEX,
-			ERR_APPLF_INTERNAL_EEROR,
-			ERR_APPLV_BAD_SHAPE,
-			ERR_APPLF_BAD_FACE_GEOM,
-			ERR_MAKEM_NOT_COMPUTED,
-		};
-		%feature("autodoc", "1");
-		SMESH_Pattern();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		bool Load(const char *theFileContents);
-		%feature("autodoc", "1");
-		bool Load(SMESH_Mesh* theMesh, const TopoDS_Face theFace, bool =false);
-		%feature("autodoc", "1");
-		bool Load(SMESH_Mesh* theMesh, const TopoDS_Shell theBlock);
-		%feature("autodoc", "1");
-		bool Save(std::ostream & theFile);
-		%feature("autodoc", "1");
-		bool MakeMesh(SMESH_Mesh* theMesh, const bool toCreatePolygons=false, const bool toCreatePolyedrs=false);
-		%feature("autodoc", "1");
-		SMESH_Pattern::ErrorCode GetErrorCode() const;
-		%feature("autodoc", "1");
-		bool IsLoaded() const;
-		%feature("autodoc", "1");
-		bool Is2D() const;
-		%feature("autodoc", "1");
-		std::list<int, std::allocator<int> > const & GetKeyPointIDs() const;
-		%feature("autodoc", "1");
-		std::list<std::list<int, std::allocator<int> >, std::allocator<std::list<int, std::allocator<int> > > > const & GetElementPointIDs(bool ) const;
-		%feature("autodoc", "1");
-		void DumpPoints() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape GetSubShape(const int i) const;
-
-};
-%feature("shadow") SMESH_Pattern::~SMESH_Pattern %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMESH_Pattern {
+%extend SMESH_Exception {
 	void _kill_pointed() {
 		delete $self;
 	}

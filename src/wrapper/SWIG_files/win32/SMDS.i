@@ -51,13 +51,13 @@ $HeaderURL$
 %include SMDS_headers.i
 
 typedef SMDS_MeshNode const * SMDS_pNode;
-typedef SMDS_Iterator<const SMDS_MeshEdge*> SMDS_EdgeIterator;
 typedef SMDS_Iterator<const SMDS_MeshFace*> SMDS_FaceIterator;
 typedef SMDS_Iterator<const SMDS_MeshVolume*> SMDS_VolumeIterator;
+typedef SMDS_MeshElement const * SMDS_pElement;
 typedef NCollection_DataMap<int, SMDS_MeshElement*> SMDS_IdElementMap;
 typedef SMDS_Iterator<SMDS_MeshElement const*> SMDS_ElemIterator;
 typedef SMDS_Iterator<const SMDS_MeshNode*> SMDS_NodeIterator;
-typedef SMDS_MeshElement const * SMDS_pElement;
+typedef SMDS_Iterator<const SMDS_MeshEdge*> SMDS_EdgeIterator;
 
 enum SMDS_TypeOfPosition {
 	SMDS_TOP_UNSPEC,
@@ -314,74 +314,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_MeshVolume;
-class SMDS_MeshVolume : public SMDS_MeshElement {
-	public:
-		%feature("autodoc", "1");
-		SMDS_MeshVolume();
-		%feature("autodoc", "1");
-		virtual		SMDSAbs_ElementType GetType() const;
-
-};
-%feature("shadow") SMDS_MeshVolume::~SMDS_MeshVolume %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_MeshVolume {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMDS_QuadraticVolumeOfNodes;
-class SMDS_QuadraticVolumeOfNodes : public SMDS_MeshVolume {
-	public:
-		%feature("autodoc", "1");
-		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n31, const SMDS_MeshNode *n14, const SMDS_MeshNode *n24, const SMDS_MeshNode *n34);
-		%feature("autodoc", "1");
-		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n34, const SMDS_MeshNode *n41, const SMDS_MeshNode *n15, const SMDS_MeshNode *n25, const SMDS_MeshNode *n35, const SMDS_MeshNode *n45);
-		%feature("autodoc", "1");
-		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n31, const SMDS_MeshNode *n45, const SMDS_MeshNode *n56, const SMDS_MeshNode *n64, const SMDS_MeshNode *n14, const SMDS_MeshNode *n25, const SMDS_MeshNode *n36);
-		%feature("autodoc", "1");
-		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n7, const SMDS_MeshNode *n8, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n34, const SMDS_MeshNode *n41, const SMDS_MeshNode *n56, const SMDS_MeshNode *n67, const SMDS_MeshNode *n78, const SMDS_MeshNode *n85, const SMDS_MeshNode *n15, const SMDS_MeshNode *n26, const SMDS_MeshNode *n37, const SMDS_MeshNode *n48);
-		%feature("autodoc", "1");
-		virtual		bool IsQuadratic() const;
-		%feature("autodoc", "1");
-		virtual		bool IsMediumNode(const SMDS_MeshNode *node) const;
-		%feature("autodoc", "1");
-		virtual		int NbNodes() const;
-		%feature("autodoc", "1");
-		virtual		int NbEdges() const;
-		%feature("autodoc", "1");
-		virtual		int NbFaces() const;
-		%feature("autodoc", "1");
-		virtual		void Print(std::ostream & OS) const;
-		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
-
-};
-%feature("shadow") SMDS_QuadraticVolumeOfNodes::~SMDS_QuadraticVolumeOfNodes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_QuadraticVolumeOfNodes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SMDS_VolumeTool;
 class SMDS_VolumeTool {
 	public:
@@ -483,6 +415,70 @@ def __del__(self):
 };
 
 
+%nodefaultctor SMDS_MeshVolume;
+class SMDS_MeshVolume : public SMDS_MeshElement {
+	public:
+		%feature("autodoc", "1");
+		SMDS_MeshVolume();
+		%feature("autodoc", "1");
+		virtual		SMDSAbs_ElementType GetType() const;
+
+};
+%feature("shadow") SMDS_MeshVolume::~SMDS_MeshVolume %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_MeshVolume {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMDS_VolumeOfNodes;
+class SMDS_VolumeOfNodes : public SMDS_MeshVolume {
+	public:
+		%feature("autodoc", "1");
+		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4);
+		%feature("autodoc", "1");
+		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5);
+		%feature("autodoc", "1");
+		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5, const SMDS_MeshNode *node6);
+		%feature("autodoc", "1");
+		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5, const SMDS_MeshNode *node6, const SMDS_MeshNode *node7, const SMDS_MeshNode *node8);
+		%feature("autodoc", "1");
+		virtual		void Print(std::ostream & OS) const;
+		%feature("autodoc", "1");
+		virtual		int NbFaces() const;
+		%feature("autodoc", "1");
+		virtual		int NbNodes() const;
+		%feature("autodoc", "1");
+		virtual		int NbEdges() const;
+		%feature("autodoc", "1");
+		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
+
+};
+%feature("shadow") SMDS_VolumeOfNodes::~SMDS_VolumeOfNodes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_VolumeOfNodes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor SMDS_QuadraticFaceOfNodes;
 class SMDS_QuadraticFaceOfNodes : public SMDS_MeshFace {
 	public:
@@ -553,32 +549,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_VolumeOfNodes;
-class SMDS_VolumeOfNodes : public SMDS_MeshVolume {
+%nodefaultctor SMDS_QuadraticVolumeOfNodes;
+class SMDS_QuadraticVolumeOfNodes : public SMDS_MeshVolume {
 	public:
 		%feature("autodoc", "1");
-		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4);
+		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n31, const SMDS_MeshNode *n14, const SMDS_MeshNode *n24, const SMDS_MeshNode *n34);
 		%feature("autodoc", "1");
-		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5);
+		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n34, const SMDS_MeshNode *n41, const SMDS_MeshNode *n15, const SMDS_MeshNode *n25, const SMDS_MeshNode *n35, const SMDS_MeshNode *n45);
 		%feature("autodoc", "1");
-		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5, const SMDS_MeshNode *node6);
+		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n31, const SMDS_MeshNode *n45, const SMDS_MeshNode *n56, const SMDS_MeshNode *n64, const SMDS_MeshNode *n14, const SMDS_MeshNode *n25, const SMDS_MeshNode *n36);
 		%feature("autodoc", "1");
-		SMDS_VolumeOfNodes(const SMDS_MeshNode *node1, const SMDS_MeshNode *node2, const SMDS_MeshNode *node3, const SMDS_MeshNode *node4, const SMDS_MeshNode *node5, const SMDS_MeshNode *node6, const SMDS_MeshNode *node7, const SMDS_MeshNode *node8);
+		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n7, const SMDS_MeshNode *n8, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n34, const SMDS_MeshNode *n41, const SMDS_MeshNode *n56, const SMDS_MeshNode *n67, const SMDS_MeshNode *n78, const SMDS_MeshNode *n85, const SMDS_MeshNode *n15, const SMDS_MeshNode *n26, const SMDS_MeshNode *n37, const SMDS_MeshNode *n48);
 		%feature("autodoc", "1");
-		virtual		void Print(std::ostream & OS) const;
+		virtual		bool IsQuadratic() const;
 		%feature("autodoc", "1");
-		virtual		int NbFaces() const;
+		virtual		bool IsMediumNode(const SMDS_MeshNode *node) const;
 		%feature("autodoc", "1");
 		virtual		int NbNodes() const;
 		%feature("autodoc", "1");
 		virtual		int NbEdges() const;
 		%feature("autodoc", "1");
-		virtual		SMDSAbs_ElementType GetType() const;
+		virtual		int NbFaces() const;
+		%feature("autodoc", "1");
+		virtual		void Print(std::ostream & OS) const;
 		%feature("autodoc", "1");
 		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
-%feature("shadow") SMDS_VolumeOfNodes::~SMDS_VolumeOfNodes %{
+%feature("shadow") SMDS_QuadraticVolumeOfNodes::~SMDS_QuadraticVolumeOfNodes %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -587,7 +585,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_VolumeOfNodes {
+%extend SMDS_QuadraticVolumeOfNodes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -624,24 +622,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_MeshElementIDFactory;
-class SMDS_MeshElementIDFactory : public SMDS_MeshIDFactory {
+%nodefaultctor SMDS_MeshGroup;
+class SMDS_MeshGroup : public SMDS_MeshObject {
 	public:
 		%feature("autodoc", "1");
-		SMDS_MeshElementIDFactory();
+		SMDS_MeshGroup(const SMDS_Mesh *theMesh, const SMDSAbs_ElementType theType=SMDSAbs_All);
 		%feature("autodoc", "1");
-		bool BindID(int , SMDS_MeshElement* elem);
+		const SMDS_MeshGroup * AddSubGroup(const SMDSAbs_ElementType theType=SMDSAbs_All);
 		%feature("autodoc", "1");
-		SMDS_MeshElement * MeshElement(int );
+		virtual		bool RemoveSubGroup(const SMDS_MeshGroup *theGroup);
 		%feature("autodoc", "1");
-		int GetMaxID() const;
+		virtual		bool RemoveFromParent();
 		%feature("autodoc", "1");
-		int GetMinID() const;
+		const SMDS_Mesh * GetMesh() const;
 		%feature("autodoc", "1");
-		SMDS_ElemIteratorPtr elementsIterator() const;
+		void SetType(const SMDSAbs_ElementType theType);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Add(const SMDS_MeshElement *theElem);
+		%feature("autodoc", "1");
+		bool Remove(const SMDS_MeshElement *theElem);
+		%feature("autodoc", "1");
+		bool IsEmpty() const;
+		%feature("autodoc", "1");
+		int Extent() const;
+		%feature("autodoc", "1");
+		int SubGroupsNb() const;
+		%feature("autodoc", "1");
+		SMDSAbs_ElementType GetType() const;
+		%feature("autodoc", "1");
+		bool Contains(const SMDS_MeshElement *theElem) const;
+		%feature("autodoc", "1");
+		void InitIterator() const;
+		%feature("autodoc", "1");
+		bool More() const;
+		%feature("autodoc", "1");
+		const SMDS_MeshElement * Next() const;
+		%feature("autodoc", "1");
+		void InitSubGroupsIterator() const;
+		%feature("autodoc", "1");
+		bool MoreSubGroups() const;
+		%feature("autodoc", "1");
+		const SMDS_MeshGroup * NextSubGroup() const;
 
 };
-%feature("shadow") SMDS_MeshElementIDFactory::~SMDS_MeshElementIDFactory %{
+%feature("shadow") SMDS_MeshGroup::~SMDS_MeshGroup %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -650,35 +676,29 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_MeshElementIDFactory {
+%extend SMDS_MeshGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor SMDS_FaceOfEdges;
-class SMDS_FaceOfEdges : public SMDS_MeshFace {
+%nodefaultctor SMDS_EdgePosition;
+class SMDS_EdgePosition : public SMDS_Position {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Print(std::ostream & OS) const;
+		SMDS_EdgePosition(const int aEdgeId=0, const double aUParam=0);
 		%feature("autodoc", "1");
-		SMDS_FaceOfEdges(const SMDS_MeshEdge *edge1, const SMDS_MeshEdge *edge2, const SMDS_MeshEdge *edge3);
+		virtual		const double * Coords() const;
 		%feature("autodoc", "1");
-		SMDS_FaceOfEdges(const SMDS_MeshEdge *edge1, const SMDS_MeshEdge *edge2, const SMDS_MeshEdge *edge3, const SMDS_MeshEdge *edge4);
+		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
 		%feature("autodoc", "1");
-		virtual		SMDSAbs_ElementType GetType() const;
+		void SetUParameter(double );
 		%feature("autodoc", "1");
-		virtual		int NbNodes() const;
-		%feature("autodoc", "1");
-		virtual		int NbEdges() const;
-		%feature("autodoc", "1");
-		virtual		int NbFaces() const;
-		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
+		double GetUParameter() const;
 
 };
-%feature("shadow") SMDS_FaceOfEdges::~SMDS_FaceOfEdges %{
+%feature("shadow") SMDS_EdgePosition::~SMDS_EdgePosition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -687,7 +707,42 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_FaceOfEdges {
+%extend SMDS_EdgePosition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMDS_FacePosition;
+class SMDS_FacePosition : public SMDS_Position {
+	public:
+		%feature("autodoc", "1");
+		SMDS_FacePosition(int =0, double =0, double =0);
+		%feature("autodoc", "1");
+		virtual		const double * Coords() const;
+		%feature("autodoc", "1");
+		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
+		%feature("autodoc", "1");
+		void SetUParameter(double );
+		%feature("autodoc", "1");
+		void SetVParameter(double );
+		%feature("autodoc", "1");
+		double GetUParameter() const;
+		%feature("autodoc", "1");
+		double GetVParameter() const;
+
+};
+%feature("shadow") SMDS_FacePosition::~SMDS_FacePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_FacePosition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -743,53 +798,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_EdgePosition;
-class SMDS_EdgePosition : public SMDS_Position {
+%nodefaultctor SMDS_FaceOfEdges;
+class SMDS_FaceOfEdges : public SMDS_MeshFace {
 	public:
-		%feature("autodoc", "1");
-		SMDS_EdgePosition(const int aEdgeId=0, const double aUParam=0);
-		%feature("autodoc", "1");
-		virtual		const double * Coords() const;
-		%feature("autodoc", "1");
-		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
-		%feature("autodoc", "1");
-		void SetUParameter(double );
-		%feature("autodoc", "1");
-		double GetUParameter() const;
-
-};
-%feature("shadow") SMDS_EdgePosition::~SMDS_EdgePosition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_EdgePosition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMDS_VolumeOfFaces;
-class SMDS_VolumeOfFaces : public SMDS_MeshVolume {
-	public:
-		%feature("autodoc", "1");
-		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4);
-		%feature("autodoc", "1");
-		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4, const SMDS_MeshFace *face5);
-		%feature("autodoc", "1");
-		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4, const SMDS_MeshFace *face5, const SMDS_MeshFace *face6);
 		%feature("autodoc", "1");
 		virtual		void Print(std::ostream & OS) const;
 		%feature("autodoc", "1");
+		SMDS_FaceOfEdges(const SMDS_MeshEdge *edge1, const SMDS_MeshEdge *edge2, const SMDS_MeshEdge *edge3);
+		%feature("autodoc", "1");
+		SMDS_FaceOfEdges(const SMDS_MeshEdge *edge1, const SMDS_MeshEdge *edge2, const SMDS_MeshEdge *edge3, const SMDS_MeshEdge *edge4);
+		%feature("autodoc", "1");
+		virtual		SMDSAbs_ElementType GetType() const;
+		%feature("autodoc", "1");
+		virtual		int NbNodes() const;
+		%feature("autodoc", "1");
+		virtual		int NbEdges() const;
+		%feature("autodoc", "1");
 		virtual		int NbFaces() const;
+		%feature("autodoc", "1");
+		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
-%feature("shadow") SMDS_VolumeOfFaces::~SMDS_VolumeOfFaces %{
+%feature("shadow") SMDS_FaceOfEdges::~SMDS_FaceOfEdges %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -798,7 +828,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_VolumeOfFaces {
+%extend SMDS_FaceOfEdges {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -935,26 +965,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_FacePosition;
-class SMDS_FacePosition : public SMDS_Position {
+%nodefaultctor SMDS_VolumeOfFaces;
+class SMDS_VolumeOfFaces : public SMDS_MeshVolume {
 	public:
 		%feature("autodoc", "1");
-		SMDS_FacePosition(int =0, double =0, double =0);
+		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4);
 		%feature("autodoc", "1");
-		virtual		const double * Coords() const;
+		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4, const SMDS_MeshFace *face5);
 		%feature("autodoc", "1");
-		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
+		SMDS_VolumeOfFaces(const SMDS_MeshFace *face1, const SMDS_MeshFace *face2, const SMDS_MeshFace *face3, const SMDS_MeshFace *face4, const SMDS_MeshFace *face5, const SMDS_MeshFace *face6);
 		%feature("autodoc", "1");
-		void SetUParameter(double );
+		virtual		void Print(std::ostream & OS) const;
 		%feature("autodoc", "1");
-		void SetVParameter(double );
-		%feature("autodoc", "1");
-		double GetUParameter() const;
-		%feature("autodoc", "1");
-		double GetVParameter() const;
+		virtual		int NbFaces() const;
 
 };
-%feature("shadow") SMDS_FacePosition::~SMDS_FacePosition %{
+%feature("shadow") SMDS_VolumeOfFaces::~SMDS_VolumeOfFaces %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -963,7 +989,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_FacePosition {
+%extend SMDS_VolumeOfFaces {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1128,52 +1154,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_MeshGroup;
-class SMDS_MeshGroup : public SMDS_MeshObject {
+%nodefaultctor SMDS_MeshElementIDFactory;
+class SMDS_MeshElementIDFactory : public SMDS_MeshIDFactory {
 	public:
 		%feature("autodoc", "1");
-		SMDS_MeshGroup(const SMDS_Mesh *theMesh, const SMDSAbs_ElementType theType=SMDSAbs_All);
+		SMDS_MeshElementIDFactory();
 		%feature("autodoc", "1");
-		const SMDS_MeshGroup * AddSubGroup(const SMDSAbs_ElementType theType=SMDSAbs_All);
+		bool BindID(int , SMDS_MeshElement* elem);
 		%feature("autodoc", "1");
-		virtual		bool RemoveSubGroup(const SMDS_MeshGroup *theGroup);
+		SMDS_MeshElement * MeshElement(int );
 		%feature("autodoc", "1");
-		virtual		bool RemoveFromParent();
+		virtual		int GetFreeID();
 		%feature("autodoc", "1");
-		const SMDS_Mesh * GetMesh() const;
+		virtual		void ReleaseID(int );
 		%feature("autodoc", "1");
-		void SetType(const SMDSAbs_ElementType theType);
+		int GetMaxID() const;
 		%feature("autodoc", "1");
-		void Clear();
+		int GetMinID() const;
 		%feature("autodoc", "1");
-		void Add(const SMDS_MeshElement *theElem);
+		SMDS_ElemIteratorPtr elementsIterator() const;
 		%feature("autodoc", "1");
-		bool Remove(const SMDS_MeshElement *theElem);
-		%feature("autodoc", "1");
-		bool IsEmpty() const;
-		%feature("autodoc", "1");
-		int Extent() const;
-		%feature("autodoc", "1");
-		int SubGroupsNb() const;
-		%feature("autodoc", "1");
-		SMDSAbs_ElementType GetType() const;
-		%feature("autodoc", "1");
-		bool Contains(const SMDS_MeshElement *theElem) const;
-		%feature("autodoc", "1");
-		void InitIterator() const;
-		%feature("autodoc", "1");
-		bool More() const;
-		%feature("autodoc", "1");
-		const SMDS_MeshElement * Next() const;
-		%feature("autodoc", "1");
-		void InitSubGroupsIterator() const;
-		%feature("autodoc", "1");
-		bool MoreSubGroups() const;
-		%feature("autodoc", "1");
-		const SMDS_MeshGroup * NextSubGroup() const;
+		virtual		void Clear();
 
 };
-%feature("shadow") SMDS_MeshGroup::~SMDS_MeshGroup %{
+%feature("shadow") SMDS_MeshElementIDFactory::~SMDS_MeshElementIDFactory %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1182,7 +1186,7 @@ def __del__(self):
 		pass
 %}
 
-%extend SMDS_MeshGroup {
+%extend SMDS_MeshElementIDFactory {
 	void _kill_pointed() {
 		delete $self;
 	}

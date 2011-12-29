@@ -91,29 +91,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
-class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo;
+class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock();
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo();
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo &aHandle);
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo *anItem);
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo & operator=(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo &aHandle);
 		%feature("autodoc", "1");
-		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo *anItem);
 		%feature("autodoc", "1");
-		static		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock* GetObject() {
-	return (NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*)$self->Access();
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo* GetObject() {
+	return (NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo*)$self->Access();
 	}
 };
-%feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
+%feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -122,7 +122,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -161,6 +161,44 @@ def __del__(self):
 %}
 
 %extend Handle_NMTTools_ListNodeOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
+class Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock();
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock* GetObject() {
+	return (NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -319,35 +357,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor NMTTools_MapIteratorOfMapOfPaveBlock;
-class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_MapIteratorOfMapOfPaveBlock();
-		%feature("autodoc", "1");
-		NMTTools_MapIteratorOfMapOfPaveBlock(const NMTTools_MapOfPaveBlock &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const NMTTools_MapOfPaveBlock &aMap);
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & Key() const;
-
-};
-%feature("shadow") NMTTools_MapIteratorOfMapOfPaveBlock::~NMTTools_MapIteratorOfMapOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_MapIteratorOfMapOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor NMTTools_DEProcessor;
 class NMTTools_DEProcessor {
 	public:
@@ -369,913 +378,6 @@ def __del__(self):
 %}
 
 %extend NMTTools_DEProcessor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapOfShapeIndexedMapOfShape;
-class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & Assign(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const TopTools_IndexedMapOfShape &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const TopTools_IndexedMapOfShape &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape K);
-
-};
-%feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapOfShapePaveBlock;
-class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapePaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapePaveBlock & Assign(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfShapePaveBlock & operator=(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const BOPTools_PaveBlock &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOPTools_PaveBlock &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape K);
-
-};
-%feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IndexedDataMapOfShapePaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
-class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey1() {
-				return (Standard_Integer) $self->Key1();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey1(Standard_Integer value ) {
-				$self->Key1()=value;
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger GetHandle() {
-	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger*) &$self;
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_MapOfPaveBlock;
-class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock & Assign(const NMTTools_MapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		NMTTools_MapOfPaveBlock & operator=(const NMTTools_MapOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const BOPTools_PaveBlock &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const BOPTools_PaveBlock &aKey);
-
-};
-%feature("shadow") NMTTools_MapOfPaveBlock::~NMTTools_MapOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_MapOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_CoupleOfShape;
-class NMTTools_CoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CoupleOfShape();
-		%feature("autodoc", "1");
-		void SetShape1(const TopoDS_Shape aS);
-		%feature("autodoc", "1");
-		void SetShape2(const TopoDS_Shape aS);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape1() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape2() const;
-
-};
-%feature("shadow") NMTTools_CoupleOfShape::~NMTTools_CoupleOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_CoupleOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IteratorOfCoupleOfShape;
-class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IteratorOfCoupleOfShape();
-		%feature("autodoc", "1");
-		void SetDS(const NMTDS_PShapesDataStructure &pDS);
-		%feature("autodoc", "1");
-		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
-		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
-
-		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean More() const;
-
-};
-%feature("shadow") NMTTools_IteratorOfCoupleOfShape::~NMTTools_IteratorOfCoupleOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IteratorOfCoupleOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_ListOfCommonBlock;
-class NMTTools_ListOfCommonBlock {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListOfCommonBlock();
-		%feature("autodoc", "1");
-		void Assign(const NMTTools_ListOfCommonBlock &Other);
-		%feature("autodoc", "1");
-		void operator=(const NMTTools_ListOfCommonBlock &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CommonBlock &I);
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
-		%feature("autodoc", "1");
-		void Prepend(NMTTools_ListOfCommonBlock & Other);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CommonBlock &I);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
-		%feature("autodoc", "1");
-		void Append(NMTTools_ListOfCommonBlock & Other);
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & First() const;
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertBefore(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
-		%feature("autodoc", "1");
-		void InsertAfter(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
-
-};
-%feature("shadow") NMTTools_ListOfCommonBlock::~NMTTools_ListOfCommonBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_ListOfCommonBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
-class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_StdMapNodeOfMapOfPaveBlock(const BOPTools_PaveBlock &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	Handle_NMTTools_StdMapNodeOfMapOfPaveBlock GetHandle() {
-	return *(Handle_NMTTools_StdMapNodeOfMapOfPaveBlock*) &$self;
-	}
-};
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NMTTools_StdMapNodeOfMapOfPaveBlock::~NMTTools_StdMapNodeOfMapOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_ListIteratorOfListOfCommonBlock;
-class NMTTools_ListIteratorOfListOfCommonBlock {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListIteratorOfListOfCommonBlock();
-		%feature("autodoc", "1");
-		NMTTools_ListIteratorOfListOfCommonBlock(const NMTTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		void Initialize(const NMTTools_ListOfCommonBlock &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & Value() const;
-
-};
-%feature("shadow") NMTTools_ListIteratorOfListOfCommonBlock::~NMTTools_ListIteratorOfListOfCommonBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_ListIteratorOfListOfCommonBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
-class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock GetHandle() {
-	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*) &$self;
-	}
-};
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_CommonBlockPool;
-class NMTTools_CommonBlockPool {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CommonBlockPool(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer theNewLength);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		Standard_Integer FactLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer Append(const NMTTools_ListOfCommonBlock &Value);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const NMTTools_ListOfCommonBlock & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const NMTTools_ListOfCommonBlock & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		NMTTools_ListOfCommonBlock & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		NMTTools_ListOfCommonBlock & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetBlockLength(const Standard_Integer aBL);
-		%feature("autodoc", "1");
-		Standard_Integer BlockLength() const;
-
-};
-%feature("shadow") NMTTools_CommonBlockPool::~NMTTools_CommonBlockPool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_CommonBlockPool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_ListNodeOfListOfCommonBlock;
-class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListNodeOfListOfCommonBlock(const NMTTools_CommonBlock &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	Handle_NMTTools_ListNodeOfListOfCommonBlock GetHandle() {
-	return *(Handle_NMTTools_ListNodeOfListOfCommonBlock*) &$self;
-	}
-};
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NMTTools_ListNodeOfListOfCommonBlock::~NMTTools_ListNodeOfListOfCommonBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_ListNodeOfListOfCommonBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_Tools;
-class NMTTools_Tools {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_Tools();
-		%feature("autodoc", "1");
-		static		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
-		%feature("autodoc", "1");
-		static		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
-		%feature("autodoc", "1");
-		static		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
-		%feature("autodoc", "1");
-		static		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge aE, const TopoDS_Face aF, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		static		Standard_Boolean AreFacesSameDomain(const TopoDS_Face aF1, const TopoDS_Face aF2, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		static		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
-		%feature("autodoc", "1");
-		static		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
-		%feature("autodoc", "1");
-		static		void MakePCurve(const TopoDS_Edge aE, const TopoDS_Face aF, const Handle_Geom2d_Curve &aC2D);
-		%feature("autodoc", "1");
-		static		void UpdateEdge(const TopoDS_Edge aE, const Standard_Real aTol);
-
-};
-%feature("shadow") NMTTools_Tools::~NMTTools_Tools %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_Tools {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_CommonBlockAPI;
-class NMTTools_CommonBlockAPI {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CommonBlockAPI(const NMTTools_ListOfCommonBlock &aList);
-		%feature("autodoc", "1");
-		const NMTTools_ListOfCommonBlock & List() const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & CommonPaveBlocks(const Standard_Integer anE) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCommonBlock(const BOPTools_PaveBlock &aPB) const;
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock & CommonBlock(const BOPTools_PaveBlock &aPB) const;
-
-};
-%feature("shadow") NMTTools_CommonBlockAPI::~NMTTools_CommonBlockAPI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_CommonBlockAPI {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_ListOfCoupleOfShape;
-class NMTTools_ListOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListOfCoupleOfShape();
-		%feature("autodoc", "1");
-		void Assign(const NMTTools_ListOfCoupleOfShape &Other);
-		%feature("autodoc", "1");
-		void operator=(const NMTTools_ListOfCoupleOfShape &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CoupleOfShape &I);
-		%feature("autodoc", "1");
-		void Prepend(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & theIt);
-		%feature("autodoc", "1");
-		void Prepend(NMTTools_ListOfCoupleOfShape & Other);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CoupleOfShape &I);
-		%feature("autodoc", "1");
-		void Append(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & theIt);
-		%feature("autodoc", "1");
-		void Append(NMTTools_ListOfCoupleOfShape & Other);
-		%feature("autodoc", "1");
-		NMTTools_CoupleOfShape & First() const;
-		%feature("autodoc", "1");
-		NMTTools_CoupleOfShape & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(NMTTools_ListIteratorOfListOfCoupleOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(NMTTools_ListOfCoupleOfShape & Other, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(NMTTools_ListOfCoupleOfShape & Other, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
-
-};
-%feature("shadow") NMTTools_ListOfCoupleOfShape::~NMTTools_ListOfCoupleOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_ListOfCoupleOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
-class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape GetHandle() {
-	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*) &$self;
-	}
-};
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_CommonBlock;
-class NMTTools_CommonBlock {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_CommonBlock();
-		%feature("autodoc", "1");
-		void AddPaveBlock(const BOPTools_PaveBlock &aPB);
-		%feature("autodoc", "1");
-		void AddFace(const Standard_Integer aF);
-		%feature("autodoc", "1");
-		void AddFaces(const TColStd_ListOfInteger &aLF);
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & PaveBlocks() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Faces() const;
-		%feature("autodoc", "1");
-		const BOPTools_PaveBlock & PaveBlock1() const;
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & PaveBlock1(const Standard_Integer anIx);
-		%feature("autodoc", "1");
-		BOPTools_PaveBlock & PaveBlockOnEdge(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPaveBlockOnFace(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPaveBlockOnEdge(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const NMTTools_CommonBlock &aCB) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const BOPTools_PaveBlock &aPB) const;
-
-};
-%feature("shadow") NMTTools_CommonBlock::~NMTTools_CommonBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_CommonBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_DataMapOfIntegerListOfPaveBlock;
-class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_DataMapOfIntegerListOfPaveBlock(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_DataMapOfIntegerListOfPaveBlock & Assign(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		NMTTools_DataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") NMTTools_DataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapOfIntegerListOfPaveBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_DataMapOfIntegerListOfPaveBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_ListIteratorOfListOfCoupleOfShape;
-class NMTTools_ListIteratorOfListOfCoupleOfShape {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_ListIteratorOfListOfCoupleOfShape();
-		%feature("autodoc", "1");
-		NMTTools_ListIteratorOfListOfCoupleOfShape(const NMTTools_ListOfCoupleOfShape &L);
-		%feature("autodoc", "1");
-		void Initialize(const NMTTools_ListOfCoupleOfShape &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		NMTTools_CoupleOfShape & Value() const;
-
-};
-%feature("shadow") NMTTools_ListIteratorOfListOfCoupleOfShape::~NMTTools_ListIteratorOfListOfCoupleOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_ListIteratorOfListOfCoupleOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTTools_IndexedDataMapOfIndexedMapOfInteger;
-class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfIndexedMapOfInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfIndexedMapOfInteger & Assign(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
-		%feature("autodoc", "1");
-		NMTTools_IndexedDataMapOfIndexedMapOfInteger & operator=(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TColStd_IndexedMapOfInteger &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
-
-};
-%feature("shadow") NMTTools_IndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapOfIndexedMapOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTTools_IndexedDataMapOfIndexedMapOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1418,6 +520,916 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger;
+class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger(const Standard_Integer &K1, const Standard_Integer K2, const TColStd_IndexedMapOfInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger GetHandle() {
+	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger*) &$self;
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_MapOfPaveBlock;
+class NMTTools_MapOfPaveBlock : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & Assign(const NMTTools_MapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & operator=(const NMTTools_MapOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const BOPTools_PaveBlock &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_PaveBlock &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const BOPTools_PaveBlock &aKey);
+
+};
+%feature("shadow") NMTTools_MapOfPaveBlock::~NMTTools_MapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_MapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_ListIteratorOfListOfCommonBlock;
+class NMTTools_ListIteratorOfListOfCommonBlock {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListIteratorOfListOfCommonBlock();
+		%feature("autodoc", "1");
+		NMTTools_ListIteratorOfListOfCommonBlock(const NMTTools_ListOfCommonBlock &L);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_ListOfCommonBlock &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & Value() const;
+
+};
+%feature("shadow") NMTTools_ListIteratorOfListOfCommonBlock::~NMTTools_ListIteratorOfListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_ListIteratorOfListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_IndexedDataMapOfShapeIndexedMapOfShape;
+class NMTTools_IndexedDataMapOfShapeIndexedMapOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & Assign(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & operator=(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const TopTools_IndexedMapOfShape &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const TopTools_IndexedMapOfShape &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopTools_IndexedMapOfShape & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & ChangeFromKey(const TopoDS_Shape K);
+
+};
+%feature("shadow") NMTTools_IndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IndexedDataMapOfShapeIndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo;
+class NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo();
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo(const NMTTools_DataMapOfIntegerFaceInfo &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_DataMapOfIntegerFaceInfo &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & Value() const;
+
+};
+%feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo::~NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_IteratorOfCoupleOfShape;
+class NMTTools_IteratorOfCoupleOfShape : public BOPTools_IteratorOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IteratorOfCoupleOfShape();
+		%feature("autodoc", "1");
+		void SetDS(const NMTDS_PShapesDataStructure &pDS);
+		%feature("autodoc", "1");
+		virtual		void Initialize(const TopAbs_ShapeEnum Type1, const TopAbs_ShapeEnum Type2);
+		%feature("autodoc","Current() -> [Standard_Integer, Standard_Integer]");
+
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean More() const;
+
+};
+%feature("shadow") NMTTools_IteratorOfCoupleOfShape::~NMTTools_IteratorOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IteratorOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_ListOfCommonBlock;
+class NMTTools_ListOfCommonBlock {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListOfCommonBlock();
+		%feature("autodoc", "1");
+		void Assign(const NMTTools_ListOfCommonBlock &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTTools_ListOfCommonBlock &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CommonBlock &I);
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTTools_ListOfCommonBlock & Other);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CommonBlock &I);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTTools_ListOfCommonBlock & Other);
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & First() const;
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const NMTTools_CommonBlock &I, NMTTools_ListIteratorOfListOfCommonBlock & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTTools_ListOfCommonBlock & Other, NMTTools_ListIteratorOfListOfCommonBlock & It);
+
+};
+%feature("shadow") NMTTools_ListOfCommonBlock::~NMTTools_ListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_ListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_CommonBlockAPI;
+class NMTTools_CommonBlockAPI {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_CommonBlockAPI(const NMTTools_ListOfCommonBlock &aList);
+		%feature("autodoc", "1");
+		const NMTTools_ListOfCommonBlock & List() const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & CommonPaveBlocks(const Standard_Integer anE) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCommonBlock(const BOPTools_PaveBlock &aPB) const;
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & CommonBlock(const BOPTools_PaveBlock &aPB) const;
+
+};
+%feature("shadow") NMTTools_CommonBlockAPI::~NMTTools_CommonBlockAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_CommonBlockAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_MapIteratorOfMapOfPaveBlock;
+class NMTTools_MapIteratorOfMapOfPaveBlock : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_MapIteratorOfMapOfPaveBlock();
+		%feature("autodoc", "1");
+		NMTTools_MapIteratorOfMapOfPaveBlock(const NMTTools_MapOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_MapOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & Key() const;
+
+};
+%feature("shadow") NMTTools_MapIteratorOfMapOfPaveBlock::~NMTTools_MapIteratorOfMapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_MapIteratorOfMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_StdMapNodeOfMapOfPaveBlock;
+class NMTTools_StdMapNodeOfMapOfPaveBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_StdMapNodeOfMapOfPaveBlock(const BOPTools_PaveBlock &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	Handle_NMTTools_StdMapNodeOfMapOfPaveBlock GetHandle() {
+	return *(Handle_NMTTools_StdMapNodeOfMapOfPaveBlock*) &$self;
+	}
+};
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_StdMapNodeOfMapOfPaveBlock::~NMTTools_StdMapNodeOfMapOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_StdMapNodeOfMapOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapOfIntegerFaceInfo;
+class NMTTools_DataMapOfIntegerFaceInfo : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo & Assign(const NMTTools_DataMapOfIntegerFaceInfo &Other);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerFaceInfo & operator=(const NMTTools_DataMapOfIntegerFaceInfo &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const NMTTools_FaceInfo &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const NMTTools_FaceInfo & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") NMTTools_DataMapOfIntegerFaceInfo::~NMTTools_DataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_CoupleOfShape;
+class NMTTools_CoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_CoupleOfShape();
+		%feature("autodoc", "1");
+		void SetShape1(const TopoDS_Shape aS);
+		%feature("autodoc", "1");
+		void SetShape2(const TopoDS_Shape aS);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape1() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape2() const;
+
+};
+%feature("shadow") NMTTools_CoupleOfShape::~NMTTools_CoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_CoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_CommonBlockPool;
+class NMTTools_CommonBlockPool {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_CommonBlockPool(const Standard_Integer Length=0, const Standard_Integer BlockLength=5);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer theNewLength);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		Standard_Integer FactLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer Append(const NMTTools_ListOfCommonBlock &Value);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const NMTTools_ListOfCommonBlock & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const NMTTools_ListOfCommonBlock & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		NMTTools_ListOfCommonBlock & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		NMTTools_ListOfCommonBlock & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetBlockLength(const Standard_Integer aBL);
+		%feature("autodoc", "1");
+		Standard_Integer BlockLength() const;
+
+};
+%feature("shadow") NMTTools_CommonBlockPool::~NMTTools_CommonBlockPool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_CommonBlockPool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_ListNodeOfListOfCommonBlock;
+class NMTTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListNodeOfListOfCommonBlock(const NMTTools_CommonBlock &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTTools_CommonBlock & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	Handle_NMTTools_ListNodeOfListOfCommonBlock GetHandle() {
+	return *(Handle_NMTTools_ListNodeOfListOfCommonBlock*) &$self;
+	}
+};
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_ListNodeOfListOfCommonBlock::~NMTTools_ListNodeOfListOfCommonBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_ListNodeOfListOfCommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_Tools;
+class NMTTools_Tools {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_Tools();
+		%feature("autodoc", "1");
+		static		void MakeNewVertex(const TopTools_ListOfShape &aLV, TopoDS_Vertex & aNewVertex);
+		%feature("autodoc", "1");
+		static		void FindChains(const BOPTools_CArray1OfVVInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		static		void FindChains(const BOPTools_CArray1OfSSInterference &aVVs, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		static		void FindChains(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &aMCV, BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & aMCX);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSplitInOnFace(const TopoDS_Edge aE, const TopoDS_Face aF, IntTools_Context & aCtx);
+		%feature("autodoc", "1");
+		static		Standard_Boolean AreFacesSameDomain(const TopoDS_Face aF1, const TopoDS_Face aF2, IntTools_Context & aCtx);
+		%feature("autodoc", "1");
+		static		void FindChains(const NMTTools_ListOfCoupleOfShape &aLCS, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM);
+		%feature("autodoc", "1");
+		static		void FindChains(const NMTTools_IndexedDataMapOfShapeIndexedMapOfShape &aM1, NMTTools_IndexedDataMapOfShapeIndexedMapOfShape & aM2);
+		%feature("autodoc", "1");
+		static		void MakePCurve(const TopoDS_Edge aE, const TopoDS_Face aF, const Handle_Geom2d_Curve &aC2D);
+		%feature("autodoc", "1");
+		static		void UpdateEdge(const TopoDS_Edge aE, const Standard_Real aTol);
+
+};
+%feature("shadow") NMTTools_Tools::~NMTTools_Tools %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_Tools {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_ListOfCoupleOfShape;
+class NMTTools_ListOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListOfCoupleOfShape();
+		%feature("autodoc", "1");
+		void Assign(const NMTTools_ListOfCoupleOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTTools_ListOfCoupleOfShape &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CoupleOfShape &I);
+		%feature("autodoc", "1");
+		void Prepend(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTTools_ListOfCoupleOfShape & Other);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CoupleOfShape &I);
+		%feature("autodoc", "1");
+		void Append(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTTools_ListOfCoupleOfShape & Other);
+		%feature("autodoc", "1");
+		NMTTools_CoupleOfShape & First() const;
+		%feature("autodoc", "1");
+		NMTTools_CoupleOfShape & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTTools_ListIteratorOfListOfCoupleOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTTools_ListOfCoupleOfShape & Other, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const NMTTools_CoupleOfShape &I, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTTools_ListOfCoupleOfShape & Other, NMTTools_ListIteratorOfListOfCoupleOfShape & It);
+
+};
+%feature("shadow") NMTTools_ListOfCoupleOfShape::~NMTTools_ListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_ListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape;
+class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopTools_IndexedMapOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape GetHandle() {
+	return *(Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape*) &$self;
+	}
+};
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapOfIntegerListOfPaveBlock;
+class NMTTools_DataMapOfIntegerListOfPaveBlock : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerListOfPaveBlock(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerListOfPaveBlock & Assign(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		NMTTools_DataMapOfIntegerListOfPaveBlock & operator=(const NMTTools_DataMapOfIntegerListOfPaveBlock &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & operator()(const Standard_Integer &K);
+
+};
+%feature("shadow") NMTTools_DataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_ListIteratorOfListOfCoupleOfShape;
+class NMTTools_ListIteratorOfListOfCoupleOfShape {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_ListIteratorOfListOfCoupleOfShape();
+		%feature("autodoc", "1");
+		NMTTools_ListIteratorOfListOfCoupleOfShape(const NMTTools_ListOfCoupleOfShape &L);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_ListOfCoupleOfShape &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		NMTTools_CoupleOfShape & Value() const;
+
+};
+%feature("shadow") NMTTools_ListIteratorOfListOfCoupleOfShape::~NMTTools_ListIteratorOfListOfCoupleOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_ListIteratorOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock;
+class NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock(const Standard_Integer &K, const BOPTools_ListOfPaveBlock &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		BOPTools_ListOfPaveBlock & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock GetHandle() {
+	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock*) &$self;
+	}
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_IndexedDataMapOfIndexedMapOfInteger;
+class NMTTools_IndexedDataMapOfIndexedMapOfInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfIndexedMapOfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfIndexedMapOfInteger & Assign(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfIndexedMapOfInteger & operator=(const NMTTools_IndexedDataMapOfIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TColStd_IndexedMapOfInteger &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
+
+};
+%feature("shadow") NMTTools_IndexedDataMapOfIndexedMapOfInteger::~NMTTools_IndexedDataMapOfIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IndexedDataMapOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTTools_CheckerSI;
 class NMTTools_CheckerSI : public NMTTools_PaveFiller {
 	public:
@@ -1445,6 +1457,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo;
+class NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo(const Standard_Integer &K, const NMTTools_FaceInfo &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo GetHandle() {
+	return *(Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo*) &$self;
+	}
+};
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::~NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTTools_ListNodeOfListOfCoupleOfShape;
 class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 	public:
@@ -1463,7 +1524,7 @@ class NMTTools_ListNodeOfListOfCoupleOfShape : public TCollection_MapNode {
 };
 %extend NMTTools_ListNodeOfListOfCoupleOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NMTTools_ListNodeOfListOfCoupleOfShape::~NMTTools_ListNodeOfListOfCoupleOfShape %{
@@ -1476,6 +1537,92 @@ def __del__(self):
 %}
 
 %extend NMTTools_ListNodeOfListOfCoupleOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_IndexedDataMapOfShapePaveBlock;
+class NMTTools_IndexedDataMapOfShapePaveBlock : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapePaveBlock(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapePaveBlock & Assign(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
+		%feature("autodoc", "1");
+		NMTTools_IndexedDataMapOfShapePaveBlock & operator=(const NMTTools_IndexedDataMapOfShapePaveBlock &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const BOPTools_PaveBlock &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const BOPTools_PaveBlock &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & ChangeFromKey(const TopoDS_Shape K);
+
+};
+%feature("shadow") NMTTools_IndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapOfShapePaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_IndexedDataMapOfShapePaveBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock;
+class NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock();
+		%feature("autodoc", "1");
+		NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock(const NMTTools_DataMapOfIntegerListOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTTools_DataMapOfIntegerListOfPaveBlock &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const BOPTools_ListOfPaveBlock & Value() const;
+
+};
+%feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1516,7 +1663,7 @@ class NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock : public TColl
 };
 %extend NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::~NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock %{
@@ -1535,22 +1682,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock;
-class NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock : public TCollection_BasicMapIterator {
+%nodefaultctor NMTTools_CommonBlock;
+class NMTTools_CommonBlock {
 	public:
 		%feature("autodoc", "1");
-		NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock();
+		NMTTools_CommonBlock();
 		%feature("autodoc", "1");
-		NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock(const NMTTools_DataMapOfIntegerListOfPaveBlock &aMap);
+		void AddPaveBlock(const BOPTools_PaveBlock &aPB);
 		%feature("autodoc", "1");
-		void Initialize(const NMTTools_DataMapOfIntegerListOfPaveBlock &aMap);
+		void AddFace(const Standard_Integer aF);
 		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
+		void AddFaces(const TColStd_ListOfInteger &aLF);
 		%feature("autodoc", "1");
-		const BOPTools_ListOfPaveBlock & Value() const;
+		const BOPTools_ListOfPaveBlock & PaveBlocks() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Faces() const;
+		%feature("autodoc", "1");
+		const BOPTools_PaveBlock & PaveBlock1() const;
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & PaveBlock1(const Standard_Integer anIx);
+		%feature("autodoc", "1");
+		BOPTools_PaveBlock & PaveBlockOnEdge(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPaveBlockOnFace(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPaveBlockOnEdge(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const NMTTools_CommonBlock &aCB) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const BOPTools_PaveBlock &aPB) const;
 
 };
-%feature("shadow") NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock::~NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock %{
+%feature("shadow") NMTTools_CommonBlock::~NMTTools_CommonBlock %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1559,7 +1722,52 @@ def __del__(self):
 		pass
 %}
 
-%extend NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock {
+%extend NMTTools_CommonBlock {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTTools_FaceInfo;
+class NMTTools_FaceInfo {
+	public:
+		%feature("autodoc", "1");
+		NMTTools_FaceInfo();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer theI);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		const NMTTools_MapOfPaveBlock & PaveBlocksIn() const;
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & ChangePaveBlocksIn();
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & VerticesIn() const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & ChangeVerticesIn();
+		%feature("autodoc", "1");
+		const NMTTools_MapOfPaveBlock & PaveBlocksOn() const;
+		%feature("autodoc", "1");
+		NMTTools_MapOfPaveBlock & ChangePaveBlocksOn();
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & VerticesOn() const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & ChangeVerticesOn();
+
+};
+%feature("shadow") NMTTools_FaceInfo::~NMTTools_FaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTTools_FaceInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
