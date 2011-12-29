@@ -52,43 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Partition_Spliter;
-class Partition_Spliter {
-	public:
-		%feature("autodoc", "1");
-		Partition_Spliter();
-		%feature("autodoc", "1");
-		void AddShape(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void AddTool(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Compute(const TopAbs_ShapeEnum Limit=TopAbs_SHAPE);
-		%feature("autodoc", "1");
-		void KeepShapesInside(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void RemoveShapesInside(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
-		%feature("autodoc", "1");
-		void Clear();
-
-};
-%feature("shadow") Partition_Spliter::~Partition_Spliter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Partition_Spliter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Partition_Loop2d;
 class Partition_Loop2d {
 	public:
@@ -158,41 +121,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Partition_Loop;
-class Partition_Loop {
-	public:
-		%feature("autodoc", "1");
-		Partition_Loop();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewWires() const;
-		%feature("autodoc", "1");
-		void WiresToFaces();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces() const;
-
-};
-%feature("shadow") Partition_Loop::~Partition_Loop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Partition_Loop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Partition_Inter3d;
 class Partition_Inter3d {
 	public:
@@ -248,6 +176,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor Partition_Loop;
+class Partition_Loop {
+	public:
+		%feature("autodoc", "1");
+		Partition_Loop();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void AddConstEdge(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewWires() const;
+		%feature("autodoc", "1");
+		void WiresToFaces();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces() const;
+
+};
+%feature("shadow") Partition_Loop::~Partition_Loop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Partition_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Partition_Loop3d;
 class Partition_Loop3d {
 	public:
@@ -276,6 +239,43 @@ def __del__(self):
 %}
 
 %extend Partition_Loop3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Partition_Spliter;
+class Partition_Spliter {
+	public:
+		%feature("autodoc", "1");
+		Partition_Spliter();
+		%feature("autodoc", "1");
+		void AddShape(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void AddTool(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Compute(const TopAbs_ShapeEnum Limit=TopAbs_SHAPE);
+		%feature("autodoc", "1");
+		void KeepShapesInside(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void RemoveShapesInside(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape() const;
+		%feature("autodoc", "1");
+		void Clear();
+
+};
+%feature("shadow") Partition_Spliter::~Partition_Spliter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Partition_Spliter {
 	void _kill_pointed() {
 		delete $self;
 	}

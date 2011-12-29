@@ -253,6 +253,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShHealOper_EdgeDivide;
+class ShHealOper_EdgeDivide : public ShHealOper_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShHealOper_EdgeDivide();
+		%feature("autodoc", "1");
+		ShHealOper_EdgeDivide(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		void Init(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform(const TopoDS_Shape theEdge, const Standard_Real theValue, const Standard_Boolean theDivideParamMode=1);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform(const TopoDS_Shape theEdge, const TColStd_SequenceOfReal &theValues, const Standard_Boolean theDivideParamMode=1);
+
+};
+%feature("shadow") ShHealOper_EdgeDivide::~ShHealOper_EdgeDivide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShHealOper_EdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShHealOper_ShapeProcess;
 class ShHealOper_ShapeProcess {
 	public:
@@ -290,37 +321,6 @@ def __del__(self):
 %}
 
 %extend ShHealOper_ShapeProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShHealOper_RemoveFace;
-class ShHealOper_RemoveFace : public ShHealOper_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShHealOper_RemoveFace();
-		%feature("autodoc", "1");
-		ShHealOper_RemoveFace(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopTools_SequenceOfShape &theRemovedFaces);
-
-};
-%feature("shadow") ShHealOper_RemoveFace::~ShHealOper_RemoveFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShHealOper_RemoveFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -370,6 +370,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShHealOper_RemoveFace;
+class ShHealOper_RemoveFace : public ShHealOper_Tool {
+	public:
+		%feature("autodoc", "1");
+		ShHealOper_RemoveFace();
+		%feature("autodoc", "1");
+		ShHealOper_RemoveFace(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		virtual		void Init(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		Standard_Boolean Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean Perform(const TopTools_SequenceOfShape &theRemovedFaces);
+
+};
+%feature("shadow") ShHealOper_RemoveFace::~ShHealOper_RemoveFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShHealOper_RemoveFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShHealOper_SplitCurve3d;
 class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 	public:
@@ -390,7 +421,7 @@ class ShHealOper_SplitCurve3d : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShHealOper_SplitCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShHealOper_SplitCurve3d::~ShHealOper_SplitCurve3d %{
@@ -491,7 +522,7 @@ class ShHealOper_SplitCurve2d : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShHealOper_SplitCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") ShHealOper_SplitCurve2d::~ShHealOper_SplitCurve2d %{
@@ -504,37 +535,6 @@ def __del__(self):
 %}
 
 %extend ShHealOper_SplitCurve2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShHealOper_EdgeDivide;
-class ShHealOper_EdgeDivide : public ShHealOper_Tool {
-	public:
-		%feature("autodoc", "1");
-		ShHealOper_EdgeDivide();
-		%feature("autodoc", "1");
-		ShHealOper_EdgeDivide(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		virtual		void Init(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopoDS_Shape theEdge, const Standard_Real theValue, const Standard_Boolean theDivideParamMode=1);
-		%feature("autodoc", "1");
-		Standard_Boolean Perform(const TopoDS_Shape theEdge, const TColStd_SequenceOfReal &theValues, const Standard_Boolean theDivideParamMode=1);
-
-};
-%feature("shadow") ShHealOper_EdgeDivide::~ShHealOper_EdgeDivide %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShHealOper_EdgeDivide {
 	void _kill_pointed() {
 		delete $self;
 	}

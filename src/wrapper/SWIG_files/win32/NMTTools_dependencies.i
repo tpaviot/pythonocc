@@ -235,11 +235,11 @@ $HeaderURL$
 #include <Standard_ProgramError.hxx>
 #include <Standard_RangeError.hxx>
 #include <Standard_Real.hxx>
-#include <Standard_Real_Original.hxx>
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -318,6 +318,6 @@ $HeaderURL$
 
 %import TCollection.i
 %import Standard.i
-%import BOPTools.i
 %import NMTDS.i
+%import BOPTools.i
 %import TopAbs.i

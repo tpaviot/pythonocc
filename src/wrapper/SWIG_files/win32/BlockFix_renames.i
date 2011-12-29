@@ -23,3 +23,8 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BlockFix_PeriodicSurfaceModifier::DownCast;
+%rename(DownCast) Handle_BlockFix_SphereSpaceModifier::DownCast;
+%rename(DownCast) Handle_BlockFix_BlockFixAPI::DownCast;
+%rename(RotateSphereSpace) BlockFix::RotateSphereSpace;
+%rename(FixRanges) BlockFix::FixRanges;

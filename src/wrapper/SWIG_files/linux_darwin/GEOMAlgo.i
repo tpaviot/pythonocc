@@ -2444,8 +2444,19 @@ class GEOMAlgo_ShapeSet {
 		const TopTools_ListOfShape & GetSet() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const GEOMAlgo_ShapeSet &theOther) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator==(const GEOMAlgo_ShapeSet &theOther) const;
+		%extend{
+			bool __eq_wrapper__(const GEOMAlgo_ShapeSet &theOther) {
+				if (*self==theOther) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
 
 };
 %feature("shadow") GEOMAlgo_ShapeSet::~GEOMAlgo_ShapeSet %{

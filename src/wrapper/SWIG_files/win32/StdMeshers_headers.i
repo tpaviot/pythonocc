@@ -106,10 +106,10 @@ $HeaderURL$
 
 #include<SMESH_Gen.hxx>
 #include<SMESH_Mesh.hxx>
+#include<SMDS_MeshElement.hxx>
 #include<SMESH_subMesh.hxx>
 #include<SMESH_MesherHelper.hxx>
 #include<SMDS_MeshNode.hxx>
 #include<SMESHDS_Mesh.hxx>
-#include<SMDS_MeshElement.hxx>
 #include<SMESH_Hypothesis.hxx>
 %}
