@@ -166,6 +166,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor BlockFix_UnionEdges;
+class BlockFix_UnionEdges {
+	public:
+		%feature("autodoc", "1");
+		BlockFix_UnionEdges();
+		%feature("autodoc", "1");
+		TopoDS_Shape Perform(const TopoDS_Shape Shape, const Standard_Real Tol);
+
+};
+%feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BlockFix_UnionEdges {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BlockFix;
 class BlockFix {
 	public:
@@ -187,31 +212,6 @@ def __del__(self):
 %}
 
 %extend BlockFix {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BlockFix_UnionEdges;
-class BlockFix_UnionEdges {
-	public:
-		%feature("autodoc", "1");
-		BlockFix_UnionEdges();
-		%feature("autodoc", "1");
-		TopoDS_Shape Perform(const TopoDS_Shape Shape, const Standard_Real Tol);
-
-};
-%feature("shadow") BlockFix_UnionEdges::~BlockFix_UnionEdges %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BlockFix_UnionEdges {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -255,7 +255,7 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_SphereSpaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
@@ -350,7 +350,7 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_PeriodicSurfaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
@@ -472,7 +472,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 };
 %extend BlockFix_BlockFixAPI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{

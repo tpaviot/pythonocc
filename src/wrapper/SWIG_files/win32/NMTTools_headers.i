@@ -27,6 +27,7 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo.hxx>
 #include<Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock.hxx>
 #include<Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger.hxx>
 #include<Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape.hxx>
@@ -40,9 +41,13 @@ $HeaderURL$
 #include<NMTTools_CommonBlockPool.hxx>
 #include<NMTTools_CoupleOfShape.hxx>
 #include<NMTTools_DEProcessor.hxx>
+#include<NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo.hxx>
 #include<NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock.hxx>
+#include<NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo.hxx>
 #include<NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock.hxx>
+#include<NMTTools_DataMapOfIntegerFaceInfo.hxx>
 #include<NMTTools_DataMapOfIntegerListOfPaveBlock.hxx>
+#include<NMTTools_FaceInfo.hxx>
 #include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger.hxx>
 #include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape.hxx>
 #include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock.hxx>

@@ -27,12 +27,12 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import BOPTools
 import Standard
 import TopoDS
-import TopTools
-import TCollection
-import TColStd
 import NMTDS
 import IntTools
+import BOPTools
+import TCollection
+import TColStd
+import TopTools
 };

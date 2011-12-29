@@ -121,11 +121,11 @@ $HeaderURL$
 #include <Standard_ProgramError.hxx>
 #include <Standard_RangeError.hxx>
 #include <Standard_Real.hxx>
-#include <Standard_Real_Original.hxx>
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
 #include <Standard_Static.hxx>
+#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -200,8 +200,10 @@ $HeaderURL$
 #include <GEOMAlgo_FinderShapeOn2.hxx>
 #include <GEOMAlgo_FinderShapeOnQuad.hxx>
 #include <GEOMAlgo_GlueAnalyser.hxx>
+#include <GEOMAlgo_GlueDetector.hxx>
 #include <GEOMAlgo_Gluer.hxx>
-#include <GEOMAlgo_Gluer1.hxx>
+#include <GEOMAlgo_Gluer2.hxx>
+#include <GEOMAlgo_GluerAlgo.hxx>
 #include <GEOMAlgo_HAlgo.hxx>
 #include <GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
 #include <GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape.hxx>
@@ -288,5 +290,5 @@ $HeaderURL$
 %import TFunction.i
 %import Standard.i
 %import SGEOM.i
-%import GEOMAlgo.i
 %import TopAbs.i
+%import GEOMAlgo.i

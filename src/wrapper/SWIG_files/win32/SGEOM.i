@@ -242,6 +242,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
+class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const TCollection_AsciiString &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
+
+};
+%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient GetHandle() {
+	return *(Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient*) &$self;
+	}
+};
+%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(2147483647);
+	}
+};
+%feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOM_Application;
 class GEOM_Application : public TDocStd_Application {
 	public:
@@ -270,7 +311,7 @@ class GEOM_Application : public TDocStd_Application {
 };
 %extend GEOM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOM_Application::~GEOM_Application %{
@@ -283,47 +324,6 @@ def __del__(self):
 %}
 
 %extend GEOM_Application {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOM_DataMapNodeOfDataMapOfAsciiStringTransient;
-class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GEOM_DataMapNodeOfDataMapOfAsciiStringTransient(const TCollection_AsciiString &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &arg0) const;
-
-};
-%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
-	Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient GetHandle() {
-	return *(Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient*) &$self;
-	}
-};
-%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
-	}
-};
-%feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -365,8 +365,6 @@ class GEOM_Engine {
 		void Redo(int );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddSubShape(Handle_GEOM_Object , Handle_TColStd_HArray1OfInteger , bool =false);
-		%feature("autodoc", "1");
-		TCollection_AsciiString DumpPython(int , Resource_DataMapOfAsciiStringAsciiString & theObjectNames, TVariablesList , bool , bool & aValidScript);
 		%feature("autodoc", "1");
 		const char * GetDumpName(const char *theStudyEntry) const;
 		%feature("autodoc", "1");
@@ -450,6 +448,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOM_Parameter;
+class GEOM_Parameter {
+	public:
+		%feature("autodoc", "1");
+		GEOM_Parameter();
+		%feature("autodoc", "1");
+		GEOM_Parameter(TCollection_AsciiString );
+		%feature("autodoc", "1");
+		GEOM_Parameter(Standard_Real );
+		%feature("autodoc", "1");
+		Standard_Boolean IsString() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDouble() const;
+		%feature("autodoc", "1");
+		Standard_Real GetDouble() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString GetString() const;
+		%feature("autodoc", "1");
+		void operator=(Standard_Real );
+		%feature("autodoc", "1");
+		void operator=(const TCollection_AsciiString &anAsciiString);
+
+};
+%feature("shadow") GEOM_Parameter::~GEOM_Parameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOM_Parameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOM_DataMapOfAsciiStringTransient;
 class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 	public:
@@ -495,45 +532,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOM_Parameter;
-class GEOM_Parameter {
-	public:
-		%feature("autodoc", "1");
-		GEOM_Parameter();
-		%feature("autodoc", "1");
-		GEOM_Parameter(TCollection_AsciiString );
-		%feature("autodoc", "1");
-		GEOM_Parameter(Standard_Real );
-		%feature("autodoc", "1");
-		Standard_Boolean IsString() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDouble() const;
-		%feature("autodoc", "1");
-		Standard_Real GetDouble() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetString() const;
-		%feature("autodoc", "1");
-		void operator=(Standard_Real );
-		%feature("autodoc", "1");
-		void operator=(const TCollection_AsciiString &anAsciiString);
-
-};
-%feature("shadow") GEOM_Parameter::~GEOM_Parameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_Parameter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOM_Solver;
 class GEOM_Solver {
 	public:
@@ -559,37 +557,6 @@ def __del__(self):
 %}
 
 %extend GEOM_Solver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
-class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient();
-		%feature("autodoc", "1");
-		GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient(const GEOM_DataMapOfAsciiStringTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const GEOM_DataMapOfAsciiStringTransient &aMap);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-
-};
-%feature("shadow") GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient::~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -651,7 +618,7 @@ class GEOM_SubShapeDriver : public TFunction_Driver {
 };
 %extend GEOM_SubShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
@@ -664,6 +631,37 @@ def __del__(self):
 %}
 
 %extend GEOM_SubShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient;
+class GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient();
+		%feature("autodoc", "1");
+		GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient(const GEOM_DataMapOfAsciiStringTransient &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const GEOM_DataMapOfAsciiStringTransient &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+
+};
+%feature("shadow") GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient::~GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -784,7 +782,7 @@ class GEOM_Function : public MMgt_TShared {
 };
 %extend GEOM_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOM_Function::~GEOM_Function %{
@@ -843,9 +841,9 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const char * GetName();
 		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &theColor);
+		void SetColor(const GEOM_Object::Color &theColor);
 		%feature("autodoc", "1");
-		Quantity_Color GetColor();
+		GEOM_Object::Color GetColor();
 		%feature("autodoc", "1");
 		void SetAutoColor(bool );
 		%feature("autodoc", "1");
@@ -907,7 +905,7 @@ class GEOM_Object : public MMgt_TShared {
 };
 %extend GEOM_Object {
 	Standard_Integer __hash__() {
-	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") GEOM_Object::~GEOM_Object %{

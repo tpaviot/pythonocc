@@ -23,3 +23,17 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_NMTTools_StdMapNodeOfMapOfPaveBlock::DownCast;
+%rename(DownCast) Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo::DownCast;
+%rename(DownCast) Handle_NMTTools_ListNodeOfListOfCoupleOfShape::DownCast;
+%rename(DownCast) Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock::DownCast;
+%rename(DownCast) Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape::DownCast;
+%rename(DownCast) Handle_NMTTools_ListNodeOfListOfCommonBlock::DownCast;
+%rename(DownCast) Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock::DownCast;
+%rename(DownCast) Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger::DownCast;
+%rename(MakeNewVertex) NMTTools_Tools::MakeNewVertex;
+%rename(FindChains) NMTTools_Tools::FindChains;
+%rename(IsSplitInOnFace) NMTTools_Tools::IsSplitInOnFace;
+%rename(AreFacesSameDomain) NMTTools_Tools::AreFacesSameDomain;
+%rename(MakePCurve) NMTTools_Tools::MakePCurve;
+%rename(UpdateEdge) NMTTools_Tools::UpdateEdge;

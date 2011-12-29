@@ -33,8 +33,9 @@ import TopoDS
 import Geom
 import TopAbs
 import TCollection
-import gp
 import BRepAlgo
+import gp
+import IntTools
 import Bnd
 import BOPTColStd
 };
