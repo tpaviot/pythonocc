@@ -436,8 +436,8 @@ static gp_XY project (const SMDS_MeshNode* theNode,
   }
   double u, v, minVal = DBL_MAX;
   for ( int i = theProjectorPS.NbExt(); i > 0; i-- )
-    if ( theProjectorPS.Value( i ) < minVal ) {
-      minVal = theProjectorPS.Value( i );
+    if ( theProjectorPS.SquareDistance( i ) < minVal ) {
+      minVal = theProjectorPS.SquareDistance( i );
       theProjectorPS.Point( i ).Parameter( u, v );
     }
   return gp_XY( u, v );
