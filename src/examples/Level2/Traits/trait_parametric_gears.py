@@ -22,14 +22,14 @@ from OCC.Display import SimpleGui, OCCViewer
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
 from math import pi
-from trait_editor import OCCTraitViewer
 from sympy import *
-from enthought.traits.ui.editor import Editor
-from enthought.traits.trait_types import Instance, Bool, Button, Int, Str, Float
-from enthought.traits.ui.editor_factory import EditorFactory
-from enthought.traits.has_traits import HasTraits
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
+from trait_editor import OCCTraitViewer
+from traits.has_traits import HasTraits
+from traits.trait_types import Instance, Bool, Button, Int, Str, Float
+from traitsui.editor import Editor
+from traitsui.editor_factory import EditorFactory
+from traitsui.item import Item
+from traitsui.view import View
 
 class PAFContextEditor(Editor):
     display = Instance(OCCViewer)
