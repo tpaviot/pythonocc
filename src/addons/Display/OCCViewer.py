@@ -20,10 +20,6 @@ from OCC.TopoDS import *
 
 from OCC.Utils.Common import to_string
 from OCC.Utils.Construct import color
-import os, os.path, types
-import sys
-import subprocess
-from ctypes import util
 
 import OCC.Visualization
 import OCC.V3d
@@ -45,9 +41,9 @@ except ImportError:
     HAVE_NIS = False
 
 def set_CSF_GraphicShr():
-    # Sets the CSF_GraphicShr env var if not already set up
-    if not os.environ.has_key('CSF_GraphicShr'):
-        os.environ['CSF_GraphicShr'] = util.find_library('TKOpenGl')
+    "Sets the CSF_GraphicShr env var"
+    from ctypes import util
+    os.environ['CSF_GraphicShr'] = util.find_library('TKOpenGl')
 
 if not (sys.platform == 'win32'):
     set_CSF_GraphicShr()

@@ -55,7 +55,6 @@ from OCC.GeomAbs import *
 
 from OCC import Graphic3d
 import random
-from __future__ import with_statement
 
 #===============================================================================
 # No PythonOCC dependencies...

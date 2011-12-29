@@ -17,62 +17,44 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys,os, os.path
+from OCC import VERSION
+
 #===============================================================================
 # TODO: resizing of the window is only performed on QT...
 #===============================================================================
 
+global USED_BACKEND
+USED_BACKEND = None
 
+def load_gui_toolkit():
+    # a little biase if you have traitsui, than lets use that backend
+    # Check PyQt4
+    try:
+        global QtCore, QtGui
+        from PyQt4 import QtCore, QtGui
+        print 'using PyQt4 as SimpleGui toolkit'
+        return 'qt'
+    except ImportError:
+        pass
 
-import sys
-import os, os.path
-from OCC import VERSION
-# First check which GUI library to use
-# Check wxPython
-try:
-    import wx
-    HAVE_WX = True
-except:
-    HAVE_WX = False
-# Check PyQt
-try:
-    from PyQt4 import QtCore, QtGui
-    HAVE_QT = True
-except:
-    HAVE_QT = False
-# Check python-xlib
-try:
-    from Xlib import display as display_xlib, X
-    HAVE_XLIB = True
-except:
-    HAVE_XLIB = False
-# Then define the default backend
-if HAVE_WX:
-    DEFAULT_BACKEND = 'wx'
-elif HAVE_QT:
-    DEFAULT_BACKEND = 'qt'
-elif HAVE_XLIB:
-    DEFAULT_BACKEND = 'x'
-else:
-    raise AssertionError('No backend.')
-# By default, used backend is the default_backend
-USED_BACKEND = DEFAULT_BACKEND
+    # check wx
+    try:
+        global wx
+        import wx
+        print 'using wx as SimpleGui toolkit'
+        return 'wx'
+    except ImportError:
+        pass
 
-def set_backend(str_backend):
-    ''' Overload the default used backend
-    '''
-    global USED_BACKEND
-    # make str_backend case unsensitive
-    str_backend = str_backend.lower()
-    if str_backend not in ['wx','qt','x']:
-        raise AssertionError('Backend must either be "wx", "qt" or "x"')
-    elif str_backend == 'qt' and not HAVE_QT:
-        raise Assertion('PyQt library not installed or not found.')
-    elif str_backend == 'wx' and not HAVE_WX:
-        raise Assertion('wxPython library not installed or not found.')
-    elif str_backend == 'x' and not HAVE_XLIB:
-        raise Assertion('python-xlib library not installed or not found.')
-    else:
-        USED_BACKEND = str_backend
+    # Check python-xlib
+    try:
+        global display_xlib, X
+        from Xlib import display as display_xlib, X
+        print 'using Xlib as SimpleGui toolkit'
+        return 'x'
+    except ImportError:
+        raise AssertionError('No GUI toolkit found. you will need either PyQt4, wx, or Xlib. the latter is osx / linux only')
 
 def get_bg_abs_filename():
     '''
@@ -87,6 +69,7 @@ def get_bg_abs_filename():
         return bg_abs_filename
 
 def safe_yield():
+    global USED_BACKEND
     if USED_BACKEND == 'wx':
         wx.SafeYield()
     elif USED_BACKEND == 'qt':
@@ -101,7 +84,8 @@ def init_display(screenX=1024, screenY=768):
     :param screenY: screen resolution y axis
     :return: OCCViewer.Viewer3d instance
     """
-    global display, add_menu, add_function_to_menu, start_display, app, win
+    global display, add_menu, add_function_to_menu, start_display, app, win, USED_BACKEND
+    USED_BACKEND = load_gui_toolkit()
     # wxPython based simple GUI
     if USED_BACKEND == 'wx':
         from wxDisplay import wxViewer3d
