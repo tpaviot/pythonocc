@@ -21,95 +21,43 @@
 
 __author__ = 'Henrik Rudstrom'
 
-from enthought.traits.has_traits import HasTraits
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
-from enthought.traits.trait_types import Any, Button, List, Instance, Str, Bool
-from enthought.traits.ui.editor import Editor
-from enthought.traits.ui.editor_factory import EditorFactory
-from itertools import izip
+# OCC
 from OCC.gp import gp_Trsf, gp_Vec
 from OCC.TopLoc import TopLoc_Location
-from OCC.Display.qtDisplay import qtViewer3d
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
 from OCC.Display import OCCViewer
-from OCC import PAF
-import OCC
+# enthought traits
+from traits.has_traits import HasTraits
+from traitsui.item import Item
+from traitsui.view import View
+from traits.trait_types import Any, Button, List, Instance, Str, Bool
+from traitsui.editor import Editor
+from traitsui.editor_factory import EditorFactory
+from traits.etsconfig.api import ETSConfig
+
+# determine on which toolkit we're on
+# at some point perhaps worth extending to pyside?
+HAVE_WX = False if ETSConfig.toolkit == 'qt' else True
+# conditionally load the right traitviewer
+if HAVE_WX:
+    from traitviewer_wx import OCCTraitViewerWx as OCCTraitViewer
+else:
+    from traitviewer_qt import OCCTraitViewerQt as OCCTraitViewer
+# stdlib
 import random
-from PyQt4 import Qt
 
-class TraitOCCViewer3d(OCCViewer.Viewer3d):
-    '''
-    Custom OCCViewer that keeps a map of its Shapes -> AIS_Shapes
-    '''
-    def __init__(self, *args, **kwargs):
-        OCCViewer.Viewer3d.__init__(self, *args, **kwargs)
-        self.ShapeMap = {}
-
-    def DisplayShape(self, shapes, **kwargs):
-        if isinstance(shapes, (list, tuple)):
-            ais_shapes = OCCViewer.Viewer3d.DisplayShape(self, shapes, **kwargs)
-            for s, ais in izip(shapes, ais_shapes):
-                self.ShapeMap[s] = ais
-        else:
-            ais = OCCViewer.Viewer3d.DisplayShape(self, shapes, **kwargs)
-            self.ShapeMap[shapes] = ais
-
-    def EraseShape(self, shape):
-        if shape not in self.ShapeMap:
-             raise Exception("shape not in shapemap")
-
-        self.Context.Erase(self.ShapeMap[shape])
-        del self.ShapeMap[shape]
-
-
-class OCCTraitViewer(qtViewer3d):
-    def __init__(self, editor=None, selection=None, **kwargs):
-        super(OCCTraitViewer, self).__init__(**kwargs)
-        self.editor = editor
-        
-        self._initialized = False
-        self.setSizePolicy(Qt.QSizePolicy(Qt.QSizePolicy.Expanding, Qt.QSizePolicy.Expanding));
-        self.setMinimumHeight(100)
-        self.setMinimumWidth(150)
-        
-    
-    def paintEvent(self, event):
-        # Display can only be initialized when window is shown.
-        # Showing windows etc is all magically done by traits
-        # Initializing on the first paint event.
-        # (resizeEvent and showEvent are too early)
-        if not self._initialized:
-            self.InitDriver()
-            self._initialized = True
-            self.editor.initialized = True
-
-        super(OCCTraitViewer, self).paintEvent(event)
-
-    def InitDriver(self):
-        #need to override this to set custom Viewer
-        self._display = TraitOCCViewer3d(self.GetHandle())
-        self._display.Create()
-        self._display.DisplayTriedron()
-        self._display.SetModeShaded()
-        self._inited = True
-        # dict mapping keys to functions
-        self._SetupKeyMap()
-        
-    def mouseReleaseEvent(self, event):
-        super(OCCTraitViewer, self).mouseReleaseEvent(event)
-        #not the nicest solution but heck.
-
-        if len(self.editor.selection) < 1:
-            self.editor.selection.append(self._display.selected_shape)
-        else: 
-            self.editor.selection[0] = self._display.selected_shape
-         
 class OCCEditor(Editor):
     shapes = List(Any)
     selection = List(Any)
     display = Instance(OCCViewer)
     initialized = Bool
+    border_size = 1
+
+
+    ################ UGLY ################
+    import wx
+    layout_style = wx.ALL
+
     
     def init ( self, parent):
         self.control = OCCTraitViewer(self, self.selection)
@@ -153,7 +101,7 @@ if __name__ == '__main__':
         #these are synced with the OCCEditor, name is refered to in OCCEditorFactory
         selection = List
         display = Instance(OCCViewer)
-        
+
         view = View(
             #set editor for the shapelist
             #optional selection and display can set to the string name of the display instance and selection list
@@ -162,14 +110,14 @@ if __name__ == '__main__':
 
             Item('add_stuff', show_label=False),
             Item('remove_stuff', show_label=False),
-            width= 0.8, 
-            height=0.8, 
+            width= 0.8,
+            height=0.8,
             resizable=True
         )
-        
+
         def _selection_items_changed(self, name, undefined, list_change):
             print "selection trait changed", list_change.added, self.display
-        
+
         def _add_stuff_changed(self, old, new):
             for i in xrange(20):
                 brep = BRepPrimAPI_MakeCylinder(random.random()*50, random.random()*50).Shape()
@@ -177,10 +125,9 @@ if __name__ == '__main__':
                 trsf.SetTranslation(gp_Vec(random.random()*100, random.random()*100, random.random()*100))
                 brep.Move(TopLoc_Location(trsf))
                 self.shapes.append(brep)
-     
+
         def _remove_stuff_changed(self, old, new):
             for shape in self.selection:
                 self.shapes.remove(shape)
-                
-                
+
     Example(shapes=[]).configure_traits()
