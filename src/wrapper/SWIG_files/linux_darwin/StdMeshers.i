@@ -1128,6 +1128,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor StdMeshers_CompositeHexa_3D;
+class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
+	public:
+		%feature("autodoc", "1");
+		StdMeshers_CompositeHexa_3D(int , int , SMESH_Gen* gen);
+		%feature("autodoc", "1");
+		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
+
+};
+%feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdMeshers_CompositeHexa_3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StdMeshers_SegmentLengthAroundVertex;
 class StdMeshers_SegmentLengthAroundVertex : public SMESH_Hypothesis {
 	public:
@@ -1319,33 +1346,6 @@ def __del__(self):
 %}
 
 %extend StdMeshers_Arithmetic1D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StdMeshers_CompositeHexa_3D;
-class StdMeshers_CompositeHexa_3D : public SMESH_3D_Algo {
-	public:
-		%feature("autodoc", "1");
-		StdMeshers_CompositeHexa_3D(int , int , SMESH_Gen* gen);
-		%feature("autodoc", "1");
-		virtual		bool Compute(SMESH_Mesh & aMesh, const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		virtual		bool CheckHypothesis(SMESH_Mesh & aMesh, const TopoDS_Shape aShape, SMESH_Hypothesis::Hypothesis_Status & aStatus);
-
-};
-%feature("shadow") StdMeshers_CompositeHexa_3D::~StdMeshers_CompositeHexa_3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdMeshers_CompositeHexa_3D {
 	void _kill_pointed() {
 		delete $self;
 	}

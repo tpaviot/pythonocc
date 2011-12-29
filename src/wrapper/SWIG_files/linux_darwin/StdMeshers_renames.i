@@ -23,3 +23,26 @@ $Author$
 $HeaderURL$
 
 */
+%rename(GetName) StdMeshers_Propagation::GetName;
+%rename(SetPropagationMgr) StdMeshers_Propagation::SetPropagationMgr;
+%rename(GetPropagationSource) StdMeshers_Propagation::GetPropagationSource;
+%rename(IsForwardEdge) StdMeshers_PrismAsBlock::IsForwardEdge;
+%rename(GetWallFaces) StdMeshers_PrismAsBlock::GetWallFaces;
+%rename(AddPrisms) StdMeshers_Prism_3D::AddPrisms;
+%rename(FindSubShapeAssociation) StdMeshers_ProjectionUtils::FindSubShapeAssociation;
+%rename(FindFaceAssociation) StdMeshers_ProjectionUtils::FindFaceAssociation;
+%rename(InitVertexAssociation) StdMeshers_ProjectionUtils::InitVertexAssociation;
+%rename(InsertAssociation) StdMeshers_ProjectionUtils::InsertAssociation;
+%rename(IsSubShape) StdMeshers_ProjectionUtils::IsSubShape;
+%rename(GetEdgeByVertices) StdMeshers_ProjectionUtils::GetEdgeByVertices;
+%rename(GetNextFace) StdMeshers_ProjectionUtils::GetNextFace;
+%rename(GetNextVertex) StdMeshers_ProjectionUtils::GetNextVertex;
+%rename(GetPropagationEdge) StdMeshers_ProjectionUtils::GetPropagationEdge;
+%rename(FindMatchingNodesOnFaces) StdMeshers_ProjectionUtils::FindMatchingNodesOnFaces;
+%rename(IsClosedEdge) StdMeshers_ProjectionUtils::IsClosedEdge;
+%rename(OuterShape) StdMeshers_ProjectionUtils::OuterShape;
+%rename(MakeComputed) StdMeshers_ProjectionUtils::MakeComputed;
+%rename(Count) StdMeshers_ProjectionUtils::Count;
+%rename(SetEventListener) StdMeshers_ProjectionUtils::SetEventListener;
+%rename(IsBoundaryEdge) StdMeshers_ProjectionUtils::IsBoundaryEdge;
+%rename(GetFaceWires) StdMeshers_FaceSide::GetFaceWires;

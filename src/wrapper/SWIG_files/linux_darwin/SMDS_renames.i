@@ -23,3 +23,11 @@ $Author$
 $HeaderURL$
 
 */
+%rename(originSpacePosition) SMDS_SpacePosition::originSpacePosition;
+%rename(GetType) SMDS_VolumeTool::GetType;
+%rename(NbFaces) SMDS_VolumeTool::NbFaces;
+%rename(GetFaceNodesIndices) SMDS_VolumeTool::GetFaceNodesIndices;
+%rename(NbFaceNodes) SMDS_VolumeTool::NbFaceNodes;
+%rename(NbCornerNodes) SMDS_VolumeTool::NbCornerNodes;
+%rename(FindEdge) SMDS_Mesh::FindEdge;
+%rename(CheckMemory) SMDS_Mesh::CheckMemory;
