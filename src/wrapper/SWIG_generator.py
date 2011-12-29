@@ -1159,7 +1159,8 @@ class ModularBuilder(object):
                           'SelectMgr_ViewerSelector.hxx',
                           'SelectMgr_SelectionManager.hxx',
                           'Aspect_XWD.hxx',
-                          'NCollection_EBTree.hxx','NCollection_CellFilter.hxx'
+                          'NCollection_EBTree.hxx','NCollection_CellFilter.hxx',
+                          'Standard_StdAllocator.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
