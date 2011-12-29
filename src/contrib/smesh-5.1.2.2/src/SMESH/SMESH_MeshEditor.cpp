@@ -2184,8 +2184,8 @@ static bool getClosestUV (Extrema_GenExtPS& projector,
   if ( projector.IsDone() ) {
     double u, v, minVal = DBL_MAX;
     for ( int i = projector.NbExt(); i > 0; i-- )
-      if ( projector.Value( i ) < minVal ) {
-        minVal = projector.Value( i );
+      if ( projector.SquareDistance( i ) < minVal ) {
+        minVal = projector.SquareDistance( i );
         projector.Point( i ).Parameter( u, v );
       }
     result.SetCoord( u, v );
