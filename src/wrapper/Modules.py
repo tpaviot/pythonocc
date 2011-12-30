@@ -587,7 +587,7 @@ SALOME_SMESH_MODULES = [('SMDSAbs',[],[]),
                         ('SMESH',['SMDS','SelectBasics','Select3D','TColStd',\
                                   'AIS','SelectMgr','MeshVS','PrsMgr','Graphic3d',\
                                   'Xw','MFT','Aspect','Quantity','Prs3d','Handle_TCollection',\
-                                  'OSD','Standard','math'],\
+                                  'OSD','Standard','Handle_Image','Handle_math'],\
                          ['SMESH_Comment','SMESH_OctreeNode','SMESH_MeshEditor',\
                                      'SMESH_0D_Algo','SMESH_1D_Algo','SMESH_2D_Algo','SMESH_3D_Algo','SMESH_Octree'],\
                          {'SMESH_Algo':['SMESH_Algo','GetNodeParamOnEdge','GetSortedNodesOnEdge'],\
