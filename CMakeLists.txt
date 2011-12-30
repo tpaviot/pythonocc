@@ -43,9 +43,27 @@ ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 ###################
 # General options #
 ###################
-# By default, GEOM and SMESH wrappers are disbled
+# By default, GEOM and SMESH wrappers are disabled
 OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
 OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
+
+SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
+SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
+SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
+SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
+#
+# Add geom and smesh paths to the list of include directories
+# If not, enabling/disabling GEOM causes the whole pythonocc
+# to be rebuilt
+#
+INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
+INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
+
+###############################################
+# Boost headers are required to compile smesh #
+###############################################
+SET(BOOST_INCLUDE_PATH /usr/local/include/boost CACHE PATH "boost include path" )
+INCLUDE_DIRECTORIES(${BOOST_INCLUDE_PATH})
 
 ##########
 # Python #
@@ -111,19 +129,24 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
 LINK_DIRECTORIES(${OCE_LIB_PATH})
 
-#######################################
-# salomegeom include and lib location #
-#######################################
+##############
+# salomegeom #
+##############
 IF(${PROJECT_NAME}_WRAP_GEOM)
-    SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
-	SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
-    INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
 	SET(GEOM_LIBRARIES Archimede Exchange3DS ExchangeBREP ExchangeCSFDB
 		ExchangeIGES ExchangeOBJ ExchangeSTEP ExchangeSTL ExchangeVRML
 		GEOM GEOMAlgo GEOMImpl NMTDS NMTTools Partition
 		ShHealOper Sketcher)
 	LINK_DIRECTORIES(${GEOM_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
+
+##############
+# salomesmesh #
+##############
+IF(${PROJECT_NAME}_WRAP_SMESH)
+	SET(SMESH_LIBRARIES SMDS SMESHDS SMESH StdMeshers DriverDAT DriverSTL DriverUNV)
+	LINK_DIRECTORIES(${SMESH_LIB_PATH})
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 ######################################################
 # Configure Build settings according to the platform #
@@ -184,13 +207,17 @@ IF(${PROJECT_NAME}_WRAP_GEOM)
 	FOREACH(GEOM_MODULE ${GEOM_MODULES})
 		OPTION_WITH_DEFAULT(GEOMMODULES_WRAP_${GEOM_MODULE} "Compile ${GEOM_MODULE}" TRUE)
 	ENDFOREACH(GEOM_MODULE ${GEOM_MODULES})
-	
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
-###############################
+############################
 # salomesmesh Modules list #
-###############################
-LIST(APPEND SMESH_MODULES SMDSAbs SMDS SMESHDS SMESH StdMeshers)
+############################
+IF(${PROJECT_NAME}_WRAP_SMESH)
+	INCLUDE(${CMAKE_CURRENT_SOURCE_DIR}/cmake/SMESH_Modules.cmake)
+	FOREACH(SMESH_MODULE ${SMESH_MODULES})
+		OPTION_WITH_DEFAULT(SMESHMODULES_WRAP_${SMESH_MODULE} "Compile ${SMESH_MODULE}" TRUE)
+	ENDFOREACH(SMESH_MODULE ${SMESH_MODULES})
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 ###################
 # Wrapper Modules #
@@ -220,14 +247,16 @@ IF(${PROJECT_NAME}_WRAP_GEOM)
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
 # salomesmesh
-IF(WRAP_SMESH)
+IF(${PROJECT_NAME}_WRAP_SMESH)
 	FOREACH(SMESH_MODULE ${SMESH_MODULES})
+	  IF(SMESHMODULES_WRAP_${SMESH_MODULE})
 	    SET(FILE ${SWIG_FILES_PATH}/${SMESH_MODULE}.i)
 		SET_SOURCE_FILES_PROPERTIES(${FILE} PROPERTIES CPLUSPLUS ON)
 	    SWIG_ADD_MODULE(${SMESH_MODULE} python ${FILE})
 	    SWIG_LINK_LIBRARIES(${SMESH_MODULE} ${PYTHON_LIBRARIES} ${OCC_LIBRARIES} ${SMESH_LIBRARIES})
-ENDFOREACH(OCC_MODULE)
-ENDIF(WRAP_SMESH)
+      ENDIF(SMESHMODULES_WRAP_${SMESH_MODULE})
+    ENDFOREACH(SMESH_MODULE)
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 
 # Build third part modules
 # TODO : the following line is strange but necessary
@@ -273,6 +302,16 @@ IF(${PROJECT_NAME}_WRAP_GEOM)
 	ENDFOREACH(GEOM_MODULE)
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
+# install pySMESH modules
+IF(${PROJECT_NAME}_WRAP_SMESH)
+	FOREACH(SMESH_MODULE ${SMESH_MODULES})
+		IF(SMESHMODULES_WRAP_${SMESH_MODULE})
+			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/${SMESH_MODULE}.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+			INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_${SMESH_MODULE}.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+		ENDIF(SMESHMODULES_WRAP_${SMESH_MODULE})
+	ENDFOREACH(SMESH_MODULE)
+ENDIF(${PROJECT_NAME}_WRAP_SMESH)
+
 # install third part modules
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/Visualization.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/_Visualization.${EXTENSION} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
@@ -295,15 +334,17 @@ INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/__init__.py DESTINATION ${${PROJ
 
 #######################
 # pythonOCC Packaging #
-# $ make package       #
+# $ make package      #
 #######################
-INCLUDE(InstallRequiredSystemLibraries)
+IF(UNIX)
+  INCLUDE(InstallRequiredSystemLibraries)
+ENDIF(UNIX)
 SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "pythonOCC")
 SET(CPACK_PACKAGE_VENDOR "Thomas Paviot")
 SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE.txt")
 SET(CPACK_SET_DESTDIR "ON")
-SET(CPACK_PACKAGE_VERSION_MAJOR 0)
-SET(CPACK_PACKAGE_VERSION_MINOR 6)
+SET(CPACK_PACKAGE_VERSION_MAJOR ${${PROJECT_NAME}_VERSION_MAJOR})
+SET(CPACK_PACKAGE_VERSION_MINOR ${${PROJECT_NAME}_VERSION_MINOR})
 SET(CPACK_PACKAGE_VERSION_PATCH 0)
 SET(CPACK_PACKAGE_NAME ${PROJECT_NAME})
 SET(CPACK_PACKAGE_CONTACT "pythonOCC users <pythonocc-users@gna.org")
