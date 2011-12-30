@@ -15,18 +15,20 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from enthought.traits.has_traits import HasTraits
+# TODO: henrik, can you please update this code and use "OCC.Display traits" rather than the local "traits_editor.py" file?
+# also we need to factor out the PyQt4 dependency
+# installing wx for x11 is super simple: sudo port install py26-wxpython
 
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
-from enthought.traits.trait_types import Any, Int, Bool, Button, Event, Str,\
+from traits.has_traits import HasTraits
+from traits.trait_types import Any, Int, Bool, Button, Event, Str,\
     Instance, List
-from enthought.traits.ui.editors.custom_editor import CustomEditor
+from traitsui.item import Item
+from traitsui.view import View
+from traitsui.editor import Editor
+from traitsui.editor_factory import EditorFactory
+
 from OCC.Display.qtDisplay import qtViewer3d
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
-import enthought.traits.ui.qt4
-from enthought.traits.ui.editor import Editor
-from enthought.traits.ui.editor_factory import EditorFactory
 from OCC.gp import gp_Trsf, gp_Vec
 from OCC.TopLoc import TopLoc_Location
 import random

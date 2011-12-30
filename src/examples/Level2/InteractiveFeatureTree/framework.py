@@ -39,7 +39,6 @@ root = doc.Main()
 
 
 ts = TDF.TDF_TagSource()
-
 #
 # We'll add all shapes under this node in the label tree 
 #
