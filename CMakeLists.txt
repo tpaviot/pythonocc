@@ -62,8 +62,7 @@ INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
 ###############################################
 # Boost headers are required to compile smesh #
 ###############################################
-SET(BOOST_INCLUDE_PATH /usr/local/include/boost CACHE PATH "boost include path" )
-INCLUDE_DIRECTORIES(${BOOST_INCLUDE_PATH})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
 
 ##########
 # Python #
