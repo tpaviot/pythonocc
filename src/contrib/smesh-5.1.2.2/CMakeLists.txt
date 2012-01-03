@@ -23,7 +23,6 @@ INCLUDE_DIRECTORIES(../)
 # Check Fortran#
 ################
 INCLUDE(CMakeDetermineFortranCompiler)
-#MESSAGE("${CMAKE_Fortran_COMPILER}")
 
 ########################################
 # OpenCASCADE include and lib location #
@@ -150,17 +149,13 @@ ENDIF(APPLE)
 ###########
 # INSTALL #
 ###########
-
-# Path name install: for instance, SMESH-5.1.2.2
-SET(INSTALL_PATH_NAME smesh-${SMESH_VERSION_MAJOR}.${SMESH_VERSION_MINOR}.${SMESH_VERSION_PATCH}.${SMESH_VERSION_TWEAK})
-
 IF(UNIX)
     # Libraries are installed by default in /usr/local/lib
     INSTALL(TARGETS SMDS Driver DriverSTL DriverDAT DriverUNV
             SMESHDS SMESH StdMeshers
             DESTINATION /usr/local/lib)
-    # Headers are installed by default in /usr/local/include/smesh-5.1.2.2
+    # Headers are installed by default in /usr/local/include/smesh
     INSTALL(DIRECTORY inc/
-            DESTINATION /usr/local/include/${INSTALL_PATH_NAME}
+            DESTINATION /usr/local/include/smesh}
             FILES_MATCHING PATTERN "*.*")
 ENDIF(UNIX)
