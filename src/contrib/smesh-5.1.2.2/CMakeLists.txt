@@ -166,7 +166,7 @@ IF(UNIX)
             DESTINATION /usr/local/lib)
     # Headers are installed by default in /usr/local/include/smesh
     INSTALL(DIRECTORY inc/
-            DESTINATION /usr/local/include/smesh}
+            DESTINATION /usr/local/include/smesh
             FILES_MATCHING PATTERN "*.*")
 ENDIF(UNIX)
 ########################
