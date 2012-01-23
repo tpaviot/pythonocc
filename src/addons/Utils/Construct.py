@@ -98,6 +98,11 @@ def gp_vec_print(self):
     magn = self.Magnitude()
     return '< gp_Vec: {0}, {1}, {2}, magnitude: {3} >'.format(x,y,z, magn)
 
+def gp_ax1_print(self):
+    pX, pY, pZ = self.Location().Coord()
+    dX, dY, dZ = self.Direction().Coord()
+    return "< gp_Ax1: location: {pX}, {pY}, {pZ}, direction: {dX}, {dY}, {dZ} >".format(**vars())
+
 def _apply(pnt, other, _operator):
     if isinstance(other, gp_Pnt):
         return gp_Pnt(*map(lambda x: _operator(*x), zip(pnt.Coord(), other.Coord())))
@@ -133,6 +138,8 @@ gp_Vec.__repr__ = gp_vec_print
 gp_Vec.__str__ = gp_vec_print
 gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
+gp_Ax1.__repr__ = gp_ax1_print
+gp_Ax1.__str__ = gp_ax1_print
 #gp_Pnt.__eq__ = gp_equal
 gp_Pnt.__add__ = gp_pnt_add
 gp_Pnt.__sub__ = gp_pnt_sub

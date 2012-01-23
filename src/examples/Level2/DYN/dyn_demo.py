@@ -488,6 +488,16 @@ def pushover(event=None):
     def f():
         # how is a block on top of the pile keeping up?
         print sum(callback_block.getLinearVel())
+        def __ff():
+            a,b,c = map(abs, callback_block.getAngularVel())
+            if a > b and a > c:
+                print 'x'
+            elif b > c:
+                print 'y'
+            else:
+                print 'z'
+
+        print 'angular vel top block', __ff()
 
     dyn_context.setERP(0.6) # 0.2 default
     dyn_context.setCFM(1e-10) # 1e-10 default
