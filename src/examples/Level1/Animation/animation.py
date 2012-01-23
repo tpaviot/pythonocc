@@ -22,13 +22,16 @@ from OCC.TopLoc import *
 from OCC.AIS import *
 
 from OCC.Display.SimpleGui import *
-from OCC.Utils.Construct import make_cube
+from OCC.Utils.Construct import make_box
+
+import time
+
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 ais_boxshp=None
 
 def build_shape():
-    boxshp = make_cube(50.,50.,50.)
+    boxshp = make_box(50.,50.,50.)
     ais_boxshp = display.DisplayShape(boxshp)
     return ais_boxshp
         
@@ -37,12 +40,14 @@ def rotating_cube_1_axis(event=None):
     Ax1 = gp_Ax1(gp_Pnt(0,0,0),gp_Dir(0,0,1))
     aCubeTrsf = gp_Trsf()
     angle = 0.0
+    display.FitAll()
     for i in range(2000):
         aCubeTrsf.SetRotation(Ax1,angle)
         aCubeToploc = TopLoc_Location(aCubeTrsf)
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
         angle += 0.001
+        time.sleep(0.001)
 
 def rotating_cube_2_axis(event=None):
     ais_boxshp = build_shape()
@@ -52,6 +57,7 @@ def rotating_cube_2_axis(event=None):
     aCubeTrsf2 = gp_Trsf()
     angle = 0.0
     angle2 = 0.0
+    display.FitAll()
     for i in range(2000):
         aCubeTrsf.SetRotation(Ax1,angle)
         aCubeTrsf2.SetRotation(Ax2,angle)
@@ -59,6 +65,7 @@ def rotating_cube_2_axis(event=None):
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
         angle += 0.001
+        time.sleep(0.05)
     
 if __name__ == '__main__':
     add_menu('animation')

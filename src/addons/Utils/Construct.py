@@ -103,6 +103,13 @@ def gp_ax1_print(self):
     dX, dY, dZ = self.Direction().Coord()
     return "< gp_Ax1: location: {pX}, {pY}, {pZ}, direction: {dX}, {dY}, {dZ} >".format(**vars())
 
+def gp_trsf_print(self):
+    _f = lambda x: [self.Value(x,i) for i in range(1,5)]
+    a,b,c,d = _f(1)
+    e,f,g,h = _f(2)
+    i,j,k,l = _f(3)
+    return "< gp_Trsf:\n {a:.3f}, {b:.3f}, {c:.3f}, {d:.3f}\n {e:.3f}, {f:.3f}, {g:.3f}, {h:.3f}\n {i:.3f}, {j:.3f}, {k:.3f}, {l:.3f} >".format(**vars())
+
 def _apply(pnt, other, _operator):
     if isinstance(other, gp_Pnt):
         return gp_Pnt(*map(lambda x: _operator(*x), zip(pnt.Coord(), other.Coord())))
@@ -140,6 +147,8 @@ gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
 gp_Ax1.__repr__ = gp_ax1_print
 gp_Ax1.__str__ = gp_ax1_print
+gp_Trsf.__repr__ = gp_trsf_print
+gp_Trsf.__str__ = gp_trsf_print
 #gp_Pnt.__eq__ = gp_equal
 gp_Pnt.__add__ = gp_pnt_add
 gp_Pnt.__sub__ = gp_pnt_sub
