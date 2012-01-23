@@ -110,6 +110,12 @@ def gp_trsf_print(self):
     i,j,k,l = _f(3)
     return "< gp_Trsf:\n {a:.3f}, {b:.3f}, {c:.3f}, {d:.3f}\n {e:.3f}, {f:.3f}, {g:.3f}, {h:.3f}\n {i:.3f}, {j:.3f}, {k:.3f}, {l:.3f} >".format(**vars())
 
+def gp_quat_print(self):
+    w,x,y,z = self.W(), self.X(), self.Y(), self.Z()
+    vec = gp_Vec()
+    angle = self.GetVectorAndAngle(vec)
+    return "< gp_Quaternion: {w}, {x}, {y}, {z} >\nvector:{vec} angle:{angle}".format(**vars())
+
 def _apply(pnt, other, _operator):
     if isinstance(other, gp_Pnt):
         return gp_Pnt(*map(lambda x: _operator(*x), zip(pnt.Coord(), other.Coord())))
