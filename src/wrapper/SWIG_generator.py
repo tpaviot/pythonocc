@@ -475,6 +475,10 @@ class ModularBuilder(object):
                     to_write += 'Standard_Real &OutValue'
                     return_list.append(['Standard_Real',argument_name])
                     FUNCTION_MODIFIED = True
+                elif ('gp_Vec &' in argument_type): #returned byref, see gp_Quaternion.GetVectorAndAngle()
+                    to_write += 'gp_Vec &OutValue'
+                    return_list.append(['gp_Vec',argument_name])
+                    FUNCTION_MODIFIED = True
                 elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
                     to_write += 'Standard_Integer &OutValue'
                     return_list.append(['Standard_Integer',argument_name])

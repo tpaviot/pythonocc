@@ -294,6 +294,19 @@ class TestWrapperFeatures(unittest.TestCase):
         self.assertTrue(h1!=h2)
         self.assertTrue(h1!=10)
         self.assertFalse(h2!=s)
+    
+    def testgpVecByRef(self):
+        ''' gp_Quaternion.GetVectorAndAngle should return both a gp_Vec and
+        Standard_Real
+        '''
+        q = gp_Quaternion()
+        my_vec,my_real = q.GetVectorAndAngle()
+        self.assertTrue(type(my_vec)==gp_Vec)
+        self.assertTrue(type(my_real)==float)
+        self.assertEqual(my_vec.X(),0)
+        self.assertEqual(my_vec.Y(),0)
+        self.assertEqual(my_vec.Z(),1)
+        self.assertEqual(my_real,0)
 
 def suite():
    suite = unittest.TestSuite()
