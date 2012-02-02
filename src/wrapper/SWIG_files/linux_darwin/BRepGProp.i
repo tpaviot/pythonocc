@@ -145,8 +145,9 @@ class BRepGProp_EdgeTool {
 		static		Standard_Integer IntegrationOrder(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
+		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+
+		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Integer NbIntervals(const BRepAdaptor_Curve &C, const GeomAbs_Shape S);
 		%feature("autodoc", "1");
@@ -414,8 +415,9 @@ class BRepGProp_Face {
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Normal(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & VNor) const;
+		%feature("autodoc","Normal(Standard_Real U, Standard_Real V) -> gp_Vec");
+
+		void Normal(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Load(const TopoDS_Edge E);
 		%feature("autodoc", "1");

@@ -833,8 +833,9 @@ class HLRAlgo_Projector {
 		const gp_Trsf  FullTransformation() const;
 		%feature("autodoc", "1");
 		Standard_Real Focus() const;
-		%feature("autodoc", "1");
-		void Transform(gp_Vec & D) const;
+		%feature("autodoc","Transform() -> gp_Vec");
+
+		void Transform(gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");

@@ -2127,9 +2127,9 @@ class gp_Quaternion {
 		void SetRotation(const gp_Vec theVecFrom, const gp_Vec theVecTo, const gp_Vec theHelpCrossVec);
 		%feature("autodoc", "1");
 		void SetVectorAndAngle(const gp_Vec theAxis, const Standard_Real theAngle);
-		%feature("autodoc","GetVectorAndAngle() -> Standard_Real");
+		%feature("autodoc","GetVectorAndAngle() -> [gp_Vec, Standard_Real]");
 
-		void GetVectorAndAngle(gp_Vec & theAxis, Standard_Real &OutValue) const;
+		void GetVectorAndAngle(gp_Vec &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetMatrix(const gp_Mat theMat);
 		%feature("autodoc", "1");

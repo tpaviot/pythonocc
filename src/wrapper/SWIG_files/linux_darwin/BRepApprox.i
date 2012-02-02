@@ -695,12 +695,15 @@ class BRepApprox_SurfaceTool {
 		static		gp_Pnt Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
 		static		void D0(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV);
-		%feature("autodoc", "1");
-		static		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV);
+		%feature("autodoc","D1(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
@@ -795,13 +798,14 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
 		BRepApprox_ThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &Surf1, const BRepAdaptor_Surface &Surf2);
-		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Vec]");
 
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
+		%feature("autodoc","Tangency(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Vec");
+
+		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");
@@ -1049,13 +1053,14 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 		BRepApprox_TheImpPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &Surf1, const IntSurf_Quadric &Surf2);
 		%feature("autodoc", "1");
 		BRepApprox_TheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &Surf1, const BRepAdaptor_Surface &Surf2);
-		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Vec]");
 
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec & Tg, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
 		%feature("autodoc", "1");
 		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & Tg);
+		%feature("autodoc","Tangency(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Vec");
+
+		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TangencyOnSurf1(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec2d & Tg);
 		%feature("autodoc", "1");

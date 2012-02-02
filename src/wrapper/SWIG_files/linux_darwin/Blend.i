@@ -282,8 +282,9 @@ class Blend_CSFunction : public Blend_AppFunction {
 		virtual		const gp_Vec2d  Tangent2d() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec  TangentOnC() const;
-		%feature("autodoc", "1");
-		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec & TgS, gp_Vec & NormS) const;
+		%feature("autodoc","Tangent(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+
+		virtual		void Tangent(const Standard_Real U, const Standard_Real V, gp_Vec &OutValue, gp_Vec &OutValue) const;
 
 };
 %feature("shadow") Blend_CSFunction::~Blend_CSFunction %{
@@ -353,8 +354,9 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 		virtual		const gp_Vec  TangentOnRst2() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
 		%feature("autodoc", "1");
@@ -627,8 +629,9 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 		virtual		const gp_Vec  TangentOnRst() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec & NS, gp_Vec & TgS) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRational() const;
 		%feature("autodoc", "1");
@@ -819,8 +822,9 @@ class Blend_Function : public Blend_AppFunction {
 		virtual		const gp_Vec  TangentOnS2() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnS2() const;
-		%feature("autodoc", "1");
-		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
+		%feature("autodoc","Tangent(Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean TwistOnS1() const;
 		%feature("autodoc", "1");

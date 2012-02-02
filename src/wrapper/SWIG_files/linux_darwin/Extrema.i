@@ -2259,10 +2259,12 @@ class Extrema_CurveTool {
 		static		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V);
-		%feature("autodoc", "1");
-		static		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
+		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+
+		static		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		static		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Lin Line(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");

@@ -653,10 +653,12 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 		Standard_Real G2Criterion() const;
 		%feature("autodoc", "1");
 		void D0(gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
+		%feature("autodoc","D1() -> [gp_Vec, gp_Vec]");
+
+		void D1(gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2() -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		void D2(gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasPnt2dOnSurf() const;
 		%feature("autodoc", "1");
@@ -734,10 +736,12 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 		GeomLProp_SLProps & LPropSurf(const Standard_Real U);
 		%feature("autodoc", "1");
 		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3, gp_Vec & V4, gp_Vec & V5) const;
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Adaptor3d_HCurve Curve3d() const;
 		%feature("autodoc", "1");
@@ -1032,12 +1036,15 @@ class GeomPlate_Surface : public Geom_Surface {
 		virtual		Standard_Boolean IsCNv(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		virtual		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & D2UV, gp_Vec & D3U, gp_Vec & D3V, gp_Vec & D3UUV, gp_Vec & D3UVV) const;
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");

@@ -833,12 +833,15 @@ class Contap_TheSurfPropsOfContour {
 	public:
 		%feature("autodoc", "1");
 		Contap_TheSurfPropsOfContour();
-		%feature("autodoc", "1");
-		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & d1u, gp_Vec & d1v, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
+		%feature("autodoc","Normale(const S, Standard_Real U, Standard_Real V) -> gp_Vec");
+
+		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue);
+		%feature("autodoc","DerivAndNorm(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","NormAndDn(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 
 };
 %feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{

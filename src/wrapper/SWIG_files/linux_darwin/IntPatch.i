@@ -861,8 +861,9 @@ class IntPatch_ALine : public IntPatch_Line {
 		Standard_Real LastParameter(Standard_Boolean & IsIncluded) const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real U);
-		%feature("autodoc", "1");
-		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec & Du);
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
 		%feature("autodoc","FindParameter(const P) -> Standard_Real");
 
 		Standard_Boolean FindParameter(const gp_Pnt P, Standard_Real &OutValue) const;

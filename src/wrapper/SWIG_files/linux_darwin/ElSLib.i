@@ -87,32 +87,45 @@ class ElSLib {
 		static		void D0(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P);
 		%feature("autodoc", "1");
 		static		void D0(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Pln Pl, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V, const Pl) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Pln Pl, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V, const S) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V, const T) -> [gp_Vec, gp_Vec]");
+
+		static		void D1(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V, const S) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V, const T) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Cone C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V, const C) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Cylinder C, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V, const S) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Sphere S, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V, const T) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Standard_Real U, const Standard_Real V, const gp_Torus T, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Pnt PlaneValue(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos);
 		%feature("autodoc", "1");
@@ -143,32 +156,45 @@ class ElSLib {
 		static		void SphereD0(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P);
 		%feature("autodoc", "1");
 		static		void TorusD0(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void PlaneD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void ConeD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void CylinderD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void SphereD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void TorusD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv);
-		%feature("autodoc", "1");
-		static		void ConeD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void CylinderD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void SphereD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void TorusD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv);
-		%feature("autodoc", "1");
-		static		void ConeD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void CylinderD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void SphereD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
-		%feature("autodoc", "1");
-		static		void TorusD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec & Vu, gp_Vec & Vv, gp_Vec & Vuu, gp_Vec & Vvv, gp_Vec & Vuv, gp_Vec & Vuuu, gp_Vec & Vvvv, gp_Vec & Vuuv, gp_Vec & Vuvv);
+		%feature("autodoc","PlaneD1(Standard_Real U, Standard_Real V, const Pos) -> [gp_Vec, gp_Vec]");
+
+		static		void PlaneD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","ConeD1(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius, Standard_Real SAngle) -> [gp_Vec, gp_Vec]");
+
+		static		void ConeD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","CylinderD1(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec]");
+
+		static		void CylinderD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","SphereD1(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec]");
+
+		static		void SphereD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","TorusD1(Standard_Real U, Standard_Real V, const Pos, Standard_Real MajorRadius, Standard_Real MinorRadius) -> [gp_Vec, gp_Vec]");
+
+		static		void TorusD1(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","ConeD2(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius, Standard_Real SAngle) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void ConeD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","CylinderD2(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void CylinderD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","SphereD2(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void SphereD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","TorusD2(Standard_Real U, Standard_Real V, const Pos, Standard_Real MajorRadius, Standard_Real MinorRadius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void TorusD2(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","ConeD3(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius, Standard_Real SAngle) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void ConeD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, const Standard_Real SAngle, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","CylinderD3(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void CylinderD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","SphereD3(Standard_Real U, Standard_Real V, const Pos, Standard_Real Radius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void SphereD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real Radius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","TorusD3(Standard_Real U, Standard_Real V, const Pos, Standard_Real MajorRadius, Standard_Real MinorRadius) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void TorusD3(const Standard_Real U, const Standard_Real V, const gp_Ax3 Pos, const Standard_Real MajorRadius, const Standard_Real MinorRadius, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc","Parameters(const Pl, const P) -> [Standard_Real, Standard_Real]");
 
 		static		void Parameters(const gp_Pln Pl, const gp_Pnt P, Standard_Real &OutValue, Standard_Real &OutValue);

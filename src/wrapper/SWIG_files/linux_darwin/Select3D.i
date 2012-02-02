@@ -930,8 +930,9 @@ class Select3D_Projector : public Standard_Transient {
 		virtual		const gp_Trsf  FullTransformation() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Focus() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(gp_Vec & D) const;
+		%feature("autodoc","Transform() -> gp_Vec");
+
+		virtual		void Transform(gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(gp_Pnt & Pnt) const;
 		%feature("autodoc", "1");

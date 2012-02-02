@@ -1358,10 +1358,12 @@ class MeshVS_Tool {
 		static		Handle_Graphic3d_AspectMarker3d CreateAspectMarker3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
 		%feature("autodoc", "1");
 		static		Handle_Graphic3d_AspectText3d CreateAspectText3d(const Handle_MeshVS_Drawer &theDr, const Standard_Boolean UseDefaults=1);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec & Norm);
+		%feature("autodoc","GetNormal(const Nodes) -> gp_Vec");
+
+		static		Standard_Boolean GetNormal(const TColStd_Array1OfReal &Nodes, gp_Vec &OutValue);
+		%feature("autodoc","GetAverageNormal(const Nodes) -> gp_Vec");
+
+		static		Standard_Boolean GetAverageNormal(const TColStd_Array1OfReal &Nodes, gp_Vec &OutValue);
 
 };
 %feature("shadow") MeshVS_Tool::~MeshVS_Tool %{
@@ -1497,8 +1499,9 @@ class MeshVS_DeformedDataSource : public MeshVS_DataSource {
 		const MeshVS_DataMapOfIntegerVector & GetVectors() const;
 		%feature("autodoc", "1");
 		void SetVectors(const MeshVS_DataMapOfIntegerVector &Map);
-		%feature("autodoc", "1");
-		Standard_Boolean GetVector(const Standard_Integer ID, gp_Vec & Vect) const;
+		%feature("autodoc","GetVector(Standard_Integer ID) -> gp_Vec");
+
+		Standard_Boolean GetVector(const Standard_Integer ID, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVector(const Standard_Integer ID, const gp_Vec Vect);
 		%feature("autodoc", "1");
@@ -1685,8 +1688,9 @@ class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 		void SetVectors(const Standard_Boolean IsElement, const MeshVS_DataMapOfIntegerVector &Map);
 		%feature("autodoc", "1");
 		Standard_Boolean HasVectors(const Standard_Boolean IsElement) const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetVector(const Standard_Boolean IsElement, const Standard_Integer ID, gp_Vec & Vect) const;
+		%feature("autodoc","GetVector(Standard_Boolean IsElement, Standard_Integer ID) -> gp_Vec");
+
+		Standard_Boolean GetVector(const Standard_Boolean IsElement, const Standard_Integer ID, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVector(const Standard_Boolean IsElement, const Standard_Integer ID, const gp_Vec Vect);
 		%feature("autodoc","GetMinMaxVectorValue(Standard_Boolean IsElement) -> [Standard_Real, Standard_Real]");

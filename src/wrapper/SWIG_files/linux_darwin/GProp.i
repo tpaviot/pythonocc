@@ -446,8 +446,9 @@ class GProp_PEquation {
 		gp_Lin Line() const;
 		%feature("autodoc", "1");
 		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc","Box() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		void Box(gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 
 };
 %feature("shadow") GProp_PEquation::~GProp_PEquation %{

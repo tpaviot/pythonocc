@@ -1318,8 +1318,9 @@ class GeomFill_TgtField : public MMgt_TShared {
 		virtual		gp_Vec Value(const Standard_Real W) const;
 		%feature("autodoc", "1");
 		virtual		gp_Vec D1(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & V, gp_Vec & DV) const;
+		%feature("autodoc","D1(Standard_Real W) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D1(const Standard_Real W, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1359,8 +1360,9 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 		virtual		gp_Vec Value(const Standard_Real W) const;
 		%feature("autodoc", "1");
 		virtual		gp_Vec D1(const Standard_Real W) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real W, gp_Vec & T, gp_Vec & DT) const;
+		%feature("autodoc","D1(Standard_Real W) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D1(const Standard_Real W, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1466,14 +1468,16 @@ class GeomFill_Boundary : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
 		virtual		gp_Vec Norm(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		%feature("autodoc","D1Norm(Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D1Norm(const Standard_Real U, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc", "1");
@@ -1563,12 +1567,15 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
 		virtual		GeomFill_PipeError ErrorStatus() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
@@ -1578,8 +1585,9 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
 
 		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -1753,18 +1761,22 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -1810,18 +1822,22 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -2042,10 +2058,12 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		Standard_Real Period() const;
 		%feature("autodoc", "1");
 		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
 		%feature("autodoc", "1");
@@ -2194,8 +2212,9 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 		GeomFill_SimpleBound(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
@@ -2354,14 +2373,18 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, gp_Mat & D2M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
 		%feature("autodoc", "1");
 		Standard_Integer Nb2dCurves() const;
 		%feature("autodoc", "1");
@@ -2391,8 +2414,9 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc","GetAverageLaw() -> gp_Vec");
+
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec &OutValue);
 		%feature("autodoc","IsTranslation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
@@ -2715,20 +2739,24 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -2818,14 +2846,18 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, gp_Mat & D2M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasFirstRestriction() const;
 		%feature("autodoc", "1");
@@ -2849,8 +2881,9 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc","GetAverageLaw() -> gp_Vec");
+
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec &OutValue);
 		%feature("autodoc","IsTranslation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
@@ -2959,20 +2992,24 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 		virtual		GeomFill_PipeError ErrorStatus() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Adaptor3d_HCurve Guide() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -3222,18 +3259,22 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 		void Init();
 		%feature("autodoc", "1");
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -3580,14 +3621,16 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
 		virtual		gp_Vec Norm(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D1Norm(const Standard_Real U, gp_Vec & N, gp_Vec & DN) const;
+		%feature("autodoc","D1Norm(Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D1Norm(const Standard_Real U, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
@@ -3837,18 +3880,22 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 		void SetAngle(const Standard_Real Angle);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");
@@ -3901,14 +3948,18 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		virtual		void SetTrsf(const gp_Mat Transfo);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_LocationLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec & V, TColgp_Array1OfPnt2d & Poles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec & V, gp_Mat & DM, gp_Vec & DV, gp_Mat & D2M, gp_Vec & D2V, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue);
+		%feature("autodoc","D0(Standard_Real Param) -> gp_Vec");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Mat & M, gp_Vec &OutValue, gp_Mat & DM, gp_Vec &OutValue, gp_Mat & D2M, gp_Vec &OutValue, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasFirstRestriction() const;
 		%feature("autodoc", "1");
@@ -3936,8 +3987,9 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real GetMaximalNorm();
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec & AV);
+		%feature("autodoc","GetAverageLaw() -> gp_Vec");
+
+		virtual		void GetAverageLaw(gp_Mat & AM, gp_Vec &OutValue);
 		%feature("autodoc","IsTranslation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsTranslation(Standard_Real &OutValue) const;
@@ -4110,18 +4162,22 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 		GeomFill_Fixed(const gp_Vec Tangent, const gp_Vec Normal);
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc","D0(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D1(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real Param) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc","GetAverageLaw() -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void GetAverageLaw(gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
 		%feature("autodoc", "1");

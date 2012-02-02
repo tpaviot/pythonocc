@@ -1442,13 +1442,15 @@ class TopOpeBRepTool_TOOL {
 		%feature("autodoc","stuvF(const uv, const F) -> [Standard_Integer, Standard_Integer]");
 
 		static		void stuvF(const gp_Pnt2d uv, const TopoDS_Face F, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		static		Standard_Boolean TggeomE(const Standard_Real par, const BRepAdaptor_Curve &BC, gp_Vec & Tg);
-		%feature("autodoc", "1");
-		static		Standard_Boolean TggeomE(const Standard_Real par, const TopoDS_Edge E, gp_Vec & Tg);
-		%feature("autodoc","TgINSIDE(const v, const E) -> Standard_Integer");
+		%feature("autodoc","TggeomE(Standard_Real par, const BC) -> gp_Vec");
 
-		static		Standard_Boolean TgINSIDE(const TopoDS_Vertex v, const TopoDS_Edge E, gp_Vec & Tg, Standard_Integer &OutValue);
+		static		Standard_Boolean TggeomE(const Standard_Real par, const BRepAdaptor_Curve &BC, gp_Vec &OutValue);
+		%feature("autodoc","TggeomE(Standard_Real par, const E) -> gp_Vec");
+
+		static		Standard_Boolean TggeomE(const Standard_Real par, const TopoDS_Edge E, gp_Vec &OutValue);
+		%feature("autodoc","TgINSIDE(const v, const E) -> [gp_Vec, Standard_Integer]");
+
+		static		Standard_Boolean TgINSIDE(const TopoDS_Vertex v, const TopoDS_Edge E, gp_Vec &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec2d Tg2d(const Standard_Integer iv, const TopoDS_Edge E, const TopOpeBRepTool_C2DF &C2DF);
 		%feature("autodoc", "1");
@@ -1459,8 +1461,9 @@ class TopOpeBRepTool_TOOL {
 		static		Standard_Boolean XX(const gp_Pnt2d uv, const TopoDS_Face f, const Standard_Real par, const TopoDS_Edge e, gp_Dir & xx);
 		%feature("autodoc", "1");
 		static		Standard_Boolean Nt(const gp_Pnt2d uv, const TopoDS_Face f, gp_Dir & normt);
-		%feature("autodoc", "1");
-		static		Standard_Boolean NggeomF(const gp_Pnt2d uv, const TopoDS_Face F, gp_Vec & ng);
+		%feature("autodoc","NggeomF(const uv, const F) -> gp_Vec");
+
+		static		Standard_Boolean NggeomF(const gp_Pnt2d uv, const TopoDS_Face F, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Boolean NgApp(const Standard_Real par, const TopoDS_Edge E, const TopoDS_Face F, const Standard_Real tola, gp_Dir & ngApp);
 		%feature("autodoc", "1");

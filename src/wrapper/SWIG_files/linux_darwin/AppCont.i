@@ -93,8 +93,9 @@ class AppCont_Function {
 		virtual		Standard_Real LastParameter() const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+
+		virtual		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
 
 };
 %feature("shadow") AppCont_Function::~AppCont_Function %{

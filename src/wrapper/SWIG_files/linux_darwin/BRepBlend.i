@@ -682,8 +682,9 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 		virtual		const gp_Vec  TangentOnRst() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec & NS, gp_Vec & TgS) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
@@ -788,14 +789,16 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		virtual		const gp_Vec  TangentOnRst2() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc", "1");
-		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec & VdMed) const;
+		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> gp_Vec");
+
+		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec &OutValue) const;
 		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
 
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
@@ -1235,12 +1238,15 @@ class BRepBlend_HCurveTool {
 		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
 		%feature("autodoc", "1");
 		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
@@ -1877,14 +1883,16 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		virtual		const gp_Vec  TangentOnRst2() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc", "1");
-		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec & VdMed) const;
+		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> gp_Vec");
+
+		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec &OutValue) const;
 		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
 
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
@@ -1983,8 +1991,9 @@ class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {
 		virtual		const gp_Vec  TangentOnRst() const;
 		%feature("autodoc", "1");
 		virtual		const gp_Vec2d  Tangent2dOnRst() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec & NS, gp_Vec & TgS) const;
+		%feature("autodoc","Decroch(const Sol) -> [gp_Vec, gp_Vec]");
+
+		virtual		Standard_Boolean Decroch(const math_Vector &Sol, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");

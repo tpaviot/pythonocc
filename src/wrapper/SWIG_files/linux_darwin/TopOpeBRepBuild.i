@@ -2707,14 +2707,18 @@ class TopOpeBRepBuild_Tools {
 		static		void FindState2(const TopoDS_Shape anEdge, const TopAbs_State aState, const TopTools_IndexedDataMapOfShapeListOfShape &aMapEdgesFaces, TopTools_MapOfShape & aMapProcessedEdges, TopOpeBRepDS_DataMapOfShapeState & aMapVs);
 		%feature("autodoc", "1");
 		static		Standard_Boolean GetAdjacentFace(const TopoDS_Shape aFaceObj, const TopoDS_Shape anEObj, const TopTools_IndexedDataMapOfShapeListOfShape &anEdgeFaceMap, TopoDS_Shape & anAdjFaceObj);
-		%feature("autodoc", "1");
-		static		void GetNormalToFaceOnEdge(const TopoDS_Face aFObj, const TopoDS_Edge anEdgeObj, gp_Vec & aDirNormal);
-		%feature("autodoc", "1");
-		static		void GetNormalInNearestPoint(const TopoDS_Face aFace, const TopoDS_Edge anEdge, gp_Vec & aNormal);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetTangentToEdgeEdge(const TopoDS_Face aFObj, const TopoDS_Edge anEdgeObj, const TopoDS_Edge aOriEObj, gp_Vec & aTangent);
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetTangentToEdge(const TopoDS_Edge anEdgeObj, gp_Vec & aTangent);
+		%feature("autodoc","GetNormalToFaceOnEdge(const aFObj, const anEdgeObj) -> gp_Vec");
+
+		static		void GetNormalToFaceOnEdge(const TopoDS_Face aFObj, const TopoDS_Edge anEdgeObj, gp_Vec &OutValue);
+		%feature("autodoc","GetNormalInNearestPoint(const aFace, const anEdge) -> gp_Vec");
+
+		static		void GetNormalInNearestPoint(const TopoDS_Face aFace, const TopoDS_Edge anEdge, gp_Vec &OutValue);
+		%feature("autodoc","GetTangentToEdgeEdge(const aFObj, const anEdgeObj, const aOriEObj) -> gp_Vec");
+
+		static		Standard_Boolean GetTangentToEdgeEdge(const TopoDS_Face aFObj, const TopoDS_Edge anEdgeObj, const TopoDS_Edge aOriEObj, gp_Vec &OutValue);
+		%feature("autodoc","GetTangentToEdge(const anEdgeObj) -> gp_Vec");
+
+		static		Standard_Boolean GetTangentToEdge(const TopoDS_Edge anEdgeObj, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void UpdatePCurves(const TopoDS_Wire aWire, const TopoDS_Face fromFace, const TopoDS_Face toFace);
 		%feature("autodoc", "1");

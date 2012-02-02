@@ -3929,10 +3929,12 @@ class BOPTools_Tools2D {
 		static		void RemovePCurveForEdgeOnFace(const TopoDS_Edge aE, const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		static		void BuildPCurveForEdgeOnFace(const TopoDS_Edge aE, const TopoDS_Face aF);
-		%feature("autodoc", "1");
-		static		Standard_Boolean EdgeTangent(const TopoDS_Edge anE, const Standard_Real aT, gp_Vec & Tau);
-		%feature("autodoc", "1");
-		static		void FaceNormal(const TopoDS_Face aF, const Standard_Real U, const Standard_Real V, gp_Vec & aN);
+		%feature("autodoc","EdgeTangent(const anE, Standard_Real aT) -> gp_Vec");
+
+		static		Standard_Boolean EdgeTangent(const TopoDS_Edge anE, const Standard_Real aT, gp_Vec &OutValue);
+		%feature("autodoc","FaceNormal(const aF, Standard_Real U, Standard_Real V) -> gp_Vec");
+
+		static		void FaceNormal(const TopoDS_Face aF, const Standard_Real U, const Standard_Real V, gp_Vec &OutValue);
 		%feature("autodoc","PointOnSurface(const aE, const aF, Standard_Real aT) -> [Standard_Real, Standard_Real]");
 
 		static		void PointOnSurface(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -3965,12 +3967,14 @@ class BOPTools_Tools2D {
 		static		void AdjustPCurveOnFace(const TopoDS_Face aF, const Standard_Real aT1, const Standard_Real aT2, const Handle_Geom2d_Curve &aC2D, Handle_Geom2d_Curve & aC2DA);
 		%feature("autodoc", "1");
 		static		void MakePCurveOfType(const ProjLib_ProjectedCurve &PC, Handle_Geom2d_Curve & aC);
-		%feature("autodoc", "1");
-		static		Standard_Boolean TangentOnEdge(const Standard_Real aParm, const TopoDS_Edge anE, gp_Vec & aTang);
+		%feature("autodoc","TangentOnEdge(Standard_Real aParm, const anE) -> gp_Vec");
+
+		static		Standard_Boolean TangentOnEdge(const Standard_Real aParm, const TopoDS_Edge anE, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Boolean TangentOnEdge(const TopoDS_Edge anE, gp_Dir & aDTang);
-		%feature("autodoc", "1");
-		static		Standard_Boolean TangentOnVertex(const TopoDS_Vertex aVF, const TopoDS_Vertex aVL, const TopoDS_Edge anE, gp_Vec & aTang);
+		%feature("autodoc","TangentOnVertex(const aVF, const aVL, const anE) -> gp_Vec");
+
+		static		Standard_Boolean TangentOnVertex(const TopoDS_Vertex aVF, const TopoDS_Vertex aVL, const TopoDS_Edge anE, gp_Vec &OutValue);
 		%feature("autodoc","EdgeBounds(const anE) -> [Standard_Real, Standard_Real]");
 
 		static		void EdgeBounds(const TopoDS_Edge anE, Standard_Real &OutValue, Standard_Real &OutValue);

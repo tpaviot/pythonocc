@@ -428,8 +428,9 @@ class IntAna_Curve {
 		Standard_Boolean IsLastOpen() const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real Theta);
-		%feature("autodoc", "1");
-		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec & V);
+		%feature("autodoc","D1u(Standard_Real Theta) -> gp_Vec");
+
+		Standard_Boolean D1u(const Standard_Real Theta, gp_Pnt & P, gp_Vec &OutValue);
 		%feature("autodoc","FindParameter(const P) -> Standard_Real");
 
 		Standard_Boolean FindParameter(const gp_Pnt P, Standard_Real &OutValue) const;

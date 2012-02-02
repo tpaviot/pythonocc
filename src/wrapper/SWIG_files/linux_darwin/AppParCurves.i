@@ -431,12 +431,14 @@ class AppParCurves_MultiCurve {
 		virtual		void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt) const;
 		%feature("autodoc", "1");
 		virtual		void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1) const;
+		%feature("autodoc","D1(Standard_Integer CuIndex, Standard_Real U) -> gp_Vec");
+
+		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc","D2(Standard_Integer CuIndex, Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2) const;
 		%feature("autodoc", "1");

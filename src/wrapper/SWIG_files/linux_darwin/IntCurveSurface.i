@@ -756,12 +756,15 @@ class IntCurveSurface_TheHCurveTool {
 		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
 		%feature("autodoc", "1");
 		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");

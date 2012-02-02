@@ -421,9 +421,9 @@ class IntSurf_Quadric {
 		Standard_Real Distance(const gp_Pnt P) const;
 		%feature("autodoc", "1");
 		gp_Vec Gradient(const gp_Pnt P) const;
-		%feature("autodoc","ValAndGrad(const P) -> Standard_Real");
+		%feature("autodoc","ValAndGrad(const P) -> [Standard_Real, gp_Vec]");
 
-		void ValAndGrad(const gp_Pnt P, Standard_Real &OutValue, gp_Vec & Grad) const;
+		void ValAndGrad(const gp_Pnt P, Standard_Real &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		GeomAbs_SurfaceType TypeQuadric() const;
 		%feature("autodoc", "1");
@@ -436,8 +436,9 @@ class IntSurf_Quadric {
 		gp_Cone Cone() const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V) const;
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+
+		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
@@ -1138,11 +1139,12 @@ class IntSurf_QuadricTool {
 		IntSurf_QuadricTool();
 		%feature("autodoc", "1");
 		static		Standard_Real Value(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
-		%feature("autodoc", "1");
-		static		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec & V);
-		%feature("autodoc","ValueAndGradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z) -> Standard_Real");
+		%feature("autodoc","Gradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z) -> gp_Vec");
 
-		static		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec & V);
+		static		void Gradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, gp_Vec &OutValue);
+		%feature("autodoc","ValueAndGradient(const Quad, Standard_Real X, Standard_Real Y, Standard_Real Z) -> [Standard_Real, gp_Vec]");
+
+		static		void ValueAndGradient(const IntSurf_Quadric &Quad, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, Standard_Real &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Real Tolerance(const IntSurf_Quadric &Quad);
 
