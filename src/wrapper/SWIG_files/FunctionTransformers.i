@@ -132,3 +132,31 @@ gp_Vec & by ref out value
 %typemap(in,numinputs=0) gp_Vec &OutValue(gp_Vec temp) {
     $1 = &temp;
 }
+
+/*
+gp_Pnt & by ref out value
+*/
+%typemap(argout) gp_Pnt &OutValue {
+    PyObject *o, *o2, *o3;
+	gp_Pnt *tmp_ptr = (gp_Pnt *)new gp_Pnt(*$1);
+	o = SWIG_NewPointerObj(SWIG_as_voidptr(tmp_ptr), SWIGTYPE_p_gp_Pnt, SWIG_POINTER_OWN |  0 );
+	if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) gp_Pnt &OutValue(gp_Pnt temp) {
+    $1 = &temp;
+}
