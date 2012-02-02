@@ -817,10 +817,12 @@ class StdMeshers_SMESHBlock {
 		void ComputeParameters(const gp_Pnt thePnt, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
 		%feature("autodoc", "1");
 		void ComputeParameters(const double &theU, const TopoDS_Shape theShape, gp_XYZ & theXYZ);
-		%feature("autodoc", "1");
-		void Point(const gp_XYZ theParams, gp_Pnt & thePnt);
-		%feature("autodoc", "1");
-		void Point(const gp_XYZ theParams, const TopoDS_Shape theShape, gp_Pnt & thePnt);
+		%feature("autodoc","Point(const theParams) -> gp_Pnt");
+
+		void Point(const gp_XYZ theParams, gp_Pnt &OutValue);
+		%feature("autodoc","Point(const theParams, const theShape) -> gp_Pnt");
+
+		void Point(const gp_XYZ theParams, const TopoDS_Shape theShape, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		int ShapeID(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");

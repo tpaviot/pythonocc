@@ -2952,18 +2952,24 @@ class GEOMAlgo_Tools {
 		static		Standard_Integer FindSDShapes(const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_IndexedDataMapOfShapeListOfShape & aMEE, IntTools_Context & aCtx);
 		%feature("autodoc", "1");
 		static		Standard_Integer FindSDShapes(const TopoDS_Shape aE1, const TopTools_ListOfShape &aLE, const Standard_Real aTol, TopTools_ListOfShape & aLESD, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ProjectPointOnShape(const gp_Pnt aP1, const TopoDS_Shape aS, gp_Pnt & aP2, IntTools_Context & aCtx);
-		%feature("autodoc", "1");
-		static		void PointOnShape(const TopoDS_Shape aS, gp_Pnt & aP3D);
-		%feature("autodoc", "1");
-		static		void PointOnEdge(const TopoDS_Edge aE, gp_Pnt & aP3D);
-		%feature("autodoc", "1");
-		static		void PointOnEdge(const TopoDS_Edge aE, const Standard_Real aT, gp_Pnt & aP3D);
-		%feature("autodoc", "1");
-		static		void PointOnFace(const TopoDS_Face aF, gp_Pnt & aP3D);
-		%feature("autodoc", "1");
-		static		void PointOnFace(const TopoDS_Face aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt & aP3D);
+		%feature("autodoc","ProjectPointOnShape(const aP1, const aS) -> gp_Pnt");
+
+		static		Standard_Boolean ProjectPointOnShape(const gp_Pnt aP1, const TopoDS_Shape aS, gp_Pnt &OutValue, IntTools_Context & aCtx);
+		%feature("autodoc","PointOnShape(const aS) -> gp_Pnt");
+
+		static		void PointOnShape(const TopoDS_Shape aS, gp_Pnt &OutValue);
+		%feature("autodoc","PointOnEdge(const aE) -> gp_Pnt");
+
+		static		void PointOnEdge(const TopoDS_Edge aE, gp_Pnt &OutValue);
+		%feature("autodoc","PointOnEdge(const aE, Standard_Real aT) -> gp_Pnt");
+
+		static		void PointOnEdge(const TopoDS_Edge aE, const Standard_Real aT, gp_Pnt &OutValue);
+		%feature("autodoc","PointOnFace(const aF) -> gp_Pnt");
+
+		static		void PointOnFace(const TopoDS_Face aF, gp_Pnt &OutValue);
+		%feature("autodoc","PointOnFace(const aF, Standard_Real aU, Standard_Real aV) -> gp_Pnt");
+
+		static		void PointOnFace(const TopoDS_Face aF, const Standard_Real aU, const Standard_Real aV, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void RefinePCurveForEdgeOnFace(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aU1, const Standard_Real aU2);
 		%feature("autodoc", "1");

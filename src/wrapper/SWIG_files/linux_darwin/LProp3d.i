@@ -57,14 +57,15 @@ class LProp3d_SurfaceTool {
 	public:
 		%feature("autodoc", "1");
 		LProp3d_SurfaceTool();
-		%feature("autodoc", "1");
-		static		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc","D1(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","Value(const S, Standard_Real U, Standard_Real V) -> gp_Pnt");
 
-		static		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D2(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
 		%feature("autodoc", "1");
@@ -95,17 +96,18 @@ class LProp3d_CurveTool {
 	public:
 		%feature("autodoc", "1");
 		LProp3d_CurveTool();
-		%feature("autodoc", "1");
-		static		void Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","Value(const C, Standard_Real U) -> gp_Pnt");
 
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Integer Continuity(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
@@ -228,8 +230,9 @@ class LProp3d_CLProps {
 		Standard_Real Curvature();
 		%feature("autodoc", "1");
 		void Normal(gp_Dir & N);
-		%feature("autodoc", "1");
-		void CentreOfCurvature(gp_Pnt & P);
+		%feature("autodoc","CentreOfCurvature() -> gp_Pnt");
+
+		void CentreOfCurvature(gp_Pnt &OutValue);
 
 };
 %feature("shadow") LProp3d_CLProps::~LProp3d_CLProps %{

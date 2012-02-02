@@ -94,8 +94,9 @@ class DsgPrs_FilletRadiusPresentation {
 	public:
 		%feature("autodoc", "1");
 		DsgPrs_FilletRadiusPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real thevalue, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const gp_Dir aNormalDir, const gp_Pnt aBasePnt, const gp_Pnt aFirstPoint, const gp_Pnt aSecondPoint, const gp_Pnt aCenter, const DsgPrs_ArrowSide ArrowPrs, const Standard_Boolean drawRevers, gp_Pnt & DrawPosition, gp_Pnt & EndOfArrow, Handle_Geom_TrimmedCurve & TrimCurve, Standard_Boolean & HasCircle);
+		%feature("autodoc","Add(const aPresentation, const aDrawer, Standard_Real thevalue, const aText, const aPosition, const aNormalDir, const aBasePnt, const aFirstPoint, const aSecondPoint, const aCenter, DsgPrs_ArrowSide ArrowPrs, Standard_Boolean drawRevers) -> [gp_Pnt, gp_Pnt]");
+
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const Standard_Real thevalue, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const gp_Dir aNormalDir, const gp_Pnt aBasePnt, const gp_Pnt aFirstPoint, const gp_Pnt aSecondPoint, const gp_Pnt aCenter, const DsgPrs_ArrowSide ArrowPrs, const Standard_Boolean drawRevers, gp_Pnt &OutValue, gp_Pnt &OutValue, Handle_Geom_TrimmedCurve & TrimCurve, Standard_Boolean & HasCircle);
 
 };
 %feature("shadow") DsgPrs_FilletRadiusPresentation::~DsgPrs_FilletRadiusPresentation %{
@@ -536,8 +537,9 @@ class DsgPrs_EqualDistancePresentation {
 		DsgPrs_EqualDistancePresentation();
 		%feature("autodoc", "1");
 		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt Point1, const gp_Pnt Point2, const gp_Pnt Point3, const gp_Pnt Point4, const Handle_Geom_Plane &Plane);
-		%feature("autodoc", "1");
-		static		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Dir aDir, const gp_Pnt aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt & anExtremePnt1, gp_Pnt & anExtremePnt2);
+		%feature("autodoc","AddInterval(const aPresentation, const aDrawer, const aPoint1, const aPoint2, const aDir, const aPosition, DsgPrs_ArrowSide anArrowSide) -> [gp_Pnt, gp_Pnt]");
+
+		static		void AddInterval(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Dir aDir, const gp_Pnt aPosition, const DsgPrs_ArrowSide anArrowSide, gp_Pnt &OutValue, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void AddIntervalBetweenTwoArcs(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const gp_Circ aCircle1, const gp_Circ aCircle2, const gp_Pnt aPoint1, const gp_Pnt aPoint2, const gp_Pnt aPoint3, const gp_Pnt aPoint4, const DsgPrs_ArrowSide anArrowSide);
 
@@ -671,19 +673,21 @@ class DsgPrs {
 		static		void ComputeSymbol(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_AngleAspect &anAspect, const gp_Pnt pt1, const gp_Pnt pt2, const gp_Dir dir1, const gp_Dir dir2, const DsgPrs_ArrowSide ArrowSide);
 		%feature("autodoc", "1");
 		static		void ComputeSymbol(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_LengthAspect &anAspect, const gp_Pnt pt1, const gp_Pnt pt2, const gp_Dir dir1, const gp_Dir dir2, const DsgPrs_ArrowSide ArrowSide, const Standard_Boolean drawFromCenter=1);
-		%feature("autodoc", "1");
-		static		void ComputePlanarFacesLengthPresentation(const Standard_Real FirstArrowLength, const Standard_Real SecondArrowLength, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir DirAttach, const gp_Pnt OffsetPoint, const gp_Pln PlaneOfFaces, gp_Pnt & EndOfArrow1, gp_Pnt & EndOfArrow2, gp_Dir & DirOfArrow1);
-		%feature("autodoc","ComputeCurvilinearFacesLengthPresentation(Standard_Real FirstArrowLength, Standard_Real SecondArrowLength, const SecondSurf, const AttachmentPoint1, const AttachmentPoint2, const DirAttach) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","ComputePlanarFacesLengthPresentation(Standard_Real FirstArrowLength, Standard_Real SecondArrowLength, const AttachmentPoint1, const AttachmentPoint2, const DirAttach, const OffsetPoint, const PlaneOfFaces) -> [gp_Pnt, gp_Pnt]");
 
-		static		void ComputeCurvilinearFacesLengthPresentation(const Standard_Real FirstArrowLength, const Standard_Real SecondArrowLength, const Handle_Geom_Surface &SecondSurf, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir DirAttach, gp_Pnt & EndOfArrow2, gp_Dir & DirOfArrow1, Handle_Geom_Curve & VCurve, Handle_Geom_Curve & UCurve, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","ComputeFacesAnglePresentation(Standard_Real ArrowLength, Standard_Real Value, const CenterPoint, const AttachmentPoint1, const AttachmentPoint2, const dir1, const dir2, const axisdir, Standard_Boolean isPlane, const AxisOfSurf, const OffsetPoint) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		static		void ComputePlanarFacesLengthPresentation(const Standard_Real FirstArrowLength, const Standard_Real SecondArrowLength, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir DirAttach, const gp_Pnt OffsetPoint, const gp_Pln PlaneOfFaces, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Dir & DirOfArrow1);
+		%feature("autodoc","ComputeCurvilinearFacesLengthPresentation(Standard_Real FirstArrowLength, Standard_Real SecondArrowLength, const SecondSurf, const AttachmentPoint1, const AttachmentPoint2, const DirAttach) -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		static		void ComputeFacesAnglePresentation(const Standard_Real ArrowLength, const Standard_Real Value, const gp_Pnt CenterPoint, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir dir1, const gp_Dir dir2, const gp_Dir axisdir, const Standard_Boolean isPlane, const gp_Ax1 AxisOfSurf, const gp_Pnt OffsetPoint, gp_Circ & AngleCirc, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & EndOfArrow1, gp_Pnt & EndOfArrow2, gp_Dir & DirOfArrow1, gp_Dir & DirOfArrow2, gp_Pnt & ProjAttachPoint2, gp_Circ & AttachCirc, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		void ComputeRadiusLine(const gp_Pnt aCenter, const gp_Pnt anEndOfArrow, const gp_Pnt aPosition, const Standard_Boolean drawFromCenter, gp_Pnt & aRadLineOrign, gp_Pnt & aRadLineEnd);
-		%feature("autodoc","ComputeFilletRadiusPresentation(Standard_Real ArrowLength, Standard_Real Value, const Position, const NormalDir, const FirstPoint, const SecondPoint, const Center, const BasePnt, Standard_Boolean drawRevers) -> [Standard_Real, Standard_Real]");
+		static		void ComputeCurvilinearFacesLengthPresentation(const Standard_Real FirstArrowLength, const Standard_Real SecondArrowLength, const Handle_Geom_Surface &SecondSurf, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir DirAttach, gp_Pnt &OutValue, gp_Dir & DirOfArrow1, Handle_Geom_Curve & VCurve, Handle_Geom_Curve & UCurve, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","ComputeFacesAnglePresentation(Standard_Real ArrowLength, Standard_Real Value, const CenterPoint, const AttachmentPoint1, const AttachmentPoint2, const dir1, const dir2, const axisdir, Standard_Boolean isPlane, const AxisOfSurf, const OffsetPoint) -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt, gp_Pnt, Standard_Real, Standard_Real]");
 
-		static		void ComputeFilletRadiusPresentation(const Standard_Real ArrowLength, const Standard_Real Value, const gp_Pnt Position, const gp_Dir NormalDir, const gp_Pnt FirstPoint, const gp_Pnt SecondPoint, const gp_Pnt Center, const gp_Pnt BasePnt, const Standard_Boolean drawRevers, Standard_Boolean & SpecCase, gp_Circ & FilletCirc, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & EndOfArrow, gp_Dir & DirOfArrow, gp_Pnt & DrawPosition);
+		static		void ComputeFacesAnglePresentation(const Standard_Real ArrowLength, const Standard_Real Value, const gp_Pnt CenterPoint, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir dir1, const gp_Dir dir2, const gp_Dir axisdir, const Standard_Boolean isPlane, const gp_Ax1 AxisOfSurf, const gp_Pnt OffsetPoint, gp_Circ & AngleCirc, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Dir & DirOfArrow1, gp_Dir & DirOfArrow2, gp_Pnt &OutValue, gp_Circ & AttachCirc, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","ComputeRadiusLine(const aCenter, const anEndOfArrow, const aPosition, Standard_Boolean drawFromCenter) -> [gp_Pnt, gp_Pnt]");
+
+		static		void ComputeRadiusLine(const gp_Pnt aCenter, const gp_Pnt anEndOfArrow, const gp_Pnt aPosition, const Standard_Boolean drawFromCenter, gp_Pnt &OutValue, gp_Pnt &OutValue);
+		%feature("autodoc","ComputeFilletRadiusPresentation(Standard_Real ArrowLength, Standard_Real Value, const Position, const NormalDir, const FirstPoint, const SecondPoint, const Center, const BasePnt, Standard_Boolean drawRevers) -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt]");
+
+		static		void ComputeFilletRadiusPresentation(const Standard_Real ArrowLength, const Standard_Real Value, const gp_Pnt Position, const gp_Dir NormalDir, const gp_Pnt FirstPoint, const gp_Pnt SecondPoint, const gp_Pnt Center, const gp_Pnt BasePnt, const Standard_Boolean drawRevers, Standard_Boolean & SpecCase, gp_Circ & FilletCirc, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Dir & DirOfArrow, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Real DistanceFromApex(const gp_Elips elips, const gp_Pnt Apex, const Standard_Real par);
 

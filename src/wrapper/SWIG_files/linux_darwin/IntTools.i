@@ -742,8 +742,9 @@ class IntTools_CommonPrt {
 		void SetAllNullFlag(const Standard_Boolean aFlag);
 		%feature("autodoc", "1");
 		void SetBoundingPoints(const gp_Pnt aP1, const gp_Pnt aP2);
-		%feature("autodoc", "1");
-		void BoundingPoints(gp_Pnt & aP1, gp_Pnt & aP2) const;
+		%feature("autodoc","BoundingPoints() -> [gp_Pnt, gp_Pnt]");
+
+		void BoundingPoints(gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") IntTools_CommonPrt::~IntTools_CommonPrt %{
@@ -1027,8 +1028,9 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 		virtual		Standard_Integer NbSamplesV();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbSamples();
-		%feature("autodoc", "1");
-		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt & P3d);
+		%feature("autodoc","SamplePoint(Standard_Integer Index) -> gp_Pnt");
+
+		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		virtual		void SamplePnts(const Standard_Real theDefl, const Standard_Integer theNUmin, const Standard_Integer theNVmin);
 		%feature("autodoc", "1");
@@ -3450,12 +3452,12 @@ class IntTools_Curve {
 		const Handle_Geom2d_Curve & SecondCurve2d() const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasBounds() const;
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt]");
 
-		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
-		%feature("autodoc","D0() -> Standard_Real");
+		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
+		%feature("autodoc","D0() -> [Standard_Real, gp_Pnt]");
 
-		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
+		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		GeomAbs_CurveType Type() const;
 

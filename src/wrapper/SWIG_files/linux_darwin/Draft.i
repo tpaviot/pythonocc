@@ -433,9 +433,9 @@ class Draft_Modification : public BRepTools_Modification {
 		%feature("autodoc","NewCurve(const E) -> Standard_Real");
 
 		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+		%feature("autodoc","NewPoint(const V) -> [gp_Pnt, Standard_Real]");
 
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
 
 		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
@@ -717,8 +717,9 @@ class Draft_EdgeInfo {
 		void RootFace(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void Tangent(const gp_Pnt P);
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent(gp_Pnt & P) const;
+		%feature("autodoc","IsTangent() -> gp_Pnt");
+
+		Standard_Boolean IsTangent(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean NewGeometry() const;
 		%feature("autodoc", "1");

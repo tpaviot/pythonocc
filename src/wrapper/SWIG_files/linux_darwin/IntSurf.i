@@ -436,9 +436,9 @@ class IntSurf_Quadric {
 		gp_Cone Cone() const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");

@@ -406,9 +406,9 @@ class GeomLib {
 		static		void ExtendSurfByLength(Handle_Geom_BoundedSurface & Surf, const Standard_Real Length, const Standard_Integer Cont, const Standard_Boolean InU, const Standard_Boolean After);
 		%feature("autodoc", "1");
 		static		void AxeOfInertia(const TColgp_Array1OfPnt &Points, gp_Ax2 & Axe, Standard_Boolean & IsSingular, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
-		%feature("autodoc","Inertia(const Points) -> [Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Inertia(const Points) -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real]");
 
-		static		void Inertia(const TColgp_Array1OfPnt &Points, gp_Pnt & Bary, gp_Dir & XDir, gp_Dir & YDir, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Inertia(const TColgp_Array1OfPnt &Points, gp_Pnt &OutValue, gp_Dir & XDir, gp_Dir & YDir, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		static		void RemovePointsFromArray(const Standard_Integer NumPoints, const TColStd_Array1OfReal &InParameters, Handle_TColStd_HArray1OfReal & OutParameters);
 		%feature("autodoc", "1");

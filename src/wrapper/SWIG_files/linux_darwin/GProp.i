@@ -175,12 +175,12 @@ class GProp_PGProps : public GProp_GProps {
 		static		gp_Pnt Barycentre(const TColgp_Array1OfPnt &Pnts);
 		%feature("autodoc", "1");
 		static		gp_Pnt Barycentre(const TColgp_Array2OfPnt &Pnts);
-		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> [Standard_Real, gp_Pnt]");
 
-		static		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
-		%feature("autodoc","Barycentre(const Pnts, const Density) -> Standard_Real");
+		static		void Barycentre(const TColgp_Array1OfPnt &Pnts, const TColStd_Array1OfReal &Density, Standard_Real &OutValue, gp_Pnt &OutValue);
+		%feature("autodoc","Barycentre(const Pnts, const Density) -> [Standard_Real, gp_Pnt]");
 
-		static		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt & G);
+		static		void Barycentre(const TColgp_Array2OfPnt &Pnts, const TColStd_Array2OfReal &Density, Standard_Real &OutValue, gp_Pnt &OutValue);
 
 };
 %feature("shadow") GProp_PGProps::~GProp_PGProps %{
@@ -446,9 +446,9 @@ class GProp_PEquation {
 		gp_Lin Line() const;
 		%feature("autodoc", "1");
 		gp_Pnt Point() const;
-		%feature("autodoc","Box() -> [gp_Vec, gp_Vec, gp_Vec]");
+		%feature("autodoc","Box() -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		void Box(gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		void Box(gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 
 };
 %feature("shadow") GProp_PEquation::~GProp_PEquation %{

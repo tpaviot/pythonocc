@@ -2259,12 +2259,12 @@ class Extrema_CurveTool {
 		static		GeomAbs_CurveType GetType(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const Adaptor3d_Curve &C, const Standard_Real U);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void D1(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Adaptor3d_Curve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Lin Line(const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -2842,9 +2842,9 @@ class Extrema_ExtCC {
 		Standard_Real SquareDistance(const Standard_Integer N=1) const;
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer N, Extrema_POnCurv & P1, Extrema_POnCurv & P2) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Pnt, gp_Pnt, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") Extrema_ExtCC::~Extrema_ExtCC %{
@@ -3115,9 +3115,9 @@ class Extrema_ExtPC {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") Extrema_ExtPC::~Extrema_ExtPC %{
@@ -4829,9 +4829,9 @@ class Extrema_ExtPS {
 		Standard_Real SquareDistance(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnSurf Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Pnt, gp_Pnt, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & PUfVf, gp_Pnt & PUfVl, gp_Pnt & PUlVf, gp_Pnt & PUlVl) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		void SetFlag(const Extrema_ExtFlag F);
 		%feature("autodoc", "1");
@@ -5158,9 +5158,9 @@ class Extrema_ELPCOfLocateExtPC {
 		Standard_Boolean IsMin(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		Extrema_POnCurv Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P1, gp_Pnt & P2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") Extrema_ELPCOfLocateExtPC::~Extrema_ELPCOfLocateExtPC %{

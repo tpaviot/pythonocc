@@ -836,8 +836,9 @@ class HLRAlgo_Projector {
 		%feature("autodoc","Transform() -> gp_Vec");
 
 		void Transform(gp_Vec &OutValue) const;
-		%feature("autodoc", "1");
-		void Transform(gp_Pnt & Pnt) const;
+		%feature("autodoc","Transform() -> gp_Pnt");
+
+		void Transform(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		void Project(const gp_Pnt P, gp_Pnt2d & Pout) const;
 		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");

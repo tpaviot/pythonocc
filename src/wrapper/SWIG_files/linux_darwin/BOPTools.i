@@ -933,8 +933,9 @@ class BOPTools_Tools {
 		static		void MakeNewVertex(const TopoDS_Edge aE1, const Standard_Real aP1, const TopoDS_Edge aE2, const Standard_Real aP2, TopoDS_Vertex & aNewVertex);
 		%feature("autodoc", "1");
 		static		void MakeNewVertex(const TopoDS_Edge aE1, const Standard_Real aP1, const TopoDS_Face aF2, TopoDS_Vertex & aNewVertex);
-		%feature("autodoc", "1");
-		static		void PointOnEdge(const TopoDS_Edge aEdge, const Standard_Real aPrm, gp_Pnt & aP);
+		%feature("autodoc","PointOnEdge(const aEdge, Standard_Real aPrm) -> gp_Pnt");
+
+		static		void PointOnEdge(const TopoDS_Edge aEdge, const Standard_Real aPrm, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void MakeSplitEdge(const TopoDS_Edge aE1, const TopoDS_Vertex aV1, const Standard_Real aP1, const TopoDS_Vertex aV2, const Standard_Real aP2, TopoDS_Edge & aNewEdge);
 		%feature("autodoc", "1");
@@ -4051,16 +4052,21 @@ class BOPTools_Tools3D {
 		static		TopAbs_Orientation Orientation(const TopoDS_Edge aE, const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		static		Standard_Real SignDistance(const gp_Pnt aP, const gp_Pln aPL);
-		%feature("autodoc", "1");
-		static		void GetApproxNormalToFaceOnEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, gp_Pnt & aPx, gp_Dir & aD);
-		%feature("autodoc", "1");
-		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, const Standard_Real aDt2D, gp_Pnt2d & aP2D, gp_Pnt & aPx);
-		%feature("autodoc", "1");
-		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, gp_Pnt2d & aP2D, gp_Pnt & aPx);
-		%feature("autodoc", "1");
-		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, gp_Pnt2d & aP2D, gp_Pnt & aPx);
-		%feature("autodoc", "1");
-		static		void PointToCompare(const gp_Pnt aP1, const gp_Pnt aP2, const TopoDS_Face aF, gp_Pnt & aPx, IntTools_Context & aContext);
+		%feature("autodoc","GetApproxNormalToFaceOnEdge(const aE, const aF, Standard_Real aT) -> gp_Pnt");
+
+		static		void GetApproxNormalToFaceOnEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, gp_Pnt &OutValue, gp_Dir & aD);
+		%feature("autodoc","PointNearEdge(const aE, const aF, Standard_Real aT, Standard_Real aDt2D) -> gp_Pnt");
+
+		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, const Standard_Real aDt2D, gp_Pnt2d & aP2D, gp_Pnt &OutValue);
+		%feature("autodoc","PointNearEdge(const aE, const aF, Standard_Real aT) -> gp_Pnt");
+
+		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, const Standard_Real aT, gp_Pnt2d & aP2D, gp_Pnt &OutValue);
+		%feature("autodoc","PointNearEdge(const aE, const aF) -> gp_Pnt");
+
+		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, gp_Pnt2d & aP2D, gp_Pnt &OutValue);
+		%feature("autodoc","PointToCompare(const aP1, const aP2, const aF) -> gp_Pnt");
+
+		static		void PointToCompare(const gp_Pnt aP1, const gp_Pnt aP2, const TopoDS_Face aF, gp_Pnt &OutValue, IntTools_Context & aContext);
 		%feature("autodoc", "1");
 		static		void GetPlane(const TopoDS_Edge aSp, const TopoDS_Edge aE1, const TopoDS_Face aF1, const TopoDS_Face aF2, TopAbs_State & aST, IntTools_Context & aContext);
 		%feature("autodoc", "1");

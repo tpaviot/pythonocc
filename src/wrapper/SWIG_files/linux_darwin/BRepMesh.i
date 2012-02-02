@@ -2399,16 +2399,18 @@ class BRepMesh_GeomTool {
 		Standard_Integer AddPoint(const gp_Pnt thePnt, const Standard_Real theParam, const Standard_Boolean theIsReplace=1);
 		%feature("autodoc", "1");
 		Standard_Integer NbPoints() const;
-		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index) -> Standard_Real");
+		%feature("autodoc","Value(Standard_Real IsoParam, Standard_Integer Index) -> [Standard_Real, gp_Pnt]");
 
-		void Value(const Standard_Real IsoParam, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
-		%feature("autodoc","Value(const C, const S, Standard_Integer Index) -> Standard_Real");
+		void Value(const Standard_Real IsoParam, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt2d & UV) const;
+		%feature("autodoc","Value(const C, const S, Standard_Integer Index) -> [Standard_Real, gp_Pnt]");
 
-		void Value(const BRepAdaptor_Curve &C, const Handle_BRepAdaptor_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt & P, gp_Pnt2d & UV) const;
-		%feature("autodoc", "1");
-		static		void D0(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Normal(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Dir & Nor);
+		void Value(const BRepAdaptor_Curve &C, const Handle_BRepAdaptor_HSurface &S, const Standard_Integer Index, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt2d & UV) const;
+		%feature("autodoc","D0(const F, Standard_Real U, Standard_Real V) -> gp_Pnt");
+
+		static		void D0(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue);
+		%feature("autodoc","Normal(const F, Standard_Real U, Standard_Real V) -> gp_Pnt");
+
+		static		Standard_Boolean Normal(const Handle_BRepAdaptor_HSurface &F, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Dir & Nor);
 
 };
 %feature("shadow") BRepMesh_GeomTool::~BRepMesh_GeomTool %{

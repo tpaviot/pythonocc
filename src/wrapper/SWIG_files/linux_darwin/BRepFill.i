@@ -2748,8 +2748,9 @@ class BRepFill_MultiLine {
 		gp_Pnt2d ValueOnF1(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOnF2(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void Value3dOnF1OnF2(const Standard_Real U, gp_Pnt & P3d, gp_Pnt2d & PF1, gp_Pnt2d & PF2) const;
+		%feature("autodoc","Value3dOnF1OnF2(Standard_Real U) -> gp_Pnt");
+
+		void Value3dOnF1OnF2(const Standard_Real U, gp_Pnt &OutValue, gp_Pnt2d & PF1, gp_Pnt2d & PF2) const;
 
 };
 %feature("shadow") BRepFill_MultiLine::~BRepFill_MultiLine %{

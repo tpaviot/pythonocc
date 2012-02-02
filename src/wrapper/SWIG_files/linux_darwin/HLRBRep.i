@@ -813,17 +813,18 @@ class HLRBRep_LineTool {
 		static		Standard_Real Period(const gp_Lin arg0);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const gp_Lin C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D0(const gp_Lin C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(const C, Standard_Real U) -> gp_Pnt");
 
-		static		void D1(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void D0(const gp_Lin C, const Standard_Real U, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D2(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const gp_Lin C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D3(const gp_Lin C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const gp_Lin C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const gp_Lin C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const gp_Lin C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
@@ -965,11 +966,12 @@ class HLRBRep_Curve {
 		Standard_Real Z(const Standard_Real U) const;
 		%feature("autodoc", "1");
 		gp_Pnt Value3D(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(Standard_Real U) -> gp_Pnt");
 
-		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
+		void D0(const Standard_Real U, gp_Pnt &OutValue) const;
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
+
+		void D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void Tangent(const Standard_Boolean AtStart, gp_Pnt2d & P, gp_Dir2d & D) const;
 		%feature("autodoc", "1");
@@ -1648,14 +1650,15 @@ class HLRBRep_SLPropsATool {
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_SLPropsATool();
-		%feature("autodoc", "1");
-		static		void Value(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc","D1(Standard_Address A, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","Value(Standard_Address A, Standard_Real U, Standard_Real V) -> gp_Pnt");
 
-		static		void D1(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D2(Standard_Address A, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void Value(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue);
+		%feature("autodoc","D1(Standard_Address A, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D1(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Address A, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D2(const Standard_Address A, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Standard_Address A, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
@@ -1886,17 +1889,18 @@ class HLRBRep_Surface {
 		Standard_Real VPeriod() const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real U, const Standard_Real V) const;
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt & P) const;
-		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D0(Standard_Real U, Standard_Real V) -> gp_Pnt");
 
-		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
-		%feature("autodoc","D2(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		void D0(const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue) const;
+		%feature("autodoc","D1(Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
-		%feature("autodoc","D3(Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		void D1(const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
 
-		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		void D2(const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D3(Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		void D3(const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Vec DN(const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv) const;
 		%feature("autodoc", "1");
@@ -2258,17 +2262,18 @@ class HLRBRep_BCurveTool {
 		static		Standard_Real Period(const BRepAdaptor_Curve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const BRepAdaptor_Curve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D0(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(const C, Standard_Real U) -> gp_Pnt");
 
-		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void D0(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D2(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D3(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const BRepAdaptor_Curve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const BRepAdaptor_Curve &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
@@ -2775,17 +2780,18 @@ class HLRBRep_BSurfaceTool {
 		static		Standard_Real VPeriod(const BRepAdaptor_Surface &S);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		static		void D0(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc","D1(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D0(const S, Standard_Real U, Standard_Real V) -> gp_Pnt");
 
-		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D2(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void D0(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");
@@ -3863,17 +3869,18 @@ class HLRBRep_SurfaceTool {
 		static		Standard_Real VPeriod(const Standard_Address S);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const Standard_Address S, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		static		void D0(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc","D1(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D0(Standard_Address S, Standard_Real U, Standard_Real V) -> gp_Pnt");
 
-		static		void D1(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D2(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void D0(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue);
+		%feature("autodoc","D1(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void D3(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(Standard_Address S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Standard_Address S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Standard_Address S, const Standard_Real U, const Standard_Real V, const Standard_Integer Nu, const Standard_Integer Nv);
 		%feature("autodoc", "1");

@@ -1084,8 +1084,9 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 		void First(const Standard_Real F);
 		%feature("autodoc", "1");
 		void Last(const Standard_Real L);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc","D0(Standard_Real U) -> gp_Pnt");
+
+		virtual		void D0(const Standard_Real U, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Update();
 
@@ -1543,8 +1544,9 @@ class BRep_Curve3D : public BRep_GCurve {
 	public:
 		%feature("autodoc", "1");
 		BRep_Curve3D(const Handle_Geom_Curve &C, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc","D0(Standard_Real U) -> gp_Pnt");
+
+		virtual		void D0(const Standard_Real U, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCurve3D() const;
 		%feature("autodoc", "1");
@@ -1653,8 +1655,9 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 		virtual		Standard_Boolean IsRegularity() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsRegularity(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2) const;
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc","D0(Standard_Real U) -> gp_Pnt");
+
+		void D0(const Standard_Real U, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Surface & Surface() const;
 		%feature("autodoc", "1");

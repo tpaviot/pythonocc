@@ -4940,9 +4940,9 @@ class TopOpeBRepDS_FaceInterferenceTool {
 		void Add(const TopoDS_Shape E, const TopOpeBRepDS_Curve &C, const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
 		void SetEdgePntPar(const gp_Pnt P, const Standard_Real par);
-		%feature("autodoc","GetEdgePntPar() -> Standard_Real");
+		%feature("autodoc","GetEdgePntPar() -> [gp_Pnt, Standard_Real]");
 
-		void GetEdgePntPar(gp_Pnt & P, Standard_Real &OutValue) const;
+		void GetEdgePntPar(gp_Pnt &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEdgePntParDef() const;
 		%feature("autodoc", "1");

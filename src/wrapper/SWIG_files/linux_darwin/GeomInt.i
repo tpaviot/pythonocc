@@ -771,11 +771,12 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
 		%feature("autodoc", "1");
 		GeomInt_ThePrmPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
-		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Vec]");
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Pnt, gp_Vec]");
 
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-		%feature("autodoc", "1");
-		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		%feature("autodoc","Pnt(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Pnt");
+
+		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt &OutValue);
 		%feature("autodoc","Tangency(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Vec");
 
 		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec &OutValue);
@@ -1243,11 +1244,12 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &Surf1, const IntSurf_Quadric &Surf2);
 		%feature("autodoc", "1");
 		GeomInt_TheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &Surf1, const Handle_Adaptor3d_HSurface &Surf2);
-		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Vec]");
+		%feature("autodoc","Compute() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Pnt, gp_Vec]");
 
-		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
-		%feature("autodoc", "1");
-		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt & P);
+		virtual		Standard_Boolean Compute(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec2d & Tguv1, gp_Vec2d & Tguv2);
+		%feature("autodoc","Pnt(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Pnt");
+
+		virtual		void Pnt(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Pnt &OutValue);
 		%feature("autodoc","Tangency(Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> gp_Vec");
 
 		virtual		Standard_Boolean Tangency(const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec &OutValue);

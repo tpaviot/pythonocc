@@ -378,8 +378,9 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 		virtual		Standard_Integer NbSamplesV();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbSamples();
-		%feature("autodoc", "1");
-		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt & P3d);
+		%feature("autodoc","SamplePoint(Standard_Integer Index) -> gp_Pnt");
+
+		virtual		void SamplePoint(const Standard_Integer Index, gp_Pnt2d & P2d, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean DomainIsInfinite();
 		%feature("autodoc", "1");

@@ -1468,9 +1468,9 @@ class GeomFill_Boundary : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
+		virtual		void D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
@@ -1480,8 +1480,9 @@ class GeomFill_Boundary : public MMgt_TShared {
 		virtual		void D1Norm(const Standard_Real U, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
-		%feature("autodoc", "1");
-		void Points(gp_Pnt & PFirst, gp_Pnt & PLast) const;
+		%feature("autodoc","Points() -> [gp_Pnt, gp_Pnt]");
+
+		void Points(gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
 
 		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -2056,14 +2057,15 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 		virtual		Standard_Boolean IsPeriodic() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(Standard_Real U) -> gp_Pnt");
 
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
-		%feature("autodoc","D2(Standard_Real U) -> [gp_Vec, gp_Vec]");
+		virtual		void D0(const Standard_Real U, gp_Pnt &OutValue) const;
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		virtual		void D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
+
+		virtual		void D2(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real Resolution(const Standard_Real R3d) const;
 		%feature("autodoc", "1");
@@ -2212,9 +2214,9 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 		GeomFill_SimpleBound(const Handle_Adaptor3d_HCurve &Curve, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
+		virtual		void D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Reparametrize(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DF, const Standard_Real DL, const Standard_Boolean Rev);
 		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
@@ -2423,8 +2425,9 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 		%feature("autodoc","IsRotation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
+		%feature("autodoc","Rotation() -> gp_Pnt");
+
+		virtual		void Rotation(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2890,8 +2893,9 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 		%feature("autodoc","IsRotation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
+		%feature("autodoc","Rotation() -> gp_Pnt");
+
+		virtual		void Rotation(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsIntersec() const;
 		%feature("autodoc", "1");
@@ -3621,9 +3625,9 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 		GeomFill_BoundWithSurf(const Adaptor3d_CurveOnSurface &CurveOnSurf, const Standard_Real Tol3d, const Standard_Real Tolang);
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue) const;
+		virtual		void D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasNormals() const;
 		%feature("autodoc", "1");
@@ -3996,8 +4000,9 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 		%feature("autodoc","IsRotation() -> Standard_Real");
 
 		virtual		Standard_Boolean IsRotation(Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Rotation(gp_Pnt & Center) const;
+		%feature("autodoc","Rotation() -> gp_Pnt");
+
+		virtual		void Rotation(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Geom_Curve Section() const;
 		%feature("autodoc", "1");

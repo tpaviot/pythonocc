@@ -427,18 +427,19 @@ class AppParCurves_MultiCurve {
 		void Transform(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy, const Standard_Real z, const Standard_Real dz);
 		%feature("autodoc", "1");
 		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
-		%feature("autodoc", "1");
-		virtual		void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt) const;
+		%feature("autodoc","Value(Standard_Integer CuIndex, Standard_Real U) -> gp_Pnt");
+
+		virtual		void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Value(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt) const;
-		%feature("autodoc","D1(Standard_Integer CuIndex, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Integer CuIndex, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec &OutValue) const;
+		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void D1(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1) const;
-		%feature("autodoc","D2(Standard_Integer CuIndex, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D2(Standard_Integer CuIndex, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt & Pt, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2) const;
 		%feature("autodoc", "1");

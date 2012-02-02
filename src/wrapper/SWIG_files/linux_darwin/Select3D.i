@@ -933,8 +933,9 @@ class Select3D_Projector : public Standard_Transient {
 		%feature("autodoc","Transform() -> gp_Vec");
 
 		virtual		void Transform(gp_Vec &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void Transform(gp_Pnt & Pnt) const;
+		%feature("autodoc","Transform() -> gp_Pnt");
+
+		virtual		void Transform(gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Pnt P, gp_Pnt2d & Pout) const;
 		%feature("autodoc","Project(const P) -> [Standard_Real, Standard_Real, Standard_Real]");
@@ -952,8 +953,9 @@ class Select3D_Projector : public Standard_Transient {
 		Standard_Real DepthMax() const;
 		%feature("autodoc", "1");
 		void DepthMinMax(const Standard_Real theDepthMin, const Standard_Real theDepthMax);
-		%feature("autodoc", "1");
-		virtual		void Transform(gp_Pnt & Pnt, const gp_GTrsf T) const;
+		%feature("autodoc","Transform(const T) -> gp_Pnt");
+
+		virtual		void Transform(gp_Pnt &OutValue, const gp_GTrsf T) const;
 		%feature("autodoc", "1");
 		virtual		void Transform(gp_Lin & Lin, const gp_GTrsf T) const;
 		%feature("autodoc", "1");
@@ -1111,8 +1113,9 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
 		%feature("autodoc", "1");
 		virtual		Standard_Real ComputeDepth(const gp_Lin EyeLine) const;
-		%feature("autodoc", "1");
-		void Points3D(gp_Pnt & P1, gp_Pnt & P2, gp_Pnt & P3) const;
+		%feature("autodoc","Points3D() -> [gp_Pnt, gp_Pnt, gp_Pnt]");
+
+		void Points3D(gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt Center3D() const;
 		%feature("autodoc", "1");

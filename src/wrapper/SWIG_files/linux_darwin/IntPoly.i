@@ -385,8 +385,9 @@ class IntPoly_ShapeSection {
 		void InsertInMap();
 		%feature("autodoc", "1");
 		void Insert(const gp_Pnt OldPnt, const gp_Pnt ComPnt, const gp_Pnt NewPnt);
-		%feature("autodoc", "1");
-		Standard_Integer Concat(const gp_Pnt BegPnt, const gp_Pnt EndPnt, gp_Pnt & OutPnt);
+		%feature("autodoc","Concat(const BegPnt, const EndPnt) -> gp_Pnt");
+
+		Standard_Integer Concat(const gp_Pnt BegPnt, const gp_Pnt EndPnt, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		void ConcatSection(TColgp_SequenceOfPnt & Section, const Standard_Integer NbSection, const Standard_Integer Index);
 		%feature("autodoc", "1");

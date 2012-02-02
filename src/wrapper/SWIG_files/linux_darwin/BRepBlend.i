@@ -796,9 +796,9 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 		void Set(const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> gp_Vec");
+		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> [gp_Pnt, gp_Vec]");
 
-		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec &OutValue) const;
+		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
 
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);
@@ -1236,17 +1236,18 @@ class BRepBlend_HCurveTool {
 		static		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(const C, Standard_Real U) -> gp_Pnt");
 
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
@@ -1890,9 +1891,9 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 		void Set(const Standard_Real Radius, const Standard_Integer Choix);
 		%feature("autodoc", "1");
 		void Set(const BlendFunc_SectionShape TypeSection);
-		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> gp_Vec");
+		%feature("autodoc","CenterCircleRst1Rst2(const PtRst1, const PtRst2, const np) -> [gp_Pnt, gp_Vec]");
 
-		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt & Center, gp_Vec &OutValue) const;
+		Standard_Boolean CenterCircleRst1Rst2(const gp_Pnt PtRst1, const gp_Pnt PtRst2, const gp_Vec np, gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc","Section(Standard_Real Param, Standard_Real U, Standard_Real V) -> [Standard_Real, Standard_Real]");
 
 		void Section(const Standard_Real Param, const Standard_Real U, const Standard_Real V, Standard_Real &OutValue, Standard_Real &OutValue, gp_Circ & C);

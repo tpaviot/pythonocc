@@ -804,14 +804,15 @@ class ChFiDS_Spine : public MMgt_TShared {
 		void Parameter(const Standard_Integer Index, const Standard_Real AbsC, Standard_Real &OutValue, const Standard_Boolean Oriented=1);
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real AbsC);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real AbsC, gp_Pnt & P);
-		%feature("autodoc","D1(Standard_Real AbsC) -> gp_Vec");
+		%feature("autodoc","D0(Standard_Real AbsC) -> gp_Pnt");
 
-		void D1(const Standard_Real AbsC, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(Standard_Real AbsC) -> [gp_Vec, gp_Vec]");
+		void D0(const Standard_Real AbsC, gp_Pnt &OutValue);
+		%feature("autodoc","D1(Standard_Real AbsC) -> [gp_Pnt, gp_Vec]");
 
-		void D2(const Standard_Real AbsC, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		void D1(const Standard_Real AbsC, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(Standard_Real AbsC) -> [gp_Pnt, gp_Vec, gp_Vec]");
+
+		void D2(const Standard_Real AbsC, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		void SetCurrent(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -1430,29 +1431,30 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 		virtual		Standard_Real Period() const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt Value(const Standard_Real AbsC) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real AbsC, gp_Pnt & P) const;
-		%feature("autodoc","D1(Standard_Real AbsC) -> gp_Vec");
+		%feature("autodoc","D0(Standard_Real AbsC) -> gp_Pnt");
 
-		virtual		void D1(const Standard_Real AbsC, gp_Pnt & P, gp_Vec &OutValue) const;
-		%feature("autodoc","D2(Standard_Real AbsC) -> [gp_Vec, gp_Vec]");
+		virtual		void D0(const Standard_Real AbsC, gp_Pnt &OutValue) const;
+		%feature("autodoc","D1(Standard_Real AbsC) -> [gp_Pnt, gp_Vec]");
 
-		virtual		void D2(const Standard_Real AbsC, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue) const;
-		%feature("autodoc","D3(Standard_Real AbsC) -> [gp_Vec, gp_Vec, gp_Vec]");
+		virtual		void D1(const Standard_Real AbsC, gp_Pnt &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D2(Standard_Real AbsC) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		virtual		void D3(const Standard_Real AbsC, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		virtual		void D2(const Standard_Real AbsC, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","D3(Standard_Real AbsC) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		virtual		void D3(const Standard_Real AbsC, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void FirstParameter(const Standard_Real P);
 		%feature("autodoc", "1");
 		void LastParameter(const Standard_Real P);
 		%feature("autodoc", "1");
 		void SetOrigin(const Standard_Real O);
-		%feature("autodoc","FirstPointAndTgt() -> gp_Vec");
+		%feature("autodoc","FirstPointAndTgt() -> [gp_Pnt, gp_Vec]");
 
-		void FirstPointAndTgt(gp_Pnt & P, gp_Vec &OutValue) const;
-		%feature("autodoc","LastPointAndTgt() -> gp_Vec");
+		void FirstPointAndTgt(gp_Pnt &OutValue, gp_Vec &OutValue) const;
+		%feature("autodoc","LastPointAndTgt() -> [gp_Pnt, gp_Vec]");
 
-		void LastPointAndTgt(gp_Pnt & P, gp_Vec &OutValue) const;
+		void LastPointAndTgt(gp_Pnt &OutValue, gp_Vec &OutValue) const;
 		%feature("autodoc", "1");
 		void SetFirstPointAndTgt(const gp_Pnt P, const gp_Vec T);
 		%feature("autodoc", "1");

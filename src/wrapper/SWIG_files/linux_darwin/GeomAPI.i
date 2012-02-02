@@ -102,15 +102,17 @@ class GeomAPI_ExtremaSurfaceSurface {
 		void Init(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter V1min, const Quantity_Parameter V1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max, const Quantity_Parameter V2min, const Quantity_Parameter V2max);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Points(Standard_Integer Index) -> [gp_Pnt, gp_Pnt]");
+
+		void Points(const Standard_Integer Index, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","NearestPoints() -> [gp_Pnt, gp_Pnt]");
+
+		void NearestPoints(gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -265,15 +267,17 @@ class GeomAPI_ExtremaCurveSurface {
 		void Init(const Handle_Geom_Curve &Curve, const Handle_Geom_Surface &Surface, const Quantity_Parameter Wmin, const Quantity_Parameter Wmax, const Quantity_Parameter Umin, const Quantity_Parameter Umax, const Quantity_Parameter Vmin, const Quantity_Parameter Vmax);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Points(Standard_Integer Index) -> [gp_Pnt, gp_Pnt]");
+
+		void Points(const Standard_Integer Index, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & PC, gp_Pnt & PS) const;
+		%feature("autodoc","NearestPoints() -> [gp_Pnt, gp_Pnt]");
+
+		void NearestPoints(gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -449,15 +453,17 @@ class GeomAPI_ExtremaCurveCurve {
 		void Init(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2, const Quantity_Parameter U1min, const Quantity_Parameter U1max, const Quantity_Parameter U2min, const Quantity_Parameter U2max);
 		%feature("autodoc", "1");
 		Standard_Integer NbExtrema() const;
-		%feature("autodoc", "1");
-		void Points(const Standard_Integer Index, gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","Points(Standard_Integer Index) -> [gp_Pnt, gp_Pnt]");
+
+		void Points(const Standard_Integer Index, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
 
 		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void NearestPoints(gp_Pnt & P1, gp_Pnt & P2) const;
+		%feature("autodoc","NearestPoints() -> [gp_Pnt, gp_Pnt]");
+
+		void NearestPoints(gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 		%feature("autodoc","LowerDistanceParameters() -> [Standard_Real, Standard_Real]");
 
 		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -465,8 +471,9 @@ class GeomAPI_ExtremaCurveCurve {
 		Quantity_Length LowerDistance() const;
 		%feature("autodoc", "1");
 		const Extrema_ExtCC & Extrema() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TotalNearestPoints(gp_Pnt & P1, gp_Pnt & P2);
+		%feature("autodoc","TotalNearestPoints() -> [gp_Pnt, gp_Pnt]");
+
+		Standard_Boolean TotalNearestPoints(gp_Pnt &OutValue, gp_Pnt &OutValue);
 		%feature("autodoc","TotalLowerDistanceParameters() -> [Standard_Real, Standard_Real]");
 
 		Standard_Boolean TotalLowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue);

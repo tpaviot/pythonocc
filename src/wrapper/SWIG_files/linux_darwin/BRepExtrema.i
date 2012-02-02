@@ -102,9 +102,9 @@ class BRepExtrema_Poly {
 	public:
 		%feature("autodoc", "1");
 		BRepExtrema_Poly();
-		%feature("autodoc","Distance(const S1, const S2) -> Standard_Real");
+		%feature("autodoc","Distance(const S1, const S2) -> [gp_Pnt, gp_Pnt, Standard_Real]");
 
-		static		Standard_Boolean Distance(const TopoDS_Shape S1, const TopoDS_Shape S2, gp_Pnt & P1, gp_Pnt & P2, Standard_Real &OutValue);
+		static		Standard_Boolean Distance(const TopoDS_Shape S1, const TopoDS_Shape S2, gp_Pnt &OutValue, gp_Pnt &OutValue, Standard_Real &OutValue);
 
 };
 %feature("shadow") BRepExtrema_Poly::~BRepExtrema_Poly %{
@@ -237,9 +237,9 @@ class BRepExtrema_ExtCC {
 		Standard_Real ParameterOnE2(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt PointOnE2(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, gp_Pnt, gp_Pnt, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & P11, gp_Pnt & P12, gp_Pnt & P21, gp_Pnt & P22) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") BRepExtrema_ExtCC::~BRepExtrema_ExtCC %{
@@ -318,9 +318,9 @@ class BRepExtrema_ExtPC {
 		Standard_Real Parameter(const Standard_Integer N) const;
 		%feature("autodoc", "1");
 		gp_Pnt Point(const Standard_Integer N) const;
-		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","TrimmedSquareDistances() -> [Standard_Real, Standard_Real, gp_Pnt, gp_Pnt]");
 
-		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & pnt1, gp_Pnt & pnt2) const;
+		void TrimmedSquareDistances(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt &OutValue) const;
 
 };
 %feature("shadow") BRepExtrema_ExtPC::~BRepExtrema_ExtPC %{

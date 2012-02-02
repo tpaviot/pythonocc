@@ -142,26 +142,27 @@ class BRepClass3d_SolidExplorer {
 		void InitShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Reject(const gp_Pnt P) const;
-		%feature("autodoc","FindAPointInTheFace(const F) -> Standard_Real");
+		%feature("autodoc","FindAPointInTheFace(const F) -> [gp_Pnt, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real]");
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","FindAPointInTheFace(const F) -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real]");
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","FindAPointInTheFace(const F) -> [gp_Pnt, Standard_Real, Standard_Real]");
 
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P);
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","FindAPointInTheFace(const F) -> gp_Pnt");
+
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue);
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real]");
 
 		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","PointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
+		%feature("autodoc","PointInTheFace(const F) -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
-		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
+		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
-		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
+		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
 		%feature("autodoc", "1");
 		void InitShell();
 		%feature("autodoc", "1");

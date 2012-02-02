@@ -384,9 +384,9 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 		Standard_Boolean HasSingularities(const Standard_Real preci);
 		%feature("autodoc", "1");
 		Standard_Integer NbSingularities(const Standard_Real preci);
-		%feature("autodoc","Singularity(Standard_Integer num) -> [Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Singularity(Standard_Integer num) -> [Standard_Real, gp_Pnt, Standard_Real, Standard_Real]");
 
-		Standard_Boolean Singularity(const Standard_Integer num, Standard_Real &OutValue, gp_Pnt & P3d, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & uisodeg);
+		Standard_Boolean Singularity(const Standard_Integer num, Standard_Real &OutValue, gp_Pnt &OutValue, gp_Pnt2d & firstP2d, gp_Pnt2d & lastP2d, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & uisodeg);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDegenerated(const gp_Pnt P3d, const Standard_Real preci);
 		%feature("autodoc","DegeneratedValues(const P3d, Standard_Real preci, Standard_Boolean forward=1) -> [Standard_Real, Standard_Real]");
@@ -840,24 +840,24 @@ class ShapeAnalysis_Curve {
 	public:
 		%feature("autodoc", "1");
 		ShapeAnalysis_Curve();
-		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Boolean AdjustToEnds=1) -> Standard_Real");
+		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Boolean AdjustToEnds=1) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
-		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Boolean AdjustToEnds=1) -> Standard_Real");
+		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
+		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Boolean AdjustToEnds=1) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real Project(const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
-		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Real cf, Standard_Real cl, Standard_Boolean AdjustToEnds=1) -> Standard_Real");
+		Standard_Real Project(const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue, const Standard_Boolean AdjustToEnds=1) const;
+		%feature("autodoc","Project(const C3D, const P3D, Standard_Real preci, Standard_Real cf, Standard_Real cl, Standard_Boolean AdjustToEnds=1) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Real cf, const Standard_Real cl, const Standard_Boolean AdjustToEnds=1) const;
-		%feature("autodoc","ProjectAct(const C3D, const P3D, Standard_Real preci) -> Standard_Real");
+		Standard_Real Project(const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue, const Standard_Real cf, const Standard_Real cl, const Standard_Boolean AdjustToEnds=1) const;
+		%feature("autodoc","ProjectAct(const C3D, const P3D, Standard_Real preci) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real ProjectAct(const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue) const;
-		%feature("autodoc","NextProject(Standard_Real paramPrev, const C3D, const P3D, Standard_Real preci, Standard_Real cf, Standard_Real cl, Standard_Boolean AdjustToEnds=1) -> Standard_Real");
+		Standard_Real ProjectAct(const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","NextProject(Standard_Real paramPrev, const C3D, const P3D, Standard_Real preci, Standard_Real cf, Standard_Real cl, Standard_Boolean AdjustToEnds=1) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real NextProject(const Standard_Real paramPrev, const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue, const Standard_Real cf, const Standard_Real cl, const Standard_Boolean AdjustToEnds=1) const;
-		%feature("autodoc","NextProject(Standard_Real paramPrev, const C3D, const P3D, Standard_Real preci) -> Standard_Real");
+		Standard_Real NextProject(const Standard_Real paramPrev, const Handle_Geom_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue, const Standard_Real cf, const Standard_Real cl, const Standard_Boolean AdjustToEnds=1) const;
+		%feature("autodoc","NextProject(Standard_Real paramPrev, const C3D, const P3D, Standard_Real preci) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Real NextProject(const Standard_Real paramPrev, const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt & proj, Standard_Real &OutValue) const;
+		Standard_Real NextProject(const Standard_Real paramPrev, const Adaptor3d_Curve &C3D, const gp_Pnt P3D, const Standard_Real preci, gp_Pnt &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ValidateRange(const Crv, Standard_Real prec) -> [Standard_Real, Standard_Real]");
 
 		Standard_Boolean ValidateRange(const Handle_Geom_Curve &Crv, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real prec) const;
@@ -1250,9 +1250,9 @@ class ShapeAnalysis_CheckSmallFace {
 	public:
 		%feature("autodoc", "1");
 		ShapeAnalysis_CheckSmallFace();
-		%feature("autodoc","IsSpotFace(const F, Standard_Real tol=-1.0e+0) -> Standard_Real");
+		%feature("autodoc","IsSpotFace(const F, Standard_Real tol=-1.0e+0) -> [gp_Pnt, Standard_Real]");
 
-		Standard_Integer IsSpotFace(const TopoDS_Face F, gp_Pnt & spot, Standard_Real &OutValue, const Standard_Real tol=-1.0e+0) const;
+		Standard_Integer IsSpotFace(const TopoDS_Face F, gp_Pnt &OutValue, Standard_Real &OutValue, const Standard_Real tol=-1.0e+0) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CheckSpotFace(const TopoDS_Face F, const Standard_Real tol=-1.0e+0);
 		%feature("autodoc", "1");

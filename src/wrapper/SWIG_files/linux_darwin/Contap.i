@@ -833,15 +833,15 @@ class Contap_TheSurfPropsOfContour {
 	public:
 		%feature("autodoc", "1");
 		Contap_TheSurfPropsOfContour();
-		%feature("autodoc","Normale(const S, Standard_Real U, Standard_Real V) -> gp_Vec");
+		%feature("autodoc","Normale(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec]");
 
-		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","DerivAndNorm(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","DerivAndNorm(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","NormAndDn(const S, Standard_Real U, Standard_Real V) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","NormAndDn(const S, Standard_Real U, Standard_Real V) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 
 };
 %feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{
@@ -1218,9 +1218,9 @@ class Contap_HContTool {
 		static		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		static		Standard_Integer NbPoints(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc","Value(const C, Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","Value(const C, Standard_Integer Index) -> [gp_Pnt, Standard_Real, Standard_Real]");
 
-		static		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt & Pt, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsVertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index);
 		%feature("autodoc", "1");

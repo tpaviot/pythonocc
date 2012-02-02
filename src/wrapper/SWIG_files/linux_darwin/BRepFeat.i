@@ -179,8 +179,9 @@ class BRepFeat {
 		BRepFeat();
 		%feature("autodoc", "1");
 		static		void SampleEdges(const TopoDS_Shape S, TColgp_SequenceOfPnt & Pt);
-		%feature("autodoc", "1");
-		static		void Barycenter(const TopoDS_Shape S, gp_Pnt & Pt);
+		%feature("autodoc","Barycenter(const S) -> gp_Pnt");
+
+		static		void Barycenter(const TopoDS_Shape S, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Real ParametricBarycenter(const TopoDS_Shape S, const Handle_Geom_Curve &C);
 		%feature("autodoc","ParametricMinMax(const S, const C, Standard_Boolean Ori=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");

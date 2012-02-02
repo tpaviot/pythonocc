@@ -861,9 +861,9 @@ class IntPatch_ALine : public IntPatch_Line {
 		Standard_Real LastParameter(Standard_Boolean & IsIncluded) const;
 		%feature("autodoc", "1");
 		gp_Pnt Value(const Standard_Real U);
-		%feature("autodoc","D1(Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		Standard_Boolean D1(const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
+		Standard_Boolean D1(const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
 		%feature("autodoc","FindParameter(const P) -> Standard_Real");
 
 		Standard_Boolean FindParameter(const gp_Pnt P, Standard_Real &OutValue) const;
@@ -1968,9 +1968,9 @@ class IntPatch_HInterTool {
 		static		Standard_Real Parameter(const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
 		static		Standard_Integer NbPoints(const Handle_Adaptor2d_HCurve2d &C);
-		%feature("autodoc","Value(const C, Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","Value(const C, Standard_Integer Index) -> [gp_Pnt, Standard_Real, Standard_Real]");
 
-		static		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt & Pt, Standard_Real &OutValue, Standard_Real &OutValue);
+		static		void Value(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsVertex(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index);
 		%feature("autodoc", "1");

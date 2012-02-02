@@ -1916,8 +1916,9 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 		void Set(const gp_Pnt pnt);
 		%feature("autodoc", "1");
 		gp_Pnt Get() const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean Get(const TDF_Label &label, gp_Pnt & pnt);
+		%feature("autodoc","Get(const label) -> gp_Pnt");
+
+		static		Standard_Boolean Get(const TDF_Label &label, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");

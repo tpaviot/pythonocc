@@ -2299,12 +2299,12 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 		gp_Dir Axis() const;
 		%feature("autodoc", "1");
 		gp_Dir TransformedAxis() const;
-		%feature("autodoc","Definition() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","Definition() -> [gp_Pnt, Standard_Real, Standard_Real]");
 
-		void Definition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","TransformedDefinition() -> [Standard_Real, Standard_Real]");
+		void Definition(gp_Pnt &OutValue, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","TransformedDefinition() -> [gp_Pnt, Standard_Real, Standard_Real]");
 
-		void TransformedDefinition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void TransformedDefinition(gp_Pnt &OutValue, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","ComputedDefinition() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;

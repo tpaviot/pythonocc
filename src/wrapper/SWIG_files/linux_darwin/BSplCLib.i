@@ -219,51 +219,53 @@ class BSplCLib {
 		%feature("autodoc","D0(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> Standard_Real");
 
 		static		void D0(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		void D0(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt & P);
+		%feature("autodoc","D0(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> gp_Pnt");
+
+		static		void D0(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void D0(const Standard_Real U, const Standard_Integer UIndex, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt2d & P);
-		%feature("autodoc", "1");
-		static		void D0(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P);
+		%feature("autodoc","D0(Standard_Real U, const Poles, const Weights) -> gp_Pnt");
+
+		static		void D0(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void D0(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P);
 		%feature("autodoc","D1(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [Standard_Real, Standard_Real]");
 
 		static		void D1(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D1(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [gp_Pnt, gp_Vec]");
 
-		static		void D1(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt & P, gp_Vec &OutValue);
+		static		void D1(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D1(const Standard_Real U, const Standard_Integer UIndex, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt2d & P, gp_Vec2d & V);
-		%feature("autodoc","D1(Standard_Real U, const Poles, const Weights) -> gp_Vec");
+		%feature("autodoc","D1(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec]");
 
-		static		void D1(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue);
+		static		void D1(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D1(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & V);
 		%feature("autodoc","D2(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void D2(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D2(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D2(const Standard_Real U, const Standard_Integer UIndex, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
-		%feature("autodoc","D2(Standard_Real U, const Poles, const Weights) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","D2(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D2(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D2(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2);
 		%feature("autodoc","D3(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void D3(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D3(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [gp_Vec, gp_Vec, gp_Vec]");
+		%feature("autodoc","D3(Standard_Real U, Standard_Integer Index, Standard_Integer Degree, Standard_Boolean Periodic, const Poles, const Weights, const Knots, const Mults) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void D3(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D3(const Standard_Real U, const Standard_Integer Index, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D3(const Standard_Real U, const Standard_Integer UIndex, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
-		%feature("autodoc","D3(Standard_Real U, const Poles, const Weights) -> [gp_Vec, gp_Vec, gp_Vec]");
+		%feature("autodoc","D3(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void D3(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D3(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void D3(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc","EvalBsplineBasis(Standard_Integer Side, Standard_Integer DerivativeOrder, Standard_Integer Order, const FlatKnots, Standard_Real Parameter) -> Standard_Integer");
@@ -298,51 +300,53 @@ class BSplCLib {
 		%feature("autodoc","Eval(Standard_Real U, Standard_Boolean PeriodicFlag, Standard_Integer DerivativeRequest, Standard_Integer Degree, const FlatKnots, Standard_Integer ArrayDimension) -> [Standard_Integer, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","Eval(Standard_Real U, Standard_Boolean PeriodicFlag, Standard_Boolean HomogeneousFlag, Standard_Integer Degree, const FlatKnots, const Poles, const Weights) -> [Standard_Integer, Standard_Real]");
+		%feature("autodoc","Eval(Standard_Real U, Standard_Boolean PeriodicFlag, Standard_Boolean HomogeneousFlag, Standard_Integer Degree, const FlatKnots, const Poles, const Weights) -> [Standard_Integer, gp_Pnt, Standard_Real]");
 
-		static		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, Standard_Real &OutValue);
+		static		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, Standard_Real &OutValue);
 		%feature("autodoc","Eval(Standard_Real U, Standard_Boolean PeriodicFlag, Standard_Boolean HomogeneousFlag, Standard_Integer Degree, const FlatKnots, const Poles, const Weights) -> [Standard_Integer, Standard_Real]");
 
 		static		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, Standard_Real &OutValue);
 		%feature("autodoc","TangExtendToConstraint(const FlatKnots, Standard_Real C1Coefficient, Standard_Integer NumPoles, Standard_Integer Dimension, Standard_Integer Degree, const ConstraintPoint, Standard_Integer Continuity, Standard_Boolean After) -> [Standard_Real, Standard_Integer, Standard_Integer, Standard_Real, Standard_Real]");
 
 		static		void TangExtendToConstraint(const TColStd_Array1OfReal &FlatKnots, const Standard_Real C1Coefficient, const Standard_Integer NumPoles, Standard_Real &OutValue, const Standard_Integer Dimension, const Standard_Integer Degree, const TColStd_Array1OfReal &ConstraintPoint, const Standard_Integer Continuity, const Standard_Boolean After, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		void CacheD0(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point);
+		%feature("autodoc","CacheD0(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> gp_Pnt");
+
+		static		void CacheD0(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void CacheD0(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point);
-		%feature("autodoc", "1");
-		static		void CoefsD0(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P);
+		%feature("autodoc","CoefsD0(Standard_Real U, const Poles, const Weights) -> gp_Pnt");
+
+		static		void CoefsD0(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue);
 		%feature("autodoc", "1");
 		static		void CoefsD0(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P);
-		%feature("autodoc","CacheD1(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> gp_Vec");
+		%feature("autodoc","CacheD1(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> [gp_Pnt, gp_Vec]");
 
-		static		void CacheD1(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, gp_Vec &OutValue);
+		static		void CacheD1(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CacheD1(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, gp_Vec2d & Vec);
-		%feature("autodoc","CoefsD1(Standard_Real U, const Poles, const Weights) -> gp_Vec");
+		%feature("autodoc","CoefsD1(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec]");
 
-		static		void CoefsD1(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue);
+		static		void CoefsD1(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CoefsD1(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & Vec);
-		%feature("autodoc","CacheD2(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","CacheD2(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void CacheD2(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void CacheD2(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CacheD2(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, gp_Vec2d & Vec1, gp_Vec2d & Vec2);
-		%feature("autodoc","CoefsD2(Standard_Real U, const Poles, const Weights) -> [gp_Vec, gp_Vec]");
+		%feature("autodoc","CoefsD2(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void CoefsD2(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void CoefsD2(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CoefsD2(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & Vec1, gp_Vec2d & Vec2);
-		%feature("autodoc","CacheD3(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> [gp_Vec, gp_Vec, gp_Vec]");
+		%feature("autodoc","CacheD3(Standard_Real U, Standard_Integer Degree, Standard_Real CacheParameter, Standard_Real SpanLenght, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void CacheD3(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void CacheD3(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CacheD3(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, gp_Vec2d & Vec1, gp_Vec2d & Vec2, gp_Vec2d & Vec3);
-		%feature("autodoc","CoefsD3(Standard_Real U, const Poles, const Weights) -> [gp_Vec, gp_Vec, gp_Vec]");
+		%feature("autodoc","CoefsD3(Standard_Real U, const Poles, const Weights) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
 
-		static		void CoefsD3(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void CoefsD3(const Standard_Real U, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		void CoefsD3(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & Vec1, gp_Vec2d & Vec2, gp_Vec2d & Vec3);
 		%feature("autodoc", "1");

@@ -289,9 +289,9 @@ class IntCurveSurface_IntersectionPoint {
 		IntCurveSurface_IntersectionPoint(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
 		%feature("autodoc", "1");
 		void SetValues(const gp_Pnt P, const Standard_Real USurf, const Standard_Real VSurf, const Standard_Real UCurv, const IntCurveSurface_TransitionOnCurve TrCurv);
-		%feature("autodoc","Values() -> [Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Values() -> [gp_Pnt, Standard_Real, Standard_Real, Standard_Real]");
 
-		void Values(gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
+		void Values(gp_Pnt &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, IntCurveSurface_TransitionOnCurve & TrCurv) const;
 		%feature("autodoc", "1");
 		const gp_Pnt  Pnt() const;
 		%feature("autodoc", "1");
@@ -754,17 +754,18 @@ class IntCurveSurface_TheHCurveTool {
 		static		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc","D1(const C, Standard_Real U) -> gp_Vec");
+		%feature("autodoc","D0(const C, Standard_Real U) -> gp_Pnt");
 
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue);
-		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Vec, gp_Vec]");
+		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue);
+		%feature("autodoc","D1(const C, Standard_Real U) -> [gp_Pnt, gp_Vec]");
 
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue);
-		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Vec, gp_Vec, gp_Vec]");
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D2(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec]");
 
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
+		%feature("autodoc","D3(const C, Standard_Real U) -> [gp_Pnt, gp_Vec, gp_Vec, gp_Vec]");
+
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt &OutValue, gp_Vec &OutValue, gp_Vec &OutValue, gp_Vec &OutValue);
 		%feature("autodoc", "1");
 		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
 		%feature("autodoc", "1");
