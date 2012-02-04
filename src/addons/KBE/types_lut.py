@@ -2,7 +2,7 @@
 this class abstract types
 '''
 from OCC.GeomAbs import *
-from OCC.TopoDS import TopoDS
+from OCC.TopoDS import *
 from OCC.TopAbs import *
 
 class ShapeToTopology(object):
@@ -11,7 +11,8 @@ class ShapeToTopology(object):
     '''
     def __init__(self):
         self.tds =  TopoDS()
-        self.topoTypes = {   TopAbs_VERTEX:      self.tds.vertex,
+        self.topoTypes = {
+                        TopAbs_VERTEX:      self.tds.vertex,
                         TopAbs_EDGE:        self.tds.edge,
                         TopAbs_FACE:        self.tds.face,
                         TopAbs_WIRE:        self.tds.wire,
