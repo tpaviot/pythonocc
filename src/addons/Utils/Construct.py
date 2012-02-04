@@ -155,6 +155,8 @@ gp_Ax1.__repr__ = gp_ax1_print
 gp_Ax1.__str__ = gp_ax1_print
 gp_Trsf.__repr__ = gp_trsf_print
 gp_Trsf.__str__ = gp_trsf_print
+gp_Quaternion.__repr__ = gp_quat_print
+gp_Quaternion.__str__ = gp_quat_print
 #gp_Pnt.__eq__ = gp_equal
 gp_Pnt.__add__ = gp_pnt_add
 gp_Pnt.__sub__ = gp_pnt_sub
@@ -416,7 +418,6 @@ def make_oriented_box(v_corner, v_x, v_y, v_z):
 
     bottom = make_face(p)
     top = translate_topods_from_vector(bottom, v_z, True)
-
     oriented_bbox = make_solid(sew_shapes([bottom, shp, top]))
     return oriented_bbox
 
