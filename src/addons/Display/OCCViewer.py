@@ -324,7 +324,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                           'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
                           'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE, }
             color = dict_color[color]
-        elif isinstance(color, Quantity_Color):
+        elif isinstance(color, OCC.Quantity.Quantity_Color):
             pass
         else:
             raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
