@@ -289,7 +289,9 @@ SET(VISUALIZATION_SOURCE_FILES
 	src/wrapper/Visualization/Visualization.i
 	src/wrapper/Visualization/Display3d.cpp
 	src/wrapper/Visualization/Display2d.cpp
-	src/wrapper/Visualization/NISDisplay3d.cpp)
+	src/wrapper/Visualization/NISDisplay3d.cpp
+	src/wrapper/Visualization/Tesselator.cpp
+	)
 SWIG_ADD_MODULE(Visualization python ${VISUALIZATION_SOURCE_FILES})
 SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
 
