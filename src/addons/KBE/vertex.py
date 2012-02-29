@@ -1,6 +1,6 @@
 
 #from OCC.Utils.Construct import make_vertex
-from OCC.BRepPrimAPI import BRepBuilderAPI_MakeVertex
+from OCC.BRepPrimAPI import *
 
 from OCC.Utils.Construct import make_vertex
 

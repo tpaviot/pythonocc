@@ -239,6 +239,22 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
 
+    def DisplayVector(self, vec, pnt, update=False):
+        if self._inited:
+            arrow = Prs3d_Arrow()
+            arrow.Draw(
+                self.aPresentation.GetHandle(),
+                (pnt.as_vec() + vec).as_pnt(),
+                gp_Dir(vec),
+                math.radians(20),
+                vec.Magnitude()
+            )
+            self.aPresentation.Display()
+            # it would be more coherent if a AIS_InteractiveObject would be returned
+            if update:
+                self.Repaint()
+            return self.aPresentation
+
     def DisplayMessage(self,point,text_to_write, message_color=None, update=True):
         """
         :point: a gp_Pnt instance
