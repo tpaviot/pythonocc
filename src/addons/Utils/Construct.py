@@ -192,6 +192,14 @@ def make_face(*args):
         face.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakeEdge2d)
+def make_edge2d(*args):
+    edge = BRepBuilderAPI_MakeEdge2d(*args)
+    with assert_isdone(edge, 'failed to produce edge'):
+        result = edge.Edge()
+        edge.Delete()
+    return result
+
 @wraps(BRepBuilderAPI_MakeEdge)
 def make_edge(*args):
     edge = BRepBuilderAPI_MakeEdge(*args)

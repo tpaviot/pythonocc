@@ -90,9 +90,31 @@ def length_dimension(event=None):
         dimension_from_face_edge(a,b)
     display.FitAll()
 
+def angle_dimension(event=None):
+    display.EraseAll()
+    # TopoDS_Edge aFirstEdge, TopoDS_Edge aSecondEdge, Handle_Geom_Plane aPlane,Standard_Real aVal, TCollection_ExtendedString aText)
+    box = make_box(1,1,1)
+    tp = Topo(box)
+    faces = [f for f in tp.faces()]
+    f1 = faces[0]
+    f2 = faces[5]
+    wi1 = Topo(f1).wires().next()
+    wi2 = Topo(f2).wires().next()
+    we1 = [e for e in WireExplorer(wi1).ordered_edges()]
+    we2 = [e for e in WireExplorer(wi2).ordered_edges()]
+    pl1 = find_plane_from_shape(f1)
+    pl2 = find_plane_from_shape(f2)
+    dim1 = AIS_AngleDimension( we1[0], we1[1], pl1.GetHandle(), math.degrees(90), to_string('1 - 90.0') )
+    dim2 = AIS_AngleDimension( we2[0], we2[1], pl2.GetHandle(), 90.0, to_string('2 - 90.0') )
+    display.Context.Display(dim1.GetHandle())
+    display.Context.Display(dim2.GetHandle())
+    display.DisplayShape(box)
+    display.FitAll()
+
 if __name__ == '__main__':
     add_menu('dimension')
     add_function_to_menu('dimension', radius_dimension)
     add_function_to_menu('dimension', length_dimension)
+    add_function_to_menu('dimension', angle_dimension)
     display.EnableAntiAliasing()
     start_display()

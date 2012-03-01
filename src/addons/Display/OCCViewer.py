@@ -19,8 +19,7 @@ from OCC.TopoDS import *
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.Utils.Common import to_string
-from OCC.Utils.Construct import color
-
+from OCC.Utils.Construct import color, gp_Dir
 import OCC.Visualization
 import OCC.V3d
 import OCC.V2d
