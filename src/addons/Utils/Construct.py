@@ -52,7 +52,7 @@ from OCC.Utils.Context import assert_isdone
 from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
-import warnings, operator
+import warnings, operator, math
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -113,8 +113,8 @@ def gp_trsf_print(self):
 def gp_quat_print(self):
     w,x,y,z = self.W(), self.X(), self.Y(), self.Z()
     vec = gp_Vec()
-    angle = self.GetVectorAndAngle(vec)
-    return "< gp_Quaternion: {w}, {x}, {y}, {z} >\nvector:{vec} angle:{angle}".format(**vars())
+    angle = math.degrees(self.GetVectorAndAngle(vec))
+    return "< gp_Quaternion: w:{w}, x:{x}, y:{y}, z:{z} >\nvector:{vec} angle:{angle}".format(**vars())
 
 def _apply(pnt, other, _operator):
     if isinstance(other, gp_Pnt):

@@ -32,7 +32,7 @@ from OCC import Prs3d
 from OCC.Prs3d import Prs3d_Arrow
 from OCC.Quantity import Quantity_Color
 
-import os, os.path, types, sys, subprocess
+import os, os.path, types, sys, subprocess, math
 
 try:
     import OCC.NIS
