@@ -81,6 +81,17 @@ def get_boundingbox(shape, tol=1e-12):
     BRepBndLib_Add(shape, bbox)
     return bbox
 
+def smooth_pnts(pnts):
+    smooth = [pnts[0]]
+    for i in range(1, len(pnts)-1):
+        prev = pnts[i-1]
+        this = pnts[i]
+        next = pnts[i+1]
+        pt = (prev+this+next) / 3.0
+        smooth.append(pt)
+    smooth.append(pnts[-1])
+    return smooth
+
 #===============================================================================
 # Data type utilities
 #===============================================================================
@@ -559,6 +570,18 @@ def project_point_on_curve(crv, pnt):
     from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
     rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
     return rrr.LowerDistanceParameter(), rrr.NearestPoint()
+
+def project_point_on_plane( plane, point ):
+    '''
+    project point on plane
+    @param plane: Geom_Plane
+    @param point: gp_Pnt
+    '''
+    pl = plane.Pln()
+    ppp = ProjLib()
+    aa, bb  = ppp.Project(pl, point).Coord()
+    point = plane.Value(aa,bb)
+    return point
 
 def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, max_order=12):
     '''

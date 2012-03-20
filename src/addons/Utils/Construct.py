@@ -310,7 +310,10 @@ def make_prism_shell(profile, vec):
     '''
     return BRepOffsetAPI_MakePipeShell()
 
-def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=BRepOffset_Skin, intersection=False, selfintersection=False, joinType=GeomAbs_Arc):
+def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE,
+                      offsetMode=BRepOffset_Skin, intersection=False,
+                      selfintersection=False, joinType=GeomAbs_Arc):
+    # TODO: refactor assert_isdone
     '''
     builds an offsetted shell from a shape
     construct an offsetted version of the shape
@@ -324,11 +327,15 @@ def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offset
                                                    selfintersection,
                                                     joinType
                                                     )
-        return offset.Shape()
+        if offset.IsDone():
+            return offset.Shape()
+        else:
+            return None
     except RuntimeError('failed to offset shape'):
         return None
 
 def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
+    # TODO: refactor assert_isdone
     '''
     builds a offsetted wire or face from a wire or face
     construct an offsetted version of the shape
@@ -348,7 +355,10 @@ def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
     try:
         offset = BRepOffsetAPI_MakeOffset(wire_or_face,joinType)
         offset.Perform(offsetDistance, altitude)
-        return ST(offset.Shape())
+        if offset.IsDone():
+            return ST(offset.Shape())
+        else:
+            return None
     except RuntimeError('failed to offset shape'):
         return None
 
@@ -479,22 +489,24 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     :param continuity: GeomAbs_0, 1, 2
     :return: TopoDS_Face
     """
-    n_sided = BRepFill_Filling()
-    n_sided.SetApproxParam(6, 40)
-    n_sided.SetResolParam(3, 20, 20, False)
+    n_sided = BRepFill_Filling(NbIter=6)
+    #n_sided.SetApproxParam( 6, 40)
+    #n_sided.SetResolParam( 3, 20, 20, False)
     for edg in edges:
         n_sided.Add(edg, continuity)
     for pt in points:
         n_sided.Add(pt)
     n_sided.Build()
-    face  = n_sided.Face()
+    #if n_sided.IsDone():
+    face  = n_sided.Face()  
     return face
-
+    
 def make_n_sections(edges):
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
     n_sec = BRepFill_NSections(seq)
+    return n_sec
 
 
 def make_coons(edges):
@@ -691,12 +703,14 @@ def translate_topods_from_vector(brep_or_iterable, vec, copy=False):
     @param vec:     the vector defining the translation
     @param copy:    copies to brep if True
     '''
+    from OCC.KBE.types_lut import ShapeToTopology
+    st = ShapeToTopology()
     trns = gp_Trsf()
     trns.SetTranslation(vec)
     if issubclass(brep_or_iterable.__class__, TopoDS_Shape):
         brep_trns = BRepBuilderAPI_Transform(brep_or_iterable, trns, copy)
         brep_trns.Build()
-        return brep_trns.Shape()
+        return st(brep_trns.Shape())
     else:
         return  [translate_topods_from_vector(brep_or_iterable, vec, copy) for i in brep_or_iterable]
 
@@ -791,9 +805,13 @@ def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000, show=False):
         display.DisplayShape(_trim_plane)
     return _trim_plane
 
-def find_plane_from_shape(shape, tolerance=TOLERANCE):
+def find_plane_from_shape(shape, tolerance=-1):
     try:
-        return BRepBuilderAPI_FindPlane(shape, tolerance).Plane().GetObject()
+        fpl = BRepBuilderAPI_FindPlane(shape, tolerance)
+        if fpl.Found():
+            return fpl.Plane().GetObject()
+        else:
+            return None
     except:
         raise AssertionError('couldnt find plane in %s' % (shape))
 
@@ -815,3 +833,40 @@ def compound(topo):
         bd.Add(comp,i)
     return comp
 
+def geodesic_path(pntA, pntB, edgA, edgB, kbe_face, n_segments=20, _tolerance=0.1, n_iter=20):
+    """
+    :param pntA:        point to start from
+    :param pntB:        point to move towards
+    :param edgA:        edge to start from
+    :param edgB:        edge to move towards
+    :param kbe_face:    kbe.face.Face on which `edgA` and `edgB` lie
+    :param n_segments:  the number of segments the geodesic is built from
+    :param _tolerance:  tolerance when the geodesic is converged
+    :param n_iter:      maximum number of iterations
+    :return:            TopoDS_Edge
+    """
+    from OCC.Utils.Common import smooth_pnts
+    uvA, srf_pnt_A = kbe_face.project_vertex(pntA)
+    uvB, srf_pnt_B = kbe_face.project_vertex(pntB)
+
+    path = []
+    for i in range(n_segments):
+        t = i / float(n_segments)
+        u = uvA[0] + t*(uvB[0] - uvA[0])
+        v = uvA[1] + t*(uvB[1] - uvA[1])
+        path.append(kbe_face.parameter_to_point(u,v))
+
+    project_pnts = lambda x: [kbe_face.project_vertex(i)[1] for i in x]
+    poly_length = lambda x: sum([x[i].Distance(x[i+1]) for i in range(len(x)-1)]) / len(x)
+
+    length = poly_length(path)
+
+    n = 0
+    while True:
+        path = smooth_pnts(path)
+        path = project_pnts(path)
+        newlength = poly_length(path)
+        if abs(newlength-length) < _tolerance or n == n_iter:
+            crv = points_to_bspline(path)
+            return make_edge(crv)
+        n+=1

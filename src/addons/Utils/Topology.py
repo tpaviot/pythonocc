@@ -365,7 +365,9 @@ class Topo(object):
       
     def wires_from_edge(self, edg):
         return self._map_shapes_and_ancestors(TopAbs_EDGE, TopAbs_WIRE, edg)
-   
+    
+    def wires_from_vertex(self, edg): return self._map_shapes_and_ancestors(TopAbs_VERTEX, TopAbs_WIRE, edg)
+
     def number_of_wires_from_edge(self, edg):
         return self._number_shapes_ancestors(TopAbs_EDGE,TopAbs_WIRE, edg)
 

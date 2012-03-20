@@ -26,7 +26,7 @@ from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.IntTools import IntTools_FaceFace
 from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.GeomProjLib import GeomProjLib
-from OCC.Utils.Topology import Topo
+from OCC.Utils.Topology import Topo, WireExplorer
 
 
 '''
@@ -193,11 +193,15 @@ class Face(KbeObject, TopoDS_Face):
         self._curvature_initiated = False
         self._geometry_lookup_init = False
 
+        #===============================================================================
+        # properties
+        #===============================================================================
         self._h_srf           = None
         self._srf             = None
         self._adaptor         = None
         self._adaptor_handle  = None
         self._classify_uv     = None # cache the u,v classifier, no need to rebuild for every sample
+        self._topo            = None
 
         # aliasing of useful methods
         def is_u_periodic(self):
@@ -241,6 +245,14 @@ class Face(KbeObject, TopoDS_Face):
         :return: UMin, UMax, VMin, VMax
         '''
         return BRepTools.UVBounds(self)
+
+    @property
+    def topo(self):
+        if self._topo is not None:
+            return self._topo
+        else:
+            self._topo = Topo(self)
+            return self._topo
 
     @property
     def surface(self):
@@ -406,7 +418,7 @@ class Face(KbeObject, TopoDS_Face):
                 if isinstance(other, TopoDS_Edge):
                     # convert edge to curve
                     first, last = TopExp.FirstVertex(other), TopExp.LastVertex(other)
-                    lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(first, other)
+                    lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(last, other)
                     other = BRep_Tool.Curve(other, lbound, ubound).GetObject()
 
                 return GeomProjLib().Project(other, self.surface_handle)
@@ -437,7 +449,7 @@ class Face(KbeObject, TopoDS_Face):
         return iso
 
     def Edges(self):
-        return [Edge(i) for i in Topo(self).edges()]
+        return [Edge(i) for i in WireExplorer(self.topo.wires().next()).ordered_edges()]
 
 if __name__ == "__main__":
 
