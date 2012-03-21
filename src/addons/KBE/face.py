@@ -393,7 +393,7 @@ class Face(KbeObject, TopoDS_Face):
 #    project curve, point on face
 #===============================================================================
 
-    def project_vertex( self, pnt ):
+    def project_vertex( self, pnt, tol=TOLERANCE):
         '''projects self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
 
@@ -402,12 +402,18 @@ class Face(KbeObject, TopoDS_Face):
 
         '''
         if isinstance(pnt, TopoDS_Vertex):
-            pt = BRep_Tool.Pnt(pnt)
+            pnt = BRep_Tool.Pnt(pnt)
 
-        proj = GeomAPI_ProjectPointOnSurf(pnt, self.surface_handle)
-        # SHOULD USE THIS!!!
+        print "from OCC.ShapeAnalysis import ShapeAnalysis_Surface"
+#        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+#
+#        ssa = ShapeAnalysis_Surface(self.surface_handle)
+#        ssa.NextValueOfUV()
+
+        proj = GeomAPI_ProjectPointOnSurf(pnt, self.surface_handle, tol)
         uv = proj.LowerDistanceParameters()
         proj_pnt = proj.NearestPoint()
+
         return uv, proj_pnt
 
     def project_curve(self, other):

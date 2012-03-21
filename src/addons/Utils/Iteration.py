@@ -83,8 +83,8 @@ class LoopWirePairs(object):
         b1, b2 = Edge(edges_b.next()),Edge(edges_b.next())
         mpA = a1.mid_point()
         self.index +=1
-        
-        if mpA.Distance(b1.mid_point()) < mpA.Distance(b2.mid_point()):
+
+        if mpA[1].Distance(b1.mid_point()[1]) < mpA[1].Distance(b2.mid_point()[1]):
             return iter([a1, a2]), iter([b1,b2])
         else:
             return iter([a1, a2]), iter([b2,b1])
