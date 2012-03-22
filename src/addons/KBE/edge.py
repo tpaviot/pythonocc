@@ -410,9 +410,6 @@ class Edge(KbeObject, TopoDS_Edge):
 #        return 0
 #
 #
-    def __hash__(self):
-        return self.__hash__()
-
     def first_vertex(self):
         # TODO: should return Vertex, not TopoDS_Vertex
         return TopExp.FirstVertex(self)

@@ -90,6 +90,10 @@ def gp_Pnt_set_state(self, state):
     '''
     self.__init__(*state)
 
+def gp_Pnt_equal(self, other):
+    print 'jelle contains!!!'
+    return self.IsEqual(other, TOLERANCE)
+
 def gp_pnt_print(self):
     return '< gp_Pnt: {0}, {1}, {2} >'.format(*self.Coord())
 
@@ -146,6 +150,8 @@ gp_Pnt.__getstate__ = gp_Pnt_get_state
 gp_Pnt.__setstate__ = gp_Pnt_set_state
 gp_Vec.__getstate__ = gp_Pnt_get_state
 gp_Vec.__setstate__ = gp_Pnt_set_state
+# equality, not identity comparison
+gp_Pnt.__eq__ = gp_Pnt_equal
 # print gp_Pnt() should return something informative...
 gp_Vec.__repr__ = gp_vec_print
 gp_Vec.__str__ = gp_vec_print
@@ -389,6 +395,9 @@ def make_loft(elements, ruled=False, tolerance=TOLERANCE):
         te = ShapeToTopology()
         loft = te(sections.Shape())
         return loft
+
+def make_ruled(edgeA, edgeB):
+    return BRepFill_Face(edgeA, edgeB)
 
 #===============================================================================
 # ---CONVENIENCE---
