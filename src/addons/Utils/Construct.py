@@ -29,22 +29,14 @@ from __future__ import with_statement
 from OCC.BRep import BRep_Tool
 from OCC.BRepOffset import BRepOffset_Skin
 from OCC.GeomLProp import *
-from OCC.ShapeFix import *
 from OCC.BRepOffsetAPI import *
 from OCC.BRepBuilderAPI import *
-from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
-from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
 from OCC.BRepPrimAPI import *
 from OCC.GeomAbs import *
 from OCC.TopAbs import *
 from OCC.TopoDS import *
 from OCC.gp import *
 from OCC.BRepFill import *
-from OCC.GeomPlate import *
-from OCC.BRepAdaptor import *
-from OCC.GeomFill import *
-from OCC.TopTools import *
-from OCC.Geom import *
 
 # high level
 from OCC.Utils.Common import *
@@ -511,6 +503,7 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     return face
     
 def make_n_sections(edges):
+    from OCC.TopTools import TopTools_SequenceOfShape
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
@@ -519,6 +512,7 @@ def make_n_sections(edges):
 
 
 def make_coons(edges):
+    from OCC.GeomFill import GeomFill_BSplineCurves, GeomFill_StretchStyle
     bt = BRep_Tool()
     if len(edges) == 4:
         spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
@@ -535,10 +529,10 @@ def make_coons(edges):
 
 def make_constrained_surface_from_edges(edges):
     '''
-    
     DOESNT RESPECT BOUNDARIES
-    
     '''
+    from OCC.BRepAdaptor import BRepAdaptor_HCurve
+    from OCC.GeomPlate import GeomPlate_MakeApprox, GeomPlate_BuildPlateSurface
     bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
     for edg in edges:
         c = BRepAdaptor_HCurve()
@@ -601,6 +595,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
 #===============================================================================
 
 def boolean_cut(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
     try:
         cut = BRepAlgoAPI_Cut(shapeToCutFrom, cuttingShape)
         print 'can work?', cut.BuilderCanWork()
@@ -632,6 +627,7 @@ def boolean_cut_old(shapeToCutFrom, cuttingShape):
     return shp
 
 def boolean_fuse(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
     join = BRepAlgoAPI_Fuse(shapeToCutFrom, joiningShape)
     join.RefineEdges()
     join.FuseEdges()
@@ -687,6 +683,7 @@ def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
 #===============================================================================
 
 def fix_shape(shp, tolerance=1e-3):
+    from OCC.ShapeFix import ShapeFix_Shape
     te = ShapeToTopology()
     fix = ShapeFix_Shape(shp)
     fix.SetFixFreeShellMode(True)
@@ -697,6 +694,7 @@ def fix_shape(shp, tolerance=1e-3):
     return fix.Shape()
 
 def fix_face(shp, tolerance=1e-3):
+    from OCC.ShapeFix import ShapeFix_Face
     fix = ShapeFix_Face(shp)
     fix.SetMaxTolerance(tolerance)
     fix.Perform()
@@ -823,6 +821,40 @@ def find_plane_from_shape(shape, tolerance=-1):
             return None
     except:
         raise AssertionError('couldnt find plane in %s' % (shape))
+
+def fit_plane_through_face_vertices(_face):
+    """
+    :param _face:   OCC.KBE.face.Face instance
+    :return:        Geom_Plane
+    """
+    from OCC.GeomPlate import GeomPlate_BuildAveragePlane
+    from OCC.Utils.Topology import Topo
+    uvs_from_vertices = [_face.project_vertex(vertex2pnt(i)) for i in Topo(_face).vertices()]
+    normals = [gp_Vec(_face.DiffGeom.normal(*uv[0])) for uv in uvs_from_vertices]
+    points = [i[1] for i in uvs_from_vertices]
+
+    NORMALS = TColgp_SequenceOfVec()
+    [NORMALS.Append(i) for i in normals]
+    POINTS = to_tcol_(points, TColgp_HArray1OfPnt)
+
+    pl = GeomPlate_BuildAveragePlane(NORMALS, POINTS).Plane().GetObject()
+    vec = gp_Vec(pl.Location(), _face.GlobalProperties.centre())
+    pt = (pl.Location().as_vec() + vec).as_pnt()
+    pl.SetLocation(pt)
+    return pl
+
+def project_edge_onto_plane(edg, plane):
+    """
+    p'bably BRepOffsetAPI_NormalProjection would be a good option too, it expects
+
+    :param edg:     kbe.edge.Edge
+    :param plane:   Geom_Plane
+    :return:        TopoDS_Edge projected on the plane
+    """
+    from OCC.GeomProjLib import GeomProjLib_ProjectOnPlane
+    proj = GeomProjLib_ProjectOnPlane(edg.adaptor.Curve().Curve(), plane.GetHandle(), plane.Axis().Direction(), 1 )
+    return make_edge(proj)
+
 
 def curve_to_bspline(crv_handle, tolerance=TOLERANCE, continuity=GeomAbs_C1, sections=300, degree=12):
     approx_curve = GeomConvert_ApproxCurve(crv_handle, tolerance, continuity, sections, degree)
