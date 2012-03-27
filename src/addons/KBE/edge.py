@@ -4,13 +4,14 @@ from OCC.GCPnts import  GCPnts_UniformAbscissa
 from OCC.Geom import Geom_OffsetCurve, Geom_TrimmedCurve
 from OCC.KBE.base import KbeObject
 from OCC.TopExp import TopExp
-from OCC.TopoDS import  TopoDS_Edge, TopoDS_Vertex
+from OCC.TopoDS import  TopoDS_Edge, TopoDS_Vertex, TopoDS_Face
 from OCC.gp import *
 # high-level
 from OCC.Utils.Common import vertex2pnt, minimum_distance
 from OCC.Utils.Construct import make_edge, fix_continuity
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.vertex import Vertex
+from OCC.KBE.types_lut import geom_lut
 from OCC.GeomLProp import GeomLProp_CurveTool
 from OCC.BRepLProp import BRepLProp_CLProps
 from OCC.GeomLib import GeomLib
@@ -20,26 +21,38 @@ from OCC.ShapeAnalysis import ShapeAnalysis_Edge
 from OCC.BRep import *
 
 class IntersectCurve(object):
-    def __init__(self, Instance):
-        self.Instance = Instance
+    def __init__(self, instance):
+        self.instance = instance
 
-    def intersect(self, other):
+    def intersect(self, other, disp, tolerance=1e-2):
         '''Intersect self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
         '''
-        raise NotImplementedError
+        if isinstance(other, TopoDS_Face):
+            from OCC.BRepIntCurveSurface import BRepIntCurveSurface_Inter
+            face_curve_intersect = BRepIntCurveSurface_Inter()
+            face_curve_intersect.Init( other, self.instance.adaptor.Curve(), tolerance )
+            pnts = []
+            while face_curve_intersect.More():
+                face_curve_intersect.Next()
+                pnts.append(face_curve_intersect.Pnt())
+            return pnts
+
+
 
 
 class DiffGeomCurve(object):
     def __init__(self, instance):
         self.instance = instance
+        #self._local_props = BRepLProp_CLProps(self.instance.adaptor, self.instance.degree(), self.instance.tolerance)
+        self._local_props = BRepLProp_CLProps(self.instance.adaptor, 2, self.instance.tolerance)
         # initialize with random parameter: 0
 
     @property
     def _curvature(self):
-        return BRepLProp_CLProps(self.instance.adaptor, 0, 2, self.instance.tolerance)
+        return self._local_props
 
-    def curvature(self, u, n, resolution=1e-7):
+    def curvature(self, u):
         self._curvature.SetParameter(u)
 
     def radius(self, u):
@@ -70,6 +83,10 @@ class DiffGeomCurve(object):
 
     def normal(self, u):
         '''returns the normal at u
+
+        computes the main normal if no normal is found
+        see:
+        www.opencascade.org/org/forum/thread_645+&cd=10&hl=nl&ct=clnk&gl=nl
         '''
         try:
             self._curvature.SetParameter(u)
@@ -77,6 +94,24 @@ class DiffGeomCurve(object):
             self._curvature.Normal(ddd)
             return ddd
         except:
+#            gp_Vec d1u, d2u;
+
+#            Handle_Geom_Curve aCurv=aCertainCurve;
+#
+#            Standard_Real u=aCertainValue;
+#
+#            // get 1st and 2nd derivative in u
+#
+#            aCurv->D2(u, aPnt, d1u, d2u);
+#
+#            Standard_Real nu_dot = d1u.Dot(d2u)/d1u.Magnitude();
+#
+#            gp_Vec t_vec = d1u.Divided(d1u.Magnitude());
+#
+#            // compute the main normal (not the bi normal)
+#
+#            gp_Vec mainn = d2u-(nu_dot*t_vec);
+
             raise ValueError('no normal was found')
 
     def derivative(self, u, n):
@@ -171,7 +206,13 @@ class Edge(KbeObject, TopoDS_Edge):
         return self.adaptor.Continuity
 
     def degree(self):
-        return self.adaptor.Degree()
+        if 'line' in self.type:
+            return 1
+        elif 'curve' in self.type:
+            return self.adaptor.Degree()
+        else:
+            # hyperbola, parabola, circle
+            return 2
 
     def nb_knots(self):
         return self.adaptor.NbKnots()
@@ -224,6 +265,10 @@ class Edge(KbeObject, TopoDS_Edge):
         else:
             self.adaptor
         return self._adaptor.Curve().Curve()
+
+    @property
+    def type(self):
+        return geom_lut[self.adaptor.Curve().GetType()]
 
     def pcurve(self, face):
         """
@@ -431,7 +476,7 @@ class Edge(KbeObject, TopoDS_Edge):
     def parameter_to_point(self, u):
         '''returns the coordinate at parameter u
         '''
-        return Vertex(*self.adaptor.Value(u).Coord())
+        return self.adaptor.Value(u)
 
     def point_to_parameter(self, coord):
         '''returns the parameters / pnt on edge at world coordinate `coord`

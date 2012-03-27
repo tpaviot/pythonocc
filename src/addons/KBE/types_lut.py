@@ -119,12 +119,20 @@ _topoTypesA = ['vertex', 'edge', 'wire', 'face', 'shell','solid','compsolid', 'c
 _topoTypesB = [ TopAbs_VERTEX, TopAbs_EDGE, TopAbs_WIRE, TopAbs_FACE, TopAbs_SHELL,TopAbs_SOLID,
                 TopAbs_COMPSOLID, TopAbs_COMPOUND, TopAbs_SHAPE ]
 
+
+
+_geom_types_a = ['line', 'circle', 'ellipse', 'hyperbola', 'parabola', 'beziercurve', 'bsplinecurve','othercurve']
+_geom_types_b = [GeomAbs_Line, GeomAbs_Circle, GeomAbs_Ellipse, GeomAbs_Hyperbola, GeomAbs_Parabola, GeomAbs_BezierCurve,\
+                 GeomAbs_BSplineCurve, GeomAbs_OtherCurve ]
+
+
 curve_lut = EnumLookup(_curve_typesA,_curve_typesB)
 surface_lut = EnumLookup(_surface_typesA, _surface_typesB)
 state_lut = EnumLookup(_stateA, _stateB)
 orient_lut = EnumLookup(_orientA, _orientB)
 topo_lut = EnumLookup(_topoTypesA,_topoTypesB)
 shape_lut = ShapeToTopology()
+geom_lut= EnumLookup(_geom_types_a, _geom_types_b)
 
 # todo: refactor, these classes have been moved from the "Topology" directory
 # which had too many overlapping methods & classes, that are now part of the KBE module...

@@ -29,14 +29,12 @@ from __future__ import with_statement
 from OCC.BRep import BRep_Tool
 from OCC.BRepOffset import BRepOffset_Skin
 from OCC.GeomLProp import *
-from OCC.BRepOffsetAPI import *
 from OCC.BRepBuilderAPI import *
 from OCC.BRepPrimAPI import *
 from OCC.GeomAbs import *
 from OCC.TopAbs import *
 from OCC.TopoDS import *
 from OCC.gp import *
-from OCC.BRepFill import *
 
 # high level
 from OCC.Utils.Common import *
@@ -288,6 +286,7 @@ def make_evolved(spine, profile):
         return evol.Evolved()
     
 def make_pipe(spine, profile):
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipe
     pipe = BRepOffsetAPI_MakePipe(spine, profile)
     with assert_isdone(pipe, 'failed building pipe'):
         pipe.Build()
@@ -306,6 +305,7 @@ def make_prism_shell(profile, vec):
     '''
     makes a finite prism
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipeShell
     return BRepOffsetAPI_MakePipeShell()
 
 def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE,
@@ -316,6 +316,7 @@ def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE,
     builds an offsetted shell from a shape
     construct an offsetted version of the shape
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeOffsetShape
     try:
         offset = BRepOffsetAPI_MakeOffsetShape(shapeToOffset,
                                                offsetDistance,
@@ -348,6 +349,7 @@ def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
     note: a shape that has a negative offsetDistance will return
     a sharp corner
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeOffset
     _joints = [ GeomAbs_Arc, GeomAbs_Tangent, GeomAbs_Intersection ]
     assert joinType in _joints, '%s is not one of %s' ( joinType, _joints)
     try:
@@ -364,15 +366,18 @@ def make_draft(profile, vec):
     '''
     makes a finite prism
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeDraft
     return BRepOffsetAPI_MakeDraft()
 
 def make_filling(profile, vec):
     '''
     makes a n-sided patch from constraints
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeFilling
     return BRepOffsetAPI_MakeFilling()
 
 def make_loft(elements, ruled=False, tolerance=TOLERANCE):
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_ThruSections
     sections = BRepOffsetAPI_ThruSections(False, ruled, tolerance)
     for i in elements:
         if isinstance(i, TopoDS_Wire):
@@ -389,6 +394,7 @@ def make_loft(elements, ruled=False, tolerance=TOLERANCE):
         return loft
 
 def make_ruled(edgeA, edgeB):
+    from OCC.BRepFill import BRepFill_Face
     return BRepFill_Face(edgeA, edgeB)
 
 #===============================================================================
@@ -428,6 +434,7 @@ def make_oriented_box(v_corner, v_x, v_y, v_z):
     :param v_z: gp_Vec that describes the Z-axis
     :return: TopoDS_Solid
     """
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipe
     verts = map(lambda x: x.as_pnt(), [v_corner, v_corner+v_x, v_corner+v_x+v_y, v_corner+v_y])
     p = make_polygon(verts, closed=True)
     li = make_line(v_corner.as_pnt(), (v_corner+v_z).as_pnt())
@@ -490,6 +497,7 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     :param continuity: GeomAbs_0, 1, 2
     :return: TopoDS_Face
     """
+    from OCC.BRepFill import BRepFill_Filling
     n_sided = BRepFill_Filling(NbIter=6)
     #n_sided.SetApproxParam( 6, 40)
     #n_sided.SetResolParam( 3, 20, 20, False)
@@ -504,6 +512,7 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     
 def make_n_sections(edges):
     from OCC.TopTools import TopTools_SequenceOfShape
+    from OCC.BRepFill import BRepFill_NSections
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
@@ -533,6 +542,7 @@ def make_constrained_surface_from_edges(edges):
     '''
     from OCC.BRepAdaptor import BRepAdaptor_HCurve
     from OCC.GeomPlate import GeomPlate_MakeApprox, GeomPlate_BuildPlateSurface
+    from OCC.BRepFill import BRepFill_CurveConstraint
     bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
     for edg in edges:
         c = BRepAdaptor_HCurve()
@@ -620,6 +630,7 @@ def boolean_cut(shapeToCutFrom, cuttingShape):
         return shapeToCutFrom
 
 def boolean_cut_old(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgo import BRepAlgo_Cut
     cut = BRepAlgo_Cut(shapeToCutFrom, cuttingShape)
     #cut.RefineEdges()
     #cut.FuseEdges()
@@ -829,6 +840,8 @@ def fit_plane_through_face_vertices(_face):
     """
     from OCC.GeomPlate import GeomPlate_BuildAveragePlane
     from OCC.Utils.Topology import Topo
+
+
     uvs_from_vertices = [_face.project_vertex(vertex2pnt(i)) for i in Topo(_face).vertices()]
     normals = [gp_Vec(_face.DiffGeom.normal(*uv[0])) for uv in uvs_from_vertices]
     points = [i[1] for i in uvs_from_vertices]

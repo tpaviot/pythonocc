@@ -41,7 +41,6 @@ from OCC.TColGeom import *
 from OCC.TColStd import *
 from OCC.TCollection import *
 from OCC.BRepAdaptor import *
-from OCC.BRepAlgoAPI import *
 from OCC.GeomAPI import *
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
@@ -103,6 +102,12 @@ def to_string(_string):
     from OCC.TCollection import  TCollection_ExtendedString
     return TCollection_ExtendedString(_string)
 
+def to_tcol_(_list, type):
+    array = type(1, len(_list)+1)
+    for n,i in enumerate(_list):
+        array.SetValue(n+1,i)
+    return array.GetHandle()
+
 def _Tcol_dim_1(li, _type):
     '''function factory for 1-dimensional TCol* types'''
     pts = _type(0, len(li)-1)
@@ -135,6 +140,7 @@ def point2d_list_to_TColgp_Array1OfPnt2d(li):
 # --- BOOLEAN OPERATIONS AS FUNCTIONS ---
 #===============================================================================
 def boolean_cut(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
     try:
         cut = BRepAlgoAPI_Cut(shapeToCutFrom, cuttingShape)
         print 'can work?', cut.BuilderCanWork()
@@ -167,6 +173,7 @@ def boolean_cut_old(shapeToCutFrom, cuttingShape):
     return shp
 
 def boolean_fuse(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
     join = BRepAlgoAPI_Fuse(shapeToCutFrom, joiningShape)
     join.RefineEdges()
     join.FuseEdges()
@@ -577,6 +584,7 @@ def project_point_on_plane( plane, point ):
     @param plane: Geom_Plane
     @param point: gp_Pnt
     '''
+    from OCC.ProjLib import ProjLib
     pl = plane.Pln()
     ppp = ProjLib()
     aa, bb  = ppp.Project(pl, point).Coord()
