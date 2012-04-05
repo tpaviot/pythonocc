@@ -172,7 +172,14 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         BaseDriver.__init__(self,window_handle)
         OCC.Visualization.Display3d.__init__(self)
         self.selected_shape = None
-                
+
+    def SetDoubleBuffer(self, onoroff):
+        """enables double buffering
+        when shapes are moved in the viewer
+        a very shaky picture is drawn, since double buffering [ a rudimentary OGL capability ]
+        is disabled by default. Which is a bad default choice, fixed here..."""
+        self.View.Window().GetObject().SetDoubleBuffer(bool(onoroff))
+
     def OnResize(self):
         self.View.MustBeResized()
 
