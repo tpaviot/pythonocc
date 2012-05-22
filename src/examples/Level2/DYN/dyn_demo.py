@@ -375,6 +375,7 @@ def hinge(event=None):
         XXX = 0.15 * N
         first.setLinearVel((0, XXX,0))
         dyn_shape.setLinearVel((0,-XXX,0))
+        display.FitAll()
 
     dyn_context.mu = 500
     dyn_context.setERP(0.8) # 0.2 default

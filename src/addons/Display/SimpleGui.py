@@ -35,7 +35,7 @@ def load_gui_toolkit():
         from PyQt4 import QtCore, QtGui
         print 'using PyQt4 as SimpleGui toolkit'
         return 'qt'
-    except ImportError:
+    except Exception:
         pass
 
     # check wx
@@ -44,7 +44,7 @@ def load_gui_toolkit():
         import wx
         print 'using wx as SimpleGui toolkit'
         return 'wx'
-    except ImportError:
+    except Exception:
         pass
 
     # Check python-xlib
@@ -53,7 +53,7 @@ def load_gui_toolkit():
         from Xlib import display as display_xlib, X
         print 'using Xlib as SimpleGui toolkit'
         return 'x'
-    except ImportError:
+    except Exception:
         raise AssertionError('No GUI toolkit found. you will need either PyQt4, wx, or Xlib. the latter is osx / linux only')
 
 def get_bg_abs_filename():

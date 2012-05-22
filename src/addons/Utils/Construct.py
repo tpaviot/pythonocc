@@ -883,7 +883,6 @@ def compound(topo):
     comp = TopoDS_Compound()
     bd.MakeCompound(comp)
     for i in topo:
-        print i
         bd.Add(comp,i)
     return comp
 

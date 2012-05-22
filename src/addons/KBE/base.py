@@ -56,9 +56,9 @@ class Display(object):
 #============
 # base class 
 #============
+    """base class for all KBE objects"""
 
 class KbeObject(object):
-    """base class for all KBE objects"""
 
     def __init__(self, name=None):
         """Constructor for KbeObject"""
@@ -66,6 +66,7 @@ class KbeObject(object):
         self.name = name
         self._dirty = False
         self.tolerance = TOLERANCE
+        self.display_set = False
 
     @property
     def is_dirty(self):
@@ -88,6 +89,13 @@ class KbeObject(object):
             return surface_lut[self.adaptor.GetType()]
         else:
             raise ValueError('geom_type works only for edges and faces...')
+
+    def set_display(self, display):
+        if hasattr(display, 'DisplayShape'):
+            self.display_set = True
+            self.display = display
+        else:
+            raise ValueError('not a display')
 
     def check(self):
         """
@@ -143,7 +151,10 @@ class KbeObject(object):
 
         :param update: redraw the scene or not
         """
-        Display()(self, *args, **kwargs)
+        if not self.display_set:
+            Display()(self, *args, **kwargs)
+        else:
+            self.disp.DisplayShape(*args, **kwargs)
 
     def build(self):
         if self.name.startswith('Vertex'):

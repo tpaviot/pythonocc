@@ -95,9 +95,7 @@ class BaseDriver(object):
         
         # nessecary for text rendering
         self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
-        self.aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
 
-    
         
 class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
     def __init__(self, window_handle ):
@@ -268,20 +266,22 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         :text_to_write: a string
         :message_color: triple with the range 0-1
         """
+        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
         text_aspect = Prs3d.Prs3d_TextAspect()
 
         if message_color is not None:
             text_aspect.SetColor(color(*message_color))
 
-        Prs3d.Prs3d_Text().Draw(self.aPresentation.GetHandle(),
-                                 text_aspect.GetHandle(),
-                                  to_string(text_to_write),
-                                   point)
-        self.aPresentation.Display()
+        text = Prs3d.Prs3d_Text()
+        text.Draw(aPresentation.GetHandle(),
+                     text_aspect.GetHandle(),
+                          to_string(text_to_write),
+                               point)
+        aPresentation.Display()
         # TODO: it would be more coherent if a AIS_InteractiveObject would be returned
         if update:
             self.Repaint()
-        return self.aPresentation
+        return aPresentation
 
 
 #    def DisplayMessage(self,point,text_to_write, update=True):

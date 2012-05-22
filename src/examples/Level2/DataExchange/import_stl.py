@@ -15,15 +15,34 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Utils.DataExchange.STL import STLImporter
+from OCC.DataExchange.STL import STLImporter, FastSTLImporter
 from OCC.Display.SimpleGui import *
 
 # open/parse STL file and get the resulting TopoDS_Shape instance
-my_stl_importer = STLImporter("../../data/STL/venus.stl")
+_this_file = os.path.split(os.path.abspath(__file__))[0]
+# looks like the path layout might have been changed...
+# probably we should have a get_data_root() func somewhere...
+#my_stl_importer = STLImporter("../../data/STL/venus.stl")
+path = os.path.abspath( os.path.join(_this_file, "../../../../data/_3dmodels/aube_pleine.stl") )
+my_stl_importer = STLImporter(path)
 my_stl_importer.read_file()
 the_shape = my_stl_importer.get_shape()
 
 # Then display the shape
 display, start_display, add_menu, add_function_to_menu = init_display()
-display.DisplayShape(the_shape,color='RED')
+display.DisplayColoredShape(the_shape,color='RED')
 start_display()
+
+
+# FAST STL DISPLAY
+path = os.path.abspath( os.path.join(_this_file, "../../../../data/_3dmodels/aube_pleine.stl") )
+my_stl_importer = FastSTLImporter(path)
+my_stl_importer.read_file()
+
+# Then display the shape
+display, start_display, add_menu, add_function_to_menu = init_display()
+display.DisplayColoredShape(the_shape,color='RED')
+the_shape = my_stl_importer.draw_mesh(display)
+start_display()
+
+

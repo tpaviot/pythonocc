@@ -312,10 +312,7 @@ class Face(KbeObject, TopoDS_Face):
         :return: bool, gp_Pln
         '''
         aaa = GeomLib_IsPlanarSurface(self.surface_handle, tol)
-        if aaa.IsPlanar():
-            return aaa.IsPlanar()# , aaa.Plan()
-        else:
-            return aaa.IsPlanar()#, None
+        return aaa.IsPlanar()# , aaa.Plan()
 
     def is_overlapping(self, other):
         import ipdb; ipdb.set_trace()
