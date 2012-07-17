@@ -150,12 +150,8 @@ elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
-        OCC_LIB = os.path.join(OCC_ROOT,'lib')
-    else:
-        OCC_INC = '/usr/include/opencascade'
-        OCC_LIB = '/usr/lib'
+    OCC_INC = '/usr/local/include/oce'
+    OCC_LIB = '/usr/local/lib'
     SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
