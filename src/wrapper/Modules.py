@@ -516,6 +516,8 @@ UNIX_MODULES = [
                     ('PrsMgr',['OSD','MFT','Xw','Graphic3d','gp','Aspect','Handle_TCollection','Image'],[]),#OCC650PATCH Added Image
                     ('SelectMgr',['OSD','MFT','Xw','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d'],[],
                      {'SelectMgr_SelectionManager':['Status'],'SelectMgr_ViewerSelector':['Status']}),#OCC650PATCH Added Image, removed sm_Status
+                    ('StdSelect',['OSD','MFT','Xw','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d','SelectBasis','Image','OSD'],[],
+                     {'StdSelect_Shape':['Shape'],'StdSelect_BRepOwner':['Set']}),
                     ('DsgPrs',[],[],{'DsgPrs_RadiusPresentation':['Add']}),
                     ('AIS',['OSD','MFT','Xw','Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image'],[],
                      {"AIS_LocalContext":["Reactivate"],
