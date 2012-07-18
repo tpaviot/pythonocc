@@ -928,7 +928,7 @@ class ModularBuilder(object):
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            self.fp.write("\treturn $self->HashCode(2147483647);\n\t}\n};")
+            self.fp.write("\treturn HashCode(*(Handle_Standard_Transient*)&$self,2147483647);\n\t}\n};")
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
@@ -1160,7 +1160,9 @@ class ModularBuilder(object):
                           'SelectMgr_SelectionManager.hxx',
                           'Aspect_XWD.hxx',
                           'NCollection_EBTree.hxx','NCollection_CellFilter.hxx',
-                          'Standard_StdAllocator.hxx'
+                          'Standard_StdAllocator.hxx',
+                          'StdSelect_ViewerSelector2d.hxx','StdSelect_ViewerSelector3d.hxx',
+                          'Image_PixelFieldOfDIndexedImage.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
