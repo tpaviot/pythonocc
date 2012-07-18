@@ -60,29 +60,29 @@ enum TFunction_ExecutionStatus {
 
 
 
-%nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
-class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
+class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
+		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TFunction_HArray1OfDataMapOfGUIDDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
-	TFunction_HArray1OfDataMapOfGUIDDriver* GetObject() {
-	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel* GetObject() {
+	return (TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TFunction_HArray1OfDataMapOfGUIDDriver::~Handle_TFunction_HArray1OfDataMapOfGUIDDriver %{
+%feature("shadow") Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -91,7 +91,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -288,29 +288,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
-class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
+class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel();
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver();
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel &aHandle);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const Handle_TFunction_HArray1OfDataMapOfGUIDDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel & operator=(const TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel *anItem);
+		Handle_TFunction_HArray1OfDataMapOfGUIDDriver & operator=(const TFunction_HArray1OfDataMapOfGUIDDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TFunction_HArray1OfDataMapOfGUIDDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel* GetObject() {
-	return (TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*)$self->Access();
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
+	TFunction_HArray1OfDataMapOfGUIDDriver* GetObject() {
+	return (TFunction_HArray1OfDataMapOfGUIDDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
+%feature("shadow") Handle_TFunction_HArray1OfDataMapOfGUIDDriver::~Handle_TFunction_HArray1OfDataMapOfGUIDDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -319,7 +319,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+%extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -402,36 +402,72 @@ def __del__(self):
 };
 
 
-%nodefaultctor TFunction_DataMapOfLabelListOfLabel;
-class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
+%nodefaultctor TFunction_Scope;
+class TFunction_Scope : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel(const Standard_Integer NbBuckets=1);
+		static		Handle_TFunction_Scope Set(const TDF_Label &Access);
 		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel & Assign(const TFunction_DataMapOfLabelListOfLabel &Other);
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TFunction_DataMapOfLabelListOfLabel & operator=(const TFunction_DataMapOfLabelListOfLabel &Other);
+		TFunction_Scope();
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Boolean AddFunction(const TDF_Label &L);
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Boolean RemoveFunction(const TDF_Label &L);
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
+		Standard_Boolean RemoveFunction(const Standard_Integer ID);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TDF_Label &K) const;
+		void RemoveAllFunctions();
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TDF_Label &K);
+		Standard_Boolean HasFunction(const Standard_Integer ID) const;
 		%feature("autodoc", "1");
-		const TDF_LabelList & Find(const TDF_Label &K) const;
+		Standard_Boolean HasFunction(const TDF_Label &L) const;
 		%feature("autodoc", "1");
-		const TDF_LabelList & operator()(const TDF_Label &K) const;
+		Standard_Integer GetFunction(const TDF_Label &L) const;
 		%feature("autodoc", "1");
-		TDF_LabelList & ChangeFind(const TDF_Label &K);
+		const TDF_Label & GetFunction(const Standard_Integer ID) const;
 		%feature("autodoc", "1");
-		TDF_LabelList & operator()(const TDF_Label &K);
+		TFunction_Logbook & GetLogbook();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
+		%feature("autodoc", "1");
+		TFunction_DoubleMapOfIntegerLabel & ChangeFunctions();
+		%feature("autodoc", "1");
+		void SetFreeID(const Standard_Integer ID);
+		%feature("autodoc", "1");
+		Standard_Integer GetFreeID() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TFunction_DataMapOfLabelListOfLabel::~TFunction_DataMapOfLabelListOfLabel %{
+%extend TFunction_Scope {
+	Handle_TFunction_Scope GetHandle() {
+	return *(Handle_TFunction_Scope*) &$self;
+	}
+};
+%extend TFunction_Scope {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TFunction_Scope::~TFunction_Scope %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -440,7 +476,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TFunction_DataMapOfLabelListOfLabel {
+%extend TFunction_Scope {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -483,7 +519,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_HArray1OfDataMapOfGUIDDriver::~TFunction_HArray1OfDataMapOfGUIDDriver %{
@@ -577,7 +613,7 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %extend TFunction_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_Driver::~TFunction_Driver %{
@@ -623,6 +659,10 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		Handle_TFunction_Driver & ChangeFind(const Standard_GUID &K);
 		%feature("autodoc", "1");
 		Handle_TFunction_Driver & operator()(const Standard_GUID &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_GUID &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_GUID &K);
 
 };
 %feature("shadow") TFunction_DataMapOfGUIDDriver::~TFunction_DataMapOfGUIDDriver %{
@@ -691,7 +731,7 @@ class TFunction_Function : public TDF_Attribute {
 };
 %extend TFunction_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_Function::~TFunction_Function %{
@@ -704,6 +744,45 @@ def __del__(self):
 %}
 
 %extend TFunction_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
+class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TFunction_Driver &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_GUID & Key() const;
+		%feature("autodoc", "1");
+		Handle_TFunction_Driver & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
+	return *(Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TFunction_DataMapNodeOfDataMapOfGUIDDriver::~TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -741,48 +820,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor TFunction_IFunction;
-class TFunction_IFunction {
+%nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
+class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		static		Standard_Boolean NewFunction(const TDF_Label &L, const Standard_GUID &ID);
+		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
 		%feature("autodoc", "1");
-		static		Standard_Boolean DeleteFunction(const TDF_Label &L);
+		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapOfIntegerLabel &aMap);
 		%feature("autodoc", "1");
-		static		Standard_Boolean UpdateDependencies(const TDF_Label &Access);
+		void Initialize(const TFunction_DoubleMapOfIntegerLabel &aMap);
 		%feature("autodoc", "1");
-		TFunction_IFunction();
+		const Standard_Integer & Key1() const;
 		%feature("autodoc", "1");
-		TFunction_IFunction(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void Init(const TDF_Label &L);
-		%feature("autodoc", "1");
-		const TDF_Label & Label() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UpdateDependencies() const;
-		%feature("autodoc", "1");
-		void Arguments(TDF_LabelList & args) const;
-		%feature("autodoc", "1");
-		void Results(TDF_LabelList & res) const;
-		%feature("autodoc", "1");
-		void GetPrevious(TDF_LabelList & prev) const;
-		%feature("autodoc", "1");
-		void GetNext(TDF_LabelList & prev) const;
-		%feature("autodoc", "1");
-		TFunction_ExecutionStatus GetStatus() const;
-		%feature("autodoc", "1");
-		void SetStatus(const TFunction_ExecutionStatus status) const;
-		%feature("autodoc", "1");
-		const TFunction_DoubleMapOfIntegerLabel & GetAllFunctions() const;
-		%feature("autodoc", "1");
-		TFunction_Logbook & GetLogbook() const;
-		%feature("autodoc", "1");
-		Handle_TFunction_Driver GetDriver(const Standard_Integer thread=0) const;
-		%feature("autodoc", "1");
-		Handle_TFunction_GraphNode GetGraphNode() const;
+		const TDF_Label & Key2() const;
 
 };
-%feature("shadow") TFunction_IFunction::~TFunction_IFunction %{
+%feature("shadow") TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -791,46 +844,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TFunction_IFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
-class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TFunction_Driver &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_GUID & Key() const;
-		%feature("autodoc", "1");
-		Handle_TFunction_Driver & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
-	Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
-	return *(Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
-	}
-};
-%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TFunction_DataMapNodeOfDataMapOfGUIDDriver::~TFunction_DataMapNodeOfDataMapOfGUIDDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
+%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -888,57 +902,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
-class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey1() {
-				return (Standard_Integer) $self->Key1();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey1(Standard_Integer value ) {
-				$self->Key1()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TDF_Label & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
-	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
-	}
-};
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TFunction_DriverTable;
 class TFunction_DriverTable : public MMgt_TShared {
 	public:
@@ -975,7 +938,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %extend TFunction_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DriverTable::~TFunction_DriverTable %{
@@ -1045,6 +1008,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
+class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel(const Standard_Integer &K1, const TDF_Label &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TDF_Label & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel GetHandle() {
+	return *(Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel*) &$self;
+	}
+};
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapNode {
 	public:
@@ -1065,7 +1079,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel %{
@@ -1084,22 +1098,48 @@ def __del__(self):
 };
 
 
-%nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
-class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
+%nodefaultctor TFunction_IFunction;
+class TFunction_IFunction {
 	public:
 		%feature("autodoc", "1");
-		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel();
+		static		Standard_Boolean NewFunction(const TDF_Label &L, const Standard_GUID &ID);
 		%feature("autodoc", "1");
-		TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel(const TFunction_DoubleMapOfIntegerLabel &aMap);
+		static		Standard_Boolean DeleteFunction(const TDF_Label &L);
 		%feature("autodoc", "1");
-		void Initialize(const TFunction_DoubleMapOfIntegerLabel &aMap);
+		static		Standard_Boolean UpdateDependencies(const TDF_Label &Access);
 		%feature("autodoc", "1");
-		const Standard_Integer & Key1() const;
+		TFunction_IFunction();
 		%feature("autodoc", "1");
-		const TDF_Label & Key2() const;
+		TFunction_IFunction(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void Init(const TDF_Label &L);
+		%feature("autodoc", "1");
+		const TDF_Label & Label() const;
+		%feature("autodoc", "1");
+		Standard_Boolean UpdateDependencies() const;
+		%feature("autodoc", "1");
+		void Arguments(TDF_LabelList & args) const;
+		%feature("autodoc", "1");
+		void Results(TDF_LabelList & res) const;
+		%feature("autodoc", "1");
+		void GetPrevious(TDF_LabelList & prev) const;
+		%feature("autodoc", "1");
+		void GetNext(TDF_LabelList & prev) const;
+		%feature("autodoc", "1");
+		TFunction_ExecutionStatus GetStatus() const;
+		%feature("autodoc", "1");
+		void SetStatus(const TFunction_ExecutionStatus status) const;
+		%feature("autodoc", "1");
+		const TFunction_DoubleMapOfIntegerLabel & GetAllFunctions() const;
+		%feature("autodoc", "1");
+		TFunction_Logbook & GetLogbook() const;
+		%feature("autodoc", "1");
+		Handle_TFunction_Driver GetDriver(const Standard_Integer thread=0) const;
+		%feature("autodoc", "1");
+		Handle_TFunction_GraphNode GetGraphNode() const;
 
 };
-%feature("shadow") TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel::~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel %{
+%feature("shadow") TFunction_IFunction::~TFunction_IFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1108,7 +1148,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
+%extend TFunction_IFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1236,7 +1276,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %extend TFunction_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TFunction_GraphNode::~TFunction_GraphNode %{
@@ -1249,6 +1289,55 @@ def __del__(self):
 %}
 
 %extend TFunction_GraphNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TFunction_DataMapOfLabelListOfLabel;
+class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TFunction_DataMapOfLabelListOfLabel(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TFunction_DataMapOfLabelListOfLabel & Assign(const TFunction_DataMapOfLabelListOfLabel &Other);
+		%feature("autodoc", "1");
+		TFunction_DataMapOfLabelListOfLabel & operator=(const TFunction_DataMapOfLabelListOfLabel &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TDF_Label &K, const TDF_LabelList &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		const TDF_LabelList & Find(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		const TDF_LabelList & operator()(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		TDF_LabelList & ChangeFind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		TDF_LabelList & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
+
+};
+%feature("shadow") TFunction_DataMapOfLabelListOfLabel::~TFunction_DataMapOfLabelListOfLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TFunction_DataMapOfLabelListOfLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1280,87 +1369,6 @@ def __del__(self):
 %}
 
 %extend TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TFunction_Scope;
-class TFunction_Scope : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		Handle_TFunction_Scope Set(const TDF_Label &Access);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		TFunction_Scope();
-		%feature("autodoc", "1");
-		Standard_Boolean AddFunction(const TDF_Label &L);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveFunction(const TDF_Label &L);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveFunction(const Standard_Integer ID);
-		%feature("autodoc", "1");
-		void RemoveAllFunctions();
-		%feature("autodoc", "1");
-		Standard_Boolean HasFunction(const Standard_Integer ID) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFunction(const TDF_Label &L) const;
-		%feature("autodoc", "1");
-		Standard_Integer GetFunction(const TDF_Label &L) const;
-		%feature("autodoc", "1");
-		const TDF_Label & GetFunction(const Standard_Integer ID) const;
-		%feature("autodoc", "1");
-		TFunction_Logbook & GetLogbook();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
-		%feature("autodoc", "1");
-		TFunction_DoubleMapOfIntegerLabel & ChangeFunctions();
-		%feature("autodoc", "1");
-		void SetFreeID(const Standard_Integer ID);
-		%feature("autodoc", "1");
-		Standard_Integer GetFreeID() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TFunction_Scope {
-	Handle_TFunction_Scope GetHandle() {
-	return *(Handle_TFunction_Scope*) &$self;
-	}
-};
-%extend TFunction_Scope {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TFunction_Scope::~TFunction_Scope %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TFunction_Scope {
 	void _kill_pointed() {
 		delete $self;
 	}

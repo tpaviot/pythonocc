@@ -65,6 +65,6 @@ $HeaderURL$
 #include<Handle_Standard_Type.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Message.hxx>
 #include<Handle_TCollection_HExtendedString.hxx>
+#include<Message.hxx>
 %}

@@ -25,15 +25,15 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_TPrsStd_Driver::DownCast;
 %rename(DownCast) Handle_TPrsStd_ConstraintDriver::DownCast;
-%rename(DownCast) Handle_TPrsStd_DriverTable::DownCast;
 %rename(DownCast) Handle_TPrsStd_PlaneDriver::DownCast;
-%rename(DownCast) Handle_TPrsStd_AISPresentation::DownCast;
+%rename(DownCast) Handle_TPrsStd_NamedShapeDriver::DownCast;
 %rename(DownCast) Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::DownCast;
 %rename(DownCast) Handle_TPrsStd_AxisDriver::DownCast;
+%rename(DownCast) Handle_TPrsStd_DriverTable::DownCast;
 %rename(DownCast) Handle_TPrsStd_PointDriver::DownCast;
 %rename(DownCast) Handle_TPrsStd_AISViewer::DownCast;
+%rename(DownCast) Handle_TPrsStd_AISPresentation::DownCast;
 %rename(DownCast) Handle_TPrsStd_GeometryDriver::DownCast;
-%rename(DownCast) Handle_TPrsStd_NamedShapeDriver::DownCast;
 %rename(UpdateOnlyValue) TPrsStd_ConstraintTools::UpdateOnlyValue;
 %rename(ComputeDistance) TPrsStd_ConstraintTools::ComputeDistance;
 %rename(ComputeParallel) TPrsStd_ConstraintTools::ComputeParallel;
@@ -57,12 +57,12 @@ $HeaderURL$
 %rename(ComputeOthers) TPrsStd_ConstraintTools::ComputeOthers;
 %rename(ComputeTextAndValue) TPrsStd_ConstraintTools::ComputeTextAndValue;
 %rename(ComputeAngleForOneFace) TPrsStd_ConstraintTools::ComputeAngleForOneFace;
+%rename(GetID) TPrsStd_AISPresentation::GetID;
+%rename(Set) TPrsStd_AISPresentation::Set;
+%rename(Unset) TPrsStd_AISPresentation::Unset;
 %rename(GetID) TPrsStd_AISViewer::GetID;
 %rename(Has) TPrsStd_AISViewer::Has;
 %rename(New) TPrsStd_AISViewer::New;
 %rename(Find) TPrsStd_AISViewer::Find;
 %rename(Update) TPrsStd_AISViewer::Update;
-%rename(GetID) TPrsStd_AISPresentation::GetID;
-%rename(Set) TPrsStd_AISPresentation::Set;
-%rename(Unset) TPrsStd_AISPresentation::Unset;
 %rename(Get) TPrsStd_DriverTable::Get;

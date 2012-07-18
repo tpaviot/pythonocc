@@ -99,120 +99,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AlienImage_AlienUserImage;
-class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage(const Handle_AlienImage_AlienUserImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage(const AlienImage_AlienUserImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage & operator=(const Handle_AlienImage_AlienUserImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AlienUserImage & operator=(const AlienImage_AlienUserImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_AlienUserImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_AlienUserImage {
-	AlienImage_AlienUserImage* GetObject() {
-	return (AlienImage_AlienUserImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_AlienUserImage::~Handle_AlienImage_AlienUserImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_AlienUserImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
-class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage & operator=(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_SGIRGBAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_SGIRGBAlienImage {
-	AlienImage_SGIRGBAlienImage* GetObject() {
-	return (AlienImage_SGIRGBAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_SGIRGBAlienImage::~Handle_AlienImage_SGIRGBAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_SGIRGBAlienImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_EuclidAlienImage;
-class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage(const Handle_AlienImage_EuclidAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage(const AlienImage_EuclidAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage & operator=(const Handle_AlienImage_EuclidAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienImage & operator=(const AlienImage_EuclidAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_EuclidAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_EuclidAlienImage {
-	AlienImage_EuclidAlienImage* GetObject() {
-	return (AlienImage_EuclidAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_EuclidAlienImage::~Handle_AlienImage_EuclidAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_EuclidAlienImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AlienImage_AlienImageData;
 class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 	public:
@@ -245,234 +131,6 @@ def __del__(self):
 %}
 
 %extend Handle_AlienImage_AlienImageData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_AidaAlienImage;
-class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage(const Handle_AlienImage_AidaAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage & operator=(const Handle_AlienImage_AidaAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_AidaAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_AidaAlienImage {
-	AlienImage_AidaAlienImage* GetObject() {
-	return (AlienImage_AidaAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_AidaAlienImage::~Handle_AlienImage_AidaAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_AidaAlienImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_SunRFAlienData;
-class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData(const Handle_AlienImage_SunRFAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData & operator=(const Handle_AlienImage_SunRFAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_SunRFAlienData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_SunRFAlienData {
-	AlienImage_SunRFAlienData* GetObject() {
-	return (AlienImage_SunRFAlienData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_SunRFAlienData::~Handle_AlienImage_SunRFAlienData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_SunRFAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_EuclidAlienData;
-class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageData {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData(const Handle_AlienImage_EuclidAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData(const AlienImage_EuclidAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData & operator=(const Handle_AlienImage_EuclidAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_EuclidAlienData & operator=(const AlienImage_EuclidAlienData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_EuclidAlienData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_EuclidAlienData {
-	AlienImage_EuclidAlienData* GetObject() {
-	return (AlienImage_EuclidAlienData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_EuclidAlienData::~Handle_AlienImage_EuclidAlienData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_EuclidAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_SGIRGBAlienData;
-class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageData {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData();
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData(const Handle_AlienImage_SGIRGBAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData(const AlienImage_SGIRGBAlienData *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData & operator=(const Handle_AlienImage_SGIRGBAlienData &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SGIRGBAlienData & operator=(const AlienImage_SGIRGBAlienData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_SGIRGBAlienData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_SGIRGBAlienData {
-	AlienImage_SGIRGBAlienData* GetObject() {
-	return (AlienImage_SGIRGBAlienData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_SGIRGBAlienData::~Handle_AlienImage_SGIRGBAlienData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_SGIRGBAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_XAlienImage;
-class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage(const Handle_AlienImage_XAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage & operator=(const Handle_AlienImage_XAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_XAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_XAlienImage {
-	AlienImage_XAlienImage* GetObject() {
-	return (AlienImage_XAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_XAlienImage::~Handle_AlienImage_XAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_XAlienImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_GIFAlienImage;
-class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage(const Handle_AlienImage_GIFAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage(const AlienImage_GIFAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage & operator=(const Handle_AlienImage_GIFAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_GIFAlienImage & operator=(const AlienImage_GIFAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_GIFAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_GIFAlienImage {
-	AlienImage_GIFAlienImage* GetObject() {
-	return (AlienImage_GIFAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_GIFAlienImage::~Handle_AlienImage_GIFAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_GIFAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -517,6 +175,158 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AlienImage_AlienUserImage;
+class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienUserImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienUserImage(const Handle_AlienImage_AlienUserImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienUserImage(const AlienImage_AlienUserImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienUserImage & operator=(const Handle_AlienImage_AlienUserImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AlienUserImage & operator=(const AlienImage_AlienUserImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_AlienUserImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_AlienUserImage {
+	AlienImage_AlienUserImage* GetObject() {
+	return (AlienImage_AlienUserImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_AlienUserImage::~Handle_AlienImage_AlienUserImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_AlienUserImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_EuclidAlienImage;
+class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienImage(const Handle_AlienImage_EuclidAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienImage(const AlienImage_EuclidAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienImage & operator=(const Handle_AlienImage_EuclidAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienImage & operator=(const AlienImage_EuclidAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_EuclidAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_EuclidAlienImage {
+	AlienImage_EuclidAlienImage* GetObject() {
+	return (AlienImage_EuclidAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_EuclidAlienImage::~Handle_AlienImage_EuclidAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_EuclidAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_EuclidAlienData;
+class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienData(const Handle_AlienImage_EuclidAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienData(const AlienImage_EuclidAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienData & operator=(const Handle_AlienImage_EuclidAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_EuclidAlienData & operator=(const AlienImage_EuclidAlienData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_EuclidAlienData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_EuclidAlienData {
+	AlienImage_EuclidAlienData* GetObject() {
+	return (AlienImage_EuclidAlienData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_EuclidAlienData::~Handle_AlienImage_EuclidAlienData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_EuclidAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_SunRFAlienData;
+class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData(const Handle_AlienImage_SunRFAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData(const AlienImage_SunRFAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData & operator=(const Handle_AlienImage_SunRFAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienData & operator=(const AlienImage_SunRFAlienData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_SunRFAlienData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SunRFAlienData {
+	AlienImage_SunRFAlienData* GetObject() {
+	return (AlienImage_SunRFAlienData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_SunRFAlienData::~Handle_AlienImage_SunRFAlienData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_SunRFAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AlienImage_BMPAlienImage;
 class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -549,6 +359,82 @@ def __del__(self):
 %}
 
 %extend Handle_AlienImage_BMPAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_GIFAlienImage;
+class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_GIFAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_GIFAlienImage(const Handle_AlienImage_GIFAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_GIFAlienImage(const AlienImage_GIFAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_GIFAlienImage & operator=(const Handle_AlienImage_GIFAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_GIFAlienImage & operator=(const AlienImage_GIFAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_GIFAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_GIFAlienImage {
+	AlienImage_GIFAlienImage* GetObject() {
+	return (AlienImage_GIFAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_GIFAlienImage::~Handle_AlienImage_GIFAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_GIFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_SGIRGBAlienData;
+class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienData();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienData(const Handle_AlienImage_SGIRGBAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienData(const AlienImage_SGIRGBAlienData *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienData & operator=(const Handle_AlienImage_SGIRGBAlienData &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienData & operator=(const AlienImage_SGIRGBAlienData *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_SGIRGBAlienData DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SGIRGBAlienData {
+	AlienImage_SGIRGBAlienData* GetObject() {
+	return (AlienImage_SGIRGBAlienData*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_SGIRGBAlienData::~Handle_AlienImage_SGIRGBAlienData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_SGIRGBAlienData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -593,6 +479,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AlienImage_XAlienImage;
+class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_XAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_XAlienImage(const Handle_AlienImage_XAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_XAlienImage(const AlienImage_XAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_XAlienImage & operator=(const Handle_AlienImage_XAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_XAlienImage & operator=(const AlienImage_XAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_XAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_XAlienImage {
+	AlienImage_XAlienImage* GetObject() {
+	return (AlienImage_XAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_XAlienImage::~Handle_AlienImage_XAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_XAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
+class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage(const AlienImage_SGIRGBAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage & operator=(const Handle_AlienImage_SGIRGBAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SGIRGBAlienImage & operator=(const AlienImage_SGIRGBAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_SGIRGBAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SGIRGBAlienImage {
+	AlienImage_SGIRGBAlienImage* GetObject() {
+	return (AlienImage_SGIRGBAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_SGIRGBAlienImage::~Handle_AlienImage_SGIRGBAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_SGIRGBAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AlienImage_AidaAlienImage;
+class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage(const Handle_AlienImage_AidaAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage(const AlienImage_AidaAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage & operator=(const Handle_AlienImage_AidaAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_AidaAlienImage & operator=(const AlienImage_AidaAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_AidaAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_AidaAlienImage {
+	AlienImage_AidaAlienImage* GetObject() {
+	return (AlienImage_AidaAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_AidaAlienImage::~Handle_AlienImage_AidaAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_AidaAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AlienImage_GIFAlienData;
 class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 	public:
@@ -625,44 +625,6 @@ def __del__(self):
 %}
 
 %extend Handle_AlienImage_GIFAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AlienImage_SunRFAlienImage;
-class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage();
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage(const Handle_AlienImage_SunRFAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage(const AlienImage_SunRFAlienImage *anItem);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage & operator=(const Handle_AlienImage_SunRFAlienImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_AlienImage_SunRFAlienImage & operator=(const AlienImage_SunRFAlienImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AlienImage_SunRFAlienImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AlienImage_SunRFAlienImage {
-	AlienImage_SunRFAlienImage* GetObject() {
-	return (AlienImage_SunRFAlienImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AlienImage_SunRFAlienImage::~Handle_AlienImage_SunRFAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AlienImage_SunRFAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -707,6 +669,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AlienImage_SunRFAlienImage;
+class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienImage();
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienImage(const Handle_AlienImage_SunRFAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienImage(const AlienImage_SunRFAlienImage *anItem);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienImage & operator=(const Handle_AlienImage_SunRFAlienImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_AlienImage_SunRFAlienImage & operator=(const AlienImage_SunRFAlienImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AlienImage_SunRFAlienImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AlienImage_SunRFAlienImage {
+	AlienImage_SunRFAlienImage* GetObject() {
+	return (AlienImage_SunRFAlienImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AlienImage_SunRFAlienImage::~Handle_AlienImage_SunRFAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AlienImage_SunRFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AlienImage_AlienImage;
 class AlienImage_AlienImage : public MMgt_TShared {
 	public:
@@ -729,7 +729,7 @@ class AlienImage_AlienImage : public MMgt_TShared {
 };
 %extend AlienImage_AlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_AlienImage::~AlienImage_AlienImage %{
@@ -764,7 +764,7 @@ class AlienImage_AlienImageData : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienImageData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_AlienImageData::~AlienImage_AlienImageData %{
@@ -799,7 +799,7 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SGIRGBAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_SGIRGBAlienData::~AlienImage_SGIRGBAlienData %{
@@ -812,6 +812,29 @@ def __del__(self):
 %}
 
 %extend AlienImage_SGIRGBAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AlienImage_SUNRFFileHeader;
+class AlienImage_SUNRFFileHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_SUNRFFileHeader();
+
+};
+%feature("shadow") AlienImage_SUNRFFileHeader::~AlienImage_SUNRFFileHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AlienImage_SUNRFFileHeader {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -844,7 +867,7 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienUserImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_AlienUserImage::~AlienImage_AlienUserImage %{
@@ -883,7 +906,7 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SGIRGBAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_SGIRGBAlienImage::~AlienImage_SGIRGBAlienImage %{
@@ -902,40 +925,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor AlienImage_X11XWDAlienData;
-class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
+%nodefaultctor AlienImage_MemoryOperations;
+class AlienImage_MemoryOperations {
 	public:
 		%feature("autodoc", "1");
-		AlienImage_X11XWDAlienData();
+		AlienImage_MemoryOperations();
 		%feature("autodoc", "1");
-		void Clear();
+		static		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Read(OSD_File & afile);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Write(OSD_File & afile) const;
-		%feature("autodoc", "1");
-		virtual		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		const TCollection_AsciiString & Name() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Image_Image ToImage() const;
-		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
 
 };
-%extend AlienImage_X11XWDAlienData {
-	Handle_AlienImage_X11XWDAlienData GetHandle() {
-	return *(Handle_AlienImage_X11XWDAlienData*) &$self;
-	}
-};
-%extend AlienImage_X11XWDAlienData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AlienImage_X11XWDAlienData::~AlienImage_X11XWDAlienData %{
+%feature("shadow") AlienImage_MemoryOperations::~AlienImage_MemoryOperations %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -944,7 +945,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AlienImage_X11XWDAlienData {
+%extend AlienImage_MemoryOperations {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -981,7 +982,7 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SunRFAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_SunRFAlienImage::~AlienImage_SunRFAlienImage %{
@@ -994,6 +995,104 @@ def __del__(self):
 %}
 
 %extend AlienImage_SunRFAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AlienImage_X11XWDAlienData;
+class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_X11XWDAlienData();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Read(OSD_File & afile);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Write(OSD_File & afile) const;
+		%feature("autodoc", "1");
+		virtual		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		const TCollection_AsciiString & Name() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Image_Image ToImage() const;
+		%feature("autodoc", "1");
+		virtual		void FromImage(const Handle_Image_Image &anImage);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AlienImage_X11XWDAlienData {
+	Handle_AlienImage_X11XWDAlienData GetHandle() {
+	return *(Handle_AlienImage_X11XWDAlienData*) &$self;
+	}
+};
+%extend AlienImage_X11XWDAlienData {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") AlienImage_X11XWDAlienData::~AlienImage_X11XWDAlienData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AlienImage_X11XWDAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AlienImage_XAlienImage;
+class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_XAlienImage();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Name() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Image_Image ToImage() const;
+		%feature("autodoc", "1");
+		virtual		void FromImage(const Handle_Image_Image &anImage);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Read(OSD_File & afile);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Write(OSD_File & afile) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AlienImage_XAlienImage {
+	Handle_AlienImage_XAlienImage GetHandle() {
+	return *(Handle_AlienImage_XAlienImage*) &$self;
+	}
+};
+%extend AlienImage_XAlienImage {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") AlienImage_XAlienImage::~AlienImage_XAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AlienImage_XAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1049,7 +1148,7 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_BMPAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_BMPAlienData::~AlienImage_BMPAlienData %{
@@ -1062,78 +1161,6 @@ def __del__(self):
 %}
 
 %extend AlienImage_BMPAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AlienImage_SUNRFFileHeader;
-class AlienImage_SUNRFFileHeader {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_SUNRFFileHeader();
-
-};
-%feature("shadow") AlienImage_SUNRFFileHeader::~AlienImage_SUNRFFileHeader %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AlienImage_SUNRFFileHeader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AlienImage_GIFAlienImage;
-class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_GIFAlienImage();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Name() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Image_Image ToImage() const;
-		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Read(OSD_File & afile);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Write(OSD_File & afile) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AlienImage_GIFAlienImage {
-	Handle_AlienImage_GIFAlienImage GetHandle() {
-	return *(Handle_AlienImage_GIFAlienImage*) &$self;
-	}
-};
-%extend AlienImage_GIFAlienImage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AlienImage_GIFAlienImage::~AlienImage_GIFAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AlienImage_GIFAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1172,52 +1199,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AlienImage_BMPHeader;
-class AlienImage_BMPHeader {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_BMPHeader();
-
-};
-%feature("shadow") AlienImage_BMPHeader::~AlienImage_BMPHeader %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AlienImage_BMPHeader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AlienImage_SGIRGBFileHeader;
-class AlienImage_SGIRGBFileHeader {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_SGIRGBFileHeader();
-
-};
-%feature("shadow") AlienImage_SGIRGBFileHeader::~AlienImage_SGIRGBFileHeader %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AlienImage_SGIRGBFileHeader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AlienImage_AidaAlienImage;
 class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 	public:
@@ -1246,7 +1227,7 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_AidaAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_AidaAlienImage::~AlienImage_AidaAlienImage %{
@@ -1295,7 +1276,7 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_EuclidAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_EuclidAlienData::~AlienImage_EuclidAlienData %{
@@ -1308,6 +1289,29 @@ def __del__(self):
 %}
 
 %extend AlienImage_EuclidAlienData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AlienImage_BMPHeader;
+class AlienImage_BMPHeader {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_BMPHeader();
+
+};
+%feature("shadow") AlienImage_BMPHeader::~AlienImage_BMPHeader %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AlienImage_BMPHeader {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1342,7 +1346,7 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_AidaAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_AidaAlienData::~AlienImage_AidaAlienData %{
@@ -1355,55 +1359,6 @@ def __del__(self):
 %}
 
 %extend AlienImage_AidaAlienData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AlienImage_XAlienImage;
-class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
-	public:
-		%feature("autodoc", "1");
-		AlienImage_XAlienImage();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void SetName(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Name() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Image_Image ToImage() const;
-		%feature("autodoc", "1");
-		virtual		void FromImage(const Handle_Image_Image &anImage);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Read(OSD_File & afile);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Write(OSD_File & afile) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AlienImage_XAlienImage {
-	Handle_AlienImage_XAlienImage GetHandle() {
-	return *(Handle_AlienImage_XAlienImage*) &$self;
-	}
-};
-%extend AlienImage_XAlienImage {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AlienImage_XAlienImage::~AlienImage_XAlienImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AlienImage_XAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1450,7 +1405,7 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SunRFAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_SunRFAlienData::~AlienImage_SunRFAlienData %{
@@ -1495,7 +1450,7 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_EuclidAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_EuclidAlienImage::~AlienImage_EuclidAlienImage %{
@@ -1514,18 +1469,14 @@ def __del__(self):
 };
 
 
-%nodefaultctor AlienImage_MemoryOperations;
-class AlienImage_MemoryOperations {
+%nodefaultctor AlienImage_SGIRGBFileHeader;
+class AlienImage_SGIRGBFileHeader {
 	public:
 		%feature("autodoc", "1");
-		AlienImage_MemoryOperations();
-		%feature("autodoc", "1");
-		static		void SwapLong(const Standard_Address Data, const Standard_Integer Size);
-		%feature("autodoc", "1");
-		static		void SwapShort(const Standard_Address Data, const Standard_Integer Size);
+		AlienImage_SGIRGBFileHeader();
 
 };
-%feature("shadow") AlienImage_MemoryOperations::~AlienImage_MemoryOperations %{
+%feature("shadow") AlienImage_SGIRGBFileHeader::~AlienImage_SGIRGBFileHeader %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1534,7 +1485,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AlienImage_MemoryOperations {
+%extend AlienImage_SGIRGBFileHeader {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1567,7 +1518,7 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_GIFAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_GIFAlienData::~AlienImage_GIFAlienData %{
@@ -1616,7 +1567,7 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_BMPAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AlienImage_BMPAlienImage::~AlienImage_BMPAlienImage %{
@@ -1629,6 +1580,55 @@ def __del__(self):
 %}
 
 %extend AlienImage_BMPAlienImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AlienImage_GIFAlienImage;
+class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
+	public:
+		%feature("autodoc", "1");
+		AlienImage_GIFAlienImage();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void SetName(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Name() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Image_Image ToImage() const;
+		%feature("autodoc", "1");
+		virtual		void FromImage(const Handle_Image_Image &anImage);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Read(OSD_File & afile);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Write(OSD_File & afile) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AlienImage_GIFAlienImage {
+	Handle_AlienImage_GIFAlienImage GetHandle() {
+	return *(Handle_AlienImage_GIFAlienImage*) &$self;
+	}
+};
+%extend AlienImage_GIFAlienImage {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") AlienImage_GIFAlienImage::~AlienImage_GIFAlienImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AlienImage_GIFAlienImage {
 	void _kill_pointed() {
 		delete $self;
 	}

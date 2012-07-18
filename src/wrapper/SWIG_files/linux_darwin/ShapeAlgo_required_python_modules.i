@@ -27,8 +27,8 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import ShapeFix
 import Standard
 import TopoDS
 import Geom
+import ShapeFix
 };

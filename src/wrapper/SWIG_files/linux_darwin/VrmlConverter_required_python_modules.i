@@ -27,9 +27,9 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
+import Vrml
+import Standard
+import HLRAlgo
 import Aspect
 import Quantity
-import Standard
-import Vrml
-import HLRAlgo
 };

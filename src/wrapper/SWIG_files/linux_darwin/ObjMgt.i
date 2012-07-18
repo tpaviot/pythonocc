@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_ObjMgt_SeqNodeOfPSeqOfExtRef;
-class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	ObjMgt_SeqNodeOfPSeqOfExtRef* GetObject() {
-	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ObjMgt_ExternRef;
 class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_ObjMgt_ExternRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ObjMgt_SeqNodeOfPSeqOfExtRef;
+class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
+	ObjMgt_SeqNodeOfPSeqOfExtRef* GetObject() {
+	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -235,73 +235,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
-class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheLast, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_ExternRef &TheItem, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheFirst);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ThePrevious, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheNext, const Handle_ObjMgt_ExternRef &TheItem);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef Value() const;
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Next() const;
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Previous() const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_ObjMgt_ExternRef &AnItem);
-		%feature("autodoc", "1");
-		void SetNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
-		%feature("autodoc", "1");
-		void SetPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef();
-		%feature("autodoc", "1");
-		ObjMgt_SeqNodeOfPSeqOfExtRef(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_ExternRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyItem() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const Handle_ObjMgt_ExternRef &p);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyNext() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	Handle_ObjMgt_SeqNodeOfPSeqOfExtRef GetHandle() {
-	return *(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef*) &$self;
-	}
-};
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ObjMgt_PSeqOfExtRef;
 class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	public:
@@ -392,7 +325,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %extend ObjMgt_PSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_PSeqOfExtRef::~ObjMgt_PSeqOfExtRef %{
@@ -405,6 +338,73 @@ def __del__(self):
 %}
 
 %extend ObjMgt_PSeqOfExtRef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
+class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheLast, const Handle_ObjMgt_ExternRef &TheItem);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_ExternRef &TheItem, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheFirst);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ThePrevious, const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &TheNext, const Handle_ObjMgt_ExternRef &TheItem);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_ExternRef Value() const;
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Next() const;
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef Previous() const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_ObjMgt_ExternRef &AnItem);
+		%feature("autodoc", "1");
+		void SetNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
+		%feature("autodoc", "1");
+		void SetPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &ANode);
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef();
+		%feature("autodoc", "1");
+		ObjMgt_SeqNodeOfPSeqOfExtRef(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyPrevious(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_ExternRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyItem() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyItem(const Handle_ObjMgt_ExternRef &p);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef _CSFDB_GetObjMgt_SeqNodeOfPSeqOfExtRefMyNext() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetObjMgt_SeqNodeOfPSeqOfExtRefMyNext(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	Handle_ObjMgt_SeqNodeOfPSeqOfExtRef GetHandle() {
+	return *(Handle_ObjMgt_SeqNodeOfPSeqOfExtRef*) &$self;
+	}
+};
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -437,7 +437,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %extend ObjMgt_ExternRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternRef::~ObjMgt_ExternRef %{
@@ -478,7 +478,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %extend ObjMgt_ExternShareable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternShareable::~ObjMgt_ExternShareable %{

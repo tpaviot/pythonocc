@@ -50,11 +50,46 @@ $HeaderURL$
 %include XmlObjMgt_headers.i
 
 typedef LDOM_Document XmlObjMgt_Document;
-typedef LDOMString XmlObjMgt_DOMString;
 typedef TColStd_IndexedMapOfTransient XmlObjMgt_SRelocationTable;
+typedef LDOMString XmlObjMgt_DOMString;
 typedef LDOM_Element XmlObjMgt_Element;
 typedef TColStd_DataMapOfIntegerTransient XmlObjMgt_RRelocationTable;
 
+
+
+%nodefaultctor XmlObjMgt_GP;
+class XmlObjMgt_GP {
+	public:
+		%feature("autodoc", "1");
+		XmlObjMgt_GP();
+		%feature("autodoc", "1");
+		static		XmlObjMgt_DOMString Translate(const gp_Trsf aTrsf);
+		%feature("autodoc", "1");
+		static		XmlObjMgt_DOMString Translate(const gp_Mat aMat);
+		%feature("autodoc", "1");
+		static		XmlObjMgt_DOMString Translate(const gp_XYZ anXYZ);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Trsf & T);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Mat & T);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
+
+};
+%feature("shadow") XmlObjMgt_GP::~XmlObjMgt_GP %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlObjMgt_GP {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor XmlObjMgt;
@@ -100,41 +135,6 @@ def __del__(self):
 %}
 
 %extend XmlObjMgt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlObjMgt_GP;
-class XmlObjMgt_GP {
-	public:
-		%feature("autodoc", "1");
-		XmlObjMgt_GP();
-		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_Trsf aTrsf);
-		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_Mat aMat);
-		%feature("autodoc", "1");
-		static		XmlObjMgt_DOMString Translate(const gp_XYZ anXYZ);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Trsf & T);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_Mat & T);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Translate(const XmlObjMgt_DOMString &aStr, gp_XYZ & T);
-
-};
-%feature("shadow") XmlObjMgt_GP::~XmlObjMgt_GP %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlObjMgt_GP {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -24,16 +24,16 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_ChFiDS_SecHArray1::DownCast;
-%rename(DownCast) Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::DownCast;
 %rename(DownCast) Handle_ChFiDS_Stripe::DownCast;
-%rename(DownCast) Handle_ChFiDS_ListNodeOfListOfHElSpine::DownCast;
-%rename(DownCast) Handle_ChFiDS_Spine::DownCast;
-%rename(DownCast) Handle_ChFiDS_ChamfSpine::DownCast;
-%rename(DownCast) Handle_ChFiDS_HElSpine::DownCast;
 %rename(DownCast) Handle_ChFiDS_ListNodeOfListOfStripe::DownCast;
+%rename(DownCast) Handle_ChFiDS_Spine::DownCast;
+%rename(DownCast) Handle_ChFiDS_HData::DownCast;
+%rename(DownCast) Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData::DownCast;
+%rename(DownCast) Handle_ChFiDS_ChamfSpine::DownCast;
 %rename(DownCast) Handle_ChFiDS_FilSpine::DownCast;
+%rename(DownCast) Handle_ChFiDS_HElSpine::DownCast;
+%rename(DownCast) Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::DownCast;
 %rename(DownCast) Handle_ChFiDS_SequenceNodeOfSequenceOfSpine::DownCast;
 %rename(DownCast) Handle_ChFiDS_SurfData::DownCast;
-%rename(DownCast) Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData::DownCast;
 %rename(DownCast) Handle_ChFiDS_ListNodeOfRegularities::DownCast;
-%rename(DownCast) Handle_ChFiDS_HData::DownCast;
+%rename(DownCast) Handle_ChFiDS_ListNodeOfListOfHElSpine::DownCast;

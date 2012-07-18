@@ -50,12 +50,6 @@ $HeaderURL$
 %include Transfer_headers.i
 
 
-enum Transfer_StatusResult {
-	Transfer_StatusVoid,
-	Transfer_StatusDefined,
-	Transfer_StatusUsed,
-	};
-
 enum Transfer_StatusExec {
 	Transfer_StatusInitial,
 	Transfer_StatusRun,
@@ -71,310 +65,12 @@ enum Transfer_UndefMode {
 	Transfer_UndefUser,
 	};
 
+enum Transfer_StatusResult {
+	Transfer_StatusVoid,
+	Transfer_StatusDefined,
+	Transfer_StatusUsed,
+	};
 
-
-%nodefaultctor Handle_Transfer_HSequenceOfFinder;
-class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder(const Handle_Transfer_HSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder(const Transfer_HSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder & operator=(const Handle_Transfer_HSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder & operator=(const Transfer_HSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_HSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_HSequenceOfFinder {
-	Transfer_HSequenceOfFinder* GetObject() {
-	return (Transfer_HSequenceOfFinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_HSequenceOfFinder::~Handle_Transfer_HSequenceOfFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_HSequenceOfFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_Finder;
-class Handle_Transfer_Finder : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder();
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder(const Handle_Transfer_Finder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder(const Transfer_Finder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & operator=(const Handle_Transfer_Finder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & operator=(const Transfer_Finder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_Finder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_Finder {
-	Transfer_Finder* GetObject() {
-	return (Transfer_Finder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_Finder::~Handle_Transfer_Finder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_Finder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
-class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient(const Transfer_ActorOfProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient & operator=(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient & operator=(const Transfer_ActorOfProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorOfProcessForTransient {
-	Transfer_ActorOfProcessForTransient* GetObject() {
-	return (Transfer_ActorOfProcessForTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ActorOfProcessForTransient::~Handle_Transfer_ActorOfProcessForTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ActorOfProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_DispatchControl;
-class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl();
-		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl(const Handle_Transfer_DispatchControl &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl(const Transfer_DispatchControl *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl & operator=(const Handle_Transfer_DispatchControl &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_DispatchControl & operator=(const Transfer_DispatchControl *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_DispatchControl DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_DispatchControl {
-	Transfer_DispatchControl* GetObject() {
-	return (Transfer_DispatchControl*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_DispatchControl::~Handle_Transfer_DispatchControl %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_DispatchControl {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
-class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder & operator=(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
-	Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder* GetObject() {
-	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ActorOfProcessForFinder;
-class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder(const Handle_Transfer_ActorOfProcessForFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder(const Transfer_ActorOfProcessForFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder & operator=(const Handle_Transfer_ActorOfProcessForFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder & operator=(const Transfer_ActorOfProcessForFinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorOfProcessForFinder {
-	Transfer_ActorOfProcessForFinder* GetObject() {
-	return (Transfer_ActorOfProcessForFinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ActorOfProcessForFinder::~Handle_Transfer_ActorOfProcessForFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ActorOfProcessForFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_TransientMapper;
-class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientMapper();
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientMapper(const Handle_Transfer_TransientMapper &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientMapper(const Transfer_TransientMapper *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientMapper & operator=(const Handle_Transfer_TransientMapper &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientMapper & operator=(const Transfer_TransientMapper *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_TransientMapper DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_TransientMapper {
-	Transfer_TransientMapper* GetObject() {
-	return (Transfer_TransientMapper*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_TransientMapper::~Handle_Transfer_TransientMapper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_TransientMapper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
-class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient & operator=(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient* GetObject() {
-	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
 
 
 %nodefaultctor Handle_Transfer_Binder;
@@ -409,424 +105,6 @@ def __del__(self):
 %}
 
 %extend Handle_Transfer_Binder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
-class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient(const Transfer_SimpleBinderOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient & operator=(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient & operator=(const Transfer_SimpleBinderOfTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_SimpleBinderOfTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_SimpleBinderOfTransient {
-	Transfer_SimpleBinderOfTransient* GetObject() {
-	return (Transfer_SimpleBinderOfTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_SimpleBinderOfTransient::~Handle_Transfer_SimpleBinderOfTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_SimpleBinderOfTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ProcessForTransient;
-class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ProcessForTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_ProcessForTransient(const Handle_Transfer_ProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ProcessForTransient(const Transfer_ProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ProcessForTransient & operator=(const Handle_Transfer_ProcessForTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ProcessForTransient & operator=(const Transfer_ProcessForTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ProcessForTransient {
-	Transfer_ProcessForTransient* GetObject() {
-	return (Transfer_ProcessForTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ProcessForTransient::~Handle_Transfer_ProcessForTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_TransientProcess;
-class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess();
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess(const Handle_Transfer_TransientProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess(const Transfer_TransientProcess *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess & operator=(const Handle_Transfer_TransientProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess & operator=(const Transfer_TransientProcess *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_TransientProcess DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_TransientProcess {
-	Transfer_TransientProcess* GetObject() {
-	return (Transfer_TransientProcess*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_TransientProcess::~Handle_Transfer_TransientProcess %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_TransientProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_TransferFailure;
-class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure();
-		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure(const Handle_Transfer_TransferFailure &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure(const Transfer_TransferFailure *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure & operator=(const Handle_Transfer_TransferFailure &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_TransferFailure & operator=(const Transfer_TransferFailure *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_TransferFailure DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_TransferFailure {
-	Transfer_TransferFailure* GetObject() {
-	return (Transfer_TransferFailure*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_TransferFailure::~Handle_Transfer_TransferFailure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_TransferFailure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
-class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_SequenceNodeOfSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
-	Transfer_SequenceNodeOfSequenceOfBinder* GetObject() {
-	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfBinder::~Handle_Transfer_SequenceNodeOfSequenceOfBinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ResultFromTransient;
-class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient();
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient(const Handle_Transfer_ResultFromTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient(const Transfer_ResultFromTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient & operator=(const Handle_Transfer_ResultFromTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ResultFromTransient & operator=(const Transfer_ResultFromTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ResultFromTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ResultFromTransient {
-	Transfer_ResultFromTransient* GetObject() {
-	return (Transfer_ResultFromTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ResultFromTransient::~Handle_Transfer_ResultFromTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ResultFromTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
-class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_SequenceNodeOfSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
-	Transfer_SequenceNodeOfSequenceOfFinder* GetObject() {
-	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfFinder::~Handle_Transfer_SequenceNodeOfSequenceOfFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ActorOfTransientProcess;
-class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfProcessForTransient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess(const Handle_Transfer_ActorOfTransientProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess(const Transfer_ActorOfTransientProcess *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess & operator=(const Handle_Transfer_ActorOfTransientProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess & operator=(const Transfer_ActorOfTransientProcess *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfTransientProcess DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorOfTransientProcess {
-	Transfer_ActorOfTransientProcess* GetObject() {
-	return (Transfer_ActorOfTransientProcess*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ActorOfTransientProcess::~Handle_Transfer_ActorOfTransientProcess %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ActorOfTransientProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_BinderOfTransientInteger;
-class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBinderOfTransient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_BinderOfTransientInteger();
-		%feature("autodoc", "1");
-		Handle_Transfer_BinderOfTransientInteger(const Handle_Transfer_BinderOfTransientInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_BinderOfTransientInteger(const Transfer_BinderOfTransientInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_BinderOfTransientInteger & operator=(const Handle_Transfer_BinderOfTransientInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_BinderOfTransientInteger & operator=(const Transfer_BinderOfTransientInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_BinderOfTransientInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_BinderOfTransientInteger {
-	Transfer_BinderOfTransientInteger* GetObject() {
-	return (Transfer_BinderOfTransientInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_BinderOfTransientInteger::~Handle_Transfer_BinderOfTransientInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_BinderOfTransientInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ActorOfFinderProcess;
-class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess(const Handle_Transfer_ActorOfFinderProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess(const Transfer_ActorOfFinderProcess *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess & operator=(const Handle_Transfer_ActorOfFinderProcess &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfFinderProcess & operator=(const Transfer_ActorOfFinderProcess *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorOfFinderProcess DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorOfFinderProcess {
-	Transfer_ActorOfFinderProcess* GetObject() {
-	return (Transfer_ActorOfFinderProcess*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ActorOfFinderProcess::~Handle_Transfer_ActorOfFinderProcess %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ActorOfFinderProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_ActorDispatch;
-class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch();
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch(const Handle_Transfer_ActorDispatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch(const Transfer_ActorDispatch *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch & operator=(const Handle_Transfer_ActorDispatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorDispatch & operator=(const Transfer_ActorDispatch *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_ActorDispatch DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_ActorDispatch {
-	Transfer_ActorDispatch* GetObject() {
-	return (Transfer_ActorDispatch*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_ActorDispatch::~Handle_Transfer_ActorDispatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_ActorDispatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -909,29 +187,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Transfer_HSequenceOfBinder;
-class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Transfer_HSequenceOfFinder;
+class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfBinder();
+		Handle_Transfer_HSequenceOfFinder();
 		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfBinder(const Handle_Transfer_HSequenceOfBinder &aHandle);
+		Handle_Transfer_HSequenceOfFinder(const Handle_Transfer_HSequenceOfFinder &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfBinder(const Transfer_HSequenceOfBinder *anItem);
+		Handle_Transfer_HSequenceOfFinder(const Transfer_HSequenceOfFinder *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfBinder & operator=(const Handle_Transfer_HSequenceOfBinder &aHandle);
+		Handle_Transfer_HSequenceOfFinder & operator=(const Handle_Transfer_HSequenceOfFinder &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfBinder & operator=(const Transfer_HSequenceOfBinder *anItem);
+		Handle_Transfer_HSequenceOfFinder & operator=(const Transfer_HSequenceOfFinder *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_HSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_HSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_HSequenceOfBinder {
-	Transfer_HSequenceOfBinder* GetObject() {
-	return (Transfer_HSequenceOfBinder*)$self->Access();
+%extend Handle_Transfer_HSequenceOfFinder {
+	Transfer_HSequenceOfFinder* GetObject() {
+	return (Transfer_HSequenceOfFinder*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Transfer_HSequenceOfBinder::~Handle_Transfer_HSequenceOfBinder %{
+%feature("shadow") Handle_Transfer_HSequenceOfFinder::~Handle_Transfer_HSequenceOfFinder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -940,7 +218,501 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Transfer_HSequenceOfBinder {
+%extend Handle_Transfer_HSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
+class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient(const Transfer_SimpleBinderOfTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient & operator=(const Handle_Transfer_SimpleBinderOfTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient & operator=(const Transfer_SimpleBinderOfTransient *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_SimpleBinderOfTransient DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	Transfer_SimpleBinderOfTransient* GetObject() {
+	return (Transfer_SimpleBinderOfTransient*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_SimpleBinderOfTransient::~Handle_Transfer_SimpleBinderOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_SimpleBinderOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ResultFromTransient;
+class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient(const Handle_Transfer_ResultFromTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient(const Transfer_ResultFromTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient & operator=(const Handle_Transfer_ResultFromTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ResultFromTransient & operator=(const Transfer_ResultFromTransient *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ResultFromTransient DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ResultFromTransient {
+	Transfer_ResultFromTransient* GetObject() {
+	return (Transfer_ResultFromTransient*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ResultFromTransient::~Handle_Transfer_ResultFromTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ResultFromTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
+class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder & operator=(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder* GetObject() {
+	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ActorOfProcessForFinder;
+class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder(const Handle_Transfer_ActorOfProcessForFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder(const Transfer_ActorOfProcessForFinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder & operator=(const Handle_Transfer_ActorOfProcessForFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder & operator=(const Transfer_ActorOfProcessForFinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ActorOfProcessForFinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ActorOfProcessForFinder {
+	Transfer_ActorOfProcessForFinder* GetObject() {
+	return (Transfer_ActorOfProcessForFinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ActorOfProcessForFinder::~Handle_Transfer_ActorOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ActorOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ActorOfFinderProcess;
+class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess();
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess(const Handle_Transfer_ActorOfFinderProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess(const Transfer_ActorOfFinderProcess *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess & operator=(const Handle_Transfer_ActorOfFinderProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfFinderProcess & operator=(const Transfer_ActorOfFinderProcess *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ActorOfFinderProcess DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ActorOfFinderProcess {
+	Transfer_ActorOfFinderProcess* GetObject() {
+	return (Transfer_ActorOfFinderProcess*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ActorOfFinderProcess::~Handle_Transfer_ActorOfFinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ActorOfFinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_BinderOfTransientInteger;
+class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBinderOfTransient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_BinderOfTransientInteger();
+		%feature("autodoc", "1");
+		Handle_Transfer_BinderOfTransientInteger(const Handle_Transfer_BinderOfTransientInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_BinderOfTransientInteger(const Transfer_BinderOfTransientInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_BinderOfTransientInteger & operator=(const Handle_Transfer_BinderOfTransientInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_BinderOfTransientInteger & operator=(const Transfer_BinderOfTransientInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_BinderOfTransientInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_BinderOfTransientInteger {
+	Transfer_BinderOfTransientInteger* GetObject() {
+	return (Transfer_BinderOfTransientInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_BinderOfTransientInteger::~Handle_Transfer_BinderOfTransientInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_BinderOfTransientInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_Finder;
+class Handle_Transfer_Finder : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder();
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder(const Handle_Transfer_Finder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder(const Transfer_Finder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & operator=(const Handle_Transfer_Finder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & operator=(const Transfer_Finder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_Finder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_Finder {
+	Transfer_Finder* GetObject() {
+	return (Transfer_Finder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_Finder::~Handle_Transfer_Finder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_Finder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_TransientMapper;
+class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientMapper();
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientMapper(const Handle_Transfer_TransientMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientMapper(const Transfer_TransientMapper *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientMapper & operator=(const Handle_Transfer_TransientMapper &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientMapper & operator=(const Transfer_TransientMapper *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_TransientMapper DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_TransientMapper {
+	Transfer_TransientMapper* GetObject() {
+	return (Transfer_TransientMapper*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_TransientMapper::~Handle_Transfer_TransientMapper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_TransientMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
+class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient & operator=(const Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient & operator=(const Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient* GetObject() {
+	return (Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_TransferFailure;
+class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_TransferFailure();
+		%feature("autodoc", "1");
+		Handle_Transfer_TransferFailure(const Handle_Transfer_TransferFailure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransferFailure(const Transfer_TransferFailure *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransferFailure & operator=(const Handle_Transfer_TransferFailure &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransferFailure & operator=(const Transfer_TransferFailure *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_TransferFailure DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_TransferFailure {
+	Transfer_TransferFailure* GetObject() {
+	return (Transfer_TransferFailure*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_TransferFailure::~Handle_Transfer_TransferFailure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_TransferFailure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
+class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfBinder & operator=(const Transfer_SequenceNodeOfSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_SequenceNodeOfSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	Transfer_SequenceNodeOfSequenceOfBinder* GetObject() {
+	return (Transfer_SequenceNodeOfSequenceOfBinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfBinder::~Handle_Transfer_SequenceNodeOfSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ProcessForTransient;
+class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ProcessForTransient();
+		%feature("autodoc", "1");
+		Handle_Transfer_ProcessForTransient(const Handle_Transfer_ProcessForTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ProcessForTransient(const Transfer_ProcessForTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ProcessForTransient & operator=(const Handle_Transfer_ProcessForTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ProcessForTransient & operator=(const Transfer_ProcessForTransient *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ProcessForTransient {
+	Transfer_ProcessForTransient* GetObject() {
+	return (Transfer_ProcessForTransient*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ProcessForTransient::~Handle_Transfer_ProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_TransientProcess;
+class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess();
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess(const Handle_Transfer_TransientProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess(const Transfer_TransientProcess *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess & operator=(const Handle_Transfer_TransientProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess & operator=(const Transfer_TransientProcess *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_TransientProcess DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_TransientProcess {
+	Transfer_TransientProcess* GetObject() {
+	return (Transfer_TransientProcess*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_TransientProcess::~Handle_Transfer_TransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_TransientProcess {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -985,29 +757,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Transfer_MapContainer;
-class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
+class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer();
+		Handle_Transfer_ActorOfProcessForTransient();
 		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
+		Handle_Transfer_ActorOfProcessForTransient(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
+		Handle_Transfer_ActorOfProcessForTransient(const Transfer_ActorOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer & operator=(const Handle_Transfer_MapContainer &aHandle);
+		Handle_Transfer_ActorOfProcessForTransient & operator=(const Handle_Transfer_ActorOfProcessForTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_Transfer_MapContainer & operator=(const Transfer_MapContainer *anItem);
+		Handle_Transfer_ActorOfProcessForTransient & operator=(const Transfer_ActorOfProcessForTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Transfer_MapContainer DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Transfer_ActorOfProcessForTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Transfer_MapContainer {
-	Transfer_MapContainer* GetObject() {
-	return (Transfer_MapContainer*)$self->Access();
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	Transfer_ActorOfProcessForTransient* GetObject() {
+	return (Transfer_ActorOfProcessForTransient*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Transfer_MapContainer::~Handle_Transfer_MapContainer %{
+%feature("shadow") Handle_Transfer_ActorOfProcessForTransient::~Handle_Transfer_ActorOfProcessForTransient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1016,7 +788,159 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Transfer_MapContainer {
+%extend Handle_Transfer_ActorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ActorOfTransientProcess;
+class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfProcessForTransient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess();
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess(const Handle_Transfer_ActorOfTransientProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess(const Transfer_ActorOfTransientProcess *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess & operator=(const Handle_Transfer_ActorOfTransientProcess &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess & operator=(const Transfer_ActorOfTransientProcess *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ActorOfTransientProcess DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ActorOfTransientProcess {
+	Transfer_ActorOfTransientProcess* GetObject() {
+	return (Transfer_ActorOfTransientProcess*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ActorOfTransientProcess::~Handle_Transfer_ActorOfTransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ActorOfTransientProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_DispatchControl;
+class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_DispatchControl();
+		%feature("autodoc", "1");
+		Handle_Transfer_DispatchControl(const Handle_Transfer_DispatchControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_DispatchControl(const Transfer_DispatchControl *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_DispatchControl & operator=(const Handle_Transfer_DispatchControl &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_DispatchControl & operator=(const Transfer_DispatchControl *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_DispatchControl DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_DispatchControl {
+	Transfer_DispatchControl* GetObject() {
+	return (Transfer_DispatchControl*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_DispatchControl::~Handle_Transfer_DispatchControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_DispatchControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_HSequenceOfBinder;
+class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfBinder(const Handle_Transfer_HSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfBinder(const Transfer_HSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfBinder & operator=(const Handle_Transfer_HSequenceOfBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfBinder & operator=(const Transfer_HSequenceOfBinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_HSequenceOfBinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_HSequenceOfBinder {
+	Transfer_HSequenceOfBinder* GetObject() {
+	return (Transfer_HSequenceOfBinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_HSequenceOfBinder::~Handle_Transfer_HSequenceOfBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_HSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_ActorDispatch;
+class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorDispatch();
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorDispatch(const Handle_Transfer_ActorDispatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorDispatch(const Transfer_ActorDispatch *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorDispatch & operator=(const Handle_Transfer_ActorDispatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorDispatch & operator=(const Transfer_ActorDispatch *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_ActorDispatch DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_ActorDispatch {
+	Transfer_ActorDispatch* GetObject() {
+	return (Transfer_ActorDispatch*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_ActorDispatch::~Handle_Transfer_ActorDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_ActorDispatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1099,6 +1023,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Transfer_MapContainer;
+class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer();
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer(const Handle_Transfer_MapContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer(const Transfer_MapContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer & operator=(const Handle_Transfer_MapContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_MapContainer & operator=(const Transfer_MapContainer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_MapContainer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_MapContainer {
+	Transfer_MapContainer* GetObject() {
+	return (Transfer_MapContainer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_MapContainer::~Handle_Transfer_MapContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_MapContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Transfer_TransientListBinder;
 class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 	public:
@@ -1175,6 +1137,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
+class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Handle_Transfer_SequenceNodeOfSequenceOfFinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_SequenceNodeOfSequenceOfFinder & operator=(const Transfer_SequenceNodeOfSequenceOfFinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_SequenceNodeOfSequenceOfFinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	Transfer_SequenceNodeOfSequenceOfFinder* GetObject() {
+	return (Transfer_SequenceNodeOfSequenceOfFinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_SequenceNodeOfSequenceOfFinder::~Handle_Transfer_SequenceNodeOfSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Transfer_TransferMapOfProcessForTransient;
 class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 	public:
@@ -1212,6 +1212,10 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 		const Handle_Transfer_Binder & FindFromKey(const Handle_Standard_Transient &K) const;
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") Transfer_TransferMapOfProcessForTransient::~Transfer_TransferMapOfProcessForTransient %{
@@ -1289,7 +1293,7 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 };
 %extend Transfer_DispatchControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_DispatchControl::~Transfer_DispatchControl %{
@@ -1356,7 +1360,7 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 };
 %extend Transfer_ResultFromTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_ResultFromTransient::~Transfer_ResultFromTransient %{
@@ -1369,6 +1373,374 @@ def __del__(self):
 %}
 
 %extend Transfer_ResultFromTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_Binder;
+class Transfer_Binder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		void Merge(const Handle_Transfer_Binder &other);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMultiple() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		void AddResult(const Handle_Transfer_Binder &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NextResult() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		void SetAlreadyUsed();
+		%feature("autodoc", "1");
+		Transfer_StatusResult Status() const;
+		%feature("autodoc", "1");
+		Transfer_StatusExec StatusExec() const;
+		%feature("autodoc", "1");
+		void SetStatusExec(const Transfer_StatusExec stat);
+		%feature("autodoc", "1");
+		void AddFail(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		void AddWarning(const char * mess, const char * orig="");
+		%feature("autodoc", "1");
+		Handle_Interface_Check const Check() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check CCheck();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_Binder {
+	Handle_Transfer_Binder GetHandle() {
+	return *(Handle_Transfer_Binder*) &$self;
+	}
+};
+%extend Transfer_Binder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_Binder::~Transfer_Binder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_Binder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfProcessForFinder;
+class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfProcessForFinder();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NullResult() const;
+		%feature("autodoc", "1");
+		void SetLast(const Standard_Boolean mode=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLast() const;
+		%feature("autodoc", "1");
+		void SetNext(const Handle_Transfer_ActorOfProcessForFinder &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForFinder Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfProcessForFinder {
+	Handle_Transfer_ActorOfProcessForFinder GetHandle() {
+	return *(Handle_Transfer_ActorOfProcessForFinder*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForFinder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_ActorOfProcessForFinder::~Transfer_ActorOfProcessForFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_ActorOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfFinderProcess;
+class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfFinderProcess();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetModeTrans() {
+				return (Standard_Integer) $self->ModeTrans();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetModeTrans(Standard_Integer value ) {
+				$self->ModeTrans()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_FinderProcess &TP);
+
+};
+%extend Transfer_ActorOfFinderProcess {
+	Handle_Transfer_ActorOfFinderProcess GetHandle() {
+	return *(Handle_Transfer_ActorOfFinderProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfFinderProcess {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_ActorOfFinderProcess::~Transfer_ActorOfFinderProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_ActorOfFinderProcess {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfProcessForTransient;
+class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfProcessForTransient();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
+		%feature("autodoc", "1");
+		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder NullResult() const;
+		%feature("autodoc", "1");
+		void SetLast(const Standard_Boolean mode=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLast() const;
+		%feature("autodoc", "1");
+		void SetNext(const Handle_Transfer_ActorOfProcessForTransient &next);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfProcessForTransient Next() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfProcessForTransient {
+	Handle_Transfer_ActorOfProcessForTransient GetHandle() {
+	return *(Handle_Transfer_ActorOfProcessForTransient*) &$self;
+	}
+};
+%extend Transfer_ActorOfProcessForTransient {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_ActorOfProcessForTransient::~Transfer_ActorOfProcessForTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_ActorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_HSequenceOfFinder;
+class Transfer_HSequenceOfFinder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Transfer_HSequenceOfFinder();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfFinder Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Transfer_SequenceOfFinder & Sequence() const;
+		%feature("autodoc", "1");
+		Transfer_SequenceOfFinder & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Transfer_HSequenceOfFinder ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_HSequenceOfFinder {
+	Handle_Transfer_HSequenceOfFinder GetHandle() {
+	return *(Handle_Transfer_HSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_HSequenceOfFinder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_HSequenceOfFinder::~Transfer_HSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_HSequenceOfFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_Finder;
+class Transfer_Finder : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer GetHashCode() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Equates(const Handle_Transfer_Finder &other) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ValueType() const;
+		%feature("autodoc", "1");
+		virtual		char * ValueTypeName() const;
+		%feature("autodoc", "1");
+		void SetAttribute(const char * name, const Handle_Standard_Transient &val);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveAttribute(const char * name);
+		%feature("autodoc", "1");
+		Standard_Boolean GetAttribute(const char * name, const Handle_Standard_Type &type, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Attribute(const char * name) const;
+		%feature("autodoc", "1");
+		Interface_ParamType AttributeType(const char * name) const;
+		%feature("autodoc", "1");
+		void SetIntegerAttribute(const char * name, const Standard_Integer val);
+		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
+
+		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer IntegerAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		void SetRealAttribute(const char * name, const Standard_Real val);
+		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
+
+		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real RealAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		void SetStringAttribute(const char * name, const char * val);
+		%feature("autodoc", "1");
+		char * StringAttribute(const char * name) const;
+		%feature("autodoc", "1");
+		Handle_Dico_DictionaryOfTransient AttrList() const;
+		%feature("autodoc", "1");
+		void SameAttributes(const Handle_Transfer_Finder &other);
+		%feature("autodoc", "1");
+		void GetAttributes(const Handle_Transfer_Finder &other, const char * fromname="", const Standard_Boolean copied=1);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_Finder {
+	Handle_Transfer_Finder GetHandle() {
+	return *(Handle_Transfer_Finder*) &$self;
+	}
+};
+%extend Transfer_Finder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_Finder::~Transfer_Finder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_Finder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1519,7 +1891,7 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 };
 %extend Transfer_ProcessForFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_ProcessForFinder::~Transfer_ProcessForFinder %{
@@ -1562,7 +1934,7 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 };
 %extend Transfer_FinderProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_FinderProcess::~Transfer_FinderProcess %{
@@ -1575,560 +1947,6 @@ def __del__(self):
 %}
 
 %extend Transfer_FinderProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_Binder;
-class Transfer_Binder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		void Merge(const Handle_Transfer_Binder &other);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMultiple() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		char * ResultTypeName() const;
-		%feature("autodoc", "1");
-		void AddResult(const Handle_Transfer_Binder &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NextResult() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		void SetAlreadyUsed();
-		%feature("autodoc", "1");
-		Transfer_StatusResult Status() const;
-		%feature("autodoc", "1");
-		Transfer_StatusExec StatusExec() const;
-		%feature("autodoc", "1");
-		void SetStatusExec(const Transfer_StatusExec stat);
-		%feature("autodoc", "1");
-		void AddFail(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		void AddWarning(const char * mess, const char * orig="");
-		%feature("autodoc", "1");
-		Handle_Interface_Check const Check() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check CCheck();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_Binder {
-	Handle_Transfer_Binder GetHandle() {
-	return *(Handle_Transfer_Binder*) &$self;
-	}
-};
-%extend Transfer_Binder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_Binder::~Transfer_Binder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_Binder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_SimpleBinderOfTransient;
-class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SimpleBinderOfTransient();
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		char * ResultTypeName() const;
-		%feature("autodoc", "1");
-		void SetResult(const Handle_Standard_Transient &res);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Result() const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean GetTypedResult(const Handle_Transfer_Binder &bnd, const Handle_Standard_Type &atype, Handle_Standard_Transient & res);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_SimpleBinderOfTransient {
-	Handle_Transfer_SimpleBinderOfTransient GetHandle() {
-	return *(Handle_Transfer_SimpleBinderOfTransient*) &$self;
-	}
-};
-%extend Transfer_SimpleBinderOfTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_SimpleBinderOfTransient::~Transfer_SimpleBinderOfTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_SimpleBinderOfTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_TransferIterator;
-class Transfer_TransferIterator {
-	public:
-		%feature("autodoc", "1");
-		Transfer_TransferIterator();
-		%feature("autodoc", "1");
-		void AddItem(const Handle_Transfer_Binder &atr);
-		%feature("autodoc", "1");
-		void SelectBinder(const Handle_Standard_Type &atype, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectResult(const Handle_Standard_Type &atype, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectUnique(const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		void SelectItem(const Standard_Integer num, const Standard_Boolean keep);
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-		%feature("autodoc", "1");
-		void Start();
-		%feature("autodoc", "1");
-		Standard_Boolean More();
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Transfer_Binder & Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasUniqueResult() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasTransientResult() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & TransientResult() const;
-		%feature("autodoc", "1");
-		Transfer_StatusExec Status() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFails() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasWarnings() const;
-		%feature("autodoc", "1");
-		Handle_Interface_Check const Check() const;
-
-};
-%feature("shadow") Transfer_TransferIterator::~Transfer_TransferIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_TransferIterator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfProcessForFinder;
-class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfProcessForFinder();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NullResult() const;
-		%feature("autodoc", "1");
-		void SetLast(const Standard_Boolean mode=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLast() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_Transfer_ActorOfProcessForFinder &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForFinder Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfProcessForFinder {
-	Handle_Transfer_ActorOfProcessForFinder GetHandle() {
-	return *(Handle_Transfer_ActorOfProcessForFinder*) &$self;
-	}
-};
-%extend Transfer_ActorOfProcessForFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_ActorOfProcessForFinder::~Transfer_ActorOfProcessForFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_ActorOfProcessForFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfProcessForTransient;
-class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfProcessForTransient();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
-		%feature("autodoc", "1");
-		Handle_Transfer_SimpleBinderOfTransient TransientResult(const Handle_Standard_Transient &res) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder NullResult() const;
-		%feature("autodoc", "1");
-		void SetLast(const Standard_Boolean mode=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLast() const;
-		%feature("autodoc", "1");
-		void SetNext(const Handle_Transfer_ActorOfProcessForTransient &next);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfProcessForTransient Next() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfProcessForTransient {
-	Handle_Transfer_ActorOfProcessForTransient GetHandle() {
-	return *(Handle_Transfer_ActorOfProcessForTransient*) &$self;
-	}
-};
-%extend Transfer_ActorOfProcessForTransient {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_ActorOfProcessForTransient::~Transfer_ActorOfProcessForTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_ActorOfProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_HSequenceOfFinder;
-class Transfer_HSequenceOfFinder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Transfer_HSequenceOfFinder();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Transfer_HSequenceOfFinder &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Transfer_Finder &anItem);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & Sequence() const;
-		%feature("autodoc", "1");
-		Transfer_SequenceOfFinder & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Transfer_HSequenceOfFinder ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_HSequenceOfFinder {
-	Handle_Transfer_HSequenceOfFinder GetHandle() {
-	return *(Handle_Transfer_HSequenceOfFinder*) &$self;
-	}
-};
-%extend Transfer_HSequenceOfFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_HSequenceOfFinder::~Transfer_HSequenceOfFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_HSequenceOfFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_Finder;
-class Transfer_Finder : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer GetHashCode() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Equates(const Handle_Transfer_Finder &other) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ValueType() const;
-		%feature("autodoc", "1");
-		virtual		char * ValueTypeName() const;
-		%feature("autodoc", "1");
-		void SetAttribute(const char * name, const Handle_Standard_Transient &val);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveAttribute(const char * name);
-		%feature("autodoc", "1");
-		Standard_Boolean GetAttribute(const char * name, const Handle_Standard_Type &type, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Attribute(const char * name) const;
-		%feature("autodoc", "1");
-		Interface_ParamType AttributeType(const char * name) const;
-		%feature("autodoc", "1");
-		void SetIntegerAttribute(const char * name, const Standard_Integer val);
-		%feature("autodoc","GetIntegerAttribute(Standard_CString name) -> Standard_Integer");
-
-		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer IntegerAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		void SetRealAttribute(const char * name, const Standard_Real val);
-		%feature("autodoc","GetRealAttribute(Standard_CString name) -> Standard_Real");
-
-		Standard_Boolean GetRealAttribute(const char * name, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real RealAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		void SetStringAttribute(const char * name, const char * val);
-		%feature("autodoc", "1");
-		char * StringAttribute(const char * name) const;
-		%feature("autodoc", "1");
-		Handle_Dico_DictionaryOfTransient AttrList() const;
-		%feature("autodoc", "1");
-		void SameAttributes(const Handle_Transfer_Finder &other);
-		%feature("autodoc", "1");
-		void GetAttributes(const Handle_Transfer_Finder &other, const char * fromname="", const Standard_Boolean copied=1);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_Finder {
-	Handle_Transfer_Finder GetHandle() {
-	return *(Handle_Transfer_Finder*) &$self;
-	}
-};
-%extend Transfer_Finder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_Finder::~Transfer_Finder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_Finder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_SequenceOfFinder;
-class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SequenceOfFinder();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & Assign(const Transfer_SequenceOfFinder &Other);
-		%feature("autodoc", "1");
-		const Transfer_SequenceOfFinder & operator=(const Transfer_SequenceOfFinder &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void Append(Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void Prepend(Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Transfer_Finder &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Transfer_Finder &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & First() const;
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Transfer_Finder & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Transfer_Finder &I);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Transfer_SequenceOfFinder::~Transfer_SequenceOfFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_SequenceOfFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
-class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_Finder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Transfer_Finder & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	Handle_Transfer_SequenceNodeOfSequenceOfFinder GetHandle() {
-	return *(Handle_Transfer_SequenceNodeOfSequenceOfFinder*) &$self;
-	}
-};
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_SequenceNodeOfSequenceOfFinder::~Transfer_SequenceNodeOfSequenceOfFinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_SequenceNodeOfSequenceOfFinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_FindHasher;
-class Transfer_FindHasher {
-	public:
-		%feature("autodoc", "1");
-		Transfer_FindHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
-
-};
-%feature("shadow") Transfer_FindHasher::~Transfer_FindHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_FindHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2189,7 +2007,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 };
 %extend Transfer_ResultFromModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_ResultFromModel::~Transfer_ResultFromModel %{
@@ -2202,88 +2020,6 @@ def __del__(self):
 %}
 
 %extend Transfer_ResultFromModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_ActorOfTransientProcess;
-class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransient {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorOfTransientProcess();
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_ActorOfTransientProcess {
-	Handle_Transfer_ActorOfTransientProcess GetHandle() {
-	return *(Handle_Transfer_ActorOfTransientProcess*) &$self;
-	}
-};
-%extend Transfer_ActorOfTransientProcess {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_ActorOfTransientProcess::~Transfer_ActorOfTransientProcess %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_ActorOfTransientProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_ActorDispatch;
-class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
-		%feature("autodoc", "1");
-		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel);
-		%feature("autodoc", "1");
-		void AddActor(const Handle_Transfer_ActorOfTransientProcess &actor);
-		%feature("autodoc", "1");
-		Transfer_TransferDispatch & TransferDispatch();
-
-};
-%extend Transfer_ActorDispatch {
-	Handle_Transfer_ActorDispatch GetHandle() {
-	return *(Handle_Transfer_ActorDispatch*) &$self;
-	}
-};
-%extend Transfer_ActorDispatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_ActorDispatch::~Transfer_ActorDispatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_ActorDispatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2434,7 +2170,7 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 };
 %extend Transfer_ProcessForTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_ProcessForTransient::~Transfer_ProcessForTransient %{
@@ -2447,6 +2183,37 @@ def __del__(self):
 %}
 
 %extend Transfer_ProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_TransferDispatch;
+class Transfer_TransferDispatch : public Interface_CopyTool {
+	public:
+		%feature("autodoc", "1");
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		Handle_Transfer_TransientProcess TransientProcess() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
+
+};
+%feature("shadow") Transfer_TransferDispatch::~Transfer_TransferDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_TransferDispatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2477,7 +2244,7 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 };
 %extend Transfer_TransferFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_TransferFailure::~Transfer_TransferFailure %{
@@ -2514,7 +2281,7 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 };
 %extend Transfer_TransferDeadLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_TransferDeadLoop::~Transfer_TransferDeadLoop %{
@@ -2527,6 +2294,82 @@ def __del__(self):
 %}
 
 %extend Transfer_TransferDeadLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_VoidBinder;
+class Transfer_VoidBinder : public Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_VoidBinder();
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_VoidBinder {
+	Handle_Transfer_VoidBinder GetHandle() {
+	return *(Handle_Transfer_VoidBinder*) &$self;
+	}
+};
+%extend Transfer_VoidBinder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_VoidBinder::~Transfer_VoidBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_VoidBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
+class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Transfer_SequenceNodeOfSequenceOfFinder(const Handle_Transfer_Finder &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	Handle_Transfer_SequenceNodeOfSequenceOfFinder GetHandle() {
+	return *(Handle_Transfer_SequenceNodeOfSequenceOfFinder*) &$self;
+	}
+};
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_SequenceNodeOfSequenceOfFinder::~Transfer_SequenceNodeOfSequenceOfFinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_SequenceNodeOfSequenceOfFinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2567,7 +2410,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder %{
@@ -2580,6 +2423,33 @@ def __del__(self):
 %}
 
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_FindHasher;
+class Transfer_FindHasher {
+	public:
+		%feature("autodoc", "1");
+		Transfer_FindHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Handle_Transfer_Finder &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Handle_Transfer_Finder &K1, const Handle_Transfer_Finder &K2);
+
+};
+%feature("shadow") Transfer_FindHasher::~Transfer_FindHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_FindHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2634,7 +2504,7 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 };
 %extend Transfer_TransientProcess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientProcess::~Transfer_TransientProcess %{
@@ -2677,7 +2547,7 @@ class Transfer_TransientMapper : public Transfer_Finder {
 };
 %extend Transfer_TransientMapper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientMapper::~Transfer_TransientMapper %{
@@ -2690,6 +2560,112 @@ def __del__(self):
 %}
 
 %extend Transfer_TransientMapper {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_SimpleBinderOfTransient;
+class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Transfer_SimpleBinderOfTransient();
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		virtual		char * ResultTypeName() const;
+		%feature("autodoc", "1");
+		void SetResult(const Handle_Standard_Transient &res);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Result() const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean GetTypedResult(const Handle_Transfer_Binder &bnd, const Handle_Standard_Type &atype, Handle_Standard_Transient & res);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_SimpleBinderOfTransient {
+	Handle_Transfer_SimpleBinderOfTransient GetHandle() {
+	return *(Handle_Transfer_SimpleBinderOfTransient*) &$self;
+	}
+};
+%extend Transfer_SimpleBinderOfTransient {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_SimpleBinderOfTransient::~Transfer_SimpleBinderOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_SimpleBinderOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_TransferIterator;
+class Transfer_TransferIterator {
+	public:
+		%feature("autodoc", "1");
+		Transfer_TransferIterator();
+		%feature("autodoc", "1");
+		void AddItem(const Handle_Transfer_Binder &atr);
+		%feature("autodoc", "1");
+		void SelectBinder(const Handle_Standard_Type &atype, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectResult(const Handle_Standard_Type &atype, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectUnique(const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		void SelectItem(const Standard_Integer num, const Standard_Boolean keep);
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+		%feature("autodoc", "1");
+		void Start();
+		%feature("autodoc", "1");
+		Standard_Boolean More();
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Transfer_Binder & Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasUniqueResult() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Type ResultType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasTransientResult() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & TransientResult() const;
+		%feature("autodoc", "1");
+		Transfer_StatusExec Status() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasFails() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasWarnings() const;
+		%feature("autodoc", "1");
+		Handle_Interface_Check const Check() const;
+
+};
+%feature("shadow") Transfer_TransferIterator::~Transfer_TransferIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_TransferIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2729,22 +2705,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor Transfer_TransferDispatch;
-class Transfer_TransferDispatch : public Interface_CopyTool {
+%nodefaultctor Transfer_IteratorOfProcessForTransient;
+class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
 	public:
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		Transfer_IteratorOfProcessForTransient(const Standard_Boolean withstarts);
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		void Add(const Handle_Transfer_Binder &binder);
 		%feature("autodoc", "1");
-		Transfer_TransferDispatch(const Handle_Interface_InterfaceModel &amodel);
+		void Add(const Handle_Transfer_Binder &binder, const Handle_Standard_Transient &start);
 		%feature("autodoc", "1");
-		Handle_Transfer_TransientProcess TransientProcess() const;
+		void Filter(const Handle_TColStd_HSequenceOfTransient &list, const Standard_Boolean keep=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Copy(const Handle_Standard_Transient &entfrom, Handle_Standard_Transient & entto, const Standard_Boolean mapped, const Standard_Boolean errstat);
+		Standard_Boolean HasStarting() const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Starting() const;
 
 };
-%feature("shadow") Transfer_TransferDispatch::~Transfer_TransferDispatch %{
+%feature("shadow") Transfer_IteratorOfProcessForTransient::~Transfer_IteratorOfProcessForTransient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2753,7 +2731,48 @@ def __del__(self):
 		pass
 %}
 
-%extend Transfer_TransferDispatch {
+%extend Transfer_IteratorOfProcessForTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_ActorOfTransientProcess;
+class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransient {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorOfTransientProcess();
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transferring(const Handle_Standard_Transient &start, const Handle_Transfer_ProcessForTransient &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorOfTransientProcess {
+	Handle_Transfer_ActorOfTransientProcess GetHandle() {
+	return *(Handle_Transfer_ActorOfTransientProcess*) &$self;
+	}
+};
+%extend Transfer_ActorOfTransientProcess {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_ActorOfTransientProcess::~Transfer_ActorOfTransientProcess %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_ActorOfTransientProcess {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2780,7 +2799,7 @@ class Transfer_MapContainer : public MMgt_TShared {
 };
 %extend Transfer_MapContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_MapContainer::~Transfer_MapContainer %{
@@ -2799,44 +2818,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor Transfer_ActorOfFinderProcess;
-class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
+%nodefaultctor Transfer_SequenceOfFinder;
+class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Transfer_ActorOfFinderProcess();
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetModeTrans() {
-				return (Standard_Integer) $self->ModeTrans();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetModeTrans(Standard_Integer value ) {
-				$self->ModeTrans()=value;
-				}
-		};
+		Transfer_SequenceOfFinder();
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transferring(const Handle_Transfer_Finder &start, const Handle_Transfer_ProcessForFinder &TP);
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &TP);
+		const Transfer_SequenceOfFinder & Assign(const Transfer_SequenceOfFinder &Other);
 		%feature("autodoc", "1");
-		virtual		Handle_Standard_Transient TransferTransient(const Handle_Standard_Transient &start, const Handle_Transfer_FinderProcess &TP);
+		const Transfer_SequenceOfFinder & operator=(const Transfer_SequenceOfFinder &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Append(const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void Append(Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void Prepend(Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Transfer_Finder &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Transfer_Finder &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & First() const;
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Transfer_SequenceOfFinder & S);
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Transfer_Finder & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Transfer_Finder &I);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Transfer_Finder & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Transfer_ActorOfFinderProcess {
-	Handle_Transfer_ActorOfFinderProcess GetHandle() {
-	return *(Handle_Transfer_ActorOfFinderProcess*) &$self;
-	}
-};
-%extend Transfer_ActorOfFinderProcess {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_ActorOfFinderProcess::~Transfer_ActorOfFinderProcess %{
+%feature("shadow") Transfer_SequenceOfFinder::~Transfer_SequenceOfFinder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2845,46 +2876,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Transfer_ActorOfFinderProcess {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_VoidBinder;
-class Transfer_VoidBinder : public Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type ResultType() const;
-		%feature("autodoc", "1");
-		virtual		char * ResultTypeName() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Transfer_VoidBinder {
-	Handle_Transfer_VoidBinder GetHandle() {
-	return *(Handle_Transfer_VoidBinder*) &$self;
-	}
-};
-%extend Transfer_VoidBinder {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Transfer_VoidBinder::~Transfer_VoidBinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_VoidBinder {
+%extend Transfer_SequenceOfFinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2988,7 +2980,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 };
 %extend Transfer_MultipleBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_MultipleBinder::~Transfer_MultipleBinder %{
@@ -3085,6 +3077,10 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 		const Handle_Transfer_Binder & FindFromKey(const Handle_Transfer_Finder &K) const;
 		%feature("autodoc", "1");
 		Handle_Transfer_Binder & ChangeFromKey(const Handle_Transfer_Finder &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_Transfer_Finder &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_Transfer_Finder &K);
 
 };
 %feature("shadow") Transfer_TransferMapOfProcessForFinder::~Transfer_TransferMapOfProcessForFinder %{
@@ -3137,7 +3133,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 };
 %extend Transfer_TransientListBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_TransientListBinder::~Transfer_TransientListBinder %{
@@ -3174,7 +3170,7 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 };
 %extend Transfer_SequenceNodeOfSequenceOfBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_SequenceNodeOfSequenceOfBinder::~Transfer_SequenceNodeOfSequenceOfBinder %{
@@ -3213,7 +3209,7 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 };
 %extend Transfer_BinderOfTransientInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_BinderOfTransientInteger::~Transfer_BinderOfTransientInteger %{
@@ -3292,7 +3288,7 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 };
 %extend Transfer_HSequenceOfBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_HSequenceOfBinder::~Transfer_HSequenceOfBinder %{
@@ -3305,6 +3301,51 @@ def __del__(self):
 %}
 
 %extend Transfer_HSequenceOfBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Transfer_ActorDispatch;
+class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Interface_GeneralLib &lib);
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel, const Handle_Interface_Protocol &protocol);
+		%feature("autodoc", "1");
+		Transfer_ActorDispatch(const Handle_Interface_InterfaceModel &amodel);
+		%feature("autodoc", "1");
+		void AddActor(const Handle_Transfer_ActorOfTransientProcess &actor);
+		%feature("autodoc", "1");
+		Transfer_TransferDispatch & TransferDispatch();
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Standard_Transient &start, const Handle_Transfer_TransientProcess &TP);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Transfer_ActorDispatch {
+	Handle_Transfer_ActorDispatch GetHandle() {
+	return *(Handle_Transfer_ActorDispatch*) &$self;
+	}
+};
+%extend Transfer_ActorDispatch {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Transfer_ActorDispatch::~Transfer_ActorDispatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Transfer_ActorDispatch {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3372,7 +3413,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient %{
@@ -3385,39 +3426,6 @@ def __del__(self):
 %}
 
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Transfer_IteratorOfProcessForTransient;
-class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
-	public:
-		%feature("autodoc", "1");
-		Transfer_IteratorOfProcessForTransient(const Standard_Boolean withstarts);
-		%feature("autodoc", "1");
-		void Add(const Handle_Transfer_Binder &binder);
-		%feature("autodoc", "1");
-		void Add(const Handle_Transfer_Binder &binder, const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		void Filter(const Handle_TColStd_HSequenceOfTransient &list, const Standard_Boolean keep=1);
-		%feature("autodoc", "1");
-		Standard_Boolean HasStarting() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Starting() const;
-
-};
-%feature("shadow") Transfer_IteratorOfProcessForTransient::~Transfer_IteratorOfProcessForTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Transfer_IteratorOfProcessForTransient {
 	void _kill_pointed() {
 		delete $self;
 	}

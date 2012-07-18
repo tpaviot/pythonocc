@@ -31,9 +31,10 @@ import Standard
 import TopoDS
 import TCollection
 import TopTools
-import BOPTColStd
-import BooleanOperations
-import TopAbs
 import gp
+import TopAbs
+import BooleanOperations
+import IntTools
+import BOPTColStd
 import BOPTools
 };

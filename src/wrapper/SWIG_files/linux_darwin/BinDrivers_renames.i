@@ -23,8 +23,8 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BinDrivers_DocumentRetrievalDriver::DownCast;
 %rename(DownCast) Handle_BinDrivers_DocumentStorageDriver::DownCast;
+%rename(DownCast) Handle_BinDrivers_DocumentRetrievalDriver::DownCast;
 %rename(Factory) BinDrivers::Factory;
 %rename(AttributeDrivers) BinDrivers::AttributeDrivers;
 %rename(StorageVersion) BinDrivers::StorageVersion;

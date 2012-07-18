@@ -59,44 +59,6 @@ enum Intf_PIType {
 
 
 
-%nodefaultctor Handle_Intf_SequenceNodeOfSeqOfTangentZone;
-class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone();
-		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
-		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
-		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
-		%feature("autodoc", "1");
-		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Intf_SequenceNodeOfSeqOfTangentZone DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
-	Intf_SequenceNodeOfSeqOfTangentZone* GetObject() {
-	return (Intf_SequenceNodeOfSeqOfTangentZone*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Intf_SequenceNodeOfSeqOfTangentZone::~Handle_Intf_SequenceNodeOfSeqOfTangentZone %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Intf_SequenceNodeOfSeqOfSectionLine;
 class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_SeqNode {
 	public:
@@ -129,6 +91,44 @@ def __del__(self):
 %}
 
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Intf_SequenceNodeOfSeqOfTangentZone;
+class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone();
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Handle_Intf_SequenceNodeOfSeqOfTangentZone &aHandle);
+		%feature("autodoc", "1");
+		Handle_Intf_SequenceNodeOfSeqOfTangentZone & operator=(const Intf_SequenceNodeOfSeqOfTangentZone *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Intf_SequenceNodeOfSeqOfTangentZone DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
+	Intf_SequenceNodeOfSeqOfTangentZone* GetObject() {
+	return (Intf_SequenceNodeOfSeqOfTangentZone*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Intf_SequenceNodeOfSeqOfTangentZone::~Handle_Intf_SequenceNodeOfSeqOfTangentZone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -191,7 +191,7 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionPoint::~Intf_SequenceNodeOfSeqOfSectionPoint %{
@@ -228,7 +228,7 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionLine::~Intf_SequenceNodeOfSeqOfSectionLine %{
@@ -313,71 +313,6 @@ def __del__(self):
 %}
 
 %extend Intf_SectionPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Intf_SeqOfSectionPoint;
-class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Intf_SeqOfSectionPoint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
-		%feature("autodoc", "1");
-		const Intf_SeqOfSectionPoint & operator=(const Intf_SeqOfSectionPoint &Other);
-		%feature("autodoc", "1");
-		void Append(const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void Append(Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void Prepend(const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void Prepend(Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & First() const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Intf_SectionPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Intf_SectionPoint &I);
-		%feature("autodoc", "1");
-		Intf_SectionPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Intf_SectionPoint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Intf_SeqOfSectionPoint::~Intf_SeqOfSectionPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf_SeqOfSectionPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -532,7 +467,7 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfTangentZone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfTangentZone::~Intf_SequenceNodeOfSeqOfTangentZone %{
@@ -596,6 +531,71 @@ def __del__(self):
 %}
 
 %extend Intf_Array1OfLin {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_SeqOfSectionPoint;
+class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Intf_SeqOfSectionPoint();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionPoint & Assign(const Intf_SeqOfSectionPoint &Other);
+		%feature("autodoc", "1");
+		const Intf_SeqOfSectionPoint & operator=(const Intf_SeqOfSectionPoint &Other);
+		%feature("autodoc", "1");
+		void Append(const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void Append(Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void Prepend(const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void Prepend(Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Intf_SectionPoint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Intf_SectionPoint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & First() const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Intf_SeqOfSectionPoint & S);
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Intf_SectionPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Intf_SectionPoint &I);
+		%feature("autodoc", "1");
+		Intf_SectionPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Intf_SectionPoint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Intf_SeqOfSectionPoint::~Intf_SeqOfSectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_SeqOfSectionPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -753,34 +753,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Intf;
-class Intf {
-	public:
-		%feature("autodoc", "1");
-		Intf();
-		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
-
-		static		void PlaneEquation(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Contain(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt ThePnt);
-
-};
-%feature("shadow") Intf::~Intf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Intf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Intf_TangentZone;
 class Intf_TangentZone {
 	public:
@@ -851,6 +823,98 @@ def __del__(self):
 %}
 
 %extend Intf_TangentZone {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_InterferencePolygon2d;
+class Intf_InterferencePolygon2d : public Intf_Interference {
+	public:
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d();
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d(const Intf_Polygon2d &Obje1, const Intf_Polygon2d &Obje2);
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d(const Intf_Polygon2d &Obje);
+		%feature("autodoc", "1");
+		void Perform(const Intf_Polygon2d &Obje1, const Intf_Polygon2d &Obje2);
+		%feature("autodoc", "1");
+		void Perform(const Intf_Polygon2d &Obje);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
+
+};
+%feature("shadow") Intf_InterferencePolygon2d::~Intf_InterferencePolygon2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_InterferencePolygon2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_Polygon2d;
+class Intf_Polygon2d {
+	public:
+		%feature("autodoc", "1");
+		const Bnd_Box2d & Bounding() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real DeflectionOverEstimation() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
+
+};
+%feature("shadow") Intf_Polygon2d::~Intf_Polygon2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_Polygon2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf;
+class Intf {
+	public:
+		%feature("autodoc", "1");
+		Intf();
+		%feature("autodoc","PlaneEquation(const P1, const P2, const P3) -> Standard_Real");
+
+		static		void PlaneEquation(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, gp_XYZ & NormalVector, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Contain(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt ThePnt);
+
+};
+%feature("shadow") Intf::~Intf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf {
 	void _kill_pointed() {
 		delete $self;
 	}

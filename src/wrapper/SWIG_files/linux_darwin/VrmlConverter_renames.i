@@ -24,12 +24,13 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_VrmlConverter_ShadingAspect::DownCast;
-%rename(DownCast) Handle_VrmlConverter_Drawer::DownCast;
 %rename(DownCast) Handle_VrmlConverter_PointAspect::DownCast;
 %rename(DownCast) Handle_VrmlConverter_LineAspect::DownCast;
-%rename(DownCast) Handle_VrmlConverter_IsoAspect::DownCast;
 %rename(DownCast) Handle_VrmlConverter_Projector::DownCast;
+%rename(DownCast) Handle_VrmlConverter_IsoAspect::DownCast;
+%rename(DownCast) Handle_VrmlConverter_Drawer::DownCast;
 %rename(Add) VrmlConverter_WFDeflectionShape::Add;
+%rename(Add) VrmlConverter_DeflectionCurve::Add;
 %rename(Add) VrmlConverter_WFDeflectionRestrictedFace::Add;
 %rename(AddUIso) VrmlConverter_WFDeflectionRestrictedFace::AddUIso;
 %rename(AddVIso) VrmlConverter_WFDeflectionRestrictedFace::AddVIso;
@@ -39,6 +40,5 @@ $HeaderURL$
 %rename(Add) VrmlConverter_ShadedShape::Add;
 %rename(ComputeNormal) VrmlConverter_ShadedShape::ComputeNormal;
 %rename(Add) VrmlConverter_Curve::Add;
-%rename(Add) VrmlConverter_HLRShape::Add;
 %rename(Add) VrmlConverter_WFShape::Add;
-%rename(Add) VrmlConverter_DeflectionCurve::Add;
+%rename(Add) VrmlConverter_HLRShape::Add;

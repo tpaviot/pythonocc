@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TColStd
+import gp
 import TColgp
 import Geom
-import gp
 };

@@ -24,18 +24,18 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_XmlMXCAFDoc_LocationDriver::DownCast;
+%rename(DownCast) Handle_XmlMXCAFDoc_ColorToolDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_CentroidDriver::DownCast;
-%rename(DownCast) Handle_XmlMXCAFDoc_GraphNodeDriver::DownCast;
-%rename(DownCast) Handle_XmlMXCAFDoc_VolumeDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_DimTolToolDriver::DownCast;
+%rename(DownCast) Handle_XmlMXCAFDoc_VolumeDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_DocumentToolDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_ColorDriver::DownCast;
+%rename(DownCast) Handle_XmlMXCAFDoc_GraphNodeDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_DimTolDriver::DownCast;
-%rename(DownCast) Handle_XmlMXCAFDoc_DatumDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_MaterialDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_LayerToolDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_MaterialToolDriver::DownCast;
-%rename(DownCast) Handle_XmlMXCAFDoc_AreaDriver::DownCast;
+%rename(DownCast) Handle_XmlMXCAFDoc_DatumDriver::DownCast;
 %rename(DownCast) Handle_XmlMXCAFDoc_ShapeToolDriver::DownCast;
-%rename(DownCast) Handle_XmlMXCAFDoc_ColorToolDriver::DownCast;
+%rename(DownCast) Handle_XmlMXCAFDoc_AreaDriver::DownCast;
 %rename(AddDrivers) XmlMXCAFDoc::AddDrivers;

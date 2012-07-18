@@ -54,7 +54,6 @@ $HeaderURL$
 #include<HLRBRep_Hider.hxx>
 #include<HLRBRep_IntConicCurveOfCInter.hxx>
 #include<HLRBRep_InterCSurf.hxx>
-#include<HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter.hxx>
 #include<HLRBRep_InternalAlgo.hxx>
 #include<HLRBRep_Intersector.hxx>
 #include<HLRBRep_LineTool.hxx>
@@ -88,7 +87,6 @@ $HeaderURL$
 #include<HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter.hxx>
 #include<HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter.hxx>
 #include<HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter.hxx>
-#include<HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter.hxx>
 #include<HLRBRep_ThePolygonOfInterCSurf.hxx>
 #include<HLRBRep_ThePolygonToolOfInterCSurf.hxx>
 #include<HLRBRep_ThePolyhedronOfInterCSurf.hxx>
@@ -113,19 +111,18 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<IntRes2d_Domain.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>
 #include<gp_Parab2d.hxx>
 #include<gp_Hypr2d.hxx>
+#include<gp_Pnt2d.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<Handle_HLRTopoBRep_OutLiner.hxx>
 #include<Handle_MMgt_TShared.hxx>
 #include<Extrema_POnCurv2d.hxx>
 #include<gp_Lin.hxx>
-#include<Bnd_BoundSortBox.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
@@ -138,18 +135,19 @@ $HeaderURL$
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
-#include<BRepTopAdaptor_MapOfShapeTool.hxx>
+#include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Dir2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<IntSurf_Quadric.hxx>
+#include<BRepTopAdaptor_MapOfShapeTool.hxx>
+#include<Bnd_BoundSortBox.hxx>
 #include<Bnd_Box2d.hxx>
 #include<TopoDS_Shape.hxx>
 #include<HLRAlgo_ListIteratorOfInterferenceList.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
-#include<TopoDS_Face.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>

@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import Geom2d
 import TopLoc
 import TopoDS
 import Geom
-import Geom2d
 };

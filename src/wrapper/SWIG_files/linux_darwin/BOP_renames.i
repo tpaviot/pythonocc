@@ -25,18 +25,18 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_BOP_HistoryCollector::DownCast;
 %rename(DownCast) Handle_BOP_ShellSolidHistoryCollector::DownCast;
-%rename(DownCast) Handle_BOP_SolidSolidHistoryCollector::DownCast;
+%rename(DownCast) Handle_BOP_SequenceNodeOfSeqOfSeqOfShape::DownCast;
 %rename(DownCast) Handle_BOP_ListNodeOfListOfListOfLoop::DownCast;
-%rename(DownCast) Handle_BOP_WireSolidHistoryCollector::DownCast;
-%rename(DownCast) Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::DownCast;
 %rename(DownCast) Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo::DownCast;
+%rename(DownCast) Handle_BOP_WireSolidHistoryCollector::DownCast;
+%rename(DownCast) Handle_BOP_ListNodeOfListOfFaceInfo::DownCast;
+%rename(DownCast) Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::DownCast;
 %rename(DownCast) Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo::DownCast;
 %rename(DownCast) Handle_BOP_ListNodeOfListOfCheckResult::DownCast;
+%rename(DownCast) Handle_BOP_SolidSolidHistoryCollector::DownCast;
 %rename(DownCast) Handle_BOP_ListNodeOfListOfLoop::DownCast;
-%rename(DownCast) Handle_BOP_SequenceNodeOfSeqOfSeqOfShape::DownCast;
-%rename(DownCast) Handle_BOP_Loop::DownCast;
 %rename(DownCast) Handle_BOP_SectionHistoryCollector::DownCast;
-%rename(DownCast) Handle_BOP_ListNodeOfListOfFaceInfo::DownCast;
+%rename(DownCast) Handle_BOP_Loop::DownCast;
 %rename(DownCast) Handle_BOP_ListNodeOfListOfConnexityBlock::DownCast;
 %rename(DownCast) Handle_BOP_ListNodeOfListOfEdgeInfo::DownCast;
 %rename(SortTypes) BOP_Builder::SortTypes;
@@ -54,9 +54,9 @@ $HeaderURL$
 %rename(IsPartOn2dToKeep) BOP_BuilderTools::IsPartOn2dToKeep;
 %rename(DoMap) BOP_BuilderTools::DoMap;
 %rename(MakeConnexityBlocks) BOP_BuilderTools::MakeConnexityBlocks;
+%rename(CheckArgTypes) BOP_WireSolid::CheckArgTypes;
 %rename(CheckArgTypes) BOP_ShellSolid::CheckArgTypes;
+%rename(IsUVISO) BOP_WireEdgeSet::IsUVISO;
 %rename(CorrectTolerances) BOP_CorrectTolerances::CorrectTolerances;
 %rename(CorrectCurveOnSurface) BOP_CorrectTolerances::CorrectCurveOnSurface;
 %rename(CorrectPointOnCurve) BOP_CorrectTolerances::CorrectPointOnCurve;
-%rename(CheckArgTypes) BOP_WireSolid::CheckArgTypes;
-%rename(IsUVISO) BOP_WireEdgeSet::IsUVISO;

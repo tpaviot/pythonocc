@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopoDS
 import OSD
+import TopoDS
 import TCollection
 import TColStd
 import Dico

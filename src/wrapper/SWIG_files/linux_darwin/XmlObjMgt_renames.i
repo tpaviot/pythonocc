@@ -23,6 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(Translate) XmlObjMgt_GP::Translate;
 %rename(IdString) XmlObjMgt::IdString;
 %rename(SetExtendedString) XmlObjMgt::SetExtendedString;
 %rename(GetExtendedString) XmlObjMgt::GetExtendedString;
@@ -34,4 +35,3 @@ $HeaderURL$
 %rename(FindChildByRef) XmlObjMgt::FindChildByRef;
 %rename(FindChildByName) XmlObjMgt::FindChildByName;
 %rename(GetReal) XmlObjMgt::GetReal;
-%rename(Translate) XmlObjMgt_GP::Translate;

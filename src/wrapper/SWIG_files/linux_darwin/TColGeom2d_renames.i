@@ -25,12 +25,12 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_TColGeom2d_HArray1OfGeometry::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HSequenceOfGeometry::DownCast;
+%rename(DownCast) Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HSequenceOfBoundedCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HArray1OfBSplineCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HArray1OfCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HSequenceOfCurve::DownCast;
-%rename(DownCast) Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HArray1OfBoundedCurve::DownCast;
-%rename(DownCast) Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry::DownCast;
 %rename(DownCast) Handle_TColGeom2d_HArray1OfBezierCurve::DownCast;
+%rename(DownCast) Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry::DownCast;

@@ -122,24 +122,39 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
+%nodefaultctor Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
+class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter();
+		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
 		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje2);
+		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d P, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje);
+		void Initialize(const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
-		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje2);
+		void SetPoint(const gp_Pnt2d P);
+		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje);
+		virtual		Standard_Integer GetStateNumber();
 		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
+		Standard_Integer NbExt() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMin(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d Point(const Standard_Integer N) const;
 
 };
-%feature("shadow") Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter::~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter %{
+%feature("shadow") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -148,7 +163,63 @@ def __del__(self):
 		pass
 %}
 
-%extend Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter {
+%extend Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter;
+class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
+
+};
+%feature("shadow") Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter::~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
+class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &curve1, const Adaptor2d_Curve2d &curve2);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+
+};
+%feature("shadow") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter::~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -233,145 +304,6 @@ def __del__(self):
 %}
 
 %extend Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
-class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter();
-		%feature("autodoc", "1");
-		Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter(const gp_Pnt2d P, const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C);
-		%feature("autodoc", "1");
-		void SetPoint(const gp_Pnt2d P);
-		%feature("autodoc","Value(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real U, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real U) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		Standard_Integer NbExt() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMin(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Extrema_POnCurv2d Point(const Standard_Integer N) const;
-
-};
-%feature("shadow") Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter;
-class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter();
-
-};
-%feature("shadow") Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter::~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  BeginOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  EndOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
-
-};
-%feature("shadow") Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &curve1, const Adaptor2d_Curve2d &curve2);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-
-};
-%feature("shadow") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter::~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -603,7 +535,7 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 };
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
@@ -623,7 +555,7 @@ def __del__(self):
 
 
 %nodefaultctor Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
+class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d {
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &Curve, const Standard_Integer NbPnt, const IntRes2d_Domain &Domain, const Standard_Real Tol);
@@ -632,21 +564,15 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 		%feature("autodoc", "1");
 		void ComputeWithBox(const Adaptor2d_Curve2d &Curve, const Bnd_Box2d &OtherBox);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation() const;
+		virtual		Standard_Real DeflectionOverEstimation() const;
 		%feature("autodoc", "1");
 		void SetDeflectionOverEstimation(const Standard_Real x);
 		%feature("autodoc", "1");
 		void Closed(const Standard_Boolean flag);
 		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
+		virtual		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");

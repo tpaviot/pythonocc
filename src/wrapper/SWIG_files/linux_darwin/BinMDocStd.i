@@ -90,31 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMDocStd;
-class BinMDocStd {
-	public:
-		%feature("autodoc", "1");
-		BinMDocStd();
-		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
-
-};
-%feature("shadow") BinMDocStd::~BinMDocStd %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMDocStd {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMDocStd_XLinkDriver;
 class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 	public:
@@ -137,7 +112,7 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 };
 %extend BinMDocStd_XLinkDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinMDocStd_XLinkDriver::~BinMDocStd_XLinkDriver %{
@@ -150,6 +125,31 @@ def __del__(self):
 %}
 
 %extend BinMDocStd_XLinkDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMDocStd;
+class BinMDocStd {
+	public:
+		%feature("autodoc", "1");
+		BinMDocStd();
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+
+};
+%feature("shadow") BinMDocStd::~BinMDocStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMDocStd {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TDF
 import PDF
+import TDF
 import TDataStd
 };

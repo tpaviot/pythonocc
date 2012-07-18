@@ -23,9 +23,9 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_PPoly_HArray1OfTriangle::DownCast;
-%rename(DownCast) Handle_PPoly_Polygon2D::DownCast;
-%rename(DownCast) Handle_PPoly_Polygon3D::DownCast;
-%rename(DownCast) Handle_PPoly_Triangulation::DownCast;
-%rename(DownCast) Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::DownCast;
 %rename(DownCast) Handle_PPoly_PolygonOnTriangulation::DownCast;
+%rename(DownCast) Handle_PPoly_Polygon2D::DownCast;
+%rename(DownCast) Handle_PPoly_HArray1OfTriangle::DownCast;
+%rename(DownCast) Handle_PPoly_Triangulation::DownCast;
+%rename(DownCast) Handle_PPoly_Polygon3D::DownCast;
+%rename(DownCast) Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::DownCast;

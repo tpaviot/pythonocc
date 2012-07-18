@@ -24,7 +24,7 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_ProjLib_HProjectedCurve::DownCast;
-%rename(DownCast) Handle_ProjLib_HCompProjectedCurve::DownCast;
 %rename(DownCast) Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::DownCast;
 %rename(DownCast) Handle_ProjLib_HSequenceOfHSequenceOfPnt::DownCast;
+%rename(DownCast) Handle_ProjLib_HCompProjectedCurve::DownCast;
 %rename(Project) ProjLib::Project;

@@ -67,11 +67,11 @@ $HeaderURL$
 #include<IntSurf.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
+#include<gp_Pnt.hxx>
+#include<gp_Dir2d.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Cone.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Dir2d.hxx>
 #include<gp_Vec2d.hxx>
 %}

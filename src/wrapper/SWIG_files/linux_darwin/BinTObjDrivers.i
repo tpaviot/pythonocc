@@ -166,44 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BinTObjDrivers_DocumentRetrievalDriver;
-class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentRetrievalDriver(const Handle_BinTObjDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentRetrievalDriver(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const Handle_BinTObjDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinTObjDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
-	BinTObjDrivers_DocumentRetrievalDriver* GetObject() {
-	return (BinTObjDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinTObjDrivers_DocumentRetrievalDriver::~Handle_BinTObjDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinTObjDrivers_DocumentStorageDriver;
 class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
 	public:
@@ -318,18 +280,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinTObjDrivers;
-class BinTObjDrivers {
+%nodefaultctor Handle_BinTObjDrivers_DocumentRetrievalDriver;
+class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
 	public:
 		%feature("autodoc", "1");
-		BinTObjDrivers();
+		Handle_BinTObjDrivers_DocumentRetrievalDriver();
 		%feature("autodoc", "1");
-		static		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+		Handle_BinTObjDrivers_DocumentRetrievalDriver(const Handle_BinTObjDrivers_DocumentRetrievalDriver &aHandle);
 		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+		Handle_BinTObjDrivers_DocumentRetrievalDriver(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const Handle_BinTObjDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinTObjDrivers_DocumentRetrievalDriver & operator=(const BinTObjDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinTObjDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") BinTObjDrivers::~BinTObjDrivers %{
+%extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
+	BinTObjDrivers_DocumentRetrievalDriver* GetObject() {
+	return (BinTObjDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinTObjDrivers_DocumentRetrievalDriver::~Handle_BinTObjDrivers_DocumentRetrievalDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -338,245 +311,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BinTObjDrivers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_IntSparseArrayDriver;
-class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_IntSparseArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_IntSparseArrayDriver {
-	Handle_BinTObjDrivers_IntSparseArrayDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_IntSparseArrayDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_IntSparseArrayDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_IntSparseArrayDriver::~BinTObjDrivers_IntSparseArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_IntSparseArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_ObjectDriver;
-class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_ObjectDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_ObjectDriver {
-	Handle_BinTObjDrivers_ObjectDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_ObjectDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_ObjectDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_ObjectDriver::~BinTObjDrivers_ObjectDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_ObjectDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_DocumentRetrievalDriver;
-class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_DocumentRetrievalDriver {
-	Handle_BinTObjDrivers_DocumentRetrievalDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_DocumentRetrievalDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_DocumentRetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_DocumentRetrievalDriver::~BinTObjDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_DocumentStorageDriver;
-class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_DocumentStorageDriver {
-	Handle_BinTObjDrivers_DocumentStorageDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_DocumentStorageDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_DocumentStorageDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_DocumentStorageDriver::~BinTObjDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_ReferenceDriver;
-class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_ReferenceDriver {
-	Handle_BinTObjDrivers_ReferenceDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_ReferenceDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_ReferenceDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_ReferenceDriver::~BinTObjDrivers_ReferenceDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_ReferenceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTObjDrivers_ModelDriver;
-class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinTObjDrivers_ModelDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinTObjDrivers_ModelDriver {
-	Handle_BinTObjDrivers_ModelDriver GetHandle() {
-	return *(Handle_BinTObjDrivers_ModelDriver*) &$self;
-	}
-};
-%extend BinTObjDrivers_ModelDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinTObjDrivers_ModelDriver::~BinTObjDrivers_ModelDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTObjDrivers_ModelDriver {
+%extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -605,7 +340,7 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinTObjDrivers_XYZDriver::~BinTObjDrivers_XYZDriver %{
@@ -618,6 +353,271 @@ def __del__(self):
 %}
 
 %extend BinTObjDrivers_XYZDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_ModelDriver;
+class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_ModelDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_ModelDriver {
+	Handle_BinTObjDrivers_ModelDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_ModelDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_ModelDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_ModelDriver::~BinTObjDrivers_ModelDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_ModelDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_ObjectDriver;
+class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_ObjectDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_ObjectDriver {
+	Handle_BinTObjDrivers_ObjectDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_ObjectDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_ObjectDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_ObjectDriver::~BinTObjDrivers_ObjectDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_ObjectDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_ReferenceDriver;
+class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_ReferenceDriver {
+	Handle_BinTObjDrivers_ReferenceDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_ReferenceDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_ReferenceDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_ReferenceDriver::~BinTObjDrivers_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_ReferenceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers;
+class BinTObjDrivers {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Transient Factory(const Standard_GUID &aGUID);
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &aMsgDrv);
+
+};
+%feature("shadow") BinTObjDrivers::~BinTObjDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_DocumentRetrievalDriver;
+class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_DocumentRetrievalDriver {
+	Handle_BinTObjDrivers_DocumentRetrievalDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_DocumentRetrievalDriver::~BinTObjDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_IntSparseArrayDriver;
+class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_IntSparseArrayDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &theSource, const Handle_TDF_Attribute &theTarget, BinObjMgt_RRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &theSource, BinObjMgt_Persistent & theTarget, BinObjMgt_SRelocationTable & theRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_IntSparseArrayDriver {
+	Handle_BinTObjDrivers_IntSparseArrayDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_IntSparseArrayDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_IntSparseArrayDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_IntSparseArrayDriver::~BinTObjDrivers_IntSparseArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_IntSparseArrayDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinTObjDrivers_DocumentStorageDriver;
+class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		BinTObjDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinTObjDrivers_DocumentStorageDriver {
+	Handle_BinTObjDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_BinTObjDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend BinTObjDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinTObjDrivers_DocumentStorageDriver::~BinTObjDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTObjDrivers_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

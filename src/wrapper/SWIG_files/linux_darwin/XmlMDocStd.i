@@ -137,7 +137,7 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDocStd_XLinkDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDocStd_XLinkDriver::~XmlMDocStd_XLinkDriver %{

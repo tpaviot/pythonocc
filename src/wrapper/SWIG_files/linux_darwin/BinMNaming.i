@@ -128,6 +128,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor BinMNaming_NamingDriver;
+class BinMNaming_NamingDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMNaming_NamingDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMNaming_NamingDriver {
+	Handle_BinMNaming_NamingDriver GetHandle() {
+	return *(Handle_BinMNaming_NamingDriver*) &$self;
+	}
+};
+%extend BinMNaming_NamingDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinMNaming_NamingDriver::~BinMNaming_NamingDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMNaming_NamingDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinMNaming;
 class BinMNaming {
 	public:
@@ -151,47 +192,6 @@ def __del__(self):
 %}
 
 %extend BinMNaming {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinMNaming_NamingDriver;
-class BinMNaming_NamingDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMNaming_NamingDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMNaming_NamingDriver {
-	Handle_BinMNaming_NamingDriver GetHandle() {
-	return *(Handle_BinMNaming_NamingDriver*) &$self;
-	}
-};
-%extend BinMNaming_NamingDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinMNaming_NamingDriver::~BinMNaming_NamingDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMNaming_NamingDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -243,7 +243,7 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinMNaming_NamedShapeDriver::~BinMNaming_NamedShapeDriver %{

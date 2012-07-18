@@ -38,13 +38,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_IGESData_IGESModel.hxx>
+#include<Handle_IGESGeom_Direction.hxx>
+#include<Handle_Geom2d_Vector.hxx>
+#include<Handle_Geom2d_VectorWithMagnitude.hxx>
+#include<Handle_Geom2d_Direction.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_IGESGeom_Point.hxx>
 #include<Handle_Geom2d_Point.hxx>
 #include<Handle_Geom2d_CartesianPoint.hxx>
-#include<Handle_IGESGeom_Direction.hxx>
-#include<Handle_Geom2d_Vector.hxx>
-#include<Handle_Geom2d_VectorWithMagnitude.hxx>
-#include<Handle_Geom2d_Direction.hxx>
 %}

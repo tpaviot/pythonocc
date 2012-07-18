@@ -23,19 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Image_PixMap::DownCast;
 %rename(DownCast) Handle_Image_Image::DownCast;
-%rename(DownCast) Handle_Image_DColorImage::DownCast;
 %rename(DownCast) Handle_Image_DIndexedImage::DownCast;
 %rename(DownCast) Handle_Image_PseudoColorImage::DownCast;
-%rename(DownCast) Handle_Image_DataMapNodeOfLookupTable::DownCast;
-%rename(DownCast) Handle_Image_PixMap::DownCast;
 %rename(DownCast) Handle_Image_DataMapNodeOfColorPixelDataMap::DownCast;
+%rename(DownCast) Handle_Image_DColorImage::DownCast;
 %rename(DownCast) Handle_Image_ColorImage::DownCast;
-%rename(HashCode) Image_IndexPixelMapHasher::HashCode;
-%rename(IsEqual) Image_IndexPixelMapHasher::IsEqual;
+%rename(DownCast) Handle_Image_DataMapNodeOfLookupTable::DownCast;
 %rename(Zoom) Image::Zoom;
 %rename(Rotate) Image::Rotate;
 %rename(Translate) Image::Translate;
 %rename(Affine) Image::Affine;
+%rename(HashCode) Image_IndexPixelMapHasher::HashCode;
+%rename(IsEqual) Image_IndexPixelMapHasher::IsEqual;
 %rename(HashCode) Image_ColorPixelMapHasher::HashCode;
 %rename(IsEqual) Image_ColorPixelMapHasher::IsEqual;

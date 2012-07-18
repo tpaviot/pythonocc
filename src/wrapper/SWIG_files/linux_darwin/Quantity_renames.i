@@ -27,11 +27,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Quantity_PeriodDefinitionError::DownCast;
 %rename(DownCast) Handle_Quantity_HArray1OfColor::DownCast;
 %rename(DownCast) Handle_Quantity_DateDefinitionError::DownCast;
-%rename(IsValid) Quantity_Period::IsValid;
-%rename(Raise) Quantity_ColorDefinitionError::Raise;
-%rename(NewInstance) Quantity_ColorDefinitionError::NewInstance;
-%rename(Raise) Quantity_PeriodDefinitionError::Raise;
-%rename(NewInstance) Quantity_PeriodDefinitionError::NewInstance;
 %rename(SetEpsilon) Quantity_Color::SetEpsilon;
 %rename(Epsilon) Quantity_Color::Epsilon;
 %rename(Name) Quantity_Color::Name;
@@ -41,8 +36,13 @@ $HeaderURL$
 %rename(Color2argb) Quantity_Color::Color2argb;
 %rename(Argb2color) Quantity_Color::Argb2color;
 %rename(Test) Quantity_Color::Test;
+%rename(Raise) Quantity_ColorDefinitionError::Raise;
+%rename(NewInstance) Quantity_ColorDefinitionError::NewInstance;
+%rename(IsValid) Quantity_Period::IsValid;
 %rename(IsValid) Quantity_Date::IsValid;
 %rename(IsLeap) Quantity_Date::IsLeap;
+%rename(Raise) Quantity_PeriodDefinitionError::Raise;
+%rename(NewInstance) Quantity_PeriodDefinitionError::NewInstance;
 %rename(Raise) Quantity_DateDefinitionError::Raise;
 %rename(NewInstance) Quantity_DateDefinitionError::NewInstance;
 %rename(SetQuantity) Quantity_Convert::SetQuantity;

@@ -40,7 +40,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Geom2dAdaptor.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Adaptor2d_Curve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<gp_Pnt2d.hxx>
@@ -52,6 +54,4 @@ $HeaderURL$
 #include<gp_Parab2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Geom2dAdaptor.hxx>
-#include<Adaptor2d_Curve2d.hxx>
 %}

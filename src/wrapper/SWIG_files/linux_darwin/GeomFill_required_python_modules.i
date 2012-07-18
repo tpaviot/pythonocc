@@ -30,11 +30,11 @@ import GarbageCollector
 import Standard
 import gp
 import Geom
+import Law
 import GeomAbs
 import Adaptor3d
-import Geom2d
 import Approx
 import TColgp
 import TColStd
-import Law
+import Geom2d
 };

@@ -28,8 +28,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Resource_NoSuchResource::DownCast;
 %rename(DownCast) Handle_Resource_Manager::DownCast;
 %rename(Sort) Resource_QuickSortOfArray1::Sort;
-%rename(Raise) Resource_NoSuchResource::Raise;
-%rename(NewInstance) Resource_NoSuchResource::NewInstance;
 %rename(ConvertSJISToUnicode) Resource_Unicode::ConvertSJISToUnicode;
 %rename(ConvertEUCToUnicode) Resource_Unicode::ConvertEUCToUnicode;
 %rename(ConvertGBToUnicode) Resource_Unicode::ConvertGBToUnicode;
@@ -43,3 +41,5 @@ $HeaderURL$
 %rename(ReadFormat) Resource_Unicode::ReadFormat;
 %rename(ConvertFormatToUnicode) Resource_Unicode::ConvertFormatToUnicode;
 %rename(ConvertUnicodeToFormat) Resource_Unicode::ConvertUnicodeToFormat;
+%rename(Raise) Resource_NoSuchResource::Raise;
+%rename(NewInstance) Resource_NoSuchResource::NewInstance;

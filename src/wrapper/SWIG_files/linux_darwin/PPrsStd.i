@@ -202,7 +202,7 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 };
 %extend PPrsStd_AISPresentation_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PPrsStd_AISPresentation_1::~PPrsStd_AISPresentation_1 %{
@@ -287,7 +287,7 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 };
 %extend PPrsStd_AISPresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PPrsStd_AISPresentation::~PPrsStd_AISPresentation %{

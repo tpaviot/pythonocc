@@ -125,6 +125,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -407,6 +408,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -500,16 +502,16 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Graphic2d_GraphicObject.hxx>
-#include<Handle_Graphic3d_StructureManager.hxx>
-#include<Handle_Graphic3d_Structure.hxx>
-#include<Handle_Graphic3d_DataStructureManager.hxx>
-#include<TColStd_Array2OfReal.hxx>
 #include<gp_Pnt.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Prs3d_Presentation.hxx>
 #include<Handle_Viewer_View.hxx>
+#include<Handle_Graphic2d_GraphicObject.hxx>
+#include<Handle_Graphic3d_StructureManager.hxx>
+#include<Handle_Graphic3d_Structure.hxx>
+#include<Handle_Graphic3d_DataStructureManager.hxx>
+#include<TColStd_Array2OfReal.hxx>
 #include<Handle_Graphic2d_View.hxx>
 #include<Handle_Graphic2d_Buffer.hxx>
 #include<Handle_Geom_Transformation.hxx>

@@ -111,9 +111,9 @@ class BRepGProp {
 		%feature("autodoc", "1");
 		static		Standard_Real VolumeProperties(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 		%feature("autodoc", "1");
-		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const gp_Pln thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const gp_Pln thePln, const Standard_Real Eps=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 
 };
 %feature("shadow") BRepGProp::~BRepGProp %{
@@ -238,36 +238,6 @@ def __del__(self):
 %}
 
 %extend BRepGProp_Vinert {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepGProp_UFunctionOfVinertGK;
-class BRepGProp_UFunctionOfVinertGK : public math_Function {
-	public:
-		%feature("autodoc", "1");
-		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
-		%feature("autodoc", "1");
-		void SetValueType(const GProp_ValueType theType);
-		%feature("autodoc", "1");
-		void SetVParam(const Standard_Real theVParam);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-
-};
-%feature("shadow") BRepGProp_UFunctionOfVinertGK::~BRepGProp_UFunctionOfVinertGK %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepGProp_UFunctionOfVinertGK {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -444,6 +414,36 @@ def __del__(self):
 %}
 
 %extend BRepGProp_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepGProp_UFunctionOfVinertGK;
+class BRepGProp_UFunctionOfVinertGK : public math_Function {
+	public:
+		%feature("autodoc", "1");
+		BRepGProp_UFunctionOfVinertGK(const BRepGProp_Face &theSurface, const gp_Pnt theVertex, const Standard_Boolean IsByPoint, const Standard_Address theCoeffs);
+		%feature("autodoc", "1");
+		void SetValueType(const GProp_ValueType theType);
+		%feature("autodoc", "1");
+		void SetVParam(const Standard_Real theVParam);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+
+};
+%feature("shadow") BRepGProp_UFunctionOfVinertGK::~BRepGProp_UFunctionOfVinertGK %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepGProp_UFunctionOfVinertGK {
 	void _kill_pointed() {
 		delete $self;
 	}

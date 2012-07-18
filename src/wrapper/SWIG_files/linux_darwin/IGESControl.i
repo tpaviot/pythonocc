@@ -166,6 +166,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESControl_ToolContainer;
+class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESControl_ToolContainer();
+		%feature("autodoc", "1");
+		Handle_IGESControl_ToolContainer(const Handle_IGESControl_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESControl_ToolContainer(const IGESControl_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESControl_ToolContainer & operator=(const Handle_IGESControl_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESControl_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESControl_ToolContainer {
+	IGESControl_ToolContainer* GetObject() {
+	return (IGESControl_ToolContainer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESControl_ToolContainer::~Handle_IGESControl_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESControl_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESControl_IGESBoundary;
 class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	public:
@@ -204,29 +242,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESControl_ToolContainer;
-class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer {
+%nodefaultctor IGESControl_AlgoContainer;
+class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer();
+		IGESControl_AlgoContainer();
 		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer(const Handle_IGESControl_ToolContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer(const IGESControl_ToolContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer & operator=(const Handle_IGESControl_ToolContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESControl_ToolContainer & operator=(const IGESControl_ToolContainer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESControl_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_IGESControl_ToolContainer {
-	IGESControl_ToolContainer* GetObject() {
-	return (IGESControl_ToolContainer*)$self->Access();
+%extend IGESControl_AlgoContainer {
+	Handle_IGESControl_AlgoContainer GetHandle() {
+	return *(Handle_IGESControl_AlgoContainer*) &$self;
 	}
 };
-%feature("shadow") Handle_IGESControl_ToolContainer::~Handle_IGESControl_ToolContainer %{
+%extend IGESControl_AlgoContainer {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,7 +270,46 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESControl_ToolContainer {
+%extend IGESControl_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESControl_ActorWrite;
+class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
+	public:
+		%feature("autodoc", "1");
+		IGESControl_ActorWrite();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESControl_ActorWrite {
+	Handle_IGESControl_ActorWrite GetHandle() {
+	return *(Handle_IGESControl_ActorWrite*) &$self;
+	}
+};
+%extend IGESControl_ActorWrite {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESControl_ActorWrite {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -277,30 +351,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESControl_ActorWrite;
-class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
+%nodefaultctor IGESControl_IGESBoundary;
+class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 	public:
 		%feature("autodoc", "1");
-		IGESControl_ActorWrite();
+		IGESControl_IGESBoundary();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
 		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
+		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESControl_ActorWrite {
-	Handle_IGESControl_ActorWrite GetHandle() {
-	return *(Handle_IGESControl_ActorWrite*) &$self;
+%extend IGESControl_IGESBoundary {
+	Handle_IGESControl_IGESBoundary GetHandle() {
+	return *(Handle_IGESControl_IGESBoundary*) &$self;
 	}
 };
-%extend IGESControl_ActorWrite {
+%extend IGESControl_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{
+%feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -309,7 +383,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESControl_ActorWrite {
+%extend IGESControl_IGESBoundary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -334,7 +408,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %extend IGESControl_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
@@ -347,80 +421,6 @@ def __del__(self):
 %}
 
 %extend IGESControl_ToolContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESControl_AlgoContainer;
-class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
-	public:
-		%feature("autodoc", "1");
-		IGESControl_AlgoContainer();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESControl_AlgoContainer {
-	Handle_IGESControl_AlgoContainer GetHandle() {
-	return *(Handle_IGESControl_AlgoContainer*) &$self;
-	}
-};
-%extend IGESControl_AlgoContainer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESControl_AlgoContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESControl_IGESBoundary;
-class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
-	public:
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary();
-		%feature("autodoc", "1");
-		IGESControl_IGESBoundary(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		virtual		void Check(const Standard_Boolean result, const Standard_Boolean checkclosure, const Standard_Boolean okCurve3d, const Standard_Boolean okCurve2d);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESControl_IGESBoundary {
-	Handle_IGESControl_IGESBoundary GetHandle() {
-	return *(Handle_IGESControl_IGESBoundary*) &$self;
-	}
-};
-%extend IGESControl_IGESBoundary {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESControl_IGESBoundary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -500,7 +500,7 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %extend IGESControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_Controller::~IGESControl_Controller %{

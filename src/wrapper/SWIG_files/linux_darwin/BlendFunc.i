@@ -59,6 +59,40 @@ enum BlendFunc_SectionShape {
 
 
 
+%nodefaultctor BlendFunc;
+class BlendFunc {
+	public:
+		%feature("autodoc", "1");
+		BlendFunc();
+		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		static		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
+		%feature("autodoc", "1");
+		static		void GetMinimalWeights(const BlendFunc_SectionShape SectShape, const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		static		GeomAbs_Shape NextShape(const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ComputeNormal(const Handle_Adaptor3d_HSurface &Surf, const gp_Pnt2d p2d, gp_Vec & Normal);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ComputeDNormal(const Handle_Adaptor3d_HSurface &Surf, const gp_Pnt2d p2d, gp_Vec & Normal, gp_Vec & DNu, gp_Vec & DNv);
+
+};
+%feature("shadow") BlendFunc::~BlendFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BlendFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BlendFunc_Chamfer;
 class BlendFunc_Chamfer : public Blend_Function {
 	public:
@@ -145,145 +179,6 @@ def __del__(self):
 %}
 
 %extend BlendFunc_Chamfer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BlendFunc_ChamfInv;
-class BlendFunc_ChamfInv : public Blend_FuncInv {
-	public:
-		%feature("autodoc", "1");
-		BlendFunc_ChamfInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
-
-};
-%feature("shadow") BlendFunc_ChamfInv::~BlendFunc_ChamfInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BlendFunc_ChamfInv {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BlendFunc_ChAsym;
-class BlendFunc_ChAsym : public Blend_Function {
-	public:
-		%feature("autodoc", "1");
-		BlendFunc_ChAsym(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMinimalDistance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ComputeValues(const math_Vector &X, const Standard_Integer DegF, const Standard_Integer DegL);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  PointOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  PointOnS2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec  TangentOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d  Tangent2dOnS1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec  TangentOnS2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d  Tangent2dOnS2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TwistOnS1() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean TwistOnS2() const;
-		%feature("autodoc", "1");
-		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
-		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
-
-		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
-
-		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
-
-};
-%feature("shadow") BlendFunc_ChAsym::~BlendFunc_ChAsym %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BlendFunc_ChAsym {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -388,25 +283,89 @@ def __del__(self):
 };
 
 
-%nodefaultctor BlendFunc;
-class BlendFunc {
+%nodefaultctor BlendFunc_ChAsym;
+class BlendFunc_ChAsym : public Blend_Function {
 	public:
 		%feature("autodoc", "1");
-		BlendFunc();
-		%feature("autodoc","GetShape(BlendFunc_SectionShape SectShape, Standard_Real MaxAng) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+		BlendFunc_ChAsym(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMinimalDistance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ComputeValues(const math_Vector &X, const Standard_Integer DegF, const Standard_Integer DegL);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  PointOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  PointOnS2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec  TangentOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d  Tangent2dOnS1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec  TangentOnS2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d  Tangent2dOnS2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TwistOnS1() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean TwistOnS2() const;
+		%feature("autodoc", "1");
+		virtual		void Tangent(const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, gp_Vec & TgFirst, gp_Vec & TgLast, gp_Vec & NormFirst, gp_Vec & NormLast) const;
+		%feature("autodoc","Section(Standard_Real Param, Standard_Real U1, Standard_Real V1, Standard_Real U2, Standard_Real V2) -> [Standard_Real, Standard_Real]");
 
-		static		void GetShape(const BlendFunc_SectionShape SectShape, const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
+		void Section(const Standard_Real Param, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, Standard_Real &OutValue, Standard_Real &OutValue, gp_Lin & C);
 		%feature("autodoc", "1");
-		static		void GetMinimalWeights(const BlendFunc_SectionShape SectShape, const Convert_ParameterisationType TConv, const Standard_Real AngleMin, const Standard_Real AngleMax, TColStd_Array1OfReal & Weigths);
+		virtual		Standard_Boolean IsRational() const;
 		%feature("autodoc", "1");
-		static		GeomAbs_Shape NextShape(const GeomAbs_Shape S);
+		virtual		Standard_Real GetSectionSize() const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean ComputeNormal(const Handle_Adaptor3d_HSurface &Surf, const gp_Pnt2d p2d, gp_Vec & Normal);
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean ComputeDNormal(const Handle_Adaptor3d_HSurface &Surf, const gp_Pnt2d p2d, gp_Vec & Normal, gp_Vec & DNu, gp_Vec & DNv);
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		%feature("autodoc","Resolution(Standard_Integer IC2d, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
+		virtual		void Resolution(const Standard_Integer IC2d, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Dist1, const Standard_Real Angle, const Standard_Integer Choix);
 
 };
-%feature("shadow") BlendFunc::~BlendFunc %{
+%feature("shadow") BlendFunc_ChAsym::~BlendFunc_ChAsym %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -415,7 +374,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BlendFunc {
+%extend BlendFunc_ChAsym {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -608,11 +567,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor BlendFunc_ConstRadInv;
-class BlendFunc_ConstRadInv : public Blend_FuncInv {
+%nodefaultctor BlendFunc_ChamfInv;
+class BlendFunc_ChamfInv : public Blend_FuncInv {
 	public:
 		%feature("autodoc", "1");
-		BlendFunc_ConstRadInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		BlendFunc_ChamfInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
 		%feature("autodoc", "1");
@@ -630,10 +589,10 @@ class BlendFunc_ConstRadInv : public Blend_FuncInv {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Set(const Standard_Real R, const Standard_Integer Choix);
+		void Set(const Standard_Real Dist1, const Standard_Real Dist2, const Standard_Integer Choix);
 
 };
-%feature("shadow") BlendFunc_ConstRadInv::~BlendFunc_ConstRadInv %{
+%feature("shadow") BlendFunc_ChamfInv::~BlendFunc_ChamfInv %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -642,7 +601,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BlendFunc_ConstRadInv {
+%extend BlendFunc_ChamfInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -682,6 +641,47 @@ def __del__(self):
 %}
 
 %extend BlendFunc_RuledInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BlendFunc_ConstRadInv;
+class BlendFunc_ConstRadInv : public Blend_FuncInv {
+	public:
+		%feature("autodoc", "1");
+		BlendFunc_ConstRadInv(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real R, const Standard_Integer Choix);
+
+};
+%feature("shadow") BlendFunc_ConstRadInv::~BlendFunc_ConstRadInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BlendFunc_ConstRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -879,6 +879,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor BlendFunc_Tensor;
+class BlendFunc_Tensor {
+	public:
+		%feature("autodoc", "1");
+		BlendFunc_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
+		%feature("autodoc", "1");
+		void Init(const Standard_Real InitialValue);
+		%feature("autodoc", "1");
+		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
+				$self->ChangeValue(Row,Col,Mat)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
+		%feature("autodoc", "1");
+		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
+
+};
+%feature("shadow") BlendFunc_Tensor::~BlendFunc_Tensor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BlendFunc_Tensor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BlendFunc_CSConstRad;
 class BlendFunc_CSConstRad : public Blend_CSFunction {
 	public:
@@ -969,51 +1014,6 @@ def __del__(self):
 %}
 
 %extend BlendFunc_CSConstRad {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BlendFunc_Tensor;
-class BlendFunc_Tensor {
-	public:
-		%feature("autodoc", "1");
-		BlendFunc_Tensor(const Standard_Integer NbRow, const Standard_Integer NbCol, const Standard_Integer NbMat);
-		%feature("autodoc", "1");
-		void Init(const Standard_Real InitialValue);
-		%feature("autodoc", "1");
-		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
-				return (Standard_Real) $self->ChangeValue(Row,Col,Mat);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat) {
-				$self->ChangeValue(Row,Col,Mat)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col, const Standard_Integer Mat);
-		%feature("autodoc", "1");
-		void Multiply(const math_Vector &Right, math_Matrix & Product) const;
-
-};
-%feature("shadow") BlendFunc_Tensor::~BlendFunc_Tensor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BlendFunc_Tensor {
 	void _kill_pointed() {
 		delete $self;
 	}

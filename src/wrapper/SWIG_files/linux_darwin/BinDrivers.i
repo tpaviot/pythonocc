@@ -57,44 +57,6 @@ enum BinDrivers_Marker {
 
 
 
-%nodefaultctor Handle_BinDrivers_DocumentRetrievalDriver;
-class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver(const BinDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinDrivers_DocumentRetrievalDriver {
-	BinDrivers_DocumentRetrievalDriver* GetObject() {
-	return (BinDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinDrivers_DocumentRetrievalDriver::~Handle_BinDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinDrivers_DocumentStorageDriver;
 class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
 	public:
@@ -133,6 +95,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BinDrivers_DocumentRetrievalDriver;
+class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_BinDrivers_DocumentRetrievalDriver(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinDrivers_DocumentRetrievalDriver(const BinDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const Handle_BinDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinDrivers_DocumentRetrievalDriver & operator=(const BinDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinDrivers_DocumentRetrievalDriver {
+	BinDrivers_DocumentRetrievalDriver* GetObject() {
+	return (BinDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinDrivers_DocumentRetrievalDriver::~Handle_BinDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinDrivers_DocumentStorageDriver;
 class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
 	public:
@@ -153,7 +153,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 };
 %extend BinDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinDrivers_DocumentStorageDriver::~BinDrivers_DocumentStorageDriver %{
@@ -166,35 +166,6 @@ def __del__(self):
 %}
 
 %extend BinDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinDrivers;
-class BinDrivers {
-	public:
-		%feature("autodoc", "1");
-		BinDrivers();
-		%feature("autodoc", "1");
-		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
-		%feature("autodoc", "1");
-		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
-		%feature("autodoc", "1");
-		static		TCollection_AsciiString StorageVersion();
-
-};
-%feature("shadow") BinDrivers::~BinDrivers %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinDrivers {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -225,7 +196,7 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 };
 %extend BinDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinDrivers_DocumentRetrievalDriver::~BinDrivers_DocumentRetrievalDriver %{
@@ -238,6 +209,35 @@ def __del__(self):
 %}
 
 %extend BinDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinDrivers;
+class BinDrivers {
+	public:
+		%feature("autodoc", "1");
+		BinDrivers();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		%feature("autodoc", "1");
+		static		TCollection_AsciiString StorageVersion();
+
+};
+%feature("shadow") BinDrivers::~BinDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinDrivers {
 	void _kill_pointed() {
 		delete $self;
 	}

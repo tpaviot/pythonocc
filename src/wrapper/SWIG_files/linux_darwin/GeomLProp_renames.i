@@ -23,13 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(Continuity) GeomLProp::Continuity;
-%rename(Value) GeomLProp_SurfaceTool::Value;
-%rename(D1) GeomLProp_SurfaceTool::D1;
-%rename(D2) GeomLProp_SurfaceTool::D2;
-%rename(DN) GeomLProp_SurfaceTool::DN;
-%rename(Continuity) GeomLProp_SurfaceTool::Continuity;
-%rename(Bounds) GeomLProp_SurfaceTool::Bounds;
 %rename(Value) GeomLProp_CurveTool::Value;
 %rename(D1) GeomLProp_CurveTool::D1;
 %rename(D2) GeomLProp_CurveTool::D2;
@@ -37,3 +30,10 @@ $HeaderURL$
 %rename(Continuity) GeomLProp_CurveTool::Continuity;
 %rename(FirstParameter) GeomLProp_CurveTool::FirstParameter;
 %rename(LastParameter) GeomLProp_CurveTool::LastParameter;
+%rename(Continuity) GeomLProp::Continuity;
+%rename(Value) GeomLProp_SurfaceTool::Value;
+%rename(D1) GeomLProp_SurfaceTool::D1;
+%rename(D2) GeomLProp_SurfaceTool::D2;
+%rename(DN) GeomLProp_SurfaceTool::DN;
+%rename(Continuity) GeomLProp_SurfaceTool::Continuity;
+%rename(Bounds) GeomLProp_SurfaceTool::Bounds;

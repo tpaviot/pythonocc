@@ -246,22 +246,23 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopTools_ListOfShape.hxx>
+#include<gp_Circ.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TColGeom_SequenceOfCurve.hxx>
 #include<TopoDS_Face.hxx>
+#include<TopOpeBRepDS_BuildTool.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Ax1.hxx>
 #include<TopoDS_Wire.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Pln.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<gp_Ax1.hxx>
-#include<gp_Circ.hxx>
-#include<TopTools_ListOfShape.hxx>
-#include<TopOpeBRepDS_BuildTool.hxx>
-#include<TColGeom_SequenceOfCurve.hxx>
-#include<gp_Lin.hxx>
-#include<gp_Pnt.hxx>
+#include<TopoDS_Compound.hxx>
 #include<LocOpe.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Pln.hxx>
 %}

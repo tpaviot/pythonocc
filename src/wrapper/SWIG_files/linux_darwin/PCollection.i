@@ -62,6 +62,82 @@ enum PCollection_AccessMode {
 
 
 
+%nodefaultctor Handle_PCollection_HAsciiString;
+class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString();
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PCollection_HAsciiString DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PCollection_HAsciiString {
+	PCollection_HAsciiString* GetObject() {
+	return (PCollection_HAsciiString*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PCollection_HAsciiString::~Handle_PCollection_HAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PCollection_HAsciiString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PCollection_HExtendedString;
+class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString();
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
+		%feature("autodoc", "1");
+		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PCollection_HExtendedString DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PCollection_HExtendedString {
+	PCollection_HExtendedString* GetObject() {
+	return (PCollection_HExtendedString*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PCollection_HExtendedString::~Handle_PCollection_HExtendedString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PCollection_HExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PCollection_IsNotRoot;
 class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	public:
@@ -176,82 +252,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PCollection_HAsciiString;
-class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString();
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString(const Handle_PCollection_HAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString(const PCollection_HAsciiString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString & operator=(const Handle_PCollection_HAsciiString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HAsciiString & operator=(const PCollection_HAsciiString *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PCollection_HAsciiString DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PCollection_HAsciiString {
-	PCollection_HAsciiString* GetObject() {
-	return (PCollection_HAsciiString*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PCollection_HAsciiString::~Handle_PCollection_HAsciiString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PCollection_HAsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PCollection_HExtendedString;
-class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString();
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString(const Handle_PCollection_HExtendedString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString(const PCollection_HExtendedString *anItem);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString & operator=(const Handle_PCollection_HExtendedString &aHandle);
-		%feature("autodoc", "1");
-		Handle_PCollection_HExtendedString & operator=(const PCollection_HExtendedString *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PCollection_HExtendedString DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PCollection_HExtendedString {
-	PCollection_HExtendedString* GetObject() {
-	return (PCollection_HExtendedString*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PCollection_HExtendedString::~Handle_PCollection_HExtendedString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PCollection_HExtendedString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PCollection_IsNullTree;
 class PCollection_IsNullTree : public Standard_Failure {
 	public:
@@ -276,7 +276,7 @@ class PCollection_IsNullTree : public Standard_Failure {
 };
 %extend PCollection_IsNullTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNullTree::~PCollection_IsNullTree %{
@@ -348,7 +348,7 @@ class PCollection_IsNotRoot : public Standard_Failure {
 };
 %extend PCollection_IsNotRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNotRoot::~PCollection_IsNotRoot %{
@@ -391,7 +391,7 @@ class PCollection_IsContained : public Standard_Failure {
 };
 %extend PCollection_IsContained {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsContained::~PCollection_IsContained %{
@@ -540,7 +540,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 };
 %extend PCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_HAsciiString::~PCollection_HAsciiString %{
@@ -696,7 +696,7 @@ class PCollection_HExtendedString : public Standard_Persistent {
 };
 %extend PCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{

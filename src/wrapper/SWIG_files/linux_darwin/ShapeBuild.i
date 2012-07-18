@@ -115,6 +115,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeBuild_Vertex;
+class ShapeBuild_Vertex {
+	public:
+		%feature("autodoc", "1");
+		ShapeBuild_Vertex();
+		%feature("autodoc", "1");
+		TopoDS_Vertex CombineVertex(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const Standard_Real tolFactor=1.0000999999999999889865875957184471189975738525390625e+0) const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex CombineVertex(const gp_Pnt pnt1, const gp_Pnt pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.0000999999999999889865875957184471189975738525390625e+0) const;
+
+};
+%feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeBuild_Vertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeBuild_ReShape;
 class ShapeBuild_ReShape : public BRepTools_ReShape {
 	public:
@@ -139,7 +166,7 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 };
 %extend ShapeBuild_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeBuild_ReShape::~ShapeBuild_ReShape %{
@@ -214,33 +241,6 @@ def __del__(self):
 %}
 
 %extend ShapeBuild_Edge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeBuild_Vertex;
-class ShapeBuild_Vertex {
-	public:
-		%feature("autodoc", "1");
-		ShapeBuild_Vertex();
-		%feature("autodoc", "1");
-		TopoDS_Vertex CombineVertex(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
-		%feature("autodoc", "1");
-		TopoDS_Vertex CombineVertex(const gp_Pnt pnt1, const gp_Pnt pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
-
-};
-%feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeBuild_Vertex {
 	void _kill_pointed() {
 		delete $self;
 	}

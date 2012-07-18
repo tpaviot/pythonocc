@@ -23,19 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::DownCast;
 %rename(DownCast) Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction::DownCast;
-%rename(DownCast) Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression::DownCast;
 %rename(DownCast) Handle_ExprIntrp_Generator::DownCast;
 %rename(DownCast) Handle_ExprIntrp_GenExp::DownCast;
 %rename(DownCast) Handle_ExprIntrp_SyntaxError::DownCast;
-%rename(DownCast) Handle_ExprIntrp_GenRel::DownCast;
+%rename(DownCast) Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression::DownCast;
 %rename(DownCast) Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation::DownCast;
-%rename(DownCast) Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::DownCast;
 %rename(DownCast) Handle_ExprIntrp_GenFct::DownCast;
-%rename(DownCast) Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::DownCast;
+%rename(DownCast) Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::DownCast;
 %rename(DownCast) Handle_ExprIntrp_StackNodeOfStackOfNames::DownCast;
+%rename(DownCast) Handle_ExprIntrp_GenRel::DownCast;
 %rename(Create) ExprIntrp_GenFct::Create;
-%rename(Raise) ExprIntrp_SyntaxError::Raise;
-%rename(NewInstance) ExprIntrp_SyntaxError::NewInstance;
 %rename(Create) ExprIntrp_GenRel::Create;
 %rename(Create) ExprIntrp_GenExp::Create;
+%rename(Raise) ExprIntrp_SyntaxError::Raise;
+%rename(NewInstance) ExprIntrp_SyntaxError::NewInstance;

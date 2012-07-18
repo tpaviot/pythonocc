@@ -102,6 +102,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -158,21 +159,21 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_MFT_FontManager.hxx>
+#include<Handle_Aspect_GraphicDriver.hxx>
 #include<TShort_Array1OfShortReal.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Aspect_WidthMapEntry.hxx>
-#include<Handle_Aspect_WidthMap.hxx>
 #include<Aspect_ColorMapEntry.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Quantity_Color.hxx>
+#include<Aspect_FontMapEntry.hxx>
+#include<Handle_Aspect_FontMap.hxx>
+#include<Handle_Aspect_Window.hxx>
 #include<Aspect_Background.hxx>
 #include<Aspect_GradientBackground.hxx>
 #include<Handle_Aspect_PixMap.hxx>
-#include<Handle_Aspect_Window.hxx>
-#include<Aspect_FontMapEntry.hxx>
-#include<Handle_Aspect_FontMap.hxx>
+#include<Aspect_WidthMapEntry.hxx>
+#include<Handle_Aspect_WidthMap.hxx>
 #include<Aspect_TypeMapEntry.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Aspect_MarkMapEntry.hxx>

@@ -50,6 +50,15 @@ $HeaderURL$
 %include GccIter_headers.i
 
 
+enum GccIter_Type1 {
+	GccIter_CuCuCu,
+	GccIter_CiCuCu,
+	GccIter_CiCiCu,
+	GccIter_CiLiCu,
+	GccIter_LiLiCu,
+	GccIter_LiCuCu,
+	};
+
 enum GccIter_Type2 {
 	GccIter_CuCuOnCu,
 	GccIter_CiCuOnCu,
@@ -63,15 +72,6 @@ enum GccIter_Type2 {
 	GccIter_CiCuOnCi,
 	GccIter_LiCuOnCi,
 	GccIter_CuPtOnCi,
-	};
-
-enum GccIter_Type1 {
-	GccIter_CuCuCu,
-	GccIter_CiCuCu,
-	GccIter_CiCiCu,
-	GccIter_CiLiCu,
-	GccIter_LiLiCu,
-	GccIter_LiCuCu,
 	};
 
 enum GccIter_Type3 {
@@ -143,7 +143,7 @@ class GccIter_IsParallel : public Standard_DomainError {
 };
 %extend GccIter_IsParallel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") GccIter_IsParallel::~GccIter_IsParallel %{

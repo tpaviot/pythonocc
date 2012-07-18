@@ -110,6 +110,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor GC_MakeConicalSurface;
+class GC_MakeConicalSurface : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Ax2 A2, const Standard_Real Ang, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone C);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone Cone, const gp_Pnt Point);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Cone Cone, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Ax1 Axis, const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Lin Axis, const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
+		%feature("autodoc", "1");
+		const Handle_Geom_ConicalSurface & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_ConicalSurface & Operator() const;
+
+};
+%feature("shadow") GC_MakeConicalSurface::~GC_MakeConicalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GC_MakeConicalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GC_MakeArcOfCircle;
 class GC_MakeArcOfCircle : public GC_Root {
 	public:
@@ -139,6 +180,37 @@ def __del__(self):
 %}
 
 %extend GC_MakeArcOfCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GC_MakeHyperbola;
+class GC_MakeHyperbola : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Hypr H);
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		GC_MakeHyperbola(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
+		%feature("autodoc", "1");
+		const Handle_Geom_Hyperbola & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Hyperbola & Operator() const;
+
+};
+%feature("shadow") GC_MakeHyperbola::~GC_MakeHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GC_MakeHyperbola {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -180,20 +252,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor GC_MakeTrimmedCone;
-class GC_MakeTrimmedCone : public GC_Root {
+%nodefaultctor GC_MakeMirror;
+class GC_MakeMirror {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
+		GC_MakeMirror(const gp_Pnt Point);
 		%feature("autodoc", "1");
-		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
+		GC_MakeMirror(const gp_Ax1 Axis);
 		%feature("autodoc", "1");
-		const Handle_Geom_RectangularTrimmedSurface & Value() const;
+		GC_MakeMirror(const gp_Lin Line);
 		%feature("autodoc", "1");
-		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
+		GC_MakeMirror(const gp_Pnt Point, const gp_Dir Direc);
+		%feature("autodoc", "1");
+		GC_MakeMirror(const gp_Pln Plane);
+		%feature("autodoc", "1");
+		GC_MakeMirror(const gp_Ax2 Plane);
+		%feature("autodoc", "1");
+		const Handle_Geom_Transformation & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Transformation & Operator() const;
 
 };
-%feature("shadow") GC_MakeTrimmedCone::~GC_MakeTrimmedCone %{
+%feature("shadow") GC_MakeMirror::~GC_MakeMirror %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -202,7 +282,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GC_MakeTrimmedCone {
+%extend GC_MakeMirror {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -308,28 +388,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor GC_MakeMirror;
-class GC_MakeMirror {
+%nodefaultctor GC_MakeTrimmedCone;
+class GC_MakeTrimmedCone : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt Point);
+		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax1 Axis);
+		GC_MakeTrimmedCone(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Lin Line);
+		const Handle_Geom_RectangularTrimmedSurface & Value() const;
 		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pnt Point, const gp_Dir Direc);
-		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Pln Plane);
-		%feature("autodoc", "1");
-		GC_MakeMirror(const gp_Ax2 Plane);
-		%feature("autodoc", "1");
-		const Handle_Geom_Transformation & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Transformation & Operator() const;
+		const Handle_Geom_RectangularTrimmedSurface & Operator() const;
 
 };
-%feature("shadow") GC_MakeMirror::~GC_MakeMirror %{
+%feature("shadow") GC_MakeTrimmedCone::~GC_MakeTrimmedCone %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -338,39 +410,29 @@ def __del__(self):
 		pass
 %}
 
-%extend GC_MakeMirror {
+%extend GC_MakeTrimmedCone {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor GC_MakePlane;
-class GC_MakePlane : public GC_Root {
+%nodefaultctor GC_MakeArcOfEllipse;
+class GC_MakeArcOfEllipse : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Ax2 A2);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln Pl);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pnt P, const gp_Dir V);
+		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GC_MakePlane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
+		const Handle_Geom_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln Pln, const gp_Pnt Point);
-		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pln Pln, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
-		%feature("autodoc", "1");
-		GC_MakePlane(const gp_Ax1 Axis);
-		%feature("autodoc", "1");
-		const Handle_Geom_Plane & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Plane & Operator() const;
+		const Handle_Geom_TrimmedCurve & Operator() const;
 
 };
-%feature("shadow") GC_MakePlane::~GC_MakePlane %{
+%feature("shadow") GC_MakeArcOfEllipse::~GC_MakeArcOfEllipse %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -379,7 +441,40 @@ def __del__(self):
 		pass
 %}
 
-%extend GC_MakePlane {
+%extend GC_MakeArcOfEllipse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GC_MakeSegment;
+class GC_MakeSegment : public GC_Root {
+	public:
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin Line, const Standard_Real U1, const Standard_Real U2);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin Line, const gp_Pnt Point, const Standard_Real Ulast);
+		%feature("autodoc", "1");
+		GC_MakeSegment(const gp_Lin Line, const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		const Handle_Geom_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_TrimmedCurve & Operator() const;
+
+};
+%feature("shadow") GC_MakeSegment::~GC_MakeSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GC_MakeSegment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -440,45 +535,6 @@ def __del__(self):
 %}
 
 %extend GC_MakeRotation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GC_MakeCylindricalSurface;
-class GC_MakeCylindricalSurface : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax2 A2, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder C);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const gp_Pnt Point);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Ax1 Axis, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeCylindricalSurface(const gp_Circ Circ);
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_CylindricalSurface & Operator() const;
-
-};
-%feature("shadow") GC_MakeCylindricalSurface::~GC_MakeCylindricalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GC_MakeCylindricalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -551,22 +607,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor GC_MakeArcOfEllipse;
-class GC_MakeArcOfEllipse : public GC_Root {
+%nodefaultctor GC_MakeCylindricalSurface;
+class GC_MakeCylindricalSurface : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense);
+		GC_MakeCylindricalSurface(const gp_Ax2 A2, const Standard_Real Radius);
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P, const Standard_Real Alpha, const Standard_Boolean Sense);
+		GC_MakeCylindricalSurface(const gp_Cylinder C);
 		%feature("autodoc", "1");
-		GC_MakeArcOfEllipse(const gp_Elips Elips, const gp_Pnt P1, const gp_Pnt P2, const Standard_Boolean Sense);
+		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const gp_Pnt Point);
 		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Value() const;
+		GC_MakeCylindricalSurface(const gp_Cylinder Cyl, const Standard_Real Dist);
 		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Operator() const;
+		GC_MakeCylindricalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Ax1 Axis, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GC_MakeCylindricalSurface(const gp_Circ Circ);
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_CylindricalSurface & Operator() const;
 
 };
-%feature("shadow") GC_MakeArcOfEllipse::~GC_MakeArcOfEllipse %{
+%feature("shadow") GC_MakeCylindricalSurface::~GC_MakeCylindricalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -575,29 +639,39 @@ def __del__(self):
 		pass
 %}
 
-%extend GC_MakeArcOfEllipse {
+%extend GC_MakeCylindricalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor GC_MakeHyperbola;
-class GC_MakeHyperbola : public GC_Root {
+%nodefaultctor GC_MakePlane;
+class GC_MakePlane : public GC_Root {
 	public:
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Hypr H);
+		GC_MakePlane(const gp_Ax2 A2);
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		GC_MakePlane(const gp_Pln Pl);
 		%feature("autodoc", "1");
-		GC_MakeHyperbola(const gp_Pnt S1, const gp_Pnt S2, const gp_Pnt Center);
+		GC_MakePlane(const gp_Pnt P, const gp_Dir V);
 		%feature("autodoc", "1");
-		const Handle_Geom_Hyperbola & Value() const;
+		GC_MakePlane(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D);
 		%feature("autodoc", "1");
-		const Handle_Geom_Hyperbola & Operator() const;
+		GC_MakePlane(const gp_Pln Pln, const gp_Pnt Point);
+		%feature("autodoc", "1");
+		GC_MakePlane(const gp_Pln Pln, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GC_MakePlane(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3);
+		%feature("autodoc", "1");
+		GC_MakePlane(const gp_Ax1 Axis);
+		%feature("autodoc", "1");
+		const Handle_Geom_Plane & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Plane & Operator() const;
 
 };
-%feature("shadow") GC_MakeHyperbola::~GC_MakeHyperbola %{
+%feature("shadow") GC_MakePlane::~GC_MakePlane %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -606,81 +680,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GC_MakeHyperbola {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GC_MakeSegment;
-class GC_MakeSegment : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin Line, const Standard_Real U1, const Standard_Real U2);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin Line, const gp_Pnt Point, const Standard_Real Ulast);
-		%feature("autodoc", "1");
-		GC_MakeSegment(const gp_Lin Line, const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_TrimmedCurve & Operator() const;
-
-};
-%feature("shadow") GC_MakeSegment::~GC_MakeSegment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GC_MakeSegment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GC_MakeConicalSurface;
-class GC_MakeConicalSurface : public GC_Root {
-	public:
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax2 A2, const Standard_Real Ang, const Standard_Real Radius);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone C);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone Cone, const gp_Pnt Point);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Cone Cone, const Standard_Real Dist);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Ax1 Axis, const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Lin Axis, const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		GC_MakeConicalSurface(const gp_Pnt P1, const gp_Pnt P2, const Standard_Real R1, const Standard_Real R2);
-		%feature("autodoc", "1");
-		const Handle_Geom_ConicalSurface & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_ConicalSurface & Operator() const;
-
-};
-%feature("shadow") GC_MakeConicalSurface::~GC_MakeConicalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GC_MakeConicalSurface {
+%extend GC_MakePlane {
 	void _kill_pointed() {
 		delete $self;
 	}

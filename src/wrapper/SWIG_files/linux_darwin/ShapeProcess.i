@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_ShapeProcess_Context;
+class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context();
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context(const Handle_ShapeProcess_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context(const ShapeProcess_Context *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context & operator=(const Handle_ShapeProcess_Context &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeProcess_Context DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeProcess_Context {
+	ShapeProcess_Context* GetObject() {
+	return (ShapeProcess_Context*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeProcess_Context::~Handle_ShapeProcess_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeProcess_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeProcess_StackItemOfDictionaryOfOperator;
 class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
@@ -166,44 +204,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeProcess_Context;
-class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context();
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context(const Handle_ShapeProcess_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context(const ShapeProcess_Context *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context & operator=(const Handle_ShapeProcess_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeProcess_Context & operator=(const ShapeProcess_Context *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeProcess_Context DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeProcess_Context {
-	ShapeProcess_Context* GetObject() {
-	return (ShapeProcess_Context*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeProcess_Context::~Handle_ShapeProcess_Context %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeProcess_Context {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeProcess_DictionaryOfOperator;
 class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	public:
@@ -296,7 +296,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %extend ShapeProcess_Operator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Operator::~ShapeProcess_Operator %{
@@ -329,7 +329,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %extend ShapeProcess_UOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_UOperator::~ShapeProcess_UOperator %{
@@ -342,33 +342,6 @@ def __del__(self):
 %}
 
 %extend ShapeProcess_UOperator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeProcess_OperLibrary;
-class ShapeProcess_OperLibrary {
-	public:
-		%feature("autodoc", "1");
-		ShapeProcess_OperLibrary();
-		%feature("autodoc", "1");
-		static		void Init();
-		%feature("autodoc", "1");
-		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
-
-};
-%feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeProcess_OperLibrary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -428,7 +401,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_StackItemOfDictionaryOfOperator::~ShapeProcess_StackItemOfDictionaryOfOperator %{
@@ -441,6 +414,33 @@ def __del__(self):
 %}
 
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeProcess_OperLibrary;
+class ShapeProcess_OperLibrary {
+	public:
+		%feature("autodoc", "1");
+		ShapeProcess_OperLibrary();
+		%feature("autodoc", "1");
+		static		void Init();
+		%feature("autodoc", "1");
+		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape S, const Handle_ShapeProcess_ShapeContext &context, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & map);
+
+};
+%feature("shadow") ShapeProcess_OperLibrary::~ShapeProcess_OperLibrary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeProcess_OperLibrary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -526,6 +526,10 @@ class ShapeProcess_Context : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_Messenger Messenger() const;
 		%feature("autodoc", "1");
+		void SetProgress(const Handle_Message_ProgressIndicator &theProgress);
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator Progress() const;
+		%feature("autodoc", "1");
 		void SetTraceLevel(const Standard_Integer tracelev);
 		%feature("autodoc", "1");
 		Standard_Integer TraceLevel() const;
@@ -540,7 +544,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %extend ShapeProcess_Context {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Context::~ShapeProcess_Context %{
@@ -609,7 +613,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %extend ShapeProcess_ShapeContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_ShapeContext::~ShapeProcess_ShapeContext %{
@@ -678,7 +682,7 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{

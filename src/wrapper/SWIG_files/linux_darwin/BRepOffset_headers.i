@@ -81,15 +81,16 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopTools_MapOfShape.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Compound.hxx>
-#include<TopTools_MapOfShape.hxx>
 #include<BRepOffset.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
+#include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<BRepAlgo_Image.hxx>
 #include<TopoDS_Wire.hxx>

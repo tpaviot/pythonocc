@@ -128,6 +128,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor BinXCAFDrivers_DocumentRetrievalDriver;
+class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		BinXCAFDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	Handle_BinXCAFDrivers_DocumentRetrievalDriver GetHandle() {
+	return *(Handle_BinXCAFDrivers_DocumentRetrievalDriver*) &$self;
+	}
+};
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BinXCAFDrivers_DocumentRetrievalDriver::~BinXCAFDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinXCAFDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinXCAFDrivers;
 class BinXCAFDrivers {
 	public:
@@ -173,7 +210,7 @@ class BinXCAFDrivers_DocumentStorageDriver : public BinDrivers_DocumentStorageDr
 };
 %extend BinXCAFDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BinXCAFDrivers_DocumentStorageDriver::~BinXCAFDrivers_DocumentStorageDriver %{
@@ -186,43 +223,6 @@ def __del__(self):
 %}
 
 %extend BinXCAFDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinXCAFDrivers_DocumentRetrievalDriver;
-class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		BinXCAFDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
-	Handle_BinXCAFDrivers_DocumentRetrievalDriver GetHandle() {
-	return *(Handle_BinXCAFDrivers_DocumentRetrievalDriver*) &$self;
-	}
-};
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BinXCAFDrivers_DocumentRetrievalDriver::~BinXCAFDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinXCAFDrivers_DocumentRetrievalDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

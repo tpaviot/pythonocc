@@ -27,12 +27,12 @@ $HeaderURL$
 %rename(DownCast) Handle_IntPatch_Line::DownCast;
 %rename(DownCast) Handle_IntPatch_ALine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::DownCast;
+%rename(DownCast) Handle_IntPatch_TheIWLineOfTheIWalking::DownCast;
 %rename(DownCast) Handle_IntPatch_GLine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::DownCast;
 %rename(DownCast) Handle_IntPatch_WLine::DownCast;
 %rename(DownCast) Handle_IntPatch_RLine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfPoint::DownCast;
-%rename(DownCast) Handle_IntPatch_TheIWLineOfTheIWalking::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfLine::DownCast;
 %rename(PutVertexOnLine) IntPatch_RstInt::PutVertexOnLine;
 %rename(FirstParameter) IntPatch_HCurve2dTool::FirstParameter;
@@ -59,13 +59,6 @@ $HeaderURL$
 %rename(Bezier) IntPatch_HCurve2dTool::Bezier;
 %rename(BSpline) IntPatch_HCurve2dTool::BSpline;
 %rename(NbSamples) IntPatch_HCurve2dTool::NbSamples;
-%rename(Bounding) IntPatch_PolygoTool::Bounding;
-%rename(DeflectionOverEstimation) IntPatch_PolygoTool::DeflectionOverEstimation;
-%rename(Closed) IntPatch_PolygoTool::Closed;
-%rename(NbSegments) IntPatch_PolygoTool::NbSegments;
-%rename(BeginOfSeg) IntPatch_PolygoTool::BeginOfSeg;
-%rename(EndOfSeg) IntPatch_PolygoTool::EndOfSeg;
-%rename(Dump) IntPatch_PolygoTool::Dump;
 %rename(Bounding) IntPatch_PolyhedronTool::Bounding;
 %rename(ComponentsBounding) IntPatch_PolyhedronTool::ComponentsBounding;
 %rename(DeflectionOverEstimation) IntPatch_PolyhedronTool::DeflectionOverEstimation;

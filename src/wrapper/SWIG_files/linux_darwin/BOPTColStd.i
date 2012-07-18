@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
+class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger* GetObject() {
+	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
@@ -166,44 +204,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
-class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger();
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger* GetObject() {
-	return (BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTColStd_CArray1OfShape;
 class BOPTColStd_CArray1OfShape {
 	public:
@@ -235,6 +235,8 @@ class BOPTColStd_CArray1OfShape {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTColStd_CArray1OfShape::~BOPTColStd_CArray1OfShape %{
@@ -247,61 +249,6 @@ def __del__(self):
 %}
 
 %extend BOPTColStd_CArray1OfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
-class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TColStd_IndexedMapOfInteger &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const TColStd_IndexedMapOfInteger & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
-
-};
-%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -379,7 +326,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger %{
@@ -392,121 +339,6 @@ def __del__(self):
 %}
 
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
-class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		BOPTColStd_IndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const Standard_Integer &K, const Standard_Integer &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Standard_Integer I) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
-				return (Standard_Integer) $self->ChangeFromIndex(I);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
-				$self->ChangeFromIndex(I)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFromKey(const Standard_Integer &K) {
-				return (Standard_Integer) $self->ChangeFromKey(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFromKey(Standard_Integer value ,const Standard_Integer &K) {
-				$self->ChangeFromKey(K)=value;
-				}
-		};
-
-};
-%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapOfIntegerInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BOPTColStd_ShapeWithRank;
-class BOPTColStd_ShapeWithRank {
-	public:
-		%feature("autodoc", "1");
-		BOPTColStd_ShapeWithRank();
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape aS);
-		%feature("autodoc", "1");
-		void SetRank(const Standard_Integer aR);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		Standard_Integer Rank() const;
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
-
-};
-%extend BOPTColStd_ShapeWithRank {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTColStd_ShapeWithRank {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -544,6 +376,8 @@ class BOPTColStd_CArray1OfPnt2d {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTColStd_CArray1OfPnt2d::~BOPTColStd_CArray1OfPnt2d %{
@@ -556,6 +390,65 @@ def __del__(self):
 %}
 
 %extend BOPTColStd_CArray1OfPnt2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
+class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const TColStd_IndexedMapOfInteger &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TColStd_IndexedMapOfInteger &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TColStd_IndexedMapOfInteger & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TColStd_IndexedMapOfInteger & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
+
+};
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -616,7 +509,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger %{
@@ -692,6 +585,10 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 				$self->ChangeFromKey(K)=value;
 				}
 		};
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const BOPTColStd_ShapeWithRank &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const BOPTColStd_ShapeWithRank &K);
 
 };
 %feature("shadow") BOPTColStd_IndexedDataMapOfSWRInteger::~BOPTColStd_IndexedDataMapOfSWRInteger %{
@@ -845,6 +742,8 @@ class BOPTColStd_CArray1OfInteger {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTColStd_CArray1OfInteger::~BOPTColStd_CArray1OfInteger %{
@@ -881,7 +780,7 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 };
 %extend BOPTColStd_ListNodeOfListOfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_ListNodeOfListOfListOfShape::~BOPTColStd_ListNodeOfListOfListOfShape %{
@@ -919,6 +818,125 @@ def __del__(self):
 %}
 
 %extend BOPTColStd_Failure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTColStd_ShapeWithRank;
+class BOPTColStd_ShapeWithRank {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_ShapeWithRank();
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape aS);
+		%feature("autodoc", "1");
+		void SetRank(const Standard_Integer aR);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		Standard_Integer Rank() const;
+		%feature("autodoc", "1");
+		Standard_Integer HashCode(const Standard_Integer Upper) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const BOPTColStd_ShapeWithRank &Other) const;
+
+};
+%extend BOPTColStd_ShapeWithRank {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") BOPTColStd_ShapeWithRank::~BOPTColStd_ShapeWithRank %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTColStd_ShapeWithRank {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
+class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerInteger & Assign(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
+		%feature("autodoc", "1");
+		BOPTColStd_IndexedDataMapOfIntegerInteger & operator=(const BOPTColStd_IndexedDataMapOfIntegerInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const Standard_Integer &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Standard_Integer I) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromIndex(const Standard_Integer I) {
+				return (Standard_Integer) $self->ChangeFromIndex(I);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromIndex(Standard_Integer value ,const Standard_Integer I) {
+				$self->ChangeFromIndex(I)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFromKey(const Standard_Integer &K) {
+				return (Standard_Integer) $self->ChangeFromKey(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFromKey(Standard_Integer value ,const Standard_Integer &K) {
+				$self->ChangeFromKey(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
+
+};
+%feature("shadow") BOPTColStd_IndexedDataMapOfIntegerInteger::~BOPTColStd_IndexedDataMapOfIntegerInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTColStd_IndexedDataMapOfIntegerInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -969,7 +987,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 };
 %extend BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger::~BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger %{

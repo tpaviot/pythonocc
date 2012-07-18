@@ -205,8 +205,11 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_XY.hxx>
-#include<gp_Pnt2d.hxx>
+#include<Handle_TColgp_HArray1OfXY.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_IGESData_IGESEntity.hxx>
+#include<Handle_IGESGeom_CircularArc.hxx>
+#include<Handle_IGESGeom_CompositeCurve.hxx>
 #include<Handle_IGESData_IGESReaderData.hxx>
 #include<IGESData_ParamReader.hxx>
 #include<IGESData_IGESWriter.hxx>
@@ -217,10 +220,9 @@ $HeaderURL$
 #include<Interface_CopyTool.hxx>
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
-#include<Handle_TColgp_HArray1OfXY.hxx>
-#include<gp_Pnt.hxx>
 #include<Handle_IGESData_HArray1OfIGESEntity.hxx>
-#include<Handle_IGESData_IGESEntity.hxx>
+#include<gp_XY.hxx>
+#include<gp_Pnt2d.hxx>
 #include<gp_XYZ.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
@@ -229,7 +231,5 @@ $HeaderURL$
 #include<Handle_Interface_HArray1OfHAsciiString.hxx>
 #include<Handle_IGESGraph_TextFontDef.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_IGESGeom_CircularArc.hxx>
-#include<Handle_IGESGeom_CompositeCurve.hxx>
 #include<IGESDimen.hxx>
 %}

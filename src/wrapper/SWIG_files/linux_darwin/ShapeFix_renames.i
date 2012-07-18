@@ -26,13 +26,13 @@ $HeaderURL$
 %rename(DownCast) Handle_ShapeFix_EdgeProjAux::DownCast;
 %rename(DownCast) Handle_ShapeFix_Root::DownCast;
 %rename(DownCast) Handle_ShapeFix_Face::DownCast;
-%rename(DownCast) Handle_ShapeFix_Edge::DownCast;
 %rename(DownCast) Handle_ShapeFix_ComposeShell::DownCast;
 %rename(DownCast) Handle_ShapeFix_Solid::DownCast;
 %rename(DownCast) Handle_ShapeFix_Wire::DownCast;
+%rename(DownCast) Handle_ShapeFix_Edge::DownCast;
 %rename(DownCast) Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment::DownCast;
-%rename(DownCast) Handle_ShapeFix_Wireframe::DownCast;
 %rename(DownCast) Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::DownCast;
+%rename(DownCast) Handle_ShapeFix_Wireframe::DownCast;
 %rename(DownCast) Handle_ShapeFix_Shape::DownCast;
 %rename(DownCast) Handle_ShapeFix_FixSmallFace::DownCast;
 %rename(DownCast) Handle_ShapeFix_Shell::DownCast;

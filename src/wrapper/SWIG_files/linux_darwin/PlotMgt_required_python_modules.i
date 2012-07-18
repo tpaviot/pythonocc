@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import TColStd
 import TCollection
-import Quantity
 import Aspect
+import Quantity
 import MFT
 };

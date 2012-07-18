@@ -81,35 +81,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
-class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWParametricSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWParametricSurface3dElementCoordinateSystem::~RWStepFEA_RWParametricSurface3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWCurve3dElementRepresentation;
 class RWStepFEA_RWCurve3dElementRepresentation {
 	public:
@@ -168,6 +139,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
+class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaCurveSectionGeometricRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaCurveSectionGeometricRelationship::~RWStepFEA_RWFeaCurveSectionGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWCurve3dElementProperty;
 class RWStepFEA_RWCurve3dElementProperty {
 	public:
@@ -220,35 +220,6 @@ def __del__(self):
 %}
 
 %extend RWStepFEA_RWFeaAreaDensity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWCurveElementInterval;
-class RWStepFEA_RWCurveElementInterval {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWCurveElementInterval();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementInterval &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementInterval &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_CurveElementInterval &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWCurveElementInterval::~RWStepFEA_RWCurveElementInterval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWCurveElementInterval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -371,64 +342,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
-class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWAlignedCurve3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWAlignedCurve3dElementCoordinateSystem::~RWStepFEA_RWAlignedCurve3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaMoistureAbsorption;
-class RWStepFEA_RWFeaMoistureAbsorption {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaMoistureAbsorption();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMoistureAbsorption &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMoistureAbsorption &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaMoistureAbsorption &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaMoistureAbsorption::~RWStepFEA_RWFeaMoistureAbsorption %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaMoistureAbsorption {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWCurveElementIntervalConstant;
 class RWStepFEA_RWCurveElementIntervalConstant {
 	public:
@@ -452,6 +365,64 @@ def __del__(self):
 %}
 
 %extend RWStepFEA_RWCurveElementIntervalConstant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaMassDensity;
+class RWStepFEA_RWFeaMassDensity {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaMassDensity();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMassDensity &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMassDensity &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaMassDensity &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaMassDensity::~RWStepFEA_RWFeaMassDensity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaMassDensity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWNodeWithVector;
+class RWStepFEA_RWNodeWithVector {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWNodeWithVector();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeWithVector &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeWithVector &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_NodeWithVector &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWNodeWithVector::~RWStepFEA_RWNodeWithVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWNodeWithVector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -487,35 +458,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
-class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWParametricCurve3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateSystem::~RWStepFEA_RWParametricCurve3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWFeaShellBendingStiffness;
 class RWStepFEA_RWFeaShellBendingStiffness {
 	public:
@@ -545,20 +487,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWNodeRepresentation;
-class RWStepFEA_RWNodeRepresentation {
+%nodefaultctor RWStepFEA_RWNodeGroup;
+class RWStepFEA_RWNodeGroup {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWNodeRepresentation();
+		RWStepFEA_RWNodeGroup();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeRepresentation &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeGroup &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeRepresentation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeGroup &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_NodeRepresentation &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_NodeGroup &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWNodeRepresentation::~RWStepFEA_RWNodeRepresentation %{
+%feature("shadow") RWStepFEA_RWNodeGroup::~RWStepFEA_RWNodeGroup %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -567,27 +509,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWNodeRepresentation {
+%extend RWStepFEA_RWNodeGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
-class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
+%nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
+class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWParametricCurve3dElementCoordinateDirection();
+		RWStepFEA_RWParametricCurve3dElementCoordinateSystem();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_ParametricCurve3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateDirection::~RWStepFEA_RWParametricCurve3dElementCoordinateDirection %{
+%feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateSystem::~RWStepFEA_RWParametricCurve3dElementCoordinateSystem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -596,7 +538,65 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
+%extend RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
+class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWParametricSurface3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_ParametricSurface3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWParametricSurface3dElementCoordinateSystem::~RWStepFEA_RWParametricSurface3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
+class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWAlignedCurve3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_AlignedCurve3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWAlignedCurve3dElementCoordinateSystem::~RWStepFEA_RWAlignedCurve3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -632,6 +632,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepFEA_RWSurface3dElementRepresentation;
+class RWStepFEA_RWSurface3dElementRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWSurface3dElementRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_Surface3dElementRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_Surface3dElementRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_Surface3dElementRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWSurface3dElementRepresentation::~RWStepFEA_RWSurface3dElementRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWSurface3dElementRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	public:
@@ -661,64 +690,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
-class RWStepFEA_RWFeaAxis2Placement3d {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaAxis2Placement3d();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaAxis2Placement3d &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaAxis2Placement3d::~RWStepFEA_RWFeaAxis2Placement3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaAxis2Placement3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
-class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWConstantSurface3dElementCoordinateSystem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWConstantSurface3dElementCoordinateSystem::~RWStepFEA_RWConstantSurface3dElementCoordinateSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 	public:
@@ -742,6 +713,35 @@ def __del__(self):
 %}
 
 %extend RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWGeometricNode;
+class RWStepFEA_RWGeometricNode {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWGeometricNode();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_GeometricNode &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_GeometricNode &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_GeometricNode &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWGeometricNode::~RWStepFEA_RWGeometricNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWGeometricNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -835,151 +835,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFreedomAndCoefficient;
-class RWStepFEA_RWFreedomAndCoefficient {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFreedomAndCoefficient();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomAndCoefficient &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FreedomAndCoefficient &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FreedomAndCoefficient &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFreedomAndCoefficient::~RWStepFEA_RWFreedomAndCoefficient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFreedomAndCoefficient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaLinearElasticity;
-class RWStepFEA_RWFeaLinearElasticity {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaLinearElasticity();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaLinearElasticity &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaLinearElasticity &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaLinearElasticity &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaLinearElasticity::~RWStepFEA_RWFeaLinearElasticity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaLinearElasticity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWSurface3dElementRepresentation;
-class RWStepFEA_RWSurface3dElementRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWSurface3dElementRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_Surface3dElementRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_Surface3dElementRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_Surface3dElementRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWSurface3dElementRepresentation::~RWStepFEA_RWSurface3dElementRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWSurface3dElementRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWElementGroup;
-class RWStepFEA_RWElementGroup {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWElementGroup();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ElementGroup &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ElementGroup &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ElementGroup &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWElementGroup::~RWStepFEA_RWElementGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWElementGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWNodeWithVector;
-class RWStepFEA_RWNodeWithVector {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWNodeWithVector();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeWithVector &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeWithVector &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_NodeWithVector &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWNodeWithVector::~RWStepFEA_RWNodeWithVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWNodeWithVector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWCurveElementEndOffset;
 class RWStepFEA_RWCurveElementEndOffset {
 	public:
@@ -1009,20 +864,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFeaRepresentationItem;
-class RWStepFEA_RWFeaRepresentationItem {
+%nodefaultctor RWStepFEA_RWFreedomAndCoefficient;
+class RWStepFEA_RWFreedomAndCoefficient {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWFeaRepresentationItem();
+		RWStepFEA_RWFreedomAndCoefficient();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaRepresentationItem &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomAndCoefficient &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaRepresentationItem &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FreedomAndCoefficient &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaRepresentationItem &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_FreedomAndCoefficient &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWFeaRepresentationItem::~RWStepFEA_RWFeaRepresentationItem %{
+%feature("shadow") RWStepFEA_RWFreedomAndCoefficient::~RWStepFEA_RWFreedomAndCoefficient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1031,7 +886,36 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWFeaRepresentationItem {
+%extend RWStepFEA_RWFreedomAndCoefficient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
+class RWStepFEA_RWFeaAxis2Placement3d {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaAxis2Placement3d();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaAxis2Placement3d &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaAxis2Placement3d &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaAxis2Placement3d::~RWStepFEA_RWFeaAxis2Placement3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaAxis2Placement3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1067,20 +951,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFeaModel3d;
-class RWStepFEA_RWFeaModel3d {
+%nodefaultctor RWStepFEA_RWNodeRepresentation;
+class RWStepFEA_RWNodeRepresentation {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWFeaModel3d();
+		RWStepFEA_RWNodeRepresentation();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel3d &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel3d &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeRepresentation &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaModel3d &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_NodeRepresentation &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWFeaModel3d::~RWStepFEA_RWFeaModel3d %{
+%feature("shadow") RWStepFEA_RWNodeRepresentation::~RWStepFEA_RWNodeRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1089,27 +973,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWFeaModel3d {
+%extend RWStepFEA_RWNodeRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepFEA_RWGeometricNode;
-class RWStepFEA_RWGeometricNode {
+%nodefaultctor RWStepFEA_RWElementGroup;
+class RWStepFEA_RWElementGroup {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWGeometricNode();
+		RWStepFEA_RWElementGroup();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_GeometricNode &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ElementGroup &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_GeometricNode &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ElementGroup &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_GeometricNode &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_ElementGroup &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWGeometricNode::~RWStepFEA_RWGeometricNode %{
+%feature("shadow") RWStepFEA_RWElementGroup::~RWStepFEA_RWElementGroup %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1118,94 +1002,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWGeometricNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaMassDensity;
-class RWStepFEA_RWFeaMassDensity {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaMassDensity();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMassDensity &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMassDensity &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaMassDensity &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaMassDensity::~RWStepFEA_RWFeaMassDensity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaMassDensity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWElementGeometricRelationship;
-class RWStepFEA_RWElementGeometricRelationship {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWElementGeometricRelationship();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ElementGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ElementGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_ElementGeometricRelationship &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWElementGeometricRelationship::~RWStepFEA_RWElementGeometricRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWElementGeometricRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
-class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaMaterialPropertyRepresentationItem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaMaterialPropertyRepresentationItem::~RWStepFEA_RWFeaMaterialPropertyRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
+%extend RWStepFEA_RWElementGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1235,6 +1032,122 @@ def __del__(self):
 %}
 
 %extend RWStepFEA_RWFeaModelDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFreedomsList;
+class RWStepFEA_RWFreedomsList {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFreedomsList();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomsList &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FreedomsList &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FreedomsList &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFreedomsList::~RWStepFEA_RWFreedomsList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFreedomsList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaModel3d;
+class RWStepFEA_RWFeaModel3d {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaModel3d();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel3d &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel3d &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaModel3d &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaModel3d::~RWStepFEA_RWFeaModel3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaModel3d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWCurveElementLocation;
+class RWStepFEA_RWCurveElementLocation {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWCurveElementLocation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementLocation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementLocation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_CurveElementLocation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWCurveElementLocation::~RWStepFEA_RWCurveElementLocation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWCurveElementLocation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWCurveElementInterval;
+class RWStepFEA_RWCurveElementInterval {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWCurveElementInterval();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementInterval &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementInterval &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_CurveElementInterval &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWCurveElementInterval::~RWStepFEA_RWCurveElementInterval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWCurveElementInterval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1299,6 +1212,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepFEA_RWFeaRepresentationItem;
+class RWStepFEA_RWFeaRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaRepresentationItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaRepresentationItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaRepresentationItem::~RWStepFEA_RWFeaRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepFEA_RWNodeWithSolutionCoordinateSystem;
 class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 	public:
@@ -1328,20 +1270,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFreedomsList;
-class RWStepFEA_RWFreedomsList {
+%nodefaultctor RWStepFEA_RWFeaModel;
+class RWStepFEA_RWFeaModel {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWFreedomsList();
+		RWStepFEA_RWFeaModel();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FreedomsList &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FreedomsList &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FreedomsList &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWFreedomsList::~RWStepFEA_RWFreedomsList %{
+%feature("shadow") RWStepFEA_RWFeaModel::~RWStepFEA_RWFeaModel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1350,27 +1292,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWFreedomsList {
+%extend RWStepFEA_RWFeaModel {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepFEA_RWNodeGroup;
-class RWStepFEA_RWNodeGroup {
+%nodefaultctor RWStepFEA_RWFeaMoistureAbsorption;
+class RWStepFEA_RWFeaMoistureAbsorption {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWNodeGroup();
+		RWStepFEA_RWFeaMoistureAbsorption();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_NodeGroup &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMoistureAbsorption &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_NodeGroup &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMoistureAbsorption &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_NodeGroup &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_FeaMoistureAbsorption &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWNodeGroup::~RWStepFEA_RWNodeGroup %{
+%feature("shadow") RWStepFEA_RWFeaMoistureAbsorption::~RWStepFEA_RWFeaMoistureAbsorption %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1379,36 +1321,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWNodeGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
-class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaCurveSectionGeometricRelationship();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaCurveSectionGeometricRelationship &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaCurveSectionGeometricRelationship::~RWStepFEA_RWFeaCurveSectionGeometricRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
+%extend RWStepFEA_RWFeaMoistureAbsorption {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1473,35 +1386,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWFeaModel;
-class RWStepFEA_RWFeaModel {
-	public:
-		%feature("autodoc", "1");
-		RWStepFEA_RWFeaModel();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaModel &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_FeaModel &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepFEA_RWFeaModel::~RWStepFEA_RWFeaModel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepFEA_RWFeaModel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepFEA_RWNode;
 class RWStepFEA_RWNode {
 	public:
@@ -1531,20 +1415,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepFEA_RWCurveElementLocation;
-class RWStepFEA_RWCurveElementLocation {
+%nodefaultctor RWStepFEA_RWFeaLinearElasticity;
+class RWStepFEA_RWFeaLinearElasticity {
 	public:
 		%feature("autodoc", "1");
-		RWStepFEA_RWCurveElementLocation();
+		RWStepFEA_RWFeaLinearElasticity();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_CurveElementLocation &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaLinearElasticity &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_CurveElementLocation &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaLinearElasticity &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepFEA_CurveElementLocation &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepFEA_FeaLinearElasticity &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepFEA_RWCurveElementLocation::~RWStepFEA_RWCurveElementLocation %{
+%feature("shadow") RWStepFEA_RWFeaLinearElasticity::~RWStepFEA_RWFeaLinearElasticity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1553,7 +1437,123 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepFEA_RWCurveElementLocation {
+%extend RWStepFEA_RWFeaLinearElasticity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
+class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWConstantSurface3dElementCoordinateSystem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_ConstantSurface3dElementCoordinateSystem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWConstantSurface3dElementCoordinateSystem::~RWStepFEA_RWConstantSurface3dElementCoordinateSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWElementGeometricRelationship;
+class RWStepFEA_RWElementGeometricRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWElementGeometricRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ElementGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ElementGeometricRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_ElementGeometricRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWElementGeometricRelationship::~RWStepFEA_RWElementGeometricRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWElementGeometricRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
+class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWParametricCurve3dElementCoordinateDirection();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_ParametricCurve3dElementCoordinateDirection &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWParametricCurve3dElementCoordinateDirection::~RWStepFEA_RWParametricCurve3dElementCoordinateDirection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
+class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepFEA_RWFeaMaterialPropertyRepresentationItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepFEA_FeaMaterialPropertyRepresentationItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepFEA_RWFeaMaterialPropertyRepresentationItem::~RWStepFEA_RWFeaMaterialPropertyRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}

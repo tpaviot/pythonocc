@@ -24,7 +24,6 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_HLRBRep_InternalAlgo::DownCast;
-%rename(DownCast) Handle_HLRBRep_Algo::DownCast;
 %rename(DownCast) Handle_HLRBRep_ListNodeOfListOfBPoint::DownCast;
 %rename(DownCast) Handle_HLRBRep_AreaLimit::DownCast;
 %rename(DownCast) Handle_HLRBRep_ListNodeOfListOfBPnt2D::DownCast;
@@ -32,6 +31,7 @@ $HeaderURL$
 %rename(DownCast) Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds::DownCast;
 %rename(DownCast) Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::DownCast;
 %rename(DownCast) Handle_HLRBRep_Data::DownCast;
+%rename(DownCast) Handle_HLRBRep_Algo::DownCast;
 %rename(FindParameter) HLRBRep_TheProjPCurOfCInter::FindParameter;
 %rename(FirstParameter) HLRBRep_LineTool::FirstParameter;
 %rename(LastParameter) HLRBRep_LineTool::LastParameter;
@@ -68,7 +68,6 @@ $HeaderURL$
 %rename(KnotsAndMultiplicities) HLRBRep_LineTool::KnotsAndMultiplicities;
 %rename(NbSamples) HLRBRep_LineTool::NbSamples;
 %rename(SamplePars) HLRBRep_LineTool::SamplePars;
-%rename(Load) HLRBRep_ShapeToHLR::Load;
 %rename(Bounding) HLRBRep_ThePolygonToolOfInterCSurf::Bounding;
 %rename(DeflectionOverEstimation) HLRBRep_ThePolygonToolOfInterCSurf::DeflectionOverEstimation;
 %rename(Closed) HLRBRep_ThePolygonToolOfInterCSurf::Closed;
@@ -92,6 +91,7 @@ $HeaderURL$
 %rename(DN) HLRBRep_SLPropsATool::DN;
 %rename(Continuity) HLRBRep_SLPropsATool::Continuity;
 %rename(Bounds) HLRBRep_SLPropsATool::Bounds;
+%rename(Load) HLRBRep_ShapeToHLR::Load;
 %rename(AddInterference) HLRBRep_EdgeIList::AddInterference;
 %rename(ProcessComplex) HLRBRep_EdgeIList::ProcessComplex;
 %rename(FirstParameter) HLRBRep_BCurveTool::FirstParameter;
@@ -173,12 +173,6 @@ $HeaderURL$
 %rename(NbSamplesV) HLRBRep_BSurfaceTool::NbSamplesV;
 %rename(MakeEdge) HLRBRep::MakeEdge;
 %rename(PolyHLRAngleAndDeflection) HLRBRep::PolyHLRAngleAndDeflection;
-%rename(Bounding) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::Bounding;
-%rename(DeflectionOverEstimation) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::DeflectionOverEstimation;
-%rename(Closed) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::Closed;
-%rename(NbSegments) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::NbSegments;
-%rename(BeginOfSeg) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::BeginOfSeg;
-%rename(EndOfSeg) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::EndOfSeg;
 %rename(Value) HLRBRep_CLPropsATool::Value;
 %rename(D1) HLRBRep_CLPropsATool::D1;
 %rename(D2) HLRBRep_CLPropsATool::D2;

@@ -53,6 +53,44 @@ typedef void * DBC_DBVArray;
 
 
 
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
+class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter();
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		%feature("autodoc", "1");
+		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
+	DBC_VArrayNodeOfVArrayOfExtCharacter* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfExtCharacter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfInteger;
 class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode {
 	public:
@@ -91,29 +129,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
-class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_ArrayNode {
+%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
+class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter();
+		Handle_DBC_VArrayNodeOfVArrayOfReal();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const Handle_DBC_VArrayNodeOfVArrayOfExtCharacter &aHandle);
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter & operator=(const DBC_VArrayNodeOfVArrayOfExtCharacter *anItem);
+		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfExtCharacter DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_DBC_VArrayNodeOfVArrayOfReal DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
-	DBC_VArrayNodeOfVArrayOfExtCharacter* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfExtCharacter*)$self->Access();
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+	DBC_VArrayNodeOfVArrayOfReal* GetObject() {
+	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
 	}
 };
-%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::~Handle_DBC_VArrayNodeOfVArrayOfExtCharacter %{
+%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfReal::~Handle_DBC_VArrayNodeOfVArrayOfReal %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -122,7 +160,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_DBC_VArrayNodeOfVArrayOfExtCharacter {
+%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -167,29 +205,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
-class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
+%nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
+class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal();
+		DBC_VArrayNodeOfVArrayOfCharacter();
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
+		DBC_VArrayNodeOfVArrayOfCharacter(const Standard_Character &aValue);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal(const DBC_VArrayNodeOfVArrayOfReal *anItem);
+		void SetValue(const Standard_Character &aValue);
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const Handle_DBC_VArrayNodeOfVArrayOfReal &aHandle);
+		Standard_Address Value() const;
 		%feature("autodoc", "1");
-		Handle_DBC_VArrayNodeOfVArrayOfReal & operator=(const DBC_VArrayNodeOfVArrayOfReal *anItem);
+		DBC_VArrayNodeOfVArrayOfCharacter(const Storage_stCONSTclCOM &a);
 		%feature("autodoc", "1");
-		static		Handle_DBC_VArrayNodeOfVArrayOfReal DownCast(const Handle_Standard_Persistent &AnObject);
+		Standard_Character _CSFDB_GetDBC_VArrayNodeOfVArrayOfCharactermyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfCharactermyValue(const Standard_Character p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
-	DBC_VArrayNodeOfVArrayOfReal* GetObject() {
-	return (DBC_VArrayNodeOfVArrayOfReal*)$self->Access();
+%extend DBC_VArrayNodeOfVArrayOfCharacter {
+	Handle_DBC_VArrayNodeOfVArrayOfCharacter GetHandle() {
+	return *(Handle_DBC_VArrayNodeOfVArrayOfCharacter*) &$self;
 	}
 };
-%feature("shadow") Handle_DBC_VArrayNodeOfVArrayOfReal::~Handle_DBC_VArrayNodeOfVArrayOfReal %{
+%extend DBC_VArrayNodeOfVArrayOfCharacter {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") DBC_VArrayNodeOfVArrayOfCharacter::~DBC_VArrayNodeOfVArrayOfCharacter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -198,7 +245,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_DBC_VArrayNodeOfVArrayOfReal {
+%extend DBC_VArrayNodeOfVArrayOfCharacter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -281,35 +328,6 @@ def __del__(self):
 %}
 
 %extend DBC_BaseArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
-class DBC_VArrayTNodeOfVArrayOfInteger {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DBC_VArrayTNodeOfVArrayOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -437,53 +455,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
-class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfCharacter();
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfCharacter(const Standard_Character &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Character &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		DBC_VArrayNodeOfVArrayOfCharacter(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Character _CSFDB_GetDBC_VArrayNodeOfVArrayOfCharactermyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetDBC_VArrayNodeOfVArrayOfCharactermyValue(const Standard_Character p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend DBC_VArrayNodeOfVArrayOfCharacter {
-	Handle_DBC_VArrayNodeOfVArrayOfCharacter GetHandle() {
-	return *(Handle_DBC_VArrayNodeOfVArrayOfCharacter*) &$self;
-	}
-};
-%extend DBC_VArrayNodeOfVArrayOfCharacter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") DBC_VArrayNodeOfVArrayOfCharacter::~DBC_VArrayNodeOfVArrayOfCharacter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DBC_VArrayNodeOfVArrayOfCharacter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DBC_VArrayOfInteger;
 class DBC_VArrayOfInteger : public DBC_BaseArray {
 	public:
@@ -563,7 +534,7 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfReal::~DBC_VArrayNodeOfVArrayOfReal %{
@@ -605,6 +576,35 @@ def __del__(self):
 %}
 
 %extend DBC_VArrayTNodeOfVArrayOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
+class DBC_VArrayTNodeOfVArrayOfInteger {
+	public:
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger();
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DBC_VArrayTNodeOfVArrayOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -680,7 +680,7 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfInteger::~DBC_VArrayNodeOfVArrayOfInteger %{
@@ -727,7 +727,7 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfExtCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfExtCharacter::~DBC_VArrayNodeOfVArrayOfExtCharacter %{

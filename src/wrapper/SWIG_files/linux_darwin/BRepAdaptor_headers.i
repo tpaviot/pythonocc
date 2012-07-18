@@ -106,21 +106,11 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
-#include<TopoDS_Wire.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<Handle_Adaptor3d_HCurve.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Lin.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Elips.hxx>
-#include<gp_Hypr.hxx>
-#include<gp_Parab.hxx>
-#include<Handle_Geom_BezierCurve.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
@@ -130,4 +120,14 @@ $HeaderURL$
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Dir.hxx>
+#include<Handle_Adaptor3d_HCurve.hxx>
+#include<TopoDS_Edge.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+#include<gp_Elips.hxx>
+#include<gp_Hypr.hxx>
+#include<gp_Parab.hxx>
+#include<Handle_Geom_BezierCurve.hxx>
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<TopoDS_Wire.hxx>
 %}

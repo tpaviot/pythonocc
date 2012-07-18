@@ -116,7 +116,7 @@ class PCDMShape_Document : public PCDM_Document {
 };
 %extend PCDMShape_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PCDMShape_Document::~PCDMShape_Document %{

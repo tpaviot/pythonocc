@@ -92,7 +92,6 @@ $HeaderURL$
 #include<Geom2dInt_GInter.hxx>
 #include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_IntConicCurveOfGInter.hxx>
-#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
@@ -104,7 +103,6 @@ $HeaderURL$
 #include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheProjPCurOfGInter.hxx>
 #include<Geom2dLProp_CLProps2d.hxx>
 #include<Geom2dLProp_CurAndInf2d.hxx>
@@ -556,14 +554,14 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<ShapeBuild.hxx>
 #include<Handle_Geom_Plane.hxx>
+#include<TopoDS_Vertex.hxx>
+#include<gp_Pnt.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Edge.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Trsf2d.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<gp_Pnt.hxx>
 %}

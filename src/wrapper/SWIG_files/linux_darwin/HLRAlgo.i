@@ -52,158 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_HLRAlgo_PolyShellData;
-class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData(const Handle_HLRAlgo_PolyShellData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData(const HLRAlgo_PolyShellData *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData & operator=(const Handle_HLRAlgo_PolyShellData &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyShellData & operator=(const HLRAlgo_PolyShellData *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyShellData DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_PolyShellData {
-	HLRAlgo_PolyShellData* GetObject() {
-	return (HLRAlgo_PolyShellData*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_PolyShellData::~Handle_HLRAlgo_PolyShellData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_PolyShellData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_EdgesBlock;
-class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock(const Handle_HLRAlgo_EdgesBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock(const HLRAlgo_EdgesBlock *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock & operator=(const Handle_HLRAlgo_EdgesBlock &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_EdgesBlock & operator=(const HLRAlgo_EdgesBlock *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_EdgesBlock DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_EdgesBlock {
-	HLRAlgo_EdgesBlock* GetObject() {
-	return (HLRAlgo_EdgesBlock*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_EdgesBlock::~Handle_HLRAlgo_EdgesBlock %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_EdgesBlock {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
-class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_ListNodeOfInterferenceList *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const HLRAlgo_ListNodeOfInterferenceList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_ListNodeOfInterferenceList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
-	HLRAlgo_ListNodeOfInterferenceList* GetObject() {
-	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_ListNodeOfInterferenceList::~Handle_HLRAlgo_ListNodeOfInterferenceList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
-class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod();
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod(const HLRAlgo_HArray1OfPINod *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod & operator=(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPINod & operator=(const HLRAlgo_HArray1OfPINod *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPINod DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRAlgo_HArray1OfPINod {
-	HLRAlgo_HArray1OfPINod* GetObject() {
-	return (HLRAlgo_HArray1OfPINod*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRAlgo_HArray1OfPINod::~Handle_HLRAlgo_HArray1OfPINod %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRAlgo_HArray1OfPINod {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
 class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	public:
@@ -274,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_HLRAlgo_HArray1OfTData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
+class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg & operator=(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_HArray1OfPISeg & operator=(const HLRAlgo_HArray1OfPISeg *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_HArray1OfPISeg DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_HArray1OfPISeg {
+	HLRAlgo_HArray1OfPISeg* GetObject() {
+	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_HArray1OfPISeg::~Handle_HLRAlgo_HArray1OfPISeg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_HArray1OfPISeg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,29 +280,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_HLRAlgo_PolyAlgo;
-class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
+%nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
+class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo();
+		Handle_HLRAlgo_HArray1OfPINod();
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo(const Handle_HLRAlgo_PolyAlgo &aHandle);
+		Handle_HLRAlgo_HArray1OfPINod(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo(const HLRAlgo_PolyAlgo *anItem);
+		Handle_HLRAlgo_HArray1OfPINod(const HLRAlgo_HArray1OfPINod *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo & operator=(const Handle_HLRAlgo_PolyAlgo &aHandle);
+		Handle_HLRAlgo_HArray1OfPINod & operator=(const Handle_HLRAlgo_HArray1OfPINod &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyAlgo & operator=(const HLRAlgo_PolyAlgo *anItem);
+		Handle_HLRAlgo_HArray1OfPINod & operator=(const HLRAlgo_HArray1OfPINod *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_PolyAlgo DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_HArray1OfPINod DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_HLRAlgo_PolyAlgo {
-	HLRAlgo_PolyAlgo* GetObject() {
-	return (HLRAlgo_PolyAlgo*)$self->Access();
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	HLRAlgo_HArray1OfPINod* GetObject() {
+	return (HLRAlgo_HArray1OfPINod*)$self->Access();
 	}
 };
-%feature("shadow") Handle_HLRAlgo_PolyAlgo::~Handle_HLRAlgo_PolyAlgo %{
+%feature("shadow") Handle_HLRAlgo_HArray1OfPINod::~Handle_HLRAlgo_HArray1OfPINod %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -425,7 +311,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_HLRAlgo_PolyAlgo {
+%extend Handle_HLRAlgo_HArray1OfPINod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_ListNodeOfInterferenceList;
+class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList(const HLRAlgo_ListNodeOfInterferenceList *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const Handle_HLRAlgo_ListNodeOfInterferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_ListNodeOfInterferenceList & operator=(const HLRAlgo_ListNodeOfInterferenceList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_ListNodeOfInterferenceList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	HLRAlgo_ListNodeOfInterferenceList* GetObject() {
+	return (HLRAlgo_ListNodeOfInterferenceList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_ListNodeOfInterferenceList::~Handle_HLRAlgo_ListNodeOfInterferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_ListNodeOfInterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_EdgesBlock;
+class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock(const Handle_HLRAlgo_EdgesBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock(const HLRAlgo_EdgesBlock *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock & operator=(const Handle_HLRAlgo_EdgesBlock &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_EdgesBlock & operator=(const HLRAlgo_EdgesBlock *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_EdgesBlock DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_EdgesBlock {
+	HLRAlgo_EdgesBlock* GetObject() {
+	return (HLRAlgo_EdgesBlock*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_EdgesBlock::~Handle_HLRAlgo_EdgesBlock %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_EdgesBlock {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -470,29 +432,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
-class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
+%nodefaultctor Handle_HLRAlgo_PolyShellData;
+class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg();
+		Handle_HLRAlgo_PolyShellData();
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		Handle_HLRAlgo_PolyShellData(const Handle_HLRAlgo_PolyShellData &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg(const HLRAlgo_HArray1OfPISeg *anItem);
+		Handle_HLRAlgo_PolyShellData(const HLRAlgo_PolyShellData *anItem);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg & operator=(const Handle_HLRAlgo_HArray1OfPISeg &aHandle);
+		Handle_HLRAlgo_PolyShellData & operator=(const Handle_HLRAlgo_PolyShellData &aHandle);
 		%feature("autodoc", "1");
-		Handle_HLRAlgo_HArray1OfPISeg & operator=(const HLRAlgo_HArray1OfPISeg *anItem);
+		Handle_HLRAlgo_PolyShellData & operator=(const HLRAlgo_PolyShellData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_HLRAlgo_HArray1OfPISeg DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_HLRAlgo_PolyShellData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_HLRAlgo_HArray1OfPISeg {
-	HLRAlgo_HArray1OfPISeg* GetObject() {
-	return (HLRAlgo_HArray1OfPISeg*)$self->Access();
+%extend Handle_HLRAlgo_PolyShellData {
+	HLRAlgo_PolyShellData* GetObject() {
+	return (HLRAlgo_PolyShellData*)$self->Access();
 	}
 };
-%feature("shadow") Handle_HLRAlgo_HArray1OfPISeg::~Handle_HLRAlgo_HArray1OfPISeg %{
+%feature("shadow") Handle_HLRAlgo_PolyShellData::~Handle_HLRAlgo_PolyShellData %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -501,7 +463,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_HLRAlgo_HArray1OfPISeg {
+%extend Handle_HLRAlgo_PolyShellData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_HLRAlgo_PolyAlgo;
+class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo();
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo(const Handle_HLRAlgo_PolyAlgo &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo(const HLRAlgo_PolyAlgo *anItem);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo & operator=(const Handle_HLRAlgo_PolyAlgo &aHandle);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyAlgo & operator=(const HLRAlgo_PolyAlgo *anItem);
+		%feature("autodoc", "1");
+		static		Handle_HLRAlgo_PolyAlgo DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_HLRAlgo_PolyAlgo {
+	HLRAlgo_PolyAlgo* GetObject() {
+	return (HLRAlgo_PolyAlgo*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRAlgo_PolyAlgo::~Handle_HLRAlgo_PolyAlgo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_HLRAlgo_PolyAlgo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -695,7 +695,7 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPISeg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPISeg::~HLRAlgo_HArray1OfPISeg %{
@@ -734,7 +734,7 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
@@ -747,57 +747,6 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_PolyInternalNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRAlgo_Array1OfPINod;
-class HLRAlgo_Array1OfPINod {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod(const Handle_HLRAlgo_PolyInternalNode &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_HLRAlgo_PolyInternalNode &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPINod & Assign(const HLRAlgo_Array1OfPINod &Other);
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPINod & operator=(const HLRAlgo_Array1OfPINod &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_HLRAlgo_PolyInternalNode &Value);
-		%feature("autodoc", "1");
-		const Handle_HLRAlgo_PolyInternalNode & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") HLRAlgo_Array1OfPINod::~HLRAlgo_Array1OfPINod %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_Array1OfPINod {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -905,6 +854,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRAlgo_PolyInternalSegment;
+class HLRAlgo_PolyInternalSegment {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalSegment();
+		%feature("autodoc", "1");
+		Standard_Address Indices() const;
+
+};
+%feature("shadow") HLRAlgo_PolyInternalSegment::~HLRAlgo_PolyInternalSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_PolyInternalSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRAlgo_BiPoint;
 class HLRAlgo_BiPoint {
 	public:
@@ -964,16 +938,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRAlgo_PolyInternalSegment;
-class HLRAlgo_PolyInternalSegment {
+%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
+class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalSegment();
+		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		Standard_Address Indices() const;
+		HLRAlgo_BiPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") HLRAlgo_PolyInternalSegment::~HLRAlgo_PolyInternalSegment %{
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
+	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
+	}
+};
+%extend HLRAlgo_ListNodeOfListOfBPoint {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -982,7 +968,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HLRAlgo_PolyInternalSegment {
+%extend HLRAlgo_ListNodeOfListOfBPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1035,7 +1021,7 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_EdgesBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_EdgesBlock::~HLRAlgo_EdgesBlock %{
@@ -1054,60 +1040,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
-class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
+%nodefaultctor HLRAlgo_HArray1OfPHDat;
+class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		HLRAlgo_ListNodeOfListOfBPoint(const HLRAlgo_BiPoint &I, const TCollection_MapNodePtr &n);
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		HLRAlgo_BiPoint & Value() const;
+		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRAlgo_ListNodeOfListOfBPoint {
-	Handle_HLRAlgo_ListNodeOfListOfBPoint GetHandle() {
-	return *(Handle_HLRAlgo_ListNodeOfListOfBPoint*) &$self;
-	}
-};
-%extend HLRAlgo_ListNodeOfListOfBPoint {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_ListNodeOfListOfBPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRAlgo_Array1OfTData;
-class HLRAlgo_Array1OfTData {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData(const HLRAlgo_TriangleData &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_TriangleData &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfTData & Assign(const HLRAlgo_Array1OfTData &Other);
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfTData & operator=(const HLRAlgo_Array1OfTData &Other);
+		void Init(const HLRAlgo_PolyHidingData &V);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -1115,18 +1056,30 @@ class HLRAlgo_Array1OfTData {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
+		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
 		%feature("autodoc", "1");
-		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
+		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const HLRAlgo_TriangleData & operator()(const Standard_Integer Index) const;
+		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
+		const HLRAlgo_Array1OfPHDat & Array1() const;
 		%feature("autodoc", "1");
-		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
+		HLRAlgo_Array1OfPHDat & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") HLRAlgo_Array1OfTData::~HLRAlgo_Array1OfTData %{
+%extend HLRAlgo_HArray1OfPHDat {
+	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
+	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
+	}
+};
+%extend HLRAlgo_HArray1OfPHDat {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1135,7 +1088,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HLRAlgo_Array1OfTData {
+%extend HLRAlgo_HArray1OfPHDat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1160,7 +1113,7 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_ListNodeOfInterferenceList::~HLRAlgo_ListNodeOfInterferenceList %{
@@ -1173,6 +1126,57 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_ListNodeOfInterferenceList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRAlgo_Array1OfPINod;
+class HLRAlgo_Array1OfPINod {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod(const Handle_HLRAlgo_PolyInternalNode &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_HLRAlgo_PolyInternalNode &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPINod & Assign(const HLRAlgo_Array1OfPINod &Other);
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfPINod & operator=(const HLRAlgo_Array1OfPINod &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_HLRAlgo_PolyInternalNode &Value);
+		%feature("autodoc", "1");
+		const Handle_HLRAlgo_PolyInternalNode & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_PolyInternalNode & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") HLRAlgo_Array1OfPINod::~HLRAlgo_Array1OfPINod %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_Array1OfPINod {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1205,7 +1209,7 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_WiresBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_WiresBlock::~HLRAlgo_WiresBlock %{
@@ -1266,7 +1270,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyAlgo::~HLRAlgo_PolyAlgo %{
@@ -1315,7 +1319,7 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyShellData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyShellData::~HLRAlgo_PolyShellData %{
@@ -1425,7 +1429,7 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyData::~HLRAlgo_PolyData %{
@@ -1520,61 +1524,6 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_Interference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRAlgo_HArray1OfPHDat;
-class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		HLRAlgo_HArray1OfPHDat(const Standard_Integer Low, const Standard_Integer Up, const HLRAlgo_PolyHidingData &V);
-		%feature("autodoc", "1");
-		void Init(const HLRAlgo_PolyHidingData &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const HLRAlgo_PolyHidingData &Value);
-		%feature("autodoc", "1");
-		const HLRAlgo_PolyHidingData & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HLRAlgo_PolyHidingData & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const HLRAlgo_Array1OfPHDat & Array1() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPHDat & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRAlgo_HArray1OfPHDat {
-	Handle_HLRAlgo_HArray1OfPHDat GetHandle() {
-	return *(Handle_HLRAlgo_HArray1OfPHDat*) &$self;
-	}
-};
-%extend HLRAlgo_HArray1OfPHDat {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_HArray1OfPHDat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1678,7 +1627,7 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPINod::~HLRAlgo_HArray1OfPINod %{
@@ -1691,6 +1640,57 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_HArray1OfPINod {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRAlgo_Array1OfTData;
+class HLRAlgo_Array1OfTData {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData(const HLRAlgo_TriangleData &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const HLRAlgo_TriangleData &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfTData & Assign(const HLRAlgo_Array1OfTData &Other);
+		%feature("autodoc", "1");
+		const HLRAlgo_Array1OfTData & operator=(const HLRAlgo_Array1OfTData &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const HLRAlgo_TriangleData &Value);
+		%feature("autodoc", "1");
+		const HLRAlgo_TriangleData & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const HLRAlgo_TriangleData & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HLRAlgo_TriangleData & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		HLRAlgo_TriangleData & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") HLRAlgo_Array1OfTData::~HLRAlgo_Array1OfTData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_Array1OfTData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1806,7 +1806,7 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
@@ -1925,7 +1925,7 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfTData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfTData::~HLRAlgo_HArray1OfTData %{

@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TopoDS
 import IntCurveSurface
 import TopAbs
-import TopoDS
 };

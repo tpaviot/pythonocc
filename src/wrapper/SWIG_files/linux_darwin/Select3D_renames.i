@@ -23,21 +23,21 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Select3D_ListNodeOfListOfSensitive::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveEntity::DownCast;
 %rename(DownCast) Handle_Select3D_SensitivePoly::DownCast;
-%rename(DownCast) Handle_Select3D_SensitiveCircle::DownCast;
-%rename(DownCast) Handle_Select3D_SensitiveBox::DownCast;
-%rename(DownCast) Handle_Select3D_Projector::DownCast;
-%rename(DownCast) Handle_Select3D_SensitiveFace::DownCast;
-%rename(DownCast) Handle_Select3D_SensitiveTriangle::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveCurve::DownCast;
+%rename(DownCast) Handle_Select3D_SensitiveCircle::DownCast;
+%rename(DownCast) Handle_Select3D_SensitiveTriangle::DownCast;
+%rename(DownCast) Handle_Select3D_SensitivePoint::DownCast;
+%rename(DownCast) Handle_Select3D_SequenceNodeOfSensitiveEntitySequence::DownCast;
+%rename(DownCast) Handle_Select3D_SensitiveFace::DownCast;
+%rename(DownCast) Handle_Select3D_SensitiveSegment::DownCast;
+%rename(DownCast) Handle_Select3D_ListNodeOfListOfSensitive::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveWire::DownCast;
+%rename(DownCast) Handle_Select3D_SensitiveBox::DownCast;
 %rename(DownCast) Handle_Select3D_ListNodeOfListOfSensitiveTriangle::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveTriangulation::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveGroup::DownCast;
-%rename(DownCast) Handle_Select3D_SensitivePoint::DownCast;
-%rename(DownCast) Handle_Select3D_SensitiveSegment::DownCast;
-%rename(DownCast) Handle_Select3D_SequenceNodeOfSensitiveEntitySequence::DownCast;
+%rename(DownCast) Handle_Select3D_Projector::DownCast;
 %rename(DumpBox) Select3D_SensitiveEntity::DumpBox;
 %rename(Status) Select3D_SensitiveTriangle::Status;

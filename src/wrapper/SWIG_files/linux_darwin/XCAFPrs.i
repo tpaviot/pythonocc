@@ -242,67 +242,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFPrs_DataMapOfStyleShape;
-class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
+class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfStyleShape(const Standard_Integer NbBuckets=1);
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape();
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfStyleShape & Assign(const XCAFPrs_DataMapOfStyleShape &Other);
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape(const XCAFPrs_DataMapOfStyleShape &aMap);
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfStyleShape & operator=(const XCAFPrs_DataMapOfStyleShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const XCAFPrs_Style &K, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const XCAFPrs_Style &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const XCAFPrs_Style &K);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Find(const XCAFPrs_Style &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const XCAFPrs_Style &K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeFind(const XCAFPrs_Style &K);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const XCAFPrs_Style &K);
-
-};
-%feature("shadow") XCAFPrs_DataMapOfStyleShape::~XCAFPrs_DataMapOfStyleShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFPrs_DataMapOfStyleShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
-class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient();
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient(const XCAFPrs_DataMapOfStyleTransient &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		void Initialize(const XCAFPrs_DataMapOfStyleShape &aMap);
 		%feature("autodoc", "1");
 		const XCAFPrs_Style & Key() const;
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
+		const TopoDS_Shape  Value() const;
 
 };
-%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient::~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient %{
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleShape::~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -311,7 +266,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient {
+%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -324,6 +279,20 @@ class XCAFPrs_AISObject : public AIS_Shape {
 		%feature("autodoc", "1");
 		XCAFPrs_AISObject(const TDF_Label &lab);
 		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -334,7 +303,7 @@ class XCAFPrs_AISObject : public AIS_Shape {
 };
 %extend XCAFPrs_AISObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_AISObject::~XCAFPrs_AISObject %{
@@ -353,36 +322,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFPrs_DataMapOfShapeStyle;
-class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
+%nodefaultctor XCAFPrs_Driver;
+class XCAFPrs_Driver : public TPrsStd_Driver {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle(const Standard_Integer NbBuckets=1);
+		XCAFPrs_Driver();
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle & Assign(const XCAFPrs_DataMapOfShapeStyle &Other);
+		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapOfShapeStyle & operator=(const XCAFPrs_DataMapOfShapeStyle &Other);
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const XCAFPrs_Style &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const XCAFPrs_Style & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		XCAFPrs_Style & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		XCAFPrs_Style & operator()(const TopoDS_Shape K);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") XCAFPrs_DataMapOfShapeStyle::~XCAFPrs_DataMapOfShapeStyle %{
+%extend XCAFPrs_Driver {
+	Handle_XCAFPrs_Driver GetHandle() {
+	return *(Handle_XCAFPrs_Driver*) &$self;
+	}
+};
+%extend XCAFPrs_Driver {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -391,7 +354,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFPrs_DataMapOfShapeStyle {
+%extend XCAFPrs_Driver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -429,6 +392,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
+class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle();
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle(const XCAFPrs_DataMapOfShapeStyle &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XCAFPrs_DataMapOfShapeStyle &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & Value() const;
+
+};
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle::~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfStyleTransient;
 class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode {
 	public:
@@ -449,7 +443,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode 
 };
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleTransient::~XCAFPrs_DataMapNodeOfDataMapOfStyleTransient %{
@@ -468,30 +462,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFPrs_Driver;
-class XCAFPrs_Driver : public TPrsStd_Driver {
+%nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
+class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_Driver();
+		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
+		XCAFPrs_Style & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend XCAFPrs_Driver {
-	Handle_XCAFPrs_Driver GetHandle() {
-	return *(Handle_XCAFPrs_Driver*) &$self;
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
+	Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle GetHandle() {
+	return *(Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle*) &$self;
 	}
 };
-%extend XCAFPrs_Driver {
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
+%feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -500,7 +494,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFPrs_Driver {
+%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -534,6 +528,10 @@ class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const XCAFPrs_Style &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const XCAFPrs_Style &K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfStyleTransient::~XCAFPrs_DataMapOfStyleTransient %{
@@ -572,7 +570,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 };
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleShape::~XCAFPrs_DataMapNodeOfDataMapOfStyleShape %{
@@ -653,22 +651,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
-class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMapIterator {
+%nodefaultctor XCAFPrs_DataMapOfShapeStyle;
+class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle();
+		XCAFPrs_DataMapOfShapeStyle(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle(const XCAFPrs_DataMapOfShapeStyle &aMap);
+		XCAFPrs_DataMapOfShapeStyle & Assign(const XCAFPrs_DataMapOfShapeStyle &Other);
 		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfShapeStyle &aMap);
+		XCAFPrs_DataMapOfShapeStyle & operator=(const XCAFPrs_DataMapOfShapeStyle &Other);
 		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		const XCAFPrs_Style & Value() const;
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const XCAFPrs_Style &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const XCAFPrs_Style & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		XCAFPrs_Style & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		XCAFPrs_Style & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
-%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle::~XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle %{
+%feature("shadow") XCAFPrs_DataMapOfShapeStyle::~XCAFPrs_DataMapOfShapeStyle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -677,29 +693,78 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle {
+%extend XCAFPrs_DataMapOfShapeStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
-class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMapIterator {
+%nodefaultctor XCAFPrs_DataMapOfStyleShape;
+class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape();
+		XCAFPrs_DataMapOfStyleShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		XCAFPrs_DataMapIteratorOfDataMapOfStyleShape(const XCAFPrs_DataMapOfStyleShape &aMap);
+		XCAFPrs_DataMapOfStyleShape & Assign(const XCAFPrs_DataMapOfStyleShape &Other);
 		%feature("autodoc", "1");
-		void Initialize(const XCAFPrs_DataMapOfStyleShape &aMap);
+		XCAFPrs_DataMapOfStyleShape & operator=(const XCAFPrs_DataMapOfStyleShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const XCAFPrs_Style &K, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Find(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFind(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const XCAFPrs_Style &K);
+
+};
+%feature("shadow") XCAFPrs_DataMapOfStyleShape::~XCAFPrs_DataMapOfStyleShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFPrs_DataMapOfStyleShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
+class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient();
+		%feature("autodoc", "1");
+		XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient(const XCAFPrs_DataMapOfStyleTransient &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XCAFPrs_DataMapOfStyleTransient &aMap);
 		%feature("autodoc", "1");
 		const XCAFPrs_Style & Key() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape  Value() const;
+		const Handle_Standard_Transient & Value() const;
 
 };
-%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleShape::~XCAFPrs_DataMapIteratorOfDataMapOfStyleShape %{
+%feature("shadow") XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient::~XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -708,46 +773,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
-class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_DataMapNodeOfDataMapOfShapeStyle(const TopoDS_Shape K, const XCAFPrs_Style &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		XCAFPrs_Style & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle GetHandle() {
-	return *(Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle*) &$self;
-	}
-};
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
+%extend XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient {
 	void _kill_pointed() {
 		delete $self;
 	}

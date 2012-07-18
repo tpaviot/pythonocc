@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Poly
 import TopTools
+import Poly
 import Adaptor2d
 import TopAbs
 };

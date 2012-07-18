@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Quantity
 import Standard
-import Aspect
 import Graphic3d
+import Aspect
 import Visual3d
 import Image
 import gp

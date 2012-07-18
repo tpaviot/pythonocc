@@ -115,6 +115,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -392,6 +393,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -765,15 +767,15 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
+#include<Quantity_Color.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<Handle_V3d_Viewer.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Bnd_B3f.hxx>
 #include<gp_Ax1.hxx>
-#include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
-#include<Quantity_Color.hxx>
 #include<gp_Trsf.hxx>
 #include<TColStd_PackedMapOfInteger.hxx>
-#include<Handle_Standard_Type.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<TopoDS_Shape.hxx>
 %}

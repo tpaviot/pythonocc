@@ -24,12 +24,6 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::DownCast;
-%rename(Bounding) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Bounding;
-%rename(DeflectionOverEstimation) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::DeflectionOverEstimation;
-%rename(Closed) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::Closed;
-%rename(NbSegments) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::NbSegments;
-%rename(BeginOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::BeginOfSeg;
-%rename(EndOfSeg) Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::EndOfSeg;
 %rename(TheType) Geom2dInt_Geom2dCurveTool::TheType;
 %rename(Line) Geom2dInt_Geom2dCurveTool::Line;
 %rename(Circle) Geom2dInt_Geom2dCurveTool::Circle;

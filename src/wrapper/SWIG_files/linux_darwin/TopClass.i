@@ -52,37 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor TopClass_Intersection3d;
-class TopClass_Intersection3d {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Perform(const gp_Lin L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face Face);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean HasAPoint() const;
-		%feature("autodoc", "1");
-		virtual		const IntCurveSurface_IntersectionPoint & Point() const;
-		%feature("autodoc", "1");
-		virtual		TopAbs_State State() const;
-
-};
-%feature("shadow") TopClass_Intersection3d::~TopClass_Intersection3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopClass_Intersection3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopClass_SolidExplorer;
 class TopClass_SolidExplorer {
 	public:
@@ -124,6 +93,37 @@ def __del__(self):
 %}
 
 %extend TopClass_SolidExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopClass_Intersection3d;
+class TopClass_Intersection3d {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Perform(const gp_Lin L, const Standard_Real Prm, const Standard_Real Tol, const TopoDS_Face Face);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean HasAPoint() const;
+		%feature("autodoc", "1");
+		virtual		const IntCurveSurface_IntersectionPoint & Point() const;
+		%feature("autodoc", "1");
+		virtual		TopAbs_State State() const;
+
+};
+%feature("shadow") TopClass_Intersection3d::~TopClass_Intersection3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopClass_Intersection3d {
 	void _kill_pointed() {
 		delete $self;
 	}

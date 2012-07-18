@@ -103,44 +103,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_VrmlConverter_Drawer;
-class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer();
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_Drawer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_VrmlConverter_Drawer {
-	VrmlConverter_Drawer* GetObject() {
-	return (VrmlConverter_Drawer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_VrmlConverter_Drawer::~Handle_VrmlConverter_Drawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_VrmlConverter_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_VrmlConverter_PointAspect;
 class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 	public:
@@ -217,44 +179,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_VrmlConverter_IsoAspect;
-class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
-	public:
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect();
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect(const Handle_VrmlConverter_IsoAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect(const VrmlConverter_IsoAspect *anItem);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect & operator=(const Handle_VrmlConverter_IsoAspect &aHandle);
-		%feature("autodoc", "1");
-		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
-		%feature("autodoc", "1");
-		static		Handle_VrmlConverter_IsoAspect DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_VrmlConverter_IsoAspect {
-	VrmlConverter_IsoAspect* GetObject() {
-	return (VrmlConverter_IsoAspect*)$self->Access();
-	}
-};
-%feature("shadow") Handle_VrmlConverter_IsoAspect::~Handle_VrmlConverter_IsoAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_VrmlConverter_IsoAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_VrmlConverter_Projector;
 class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	public:
@@ -293,6 +217,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_VrmlConverter_IsoAspect;
+class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
+	public:
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect();
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect(const Handle_VrmlConverter_IsoAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect(const VrmlConverter_IsoAspect *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect & operator=(const Handle_VrmlConverter_IsoAspect &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_IsoAspect & operator=(const VrmlConverter_IsoAspect *anItem);
+		%feature("autodoc", "1");
+		static		Handle_VrmlConverter_IsoAspect DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_VrmlConverter_IsoAspect {
+	VrmlConverter_IsoAspect* GetObject() {
+	return (VrmlConverter_IsoAspect*)$self->Access();
+	}
+};
+%feature("shadow") Handle_VrmlConverter_IsoAspect::~Handle_VrmlConverter_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_VrmlConverter_IsoAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_VrmlConverter_Drawer;
+class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer();
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer(const Handle_VrmlConverter_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer(const VrmlConverter_Drawer *anItem);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const Handle_VrmlConverter_Drawer &aHandle);
+		%feature("autodoc", "1");
+		Handle_VrmlConverter_Drawer & operator=(const VrmlConverter_Drawer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_VrmlConverter_Drawer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_VrmlConverter_Drawer {
+	VrmlConverter_Drawer* GetObject() {
+	return (VrmlConverter_Drawer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_VrmlConverter_Drawer::~Handle_VrmlConverter_Drawer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_VrmlConverter_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor VrmlConverter_WFDeflectionShape;
 class VrmlConverter_WFDeflectionShape {
 	public:
@@ -312,6 +312,123 @@ def __del__(self):
 %}
 
 %extend VrmlConverter_WFDeflectionShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_DeflectionCurve;
+class VrmlConverter_DeflectionCurve {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_DeflectionCurve();
+		%feature("autodoc", "1");
+		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Standard_Real aLimit);
+		%feature("autodoc", "1");
+		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Handle_VrmlConverter_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
+
+};
+%feature("shadow") VrmlConverter_DeflectionCurve::~VrmlConverter_DeflectionCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_DeflectionCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_LineAspect;
+class VrmlConverter_LineAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_LineAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_LineAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material Material() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_LineAspect {
+	Handle_VrmlConverter_LineAspect GetHandle() {
+	return *(Handle_VrmlConverter_LineAspect*) &$self;
+	}
+};
+%extend VrmlConverter_LineAspect {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") VrmlConverter_LineAspect::~VrmlConverter_LineAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_LineAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_IsoAspect;
+class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		void SetNumber(const Standard_Integer aNumber);
+		%feature("autodoc", "1");
+		Standard_Integer Number() const;
+
+};
+%extend VrmlConverter_IsoAspect {
+	Handle_VrmlConverter_IsoAspect GetHandle() {
+	return *(Handle_VrmlConverter_IsoAspect*) &$self;
+	}
+};
+%extend VrmlConverter_IsoAspect {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") VrmlConverter_IsoAspect::~VrmlConverter_IsoAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_IsoAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -380,6 +497,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor VrmlConverter_ShadingAspect;
+class VrmlConverter_ShadingAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_ShadingAspect();
+		%feature("autodoc", "1");
+		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material FrontMaterial() const;
+		%feature("autodoc", "1");
+		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
+		%feature("autodoc", "1");
+		Vrml_ShapeHints ShapeHints() const;
+		%feature("autodoc", "1");
+		void SetHasNormals(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_ShadingAspect {
+	Handle_VrmlConverter_ShadingAspect GetHandle() {
+	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
+	}
+};
+%extend VrmlConverter_ShadingAspect {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_ShadingAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor VrmlConverter_ShadedShape;
 class VrmlConverter_ShadedShape {
 	public:
@@ -401,6 +569,133 @@ def __del__(self):
 %}
 
 %extend VrmlConverter_ShadedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_Projector;
+class VrmlConverter_Projector : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_Projector(const TopTools_Array1OfShape &Shapes, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp, const VrmlConverter_TypeOfCamera Camera=VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light=VrmlConverter_NoLight);
+		%feature("autodoc", "1");
+		void SetCamera(const VrmlConverter_TypeOfCamera aCamera);
+		%feature("autodoc", "1");
+		VrmlConverter_TypeOfCamera Camera() const;
+		%feature("autodoc", "1");
+		void SetLight(const VrmlConverter_TypeOfLight aLight);
+		%feature("autodoc", "1");
+		VrmlConverter_TypeOfLight Light() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string AddToString() {
+			std::stringstream s;
+			self->Add(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		HLRAlgo_Projector Projector() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_Projector {
+	Handle_VrmlConverter_Projector GetHandle() {
+	return *(Handle_VrmlConverter_Projector*) &$self;
+	}
+};
+%extend VrmlConverter_Projector {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") VrmlConverter_Projector::~VrmlConverter_Projector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_Projector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_Curve;
+class VrmlConverter_Curve {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_Curve();
+		%feature("autodoc", "1");
+		static		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		%feature("autodoc", "1");
+		static		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
+		%feature("autodoc", "1");
+		static		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
+
+};
+%feature("shadow") VrmlConverter_Curve::~VrmlConverter_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_Curve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor VrmlConverter_PointAspect;
+class VrmlConverter_PointAspect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		VrmlConverter_PointAspect();
+		%feature("autodoc", "1");
+		VrmlConverter_PointAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_Vrml_Material &aMaterial);
+		%feature("autodoc", "1");
+		Handle_Vrml_Material Material() const;
+		%feature("autodoc", "1");
+		void SetHasMaterial(const Standard_Boolean OnOff);
+		%feature("autodoc", "1");
+		Standard_Boolean HasMaterial() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend VrmlConverter_PointAspect {
+	Handle_VrmlConverter_PointAspect GetHandle() {
+	return *(Handle_VrmlConverter_PointAspect*) &$self;
+	}
+};
+%extend VrmlConverter_PointAspect {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") VrmlConverter_PointAspect::~VrmlConverter_PointAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend VrmlConverter_PointAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -505,7 +800,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 };
 %extend VrmlConverter_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") VrmlConverter_Drawer::~VrmlConverter_Drawer %{
@@ -518,293 +813,6 @@ def __del__(self):
 %}
 
 %extend VrmlConverter_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_LineAspect;
-class VrmlConverter_LineAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_LineAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_LineAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material Material() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_LineAspect {
-	Handle_VrmlConverter_LineAspect GetHandle() {
-	return *(Handle_VrmlConverter_LineAspect*) &$self;
-	}
-};
-%extend VrmlConverter_LineAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") VrmlConverter_LineAspect::~VrmlConverter_LineAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_LineAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_IsoAspect;
-class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_IsoAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff, const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		void SetNumber(const Standard_Integer aNumber);
-		%feature("autodoc", "1");
-		Standard_Integer Number() const;
-
-};
-%extend VrmlConverter_IsoAspect {
-	Handle_VrmlConverter_IsoAspect GetHandle() {
-	return *(Handle_VrmlConverter_IsoAspect*) &$self;
-	}
-};
-%extend VrmlConverter_IsoAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") VrmlConverter_IsoAspect::~VrmlConverter_IsoAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_IsoAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_Projector;
-class VrmlConverter_Projector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_Projector(const TopTools_Array1OfShape &Shapes, const Quantity_Length Focus, const Quantity_Length DX, const Quantity_Length DY, const Quantity_Length DZ, const Quantity_Length XUp, const Quantity_Length YUp, const Quantity_Length ZUp, const VrmlConverter_TypeOfCamera Camera=VrmlConverter_NoCamera, const VrmlConverter_TypeOfLight Light=VrmlConverter_NoLight);
-		%feature("autodoc", "1");
-		void SetCamera(const VrmlConverter_TypeOfCamera aCamera);
-		%feature("autodoc", "1");
-		VrmlConverter_TypeOfCamera Camera() const;
-		%feature("autodoc", "1");
-		void SetLight(const VrmlConverter_TypeOfLight aLight);
-		%feature("autodoc", "1");
-		VrmlConverter_TypeOfLight Light() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string AddToString() {
-			std::stringstream s;
-			self->Add(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		HLRAlgo_Projector Projector() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_Projector {
-	Handle_VrmlConverter_Projector GetHandle() {
-	return *(Handle_VrmlConverter_Projector*) &$self;
-	}
-};
-%extend VrmlConverter_Projector {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") VrmlConverter_Projector::~VrmlConverter_Projector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_Projector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_Curve;
-class VrmlConverter_Curve {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_Curve();
-		%feature("autodoc", "1");
-		static		void Add(const Adaptor3d_Curve &aCurve, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
-		%feature("autodoc", "1");
-		static		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer, Standard_OStream & anOStream);
-		%feature("autodoc", "1");
-		static		void Add(const Adaptor3d_Curve &aCurve, const Standard_Real U1, const Standard_Real U2, Standard_OStream & anOStream, const Standard_Integer aNbPoints);
-
-};
-%feature("shadow") VrmlConverter_Curve::~VrmlConverter_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_ShadingAspect;
-class VrmlConverter_ShadingAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_ShadingAspect();
-		%feature("autodoc", "1");
-		void SetFrontMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material FrontMaterial() const;
-		%feature("autodoc", "1");
-		void SetShapeHints(const Vrml_ShapeHints &aShapeHints);
-		%feature("autodoc", "1");
-		Vrml_ShapeHints ShapeHints() const;
-		%feature("autodoc", "1");
-		void SetHasNormals(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasNormals() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_ShadingAspect {
-	Handle_VrmlConverter_ShadingAspect GetHandle() {
-	return *(Handle_VrmlConverter_ShadingAspect*) &$self;
-	}
-};
-%extend VrmlConverter_ShadingAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") VrmlConverter_ShadingAspect::~VrmlConverter_ShadingAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_ShadingAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_HLRShape;
-class VrmlConverter_HLRShape {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_HLRShape();
-		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
-
-};
-%feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_HLRShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor VrmlConverter_PointAspect;
-class VrmlConverter_PointAspect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		VrmlConverter_PointAspect();
-		%feature("autodoc", "1");
-		VrmlConverter_PointAspect(const Handle_Vrml_Material &aMaterial, const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_Vrml_Material &aMaterial);
-		%feature("autodoc", "1");
-		Handle_Vrml_Material Material() const;
-		%feature("autodoc", "1");
-		void SetHasMaterial(const Standard_Boolean OnOff);
-		%feature("autodoc", "1");
-		Standard_Boolean HasMaterial() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend VrmlConverter_PointAspect {
-	Handle_VrmlConverter_PointAspect GetHandle() {
-	return *(Handle_VrmlConverter_PointAspect*) &$self;
-	}
-};
-%extend VrmlConverter_PointAspect {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") VrmlConverter_PointAspect::~VrmlConverter_PointAspect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend VrmlConverter_PointAspect {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -836,24 +844,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor VrmlConverter_DeflectionCurve;
-class VrmlConverter_DeflectionCurve {
+%nodefaultctor VrmlConverter_HLRShape;
+class VrmlConverter_HLRShape {
 	public:
 		%feature("autodoc", "1");
-		VrmlConverter_DeflectionCurve();
+		VrmlConverter_HLRShape();
 		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Standard_Real aLimit);
-		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Handle_VrmlConverter_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void Add(Standard_OStream & anOStream, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection);
+		static		void Add(Standard_OStream & anOStream, const TopoDS_Shape aShape, const Handle_VrmlConverter_Drawer &aDrawer, const Handle_VrmlConverter_Projector &aProjector);
 
 };
-%feature("shadow") VrmlConverter_DeflectionCurve::~VrmlConverter_DeflectionCurve %{
+%feature("shadow") VrmlConverter_HLRShape::~VrmlConverter_HLRShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -862,7 +862,7 @@ def __del__(self):
 		pass
 %}
 
-%extend VrmlConverter_DeflectionCurve {
+%extend VrmlConverter_HLRShape {
 	void _kill_pointed() {
 		delete $self;
 	}

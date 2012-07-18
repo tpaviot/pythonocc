@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_ShapeCustom_BSplineRestriction;
-class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modification {
+%nodefaultctor Handle_ShapeCustom_DirectModification;
+class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction();
+		Handle_ShapeCustom_DirectModification();
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		Handle_ShapeCustom_DirectModification(const Handle_ShapeCustom_DirectModification &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction(const ShapeCustom_BSplineRestriction *anItem);
+		Handle_ShapeCustom_DirectModification(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction & operator=(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		Handle_ShapeCustom_DirectModification & operator=(const Handle_ShapeCustom_DirectModification &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *anItem);
+		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_BSplineRestriction DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeCustom_DirectModification DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeCustom_BSplineRestriction {
-	ShapeCustom_BSplineRestriction* GetObject() {
-	return (ShapeCustom_BSplineRestriction*)$self->Access();
+%extend Handle_ShapeCustom_DirectModification {
+	ShapeCustom_DirectModification* GetObject() {
+	return (ShapeCustom_DirectModification*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ShapeCustom_BSplineRestriction::~Handle_ShapeCustom_BSplineRestriction %{
+%feature("shadow") Handle_ShapeCustom_DirectModification::~Handle_ShapeCustom_DirectModification %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ShapeCustom_BSplineRestriction {
+%extend Handle_ShapeCustom_DirectModification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -166,6 +166,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeCustom_BSplineRestriction;
+class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction();
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction(const ShapeCustom_BSplineRestriction *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction & operator=(const Handle_ShapeCustom_BSplineRestriction &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_BSplineRestriction & operator=(const ShapeCustom_BSplineRestriction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeCustom_BSplineRestriction DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeCustom_BSplineRestriction {
+	ShapeCustom_BSplineRestriction* GetObject() {
+	return (ShapeCustom_BSplineRestriction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeCustom_BSplineRestriction::~Handle_ShapeCustom_BSplineRestriction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeCustom_BSplineRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
+class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution();
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution(const ShapeCustom_ConvertToRevolution *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution & operator=(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeCustom_ConvertToRevolution DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeCustom_ConvertToRevolution {
+	ShapeCustom_ConvertToRevolution* GetObject() {
+	return (ShapeCustom_ConvertToRevolution*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeCustom_ConvertToRevolution::~Handle_ShapeCustom_ConvertToRevolution %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeCustom_ConvertToRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeCustom_RestrictionParameters;
 class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	public:
@@ -242,82 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
-class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution();
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution(const ShapeCustom_ConvertToRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution & operator=(const Handle_ShapeCustom_ConvertToRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_ConvertToRevolution & operator=(const ShapeCustom_ConvertToRevolution *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_ConvertToRevolution DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeCustom_ConvertToRevolution {
-	ShapeCustom_ConvertToRevolution* GetObject() {
-	return (ShapeCustom_ConvertToRevolution*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeCustom_ConvertToRevolution::~Handle_ShapeCustom_ConvertToRevolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeCustom_ConvertToRevolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeCustom_DirectModification;
-class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification();
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification(const Handle_ShapeCustom_DirectModification &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification(const ShapeCustom_DirectModification *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification & operator=(const Handle_ShapeCustom_DirectModification &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeCustom_DirectModification & operator=(const ShapeCustom_DirectModification *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeCustom_DirectModification DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeCustom_DirectModification {
-	ShapeCustom_DirectModification* GetObject() {
-	return (ShapeCustom_DirectModification*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeCustom_DirectModification::~Handle_ShapeCustom_DirectModification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeCustom_DirectModification {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeCustom_ConvertToBSpline;
 class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 	public:
@@ -359,7 +359,7 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToBSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_ConvertToBSpline::~ShapeCustom_ConvertToBSpline %{
@@ -372,139 +372,6 @@ def __del__(self):
 %}
 
 %extend ShapeCustom_ConvertToBSpline {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeCustom_ConvertToRevolution;
-class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_ConvertToRevolution();
-		%feature("autodoc","NewSurface(const F) -> Standard_Real");
-
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E) -> Standard_Real");
-
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V) -> Standard_Real");
-
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
-
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const TopoDS_Edge NewE, const TopoDS_Face NewF1, const TopoDS_Face NewF2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeCustom_ConvertToRevolution {
-	Handle_ShapeCustom_ConvertToRevolution GetHandle() {
-	return *(Handle_ShapeCustom_ConvertToRevolution*) &$self;
-	}
-};
-%extend ShapeCustom_ConvertToRevolution {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeCustom_ConvertToRevolution::~ShapeCustom_ConvertToRevolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeCustom_ConvertToRevolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeCustom_Curve2d;
-class ShapeCustom_Curve2d {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_Curve2d();
-		%feature("autodoc","IsLinear(const thePoles, Standard_Real theTolerance) -> Standard_Real");
-
-		static		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
-		%feature("autodoc","ConvertToLine2d(const theCurve, Standard_Real theFirstIn, Standard_Real theLastIn, Standard_Real theTolerance) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		static		Handle_Geom2d_Line ConvertToLine2d(const Handle_Geom2d_Curve &theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
-
-};
-%feature("shadow") ShapeCustom_Curve2d::~ShapeCustom_Curve2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeCustom_Curve2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeCustom_TrsfModification;
-class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_TrsfModification(const gp_Trsf T);
-		%feature("autodoc","NewSurface(const F) -> Standard_Real");
-
-		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
-		%feature("autodoc","NewCurve(const E) -> Standard_Real");
-
-		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
-		%feature("autodoc","NewPoint(const V) -> Standard_Real");
-
-		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
-		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
-
-		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
-		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeCustom_TrsfModification {
-	Handle_ShapeCustom_TrsfModification GetHandle() {
-	return *(Handle_ShapeCustom_TrsfModification*) &$self;
-	}
-};
-%extend ShapeCustom_TrsfModification {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeCustom_TrsfModification::~ShapeCustom_TrsfModification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeCustom_TrsfModification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -719,7 +586,7 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 };
 %extend ShapeCustom_RestrictionParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_RestrictionParameters::~ShapeCustom_RestrictionParameters %{
@@ -738,6 +605,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeCustom_Curve2d;
+class ShapeCustom_Curve2d {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_Curve2d();
+		%feature("autodoc","IsLinear(const thePoles, Standard_Real theTolerance) -> Standard_Real");
+
+		static		Standard_Boolean IsLinear(const TColgp_Array1OfPnt2d &thePoles, const Standard_Real theTolerance, Standard_Real &OutValue);
+		%feature("autodoc","ConvertToLine2d(const theCurve, Standard_Real theFirstIn, Standard_Real theLastIn, Standard_Real theTolerance) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		static		Handle_Geom2d_Line ConvertToLine2d(const Handle_Geom2d_Curve &theCurve, const Standard_Real theFirstIn, const Standard_Real theLastIn, const Standard_Real theTolerance, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		static		Standard_Boolean SimplifyBSpline2d(Handle_Geom2d_BSplineCurve & theBSpline2d, const Standard_Real theTolerance);
+
+};
+%feature("shadow") ShapeCustom_Curve2d::~ShapeCustom_Curve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeCustom_Curve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeCustom_Curve;
 class ShapeCustom_Curve {
 	public:
@@ -748,7 +646,7 @@ class ShapeCustom_Curve {
 		%feature("autodoc", "1");
 		void Init(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
+		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x00000000000000001);
 
 };
 %feature("shadow") ShapeCustom_Curve::~ShapeCustom_Curve %{
@@ -761,39 +659,6 @@ def __del__(self):
 %}
 
 %extend ShapeCustom_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeCustom_Surface;
-class ShapeCustom_Surface {
-	public:
-		%feature("autodoc", "1");
-		ShapeCustom_Surface();
-		%feature("autodoc", "1");
-		ShapeCustom_Surface(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S);
-		%feature("autodoc", "1");
-		Standard_Real Gap() const;
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
-
-};
-%feature("shadow") ShapeCustom_Surface::~ShapeCustom_Surface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeCustom_Surface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -833,7 +698,7 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 };
 %extend ShapeCustom_SweptToElementary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_SweptToElementary::~ShapeCustom_SweptToElementary %{
@@ -852,20 +717,43 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeCustom;
-class ShapeCustom {
+%nodefaultctor ShapeCustom_ConvertToRevolution;
+class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 	public:
 		%feature("autodoc", "1");
-		ShapeCustom();
+		ShapeCustom_ConvertToRevolution();
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
+
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
+
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
+
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
+		virtual		GeomAbs_Shape Continuity(const TopoDS_Edge E, const TopoDS_Face F1, const TopoDS_Face F2, const TopoDS_Edge NewE, const TopoDS_Face NewF1, const TopoDS_Face NewF2);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape DirectFaces(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		static		TopoDS_Shape ScaleShape(const TopoDS_Shape S, const Standard_Real scale);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") ShapeCustom::~ShapeCustom %{
+%extend ShapeCustom_ConvertToRevolution {
+	Handle_ShapeCustom_ConvertToRevolution GetHandle() {
+	return *(Handle_ShapeCustom_ConvertToRevolution*) &$self;
+	}
+};
+%extend ShapeCustom_ConvertToRevolution {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeCustom_ConvertToRevolution::~ShapeCustom_ConvertToRevolution %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -874,7 +762,90 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeCustom {
+%extend ShapeCustom_ConvertToRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeCustom_TrsfModification;
+class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_TrsfModification(const gp_Trsf T);
+		%feature("autodoc","NewSurface(const F) -> Standard_Real");
+
+		virtual		Standard_Boolean NewSurface(const TopoDS_Face F, Handle_Geom_Surface & S, TopLoc_Location & L, Standard_Real &OutValue, Standard_Boolean & RevWires, Standard_Boolean & RevFace);
+		%feature("autodoc","NewCurve(const E) -> Standard_Real");
+
+		virtual		Standard_Boolean NewCurve(const TopoDS_Edge E, Handle_Geom_Curve & C, TopLoc_Location & L, Standard_Real &OutValue);
+		%feature("autodoc","NewPoint(const V) -> Standard_Real");
+
+		virtual		Standard_Boolean NewPoint(const TopoDS_Vertex V, gp_Pnt & P, Standard_Real &OutValue);
+		%feature("autodoc","NewCurve2d(const E, const F, const NewE, const NewF) -> Standard_Real");
+
+		virtual		Standard_Boolean NewCurve2d(const TopoDS_Edge E, const TopoDS_Face F, const TopoDS_Edge NewE, const TopoDS_Face NewF, Handle_Geom2d_Curve & C, Standard_Real &OutValue);
+		%feature("autodoc","NewParameter(const V, const E) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean NewParameter(const TopoDS_Vertex V, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeCustom_TrsfModification {
+	Handle_ShapeCustom_TrsfModification GetHandle() {
+	return *(Handle_ShapeCustom_TrsfModification*) &$self;
+	}
+};
+%extend ShapeCustom_TrsfModification {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeCustom_TrsfModification::~ShapeCustom_TrsfModification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeCustom_TrsfModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeCustom_Surface;
+class ShapeCustom_Surface {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom_Surface();
+		%feature("autodoc", "1");
+		ShapeCustom_Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		Standard_Real Gap() const;
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x00000000000000001);
+
+};
+%feature("shadow") ShapeCustom_Surface::~ShapeCustom_Surface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeCustom_Surface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -993,7 +964,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 %extend ShapeCustom_BSplineRestriction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_BSplineRestriction::~ShapeCustom_BSplineRestriction %{
@@ -1006,6 +977,35 @@ def __del__(self):
 %}
 
 %extend ShapeCustom_BSplineRestriction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeCustom;
+class ShapeCustom {
+	public:
+		%feature("autodoc", "1");
+		ShapeCustom();
+		%feature("autodoc", "1");
+		static		TopoDS_Shape ApplyModifier(const TopoDS_Shape S, const Handle_BRepTools_Modification &M, TopTools_DataMapOfShapeShape & context, BRepTools_Modifier & MD);
+		%feature("autodoc", "1");
+		static		TopoDS_Shape DirectFaces(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		static		TopoDS_Shape ScaleShape(const TopoDS_Shape S, const Standard_Real scale);
+
+};
+%feature("shadow") ShapeCustom::~ShapeCustom %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeCustom {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1045,7 +1045,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 };
 %extend ShapeCustom_DirectModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_DirectModification::~ShapeCustom_DirectModification %{

@@ -56,6 +56,7 @@ $HeaderURL$
 #include<PCDM_SequenceOfDocument.hxx>
 #include<PCDM_SequenceOfReference.hxx>
 #include<PCDM_StorageDriver.hxx>
+#include<PCDM_StoreStatus.hxx>
 #include<PCDM_TypeOfFileDriver.hxx>
 #include<PCDM_Writer.hxx>
 #include<Storage.hxx>
@@ -138,7 +139,7 @@ $HeaderURL$
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<XmlTObjDrivers.hxx>
 #include<Standard_GUID.hxx>
-#include<TCollection_ExtendedString.hxx>
 %}

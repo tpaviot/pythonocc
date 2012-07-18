@@ -128,6 +128,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XSControl_Controller;
+class Handle_XSControl_Controller : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller();
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller(const Handle_XSControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller(const XSControl_Controller *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller & operator=(const Handle_XSControl_Controller &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller & operator=(const XSControl_Controller *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XSControl_Controller DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XSControl_Controller {
+	XSControl_Controller* GetObject() {
+	return (XSControl_Controller*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XSControl_Controller::~Handle_XSControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XSControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XSControl_SelectForTransfer;
+class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer(const Handle_XSControl_SelectForTransfer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer(const XSControl_SelectForTransfer *anItem);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer & operator=(const Handle_XSControl_SelectForTransfer &aHandle);
+		%feature("autodoc", "1");
+		Handle_XSControl_SelectForTransfer & operator=(const XSControl_SelectForTransfer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XSControl_SelectForTransfer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XSControl_SelectForTransfer {
+	XSControl_SelectForTransfer* GetObject() {
+	return (XSControl_SelectForTransfer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XSControl_SelectForTransfer::~Handle_XSControl_SelectForTransfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XSControl_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XSControl_TransferReader;
 class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 	public:
@@ -204,44 +280,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XSControl_SelectForTransfer;
-class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer(const Handle_XSControl_SelectForTransfer &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer(const XSControl_SelectForTransfer *anItem);
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer & operator=(const Handle_XSControl_SelectForTransfer &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_SelectForTransfer & operator=(const XSControl_SelectForTransfer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XSControl_SelectForTransfer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XSControl_SelectForTransfer {
-	XSControl_SelectForTransfer* GetObject() {
-	return (XSControl_SelectForTransfer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XSControl_SelectForTransfer::~Handle_XSControl_SelectForTransfer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XSControl_SelectForTransfer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XSControl_WorkSession;
 class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 	public:
@@ -274,44 +312,6 @@ def __del__(self):
 %}
 
 %extend Handle_XSControl_WorkSession {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XSControl_Controller;
-class Handle_XSControl_Controller : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller();
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller(const Handle_XSControl_Controller &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller(const XSControl_Controller *anItem);
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller & operator=(const Handle_XSControl_Controller &aHandle);
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller & operator=(const XSControl_Controller *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XSControl_Controller DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XSControl_Controller {
-	XSControl_Controller* GetObject() {
-	return (XSControl_Controller*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XSControl_Controller::~Handle_XSControl_Controller %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XSControl_Controller {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -356,6 +356,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor XSControl;
+class XSControl {
+	public:
+		%feature("autodoc", "1");
+		XSControl();
+		%feature("autodoc", "1");
+		static		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
+		%feature("autodoc", "1");
+		static		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
+
+};
+%feature("shadow") XSControl::~XSControl %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XSControl_SignTransferStatus;
 class XSControl_SignTransferStatus : public IFSelect_Signature {
 	public:
@@ -384,7 +411,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %extend XSControl_SignTransferStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_SignTransferStatus::~XSControl_SignTransferStatus %{
@@ -397,72 +424,6 @@ def __del__(self):
 %}
 
 %extend XSControl_SignTransferStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_Writer;
-class XSControl_Writer {
-	public:
-		%feature("autodoc", "1");
-		XSControl_Writer();
-		%feature("autodoc", "1");
-		XSControl_Writer(const char * norm);
-		%feature("autodoc", "1");
-		XSControl_Writer(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		Standard_Boolean SetNorm(const char * norm);
-		%feature("autodoc", "1");
-		void SetWS(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
-		%feature("autodoc", "1");
-		Handle_XSControl_WorkSession WS() const;
-		%feature("autodoc", "1");
-		Handle_Interface_InterfaceModel Model(const Standard_Boolean newone=0);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus TransferShape(const TopoDS_Shape sh, const Standard_Integer mode=0);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus WriteFile(const char * filename);
-		%feature("autodoc", "1");
-		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
-
-};
-%feature("shadow") XSControl_Writer::~XSControl_Writer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_Writer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_Functions;
-class XSControl_Functions {
-	public:
-		%feature("autodoc", "1");
-		XSControl_Functions();
-		%feature("autodoc", "1");
-		static		void Init();
-
-};
-%feature("shadow") XSControl_Functions::~XSControl_Functions %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_Functions {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -495,7 +456,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 %extend XSControl_ConnectedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_ConnectedShapes::~XSControl_ConnectedShapes %{
@@ -508,114 +469,6 @@ def __del__(self):
 %}
 
 %extend XSControl_ConnectedShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_Utils;
-class XSControl_Utils {
-	public:
-		%feature("autodoc", "1");
-		XSControl_Utils();
-		%feature("autodoc", "1");
-		void TraceLine(const char * line) const;
-		%feature("autodoc", "1");
-		void TraceLines(const Handle_Standard_Transient &lines) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Transient &item, const Handle_Standard_Type &what) const;
-		%feature("autodoc", "1");
-		char * TypeName(const Handle_Standard_Transient &item, const Standard_Boolean nopk=0) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient TraValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient NewSeqTra() const;
-		%feature("autodoc", "1");
-		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
-		%feature("autodoc", "1");
-		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
-		%feature("autodoc","DateValues(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
-		%feature("autodoc", "1");
-		char * ToCString(const TCollection_AsciiString &strval) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString ToHString(const char * strcon) const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString ToAString(const char * strcon) const;
-		%feature("autodoc", "1");
-		Standard_ExtString ToEString(const Handle_TCollection_HExtendedString &strval) const;
-		%feature("autodoc", "1");
-		Standard_ExtString ToEString(const TCollection_ExtendedString &strval) const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HExtendedString ToHString(const Standard_ExtString strcon) const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString ToXString(const Standard_ExtString strcon) const;
-		%feature("autodoc", "1");
-		Standard_ExtString AsciiToExtended(const char * str) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAscii(const Standard_ExtString str) const;
-		%feature("autodoc", "1");
-		char * ExtendedToAscii(const Standard_ExtString str) const;
-		%feature("autodoc", "1");
-		char * CStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_ExtString EStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHAsciiString NewSeqCStr() const;
-		%feature("autodoc", "1");
-		void AppendCStr(const Handle_TColStd_HSequenceOfHAsciiString &seqval, const char * strval) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfHExtendedString NewSeqEStr() const;
-		%feature("autodoc", "1");
-		void AppendEStr(const Handle_TColStd_HSequenceOfHExtendedString &seqval, const Standard_ExtString strval) const;
-		%feature("autodoc", "1");
-		Standard_Boolean WriteShape(const TopoDS_Shape shape, const char * filename) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape NewShape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ReadShape(TopoDS_Shape & shape, const char * filename) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNullShape(const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape shape, const Standard_Boolean compound) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape SortedCompound(const TopoDS_Shape shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape ShapeValue(const Handle_TopTools_HSequenceOfShape &seqv, const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape NewSeqShape() const;
-		%feature("autodoc", "1");
-		void AppendShape(const Handle_TopTools_HSequenceOfShape &seqv, const TopoDS_Shape shape) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ShapeBinder(const TopoDS_Shape shape, const Standard_Boolean hs=1) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape BinderShape(const Handle_Standard_Transient &tr) const;
-		%feature("autodoc", "1");
-		Standard_Integer SeqLength(const Handle_Standard_Transient &list) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient SeqToArr(const Handle_Standard_Transient &seq, const Standard_Integer first=1) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient ArrToSeq(const Handle_Standard_Transient &arr) const;
-		%feature("autodoc", "1");
-		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
-
-};
-%feature("shadow") XSControl_Utils::~XSControl_Utils %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_Utils {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -744,7 +597,7 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %extend XSControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_Controller::~XSControl_Controller %{
@@ -757,6 +610,269 @@ def __del__(self):
 %}
 
 %extend XSControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_SelectForTransfer;
+class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
+	public:
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer();
+		%feature("autodoc", "1");
+		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetReader(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
+		%feature("autodoc", "1");
+		Handle_Transfer_ActorOfTransientProcess Actor() const;
+		%feature("autodoc", "1");
+		Handle_XSControl_TransferReader Reader() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExtractLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSControl_SelectForTransfer {
+	Handle_XSControl_SelectForTransfer GetHandle() {
+	return *(Handle_XSControl_SelectForTransfer*) &$self;
+	}
+};
+%extend XSControl_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_Utils;
+class XSControl_Utils {
+	public:
+		%feature("autodoc", "1");
+		XSControl_Utils();
+		%feature("autodoc", "1");
+		void TraceLine(const char * line) const;
+		%feature("autodoc", "1");
+		void TraceLines(const Handle_Standard_Transient &lines) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Transient &item, const Handle_Standard_Type &what) const;
+		%feature("autodoc", "1");
+		char * TypeName(const Handle_Standard_Transient &item, const Standard_Boolean nopk=0) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient TraValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient NewSeqTra() const;
+		%feature("autodoc", "1");
+		void AppendTra(const Handle_TColStd_HSequenceOfTransient &seqval, const Handle_Standard_Transient &traval) const;
+		%feature("autodoc", "1");
+		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
+		%feature("autodoc","DateValues(Standard_CString text) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
+		%feature("autodoc", "1");
+		char * ToCString(const TCollection_AsciiString &strval) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString ToHString(const char * strcon) const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString ToAString(const char * strcon) const;
+		%feature("autodoc", "1");
+		Standard_ExtString ToEString(const Handle_TCollection_HExtendedString &strval) const;
+		%feature("autodoc", "1");
+		Standard_ExtString ToEString(const TCollection_ExtendedString &strval) const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HExtendedString ToHString(const Standard_ExtString strcon) const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString ToXString(const Standard_ExtString strcon) const;
+		%feature("autodoc", "1");
+		Standard_ExtString AsciiToExtended(const char * str) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAscii(const Standard_ExtString str) const;
+		%feature("autodoc", "1");
+		char * ExtendedToAscii(const Standard_ExtString str) const;
+		%feature("autodoc", "1");
+		char * CStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_ExtString EStrValue(const Handle_Standard_Transient &list, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHAsciiString NewSeqCStr() const;
+		%feature("autodoc", "1");
+		void AppendCStr(const Handle_TColStd_HSequenceOfHAsciiString &seqval, const char * strval) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfHExtendedString NewSeqEStr() const;
+		%feature("autodoc", "1");
+		void AppendEStr(const Handle_TColStd_HSequenceOfHExtendedString &seqval, const Standard_ExtString strval) const;
+		%feature("autodoc", "1");
+		Standard_Boolean WriteShape(const TopoDS_Shape shape, const char * filename) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape NewShape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ReadShape(TopoDS_Shape & shape, const char * filename) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNullShape(const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape CompoundFromSeq(const Handle_TopTools_HSequenceOfShape &seqval) const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum ShapeType(const TopoDS_Shape shape, const Standard_Boolean compound) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape SortedCompound(const TopoDS_Shape shape, const TopAbs_ShapeEnum type, const Standard_Boolean explore, const Standard_Boolean compound) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape ShapeValue(const Handle_TopTools_HSequenceOfShape &seqv, const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape NewSeqShape() const;
+		%feature("autodoc", "1");
+		void AppendShape(const Handle_TopTools_HSequenceOfShape &seqv, const TopoDS_Shape shape) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ShapeBinder(const TopoDS_Shape shape, const Standard_Boolean hs=1) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape BinderShape(const Handle_Standard_Transient &tr) const;
+		%feature("autodoc", "1");
+		Standard_Integer SeqLength(const Handle_Standard_Transient &list) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient SeqToArr(const Handle_Standard_Transient &seq, const Standard_Integer first=1) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient ArrToSeq(const Handle_Standard_Transient &arr) const;
+		%feature("autodoc", "1");
+		Standard_Integer SeqIntValue(const Handle_TColStd_HSequenceOfInteger &list, const Standard_Integer num) const;
+
+};
+%feature("shadow") XSControl_Utils::~XSControl_Utils %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_Utils {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_TransferWriter;
+class XSControl_TransferWriter : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		XSControl_TransferWriter();
+		%feature("autodoc", "1");
+		Handle_Transfer_FinderProcess FinderProcess() const;
+		%feature("autodoc", "1");
+		void SetFinderProcess(const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		Handle_XSControl_Controller Controller() const;
+		%feature("autodoc", "1");
+		void SetController(const Handle_XSControl_Controller &ctl);
+		%feature("autodoc", "1");
+		void Clear(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		Standard_Integer TransferMode() const;
+		%feature("autodoc", "1");
+		void SetTransferMode(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		void PrintStats(const Standard_Integer what, const Standard_Integer mode=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeTransient(const Handle_Standard_Transient &obj);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus TransferWriteTransient(const Handle_Interface_InterfaceModel &model, const Handle_Standard_Transient &obj);
+		%feature("autodoc", "1");
+		Standard_Boolean RecognizeShape(const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus TransferWriteShape(const Handle_Interface_InterfaceModel &model, const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		Interface_CheckIterator CheckList() const;
+		%feature("autodoc", "1");
+		Interface_CheckIterator ResultCheckList(const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		static		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSControl_TransferWriter {
+	Handle_XSControl_TransferWriter GetHandle() {
+	return *(Handle_XSControl_TransferWriter*) &$self;
+	}
+};
+%extend XSControl_TransferWriter {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_TransferWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_Writer;
+class XSControl_Writer {
+	public:
+		%feature("autodoc", "1");
+		XSControl_Writer();
+		%feature("autodoc", "1");
+		XSControl_Writer(const char * norm);
+		%feature("autodoc", "1");
+		XSControl_Writer(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		%feature("autodoc", "1");
+		Standard_Boolean SetNorm(const char * norm);
+		%feature("autodoc", "1");
+		void SetWS(const Handle_XSControl_WorkSession &WS, const Standard_Boolean scratch=1);
+		%feature("autodoc", "1");
+		Handle_XSControl_WorkSession WS() const;
+		%feature("autodoc", "1");
+		Handle_Interface_InterfaceModel Model(const Standard_Boolean newone=0);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus TransferShape(const TopoDS_Shape sh, const Standard_Integer mode=0);
+		%feature("autodoc", "1");
+		IFSelect_ReturnStatus WriteFile(const char * filename);
+		%feature("autodoc", "1");
+		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
+
+};
+%feature("shadow") XSControl_Writer::~XSControl_Writer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_Writer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -829,120 +945,6 @@ def __del__(self):
 %}
 
 %extend XSControl_Reader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_SelectForTransfer;
-class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
-	public:
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer();
-		%feature("autodoc", "1");
-		XSControl_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetReader(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		void SetActor(const Handle_Transfer_ActorOfTransientProcess &act);
-		%feature("autodoc", "1");
-		Handle_Transfer_ActorOfTransientProcess Actor() const;
-		%feature("autodoc", "1");
-		Handle_XSControl_TransferReader Reader() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Sort(const Standard_Integer rank, const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExtractLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSControl_SelectForTransfer {
-	Handle_XSControl_SelectForTransfer GetHandle() {
-	return *(Handle_XSControl_SelectForTransfer*) &$self;
-	}
-};
-%extend XSControl_SelectForTransfer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") XSControl_SelectForTransfer::~XSControl_SelectForTransfer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_SelectForTransfer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl_TransferWriter;
-class XSControl_TransferWriter : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		XSControl_TransferWriter();
-		%feature("autodoc", "1");
-		Handle_Transfer_FinderProcess FinderProcess() const;
-		%feature("autodoc", "1");
-		void SetFinderProcess(const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		Handle_XSControl_Controller Controller() const;
-		%feature("autodoc", "1");
-		void SetController(const Handle_XSControl_Controller &ctl);
-		%feature("autodoc", "1");
-		void Clear(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		Standard_Integer TransferMode() const;
-		%feature("autodoc", "1");
-		void SetTransferMode(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		void PrintStats(const Standard_Integer what, const Standard_Integer mode=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeTransient(const Handle_Standard_Transient &obj);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus TransferWriteTransient(const Handle_Interface_InterfaceModel &model, const Handle_Standard_Transient &obj);
-		%feature("autodoc", "1");
-		Standard_Boolean RecognizeShape(const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		IFSelect_ReturnStatus TransferWriteShape(const Handle_Interface_InterfaceModel &model, const TopoDS_Shape shape);
-		%feature("autodoc", "1");
-		Interface_CheckIterator CheckList() const;
-		%feature("autodoc", "1");
-		Interface_CheckIterator ResultCheckList(const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		static		void PrintStatsProcess(const Handle_Transfer_FinderProcess &TP, const Standard_Integer what, const Standard_Integer mode=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSControl_TransferWriter {
-	Handle_XSControl_TransferWriter GetHandle() {
-	return *(Handle_XSControl_TransferWriter*) &$self;
-	}
-};
-%extend XSControl_TransferWriter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") XSControl_TransferWriter::~XSControl_TransferWriter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl_TransferWriter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1027,7 +1029,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %extend XSControl_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_WorkSession::~XSControl_WorkSession %{
@@ -1040,6 +1042,31 @@ def __del__(self):
 %}
 
 %extend XSControl_WorkSession {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSControl_Functions;
+class XSControl_Functions {
+	public:
+		%feature("autodoc", "1");
+		XSControl_Functions();
+		%feature("autodoc", "1");
+		static		void Init();
+
+};
+%feature("shadow") XSControl_Functions::~XSControl_Functions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSControl_Functions {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1154,7 +1181,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %extend XSControl_TransferReader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XSControl_TransferReader::~XSControl_TransferReader %{
@@ -1167,33 +1194,6 @@ def __del__(self):
 %}
 
 %extend XSControl_TransferReader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XSControl;
-class XSControl {
-	public:
-		%feature("autodoc", "1");
-		XSControl();
-		%feature("autodoc", "1");
-		static		Handle_XSControl_WorkSession Session(const Handle_IFSelect_SessionPilot &pilot);
-		%feature("autodoc", "1");
-		static		Handle_XSControl_Vars Vars(const Handle_IFSelect_SessionPilot &pilot);
-
-};
-%feature("shadow") XSControl::~XSControl %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSControl {
 	void _kill_pointed() {
 		delete $self;
 	}

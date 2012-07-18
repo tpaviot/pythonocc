@@ -140,12 +140,12 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Lin.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<gp_XY.hxx>
 #include<Handle_Law_Function.hxx>
 #include<Handle_Law_Composite.hxx>

@@ -146,7 +146,7 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 };
 %extend XCAFDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDrivers_DocumentRetrievalDriver::~XCAFDrivers_DocumentRetrievalDriver %{
@@ -183,7 +183,7 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 };
 %extend XCAFDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDrivers_DocumentStorageDriver::~XCAFDrivers_DocumentStorageDriver %{

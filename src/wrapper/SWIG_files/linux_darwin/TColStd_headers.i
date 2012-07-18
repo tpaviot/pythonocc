@@ -243,6 +243,6 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TCollection_HExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Handle_TCollection_HExtendedString.hxx>
 %}

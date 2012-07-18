@@ -50,17 +50,17 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
-#include<gp_Sphere.hxx>
 #include<gp_Cone.hxx>
 #include<gp_Pnt.hxx>
+#include<gp_Vec.hxx>
+#include<gp_Pln.hxx>
+#include<gp_Sphere.hxx>
+#include<gp_Ax3.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Parab.hxx>
 #include<gp_Hypr.hxx>
-#include<gp_Vec.hxx>
-#include<gp_Ax3.hxx>
 #include<gp_Torus.hxx>
 %}

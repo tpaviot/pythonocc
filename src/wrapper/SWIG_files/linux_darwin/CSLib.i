@@ -50,16 +50,6 @@ $HeaderURL$
 %include CSLib_headers.i
 
 
-enum CSLib_DerivativeStatus {
-	CSLib_Done,
-	CSLib_D1uIsNull,
-	CSLib_D1vIsNull,
-	CSLib_D1IsNull,
-	CSLib_D1uD1vRatioIsNull,
-	CSLib_D1vD1uRatioIsNull,
-	CSLib_D1uIsParallelD1v,
-	};
-
 enum CSLib_NormalStatus {
 	CSLib_Singular,
 	CSLib_Defined,
@@ -72,38 +62,16 @@ enum CSLib_NormalStatus {
 	CSLib_D1NuIsParallelD1Nv,
 	};
 
+enum CSLib_DerivativeStatus {
+	CSLib_Done,
+	CSLib_D1uIsNull,
+	CSLib_D1vIsNull,
+	CSLib_D1IsNull,
+	CSLib_D1uD1vRatioIsNull,
+	CSLib_D1vD1uRatioIsNull,
+	CSLib_D1uIsParallelD1v,
+	};
 
-
-%nodefaultctor CSLib_NormalPolyDef;
-class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		CSLib_NormalPolyDef(const Standard_Integer k0, const TColStd_Array1OfReal &li);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") CSLib_NormalPolyDef::~CSLib_NormalPolyDef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CSLib_NormalPolyDef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
 
 
 %nodefaultctor CSLib_Class2d;
@@ -175,6 +143,38 @@ def __del__(self):
 %}
 
 %extend CSLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CSLib_NormalPolyDef;
+class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		CSLib_NormalPolyDef(const Standard_Integer k0, const TColStd_Array1OfReal &li);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") CSLib_NormalPolyDef::~CSLib_NormalPolyDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CSLib_NormalPolyDef {
 	void _kill_pointed() {
 		delete $self;
 	}

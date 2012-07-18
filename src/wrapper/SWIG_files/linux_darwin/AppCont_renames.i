@@ -23,15 +23,15 @@ $Author$
 $HeaderURL$
 
 */
-%rename(FirstParameter) AppCont_FunctionTool::FirstParameter;
-%rename(LastParameter) AppCont_FunctionTool::LastParameter;
-%rename(NbP2d) AppCont_FunctionTool::NbP2d;
-%rename(NbP3d) AppCont_FunctionTool::NbP3d;
-%rename(Value) AppCont_FunctionTool::Value;
-%rename(D1) AppCont_FunctionTool::D1;
 %rename(FirstParameter) AppCont_FunctionTool2d::FirstParameter;
 %rename(LastParameter) AppCont_FunctionTool2d::LastParameter;
 %rename(NbP2d) AppCont_FunctionTool2d::NbP2d;
 %rename(NbP3d) AppCont_FunctionTool2d::NbP3d;
 %rename(Value) AppCont_FunctionTool2d::Value;
 %rename(D1) AppCont_FunctionTool2d::D1;
+%rename(FirstParameter) AppCont_FunctionTool::FirstParameter;
+%rename(LastParameter) AppCont_FunctionTool::LastParameter;
+%rename(NbP2d) AppCont_FunctionTool::NbP2d;
+%rename(NbP3d) AppCont_FunctionTool::NbP3d;
+%rename(Value) AppCont_FunctionTool::Value;
+%rename(D1) AppCont_FunctionTool::D1;

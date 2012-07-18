@@ -52,40 +52,28 @@ $HeaderURL$
 
 
 
-%nodefaultctor GeomLProp_CLProps;
-class GeomLProp_CLProps {
+%nodefaultctor GeomLProp_CurveTool;
+class GeomLProp_CurveTool {
 	public:
 		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
+		GeomLProp_CurveTool();
 		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+		static		void Value(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P);
 		%feature("autodoc", "1");
-		GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+		static		void D1(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
 		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real U);
+		static		void D2(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
 		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &C);
+		static		void D3(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
 		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
+		static		Standard_Integer Continuity(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
-		const gp_Vec  D1();
+		static		Standard_Real FirstParameter(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
-		const gp_Vec  D2();
-		%feature("autodoc", "1");
-		const gp_Vec  D3();
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangentDefined();
-		%feature("autodoc", "1");
-		void Tangent(gp_Dir & D);
-		%feature("autodoc", "1");
-		Standard_Real Curvature();
-		%feature("autodoc", "1");
-		void Normal(gp_Dir & N);
-		%feature("autodoc", "1");
-		void CentreOfCurvature(gp_Pnt & P);
+		static		Standard_Real LastParameter(const Handle_Geom_Curve &C);
 
 };
-%feature("shadow") GeomLProp_CLProps::~GeomLProp_CLProps %{
+%feature("shadow") GeomLProp_CurveTool::~GeomLProp_CurveTool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -94,7 +82,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomLProp_CLProps {
+%extend GeomLProp_CurveTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -170,6 +158,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomLProp_CLProps;
+class GeomLProp_CLProps {
+	public:
+		%feature("autodoc", "1");
+		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		GeomLProp_CLProps(const Handle_Geom_Curve &C, const Standard_Real U, const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		GeomLProp_CLProps(const Standard_Integer N, const Standard_Real Resolution);
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real U);
+		%feature("autodoc", "1");
+		void SetCurve(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+		%feature("autodoc", "1");
+		const gp_Vec  D1();
+		%feature("autodoc", "1");
+		const gp_Vec  D2();
+		%feature("autodoc", "1");
+		const gp_Vec  D3();
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangentDefined();
+		%feature("autodoc", "1");
+		void Tangent(gp_Dir & D);
+		%feature("autodoc", "1");
+		Standard_Real Curvature();
+		%feature("autodoc", "1");
+		void Normal(gp_Dir & N);
+		%feature("autodoc", "1");
+		void CentreOfCurvature(gp_Pnt & P);
+
+};
+%feature("shadow") GeomLProp_CLProps::~GeomLProp_CLProps %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLProp_CLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomLProp;
 class GeomLProp {
 	public:
@@ -227,43 +264,6 @@ def __del__(self):
 %}
 
 %extend GeomLProp_SurfaceTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLProp_CurveTool;
-class GeomLProp_CurveTool {
-	public:
-		%feature("autodoc", "1");
-		GeomLProp_CurveTool();
-		%feature("autodoc", "1");
-		static		void Value(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2);
-		%feature("autodoc", "1");
-		static		void D3(const Handle_Geom_Curve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-		%feature("autodoc", "1");
-		static		Standard_Integer Continuity(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		static		Standard_Real FirstParameter(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		static		Standard_Real LastParameter(const Handle_Geom_Curve &C);
-
-};
-%feature("shadow") GeomLProp_CurveTool::~GeomLProp_CurveTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLProp_CurveTool {
 	void _kill_pointed() {
 		delete $self;
 	}

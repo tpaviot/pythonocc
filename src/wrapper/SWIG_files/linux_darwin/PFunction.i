@@ -122,7 +122,7 @@ class PFunction_Function : public PDF_Attribute {
 };
 %extend PFunction_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PFunction_Function::~PFunction_Function %{

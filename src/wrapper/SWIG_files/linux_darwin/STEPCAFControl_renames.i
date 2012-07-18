@@ -23,16 +23,16 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::DownCast;
 %rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_Controller::DownCast;
 %rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::DownCast;
-%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD::DownCast;
-%rename(DownCast) Handle_STEPCAFControl_ActorWrite::DownCast;
-%rename(DownCast) Handle_STEPCAFControl_ExternFile::DownCast;
 %rename(DownCast) Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_ActorWrite::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_ExternFile::DownCast;
+%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD::DownCast;
 %rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::DownCast;
 %rename(DownCast) Handle_STEPCAFControl_DictionaryOfExternFile::DownCast;
-%rename(DownCast) Handle_STEPCAFControl_Controller::DownCast;
-%rename(DownCast) Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::DownCast;
-%rename(FindInstance) STEPCAFControl_Reader::FindInstance;
 %rename(Init) STEPCAFControl_Controller::Init;
+%rename(FindInstance) STEPCAFControl_Reader::FindInstance;

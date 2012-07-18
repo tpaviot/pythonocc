@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import AIS
-import TDF
 import Graphic3d
 import Quantity
+import TDF
 };

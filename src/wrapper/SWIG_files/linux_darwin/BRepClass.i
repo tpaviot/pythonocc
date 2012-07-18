@@ -52,6 +52,45 @@ $HeaderURL$
 
 
 
+%nodefaultctor BRepClass_FClassifier;
+class BRepClass_FClassifier {
+	public:
+		%feature("autodoc", "1");
+		BRepClass_FClassifier();
+		%feature("autodoc", "1");
+		BRepClass_FClassifier(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Rejected() const;
+		%feature("autodoc", "1");
+		Standard_Boolean NoWires() const;
+		%feature("autodoc", "1");
+		const BRepClass_Edge & Edge() const;
+		%feature("autodoc", "1");
+		Standard_Real EdgeParameter() const;
+		%feature("autodoc", "1");
+		IntRes2d_Position Position() const;
+
+};
+%feature("shadow") BRepClass_FClassifier::~BRepClass_FClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepClass_FClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepClass_Edge;
 class BRepClass_Edge {
 	public:
@@ -107,45 +146,6 @@ def __del__(self):
 %}
 
 %extend BRepClass_Intersector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepClass_FClassifier;
-class BRepClass_FClassifier {
-	public:
-		%feature("autodoc", "1");
-		BRepClass_FClassifier();
-		%feature("autodoc", "1");
-		BRepClass_FClassifier(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(BRepClass_FaceExplorer & F, const gp_Pnt2d P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Rejected() const;
-		%feature("autodoc", "1");
-		Standard_Boolean NoWires() const;
-		%feature("autodoc", "1");
-		const BRepClass_Edge & Edge() const;
-		%feature("autodoc", "1");
-		Standard_Real EdgeParameter() const;
-		%feature("autodoc", "1");
-		IntRes2d_Position Position() const;
-
-};
-%feature("shadow") BRepClass_FClassifier::~BRepClass_FClassifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepClass_FClassifier {
 	void _kill_pointed() {
 		delete $self;
 	}

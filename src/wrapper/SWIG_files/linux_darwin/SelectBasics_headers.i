@@ -54,8 +54,8 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Bnd_Box2d.hxx>
 #include<Handle_Bnd_HArray1OfBox2d.hxx>
-#include<gp_Pnt2d.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
 #include<SelectBasics.hxx>
 #include<TopLoc_Location.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<gp_Pnt2d.hxx>
 %}

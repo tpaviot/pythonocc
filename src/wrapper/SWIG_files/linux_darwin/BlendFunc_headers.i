@@ -49,12 +49,14 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<BlendFunc.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
+#include<gp_Pnt2d.hxx>
+#include<gp_Vec.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
-#include<gp_Vec.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<gp_Lin.hxx>
 #include<Blend_Point.hxx>
@@ -62,11 +64,9 @@ $HeaderURL$
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
-#include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<Handle_Law_Function.hxx>
 #include<gp_Circ.hxx>
-#include<BlendFunc.hxx>
-#include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
+#include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<gp_Ax1.hxx>
 %}

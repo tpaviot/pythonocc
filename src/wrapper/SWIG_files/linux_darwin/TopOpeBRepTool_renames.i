@@ -23,25 +23,34 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF::DownCast;
-%rename(DownCast) Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_HBoxTool::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity::DownCast;
+%rename(DownCast) Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d::DownCast;
+%rename(DownCast) Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF::DownCast;
+%rename(DownCast) Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface::DownCast;
 %rename(DownCast) Handle_TopOpeBRepTool_ListNodeOfListOfC2DF::DownCast;
-%rename(DownCast) Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::DownCast;
-%rename(MakeHABCOB) TopOpeBRepTool_BoxSort::MakeHABCOB;
+%rename(MakeAncestors) TopOpeBRepTool_AncestorsTool::MakeAncestors;
+%rename(PurgeClosingEdges) TopOpeBRepTool::PurgeClosingEdges;
+%rename(CorrectONUVISO) TopOpeBRepTool::CorrectONUVISO;
+%rename(MakeFaces) TopOpeBRepTool::MakeFaces;
+%rename(Regularize) TopOpeBRepTool::Regularize;
+%rename(RegularizeWires) TopOpeBRepTool::RegularizeWires;
+%rename(RegularizeFace) TopOpeBRepTool::RegularizeFace;
+%rename(RegularizeShells) TopOpeBRepTool::RegularizeShells;
+%rename(Print) TopOpeBRepTool::Print;
 %rename(WireToFace) TopOpeBRepTool_REGUS::WireToFace;
 %rename(SplitF) TopOpeBRepTool_REGUS::SplitF;
+%rename(ComputeBox) TopOpeBRepTool_HBoxTool::ComputeBox;
+%rename(ComputeBoxOnVertices) TopOpeBRepTool_HBoxTool::ComputeBoxOnVertices;
+%rename(DumpB) TopOpeBRepTool_HBoxTool::DumpB;
+%rename(MakeHABCOB) TopOpeBRepTool_BoxSort::MakeHABCOB;
 %rename(MakeBSpline1fromPnt) TopOpeBRepTool_CurveTool::MakeBSpline1fromPnt;
 %rename(MakeBSpline1fromPnt2d) TopOpeBRepTool_CurveTool::MakeBSpline1fromPnt2d;
 %rename(IsProjectable) TopOpeBRepTool_CurveTool::IsProjectable;
 %rename(MakePCurveOnFace) TopOpeBRepTool_CurveTool::MakePCurveOnFace;
-%rename(ComputeBox) TopOpeBRepTool_HBoxTool::ComputeBox;
-%rename(ComputeBoxOnVertices) TopOpeBRepTool_HBoxTool::ComputeBoxOnVertices;
-%rename(DumpB) TopOpeBRepTool_HBoxTool::DumpB;
 %rename(OriinSor) TopOpeBRepTool_TOOL::OriinSor;
 %rename(OriinSorclosed) TopOpeBRepTool_TOOL::OriinSorclosed;
 %rename(ClosedE) TopOpeBRepTool_TOOL::ClosedE;
@@ -104,12 +113,3 @@ $HeaderURL$
 %rename(Resolution3dU) TopOpeBRepTool_ShapeTool::Resolution3dU;
 %rename(Resolution3dV) TopOpeBRepTool_ShapeTool::Resolution3dV;
 %rename(Resolution3d) TopOpeBRepTool_ShapeTool::Resolution3d;
-%rename(MakeAncestors) TopOpeBRepTool_AncestorsTool::MakeAncestors;
-%rename(PurgeClosingEdges) TopOpeBRepTool::PurgeClosingEdges;
-%rename(CorrectONUVISO) TopOpeBRepTool::CorrectONUVISO;
-%rename(MakeFaces) TopOpeBRepTool::MakeFaces;
-%rename(Regularize) TopOpeBRepTool::Regularize;
-%rename(RegularizeWires) TopOpeBRepTool::RegularizeWires;
-%rename(RegularizeFace) TopOpeBRepTool::RegularizeFace;
-%rename(RegularizeShells) TopOpeBRepTool::RegularizeShells;
-%rename(Print) TopOpeBRepTool::Print;

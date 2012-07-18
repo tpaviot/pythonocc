@@ -53,6 +53,56 @@ typedef BinTools_LocationSet * BinTools_LocationSetPtr;
 
 
 
+%nodefaultctor BinTools_Curve2dSet;
+class BinTools_Curve2dSet {
+	public:
+		%feature("autodoc", "1");
+		BinTools_Curve2dSet();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
+		%feature("autodoc", "1");
+		static		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
+		%feature("autodoc", "1");
+		static		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
+
+};
+%feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinTools_Curve2dSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinTools_LocationSet;
 class BinTools_LocationSet {
 	public:
@@ -366,56 +416,6 @@ def __del__(self):
 %}
 
 %extend BinTools_CurveSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinTools_Curve2dSet;
-class BinTools_Curve2dSet {
-	public:
-		%feature("autodoc", "1");
-		BinTools_Curve2dSet();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve2d(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string WriteToString() {
-			std::stringstream s;
-			self->Write(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			void ReadFromString(std::string src) {
-			std::stringstream s(src);
-			self->Read(s);}
-		};
-		%feature("autodoc", "1");
-		static		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
-		%feature("autodoc", "1");
-		static		std::istream & ReadCurve2d(std::istream & IS, Handle_Geom2d_Curve & C);
-
-};
-%feature("shadow") BinTools_Curve2dSet::~BinTools_Curve2dSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinTools_Curve2dSet {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -300,21 +300,21 @@ $HeaderURL$
 
 #include<Handle_StepData_StepReaderData.hxx>
 #include<Handle_Interface_Check.hxx>
-#include<Handle_StepElement_AnalysisItemWithinRepresentation.hxx>
+#include<Handle_StepElement_Surface3dElementDescriptor.hxx>
 #include<StepData_StepWriter.hxx>
 #include<Interface_EntityIterator.hxx>
+#include<Handle_StepElement_AnalysisItemWithinRepresentation.hxx>
 #include<Handle_StepElement_SurfaceSectionField.hxx>
+#include<Handle_StepElement_CurveElementSectionDefinition.hxx>
 #include<Handle_StepElement_CurveElementSectionDerivedDefinitions.hxx>
 #include<Handle_StepElement_SurfaceSectionFieldVarying.hxx>
-#include<Handle_StepElement_SurfaceSection.hxx>
+#include<Handle_StepElement_UniformSurfaceSection.hxx>
 #include<Handle_StepElement_ElementDescriptor.hxx>
 #include<Handle_StepElement_ElementMaterial.hxx>
-#include<Handle_StepElement_CurveElementSectionDefinition.hxx>
 #include<Handle_StepElement_Volume3dElementDescriptor.hxx>
 #include<Handle_StepElement_SurfaceElementProperty.hxx>
-#include<Handle_StepElement_UniformSurfaceSection.hxx>
-#include<Handle_StepElement_Surface3dElementDescriptor.hxx>
 #include<Handle_StepElement_SurfaceSectionFieldConstant.hxx>
 #include<Handle_StepElement_Curve3dElementDescriptor.hxx>
 #include<Handle_StepElement_CurveElementEndReleasePacket.hxx>
+#include<Handle_StepElement_SurfaceSection.hxx>
 %}

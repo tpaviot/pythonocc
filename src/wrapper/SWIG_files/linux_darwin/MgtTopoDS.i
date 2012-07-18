@@ -212,7 +212,7 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 };
 %extend MgtTopoDS_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") MgtTopoDS_TranslateTool::~MgtTopoDS_TranslateTool %{
@@ -315,7 +315,7 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 };
 %extend MgtTopoDS_TranslateTool1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") MgtTopoDS_TranslateTool1::~MgtTopoDS_TranslateTool1 %{

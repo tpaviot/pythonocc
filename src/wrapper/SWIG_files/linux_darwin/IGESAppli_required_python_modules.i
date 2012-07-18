@@ -30,9 +30,9 @@ import GarbageCollector
 import Standard
 import IGESData
 import TCollection
-import IGESGraph
 import IGESDimen
+import IGESGraph
+import IGESDefs
 import TColStd
 import gp
-import IGESDefs
 };

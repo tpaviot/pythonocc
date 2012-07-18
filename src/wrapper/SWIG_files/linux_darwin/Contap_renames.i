@@ -23,13 +23,13 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::DownCast;
 %rename(DownCast) Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::DownCast;
+%rename(DownCast) Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::DownCast;
+%rename(DownCast) Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::DownCast;
 %rename(DownCast) Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::DownCast;
 %rename(DownCast) Handle_Contap_TheIWLineOfTheIWalkingOfContour::DownCast;
 %rename(DownCast) Handle_Contap_TheHSequenceOfPointOfContour::DownCast;
 %rename(DownCast) Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::DownCast;
-%rename(DownCast) Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::DownCast;
 %rename(Normale) Contap_TheSurfPropsOfContour::Normale;
 %rename(DerivAndNorm) Contap_TheSurfPropsOfContour::DerivAndNorm;
 %rename(NormAndDn) Contap_TheSurfPropsOfContour::NormAndDn;

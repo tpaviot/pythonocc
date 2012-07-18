@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TColgp
 import gp
 import Geom2d
-import TColgp
 };

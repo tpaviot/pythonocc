@@ -190,6 +190,8 @@ class STEPControl_Reader : public XSControl_Reader {
 		Standard_Boolean TransferRoot(const Standard_Integer num=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbRootsForTransfer();
+		%feature("autodoc", "1");
+		void FileUnits(TColStd_SequenceOfAsciiString & theUnitLengthNames, TColStd_SequenceOfAsciiString & theUnitAngleNames, TColStd_SequenceOfAsciiString & theUnitSolidAngleNames);
 
 };
 %feature("shadow") STEPControl_Reader::~STEPControl_Reader %{
@@ -202,6 +204,108 @@ def __del__(self):
 %}
 
 %extend STEPControl_Reader {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPControl_Controller;
+class STEPControl_Controller : public XSControl_Controller {
+	public:
+		%feature("autodoc", "1");
+		STEPControl_Controller();
+		%feature("autodoc", "1");
+		virtual		Handle_Interface_InterfaceModel NewModel() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		void Customise(Handle_XSControl_WorkSession & WS);
+		%feature("autodoc", "1");
+		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
+		%feature("autodoc", "1");
+		static		Standard_Boolean Init();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPControl_Controller {
+	Handle_STEPControl_Controller GetHandle() {
+	return *(Handle_STEPControl_Controller*) &$self;
+	}
+};
+%extend STEPControl_Controller {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPControl_ActorWrite;
+class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
+	public:
+		%feature("autodoc", "1");
+		STEPControl_ActorWrite();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
+		%feature("autodoc", "1");
+		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder TransferSubShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0l, const Standard_Boolean isManifold=1);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder TransferShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0l, const Standard_Boolean isManifold=1);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder TransferCompound(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
+		%feature("autodoc", "1");
+		void SetMode(const STEPControl_StepModelType M);
+		%feature("autodoc", "1");
+		STEPControl_StepModelType Mode() const;
+		%feature("autodoc", "1");
+		void SetGroupMode(const Standard_Integer mode);
+		%feature("autodoc", "1");
+		Standard_Integer GroupMode() const;
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsAssembly(TopoDS_Shape & S) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPControl_ActorWrite {
+	Handle_STEPControl_ActorWrite GetHandle() {
+	return *(Handle_STEPControl_ActorWrite*) &$self;
+	}
+};
+%extend STEPControl_ActorWrite {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPControl_ActorWrite {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -238,7 +342,7 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 };
 %extend STEPControl_ActorRead {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") STEPControl_ActorRead::~STEPControl_ActorRead %{
@@ -251,108 +355,6 @@ def __del__(self):
 %}
 
 %extend STEPControl_ActorRead {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPControl_Controller;
-class STEPControl_Controller : public XSControl_Controller {
-	public:
-		%feature("autodoc", "1");
-		STEPControl_Controller();
-		%feature("autodoc", "1");
-		virtual		Handle_Interface_InterfaceModel NewModel() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_ActorOfTransientProcess ActorRead(const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		void Customise(Handle_XSControl_WorkSession & WS);
-		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus TransferWriteShape(const TopoDS_Shape shape, const Handle_Transfer_FinderProcess &FP, const Handle_Interface_InterfaceModel &model, const Standard_Integer modetrans=0) const;
-		%feature("autodoc", "1");
-		static		Standard_Boolean Init();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPControl_Controller {
-	Handle_STEPControl_Controller GetHandle() {
-	return *(Handle_STEPControl_Controller*) &$self;
-	}
-};
-%extend STEPControl_Controller {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") STEPControl_Controller::~STEPControl_Controller %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPControl_Controller {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPControl_ActorWrite;
-class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
-	public:
-		%feature("autodoc", "1");
-		STEPControl_ActorWrite();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Recognize(const Handle_Transfer_Finder &start);
-		%feature("autodoc", "1");
-		virtual		Handle_Transfer_Binder Transfer(const Handle_Transfer_Finder &start, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferSubShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, Handle_StepGeom_Axis2Placement3d & AX1, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0, const Standard_Boolean isManifold=1);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferShape(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP, const Handle_TopTools_HSequenceOfShape &shapeGroup=0, const Standard_Boolean isManifold=1);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder TransferCompound(const Handle_Transfer_Finder &start, const Handle_StepShape_ShapeDefinitionRepresentation &SDR, const Handle_Transfer_FinderProcess &FP);
-		%feature("autodoc", "1");
-		void SetMode(const STEPControl_StepModelType M);
-		%feature("autodoc", "1");
-		STEPControl_StepModelType Mode() const;
-		%feature("autodoc", "1");
-		void SetGroupMode(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		Standard_Integer GroupMode() const;
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsAssembly(TopoDS_Shape & S) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPControl_ActorWrite {
-	Handle_STEPControl_ActorWrite GetHandle() {
-	return *(Handle_STEPControl_ActorWrite*) &$self;
-	}
-};
-%extend STEPControl_ActorWrite {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") STEPControl_ActorWrite::~STEPControl_ActorWrite %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPControl_ActorWrite {
 	void _kill_pointed() {
 		delete $self;
 	}

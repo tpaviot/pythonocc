@@ -60,6 +60,44 @@ enum math_Status {
 
 
 
+%nodefaultctor Handle_math_SingularMatrix;
+class Handle_math_SingularMatrix : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix();
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix(const Handle_math_SingularMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix(const math_SingularMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix & operator=(const Handle_math_SingularMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
+		%feature("autodoc", "1");
+		static		Handle_math_SingularMatrix DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_math_SingularMatrix {
+	math_SingularMatrix* GetObject() {
+	return (math_SingularMatrix*)$self->Access();
+	}
+};
+%feature("shadow") Handle_math_SingularMatrix::~Handle_math_SingularMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_math_SingularMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_math_NotSquare;
 class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	public:
@@ -98,29 +136,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_math_SingularMatrix;
-class Handle_math_SingularMatrix : public Handle_Standard_Failure {
+%nodefaultctor math_BracketedRoot;
+class math_BracketedRoot {
 	public:
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix();
+		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix(const Handle_math_SingularMatrix &aHandle);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix(const math_SingularMatrix *anItem);
+		Standard_Real Root() const;
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix & operator=(const Handle_math_SingularMatrix &aHandle);
+		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		Handle_math_SingularMatrix & operator=(const math_SingularMatrix *anItem);
+		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		static		Handle_math_SingularMatrix DownCast(const Handle_Standard_Transient &AnObject);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
-%extend Handle_math_SingularMatrix {
-	math_SingularMatrix* GetObject() {
-	return (math_SingularMatrix*)$self->Access();
-	}
-};
-%feature("shadow") Handle_math_SingularMatrix::~Handle_math_SingularMatrix %{
+%feature("shadow") math_BracketedRoot::~math_BracketedRoot %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -129,7 +168,87 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_math_SingularMatrix {
+%extend math_BracketedRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_FunctionRoot;
+class math_FunctionRoot {
+	public:
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Derivative() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FunctionRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_SVD;
+class math_SVD {
+	public:
+		%feature("autodoc", "1");
+		math_SVD(const math_Matrix &A);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723690807819366e-7) const;
+		%feature("autodoc", "1");
+		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723690807819366e-7) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_SVD::~math_SVD %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_SVD {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -300,42 +419,13 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_ValueAndWeight;
-class math_ValueAndWeight {
-	public:
-		%feature("autodoc", "1");
-		math_ValueAndWeight();
-		%feature("autodoc", "1");
-		math_ValueAndWeight(const Standard_Real Value, const Standard_Real Weight);
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Weight() const;
-
-};
-%feature("shadow") math_ValueAndWeight::~math_ValueAndWeight %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_ValueAndWeight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_BFGS;
 class math_BFGS {
 	public:
 		%feature("autodoc", "1");
-		math_BFGS(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408929e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BFGS(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408928783610463e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_BFGS(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408929e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BFGS(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408928783610463e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -454,6 +544,32 @@ def __del__(self):
 };
 
 
+%nodefaultctor math_Function;
+class math_Function {
+	public:
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%feature("shadow") math_Function::~math_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor math_Jacobi;
 class math_Jacobi {
 	public:
@@ -530,98 +646,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_Powell;
-class math_Powell {
-	public:
-		%feature("autodoc", "1");
-		math_Powell(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_Powell(math_MultipleVarFunction & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void Perform(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunction & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Vector & Location() const;
-		%feature("autodoc", "1");
-		void Location(math_Vector & Loc) const;
-		%feature("autodoc", "1");
-		Standard_Real Minimum() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_Powell::~math_Powell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_Powell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FunctionRoot;
-class math_FunctionRoot {
-	public:
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real Tolerance, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Derivative() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_FunctionRoot::~math_FunctionRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_Array1OfValueAndWeight;
 class math_Array1OfValueAndWeight {
 	public:
@@ -667,6 +691,182 @@ def __del__(self):
 %}
 
 %extend math_Array1OfValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_GaussLeastSquare;
+class math_GaussLeastSquare {
+	public:
+		%feature("autodoc", "1");
+		math_GaussLeastSquare(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Solve(const math_Vector &B, math_Vector & X) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_GaussLeastSquare::~math_GaussLeastSquare %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_GaussLeastSquare {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_SingleTabOfInteger;
+class math_SingleTabOfInteger {
+	public:
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const Standard_Integer &Tab, const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer &InitValue);
+		%feature("autodoc", "1");
+		math_SingleTabOfInteger(const math_SingleTabOfInteger &Other);
+		%feature("autodoc", "1");
+		void Copy(math_SingleTabOfInteger & Other) const;
+		%feature("autodoc", "1");
+		void SetLower(const Standard_Integer LowerIndex);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Index) {
+				return (Standard_Integer) $self->Value(Index);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
+				$self->Value(Index)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Free();
+
+};
+%feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_SingleTabOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_Powell;
+class math_Powell {
+	public:
+		%feature("autodoc", "1");
+		math_Powell(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		math_Powell(math_MultipleVarFunction & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void Perform(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunction & F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Vector & Location() const;
+		%feature("autodoc", "1");
+		void Location(math_Vector & Loc) const;
+		%feature("autodoc", "1");
+		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_Powell::~math_Powell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_Powell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_SingularMatrix;
+class math_SingularMatrix : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		math_SingularMatrix();
+		%feature("autodoc", "1");
+		math_SingularMatrix(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_math_SingularMatrix NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend math_SingularMatrix {
+	Handle_math_SingularMatrix GetHandle() {
+	return *(Handle_math_SingularMatrix*) &$self;
+	}
+};
+%extend math_SingularMatrix {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") math_SingularMatrix::~math_SingularMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_SingularMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -720,22 +920,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_EigenValuesSearcher;
-class math_EigenValuesSearcher {
+%nodefaultctor math_CompareOfValueAndWeight;
+class math_CompareOfValueAndWeight {
 	public:
 		%feature("autodoc", "1");
-		math_EigenValuesSearcher(const TColStd_Array1OfReal &Diagonal, const TColStd_Array1OfReal &Subdiagonal);
+		math_CompareOfValueAndWeight();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		Standard_Boolean IsLower(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
 		%feature("autodoc", "1");
-		Standard_Integer Dimension() const;
+		Standard_Boolean IsGreater(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
 		%feature("autodoc", "1");
-		Standard_Real EigenValue(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		math_Vector EigenVector(const Standard_Integer Index) const;
+		Standard_Boolean IsEqual(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
 
 };
-%feature("shadow") math_EigenValuesSearcher::~math_EigenValuesSearcher %{
+%feature("shadow") math_CompareOfValueAndWeight::~math_CompareOfValueAndWeight %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -744,7 +942,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_EigenValuesSearcher {
+%extend math_CompareOfValueAndWeight {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -755,7 +953,7 @@ def __del__(self):
 class math_Gauss {
 	public:
 		%feature("autodoc", "1");
-		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
+		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -792,28 +990,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_SVD;
-class math_SVD {
+%nodefaultctor math_FunctionSet;
+class math_FunctionSet {
 	public:
 		%feature("autodoc", "1");
-		math_SVD(const math_Matrix &A);
+		virtual		void Delete();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
-		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
+		virtual		Standard_Integer GetStateNumber();
 
 };
-%feature("shadow") math_SVD::~math_SVD %{
+%feature("shadow") math_FunctionSet::~math_FunctionSet %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -822,23 +1014,23 @@ def __del__(self):
 		pass
 %}
 
-%extend math_SVD {
+%extend math_FunctionSet {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor math_QuickSortOfValueAndWeight;
-class math_QuickSortOfValueAndWeight {
+%nodefaultctor math_FunctionSetWithDerivatives;
+class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	public:
 		%feature("autodoc", "1");
-		math_QuickSortOfValueAndWeight();
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
-		static		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 
 };
-%feature("shadow") math_QuickSortOfValueAndWeight::~math_QuickSortOfValueAndWeight %{
+%feature("shadow") math_FunctionSetWithDerivatives::~math_FunctionSetWithDerivatives %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -847,7 +1039,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_QuickSortOfValueAndWeight {
+%extend math_FunctionSetWithDerivatives {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1101,151 +1293,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_IntegerVector;
-class math_IntegerVector {
-	public:
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last);
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last, const Standard_Integer InitialValue);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer InitialValue);
-		%feature("autodoc", "1");
-		math_IntegerVector(const Standard_Address Tab, const Standard_Integer First, const Standard_Integer Last);
-		%feature("autodoc", "1");
-		math_IntegerVector(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Real Norm() const;
-		%feature("autodoc", "1");
-		Standard_Real Norm2() const;
-		%feature("autodoc", "1");
-		Standard_Integer Max() const;
-		%feature("autodoc", "1");
-		Standard_Integer Min() const;
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		math_IntegerVector Inverse() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer I1, const Standard_Integer I2, const math_IntegerVector &V);
-		%feature("autodoc", "1");
-		math_IntegerVector Slice(const Standard_Integer I1, const Standard_Integer I2) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Integer Right);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Integer Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Multiplied(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator*(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector TMultiplied(const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void operator+=(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Added(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator+(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		void Add(const math_IntegerVector &Left, const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void Subtract(const math_IntegerVector &Left, const math_IntegerVector &Right);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue(const Standard_Integer Num) {
-				return (Standard_Integer) $self->Value(Num);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ,const Standard_Integer Num) {
-				$self->Value(Num)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Num) const;
-		%feature("autodoc", "1");
-		math_IntegerVector & Initialized(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		math_IntegerVector & operator=(const math_IntegerVector &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Multiplied(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		Standard_Integer operator*(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector Opposite();
-		%feature("autodoc", "1");
-		math_IntegerVector operator-();
-		%feature("autodoc", "1");
-		void Subtract(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		void operator-=(const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		math_IntegerVector Subtracted(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		math_IntegerVector operator-(const math_IntegerVector &Right) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_IntegerVector::~math_IntegerVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_IntegerVector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_Function;
-class math_Function {
-	public:
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%feature("shadow") math_Function::~math_Function %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_Function {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_GaussSetIntegration;
 class math_GaussSetIntegration {
 	public:
@@ -1448,7 +1495,7 @@ class math_NotSquare : public Standard_DimensionError {
 };
 %extend math_NotSquare {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") math_NotSquare::~math_NotSquare %{
@@ -1467,120 +1514,21 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_FunctionSet;
-class math_FunctionSet {
+%nodefaultctor math_Crout;
+class math_Crout {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%feature("shadow") math_FunctionSet::~math_FunctionSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FunctionSetWithDerivatives;
-class math_FunctionSetWithDerivatives : public math_FunctionSet {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-
-};
-%feature("shadow") math_FunctionSetWithDerivatives::~math_FunctionSetWithDerivatives %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionSetWithDerivatives {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_SingularMatrix;
-class math_SingularMatrix : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		math_SingularMatrix();
-		%feature("autodoc", "1");
-		math_SingularMatrix(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_math_SingularMatrix NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend math_SingularMatrix {
-	Handle_math_SingularMatrix GetHandle() {
-	return *(Handle_math_SingularMatrix*) &$self;
-	}
-};
-%extend math_SingularMatrix {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") math_SingularMatrix::~math_SingularMatrix %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_SingularMatrix {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_Householder;
-class math_Householder {
-	public:
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		math_Crout(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Value(math_Vector & sol, const Standard_Integer Index=1) const;
+		void Solve(const math_Vector &B, math_Vector & X) const;
 		%feature("autodoc", "1");
-		const math_Matrix & AllValues() const;
+		const math_Matrix & Inverse() const;
+		%feature("autodoc", "1");
+		void Invert(math_Matrix & Inv) const;
+		%feature("autodoc", "1");
+		Standard_Real Determinant() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1591,7 +1539,7 @@ class math_Householder {
 		};
 
 };
-%feature("shadow") math_Householder::~math_Householder %{
+%feature("shadow") math_Crout::~math_Crout %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1600,7 +1548,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_Householder {
+%extend math_Crout {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1630,53 +1578,6 @@ def __del__(self):
 %}
 
 %extend math_ComputeKronrodPointsAndWeights {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_BrentMinimum;
-class math_BrentMinimum {
-	public:
-		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_Function & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Location() const;
-		%feature("autodoc", "1");
-		Standard_Real Minimum() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_BrentMinimum::~math_BrentMinimum %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_BrentMinimum {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1730,27 +1631,27 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_Uzawa;
-class math_Uzawa {
+%nodefaultctor math_BrentMinimum;
+class math_BrentMinimum {
 	public:
 		%feature("autodoc", "1");
-		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723691e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=500);
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723691e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=500);
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_Function & F);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		const math_Vector & Value() const;
+		Standard_Real Location() const;
 		%feature("autodoc", "1");
-		const math_Vector & InitialError() const;
-		%feature("autodoc", "1");
-		void Duale(math_Vector & V) const;
-		%feature("autodoc", "1");
-		const math_Vector & Error() const;
+		Standard_Real Minimum() const;
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		const math_Matrix & InverseCont() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1761,7 +1662,7 @@ class math_Uzawa {
 		};
 
 };
-%feature("shadow") math_Uzawa::~math_Uzawa %{
+%feature("shadow") math_BrentMinimum::~math_BrentMinimum %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1770,7 +1671,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_Uzawa {
+%extend math_BrentMinimum {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1818,51 +1719,99 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_FunctionWithDerivative;
-class math_FunctionWithDerivative : public math_Function {
+%nodefaultctor math_IntegerVector;
+class math_IntegerVector {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") math_FunctionWithDerivative::~math_FunctionWithDerivative %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionWithDerivative {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_BracketedRoot;
-class math_BracketedRoot {
-	public:
+		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last);
 		%feature("autodoc", "1");
-		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_IntegerVector(const Standard_Integer First, const Standard_Integer Last, const Standard_Integer InitialValue);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		void Init(const Standard_Integer InitialValue);
 		%feature("autodoc", "1");
-		Standard_Real Root() const;
+		math_IntegerVector(const Standard_Address Tab, const Standard_Integer First, const Standard_Integer Last);
 		%feature("autodoc", "1");
-		Standard_Real Value() const;
+		math_IntegerVector(const math_IntegerVector &Other);
 		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Standard_Real Norm() const;
+		%feature("autodoc", "1");
+		Standard_Real Norm2() const;
+		%feature("autodoc", "1");
+		Standard_Integer Max() const;
+		%feature("autodoc", "1");
+		Standard_Integer Min() const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		math_IntegerVector Inverse() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer I1, const Standard_Integer I2, const math_IntegerVector &V);
+		%feature("autodoc", "1");
+		math_IntegerVector Slice(const Standard_Integer I1, const Standard_Integer I2) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Integer Right);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Integer Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Multiplied(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator*(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector TMultiplied(const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void operator+=(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Added(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator+(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		void Add(const math_IntegerVector &Left, const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void Subtract(const math_IntegerVector &Left, const math_IntegerVector &Right);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue(const Standard_Integer Num) {
+				return (Standard_Integer) $self->Value(Num);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ,const Standard_Integer Num) {
+				$self->Value(Num)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer Num) const;
+		%feature("autodoc", "1");
+		math_IntegerVector & Initialized(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		math_IntegerVector & operator=(const math_IntegerVector &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Multiplied(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		Standard_Integer operator*(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector Opposite();
+		%feature("autodoc", "1");
+		math_IntegerVector operator-();
+		%feature("autodoc", "1");
+		void Subtract(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		void operator-=(const math_IntegerVector &Right);
+		%feature("autodoc", "1");
+		math_IntegerVector Subtracted(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		math_IntegerVector operator-(const math_IntegerVector &Right) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1873,7 +1822,7 @@ class math_BracketedRoot {
 		};
 
 };
-%feature("shadow") math_BracketedRoot::~math_BracketedRoot %{
+%feature("shadow") math_IntegerVector::~math_IntegerVector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1882,70 +1831,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_BracketedRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FunctionSetRoot;
-class math_FunctionSetRoot {
-	public:
-		%feature("autodoc", "1");
-		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const math_Vector &infBound, const math_Vector &supBound, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void SetTolerance(const math_Vector &Tolerance);
-		%feature("autodoc", "1");
-		void Perform(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &infBound, const math_Vector &supBound);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_FunctionSetWithDerivatives & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		Standard_Integer StateNumber() const;
-		%feature("autodoc", "1");
-		const math_Vector & Root() const;
-		%feature("autodoc", "1");
-		void Root(math_Vector & Root) const;
-		%feature("autodoc", "1");
-		const math_Matrix & Derivative() const;
-		%feature("autodoc", "1");
-		void Derivative(math_Matrix & Der) const;
-		%feature("autodoc", "1");
-		const math_Vector & FunctionSetErrors() const;
-		%feature("autodoc", "1");
-		void FunctionSetErrors(math_Vector & Err) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_FunctionSetRoot::~math_FunctionSetRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionSetRoot {
+%extend math_IntegerVector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1989,6 +1875,38 @@ def __del__(self):
 %}
 
 %extend math_BracketMinimum {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_FunctionWithDerivative;
+class math_FunctionWithDerivative : public math_Function {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") math_FunctionWithDerivative::~math_FunctionWithDerivative %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FunctionWithDerivative {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2044,20 +1962,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_CompareOfValueAndWeight;
-class math_CompareOfValueAndWeight {
+%nodefaultctor math_QuickSortOfValueAndWeight;
+class math_QuickSortOfValueAndWeight {
 	public:
 		%feature("autodoc", "1");
-		math_CompareOfValueAndWeight();
+		math_QuickSortOfValueAndWeight();
 		%feature("autodoc", "1");
-		Standard_Boolean IsLower(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const math_ValueAndWeight &Left, const math_ValueAndWeight &Right) const;
+		static		void Sort(math_Array1OfValueAndWeight & TheArray, const math_CompareOfValueAndWeight &Comp);
 
 };
-%feature("shadow") math_CompareOfValueAndWeight::~math_CompareOfValueAndWeight %{
+%feature("shadow") math_QuickSortOfValueAndWeight::~math_QuickSortOfValueAndWeight %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2066,22 +1980,63 @@ def __del__(self):
 		pass
 %}
 
-%extend math_CompareOfValueAndWeight {
+%extend math_QuickSortOfValueAndWeight {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor math_GaussLeastSquare;
-class math_GaussLeastSquare {
+%nodefaultctor math_ValueAndWeight;
+class math_ValueAndWeight {
 	public:
 		%feature("autodoc", "1");
-		math_GaussLeastSquare(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
+		math_ValueAndWeight();
+		%feature("autodoc", "1");
+		math_ValueAndWeight(const Standard_Real Value, const Standard_Real Weight);
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Weight() const;
+
+};
+%feature("shadow") math_ValueAndWeight::~math_ValueAndWeight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_ValueAndWeight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_Uzawa;
+class math_Uzawa {
+	public:
+		%feature("autodoc", "1");
+		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=500);
+		%feature("autodoc", "1");
+		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=500);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X) const;
+		const math_Vector & Value() const;
+		%feature("autodoc", "1");
+		const math_Vector & InitialError() const;
+		%feature("autodoc", "1");
+		void Duale(math_Vector & V) const;
+		%feature("autodoc", "1");
+		const math_Vector & Error() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		const math_Matrix & InverseCont() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -2092,7 +2047,7 @@ class math_GaussLeastSquare {
 		};
 
 };
-%feature("shadow") math_GaussLeastSquare::~math_GaussLeastSquare %{
+%feature("shadow") math_Uzawa::~math_Uzawa %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2101,7 +2056,101 @@ def __del__(self):
 		pass
 %}
 
-%extend math_GaussLeastSquare {
+%extend math_Uzawa {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_Householder;
+class math_Householder {
+	public:
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
+		%feature("autodoc", "1");
+		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Value(math_Vector & sol, const Standard_Integer Index=1) const;
+		%feature("autodoc", "1");
+		const math_Matrix & AllValues() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_Householder::~math_Householder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_Householder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_FRPR;
+class math_FRPR {
+	public:
+		%feature("autodoc", "1");
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const math_Vector & Location() const;
+		%feature("autodoc", "1");
+		void Location(math_Vector & Loc) const;
+		%feature("autodoc", "1");
+		Standard_Real Minimum() const;
+		%feature("autodoc", "1");
+		const math_Vector & Gradient() const;
+		%feature("autodoc", "1");
+		void Gradient(math_Vector & Grad) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_FRPR::~math_FRPR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FRPR {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2148,100 +2197,6 @@ def __del__(self):
 %}
 
 %extend math_KronrodSingleIntegration {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_Crout;
-class math_Crout {
-	public:
-		%feature("autodoc", "1");
-		math_Crout(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X) const;
-		%feature("autodoc", "1");
-		const math_Matrix & Inverse() const;
-		%feature("autodoc", "1");
-		void Invert(math_Matrix & Inv) const;
-		%feature("autodoc", "1");
-		Standard_Real Determinant() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_Crout::~math_Crout %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_Crout {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FRPR;
-class math_FRPR {
-	public:
-		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		void Perform(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Vector & Location() const;
-		%feature("autodoc", "1");
-		void Location(math_Vector & Loc) const;
-		%feature("autodoc", "1");
-		Standard_Real Minimum() const;
-		%feature("autodoc", "1");
-		const math_Vector & Gradient() const;
-		%feature("autodoc", "1");
-		void Gradient(math_Vector & Grad) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_FRPR::~math_FRPR %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FRPR {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2334,40 +2289,54 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_SingleTabOfInteger;
-class math_SingleTabOfInteger {
+%nodefaultctor math_FunctionSetRoot;
+class math_FunctionSetRoot {
 	public:
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &Tolerance, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const Standard_Integer &Tab, const Standard_Integer LowerIndex, const Standard_Integer UpperIndex);
+		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer &InitValue);
+		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		math_SingleTabOfInteger(const math_SingleTabOfInteger &Other);
+		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const math_Vector &infBound, const math_Vector &supBound, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		void Copy(math_SingleTabOfInteger & Other) const;
+		virtual		void Delete();
 		%feature("autodoc", "1");
-		void SetLower(const Standard_Integer LowerIndex);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue(const Standard_Integer Index) {
-				return (Standard_Integer) $self->Value(Index);
-				}
+		void SetTolerance(const math_Vector &Tolerance);
+		%feature("autodoc", "1");
+		void Perform(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &infBound, const math_Vector &supBound);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_FunctionSetWithDerivatives & F);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		Standard_Integer StateNumber() const;
+		%feature("autodoc", "1");
+		const math_Vector & Root() const;
+		%feature("autodoc", "1");
+		void Root(math_Vector & Root) const;
+		%feature("autodoc", "1");
+		const math_Matrix & Derivative() const;
+		%feature("autodoc", "1");
+		void Derivative(math_Matrix & Der) const;
+		%feature("autodoc", "1");
+		const math_Vector & FunctionSetErrors() const;
+		%feature("autodoc", "1");
+		void FunctionSetErrors(math_Vector & Err) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
 		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ,const Standard_Integer Index) {
-				$self->Value(Index)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Free();
 
 };
-%feature("shadow") math_SingleTabOfInteger::~math_SingleTabOfInteger %{
+%feature("shadow") math_FunctionSetRoot::~math_FunctionSetRoot %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2376,7 +2345,7 @@ def __del__(self):
 		pass
 %}
 
-%extend math_SingleTabOfInteger {
+%extend math_FunctionSetRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2412,6 +2381,37 @@ def __del__(self):
 %}
 
 %extend math_GaussMultipleIntegration {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_EigenValuesSearcher;
+class math_EigenValuesSearcher {
+	public:
+		%feature("autodoc", "1");
+		math_EigenValuesSearcher(const TColStd_Array1OfReal &Diagonal, const TColStd_Array1OfReal &Subdiagonal);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer Dimension() const;
+		%feature("autodoc", "1");
+		Standard_Real EigenValue(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		math_Vector EigenVector(const Standard_Integer Index) const;
+
+};
+%feature("shadow") math_EigenValuesSearcher::~math_EigenValuesSearcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_EigenValuesSearcher {
 	void _kill_pointed() {
 		delete $self;
 	}

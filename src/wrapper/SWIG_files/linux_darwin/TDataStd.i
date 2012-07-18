@@ -59,44 +59,6 @@ enum TDataStd_RealEnum {
 
 
 
-%nodefaultctor Handle_TDataStd_DeltaOnModificationOfExtStringArray;
-class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_DeltaOnModification {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray();
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_DeltaOnModificationOfExtStringArray DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
-	TDataStd_DeltaOnModificationOfExtStringArray* GetObject() {
-	return (TDataStd_DeltaOnModificationOfExtStringArray*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_DeltaOnModificationOfExtStringArray::~Handle_TDataStd_DeltaOnModificationOfExtStringArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_Relation;
 class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	public:
@@ -129,6 +91,44 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
+class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal();
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
+	TDataStd_DataMapNodeOfDataMapOfStringReal* GetObject() {
+	return (TDataStd_DataMapNodeOfDataMapOfStringReal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -287,6 +287,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
+class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger();
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger(const TDataStd_HDataMapOfStringInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger & operator=(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringInteger & operator=(const TDataStd_HDataMapOfStringInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_HDataMapOfStringInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_HDataMapOfStringInteger {
+	TDataStd_HDataMapOfStringInteger* GetObject() {
+	return (TDataStd_HDataMapOfStringInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_HDataMapOfStringInteger::~Handle_TDataStd_HDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_HDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_BooleanList;
 class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 	public:
@@ -363,29 +401,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
-class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TDataStd_AsciiString;
+class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal();
+		Handle_TDataStd_AsciiString();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
+		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const Handle_TDataStd_DataMapNodeOfDataMapOfStringReal &aHandle);
+		Handle_TDataStd_AsciiString & operator=(const Handle_TDataStd_AsciiString &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal & operator=(const TDataStd_DataMapNodeOfDataMapOfStringReal *anItem);
+		Handle_TDataStd_AsciiString & operator=(const TDataStd_AsciiString *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_DataMapNodeOfDataMapOfStringReal DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDataStd_AsciiString DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
-	TDataStd_DataMapNodeOfDataMapOfStringReal* GetObject() {
-	return (TDataStd_DataMapNodeOfDataMapOfStringReal*)$self->Access();
+%extend Handle_TDataStd_AsciiString {
+	TDataStd_AsciiString* GetObject() {
+	return (TDataStd_AsciiString*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDataStd_DataMapNodeOfDataMapOfStringReal::~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal %{
+%feature("shadow") Handle_TDataStd_AsciiString::~Handle_TDataStd_AsciiString %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -394,7 +432,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
+%extend Handle_TDataStd_AsciiString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -433,44 +471,6 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
-class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte();
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte & operator=(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringByte & operator=(const TDataStd_HDataMapOfStringByte *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_HDataMapOfStringByte DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_HDataMapOfStringByte {
-	TDataStd_HDataMapOfStringByte* GetObject() {
-	return (TDataStd_HDataMapOfStringByte*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_HDataMapOfStringByte::~Handle_TDataStd_HDataMapOfStringByte %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_HDataMapOfStringByte {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -553,6 +553,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDataStd_HDataMapOfStringString;
+class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString();
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString & operator=(const Handle_TDataStd_HDataMapOfStringString &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringString & operator=(const TDataStd_HDataMapOfStringString *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_HDataMapOfStringString DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_HDataMapOfStringString {
+	TDataStd_HDataMapOfStringString* GetObject() {
+	return (TDataStd_HDataMapOfStringString*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_HDataMapOfStringString::~Handle_TDataStd_HDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_HDataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntArray;
 class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnModification {
 	public:
@@ -591,29 +629,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_AsciiString;
-class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDataStd_IntPackedMap;
+class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString();
+		Handle_TDataStd_IntPackedMap();
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString(const Handle_TDataStd_AsciiString &aHandle);
+		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString(const TDataStd_AsciiString *anItem);
+		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString & operator=(const Handle_TDataStd_AsciiString &aHandle);
+		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_AsciiString & operator=(const TDataStd_AsciiString *anItem);
+		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_AsciiString DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDataStd_IntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_AsciiString {
-	TDataStd_AsciiString* GetObject() {
-	return (TDataStd_AsciiString*)$self->Access();
+%extend Handle_TDataStd_IntPackedMap {
+	TDataStd_IntPackedMap* GetObject() {
+	return (TDataStd_IntPackedMap*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDataStd_AsciiString::~Handle_TDataStd_AsciiString %{
+%feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -622,45 +660,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDataStd_AsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
-class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger();
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger(const TDataStd_HDataMapOfStringInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger & operator=(const Handle_TDataStd_HDataMapOfStringInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringInteger & operator=(const TDataStd_HDataMapOfStringInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_HDataMapOfStringInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_HDataMapOfStringInteger {
-	TDataStd_HDataMapOfStringInteger* GetObject() {
-	return (TDataStd_HDataMapOfStringInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_HDataMapOfStringInteger::~Handle_TDataStd_HDataMapOfStringInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_HDataMapOfStringInteger {
+%extend Handle_TDataStd_IntPackedMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -819,6 +819,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
+class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte();
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte(const TDataStd_HDataMapOfStringByte *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte & operator=(const Handle_TDataStd_HDataMapOfStringByte &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_HDataMapOfStringByte & operator=(const TDataStd_HDataMapOfStringByte *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_HDataMapOfStringByte DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	TDataStd_HDataMapOfStringByte* GetObject() {
+	return (TDataStd_HDataMapOfStringByte*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_HDataMapOfStringByte::~Handle_TDataStd_HDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_HDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_Real;
+class Handle_TDataStd_Real : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real();
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real(const Handle_TDataStd_Real &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real(const TDataStd_Real *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real & operator=(const Handle_TDataStd_Real &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real & operator=(const TDataStd_Real *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Real DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_Real {
+	TDataStd_Real* GetObject() {
+	return (TDataStd_Real*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_Real::~Handle_TDataStd_Real %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_Real {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_IntegerArray;
 class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	public:
@@ -895,82 +971,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_ReferenceList;
-class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList();
-		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList(const Handle_TDataStd_ReferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList(const TDataStd_ReferenceList *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList & operator=(const Handle_TDataStd_ReferenceList &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_ReferenceList & operator=(const TDataStd_ReferenceList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_ReferenceList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_ReferenceList {
-	TDataStd_ReferenceList* GetObject() {
-	return (TDataStd_ReferenceList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_ReferenceList::~Handle_TDataStd_ReferenceList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_ReferenceList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_HDataMapOfStringString;
-class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString();
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString(const Handle_TDataStd_HDataMapOfStringString &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString(const TDataStd_HDataMapOfStringString *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString & operator=(const Handle_TDataStd_HDataMapOfStringString &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_HDataMapOfStringString & operator=(const TDataStd_HDataMapOfStringString *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_HDataMapOfStringString DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_HDataMapOfStringString {
-	TDataStd_HDataMapOfStringString* GetObject() {
-	return (TDataStd_HDataMapOfStringString*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_HDataMapOfStringString::~Handle_TDataStd_HDataMapOfStringString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_HDataMapOfStringString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_Expression;
 class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	public:
@@ -1003,6 +1003,44 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_Expression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_ReferenceList;
+class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList();
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList(const Handle_TDataStd_ReferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList(const TDataStd_ReferenceList *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList & operator=(const Handle_TDataStd_ReferenceList &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_ReferenceList & operator=(const TDataStd_ReferenceList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_ReferenceList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_ReferenceList {
+	TDataStd_ReferenceList* GetObject() {
+	return (TDataStd_ReferenceList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_ReferenceList::~Handle_TDataStd_ReferenceList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_ReferenceList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1047,29 +1085,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
-class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
+%nodefaultctor Handle_TDataStd_Name;
+class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray();
+		Handle_TDataStd_Name();
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		Handle_TDataStd_Name(const Handle_TDataStd_Name &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		Handle_TDataStd_Name(const TDataStd_Name *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		Handle_TDataStd_Name & operator=(const Handle_TDataStd_Name &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		Handle_TDataStd_Name & operator=(const TDataStd_Name *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_DeltaOnModificationOfRealArray DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDataStd_Name DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
-	TDataStd_DeltaOnModificationOfRealArray* GetObject() {
-	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
+%extend Handle_TDataStd_Name {
+	TDataStd_Name* GetObject() {
+	return (TDataStd_Name*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDataStd_DeltaOnModificationOfRealArray::~Handle_TDataStd_DeltaOnModificationOfRealArray %{
+%feature("shadow") Handle_TDataStd_Name::~Handle_TDataStd_Name %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1078,7 +1116,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
+%extend Handle_TDataStd_Name {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1161,44 +1199,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_IntPackedMap;
-class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap();
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_IntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_IntPackedMap {
-	TDataStd_IntPackedMap* GetObject() {
-	return (TDataStd_IntPackedMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_IntPackedMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_HLabelArray1;
 class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	public:
@@ -1237,29 +1237,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_Name;
-class Handle_TDataStd_Name : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDataStd_DeltaOnModificationOfExtStringArray;
+class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_DeltaOnModification {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name();
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray();
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name(const Handle_TDataStd_Name &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name(const TDataStd_Name *anItem);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name & operator=(const Handle_TDataStd_Name &aHandle);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const Handle_TDataStd_DeltaOnModificationOfExtStringArray &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDataStd_Name & operator=(const TDataStd_Name *anItem);
+		Handle_TDataStd_DeltaOnModificationOfExtStringArray & operator=(const TDataStd_DeltaOnModificationOfExtStringArray *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_Name DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDataStd_DeltaOnModificationOfExtStringArray DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDataStd_Name {
-	TDataStd_Name* GetObject() {
-	return (TDataStd_Name*)$self->Access();
+%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
+	TDataStd_DeltaOnModificationOfExtStringArray* GetObject() {
+	return (TDataStd_DeltaOnModificationOfExtStringArray*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDataStd_Name::~Handle_TDataStd_Name %{
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfExtStringArray::~Handle_TDataStd_DeltaOnModificationOfExtStringArray %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1268,7 +1268,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDataStd_Name {
+%extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1383,6 +1383,44 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_Comment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
+class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray();
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const Handle_TDataStd_DeltaOnModificationOfRealArray &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfRealArray & operator=(const TDataStd_DeltaOnModificationOfRealArray *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_DeltaOnModificationOfRealArray DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
+	TDataStd_DeltaOnModificationOfRealArray* GetObject() {
+	return (TDataStd_DeltaOnModificationOfRealArray*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfRealArray::~Handle_TDataStd_DeltaOnModificationOfRealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_DeltaOnModificationOfRealArray {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1731,44 +1769,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDataStd_Real;
-class Handle_TDataStd_Real : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real();
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real(const Handle_TDataStd_Real &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real(const TDataStd_Real *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real & operator=(const Handle_TDataStd_Real &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real & operator=(const TDataStd_Real *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Real DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_Real {
-	TDataStd_Real* GetObject() {
-	return (TDataStd_Real*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_Real::~Handle_TDataStd_Real %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_Real {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDataStd_NamedData;
 class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	public:
@@ -1801,78 +1801,6 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_NamedData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HDataMapOfStringHArray1OfInteger;
-class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringHArray1OfInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger &theOther);
-		%feature("autodoc", "1");
-		const TDataStd_DataMapOfStringHArray1OfInteger & Map() const;
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HDataMapOfStringHArray1OfInteger {
-	Handle_TDataStd_HDataMapOfStringHArray1OfInteger GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringHArray1OfInteger*) &$self;
-	}
-};
-%extend TDataStd_HDataMapOfStringHArray1OfInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HDataMapOfStringHArray1OfInteger::~TDataStd_HDataMapOfStringHArray1OfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HDataMapOfStringHArray1OfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
-class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte();
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Byte & Value() const;
-
-};
-%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1921,7 +1849,7 @@ class TDataStd_NoteBook : public TDF_Attribute {
 };
 %extend TDataStd_NoteBook {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_NoteBook::~TDataStd_NoteBook %{
@@ -1960,7 +1888,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringString::~TDataStd_DataMapNodeOfDataMapOfStringString %{
@@ -1973,57 +1901,6 @@ def __del__(self):
 %}
 
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_LabelArray1;
-class TDataStd_LabelArray1 {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_LabelArray1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TDataStd_LabelArray1(const TDF_Label &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const TDF_Label &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TDataStd_LabelArray1 & Assign(const TDataStd_LabelArray1 &Other);
-		%feature("autodoc", "1");
-		const TDataStd_LabelArray1 & operator=(const TDataStd_LabelArray1 &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TDF_Label &Value);
-		%feature("autodoc", "1");
-		const TDF_Label & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TDF_Label & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TDF_Label & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TDF_Label & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") TDataStd_LabelArray1::~TDataStd_LabelArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_LabelArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2057,6 +1934,47 @@ def __del__(self):
 %}
 
 %extend TDataStd_ListIteratorOfListOfExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringHArray1OfInteger;
+class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringHArray1OfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger &theOther);
+		%feature("autodoc", "1");
+		const TDataStd_DataMapOfStringHArray1OfInteger & Map() const;
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfInteger & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringHArray1OfInteger {
+	Handle_TDataStd_HDataMapOfStringHArray1OfInteger GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringHArray1OfInteger*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringHArray1OfInteger {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HDataMapOfStringHArray1OfInteger::~TDataStd_HDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HDataMapOfStringHArray1OfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2171,7 +2089,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 %extend TDataStd_NamedData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_NamedData::~TDataStd_NamedData %{
@@ -2184,140 +2102,6 @@ def __del__(self):
 %}
 
 %extend TDataStd_NamedData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapOfStringReal;
-class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringReal & operator=(const TDataStd_DataMapOfStringReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeFind(const TCollection_ExtendedString &K) {
-				return (Standard_Real) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Real value ,const TCollection_ExtendedString &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const TCollection_ExtendedString &K);
-
-};
-%feature("shadow") TDataStd_DataMapOfStringReal::~TDataStd_DataMapOfStringReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapOfStringReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_RealArray;
-class TDataStd_RealArray : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_RealArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Real Value);
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfReal &newArray, const Standard_Boolean isCheckItems=1);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal const Array() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDelta() const;
-		%feature("autodoc", "1");
-		void SetDelta(const Standard_Boolean isDelta);
-		%feature("autodoc", "1");
-		TDataStd_RealArray();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_RealArray {
-	Handle_TDataStd_RealArray GetHandle() {
-	return *(Handle_TDataStd_RealArray*) &$self;
-	}
-};
-%extend TDataStd_RealArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_RealArray::~TDataStd_RealArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_RealArray {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2416,28 +2200,62 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
-class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
+%nodefaultctor TDataStd_BooleanList;
+class TDataStd_BooleanList : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_IntPackedMap &Arr);
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		virtual		void Apply();
+		static		Handle_TDataStd_BooleanList Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_BooleanList();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Boolean value);
+		%feature("autodoc", "1");
+		void Append(const Standard_Boolean value);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean First() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Last() const;
+		%feature("autodoc", "1");
+		const TDataStd_ListOfByte & List() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
-	Handle_TDataStd_DeltaOnModificationOfIntPackedMap GetHandle() {
-	return *(Handle_TDataStd_DeltaOnModificationOfIntPackedMap*) &$self;
+%extend TDataStd_BooleanList {
+	Handle_TDataStd_BooleanList GetHandle() {
+	return *(Handle_TDataStd_BooleanList*) &$self;
 	}
 };
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+%extend TDataStd_BooleanList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") TDataStd_DeltaOnModificationOfIntPackedMap::~TDataStd_DeltaOnModificationOfIntPackedMap %{
+%feature("shadow") TDataStd_BooleanList::~TDataStd_BooleanList %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2446,7 +2264,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+%extend TDataStd_BooleanList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2497,7 +2315,7 @@ class TDataStd_Relation : public TDF_Attribute {
 };
 %extend TDataStd_Relation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Relation::~TDataStd_Relation %{
@@ -2510,6 +2328,47 @@ def __del__(self):
 %}
 
 %extend TDataStd_Relation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringByte;
+class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringByte(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte &theOther);
+		%feature("autodoc", "1");
+		const TDataStd_DataMapOfStringByte & Map() const;
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringByte & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringByte {
+	Handle_TDataStd_HDataMapOfStringByte GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringByte*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringByte {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HDataMapOfStringByte::~TDataStd_HDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HDataMapOfStringByte {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2534,7 +2393,7 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ListNodeOfListOfExtendedString::~TDataStd_ListNodeOfListOfExtendedString %{
@@ -2595,7 +2454,7 @@ class TDataStd_AsciiString : public TDF_Attribute {
 };
 %extend TDataStd_AsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_AsciiString::~TDataStd_AsciiString %{
@@ -2608,37 +2467,6 @@ def __del__(self):
 %}
 
 %extend TDataStd_AsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringString;
-class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringString();
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringString(const TDataStd_DataMapOfStringString &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_DataMapOfStringString &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Value() const;
-
-};
-%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringString::~TDataStd_DataMapIteratorOfDataMapOfStringString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapIteratorOfDataMapOfStringString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2689,7 +2517,7 @@ class TDataStd_Expression : public TDF_Attribute {
 };
 %extend TDataStd_Expression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Expression::~TDataStd_Expression %{
@@ -2726,7 +2554,7 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfExtStringArray::~TDataStd_DeltaOnModificationOfExtStringArray %{
@@ -2763,7 +2591,7 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ListNodeOfListOfByte::~TDataStd_ListNodeOfListOfByte %{
@@ -2800,7 +2628,7 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfRealArray::~TDataStd_DeltaOnModificationOfRealArray %{
@@ -2880,120 +2708,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_BooleanArray;
-class TDataStd_BooleanArray : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_BooleanArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer index, const Standard_Boolean value);
-		%feature("autodoc", "1");
-		Standard_Boolean Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfByte & InternalArray() const;
-		%feature("autodoc", "1");
-		void SetInternalArray(const Handle_TColStd_HArray1OfByte &values);
-		%feature("autodoc", "1");
-		TDataStd_BooleanArray();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_BooleanArray {
-	Handle_TDataStd_BooleanArray GetHandle() {
-	return *(Handle_TDataStd_BooleanArray*) &$self;
-	}
-};
-%extend TDataStd_BooleanArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_BooleanArray::~TDataStd_BooleanArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_BooleanArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HDataMapOfStringInteger;
-class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringInteger(const TColStd_DataMapOfStringInteger &theOther);
-		%feature("autodoc", "1");
-		const TColStd_DataMapOfStringInteger & Map() const;
-		%feature("autodoc", "1");
-		TColStd_DataMapOfStringInteger & ChangeMap();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HDataMapOfStringInteger {
-	Handle_TDataStd_HDataMapOfStringInteger GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringInteger*) &$self;
-	}
-};
-%extend TDataStd_HDataMapOfStringInteger {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HDataMapOfStringInteger::~TDataStd_HDataMapOfStringInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HDataMapOfStringInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TDataStd_ByteArray;
 class TDataStd_ByteArray : public TDF_Attribute {
 	public:
@@ -3054,7 +2768,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 };
 %extend TDataStd_ByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ByteArray::~TDataStd_ByteArray %{
@@ -3133,7 +2847,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 };
 %extend TDataStd_IntPackedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_IntPackedMap::~TDataStd_IntPackedMap %{
@@ -3146,6 +2860,37 @@ def __del__(self):
 %}
 
 %extend TDataStd_IntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringString;
+class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringString();
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringString(const TDataStd_DataMapOfStringString &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDataStd_DataMapOfStringString &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Value() const;
+
+};
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringString::~TDataStd_DataMapIteratorOfDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3201,7 +2946,7 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfByteArray::~TDataStd_DeltaOnModificationOfByteArray %{
@@ -3247,6 +2992,10 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		Standard_Byte & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		Standard_Byte & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringByte::~TDataStd_DataMapOfStringByte %{
@@ -3259,83 +3008,6 @@ def __del__(self):
 %}
 
 %extend TDataStd_DataMapOfStringByte {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_ExtStringList;
-class TDataStd_ExtStringList : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_ExtStringList Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		TDataStd_ExtStringList();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Prepend(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		void Append(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertBefore(const TCollection_ExtendedString &value, const TCollection_ExtendedString &before_value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertAfter(const TCollection_ExtendedString &value, const TCollection_ExtendedString &after_value);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TCollection_ExtendedString &value);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & First() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Last() const;
-		%feature("autodoc", "1");
-		const TDataStd_ListOfExtendedString & List() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_ExtStringList {
-	Handle_TDataStd_ExtStringList GetHandle() {
-	return *(Handle_TDataStd_ExtStringList*) &$self;
-	}
-};
-%extend TDataStd_ExtStringList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_ExtStringList::~TDataStd_ExtStringList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_ExtStringList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3369,6 +3041,10 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		Handle_TColStd_HArray1OfInteger & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringHArray1OfInteger::~TDataStd_DataMapOfStringHArray1OfInteger %{
@@ -3429,7 +3105,7 @@ class TDataStd_Integer : public TDF_Attribute {
 };
 %extend TDataStd_Integer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
@@ -3448,76 +3124,37 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
-class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringHArray1OfReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringHArray1OfReal & Assign(const TDataStd_DataMapOfStringHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapOfStringHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Find(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & ChangeFind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K);
-
-};
-%feature("shadow") TDataStd_DataMapOfStringHArray1OfReal::~TDataStd_DataMapOfStringHArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapOfStringHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_BooleanList;
-class TDataStd_BooleanList : public TDF_Attribute {
+%nodefaultctor TDataStd_IntegerArray;
+class TDataStd_IntegerArray : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
 		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_BooleanList Set(const TDF_Label &label);
+		static		Handle_TDataStd_IntegerArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
 		%feature("autodoc", "1");
-		TDataStd_BooleanList();
+		void Init(const Standard_Integer lower, const Standard_Integer upper);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		void SetValue(const Standard_Integer Index, const Standard_Integer Value);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		Standard_Integer Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Prepend(const Standard_Boolean value);
+		Standard_Integer operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Append(const Standard_Boolean value);
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Boolean First() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Last() const;
+		void ChangeArray(const Handle_TColStd_HArray1OfInteger &newArray, const Standard_Boolean isCheckItems=1);
 		%feature("autodoc", "1");
-		const TDataStd_ListOfByte & List() const;
+		Handle_TColStd_HArray1OfInteger const Array() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetDelta() const;
+		%feature("autodoc", "1");
+		void SetDelta(const Standard_Boolean isDelta);
+		%feature("autodoc", "1");
+		TDataStd_IntegerArray();
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -3535,20 +3172,22 @@ class TDataStd_BooleanList : public TDF_Attribute {
 			return s.str();}
 		};
 		%feature("autodoc", "1");
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_BooleanList {
-	Handle_TDataStd_BooleanList GetHandle() {
-	return *(Handle_TDataStd_BooleanList*) &$self;
+%extend TDataStd_IntegerArray {
+	Handle_TDataStd_IntegerArray GetHandle() {
+	return *(Handle_TDataStd_IntegerArray*) &$self;
 	}
 };
-%extend TDataStd_BooleanList {
+%extend TDataStd_IntegerArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") TDataStd_BooleanList::~TDataStd_BooleanList %{
+%feature("shadow") TDataStd_IntegerArray::~TDataStd_IntegerArray %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3557,7 +3196,89 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_BooleanList {
+%extend TDataStd_IntegerArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
+class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte();
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Byte & Value() const;
+
+};
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_LabelArray1;
+class TDataStd_LabelArray1 {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_LabelArray1(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TDataStd_LabelArray1(const TDF_Label &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const TDF_Label &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TDataStd_LabelArray1 & Assign(const TDataStd_LabelArray1 &Other);
+		%feature("autodoc", "1");
+		const TDataStd_LabelArray1 & operator=(const TDataStd_LabelArray1 &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TDF_Label &Value);
+		%feature("autodoc", "1");
+		const TDF_Label & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TDF_Label & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TDF_Label & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TDF_Label & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") TDataStd_LabelArray1::~TDataStd_LabelArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_LabelArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3584,7 +3305,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringByte::~TDataStd_DataMapNodeOfDataMapOfStringByte %{
@@ -3625,7 +3346,7 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringReal::~TDataStd_HDataMapOfStringReal %{
@@ -3702,7 +3423,7 @@ class TDataStd_IntegerList : public TDF_Attribute {
 };
 %extend TDataStd_IntegerList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_IntegerList::~TDataStd_IntegerList %{
@@ -3739,7 +3460,7 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfIntArray::~TDataStd_DeltaOnModificationOfIntArray %{
@@ -3758,30 +3479,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
-class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_MapNode {
+%nodefaultctor TDataStd_ListIteratorOfListOfByte;
+class TDataStd_ListIteratorOfListOfByte {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I, const TCollection_MapNodePtr &n);
+		TDataStd_ListIteratorOfListOfByte();
 		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
+		TDataStd_ListIteratorOfListOfByte(const TDataStd_ListOfByte &L);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & Value() const;
+		void Initialize(const TDataStd_ListOfByte &L);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Standard_Byte & Value() const;
 
 };
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
-	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal GetHandle() {
-	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal*) &$self;
-	}
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
+%feature("shadow") TDataStd_ListIteratorOfListOfByte::~TDataStd_ListIteratorOfListOfByte %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3790,154 +3505,44 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+%extend TDataStd_ListIteratorOfListOfByte {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor TDataStd_DataMapOfStringString;
-class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
+%nodefaultctor TDataStd_ExtStringList;
+class TDataStd_ExtStringList : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringString(const Standard_Integer NbBuckets=1);
+		static		const Standard_GUID & GetID();
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringString & Assign(const TDataStd_DataMapOfStringString &Other);
+		static		Handle_TDataStd_ExtStringList Set(const TDF_Label &label);
 		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringString & operator=(const TDataStd_DataMapOfStringString &Other);
+		TDataStd_ExtStringList();
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Prepend(const TCollection_ExtendedString &value);
+		%feature("autodoc", "1");
+		void Append(const TCollection_ExtendedString &value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertBefore(const TCollection_ExtendedString &value, const TCollection_ExtendedString &before_value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertAfter(const TCollection_ExtendedString &value, const TCollection_ExtendedString &after_value);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const TCollection_ExtendedString &value);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TCollection_ExtendedString &I);
+		const TCollection_ExtendedString & First() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		const TCollection_ExtendedString & Last() const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Find(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K) const;
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & ChangeFind(const TCollection_ExtendedString &K);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
-
-};
-%feature("shadow") TDataStd_DataMapOfStringString::~TDataStd_DataMapOfStringString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapOfStringString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_IntegerArray;
-class TDataStd_IntegerArray : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_IntegerArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Standard_Integer Value);
-		%feature("autodoc", "1");
-		Standard_Integer Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void ChangeArray(const Handle_TColStd_HArray1OfInteger &newArray, const Standard_Boolean isCheckItems=1);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger const Array() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDelta() const;
-		%feature("autodoc", "1");
-		void SetDelta(const Standard_Boolean isDelta);
-		%feature("autodoc", "1");
-		TDataStd_IntegerArray();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_IntegerArray {
-	Handle_TDataStd_IntegerArray GetHandle() {
-	return *(Handle_TDataStd_IntegerArray*) &$self;
-	}
-};
-%extend TDataStd_IntegerArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_IntegerArray::~TDataStd_IntegerArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_IntegerArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Current;
-class TDataStd_Current : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		void Set(const TDF_Label &L);
-		%feature("autodoc", "1");
-		static		TDF_Label Get(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Has(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		TDataStd_Current();
-		%feature("autodoc", "1");
-		void SetLabel(const TDF_Label &current);
-		%feature("autodoc", "1");
-		TDF_Label GetLabel() const;
+		const TDataStd_ListOfExtendedString & List() const;
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -3958,17 +3563,17 @@ class TDataStd_Current : public TDF_Attribute {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_Current {
-	Handle_TDataStd_Current GetHandle() {
-	return *(Handle_TDataStd_Current*) &$self;
+%extend TDataStd_ExtStringList {
+	Handle_TDataStd_ExtStringList GetHandle() {
+	return *(Handle_TDataStd_ExtStringList*) &$self;
 	}
 };
-%extend TDataStd_Current {
+%extend TDataStd_ExtStringList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") TDataStd_Current::~TDataStd_Current %{
+%feature("shadow") TDataStd_ExtStringList::~TDataStd_ExtStringList %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3977,277 +3582,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_Current {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HDataMapOfStringByte;
-class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringByte(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringByte(const TDataStd_DataMapOfStringByte &theOther);
-		%feature("autodoc", "1");
-		const TDataStd_DataMapOfStringByte & Map() const;
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringByte & ChangeMap();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HDataMapOfStringByte {
-	Handle_TDataStd_HDataMapOfStringByte GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringByte*) &$self;
-	}
-};
-%extend TDataStd_HDataMapOfStringByte {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HDataMapOfStringByte::~TDataStd_HDataMapOfStringByte %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HDataMapOfStringByte {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
-class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringReal(const TCollection_ExtendedString &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue() {
-				return (Standard_Real) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	Handle_TDataStd_DataMapNodeOfDataMapOfStringReal GetHandle() {
-	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringReal*) &$self;
-	}
-};
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringReal::~TDataStd_DataMapNodeOfDataMapOfStringReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HDataMapOfStringString;
-class TDataStd_HDataMapOfStringString : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringString(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringString(const TDataStd_DataMapOfStringString &theOther);
-		%feature("autodoc", "1");
-		const TDataStd_DataMapOfStringString & Map() const;
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringString & ChangeMap();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HDataMapOfStringString {
-	Handle_TDataStd_HDataMapOfStringString GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringString*) &$self;
-	}
-};
-%extend TDataStd_HDataMapOfStringString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HDataMapOfStringString::~TDataStd_HDataMapOfStringString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HDataMapOfStringString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_UAttribute;
-class TDataStd_UAttribute : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_UAttribute Set(const TDF_Label &label, const Standard_GUID &LocalID);
-		%feature("autodoc", "1");
-		TDataStd_UAttribute();
-		%feature("autodoc", "1");
-		void SetID(const Standard_GUID &LocalID);
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_UAttribute {
-	Handle_TDataStd_UAttribute GetHandle() {
-	return *(Handle_TDataStd_UAttribute*) &$self;
-	}
-};
-%extend TDataStd_UAttribute {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_UAttribute::~TDataStd_UAttribute %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_UAttribute {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HLabelArray1;
-class TDataStd_HLabelArray1 : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HLabelArray1(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TDataStd_HLabelArray1(const Standard_Integer Low, const Standard_Integer Up, const TDF_Label &V);
-		%feature("autodoc", "1");
-		void Init(const TDF_Label &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TDF_Label &Value);
-		%feature("autodoc", "1");
-		const TDF_Label & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TDF_Label & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TDataStd_LabelArray1 & Array1() const;
-		%feature("autodoc", "1");
-		TDataStd_LabelArray1 & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HLabelArray1 {
-	Handle_TDataStd_HLabelArray1 GetHandle() {
-	return *(Handle_TDataStd_HLabelArray1*) &$self;
-	}
-};
-%extend TDataStd_HLabelArray1 {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HLabelArray1::~TDataStd_HLabelArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HLabelArray1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd;
-class TDataStd {
-	public:
-		%feature("autodoc", "1");
-		TDataStd();
-		%feature("autodoc", "1");
-		static		void IDList(TDF_IDList & anIDList);
-		%feature("autodoc", "1");
-		static		Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
-
-};
-%feature("shadow") TDataStd::~TDataStd %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd {
+%extend TDataStd_ExtStringList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4314,7 +3649,7 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ReferenceList::~TDataStd_ReferenceList %{
@@ -4333,30 +3668,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
-class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection_MapNode {
+%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
+class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfInteger &I, const TCollection_MapNodePtr &n);
+		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & Key() const;
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & Value() const;
+		Handle_TColStd_HArray1OfReal & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
-	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger GetHandle() {
-	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*) &$self;
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal GetHandle() {
+	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal*) &$self;
 	}
 };
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4365,7 +3700,264 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapOfStringString;
+class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringString(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringString & Assign(const TDataStd_DataMapOfStringString &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringString & operator=(const TDataStd_DataMapOfStringString &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const TCollection_ExtendedString &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Find(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
+
+};
+%feature("shadow") TDataStd_DataMapOfStringString::~TDataStd_DataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapOfStringString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HLabelArray1;
+class TDataStd_HLabelArray1 : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HLabelArray1(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TDataStd_HLabelArray1(const Standard_Integer Low, const Standard_Integer Up, const TDF_Label &V);
+		%feature("autodoc", "1");
+		void Init(const TDF_Label &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TDF_Label &Value);
+		%feature("autodoc", "1");
+		const TDF_Label & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TDF_Label & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TDataStd_LabelArray1 & Array1() const;
+		%feature("autodoc", "1");
+		TDataStd_LabelArray1 & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HLabelArray1 {
+	Handle_TDataStd_HLabelArray1 GetHandle() {
+	return *(Handle_TDataStd_HLabelArray1*) &$self;
+	}
+};
+%extend TDataStd_HLabelArray1 {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HLabelArray1::~TDataStd_HLabelArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HLabelArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Current;
+class TDataStd_Current : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		void Set(const TDF_Label &L);
+		%feature("autodoc", "1");
+		static		TDF_Label Get(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Has(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		TDataStd_Current();
+		%feature("autodoc", "1");
+		void SetLabel(const TDF_Label &current);
+		%feature("autodoc", "1");
+		TDF_Label GetLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Current {
+	Handle_TDataStd_Current GetHandle() {
+	return *(Handle_TDataStd_Current*) &$self;
+	}
+};
+%extend TDataStd_Current {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Current::~TDataStd_Current %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Current {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
+class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapNodeOfDataMapOfStringReal(const TCollection_ExtendedString &K, const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	Handle_TDataStd_DataMapNodeOfDataMapOfStringReal GetHandle() {
+	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringReal*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringReal::~TDataStd_DataMapNodeOfDataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringString;
+class TDataStd_HDataMapOfStringString : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringString(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringString(const TDataStd_DataMapOfStringString &theOther);
+		%feature("autodoc", "1");
+		const TDataStd_DataMapOfStringString & Map() const;
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringString & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringString {
+	Handle_TDataStd_HDataMapOfStringString GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringString*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringString {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HDataMapOfStringString::~TDataStd_HDataMapOfStringString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HDataMapOfStringString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4408,7 +4000,7 @@ class TDataStd_Tick : public TDF_Attribute {
 };
 %extend TDataStd_Tick {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Tick::~TDataStd_Tick %{
@@ -4427,253 +4019,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_ReferenceArray;
-class TDataStd_ReferenceArray : public TDF_Attribute {
+%nodefaultctor TDataStd_UAttribute;
+class TDataStd_UAttribute : public TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
+		static		Handle_TDataStd_UAttribute Set(const TDF_Label &label, const Standard_GUID &LocalID);
 		%feature("autodoc", "1");
-		static		Handle_TDataStd_ReferenceArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper);
+		TDataStd_UAttribute();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer lower, const Standard_Integer upper);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer index, const TDF_Label &value);
-		%feature("autodoc", "1");
-		TDF_Label Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TDF_Label operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		const Handle_TDataStd_HLabelArray1 & InternalArray() const;
-		%feature("autodoc", "1");
-		void SetInternalArray(const Handle_TDataStd_HLabelArray1 &values, const Standard_Boolean isCheckItems=1);
-		%feature("autodoc", "1");
-		TDataStd_ReferenceArray();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_ReferenceArray {
-	Handle_TDataStd_ReferenceArray GetHandle() {
-	return *(Handle_TDataStd_ReferenceArray*) &$self;
-	}
-};
-%extend TDataStd_ReferenceArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_ReferenceArray::~TDataStd_ReferenceArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_ReferenceArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Comment;
-class TDataStd_Comment : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Comment Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
-		%feature("autodoc", "1");
-		TDataStd_Comment();
-		%feature("autodoc", "1");
-		void Set(const TCollection_ExtendedString &S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Comment {
-	Handle_TDataStd_Comment GetHandle() {
-	return *(Handle_TDataStd_Comment*) &$self;
-	}
-};
-%extend TDataStd_Comment {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Comment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Name;
-class TDataStd_Name : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Name Set(const TDF_Label &label, const TCollection_ExtendedString &string);
-		%feature("autodoc", "1");
-		TDataStd_Name();
-		%feature("autodoc", "1");
-		void Set(const TCollection_ExtendedString &S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Name {
-	Handle_TDataStd_Name GetHandle() {
-	return *(Handle_TDataStd_Name*) &$self;
-	}
-};
-%extend TDataStd_Name {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_Name::~TDataStd_Name %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Name {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_ChildNodeIterator;
-class TDataStd_ChildNodeIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ChildNodeIterator();
-		%feature("autodoc", "1");
-		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		void NextBrother();
-		%feature("autodoc", "1");
-		Handle_TDataStd_TreeNode Value() const;
-
-};
-%feature("shadow") TDataStd_ChildNodeIterator::~TDataStd_ChildNodeIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_ChildNodeIterator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Directory;
-class TDataStd_Directory : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const TDF_Label &current, Handle_TDataStd_Directory & D);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Directory New(const TDF_Label &label);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Directory AddDirectory(const Handle_TDataStd_Directory &dir);
-		%feature("autodoc", "1");
-		static		TDF_Label MakeObjectLabel(const Handle_TDataStd_Directory &dir);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		TDataStd_Directory();
+		void SetID(const Standard_GUID &LocalID);
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -4696,17 +4050,17 @@ class TDataStd_Directory : public TDF_Attribute {
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TDataStd_Directory {
-	Handle_TDataStd_Directory GetHandle() {
-	return *(Handle_TDataStd_Directory*) &$self;
+%extend TDataStd_UAttribute {
+	Handle_TDataStd_UAttribute GetHandle() {
+	return *(Handle_TDataStd_UAttribute*) &$self;
 	}
 };
-%extend TDataStd_Directory {
+%extend TDataStd_UAttribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") TDataStd_Directory::~TDataStd_Directory %{
+%feature("shadow") TDataStd_UAttribute::~TDataStd_UAttribute %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4715,341 +4069,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TDataStd_Directory {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_RealList;
-class TDataStd_RealList : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_RealList Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		TDataStd_RealList();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Prepend(const Standard_Real value);
-		%feature("autodoc", "1");
-		void Append(const Standard_Real value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertBefore(const Standard_Real value, const Standard_Real before_value);
-		%feature("autodoc", "1");
-		Standard_Boolean InsertAfter(const Standard_Real value, const Standard_Real after_value);
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Standard_Real value);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Real First() const;
-		%feature("autodoc", "1");
-		Standard_Real Last() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfReal & List() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_RealList {
-	Handle_TDataStd_RealList GetHandle() {
-	return *(Handle_TDataStd_RealList*) &$self;
-	}
-};
-%extend TDataStd_RealList {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_RealList::~TDataStd_RealList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_RealList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_HDataMapOfStringHArray1OfReal;
-class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringHArray1OfReal(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_DataMapOfStringHArray1OfReal &theOther);
-		%feature("autodoc", "1");
-		const TDataStd_DataMapOfStringHArray1OfReal & Map() const;
-		%feature("autodoc", "1");
-		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_HDataMapOfStringHArray1OfReal {
-	Handle_TDataStd_HDataMapOfStringHArray1OfReal GetHandle() {
-	return *(Handle_TDataStd_HDataMapOfStringHArray1OfReal*) &$self;
-	}
-};
-%extend TDataStd_HDataMapOfStringHArray1OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_HDataMapOfStringHArray1OfReal::~TDataStd_HDataMapOfStringHArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_HDataMapOfStringHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Variable;
-class TDataStd_Variable : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Variable Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		TDataStd_Variable();
-		%feature("autodoc", "1");
-		void Name(const TCollection_ExtendedString &string);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Name() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsValued() const;
-		%feature("autodoc", "1");
-		Standard_Real Get() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Real Real() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsAssigned() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Assign() const;
-		%feature("autodoc", "1");
-		void Desassign() const;
-		%feature("autodoc", "1");
-		Handle_TDataStd_Expression Expression() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant() const;
-		%feature("autodoc", "1");
-		void Unit(const TCollection_AsciiString &unit);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Unit() const;
-		%feature("autodoc", "1");
-		void Constant(const Standard_Boolean status);
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &DS) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Variable {
-	Handle_TDataStd_Variable GetHandle() {
-	return *(Handle_TDataStd_Variable*) &$self;
-	}
-};
-%extend TDataStd_Variable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_Variable::~TDataStd_Variable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Variable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_Real;
-class TDataStd_Real : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Real Set(const TDF_Label &label, const Standard_Real value);
-		%feature("autodoc", "1");
-		TDataStd_Real();
-		%feature("autodoc", "1");
-		void SetDimension(const TDataStd_RealEnum DIM);
-		%feature("autodoc", "1");
-		TDataStd_RealEnum GetDimension() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Real V);
-		%feature("autodoc", "1");
-		Standard_Real Get() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Real {
-	Handle_TDataStd_Real GetHandle() {
-	return *(Handle_TDataStd_Real*) &$self;
-	}
-};
-%extend TDataStd_Real {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TDataStd_Real::~TDataStd_Real %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Real {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
-class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger();
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_DataMapOfStringHArray1OfInteger &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfInteger & Value() const;
-
-};
-%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_ListIteratorOfListOfByte;
-class TDataStd_ListIteratorOfListOfByte {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_ListIteratorOfListOfByte();
-		%feature("autodoc", "1");
-		TDataStd_ListIteratorOfListOfByte(const TDataStd_ListOfByte &L);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_ListOfByte &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Standard_Byte & Value() const;
-
-};
-%feature("shadow") TDataStd_ListIteratorOfListOfByte::~TDataStd_ListIteratorOfListOfByte %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_ListIteratorOfListOfByte {
+%extend TDataStd_UAttribute {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5168,7 +4188,7 @@ class TDataStd_TreeNode : public TDF_Attribute {
 };
 %extend TDataStd_TreeNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_TreeNode::~TDataStd_TreeNode %{
@@ -5181,6 +4201,965 @@ def __del__(self):
 %}
 
 %extend TDataStd_TreeNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
+class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfInteger &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger GetHandle() {
+	return *(Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger*) &$self;
+	}
+};
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_BooleanArray;
+class TDataStd_BooleanArray : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_BooleanArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer lower, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer index, const Standard_Boolean value);
+		%feature("autodoc", "1");
+		Standard_Boolean Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfByte & InternalArray() const;
+		%feature("autodoc", "1");
+		void SetInternalArray(const Handle_TColStd_HArray1OfByte &values);
+		%feature("autodoc", "1");
+		TDataStd_BooleanArray();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_BooleanArray {
+	Handle_TDataStd_BooleanArray GetHandle() {
+	return *(Handle_TDataStd_BooleanArray*) &$self;
+	}
+};
+%extend TDataStd_BooleanArray {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_BooleanArray::~TDataStd_BooleanArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_BooleanArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_ReferenceArray;
+class TDataStd_ReferenceArray : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_ReferenceArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer lower, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer index, const TDF_Label &value);
+		%feature("autodoc", "1");
+		TDF_Label Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TDF_Label operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		const Handle_TDataStd_HLabelArray1 & InternalArray() const;
+		%feature("autodoc", "1");
+		void SetInternalArray(const Handle_TDataStd_HLabelArray1 &values, const Standard_Boolean isCheckItems=1);
+		%feature("autodoc", "1");
+		TDataStd_ReferenceArray();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_ReferenceArray {
+	Handle_TDataStd_ReferenceArray GetHandle() {
+	return *(Handle_TDataStd_ReferenceArray*) &$self;
+	}
+};
+%extend TDataStd_ReferenceArray {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_ReferenceArray::~TDataStd_ReferenceArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_ReferenceArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Name;
+class TDataStd_Name : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Name Set(const TDF_Label &label, const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		TDataStd_Name();
+		%feature("autodoc", "1");
+		void Set(const TCollection_ExtendedString &S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Name {
+	Handle_TDataStd_Name GetHandle() {
+	return *(Handle_TDataStd_Name*) &$self;
+	}
+};
+%extend TDataStd_Name {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Name::~TDataStd_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_RealArray;
+class TDataStd_RealArray : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_RealArray Set(const TDF_Label &label, const Standard_Integer lower, const Standard_Integer upper, const Standard_Boolean isDelta=0);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer lower, const Standard_Integer upper);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Standard_Real Value);
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void ChangeArray(const Handle_TColStd_HArray1OfReal &newArray, const Standard_Boolean isCheckItems=1);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal const Array() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetDelta() const;
+		%feature("autodoc", "1");
+		void SetDelta(const Standard_Boolean isDelta);
+		%feature("autodoc", "1");
+		TDataStd_RealArray();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_DeltaOnModification DeltaOnModification(const Handle_TDF_Attribute &anOldAttribute) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_RealArray {
+	Handle_TDataStd_RealArray GetHandle() {
+	return *(Handle_TDataStd_RealArray*) &$self;
+	}
+};
+%extend TDataStd_RealArray {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_RealArray::~TDataStd_RealArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_RealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_ChildNodeIterator;
+class TDataStd_ChildNodeIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_ChildNodeIterator();
+		%feature("autodoc", "1");
+		TDataStd_ChildNodeIterator(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_TDataStd_TreeNode &aTreeNode, const Standard_Boolean allLevels=0);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		void NextBrother();
+		%feature("autodoc", "1");
+		Handle_TDataStd_TreeNode Value() const;
+
+};
+%feature("shadow") TDataStd_ChildNodeIterator::~TDataStd_ChildNodeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_ChildNodeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Directory;
+class TDataStd_Directory : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const TDF_Label &current, Handle_TDataStd_Directory & D);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Directory New(const TDF_Label &label);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Directory AddDirectory(const Handle_TDataStd_Directory &dir);
+		%feature("autodoc", "1");
+		static		TDF_Label MakeObjectLabel(const Handle_TDataStd_Directory &dir);
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		TDataStd_Directory();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Directory {
+	Handle_TDataStd_Directory GetHandle() {
+	return *(Handle_TDataStd_Directory*) &$self;
+	}
+};
+%extend TDataStd_Directory {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Directory::~TDataStd_Directory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Directory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_RealList;
+class TDataStd_RealList : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_RealList Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_RealList();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Prepend(const Standard_Real value);
+		%feature("autodoc", "1");
+		void Append(const Standard_Real value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertBefore(const Standard_Real value, const Standard_Real before_value);
+		%feature("autodoc", "1");
+		Standard_Boolean InsertAfter(const Standard_Real value, const Standard_Real after_value);
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Standard_Real value);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Real First() const;
+		%feature("autodoc", "1");
+		Standard_Real Last() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfReal & List() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_RealList {
+	Handle_TDataStd_RealList GetHandle() {
+	return *(Handle_TDataStd_RealList*) &$self;
+	}
+};
+%extend TDataStd_RealList {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_RealList::~TDataStd_RealList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_RealList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringInteger;
+class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringInteger(const TColStd_DataMapOfStringInteger &theOther);
+		%feature("autodoc", "1");
+		const TColStd_DataMapOfStringInteger & Map() const;
+		%feature("autodoc", "1");
+		TColStd_DataMapOfStringInteger & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringInteger {
+	Handle_TDataStd_HDataMapOfStringInteger GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringInteger*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringInteger {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HDataMapOfStringInteger::~TDataStd_HDataMapOfStringInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HDataMapOfStringInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
+class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfReal & Assign(const TDataStd_DataMapOfStringHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfReal & operator=(const TDataStd_DataMapOfStringHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Handle_TColStd_HArray1OfReal &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Find(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & ChangeFind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
+
+};
+%feature("shadow") TDataStd_DataMapOfStringHArray1OfReal::~TDataStd_DataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
+class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_IntPackedMap &Arr);
+		%feature("autodoc", "1");
+		virtual		void Apply();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	Handle_TDataStd_DeltaOnModificationOfIntPackedMap GetHandle() {
+	return *(Handle_TDataStd_DeltaOnModificationOfIntPackedMap*) &$self;
+	}
+};
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_DeltaOnModificationOfIntPackedMap::~TDataStd_DeltaOnModificationOfIntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DeltaOnModificationOfIntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd;
+class TDataStd {
+	public:
+		%feature("autodoc", "1");
+		TDataStd();
+		%feature("autodoc", "1");
+		static		void IDList(TDF_IDList & anIDList);
+		%feature("autodoc", "1");
+		static		Standard_OStream & Print(const TDataStd_RealEnum DIM, Standard_OStream & S);
+
+};
+%feature("shadow") TDataStd::~TDataStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapOfStringReal;
+class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal & Assign(const TDataStd_DataMapOfStringReal &Other);
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringReal & operator=(const TDataStd_DataMapOfStringReal &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_ExtendedString &K, const Standard_Real &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		const Standard_Real & Find(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const TCollection_ExtendedString &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeFind(const TCollection_ExtendedString &K) {
+				return (Standard_Real) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Real value ,const TCollection_ExtendedString &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
+
+};
+%feature("shadow") TDataStd_DataMapOfStringReal::~TDataStd_DataMapOfStringReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapOfStringReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Real;
+class TDataStd_Real : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Real Set(const TDF_Label &label, const Standard_Real value);
+		%feature("autodoc", "1");
+		TDataStd_Real();
+		%feature("autodoc", "1");
+		void SetDimension(const TDataStd_RealEnum DIM);
+		%feature("autodoc", "1");
+		TDataStd_RealEnum GetDimension() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real V);
+		%feature("autodoc", "1");
+		Standard_Real Get() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Real {
+	Handle_TDataStd_Real GetHandle() {
+	return *(Handle_TDataStd_Real*) &$self;
+	}
+};
+%extend TDataStd_Real {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Real::~TDataStd_Real %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Real {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
+class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger();
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger(const TDataStd_DataMapOfStringHArray1OfInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDataStd_DataMapOfStringHArray1OfInteger &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfInteger & Value() const;
+
+};
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Variable;
+class TDataStd_Variable : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Variable Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		TDataStd_Variable();
+		%feature("autodoc", "1");
+		void Name(const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Name() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Real value, const TDataStd_RealEnum dimension=TDataStd_SCALAR) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsValued() const;
+		%feature("autodoc", "1");
+		Standard_Real Get() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Real Real() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsAssigned() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression Assign() const;
+		%feature("autodoc", "1");
+		void Desassign() const;
+		%feature("autodoc", "1");
+		Handle_TDataStd_Expression Expression() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		void Unit(const TCollection_AsciiString &unit);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Unit() const;
+		%feature("autodoc", "1");
+		void Constant(const Standard_Boolean status);
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &DS) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Variable {
+	Handle_TDataStd_Variable GetHandle() {
+	return *(Handle_TDataStd_Variable*) &$self;
+	}
+};
+%extend TDataStd_Variable {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Variable::~TDataStd_Variable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Comment;
+class TDataStd_Comment : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Comment Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		TDataStd_Comment();
+		%feature("autodoc", "1");
+		void Set(const TCollection_ExtendedString &S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Comment {
+	Handle_TDataStd_Comment GetHandle() {
+	return *(Handle_TDataStd_Comment*) &$self;
+	}
+};
+%extend TDataStd_Comment {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Comment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5247,7 +5226,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ExtStringArray::~TDataStd_ExtStringArray %{
@@ -5260,6 +5239,47 @@ def __del__(self):
 %}
 
 %extend TDataStd_ExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_HDataMapOfStringHArray1OfReal;
+class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringHArray1OfReal(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDataStd_HDataMapOfStringHArray1OfReal(const TDataStd_DataMapOfStringHArray1OfReal &theOther);
+		%feature("autodoc", "1");
+		const TDataStd_DataMapOfStringHArray1OfReal & Map() const;
+		%feature("autodoc", "1");
+		TDataStd_DataMapOfStringHArray1OfReal & ChangeMap();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_HDataMapOfStringHArray1OfReal {
+	Handle_TDataStd_HDataMapOfStringHArray1OfReal GetHandle() {
+	return *(Handle_TDataStd_HDataMapOfStringHArray1OfReal*) &$self;
+	}
+};
+%extend TDataStd_HDataMapOfStringHArray1OfReal {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_HDataMapOfStringHArray1OfReal::~TDataStd_HDataMapOfStringHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_HDataMapOfStringHArray1OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}

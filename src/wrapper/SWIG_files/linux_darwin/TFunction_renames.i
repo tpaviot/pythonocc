@@ -23,22 +23,22 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_TFunction_HArray1OfDataMapOfGUIDDriver::DownCast;
+%rename(DownCast) Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::DownCast;
 %rename(DownCast) Handle_TFunction_DriverTable::DownCast;
 %rename(DownCast) Handle_TFunction_GraphNode::DownCast;
 %rename(DownCast) Handle_TFunction_Scope::DownCast;
 %rename(DownCast) Handle_TFunction_Driver::DownCast;
 %rename(DownCast) Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver::DownCast;
-%rename(DownCast) Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel::DownCast;
+%rename(DownCast) Handle_TFunction_HArray1OfDataMapOfGUIDDriver::DownCast;
 %rename(DownCast) Handle_TFunction_Function::DownCast;
 %rename(DownCast) Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel::DownCast;
+%rename(Set) TFunction_Scope::Set;
+%rename(GetID) TFunction_Scope::GetID;
 %rename(Set) TFunction_Function::Set;
 %rename(GetID) TFunction_Function::GetID;
+%rename(Get) TFunction_DriverTable::Get;
 %rename(NewFunction) TFunction_IFunction::NewFunction;
 %rename(DeleteFunction) TFunction_IFunction::DeleteFunction;
 %rename(UpdateDependencies) TFunction_IFunction::UpdateDependencies;
-%rename(Get) TFunction_DriverTable::Get;
 %rename(Set) TFunction_GraphNode::Set;
 %rename(GetID) TFunction_GraphNode::GetID;
-%rename(Set) TFunction_Scope::Set;
-%rename(GetID) TFunction_Scope::GetID;

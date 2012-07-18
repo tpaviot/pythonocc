@@ -266,7 +266,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 };
 %extend GProp_UndefinedAxis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") GProp_UndefinedAxis::~GProp_UndefinedAxis %{
@@ -361,6 +361,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor GProp_PEquation;
+class GProp_PEquation {
+	public:
+		%feature("autodoc", "1");
+		GProp_PEquation(const TColgp_Array1OfPnt &Pnts, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlanar() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsLinear() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSpace() const;
+		%feature("autodoc", "1");
+		gp_Pln Plane() const;
+		%feature("autodoc", "1");
+		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point() const;
+		%feature("autodoc", "1");
+		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+
+};
+%feature("shadow") GProp_PEquation::~GProp_PEquation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GProp_PEquation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GProp_VelGProps;
 class GProp_VelGProps : public GProp_GProps {
 	public:
@@ -421,45 +460,6 @@ def __del__(self):
 %}
 
 %extend GProp {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GProp_PEquation;
-class GProp_PEquation {
-	public:
-		%feature("autodoc", "1");
-		GProp_PEquation(const TColgp_Array1OfPnt &Pnts, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLinear() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSpace() const;
-		%feature("autodoc", "1");
-		gp_Pln Plane() const;
-		%feature("autodoc", "1");
-		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		void Box(gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-
-};
-%feature("shadow") GProp_PEquation::~GProp_PEquation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GProp_PEquation {
 	void _kill_pointed() {
 		delete $self;
 	}

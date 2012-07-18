@@ -23,22 +23,17 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_PCDM_SequenceNodeOfSequenceOfReference::DownCast;
-%rename(DownCast) Handle_PCDM_Document::DownCast;
-%rename(DownCast) Handle_PCDM_SequenceNodeOfSequenceOfDocument::DownCast;
 %rename(DownCast) Handle_PCDM_ReadWriter::DownCast;
 %rename(DownCast) Handle_PCDM_ReadWriter_1::DownCast;
-%rename(DownCast) Handle_PCDM_Reader::DownCast;
-%rename(DownCast) Handle_PCDM_RetrievalDriver::DownCast;
+%rename(DownCast) Handle_PCDM_SequenceNodeOfSequenceOfReference::DownCast;
+%rename(DownCast) Handle_PCDM_SequenceNodeOfSequenceOfDocument::DownCast;
 %rename(DownCast) Handle_PCDM_Writer::DownCast;
 %rename(DownCast) Handle_PCDM_StorageDriver::DownCast;
-%rename(DownCast) Handle_PCDM_DriverError::DownCast;
+%rename(DownCast) Handle_PCDM_Reader::DownCast;
+%rename(DownCast) Handle_PCDM_RetrievalDriver::DownCast;
+%rename(DownCast) Handle_PCDM_Document::DownCast;
 %rename(DownCast) Handle_PCDM_ReferenceIterator::DownCast;
-%rename(Raise) PCDM_DriverError::Raise;
-%rename(NewInstance) PCDM_DriverError::NewInstance;
-%rename(RaiseIfUnknownTypes) PCDM_RetrievalDriver::RaiseIfUnknownTypes;
-%rename(DocumentVersion) PCDM_RetrievalDriver::DocumentVersion;
-%rename(ReferenceCounter) PCDM_RetrievalDriver::ReferenceCounter;
+%rename(DownCast) Handle_PCDM_DriverError::DownCast;
 %rename(Open) PCDM_ReadWriter::Open;
 %rename(Reader) PCDM_ReadWriter::Reader;
 %rename(Writer) PCDM_ReadWriter::Writer;
@@ -46,3 +41,8 @@ $HeaderURL$
 %rename(FileFormat) PCDM_ReadWriter::FileFormat;
 %rename(FindStorageDriver) PCDM::FindStorageDriver;
 %rename(Schema) PCDM::Schema;
+%rename(Raise) PCDM_DriverError::Raise;
+%rename(NewInstance) PCDM_DriverError::NewInstance;
+%rename(RaiseIfUnknownTypes) PCDM_RetrievalDriver::RaiseIfUnknownTypes;
+%rename(DocumentVersion) PCDM_RetrievalDriver::DocumentVersion;
+%rename(ReferenceCounter) PCDM_RetrievalDriver::ReferenceCounter;

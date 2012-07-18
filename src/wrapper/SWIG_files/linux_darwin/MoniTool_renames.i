@@ -23,22 +23,24 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_MoniTool_SignText::DownCast;
-%rename(DownCast) Handle_MoniTool_DataMapNodeOfDataMapOfTimer::DownCast;
-%rename(DownCast) Handle_MoniTool_IntVal::DownCast;
 %rename(DownCast) Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient::DownCast;
+%rename(DownCast) Handle_MoniTool_DataMapNodeOfDataMapOfTimer::DownCast;
 %rename(DownCast) Handle_MoniTool_CaseData::DownCast;
 %rename(DownCast) Handle_MoniTool_RealVal::DownCast;
+%rename(DownCast) Handle_MoniTool_SignText::DownCast;
 %rename(DownCast) Handle_MoniTool_Option::DownCast;
+%rename(DownCast) Handle_MoniTool_IntVal::DownCast;
 %rename(DownCast) Handle_MoniTool_Element::DownCast;
 %rename(DownCast) Handle_MoniTool_TransientElem::DownCast;
 %rename(DownCast) Handle_MoniTool_Profile::DownCast;
 %rename(DownCast) Handle_MoniTool_SequenceNodeOfSequenceOfElement::DownCast;
+%rename(DownCast) Handle_MoniTool_Timer::DownCast;
 %rename(DownCast) Handle_MoniTool_TypedValue::DownCast;
+%rename(DownCast) Handle_MoniTool_HSequenceOfElement::DownCast;
 %rename(DownCast) Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::DownCast;
 %rename(DownCast) Handle_MoniTool_SignShape::DownCast;
-%rename(DownCast) Handle_MoniTool_HSequenceOfElement::DownCast;
-%rename(DownCast) Handle_MoniTool_Timer::DownCast;
+%rename(HashCode) MoniTool_ElemHasher::HashCode;
+%rename(IsEqual) MoniTool_ElemHasher::IsEqual;
 %rename(Timer) MoniTool_Timer::Timer;
 %rename(Start) MoniTool_Timer::Start;
 %rename(Stop) MoniTool_Timer::Stop;
@@ -55,8 +57,6 @@ $HeaderURL$
 %rename(StaticValue) MoniTool_TypedValue::StaticValue;
 %rename(Type) MoniTool_DataInfo::Type;
 %rename(TypeName) MoniTool_DataInfo::TypeName;
-%rename(HashCode) MoniTool_ElemHasher::HashCode;
-%rename(IsEqual) MoniTool_ElemHasher::IsEqual;
 %rename(HashCode) MoniTool_MTHasher::HashCode;
 %rename(IsEqual) MoniTool_MTHasher::IsEqual;
 %rename(SetDefWarning) MoniTool_CaseData::SetDefWarning;

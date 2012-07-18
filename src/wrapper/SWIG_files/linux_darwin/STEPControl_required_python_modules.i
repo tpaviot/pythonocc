@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import StepData
 import Standard
-import Transfer
 import Interface
+import Transfer
 import IFSelect
 import XSControl
 };

@@ -28,15 +28,15 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopoDS
 import TopAbs
-import Bnd
-import TColStd
-import gp
-import GeomAPI
-import BRepClass3d
 import Geom
 import Geom2d
 import GeomAbs
+import TColStd
+import Bnd
+import GeomAPI
+import BRepClass3d
+import gp
+import TopoDS
 import TCollection
 };

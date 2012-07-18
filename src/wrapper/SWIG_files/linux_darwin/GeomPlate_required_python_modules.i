@@ -29,12 +29,12 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Adaptor3d
-import gp
+import TColStd
 import GeomLProp
 import Geom2d
 import Adaptor2d
-import TColStd
 import Geom
+import gp
 import GeomAbs
 import TColGeom2d
 };

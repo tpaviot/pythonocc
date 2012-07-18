@@ -254,6 +254,151 @@ def __del__(self):
 };
 
 
+%nodefaultctor Approx_SequenceOfHArray1OfReal;
+class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Approx_SequenceOfHArray1OfReal();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void Append(Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void Prepend(Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & First() const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Approx_SequenceOfHArray1OfReal::~Approx_SequenceOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_SequenceOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Approx_FitAndDivide;
+class Approx_FitAndDivide {
+	public:
+		%feature("autodoc", "1");
+		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		%feature("autodoc", "1");
+		Approx_FitAndDivide(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		%feature("autodoc", "1");
+		void Perform(const AppCont_Function &Line);
+		%feature("autodoc", "1");
+		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
+		%feature("autodoc", "1");
+		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
+		%feature("autodoc", "1");
+		void SetConstraints(const AppParCurves_Constraint FirstC, const AppParCurves_Constraint LastC);
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllApproximated() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsToleranceReached() const;
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbMultiCurves() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
+		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Approx_FitAndDivide::~Approx_FitAndDivide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_FitAndDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Approx_Curve2d;
+class Approx_Curve2d {
+	public:
+		%feature("autodoc", "1");
+		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasResult() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2dU() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2dV() const;
+
+};
+%feature("shadow") Approx_Curve2d::~Approx_Curve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_Curve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Approx_Curve3d;
 class Approx_Curve3d {
 	public:
@@ -293,6 +438,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor Approx_SameParameter;
+class Approx_SameParameter {
+	public:
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real TolReached() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSameParameter() const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Curve2d() const;
+
+};
+%feature("shadow") Approx_SameParameter::~Approx_SameParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_SameParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide2d;
 class Approx_MyLeastSquareOfFitAndDivide2d {
 	public:
@@ -323,60 +503,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor Approx_SweepFunction;
-class Approx_SweepFunction : public MMgt_TShared {
+%nodefaultctor Approx_HArray1OfAdHSurface;
+class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HSurface &V);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
+		void Init(const Handle_Adaptor3d_HSurface &V);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Nb2dCurves() const;
-		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
+		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		Handle_Adaptor3d_HSurface & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
-
-		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		const Approx_Array1OfAdHSurface & Array1() const;
 		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
-		%feature("autodoc", "1");
-		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		virtual		gp_Pnt BarycentreOfSurf() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real MaximalSection() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		Approx_Array1OfAdHSurface & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Approx_SweepFunction {
-	Handle_Approx_SweepFunction GetHandle() {
-	return *(Handle_Approx_SweepFunction*) &$self;
+%extend Approx_HArray1OfAdHSurface {
+	Handle_Approx_HArray1OfAdHSurface GetHandle() {
+	return *(Handle_Approx_HArray1OfAdHSurface*) &$self;
 	}
 };
-%extend Approx_SweepFunction {
+%extend Approx_HArray1OfAdHSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Approx_SweepFunction::~Approx_SweepFunction %{
+%feature("shadow") Approx_HArray1OfAdHSurface::~Approx_HArray1OfAdHSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -385,7 +551,37 @@ def __del__(self):
 		pass
 %}
 
-%extend Approx_SweepFunction {
+%extend Approx_HArray1OfAdHSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
+class Approx_MyLeastSquareOfFitAndDivide {
+	public:
+		%feature("autodoc", "1");
+		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & Value();
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Approx_MyLeastSquareOfFitAndDivide::~Approx_MyLeastSquareOfFitAndDivide %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_MyLeastSquareOfFitAndDivide {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -478,43 +674,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
-class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_TColStd_HArray1OfReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal GetHandle() {
-	return *(Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal*) &$self;
-	}
-};
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Approx_SequenceNodeOfSequenceOfHArray1OfReal::~Approx_SequenceNodeOfSequenceOfHArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Approx_Array1OfGTrsf2d;
 class Approx_Array1OfGTrsf2d {
 	public:
@@ -566,46 +725,60 @@ def __del__(self):
 };
 
 
-%nodefaultctor Approx_HArray1OfAdHSurface;
-class Approx_HArray1OfAdHSurface : public MMgt_TShared {
+%nodefaultctor Approx_SweepFunction;
+class Approx_SweepFunction : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up);
+		virtual		Standard_Boolean D0(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
 		%feature("autodoc", "1");
-		Approx_HArray1OfAdHSurface(const Standard_Integer Low, const Standard_Integer Up, const Handle_Adaptor3d_HSurface &V);
+		virtual		Standard_Boolean D1(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
 		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &V);
+		virtual		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		virtual		Standard_Integer Nb2dCurves() const;
+		%feature("autodoc","SectionShape() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		virtual		void Mults(TColStd_Array1OfInteger & TMults) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Adaptor3d_HSurface &Value);
+		virtual		Standard_Boolean IsRational() const;
 		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & Value(const Standard_Integer Index) const;
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface & ChangeValue(const Standard_Integer Index);
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		const Approx_Array1OfAdHSurface & Array1() const;
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc","Resolution(Standard_Integer Index, Standard_Real Tol) -> [Standard_Real, Standard_Real]");
+
+		virtual		void Resolution(const Standard_Integer Index, const Standard_Real Tol, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Approx_Array1OfAdHSurface & ChangeArray1();
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, TColStd_Array1OfReal & Tol3d) const;
+		%feature("autodoc", "1");
+		virtual		void SetTolerance(const Standard_Real Tol3d, const Standard_Real Tol2d);
+		%feature("autodoc", "1");
+		virtual		gp_Pnt BarycentreOfSurf() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real MaximalSection() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Approx_HArray1OfAdHSurface {
-	Handle_Approx_HArray1OfAdHSurface GetHandle() {
-	return *(Handle_Approx_HArray1OfAdHSurface*) &$self;
+%extend Approx_SweepFunction {
+	Handle_Approx_SweepFunction GetHandle() {
+	return *(Handle_Approx_SweepFunction*) &$self;
 	}
 };
-%extend Approx_HArray1OfAdHSurface {
+%extend Approx_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Approx_HArray1OfAdHSurface::~Approx_HArray1OfAdHSurface %{
+%feature("shadow") Approx_SweepFunction::~Approx_SweepFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -614,87 +787,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Approx_HArray1OfAdHSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_Curve2d;
-class Approx_Curve2d {
-	public:
-		%feature("autodoc", "1");
-		Approx_Curve2d(const Handle_Adaptor2d_HCurve2d &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real TolU, const Standard_Real TolV, const GeomAbs_Shape Continuity, const Standard_Integer MaxDegree, const Standard_Integer MaxSegments);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasResult() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2dU() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2dV() const;
-
-};
-%feature("shadow") Approx_Curve2d::~Approx_Curve2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_Curve2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_FitAndDivide;
-class Approx_FitAndDivide {
-	public:
-		%feature("autodoc", "1");
-		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
-		%feature("autodoc", "1");
-		Approx_FitAndDivide(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
-		%feature("autodoc", "1");
-		void Perform(const AppCont_Function &Line);
-		%feature("autodoc", "1");
-		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
-		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
-		%feature("autodoc", "1");
-		void SetConstraints(const AppParCurves_Constraint FirstC, const AppParCurves_Constraint LastC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllApproximated() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMultiCurves() const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve Value(const Standard_Integer Index=1) const;
-		%feature("autodoc","Parameters(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Approx_FitAndDivide::~Approx_FitAndDivide %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_FitAndDivide {
+%extend Approx_SweepFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -737,7 +830,7 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 };
 %extend Approx_HArray1OfGTrsf2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Approx_HArray1OfGTrsf2d::~Approx_HArray1OfGTrsf2d %{
@@ -756,13 +849,50 @@ def __del__(self):
 };
 
 
+%nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
+class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Approx_SequenceNodeOfSequenceOfHArray1OfReal(const Handle_TColStd_HArray1OfReal &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfReal & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal GetHandle() {
+	return *(Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal*) &$self;
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Approx_SequenceNodeOfSequenceOfHArray1OfReal::~Approx_SequenceNodeOfSequenceOfHArray1OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Approx_FitAndDivide2d;
 class Approx_FitAndDivide2d {
 	public:
 		%feature("autodoc", "1");
-		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		Approx_FitAndDivide2d(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide2d(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		void Perform(const AppCont_Function2d &Line);
 		%feature("autodoc", "1");
@@ -888,7 +1018,7 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 };
 %extend Approx_CurvlinFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Approx_CurvlinFunc::~Approx_CurvlinFunc %{
@@ -901,36 +1031,6 @@ def __del__(self):
 %}
 
 %extend Approx_CurvlinFunc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
-class Approx_MyLeastSquareOfFitAndDivide {
-	public:
-		%feature("autodoc", "1");
-		Approx_MyLeastSquareOfFitAndDivide(const AppCont_Function &SSP, const Standard_Real U0, const Standard_Real U1, const AppParCurves_Constraint FirstCons, const AppParCurves_Constraint LastCons, const Standard_Integer Deg, const Standard_Integer NbPoints=24);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value();
-		%feature("autodoc","Error() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Approx_MyLeastSquareOfFitAndDivide::~Approx_MyLeastSquareOfFitAndDivide %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_MyLeastSquareOfFitAndDivide {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -982,106 +1082,6 @@ def __del__(self):
 %}
 
 %extend Approx_Array1OfAdHSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_SameParameter;
-class Approx_SameParameter {
-	public:
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Geom_Curve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Geom_Surface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Geom2d_Curve &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_SameParameter(const Handle_Adaptor3d_HCurve &C3D, const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real TolReached() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSameParameter() const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Curve2d() const;
-
-};
-%feature("shadow") Approx_SameParameter::~Approx_SameParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_SameParameter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_SequenceOfHArray1OfReal;
-class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Approx_SequenceOfHArray1OfReal();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Approx_SequenceOfHArray1OfReal & Assign(const Approx_SequenceOfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		const Approx_SequenceOfHArray1OfReal & operator=(const Approx_SequenceOfHArray1OfReal &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void Append(Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void Prepend(Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Approx_SequenceOfHArray1OfReal & S);
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColStd_HArray1OfReal &I);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Approx_SequenceOfHArray1OfReal::~Approx_SequenceOfHArray1OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_SequenceOfHArray1OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}

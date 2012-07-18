@@ -73,6 +73,22 @@ $HeaderURL$
 #include<Contap_TheSequenceOfPointOfContour.hxx>
 #include<Contap_TheSurfFunctionOfContour.hxx>
 #include<Contap_TheSurfPropsOfContour.hxx>
+#include<Intf.hxx>
+#include<Intf_Array1OfLin.hxx>
+#include<Intf_Interference.hxx>
+#include<Intf_InterferencePolygon2d.hxx>
+#include<Intf_PIType.hxx>
+#include<Intf_Polygon2d.hxx>
+#include<Intf_SectionLine.hxx>
+#include<Intf_SectionPoint.hxx>
+#include<Intf_SeqOfSectionLine.hxx>
+#include<Intf_SeqOfSectionPoint.hxx>
+#include<Intf_SeqOfTangentZone.hxx>
+#include<Intf_SequenceNodeOfSeqOfSectionLine.hxx>
+#include<Intf_SequenceNodeOfSeqOfSectionPoint.hxx>
+#include<Intf_SequenceNodeOfSeqOfTangentZone.hxx>
+#include<Intf_TangentZone.hxx>
+#include<Intf_Tool.hxx>
 #include<math.hxx>
 #include<math_Array1OfValueAndWeight.hxx>
 #include<math_BFGS.hxx>
@@ -135,9 +151,9 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Geom2dAdaptor_Curve.hxx>
+#include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Dir2d.hxx>
 #include<HatchGen_PointOnHatching.hxx>
 #include<HatchGen_Domain.hxx>
-#include<gp_Pnt2d.hxx>
 %}

@@ -104,10 +104,10 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Geom_BoundedCurve.hxx>
-#include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<Handle_Geom_BoundedSurface.hxx>
 #include<Handle_Geom_BezierSurface.hxx>
+#include<Handle_Geom_Curve.hxx>
+#include<Handle_Geom_BoundedSurface.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
 #include<Handle_Geom_BezierCurve.hxx>

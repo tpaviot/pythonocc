@@ -24,12 +24,12 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_FEmTool_ElementaryCriterion::DownCast;
-%rename(DownCast) Handle_FEmTool_LinearTension::DownCast;
-%rename(DownCast) Handle_FEmTool_LinearJerk::DownCast;
+%rename(DownCast) Handle_FEmTool_LinearFlexion::DownCast;
 %rename(DownCast) Handle_FEmTool_SequenceNodeOfSeqOfLinConstr::DownCast;
+%rename(DownCast) Handle_FEmTool_LinearTension::DownCast;
+%rename(DownCast) Handle_FEmTool_ListNodeOfListOfVectors::DownCast;
+%rename(DownCast) Handle_FEmTool_LinearJerk::DownCast;
 %rename(DownCast) Handle_FEmTool_SparseMatrix::DownCast;
 %rename(DownCast) Handle_FEmTool_ProfileMatrix::DownCast;
 %rename(DownCast) Handle_FEmTool_Curve::DownCast;
-%rename(DownCast) Handle_FEmTool_LinearFlexion::DownCast;
 %rename(DownCast) Handle_FEmTool_HAssemblyTable::DownCast;
-%rename(DownCast) Handle_FEmTool_ListNodeOfListOfVectors::DownCast;

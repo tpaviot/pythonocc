@@ -60,62 +60,6 @@ enum GeomLib_InterpolationErrors {
 
 
 
-%nodefaultctor GeomLib_CheckBSplineCurve;
-class GeomLib_CheckBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-};
-%feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_CheckBSplineCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_DenominatorMultiplier;
-class GeomLib_DenominatorMultiplier {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
-
-};
-%feature("shadow") GeomLib_DenominatorMultiplier::~GeomLib_DenominatorMultiplier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_DenominatorMultiplier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
 	public:
@@ -142,6 +86,118 @@ def __del__(self):
 %}
 
 %extend GeomLib_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomLib_LogSample;
+class GeomLib_LogSample : public math_FunctionSample {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
+
+};
+%feature("shadow") GeomLib_LogSample::~GeomLib_LogSample %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_LogSample {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomLib_Interpolate;
+class GeomLib_Interpolate {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		GeomLib_InterpolationErrors Error() const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve Curve() const;
+
+};
+%feature("shadow") GeomLib_Interpolate::~GeomLib_Interpolate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_Interpolate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomLib_IsPlanarSurface;
+class GeomLib_IsPlanarSurface {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
+		%feature("autodoc", "1");
+		Standard_Boolean IsPlanar() const;
+		%feature("autodoc", "1");
+		const gp_Pln  Plan() const;
+
+};
+%feature("shadow") GeomLib_IsPlanarSurface::~GeomLib_IsPlanarSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_IsPlanarSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomLib_Check2dBSplineCurve;
+class GeomLib_Check2dBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+
+};
+%feature("shadow") GeomLib_Check2dBSplineCurve::~GeomLib_Check2dBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_Check2dBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -180,16 +236,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomLib_LogSample;
-class GeomLib_LogSample : public math_FunctionSample {
+%nodefaultctor GeomLib_CheckBSplineCurve;
+class GeomLib_CheckBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_LogSample(const Standard_Real A, const Standard_Real B, const Standard_Integer N);
+		GeomLib_CheckBSplineCurve(const Handle_Geom_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
-		virtual		Standard_Real GetParameter(const Standard_Integer Index) const;
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
+		%feature("autodoc", "1");
+		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
 
 };
-%feature("shadow") GeomLib_LogSample::~GeomLib_LogSample %{
+%feature("shadow") GeomLib_CheckBSplineCurve::~GeomLib_CheckBSplineCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -198,7 +260,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomLib_LogSample {
+%extend GeomLib_CheckBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -240,93 +302,6 @@ def __del__(self):
 %}
 
 %extend GeomLib_MakeCurvefromApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_IsPlanarSurface;
-class GeomLib_IsPlanarSurface {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPlanar() const;
-		%feature("autodoc", "1");
-		const gp_Pln  Plan() const;
-
-};
-%feature("shadow") GeomLib_IsPlanarSurface::~GeomLib_IsPlanarSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_IsPlanarSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_Interpolate;
-class GeomLib_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_Interpolate(const Standard_Integer Degree, const Standard_Integer NumPoints, const TColgp_Array1OfPnt &Points, const TColStd_Array1OfReal &Parameters);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		GeomLib_InterpolationErrors Error() const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve Curve() const;
-
-};
-%feature("shadow") GeomLib_Interpolate::~GeomLib_Interpolate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_Interpolate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomLib_Check2dBSplineCurve;
-class GeomLib_Check2dBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		GeomLib_Check2dBSplineCurve(const Handle_Geom2d_BSplineCurve &Curve, const Standard_Real Tolerance, const Standard_Real AngularTolerance);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void NeedTangentFix(Standard_Boolean & FirstFlag, Standard_Boolean & SecondFlag) const;
-		%feature("autodoc", "1");
-		void FixTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve FixedTangent(const Standard_Boolean FirstFlag, const Standard_Boolean LastFlag);
-
-};
-%feature("shadow") GeomLib_Check2dBSplineCurve::~GeomLib_Check2dBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomLib_Check2dBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -405,7 +380,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		static		void ExtendSurfByLength(Handle_Geom_BoundedSurface & Surf, const Standard_Real Length, const Standard_Integer Cont, const Standard_Boolean InU, const Standard_Boolean After);
 		%feature("autodoc", "1");
-		static		void AxeOfInertia(const TColgp_Array1OfPnt &Points, gp_Ax2 & Axe, Standard_Boolean & IsSingular, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		static		void AxeOfInertia(const TColgp_Array1OfPnt &Points, gp_Ax2 & Axe, Standard_Boolean & IsSingular, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc","Inertia(const Points) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void Inertia(const TColgp_Array1OfPnt &Points, gp_Pnt & Bary, gp_Dir & XDir, gp_Dir & YDir, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -414,7 +389,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		static		void DensifyArray1OfReal(const Standard_Integer MinNumPoints, const TColStd_Array1OfReal &InParameters, Handle_TColStd_HArray1OfReal & OutParameters);
 		%feature("autodoc", "1");
-		static		void FuseIntervals(const TColStd_Array1OfReal &Interval1, const TColStd_Array1OfReal &Interval2, TColStd_SequenceOfReal & Fusion, const Standard_Real Confusion=1.00000000000000006228159145777985641889706869279e-9);
+		static		void FuseIntervals(const TColStd_Array1OfReal &Interval1, const TColStd_Array1OfReal &Interval2, TColStd_SequenceOfReal & Fusion, const Standard_Real Confusion=1.00000000000000006228159145777985641889706869278597878292e-9);
 		%feature("autodoc","EvalMaxParametricDistance(const Curve, const AReferenceCurve, Standard_Real Tolerance, const Parameters) -> Standard_Real");
 
 		static		void EvalMaxParametricDistance(const Adaptor3d_Curve &Curve, const Adaptor3d_Curve &AReferenceCurve, const Standard_Real Tolerance, const TColStd_Array1OfReal &Parameters, Standard_Real &OutValue);
@@ -437,6 +412,31 @@ def __del__(self):
 %}
 
 %extend GeomLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomLib_DenominatorMultiplier;
+class GeomLib_DenominatorMultiplier {
+	public:
+		%feature("autodoc", "1");
+		GeomLib_DenominatorMultiplier(const Handle_Geom_BSplineSurface &Surface, const TColStd_Array1OfReal &KnotVector);
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Real UParameter, const Standard_Real VParameter) const;
+
+};
+%feature("shadow") GeomLib_DenominatorMultiplier::~GeomLib_DenominatorMultiplier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomLib_DenominatorMultiplier {
 	void _kill_pointed() {
 		delete $self;
 	}

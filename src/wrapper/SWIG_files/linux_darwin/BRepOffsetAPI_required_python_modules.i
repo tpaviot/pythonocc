@@ -27,14 +27,14 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
+import BRepOffset
+import TopTools
+import GeomAbs
 import Standard
 import TopoDS
 import Draft
-import TopTools
 import TColStd
 import BRepBuilderAPI
-import BRepOffset
-import GeomAbs
 import BRepFill
 import Approx
 };

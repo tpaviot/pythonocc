@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Interface
-import Message
 import Dico
+import Message
 import TColStd
 import TCollection
 };

@@ -28,13 +28,13 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopAbs
 import gp
-import IntTools
-import TCollection
-import TColStd
-import BooleanOperations
 import TopoDS
+import BooleanOperations
+import TCollection
+import TopAbs
+import IntTools
+import TColStd
 import TopTools
 import Geom
 };

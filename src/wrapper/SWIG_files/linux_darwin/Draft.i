@@ -135,44 +135,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
-class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
-		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
-		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
-	Draft_DataMapNodeOfDataMapOfVertexVertexInfo* GetObject() {
-	return (Draft_DataMapNodeOfDataMapOfVertexVertexInfo*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Draft_Modification;
 class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 	public:
@@ -205,6 +167,44 @@ def __del__(self):
 %}
 
 %extend Handle_Draft_Modification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
+class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo();
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo & operator=(const Draft_DataMapNodeOfDataMapOfVertexVertexInfo *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	Draft_DataMapNodeOfDataMapOfVertexVertexInfo* GetObject() {
+	return (Draft_DataMapNodeOfDataMapOfVertexVertexInfo*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -283,6 +283,10 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 		Draft_FaceInfo & ChangeFind(const TopoDS_Face K);
 		%feature("autodoc", "1");
 		Draft_FaceInfo & operator()(const TopoDS_Face K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Face K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Face K);
 
 };
 %feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
@@ -328,6 +332,10 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 		Draft_EdgeInfo & ChangeFind(const TopoDS_Edge K);
 		%feature("autodoc", "1");
 		Draft_EdgeInfo & operator()(const TopoDS_Edge K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Edge K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Edge K);
 
 };
 %feature("shadow") Draft_DataMapOfEdgeEdgeInfo::~Draft_DataMapOfEdgeEdgeInfo %{
@@ -455,7 +463,7 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %extend Draft_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Draft_Modification::~Draft_Modification %{
@@ -494,7 +502,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
@@ -533,7 +541,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
@@ -685,7 +693,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{
@@ -790,6 +798,10 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 		Draft_VertexInfo & ChangeFind(const TopoDS_Vertex K);
 		%feature("autodoc", "1");
 		Draft_VertexInfo & operator()(const TopoDS_Vertex K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Vertex K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Vertex K);
 
 };
 %feature("shadow") Draft_DataMapOfVertexVertexInfo::~Draft_DataMapOfVertexVertexInfo %{

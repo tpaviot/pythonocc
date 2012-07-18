@@ -81,6 +81,44 @@ enum Image_DitheringMethod {
 
 
 
+%nodefaultctor Handle_Image_PixMap;
+class Handle_Image_PixMap : public Handle_Aspect_PixMap {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_PixMap();
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_PixMap {
+	Image_PixMap* GetObject() {
+	return (Image_PixMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Image_Image;
 class Handle_Image_Image : public Handle_MMgt_TShared {
 	public:
@@ -113,44 +151,6 @@ def __del__(self):
 %}
 
 %extend Handle_Image_Image {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Image_DColorImage;
-class Handle_Image_DColorImage : public Handle_Image_Image {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_DColorImage();
-		%feature("autodoc", "1");
-		Handle_Image_DColorImage(const Handle_Image_DColorImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DColorImage(const Image_DColorImage *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_DColorImage & operator=(const Handle_Image_DColorImage &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_DColorImage DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_DColorImage {
-	Image_DColorImage* GetObject() {
-	return (Image_DColorImage*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_DColorImage::~Handle_Image_DColorImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_DColorImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -233,82 +233,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
-class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable();
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable & operator=(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_DataMapNodeOfLookupTable DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_DataMapNodeOfLookupTable {
-	Image_DataMapNodeOfLookupTable* GetObject() {
-	return (Image_DataMapNodeOfLookupTable*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_DataMapNodeOfLookupTable::~Handle_Image_DataMapNodeOfLookupTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_DataMapNodeOfLookupTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Image_PixMap;
-class Handle_Image_PixMap : public Handle_Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_PixMap();
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_PixMap {
-	Image_PixMap* GetObject() {
-	return (Image_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
 class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -341,6 +265,44 @@ def __del__(self):
 %}
 
 %extend Handle_Image_DataMapNodeOfColorPixelDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Image_DColorImage;
+class Handle_Image_DColorImage : public Handle_Image_Image {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage();
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage(const Handle_Image_DColorImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage(const Image_DColorImage *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage & operator=(const Handle_Image_DColorImage &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DColorImage & operator=(const Image_DColorImage *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_DColorImage DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_DColorImage {
+	Image_DColorImage* GetObject() {
+	return (Image_DColorImage*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_DColorImage::~Handle_Image_DColorImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_DColorImage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -385,42 +347,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Image_PixelRowOfDIndexedImage;
-class Image_PixelRowOfDIndexedImage {
+%nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
+class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Image_PixelRowOfDIndexedImage(const Standard_Integer Low, const Standard_Integer Up);
+		Handle_Image_DataMapNodeOfLookupTable();
 		%feature("autodoc", "1");
-		Image_PixelRowOfDIndexedImage(const Aspect_IndexPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Handle_Image_DataMapNodeOfLookupTable(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
 		%feature("autodoc", "1");
-		void Init(const Aspect_IndexPixel &V);
+		Handle_Image_DataMapNodeOfLookupTable(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_Image_DataMapNodeOfLookupTable & operator=(const Handle_Image_DataMapNodeOfLookupTable &aHandle);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_Image_DataMapNodeOfLookupTable & operator=(const Image_DataMapNodeOfLookupTable *anItem);
 		%feature("autodoc", "1");
-		const Image_PixelRowOfDIndexedImage & Assign(const Image_PixelRowOfDIndexedImage &Other);
-		%feature("autodoc", "1");
-		const Image_PixelRowOfDIndexedImage & operator=(const Image_PixelRowOfDIndexedImage &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Aspect_IndexPixel &Value);
-		%feature("autodoc", "1");
-		const Aspect_IndexPixel & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Aspect_IndexPixel & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & operator()(const Standard_Integer Index);
+		static		Handle_Image_DataMapNodeOfLookupTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") Image_PixelRowOfDIndexedImage::~Image_PixelRowOfDIndexedImage %{
+%extend Handle_Image_DataMapNodeOfLookupTable {
+	Image_DataMapNodeOfLookupTable* GetObject() {
+	return (Image_DataMapNodeOfLookupTable*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_DataMapNodeOfLookupTable::~Handle_Image_DataMapNodeOfLookupTable %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -429,7 +378,66 @@ def __del__(self):
 		pass
 %}
 
-%extend Image_PixelRowOfDIndexedImage {
+%extend Handle_Image_DataMapNodeOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorPixelDataMap;
+class Image_ColorPixelDataMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap & Assign(const Image_ColorPixelDataMap &Other);
+		%feature("autodoc", "1");
+		Image_ColorPixelDataMap & operator=(const Image_ColorPixelDataMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Aspect_ColorPixel &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Aspect_ColorPixel &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Aspect_ColorPixel &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Aspect_ColorPixel &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_ColorPixel &K);
+
+};
+%feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -508,7 +516,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_Image::~Image_Image %{
@@ -521,33 +529,6 @@ def __del__(self):
 %}
 
 %extend Image_Image {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_IndexPixelMapHasher;
-class Image_IndexPixelMapHasher {
-	public:
-		%feature("autodoc", "1");
-		Image_IndexPixelMapHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
-
-};
-%feature("shadow") Image_IndexPixelMapHasher::~Image_IndexPixelMapHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_IndexPixelMapHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -582,7 +563,7 @@ class Image_PixMap : public Aspect_PixMap {
 };
 %extend Image_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_PixMap::~Image_PixMap %{
@@ -657,6 +638,88 @@ def __del__(self):
 };
 
 
+%nodefaultctor Image_PixelRowOfDIndexedImage;
+class Image_PixelRowOfDIndexedImage {
+	public:
+		%feature("autodoc", "1");
+		Image_PixelRowOfDIndexedImage(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Image_PixelRowOfDIndexedImage(const Aspect_IndexPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Aspect_IndexPixel &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDIndexedImage & Assign(const Image_PixelRowOfDIndexedImage &Other);
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDIndexedImage & operator=(const Image_PixelRowOfDIndexedImage &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Aspect_IndexPixel &Value);
+		%feature("autodoc", "1");
+		const Aspect_IndexPixel & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Aspect_IndexPixel & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Image_PixelRowOfDIndexedImage::~Image_PixelRowOfDIndexedImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_PixelRowOfDIndexedImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_DataMapIteratorOfLookupTable;
+class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfLookupTable();
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfLookupTable(const Image_LookupTable &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Image_LookupTable &aMap);
+		%feature("autodoc", "1");
+		const Aspect_IndexPixel & Key() const;
+		%feature("autodoc", "1");
+		const Aspect_IndexPixel & Value() const;
+
+};
+%feature("shadow") Image_DataMapIteratorOfLookupTable::~Image_DataMapIteratorOfLookupTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_DataMapIteratorOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Image_LookupTable;
 class Image_LookupTable : public TCollection_BasicMap {
 	public:
@@ -684,6 +747,10 @@ class Image_LookupTable : public TCollection_BasicMap {
 		Aspect_IndexPixel & ChangeFind(const Aspect_IndexPixel &K);
 		%feature("autodoc", "1");
 		Aspect_IndexPixel & operator()(const Aspect_IndexPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_IndexPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_IndexPixel &K);
 
 };
 %feature("shadow") Image_LookupTable::~Image_LookupTable %{
@@ -800,7 +867,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_DColorImage::~Image_DColorImage %{
@@ -841,7 +908,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_ColorImage::~Image_ColorImage %{
@@ -854,6 +921,84 @@ def __del__(self):
 %}
 
 %extend Image_ColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_BilinearPixelInterpolation;
+class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_BilinearPixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%feature("shadow") Image_BilinearPixelInterpolation::~Image_BilinearPixelInterpolation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_BilinearPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_DataMapNodeOfColorPixelDataMap;
+class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapNodeOfColorPixelDataMap(const Aspect_ColorPixel &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Aspect_ColorPixel & Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_DataMapNodeOfColorPixelDataMap {
+	Handle_Image_DataMapNodeOfColorPixelDataMap GetHandle() {
+	return *(Handle_Image_DataMapNodeOfColorPixelDataMap*) &$self;
+	}
+};
+%extend Image_DataMapNodeOfColorPixelDataMap {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_DataMapNodeOfColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -897,327 +1042,6 @@ def __del__(self):
 %}
 
 %extend Image {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_AveragePixelInterpolation;
-class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_AveragePixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%feature("shadow") Image_AveragePixelInterpolation::~Image_AveragePixelInterpolation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_AveragePixelInterpolation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_DataMapNodeOfLookupTable;
-class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapNodeOfLookupTable(const Aspect_IndexPixel &K, const Aspect_IndexPixel &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & Key() const;
-		%feature("autodoc", "1");
-		Aspect_IndexPixel & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Image_DataMapNodeOfLookupTable {
-	Handle_Image_DataMapNodeOfLookupTable GetHandle() {
-	return *(Handle_Image_DataMapNodeOfLookupTable*) &$self;
-	}
-};
-%extend Image_DataMapNodeOfLookupTable {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_DataMapNodeOfLookupTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_BilinearPixelInterpolation;
-class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_BilinearPixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%feature("shadow") Image_BilinearPixelInterpolation::~Image_BilinearPixelInterpolation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_BilinearPixelInterpolation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_Convertor;
-class Image_Convertor {
-	public:
-		%feature("autodoc", "1");
-		Image_Convertor();
-		%feature("autodoc", "1");
-		void SetDitheringMethod(const Image_DitheringMethod aMethod);
-		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_ColorImage &aColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
-		%feature("autodoc", "1");
-		Handle_Image_PseudoColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
-		%feature("autodoc", "1");
-		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
-
-};
-%feature("shadow") Image_Convertor::~Image_Convertor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_Convertor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_ColorPixelMapHasher;
-class Image_ColorPixelMapHasher {
-	public:
-		%feature("autodoc", "1");
-		Image_ColorPixelMapHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
-
-};
-%feature("shadow") Image_ColorPixelMapHasher::~Image_ColorPixelMapHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_ColorPixelMapHasher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_DataMapIteratorOfLookupTable;
-class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfLookupTable();
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfLookupTable(const Image_LookupTable &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Image_LookupTable &aMap);
-		%feature("autodoc", "1");
-		const Aspect_IndexPixel & Key() const;
-		%feature("autodoc", "1");
-		const Aspect_IndexPixel & Value() const;
-
-};
-%feature("shadow") Image_DataMapIteratorOfLookupTable::~Image_DataMapIteratorOfLookupTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_DataMapIteratorOfLookupTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_PixelRowOfDColorImage;
-class Image_PixelRowOfDColorImage {
-	public:
-		%feature("autodoc", "1");
-		Image_PixelRowOfDColorImage(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Image_PixelRowOfDColorImage(const Aspect_ColorPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Aspect_ColorPixel &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Image_PixelRowOfDColorImage & Assign(const Image_PixelRowOfDColorImage &Other);
-		%feature("autodoc", "1");
-		const Image_PixelRowOfDColorImage & operator=(const Image_PixelRowOfDColorImage &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Aspect_ColorPixel &Value);
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Aspect_ColorPixel & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Aspect_ColorPixel & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Image_PixelRowOfDColorImage::~Image_PixelRowOfDColorImage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_PixelRowOfDColorImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_ColorPixelDataMap;
-class Image_ColorPixelDataMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Image_ColorPixelDataMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Image_ColorPixelDataMap & Assign(const Image_ColorPixelDataMap &Other);
-		%feature("autodoc", "1");
-		Image_ColorPixelDataMap & operator=(const Image_ColorPixelDataMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Aspect_ColorPixel &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Aspect_ColorPixel &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Aspect_ColorPixel &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Aspect_ColorPixel &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Aspect_ColorPixel &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const Aspect_ColorPixel &K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const Aspect_ColorPixel &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Aspect_ColorPixel &K);
-
-};
-%feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_ColorPixelDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_BalancedPixelInterpolation;
-class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
-	public:
-		%feature("autodoc", "1");
-		Image_BalancedPixelInterpolation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
-
-};
-%feature("shadow") Image_BalancedPixelInterpolation::~Image_BalancedPixelInterpolation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_BalancedPixelInterpolation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1322,7 +1146,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
@@ -1335,37 +1159,6 @@ def __del__(self):
 %}
 
 %extend Image_DIndexedImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
-class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfColorPixelDataMap();
-		%feature("autodoc", "1");
-		Image_DataMapIteratorOfColorPixelDataMap(const Image_ColorPixelDataMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Image_ColorPixelDataMap &aMap);
-		%feature("autodoc", "1");
-		const Aspect_ColorPixel & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") Image_DataMapIteratorOfColorPixelDataMap::~Image_DataMapIteratorOfColorPixelDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_DataMapIteratorOfColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1414,7 +1207,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
@@ -1427,6 +1220,270 @@ def __del__(self):
 %}
 
 %extend Image_PseudoColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_PixelRowOfDColorImage;
+class Image_PixelRowOfDColorImage {
+	public:
+		%feature("autodoc", "1");
+		Image_PixelRowOfDColorImage(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Image_PixelRowOfDColorImage(const Aspect_ColorPixel &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Aspect_ColorPixel &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDColorImage & Assign(const Image_PixelRowOfDColorImage &Other);
+		%feature("autodoc", "1");
+		const Image_PixelRowOfDColorImage & operator=(const Image_PixelRowOfDColorImage &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Aspect_ColorPixel &Value);
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Aspect_ColorPixel & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Aspect_ColorPixel & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Image_PixelRowOfDColorImage::~Image_PixelRowOfDColorImage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_PixelRowOfDColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_DataMapNodeOfLookupTable;
+class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapNodeOfLookupTable(const Aspect_IndexPixel &K, const Aspect_IndexPixel &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & Key() const;
+		%feature("autodoc", "1");
+		Aspect_IndexPixel & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Image_DataMapNodeOfLookupTable {
+	Handle_Image_DataMapNodeOfLookupTable GetHandle() {
+	return *(Handle_Image_DataMapNodeOfLookupTable*) &$self;
+	}
+};
+%extend Image_DataMapNodeOfLookupTable {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_DataMapNodeOfLookupTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_IndexPixelMapHasher;
+class Image_IndexPixelMapHasher {
+	public:
+		%feature("autodoc", "1");
+		Image_IndexPixelMapHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Aspect_IndexPixel &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Aspect_IndexPixel &K1, const Aspect_IndexPixel &K2);
+
+};
+%feature("shadow") Image_IndexPixelMapHasher::~Image_IndexPixelMapHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_IndexPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_Convertor;
+class Image_Convertor {
+	public:
+		%feature("autodoc", "1");
+		Image_Convertor();
+		%feature("autodoc", "1");
+		void SetDitheringMethod(const Image_DitheringMethod aMethod);
+		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage Convert(const Handle_Image_ColorImage &aColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		%feature("autodoc", "1");
+		Handle_Image_PseudoColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage, const Handle_Aspect_ColorMap &aColorMap) const;
+		%feature("autodoc", "1");
+		Handle_Image_ColorImage Convert(const Handle_Image_PseudoColorImage &aPseudoColorImage) const;
+
+};
+%feature("shadow") Image_Convertor::~Image_Convertor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_Convertor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_ColorPixelMapHasher;
+class Image_ColorPixelMapHasher {
+	public:
+		%feature("autodoc", "1");
+		Image_ColorPixelMapHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Aspect_ColorPixel &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Aspect_ColorPixel &K1, const Aspect_ColorPixel &K2);
+
+};
+%feature("shadow") Image_ColorPixelMapHasher::~Image_ColorPixelMapHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_ColorPixelMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_BalancedPixelInterpolation;
+class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_BalancedPixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%feature("shadow") Image_BalancedPixelInterpolation::~Image_BalancedPixelInterpolation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_BalancedPixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_AveragePixelInterpolation;
+class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
+	public:
+		%feature("autodoc", "1");
+		Image_AveragePixelInterpolation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_Image &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_Pixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DColorImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_ColorPixel & RetPixel) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Interpolate(const Handle_Image_DIndexedImage &aImage, const Standard_Real FX, const Standard_Real FY, const Standard_Integer LowerX, const Standard_Integer LowerY, const Standard_Integer UpperX, const Standard_Integer UpperY, Aspect_IndexPixel & RetPixel) const;
+
+};
+%feature("shadow") Image_AveragePixelInterpolation::~Image_AveragePixelInterpolation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_AveragePixelInterpolation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
+class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfColorPixelDataMap();
+		%feature("autodoc", "1");
+		Image_DataMapIteratorOfColorPixelDataMap(const Image_ColorPixelDataMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Image_ColorPixelDataMap &aMap);
+		%feature("autodoc", "1");
+		const Aspect_ColorPixel & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%feature("shadow") Image_DataMapIteratorOfColorPixelDataMap::~Image_DataMapIteratorOfColorPixelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Image_DataMapIteratorOfColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1472,55 +1529,6 @@ def __del__(self):
 %}
 
 %extend Image_PixelFieldOfDColorImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Image_DataMapNodeOfColorPixelDataMap;
-class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Image_DataMapNodeOfColorPixelDataMap(const Aspect_ColorPixel &K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Aspect_ColorPixel & Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Image_DataMapNodeOfColorPixelDataMap {
-	Handle_Image_DataMapNodeOfColorPixelDataMap GetHandle() {
-	return *(Handle_Image_DataMapNodeOfColorPixelDataMap*) &$self;
-	}
-};
-%extend Image_DataMapNodeOfColorPixelDataMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Image_DataMapNodeOfColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -52,42 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor BRepLProp_SurfaceTool;
-class BRepLProp_SurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		BRepLProp_SurfaceTool();
-		%feature("autodoc", "1");
-		static		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
-		%feature("autodoc", "1");
-		static		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
-		%feature("autodoc", "1");
-		static		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
-		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") BRepLProp_SurfaceTool::~BRepLProp_SurfaceTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepLProp_SurfaceTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
 	public:
@@ -237,6 +201,42 @@ def __del__(self):
 %}
 
 %extend BRepLProp_CLProps {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepLProp_SurfaceTool;
+class BRepLProp_SurfaceTool {
+	public:
+		%feature("autodoc", "1");
+		BRepLProp_SurfaceTool();
+		%feature("autodoc", "1");
+		static		void Value(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		static		void D1(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		%feature("autodoc", "1");
+		static		void D2(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
+		%feature("autodoc", "1");
+		static		gp_Vec DN(const BRepAdaptor_Surface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
+		%feature("autodoc", "1");
+		static		Standard_Integer Continuity(const BRepAdaptor_Surface &S);
+		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void Bounds(const BRepAdaptor_Surface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") BRepLProp_SurfaceTool::~BRepLProp_SurfaceTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepLProp_SurfaceTool {
 	void _kill_pointed() {
 		delete $self;
 	}

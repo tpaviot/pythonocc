@@ -91,6 +91,94 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPolyh_StartPoint;
+class IntPolyh_StartPoint {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint();
+		%feature("autodoc", "1");
+		IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
+		%feature("autodoc", "1");
+		Standard_Real X() const;
+		%feature("autodoc", "1");
+		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		Standard_Real Z() const;
+		%feature("autodoc", "1");
+		Standard_Real U1() const;
+		%feature("autodoc", "1");
+		Standard_Real V1() const;
+		%feature("autodoc", "1");
+		Standard_Real U2() const;
+		%feature("autodoc", "1");
+		Standard_Real V2() const;
+		%feature("autodoc", "1");
+		Standard_Integer T1() const;
+		%feature("autodoc", "1");
+		Standard_Integer E1() const;
+		%feature("autodoc", "1");
+		Standard_Real Lambda1() const;
+		%feature("autodoc", "1");
+		Standard_Integer T2() const;
+		%feature("autodoc", "1");
+		Standard_Integer E2() const;
+		%feature("autodoc", "1");
+		Standard_Real Lambda2() const;
+		%feature("autodoc", "1");
+		Standard_Real GetAngle() const;
+		%feature("autodoc", "1");
+		Standard_Integer ChainList() const;
+		%feature("autodoc","GetEdgePoints(const Triangle) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		void Equal(const IntPolyh_StartPoint &StPt);
+		%feature("autodoc", "1");
+		void operator=(const IntPolyh_StartPoint &StPt);
+		%feature("autodoc", "1");
+		void SetXYZ(const Standard_Real XX, const Standard_Real YY, const Standard_Real ZZ);
+		%feature("autodoc", "1");
+		void SetUV1(const Standard_Real UU1, const Standard_Real VV1);
+		%feature("autodoc", "1");
+		void SetUV2(const Standard_Real UU2, const Standard_Real VV2);
+		%feature("autodoc", "1");
+		void SetEdge1(const Standard_Integer IE1);
+		%feature("autodoc", "1");
+		void SetLambda1(const Standard_Real LAM1);
+		%feature("autodoc", "1");
+		void SetEdge2(const Standard_Integer IE2);
+		%feature("autodoc", "1");
+		void SetLambda2(const Standard_Real LAM2);
+		%feature("autodoc", "1");
+		void SetCoupleValue(const Standard_Integer IT1, const Standard_Integer IT2);
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real ang);
+		%feature("autodoc", "1");
+		void SetChainList(const Standard_Integer ChList);
+		%feature("autodoc", "1");
+		Standard_Integer CheckSameSP(const IntPolyh_StartPoint &SP) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer i) const;
+
+};
+%feature("shadow") IntPolyh_StartPoint::~IntPolyh_StartPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_StartPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPolyh_SeqOfStartPoints;
 class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 	public:
@@ -150,6 +238,53 @@ def __del__(self):
 %}
 
 %extend IntPolyh_SeqOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPolyh_Edge;
+class IntPolyh_Edge {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Edge();
+		%feature("autodoc", "1");
+		IntPolyh_Edge(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4);
+		%feature("autodoc", "1");
+		Standard_Integer FirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstTriangle() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondTriangle() const;
+		%feature("autodoc", "1");
+		Standard_Integer AnalysisFlag() const;
+		%feature("autodoc", "1");
+		void SetFirstPoint(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetSecondPoint(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetFirstTriangle(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetSecondTriangle(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetAnalysisFlag(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer v) const;
+
+};
+%feature("shadow") IntPolyh_Edge::~IntPolyh_Edge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_Edge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -295,47 +430,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_SectionLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_Couple;
-class IntPolyh_Couple {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_Couple();
-		%feature("autodoc", "1");
-		IntPolyh_Couple(const Standard_Integer i1, const Standard_Integer i2);
-		%feature("autodoc", "1");
-		Standard_Integer FirstValue() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondValue() const;
-		%feature("autodoc", "1");
-		Standard_Integer AnalyseFlagValue() const;
-		%feature("autodoc", "1");
-		Standard_Real AngleValue() const;
-		%feature("autodoc", "1");
-		void SetCoupleValue(const Standard_Integer v, const Standard_Integer w);
-		%feature("autodoc", "1");
-		void SetAnalyseFlag(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetAngleValue(const Standard_Real ang);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer v) const;
-
-};
-%feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_Couple {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -509,6 +603,10 @@ class IntPolyh_Point {
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer i) const;
+		%feature("autodoc", "1");
+		void SetDegenerated(const Standard_Boolean theFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean Degenerated() const;
 
 };
 %feature("shadow") IntPolyh_Point::~IntPolyh_Point %{
@@ -521,141 +619,6 @@ def __del__(self):
 %}
 
 %extend IntPolyh_Point {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_StartPoint;
-class IntPolyh_StartPoint {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint();
-		%feature("autodoc", "1");
-		IntPolyh_StartPoint(const Standard_Real xx, const Standard_Real yy, const Standard_Real zz, const Standard_Real uu1, const Standard_Real vv1, const Standard_Real uu2, const Standard_Real vv2, const Standard_Integer T1, const Standard_Integer E1, const Standard_Real LAM1, const Standard_Integer T2, const Standard_Integer E2, const Standard_Real LAM2, const Standard_Integer List);
-		%feature("autodoc", "1");
-		Standard_Real X() const;
-		%feature("autodoc", "1");
-		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		Standard_Real Z() const;
-		%feature("autodoc", "1");
-		Standard_Real U1() const;
-		%feature("autodoc", "1");
-		Standard_Real V1() const;
-		%feature("autodoc", "1");
-		Standard_Real U2() const;
-		%feature("autodoc", "1");
-		Standard_Real V2() const;
-		%feature("autodoc", "1");
-		Standard_Integer T1() const;
-		%feature("autodoc", "1");
-		Standard_Integer E1() const;
-		%feature("autodoc", "1");
-		Standard_Real Lambda1() const;
-		%feature("autodoc", "1");
-		Standard_Integer T2() const;
-		%feature("autodoc", "1");
-		Standard_Integer E2() const;
-		%feature("autodoc", "1");
-		Standard_Real Lambda2() const;
-		%feature("autodoc", "1");
-		Standard_Real GetAngle() const;
-		%feature("autodoc", "1");
-		Standard_Integer ChainList() const;
-		%feature("autodoc","GetEdgePoints(const Triangle) -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		Standard_Integer GetEdgePoints(const IntPolyh_Triangle &Triangle, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		void Equal(const IntPolyh_StartPoint &StPt);
-		%feature("autodoc", "1");
-		void operator=(const IntPolyh_StartPoint &StPt);
-		%feature("autodoc", "1");
-		void SetXYZ(const Standard_Real XX, const Standard_Real YY, const Standard_Real ZZ);
-		%feature("autodoc", "1");
-		void SetUV1(const Standard_Real UU1, const Standard_Real VV1);
-		%feature("autodoc", "1");
-		void SetUV2(const Standard_Real UU2, const Standard_Real VV2);
-		%feature("autodoc", "1");
-		void SetEdge1(const Standard_Integer IE1);
-		%feature("autodoc", "1");
-		void SetLambda1(const Standard_Real LAM1);
-		%feature("autodoc", "1");
-		void SetEdge2(const Standard_Integer IE2);
-		%feature("autodoc", "1");
-		void SetLambda2(const Standard_Real LAM2);
-		%feature("autodoc", "1");
-		void SetCoupleValue(const Standard_Integer IT1, const Standard_Integer IT2);
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real ang);
-		%feature("autodoc", "1");
-		void SetChainList(const Standard_Integer ChList);
-		%feature("autodoc", "1");
-		Standard_Integer CheckSameSP(const IntPolyh_StartPoint &SP) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer i) const;
-
-};
-%feature("shadow") IntPolyh_StartPoint::~IntPolyh_StartPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_StartPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPolyh_Edge;
-class IntPolyh_Edge {
-	public:
-		%feature("autodoc", "1");
-		IntPolyh_Edge();
-		%feature("autodoc", "1");
-		IntPolyh_Edge(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4);
-		%feature("autodoc", "1");
-		Standard_Integer FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstTriangle() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondTriangle() const;
-		%feature("autodoc", "1");
-		Standard_Integer AnalysisFlag() const;
-		%feature("autodoc", "1");
-		void SetFirstPoint(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetSecondPoint(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetFirstTriangle(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetSecondTriangle(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void SetAnalysisFlag(const Standard_Integer v);
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer v) const;
-
-};
-%feature("shadow") IntPolyh_Edge::~IntPolyh_Edge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPolyh_Edge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -772,7 +735,7 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 };
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
@@ -785,6 +748,47 @@ def __del__(self):
 %}
 
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPolyh_Couple;
+class IntPolyh_Couple {
+	public:
+		%feature("autodoc", "1");
+		IntPolyh_Couple();
+		%feature("autodoc", "1");
+		IntPolyh_Couple(const Standard_Integer i1, const Standard_Integer i2);
+		%feature("autodoc", "1");
+		Standard_Integer FirstValue() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondValue() const;
+		%feature("autodoc", "1");
+		Standard_Integer AnalyseFlagValue() const;
+		%feature("autodoc", "1");
+		Standard_Real AngleValue() const;
+		%feature("autodoc", "1");
+		void SetCoupleValue(const Standard_Integer v, const Standard_Integer w);
+		%feature("autodoc", "1");
+		void SetAnalyseFlag(const Standard_Integer v);
+		%feature("autodoc", "1");
+		void SetAngleValue(const Standard_Real ang);
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer v) const;
+
+};
+%feature("shadow") IntPolyh_Couple::~IntPolyh_Couple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPolyh_Couple {
 	void _kill_pointed() {
 		delete $self;
 	}

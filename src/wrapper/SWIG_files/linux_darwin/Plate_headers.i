@@ -66,7 +66,7 @@ $HeaderURL$
 #include<gp_Pln.hxx>
 #include<TColgp_Array1OfXYZ.hxx>
 #include<TColgp_Array2OfXYZ.hxx>
+#include<gp_Lin.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
-#include<gp_Lin.hxx>
 %}

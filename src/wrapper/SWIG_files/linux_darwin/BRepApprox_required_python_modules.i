@@ -31,12 +31,12 @@ import Standard
 import math
 import AppParCurves
 import IntSurf
-import IntImp
 import gp
+import BRepAdaptor
+import TColStd
+import IntImp
 import Adaptor3d
 import GeomAbs
 import Geom
-import TColStd
 import Approx
-import BRepAdaptor
 };

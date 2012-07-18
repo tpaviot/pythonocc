@@ -23,9 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GGraphic2d_CurveDefinitionError::DownCast;
 %rename(DownCast) Handle_GGraphic2d_Curve::DownCast;
 %rename(DownCast) Handle_GGraphic2d_SetOfCurves::DownCast;
-%rename(DownCast) Handle_GGraphic2d_CurveDefinitionError::DownCast;
+%rename(Retrieve) GGraphic2d_Curve::Retrieve;
 %rename(Raise) GGraphic2d_CurveDefinitionError::Raise;
 %rename(NewInstance) GGraphic2d_CurveDefinitionError::NewInstance;
-%rename(Retrieve) GGraphic2d_Curve::Retrieve;

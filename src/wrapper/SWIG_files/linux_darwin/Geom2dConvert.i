@@ -52,6 +52,33 @@ $HeaderURL$
 
 
 
+%nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
+class Geom2dConvert_CompCurveToBSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		Geom2dConvert_CompCurveToBSplineCurve(const Handle_Geom2d_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_Geom2d_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve BSplineCurve() const;
+
+};
+%feature("shadow") Geom2dConvert_CompCurveToBSplineCurve::~Geom2dConvert_CompCurveToBSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dConvert_CompCurveToBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2dConvert;
 class Geom2dConvert {
 	public:
@@ -87,33 +114,6 @@ def __del__(self):
 %}
 
 %extend Geom2dConvert {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dConvert_CompCurveToBSplineCurve;
-class Geom2dConvert_CompCurveToBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		Geom2dConvert_CompCurveToBSplineCurve(const Handle_Geom2d_BoundedCurve &BasisCurve, const Convert_ParameterisationType Parameterisation=Convert_TgtThetaOver2);
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_Geom2d_BoundedCurve &NewCurve, const Standard_Real Tolerance, const Standard_Boolean After=0);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve BSplineCurve() const;
-
-};
-%feature("shadow") Geom2dConvert_CompCurveToBSplineCurve::~Geom2dConvert_CompCurveToBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dConvert_CompCurveToBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

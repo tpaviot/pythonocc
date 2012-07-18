@@ -27,8 +27,8 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import StepShape
 import Standard
+import StepShape
 import TCollection
 import Interface
 import StepRepr

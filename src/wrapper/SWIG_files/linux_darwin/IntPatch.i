@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include IntPatch_headers.i
 
+typedef Intf_InterferencePolygon2d IntPatch_SearchPnt;
 
 enum IntPatch_IType {
 	IntPatch_Lin,
@@ -209,6 +210,44 @@ def __del__(self):
 %}
 
 %extend Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IntPatch_TheIWLineOfTheIWalking;
+class Handle_IntPatch_TheIWLineOfTheIWalking : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking();
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking(const IntPatch_TheIWLineOfTheIWalking *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const IntPatch_TheIWLineOfTheIWalking *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntPatch_TheIWLineOfTheIWalking DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntPatch_TheIWLineOfTheIWalking {
+	IntPatch_TheIWLineOfTheIWalking* GetObject() {
+	return (IntPatch_TheIWLineOfTheIWalking*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntPatch_TheIWLineOfTheIWalking::~Handle_IntPatch_TheIWLineOfTheIWalking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntPatch_TheIWLineOfTheIWalking {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -405,44 +444,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IntPatch_TheIWLineOfTheIWalking;
-class Handle_IntPatch_TheIWLineOfTheIWalking : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking();
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking(const IntPatch_TheIWLineOfTheIWalking *anItem);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const IntPatch_TheIWLineOfTheIWalking *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntPatch_TheIWLineOfTheIWalking DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntPatch_TheIWLineOfTheIWalking {
-	IntPatch_TheIWLineOfTheIWalking* GetObject() {
-	return (IntPatch_TheIWLineOfTheIWalking*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntPatch_TheIWLineOfTheIWalking::~Handle_IntPatch_TheIWLineOfTheIWalking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntPatch_TheIWLineOfTheIWalking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IntPatch_SequenceNodeOfSequenceOfLine;
 class Handle_IntPatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
 	public:
@@ -571,6 +572,109 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPatch_Polygo;
+class IntPatch_Polygo : public Intf_Polygon2d {
+	public:
+		%feature("autodoc", "1");
+		Standard_Real Error() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt2d Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real DeflectionOverEstimation() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") IntPatch_Polygo::~IntPatch_Polygo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_Polygo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_PolyLine;
+class IntPatch_PolyLine : public IntPatch_Polygo {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_PolyLine();
+		%feature("autodoc", "1");
+		IntPatch_PolyLine(const Standard_Real InitDefle);
+		%feature("autodoc", "1");
+		void SetWLine(const Standard_Boolean OnFirst, const Handle_IntPatch_WLine &Line);
+		%feature("autodoc", "1");
+		void SetRLine(const Standard_Boolean OnFirst, const Handle_IntPatch_RLine &Line);
+		%feature("autodoc", "1");
+		void ResetError();
+
+};
+%feature("shadow") IntPatch_PolyLine::~IntPatch_PolyLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_PolyLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking;
+class IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
+	Handle_IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking GetHandle() {
+	return *(Handle_IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking*) &$self;
+	}
+};
+%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking::~IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPatch_HCurve2dTool;
 class IntPatch_HCurve2dTool {
 	public:
@@ -642,144 +746,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_Polygo;
-class IntPatch_Polygo {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Error() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Closed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt2d Point(const Standard_Integer Index) const;
-
-};
-%feature("shadow") IntPatch_Polygo::~IntPatch_Polygo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_Polygo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_PolyLine;
-class IntPatch_PolyLine : public IntPatch_Polygo {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_PolyLine();
-		%feature("autodoc", "1");
-		IntPatch_PolyLine(const Standard_Real InitDefle);
-		%feature("autodoc", "1");
-		void SetWLine(const Standard_Boolean OnFirst, const Handle_IntPatch_WLine &Line);
-		%feature("autodoc", "1");
-		void SetRLine(const Standard_Boolean OnFirst, const Handle_IntPatch_RLine &Line);
-		%feature("autodoc", "1");
-		void ResetError();
-
-};
-%feature("shadow") IntPatch_PolyLine::~IntPatch_PolyLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_PolyLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking;
-class IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
-	Handle_IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking GetHandle() {
-	return *(Handle_IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking*) &$self;
-	}
-};
-%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking::~IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_PolygoTool;
-class IntPatch_PolygoTool {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_PolygoTool();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		gp_Pnt2d BeginOfSeg(const IntPatch_Polygo &Line, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		gp_Pnt2d EndOfSeg(const IntPatch_Polygo &Line, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		void Dump(const IntPatch_Polygo &Line);
-
-};
-%feature("shadow") IntPatch_PolygoTool::~IntPatch_PolygoTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_PolygoTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPatch_Line;
 class IntPatch_Line : public MMgt_TShared {
 	public:
@@ -816,7 +782,7 @@ class IntPatch_Line : public MMgt_TShared {
 };
 %extend IntPatch_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_Line::~IntPatch_Line %{
@@ -891,7 +857,7 @@ class IntPatch_ALine : public IntPatch_Line {
 };
 %extend IntPatch_ALine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_ALine::~IntPatch_ALine %{
@@ -904,43 +870,6 @@ def __del__(self):
 %}
 
 %extend IntPatch_ALine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds;
-class IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds(const IntPatch_ThePathPointOfTheSOnBounds &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntPatch_ThePathPointOfTheSOnBounds & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
-	Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds GetHandle() {
-	return *(Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds*) &$self;
-	}
-};
-%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -965,7 +894,7 @@ class IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds : public TCollectio
 };
 %extend IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds %{
@@ -978,6 +907,178 @@ def __del__(self):
 %}
 
 %extend IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_PolyArc;
+class IntPatch_PolyArc : public IntPatch_Polygo {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_PolyArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Integer NbSample, const Standard_Real Pfirst, const Standard_Real Plast, const Bnd_Box2d &BoxOtherPolygon);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt2d Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetOffset(const Standard_Real OffsetX, const Standard_Real OffsetY);
+
+};
+%feature("shadow") IntPatch_PolyArc::~IntPatch_PolyArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_PolyArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_SequenceNodeOfSequenceOfLine;
+class IntPatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_SequenceNodeOfSequenceOfLine(const Handle_IntPatch_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_IntPatch_Line & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPatch_SequenceNodeOfSequenceOfLine {
+	Handle_IntPatch_SequenceNodeOfSequenceOfLine GetHandle() {
+	return *(Handle_IntPatch_SequenceNodeOfSequenceOfLine*) &$self;
+	}
+};
+%extend IntPatch_SequenceNodeOfSequenceOfLine {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IntPatch_SequenceNodeOfSequenceOfLine::~IntPatch_SequenceNodeOfSequenceOfLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_SequenceNodeOfSequenceOfLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_TheSegmentOfTheSOnBounds;
+class IntPatch_TheSegmentOfTheSOnBounds {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_TheSegmentOfTheSOnBounds();
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
+		%feature("autodoc", "1");
+		void SetLimitPoint(const IntPatch_ThePathPointOfTheSOnBounds &V, const Standard_Boolean First);
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasFirstPoint() const;
+		%feature("autodoc", "1");
+		const IntPatch_ThePathPointOfTheSOnBounds & FirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasLastPoint() const;
+		%feature("autodoc", "1");
+		const IntPatch_ThePathPointOfTheSOnBounds & LastPoint() const;
+
+};
+%feature("shadow") IntPatch_TheSegmentOfTheSOnBounds::~IntPatch_TheSegmentOfTheSOnBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_TheSegmentOfTheSOnBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_SequenceOfIWLineOfTheIWalking;
+class IntPatch_SequenceOfIWLineOfTheIWalking : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_SequenceOfIWLineOfTheIWalking();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IntPatch_SequenceOfIWLineOfTheIWalking & Assign(const IntPatch_SequenceOfIWLineOfTheIWalking &Other);
+		%feature("autodoc", "1");
+		const IntPatch_SequenceOfIWLineOfTheIWalking & operator=(const IntPatch_SequenceOfIWLineOfTheIWalking &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_IntPatch_TheIWLineOfTheIWalking &T);
+		%feature("autodoc", "1");
+		void Append(IntPatch_SequenceOfIWLineOfTheIWalking & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IntPatch_TheIWLineOfTheIWalking &T);
+		%feature("autodoc", "1");
+		void Prepend(IntPatch_SequenceOfIWLineOfTheIWalking & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
+		%feature("autodoc", "1");
+		const Handle_IntPatch_TheIWLineOfTheIWalking & First() const;
+		%feature("autodoc", "1");
+		const Handle_IntPatch_TheIWLineOfTheIWalking & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
+		%feature("autodoc", "1");
+		const Handle_IntPatch_TheIWLineOfTheIWalking & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IntPatch_TheIWLineOfTheIWalking & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &I);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IntPatch_SequenceOfIWLineOfTheIWalking::~IntPatch_SequenceOfIWLineOfTheIWalking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_SequenceOfIWLineOfTheIWalking {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1052,50 +1153,48 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_TheSurfFunction;
-class IntPatch_TheSurfFunction : public math_FunctionSetWithDerivatives {
+%nodefaultctor IntPatch_Intersection;
+class IntPatch_Intersection {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_TheSurfFunction();
+		IntPatch_Intersection();
 		%feature("autodoc", "1");
-		IntPatch_TheSurfFunction(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
+		IntPatch_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang);
 		%feature("autodoc", "1");
-		IntPatch_TheSurfFunction(const IntSurf_Quadric &IS);
+		IntPatch_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Standard_Real TolArc, const Standard_Real TolTang);
 		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &PS);
+		void SetTolerances(const Standard_Real TolArc, const Standard_Real TolTang, const Standard_Real UVMaxStep, const Standard_Real Fleche);
 		%feature("autodoc", "1");
-		void SetImplicitSurface(const IntSurf_Quadric &IS);
+		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang);
 		%feature("autodoc", "1");
-		void Set(const Standard_Real Tol);
+		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang, IntSurf_ListOfPntOn2S & LOfPnts, const Standard_Boolean RestrictLine=1);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, const Standard_Real TolArc, const Standard_Real TolTang);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
+		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Standard_Real TolArc, const Standard_Real TolTang);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		Standard_Boolean TangentFaces() const;
 		%feature("autodoc", "1");
-		Standard_Real Root() const;
+		Standard_Boolean OppositeFaces() const;
 		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
+		Standard_Integer NbPnts() const;
 		%feature("autodoc", "1");
-		const gp_Pnt  Point() const;
+		const IntPatch_Point & Point(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsTangent();
+		Standard_Integer NbLines() const;
 		%feature("autodoc", "1");
-		const gp_Vec  Direction3d();
+		const Handle_IntPatch_Line & Line(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const gp_Dir2d  Direction2d();
+		const IntPatch_SequenceOfLine & SequenceOfLine() const;
 		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & PSurface() const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & ISurface() const;
+		void Dump(const Standard_Integer Mode, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2) const;
 
 };
-%feature("shadow") IntPatch_TheSurfFunction::~IntPatch_TheSurfFunction %{
+%feature("shadow") IntPatch_Intersection::~IntPatch_Intersection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1104,7 +1203,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_TheSurfFunction {
+%extend IntPatch_Intersection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1255,43 +1354,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_SequenceNodeOfSequenceOfLine;
-class IntPatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SequenceNodeOfSequenceOfLine(const Handle_IntPatch_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_IntPatch_Line & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPatch_SequenceNodeOfSequenceOfLine {
-	Handle_IntPatch_SequenceNodeOfSequenceOfLine GetHandle() {
-	return *(Handle_IntPatch_SequenceNodeOfSequenceOfLine*) &$self;
-	}
-};
-%extend IntPatch_SequenceNodeOfSequenceOfLine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IntPatch_SequenceNodeOfSequenceOfLine::~IntPatch_SequenceNodeOfSequenceOfLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SequenceNodeOfSequenceOfLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPatch_CSFunction;
 class IntPatch_CSFunction : public math_FunctionSetWithDerivatives {
 	public:
@@ -1327,35 +1389,6 @@ def __del__(self):
 %}
 
 %extend IntPatch_CSFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_LineConstructor;
-class IntPatch_LineConstructor {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_LineConstructor(const Standard_Integer mode);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_SequenceOfLine &SL, const Handle_IntPatch_Line &L, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Integer NbLines() const;
-		%feature("autodoc", "1");
-		Handle_IntPatch_Line Line(const Standard_Integer index) const;
-
-};
-%feature("shadow") IntPatch_LineConstructor::~IntPatch_LineConstructor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_LineConstructor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1506,48 +1539,96 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_Intersection;
-class IntPatch_Intersection {
+%nodefaultctor IntPatch_WLine;
+class IntPatch_WLine : public IntPatch_Line {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_Intersection();
+		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang, const IntSurf_TypeTrans Trans1, const IntSurf_TypeTrans Trans2);
 		%feature("autodoc", "1");
-		IntPatch_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang);
+		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang, const IntSurf_Situation Situ1, const IntSurf_Situation Situ2);
 		%feature("autodoc", "1");
-		IntPatch_Intersection(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Standard_Real TolArc, const Standard_Real TolTang);
+		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang);
 		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real TolArc, const Standard_Real TolTang, const Standard_Real UVMaxStep, const Standard_Real Fleche);
+		void AddVertex(const IntPatch_Point &Pnt);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang);
+		void SetPoint(const Standard_Integer Index, const IntPatch_Point &Pnt);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real TolArc, const Standard_Real TolTang, IntSurf_ListOfPntOn2S & LOfPnts, const Standard_Boolean RestrictLine=1);
+		void Replace(const Standard_Integer Index, const IntPatch_Point &Pnt);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real U1, const Standard_Real V1, const Standard_Real U2, const Standard_Real V2, const Standard_Real TolArc, const Standard_Real TolTang);
+		void SetFirstPoint(const Standard_Integer IndFirst);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Standard_Real TolArc, const Standard_Real TolTang);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TangentFaces() const;
-		%feature("autodoc", "1");
-		Standard_Boolean OppositeFaces() const;
+		void SetLastPoint(const Standard_Integer IndLast);
 		%feature("autodoc", "1");
 		Standard_Integer NbPnts() const;
 		%feature("autodoc", "1");
-		const IntPatch_Point & Point(const Standard_Integer Index) const;
+		const IntSurf_PntOn2S & Point(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbLines() const;
+		Standard_Boolean HasFirstPoint() const;
 		%feature("autodoc", "1");
-		const Handle_IntPatch_Line & Line(const Standard_Integer Index) const;
+		Standard_Boolean HasLastPoint() const;
 		%feature("autodoc", "1");
-		const IntPatch_SequenceOfLine & SequenceOfLine() const;
+		const IntPatch_Point & FirstPoint() const;
 		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Mode, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2) const;
+		const IntPatch_Point & LastPoint() const;
+		%feature("autodoc","FirstPoint() -> Standard_Integer");
+
+		const IntPatch_Point & FirstPoint(Standard_Integer &OutValue) const;
+		%feature("autodoc","LastPoint() -> Standard_Integer");
+
+		const IntPatch_Point & LastPoint(Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVertex() const;
+		%feature("autodoc", "1");
+		const IntPatch_Point & Vertex(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void ComputeVertexParameters(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Handle_IntSurf_LineOn2S Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOutSurf1Box(const gp_Pnt2d P1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOutSurf2Box(const gp_Pnt2d P1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOutBox(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetPeriod(const Standard_Real pu1, const Standard_Real pv1, const Standard_Real pu2, const Standard_Real pv2);
+		%feature("autodoc", "1");
+		Standard_Real U1Period() const;
+		%feature("autodoc", "1");
+		Standard_Real V1Period() const;
+		%feature("autodoc", "1");
+		Standard_Real U2Period() const;
+		%feature("autodoc", "1");
+		Standard_Real V2Period() const;
+		%feature("autodoc", "1");
+		void SetArcOnS1(const Handle_Adaptor2d_HCurve2d &A);
+		%feature("autodoc", "1");
+		Standard_Boolean HasArcOnS1() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & GetArcOnS1() const;
+		%feature("autodoc", "1");
+		void SetArcOnS2(const Handle_Adaptor2d_HCurve2d &A);
+		%feature("autodoc", "1");
+		Standard_Boolean HasArcOnS2() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & GetArcOnS2() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IntPatch_Intersection::~IntPatch_Intersection %{
+%extend IntPatch_WLine {
+	Handle_IntPatch_WLine GetHandle() {
+	return *(Handle_IntPatch_WLine*) &$self;
+	}
+};
+%extend IntPatch_WLine {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IntPatch_WLine::~IntPatch_WLine %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1556,7 +1637,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_Intersection {
+%extend IntPatch_WLine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1655,28 +1736,50 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_PolyArc;
-class IntPatch_PolyArc : public IntPatch_Polygo {
+%nodefaultctor IntPatch_TheSurfFunction;
+class IntPatch_TheSurfFunction : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_PolyArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Integer NbSample, const Standard_Real Pfirst, const Standard_Real Plast, const Bnd_Box2d &BoxOtherPolygon);
+		IntPatch_TheSurfFunction();
 		%feature("autodoc", "1");
-		virtual		const Bnd_Box2d & Bounding() const;
+		IntPatch_TheSurfFunction(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Error() const;
+		IntPatch_TheSurfFunction(const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Closed() const;
+		void Set(const Handle_Adaptor3d_HSurface &PS);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbPoints() const;
+		void SetImplicitSurface(const IntSurf_Quadric &IS);
 		%feature("autodoc", "1");
-		virtual		gp_Pnt2d Point(const Standard_Integer Index) const;
+		void Set(const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Real Parameter(const Standard_Integer Index) const;
+		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
-		void SetOffset(const Standard_Real OffsetX, const Standard_Real OffsetY);
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent();
+		%feature("autodoc", "1");
+		const gp_Vec  Direction3d();
+		%feature("autodoc", "1");
+		const gp_Dir2d  Direction2d();
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HSurface & PSurface() const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & ISurface() const;
 
 };
-%feature("shadow") IntPatch_PolyArc::~IntPatch_PolyArc %{
+%feature("shadow") IntPatch_TheSurfFunction::~IntPatch_TheSurfFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1685,7 +1788,44 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_PolyArc {
+%extend IntPatch_TheSurfFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_TheSOnBounds;
+class IntPatch_TheSOnBounds {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_TheSOnBounds();
+		%feature("autodoc", "1");
+		void Perform(IntPatch_ArcFunction & F, const Handle_Adaptor3d_TopolTool &Domain, const Standard_Real TolBoundary, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean AllArcSolution() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntPatch_ThePathPointOfTheSOnBounds & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntPatch_TheSegmentOfTheSOnBounds & Segment(const Standard_Integer Index) const;
+
+};
+%feature("shadow") IntPatch_TheSOnBounds::~IntPatch_TheSOnBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_TheSOnBounds {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1735,6 +1875,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPatch_TheSearchInside;
+class IntPatch_TheSearchInside {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_TheSearchInside();
+		%feature("autodoc", "1");
+		IntPatch_TheSearchInside(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
+		%feature("autodoc", "1");
+		void Perform(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
+		%feature("autodoc", "1");
+		void Perform(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real UStart, const Standard_Real VStart);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntSurf_InteriorPoint & Value(const Standard_Integer Index) const;
+
+};
+%feature("shadow") IntPatch_TheSearchInside::~IntPatch_TheSearchInside %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_TheSearchInside {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPatch_PolyhedronTool;
 class IntPatch_PolyhedronTool {
 	public:
@@ -1774,28 +1949,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_TheSOnBounds;
-class IntPatch_TheSOnBounds {
+%nodefaultctor IntPatch_LineConstructor;
+class IntPatch_LineConstructor {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_TheSOnBounds();
+		IntPatch_LineConstructor(const Standard_Integer mode);
 		%feature("autodoc", "1");
-		void Perform(IntPatch_ArcFunction & F, const Handle_Adaptor3d_TopolTool &Domain, const Standard_Real TolBoundary, const Standard_Real TolTangency);
+		void Perform(const IntPatch_SequenceOfLine &SL, const Handle_IntPatch_Line &L, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_TopolTool &D1, const Handle_Adaptor3d_HSurface &S2, const Handle_Adaptor3d_TopolTool &D2, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		Standard_Integer NbLines() const;
 		%feature("autodoc", "1");
-		Standard_Boolean AllArcSolution() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntPatch_ThePathPointOfTheSOnBounds & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntPatch_TheSegmentOfTheSOnBounds & Segment(const Standard_Integer Index) const;
+		Handle_IntPatch_Line Line(const Standard_Integer index) const;
 
 };
-%feature("shadow") IntPatch_TheSOnBounds::~IntPatch_TheSOnBounds %{
+%feature("shadow") IntPatch_LineConstructor::~IntPatch_LineConstructor %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1804,42 +1971,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_TheSOnBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_TheSearchInside;
-class IntPatch_TheSearchInside {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_TheSearchInside();
-		%feature("autodoc", "1");
-		IntPatch_TheSearchInside(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
-		%feature("autodoc", "1");
-		void Perform(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Handle_Adaptor3d_TopolTool &T, const Standard_Real Epsilon);
-		%feature("autodoc", "1");
-		void Perform(IntPatch_TheSurfFunction & F, const Handle_Adaptor3d_HSurface &Surf, const Standard_Real UStart, const Standard_Real VStart);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntSurf_InteriorPoint & Value(const Standard_Integer Index) const;
-
-};
-%feature("shadow") IntPatch_TheSearchInside::~IntPatch_TheSearchInside %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_TheSearchInside {
+%extend IntPatch_LineConstructor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1918,7 +2050,7 @@ class IntPatch_TheIWLineOfTheIWalking : public MMgt_TShared {
 };
 %extend IntPatch_TheIWLineOfTheIWalking {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_TheIWLineOfTheIWalking::~IntPatch_TheIWLineOfTheIWalking %{
@@ -2002,56 +2134,44 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_SequenceOfLine;
-class IntPatch_SequenceOfLine : public TCollection_BaseSequence {
+%nodefaultctor IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter;
+class IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_SequenceOfLine();
+		IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter();
 		%feature("autodoc", "1");
-		void Clear();
+		IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
 		%feature("autodoc", "1");
-		const IntPatch_SequenceOfLine & Assign(const IntPatch_SequenceOfLine &Other);
+		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
-		const IntPatch_SequenceOfLine & operator=(const IntPatch_SequenceOfLine &Other);
+		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_IntPatch_Line &T);
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
 		%feature("autodoc", "1");
-		void Append(IntPatch_SequenceOfLine & S);
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_IntPatch_Line &T);
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		void Prepend(IntPatch_SequenceOfLine & S);
+		void ComputeParameters(const IntImp_ConstIsoparametric ChoixIso, const TColStd_Array1OfReal &Param, math_Vector & UVap, math_Vector & BornInf, math_Vector & BornSup, math_Vector & Tolerance);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_IntPatch_Line &I);
+		Standard_Real Root() const;
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		gp_Pnt Point() const;
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_IntPatch_Line &T);
+		Standard_Boolean IsTangent(const math_Vector &UVap, TColStd_Array1OfReal & Param, IntImp_ConstIsoparametric & BestChoix);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		gp_Dir Direction() const;
 		%feature("autodoc", "1");
-		const Handle_IntPatch_Line & First() const;
+		gp_Dir2d DirectionOnS1() const;
 		%feature("autodoc", "1");
-		const Handle_IntPatch_Line & Last() const;
+		gp_Dir2d DirectionOnS2() const;
 		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		const Handle_Adaptor3d_HSurface & AuxillarSurface1() const;
 		%feature("autodoc", "1");
-		const Handle_IntPatch_Line & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IntPatch_Line & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IntPatch_Line &I);
-		%feature("autodoc", "1");
-		Handle_IntPatch_Line & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IntPatch_Line & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		const Handle_Adaptor3d_HSurface & AuxillarSurface2() const;
 
 };
-%feature("shadow") IntPatch_SequenceOfLine::~IntPatch_SequenceOfLine %{
+%feature("shadow") IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter::~IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2060,103 +2180,48 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_SequenceOfLine {
+%extend IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IntPatch_WLine;
-class IntPatch_WLine : public IntPatch_Line {
+%nodefaultctor IntPatch_ArcFunction;
+class IntPatch_ArcFunction : public math_FunctionWithDerivative {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang, const IntSurf_TypeTrans Trans1, const IntSurf_TypeTrans Trans2);
+		IntPatch_ArcFunction();
 		%feature("autodoc", "1");
-		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang, const IntSurf_Situation Situ1, const IntSurf_Situation Situ2);
+		void SetQuadric(const IntSurf_Quadric &Q);
 		%feature("autodoc", "1");
-		IntPatch_WLine(const Handle_IntSurf_LineOn2S &Line, const Standard_Boolean Tang);
+		void Set(const Handle_Adaptor2d_HCurve2d &A);
 		%feature("autodoc", "1");
-		void AddVertex(const IntPatch_Point &Pnt);
-		%feature("autodoc", "1");
-		void SetPoint(const Standard_Integer Index, const IntPatch_Point &Pnt);
-		%feature("autodoc", "1");
-		void Replace(const Standard_Integer Index, const IntPatch_Point &Pnt);
-		%feature("autodoc", "1");
-		void SetFirstPoint(const Standard_Integer IndFirst);
-		%feature("autodoc", "1");
-		void SetLastPoint(const Standard_Integer IndLast);
-		%feature("autodoc", "1");
-		Standard_Integer NbPnts() const;
-		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLastPoint() const;
-		%feature("autodoc", "1");
-		const IntPatch_Point & FirstPoint() const;
-		%feature("autodoc", "1");
-		const IntPatch_Point & LastPoint() const;
-		%feature("autodoc","FirstPoint() -> Standard_Integer");
+		void Set(const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
 
-		const IntPatch_Point & FirstPoint(Standard_Integer &OutValue) const;
-		%feature("autodoc","LastPoint() -> Standard_Integer");
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
 
-		const IntPatch_Point & LastPoint(Standard_Integer &OutValue) const;
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Integer NbVertex() const;
+		Standard_Integer NbSamples() const;
 		%feature("autodoc", "1");
-		const IntPatch_Point & Vertex(const Standard_Integer Index) const;
+		virtual		Standard_Integer GetStateNumber();
 		%feature("autodoc", "1");
-		void ComputeVertexParameters(const Standard_Real Tol);
+		const gp_Pnt  Valpoint(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_IntSurf_LineOn2S Curve() const;
+		const IntSurf_Quadric & Quadric() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOutSurf1Box(const gp_Pnt2d P1);
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOutSurf2Box(const gp_Pnt2d P1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOutBox(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void SetPeriod(const Standard_Real pu1, const Standard_Real pv1, const Standard_Real pu2, const Standard_Real pv2);
-		%feature("autodoc", "1");
-		Standard_Real U1Period() const;
-		%feature("autodoc", "1");
-		Standard_Real V1Period() const;
-		%feature("autodoc", "1");
-		Standard_Real U2Period() const;
-		%feature("autodoc", "1");
-		Standard_Real V2Period() const;
-		%feature("autodoc", "1");
-		void SetArcOnS1(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
-		Standard_Boolean HasArcOnS1() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & GetArcOnS1() const;
-		%feature("autodoc", "1");
-		void SetArcOnS2(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
-		Standard_Boolean HasArcOnS2() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & GetArcOnS2() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Handle_Adaptor3d_HSurface & Surface() const;
 
 };
-%extend IntPatch_WLine {
-	Handle_IntPatch_WLine GetHandle() {
-	return *(Handle_IntPatch_WLine*) &$self;
-	}
-};
-%extend IntPatch_WLine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IntPatch_WLine::~IntPatch_WLine %{
+%feature("shadow") IntPatch_ArcFunction::~IntPatch_ArcFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2165,7 +2230,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_WLine {
+%extend IntPatch_ArcFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2217,121 +2282,6 @@ def __del__(self):
 %}
 
 %extend IntPatch_ALineToWLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_SequenceOfIWLineOfTheIWalking;
-class IntPatch_SequenceOfIWLineOfTheIWalking : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SequenceOfIWLineOfTheIWalking();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IntPatch_SequenceOfIWLineOfTheIWalking & Assign(const IntPatch_SequenceOfIWLineOfTheIWalking &Other);
-		%feature("autodoc", "1");
-		const IntPatch_SequenceOfIWLineOfTheIWalking & operator=(const IntPatch_SequenceOfIWLineOfTheIWalking &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_IntPatch_TheIWLineOfTheIWalking &T);
-		%feature("autodoc", "1");
-		void Append(IntPatch_SequenceOfIWLineOfTheIWalking & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_IntPatch_TheIWLineOfTheIWalking &T);
-		%feature("autodoc", "1");
-		void Prepend(IntPatch_SequenceOfIWLineOfTheIWalking & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
-		%feature("autodoc", "1");
-		const Handle_IntPatch_TheIWLineOfTheIWalking & First() const;
-		%feature("autodoc", "1");
-		const Handle_IntPatch_TheIWLineOfTheIWalking & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IntPatch_SequenceOfIWLineOfTheIWalking & S);
-		%feature("autodoc", "1");
-		const Handle_IntPatch_TheIWLineOfTheIWalking & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IntPatch_TheIWLineOfTheIWalking & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IntPatch_TheIWLineOfTheIWalking &I);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") IntPatch_SequenceOfIWLineOfTheIWalking::~IntPatch_SequenceOfIWLineOfTheIWalking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SequenceOfIWLineOfTheIWalking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_ArcFunction;
-class IntPatch_ArcFunction : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_ArcFunction();
-		%feature("autodoc", "1");
-		void SetQuadric(const IntSurf_Quadric &Q);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		const gp_Pnt  Valpoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & Quadric() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & Surface() const;
-
-};
-%feature("shadow") IntPatch_ArcFunction::~IntPatch_ArcFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_ArcFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2479,7 +2429,7 @@ class IntPatch_GLine : public IntPatch_Line {
 };
 %extend IntPatch_GLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_GLine::~IntPatch_GLine %{
@@ -2498,44 +2448,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter;
-class IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter : public math_FunctionSetWithDerivatives {
+%nodefaultctor IntPatch_TheInterfPolyhedron;
+class IntPatch_TheInterfPolyhedron : public Intf_Interference {
 	public:
 		%feature("autodoc", "1");
-		IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter();
+		IntPatch_TheInterfPolyhedron();
 		%feature("autodoc", "1");
-		IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter(const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2);
+		IntPatch_TheInterfPolyhedron(const IntPatch_Polyhedron &Obje1, const IntPatch_Polyhedron &Obje2);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
+		IntPatch_TheInterfPolyhedron(const IntPatch_Polyhedron &Obje);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
+		void Perform(const IntPatch_Polyhedron &Obje1, const IntPatch_Polyhedron &Obje2);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		void ComputeParameters(const IntImp_ConstIsoparametric ChoixIso, const TColStd_Array1OfReal &Param, math_Vector & UVap, math_Vector & BornInf, math_Vector & BornSup, math_Vector & Tolerance);
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent(const math_Vector &UVap, TColStd_Array1OfReal & Param, IntImp_ConstIsoparametric & BestChoix);
-		%feature("autodoc", "1");
-		gp_Dir Direction() const;
-		%feature("autodoc", "1");
-		gp_Dir2d DirectionOnS1() const;
-		%feature("autodoc", "1");
-		gp_Dir2d DirectionOnS2() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & AuxillarSurface1() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & AuxillarSurface2() const;
+		void Perform(const IntPatch_Polyhedron &Obje);
 
 };
-%feature("shadow") IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter::~IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter %{
+%feature("shadow") IntPatch_TheInterfPolyhedron::~IntPatch_TheInterfPolyhedron %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2544,7 +2472,109 @@ def __del__(self):
 		pass
 %}
 
-%extend IntPatch_TheFunctionOfTheInt2SOfThePWalkingInter {
+%extend IntPatch_TheInterfPolyhedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds;
+class IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds(const IntPatch_ThePathPointOfTheSOnBounds &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntPatch_ThePathPointOfTheSOnBounds & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
+	Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds GetHandle() {
+	return *(Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds*) &$self;
+	}
+};
+%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPatch_SequenceOfLine;
+class IntPatch_SequenceOfLine : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_SequenceOfLine();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IntPatch_SequenceOfLine & Assign(const IntPatch_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		const IntPatch_SequenceOfLine & operator=(const IntPatch_SequenceOfLine &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_IntPatch_Line &T);
+		%feature("autodoc", "1");
+		void Append(IntPatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_IntPatch_Line &T);
+		%feature("autodoc", "1");
+		void Prepend(IntPatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_IntPatch_Line &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_IntPatch_Line &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Handle_IntPatch_Line & First() const;
+		%feature("autodoc", "1");
+		const Handle_IntPatch_Line & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IntPatch_SequenceOfLine & S);
+		%feature("autodoc", "1");
+		const Handle_IntPatch_Line & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IntPatch_Line & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IntPatch_Line &I);
+		%feature("autodoc", "1");
+		Handle_IntPatch_Line & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IntPatch_Line & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IntPatch_SequenceOfLine::~IntPatch_SequenceOfLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_SequenceOfLine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2609,7 +2639,7 @@ class IntPatch_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend IntPatch_SequenceNodeOfSequenceOfPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfPoint::~IntPatch_SequenceNodeOfSequenceOfPoint %{
@@ -2622,107 +2652,6 @@ def __del__(self):
 %}
 
 %extend IntPatch_SequenceNodeOfSequenceOfPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_TheInterfPolyhedron;
-class IntPatch_TheInterfPolyhedron : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_TheInterfPolyhedron();
-		%feature("autodoc", "1");
-		IntPatch_TheInterfPolyhedron(const IntPatch_Polyhedron &Obje1, const IntPatch_Polyhedron &Obje2);
-		%feature("autodoc", "1");
-		IntPatch_TheInterfPolyhedron(const IntPatch_Polyhedron &Obje);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polyhedron &Obje1, const IntPatch_Polyhedron &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polyhedron &Obje);
-
-};
-%feature("shadow") IntPatch_TheInterfPolyhedron::~IntPatch_TheInterfPolyhedron %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_TheInterfPolyhedron {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_TheSegmentOfTheSOnBounds;
-class IntPatch_TheSegmentOfTheSOnBounds {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_TheSegmentOfTheSOnBounds();
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
-		void SetLimitPoint(const IntPatch_ThePathPointOfTheSOnBounds &V, const Standard_Boolean First);
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint() const;
-		%feature("autodoc", "1");
-		const IntPatch_ThePathPointOfTheSOnBounds & FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLastPoint() const;
-		%feature("autodoc", "1");
-		const IntPatch_ThePathPointOfTheSOnBounds & LastPoint() const;
-
-};
-%feature("shadow") IntPatch_TheSegmentOfTheSOnBounds::~IntPatch_TheSegmentOfTheSOnBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_TheSegmentOfTheSOnBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_SearchPnt;
-class IntPatch_SearchPnt : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt();
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt(const IntPatch_Polygo &Obje1, const IntPatch_Polygo &Obje2);
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt(const IntPatch_Polygo &Obje);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polygo &Obje1, const IntPatch_Polygo &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polygo &Obje);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
-
-};
-%feature("shadow") IntPatch_SearchPnt::~IntPatch_SearchPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SearchPnt {
 	void _kill_pointed() {
 		delete $self;
 	}

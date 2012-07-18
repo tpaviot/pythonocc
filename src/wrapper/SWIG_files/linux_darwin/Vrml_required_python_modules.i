@@ -27,10 +27,10 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
+import TCollection
 import Standard
 import TColStd
 import TColgp
 import Quantity
 import gp
-import TCollection
 };

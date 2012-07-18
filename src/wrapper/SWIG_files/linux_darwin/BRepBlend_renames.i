@@ -25,10 +25,10 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_BRepBlend_AppFuncRoot::DownCast;
 %rename(DownCast) Handle_BRepBlend_AppFuncRstRst::DownCast;
-%rename(DownCast) Handle_BRepBlend_SequenceNodeOfSequenceOfLine::DownCast;
 %rename(DownCast) Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst::DownCast;
 %rename(DownCast) Handle_BRepBlend_Line::DownCast;
 %rename(DownCast) Handle_BRepBlend_AppFunc::DownCast;
+%rename(DownCast) Handle_BRepBlend_SequenceNodeOfSequenceOfLine::DownCast;
 %rename(DownCast) Handle_BRepBlend_AppFuncRst::DownCast;
 %rename(FirstParameter) BRepBlend_HCurve2dTool::FirstParameter;
 %rename(LastParameter) BRepBlend_HCurve2dTool::LastParameter;

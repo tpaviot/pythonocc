@@ -52,42 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor LProp3d_SurfaceTool;
-class LProp3d_SurfaceTool {
-	public:
-		%feature("autodoc", "1");
-		LProp3d_SurfaceTool();
-		%feature("autodoc", "1");
-		static		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
-		%feature("autodoc", "1");
-		static		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
-		%feature("autodoc", "1");
-		static		Standard_Integer Continuity(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") LProp3d_SurfaceTool::~LProp3d_SurfaceTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LProp3d_SurfaceTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor LProp3d_CurveTool;
 class LProp3d_CurveTool {
 	public:
@@ -119,6 +83,42 @@ def __del__(self):
 %}
 
 %extend LProp3d_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor LProp3d_SurfaceTool;
+class LProp3d_SurfaceTool {
+	public:
+		%feature("autodoc", "1");
+		LProp3d_SurfaceTool();
+		%feature("autodoc", "1");
+		static		void Value(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P);
+		%feature("autodoc", "1");
+		static		void D1(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V);
+		%feature("autodoc", "1");
+		static		void D2(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & D1U, gp_Vec & D1V, gp_Vec & D2U, gp_Vec & D2V, gp_Vec & DUV);
+		%feature("autodoc", "1");
+		static		gp_Vec DN(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, const Standard_Integer IU, const Standard_Integer IV);
+		%feature("autodoc", "1");
+		static		Standard_Integer Continuity(const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc","Bounds(const S) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		void Bounds(const Handle_Adaptor3d_HSurface &S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") LProp3d_SurfaceTool::~LProp3d_SurfaceTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend LProp3d_SurfaceTool {
 	void _kill_pointed() {
 		delete $self;
 	}

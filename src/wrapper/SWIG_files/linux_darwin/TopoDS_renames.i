@@ -29,11 +29,11 @@ $HeaderURL$
 %rename(DownCast) Handle_TopoDS_ListNodeOfListOfShape::DownCast;
 %rename(DownCast) Handle_TopoDS_TFace::DownCast;
 %rename(DownCast) Handle_TopoDS_TCompSolid::DownCast;
+%rename(DownCast) Handle_TopoDS_UnCompatibleShapes::DownCast;
 %rename(DownCast) Handle_TopoDS_TCompound::DownCast;
 %rename(DownCast) Handle_TopoDS_HShape::DownCast;
-%rename(DownCast) Handle_TopoDS_UnCompatibleShapes::DownCast;
-%rename(DownCast) Handle_TopoDS_TEdge::DownCast;
 %rename(DownCast) Handle_TopoDS_TShell::DownCast;
+%rename(DownCast) Handle_TopoDS_TEdge::DownCast;
 %rename(DownCast) Handle_TopoDS_TSolid::DownCast;
 %rename(DownCast) Handle_TopoDS_TWire::DownCast;
 %rename(vertex) TopoDS::Vertex;

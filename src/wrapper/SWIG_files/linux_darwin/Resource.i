@@ -238,6 +238,10 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 		TCollection_AsciiString & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TCollection_AsciiString & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Resource_DataMapOfAsciiStringAsciiString::~Resource_DataMapOfAsciiStringAsciiString %{
@@ -287,45 +291,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
-class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const TCollection_AsciiString &K, const TCollection_AsciiString &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
-	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
-	}
-};
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollection_MapNode {
 	public:
@@ -346,7 +311,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString %{
@@ -359,6 +324,45 @@ def __del__(self):
 %}
 
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
+class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString(const TCollection_AsciiString &K, const TCollection_AsciiString &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString GetHandle() {
+	return *(Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString*) &$self;
+	}
+};
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -403,7 +407,7 @@ class Resource_Manager : public MMgt_TShared {
 };
 %extend Resource_Manager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Resource_Manager::~Resource_Manager %{
@@ -441,6 +445,55 @@ def __del__(self):
 %}
 
 %extend Resource_QuickSortOfArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Resource_Unicode;
+class Resource_Unicode {
+	public:
+		%feature("autodoc", "1");
+		Resource_Unicode();
+		%feature("autodoc", "1");
+		static		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		static		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		static		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		static		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+		%feature("autodoc", "1");
+		static		void SetFormat(const Resource_FormatType typecode);
+		%feature("autodoc", "1");
+		static		Resource_FormatType GetFormat();
+		%feature("autodoc", "1");
+		static		void ReadFormat();
+		%feature("autodoc", "1");
+		static		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
+		%feature("autodoc", "1");
+		static		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
+
+};
+%feature("shadow") Resource_Unicode::~Resource_Unicode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Resource_Unicode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -496,7 +549,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %extend Resource_NoSuchResource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Resource_NoSuchResource::~Resource_NoSuchResource %{
@@ -542,6 +595,10 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 		TCollection_ExtendedString & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Resource_DataMapOfAsciiStringExtendedString::~Resource_DataMapOfAsciiStringExtendedString %{
@@ -554,55 +611,6 @@ def __del__(self):
 %}
 
 %extend Resource_DataMapOfAsciiStringExtendedString {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Resource_Unicode;
-class Resource_Unicode {
-	public:
-		%feature("autodoc", "1");
-		Resource_Unicode();
-		%feature("autodoc", "1");
-		static		void ConvertSJISToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		static		void ConvertEUCToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		static		void ConvertGBToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		static		void ConvertANSIToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertUnicodeToSJIS(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertUnicodeToEUC(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertUnicodeToGB(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertUnicodeToANSI(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-		%feature("autodoc", "1");
-		static		void SetFormat(const Resource_FormatType typecode);
-		%feature("autodoc", "1");
-		static		Resource_FormatType GetFormat();
-		%feature("autodoc", "1");
-		static		void ReadFormat();
-		%feature("autodoc", "1");
-		static		void ConvertFormatToUnicode(const char * fromstr, TCollection_ExtendedString & tostr);
-		%feature("autodoc", "1");
-		static		Standard_Boolean ConvertUnicodeToFormat(const TCollection_ExtendedString &fromstr, Standard_PCharacter & tostr, const Standard_Integer maxsize);
-
-};
-%feature("shadow") Resource_Unicode::~Resource_Unicode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Resource_Unicode {
 	void _kill_pointed() {
 		delete $self;
 	}

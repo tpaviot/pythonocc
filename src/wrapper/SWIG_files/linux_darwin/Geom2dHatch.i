@@ -190,6 +190,10 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") Geom2dHatch_MapOfElementsOfElementsOfHatcher::~Geom2dHatch_MapOfElementsOfElementsOfHatcher %{
@@ -202,401 +206,6 @@ def __del__(self):
 %}
 
 %extend Geom2dHatch_MapOfElementsOfElementsOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
-class Geom2dHatch_FClass2dOfClassifierOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_FClass2dOfClassifierOfHatcher();
-		%feature("autodoc", "1");
-		void Reset(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Compare(const Geom2dAdaptor_Curve &E, const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		Geom2dHatch_Intersector & Intersector();
-		%feature("autodoc", "1");
-		Standard_Integer ClosestIntersection() const;
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHeadOrEnd() const;
-
-};
-%feature("shadow") Geom2dHatch_FClass2dOfClassifierOfHatcher::~Geom2dHatch_FClass2dOfClassifierOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
-class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
-	Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher GetHandle() {
-	return *(Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*) &$self;
-	}
-};
-%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_Intersector;
-class Geom2dHatch_Intersector : public Geom2dInt_GInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_Intersector(const Standard_Real Confusion, const Standard_Real Tangency);
-		%feature("autodoc", "1");
-		Standard_Real ConfusionTolerance() const;
-		%feature("autodoc", "1");
-		void SetConfusionTolerance(const Standard_Real Confusion);
-		%feature("autodoc", "1");
-		Standard_Real TangencyTolerance() const;
-		%feature("autodoc", "1");
-		void SetTangencyTolerance(const Standard_Real Tangency);
-		%feature("autodoc", "1");
-		void Intersect(const Geom2dAdaptor_Curve &C1, const Geom2dAdaptor_Curve &C2);
-		%feature("autodoc", "1");
-		Geom2dHatch_Intersector();
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol, const Geom2dAdaptor_Curve &E);
-		%feature("autodoc","LocalGeometry(const E, Standard_Real U) -> Standard_Real");
-
-		void LocalGeometry(const Geom2dAdaptor_Curve &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Geom2dHatch_Intersector::~Geom2dHatch_Intersector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_Intersector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_HatchingsOfHatcher;
-class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingsOfHatcher(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingsOfHatcher & Assign(const Geom2dHatch_HatchingsOfHatcher &Other);
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingsOfHatcher & operator=(const Geom2dHatch_HatchingsOfHatcher &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Geom2dHatch_HatchingOfHatcher & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K);
-
-};
-%feature("shadow") Geom2dHatch_HatchingsOfHatcher::~Geom2dHatch_HatchingsOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_HatchingsOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_HatchingOfHatcher;
-class Geom2dHatch_HatchingOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher();
-		%feature("autodoc", "1");
-		Geom2dHatch_HatchingOfHatcher(const Geom2dAdaptor_Curve &Curve);
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & Curve() const;
-		%feature("autodoc", "1");
-		Geom2dAdaptor_Curve & ChangeCurve();
-		%feature("autodoc", "1");
-		void TrimDone(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean TrimDone() const;
-		%feature("autodoc", "1");
-		void TrimFailed(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean TrimFailed() const;
-		%feature("autodoc", "1");
-		void IsDone(const Standard_Boolean Flag);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		void Status(const HatchGen_ErrorStatus Status);
-		%feature("autodoc", "1");
-		HatchGen_ErrorStatus Status() const;
-		%feature("autodoc", "1");
-		void AddPoint(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const HatchGen_PointOnHatching & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		HatchGen_PointOnHatching & ChangePoint(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void RemPoint(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ClrPoints();
-		%feature("autodoc", "1");
-		void AddDomain(const HatchGen_Domain &Domain);
-		%feature("autodoc", "1");
-		Standard_Integer NbDomains() const;
-		%feature("autodoc", "1");
-		const HatchGen_Domain & Domain(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void RemDomain(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void ClrDomains();
-		%feature("autodoc", "1");
-		gp_Pnt2d ClassificationPoint() const;
-
-};
-%feature("shadow") Geom2dHatch_HatchingOfHatcher::~Geom2dHatch_HatchingOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_HatchingOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
-class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
-	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
-	}
-};
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_ElementsOfHatcher;
-class Geom2dHatch_ElementsOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementsOfHatcher();
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementsOfHatcher(const Geom2dHatch_ElementsOfHatcher &Other);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Geom2dHatch_ElementOfHatcher & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Boolean Reject(const gp_Pnt2d P) const;
-		%feature("autodoc","Segment(const P) -> Standard_Real");
-
-		Standard_Boolean Segment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
-		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
-
-		Standard_Boolean OtherSegment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void InitWires();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreWires() const;
-		%feature("autodoc", "1");
-		void NextWire();
-		%feature("autodoc", "1");
-		Standard_Boolean RejectWire(const gp_Lin2d L, const Standard_Real Par) const;
-		%feature("autodoc", "1");
-		void InitEdges();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreEdges() const;
-		%feature("autodoc", "1");
-		void NextEdge();
-		%feature("autodoc", "1");
-		Standard_Boolean RejectEdge(const gp_Lin2d L, const Standard_Real Par) const;
-		%feature("autodoc", "1");
-		void CurrentEdge(Geom2dAdaptor_Curve & E, TopAbs_Orientation & Or) const;
-
-};
-%feature("shadow") Geom2dHatch_ElementsOfHatcher::~Geom2dHatch_ElementsOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_ElementsOfHatcher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dHatch_ClassifierOfHatcher;
-class Geom2dHatch_ClassifierOfHatcher {
-	public:
-		%feature("autodoc", "1");
-		Geom2dHatch_ClassifierOfHatcher();
-		%feature("autodoc", "1");
-		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		TopAbs_State State() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Rejected() const;
-		%feature("autodoc", "1");
-		Standard_Boolean NoWires() const;
-		%feature("autodoc", "1");
-		const Geom2dAdaptor_Curve & Edge() const;
-		%feature("autodoc", "1");
-		Standard_Real EdgeParameter() const;
-		%feature("autodoc", "1");
-		IntRes2d_Position Position() const;
-
-};
-%feature("shadow") Geom2dHatch_ClassifierOfHatcher::~Geom2dHatch_ClassifierOfHatcher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dHatch_ClassifierOfHatcher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -692,6 +301,336 @@ def __del__(self):
 };
 
 
+%nodefaultctor Geom2dHatch_ClassifierOfHatcher;
+class Geom2dHatch_ClassifierOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_ClassifierOfHatcher();
+		%feature("autodoc", "1");
+		Geom2dHatch_ClassifierOfHatcher(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(Geom2dHatch_ElementsOfHatcher & F, const gp_Pnt2d P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Rejected() const;
+		%feature("autodoc", "1");
+		Standard_Boolean NoWires() const;
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & Edge() const;
+		%feature("autodoc", "1");
+		Standard_Real EdgeParameter() const;
+		%feature("autodoc", "1");
+		IntRes2d_Position Position() const;
+
+};
+%feature("shadow") Geom2dHatch_ClassifierOfHatcher::~Geom2dHatch_ClassifierOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_ClassifierOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_Intersector;
+class Geom2dHatch_Intersector : public Geom2dInt_GInter {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_Intersector(const Standard_Real Confusion, const Standard_Real Tangency);
+		%feature("autodoc", "1");
+		Standard_Real ConfusionTolerance() const;
+		%feature("autodoc", "1");
+		void SetConfusionTolerance(const Standard_Real Confusion);
+		%feature("autodoc", "1");
+		Standard_Real TangencyTolerance() const;
+		%feature("autodoc", "1");
+		void SetTangencyTolerance(const Standard_Real Tangency);
+		%feature("autodoc", "1");
+		void Intersect(const Geom2dAdaptor_Curve &C1, const Geom2dAdaptor_Curve &C2);
+		%feature("autodoc", "1");
+		Geom2dHatch_Intersector();
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol, const Geom2dAdaptor_Curve &E);
+		%feature("autodoc","LocalGeometry(const E, Standard_Real U) -> Standard_Real");
+
+		void LocalGeometry(const Geom2dAdaptor_Curve &E, const Standard_Real U, gp_Dir2d & T, gp_Dir2d & N, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Geom2dHatch_Intersector::~Geom2dHatch_Intersector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_Intersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_HatchingsOfHatcher;
+class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingsOfHatcher(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingsOfHatcher & Assign(const Geom2dHatch_HatchingsOfHatcher &Other);
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingsOfHatcher & operator=(const Geom2dHatch_HatchingsOfHatcher &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Geom2dHatch_HatchingOfHatcher & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") Geom2dHatch_HatchingsOfHatcher::~Geom2dHatch_HatchingsOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_HatchingsOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
+class Geom2dHatch_FClass2dOfClassifierOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_FClass2dOfClassifierOfHatcher();
+		%feature("autodoc", "1");
+		void Reset(const gp_Lin2d L, const Standard_Real P, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Compare(const Geom2dAdaptor_Curve &E, const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		Geom2dHatch_Intersector & Intersector();
+		%feature("autodoc", "1");
+		Standard_Integer ClosestIntersection() const;
+		%feature("autodoc", "1");
+		TopAbs_State State() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHeadOrEnd() const;
+
+};
+%feature("shadow") Geom2dHatch_FClass2dOfClassifierOfHatcher::~Geom2dHatch_FClass2dOfClassifierOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
+class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_DataMapNodeOfHatchingsOfHatcher(const Standard_Integer &K, const Geom2dHatch_HatchingOfHatcher &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher GetHandle() {
+	return *(Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
+class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher GetHandle() {
+	return *(Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher*) &$self;
+	}
+};
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_ElementsOfHatcher;
+class Geom2dHatch_ElementsOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementsOfHatcher();
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementsOfHatcher(const Geom2dHatch_ElementsOfHatcher &Other);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Geom2dHatch_ElementOfHatcher &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Geom2dHatch_ElementOfHatcher & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Boolean Reject(const gp_Pnt2d P) const;
+		%feature("autodoc","Segment(const P) -> Standard_Real");
+
+		Standard_Boolean Segment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
+		%feature("autodoc","OtherSegment(const P) -> Standard_Real");
+
+		Standard_Boolean OtherSegment(const gp_Pnt2d P, gp_Lin2d & L, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void InitWires();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreWires() const;
+		%feature("autodoc", "1");
+		void NextWire();
+		%feature("autodoc", "1");
+		Standard_Boolean RejectWire(const gp_Lin2d L, const Standard_Real Par) const;
+		%feature("autodoc", "1");
+		void InitEdges();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreEdges() const;
+		%feature("autodoc", "1");
+		void NextEdge();
+		%feature("autodoc", "1");
+		Standard_Boolean RejectEdge(const gp_Lin2d L, const Standard_Real Par) const;
+		%feature("autodoc", "1");
+		void CurrentEdge(Geom2dAdaptor_Curve & E, TopAbs_Orientation & Or) const;
+
+};
+%feature("shadow") Geom2dHatch_ElementsOfHatcher::~Geom2dHatch_ElementsOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_ElementsOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_BasicMapIterator {
 	public:
@@ -717,6 +656,75 @@ def __del__(self):
 %}
 
 %extend Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dHatch_HatchingOfHatcher;
+class Geom2dHatch_HatchingOfHatcher {
+	public:
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher();
+		%feature("autodoc", "1");
+		Geom2dHatch_HatchingOfHatcher(const Geom2dAdaptor_Curve &Curve);
+		%feature("autodoc", "1");
+		const Geom2dAdaptor_Curve & Curve() const;
+		%feature("autodoc", "1");
+		Geom2dAdaptor_Curve & ChangeCurve();
+		%feature("autodoc", "1");
+		void TrimDone(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean TrimDone() const;
+		%feature("autodoc", "1");
+		void TrimFailed(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean TrimFailed() const;
+		%feature("autodoc", "1");
+		void IsDone(const Standard_Boolean Flag);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		void Status(const HatchGen_ErrorStatus Status);
+		%feature("autodoc", "1");
+		HatchGen_ErrorStatus Status() const;
+		%feature("autodoc", "1");
+		void AddPoint(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const HatchGen_PointOnHatching & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		HatchGen_PointOnHatching & ChangePoint(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void RemPoint(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ClrPoints();
+		%feature("autodoc", "1");
+		void AddDomain(const HatchGen_Domain &Domain);
+		%feature("autodoc", "1");
+		Standard_Integer NbDomains() const;
+		%feature("autodoc", "1");
+		const HatchGen_Domain & Domain(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void RemDomain(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void ClrDomains();
+		%feature("autodoc", "1");
+		gp_Pnt2d ClassificationPoint() const;
+
+};
+%feature("shadow") Geom2dHatch_HatchingOfHatcher::~Geom2dHatch_HatchingOfHatcher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dHatch_HatchingOfHatcher {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -105,6 +105,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -143,13 +144,13 @@ $HeaderURL$
 #include<TCollection_AsciiString.hxx>
 #include<OSD_File.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
-#include<TShort_Array1OfShortReal.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
 #include<Handle_Aspect_WidthMap.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Handle_Aspect_FontMap.hxx>
+#include<TShort_Array1OfShortReal.hxx>
+#include<TCollection_ExtendedString.hxx>
 #include<Handle_MFT_FontManager.hxx>
 #include<PlotMgt.hxx>
 %}

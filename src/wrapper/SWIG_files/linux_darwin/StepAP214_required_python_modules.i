@@ -31,6 +31,6 @@ import Standard
 import StepBasic
 import StepGeom
 import StepRepr
-import StepVisual
 import StepShape
+import StepVisual
 };

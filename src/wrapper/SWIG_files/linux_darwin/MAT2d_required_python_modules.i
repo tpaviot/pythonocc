@@ -27,11 +27,11 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TColStd
 import Standard
+import gp
+import TColStd
 import Bisector
 import Geom2d
 import TColGeom2d
-import gp
 import MAT
 };

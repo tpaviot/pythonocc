@@ -152,7 +152,7 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 };
 %extend Hatch_SequenceNodeOfSequenceOfParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Hatch_SequenceNodeOfSequenceOfParameter::~Hatch_SequenceNodeOfSequenceOfParameter %{
@@ -330,6 +330,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
+class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Hatch_SequenceNodeOfSequenceOfLine(const Hatch_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Hatch_Line & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Hatch_SequenceNodeOfSequenceOfLine {
+	Handle_Hatch_SequenceNodeOfSequenceOfLine GetHandle() {
+	return *(Handle_Hatch_SequenceNodeOfSequenceOfLine*) &$self;
+	}
+};
+%extend Hatch_SequenceNodeOfSequenceOfLine {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Hatch_SequenceNodeOfSequenceOfLine::~Hatch_SequenceNodeOfSequenceOfLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Hatch_SequenceNodeOfSequenceOfLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Hatch_SequenceOfLine;
 class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 	public:
@@ -414,43 +451,6 @@ def __del__(self):
 %}
 
 %extend Hatch_Parameter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
-class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Hatch_SequenceNodeOfSequenceOfLine(const Hatch_Line &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Hatch_Line & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Hatch_SequenceNodeOfSequenceOfLine {
-	Handle_Hatch_SequenceNodeOfSequenceOfLine GetHandle() {
-	return *(Handle_Hatch_SequenceNodeOfSequenceOfLine*) &$self;
-	}
-};
-%extend Hatch_SequenceNodeOfSequenceOfLine {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Hatch_SequenceNodeOfSequenceOfLine::~Hatch_SequenceNodeOfSequenceOfLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Hatch_SequenceNodeOfSequenceOfLine {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -55,6 +55,7 @@ $HeaderURL$
 #include<PCDM_SequenceOfDocument.hxx>
 #include<PCDM_SequenceOfReference.hxx>
 #include<PCDM_StorageDriver.hxx>
+#include<PCDM_StoreStatus.hxx>
 #include<PCDM_TypeOfFileDriver.hxx>
 #include<PCDM_Writer.hxx>
 
@@ -68,14 +69,14 @@ $HeaderURL$
 #include<Handle_Standard_Persistent.hxx>
 #include<Handle_CDM_Document.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<Handle_CDM_Application.hxx>
-#include<Handle_Storage_Schema.hxx>
-#include<TColStd_SequenceOfExtendedString.hxx>
-#include<Handle_CDM_MessageDriver.hxx>
-#include<Handle_CDM_MetaData.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Storage_Data.hxx>
+#include<Handle_CDM_MessageDriver.hxx>
+#include<TColStd_SequenceOfExtendedString.hxx>
 #include<Storage_BaseDriver.hxx>
+#include<Handle_CDM_Application.hxx>
 #include<PCDM.hxx>
+#include<Handle_Storage_Schema.hxx>
+#include<Handle_CDM_MetaData.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 %}

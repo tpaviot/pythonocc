@@ -50,57 +50,6 @@ $HeaderURL$
 %include GeomAbs_headers.i
 
 
-enum GeomAbs_UVSense {
-	GeomAbs_SameUV,
-	GeomAbs_SameU,
-	GeomAbs_SameV,
-	GeomAbs_OppositeUV,
-	};
-
-enum GeomAbs_CurveForm {
-	GeomAbs_PolylineForm,
-	GeomAbs_CircularForm,
-	GeomAbs_EllipticForm,
-	GeomAbs_HyperbolicForm,
-	GeomAbs_ParabolicForm,
-	GeomAbs_OtherCurveForm,
-	};
-
-enum GeomAbs_Shape {
-	GeomAbs_C0,
-	GeomAbs_G1,
-	GeomAbs_C1,
-	GeomAbs_G2,
-	GeomAbs_C2,
-	GeomAbs_C3,
-	GeomAbs_CN,
-	};
-
-enum GeomAbs_IsoType {
-	GeomAbs_IsoU,
-	GeomAbs_IsoV,
-	GeomAbs_NoneIso,
-	};
-
-enum GeomAbs_BSplKnotDistribution {
-	GeomAbs_NonUniform,
-	GeomAbs_Uniform,
-	GeomAbs_QuasiUniform,
-	GeomAbs_PiecewiseBezier,
-	};
-
-enum GeomAbs_SurfaceForm {
-	GeomAbs_PlanarForm,
-	GeomAbs_ConicalForm,
-	GeomAbs_CylindricalForm,
-	GeomAbs_ToroidalForm,
-	GeomAbs_SphericalForm,
-	GeomAbs_RevolutionForm,
-	GeomAbs_RuledForm,
-	GeomAbs_QuadricForm,
-	GeomAbs_OtherSurfaceForm,
-	};
-
 enum GeomAbs_JoinType {
 	GeomAbs_Arc,
 	GeomAbs_Tangent,
@@ -119,6 +68,57 @@ enum GeomAbs_SurfaceType {
 	GeomAbs_SurfaceOfExtrusion,
 	GeomAbs_OffsetSurface,
 	GeomAbs_OtherSurface,
+	};
+
+enum GeomAbs_Shape {
+	GeomAbs_C0,
+	GeomAbs_G1,
+	GeomAbs_C1,
+	GeomAbs_G2,
+	GeomAbs_C2,
+	GeomAbs_C3,
+	GeomAbs_CN,
+	};
+
+enum GeomAbs_CurveForm {
+	GeomAbs_PolylineForm,
+	GeomAbs_CircularForm,
+	GeomAbs_EllipticForm,
+	GeomAbs_HyperbolicForm,
+	GeomAbs_ParabolicForm,
+	GeomAbs_OtherCurveForm,
+	};
+
+enum GeomAbs_IsoType {
+	GeomAbs_IsoU,
+	GeomAbs_IsoV,
+	GeomAbs_NoneIso,
+	};
+
+enum GeomAbs_BSplKnotDistribution {
+	GeomAbs_NonUniform,
+	GeomAbs_Uniform,
+	GeomAbs_QuasiUniform,
+	GeomAbs_PiecewiseBezier,
+	};
+
+enum GeomAbs_UVSense {
+	GeomAbs_SameUV,
+	GeomAbs_SameU,
+	GeomAbs_SameV,
+	GeomAbs_OppositeUV,
+	};
+
+enum GeomAbs_SurfaceForm {
+	GeomAbs_PlanarForm,
+	GeomAbs_ConicalForm,
+	GeomAbs_CylindricalForm,
+	GeomAbs_ToroidalForm,
+	GeomAbs_SphericalForm,
+	GeomAbs_RevolutionForm,
+	GeomAbs_RuledForm,
+	GeomAbs_QuadricForm,
+	GeomAbs_OtherSurfaceForm,
 	};
 
 enum GeomAbs_CurveType {

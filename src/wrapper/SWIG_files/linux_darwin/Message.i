@@ -351,44 +351,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Message_ListNodeOfListOfMsg;
-class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Message_ListNodeOfListOfMsg();
-		%feature("autodoc", "1");
-		Handle_Message_ListNodeOfListOfMsg(const Handle_Message_ListNodeOfListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_Message_ListNodeOfListOfMsg(const Message_ListNodeOfListOfMsg *anItem);
-		%feature("autodoc", "1");
-		Handle_Message_ListNodeOfListOfMsg & operator=(const Handle_Message_ListNodeOfListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_Message_ListNodeOfListOfMsg & operator=(const Message_ListNodeOfListOfMsg *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Message_ListNodeOfListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Message_ListNodeOfListOfMsg {
-	Message_ListNodeOfListOfMsg* GetObject() {
-	return (Message_ListNodeOfListOfMsg*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Message_ListNodeOfListOfMsg::~Handle_Message_ListNodeOfListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Message_ListNodeOfListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Message_ProgressIndicator;
 class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 	public:
@@ -459,6 +421,44 @@ def __del__(self):
 %}
 
 %extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Message_ListNodeOfListOfMsg;
+class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Message_ListNodeOfListOfMsg();
+		%feature("autodoc", "1");
+		Handle_Message_ListNodeOfListOfMsg(const Handle_Message_ListNodeOfListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_Message_ListNodeOfListOfMsg(const Message_ListNodeOfListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_Message_ListNodeOfListOfMsg & operator=(const Handle_Message_ListNodeOfListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_Message_ListNodeOfListOfMsg & operator=(const Message_ListNodeOfListOfMsg *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Message_ListNodeOfListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Message_ListNodeOfListOfMsg {
+	Message_ListNodeOfListOfMsg* GetObject() {
+	return (Message_ListNodeOfListOfMsg*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Message_ListNodeOfListOfMsg::~Handle_Message_ListNodeOfListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Message_ListNodeOfListOfMsg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -568,7 +568,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %extend Message_ProgressIndicator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Message_ProgressIndicator::~Message_ProgressIndicator %{
@@ -581,65 +581,6 @@ def __del__(self):
 %}
 
 %extend Message_ProgressIndicator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_ProgressScale;
-class Message_ProgressScale {
-	public:
-		%feature("autodoc", "1");
-		Message_ProgressScale();
-		%feature("autodoc", "1");
-		void SetName(const char * theName);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &theName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString GetName() const;
-		%feature("autodoc", "1");
-		void SetMin(const Standard_Real theMin);
-		%feature("autodoc", "1");
-		Standard_Real GetMin() const;
-		%feature("autodoc", "1");
-		void SetMax(const Standard_Real theMax);
-		%feature("autodoc", "1");
-		Standard_Real GetMax() const;
-		%feature("autodoc", "1");
-		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
-		%feature("autodoc", "1");
-		void SetStep(const Standard_Real theStep);
-		%feature("autodoc", "1");
-		Standard_Real GetStep() const;
-		%feature("autodoc", "1");
-		void SetInfinite(const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		Standard_Boolean GetInfinite() const;
-		%feature("autodoc", "1");
-		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
-		%feature("autodoc", "1");
-		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
-		%feature("autodoc", "1");
-		Standard_Real GetFirst() const;
-		%feature("autodoc", "1");
-		Standard_Real GetLast() const;
-		%feature("autodoc", "1");
-		Standard_Real LocalToBase(const Standard_Real val) const;
-		%feature("autodoc", "1");
-		Standard_Real BaseToLocal(const Standard_Real val) const;
-
-};
-%feature("shadow") Message_ProgressScale::~Message_ProgressScale %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_ProgressScale {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -680,7 +621,7 @@ class Message_Messenger : public MMgt_TShared {
 };
 %extend Message_Messenger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Message_Messenger::~Message_Messenger %{
@@ -693,71 +634,6 @@ def __del__(self):
 %}
 
 %extend Message_Messenger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_SequenceOfPrinters;
-class Message_SequenceOfPrinters : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Message_SequenceOfPrinters();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Message_SequenceOfPrinters & Assign(const Message_SequenceOfPrinters &Other);
-		%feature("autodoc", "1");
-		const Message_SequenceOfPrinters & operator=(const Message_SequenceOfPrinters &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void Append(Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void Prepend(Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Message_Printer &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Message_Printer &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & First() const;
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Message_SequenceOfPrinters & S);
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Message_Printer & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Message_Printer &I);
-		%feature("autodoc", "1");
-		Handle_Message_Printer & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Message_Printer & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Message_SequenceOfPrinters::~Message_SequenceOfPrinters %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_SequenceOfPrinters {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -847,7 +723,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Message_SequenceNodeOfSequenceOfPrinters::~Message_SequenceNodeOfSequenceOfPrinters %{
@@ -897,6 +773,157 @@ def __del__(self):
 %}
 
 %extend Message_ProgressSentry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_ListNodeOfListOfMsg;
+class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Message_ListNodeOfListOfMsg(const Message_Msg &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Message_Msg & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Message_ListNodeOfListOfMsg {
+	Handle_Message_ListNodeOfListOfMsg GetHandle() {
+	return *(Handle_Message_ListNodeOfListOfMsg*) &$self;
+	}
+};
+%extend Message_ListNodeOfListOfMsg {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_ListNodeOfListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_ProgressScale;
+class Message_ProgressScale {
+	public:
+		%feature("autodoc", "1");
+		Message_ProgressScale();
+		%feature("autodoc", "1");
+		void SetName(const char * theName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &theName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString GetName() const;
+		%feature("autodoc", "1");
+		void SetMin(const Standard_Real theMin);
+		%feature("autodoc", "1");
+		Standard_Real GetMin() const;
+		%feature("autodoc", "1");
+		void SetMax(const Standard_Real theMax);
+		%feature("autodoc", "1");
+		Standard_Real GetMax() const;
+		%feature("autodoc", "1");
+		void SetRange(const Standard_Real theMin, const Standard_Real theMax);
+		%feature("autodoc", "1");
+		void SetStep(const Standard_Real theStep);
+		%feature("autodoc", "1");
+		Standard_Real GetStep() const;
+		%feature("autodoc", "1");
+		void SetInfinite(const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		Standard_Boolean GetInfinite() const;
+		%feature("autodoc", "1");
+		void SetScale(const Standard_Real theMin, const Standard_Real theMax, const Standard_Real theStep, const Standard_Boolean theInfinite=1);
+		%feature("autodoc", "1");
+		void SetSpan(const Standard_Real theFirst, const Standard_Real theLast);
+		%feature("autodoc", "1");
+		Standard_Real GetFirst() const;
+		%feature("autodoc", "1");
+		Standard_Real GetLast() const;
+		%feature("autodoc", "1");
+		Standard_Real LocalToBase(const Standard_Real val) const;
+		%feature("autodoc", "1");
+		Standard_Real BaseToLocal(const Standard_Real val) const;
+
+};
+%feature("shadow") Message_ProgressScale::~Message_ProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_ProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_Msg;
+class Message_Msg {
+	public:
+		%feature("autodoc", "1");
+		Message_Msg();
+		%feature("autodoc", "1");
+		Message_Msg(const Message_Msg &theMsg);
+		%feature("autodoc", "1");
+		Message_Msg(const char * theKey);
+		%feature("autodoc", "1");
+		Message_Msg(const TCollection_ExtendedString &theKey);
+		%feature("autodoc", "1");
+		void Set(const char * theMsg);
+		%feature("autodoc", "1");
+		void Set(const TCollection_ExtendedString &theMsg);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const char * theString);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const TCollection_AsciiString &theString);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const Handle_TCollection_HAsciiString &theString);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const TCollection_ExtendedString &theString);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const Handle_TCollection_HExtendedString &theString);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const Standard_Integer theInt);
+		%feature("autodoc", "1");
+		Message_Msg & Arg(const Standard_Real theReal);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Original() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEdited() const;
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Get();
+
+};
+%feature("shadow") Message_Msg::~Message_Msg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_Msg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -991,26 +1018,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor Message_MsgFile;
-class Message_MsgFile {
+%nodefaultctor Message_SequenceOfPrinters;
+class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Message_MsgFile();
+		Message_SequenceOfPrinters();
 		%feature("autodoc", "1");
-		static		Standard_Boolean Load(const char * theDirName, const char * theFileName);
+		void Clear();
 		%feature("autodoc", "1");
-		static		Standard_Boolean LoadFile(const char * theFName);
+		const Message_SequenceOfPrinters & Assign(const Message_SequenceOfPrinters &Other);
 		%feature("autodoc", "1");
-		static		void LoadFromEnv(const char * envname, const char * filename, const char * ext="");
+		const Message_SequenceOfPrinters & operator=(const Message_SequenceOfPrinters &Other);
 		%feature("autodoc", "1");
-		static		Standard_Boolean AddMsg(const TCollection_AsciiString &key, const TCollection_ExtendedString &text);
+		void Append(const Handle_Message_Printer &T);
 		%feature("autodoc", "1");
-		static		const TCollection_ExtendedString & Msg(const char * key);
+		void Append(Message_SequenceOfPrinters & S);
 		%feature("autodoc", "1");
-		static		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
+		void Prepend(const Handle_Message_Printer &T);
+		%feature("autodoc", "1");
+		void Prepend(Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Message_Printer &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Message_Printer &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & First() const;
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Message_SequenceOfPrinters & S);
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Message_Printer & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Message_Printer &I);
+		%feature("autodoc", "1");
+		Handle_Message_Printer & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Message_Printer & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") Message_MsgFile::~Message_MsgFile %{
+%feature("shadow") Message_SequenceOfPrinters::~Message_SequenceOfPrinters %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1019,81 +1076,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Message_MsgFile {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
-class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Message_ProgressScale & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
-	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
-	}
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_ListNodeOfListOfMsg;
-class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Message_ListNodeOfListOfMsg(const Message_Msg &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Message_Msg & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_ListNodeOfListOfMsg {
-	Handle_Message_ListNodeOfListOfMsg GetHandle() {
-	return *(Handle_Message_ListNodeOfListOfMsg*) &$self;
-	}
-};
-%extend Message_ListNodeOfListOfMsg {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Message_ListNodeOfListOfMsg::~Message_ListNodeOfListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_ListNodeOfListOfMsg {
+%extend Message_SequenceOfPrinters {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1120,7 +1103,7 @@ class Message_Printer : public MMgt_TShared {
 };
 %extend Message_Printer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Message_Printer::~Message_Printer %{
@@ -1175,7 +1158,7 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %extend Message_PrinterOStream {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Message_PrinterOStream::~Message_PrinterOStream %{
@@ -1188,6 +1171,78 @@ def __del__(self):
 %}
 
 %extend Message_PrinterOStream {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_MsgFile;
+class Message_MsgFile {
+	public:
+		%feature("autodoc", "1");
+		Message_MsgFile();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Load(const char * theDirName, const char * theFileName);
+		%feature("autodoc", "1");
+		static		Standard_Boolean LoadFile(const char * theFName);
+		%feature("autodoc", "1");
+		static		void LoadFromEnv(const char * envname, const char * filename, const char * ext="");
+		%feature("autodoc", "1");
+		static		Standard_Boolean AddMsg(const TCollection_AsciiString &key, const TCollection_ExtendedString &text);
+		%feature("autodoc", "1");
+		static		const TCollection_ExtendedString & Msg(const char * key);
+		%feature("autodoc", "1");
+		static		const TCollection_ExtendedString & Msg(const TCollection_AsciiString &key);
+
+};
+%feature("shadow") Message_MsgFile::~Message_MsgFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_MsgFile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
+class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Message_ProgressScale & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
+	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1221,61 +1276,6 @@ def __del__(self):
 %}
 
 %extend Message_ListIteratorOfListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_Msg;
-class Message_Msg {
-	public:
-		%feature("autodoc", "1");
-		Message_Msg();
-		%feature("autodoc", "1");
-		Message_Msg(const Message_Msg &theMsg);
-		%feature("autodoc", "1");
-		Message_Msg(const char * theKey);
-		%feature("autodoc", "1");
-		Message_Msg(const TCollection_ExtendedString &theKey);
-		%feature("autodoc", "1");
-		void Set(const char * theMsg);
-		%feature("autodoc", "1");
-		void Set(const TCollection_ExtendedString &theMsg);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const char * theString);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const TCollection_AsciiString &theString);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const Handle_TCollection_HAsciiString &theString);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const TCollection_ExtendedString &theString);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const Handle_TCollection_HExtendedString &theString);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const Standard_Integer theInt);
-		%feature("autodoc", "1");
-		Message_Msg & Arg(const Standard_Real theReal);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Original() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEdited() const;
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Get();
-
-};
-%feature("shadow") Message_Msg::~Message_Msg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_Msg {
 	void _kill_pointed() {
 		delete $self;
 	}

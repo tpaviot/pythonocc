@@ -66,44 +66,6 @@ enum Contap_IType {
 
 
 
-%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour;
-class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	Contap_SequenceNodeOfTheSequenceOfPointOfContour* GetObject() {
-	return (Contap_SequenceNodeOfTheSequenceOfPointOfContour*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour;
 class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public Handle_TCollection_SeqNode {
 	public:
@@ -136,6 +98,82 @@ def __del__(self):
 %}
 
 %extend Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour;
+class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour();
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	Contap_SequenceNodeOfTheSequenceOfLineOfContour* GetObject() {
+	return (Contap_SequenceNodeOfTheSequenceOfLineOfContour*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour;
+class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour();
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour &aHandle);
+		%feature("autodoc", "1");
+		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfPointOfContour *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
+	Contap_SequenceNodeOfTheSequenceOfPointOfContour* GetObject() {
+	return (Contap_SequenceNodeOfTheSequenceOfPointOfContour*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -294,152 +332,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour;
-class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCollection_SeqNode {
+%nodefaultctor Contap_TheSegmentOfTheSearchOfContour;
+class Contap_TheSegmentOfTheSearchOfContour {
 	public:
 		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour();
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour &aHandle);
-		%feature("autodoc", "1");
-		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour & operator=(const Contap_SequenceNodeOfTheSequenceOfLineOfContour *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	Contap_SequenceNodeOfTheSequenceOfLineOfContour* GetObject() {
-	return (Contap_SequenceNodeOfTheSequenceOfLineOfContour*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Contap_ThePointOfContour;
-class Contap_ThePointOfContour {
-	public:
-		%feature("autodoc", "1");
-		Contap_ThePointOfContour();
-		%feature("autodoc", "1");
-		Contap_ThePointOfContour(const gp_Pnt Pt, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt Pt, const Standard_Real U, const Standard_Real V);
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real Para);
-		%feature("autodoc", "1");
-		void SetVertex(const Handle_Adaptor3d_HVertex &V);
-		%feature("autodoc", "1");
-		void SetArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
-		%feature("autodoc", "1");
-		void SetMultiple();
-		%feature("autodoc", "1");
-		void SetInternal();
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnLine() const;
-		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
-
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOnArc() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		Standard_Real ParameterOnArc() const;
-		%feature("autodoc", "1");
-		const IntSurf_Transition & TransitionOnLine() const;
-		%feature("autodoc", "1");
-		const IntSurf_Transition & TransitionOnArc() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsVertex() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HVertex & Vertex() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsMultiple() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInternal() const;
-
-};
-%feature("shadow") Contap_ThePointOfContour::~Contap_ThePointOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_ThePointOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Contap_TheLineOfContour;
-class Contap_TheLineOfContour {
-	public:
-		%feature("autodoc", "1");
-		Contap_TheLineOfContour();
-		%feature("autodoc", "1");
-		void SetLineOn2S(const Handle_IntSurf_LineOn2S &L);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Handle_IntSurf_LineOn2S & LineOn2S() const;
-		%feature("autodoc", "1");
-		void ResetSeqOfVertex();
-		%feature("autodoc", "1");
-		void Add(const IntSurf_PntOn2S &POn2S);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Lin L);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Circ C);
+		Contap_TheSegmentOfTheSearchOfContour();
 		%feature("autodoc", "1");
 		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
 		%feature("autodoc", "1");
-		void Add(const Contap_ThePointOfContour &P);
+		void SetLimitPoint(const Contap_ThePathPointOfTheSearchOfContour &V, const Standard_Boolean First);
 		%feature("autodoc", "1");
-		Standard_Integer NbVertex() const;
+		const Handle_Adaptor2d_HCurve2d & Curve() const;
 		%feature("autodoc", "1");
-		Contap_ThePointOfContour & Vertex(const Standard_Integer Index) const;
+		Standard_Boolean HasFirstPoint() const;
 		%feature("autodoc", "1");
-		Contap_IType TypeContour() const;
+		const Contap_ThePathPointOfTheSearchOfContour & FirstPoint() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbPnts() const;
+		Standard_Boolean HasLastPoint() const;
 		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		gp_Circ Circle() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		void SetTransitionOnS(const IntSurf_TypeTrans T);
-		%feature("autodoc", "1");
-		IntSurf_TypeTrans TransitionOnS() const;
+		const Contap_ThePathPointOfTheSearchOfContour & LastPoint() const;
 
 };
-%feature("shadow") Contap_TheLineOfContour::~Contap_TheLineOfContour %{
+%feature("shadow") Contap_TheSegmentOfTheSearchOfContour::~Contap_TheSegmentOfTheSearchOfContour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -448,7 +362,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Contap_TheLineOfContour {
+%extend Contap_TheSegmentOfTheSearchOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -473,7 +387,7 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 };
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour %{
@@ -559,136 +473,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Contap_TheSequenceOfPointOfContour;
-class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Contap_TheSequenceOfPointOfContour();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Contap_TheSequenceOfPointOfContour & Assign(const Contap_TheSequenceOfPointOfContour &Other);
-		%feature("autodoc", "1");
-		const Contap_TheSequenceOfPointOfContour & operator=(const Contap_TheSequenceOfPointOfContour &Other);
-		%feature("autodoc", "1");
-		void Append(const Contap_ThePointOfContour &T);
-		%feature("autodoc", "1");
-		void Append(Contap_TheSequenceOfPointOfContour & S);
-		%feature("autodoc", "1");
-		void Prepend(const Contap_ThePointOfContour &T);
-		%feature("autodoc", "1");
-		void Prepend(Contap_TheSequenceOfPointOfContour & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Contap_ThePointOfContour &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Contap_ThePointOfContour &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
-		%feature("autodoc", "1");
-		const Contap_ThePointOfContour & First() const;
-		%feature("autodoc", "1");
-		const Contap_ThePointOfContour & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
-		%feature("autodoc", "1");
-		const Contap_ThePointOfContour & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Contap_ThePointOfContour & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Contap_ThePointOfContour &I);
-		%feature("autodoc", "1");
-		Contap_ThePointOfContour & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Contap_ThePointOfContour & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Contap_TheSequenceOfPointOfContour::~Contap_TheSequenceOfPointOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_TheSequenceOfPointOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
-class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Contap_SequenceOfIWLineOfTheIWalkingOfContour();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
-		%feature("autodoc", "1");
-		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & operator=(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void Append(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void Prepend(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & First() const;
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
-		%feature("autodoc", "1");
-		Handle_Contap_TheIWLineOfTheIWalkingOfContour & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Contap_SequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceOfIWLineOfTheIWalkingOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Contap_SequenceOfSegmentOfTheSearchOfContour;
 class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequence {
 	public:
@@ -754,28 +538,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor Contap_TheSegmentOfTheSearchOfContour;
-class Contap_TheSegmentOfTheSearchOfContour {
+%nodefaultctor Contap_TheSurfPropsOfContour;
+class Contap_TheSurfPropsOfContour {
 	public:
 		%feature("autodoc", "1");
-		Contap_TheSegmentOfTheSearchOfContour();
+		Contap_TheSurfPropsOfContour();
 		%feature("autodoc", "1");
-		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
+		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N);
 		%feature("autodoc", "1");
-		void SetLimitPoint(const Contap_ThePathPointOfTheSearchOfContour &V, const Standard_Boolean First);
+		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & d1u, gp_Vec & d1v, gp_Vec & N);
 		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint() const;
-		%feature("autodoc", "1");
-		const Contap_ThePathPointOfTheSearchOfContour & FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLastPoint() const;
-		%feature("autodoc", "1");
-		const Contap_ThePathPointOfTheSearchOfContour & LastPoint() const;
+		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
 
 };
-%feature("shadow") Contap_TheSegmentOfTheSearchOfContour::~Contap_TheSegmentOfTheSearchOfContour %{
+%feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -784,7 +560,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Contap_TheSegmentOfTheSearchOfContour {
+%extend Contap_TheSurfPropsOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -822,35 +598,6 @@ def __del__(self):
 %}
 
 %extend Contap_TheSearchOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Contap_TheSurfPropsOfContour;
-class Contap_TheSurfPropsOfContour {
-	public:
-		%feature("autodoc", "1");
-		Contap_TheSurfPropsOfContour();
-		%feature("autodoc", "1");
-		static		void Normale(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void DerivAndNorm(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & d1u, gp_Vec & d1v, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void NormAndDn(const Handle_Adaptor3d_HSurface &S, const Standard_Real U, const Standard_Real V, gp_Pnt & P, gp_Vec & N, gp_Vec & Dnu, gp_Vec & Dnv);
-
-};
-%feature("shadow") Contap_TheSurfPropsOfContour::~Contap_TheSurfPropsOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_TheSurfPropsOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -982,7 +729,7 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 };
 %extend Contap_TheHSequenceOfPointOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Contap_TheHSequenceOfPointOfContour::~Contap_TheHSequenceOfPointOfContour %{
@@ -995,6 +742,57 @@ def __del__(self):
 %}
 
 %extend Contap_TheHSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Contap_ContAna;
+class Contap_ContAna {
+	public:
+		%feature("autodoc", "1");
+		Contap_ContAna();
+		%feature("autodoc", "1");
+		void Perform(const gp_Sphere S, const gp_Dir D);
+		%feature("autodoc", "1");
+		void Perform(const gp_Sphere S, const gp_Dir D, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void Perform(const gp_Sphere S, const gp_Pnt Eye);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cylinder C, const gp_Dir D);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cylinder C, const gp_Dir D, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cylinder C, const gp_Pnt Eye);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cone C, const gp_Dir D);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cone C, const gp_Dir D, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void Perform(const gp_Cone C, const gp_Pnt Eye);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbContours() const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType TypeContour() const;
+		%feature("autodoc", "1");
+		gp_Circ Circle() const;
+		%feature("autodoc", "1");
+		gp_Lin Line(const Standard_Integer Index) const;
+
+};
+%feature("shadow") Contap_ContAna::~Contap_ContAna %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_ContAna {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1060,43 +858,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
-class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Contap_TheLineOfContour &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Contap_TheLineOfContour & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour GetHandle() {
-	return *(Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour*) &$self;
-	}
-};
-%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
 class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TCollection_SeqNode {
 	public:
@@ -1115,7 +876,7 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 };
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour %{
@@ -1134,42 +895,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Contap_ContAna;
-class Contap_ContAna {
+%nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
+class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Contap_ContAna();
+		Contap_SequenceNodeOfTheSequenceOfLineOfContour(const Contap_TheLineOfContour &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		void Perform(const gp_Sphere S, const gp_Dir D);
+		Contap_TheLineOfContour & Value() const;
 		%feature("autodoc", "1");
-		void Perform(const gp_Sphere S, const gp_Dir D, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void Perform(const gp_Sphere S, const gp_Pnt Eye);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cylinder C, const gp_Dir D);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cylinder C, const gp_Dir D, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cylinder C, const gp_Pnt Eye);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cone C, const gp_Dir D);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cone C, const gp_Dir D, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void Perform(const gp_Cone C, const gp_Pnt Eye);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbContours() const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType TypeContour() const;
-		%feature("autodoc", "1");
-		gp_Circ Circle() const;
-		%feature("autodoc", "1");
-		gp_Lin Line(const Standard_Integer Index) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Contap_ContAna::~Contap_ContAna %{
+%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour GetHandle() {
+	return *(Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour*) &$self;
+	}
+};
+%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Contap_SequenceNodeOfTheSequenceOfLineOfContour::~Contap_SequenceNodeOfTheSequenceOfLineOfContour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1178,7 +925,224 @@ def __del__(self):
 		pass
 %}
 
-%extend Contap_ContAna {
+%extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Contap_TheSequenceOfPointOfContour;
+class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Contap_TheSequenceOfPointOfContour();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Contap_TheSequenceOfPointOfContour & Assign(const Contap_TheSequenceOfPointOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_TheSequenceOfPointOfContour & operator=(const Contap_TheSequenceOfPointOfContour &Other);
+		%feature("autodoc", "1");
+		void Append(const Contap_ThePointOfContour &T);
+		%feature("autodoc", "1");
+		void Append(Contap_TheSequenceOfPointOfContour & S);
+		%feature("autodoc", "1");
+		void Prepend(const Contap_ThePointOfContour &T);
+		%feature("autodoc", "1");
+		void Prepend(Contap_TheSequenceOfPointOfContour & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Contap_ThePointOfContour &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Contap_ThePointOfContour &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
+		%feature("autodoc", "1");
+		const Contap_ThePointOfContour & First() const;
+		%feature("autodoc", "1");
+		const Contap_ThePointOfContour & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Contap_TheSequenceOfPointOfContour & S);
+		%feature("autodoc", "1");
+		const Contap_ThePointOfContour & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Contap_ThePointOfContour & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Contap_ThePointOfContour &I);
+		%feature("autodoc", "1");
+		Contap_ThePointOfContour & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Contap_ThePointOfContour & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Contap_TheSequenceOfPointOfContour::~Contap_TheSequenceOfPointOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_TheSequenceOfPointOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Contap_TheIWLineOfTheIWalkingOfContour;
+class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Contap_TheIWLineOfTheIWalkingOfContour();
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void Cut(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void AddPoint(const IntSurf_PntOn2S &P);
+		%feature("autodoc", "1");
+		void AddStatusFirst(const Standard_Boolean Closed, const Standard_Boolean HasFirst);
+		%feature("autodoc", "1");
+		void AddStatusFirst(const Standard_Boolean Closed, const Standard_Boolean HasFirst, const Standard_Integer Index, const IntSurf_PathPoint &P);
+		%feature("autodoc", "1");
+		void AddStatusFirstLast(const Standard_Boolean Closed, const Standard_Boolean HasFirst, const Standard_Boolean HasLast);
+		%feature("autodoc", "1");
+		void AddStatusLast(const Standard_Boolean HasLast);
+		%feature("autodoc", "1");
+		void AddStatusLast(const Standard_Boolean HasLast, const Standard_Integer Index, const IntSurf_PathPoint &P);
+		%feature("autodoc", "1");
+		void AddIndexPassing(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetTangentVector(const gp_Vec V, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void SetTangencyAtBegining(const Standard_Boolean IsTangent);
+		%feature("autodoc", "1");
+		void SetTangencyAtEnd(const Standard_Boolean IsTangent);
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntSurf_PntOn2S & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IntSurf_LineOn2S & Line() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasFirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasLastPoint() const;
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & FirstPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer FirstPointIndex() const;
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & LastPoint() const;
+		%feature("autodoc", "1");
+		Standard_Integer LastPointIndex() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPassingPoint() const;
+		%feature("autodoc","PassingPoint(Standard_Integer Index) -> [Standard_Integer, Standard_Integer]");
+
+		void PassingPoint(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","TangentVector() -> Standard_Integer");
+
+		const gp_Vec  TangentVector(Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangentAtBegining() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangentAtEnd() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Contap_TheIWLineOfTheIWalkingOfContour {
+	Handle_Contap_TheIWLineOfTheIWalkingOfContour GetHandle() {
+	return *(Handle_Contap_TheIWLineOfTheIWalkingOfContour*) &$self;
+	}
+};
+%extend Contap_TheIWLineOfTheIWalkingOfContour {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Contap_TheIWLineOfTheIWalkingOfContour::~Contap_TheIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_TheIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Contap_TheLineOfContour;
+class Contap_TheLineOfContour {
+	public:
+		%feature("autodoc", "1");
+		Contap_TheLineOfContour();
+		%feature("autodoc", "1");
+		void SetLineOn2S(const Handle_IntSurf_LineOn2S &L);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Handle_IntSurf_LineOn2S & LineOn2S() const;
+		%feature("autodoc", "1");
+		void ResetSeqOfVertex();
+		%feature("autodoc", "1");
+		void Add(const IntSurf_PntOn2S &POn2S);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Lin L);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Circ C);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Adaptor2d_HCurve2d &A);
+		%feature("autodoc", "1");
+		void Add(const Contap_ThePointOfContour &P);
+		%feature("autodoc", "1");
+		Standard_Integer NbVertex() const;
+		%feature("autodoc", "1");
+		Contap_ThePointOfContour & Vertex(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Contap_IType TypeContour() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPnts() const;
+		%feature("autodoc", "1");
+		const IntSurf_PntOn2S & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		gp_Circ Circle() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
+		%feature("autodoc", "1");
+		void SetTransitionOnS(const IntSurf_TypeTrans T);
+		%feature("autodoc", "1");
+		IntSurf_TypeTrans TransitionOnS() const;
+
+};
+%feature("shadow") Contap_TheLineOfContour::~Contap_TheLineOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_TheLineOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1250,6 +1214,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
+class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Contap_SequenceOfIWLineOfTheIWalkingOfContour();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & Assign(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
+		%feature("autodoc", "1");
+		const Contap_SequenceOfIWLineOfTheIWalkingOfContour & operator=(const Contap_SequenceOfIWLineOfTheIWalkingOfContour &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void Append(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void Prepend(Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & First() const;
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Contap_SequenceOfIWLineOfTheIWalkingOfContour & S);
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Contap_TheIWLineOfTheIWalkingOfContour &I);
+		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Contap_TheIWLineOfTheIWalkingOfContour & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Contap_SequenceOfIWLineOfTheIWalkingOfContour::~Contap_SequenceOfIWLineOfTheIWalkingOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Contap_HCurve2dTool;
 class Contap_HCurve2dTool {
 	public:
@@ -1315,49 +1344,6 @@ def __del__(self):
 %}
 
 %extend Contap_HCurve2dTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
-class Contap_ThePathPointOfTheSearchOfContour {
-	public:
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour();
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		void SetValue(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNew() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HVertex & Vertex() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-
-};
-%feature("shadow") Contap_ThePathPointOfTheSearchOfContour::~Contap_ThePathPointOfTheSearchOfContour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Contap_ThePathPointOfTheSearchOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1464,82 +1450,53 @@ def __del__(self):
 };
 
 
-%nodefaultctor Contap_TheIWLineOfTheIWalkingOfContour;
-class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
+%nodefaultctor Contap_ThePointOfContour;
+class Contap_ThePointOfContour {
 	public:
 		%feature("autodoc", "1");
-		Contap_TheIWLineOfTheIWalkingOfContour();
+		Contap_ThePointOfContour();
 		%feature("autodoc", "1");
-		void Reverse();
+		Contap_ThePointOfContour(const gp_Pnt Pt, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void Cut(const Standard_Integer Index);
+		void SetValue(const gp_Pnt Pt, const Standard_Real U, const Standard_Real V);
 		%feature("autodoc", "1");
-		void AddPoint(const IntSurf_PntOn2S &P);
+		void SetParameter(const Standard_Real Para);
 		%feature("autodoc", "1");
-		void AddStatusFirst(const Standard_Boolean Closed, const Standard_Boolean HasFirst);
+		void SetVertex(const Handle_Adaptor3d_HVertex &V);
 		%feature("autodoc", "1");
-		void AddStatusFirst(const Standard_Boolean Closed, const Standard_Boolean HasFirst, const Standard_Integer Index, const IntSurf_PathPoint &P);
+		void SetArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Param, const IntSurf_Transition &TLine, const IntSurf_Transition &TArc);
 		%feature("autodoc", "1");
-		void AddStatusFirstLast(const Standard_Boolean Closed, const Standard_Boolean HasFirst, const Standard_Boolean HasLast);
+		void SetMultiple();
 		%feature("autodoc", "1");
-		void AddStatusLast(const Standard_Boolean HasLast);
+		void SetInternal();
 		%feature("autodoc", "1");
-		void AddStatusLast(const Standard_Boolean HasLast, const Standard_Integer Index, const IntSurf_PathPoint &P);
+		const gp_Pnt  Value() const;
 		%feature("autodoc", "1");
-		void AddIndexPassing(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetTangentVector(const gp_Vec V, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void SetTangencyAtBegining(const Standard_Boolean IsTangent);
-		%feature("autodoc", "1");
-		void SetTangencyAtEnd(const Standard_Boolean IsTangent);
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IntSurf_LineOn2S & Line() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLastPoint() const;
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & FirstPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer FirstPointIndex() const;
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & LastPoint() const;
-		%feature("autodoc", "1");
-		Standard_Integer LastPointIndex() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPassingPoint() const;
-		%feature("autodoc","PassingPoint(Standard_Integer Index) -> [Standard_Integer, Standard_Integer]");
+		Standard_Real ParameterOnLine() const;
+		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
 
-		void PassingPoint(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","TangentVector() -> Standard_Integer");
-
-		const gp_Vec  TangentVector(Standard_Integer &OutValue) const;
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsTangentAtBegining() const;
+		Standard_Boolean IsOnArc() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsTangentAtEnd() const;
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Real ParameterOnArc() const;
+		%feature("autodoc", "1");
+		const IntSurf_Transition & TransitionOnLine() const;
+		%feature("autodoc", "1");
+		const IntSurf_Transition & TransitionOnArc() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsVertex() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HVertex & Vertex() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsMultiple() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInternal() const;
 
 };
-%extend Contap_TheIWLineOfTheIWalkingOfContour {
-	Handle_Contap_TheIWLineOfTheIWalkingOfContour GetHandle() {
-	return *(Handle_Contap_TheIWLineOfTheIWalkingOfContour*) &$self;
-	}
-};
-%extend Contap_TheIWLineOfTheIWalkingOfContour {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Contap_TheIWLineOfTheIWalkingOfContour::~Contap_TheIWLineOfTheIWalkingOfContour %{
+%feature("shadow") Contap_ThePointOfContour::~Contap_ThePointOfContour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1548,7 +1505,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Contap_TheIWLineOfTheIWalkingOfContour {
+%extend Contap_ThePointOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1573,7 +1530,7 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 };
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour::~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour %{
@@ -1586,6 +1543,49 @@ def __del__(self):
 %}
 
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
+class Contap_ThePathPointOfTheSearchOfContour {
+	public:
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour();
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		Contap_ThePathPointOfTheSearchOfContour(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor3d_HVertex &V, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		void SetValue(const gp_Pnt P, const Standard_Real Tol, const Handle_Adaptor2d_HCurve2d &A, const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNew() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HVertex & Vertex() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+
+};
+%feature("shadow") Contap_ThePathPointOfTheSearchOfContour::~Contap_ThePathPointOfTheSearchOfContour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Contap_ThePathPointOfTheSearchOfContour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1610,7 +1610,7 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 };
 %extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Contap_SequenceNodeOfTheSequenceOfPointOfContour::~Contap_SequenceNodeOfTheSequenceOfPointOfContour %{

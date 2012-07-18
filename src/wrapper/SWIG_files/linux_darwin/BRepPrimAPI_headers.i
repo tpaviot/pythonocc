@@ -46,10 +46,10 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<gp_Ax2.hxx>
-#include<Handle_Geom_Curve.hxx>
 #include<TopoDS_Shape.hxx>
-#include<TopoDS_Face.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<gp_Pnt.hxx>
+#include<TopoDS_Face.hxx>
 #include<TopoDS_Shell.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Vec.hxx>

@@ -29,12 +29,12 @@ $HeaderURL$
 import GarbageCollector
 import Transfer
 import Standard
-import Interface
-import IFSelect
 import TCollection
 import TColStd
+import IFSelect
+import Interface
+import Dico
 import TopoDS
 import TopAbs
 import TopTools
-import Dico
 };

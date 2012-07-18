@@ -23,26 +23,26 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_MDF_ARDriverHSequence::DownCast;
 %rename(DownCast) Handle_MDF_ListNodeOfDriverListOfARDriverTable::DownCast;
 %rename(DownCast) Handle_MDF_ASDriver::DownCast;
 %rename(DownCast) Handle_MDF_TagSourceStorageDriver::DownCast;
+%rename(DownCast) Handle_MDF_ARDriverHSequence::DownCast;
+%rename(DownCast) Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable::DownCast;
 %rename(DownCast) Handle_MDF_ARDriver::DownCast;
 %rename(DownCast) Handle_MDF_ReferenceRetrievalDriver::DownCast;
-%rename(DownCast) Handle_MDF_ListNodeOfDriverListOfASDriverTable::DownCast;
-%rename(DownCast) Handle_MDF_SequenceNodeOfASDriverSequence::DownCast;
-%rename(DownCast) Handle_MDF_TagSourceRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::DownCast;
 %rename(DownCast) Handle_MDF_ASDriverTable::DownCast;
-%rename(DownCast) Handle_MDF_RRelocationTable::DownCast;
 %rename(DownCast) Handle_MDF_SRelocationTable::DownCast;
-%rename(DownCast) Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable::DownCast;
+%rename(DownCast) Handle_MDF_ListNodeOfDriverListOfASDriverTable::DownCast;
+%rename(DownCast) Handle_MDF_DataMapNodeOfTypeASDriverMap::DownCast;
 %rename(DownCast) Handle_MDF_SequenceNodeOfARDriverSequence::DownCast;
 %rename(DownCast) Handle_MDF_ASDriverHSequence::DownCast;
 %rename(DownCast) Handle_MDF_ReferenceStorageDriver::DownCast;
 %rename(DownCast) Handle_MDF_DataMapNodeOfTypeARDriverMap::DownCast;
+%rename(DownCast) Handle_MDF_TagSourceRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDF_ARDriverTable::DownCast;
-%rename(DownCast) Handle_MDF_DataMapNodeOfTypeASDriverMap::DownCast;
-%rename(DownCast) Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::DownCast;
+%rename(DownCast) Handle_MDF_RRelocationTable::DownCast;
+%rename(DownCast) Handle_MDF_SequenceNodeOfASDriverSequence::DownCast;
 %rename(FromTo) MDF::FromTo;
 %rename(AddStorageDrivers) MDF::AddStorageDrivers;
 %rename(AddRetrievalDrivers) MDF::AddRetrievalDrivers;

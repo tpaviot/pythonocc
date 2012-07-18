@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_IGESDimen_CenterLine;
-class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine(const Handle_IGESDimen_CenterLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine(const IGESDimen_CenterLine *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine & operator=(const Handle_IGESDimen_CenterLine &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_CenterLine & operator=(const IGESDimen_CenterLine *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_CenterLine DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_CenterLine {
-	IGESDimen_CenterLine* GetObject() {
-	return (IGESDimen_CenterLine*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_CenterLine::~Handle_IGESDimen_CenterLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_CenterLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESDimen_DimensionDisplayData;
 class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity {
 	public:
@@ -122,6 +84,82 @@ def __del__(self):
 %}
 
 %extend Handle_IGESDimen_DimensionDisplayData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_GeneralLabel;
+class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel(const Handle_IGESDimen_GeneralLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel(const IGESDimen_GeneralLabel *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel & operator=(const Handle_IGESDimen_GeneralLabel &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralLabel & operator=(const IGESDimen_GeneralLabel *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDimen_GeneralLabel DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_GeneralLabel {
+	IGESDimen_GeneralLabel* GetObject() {
+	return (IGESDimen_GeneralLabel*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDimen_GeneralLabel::~Handle_IGESDimen_GeneralLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDimen_GeneralLabel {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_HArray1OfLeaderArrow;
+class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow(const Handle_IGESDimen_HArray1OfLeaderArrow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow(const IGESDimen_HArray1OfLeaderArrow *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const Handle_IGESDimen_HArray1OfLeaderArrow &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const IGESDimen_HArray1OfLeaderArrow *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDimen_HArray1OfLeaderArrow DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_HArray1OfLeaderArrow {
+	IGESDimen_HArray1OfLeaderArrow* GetObject() {
+	return (IGESDimen_HArray1OfLeaderArrow*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDimen_HArray1OfLeaderArrow::~Handle_IGESDimen_HArray1OfLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDimen_HArray1OfLeaderArrow {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -166,29 +204,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESDimen_GeneralLabel;
-class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESDimen_DimensionTolerance;
+class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralLabel();
+		Handle_IGESDimen_DimensionTolerance();
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralLabel(const Handle_IGESDimen_GeneralLabel &aHandle);
+		Handle_IGESDimen_DimensionTolerance(const Handle_IGESDimen_DimensionTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralLabel(const IGESDimen_GeneralLabel *anItem);
+		Handle_IGESDimen_DimensionTolerance(const IGESDimen_DimensionTolerance *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralLabel & operator=(const Handle_IGESDimen_GeneralLabel &aHandle);
+		Handle_IGESDimen_DimensionTolerance & operator=(const Handle_IGESDimen_DimensionTolerance &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralLabel & operator=(const IGESDimen_GeneralLabel *anItem);
+		Handle_IGESDimen_DimensionTolerance & operator=(const IGESDimen_DimensionTolerance *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDimen_GeneralLabel DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDimen_DimensionTolerance DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESDimen_GeneralLabel {
-	IGESDimen_GeneralLabel* GetObject() {
-	return (IGESDimen_GeneralLabel*)$self->Access();
+%extend Handle_IGESDimen_DimensionTolerance {
+	IGESDimen_DimensionTolerance* GetObject() {
+	return (IGESDimen_DimensionTolerance*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESDimen_GeneralLabel::~Handle_IGESDimen_GeneralLabel %{
+%feature("shadow") Handle_IGESDimen_DimensionTolerance::~Handle_IGESDimen_DimensionTolerance %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,7 +235,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESDimen_GeneralLabel {
+%extend Handle_IGESDimen_DimensionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
+class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote(const IGESDimen_HArray1OfGeneralNote *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const IGESDimen_HArray1OfGeneralNote *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDimen_HArray1OfGeneralNote DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
+	IGESDimen_HArray1OfGeneralNote* GetObject() {
+	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDimen_HArray1OfGeneralNote::~Handle_IGESDimen_HArray1OfGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDimen_HArray1OfGeneralNote {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -318,29 +394,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESDimen_DimensionTolerance;
-class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESDimen_DiameterDimension;
+class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionTolerance();
+		Handle_IGESDimen_DiameterDimension();
 		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionTolerance(const Handle_IGESDimen_DimensionTolerance &aHandle);
+		Handle_IGESDimen_DiameterDimension(const Handle_IGESDimen_DiameterDimension &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionTolerance(const IGESDimen_DimensionTolerance *anItem);
+		Handle_IGESDimen_DiameterDimension(const IGESDimen_DiameterDimension *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionTolerance & operator=(const Handle_IGESDimen_DimensionTolerance &aHandle);
+		Handle_IGESDimen_DiameterDimension & operator=(const Handle_IGESDimen_DiameterDimension &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionTolerance & operator=(const IGESDimen_DimensionTolerance *anItem);
+		Handle_IGESDimen_DiameterDimension & operator=(const IGESDimen_DiameterDimension *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDimen_DimensionTolerance DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDimen_DiameterDimension DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESDimen_DimensionTolerance {
-	IGESDimen_DimensionTolerance* GetObject() {
-	return (IGESDimen_DimensionTolerance*)$self->Access();
+%extend Handle_IGESDimen_DiameterDimension {
+	IGESDimen_DiameterDimension* GetObject() {
+	return (IGESDimen_DiameterDimension*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESDimen_DimensionTolerance::~Handle_IGESDimen_DimensionTolerance %{
+%feature("shadow") Handle_IGESDimen_DiameterDimension::~Handle_IGESDimen_DiameterDimension %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -349,7 +425,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESDimen_DimensionTolerance {
+%extend Handle_IGESDimen_DiameterDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -426,44 +502,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESDimen_AngularDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESDimen_PointDimension;
-class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_PointDimension();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_PointDimension(const Handle_IGESDimen_PointDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_PointDimension(const IGESDimen_PointDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_PointDimension & operator=(const Handle_IGESDimen_PointDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_PointDimension & operator=(const IGESDimen_PointDimension *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_PointDimension DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_PointDimension {
-	IGESDimen_PointDimension* GetObject() {
-	return (IGESDimen_PointDimension*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_PointDimension::~Handle_IGESDimen_PointDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_PointDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,44 +622,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESDimen_HArray1OfLeaderArrow;
-class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfLeaderArrow();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfLeaderArrow(const Handle_IGESDimen_HArray1OfLeaderArrow &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfLeaderArrow(const IGESDimen_HArray1OfLeaderArrow *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const Handle_IGESDimen_HArray1OfLeaderArrow &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfLeaderArrow & operator=(const IGESDimen_HArray1OfLeaderArrow *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_HArray1OfLeaderArrow DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_HArray1OfLeaderArrow {
-	IGESDimen_HArray1OfLeaderArrow* GetObject() {
-	return (IGESDimen_HArray1OfLeaderArrow*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_HArray1OfLeaderArrow::~Handle_IGESDimen_HArray1OfLeaderArrow %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_HArray1OfLeaderArrow {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESDimen_ReadWriteModule;
 class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -736,44 +736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESDimen_DimensionUnits;
-class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionUnits();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionUnits(const Handle_IGESDimen_DimensionUnits &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionUnits(const IGESDimen_DimensionUnits *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionUnits & operator=(const Handle_IGESDimen_DimensionUnits &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DimensionUnits & operator=(const IGESDimen_DimensionUnits *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_DimensionUnits DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_DimensionUnits {
-	IGESDimen_DimensionUnits* GetObject() {
-	return (IGESDimen_DimensionUnits*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_DimensionUnits::~Handle_IGESDimen_DimensionUnits %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_DimensionUnits {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESDimen_NewDimensionedGeometry;
 class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
@@ -806,44 +768,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESDimen_NewDimensionedGeometry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESDimen_SpecificModule;
-class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_SpecificModule(const Handle_IGESDimen_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_SpecificModule(const IGESDimen_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_SpecificModule & operator=(const Handle_IGESDimen_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_SpecificModule & operator=(const IGESDimen_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_SpecificModule {
-	IGESDimen_SpecificModule* GetObject() {
-	return (IGESDimen_SpecificModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_SpecificModule::~Handle_IGESDimen_SpecificModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -888,29 +812,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
-class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
+%nodefaultctor Handle_IGESDimen_SpecificModule;
+class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote();
+		Handle_IGESDimen_SpecificModule();
 		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		Handle_IGESDimen_SpecificModule(const Handle_IGESDimen_SpecificModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote(const IGESDimen_HArray1OfGeneralNote *anItem);
+		Handle_IGESDimen_SpecificModule(const IGESDimen_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const Handle_IGESDimen_HArray1OfGeneralNote &aHandle);
+		Handle_IGESDimen_SpecificModule & operator=(const Handle_IGESDimen_SpecificModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESDimen_HArray1OfGeneralNote & operator=(const IGESDimen_HArray1OfGeneralNote *anItem);
+		Handle_IGESDimen_SpecificModule & operator=(const IGESDimen_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESDimen_HArray1OfGeneralNote DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESDimen_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESDimen_HArray1OfGeneralNote {
-	IGESDimen_HArray1OfGeneralNote* GetObject() {
-	return (IGESDimen_HArray1OfGeneralNote*)$self->Access();
+%extend Handle_IGESDimen_SpecificModule {
+	IGESDimen_SpecificModule* GetObject() {
+	return (IGESDimen_SpecificModule*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESDimen_HArray1OfGeneralNote::~Handle_IGESDimen_HArray1OfGeneralNote %{
+%feature("shadow") Handle_IGESDimen_SpecificModule::~Handle_IGESDimen_SpecificModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -919,45 +843,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESDimen_HArray1OfGeneralNote {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESDimen_DiameterDimension;
-class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DiameterDimension();
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DiameterDimension(const Handle_IGESDimen_DiameterDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DiameterDimension(const IGESDimen_DiameterDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DiameterDimension & operator=(const Handle_IGESDimen_DiameterDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_DiameterDimension & operator=(const IGESDimen_DiameterDimension *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDimen_DiameterDimension DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDimen_DiameterDimension {
-	IGESDimen_DiameterDimension* GetObject() {
-	return (IGESDimen_DiameterDimension*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDimen_DiameterDimension::~Handle_IGESDimen_DiameterDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDimen_DiameterDimension {
+%extend Handle_IGESDimen_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1034,6 +920,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESDimen_DimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_PointDimension;
+class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension(const Handle_IGESDimen_PointDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension(const IGESDimen_PointDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension & operator=(const Handle_IGESDimen_PointDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_PointDimension & operator=(const IGESDimen_PointDimension *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDimen_PointDimension DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_PointDimension {
+	IGESDimen_PointDimension* GetObject() {
+	return (IGESDimen_PointDimension*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDimen_PointDimension::~Handle_IGESDimen_PointDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDimen_PointDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1154,38 +1078,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_BasicDimension;
-class IGESDimen_BasicDimension : public IGESData_IGESEntity {
+%nodefaultctor Handle_IGESDimen_DimensionUnits;
+class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_BasicDimension();
+		Handle_IGESDimen_DimensionUnits();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const gp_XY lowerLeft, const gp_XY lowerRight, const gp_XY upperRight, const gp_XY upperLeft);
+		Handle_IGESDimen_DimensionUnits(const Handle_IGESDimen_DimensionUnits &aHandle);
 		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
+		Handle_IGESDimen_DimensionUnits(const IGESDimen_DimensionUnits *anItem);
 		%feature("autodoc", "1");
-		gp_Pnt2d LowerLeft() const;
+		Handle_IGESDimen_DimensionUnits & operator=(const Handle_IGESDimen_DimensionUnits &aHandle);
 		%feature("autodoc", "1");
-		gp_Pnt2d LowerRight() const;
+		Handle_IGESDimen_DimensionUnits & operator=(const IGESDimen_DimensionUnits *anItem);
 		%feature("autodoc", "1");
-		gp_Pnt2d UpperRight() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d UpperLeft() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_IGESDimen_DimensionUnits DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend IGESDimen_BasicDimension {
-	Handle_IGESDimen_BasicDimension GetHandle() {
-	return *(Handle_IGESDimen_BasicDimension*) &$self;
+%extend Handle_IGESDimen_DimensionUnits {
+	IGESDimen_DimensionUnits* GetObject() {
+	return (IGESDimen_DimensionUnits*)$self->Access();
 	}
 };
-%extend IGESDimen_BasicDimension {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_BasicDimension::~IGESDimen_BasicDimension %{
+%feature("shadow") Handle_IGESDimen_DimensionUnits::~Handle_IGESDimen_DimensionUnits %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1194,7 +1109,239 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_BasicDimension {
+%extend Handle_IGESDimen_DimensionUnits {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDimen_CenterLine;
+class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine();
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine(const Handle_IGESDimen_CenterLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine(const IGESDimen_CenterLine *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine & operator=(const Handle_IGESDimen_CenterLine &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_CenterLine & operator=(const IGESDimen_CenterLine *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDimen_CenterLine DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDimen_CenterLine {
+	IGESDimen_CenterLine* GetObject() {
+	return (IGESDimen_CenterLine*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDimen_CenterLine::~Handle_IGESDimen_CenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDimen_CenterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_CenterLine;
+class IGESDimen_CenterLine : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_CenterLine();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aDataType, const Standard_Real aZdisp, const Handle_TColgp_HArray1OfXY &dataPnts);
+		%feature("autodoc", "1");
+		void SetCrossHair(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		Standard_Integer Datatype() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		Standard_Real ZDisplacement() const;
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedPoint(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCrossHair() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_CenterLine {
+	Handle_IGESDimen_CenterLine GetHandle() {
+	return *(Handle_IGESDimen_CenterLine*) &$self;
+	}
+};
+%extend IGESDimen_CenterLine {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_CenterLine::~IGESDimen_CenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_CenterLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_PointDimension;
+class IGESDimen_PointDimension : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_PointDimension();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const Handle_IGESData_IGESEntity &aGeom);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote Note() const;
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow LeaderArrow() const;
+		%feature("autodoc", "1");
+		Standard_Integer GeomCase() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Geom() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CircularArc CircularArc() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_CompositeCurve CompositeCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_PointDimension {
+	Handle_IGESDimen_PointDimension GetHandle() {
+	return *(Handle_IGESDimen_PointDimension*) &$self;
+	}
+};
+%extend IGESDimen_PointDimension {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_PointDimension::~IGESDimen_PointDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_PointDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolDimensionTolerance;
+class IGESDimen_ToolDimensionTolerance {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolDimensionTolerance();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_DimensionTolerance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_DimensionTolerance &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_DimensionTolerance &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionTolerance &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionTolerance &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_DimensionTolerance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_DimensionTolerance &entfrom, const Handle_IGESDimen_DimensionTolerance &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_DimensionTolerance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolDimensionTolerance::~IGESDimen_ToolDimensionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolDimensionTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_HArray1OfGeneralNote;
+class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_HArray1OfGeneralNote(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESDimen_HArray1OfGeneralNote(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESDimen_GeneralNote &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESDimen_GeneralNote &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESDimen_GeneralNote &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESDimen_GeneralNote & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const IGESDimen_Array1OfGeneralNote & Array1() const;
+		%feature("autodoc", "1");
+		IGESDimen_Array1OfGeneralNote & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_HArray1OfGeneralNote {
+	Handle_IGESDimen_HArray1OfGeneralNote GetHandle() {
+	return *(Handle_IGESDimen_HArray1OfGeneralNote*) &$self;
+	}
+};
+%extend IGESDimen_HArray1OfGeneralNote {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_HArray1OfGeneralNote::~IGESDimen_HArray1OfGeneralNote %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_HArray1OfGeneralNote {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1237,7 +1384,7 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 };
 %extend IGESDimen_HArray1OfLeaderArrow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_HArray1OfLeaderArrow::~IGESDimen_HArray1OfLeaderArrow %{
@@ -1256,81 +1403,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_ToolCenterLine;
-class IGESDimen_ToolCenterLine {
+%nodefaultctor IGESDimen_ReadWriteModule;
+class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_ToolCenterLine();
+		IGESDimen_ReadWriteModule();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_CenterLine &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_CenterLine &ent, IGESData_IGESWriter & IW) const;
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_CenterLine &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_CenterLine &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_CenterLine &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_CenterLine &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_CenterLine &entfrom, const Handle_IGESDimen_CenterLine &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_CenterLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolCenterLine::~IGESDimen_ToolCenterLine %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolCenterLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_CenterLine;
-class IGESDimen_CenterLine : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_CenterLine();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aDataType, const Standard_Real aZdisp, const Handle_TColgp_HArray1OfXY &dataPnts);
-		%feature("autodoc", "1");
-		void SetCrossHair(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		Standard_Integer Datatype() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
-		%feature("autodoc", "1");
-		Standard_Real ZDisplacement() const;
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedPoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCrossHair() const;
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESDimen_CenterLine {
-	Handle_IGESDimen_CenterLine GetHandle() {
-	return *(Handle_IGESDimen_CenterLine*) &$self;
+%extend IGESDimen_ReadWriteModule {
+	Handle_IGESDimen_ReadWriteModule GetHandle() {
+	return *(Handle_IGESDimen_ReadWriteModule*) &$self;
 	}
 };
-%extend IGESDimen_CenterLine {
+%extend IGESDimen_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") IGESDimen_CenterLine::~IGESDimen_CenterLine %{
+%feature("shadow") IGESDimen_ReadWriteModule::~IGESDimen_ReadWriteModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1339,7 +1437,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_CenterLine {
+%extend IGESDimen_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1378,7 +1476,7 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 };
 %extend IGESDimen_GeneralSymbol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralSymbol::~IGESDimen_GeneralSymbol %{
@@ -1423,7 +1521,7 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DimensionedGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DimensionedGeometry::~IGESDimen_DimensionedGeometry %{
@@ -1436,45 +1534,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_DimensionedGeometry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolSection;
-class IGESDimen_ToolSection {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolSection();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_Section &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_Section &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_Section &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_Section &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_Section &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_Section &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_Section &entfrom, const Handle_IGESDimen_Section &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolSection::~IGESDimen_ToolSection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolSection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1517,7 +1576,7 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 };
 %extend IGESDimen_LeaderArrow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_LeaderArrow::~IGESDimen_LeaderArrow %{
@@ -1576,7 +1635,7 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 };
 %extend IGESDimen_SectionedArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_SectionedArea::~IGESDimen_SectionedArea %{
@@ -1645,7 +1704,7 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_GeneralNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_GeneralNote::~IGESDimen_GeneralNote %{
@@ -1658,47 +1717,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_GeneralNote {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ReadWriteModule;
-class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_ReadWriteModule {
-	Handle_IGESDimen_ReadWriteModule GetHandle() {
-	return *(Handle_IGESDimen_ReadWriteModule*) &$self;
-	}
-};
-%extend IGESDimen_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_ReadWriteModule::~IGESDimen_ReadWriteModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1733,7 +1751,7 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 };
 %extend IGESDimen_WitnessLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_WitnessLine::~IGESDimen_WitnessLine %{
@@ -1746,55 +1764,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_WitnessLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_PointDimension;
-class IGESDimen_PointDimension : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_PointDimension();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const Handle_IGESData_IGESEntity &aGeom);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote Note() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow LeaderArrow() const;
-		%feature("autodoc", "1");
-		Standard_Integer GeomCase() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Geom() const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc CircularArc() const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CompositeCurve CompositeCurve() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_PointDimension {
-	Handle_IGESDimen_PointDimension GetHandle() {
-	return *(Handle_IGESDimen_PointDimension*) &$self;
-	}
-};
-%extend IGESDimen_PointDimension {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_PointDimension::~IGESDimen_PointDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_PointDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1832,6 +1801,75 @@ def __del__(self):
 %}
 
 %extend IGESDimen_ToolGeneralNote {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_DimensionDisplayData;
+class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_DimensionDisplayData();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer numProps, const Standard_Integer aDimType, const Standard_Integer aLabelPos, const Standard_Integer aCharSet, const Handle_TCollection_HAsciiString &aString, const Standard_Integer aSymbol, const Standard_Real anAng, const Standard_Integer anAlign, const Standard_Integer aLevel, const Standard_Integer aPlace, const Standard_Integer anOrient, const Standard_Real initVal, const Handle_TColStd_HArray1OfInteger &notes, const Handle_TColStd_HArray1OfInteger &startInd, const Handle_TColStd_HArray1OfInteger &endInd);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer DimensionType() const;
+		%feature("autodoc", "1");
+		Standard_Integer LabelPosition() const;
+		%feature("autodoc", "1");
+		Standard_Integer CharacterSet() const;
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString LString() const;
+		%feature("autodoc", "1");
+		Standard_Integer DecimalSymbol() const;
+		%feature("autodoc", "1");
+		Standard_Real WitnessLineAngle() const;
+		%feature("autodoc", "1");
+		Standard_Integer TextAlignment() const;
+		%feature("autodoc", "1");
+		Standard_Integer TextLevel() const;
+		%feature("autodoc", "1");
+		Standard_Integer TextPlacement() const;
+		%feature("autodoc", "1");
+		Standard_Integer ArrowHeadOrientation() const;
+		%feature("autodoc", "1");
+		Standard_Real InitialValue() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSupplementaryNotes() const;
+		%feature("autodoc", "1");
+		Standard_Integer SupplementaryNote(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer StartIndex(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer EndIndex(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_DimensionDisplayData {
+	Handle_IGESDimen_DimensionDisplayData GetHandle() {
+	return *(Handle_IGESDimen_DimensionDisplayData*) &$self;
+	}
+};
+%extend IGESDimen_DimensionDisplayData {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_DimensionDisplayData::~IGESDimen_DimensionDisplayData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_DimensionDisplayData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1889,30 +1927,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_ToolDimensionedGeometry;
-class IGESDimen_ToolDimensionedGeometry {
+%nodefaultctor IGESDimen_GeneralModule;
+class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_ToolDimensionedGeometry();
+		IGESDimen_GeneralModule();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, IGESData_IGESWriter & IW) const;
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_DimensionedGeometry &ent, Interface_EntityIterator & iter) const;
+		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionedGeometry &ent) const;
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionedGeometry &ent) const;
+		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_DimensionedGeometry &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_DimensionedGeometry &entfrom, const Handle_IGESDimen_DimensionedGeometry &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESDimen_ToolDimensionedGeometry::~IGESDimen_ToolDimensionedGeometry %{
+%extend IGESDimen_GeneralModule {
+	Handle_IGESDimen_GeneralModule GetHandle() {
+	return *(Handle_IGESDimen_GeneralModule*) &$self;
+	}
+};
+%extend IGESDimen_GeneralModule {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_GeneralModule::~IGESDimen_GeneralModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1921,7 +1967,44 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_ToolDimensionedGeometry {
+%extend IGESDimen_GeneralModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolGeneralSymbol;
+class IGESDimen_ToolGeneralSymbol {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolGeneralSymbol();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_GeneralSymbol &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_GeneralSymbol &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_GeneralSymbol &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_GeneralSymbol &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_GeneralSymbol &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_GeneralSymbol &entfrom, const Handle_IGESDimen_GeneralSymbol &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_GeneralSymbol &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolGeneralSymbol::~IGESDimen_ToolGeneralSymbol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolGeneralSymbol {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2022,7 +2105,7 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESDimen_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_SpecificModule::~IGESDimen_SpecificModule %{
@@ -2071,7 +2154,7 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 };
 %extend IGESDimen_Section {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_Section::~IGESDimen_Section %{
@@ -2127,100 +2210,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_DimensionTolerance;
-class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_DimensionTolerance();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecTolFlag, const Standard_Integer aTolType, const Standard_Integer aTolPlaceFlag, const Standard_Real anUpperTol, const Standard_Real aLowerTol, const Standard_Boolean aSignFlag, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondaryToleranceFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer ToleranceType() const;
-		%feature("autodoc", "1");
-		Standard_Integer TolerancePlacementFlag() const;
-		%feature("autodoc", "1");
-		Standard_Real UpperTolerance() const;
-		%feature("autodoc", "1");
-		Standard_Real LowerTolerance() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SignSuppressionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer FractionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer Precision() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_DimensionTolerance {
-	Handle_IGESDimen_DimensionTolerance GetHandle() {
-	return *(Handle_IGESDimen_DimensionTolerance*) &$self;
-	}
-};
-%extend IGESDimen_DimensionTolerance {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_DimensionTolerance::~IGESDimen_DimensionTolerance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_DimensionTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolDimensionTolerance;
-class IGESDimen_ToolDimensionTolerance {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolDimensionTolerance();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_DimensionTolerance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_DimensionTolerance &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_DimensionTolerance &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionTolerance &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionTolerance &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_DimensionTolerance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_DimensionTolerance &entfrom, const Handle_IGESDimen_DimensionTolerance &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_DimensionTolerance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolDimensionTolerance::~IGESDimen_ToolDimensionTolerance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolDimensionTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESDimen_FlagNote;
 class IGESDimen_FlagNote : public IGESData_IGESEntity {
 	public:
@@ -2261,7 +2250,7 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_FlagNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_FlagNote::~IGESDimen_FlagNote %{
@@ -2310,7 +2299,7 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_DiameterDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_DiameterDimension::~IGESDimen_DiameterDimension %{
@@ -2323,80 +2312,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_DiameterDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolLeaderArrow;
-class IGESDimen_ToolLeaderArrow {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolLeaderArrow();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_LeaderArrow &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_LeaderArrow &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_LeaderArrow &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_LeaderArrow &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_LeaderArrow &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_LeaderArrow &entfrom, const Handle_IGESDimen_LeaderArrow &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_LeaderArrow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolLeaderArrow::~IGESDimen_ToolLeaderArrow %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolLeaderArrow {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolAngularDimension;
-class IGESDimen_ToolAngularDimension {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolAngularDimension();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_AngularDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_AngularDimension &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_AngularDimension &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_AngularDimension &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_AngularDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_AngularDimension &entfrom, const Handle_IGESDimen_AngularDimension &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolAngularDimension::~IGESDimen_ToolAngularDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolAngularDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2532,46 +2447,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_HArray1OfGeneralNote;
-class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
+%nodefaultctor IGESDimen_RadiusDimension;
+class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_HArray1OfGeneralNote(const Standard_Integer Low, const Standard_Integer Up);
+		IGESDimen_RadiusDimension();
 		%feature("autodoc", "1");
-		IGESDimen_HArray1OfGeneralNote(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESDimen_GeneralNote &V);
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &V);
+		void InitForm(const Standard_Integer form);
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		Handle_IGESDimen_GeneralNote Note() const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		Handle_IGESDimen_LeaderArrow Leader() const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		gp_Pnt2d Center() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESDimen_GeneralNote &Value);
+		gp_Pnt TransformedCenter() const;
 		%feature("autodoc", "1");
-		const Handle_IGESDimen_GeneralNote & Value(const Standard_Integer Index) const;
+		Standard_Boolean HasLeader2() const;
 		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESDimen_Array1OfGeneralNote & Array1() const;
-		%feature("autodoc", "1");
-		IGESDimen_Array1OfGeneralNote & ChangeArray1();
+		Handle_IGESDimen_LeaderArrow Leader2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESDimen_HArray1OfGeneralNote {
-	Handle_IGESDimen_HArray1OfGeneralNote GetHandle() {
-	return *(Handle_IGESDimen_HArray1OfGeneralNote*) &$self;
+%extend IGESDimen_RadiusDimension {
+	Handle_IGESDimen_RadiusDimension GetHandle() {
+	return *(Handle_IGESDimen_RadiusDimension*) &$self;
 	}
 };
-%extend IGESDimen_HArray1OfGeneralNote {
+%extend IGESDimen_RadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") IGESDimen_HArray1OfGeneralNote::~IGESDimen_HArray1OfGeneralNote %{
+%feature("shadow") IGESDimen_RadiusDimension::~IGESDimen_RadiusDimension %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2580,35 +2491,49 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_HArray1OfGeneralNote {
+%extend IGESDimen_RadiusDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESDimen_ToolDiameterDimension;
-class IGESDimen_ToolDiameterDimension {
+%nodefaultctor IGESDimen_DimensionUnits;
+class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_ToolDiameterDimension();
+		IGESDimen_DimensionUnits();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_DiameterDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecondPos, const Standard_Integer aUnitsInd, const Standard_Integer aCharSet, const Handle_TCollection_HAsciiString &aFormat, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_DiameterDimension &ent, IGESData_IGESWriter & IW) const;
+		Standard_Integer NbPropertyValues() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_DiameterDimension &ent, Interface_EntityIterator & iter) const;
+		Standard_Integer SecondaryDimenPosition() const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DiameterDimension &ent) const;
+		Standard_Integer UnitsIndicator() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_DiameterDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Standard_Integer CharacterSet() const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_DiameterDimension &entfrom, const Handle_IGESDimen_DiameterDimension &entto, Interface_CopyTool & TC) const;
+		Handle_TCollection_HAsciiString FormatString() const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_DiameterDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		Standard_Integer FractionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer PrecisionOrDenominator() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESDimen_ToolDiameterDimension::~IGESDimen_ToolDiameterDimension %{
+%extend IGESDimen_DimensionUnits {
+	Handle_IGESDimen_DimensionUnits GetHandle() {
+	return *(Handle_IGESDimen_DimensionUnits*) &$self;
+	}
+};
+%extend IGESDimen_DimensionUnits {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_DimensionUnits::~IGESDimen_DimensionUnits %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2617,7 +2542,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_ToolDiameterDimension {
+%extend IGESDimen_DimensionUnits {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2662,7 +2587,7 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_CurveDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_CurveDimension::~IGESDimen_CurveDimension %{
@@ -2681,28 +2606,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_ToolGeneralSymbol;
-class IGESDimen_ToolGeneralSymbol {
+%nodefaultctor IGESDimen_ToolDiameterDimension;
+class IGESDimen_ToolDiameterDimension {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_ToolGeneralSymbol();
+		IGESDimen_ToolDiameterDimension();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_GeneralSymbol &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESDimen_DiameterDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_GeneralSymbol &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESDimen_DiameterDimension &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_GeneralSymbol &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESDimen_DiameterDimension &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_GeneralSymbol &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DiameterDimension &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_GeneralSymbol &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESDimen_DiameterDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_GeneralSymbol &entfrom, const Handle_IGESDimen_GeneralSymbol &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESDimen_DiameterDimension &entfrom, const Handle_IGESDimen_DiameterDimension &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_GeneralSymbol &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESDimen_DiameterDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESDimen_ToolGeneralSymbol::~IGESDimen_ToolGeneralSymbol %{
+%feature("shadow") IGESDimen_ToolDiameterDimension::~IGESDimen_ToolDiameterDimension %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2711,67 +2636,37 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_ToolGeneralSymbol {
+%extend IGESDimen_ToolDiameterDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESDimen_DimensionDisplayData;
-class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
+%nodefaultctor IGESDimen_ToolSection;
+class IGESDimen_ToolSection {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_DimensionDisplayData();
+		IGESDimen_ToolSection();
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer numProps, const Standard_Integer aDimType, const Standard_Integer aLabelPos, const Standard_Integer aCharSet, const Handle_TCollection_HAsciiString &aString, const Standard_Integer aSymbol, const Standard_Real anAng, const Standard_Integer anAlign, const Standard_Integer aLevel, const Standard_Integer aPlace, const Standard_Integer anOrient, const Standard_Real initVal, const Handle_TColStd_HArray1OfInteger &notes, const Handle_TColStd_HArray1OfInteger &startInd, const Handle_TColStd_HArray1OfInteger &endInd);
+		void ReadOwnParams(const Handle_IGESDimen_Section &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
+		void WriteOwnParams(const Handle_IGESDimen_Section &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Integer DimensionType() const;
+		void OwnShared(const Handle_IGESDimen_Section &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Integer LabelPosition() const;
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_Section &ent) const;
 		%feature("autodoc", "1");
-		Standard_Integer CharacterSet() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_Section &ent) const;
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString LString() const;
+		void OwnCheck(const Handle_IGESDimen_Section &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		Standard_Integer DecimalSymbol() const;
+		void OwnCopy(const Handle_IGESDimen_Section &entfrom, const Handle_IGESDimen_Section &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		Standard_Real WitnessLineAngle() const;
-		%feature("autodoc", "1");
-		Standard_Integer TextAlignment() const;
-		%feature("autodoc", "1");
-		Standard_Integer TextLevel() const;
-		%feature("autodoc", "1");
-		Standard_Integer TextPlacement() const;
-		%feature("autodoc", "1");
-		Standard_Integer ArrowHeadOrientation() const;
-		%feature("autodoc", "1");
-		Standard_Real InitialValue() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSupplementaryNotes() const;
-		%feature("autodoc", "1");
-		Standard_Integer SupplementaryNote(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer StartIndex(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer EndIndex(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnDump(const Handle_IGESDimen_Section &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDimen_DimensionDisplayData {
-	Handle_IGESDimen_DimensionDisplayData GetHandle() {
-	return *(Handle_IGESDimen_DimensionDisplayData*) &$self;
-	}
-};
-%extend IGESDimen_DimensionDisplayData {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_DimensionDisplayData::~IGESDimen_DimensionDisplayData %{
+%feature("shadow") IGESDimen_ToolSection::~IGESDimen_ToolSection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2780,7 +2675,93 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_DimensionDisplayData {
+%extend IGESDimen_ToolSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_BasicDimension;
+class IGESDimen_BasicDimension : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_BasicDimension();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbPropVal, const gp_XY lowerLeft, const gp_XY lowerRight, const gp_XY upperRight, const gp_XY upperLeft);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d LowerLeft() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d LowerRight() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d UpperRight() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d UpperLeft() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_BasicDimension {
+	Handle_IGESDimen_BasicDimension GetHandle() {
+	return *(Handle_IGESDimen_BasicDimension*) &$self;
+	}
+};
+%extend IGESDimen_BasicDimension {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_BasicDimension::~IGESDimen_BasicDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_BasicDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolCenterLine;
+class IGESDimen_ToolCenterLine {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolCenterLine();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_CenterLine &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_CenterLine &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_CenterLine &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_CenterLine &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_CenterLine &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_CenterLine &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_CenterLine &entfrom, const Handle_IGESDimen_CenterLine &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_CenterLine &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolCenterLine::~IGESDimen_ToolCenterLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolCenterLine {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2955,7 +2936,7 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 };
 %extend IGESDimen_NewGeneralNote {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_NewGeneralNote::~IGESDimen_NewGeneralNote %{
@@ -3045,7 +3026,7 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_LinearDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_LinearDimension::~IGESDimen_LinearDimension %{
@@ -3064,38 +3045,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_GeneralModule;
-class IGESDimen_GeneralModule : public IGESData_GeneralModule {
+%nodefaultctor IGESDimen_ToolDimensionedGeometry;
+class IGESDimen_ToolDimensionedGeometry {
 	public:
 		%feature("autodoc", "1");
-		IGESDimen_GeneralModule();
+		IGESDimen_ToolDimensionedGeometry();
 		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		void ReadOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		void WriteOwnParams(const Handle_IGESDimen_DimensionedGeometry &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnShared(const Handle_IGESDimen_DimensionedGeometry &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
+		Standard_Boolean OwnCorrect(const Handle_IGESDimen_DimensionedGeometry &ent) const;
 		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_DimensionedGeometry &ent) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		void OwnCheck(const Handle_IGESDimen_DimensionedGeometry &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnCopy(const Handle_IGESDimen_DimensionedGeometry &entfrom, const Handle_IGESDimen_DimensionedGeometry &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_DimensionedGeometry &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESDimen_GeneralModule {
-	Handle_IGESDimen_GeneralModule GetHandle() {
-	return *(Handle_IGESDimen_GeneralModule*) &$self;
-	}
-};
-%extend IGESDimen_GeneralModule {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_GeneralModule::~IGESDimen_GeneralModule %{
+%feature("shadow") IGESDimen_ToolDimensionedGeometry::~IGESDimen_ToolDimensionedGeometry %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3104,7 +3077,81 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESDimen_GeneralModule {
+%extend IGESDimen_ToolDimensionedGeometry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolLinearDimension;
+class IGESDimen_ToolLinearDimension {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolLinearDimension();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_LinearDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_LinearDimension &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_LinearDimension &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_LinearDimension &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_LinearDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_LinearDimension &entfrom, const Handle_IGESDimen_LinearDimension &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_LinearDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolLinearDimension::~IGESDimen_ToolLinearDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolLinearDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolAngularDimension;
+class IGESDimen_ToolAngularDimension {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolAngularDimension();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_AngularDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_AngularDimension &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_AngularDimension &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_AngularDimension &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_AngularDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_AngularDimension &entfrom, const Handle_IGESDimen_AngularDimension &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_AngularDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolAngularDimension::~IGESDimen_ToolAngularDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolAngularDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3166,7 +3213,7 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_OrdinateDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_OrdinateDimension::~IGESDimen_OrdinateDimension %{
@@ -3179,49 +3226,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_OrdinateDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_GeneralLabel;
-class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_GeneralLabel();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_HArray1OfLeaderArrow &someLeaders);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote Note() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbLeaders() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow Leader(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_GeneralLabel {
-	Handle_IGESDimen_GeneralLabel GetHandle() {
-	return *(Handle_IGESDimen_GeneralLabel*) &$self;
-	}
-};
-%extend IGESDimen_GeneralLabel {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_GeneralLabel::~IGESDimen_GeneralLabel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_GeneralLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3303,7 +3307,7 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 };
 %extend IGESDimen_AngularDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_AngularDimension::~IGESDimen_AngularDimension %{
@@ -3316,6 +3320,49 @@ def __del__(self):
 %}
 
 %extend IGESDimen_AngularDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_GeneralLabel;
+class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_GeneralLabel();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_HArray1OfLeaderArrow &someLeaders);
+		%feature("autodoc", "1");
+		Handle_IGESDimen_GeneralNote Note() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbLeaders() const;
+		%feature("autodoc", "1");
+		Handle_IGESDimen_LeaderArrow Leader(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_GeneralLabel {
+	Handle_IGESDimen_GeneralLabel GetHandle() {
+	return *(Handle_IGESDimen_GeneralLabel*) &$self;
+	}
+};
+%extend IGESDimen_GeneralLabel {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_GeneralLabel::~IGESDimen_GeneralLabel %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_GeneralLabel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3353,6 +3400,98 @@ def __del__(self):
 %}
 
 %extend IGESDimen_ToolSectionedArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolLeaderArrow;
+class IGESDimen_ToolLeaderArrow {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolLeaderArrow();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_LeaderArrow &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_LeaderArrow &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_LeaderArrow &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_LeaderArrow &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_LeaderArrow &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_LeaderArrow &entfrom, const Handle_IGESDimen_LeaderArrow &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_LeaderArrow &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolLeaderArrow::~IGESDimen_ToolLeaderArrow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolLeaderArrow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_DimensionTolerance;
+class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_DimensionTolerance();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecTolFlag, const Standard_Integer aTolType, const Standard_Integer aTolPlaceFlag, const Standard_Real anUpperTol, const Standard_Real aLowerTol, const Standard_Boolean aSignFlag, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
+		%feature("autodoc", "1");
+		Standard_Integer NbPropertyValues() const;
+		%feature("autodoc", "1");
+		Standard_Integer SecondaryToleranceFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer ToleranceType() const;
+		%feature("autodoc", "1");
+		Standard_Integer TolerancePlacementFlag() const;
+		%feature("autodoc", "1");
+		Standard_Real UpperTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Real LowerTolerance() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SignSuppressionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer FractionFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer Precision() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESDimen_DimensionTolerance {
+	Handle_IGESDimen_DimensionTolerance GetHandle() {
+	return *(Handle_IGESDimen_DimensionTolerance*) &$self;
+	}
+};
+%extend IGESDimen_DimensionTolerance {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESDimen_DimensionTolerance::~IGESDimen_DimensionTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_DimensionTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3433,57 +3572,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_DimensionUnits;
-class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_DimensionUnits();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer nbPropVal, const Standard_Integer aSecondPos, const Standard_Integer aUnitsInd, const Standard_Integer aCharSet, const Handle_TCollection_HAsciiString &aFormat, const Standard_Integer aFracFlag, const Standard_Integer aPrecision);
-		%feature("autodoc", "1");
-		Standard_Integer NbPropertyValues() const;
-		%feature("autodoc", "1");
-		Standard_Integer SecondaryDimenPosition() const;
-		%feature("autodoc", "1");
-		Standard_Integer UnitsIndicator() const;
-		%feature("autodoc", "1");
-		Standard_Integer CharacterSet() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString FormatString() const;
-		%feature("autodoc", "1");
-		Standard_Integer FractionFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer PrecisionOrDenominator() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_DimensionUnits {
-	Handle_IGESDimen_DimensionUnits GetHandle() {
-	return *(Handle_IGESDimen_DimensionUnits*) &$self;
-	}
-};
-%extend IGESDimen_DimensionUnits {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_DimensionUnits::~IGESDimen_DimensionUnits %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_DimensionUnits {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESDimen_ToolDimensionDisplayData;
 class IGESDimen_ToolDimensionDisplayData {
 	public:
@@ -3517,94 +3605,6 @@ def __del__(self):
 %}
 
 %extend IGESDimen_ToolDimensionDisplayData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_RadiusDimension;
-class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_RadiusDimension();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESDimen_GeneralNote &aNote, const Handle_IGESDimen_LeaderArrow &anArrow, const gp_XY arcCenter, const Handle_IGESDimen_LeaderArrow &anotherArrow);
-		%feature("autodoc", "1");
-		void InitForm(const Standard_Integer form);
-		%feature("autodoc", "1");
-		Handle_IGESDimen_GeneralNote Note() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow Leader() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Center() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasLeader2() const;
-		%feature("autodoc", "1");
-		Handle_IGESDimen_LeaderArrow Leader2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESDimen_RadiusDimension {
-	Handle_IGESDimen_RadiusDimension GetHandle() {
-	return *(Handle_IGESDimen_RadiusDimension*) &$self;
-	}
-};
-%extend IGESDimen_RadiusDimension {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESDimen_RadiusDimension::~IGESDimen_RadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_RadiusDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESDimen_ToolLinearDimension;
-class IGESDimen_ToolLinearDimension {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolLinearDimension();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_LinearDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_LinearDimension &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_LinearDimension &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_LinearDimension &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_LinearDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_LinearDimension &entfrom, const Handle_IGESDimen_LinearDimension &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_LinearDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolLinearDimension::~IGESDimen_ToolLinearDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolLinearDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3647,7 +3647,7 @@ class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {
 };
 %extend IGESDimen_NewDimensionedGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESDimen_NewDimensionedGeometry::~IGESDimen_NewDimensionedGeometry %{

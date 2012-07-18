@@ -27,13 +27,13 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopoDS
-import Standard
-import TopOpeBRepBuild
 import TopTools
+import Standard
+import TopoDS
 import TopOpeBRepDS
+import TopOpeBRepBuild
+import TColStd
 import BOP
 import BOPTools
 import Geom2d
-import TColStd
 };

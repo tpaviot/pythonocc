@@ -127,27 +127,27 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_IntPatch_Line.hxx>
 #include<Handle_AppParCurves_HArray1OfConstraintCouple.hxx>
 #include<math_Vector.hxx>
 #include<AppParCurves_MultiCurve.hxx>
+#include<math_MultipleVarFunctionWithGradient.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<AppParCurves_MultiBSpCurve.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<IntSurf_Quadric.hxx>
 #include<math_Matrix.hxx>
+#include<gp_Pnt.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Dir2d.hxx>
 #include<Handle_IntPatch_WLine.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
-#include<math_MultipleVarFunctionWithGradient.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Dir2d.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Vec2d.hxx>
-#include<Handle_IntPatch_Line.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
 #include<Handle_GeomAdaptor_HSurface.hxx>
 #include<math_FunctionSetRoot.hxx>

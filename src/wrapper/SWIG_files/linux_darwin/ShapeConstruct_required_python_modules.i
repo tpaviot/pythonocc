@@ -27,7 +27,7 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
 import Geom
 import Geom2d
+import Standard
 };

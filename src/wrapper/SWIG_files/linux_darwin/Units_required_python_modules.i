@@ -27,7 +27,7 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import TCollection
 import TColStd
+import TCollection
+import Standard
 };

@@ -81,6 +81,64 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepDimTol_RWFlatnessTolerance;
+class RWStepDimTol_RWFlatnessTolerance {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWFlatnessTolerance();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_FlatnessTolerance &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepDimTol_RWFlatnessTolerance::~RWStepDimTol_RWFlatnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepDimTol_RWFlatnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
+class RWStepDimTol_RWGeometricToleranceWithDatumReference {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWGeometricToleranceWithDatumReference();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepDimTol_RWGeometricToleranceWithDatumReference::~RWStepDimTol_RWGeometricToleranceWithDatumReference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepDimTol_RWDatumReference;
 class RWStepDimTol_RWDatumReference {
 	public:
@@ -104,6 +162,35 @@ def __del__(self):
 %}
 
 %extend RWStepDimTol_RWDatumReference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
+class RWStepDimTol_RWPlacedDatumTargetFeature {
+	public:
+		%feature("autodoc", "1");
+		RWStepDimTol_RWPlacedDatumTargetFeature();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepDimTol_RWPlacedDatumTargetFeature::~RWStepDimTol_RWPlacedDatumTargetFeature %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepDimTol_RWPlacedDatumTargetFeature {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -197,35 +284,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
-class RWStepDimTol_RWSurfaceProfileTolerance {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWSurfaceProfileTolerance();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepDimTol_RWSurfaceProfileTolerance::~RWStepDimTol_RWSurfaceProfileTolerance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepDimTol_RWSurfaceProfileTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepDimTol_RWCommonDatum;
 class RWStepDimTol_RWCommonDatum {
 	public:
@@ -249,35 +307,6 @@ def __del__(self):
 %}
 
 %extend RWStepDimTol_RWCommonDatum {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
-class RWStepDimTol_RWPlacedDatumTargetFeature {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWPlacedDatumTargetFeature();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PlacedDatumTargetFeature &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PlacedDatumTargetFeature &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepDimTol_RWPlacedDatumTargetFeature::~RWStepDimTol_RWPlacedDatumTargetFeature %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepDimTol_RWPlacedDatumTargetFeature {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -371,20 +400,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepDimTol_RWPositionTolerance;
-class RWStepDimTol_RWPositionTolerance {
+%nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
+class RWStepDimTol_RWSurfaceProfileTolerance {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWPositionTolerance();
+		RWStepDimTol_RWSurfaceProfileTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_SurfaceProfileTolerance &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_SurfaceProfileTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepDimTol_RWPositionTolerance::~RWStepDimTol_RWPositionTolerance %{
+%feature("shadow") RWStepDimTol_RWSurfaceProfileTolerance::~RWStepDimTol_RWSurfaceProfileTolerance %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -393,7 +422,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepDimTol_RWPositionTolerance {
+%extend RWStepDimTol_RWSurfaceProfileTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -458,20 +487,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepDimTol_RWFlatnessTolerance;
-class RWStepDimTol_RWFlatnessTolerance {
+%nodefaultctor RWStepDimTol_RWPositionTolerance;
+class RWStepDimTol_RWPositionTolerance {
 	public:
 		%feature("autodoc", "1");
-		RWStepDimTol_RWFlatnessTolerance();
+		RWStepDimTol_RWPositionTolerance();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_PositionTolerance &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_FlatnessTolerance &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_PositionTolerance &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_FlatnessTolerance &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepDimTol_PositionTolerance &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepDimTol_RWFlatnessTolerance::~RWStepDimTol_RWFlatnessTolerance %{
+%feature("shadow") RWStepDimTol_RWPositionTolerance::~RWStepDimTol_RWPositionTolerance %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -480,7 +509,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepDimTol_RWFlatnessTolerance {
+%extend RWStepDimTol_RWPositionTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -771,35 +800,6 @@ def __del__(self):
 %}
 
 %extend RWStepDimTol_RWDatum {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
-class RWStepDimTol_RWGeometricToleranceWithDatumReference {
-	public:
-		%feature("autodoc", "1");
-		RWStepDimTol_RWGeometricToleranceWithDatumReference();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepDimTol_GeometricToleranceWithDatumReference &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepDimTol_RWGeometricToleranceWithDatumReference::~RWStepDimTol_RWGeometricToleranceWithDatumReference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	void _kill_pointed() {
 		delete $self;
 	}

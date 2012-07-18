@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_StepSelect_ModelModifier;
-class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
+%nodefaultctor Handle_StepSelect_StepType;
+class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier();
+		Handle_StepSelect_StepType();
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier(const Handle_StepSelect_ModelModifier &aHandle);
+		Handle_StepSelect_StepType(const Handle_StepSelect_StepType &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier(const StepSelect_ModelModifier *anItem);
+		Handle_StepSelect_StepType(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier & operator=(const Handle_StepSelect_ModelModifier &aHandle);
+		Handle_StepSelect_StepType & operator=(const Handle_StepSelect_StepType &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_ModelModifier & operator=(const StepSelect_ModelModifier *anItem);
+		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepSelect_ModelModifier DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_StepType DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepSelect_ModelModifier {
-	StepSelect_ModelModifier* GetObject() {
-	return (StepSelect_ModelModifier*)$self->Access();
+%extend Handle_StepSelect_StepType {
+	StepSelect_StepType* GetObject() {
+	return (StepSelect_StepType*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepSelect_ModelModifier::~Handle_StepSelect_ModelModifier %{
+%feature("shadow") Handle_StepSelect_StepType::~Handle_StepSelect_StepType %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepSelect_ModelModifier {
+%extend Handle_StepSelect_StepType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -166,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepSelect_WorkLibrary;
-class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
+%nodefaultctor Handle_StepSelect_ModelModifier;
+class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary();
+		Handle_StepSelect_ModelModifier();
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_ModelModifier(const Handle_StepSelect_ModelModifier &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
+		Handle_StepSelect_ModelModifier(const StepSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary & operator=(const Handle_StepSelect_WorkLibrary &aHandle);
+		Handle_StepSelect_ModelModifier & operator=(const Handle_StepSelect_ModelModifier &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
+		Handle_StepSelect_ModelModifier & operator=(const StepSelect_ModelModifier *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepSelect_WorkLibrary DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_ModelModifier DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepSelect_WorkLibrary {
-	StepSelect_WorkLibrary* GetObject() {
-	return (StepSelect_WorkLibrary*)$self->Access();
+%extend Handle_StepSelect_ModelModifier {
+	StepSelect_ModelModifier* GetObject() {
+	return (StepSelect_ModelModifier*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepSelect_WorkLibrary::~Handle_StepSelect_WorkLibrary %{
+%feature("shadow") Handle_StepSelect_ModelModifier::~Handle_StepSelect_ModelModifier %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,7 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepSelect_WorkLibrary {
+%extend Handle_StepSelect_ModelModifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,29 +242,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepSelect_StepType;
-class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
+%nodefaultctor Handle_StepSelect_WorkLibrary;
+class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType();
+		Handle_StepSelect_WorkLibrary();
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType(const Handle_StepSelect_StepType &aHandle);
+		Handle_StepSelect_WorkLibrary(const Handle_StepSelect_WorkLibrary &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType(const StepSelect_StepType *anItem);
+		Handle_StepSelect_WorkLibrary(const StepSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType & operator=(const Handle_StepSelect_StepType &aHandle);
+		Handle_StepSelect_WorkLibrary & operator=(const Handle_StepSelect_WorkLibrary &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepSelect_StepType & operator=(const StepSelect_StepType *anItem);
+		Handle_StepSelect_WorkLibrary & operator=(const StepSelect_WorkLibrary *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepSelect_StepType DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepSelect_WorkLibrary DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepSelect_StepType {
-	StepSelect_StepType* GetObject() {
-	return (StepSelect_StepType*)$self->Access();
+%extend Handle_StepSelect_WorkLibrary {
+	StepSelect_WorkLibrary* GetObject() {
+	return (StepSelect_WorkLibrary*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepSelect_StepType::~Handle_StepSelect_StepType %{
+%feature("shadow") Handle_StepSelect_WorkLibrary::~Handle_StepSelect_WorkLibrary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -273,33 +273,37 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepSelect_StepType {
+%extend Handle_StepSelect_WorkLibrary {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor StepSelect_FileModifier;
-class StepSelect_FileModifier : public IFSelect_GeneralModifier {
+%nodefaultctor StepSelect_StepType;
+class StepSelect_StepType : public IFSelect_Signature {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
+		StepSelect_StepType();
+		%feature("autodoc", "1");
+		void SetProtocol(const Handle_Interface_Protocol &proto);
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepSelect_FileModifier {
-	Handle_StepSelect_FileModifier GetHandle() {
-	return *(Handle_StepSelect_FileModifier*) &$self;
+%extend StepSelect_StepType {
+	Handle_StepSelect_StepType GetHandle() {
+	return *(Handle_StepSelect_StepType*) &$self;
 	}
 };
-%extend StepSelect_FileModifier {
+%extend StepSelect_StepType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
+%feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -308,7 +312,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepSelect_FileModifier {
+%extend StepSelect_StepType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -341,7 +345,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend StepSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
@@ -360,30 +364,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepSelect_Activator;
-class StepSelect_Activator : public IFSelect_Activator {
+%nodefaultctor StepSelect_FileModifier;
+class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 	public:
 		%feature("autodoc", "1");
-		StepSelect_Activator();
-		%feature("autodoc", "1");
-		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
-		%feature("autodoc", "1");
-		virtual		char * Help(const Standard_Integer number) const;
+		virtual		void Perform(IFSelect_ContextWrite & ctx, StepData_StepWriter & writer) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepSelect_Activator {
-	Handle_StepSelect_Activator GetHandle() {
-	return *(Handle_StepSelect_Activator*) &$self;
+%extend StepSelect_FileModifier {
+	Handle_StepSelect_FileModifier GetHandle() {
+	return *(Handle_StepSelect_FileModifier*) &$self;
 	}
 };
-%extend StepSelect_Activator {
+%extend StepSelect_FileModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
+%feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -392,46 +392,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepSelect_Activator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepSelect_StepType;
-class StepSelect_StepType : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		StepSelect_StepType();
-		%feature("autodoc", "1");
-		void SetProtocol(const Handle_Interface_Protocol &proto);
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepSelect_StepType {
-	Handle_StepSelect_StepType GetHandle() {
-	return *(Handle_StepSelect_StepType*) &$self;
-	}
-};
-%extend StepSelect_StepType {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepSelect_StepType {
+%extend StepSelect_FileModifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -450,7 +411,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 		%feature("autodoc", "1");
 		void SetFormat(const char * format="%E");
 		%feature("autodoc", "1");
-		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real Rmax=1.0e+3);
+		void SetFormatForRange(const char * format="%f", const Standard_Real Rmin=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Real Rmax=1.0e+3);
 		%feature("autodoc","Format() -> [Standard_Real, Standard_Real]");
 
 		void Format(Standard_Boolean & zerosup, TCollection_AsciiString & mainform, Standard_Boolean & hasrange, TCollection_AsciiString & forminrange, Standard_Real &OutValue, Standard_Real &OutValue) const;
@@ -469,7 +430,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %extend StepSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{
@@ -508,7 +469,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend StepSelect_ModelModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
@@ -521,6 +482,45 @@ def __del__(self):
 %}
 
 %extend StepSelect_ModelModifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepSelect_Activator;
+class StepSelect_Activator : public IFSelect_Activator {
+	public:
+		%feature("autodoc", "1");
+		StepSelect_Activator();
+		%feature("autodoc", "1");
+		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
+		%feature("autodoc", "1");
+		virtual		char * Help(const Standard_Integer number) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepSelect_Activator {
+	Handle_StepSelect_Activator GetHandle() {
+	return *(Handle_StepSelect_Activator*) &$self;
+	}
+};
+%extend StepSelect_Activator {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepSelect_Activator {
 	void _kill_pointed() {
 		delete $self;
 	}

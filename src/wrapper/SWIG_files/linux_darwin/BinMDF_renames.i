@@ -24,9 +24,9 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_BinMDF_ADriver::DownCast;
+%rename(DownCast) Handle_BinMDF_TagSourceDriver::DownCast;
 %rename(DownCast) Handle_BinMDF_ReferenceDriver::DownCast;
 %rename(DownCast) Handle_BinMDF_ADriverTable::DownCast;
-%rename(DownCast) Handle_BinMDF_TagSourceDriver::DownCast;
 %rename(DownCast) Handle_BinMDF_DoubleMapNodeOfTypeIdMap::DownCast;
 %rename(DownCast) Handle_BinMDF_DataMapNodeOfTypeADriverMap::DownCast;
 %rename(AddDrivers) BinMDF::AddDrivers;

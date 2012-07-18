@@ -23,6 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_RWHeaderSection_ReadWriteModule::DownCast;
 %rename(DownCast) Handle_RWHeaderSection_GeneralModule::DownCast;
+%rename(DownCast) Handle_RWHeaderSection_ReadWriteModule::DownCast;
 %rename(Init) RWHeaderSection::Init;

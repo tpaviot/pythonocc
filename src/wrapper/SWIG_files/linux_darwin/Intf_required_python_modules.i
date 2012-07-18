@@ -29,4 +29,5 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import gp
+import Bnd
 };

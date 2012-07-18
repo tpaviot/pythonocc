@@ -129,44 +129,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Poly_Polygon3D;
-class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D();
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Poly_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Poly_Polygon3D {
-	Poly_Polygon3D* GetObject() {
-	return (Poly_Polygon3D*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Poly_Polygon3D::~Handle_Poly_Polygon3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Poly_Polygon3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Poly_Polygon2D;
 class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	public:
@@ -199,44 +161,6 @@ def __del__(self):
 %}
 
 %extend Handle_Poly_Polygon2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Poly_CoherentTriangulation;
-class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation();
-		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation(const Handle_Poly_CoherentTriangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation(const Poly_CoherentTriangulation *anItem);
-		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation & operator=(const Handle_Poly_CoherentTriangulation &aHandle);
-		%feature("autodoc", "1");
-		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Poly_CoherentTriangulation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Poly_CoherentTriangulation {
-	Poly_CoherentTriangulation* GetObject() {
-	return (Poly_CoherentTriangulation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Poly_CoherentTriangulation::~Handle_Poly_CoherentTriangulation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Poly_CoherentTriangulation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -281,62 +205,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Poly_Triangulation;
-class Poly_Triangulation : public MMgt_TShared {
+%nodefaultctor Handle_Poly_CoherentTriangulation;
+class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
+		Handle_Poly_CoherentTriangulation();
 		%feature("autodoc", "1");
-		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const Poly_Array1OfTriangle &Triangles);
+		Handle_Poly_CoherentTriangulation(const Handle_Poly_CoherentTriangulation &aHandle);
 		%feature("autodoc", "1");
-		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const TColgp_Array1OfPnt2d &UVNodes, const Poly_Array1OfTriangle &Triangles);
+		Handle_Poly_CoherentTriangulation(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
+		Handle_Poly_CoherentTriangulation & operator=(const Handle_Poly_CoherentTriangulation &aHandle);
 		%feature("autodoc", "1");
-		void Deflection(const Standard_Real D);
+		Handle_Poly_CoherentTriangulation & operator=(const Poly_CoherentTriangulation *anItem);
 		%feature("autodoc", "1");
-		void RemoveUVNodes();
-		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasUVNodes() const;
-		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt & Nodes() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfPnt & ChangeNodes();
-		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt2d & UVNodes() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfPnt2d & ChangeUVNodes();
-		%feature("autodoc", "1");
-		const Poly_Array1OfTriangle & Triangles() const;
-		%feature("autodoc", "1");
-		Poly_Array1OfTriangle & ChangeTriangles();
-		%feature("autodoc", "1");
-		void SetNormals(const Handle_TShort_HArray1OfShortReal &theNormals);
-		%feature("autodoc", "1");
-		const TShort_Array1OfShortReal & Normals() const;
-		%feature("autodoc", "1");
-		TShort_Array1OfShortReal & ChangeNormals();
-		%feature("autodoc", "1");
-		Standard_Boolean HasNormals() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_Poly_CoherentTriangulation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Poly_Triangulation {
-	Handle_Poly_Triangulation GetHandle() {
-	return *(Handle_Poly_Triangulation*) &$self;
+%extend Handle_Poly_CoherentTriangulation {
+	Poly_CoherentTriangulation* GetObject() {
+	return (Poly_CoherentTriangulation*)$self->Access();
 	}
 };
-%extend Poly_Triangulation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Poly_Triangulation::~Poly_Triangulation %{
+%feature("shadow") Handle_Poly_CoherentTriangulation::~Handle_Poly_CoherentTriangulation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -345,7 +236,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Poly_Triangulation {
+%extend Handle_Poly_CoherentTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Poly_Polygon3D;
+class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D();
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D(const Handle_Poly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D(const Poly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Handle_Poly_Polygon3D &aHandle);
+		%feature("autodoc", "1");
+		Handle_Poly_Polygon3D & operator=(const Poly_Polygon3D *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Poly_Polygon3D DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Poly_Polygon3D {
+	Poly_Polygon3D* GetObject() {
+	return (Poly_Polygon3D*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Poly_Polygon3D::~Handle_Poly_Polygon3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Poly_Polygon3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -480,7 +409,7 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 };
 %extend Poly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Poly_PolygonOnTriangulation::~Poly_PolygonOnTriangulation %{
@@ -493,6 +422,29 @@ def __del__(self):
 %}
 
 %extend Poly_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_MakeLoops2D;
+class Poly_MakeLoops2D : public Poly_MakeLoops {
+	public:
+		%feature("autodoc", "1");
+		Poly_MakeLoops2D(const Standard_Boolean theLeftWay, const Poly_MakeLoops2D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
+
+};
+%feature("shadow") Poly_MakeLoops2D::~Poly_MakeLoops2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_MakeLoops2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -544,6 +496,49 @@ def __del__(self):
 %}
 
 %extend Poly_Array1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_Polygon2D;
+class Poly_Polygon2D : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Poly_Polygon2D(const TColgp_Array1OfPnt2d &Nodes);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real D);
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		const TColgp_Array1OfPnt2d & Nodes() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Poly_Polygon2D {
+	Handle_Poly_Polygon2D GetHandle() {
+	return *(Handle_Poly_Polygon2D*) &$self;
+	}
+};
+%extend Poly_Polygon2D {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Poly_Polygon2D::~Poly_Polygon2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_Polygon2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -647,57 +642,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor Poly_MakeLoops2D;
-class Poly_MakeLoops2D : public Poly_MakeLoops {
+%nodefaultctor Poly_HArray1OfTriangle;
+class Poly_HArray1OfTriangle : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Poly_MakeLoops2D(const Standard_Boolean theLeftWay, const Poly_MakeLoops2D::Helper *theHelper, const Handle_NCollection_BaseAllocator &theAlloc);
-
-};
-%feature("shadow") Poly_MakeLoops2D::~Poly_MakeLoops2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Poly_MakeLoops2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Poly_Polygon2D;
-class Poly_Polygon2D : public MMgt_TShared {
-	public:
+		Poly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Poly_Polygon2D(const TColgp_Array1OfPnt2d &Nodes);
+		Poly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const Poly_Triangle &V);
 		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
+		void Init(const Poly_Triangle &V);
 		%feature("autodoc", "1");
-		void Deflection(const Standard_Real D);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		const TColgp_Array1OfPnt2d & Nodes() const;
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Poly_Triangle &Value);
+		%feature("autodoc", "1");
+		const Poly_Triangle & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Poly_Triangle & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Poly_Array1OfTriangle & Array1() const;
+		%feature("autodoc", "1");
+		Poly_Array1OfTriangle & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Poly_Polygon2D {
-	Handle_Poly_Polygon2D GetHandle() {
-	return *(Handle_Poly_Polygon2D*) &$self;
+%extend Poly_HArray1OfTriangle {
+	Handle_Poly_HArray1OfTriangle GetHandle() {
+	return *(Handle_Poly_HArray1OfTriangle*) &$self;
 	}
 };
-%extend Poly_Polygon2D {
+%extend Poly_HArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Poly_Polygon2D::~Poly_Polygon2D %{
+%feature("shadow") Poly_HArray1OfTriangle::~Poly_HArray1OfTriangle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -706,7 +690,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Poly_Polygon2D {
+%extend Poly_HArray1OfTriangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -769,61 +753,6 @@ def __del__(self):
 %}
 
 %extend Poly {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Poly_HArray1OfTriangle;
-class Poly_HArray1OfTriangle : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Poly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Poly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const Poly_Triangle &V);
-		%feature("autodoc", "1");
-		void Init(const Poly_Triangle &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Poly_Triangle &Value);
-		%feature("autodoc", "1");
-		const Poly_Triangle & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Poly_Triangle & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Poly_Array1OfTriangle & Array1() const;
-		%feature("autodoc", "1");
-		Poly_Array1OfTriangle & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Poly_HArray1OfTriangle {
-	Handle_Poly_HArray1OfTriangle GetHandle() {
-	return *(Handle_Poly_HArray1OfTriangle*) &$self;
-	}
-};
-%extend Poly_HArray1OfTriangle {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Poly_HArray1OfTriangle::~Poly_HArray1OfTriangle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Poly_HArray1OfTriangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -901,7 +830,7 @@ class Poly_Polygon3D : public MMgt_TShared {
 };
 %extend Poly_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Poly_Polygon3D::~Poly_Polygon3D %{
@@ -914,6 +843,77 @@ def __del__(self):
 %}
 
 %extend Poly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Poly_Triangulation;
+class Poly_Triangulation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Poly_Triangulation(const Standard_Integer nbNodes, const Standard_Integer nbTriangles, const Standard_Boolean UVNodes);
+		%feature("autodoc", "1");
+		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const Poly_Array1OfTriangle &Triangles);
+		%feature("autodoc", "1");
+		Poly_Triangulation(const TColgp_Array1OfPnt &Nodes, const TColgp_Array1OfPnt2d &UVNodes, const Poly_Array1OfTriangle &Triangles);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real D);
+		%feature("autodoc", "1");
+		void RemoveUVNodes();
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasUVNodes() const;
+		%feature("autodoc", "1");
+		const TColgp_Array1OfPnt & Nodes() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfPnt & ChangeNodes();
+		%feature("autodoc", "1");
+		const TColgp_Array1OfPnt2d & UVNodes() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfPnt2d & ChangeUVNodes();
+		%feature("autodoc", "1");
+		const Poly_Array1OfTriangle & Triangles() const;
+		%feature("autodoc", "1");
+		Poly_Array1OfTriangle & ChangeTriangles();
+		%feature("autodoc", "1");
+		void SetNormals(const Handle_TShort_HArray1OfShortReal &theNormals);
+		%feature("autodoc", "1");
+		const TShort_Array1OfShortReal & Normals() const;
+		%feature("autodoc", "1");
+		TShort_Array1OfShortReal & ChangeNormals();
+		%feature("autodoc", "1");
+		Standard_Boolean HasNormals() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Poly_Triangulation {
+	Handle_Poly_Triangulation GetHandle() {
+	return *(Handle_Poly_Triangulation*) &$self;
+	}
+};
+%extend Poly_Triangulation {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Poly_Triangulation::~Poly_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Poly_Triangulation {
 	void _kill_pointed() {
 		delete $self;
 	}

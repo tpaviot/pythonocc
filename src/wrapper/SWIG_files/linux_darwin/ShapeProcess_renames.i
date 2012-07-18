@@ -23,14 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_ShapeProcess_Context::DownCast;
 %rename(DownCast) Handle_ShapeProcess_StackItemOfDictionaryOfOperator::DownCast;
 %rename(DownCast) Handle_ShapeProcess_Operator::DownCast;
 %rename(DownCast) Handle_ShapeProcess_UOperator::DownCast;
-%rename(DownCast) Handle_ShapeProcess_Context::DownCast;
 %rename(DownCast) Handle_ShapeProcess_DictionaryOfOperator::DownCast;
 %rename(DownCast) Handle_ShapeProcess_ShapeContext::DownCast;
-%rename(Init) ShapeProcess_OperLibrary::Init;
-%rename(ApplyModifier) ShapeProcess_OperLibrary::ApplyModifier;
 %rename(RegisterOperator) ShapeProcess::RegisterOperator;
 %rename(FindOperator) ShapeProcess::FindOperator;
 %rename(Perform) ShapeProcess::Perform;
+%rename(Init) ShapeProcess_OperLibrary::Init;
+%rename(ApplyModifier) ShapeProcess_OperLibrary::ApplyModifier;

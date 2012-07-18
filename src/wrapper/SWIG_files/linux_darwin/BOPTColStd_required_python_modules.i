@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopoDS
-import TColStd
 import TCollection
 import gp
+import TColStd
 import TopTools
 };

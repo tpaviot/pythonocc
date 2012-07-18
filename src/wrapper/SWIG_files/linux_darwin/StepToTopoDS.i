@@ -59,14 +59,14 @@ enum StepToTopoDS_GeometricToolError {
 	StepToTopoDS_GeometricToolOther,
 	};
 
-enum StepToTopoDS_TranslateEdgeError {
-	StepToTopoDS_TranslateEdgeDone,
-	StepToTopoDS_TranslateEdgeOther,
+enum StepToTopoDS_TranslateFaceError {
+	StepToTopoDS_TranslateFaceDone,
+	StepToTopoDS_TranslateFaceOther,
 	};
 
-enum StepToTopoDS_BuilderError {
-	StepToTopoDS_BuilderDone,
-	StepToTopoDS_BuilderOther,
+enum StepToTopoDS_TranslateShellError {
+	StepToTopoDS_TranslateShellDone,
+	StepToTopoDS_TranslateShellOther,
 	};
 
 enum StepToTopoDS_TranslateVertexError {
@@ -74,14 +74,19 @@ enum StepToTopoDS_TranslateVertexError {
 	StepToTopoDS_TranslateVertexOther,
 	};
 
+enum StepToTopoDS_BuilderError {
+	StepToTopoDS_BuilderDone,
+	StepToTopoDS_BuilderOther,
+	};
+
+enum StepToTopoDS_TranslateEdgeError {
+	StepToTopoDS_TranslateEdgeDone,
+	StepToTopoDS_TranslateEdgeOther,
+	};
+
 enum StepToTopoDS_TranslateEdgeLoopError {
 	StepToTopoDS_TranslateEdgeLoopDone,
 	StepToTopoDS_TranslateEdgeLoopOther,
-	};
-
-enum StepToTopoDS_TranslateFaceError {
-	StepToTopoDS_TranslateFaceDone,
-	StepToTopoDS_TranslateFaceOther,
 	};
 
 enum StepToTopoDS_TranslatePolyLoopError {
@@ -94,49 +99,6 @@ enum StepToTopoDS_TranslateVertexLoopError {
 	StepToTopoDS_TranslateVertexLoopOther,
 	};
 
-enum StepToTopoDS_TranslateShellError {
-	StepToTopoDS_TranslateShellDone,
-	StepToTopoDS_TranslateShellOther,
-	};
-
-
-
-%nodefaultctor Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI;
-class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
-		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
-		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	StepToTopoDS_DataMapNodeOfDataMapOfTRI* GetObject() {
-	return (StepToTopoDS_DataMapNodeOfDataMapOfTRI*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI::~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
 
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfDataMapOfRINames;
@@ -171,6 +133,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfRINames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI;
+class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI();
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI & operator=(const StepToTopoDS_DataMapNodeOfDataMapOfTRI *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	StepToTopoDS_DataMapNodeOfDataMapOfTRI* GetObject() {
+	return (StepToTopoDS_DataMapNodeOfDataMapOfTRI*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI::~Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -291,38 +291,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToTopoDS_GeometricTool;
-class StepToTopoDS_GeometricTool {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_GeometricTool();
-		%feature("autodoc", "1");
-		static		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
-		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci) -> [Standard_Real, Standard_Real]");
-
-		static		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
-
-};
-%feature("shadow") StepToTopoDS_GeometricTool::~StepToTopoDS_GeometricTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_GeometricTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToTopoDS_Root;
 class StepToTopoDS_Root {
 	public:
@@ -384,68 +352,6 @@ def __del__(self):
 %}
 
 %extend StepToTopoDS_MakeTransformed {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
-class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const StepToTopoDS_PointEdgeMap &aMap);
-		%feature("autodoc", "1");
-		const StepToTopoDS_PointPair & Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  Value() const;
-
-};
-%feature("shadow") StepToTopoDS_DataMapIteratorOfPointEdgeMap::~StepToTopoDS_DataMapIteratorOfPointEdgeMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_TranslateShell;
-class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShell();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateShellError Error() const;
-
-};
-%feature("shadow") StepToTopoDS_TranslateShell::~StepToTopoDS_TranslateShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_TranslateShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -593,6 +499,10 @@ class StepToTopoDS_DataMapOfRI : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_StepRepr_RepresentationItem &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_StepRepr_RepresentationItem &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepRepr_RepresentationItem &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepRepr_RepresentationItem &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfRI::~StepToTopoDS_DataMapOfRI %{
@@ -631,7 +541,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfRINames : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfRINames {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRINames::~StepToTopoDS_DataMapNodeOfDataMapOfRINames %{
@@ -739,6 +649,123 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
+class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_PointPair &K, const TopoDS_Edge I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Edge  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfRI;
+class StepToTopoDS_DataMapNodeOfDataMapOfRI : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfDataMapOfRI(const Handle_StepRepr_RepresentationItem &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
+	Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRI::~StepToTopoDS_DataMapNodeOfDataMapOfRI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
+class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_StepShape_TopologicalRepresentationItem & Key() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
+	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
+	}
+};
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfTRI;
 class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIterator {
 	public:
@@ -817,7 +844,7 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfPointVertexMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointVertexMap::~StepToTopoDS_DataMapNodeOfPointVertexMap %{
@@ -863,6 +890,10 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_StepShape_TopologicalRepresentationItem &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_StepShape_TopologicalRepresentationItem &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepShape_TopologicalRepresentationItem &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepShape_TopologicalRepresentationItem &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfTRI::~StepToTopoDS_DataMapOfTRI %{
@@ -908,6 +939,10 @@ class StepToTopoDS_DataMapOfRINames : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfRINames::~StepToTopoDS_DataMapOfRINames %{
@@ -988,45 +1023,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfRI;
-class StepToTopoDS_DataMapNodeOfDataMapOfRI : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapNodeOfDataMapOfRI(const Handle_StepRepr_RepresentationItem &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem & Key() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
-	Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI GetHandle() {
-	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfRI*) &$self;
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRI::~StepToTopoDS_DataMapNodeOfDataMapOfRI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
 class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 	public:
@@ -1042,6 +1038,8 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 		Standard_Boolean Init(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP, const Handle_StepGeom_Surface &S, const Handle_Geom_Surface &Surf);
 		%feature("autodoc", "1");
 		const TopoDS_Wire  Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfiniteSegment() const;
 
 };
 %feature("shadow") StepToTopoDS_TranslateCompositeCurve::~StepToTopoDS_TranslateCompositeCurve %{
@@ -1087,6 +1085,10 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		TopoDS_Vertex  ChangeFind(const Handle_StepGeom_CartesianPoint &K);
 		%feature("autodoc", "1");
 		TopoDS_Vertex  operator()(const Handle_StepGeom_CartesianPoint &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepGeom_CartesianPoint &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepGeom_CartesianPoint &K);
 
 };
 %feature("shadow") StepToTopoDS_PointVertexMap::~StepToTopoDS_PointVertexMap %{
@@ -1122,6 +1124,131 @@ def __del__(self):
 %}
 
 %extend StepToTopoDS_PointPair {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfRINames;
+class StepToTopoDS_DataMapIteratorOfDataMapOfRINames : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfDataMapOfRINames();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfDataMapOfRINames(const StepToTopoDS_DataMapOfRINames &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_DataMapOfRINames &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value() const;
+
+};
+%feature("shadow") StepToTopoDS_DataMapIteratorOfDataMapOfRINames::~StepToTopoDS_DataMapIteratorOfDataMapOfRINames %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_DataMapIteratorOfDataMapOfRINames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
+class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop();
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateEdgeLoopError Error() const;
+
+};
+%feature("shadow") StepToTopoDS_TranslateEdgeLoop::~StepToTopoDS_TranslateEdgeLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_TranslateEdgeLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
+class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap();
+		%feature("autodoc", "1");
+		StepToTopoDS_DataMapIteratorOfPointEdgeMap(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const StepToTopoDS_PointEdgeMap &aMap);
+		%feature("autodoc", "1");
+		const StepToTopoDS_PointPair & Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  Value() const;
+
+};
+%feature("shadow") StepToTopoDS_DataMapIteratorOfPointEdgeMap::~StepToTopoDS_DataMapIteratorOfPointEdgeMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_DataMapIteratorOfPointEdgeMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToTopoDS_GeometricTool;
+class StepToTopoDS_GeometricTool {
+	public:
+		%feature("autodoc", "1");
+		StepToTopoDS_GeometricTool();
+		%feature("autodoc", "1");
+		static		Standard_Integer PCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, Handle_StepGeom_Pcurve & PC, const Standard_Integer last=0);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSeamCurve(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsLikeSeam(const Handle_StepGeom_SurfaceCurve &SC, const Handle_StepGeom_Surface &S, const Handle_StepShape_Edge &E, const Handle_StepShape_EdgeLoop &EL);
+		%feature("autodoc","UpdateParam3d(const C, Standard_Real preci) -> [Standard_Real, Standard_Real]");
+
+		static		Standard_Boolean UpdateParam3d(const Handle_Geom_Curve &C, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real preci);
+
+};
+%feature("shadow") StepToTopoDS_GeometricTool::~StepToTopoDS_GeometricTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToTopoDS_GeometricTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1210,6 +1337,10 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		TopoDS_Edge  ChangeFind(const StepToTopoDS_PointPair &K);
 		%feature("autodoc", "1");
 		TopoDS_Edge  operator()(const StepToTopoDS_PointPair &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const StepToTopoDS_PointPair &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const StepToTopoDS_PointPair &K);
 
 };
 %feature("shadow") StepToTopoDS_PointEdgeMap::~StepToTopoDS_PointEdgeMap %{
@@ -1222,37 +1353,6 @@ def __del__(self):
 %}
 
 %extend StepToTopoDS_PointEdgeMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_TranslateEdgeLoop;
-class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop();
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoop(const Handle_StepShape_FaceBound &FB, const TopoDS_Face F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepShape_FaceBound &FB, const TopoDS_Face F, const Handle_Geom_Surface &S, const Handle_StepGeom_Surface &SS, const Standard_Boolean ss, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value() const;
-		%feature("autodoc", "1");
-		StepToTopoDS_TranslateEdgeLoopError Error() const;
-
-};
-%feature("shadow") StepToTopoDS_TranslateEdgeLoop::~StepToTopoDS_TranslateEdgeLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_TranslateEdgeLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1319,76 +1419,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
-class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapNodeOfDataMapOfTRI(const Handle_StepShape_TopologicalRepresentationItem &K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_StepShape_TopologicalRepresentationItem & Key() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI GetHandle() {
-	return *(Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI*) &$self;
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfRINames;
-class StepToTopoDS_DataMapIteratorOfDataMapOfRINames : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfDataMapOfRINames();
-		%feature("autodoc", "1");
-		StepToTopoDS_DataMapIteratorOfDataMapOfRINames(const StepToTopoDS_DataMapOfRINames &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const StepToTopoDS_DataMapOfRINames &aMap);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value() const;
-
-};
-%feature("shadow") StepToTopoDS_DataMapIteratorOfDataMapOfRINames::~StepToTopoDS_DataMapIteratorOfDataMapOfRINames %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToTopoDS_DataMapIteratorOfDataMapOfRINames {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToTopoDS;
 class StepToTopoDS {
 	public:
@@ -1428,30 +1458,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
-class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
+%nodefaultctor StepToTopoDS_TranslateShell;
+class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 	public:
 		%feature("autodoc", "1");
-		StepToTopoDS_DataMapNodeOfPointEdgeMap(const StepToTopoDS_PointPair &K, const TopoDS_Edge I, const TCollection_MapNodePtr &n);
+		StepToTopoDS_TranslateShell();
 		%feature("autodoc", "1");
-		StepToTopoDS_PointPair & Key() const;
+		StepToTopoDS_TranslateShell(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
 		%feature("autodoc", "1");
-		TopoDS_Edge  Value() const;
+		void Init(const Handle_StepShape_ConnectedFaceSet &CFS, StepToTopoDS_Tool & T, StepToTopoDS_NMTool & NMTool);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		StepToTopoDS_TranslateShellError Error() const;
 
 };
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap GetHandle() {
-	return *(Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap*) &$self;
-	}
-};
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{
+%feature("shadow") StepToTopoDS_TranslateShell::~StepToTopoDS_TranslateShell %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1460,7 +1482,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
+%extend StepToTopoDS_TranslateShell {
 	void _kill_pointed() {
 		delete $self;
 	}

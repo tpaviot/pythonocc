@@ -28,14 +28,14 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import GeomAbs
 import gp
+import GeomAbs
 import Geom2d
-import Bnd
 import IntSurf
 import IntAna
-import Adaptor3d
+import Adaptor2d
 import IntImp
 import IntWalk
-import Adaptor2d
+import Adaptor3d
+import Bnd
 };

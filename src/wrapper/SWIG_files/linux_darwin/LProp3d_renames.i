@@ -23,12 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(Value) LProp3d_SurfaceTool::Value;
-%rename(D1) LProp3d_SurfaceTool::D1;
-%rename(D2) LProp3d_SurfaceTool::D2;
-%rename(DN) LProp3d_SurfaceTool::DN;
-%rename(Continuity) LProp3d_SurfaceTool::Continuity;
-%rename(Bounds) LProp3d_SurfaceTool::Bounds;
 %rename(Value) LProp3d_CurveTool::Value;
 %rename(D1) LProp3d_CurveTool::D1;
 %rename(D2) LProp3d_CurveTool::D2;
@@ -36,3 +30,9 @@ $HeaderURL$
 %rename(Continuity) LProp3d_CurveTool::Continuity;
 %rename(FirstParameter) LProp3d_CurveTool::FirstParameter;
 %rename(LastParameter) LProp3d_CurveTool::LastParameter;
+%rename(Value) LProp3d_SurfaceTool::Value;
+%rename(D1) LProp3d_SurfaceTool::D1;
+%rename(D2) LProp3d_SurfaceTool::D2;
+%rename(DN) LProp3d_SurfaceTool::DN;
+%rename(Continuity) LProp3d_SurfaceTool::Continuity;
+%rename(Bounds) LProp3d_SurfaceTool::Bounds;

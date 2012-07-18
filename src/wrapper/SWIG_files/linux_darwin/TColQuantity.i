@@ -179,6 +179,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor TColQuantity_Array2OfLength;
+class TColQuantity_Array2OfLength {
+	public:
+		%feature("autodoc", "1");
+		TColQuantity_Array2OfLength(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TColQuantity_Array2OfLength(const Quantity_Length &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Quantity_Length &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
+		%feature("autodoc", "1");
+		const TColQuantity_Array2OfLength & operator=(const TColQuantity_Array2OfLength &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Quantity_Length &Value);
+		%feature("autodoc", "1");
+		const Quantity_Length & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Quantity_Length & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%feature("shadow") TColQuantity_Array2OfLength::~TColQuantity_Array2OfLength %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColQuantity_Array2OfLength {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TColQuantity_HArray1OfLength;
 class TColQuantity_HArray1OfLength : public MMgt_TShared {
 	public:
@@ -215,7 +270,7 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 };
 %extend TColQuantity_HArray1OfLength {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TColQuantity_HArray1OfLength::~TColQuantity_HArray1OfLength %{
@@ -276,7 +331,7 @@ class TColQuantity_HArray2OfLength : public MMgt_TShared {
 };
 %extend TColQuantity_HArray2OfLength {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TColQuantity_HArray2OfLength::~TColQuantity_HArray2OfLength %{
@@ -289,61 +344,6 @@ def __del__(self):
 %}
 
 %extend TColQuantity_HArray2OfLength {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TColQuantity_Array2OfLength;
-class TColQuantity_Array2OfLength {
-	public:
-		%feature("autodoc", "1");
-		TColQuantity_Array2OfLength(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TColQuantity_Array2OfLength(const Quantity_Length &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Quantity_Length &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TColQuantity_Array2OfLength & Assign(const TColQuantity_Array2OfLength &Other);
-		%feature("autodoc", "1");
-		const TColQuantity_Array2OfLength & operator=(const TColQuantity_Array2OfLength &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Quantity_Length &Value);
-		%feature("autodoc", "1");
-		const Quantity_Length & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Quantity_Length & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Quantity_Length & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") TColQuantity_Array2OfLength::~TColQuantity_Array2OfLength %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColQuantity_Array2OfLength {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,10 +23,10 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::DownCast;
 %rename(DownCast) Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::DownCast;
-%rename(DownCast) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::DownCast;
 %rename(DownCast) Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt::DownCast;
+%rename(DownCast) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::DownCast;
+%rename(DownCast) Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::DownCast;
 %rename(HashCode) IntPoly_Pnt2dHasher::HashCode;
 %rename(IsEqual) IntPoly_Pnt2dHasher::IsEqual;
 %rename(HashCode) IntPoly_PntHasher::HashCode;

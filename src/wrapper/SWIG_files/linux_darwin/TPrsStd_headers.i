@@ -126,6 +126,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -277,6 +278,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -333,10 +335,10 @@ $HeaderURL$
 #include<Handle_AIS_InteractiveObject.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TDF_Label.hxx>
-#include<Handle_AIS_InteractiveContext.hxx>
-#include<Handle_V3d_Viewer.hxx>
+#include<Standard_GUID.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_RelocationTable.hxx>
-#include<Standard_GUID.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
+#include<Handle_AIS_InteractiveContext.hxx>
+#include<Handle_V3d_Viewer.hxx>
 %}

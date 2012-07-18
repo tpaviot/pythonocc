@@ -23,6 +23,6 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox::DownCast;
 %rename(DownCast) Handle_BiTgte_HCurveOnEdge::DownCast;
 %rename(DownCast) Handle_BiTgte_HCurveOnVertex::DownCast;
-%rename(DownCast) Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox::DownCast;

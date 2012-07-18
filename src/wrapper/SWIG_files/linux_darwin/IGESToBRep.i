@@ -204,6 +204,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESToBRep_ToolContainer;
+class IGESToBRep_ToolContainer : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESToBRep_ToolContainer();
+		%feature("autodoc", "1");
+		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESToBRep_ToolContainer {
+	Handle_IGESToBRep_ToolContainer GetHandle() {
+	return *(Handle_IGESToBRep_ToolContainer*) &$self;
+	}
+};
+%extend IGESToBRep_ToolContainer {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESToBRep_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESToBRep_CurveAndSurface;
 class IGESToBRep_CurveAndSurface {
 	public:
@@ -386,100 +423,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESToBRep_ToolContainer;
-class IGESToBRep_ToolContainer : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESToBRep_ToolContainer();
-		%feature("autodoc", "1");
-		virtual		Handle_IGESToBRep_IGESBoundary IGESBoundary() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESToBRep_ToolContainer {
-	Handle_IGESToBRep_ToolContainer GetHandle() {
-	return *(Handle_IGESToBRep_ToolContainer*) &$self;
-	}
-};
-%extend IGESToBRep_ToolContainer {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESToBRep_ToolContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESToBRep_BasicCurve;
-class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESToBRep_BasicCurve();
-		%feature("autodoc", "1");
-		IGESToBRep_BasicCurve(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		IGESToBRep_BasicCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve TransferBasicCurve(const Handle_IGESData_IGESEntity &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Transfer2dBasicCurve(const Handle_IGESData_IGESEntity &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve TransferBSplineCurve(const Handle_IGESGeom_BSplineCurve &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Transfer2dBSplineCurve(const Handle_IGESGeom_BSplineCurve &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve TransferCircularArc(const Handle_IGESGeom_CircularArc &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Transfer2dCircularArc(const Handle_IGESGeom_CircularArc &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve TransferConicArc(const Handle_IGESGeom_ConicArc &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Transfer2dConicArc(const Handle_IGESGeom_ConicArc &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve TransferCopiousData(const Handle_IGESGeom_CopiousData &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Transfer2dCopiousData(const Handle_IGESGeom_CopiousData &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Curve TransferLine(const Handle_IGESGeom_Line &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Transfer2dLine(const Handle_IGESGeom_Line &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve TransferSplineCurve(const Handle_IGESGeom_SplineCurve &start);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BSplineCurve Transfer2dSplineCurve(const Handle_IGESGeom_SplineCurve &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Transformation TransferTransformation(const Handle_IGESGeom_TransformationMatrix &start);
-
-};
-%feature("shadow") IGESToBRep_BasicCurve::~IGESToBRep_BasicCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESToBRep_BasicCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESToBRep_Actor;
 class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	public:
@@ -508,7 +451,7 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 };
 %extend IGESToBRep_Actor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_Actor::~IGESToBRep_Actor %{
@@ -606,7 +549,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 };
 %extend IGESToBRep_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_IGESBoundary::~IGESToBRep_IGESBoundary %{
@@ -666,6 +609,106 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESToBRep_BasicCurve;
+class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESToBRep_BasicCurve();
+		%feature("autodoc", "1");
+		IGESToBRep_BasicCurve(const IGESToBRep_CurveAndSurface &CS);
+		%feature("autodoc", "1");
+		IGESToBRep_BasicCurve(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve TransferBasicCurve(const Handle_IGESData_IGESEntity &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Transfer2dBasicCurve(const Handle_IGESData_IGESEntity &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve TransferBSplineCurve(const Handle_IGESGeom_BSplineCurve &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Transfer2dBSplineCurve(const Handle_IGESGeom_BSplineCurve &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve TransferCircularArc(const Handle_IGESGeom_CircularArc &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Transfer2dCircularArc(const Handle_IGESGeom_CircularArc &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve TransferConicArc(const Handle_IGESGeom_ConicArc &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Transfer2dConicArc(const Handle_IGESGeom_ConicArc &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve TransferCopiousData(const Handle_IGESGeom_CopiousData &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Transfer2dCopiousData(const Handle_IGESGeom_CopiousData &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Curve TransferLine(const Handle_IGESGeom_Line &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Transfer2dLine(const Handle_IGESGeom_Line &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve TransferSplineCurve(const Handle_IGESGeom_SplineCurve &start);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BSplineCurve Transfer2dSplineCurve(const Handle_IGESGeom_SplineCurve &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Transformation TransferTransformation(const Handle_IGESGeom_TransformationMatrix &start);
+
+};
+%feature("shadow") IGESToBRep_BasicCurve::~IGESToBRep_BasicCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESToBRep_BasicCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESToBRep_BasicSurface;
+class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface();
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface(const IGESToBRep_CurveAndSurface &CS);
+		%feature("autodoc", "1");
+		IGESToBRep_BasicSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
+		%feature("autodoc", "1");
+		Handle_Geom_Surface TransferBasicSurface(const Handle_IGESData_IGESEntity &start);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane TransferPlaneSurface(const Handle_IGESSolid_PlaneSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_CylindricalSurface TransferRigthCylindricalSurface(const Handle_IGESSolid_CylindricalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_ConicalSurface TransferRigthConicalSurface(const Handle_IGESSolid_ConicalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_SphericalSurface TransferSphericalSurface(const Handle_IGESSolid_SphericalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_ToroidalSurface TransferToroidalSurface(const Handle_IGESSolid_ToroidalSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface TransferSplineSurface(const Handle_IGESGeom_SplineSurface &start);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
+
+};
+%feature("shadow") IGESToBRep_BasicSurface::~IGESToBRep_BasicSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESToBRep_BasicSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESToBRep_TopoSurface;
 class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	public:
@@ -710,49 +753,6 @@ def __del__(self):
 %}
 
 %extend IGESToBRep_TopoSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESToBRep_BasicSurface;
-class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface();
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface(const IGESToBRep_CurveAndSurface &CS);
-		%feature("autodoc", "1");
-		IGESToBRep_BasicSurface(const Standard_Real eps, const Standard_Real epsGeom, const Standard_Real epsCoeff, const Standard_Boolean mode, const Standard_Boolean modeapprox, const Standard_Boolean optimized);
-		%feature("autodoc", "1");
-		Handle_Geom_Surface TransferBasicSurface(const Handle_IGESData_IGESEntity &start);
-		%feature("autodoc", "1");
-		Handle_Geom_Plane TransferPlaneSurface(const Handle_IGESSolid_PlaneSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_CylindricalSurface TransferRigthCylindricalSurface(const Handle_IGESSolid_CylindricalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface TransferRigthConicalSurface(const Handle_IGESSolid_ConicalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_SphericalSurface TransferSphericalSurface(const Handle_IGESSolid_SphericalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_ToroidalSurface TransferToroidalSurface(const Handle_IGESSolid_ToroidalSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface TransferSplineSurface(const Handle_IGESGeom_SplineSurface &start);
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineSurface TransferBSplineSurface(const Handle_IGESGeom_BSplineSurface &start);
-
-};
-%feature("shadow") IGESToBRep_BasicSurface::~IGESToBRep_BasicSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESToBRep_BasicSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -107,7 +107,7 @@ $HeaderURL$
 #include<Handle_MAT_Node.hxx>
 #include<Bisector_Bisec.hxx>
 #include<Handle_MAT_Arc.hxx>
-#include<TopoDS_Shape.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<TopoDS_Shape.hxx>
 %}

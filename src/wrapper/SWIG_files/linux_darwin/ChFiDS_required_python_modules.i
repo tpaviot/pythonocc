@@ -29,15 +29,15 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopoDS
-import TopAbs
 import gp
 import BRepAdaptor
 import GeomAbs
+import TopAbs
 import Law
-import TCollection
 import MMgt
 import Adaptor3d
 import Geom
 import Geom2d
+import TCollection
 import TopTools
 };

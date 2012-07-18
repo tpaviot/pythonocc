@@ -23,18 +23,19 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_TDocStd_ApplicationDelta::DownCast;
 %rename(DownCast) Handle_TDocStd_Modified::DownCast;
-%rename(DownCast) Handle_TDocStd_XLinkRoot::DownCast;
 %rename(DownCast) Handle_TDocStd_XLink::DownCast;
-%rename(DownCast) Handle_TDocStd_Document::DownCast;
 %rename(DownCast) Handle_TDocStd_MultiTransactionManager::DownCast;
-%rename(DownCast) Handle_TDocStd_Owner::DownCast;
 %rename(DownCast) Handle_TDocStd_Application::DownCast;
+%rename(DownCast) Handle_TDocStd_Document::DownCast;
+%rename(DownCast) Handle_TDocStd_Owner::DownCast;
 %rename(DownCast) Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta::DownCast;
 %rename(DownCast) Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap::DownCast;
 %rename(DownCast) Handle_TDocStd_SequenceNodeOfSequenceOfDocument::DownCast;
-%rename(DownCast) Handle_TDocStd_ApplicationDelta::DownCast;
+%rename(DownCast) Handle_TDocStd_XLinkRoot::DownCast;
 %rename(DownCast) Handle_TDocStd_CompoundDelta::DownCast;
+%rename(Get) TDocStd_Document::Get;
 %rename(GetID) TDocStd_Owner::GetID;
 %rename(SetDocument) TDocStd_Owner::SetDocument;
 %rename(GetDocument) TDocStd_Owner::GetDocument;
@@ -46,7 +47,6 @@ $HeaderURL$
 %rename(Clear) TDocStd_Modified::Clear;
 %rename(GetID) TDocStd_Modified::GetID;
 %rename(IDList) TDocStd::IDList;
-%rename(Get) TDocStd_Document::Get;
 %rename(GetID) TDocStd_XLinkRoot::GetID;
 %rename(Set) TDocStd_XLinkRoot::Set;
 %rename(Insert) TDocStd_XLinkRoot::Insert;

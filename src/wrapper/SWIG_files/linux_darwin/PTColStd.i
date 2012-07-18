@@ -193,76 +193,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PTColStd_DataMapNodeOfPersistentTransientMap;
-class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		PTColStd_DataMapNodeOfPersistentTransientMap(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTColStd_DataMapNodeOfPersistentTransientMap {
-	Handle_PTColStd_DataMapNodeOfPersistentTransientMap GetHandle() {
-	return *(Handle_PTColStd_DataMapNodeOfPersistentTransientMap*) &$self;
-	}
-};
-%extend PTColStd_DataMapNodeOfPersistentTransientMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTColStd_DataMapNodeOfPersistentTransientMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent;
-class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent();
-		%feature("autodoc", "1");
-		PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent(const PTColStd_DoubleMapOfTransientPersistent &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const PTColStd_DoubleMapOfTransientPersistent &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Key2() const;
-
-};
-%feature("shadow") PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PTColStd_DataMapIteratorOfPersistentTransientMap;
 class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_BasicMapIterator {
 	public:
@@ -294,36 +224,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor PTColStd_PersistentTransientMap;
-class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
+%nodefaultctor PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent;
+class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		PTColStd_PersistentTransientMap(const Standard_Integer NbBuckets=1);
+		PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent();
 		%feature("autodoc", "1");
-		PTColStd_PersistentTransientMap & Assign(const PTColStd_PersistentTransientMap &Other);
+		PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent(const PTColStd_DoubleMapOfTransientPersistent &aMap);
 		%feature("autodoc", "1");
-		PTColStd_PersistentTransientMap & operator=(const PTColStd_PersistentTransientMap &Other);
+		void Initialize(const PTColStd_DoubleMapOfTransientPersistent &aMap);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		const Handle_Standard_Transient & Key1() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Persistent &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Persistent &K);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const Handle_Standard_Persistent &K) const;
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Persistent &K);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K);
+		const Handle_Standard_Persistent & Key2() const;
 
 };
-%feature("shadow") PTColStd_PersistentTransientMap::~PTColStd_PersistentTransientMap %{
+%feature("shadow") PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -332,7 +248,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PTColStd_PersistentTransientMap {
+%extend PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -413,6 +329,10 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 		Handle_Standard_Persistent & ChangeFind(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") PTColStd_TransientPersistentMap::~PTColStd_TransientPersistentMap %{
@@ -425,47 +345,6 @@ def __del__(self):
 %}
 
 %extend PTColStd_TransientPersistentMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
-class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key1() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & Key2() const;
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent GetHandle() {
-	return *(Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*) &$self;
-	}
-};
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -503,6 +382,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor PTColStd_DataMapNodeOfPersistentTransientMap;
+class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		PTColStd_DataMapNodeOfPersistentTransientMap(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & Key() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTColStd_DataMapNodeOfPersistentTransientMap {
+	Handle_PTColStd_DataMapNodeOfPersistentTransientMap GetHandle() {
+	return *(Handle_PTColStd_DataMapNodeOfPersistentTransientMap*) &$self;
+	}
+};
+%extend PTColStd_DataMapNodeOfPersistentTransientMap {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") PTColStd_DataMapNodeOfPersistentTransientMap::~PTColStd_DataMapNodeOfPersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTColStd_DataMapNodeOfPersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PTColStd_DataMapNodeOfTransientPersistentMap;
 class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode {
 	public:
@@ -523,7 +441,7 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PTColStd_DataMapNodeOfTransientPersistentMap::~PTColStd_DataMapNodeOfTransientPersistentMap %{
@@ -536,6 +454,96 @@ def __del__(self):
 %}
 
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PTColStd_PersistentTransientMap;
+class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		PTColStd_PersistentTransientMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		PTColStd_PersistentTransientMap & Assign(const PTColStd_PersistentTransientMap &Other);
+		%feature("autodoc", "1");
+		PTColStd_PersistentTransientMap & operator=(const PTColStd_PersistentTransientMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_Standard_Persistent &K, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_Standard_Persistent &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_Standard_Persistent &K);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Find(const Handle_Standard_Persistent &K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Persistent &K);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const Handle_Standard_Persistent &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Persistent &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Persistent &K);
+
+};
+%feature("shadow") PTColStd_PersistentTransientMap::~PTColStd_PersistentTransientMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTColStd_PersistentTransientMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
+class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent(const Handle_Standard_Transient &K1, const Handle_Standard_Persistent &K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Key1() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & Key2() const;
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent GetHandle() {
+	return *(Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent*) &$self;
+	}
+};
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent::~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	void _kill_pointed() {
 		delete $self;
 	}

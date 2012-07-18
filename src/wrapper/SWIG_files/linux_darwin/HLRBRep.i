@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_HLRBRep_Algo;
-class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
-	public:
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo();
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo(const Handle_HLRBRep_Algo &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo(const HLRBRep_Algo *anItem);
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo & operator=(const Handle_HLRBRep_Algo &aHandle);
-		%feature("autodoc", "1");
-		Handle_HLRBRep_Algo & operator=(const HLRBRep_Algo *anItem);
-		%feature("autodoc", "1");
-		static		Handle_HLRBRep_Algo DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_HLRBRep_Algo {
-	HLRBRep_Algo* GetObject() {
-	return (HLRBRep_Algo*)$self->Access();
-	}
-};
-%feature("shadow") Handle_HLRBRep_Algo::~Handle_HLRBRep_Algo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_HLRBRep_Algo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
 class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
 	public:
@@ -394,24 +356,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
+%nodefaultctor Handle_HLRBRep_Algo;
+class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	public:
 		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
+		Handle_HLRBRep_Algo();
 		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
+		Handle_HLRBRep_Algo(const Handle_HLRBRep_Algo &aHandle);
 		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
+		Handle_HLRBRep_Algo(const HLRBRep_Algo *anItem);
 		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
+		Handle_HLRBRep_Algo & operator=(const Handle_HLRBRep_Algo &aHandle);
 		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
+		Handle_HLRBRep_Algo & operator=(const HLRBRep_Algo *anItem);
 		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
+		static		Handle_HLRBRep_Algo DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter::~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter %{
+%extend Handle_HLRBRep_Algo {
+	HLRBRep_Algo* GetObject() {
+	return (HLRBRep_Algo*)$self->Access();
+	}
+};
+%feature("shadow") Handle_HLRBRep_Algo::~Handle_HLRBRep_Algo %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -420,7 +387,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter {
+%extend Handle_HLRBRep_Algo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -667,7 +634,7 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_InternalAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_InternalAlgo::~HLRBRep_InternalAlgo %{
@@ -745,39 +712,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_InterCSurf;
-class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_InterCSurf();
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin Curve, const Standard_Address &Surface);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
-		%feature("autodoc", "1");
-		void Perform(const gp_Lin Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
-
-};
-%feature("shadow") HLRBRep_InterCSurf::~HLRBRep_InterCSurf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_InterCSurf {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -877,31 +811,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_ShapeToHLR;
-class HLRBRep_ShapeToHLR {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ShapeToHLR();
-		%feature("autodoc", "1");
-		static		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
-
-};
-%feature("shadow") HLRBRep_ShapeToHLR::~HLRBRep_ShapeToHLR %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ShapeToHLR {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_ThePolygonToolOfInterCSurf;
 class HLRBRep_ThePolygonToolOfInterCSurf {
 	public:
@@ -933,6 +842,101 @@ def __del__(self):
 %}
 
 %extend HLRBRep_ThePolygonToolOfInterCSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_FaceData;
+class HLRBRep_FaceData {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_FaceData();
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Face FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
+		%feature("autodoc", "1");
+		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
+		%feature("autodoc", "1");
+		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
+		%feature("autodoc", "1");
+		Standard_Boolean Selected() const;
+		%feature("autodoc", "1");
+		void Selected(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Back() const;
+		%feature("autodoc", "1");
+		void Back(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Side() const;
+		%feature("autodoc", "1");
+		void Side(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		void Closed(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Hiding() const;
+		%feature("autodoc", "1");
+		void Hiding(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Simple() const;
+		%feature("autodoc", "1");
+		void Simple(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cut() const;
+		%feature("autodoc", "1");
+		void Cut(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean WithOutL() const;
+		%feature("autodoc", "1");
+		void WithOutL(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Plane() const;
+		%feature("autodoc", "1");
+		void Plane(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cylinder() const;
+		%feature("autodoc", "1");
+		void Cylinder(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Cone() const;
+		%feature("autodoc", "1");
+		void Cone(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Sphere() const;
+		%feature("autodoc", "1");
+		void Sphere(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean Torus() const;
+		%feature("autodoc", "1");
+		void Torus(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Real Size() const;
+		%feature("autodoc", "1");
+		void Size(const Standard_Real S);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		Handle_HLRAlgo_WiresBlock & Wires();
+		%feature("autodoc", "1");
+		HLRBRep_Surface & Geometry();
+		%feature("autodoc", "1");
+		Standard_ShortReal Tolerance() const;
+
+};
+%feature("shadow") HLRBRep_FaceData::~HLRBRep_FaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_FaceData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1197,8 +1201,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_InterCSurf;
+class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_InterCSurf();
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin Curve, const Standard_Address &Surface);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &Polygon, const Standard_Address &Surface);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin Curve, const HLRBRep_ThePolygonOfInterCSurf &ThePolygon, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron, Bnd_BoundSortBox & BndBSB);
+		%feature("autodoc", "1");
+		void Perform(const gp_Lin Curve, const Standard_Address &Surface, const HLRBRep_ThePolyhedronOfInterCSurf &Polyhedron);
+
+};
+%feature("shadow") HLRBRep_InterCSurf::~HLRBRep_InterCSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_InterCSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
+class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter : public Intf_Polygon2d {
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter(const Standard_Address &Curve, const Standard_Integer NbPnt, const IntRes2d_Domain &Domain, const Standard_Real Tol);
@@ -1207,21 +1244,15 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		void ComputeWithBox(const Standard_Address &Curve, const Bnd_Box2d &OtherBox);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation() const;
+		virtual		Standard_Real DeflectionOverEstimation() const;
 		%feature("autodoc", "1");
 		void SetDeflectionOverEstimation(const Standard_Real x);
 		%feature("autodoc", "1");
 		void Closed(const Standard_Boolean flag);
 		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
+		virtual		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -1246,39 +1277,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
-class HLRBRep_ListIteratorOfListOfBPnt2D {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D();
-		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
-		%feature("autodoc", "1");
-		void Initialize(const HLRBRep_ListOfBPnt2D &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Value() const;
-
-};
-%feature("shadow") HLRBRep_ListIteratorOfListOfBPnt2D::~HLRBRep_ListIteratorOfListOfBPnt2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ListIteratorOfListOfBPnt2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1552,7 +1550,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 };
 %extend HLRBRep_Algo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Algo::~HLRBRep_Algo %{
@@ -1675,6 +1673,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
+class HLRBRep_ListIteratorOfListOfBPnt2D {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D();
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		void Initialize(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Value() const;
+
+};
+%feature("shadow") HLRBRep_ListIteratorOfListOfBPnt2D::~HLRBRep_ListIteratorOfListOfBPnt2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ListIteratorOfListOfBPnt2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	public:
@@ -1693,7 +1724,7 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqOfShapeBounds::~HLRBRep_SequenceNodeOfSeqOfShapeBounds %{
@@ -1788,6 +1819,31 @@ def __del__(self):
 %}
 
 %extend HLRBRep_BiPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_ShapeToHLR;
+class HLRBRep_ShapeToHLR {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ShapeToHLR();
+		%feature("autodoc", "1");
+		static		Handle_HLRBRep_Data Load(const Handle_HLRTopoBRep_OutLiner &S, const HLRAlgo_Projector &P, BRepTopAdaptor_MapOfShapeTool & MST, const Standard_Integer nbIso=0);
+
+};
+%feature("shadow") HLRBRep_ShapeToHLR::~HLRBRep_ShapeToHLR %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ShapeToHLR {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2064,65 +2120,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_EdgeBuilder;
-class HLRBRep_EdgeBuilder {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
-		%feature("autodoc", "1");
-		void InitAreas();
-		%feature("autodoc", "1");
-		void NextArea();
-		%feature("autodoc", "1");
-		void PreviousArea();
-		%feature("autodoc", "1");
-		Standard_Boolean HasArea() const;
-		%feature("autodoc", "1");
-		TopAbs_State AreaState() const;
-		%feature("autodoc", "1");
-		TopAbs_State AreaEdgeState() const;
-		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit LeftLimit() const;
-		%feature("autodoc", "1");
-		Handle_HLRBRep_AreaLimit RightLimit() const;
-		%feature("autodoc", "1");
-		void Builds(const TopAbs_State ToBuild);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreEdges() const;
-		%feature("autodoc", "1");
-		void NextEdge();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreVertices() const;
-		%feature("autodoc", "1");
-		void NextVertex();
-		%feature("autodoc", "1");
-		const HLRAlgo_Intersection & Current() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsBoundary() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInterference() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") HLRBRep_EdgeBuilder::~HLRBRep_EdgeBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_EdgeBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_Data;
 class HLRBRep_Data : public MMgt_TShared {
 	public:
@@ -2207,7 +2204,7 @@ class HLRBRep_Data : public MMgt_TShared {
 };
 %extend HLRBRep_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Data::~HLRBRep_Data %{
@@ -2614,7 +2611,7 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 };
 %extend HLRBRep_AreaLimit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_AreaLimit::~HLRBRep_AreaLimit %{
@@ -2705,7 +2702,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_PolyAlgo::~HLRBRep_PolyAlgo %{
@@ -3077,7 +3074,7 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_ListNodeOfListOfBPoint::~HLRBRep_ListNodeOfListOfBPoint %{
@@ -3090,136 +3087,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_ListNodeOfListOfBPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-
-};
-%feature("shadow") HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_FaceData;
-class HLRBRep_FaceData {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_FaceData();
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Face FG, const TopAbs_Orientation Or, const Standard_Boolean Cl, const Standard_Integer NW);
-		%feature("autodoc", "1");
-		void SetWire(const Standard_Integer WI, const Standard_Integer NE);
-		%feature("autodoc", "1");
-		void SetWEdge(const Standard_Integer WI, const Standard_Integer EWI, const Standard_Integer EI, const TopAbs_Orientation Or, const Standard_Boolean OutL, const Standard_Boolean Inte, const Standard_Boolean Dble, const Standard_Boolean IsoL);
-		%feature("autodoc", "1");
-		Standard_Boolean Selected() const;
-		%feature("autodoc", "1");
-		void Selected(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Back() const;
-		%feature("autodoc", "1");
-		void Back(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Side() const;
-		%feature("autodoc", "1");
-		void Side(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
-		%feature("autodoc", "1");
-		void Closed(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Hiding() const;
-		%feature("autodoc", "1");
-		void Hiding(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Simple() const;
-		%feature("autodoc", "1");
-		void Simple(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cut() const;
-		%feature("autodoc", "1");
-		void Cut(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean WithOutL() const;
-		%feature("autodoc", "1");
-		void WithOutL(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Plane() const;
-		%feature("autodoc", "1");
-		void Plane(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cylinder() const;
-		%feature("autodoc", "1");
-		void Cylinder(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Cone() const;
-		%feature("autodoc", "1");
-		void Cone(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Sphere() const;
-		%feature("autodoc", "1");
-		void Sphere(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean Torus() const;
-		%feature("autodoc", "1");
-		void Torus(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Real Size() const;
-		%feature("autodoc", "1");
-		void Size(const Standard_Real S);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		Handle_HLRAlgo_WiresBlock & Wires();
-		%feature("autodoc", "1");
-		HLRBRep_Surface & Geometry();
-		%feature("autodoc", "1");
-		Standard_ShortReal Tolerance() const;
-
-};
-%feature("shadow") HLRBRep_FaceData::~HLRBRep_FaceData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_FaceData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3505,7 +3372,7 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
@@ -3593,7 +3460,7 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPnt2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
@@ -3957,6 +3824,65 @@ def __del__(self):
 %}
 
 %extend HLRBRep_Intersector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_EdgeBuilder;
+class HLRBRep_EdgeBuilder {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_EdgeBuilder(HLRBRep_VertexList & VList);
+		%feature("autodoc", "1");
+		void InitAreas();
+		%feature("autodoc", "1");
+		void NextArea();
+		%feature("autodoc", "1");
+		void PreviousArea();
+		%feature("autodoc", "1");
+		Standard_Boolean HasArea() const;
+		%feature("autodoc", "1");
+		TopAbs_State AreaState() const;
+		%feature("autodoc", "1");
+		TopAbs_State AreaEdgeState() const;
+		%feature("autodoc", "1");
+		Handle_HLRBRep_AreaLimit LeftLimit() const;
+		%feature("autodoc", "1");
+		Handle_HLRBRep_AreaLimit RightLimit() const;
+		%feature("autodoc", "1");
+		void Builds(const TopAbs_State ToBuild);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreEdges() const;
+		%feature("autodoc", "1");
+		void NextEdge();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreVertices() const;
+		%feature("autodoc", "1");
+		void NextVertex();
+		%feature("autodoc", "1");
+		const HLRAlgo_Intersection & Current() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsBoundary() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInterference() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") HLRBRep_EdgeBuilder::~HLRBRep_EdgeBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_EdgeBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}

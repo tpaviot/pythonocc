@@ -25,10 +25,10 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_Poly_PolygonOnTriangulation::DownCast;
 %rename(DownCast) Handle_Poly_HArray1OfTriangle::DownCast;
-%rename(DownCast) Handle_Poly_Polygon3D::DownCast;
 %rename(DownCast) Handle_Poly_Polygon2D::DownCast;
-%rename(DownCast) Handle_Poly_CoherentTriangulation::DownCast;
 %rename(DownCast) Handle_Poly_Triangulation::DownCast;
+%rename(DownCast) Handle_Poly_CoherentTriangulation::DownCast;
+%rename(DownCast) Handle_Poly_Polygon3D::DownCast;
 %rename(Catenate) Poly::Catenate;
 %rename(Write) Poly::Write;
 %rename(Dump) Poly::Dump;

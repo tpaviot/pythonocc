@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PDF_Reference;
+class Handle_PDF_Reference : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PDF_Reference();
+		%feature("autodoc", "1");
+		Handle_PDF_Reference(const Handle_PDF_Reference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_Reference(const PDF_Reference *anItem);
+		%feature("autodoc", "1");
+		Handle_PDF_Reference & operator=(const Handle_PDF_Reference &aHandle);
+		%feature("autodoc", "1");
+		Handle_PDF_Reference & operator=(const PDF_Reference *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PDF_Reference DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PDF_Reference {
+	PDF_Reference* GetObject() {
+	return (PDF_Reference*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PDF_Reference::~Handle_PDF_Reference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PDF_TagSource;
 class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 	public:
@@ -128,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PDF_Reference;
-class Handle_PDF_Reference : public Handle_PDF_Attribute {
+%nodefaultctor Handle_PDF_Data;
+class Handle_PDF_Data : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PDF_Reference();
+		Handle_PDF_Data();
 		%feature("autodoc", "1");
-		Handle_PDF_Reference(const Handle_PDF_Reference &aHandle);
+		Handle_PDF_Data(const Handle_PDF_Data &aHandle);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference(const PDF_Reference *anItem);
+		Handle_PDF_Data(const PDF_Data *anItem);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference & operator=(const Handle_PDF_Reference &aHandle);
+		Handle_PDF_Data & operator=(const Handle_PDF_Data &aHandle);
 		%feature("autodoc", "1");
-		Handle_PDF_Reference & operator=(const PDF_Reference *anItem);
+		Handle_PDF_Data & operator=(const PDF_Data *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PDF_Reference DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PDF_Data DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PDF_Reference {
-	PDF_Reference* GetObject() {
-	return (PDF_Reference*)$self->Access();
+%extend Handle_PDF_Data {
+	PDF_Data* GetObject() {
+	return (PDF_Data*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PDF_Reference::~Handle_PDF_Reference %{
+%feature("shadow") Handle_PDF_Data::~Handle_PDF_Data %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,7 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PDF_Reference {
+%extend Handle_PDF_Data {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,44 +280,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PDF_Data;
-class Handle_PDF_Data : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PDF_Data();
-		%feature("autodoc", "1");
-		Handle_PDF_Data(const Handle_PDF_Data &aHandle);
-		%feature("autodoc", "1");
-		Handle_PDF_Data(const PDF_Data *anItem);
-		%feature("autodoc", "1");
-		Handle_PDF_Data & operator=(const Handle_PDF_Data &aHandle);
-		%feature("autodoc", "1");
-		Handle_PDF_Data & operator=(const PDF_Data *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PDF_Data DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PDF_Data {
-	PDF_Data* GetObject() {
-	return (PDF_Data*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PDF_Data::~Handle_PDF_Data %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PDF_Data {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor PDF_Attribute;
 class PDF_Attribute : public Standard_Persistent {
 	public:
@@ -298,7 +298,7 @@ class PDF_Attribute : public Standard_Persistent {
 };
 %extend PDF_Attribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PDF_Attribute::~PDF_Attribute %{
@@ -311,51 +311,6 @@ def __del__(self):
 %}
 
 %extend PDF_Attribute {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PDF_TagSource;
-class PDF_TagSource : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PDF_TagSource();
-		%feature("autodoc", "1");
-		PDF_TagSource(const Standard_Integer V);
-		%feature("autodoc", "1");
-		Standard_Integer Get() const;
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer V);
-		%feature("autodoc", "1");
-		PDF_TagSource(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPDF_TagSourcemyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPDF_TagSourcemyValue(const Standard_Integer p);
-
-};
-%extend PDF_TagSource {
-	Handle_PDF_TagSource GetHandle() {
-	return *(Handle_PDF_TagSource*) &$self;
-	}
-};
-%extend PDF_TagSource {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") PDF_TagSource::~PDF_TagSource %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PDF_TagSource {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -379,8 +334,6 @@ class PDF_Reference : public PDF_Attribute {
 		Handle_PCollection_HAsciiString _CSFDB_GetPDF_ReferencemyValue() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPDF_ReferencemyValue(const Handle_PCollection_HAsciiString &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PDF_Reference {
@@ -390,7 +343,7 @@ class PDF_Reference : public PDF_Attribute {
 };
 %extend PDF_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PDF_Reference::~PDF_Reference %{
@@ -403,6 +356,53 @@ def __del__(self):
 %}
 
 %extend PDF_Reference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PDF_TagSource;
+class PDF_TagSource : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PDF_TagSource();
+		%feature("autodoc", "1");
+		PDF_TagSource(const Standard_Integer V);
+		%feature("autodoc", "1");
+		Standard_Integer Get() const;
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer V);
+		%feature("autodoc", "1");
+		PDF_TagSource(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPDF_TagSourcemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPDF_TagSourcemyValue(const Standard_Integer p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PDF_TagSource {
+	Handle_PDF_TagSource GetHandle() {
+	return *(Handle_PDF_TagSource*) &$self;
+	}
+};
+%extend PDF_TagSource {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") PDF_TagSource::~PDF_TagSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PDF_TagSource {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -437,7 +437,7 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PDF_VArrayNodeOfFieldOfHAttributeArray1::~PDF_VArrayNodeOfFieldOfHAttributeArray1 %{
@@ -450,6 +450,47 @@ def __del__(self):
 %}
 
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PDF_FieldOfHAttributeArray1;
+class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1();
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PDF_FieldOfHAttributeArray1(const PDF_FieldOfHAttributeArray1 &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PDF_FieldOfHAttributeArray1 &Other);
+		%feature("autodoc", "1");
+		void operator=(const PDF_FieldOfHAttributeArray1 &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_PDF_Attribute & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") PDF_FieldOfHAttributeArray1::~PDF_FieldOfHAttributeArray1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PDF_FieldOfHAttributeArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -498,7 +539,7 @@ class PDF_Data : public Standard_Persistent {
 };
 %extend PDF_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PDF_Data::~PDF_Data %{
@@ -569,7 +610,7 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 };
 %extend PDF_HAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") PDF_HAttributeArray1::~PDF_HAttributeArray1 %{
@@ -582,47 +623,6 @@ def __del__(self):
 %}
 
 %extend PDF_HAttributeArray1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PDF_FieldOfHAttributeArray1;
-class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
-	public:
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1();
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		PDF_FieldOfHAttributeArray1(const PDF_FieldOfHAttributeArray1 &Varray);
-		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PDF_FieldOfHAttributeArray1 &Other);
-		%feature("autodoc", "1");
-		void operator=(const PDF_FieldOfHAttributeArray1 &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PDF_Attribute &Value);
-		%feature("autodoc", "1");
-		Handle_PDF_Attribute & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_PDF_Attribute & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") PDF_FieldOfHAttributeArray1::~PDF_FieldOfHAttributeArray1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PDF_FieldOfHAttributeArray1 {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -59,10 +59,10 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_XY.hxx>
-#include<gp_XYZ.hxx>
 #include<Plate_D1.hxx>
 #include<Plate_D2.hxx>
+#include<Plate_D3.hxx>
+#include<gp_XYZ.hxx>
 #include<Plate_Plate.hxx>
 #include<Handle_Geom_Surface.hxx>
-#include<Plate_D3.hxx>
 %}

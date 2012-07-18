@@ -147,12 +147,12 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Interface_Graph.hxx>
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
-#include<Handle_StepBasic_ProductDefinition.hxx>
-#include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
+#include<Interface_Graph.hxx>
 #include<Interface_EntityIterator.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_XSControl_TransferReader.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
+#include<Handle_XSControl_TransferReader.hxx>
+#include<Handle_StepBasic_ProductDefinition.hxx>
+#include<Handle_StepRepr_NextAssemblyUsageOccurrence.hxx>
 %}

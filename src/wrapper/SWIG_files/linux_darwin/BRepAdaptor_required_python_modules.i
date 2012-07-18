@@ -29,10 +29,10 @@ $HeaderURL$
 import GarbageCollector
 import Adaptor3d
 import Standard
+import Adaptor2d
+import GeomAdaptor
+import gp
 import TopoDS
 import GeomAbs
-import gp
 import Geom
-import GeomAdaptor
-import Adaptor2d
 };

@@ -51,10 +51,10 @@ $HeaderURL$
 
 typedef TNaming_DataMapOfShapePtrRefShape * TNaming_PtrDataMapOfShapePtrRefShape;
 typedef TNaming_NamedShape * TNaming_PtrAttribute;
-typedef NCollection_DataMap<TopoDS_Shape, NCollection_Map<TopoDS_Shape> > TNaming_DataMapOfShapeMapOfShape;
 typedef TNaming_RefShape * TNaming_PtrRefShape;
+typedef NCollection_DataMap<TopoDS_Shape, NCollection_Map<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> >, NCollection_DefaultHasher<TopoDS_Shape> > TNaming_DataMapOfShapeMapOfShape;
 typedef TNaming_Node * TNaming_PtrNode;
-typedef NCollection_Map<TopoDS_Shape> TNaming_MapOfShape;
+typedef NCollection_Map<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> > TNaming_MapOfShape;
 
 enum TNaming_Evolution {
 	TNaming_PRIMITIVE,
@@ -79,6 +79,82 @@ enum TNaming_NameType {
 	TNaming_WIREIN,
 	};
 
+
+
+%nodefaultctor Handle_TNaming_DeltaOnRemoval;
+class Handle_TNaming_DeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
+	public:
+		%feature("autodoc", "1");
+		Handle_TNaming_DeltaOnRemoval();
+		%feature("autodoc", "1");
+		Handle_TNaming_DeltaOnRemoval(const Handle_TNaming_DeltaOnRemoval &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_DeltaOnRemoval(const TNaming_DeltaOnRemoval *anItem);
+		%feature("autodoc", "1");
+		Handle_TNaming_DeltaOnRemoval & operator=(const Handle_TNaming_DeltaOnRemoval &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_DeltaOnRemoval & operator=(const TNaming_DeltaOnRemoval *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TNaming_DeltaOnRemoval DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TNaming_DeltaOnRemoval {
+	TNaming_DeltaOnRemoval* GetObject() {
+	return (TNaming_DeltaOnRemoval*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TNaming_DeltaOnRemoval::~Handle_TNaming_DeltaOnRemoval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TNaming_DeltaOnRemoval {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TNaming_TranslateTool;
+class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TNaming_TranslateTool();
+		%feature("autodoc", "1");
+		Handle_TNaming_TranslateTool(const Handle_TNaming_TranslateTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_TranslateTool(const TNaming_TranslateTool *anItem);
+		%feature("autodoc", "1");
+		Handle_TNaming_TranslateTool & operator=(const Handle_TNaming_TranslateTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_TranslateTool & operator=(const TNaming_TranslateTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TNaming_TranslateTool DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TNaming_TranslateTool {
+	TNaming_TranslateTool* GetObject() {
+	return (TNaming_TranslateTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TNaming_TranslateTool::~Handle_TNaming_TranslateTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TNaming_TranslateTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_TNaming_DeltaOnModification;
@@ -113,6 +189,44 @@ def __del__(self):
 %}
 
 %extend Handle_TNaming_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TNaming_NamedShape;
+class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape();
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape(const Handle_TNaming_NamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape(const TNaming_NamedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape & operator=(const Handle_TNaming_NamedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape & operator=(const TNaming_NamedShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TNaming_NamedShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TNaming_NamedShape {
+	TNaming_NamedShape* GetObject() {
+	return (TNaming_NamedShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TNaming_NamedShape::~Handle_TNaming_NamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TNaming_NamedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -265,120 +379,6 @@ def __del__(self):
 %}
 
 %extend Handle_TNaming_ListNodeOfListOfNamedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TNaming_TranslateTool;
-class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TNaming_TranslateTool();
-		%feature("autodoc", "1");
-		Handle_TNaming_TranslateTool(const Handle_TNaming_TranslateTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_TranslateTool(const TNaming_TranslateTool *anItem);
-		%feature("autodoc", "1");
-		Handle_TNaming_TranslateTool & operator=(const Handle_TNaming_TranslateTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_TranslateTool & operator=(const TNaming_TranslateTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TNaming_TranslateTool DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TNaming_TranslateTool {
-	TNaming_TranslateTool* GetObject() {
-	return (TNaming_TranslateTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TNaming_TranslateTool::~Handle_TNaming_TranslateTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TNaming_TranslateTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TNaming_NamedShape;
-class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape();
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape(const Handle_TNaming_NamedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape(const TNaming_NamedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape & operator=(const Handle_TNaming_NamedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape & operator=(const TNaming_NamedShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TNaming_NamedShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TNaming_NamedShape {
-	TNaming_NamedShape* GetObject() {
-	return (TNaming_NamedShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TNaming_NamedShape::~Handle_TNaming_NamedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TNaming_NamedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TNaming_DeltaOnRemoval;
-class Handle_TNaming_DeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
-	public:
-		%feature("autodoc", "1");
-		Handle_TNaming_DeltaOnRemoval();
-		%feature("autodoc", "1");
-		Handle_TNaming_DeltaOnRemoval(const Handle_TNaming_DeltaOnRemoval &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_DeltaOnRemoval(const TNaming_DeltaOnRemoval *anItem);
-		%feature("autodoc", "1");
-		Handle_TNaming_DeltaOnRemoval & operator=(const Handle_TNaming_DeltaOnRemoval &aHandle);
-		%feature("autodoc", "1");
-		Handle_TNaming_DeltaOnRemoval & operator=(const TNaming_DeltaOnRemoval *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TNaming_DeltaOnRemoval DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TNaming_DeltaOnRemoval {
-	TNaming_DeltaOnRemoval* GetObject() {
-	return (TNaming_DeltaOnRemoval*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TNaming_DeltaOnRemoval::~Handle_TNaming_DeltaOnRemoval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TNaming_DeltaOnRemoval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -671,102 +671,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_UsedShapes;
-class TNaming_UsedShapes : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		TNaming_DataMapOfShapePtrRefShape & Map();
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute BackupCopy() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &anAttribute);
-		%feature("autodoc", "1");
-		virtual		void BeforeRemoval();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AfterUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnAddition DeltaOnAddition() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_DeltaOnRemoval DeltaOnRemoval() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
-		%feature("autodoc", "1");
-		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TNaming_UsedShapes {
-	Handle_TNaming_UsedShapes GetHandle() {
-	return *(Handle_TNaming_UsedShapes*) &$self;
-	}
-};
-%extend TNaming_UsedShapes {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TNaming_UsedShapes::~TNaming_UsedShapes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_UsedShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TNaming_NamingTool;
-class TNaming_NamingTool {
-	public:
-		%feature("autodoc", "1");
-		TNaming_NamingTool();
-		%feature("autodoc", "1");
-		static		void CurrentShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &NS, TopTools_MapOfShape & MS);
-		%feature("autodoc", "1");
-		static		void CurrentShapeFromShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const TDF_Label &Acces, const TopoDS_Shape S, TopTools_MapOfShape & MS);
-		%feature("autodoc", "1");
-		static		void BuildDescendants(const Handle_TNaming_NamedShape &NS, TDF_LabelMap & Labels);
-
-};
-%feature("shadow") TNaming_NamingTool::~TNaming_NamingTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_NamingTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TNaming_TranslateTool;
 class TNaming_TranslateTool : public MMgt_TShared {
 	public:
@@ -809,7 +713,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 };
 %extend TNaming_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_TranslateTool::~TNaming_TranslateTool %{
@@ -828,28 +732,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_MapOfNamedShape;
-class TNaming_MapOfNamedShape : public TCollection_BasicMap {
+%nodefaultctor TNaming_ListOfMapOfShape;
+class TNaming_ListOfMapOfShape {
 	public:
 		%feature("autodoc", "1");
-		TNaming_MapOfNamedShape(const Standard_Integer NbBuckets=1);
+		TNaming_ListOfMapOfShape();
 		%feature("autodoc", "1");
-		TNaming_MapOfNamedShape & Assign(const TNaming_MapOfNamedShape &Other);
+		void Assign(const TNaming_ListOfMapOfShape &Other);
 		%feature("autodoc", "1");
-		TNaming_MapOfNamedShape & operator=(const TNaming_MapOfNamedShape &Other);
+		void operator=(const TNaming_ListOfMapOfShape &Other);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Integer Extent() const;
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_TNaming_NamedShape &aKey);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_TNaming_NamedShape &aKey) const;
+		void Prepend(const TopTools_MapOfShape &I);
 		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_TNaming_NamedShape &aKey);
+		void Prepend(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TNaming_ListOfMapOfShape & Other);
+		%feature("autodoc", "1");
+		void Append(const TopTools_MapOfShape &I);
+		%feature("autodoc", "1");
+		void Append(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & theIt);
+		%feature("autodoc", "1");
+		void Append(TNaming_ListOfMapOfShape & Other);
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & First() const;
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TNaming_ListIteratorOfListOfMapOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TNaming_ListOfMapOfShape & Other, TNaming_ListIteratorOfListOfMapOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TNaming_ListOfMapOfShape & Other, TNaming_ListIteratorOfListOfMapOfShape & It);
 
 };
-%feature("shadow") TNaming_MapOfNamedShape::~TNaming_MapOfNamedShape %{
+%feature("shadow") TNaming_ListOfMapOfShape::~TNaming_ListOfMapOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -858,7 +786,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_MapOfNamedShape {
+%extend TNaming_ListOfMapOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -968,80 +896,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_ListNodeOfListOfNamedShape;
-class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TNaming_ListNodeOfListOfNamedShape(const Handle_TNaming_NamedShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TNaming_ListNodeOfListOfNamedShape {
-	Handle_TNaming_ListNodeOfListOfNamedShape GetHandle() {
-	return *(Handle_TNaming_ListNodeOfListOfNamedShape*) &$self;
-	}
-};
-%extend TNaming_ListNodeOfListOfNamedShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TNaming_ListNodeOfListOfNamedShape::~TNaming_ListNodeOfListOfNamedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_ListNodeOfListOfNamedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
-class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape(const TopTools_IndexedDataMapOfShapeListOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapOfShapeListOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
-	Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape GetHandle() {
-	return *(Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape*) &$self;
-	}
-};
-%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TNaming_StdMapNodeOfMapOfNamedShape;
 class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 	public:
@@ -1060,7 +914,7 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_StdMapNodeOfMapOfNamedShape::~TNaming_StdMapNodeOfMapOfNamedShape %{
@@ -1073,6 +927,73 @@ def __del__(self):
 %}
 
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TNaming_UsedShapes;
+class TNaming_UsedShapes : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		TNaming_DataMapOfShapePtrRefShape & Map();
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute BackupCopy() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &anAttribute);
+		%feature("autodoc", "1");
+		virtual		void BeforeRemoval();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AfterUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_DeltaOnAddition DeltaOnAddition() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_DeltaOnRemoval DeltaOnRemoval() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
+		%feature("autodoc", "1");
+		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TNaming_UsedShapes {
+	Handle_TNaming_UsedShapes GetHandle() {
+	return *(Handle_TNaming_UsedShapes*) &$self;
+	}
+};
+%extend TNaming_UsedShapes {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TNaming_UsedShapes::~TNaming_UsedShapes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_UsedShapes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1126,52 +1047,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_ListOfMapOfShape;
-class TNaming_ListOfMapOfShape {
+%nodefaultctor TNaming_MapOfNamedShape;
+class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TNaming_ListOfMapOfShape();
+		TNaming_MapOfNamedShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Assign(const TNaming_ListOfMapOfShape &Other);
+		TNaming_MapOfNamedShape & Assign(const TNaming_MapOfNamedShape &Other);
 		%feature("autodoc", "1");
-		void operator=(const TNaming_ListOfMapOfShape &Other);
+		TNaming_MapOfNamedShape & operator=(const TNaming_MapOfNamedShape &Other);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Standard_Boolean Add(const Handle_TNaming_NamedShape &aKey);
 		%feature("autodoc", "1");
-		void Prepend(const TopTools_MapOfShape &I);
+		Standard_Boolean Contains(const Handle_TNaming_NamedShape &aKey) const;
 		%feature("autodoc", "1");
-		void Prepend(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TNaming_ListOfMapOfShape & Other);
-		%feature("autodoc", "1");
-		void Append(const TopTools_MapOfShape &I);
-		%feature("autodoc", "1");
-		void Append(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & theIt);
-		%feature("autodoc", "1");
-		void Append(TNaming_ListOfMapOfShape & Other);
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & First() const;
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TNaming_ListIteratorOfListOfMapOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TNaming_ListOfMapOfShape & Other, TNaming_ListIteratorOfListOfMapOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TopTools_MapOfShape &I, TNaming_ListIteratorOfListOfMapOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TNaming_ListOfMapOfShape & Other, TNaming_ListIteratorOfListOfMapOfShape & It);
+		Standard_Boolean Remove(const Handle_TNaming_NamedShape &aKey);
 
 };
-%feature("shadow") TNaming_ListOfMapOfShape::~TNaming_ListOfMapOfShape %{
+%feature("shadow") TNaming_MapOfNamedShape::~TNaming_MapOfNamedShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1180,7 +1077,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_ListOfMapOfShape {
+%extend TNaming_MapOfNamedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1283,40 +1180,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_Scope;
-class TNaming_Scope {
+%nodefaultctor TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
+class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 	public:
 		%feature("autodoc", "1");
-		TNaming_Scope();
+		TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape();
 		%feature("autodoc", "1");
-		TNaming_Scope(const Standard_Boolean WithValid);
+		TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape(const TNaming_ListOfIndexedDataMapOfShapeListOfShape &L);
 		%feature("autodoc", "1");
-		TNaming_Scope(TDF_LabelMap & valid);
+		void Initialize(const TNaming_ListOfIndexedDataMapOfShapeListOfShape &L);
 		%feature("autodoc", "1");
-		Standard_Boolean WithValid() const;
+		Standard_Boolean More() const;
 		%feature("autodoc", "1");
-		void WithValid(const Standard_Boolean mode);
+		void Next();
 		%feature("autodoc", "1");
-		void ClearValid();
-		%feature("autodoc", "1");
-		void Valid(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void ValidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
-		%feature("autodoc", "1");
-		void Unvalid(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void UnvalidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const TDF_Label &L) const;
-		%feature("autodoc", "1");
-		const TDF_LabelMap & GetValid() const;
-		%feature("autodoc", "1");
-		TDF_LabelMap & ChangeValid();
-		%feature("autodoc", "1");
-		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS) const;
+		TopTools_IndexedDataMapOfShapeListOfShape & Value() const;
 
 };
-%feature("shadow") TNaming_Scope::~TNaming_Scope %{
+%feature("shadow") TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1325,35 +1206,35 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_Scope {
+%extend TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor TNaming_RefShape;
-class TNaming_RefShape {
+%nodefaultctor TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
+class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TNaming_RefShape();
+		TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape(const TopTools_IndexedDataMapOfShapeListOfShape &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TNaming_RefShape(const TopoDS_Shape S);
+		TopTools_IndexedDataMapOfShapeListOfShape & Value() const;
 		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void FirstUse(const TNaming_PtrNode &pdn);
-		%feature("autodoc", "1");
-		TNaming_PtrNode FirstUse() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		TDF_Label Label() const;
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape NamedShape() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TNaming_RefShape::~TNaming_RefShape %{
+%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
+	Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape GetHandle() {
+	return *(Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape*) &$self;
+	}
+};
+%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1362,7 +1243,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_RefShape {
+%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1394,6 +1275,49 @@ def __del__(self):
 %}
 
 %extend TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TNaming_Localizer;
+class TNaming_Localizer {
+	public:
+		%feature("autodoc", "1");
+		TNaming_Localizer();
+		%feature("autodoc", "1");
+		void Init(const Handle_TNaming_UsedShapes &US, const Standard_Integer CurTrans);
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & SubShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
+		%feature("autodoc", "1");
+		const TopTools_IndexedDataMapOfShapeListOfShape & Ancestors(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
+		%feature("autodoc", "1");
+		void FindFeaturesInAncestors(const TopoDS_Shape S, const TopoDS_Shape In, TopTools_MapOfShape & AncInFeatures);
+		%feature("autodoc", "1");
+		void GoBack(const TopoDS_Shape S, const TDF_Label &Lab, const TNaming_Evolution Evol, TopTools_ListOfShape & OldS, TNaming_ListOfNamedShape & OldLab);
+		%feature("autodoc", "1");
+		void Backward(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TNaming_MapOfNamedShape & Primitives, TopTools_MapOfShape & ValidShapes);
+		%feature("autodoc", "1");
+		void FindNeighbourg(const TopoDS_Shape Cont, const TopoDS_Shape S, TopTools_MapOfShape & Neighbourg);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsNew(const TopoDS_Shape S, const Handle_TNaming_NamedShape &NS);
+		%feature("autodoc", "1");
+		static		void FindGenerator(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TopTools_ListOfShape & theListOfGenerators);
+		%feature("autodoc", "1");
+		static		void FindShapeContext(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape theS, TopoDS_Shape & theSC);
+
+};
+%feature("shadow") TNaming_Localizer::~TNaming_Localizer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_Localizer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1486,7 +1410,7 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TNaming_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnRemoval::~TNaming_DeltaOnRemoval %{
@@ -1554,7 +1478,7 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapeShapesSet::~TNaming_DataMapNodeOfDataMapOfShapeShapesSet %{
@@ -1591,7 +1515,7 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TNaming_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DeltaOnModification::~TNaming_DeltaOnModification %{
@@ -1604,6 +1528,35 @@ def __del__(self):
 %}
 
 %extend TNaming_DeltaOnModification {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TNaming_NamingTool;
+class TNaming_NamingTool {
+	public:
+		%feature("autodoc", "1");
+		TNaming_NamingTool();
+		%feature("autodoc", "1");
+		static		void CurrentShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const Handle_TNaming_NamedShape &NS, TopTools_MapOfShape & MS);
+		%feature("autodoc", "1");
+		static		void CurrentShapeFromShape(const TDF_LabelMap &Valid, const TDF_LabelMap &Forbiden, const TDF_Label &Acces, const TopoDS_Shape S, TopTools_MapOfShape & MS);
+		%feature("autodoc", "1");
+		static		void BuildDescendants(const Handle_TNaming_NamedShape &NS, TDF_LabelMap & Labels);
+
+};
+%feature("shadow") TNaming_NamingTool::~TNaming_NamingTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_NamingTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1645,6 +1598,84 @@ def __del__(self):
 };
 
 
+%nodefaultctor TNaming_OldShapeIterator;
+class TNaming_OldShapeIterator {
+	public:
+		%feature("autodoc", "1");
+		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const Standard_Integer Transaction, const TDF_Label &access);
+		%feature("autodoc", "1");
+		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const TDF_Label &access);
+		%feature("autodoc", "1");
+		TNaming_OldShapeIterator(const TNaming_OldShapeIterator &anIterator);
+		%feature("autodoc", "1");
+		TNaming_OldShapeIterator(const TNaming_Iterator &anIterator);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TDF_Label Label() const;
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape NamedShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModification() const;
+
+};
+%feature("shadow") TNaming_OldShapeIterator::~TNaming_OldShapeIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_OldShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TNaming_ListNodeOfListOfNamedShape;
+class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TNaming_ListNodeOfListOfNamedShape(const Handle_TNaming_NamedShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TNaming_ListNodeOfListOfNamedShape {
+	Handle_TNaming_ListNodeOfListOfNamedShape GetHandle() {
+	return *(Handle_TNaming_ListNodeOfListOfNamedShape*) &$self;
+	}
+};
+%extend TNaming_ListNodeOfListOfNamedShape {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") TNaming_ListNodeOfListOfNamedShape::~TNaming_ListNodeOfListOfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_ListNodeOfListOfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TNaming_ListNodeOfListOfMapOfShape;
 class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 	public:
@@ -1663,7 +1694,7 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_ListNodeOfListOfMapOfShape::~TNaming_ListNodeOfListOfMapOfShape %{
@@ -1746,7 +1777,7 @@ class TNaming_NamedShape : public TDF_Attribute {
 };
 %extend TNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_NamedShape::~TNaming_NamedShape %{
@@ -1765,24 +1796,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
-class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
+%nodefaultctor TNaming_MapIteratorOfMapOfNamedShape;
+class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape();
+		TNaming_MapIteratorOfMapOfNamedShape();
 		%feature("autodoc", "1");
-		TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape(const TNaming_ListOfIndexedDataMapOfShapeListOfShape &L);
+		TNaming_MapIteratorOfMapOfNamedShape(const TNaming_MapOfNamedShape &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const TNaming_ListOfIndexedDataMapOfShapeListOfShape &L);
+		void Initialize(const TNaming_MapOfNamedShape &aMap);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapOfShapeListOfShape & Value() const;
+		const Handle_TNaming_NamedShape & Key() const;
 
 };
-%feature("shadow") TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape::~TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape %{
+%feature("shadow") TNaming_MapIteratorOfMapOfNamedShape::~TNaming_MapIteratorOfMapOfNamedShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1791,7 +1818,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
+%extend TNaming_MapIteratorOfMapOfNamedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1859,6 +1886,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor TNaming_Scope;
+class TNaming_Scope {
+	public:
+		%feature("autodoc", "1");
+		TNaming_Scope();
+		%feature("autodoc", "1");
+		TNaming_Scope(const Standard_Boolean WithValid);
+		%feature("autodoc", "1");
+		TNaming_Scope(TDF_LabelMap & valid);
+		%feature("autodoc", "1");
+		Standard_Boolean WithValid() const;
+		%feature("autodoc", "1");
+		void WithValid(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		void ClearValid();
+		%feature("autodoc", "1");
+		void Valid(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void ValidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
+		%feature("autodoc", "1");
+		void Unvalid(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void UnvalidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid(const TDF_Label &L) const;
+		%feature("autodoc", "1");
+		const TDF_LabelMap & GetValid() const;
+		%feature("autodoc", "1");
+		TDF_LabelMap & ChangeValid();
+		%feature("autodoc", "1");
+		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS) const;
+
+};
+%feature("shadow") TNaming_Scope::~TNaming_Scope %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_Scope {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TNaming_ListIteratorOfListOfMapOfShape;
 class TNaming_ListIteratorOfListOfMapOfShape {
 	public:
@@ -1892,32 +1968,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_OldShapeIterator;
-class TNaming_OldShapeIterator {
+%nodefaultctor TNaming_RefShape;
+class TNaming_RefShape {
 	public:
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const Standard_Integer Transaction, const TDF_Label &access);
+		TNaming_RefShape();
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TopoDS_Shape aShape, const TDF_Label &access);
+		TNaming_RefShape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TNaming_OldShapeIterator &anIterator);
+		void Shape(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		TNaming_OldShapeIterator(const TNaming_Iterator &anIterator);
+		void FirstUse(const TNaming_PtrNode &pdn);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		TNaming_PtrNode FirstUse() const;
 		%feature("autodoc", "1");
-		void Next();
+		const TopoDS_Shape  Shape() const;
 		%feature("autodoc", "1");
 		TDF_Label Label() const;
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsModification() const;
 
 };
-%feature("shadow") TNaming_OldShapeIterator::~TNaming_OldShapeIterator %{
+%feature("shadow") TNaming_RefShape::~TNaming_RefShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1926,36 +1998,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TNaming_OldShapeIterator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TNaming_MapIteratorOfMapOfNamedShape;
-class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TNaming_MapIteratorOfMapOfNamedShape();
-		%feature("autodoc", "1");
-		TNaming_MapIteratorOfMapOfNamedShape(const TNaming_MapOfNamedShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TNaming_MapOfNamedShape &aMap);
-		%feature("autodoc", "1");
-		const Handle_TNaming_NamedShape & Key() const;
-
-};
-%feature("shadow") TNaming_MapIteratorOfMapOfNamedShape::~TNaming_MapIteratorOfMapOfNamedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_MapIteratorOfMapOfNamedShape {
+%extend TNaming_RefShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1982,7 +2025,7 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::~TNaming_DataMapNodeOfDataMapOfShapePtrRefShape %{
@@ -2032,49 +2075,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_Localizer;
-class TNaming_Localizer {
-	public:
-		%feature("autodoc", "1");
-		TNaming_Localizer();
-		%feature("autodoc", "1");
-		void Init(const Handle_TNaming_UsedShapes &US, const Standard_Integer CurTrans);
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & SubShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
-		%feature("autodoc", "1");
-		const TopTools_IndexedDataMapOfShapeListOfShape & Ancestors(const TopoDS_Shape S, const TopAbs_ShapeEnum Type);
-		%feature("autodoc", "1");
-		void FindFeaturesInAncestors(const TopoDS_Shape S, const TopoDS_Shape In, TopTools_MapOfShape & AncInFeatures);
-		%feature("autodoc", "1");
-		void GoBack(const TopoDS_Shape S, const TDF_Label &Lab, const TNaming_Evolution Evol, TopTools_ListOfShape & OldS, TNaming_ListOfNamedShape & OldLab);
-		%feature("autodoc", "1");
-		void Backward(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TNaming_MapOfNamedShape & Primitives, TopTools_MapOfShape & ValidShapes);
-		%feature("autodoc", "1");
-		void FindNeighbourg(const TopoDS_Shape Cont, const TopoDS_Shape S, TopTools_MapOfShape & Neighbourg);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsNew(const TopoDS_Shape S, const Handle_TNaming_NamedShape &NS);
-		%feature("autodoc", "1");
-		static		void FindGenerator(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape S, TopTools_ListOfShape & theListOfGenerators);
-		%feature("autodoc", "1");
-		static		void FindShapeContext(const Handle_TNaming_NamedShape &NS, const TopoDS_Shape theS, TopoDS_Shape & theSC);
-
-};
-%feature("shadow") TNaming_Localizer::~TNaming_Localizer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_Localizer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TNaming_DataMapOfShapePtrRefShape;
 class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 	public:
@@ -2102,6 +2102,10 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 		TNaming_PtrRefShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TNaming_PtrRefShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapePtrRefShape::~TNaming_DataMapOfShapePtrRefShape %{
@@ -2213,7 +2217,7 @@ class TNaming_Naming : public TDF_Attribute {
 };
 %extend TNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TNaming_Naming::~TNaming_Naming %{
@@ -2312,6 +2316,10 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 		TNaming_ShapesSet & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TNaming_ShapesSet & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TNaming_DataMapOfShapeShapesSet::~TNaming_DataMapOfShapeShapesSet %{

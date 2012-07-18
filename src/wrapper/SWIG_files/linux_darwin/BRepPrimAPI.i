@@ -122,6 +122,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepPrimAPI_MakeSweep;
+class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape FirstShape();
+		%feature("autodoc", "1");
+		virtual		TopoDS_Shape LastShape();
+
+};
+%feature("shadow") BRepPrimAPI_MakeSweep::~BRepPrimAPI_MakeSweep %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeSweep {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepPrimAPI_MakeRevolution;
 class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -157,31 +182,6 @@ def __del__(self):
 %}
 
 %extend BRepPrimAPI_MakeRevolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepPrimAPI_MakeSweep;
-class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape FirstShape();
-		%feature("autodoc", "1");
-		virtual		TopoDS_Shape LastShape();
-
-};
-%feature("shadow") BRepPrimAPI_MakeSweep::~BRepPrimAPI_MakeSweep %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeSweep {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -225,6 +225,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepPrimAPI_MakeSphere;
+class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
+		%feature("autodoc", "1");
+		virtual		Standard_Address OneAxis();
+		%feature("autodoc", "1");
+		BRepPrim_Sphere & Sphere();
+
+};
+%feature("shadow") BRepPrimAPI_MakeSphere::~BRepPrimAPI_MakeSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepPrimAPI_MakeCylinder;
 class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -252,6 +301,39 @@ def __del__(self):
 %}
 
 %extend BRepPrimAPI_MakeCylinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepPrimAPI_MakeCone;
+class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
+	public:
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
+		%feature("autodoc", "1");
+		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
+		%feature("autodoc", "1");
+		virtual		Standard_Address OneAxis();
+		%feature("autodoc", "1");
+		BRepPrim_Cone & Cone();
+
+};
+%feature("shadow") BRepPrimAPI_MakeCone::~BRepPrimAPI_MakeCone %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepPrimAPI_MakeCone {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -334,55 +416,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepPrimAPI_MakeSphere;
-class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Pnt Center, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeSphere(const gp_Ax2 Axis, const Standard_Real R, const Standard_Real angle1, const Standard_Real angle2, const Standard_Real angle3);
-		%feature("autodoc", "1");
-		virtual		Standard_Address OneAxis();
-		%feature("autodoc", "1");
-		BRepPrim_Sphere & Sphere();
-
-};
-%feature("shadow") BRepPrimAPI_MakeSphere::~BRepPrimAPI_MakeSphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeSphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepPrimAPI_MakeRevol;
 class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	public:
@@ -420,39 +453,6 @@ def __del__(self):
 %}
 
 %extend BRepPrimAPI_MakeRevol {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepPrimAPI_MakeCone;
-class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
-	public:
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H);
-		%feature("autodoc", "1");
-		BRepPrimAPI_MakeCone(const gp_Ax2 Axes, const Standard_Real R1, const Standard_Real R2, const Standard_Real H, const Standard_Real angle);
-		%feature("autodoc", "1");
-		virtual		Standard_Address OneAxis();
-		%feature("autodoc", "1");
-		BRepPrim_Cone & Cone();
-
-};
-%feature("shadow") BRepPrimAPI_MakeCone::~BRepPrimAPI_MakeCone %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepPrimAPI_MakeCone {
 	void _kill_pointed() {
 		delete $self;
 	}

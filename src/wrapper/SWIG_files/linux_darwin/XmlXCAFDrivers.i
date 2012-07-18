@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_XmlXCAFDrivers_DocumentStorageDriver;
-class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_DocumentStorageDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentStorageDriver();
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentStorageDriver(const Handle_XmlXCAFDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentStorageDriver(const XmlXCAFDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentStorageDriver & operator=(const Handle_XmlXCAFDrivers_DocumentStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentStorageDriver & operator=(const XmlXCAFDrivers_DocumentStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlXCAFDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
-	XmlXCAFDrivers_DocumentStorageDriver* GetObject() {
-	return (XmlXCAFDrivers_DocumentStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlXCAFDrivers_DocumentStorageDriver::~Handle_XmlXCAFDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlXCAFDrivers_DocumentRetrievalDriver;
 class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_DocumentRetrievalDriver {
 	public:
@@ -128,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XmlXCAFDrivers_DocumentStorageDriver;
+class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_DocumentStorageDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentStorageDriver();
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentStorageDriver(const Handle_XmlXCAFDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentStorageDriver(const XmlXCAFDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentStorageDriver & operator=(const Handle_XmlXCAFDrivers_DocumentStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentStorageDriver & operator=(const XmlXCAFDrivers_DocumentStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlXCAFDrivers_DocumentStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
+	XmlXCAFDrivers_DocumentStorageDriver* GetObject() {
+	return (XmlXCAFDrivers_DocumentStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlXCAFDrivers_DocumentStorageDriver::~Handle_XmlXCAFDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlXCAFDrivers_DocumentRetrievalDriver;
 class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetrievalDriver {
 	public:
@@ -146,7 +146,7 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 };
 %extend XmlXCAFDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XmlXCAFDrivers_DocumentRetrievalDriver::~XmlXCAFDrivers_DocumentRetrievalDriver %{
@@ -183,7 +183,7 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 };
 %extend XmlXCAFDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") XmlXCAFDrivers_DocumentStorageDriver::~XmlXCAFDrivers_DocumentStorageDriver %{

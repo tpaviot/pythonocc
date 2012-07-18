@@ -28,9 +28,9 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TColStd
 import StepShape
 import TopoDS
 import MoniTool
-import TColStd
 import TCollection
 };

@@ -29,9 +29,9 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import StepElement
-import StepGeom
-import StepData
 import TColStd
+import StepData
+import StepGeom
 import StepBasic
 import TCollection
 };

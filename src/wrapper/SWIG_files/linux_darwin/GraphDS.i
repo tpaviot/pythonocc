@@ -102,6 +102,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor GraphDS_DataMapNodeOfEntityRoleMap;
+class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		GraphDS_DataMapNodeOfEntityRoleMap(const Handle_Standard_Transient &K, const GraphDS_EntityRole &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Key() const;
+		%feature("autodoc", "1");
+		GraphDS_EntityRole & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
+	Handle_GraphDS_DataMapNodeOfEntityRoleMap GetHandle() {
+	return *(Handle_GraphDS_DataMapNodeOfEntityRoleMap*) &$self;
+	}
+};
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GraphDS_EntityRoleMap;
 class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 	public:
@@ -129,6 +168,10 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		GraphDS_EntityRole & ChangeFind(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") GraphDS_EntityRoleMap::~GraphDS_EntityRoleMap %{
@@ -141,45 +184,6 @@ def __del__(self):
 %}
 
 %extend GraphDS_EntityRoleMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GraphDS_DataMapNodeOfEntityRoleMap;
-class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		GraphDS_DataMapNodeOfEntityRoleMap(const Handle_Standard_Transient &K, const GraphDS_EntityRole &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		GraphDS_EntityRole & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GraphDS_DataMapNodeOfEntityRoleMap {
-	Handle_GraphDS_DataMapNodeOfEntityRoleMap GetHandle() {
-	return *(Handle_GraphDS_DataMapNodeOfEntityRoleMap*) &$self;
-	}
-};
-%extend GraphDS_DataMapNodeOfEntityRoleMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GraphDS_DataMapNodeOfEntityRoleMap {
 	void _kill_pointed() {
 		delete $self;
 	}

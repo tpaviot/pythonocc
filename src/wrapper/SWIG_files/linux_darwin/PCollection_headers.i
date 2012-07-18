@@ -49,8 +49,8 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
 #include<Handle_Standard_Persistent.hxx>
+#include<Handle_Standard_Transient.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<TCollection_ExtendedString.hxx>

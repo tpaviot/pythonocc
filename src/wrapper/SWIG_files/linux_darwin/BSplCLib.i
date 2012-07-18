@@ -63,6 +63,33 @@ enum BSplCLib_MultDistribution {
 
 
 
+%nodefaultctor BSplCLib_EvaluatorFunction;
+class BSplCLib_EvaluatorFunction {
+	public:
+		%feature("autodoc","Evaluate(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
+
+		virtual		void Evaluate(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","operator()(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
+
+		void operator()(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+
+};
+%feature("shadow") BSplCLib_EvaluatorFunction::~BSplCLib_EvaluatorFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BSplCLib_EvaluatorFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BSplCLib;
 class BSplCLib {
 	public:
@@ -286,6 +313,30 @@ class BSplCLib {
 		%feature("autodoc","MergeBSplineKnots(Standard_Real Tolerance, Standard_Real StartValue, Standard_Real EndValue, Standard_Integer Degree1, const Knots1, const Mults1, Standard_Integer Degree2, const Knots2, const Mults2) -> Standard_Integer");
 
 		static		void MergeBSplineKnots(const Standard_Real Tolerance, const Standard_Real StartValue, const Standard_Real EndValue, const Standard_Integer Degree1, const TColStd_Array1OfReal &Knots1, const TColStd_Array1OfInteger &Mults1, const Standard_Integer Degree2, const TColStd_Array1OfReal &Knots2, const TColStd_Array1OfInteger &Mults2, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & NewKnots, Handle_TColStd_HArray1OfInteger & NewMults);
+		%feature("autodoc","FunctionReparameterise(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, Standard_Integer PolesDimension, const FlatKnots, Standard_Integer NewDegree) -> [Standard_Real, Standard_Real, Standard_Integer]");
+
+		static		void FunctionReparameterise(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const Standard_Integer PolesDimension, Standard_Real &OutValue, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, Standard_Real &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionReparameterise(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionReparameterise(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColStd_Array1OfReal & NewPoles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionReparameterise(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionReparameterise(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColgp_Array1OfPnt & NewPoles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionReparameterise(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionReparameterise(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColgp_Array1OfPnt2d & NewPoles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionMultiply(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, Standard_Integer PolesDimension, const FlatKnots, Standard_Integer NewDegree) -> [Standard_Real, Standard_Real, Standard_Integer]");
+
+		static		void FunctionMultiply(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const Standard_Integer PolesDimension, Standard_Real &OutValue, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, Standard_Real &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionMultiply(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionMultiply(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColStd_Array1OfReal & NewPoles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionMultiply(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionMultiply(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColgp_Array1OfPnt2d & NewPoles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionMultiply(const Function, Standard_Integer BSplineDegree, const BSplineFlatKnots, const Poles, const FlatKnots, Standard_Integer NewDegree) -> Standard_Integer");
+
+		static		void FunctionMultiply(const BSplCLib_EvaluatorFunction &Function, const Standard_Integer BSplineDegree, const TColStd_Array1OfReal &BSplineFlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer NewDegree, TColgp_Array1OfPnt & NewPoles, Standard_Integer &OutValue);
 		%feature("autodoc","Eval(Standard_Real U, Standard_Boolean PeriodicFlag, Standard_Integer DerivativeRequest, Standard_Integer Degree, const FlatKnots, Standard_Integer ArrayDimension) -> [Standard_Integer, Standard_Real, Standard_Real]");
 
 		static		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue);

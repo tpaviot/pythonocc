@@ -104,6 +104,7 @@ $HeaderURL$
 #include<gp_Pnt.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Shape.hxx>
+#include<gp_Vec.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TopoDS_Shell.hxx>
 #include<gp_Lin.hxx>

@@ -265,6 +265,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -352,8 +353,7 @@ $HeaderURL$
 #include<TColStd_Array1OfInteger.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
-#include<Aspect_Array1OfEdge.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<TColStd_Array1OfReal.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 %}

@@ -89,6 +89,38 @@ def __del__(self):
 };
 
 
+%nodefaultctor ChFi3d_SearchSing;
+class ChFi3d_SearchSing : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") ChFi3d_SearchSing::~ChFi3d_SearchSing %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ChFi3d_SearchSing {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ChFi3d_Builder;
 class ChFi3d_Builder {
 	public:
@@ -175,23 +207,57 @@ def __del__(self):
 };
 
 
-%nodefaultctor ChFi3d_SearchSing;
-class ChFi3d_SearchSing : public math_FunctionWithDerivative {
+%nodefaultctor ChFi3d_FilBuilder;
+class ChFi3d_FilBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_SearchSing(const Handle_Geom_Curve &C1, const Handle_Geom_Curve &C2);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+		ChFi3d_FilBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2);
+		%feature("autodoc", "1");
+		void SetFilletShape(const ChFi3d_FilletShape FShape);
+		%feature("autodoc", "1");
+		ChFi3d_FilletShape GetFilletShape() const;
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void Add(const Standard_Real Radius, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void SetRadius(const Handle_Law_Function &C, const Standard_Integer IC, const Standard_Integer IinC);
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant(const Standard_Integer IC);
+		%feature("autodoc", "1");
+		Standard_Real Radius(const Standard_Integer IC);
+		%feature("autodoc", "1");
+		void ResetContour(const Standard_Integer IC);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void UnSet(const Standard_Integer IC, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex V);
+		%feature("autodoc", "1");
+		void UnSet(const Standard_Integer IC, const TopoDS_Vertex V);
+		%feature("autodoc", "1");
+		void SetRadius(const gp_XY UandR, const Standard_Integer IC, const Standard_Integer IinC);
+		%feature("autodoc", "1");
+		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge E);
+		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_Real, Standard_Real]");
 
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void SetLaw(const Standard_Integer IC, const TopoDS_Edge E, const Handle_Law_Function &L);
+		%feature("autodoc", "1");
+		void Simulate(const Standard_Integer IC);
+		%feature("autodoc", "1");
+		Standard_Integer NbSurf(const Standard_Integer IC) const;
+		%feature("autodoc", "1");
+		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
 
 };
-%feature("shadow") ChFi3d_SearchSing::~ChFi3d_SearchSing %{
+%feature("shadow") ChFi3d_FilBuilder::~ChFi3d_FilBuilder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -200,7 +266,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ChFi3d_SearchSing {
+%extend ChFi3d_FilBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -211,7 +277,7 @@ def __del__(self):
 class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_ChBuilder(const TopoDS_Shape S, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
+		ChFi3d_ChBuilder(const TopoDS_Shape S, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge E);
 		%feature("autodoc", "1");
@@ -280,72 +346,6 @@ def __del__(self):
 %}
 
 %extend ChFi3d_ChBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ChFi3d_FilBuilder;
-class ChFi3d_FilBuilder : public ChFi3d_Builder {
-	public:
-		%feature("autodoc", "1");
-		ChFi3d_FilBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
-		%feature("autodoc", "1");
-		void SetFilletShape(const ChFi3d_FilletShape FShape);
-		%feature("autodoc", "1");
-		ChFi3d_FilletShape GetFilletShape() const;
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void Add(const Standard_Real Radius, const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void SetRadius(const Handle_Law_Function &C, const Standard_Integer IC, const Standard_Integer IinC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		Standard_Real Radius(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		void ResetContour(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void UnSet(const Standard_Integer IC, const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void SetRadius(const Standard_Real Radius, const Standard_Integer IC, const TopoDS_Vertex V);
-		%feature("autodoc", "1");
-		void UnSet(const Standard_Integer IC, const TopoDS_Vertex V);
-		%feature("autodoc", "1");
-		void SetRadius(const gp_XY UandR, const Standard_Integer IC, const Standard_Integer IinC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsConstant(const Standard_Integer IC, const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		Standard_Real Radius(const Standard_Integer IC, const TopoDS_Edge E);
-		%feature("autodoc","GetBounds(Standard_Integer IC, const E) -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean GetBounds(const Standard_Integer IC, const TopoDS_Edge E, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Handle_Law_Function GetLaw(const Standard_Integer IC, const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void SetLaw(const Standard_Integer IC, const TopoDS_Edge E, const Handle_Law_Function &L);
-		%feature("autodoc", "1");
-		void Simulate(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		Standard_Integer NbSurf(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
-
-};
-%feature("shadow") ChFi3d_FilBuilder::~ChFi3d_FilBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ChFi3d_FilBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}

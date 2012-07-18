@@ -84,29 +84,29 @@ enum Storage_SolveMode {
 
 
 
-%nodefaultctor Handle_Storage_StreamReadError;
-class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
+%nodefaultctor Handle_Storage_Schema;
+class Handle_Storage_Schema : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError();
+		Handle_Storage_Schema();
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
+		Handle_Storage_Schema(const Handle_Storage_Schema &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
+		Handle_Storage_Schema(const Storage_Schema *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError & operator=(const Handle_Storage_StreamReadError &aHandle);
+		Handle_Storage_Schema & operator=(const Handle_Storage_Schema &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_StreamReadError & operator=(const Storage_StreamReadError *anItem);
+		Handle_Storage_Schema & operator=(const Storage_Schema *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_StreamReadError DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_Schema DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_StreamReadError {
-	Storage_StreamReadError* GetObject() {
-	return (Storage_StreamReadError*)$self->Access();
+%extend Handle_Storage_Schema {
+	Storage_Schema* GetObject() {
+	return (Storage_Schema*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_StreamReadError::~Handle_Storage_StreamReadError %{
+%feature("shadow") Handle_Storage_Schema::~Handle_Storage_Schema %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -115,45 +115,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_StreamReadError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Storage_StreamTypeMismatchError;
-class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError & operator=(const Handle_Storage_StreamTypeMismatchError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamTypeMismatchError & operator=(const Storage_StreamTypeMismatchError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamTypeMismatchError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamTypeMismatchError {
-	Storage_StreamTypeMismatchError* GetObject() {
-	return (Storage_StreamTypeMismatchError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Storage_StreamTypeMismatchError::~Handle_Storage_StreamTypeMismatchError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Storage_StreamTypeMismatchError {
+%extend Handle_Storage_Schema {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -198,29 +160,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
-class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_Storage_CallBack;
+class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack();
+		Handle_Storage_CallBack();
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		Handle_Storage_CallBack(const Handle_Storage_CallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		Handle_Storage_CallBack(const Storage_CallBack *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		Handle_Storage_CallBack & operator=(const Handle_Storage_CallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		Handle_Storage_CallBack & operator=(const Storage_CallBack *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_SequenceNodeOfSeqOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_CallBack DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
-	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
-	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
+%extend Handle_Storage_CallBack {
+	Storage_CallBack* GetObject() {
+	return (Storage_CallBack*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_SequenceNodeOfSeqOfCallBack::~Handle_Storage_SequenceNodeOfSeqOfCallBack %{
+%feature("shadow") Handle_Storage_CallBack::~Handle_Storage_CallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -229,7 +191,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+%extend Handle_Storage_CallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Storage_DefaultCallBack;
+class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack(const Handle_Storage_DefaultCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack(const Storage_DefaultCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack & operator=(const Handle_Storage_DefaultCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_DefaultCallBack & operator=(const Storage_DefaultCallBack *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Storage_DefaultCallBack DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_DefaultCallBack {
+	Storage_DefaultCallBack* GetObject() {
+	return (Storage_DefaultCallBack*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Storage_DefaultCallBack::~Handle_Storage_DefaultCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Storage_DefaultCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -350,6 +350,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
+class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Handle_Storage_SequenceNodeOfSeqOfCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_SequenceNodeOfSeqOfCallBack & operator=(const Storage_SequenceNodeOfSeqOfCallBack *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Storage_SequenceNodeOfSeqOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	Storage_SequenceNodeOfSeqOfCallBack* GetObject() {
+	return (Storage_SequenceNodeOfSeqOfCallBack*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Storage_SequenceNodeOfSeqOfCallBack::~Handle_Storage_SequenceNodeOfSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Storage_HSeqOfPersistent;
 class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 	public:
@@ -464,29 +502,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_TypedCallBack;
-class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Storage_StreamReadError;
+class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack();
+		Handle_Storage_StreamReadError();
 		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack(const Handle_Storage_TypedCallBack &aHandle);
+		Handle_Storage_StreamReadError(const Handle_Storage_StreamReadError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack(const Storage_TypedCallBack *anItem);
+		Handle_Storage_StreamReadError(const Storage_StreamReadError *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack & operator=(const Handle_Storage_TypedCallBack &aHandle);
+		Handle_Storage_StreamReadError & operator=(const Handle_Storage_StreamReadError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack & operator=(const Storage_TypedCallBack *anItem);
+		Handle_Storage_StreamReadError & operator=(const Storage_StreamReadError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_TypedCallBack DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_StreamReadError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_TypedCallBack {
-	Storage_TypedCallBack* GetObject() {
-	return (Storage_TypedCallBack*)$self->Access();
+%extend Handle_Storage_StreamReadError {
+	Storage_StreamReadError* GetObject() {
+	return (Storage_StreamReadError*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_TypedCallBack::~Handle_Storage_TypedCallBack %{
+%feature("shadow") Handle_Storage_StreamReadError::~Handle_Storage_StreamReadError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -495,7 +533,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_TypedCallBack {
+%extend Handle_Storage_StreamReadError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Storage_StreamTypeMismatchError;
+class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError();
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Handle_Storage_StreamTypeMismatchError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError(const Storage_StreamTypeMismatchError *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError & operator=(const Handle_Storage_StreamTypeMismatchError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_StreamTypeMismatchError & operator=(const Storage_StreamTypeMismatchError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Storage_StreamTypeMismatchError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_StreamTypeMismatchError {
+	Storage_StreamTypeMismatchError* GetObject() {
+	return (Storage_StreamTypeMismatchError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Storage_StreamTypeMismatchError::~Handle_Storage_StreamTypeMismatchError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Storage_StreamTypeMismatchError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -578,29 +654,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_DataMapNodeOfMapOfCallBack;
-class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_Storage_HSeqOfRoot;
+class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfCallBack();
+		Handle_Storage_HSeqOfRoot();
 		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfCallBack(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
+		Handle_Storage_HSeqOfRoot(const Handle_Storage_HSeqOfRoot &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfCallBack(const Storage_DataMapNodeOfMapOfCallBack *anItem);
+		Handle_Storage_HSeqOfRoot(const Storage_HSeqOfRoot *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
+		Handle_Storage_HSeqOfRoot & operator=(const Handle_Storage_HSeqOfRoot &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Storage_DataMapNodeOfMapOfCallBack *anItem);
+		Handle_Storage_HSeqOfRoot & operator=(const Storage_HSeqOfRoot *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_DataMapNodeOfMapOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_HSeqOfRoot DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
-	Storage_DataMapNodeOfMapOfCallBack* GetObject() {
-	return (Storage_DataMapNodeOfMapOfCallBack*)$self->Access();
+%extend Handle_Storage_HSeqOfRoot {
+	Storage_HSeqOfRoot* GetObject() {
+	return (Storage_HSeqOfRoot*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_DataMapNodeOfMapOfCallBack::~Handle_Storage_DataMapNodeOfMapOfCallBack %{
+%feature("shadow") Handle_Storage_HSeqOfRoot::~Handle_Storage_HSeqOfRoot %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -609,45 +685,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Storage_StreamWriteError;
-class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_StreamWriteError();
-		%feature("autodoc", "1");
-		Handle_Storage_StreamWriteError(const Handle_Storage_StreamWriteError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamWriteError(const Storage_StreamWriteError *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamWriteError & operator=(const Handle_Storage_StreamWriteError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_StreamWriteError & operator=(const Storage_StreamWriteError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamWriteError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_StreamWriteError {
-	Storage_StreamWriteError* GetObject() {
-	return (Storage_StreamWriteError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Storage_StreamWriteError::~Handle_Storage_StreamWriteError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Storage_StreamWriteError {
+%extend Handle_Storage_HSeqOfRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -730,29 +768,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_TypeData;
-class Handle_Storage_TypeData : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Storage_StreamWriteError;
+class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_TypeData();
+		Handle_Storage_StreamWriteError();
 		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
+		Handle_Storage_StreamWriteError(const Handle_Storage_StreamWriteError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_TypeData(const Storage_TypeData *anItem);
+		Handle_Storage_StreamWriteError(const Storage_StreamWriteError *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_TypeData & operator=(const Handle_Storage_TypeData &aHandle);
+		Handle_Storage_StreamWriteError & operator=(const Handle_Storage_StreamWriteError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_TypeData & operator=(const Storage_TypeData *anItem);
+		Handle_Storage_StreamWriteError & operator=(const Storage_StreamWriteError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_TypeData DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_StreamWriteError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_TypeData {
-	Storage_TypeData* GetObject() {
-	return (Storage_TypeData*)$self->Access();
+%extend Handle_Storage_StreamWriteError {
+	Storage_StreamWriteError* GetObject() {
+	return (Storage_StreamWriteError*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_TypeData::~Handle_Storage_TypeData %{
+%feature("shadow") Handle_Storage_StreamWriteError::~Handle_Storage_StreamWriteError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -761,36 +799,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_TypeData {
+%extend Handle_Storage_StreamWriteError {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_Storage_Schema;
-class Handle_Storage_Schema : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Storage_DataMapNodeOfMapOfCallBack;
+class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_Schema();
+		Handle_Storage_DataMapNodeOfMapOfCallBack();
 		%feature("autodoc", "1");
-		Handle_Storage_Schema(const Handle_Storage_Schema &aHandle);
+		Handle_Storage_DataMapNodeOfMapOfCallBack(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_Schema(const Storage_Schema *anItem);
+		Handle_Storage_DataMapNodeOfMapOfCallBack(const Storage_DataMapNodeOfMapOfCallBack *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_Schema & operator=(const Handle_Storage_Schema &aHandle);
+		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Handle_Storage_DataMapNodeOfMapOfCallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_Schema & operator=(const Storage_Schema *anItem);
+		Handle_Storage_DataMapNodeOfMapOfCallBack & operator=(const Storage_DataMapNodeOfMapOfCallBack *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_Schema DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_DataMapNodeOfMapOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_Schema {
-	Storage_Schema* GetObject() {
-	return (Storage_Schema*)$self->Access();
+%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
+	Storage_DataMapNodeOfMapOfCallBack* GetObject() {
+	return (Storage_DataMapNodeOfMapOfCallBack*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_Schema::~Handle_Storage_Schema %{
+%feature("shadow") Handle_Storage_DataMapNodeOfMapOfCallBack::~Handle_Storage_DataMapNodeOfMapOfCallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -799,7 +837,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_Schema {
+%extend Handle_Storage_DataMapNodeOfMapOfCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -838,6 +876,44 @@ def __del__(self):
 %}
 
 %extend Handle_Storage_RootData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Storage_TypedCallBack;
+class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack();
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack(const Handle_Storage_TypedCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack(const Storage_TypedCallBack *anItem);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & operator=(const Handle_Storage_TypedCallBack &aHandle);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & operator=(const Storage_TypedCallBack *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Storage_TypedCallBack DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Storage_TypedCallBack {
+	Storage_TypedCallBack* GetObject() {
+	return (Storage_TypedCallBack*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Storage_TypedCallBack::~Handle_Storage_TypedCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Storage_TypedCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -920,29 +996,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_HArrayOfCallBack;
-class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Storage_TypeData;
+class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack();
+		Handle_Storage_TypeData();
 		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack(const Handle_Storage_HArrayOfCallBack &aHandle);
+		Handle_Storage_TypeData(const Handle_Storage_TypeData &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack(const Storage_HArrayOfCallBack *anItem);
+		Handle_Storage_TypeData(const Storage_TypeData *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack & operator=(const Handle_Storage_HArrayOfCallBack &aHandle);
+		Handle_Storage_TypeData & operator=(const Handle_Storage_TypeData &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_HArrayOfCallBack & operator=(const Storage_HArrayOfCallBack *anItem);
+		Handle_Storage_TypeData & operator=(const Storage_TypeData *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_HArrayOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_TypeData DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_HArrayOfCallBack {
-	Storage_HArrayOfCallBack* GetObject() {
-	return (Storage_HArrayOfCallBack*)$self->Access();
+%extend Handle_Storage_TypeData {
+	Storage_TypeData* GetObject() {
+	return (Storage_TypeData*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_HArrayOfCallBack::~Handle_Storage_HArrayOfCallBack %{
+%feature("shadow") Handle_Storage_TypeData::~Handle_Storage_TypeData %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -951,7 +1027,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_HArrayOfCallBack {
+%extend Handle_Storage_TypeData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1034,82 +1110,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_CallBack;
-class Handle_Storage_CallBack : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack(const Handle_Storage_CallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack(const Storage_CallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & operator=(const Handle_Storage_CallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & operator=(const Storage_CallBack *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Storage_CallBack DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_CallBack {
-	Storage_CallBack* GetObject() {
-	return (Storage_CallBack*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Storage_CallBack::~Handle_Storage_CallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Storage_CallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Storage_DefaultCallBack;
-class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
-	public:
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack();
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack(const Handle_Storage_DefaultCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack(const Storage_DefaultCallBack *anItem);
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack & operator=(const Handle_Storage_DefaultCallBack &aHandle);
-		%feature("autodoc", "1");
-		Handle_Storage_DefaultCallBack & operator=(const Storage_DefaultCallBack *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Storage_DefaultCallBack DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Storage_DefaultCallBack {
-	Storage_DefaultCallBack* GetObject() {
-	return (Storage_DefaultCallBack*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Storage_DefaultCallBack::~Handle_Storage_DefaultCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Storage_DefaultCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Storage_StreamUnknownTypeError;
 class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadError {
 	public:
@@ -1148,29 +1148,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Storage_HSeqOfRoot;
-class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Storage_HArrayOfCallBack;
+class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot();
+		Handle_Storage_HArrayOfCallBack();
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot(const Handle_Storage_HSeqOfRoot &aHandle);
+		Handle_Storage_HArrayOfCallBack(const Handle_Storage_HArrayOfCallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot(const Storage_HSeqOfRoot *anItem);
+		Handle_Storage_HArrayOfCallBack(const Storage_HArrayOfCallBack *anItem);
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot & operator=(const Handle_Storage_HSeqOfRoot &aHandle);
+		Handle_Storage_HArrayOfCallBack & operator=(const Handle_Storage_HArrayOfCallBack &aHandle);
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot & operator=(const Storage_HSeqOfRoot *anItem);
+		Handle_Storage_HArrayOfCallBack & operator=(const Storage_HArrayOfCallBack *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Storage_HSeqOfRoot DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Storage_HArrayOfCallBack DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Storage_HSeqOfRoot {
-	Storage_HSeqOfRoot* GetObject() {
-	return (Storage_HSeqOfRoot*)$self->Access();
+%extend Handle_Storage_HArrayOfCallBack {
+	Storage_HArrayOfCallBack* GetObject() {
+	return (Storage_HArrayOfCallBack*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Storage_HSeqOfRoot::~Handle_Storage_HSeqOfRoot %{
+%feature("shadow") Handle_Storage_HArrayOfCallBack::~Handle_Storage_HArrayOfCallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1179,53 +1179,35 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Storage_HSeqOfRoot {
+%extend Handle_Storage_HArrayOfCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Storage_HArrayOfCallBack;
-class Storage_HArrayOfCallBack : public MMgt_TShared {
+%nodefaultctor Storage_SequenceNodeOfSeqOfPersistent;
+class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Storage_HArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up);
+		Storage_SequenceNodeOfSeqOfPersistent(const Handle_Standard_Persistent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		Storage_HArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_CallBack &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Storage_CallBack &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &Value);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_ArrayOfCallBack & Array1() const;
-		%feature("autodoc", "1");
-		Storage_ArrayOfCallBack & ChangeArray1();
+		Handle_Standard_Persistent & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_HArrayOfCallBack {
-	Handle_Storage_HArrayOfCallBack GetHandle() {
-	return *(Handle_Storage_HArrayOfCallBack*) &$self;
+%extend Storage_SequenceNodeOfSeqOfPersistent {
+	Handle_Storage_SequenceNodeOfSeqOfPersistent GetHandle() {
+	return *(Handle_Storage_SequenceNodeOfSeqOfPersistent*) &$self;
 	}
 };
-%extend Storage_HArrayOfCallBack {
+%extend Storage_SequenceNodeOfSeqOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_HArrayOfCallBack::~Storage_HArrayOfCallBack %{
+%feature("shadow") Storage_SequenceNodeOfSeqOfPersistent::~Storage_SequenceNodeOfSeqOfPersistent %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1234,7 +1216,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_HArrayOfCallBack {
+%extend Storage_SequenceNodeOfSeqOfPersistent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1306,640 +1288,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage;
-class Storage {
-	public:
-		%feature("autodoc", "1");
-		Storage();
-		%feature("autodoc", "1");
-		static		TCollection_AsciiString Version();
-
-};
-%feature("shadow") Storage::~Storage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_SequenceNodeOfSeqOfPersistent;
-class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_SequenceNodeOfSeqOfPersistent(const Handle_Standard_Persistent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_SequenceNodeOfSeqOfPersistent {
-	Handle_Storage_SequenceNodeOfSeqOfPersistent GetHandle() {
-	return *(Handle_Storage_SequenceNodeOfSeqOfPersistent*) &$self;
-	}
-};
-%extend Storage_SequenceNodeOfSeqOfPersistent {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_SequenceNodeOfSeqOfPersistent::~Storage_SequenceNodeOfSeqOfPersistent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_SequenceNodeOfSeqOfPersistent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_ArrayOfCallBack;
-class Storage_ArrayOfCallBack {
-	public:
-		%feature("autodoc", "1");
-		Storage_ArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_ArrayOfCallBack(const Handle_Storage_CallBack &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Storage_CallBack &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Storage_ArrayOfCallBack & Assign(const Storage_ArrayOfCallBack &Other);
-		%feature("autodoc", "1");
-		const Storage_ArrayOfCallBack & operator=(const Storage_ArrayOfCallBack &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &Value);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Storage_ArrayOfCallBack::~Storage_ArrayOfCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_ArrayOfCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_HSeqOfCallBack;
-class Storage_HSeqOfCallBack : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HSeqOfCallBack();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
-		%feature("autodoc", "1");
-		const Handle_Storage_CallBack & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Storage_CallBack & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Storage_SeqOfCallBack & Sequence() const;
-		%feature("autodoc", "1");
-		Storage_SeqOfCallBack & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfCallBack ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HSeqOfCallBack {
-	Handle_Storage_HSeqOfCallBack GetHandle() {
-	return *(Handle_Storage_HSeqOfCallBack*) &$self;
-	}
-};
-%extend Storage_HSeqOfCallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_HSeqOfCallBack::~Storage_HSeqOfCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_HSeqOfCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_MapOfCallBack;
-class Storage_MapOfCallBack : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Storage_MapOfCallBack(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Storage_MapOfCallBack & Assign(const Storage_MapOfCallBack &Other);
-		%feature("autodoc", "1");
-		Storage_MapOfCallBack & operator=(const Storage_MapOfCallBack &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		const Handle_Storage_TypedCallBack & Find(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		const Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack & ChangeFind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K);
-
-};
-%feature("shadow") Storage_MapOfCallBack::~Storage_MapOfCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_MapOfCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_HSeqOfRoot;
-class Storage_HSeqOfRoot : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HSeqOfRoot();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_Root &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Storage_HSeqOfRoot &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_Root &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Storage_HSeqOfRoot &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfRoot &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfRoot &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
-		%feature("autodoc", "1");
-		const Handle_Storage_Root & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Storage_Root & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Storage_SeqOfRoot & Sequence() const;
-		%feature("autodoc", "1");
-		Storage_SeqOfRoot & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HSeqOfRoot {
-	Handle_Storage_HSeqOfRoot GetHandle() {
-	return *(Handle_Storage_HSeqOfRoot*) &$self;
-	}
-};
-%extend Storage_HSeqOfRoot {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_HSeqOfRoot::~Storage_HSeqOfRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_HSeqOfRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_Data;
-class Storage_Data : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_Data();
-		%feature("autodoc", "1");
-		Storage_Error ErrorStatus() const;
-		%feature("autodoc", "1");
-		void ClearErrorStatus();
-		%feature("autodoc", "1");
-		TCollection_AsciiString ErrorStatusExtension() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString CreationDate() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString StorageVersion() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString SchemaVersion() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString SchemaName() const;
-		%feature("autodoc", "1");
-		void SetApplicationVersion(const TCollection_AsciiString &aVersion);
-		%feature("autodoc", "1");
-		TCollection_AsciiString ApplicationVersion() const;
-		%feature("autodoc", "1");
-		void SetApplicationName(const TCollection_ExtendedString &aName);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString ApplicationName() const;
-		%feature("autodoc", "1");
-		void SetDataType(const TCollection_ExtendedString &aType);
-		%feature("autodoc", "1");
-		TCollection_ExtendedString DataType() const;
-		%feature("autodoc", "1");
-		void AddToUserInfo(const TCollection_AsciiString &anInfo);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfAsciiString & UserInfo() const;
-		%feature("autodoc", "1");
-		void AddToComments(const TCollection_ExtendedString &aComment);
-		%feature("autodoc", "1");
-		const TColStd_SequenceOfExtendedString & Comments() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfObjects() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfRoots() const;
-		%feature("autodoc", "1");
-		void AddRoot(const Handle_Standard_Persistent &anObject) const;
-		%feature("autodoc", "1");
-		void AddRoot(const TCollection_AsciiString &aName, const Handle_Standard_Persistent &anObject) const;
-		%feature("autodoc", "1");
-		void RemoveRoot(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot Roots() const;
-		%feature("autodoc", "1");
-		Handle_Storage_Root Find(const TCollection_AsciiString &aName) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsRoot(const TCollection_AsciiString &aName) const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfTypes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsType(const TCollection_AsciiString &aName) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString Types() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_Data {
-	Handle_Storage_Data GetHandle() {
-	return *(Handle_Storage_Data*) &$self;
-	}
-};
-%extend Storage_Data {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_Data::~Storage_Data %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_Data {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_StreamReadError;
-class Storage_StreamReadError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamReadError();
-		%feature("autodoc", "1");
-		Storage_StreamReadError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamReadError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_StreamReadError {
-	Handle_Storage_StreamReadError GetHandle() {
-	return *(Handle_Storage_StreamReadError*) &$self;
-	}
-};
-%extend Storage_StreamReadError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_StreamReadError::~Storage_StreamReadError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_StreamReadError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_CallBack;
-class Storage_CallBack : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent New() const;
-		%feature("autodoc", "1");
-		virtual		void Add(const Handle_Standard_Persistent &aPers, const Handle_Storage_Schema &aSchema) const;
-		%feature("autodoc", "1");
-		virtual		void Write(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
-		%feature("autodoc", "1");
-		virtual		void Read(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_CallBack {
-	Handle_Storage_CallBack GetHandle() {
-	return *(Handle_Storage_CallBack*) &$self;
-	}
-};
-%extend Storage_CallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_CallBack::~Storage_CallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_CallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_DefaultCallBack;
-class Storage_DefaultCallBack : public Storage_CallBack {
-	public:
-		%feature("autodoc", "1");
-		Storage_DefaultCallBack();
-
-};
-%extend Storage_DefaultCallBack {
-	Handle_Storage_DefaultCallBack GetHandle() {
-	return *(Handle_Storage_DefaultCallBack*) &$self;
-	}
-};
-%extend Storage_DefaultCallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_DefaultCallBack::~Storage_DefaultCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_DefaultCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_HArrayOfSchema;
-class Storage_HArrayOfSchema : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_Schema &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Storage_Schema &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Storage_Schema &Value);
-		%feature("autodoc", "1");
-		const Handle_Storage_Schema & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Storage_Schema & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_ArrayOfSchema & Array1() const;
-		%feature("autodoc", "1");
-		Storage_ArrayOfSchema & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HArrayOfSchema {
-	Handle_Storage_HArrayOfSchema GetHandle() {
-	return *(Handle_Storage_HArrayOfSchema*) &$self;
-	}
-};
-%extend Storage_HArrayOfSchema {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_HArrayOfSchema {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_HPArray;
-class Storage_HPArray : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Standard_Persistent &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
-		%feature("autodoc", "1");
-		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_PArray & Array1() const;
-		%feature("autodoc", "1");
-		Storage_PArray & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HPArray {
-	Handle_Storage_HPArray GetHandle() {
-	return *(Handle_Storage_HPArray*) &$self;
-	}
-};
-%extend Storage_HPArray {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_HPArray::~Storage_HPArray %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_HPArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Storage_SeqOfCallBack;
 class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 	public:
@@ -2005,6 +1353,253 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_ArrayOfCallBack;
+class Storage_ArrayOfCallBack {
+	public:
+		%feature("autodoc", "1");
+		Storage_ArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_ArrayOfCallBack(const Handle_Storage_CallBack &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Storage_CallBack &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Storage_ArrayOfCallBack & Assign(const Storage_ArrayOfCallBack &Other);
+		%feature("autodoc", "1");
+		const Storage_ArrayOfCallBack & operator=(const Storage_ArrayOfCallBack &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &Value);
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Storage_ArrayOfCallBack::~Storage_ArrayOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_ArrayOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_MapOfCallBack;
+class Storage_MapOfCallBack : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Storage_MapOfCallBack(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Storage_MapOfCallBack & Assign(const Storage_MapOfCallBack &Other);
+		%feature("autodoc", "1");
+		Storage_MapOfCallBack & operator=(const Storage_MapOfCallBack &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		const Handle_Storage_TypedCallBack & Find(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
+
+};
+%feature("shadow") Storage_MapOfCallBack::~Storage_MapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_MapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_HArrayOfSchema;
+class Storage_HArrayOfSchema : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_Schema &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Storage_Schema &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Storage_Schema &Value);
+		%feature("autodoc", "1");
+		const Handle_Storage_Schema & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Storage_Schema & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Storage_ArrayOfSchema & Array1() const;
+		%feature("autodoc", "1");
+		Storage_ArrayOfSchema & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HArrayOfSchema {
+	Handle_Storage_HArrayOfSchema GetHandle() {
+	return *(Handle_Storage_HArrayOfSchema*) &$self;
+	}
+};
+%extend Storage_HArrayOfSchema {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_HArrayOfSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_RootData;
+class Storage_RootData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_RootData();
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfRoots() const;
+		%feature("autodoc", "1");
+		void AddRoot(const Handle_Storage_Root &aRoot);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot Roots() const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root Find(const TCollection_AsciiString &aName) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsRoot(const TCollection_AsciiString &aName) const;
+		%feature("autodoc", "1");
+		void RemoveRoot(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		Storage_Error ErrorStatus() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString ErrorStatusExtension() const;
+		%feature("autodoc", "1");
+		void ClearErrorStatus();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_RootData {
+	Handle_Storage_RootData GetHandle() {
+	return *(Handle_Storage_RootData*) &$self;
+	}
+};
+%extend Storage_RootData {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_RootData::~Storage_RootData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_RootData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_DataMapNodeOfMapOfPers;
+class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_DataMapNodeOfMapOfPers(const TCollection_AsciiString &K, const Handle_Storage_Root &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_DataMapNodeOfMapOfPers {
+	Handle_Storage_DataMapNodeOfMapOfPers GetHandle() {
+	return *(Handle_Storage_DataMapNodeOfMapOfPers*) &$self;
+	}
+};
+%extend Storage_DataMapNodeOfMapOfPers {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_DataMapNodeOfMapOfPers::~Storage_DataMapNodeOfMapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_DataMapNodeOfMapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_TypedCallBack;
 class Storage_TypedCallBack : public MMgt_TShared {
 	public:
@@ -2035,7 +1630,7 @@ class Storage_TypedCallBack : public MMgt_TShared {
 };
 %extend Storage_TypedCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_TypedCallBack::~Storage_TypedCallBack %{
@@ -2054,34 +1649,54 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_StreamExtCharParityError;
-class Storage_StreamExtCharParityError : public Storage_StreamReadError {
+%nodefaultctor Storage_IndexedDataMapNodeOfPType;
+class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Storage_StreamExtCharParityError();
+		Storage_IndexedDataMapNodeOfPType(const TCollection_AsciiString &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		Storage_StreamExtCharParityError(const char * AString);
+		TCollection_AsciiString & Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamExtCharParityError NewInstance(const char * aMessage="");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_StreamExtCharParityError {
-	Handle_Storage_StreamExtCharParityError GetHandle() {
-	return *(Handle_Storage_StreamExtCharParityError*) &$self;
+%extend Storage_IndexedDataMapNodeOfPType {
+	Handle_Storage_IndexedDataMapNodeOfPType GetHandle() {
+	return *(Handle_Storage_IndexedDataMapNodeOfPType*) &$self;
 	}
 };
-%extend Storage_StreamExtCharParityError {
+%extend Storage_IndexedDataMapNodeOfPType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_StreamExtCharParityError::~Storage_StreamExtCharParityError %{
+%feature("shadow") Storage_IndexedDataMapNodeOfPType::~Storage_IndexedDataMapNodeOfPType %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2090,7 +1705,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_StreamExtCharParityError {
+%extend Storage_IndexedDataMapNodeOfPType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2124,6 +1739,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_HPArray;
+class Storage_HPArray : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_HPArray(const Standard_Integer Low, const Standard_Integer Up, const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Standard_Persistent &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Standard_Persistent &Value);
+		%feature("autodoc", "1");
+		const Handle_Standard_Persistent & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Persistent & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Storage_PArray & Array1() const;
+		%feature("autodoc", "1");
+		Storage_PArray & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HPArray {
+	Handle_Storage_HPArray GetHandle() {
+	return *(Handle_Storage_HPArray*) &$self;
+	}
+};
+%extend Storage_HPArray {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_HPArray::~Storage_HPArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_HPArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_InternalData;
 class Storage_InternalData : public MMgt_TShared {
 	public:
@@ -2142,7 +1812,7 @@ class Storage_InternalData : public MMgt_TShared {
 };
 %extend Storage_InternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_InternalData::~Storage_InternalData %{
@@ -2155,6 +1825,86 @@ def __del__(self):
 %}
 
 %extend Storage_InternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_StreamReadError;
+class Storage_StreamReadError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamReadError();
+		%feature("autodoc", "1");
+		Storage_StreamReadError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Storage_StreamReadError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StreamReadError {
+	Handle_Storage_StreamReadError GetHandle() {
+	return *(Handle_Storage_StreamReadError*) &$self;
+	}
+};
+%extend Storage_StreamReadError {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_StreamReadError::~Storage_StreamReadError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_StreamReadError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_StreamExtCharParityError;
+class Storage_StreamExtCharParityError : public Storage_StreamReadError {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamExtCharParityError();
+		%feature("autodoc", "1");
+		Storage_StreamExtCharParityError(const char * AString);
+		%feature("autodoc", "1");
+		static		Handle_Storage_StreamExtCharParityError NewInstance(const char * aMessage="");
+
+};
+%extend Storage_StreamExtCharParityError {
+	Handle_Storage_StreamExtCharParityError GetHandle() {
+	return *(Handle_Storage_StreamExtCharParityError*) &$self;
+	}
+};
+%extend Storage_StreamExtCharParityError {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_StreamExtCharParityError::~Storage_StreamExtCharParityError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_StreamExtCharParityError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2186,6 +1936,92 @@ def __del__(self):
 %}
 
 %extend Storage_DataMapIteratorOfMapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_MapOfPers;
+class Storage_MapOfPers : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Storage_MapOfPers(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Storage_MapOfPers & Assign(const Storage_MapOfPers &Other);
+		%feature("autodoc", "1");
+		Storage_MapOfPers & operator=(const Storage_MapOfPers &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & Find(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & operator()(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root & ChangeFind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
+
+};
+%feature("shadow") Storage_MapOfPers::~Storage_MapOfPers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_MapOfPers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
+class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_CallBack &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	Handle_Storage_SequenceNodeOfSeqOfCallBack GetHandle() {
+	return *(Handle_Storage_SequenceNodeOfSeqOfCallBack*) &$self;
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_SequenceNodeOfSeqOfCallBack::~Storage_SequenceNodeOfSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_SequenceNodeOfSeqOfCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2278,7 +2114,7 @@ class Storage_Schema : public MMgt_TShared {
 };
 %extend Storage_Schema {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_Schema::~Storage_Schema %{
@@ -2297,44 +2133,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_RootData;
-class Storage_RootData : public MMgt_TShared {
+%nodefaultctor Storage_StreamUnknownTypeError;
+class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 	public:
 		%feature("autodoc", "1");
-		Storage_RootData();
+		Storage_StreamUnknownTypeError();
 		%feature("autodoc", "1");
-		Standard_Integer NumberOfRoots() const;
+		Storage_StreamUnknownTypeError(const char * AString);
 		%feature("autodoc", "1");
-		void AddRoot(const Handle_Storage_Root &aRoot);
+		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
-		Handle_Storage_HSeqOfRoot Roots() const;
+		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		Handle_Storage_Root Find(const TCollection_AsciiString &aName) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsRoot(const TCollection_AsciiString &aName) const;
-		%feature("autodoc", "1");
-		void RemoveRoot(const TCollection_AsciiString &aName);
-		%feature("autodoc", "1");
-		Storage_Error ErrorStatus() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString ErrorStatusExtension() const;
-		%feature("autodoc", "1");
-		void ClearErrorStatus();
+		static		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_RootData {
-	Handle_Storage_RootData GetHandle() {
-	return *(Handle_Storage_RootData*) &$self;
+%extend Storage_StreamUnknownTypeError {
+	Handle_Storage_StreamUnknownTypeError GetHandle() {
+	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
 	}
 };
-%extend Storage_RootData {
+%extend Storage_StreamUnknownTypeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_RootData::~Storage_RootData %{
+%feature("shadow") Storage_StreamUnknownTypeError::~Storage_StreamUnknownTypeError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2343,7 +2169,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_RootData {
+%extend Storage_StreamUnknownTypeError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2401,6 +2227,74 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_StreamWriteError;
+class Storage_StreamWriteError : public Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Storage_StreamWriteError();
+		%feature("autodoc", "1");
+		Storage_StreamWriteError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Storage_StreamWriteError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_StreamWriteError {
+	Handle_Storage_StreamWriteError GetHandle() {
+	return *(Handle_Storage_StreamWriteError*) &$self;
+	}
+};
+%extend Storage_StreamWriteError {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_StreamWriteError::~Storage_StreamWriteError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_StreamWriteError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage;
+class Storage {
+	public:
+		%feature("autodoc", "1");
+		Storage();
+		%feature("autodoc", "1");
+		static		TCollection_AsciiString Version();
+
+};
+%feature("shadow") Storage::~Storage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_DataMapIteratorOfMapOfPers;
 class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 	public:
@@ -2432,45 +2326,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
-class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_DataMapNodeOfMapOfCallBack(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		Handle_Storage_TypedCallBack & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_DataMapNodeOfMapOfCallBack {
-	Handle_Storage_DataMapNodeOfMapOfCallBack GetHandle() {
-	return *(Handle_Storage_DataMapNodeOfMapOfCallBack*) &$self;
-	}
-};
-%extend Storage_DataMapNodeOfMapOfCallBack {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_DataMapNodeOfMapOfCallBack::~Storage_DataMapNodeOfMapOfCallBack %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_DataMapNodeOfMapOfCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Storage_stCONSTclCOM;
 class Storage_stCONSTclCOM {
 	public:
@@ -2494,34 +2349,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_StreamUnknownTypeError;
-class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
+%nodefaultctor Storage_StreamTypeMismatchError;
+class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	public:
 		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError();
+		Storage_StreamTypeMismatchError();
 		%feature("autodoc", "1");
-		Storage_StreamUnknownTypeError(const char * AString);
+		Storage_StreamTypeMismatchError(const char * AString);
 		%feature("autodoc", "1");
 		static		void Raise(const char * aMessage="");
 		%feature("autodoc", "1");
 		static		void Raise(Standard_SStream & aReason);
 		%feature("autodoc", "1");
-		static		Handle_Storage_StreamUnknownTypeError NewInstance(const char * aMessage="");
+		static		Handle_Storage_StreamTypeMismatchError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_StreamUnknownTypeError {
-	Handle_Storage_StreamUnknownTypeError GetHandle() {
-	return *(Handle_Storage_StreamUnknownTypeError*) &$self;
+%extend Storage_StreamTypeMismatchError {
+	Handle_Storage_StreamTypeMismatchError GetHandle() {
+	return *(Handle_Storage_StreamTypeMismatchError*) &$self;
 	}
 };
-%extend Storage_StreamUnknownTypeError {
+%extend Storage_StreamTypeMismatchError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_StreamUnknownTypeError::~Storage_StreamUnknownTypeError %{
+%feature("shadow") Storage_StreamTypeMismatchError::~Storage_StreamTypeMismatchError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2530,7 +2385,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_StreamUnknownTypeError {
+%extend Storage_StreamTypeMismatchError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2710,28 +2565,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
-class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
+%nodefaultctor Storage_CallBack;
+class Storage_CallBack : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Storage_SequenceNodeOfSeqOfCallBack(const Handle_Storage_CallBack &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		virtual		Handle_Standard_Persistent New() const;
 		%feature("autodoc", "1");
-		Handle_Storage_CallBack & Value() const;
+		virtual		void Add(const Handle_Standard_Persistent &aPers, const Handle_Storage_Schema &aSchema) const;
+		%feature("autodoc", "1");
+		virtual		void Write(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
+		%feature("autodoc", "1");
+		virtual		void Read(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_SequenceNodeOfSeqOfCallBack {
-	Handle_Storage_SequenceNodeOfSeqOfCallBack GetHandle() {
-	return *(Handle_Storage_SequenceNodeOfSeqOfCallBack*) &$self;
+%extend Storage_CallBack {
+	Handle_Storage_CallBack GetHandle() {
+	return *(Handle_Storage_CallBack*) &$self;
 	}
 };
-%extend Storage_SequenceNodeOfSeqOfCallBack {
+%extend Storage_CallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_SequenceNodeOfSeqOfCallBack::~Storage_SequenceNodeOfSeqOfCallBack %{
+%feature("shadow") Storage_CallBack::~Storage_CallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2740,7 +2599,123 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_SequenceNodeOfSeqOfCallBack {
+%extend Storage_CallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_HSeqOfRoot;
+class Storage_HSeqOfRoot : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HSeqOfRoot();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_Root &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_HSeqOfRoot &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_Root &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_HSeqOfRoot &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfRoot &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfRoot &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Storage_Root &anItem);
+		%feature("autodoc", "1");
+		const Handle_Storage_Root & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Storage_SeqOfRoot & Sequence() const;
+		%feature("autodoc", "1");
+		Storage_SeqOfRoot & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HSeqOfRoot {
+	Handle_Storage_HSeqOfRoot GetHandle() {
+	return *(Handle_Storage_HSeqOfRoot*) &$self;
+	}
+};
+%extend Storage_HSeqOfRoot {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_HSeqOfRoot::~Storage_HSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_HSeqOfRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_SequenceNodeOfSeqOfRoot;
+class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_SequenceNodeOfSeqOfRoot(const Handle_Storage_Root &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Storage_Root & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_SequenceNodeOfSeqOfRoot {
+	Handle_Storage_SequenceNodeOfSeqOfRoot GetHandle() {
+	return *(Handle_Storage_SequenceNodeOfSeqOfRoot*) &$self;
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfRoot {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_SequenceNodeOfSeqOfRoot::~Storage_SequenceNodeOfSeqOfRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_SequenceNodeOfSeqOfRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2812,6 +2787,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
+class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Storage_DataMapNodeOfMapOfCallBack(const TCollection_AsciiString &K, const Handle_Storage_TypedCallBack &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		Handle_Storage_TypedCallBack & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_DataMapNodeOfMapOfCallBack {
+	Handle_Storage_DataMapNodeOfMapOfCallBack GetHandle() {
+	return *(Handle_Storage_DataMapNodeOfMapOfCallBack*) &$self;
+	}
+};
+%extend Storage_DataMapNodeOfMapOfCallBack {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_DataMapNodeOfMapOfCallBack::~Storage_DataMapNodeOfMapOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_DataMapNodeOfMapOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_HSeqOfPersistent;
 class Storage_HSeqOfPersistent : public MMgt_TShared {
 	public:
@@ -2872,7 +2886,7 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 };
 %extend Storage_HSeqOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_HSeqOfPersistent::~Storage_HSeqOfPersistent %{
@@ -2942,6 +2956,85 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_HSeqOfCallBack;
+class Storage_HSeqOfCallBack : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HSeqOfCallBack();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Storage_HSeqOfCallBack &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Storage_CallBack &anItem);
+		%feature("autodoc", "1");
+		const Handle_Storage_CallBack & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Storage_CallBack & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Storage_SeqOfCallBack & Sequence() const;
+		%feature("autodoc", "1");
+		Storage_SeqOfCallBack & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfCallBack ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HSeqOfCallBack {
+	Handle_Storage_HSeqOfCallBack GetHandle() {
+	return *(Handle_Storage_HSeqOfCallBack*) &$self;
+	}
+};
+%extend Storage_HSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_HSeqOfCallBack::~Storage_HSeqOfCallBack %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_HSeqOfCallBack {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_StreamModeError;
 class Storage_StreamModeError : public Standard_Failure {
 	public:
@@ -2966,7 +3059,7 @@ class Storage_StreamModeError : public Standard_Failure {
 };
 %extend Storage_StreamModeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_StreamModeError::~Storage_StreamModeError %{
@@ -2985,54 +3078,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_IndexedDataMapNodeOfPType;
-class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
+%nodefaultctor Storage_DefaultCallBack;
+class Storage_DefaultCallBack : public Storage_CallBack {
 	public:
 		%feature("autodoc", "1");
-		Storage_IndexedDataMapNodeOfPType(const TCollection_AsciiString &K1, const Standard_Integer K2, const Standard_Integer &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		Storage_DefaultCallBack();
 		%feature("autodoc", "1");
-		TCollection_AsciiString & Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
+		virtual		Handle_Standard_Persistent New() const;
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
-				}
-		};
+		virtual		void Add(const Handle_Standard_Persistent &aPers, const Handle_Storage_Schema &aSchema) const;
+		%feature("autodoc", "1");
+		virtual		void Write(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
+		%feature("autodoc", "1");
+		virtual		void Read(const Handle_Standard_Persistent &aPers, Storage_BaseDriver & aDriver, const Handle_Storage_Schema &aSchema) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_IndexedDataMapNodeOfPType {
-	Handle_Storage_IndexedDataMapNodeOfPType GetHandle() {
-	return *(Handle_Storage_IndexedDataMapNodeOfPType*) &$self;
+%extend Storage_DefaultCallBack {
+	Handle_Storage_DefaultCallBack GetHandle() {
+	return *(Handle_Storage_DefaultCallBack*) &$self;
 	}
 };
-%extend Storage_IndexedDataMapNodeOfPType {
+%extend Storage_DefaultCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_IndexedDataMapNodeOfPType::~Storage_IndexedDataMapNodeOfPType %{
+%feature("shadow") Storage_DefaultCallBack::~Storage_DefaultCallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3041,7 +3114,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_IndexedDataMapNodeOfPType {
+%extend Storage_DefaultCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3078,7 +3151,7 @@ class Storage_TypeData : public MMgt_TShared {
 };
 %extend Storage_TypeData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_TypeData::~Storage_TypeData %{
@@ -3091,49 +3164,6 @@ def __del__(self):
 %}
 
 %extend Storage_TypeData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_StreamWriteError;
-class Storage_StreamWriteError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamWriteError();
-		%feature("autodoc", "1");
-		Storage_StreamWriteError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamWriteError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_StreamWriteError {
-	Handle_Storage_StreamWriteError GetHandle() {
-	return *(Handle_Storage_StreamWriteError*) &$self;
-	}
-};
-%extend Storage_StreamWriteError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_StreamWriteError::~Storage_StreamWriteError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_StreamWriteError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3197,6 +3227,10 @@ class Storage_PType : public TCollection_BasicMap {
 				$self->ChangeFromKey(K)=value;
 				}
 		};
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") Storage_PType::~Storage_PType %{
@@ -3209,6 +3243,97 @@ def __del__(self):
 %}
 
 %extend Storage_PType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Storage_Data;
+class Storage_Data : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_Data();
+		%feature("autodoc", "1");
+		Storage_Error ErrorStatus() const;
+		%feature("autodoc", "1");
+		void ClearErrorStatus();
+		%feature("autodoc", "1");
+		TCollection_AsciiString ErrorStatusExtension() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString CreationDate() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString StorageVersion() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString SchemaVersion() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString SchemaName() const;
+		%feature("autodoc", "1");
+		void SetApplicationVersion(const TCollection_AsciiString &aVersion);
+		%feature("autodoc", "1");
+		TCollection_AsciiString ApplicationVersion() const;
+		%feature("autodoc", "1");
+		void SetApplicationName(const TCollection_ExtendedString &aName);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString ApplicationName() const;
+		%feature("autodoc", "1");
+		void SetDataType(const TCollection_ExtendedString &aType);
+		%feature("autodoc", "1");
+		TCollection_ExtendedString DataType() const;
+		%feature("autodoc", "1");
+		void AddToUserInfo(const TCollection_AsciiString &anInfo);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfAsciiString & UserInfo() const;
+		%feature("autodoc", "1");
+		void AddToComments(const TCollection_ExtendedString &aComment);
+		%feature("autodoc", "1");
+		const TColStd_SequenceOfExtendedString & Comments() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfObjects() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfRoots() const;
+		%feature("autodoc", "1");
+		void AddRoot(const Handle_Standard_Persistent &anObject) const;
+		%feature("autodoc", "1");
+		void AddRoot(const TCollection_AsciiString &aName, const Handle_Standard_Persistent &anObject) const;
+		%feature("autodoc", "1");
+		void RemoveRoot(const TCollection_AsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_Storage_HSeqOfRoot Roots() const;
+		%feature("autodoc", "1");
+		Handle_Storage_Root Find(const TCollection_AsciiString &aName) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsRoot(const TCollection_AsciiString &aName) const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfTypes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsType(const TCollection_AsciiString &aName) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString Types() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_Data {
+	Handle_Storage_Data GetHandle() {
+	return *(Handle_Storage_Data*) &$self;
+	}
+};
+%extend Storage_Data {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Storage_Data::~Storage_Data %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_Data {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3243,7 +3368,7 @@ class Storage_Root : public MMgt_TShared {
 };
 %extend Storage_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_Root::~Storage_Root %{
@@ -3314,7 +3439,7 @@ class Storage_HeaderData : public MMgt_TShared {
 };
 %extend Storage_HeaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_HeaderData::~Storage_HeaderData %{
@@ -3327,43 +3452,6 @@ def __del__(self):
 %}
 
 %extend Storage_HeaderData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_SequenceNodeOfSeqOfRoot;
-class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_SequenceNodeOfSeqOfRoot(const Handle_Storage_Root &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Storage_Root & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_SequenceNodeOfSeqOfRoot {
-	Handle_Storage_SequenceNodeOfSeqOfRoot GetHandle() {
-	return *(Handle_Storage_SequenceNodeOfSeqOfRoot*) &$self;
-	}
-};
-%extend Storage_SequenceNodeOfSeqOfRoot {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_SequenceNodeOfSeqOfRoot::~Storage_SequenceNodeOfSeqOfRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_SequenceNodeOfSeqOfRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3394,7 +3482,7 @@ class Storage_StreamFormatError : public Standard_Failure {
 };
 %extend Storage_StreamFormatError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Storage_StreamFormatError::~Storage_StreamFormatError %{
@@ -3413,75 +3501,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor Storage_MapOfPers;
-class Storage_MapOfPers : public TCollection_BasicMap {
+%nodefaultctor Storage_HArrayOfCallBack;
+class Storage_HArrayOfCallBack : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Storage_MapOfPers(const Standard_Integer NbBuckets=1);
+		Storage_HArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Storage_MapOfPers & Assign(const Storage_MapOfPers &Other);
+		Storage_HArrayOfCallBack(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_CallBack &V);
 		%feature("autodoc", "1");
-		Storage_MapOfPers & operator=(const Storage_MapOfPers &Other);
+		void Init(const Handle_Storage_CallBack &V);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Clear();
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TCollection_AsciiString &K, const Handle_Storage_Root &I);
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		void SetValue(const Standard_Integer Index, const Handle_Storage_CallBack &Value);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		const Handle_Storage_CallBack & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const Handle_Storage_Root & Find(const TCollection_AsciiString &K) const;
+		Handle_Storage_CallBack & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		const Handle_Storage_Root & operator()(const TCollection_AsciiString &K) const;
+		const Storage_ArrayOfCallBack & Array1() const;
 		%feature("autodoc", "1");
-		Handle_Storage_Root & ChangeFind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		Handle_Storage_Root & operator()(const TCollection_AsciiString &K);
-
-};
-%feature("shadow") Storage_MapOfPers::~Storage_MapOfPers %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_MapOfPers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_DataMapNodeOfMapOfPers;
-class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Storage_DataMapNodeOfMapOfPers(const TCollection_AsciiString &K, const Handle_Storage_Root &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		Handle_Storage_Root & Value() const;
+		Storage_ArrayOfCallBack & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Storage_DataMapNodeOfMapOfPers {
-	Handle_Storage_DataMapNodeOfMapOfPers GetHandle() {
-	return *(Handle_Storage_DataMapNodeOfMapOfPers*) &$self;
+%extend Storage_HArrayOfCallBack {
+	Handle_Storage_HArrayOfCallBack GetHandle() {
+	return *(Handle_Storage_HArrayOfCallBack*) &$self;
 	}
 };
-%extend Storage_DataMapNodeOfMapOfPers {
+%extend Storage_HArrayOfCallBack {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Storage_DataMapNodeOfMapOfPers::~Storage_DataMapNodeOfMapOfPers %{
+%feature("shadow") Storage_HArrayOfCallBack::~Storage_HArrayOfCallBack %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3490,50 +3549,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Storage_DataMapNodeOfMapOfPers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_StreamTypeMismatchError;
-class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
-	public:
-		%feature("autodoc", "1");
-		Storage_StreamTypeMismatchError();
-		%feature("autodoc", "1");
-		Storage_StreamTypeMismatchError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Storage_StreamTypeMismatchError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_StreamTypeMismatchError {
-	Handle_Storage_StreamTypeMismatchError GetHandle() {
-	return *(Handle_Storage_StreamTypeMismatchError*) &$self;
-	}
-};
-%extend Storage_StreamTypeMismatchError {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Storage_StreamTypeMismatchError::~Storage_StreamTypeMismatchError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_StreamTypeMismatchError {
+%extend Storage_HArrayOfCallBack {
 	void _kill_pointed() {
 		delete $self;
 	}

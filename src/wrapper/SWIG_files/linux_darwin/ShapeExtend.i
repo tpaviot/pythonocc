@@ -80,44 +80,6 @@ enum ShapeExtend_Parametrisation {
 
 
 
-%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
-class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg* GetObject() {
-	return (ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeExtend_BasicMsgRegistrator;
 class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	public:
@@ -194,29 +156,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
-class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
+class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg();
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg &aHandle);
 		%feature("autodoc", "1");
-		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
-	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg* GetObject() {
+	return (ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
+%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -225,7 +187,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -270,44 +232,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeExtend_CompositeSurface;
-class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface();
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface(const Handle_ShapeExtend_CompositeSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface(const ShapeExtend_CompositeSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface & operator=(const Handle_ShapeExtend_CompositeSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeExtend_CompositeSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeExtend_CompositeSurface {
-	ShapeExtend_CompositeSurface* GetObject() {
-	return (ShapeExtend_CompositeSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeExtend_CompositeSurface::~Handle_ShapeExtend_CompositeSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeExtend_CompositeSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeExtend_WireData;
 class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	public:
@@ -346,63 +270,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeExtend_ComplexCurve;
-class ShapeExtend_ComplexCurve : public Geom_Curve {
+%nodefaultctor Handle_ShapeExtend_CompositeSurface;
+class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Integer NbCurves() const;
+		Handle_ShapeExtend_CompositeSurface();
 		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve(const Standard_Integer index) const;
-		%feature("autodoc","LocateParameter(Standard_Real U) -> Standard_Real");
-
-		virtual		Standard_Integer LocateParameter(const Standard_Real U, Standard_Real &OutValue) const;
+		Handle_ShapeExtend_CompositeSurface(const Handle_ShapeExtend_CompositeSurface &aHandle);
 		%feature("autodoc", "1");
-		virtual		Standard_Real LocalToGlobal(const Standard_Integer index, const Standard_Real Ulocal) const;
+		Handle_ShapeExtend_CompositeSurface(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf T);
+		Handle_ShapeExtend_CompositeSurface & operator=(const Handle_ShapeExtend_CompositeSurface &aHandle);
 		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		Handle_ShapeExtend_CompositeSurface & operator=(const ShapeExtend_CompositeSurface *anItem);
 		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetScaleFactor(const Standard_Integer ind) const;
-		%feature("autodoc", "1");
-		Standard_Boolean CheckConnectivity(const Standard_Real Preci);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_ShapeExtend_CompositeSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend ShapeExtend_ComplexCurve {
-	Handle_ShapeExtend_ComplexCurve GetHandle() {
-	return *(Handle_ShapeExtend_ComplexCurve*) &$self;
+%extend Handle_ShapeExtend_CompositeSurface {
+	ShapeExtend_CompositeSurface* GetObject() {
+	return (ShapeExtend_CompositeSurface*)$self->Access();
 	}
 };
-%extend ShapeExtend_ComplexCurve {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
+%feature("shadow") Handle_ShapeExtend_CompositeSurface::~Handle_ShapeExtend_CompositeSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -411,7 +301,45 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeExtend_ComplexCurve {
+%extend Handle_ShapeExtend_CompositeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
+class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg();
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg* GetObject() {
+	return (ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -500,7 +428,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 };
 %extend ShapeExtend_WireData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_WireData::~ShapeExtend_WireData %{
@@ -513,47 +441,6 @@ def __del__(self):
 %}
 
 %extend ShapeExtend_WireData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_BasicMsgRegistrator;
-class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_BasicMsgRegistrator();
-		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		void Send(const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeExtend_BasicMsgRegistrator {
-	Handle_ShapeExtend_BasicMsgRegistrator GetHandle() {
-	return *(Handle_ShapeExtend_BasicMsgRegistrator*) &$self;
-	}
-};
-%extend ShapeExtend_BasicMsgRegistrator {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_BasicMsgRegistrator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -589,234 +476,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeExtend_MsgRegistrator;
-class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_MsgRegistrator();
-		%feature("autodoc", "1");
-		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
-		%feature("autodoc", "1");
-		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeExtend_MsgRegistrator {
-	Handle_ShapeExtend_MsgRegistrator GetHandle() {
-	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
-	}
-};
-%extend ShapeExtend_MsgRegistrator {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_MsgRegistrator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
-class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const TopoDS_Shape K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		Message_ListOfMsg & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg GetHandle() {
-	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*) &$self;
-	}
-};
-%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
-class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_Standard_Transient &K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		Message_ListOfMsg & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg GetHandle() {
-	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*) &$self;
-	}
-};
-%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_DataMapOfTransientListOfMsg;
-class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapOfTransientListOfMsg(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapOfTransientListOfMsg & Assign(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Message_ListOfMsg &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		const Message_ListOfMsg & Find(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		const Message_ListOfMsg & operator()(const Handle_Standard_Transient &K) const;
-		%feature("autodoc", "1");
-		Message_ListOfMsg & ChangeFind(const Handle_Standard_Transient &K);
-		%feature("autodoc", "1");
-		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
-
-};
-%feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_DataMapOfTransientListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
-class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg();
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapOfTransientListOfMsg &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const ShapeExtend_DataMapOfTransientListOfMsg &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Key() const;
-		%feature("autodoc", "1");
-		const Message_ListOfMsg & Value() const;
-
-};
-%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
-class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
-		%feature("autodoc", "1");
-		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Message_ListOfMsg & Value() const;
-
-};
-%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 	public:
@@ -844,6 +503,10 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") ShapeExtend_DataMapOfShapeListOfMsg::~ShapeExtend_DataMapOfShapeListOfMsg %{
@@ -856,6 +519,47 @@ def __del__(self):
 %}
 
 %extend ShapeExtend_DataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_BasicMsgRegistrator;
+class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_BasicMsgRegistrator();
+		%feature("autodoc", "1");
+		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		void Send(const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_BasicMsgRegistrator {
+	Handle_ShapeExtend_BasicMsgRegistrator GetHandle() {
+	return *(Handle_ShapeExtend_BasicMsgRegistrator*) &$self;
+	}
+};
+%extend ShapeExtend_BasicMsgRegistrator {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_BasicMsgRegistrator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -985,7 +689,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 };
 %extend ShapeExtend_CompositeSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_CompositeSurface::~ShapeExtend_CompositeSurface %{
@@ -998,6 +702,310 @@ def __del__(self):
 %}
 
 %extend ShapeExtend_CompositeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_MsgRegistrator;
+class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_MsgRegistrator();
+		%feature("autodoc", "1");
+		virtual		void Send(const Handle_Standard_Transient &object, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		virtual		void Send(const TopoDS_Shape shape, const Message_Msg &message, const Message_Gravity gravity);
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfTransientListOfMsg & MapTransient() const;
+		%feature("autodoc", "1");
+		const ShapeExtend_DataMapOfShapeListOfMsg & MapShape() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_MsgRegistrator {
+	Handle_ShapeExtend_MsgRegistrator GetHandle() {
+	return *(Handle_ShapeExtend_MsgRegistrator*) &$self;
+	}
+};
+%extend ShapeExtend_MsgRegistrator {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_MsgRegistrator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
+class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg(const TopoDS_Shape K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		Message_ListOfMsg & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg GetHandle() {
+	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg*) &$self;
+	}
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
+class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg(const Handle_Standard_Transient &K, const Message_ListOfMsg &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Key() const;
+		%feature("autodoc", "1");
+		Message_ListOfMsg & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg GetHandle() {
+	return *(Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg*) &$self;
+	}
+};
+%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_DataMapOfTransientListOfMsg;
+class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapOfTransientListOfMsg(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapOfTransientListOfMsg & Assign(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapOfTransientListOfMsg & operator=(const ShapeExtend_DataMapOfTransientListOfMsg &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Handle_Standard_Transient &K, const Message_ListOfMsg &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		const Message_ListOfMsg & Find(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		const Message_ListOfMsg & operator()(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Message_ListOfMsg & ChangeFind(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
+
+};
+%feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_DataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
+class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg();
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg(const ShapeExtend_DataMapOfTransientListOfMsg &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const ShapeExtend_DataMapOfTransientListOfMsg &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Key() const;
+		%feature("autodoc", "1");
+		const Message_ListOfMsg & Value() const;
+
+};
+%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
+class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg();
+		%feature("autodoc", "1");
+		ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const ShapeExtend_DataMapOfShapeListOfMsg &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const Message_ListOfMsg & Value() const;
+
+};
+%feature("shadow") ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeExtend_ComplexCurve;
+class ShapeExtend_ComplexCurve : public Geom_Curve {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbCurves() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve(const Standard_Integer index) const;
+		%feature("autodoc","LocateParameter(Standard_Real U) -> Standard_Real");
+
+		virtual		Standard_Integer LocateParameter(const Standard_Real U, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LocalToGlobal(const Standard_Integer index, const Standard_Real Ulocal) const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V1) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetScaleFactor(const Standard_Integer ind) const;
+		%feature("autodoc", "1");
+		Standard_Boolean CheckConnectivity(const Standard_Real Preci);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeExtend_ComplexCurve {
+	Handle_ShapeExtend_ComplexCurve GetHandle() {
+	return *(Handle_ShapeExtend_ComplexCurve*) &$self;
+	}
+};
+%extend ShapeExtend_ComplexCurve {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeExtend_ComplexCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

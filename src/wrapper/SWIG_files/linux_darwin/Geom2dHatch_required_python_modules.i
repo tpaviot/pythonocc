@@ -31,6 +31,6 @@ import Geom2dAdaptor
 import TopAbs
 import Standard
 import HatchGen
-import gp
 import IntRes2d
+import gp
 };

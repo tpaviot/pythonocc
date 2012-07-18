@@ -147,6 +147,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -431,6 +432,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -486,19 +488,23 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_Graphic3d_Group.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<gp_Pnt.hxx>
+#include<Quantity_Color.hxx>
+#include<Handle_Graphic3d_AspectLine3d.hxx>
+#include<Handle_Graphic3d_AspectText3d.hxx>
+#include<Graphic3d_MaterialAspect.hxx>
+#include<Handle_Graphic3d_AspectFillArea3d.hxx>
+#include<gp_Pln.hxx>
+#include<Prs3d.hxx>
 #include<Handle_Graphic3d_StructureManager.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_Geom_Transformation.hxx>
-#include<Handle_Graphic3d_Group.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<gp_Pnt.hxx>
-#include<Quantity_Color.hxx>
 #include<Handle_TColStd_HArray1OfByte.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
-#include<Handle_Graphic3d_AspectLine3d.hxx>
-#include<Prs3d.hxx>
 #include<HLRAlgo_Projector.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Bnd_Box.hxx>
@@ -507,9 +513,5 @@ $HeaderURL$
 #include<TopLoc_Location.hxx>
 #include<Handle_Poly_PolygonOnTriangulation.hxx>
 #include<Handle_Poly_Polygon3D.hxx>
-#include<Handle_Graphic3d_AspectText3d.hxx>
-#include<gp_Pln.hxx>
-#include<Graphic3d_MaterialAspect.hxx>
-#include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<gp_Dir.hxx>
 %}

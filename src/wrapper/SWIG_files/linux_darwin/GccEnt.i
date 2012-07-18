@@ -98,6 +98,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor GccEnt_BadQualifier;
+class GccEnt_BadQualifier : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		GccEnt_BadQualifier();
+		%feature("autodoc", "1");
+		GccEnt_BadQualifier(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GccEnt_BadQualifier {
+	Handle_GccEnt_BadQualifier GetHandle() {
+	return *(Handle_GccEnt_BadQualifier*) &$self;
+	}
+};
+%extend GccEnt_BadQualifier {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") GccEnt_BadQualifier::~GccEnt_BadQualifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GccEnt_BadQualifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GccEnt_QualifiedLin;
 class GccEnt_QualifiedLin {
 	public:
@@ -184,49 +227,6 @@ def __del__(self):
 %}
 
 %extend GccEnt_Array1OfPosition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GccEnt_BadQualifier;
-class GccEnt_BadQualifier : public Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		GccEnt_BadQualifier();
-		%feature("autodoc", "1");
-		GccEnt_BadQualifier(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_GccEnt_BadQualifier NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GccEnt_BadQualifier {
-	Handle_GccEnt_BadQualifier GetHandle() {
-	return *(Handle_GccEnt_BadQualifier*) &$self;
-	}
-};
-%extend GccEnt_BadQualifier {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GccEnt_BadQualifier::~GccEnt_BadQualifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GccEnt_BadQualifier {
 	void _kill_pointed() {
 		delete $self;
 	}

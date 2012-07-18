@@ -30,9 +30,9 @@ import GarbageCollector
 import Standard
 import TColStd
 import Quantity
+import TCollection
 import Aspect
 import Image
-import TCollection
 import gp
 import OSD
 import PlotMgt

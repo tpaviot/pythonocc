@@ -24,23 +24,23 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_AlienImage_AlienImage::DownCast;
-%rename(DownCast) Handle_AlienImage_AlienUserImage::DownCast;
-%rename(DownCast) Handle_AlienImage_SGIRGBAlienImage::DownCast;
-%rename(DownCast) Handle_AlienImage_EuclidAlienImage::DownCast;
 %rename(DownCast) Handle_AlienImage_AlienImageData::DownCast;
-%rename(DownCast) Handle_AlienImage_AidaAlienImage::DownCast;
-%rename(DownCast) Handle_AlienImage_SunRFAlienData::DownCast;
-%rename(DownCast) Handle_AlienImage_EuclidAlienData::DownCast;
-%rename(DownCast) Handle_AlienImage_SGIRGBAlienData::DownCast;
-%rename(DownCast) Handle_AlienImage_XAlienImage::DownCast;
-%rename(DownCast) Handle_AlienImage_GIFAlienImage::DownCast;
 %rename(DownCast) Handle_AlienImage_X11XWDAlienData::DownCast;
+%rename(DownCast) Handle_AlienImage_AlienUserImage::DownCast;
+%rename(DownCast) Handle_AlienImage_EuclidAlienImage::DownCast;
+%rename(DownCast) Handle_AlienImage_EuclidAlienData::DownCast;
+%rename(DownCast) Handle_AlienImage_SunRFAlienData::DownCast;
 %rename(DownCast) Handle_AlienImage_BMPAlienImage::DownCast;
+%rename(DownCast) Handle_AlienImage_GIFAlienImage::DownCast;
+%rename(DownCast) Handle_AlienImage_SGIRGBAlienData::DownCast;
 %rename(DownCast) Handle_AlienImage_BMPAlienData::DownCast;
+%rename(DownCast) Handle_AlienImage_XAlienImage::DownCast;
+%rename(DownCast) Handle_AlienImage_SGIRGBAlienImage::DownCast;
+%rename(DownCast) Handle_AlienImage_AidaAlienImage::DownCast;
 %rename(DownCast) Handle_AlienImage_GIFAlienData::DownCast;
-%rename(DownCast) Handle_AlienImage_SunRFAlienImage::DownCast;
 %rename(DownCast) Handle_AlienImage_AidaAlienData::DownCast;
-%rename(CreateImage) AlienImage::CreateImage;
-%rename(LoadImageFile) AlienImage::LoadImageFile;
+%rename(DownCast) Handle_AlienImage_SunRFAlienImage::DownCast;
 %rename(SwapLong) AlienImage_MemoryOperations::SwapLong;
 %rename(SwapShort) AlienImage_MemoryOperations::SwapShort;
+%rename(CreateImage) AlienImage::CreateImage;
+%rename(LoadImageFile) AlienImage::LoadImageFile;

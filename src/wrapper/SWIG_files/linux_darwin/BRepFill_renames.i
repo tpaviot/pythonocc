@@ -23,26 +23,26 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::DownCast;
 %rename(DownCast) Handle_BRepFill_ListNodeOfListOfOffsetWire::DownCast;
-%rename(DownCast) Handle_BRepFill_SectionLaw::DownCast;
-%rename(DownCast) Handle_BRepFill_NSections::DownCast;
-%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::DownCast;
 %rename(DownCast) Handle_BRepFill_SequenceNodeOfSequenceOfSection::DownCast;
-%rename(DownCast) Handle_BRepFill_LocationLaw::DownCast;
-%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::DownCast;
 %rename(DownCast) Handle_BRepFill_CurveConstraint::DownCast;
-%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::DownCast;
 %rename(DownCast) Handle_BRepFill_PipeShell::DownCast;
-%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::DownCast;
-%rename(DownCast) Handle_BRepFill_ACRLaw::DownCast;
+%rename(DownCast) Handle_BRepFill_SectionLaw::DownCast;
+%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::DownCast;
 %rename(DownCast) Handle_BRepFill_ShapeLaw::DownCast;
-%rename(DownCast) Handle_BRepFill_Edge3DLaw::DownCast;
-%rename(DownCast) Handle_BRepFill_DraftLaw::DownCast;
-%rename(DownCast) Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::DownCast;
+%rename(DownCast) Handle_BRepFill_LocationLaw::DownCast;
 %rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape::DownCast;
+%rename(DownCast) Handle_BRepFill_NSections::DownCast;
 %rename(DownCast) Handle_BRepFill_EdgeOnSurfLaw::DownCast;
 %rename(DownCast) Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder::DownCast;
+%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::DownCast;
+%rename(DownCast) Handle_BRepFill_Edge3DLaw::DownCast;
+%rename(DownCast) Handle_BRepFill_DraftLaw::DownCast;
+%rename(DownCast) Handle_BRepFill_ACRLaw::DownCast;
+%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::DownCast;
+%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::DownCast;
+%rename(DownCast) Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::DownCast;
+%rename(DownCast) Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::DownCast;
 %rename(DownCast) Handle_BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape::DownCast;
 %rename(FirstParameter) BRepFill_MultiLineTool::FirstParameter;
 %rename(LastParameter) BRepFill_MultiLineTool::LastParameter;

@@ -202,7 +202,7 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 };
 %extend TopBas_ListNodeOfListOfTestInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") TopBas_ListNodeOfListOfTestInterference::~TopBas_ListNodeOfListOfTestInterference %{

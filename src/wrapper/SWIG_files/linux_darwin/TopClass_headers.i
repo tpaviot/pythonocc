@@ -35,7 +35,7 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<gp_Pnt.hxx>
 #include<gp_Lin.hxx>
 #include<TopoDS_Face.hxx>
-#include<gp_Pnt.hxx>
 %}

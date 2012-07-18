@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Materials_FuzzyInstance;
-class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
-	public:
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance();
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance(const Handle_Materials_FuzzyInstance &aHandle);
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance(const Materials_FuzzyInstance *anItem);
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance & operator=(const Handle_Materials_FuzzyInstance &aHandle);
-		%feature("autodoc", "1");
-		Handle_Materials_FuzzyInstance & operator=(const Materials_FuzzyInstance *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Materials_FuzzyInstance DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Materials_FuzzyInstance {
-	Materials_FuzzyInstance* GetObject() {
-	return (Materials_FuzzyInstance*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Materials_FuzzyInstance::~Handle_Materials_FuzzyInstance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Materials_FuzzyInstance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Materials_MaterialDefinition;
 class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_Materials_MaterialDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Materials_FuzzyInstance;
+class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
+	public:
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance();
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance(const Handle_Materials_FuzzyInstance &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance(const Materials_FuzzyInstance *anItem);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance & operator=(const Handle_Materials_FuzzyInstance &aHandle);
+		%feature("autodoc", "1");
+		Handle_Materials_FuzzyInstance & operator=(const Materials_FuzzyInstance *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Materials_FuzzyInstance DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Materials_FuzzyInstance {
+	Materials_FuzzyInstance* GetObject() {
+	return (Materials_FuzzyInstance*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Materials_FuzzyInstance::~Handle_Materials_FuzzyInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Materials_FuzzyInstance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -352,7 +352,7 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 %extend Materials_MaterialsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Materials_MaterialsDictionary::~Materials_MaterialsDictionary %{
@@ -462,7 +462,7 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 %extend Materials_FuzzyInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Materials_FuzzyInstance::~Materials_FuzzyInstance %{
@@ -499,7 +499,7 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 };
 %extend Materials_SequenceNodeOfMtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Materials_SequenceNodeOfMtsSequence::~Materials_SequenceNodeOfMtsSequence %{
@@ -512,43 +512,6 @@ def __del__(self):
 %}
 
 %extend Materials_SequenceNodeOfMtsSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Materials_MaterialDefinition;
-class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
-	public:
-		%feature("autodoc", "1");
-		Materials_MaterialDefinition();
-		%feature("autodoc", "1");
-		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Materials_MaterialDefinition {
-	Handle_Materials_MaterialDefinition GetHandle() {
-	return *(Handle_Materials_MaterialDefinition*) &$self;
-	}
-};
-%extend Materials_MaterialDefinition {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Materials_MaterialDefinition::~Materials_MaterialDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Materials_MaterialDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -581,7 +544,7 @@ class Materials_Material : public Materials_FuzzyInstance {
 };
 %extend Materials_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Materials_Material::~Materials_Material %{
@@ -600,42 +563,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Materials_Color;
-class Materials_Color : public Standard_Transient {
+%nodefaultctor Materials_MaterialDefinition;
+class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	public:
 		%feature("autodoc", "1");
-		Materials_Color();
+		Materials_MaterialDefinition();
 		%feature("autodoc", "1");
-		Materials_Color(const Quantity_Color &acolor);
-		%feature("autodoc", "1");
-		void Color(const Quantity_Color &acolor);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
-		%feature("autodoc", "1");
-		void SetColor255(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
+		virtual		Handle_Dynamic_Parameter Switch(const char * aname, const char * atype, const char * avalue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Materials_Color {
-	Handle_Materials_Color GetHandle() {
-	return *(Handle_Materials_Color*) &$self;
+%extend Materials_MaterialDefinition {
+	Handle_Materials_MaterialDefinition GetHandle() {
+	return *(Handle_Materials_MaterialDefinition*) &$self;
 	}
 };
-%extend Materials_Color {
+%extend Materials_MaterialDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
-%feature("shadow") Materials_Color::~Materials_Color %{
+%feature("shadow") Materials_MaterialDefinition::~Materials_MaterialDefinition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -644,7 +593,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Materials_Color {
+%extend Materials_MaterialDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -776,7 +725,7 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 };
 %extend Materials_MaterialsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") Materials_MaterialsSequence::~Materials_MaterialsSequence %{
@@ -789,6 +738,57 @@ def __del__(self):
 %}
 
 %extend Materials_MaterialsSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Materials_Color;
+class Materials_Color : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Materials_Color();
+		%feature("autodoc", "1");
+		Materials_Color(const Quantity_Color &acolor);
+		%feature("autodoc", "1");
+		void Color(const Quantity_Color &acolor);
+		%feature("autodoc", "1");
+		Quantity_Color Color() const;
+		%feature("autodoc","Color(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Color(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Color255(Quantity_TypeOfColor aTypeOfColor) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Color255(const Quantity_TypeOfColor aTypeOfColor, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
+		%feature("autodoc", "1");
+		void SetColor255(const Quantity_TypeOfColor aTypeOfColor, const Standard_Real Reel1, const Standard_Real Reel2, const Standard_Real Reel3);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Materials_Color {
+	Handle_Materials_Color GetHandle() {
+	return *(Handle_Materials_Color*) &$self;
+	}
+};
+%extend Materials_Color {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") Materials_Color::~Materials_Color %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Materials_Color {
 	void _kill_pointed() {
 		delete $self;
 	}

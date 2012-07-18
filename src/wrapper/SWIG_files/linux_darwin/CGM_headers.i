@@ -103,6 +103,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -215,6 +216,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -344,11 +346,13 @@ $HeaderURL$
 #include<Standard_AbortiveTransaction.hxx>
 #include<Standard_Address.hxx>
 #include<Standard_AncestorIterator.hxx>
+#include<Standard_Assert.hxx>
 #include<Standard_Boolean.hxx>
 #include<Standard_Byte.hxx>
 #include<Standard_CString.hxx>
 #include<Standard_Character.hxx>
 #include<Standard_ConstructionError.hxx>
+#include<Standard_DefineAlloc.hxx>
 #include<Standard_DefineException.hxx>
 #include<Standard_DefineHandle.hxx>
 #include<Standard_DimensionError.hxx>
@@ -402,11 +406,11 @@ $HeaderURL$
 #include<Standard_SStream.hxx>
 #include<Standard_ShortReal.hxx>
 #include<Standard_Size.hxx>
-#include<Standard_Static.hxx>
 #include<Standard_Storable.hxx>
 #include<Standard_Stream.hxx>
 #include<Standard_String.hxx>
 #include<Standard_ThreadId.hxx>
+#include<Standard_Time.hxx>
 #include<Standard_TooManyUsers.hxx>
 #include<Standard_Transient.hxx>
 #include<Standard_Type.hxx>

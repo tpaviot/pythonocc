@@ -332,6 +332,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfStrip;
+class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_Strip &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		AdvApp2Var_Strip & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip GetHandle() {
+	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfStrip::~AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfNode;
 class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 	public:
@@ -350,7 +387,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfNode::~AdvApp2Var_SequenceNodeOfSequenceOfNode %{
@@ -421,6 +458,74 @@ def __del__(self):
 };
 
 
+%nodefaultctor AdvApp2Var_Node;
+class AdvApp2Var_Node {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_Node();
+		%feature("autodoc", "1");
+		AdvApp2Var_Node(const Standard_Integer iu, const Standard_Integer iv);
+		%feature("autodoc", "1");
+		AdvApp2Var_Node(const gp_XY UV, const Standard_Integer iu, const Standard_Integer iv);
+		%feature("autodoc", "1");
+		gp_XY Coord() const;
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Real x1, const Standard_Real x2);
+		%feature("autodoc", "1");
+		Standard_Integer UOrder() const;
+		%feature("autodoc", "1");
+		Standard_Integer VOrder() const;
+		%feature("autodoc", "1");
+		void SetPoint(const Standard_Integer iu, const Standard_Integer iv, const gp_Pnt Cte);
+		%feature("autodoc", "1");
+		gp_Pnt Point(const Standard_Integer iu, const Standard_Integer iv) const;
+		%feature("autodoc", "1");
+		void SetError(const Standard_Integer iu, const Standard_Integer iv, const Standard_Real error);
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer iu, const Standard_Integer iv) const;
+
+};
+%feature("shadow") AdvApp2Var_Node::~AdvApp2Var_Node %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_Node {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApp2Var_EvaluatorFunc2Var;
+class AdvApp2Var_EvaluatorFunc2Var {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Evaluate(Standard_Integer* theDimension, Standard_Real* theUStartEnd, Standard_Real* theVStartEnd, Standard_Integer* theFavorIso, Standard_Real* theConstParam, Standard_Integer* theNbParams, Standard_Real* theParameters, Standard_Integer* theUOrder, Standard_Integer* theVOrder, Standard_Real* theResult, Standard_Integer* theErrorCode) const;
+		%feature("autodoc", "1");
+		void operator()(Standard_Integer* theDimension, Standard_Real* theUStartEnd, Standard_Real* theVStartEnd, Standard_Integer* theFavorIso, Standard_Real* theConstParam, Standard_Integer* theNbParams, Standard_Real* theParameters, Standard_Integer* theUOrder, Standard_Integer* theVOrder, Standard_Real* theResult, Standard_Integer* theErrorCode) const;
+
+};
+%feature("shadow") AdvApp2Var_EvaluatorFunc2Var::~AdvApp2Var_EvaluatorFunc2Var %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_EvaluatorFunc2Var {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_Patch;
 class AdvApp2Var_Patch {
 	public:
@@ -430,6 +535,8 @@ class AdvApp2Var_Patch {
 		AdvApp2Var_Patch(const Standard_Real U0, const Standard_Real U1, const Standard_Real V0, const Standard_Real V1, const Standard_Integer iu, const Standard_Integer iv);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDiscretised() const;
+		%feature("autodoc", "1");
+		void Discretise(const AdvApp2Var_Context &Conditions, const AdvApp2Var_Framework &Constraints, const AdvApp2Var_EvaluatorFunc2Var &func);
 		%feature("autodoc", "1");
 		Standard_Boolean IsApproximated() const;
 		%feature("autodoc", "1");
@@ -689,7 +796,7 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfStrip::~AdvApp2Var_SequenceNodeOfStrip %{
@@ -773,6 +880,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
+class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_Patch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		AdvApp2Var_Patch & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch GetHandle() {
+	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch*) &$self;
+	}
+};
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	Standard_Integer __hash__() {
+	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	}
+};
+%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfPatch::~AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AdvApp2Var_SequenceOfStrip;
 class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {
 	public:
@@ -838,28 +982,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
-class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
+%nodefaultctor AdvApp2Var_Criterion;
+class AdvApp2Var_Criterion {
 	public:
 		%feature("autodoc", "1");
-		AdvApp2Var_SequenceNodeOfSequenceOfPatch(const AdvApp2Var_Patch &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		virtual		void Delete();
 		%feature("autodoc", "1");
-		AdvApp2Var_Patch & Value() const;
+		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxValue() const;
+		%feature("autodoc", "1");
+		AdvApp2Var_CriterionType Type() const;
+		%feature("autodoc", "1");
+		AdvApp2Var_CriterionRepartition Repartition() const;
 
 };
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch GetHandle() {
-	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch*) &$self;
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfPatch::~AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
+%feature("shadow") AdvApp2Var_Criterion::~AdvApp2Var_Criterion %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -868,7 +1008,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
+%extend AdvApp2Var_Criterion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -932,119 +1072,6 @@ def __del__(self):
 %}
 
 %extend AdvApp2Var_ApproxAFunc2Var {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfStrip;
-class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_SequenceNodeOfSequenceOfStrip(const AdvApp2Var_Strip &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		AdvApp2Var_Strip & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip GetHandle() {
-	return *(Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip*) &$self;
-	}
-};
-%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfStrip::~AdvApp2Var_SequenceNodeOfSequenceOfStrip %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_Node;
-class AdvApp2Var_Node {
-	public:
-		%feature("autodoc", "1");
-		AdvApp2Var_Node();
-		%feature("autodoc", "1");
-		AdvApp2Var_Node(const Standard_Integer iu, const Standard_Integer iv);
-		%feature("autodoc", "1");
-		AdvApp2Var_Node(const gp_XY UV, const Standard_Integer iu, const Standard_Integer iv);
-		%feature("autodoc", "1");
-		gp_XY Coord() const;
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real x1, const Standard_Real x2);
-		%feature("autodoc", "1");
-		Standard_Integer UOrder() const;
-		%feature("autodoc", "1");
-		Standard_Integer VOrder() const;
-		%feature("autodoc", "1");
-		void SetPoint(const Standard_Integer iu, const Standard_Integer iv, const gp_Pnt Cte);
-		%feature("autodoc", "1");
-		gp_Pnt Point(const Standard_Integer iu, const Standard_Integer iv) const;
-		%feature("autodoc", "1");
-		void SetError(const Standard_Integer iu, const Standard_Integer iv, const Standard_Real error);
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer iu, const Standard_Integer iv) const;
-
-};
-%feature("shadow") AdvApp2Var_Node::~AdvApp2Var_Node %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApp2Var_Node {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AdvApp2Var_Criterion;
-class AdvApp2Var_Criterion {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		void Value(AdvApp2Var_Patch & P, const AdvApp2Var_Context &C) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSatisfied(const AdvApp2Var_Patch &P) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxValue() const;
-		%feature("autodoc", "1");
-		AdvApp2Var_CriterionType Type() const;
-		%feature("autodoc", "1");
-		AdvApp2Var_CriterionRepartition Repartition() const;
-
-};
-%feature("shadow") AdvApp2Var_Criterion::~AdvApp2Var_Criterion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AdvApp2Var_Criterion {
 	void _kill_pointed() {
 		delete $self;
 	}

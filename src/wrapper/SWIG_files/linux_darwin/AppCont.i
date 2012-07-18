@@ -82,6 +82,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor AppCont_FunctionTool2d;
+class AppCont_FunctionTool2d {
+	public:
+		%feature("autodoc", "1");
+		AppCont_FunctionTool2d();
+		%feature("autodoc", "1");
+		static		Standard_Real FirstParameter(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		static		Standard_Real LastParameter(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbP2d(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbP3d(const AppCont_Function2d &C);
+		%feature("autodoc", "1");
+		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt);
+		%feature("autodoc", "1");
+		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec2d & tabV);
+		%feature("autodoc", "1");
+		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt2d);
+		%feature("autodoc", "1");
+		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
+		%feature("autodoc", "1");
+		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV2d);
+		%feature("autodoc", "1");
+		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
+
+};
+%feature("shadow") AppCont_FunctionTool2d::~AppCont_FunctionTool2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AppCont_FunctionTool2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AppCont_Function;
 class AppCont_Function {
 	public:
@@ -181,49 +224,6 @@ def __del__(self):
 %}
 
 %extend AppCont_Function2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AppCont_FunctionTool2d;
-class AppCont_FunctionTool2d {
-	public:
-		%feature("autodoc", "1");
-		AppCont_FunctionTool2d();
-		%feature("autodoc", "1");
-		static		Standard_Real FirstParameter(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		static		Standard_Real LastParameter(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbP2d(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbP3d(const AppCont_Function2d &C);
-		%feature("autodoc", "1");
-		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt2d & tabPt);
-		%feature("autodoc", "1");
-		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec2d & tabV);
-		%feature("autodoc", "1");
-		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt2d);
-		%feature("autodoc", "1");
-		static		void Value(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfPnt & tabPt, TColgp_Array1OfPnt2d & tabPt2d);
-		%feature("autodoc", "1");
-		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV2d);
-		%feature("autodoc", "1");
-		static		Standard_Boolean D1(const AppCont_Function2d &C, const Standard_Real U, TColgp_Array1OfVec & tabV, TColgp_Array1OfVec2d & tabV2d);
-
-};
-%feature("shadow") AppCont_FunctionTool2d::~AppCont_FunctionTool2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AppCont_FunctionTool2d {
 	void _kill_pointed() {
 		delete $self;
 	}
