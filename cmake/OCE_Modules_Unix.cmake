@@ -269,6 +269,7 @@ LIST(APPEND OCC_MODULES
 	StdFail
 	StdLDrivers
 	StdPrs
+	StdSelect
 	StepAP203
 	StepAP214
 	StepBasic
