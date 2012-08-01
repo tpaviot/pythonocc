@@ -372,7 +372,7 @@ class Edge(KbeObject, TopoDS_Edge):
         """
         _min, _max = self.domain()
         _mid = (_min+_max) / 2.
-        return _mid, self.adaptor.Value(_mid),
+        return _mid, self.adaptor.Value(_mid)
 
     def divide_by_number_of_points(self, n_pts, lbound=None, ubound=None):
         '''returns a nested list of parameters and points on the edge

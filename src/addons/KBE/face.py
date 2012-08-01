@@ -246,6 +246,16 @@ class Face(KbeObject, TopoDS_Face):
         '''
         return BRepTools.UVBounds(self)
 
+    def mid_point(self):
+        """
+        :return: the parameter at the mid point of the face, and its corresponding gp_Pnt
+        """
+        u_min, u_max, v_min, v_max = self.domain()
+        u_mid = (u_min + u_max) / 2.
+        v_mid = (v_min + v_max) / 2.
+        pnt = self.parameter_to_point(u_mid, v_mid)
+        return ( (u_mid, v_mid),  self.adaptor.Value(u_mid, v_mid) )
+
     @property
     def topo(self):
         if self._topo is not None:

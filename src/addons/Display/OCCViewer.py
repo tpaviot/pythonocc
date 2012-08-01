@@ -246,19 +246,20 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
     def DisplayVector(self, vec, pnt, update=False):
         if self._inited:
+            aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
             arrow = Prs3d_Arrow()
             arrow.Draw(
-                self.aPresentation.GetHandle(),
+                aPresentation.GetHandle(),
                 (pnt.as_vec() + vec).as_pnt(),
                 gp_Dir(vec),
                 math.radians(20),
                 vec.Magnitude()
             )
-            self.aPresentation.Display()
+            aPresentation.Display()
             # it would be more coherent if a AIS_InteractiveObject would be returned
             if update:
                 self.Repaint()
-            return self.aPresentation
+            return aPresentation
 
     def DisplayMessage(self,point,text_to_write, message_color=None, update=True):
         """
@@ -309,7 +310,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         
 #    def DisplayShape(self, , *shapes):
-    def DisplayShape(self, shapes, material=None, texture=None, update=False):
+    def DisplayShape(self, shapes, material=None, texture=None, color=None, transparancy= None, update=False):
         '''
         '''
         
@@ -334,10 +335,13 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
-                    shape_to_display.SetDisplayMode(3);
+                    shape_to_display.SetDisplayMode(3)
                 ais_shapes.append(shape_to_display.GetHandle())
             else:
+                # TODO: can we use .Set to attach all TopoDS_Shapes to this AIS_Shape instance?
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
+                if color:
+                    shape_to_display.SetColor(color)
                 ais_shapes.append(shape_to_display.GetHandle())
             if update:
                 # only update when explicitely told to do so
@@ -345,6 +349,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 # especially this call takes up a lot of time...
                 self.FitAll()
             else:
+                if transparancy:
+                    shape_to_display.SetTransparency(transparancy)
                 self.Context.Display(shape_to_display.GetHandle(), False)
             
         if SOLO:
