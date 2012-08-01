@@ -98,6 +98,18 @@ class Topo(object):
     def __init__(self, myShape, kbe_types=False):
         self.myShape = myShape
         self.kbe_types = kbe_types
+        
+
+        self.topoTypes = {
+                        TopAbs_VERTEX:      TopoDS_vertex,
+                        TopAbs_EDGE:        TopoDS_edge,
+                        TopAbs_FACE:        TopoDS_face,
+                        TopAbs_WIRE:        TopoDS_wire,
+                        TopAbs_SHELL:       TopoDS_shell,
+                        TopAbs_SOLID:       TopoDS_solid,
+                        TopAbs_COMPOUND:    TopoDS_compound,
+                        TopAbs_COMPSOLID:   TopoDS_compsolid
+                            }
 
     def _loop_topo(self, topologyType, topologicalEntity=None, topologyTypeToAvoid=None):
         '''
@@ -106,28 +118,25 @@ class Topo(object):
         for face in srf.faces():
             processFace(face)
         '''
-        topoTypes = {   TopAbs_VERTEX:      TopoDS_vertex,
-                        TopAbs_EDGE:        TopoDS_edge,
-                        TopAbs_FACE:        TopoDS_face,
-                        TopAbs_WIRE:        TopoDS_wire,
-                        TopAbs_SHELL:       TopoDS_shell,
-                        TopAbs_SOLID:       TopoDS_solid,
-                        TopAbs_COMPOUND:    TopoDS_compound,
-                        TopAbs_COMPSOLID:   TopoDS_compsolid}
 
         if self.kbe_types:
             from OCC.KBE.vertex import  Vertex
             from OCC.KBE.edge import  Edge
             from OCC.KBE.face import Face
             from OCC.KBE.solid import Shell, Solid
-            kbeTypes = {    TopAbs_VERTEX:      Vertex,
+
+            self.kbeTypes = {
+                            TopAbs_VERTEX:      Vertex,
                             TopAbs_EDGE:        Edge,
                             TopAbs_FACE:        Face,
                             TopAbs_SHELL:       Shell,
                             TopAbs_SOLID:       Solid,
-                            }
+                                }
+            # TODO: it would be more elegant simply to update the dictionary...
+            #self.topoTypes.update(kbeTypes)
 
-        assert topologyType in topoTypes.keys(), '%s not one of %s' %( topologyType, topoTypes.keys() )   
+
+        assert topologyType in self.topoTypes.keys(), '%s not one of %s' %( topologyType, self.topoTypes.keys() )   
         self.topExp = TopExp_Explorer()
         # use self.myShape if nothing is specified
         if topologicalEntity is None and topologyTypeToAvoid is None:
@@ -152,11 +161,11 @@ class Topo(object):
         # Convert occ_seq to python list
         occ_iterator = TopTools_ListIteratorOfListOfShape(occ_seq)
         while occ_iterator.More():
-            topo_to_add = topoTypes[topologyType](occ_iterator.Value())
+            topo_to_add = self.topoTypes[topologyType](occ_iterator.Value())
             # return a KBE type
             if self.kbe_types:
-                if topologyType in kbeTypes:
-                    seq.append(kbeTypes[topologyType](topo_to_add))
+                if topologyType in self.kbeTypes:
+                    seq.append(self.kbeTypes[topologyType](topo_to_add))
 
             # otherwise a plain TopoDS_Shape subclass
             else:
@@ -275,17 +284,15 @@ class Topo(object):
         results = _map.FindFromKey(topologicalEntity)
         if results.IsEmpty():
             yield None
-        topoTypes = {   TopAbs_VERTEX:      TopoDS_vertex,
-                TopAbs_EDGE:        TopoDS_edge,
-                TopAbs_FACE:        TopoDS_face,
-                TopAbs_WIRE:        TopoDS_wire,
-                TopAbs_SHELL:       TopoDS_shell,
-                TopAbs_SOLID:       TopoDS_solid,
-                TopAbs_COMPOUND:    TopoDS_compound,
-                TopAbs_COMPSOLID:   TopoDS_compsolid}
+
         topology_iterator = TopTools_ListIteratorOfListOfShape(results)
-        while topology_iterator.More():            
-            topo_entity  = topoTypes[topoTypeB](topology_iterator.Value())
+        while topology_iterator.More():
+            topo_entity  = self.topoTypes[topoTypeB](topology_iterator.Value())
+
+            if self.kbe_types:
+                if topoTypeB in self.kbeTypes:
+                    topo_entity = self.kbeTypes[topoTypeB](topo_entity)
+
             # return the entity if not in set
             # to assure we're not returning entities several times
             if not topo_entity in topo_set:
@@ -322,7 +329,7 @@ class Topo(object):
   
     def number_of_faces_from_edge(self, edge):
         return self._number_shapes_ancestors(TopAbs_EDGE,TopAbs_FACE,edge)
-        
+
     def edges_from_face(self, face):
         return self._loop_topo(TopAbs_EDGE, face)
   
