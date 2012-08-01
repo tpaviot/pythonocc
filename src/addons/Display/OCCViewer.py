@@ -31,6 +31,7 @@ import OCC.Visual3d
 from OCC import Prs3d
 from OCC.Prs3d import Prs3d_Arrow
 from OCC.Quantity import Quantity_Color
+from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
 import os, os.path, types, sys, subprocess, math
 
@@ -351,6 +352,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             else:
                 if transparancy:
                     shape_to_display.SetTransparency(transparancy)
+                if material is None:
+                    #The default material is too shiny to show the object
+                    #color well, so I set it to something less reflective
+                    shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
                 self.Context.Display(shape_to_display.GetHandle(), False)
             
         if SOLO:
