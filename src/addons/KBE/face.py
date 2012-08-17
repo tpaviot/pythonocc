@@ -324,10 +324,6 @@ class Face(KbeObject, TopoDS_Face):
         aaa = GeomLib_IsPlanarSurface(self.surface_handle, tol)
         return aaa.IsPlanar()# , aaa.Plan()
 
-    def is_overlapping(self, other):
-        import ipdb; ipdb.set_trace()
-        overlap = IntTools_FaceFace()
-
     def is_trimmed(self):
         """
         :return: True if the Wire delimiting the Face lies on the bounds of the surface
@@ -411,7 +407,7 @@ class Face(KbeObject, TopoDS_Face):
         if isinstance(pnt, TopoDS_Vertex):
             pnt = BRep_Tool.Pnt(pnt)
 
-        print "from OCC.ShapeAnalysis import ShapeAnalysis_Surface"
+        #print "from OCC.ShapeAnalysis import ShapeAnalysis_Surface"
 #        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 #
 #        ssa = ShapeAnalysis_Surface(self.surface_handle)
@@ -463,6 +459,12 @@ class Face(KbeObject, TopoDS_Face):
 
     def Edges(self):
         return [Edge(i) for i in WireExplorer(self.topo.wires().next()).ordered_edges()]
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.__repr__()
 
 if __name__ == "__main__":
 

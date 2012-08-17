@@ -542,7 +542,8 @@ class Edge(KbeObject, TopoDS_Edge):
         :return: True if the edge has two pcurves on one surface
         ( in the case of a sphere for example... )
         """
-        return ShapeAnalysis_Edge(self, face)
+        sae = ShapeAnalysis_Edge()
+        return sae.IsSeam(self, face)
 
     def is_edge_on_face(self, face):
         '''checks whether curve lies on a surface or a face
