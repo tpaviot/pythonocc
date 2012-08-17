@@ -1,4 +1,4 @@
-##Copyright 2010 Thomas Paviot (tpaviot@gmail.com)
+##Copyright (c) 2011 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -40,17 +40,35 @@ ENDIF( NOT DEFINED ${OPTION_NAME} )
 	OPTION( ${OPTION_NAME} "${OPTION_STRING}" ${${OPTION_NAME}} )
 ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 
-###################
-# General options #
-###################
-# By default, GEOM and SMESH wrappers are disabled
-OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
-OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
-
+##################################
+# Set/Check GEOM and SMESH paths #
+##################################
 SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
 SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
 SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
 SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
+
+FIND_FILE(GEOM_hxx "BlockFix.hxx" PATHS ${GEOM_INCLUDE_PATH})
+IF(NOT GEOM_hxx)
+    MESSAGE(WARNING "Unable to find GEOM header files. You won't benefit from the GEOM wrapper.")
+ENDIF(NOT GEOM_hxx)
+
+FIND_FILE(SMESH_hxx "SMESH_Mesh.hxx" PATHS ${SMESH_INCLUDE_PATH})
+IF(NOT SMESH_hxx)
+    MESSAGE(WARNING "Unable to find SMESH header files. You won't benefit from the SMESH wrapper.")
+ENDIF(NOT SMESH_hxx)
+
+###################
+# General options #
+###################
+# By default, GEOM and SMESH wrappers are disabled
+IF(GEOM_hxx)
+    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
+ENDIF(GEOM_hxx)
+IF(SMESH_hxx)
+    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
+ENDIF(SMESH_hxx)
+
 #
 # Add geom and smesh paths to the list of include directories
 # If not, enabling/disabling GEOM causes the whole pythonocc
@@ -62,8 +80,7 @@ INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
 ###############################################
 # Boost headers are required to compile smesh #
 ###############################################
-SET(BOOST_INCLUDE_PATH /usr/local/include/boost CACHE PATH "boost include path" )
-INCLUDE_DIRECTORIES(${BOOST_INCLUDE_PATH})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
 
 ##########
 # Python #
@@ -93,6 +110,11 @@ INCLUDE(${SWIG_USE_FILE})
 IF(UNIX)
     FIND_PACKAGE(OCE)
     IF(OCE_FOUND)
+        MESSAGE(STATUS "Found OCE version ${OCE_VERSION}")
+        # check OCE version =0.8.0
+        IF (NOT ${OCE_VERSION} MATCHES "0.8.0")
+            MESSAGE(FATAL_ERROR "OCE-0.8.0 is required.")
+        ENDIF(NOT ${OCE_VERSION} MATCHES "0.8.0")
         SET(OCE_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
     ELSE(OCE_FOUND)
         SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
@@ -267,7 +289,9 @@ SET(VISUALIZATION_SOURCE_FILES
 	src/wrapper/Visualization/Visualization.i
 	src/wrapper/Visualization/Display3d.cpp
 	src/wrapper/Visualization/Display2d.cpp
-	src/wrapper/Visualization/NISDisplay3d.cpp)
+	src/wrapper/Visualization/NISDisplay3d.cpp
+	src/wrapper/Visualization/Tesselator.cpp
+	)
 SWIG_ADD_MODULE(Visualization python ${VISUALIZATION_SOURCE_FILES})
 SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCC_LIBRARIES})
 
