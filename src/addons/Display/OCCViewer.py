@@ -311,7 +311,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         
 #    def DisplayShape(self, , *shapes):
-    def DisplayShape(self, shapes, material=None, texture=None, color=None, transparancy= None, update=False):
+    def DisplayShape(self, shapes, material=None, texture=None, color=None, transparency=None, update=False):
         '''
         '''
         
@@ -341,23 +341,28 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             else:
                 # TODO: can we use .Set to attach all TopoDS_Shapes to this AIS_Shape instance?
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
+
+                if material is None:
+                    #The default material is too shiny to show the object
+                    #color well, so I set it to something less reflective
+                    shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
+
                 if color:
                     shape_to_display.SetColor(color)
+
+                if transparency:
+                    shape_to_display.SetTransparency(transparency)
+
+
                 ais_shapes.append(shape_to_display.GetHandle())
+                self.Context.Display(shape_to_display.GetHandle(), False)
+
             if update:
                 # only update when explicitely told to do so
                 self.Context.Display(shape_to_display.GetHandle(), True)
                 # especially this call takes up a lot of time...
                 self.FitAll()
-            else:
-                if transparancy:
-                    shape_to_display.SetTransparency(transparancy)
-                if material is None:
-                    #The default material is too shiny to show the object
-                    #color well, so I set it to something less reflective
-                    shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
-                self.Context.Display(shape_to_display.GetHandle(), False)
-            
+
         if SOLO:
             return  ais_shapes[0]
         else:
