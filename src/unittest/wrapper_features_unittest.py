@@ -75,9 +75,20 @@ class TestWrapperFeatures(unittest.TestCase):
         print 'Test: python dicts'
         P1 = gp_Pnt(1,2,3)
         P2 = gp_Pnt(2,3,4)
-        d={P1:'P1',P2:'P2'}
+
+        V1 = BRepBuilderAPI_MakeVertex(P1).Vertex()
+        V2 = BRepBuilderAPI_MakeVertex(P2).Vertex()
+
+        d={P1:'P1',
+           P2:'P2',
+           V1:'V1',
+           V2:'V2',
+           }
+
         self.assertEqual(d[P1]=='P1',True)
         self.assertEqual(d[P2]=='P2',True)
+        self.assertEqual(d[V1]=='V1',True)
+        self.assertEqual(d[V2]=='V2',True)
 
     def testTopology(self):
         '''

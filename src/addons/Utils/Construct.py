@@ -850,6 +850,8 @@ def fit_plane_through_face_vertices(_face):
     [NORMALS.Append(i) for i in normals]
     POINTS = to_tcol_(points, TColgp_HArray1OfPnt)
 
+    import ipdb; ipdb.set_trace()
+    #TColgp_SequenceOfVec Normals, Handle_TColgp_HArray1OfPnt Pts
     pl = GeomPlate_BuildAveragePlane(NORMALS, POINTS).Plane().GetObject()
     vec = gp_Vec(pl.Location(), _face.GlobalProperties.centre())
     pt = (pl.Location().as_vec() + vec).as_pnt()

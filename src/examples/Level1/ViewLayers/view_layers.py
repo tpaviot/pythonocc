@@ -35,23 +35,18 @@ import time
 
 def set_background_color(event=None):
     clr = display.View.BackgroundColor()
-    color_alice = Quantity_Color(Quantity_NOC_ALICEBLUE)
-    color_cyan = Quantity_Color(Quantity_NOC_CYAN1)
-    color_black = Quantity_Color(Quantity_NOC_BLACK)
-
-    display.View.SetBackgroundColor(color_alice)
+    display.View.SetBackgroundColor(Quantity_NOC_ALICEBLUE)
     print 'Background color set to ALICEBLUE'
     display.Repaint()
     time.sleep(1)
-    display.View.SetBackgroundColor(color_black)
+    display.View.SetBackgroundColor(Quantity_NOC_BLACK)
     print 'Background color set to BLACK'
     display.Repaint()
     time.sleep(1)
-    display.View.SetBackgroundColor(color_cyan)
+    display.View.SetBackgroundColor(Quantity_NOC_CYAN1)
     print 'Background color set to CYAN1'
     display.Repaint()
     time.sleep(1)
-    print 'resetting the color to original color'
     display.View.SetBackgroundColor(clr)
 
 def set_background_image(event=None):
@@ -59,26 +54,20 @@ def set_background_image(event=None):
     display.SetBackgroundImage(image)
 
 def set_layer(event=None):
-    view = display.View.View().GetObject()
-    window = view.Window().GetObject()
-    w,h = window.Size()
-    w,h = 20,20
-    print 'h,w',h,w
-
-    view_mgr = view.ViewManager()
-    layer = Visual3d_Layer(view_mgr, Aspect_TOL_OVERLAY, True)
+    view_mgr = display.View.View().GetObject().ViewManager()
+    layer = Visual3d_Layer(view_mgr, Aspect_TOL_UNDERLAY, False)
     #a,b,c,d = layer.GetScreenRect()
-    layer.SetViewport(w,h)
-    layer.SetOrtho(0,w,h,0)
-
+    h,w = display.View.Window().GetObject().Size()
+    print h,w
+    #layer.SetViewport(1,1)
+    #layer.SetViewport(10,10)
     layer.Clear()
     layer.Begin()
-    
-   
+    layer.SetViewport(640,480)
     print "ok"
-    layer.SetTextAttributes( Graphic3d_NOF_ASCII_ITALIC_COMPLEX, Aspect_TODT_NORMAL, Quantity_Color(Quantity_NOC_ORANGE ))
+    layer.SetTextAttributes( "arial", Aspect_TODT_NORMAL, Quantity_Color(Quantity_NOC_ORANGE ))
     print "ok2"
-    layer.DrawText('PythonOCC R*cks!!!',0,0,5)
+    layer.DrawText('PythonOCC R*cks!!!',0.1,0.1,5)
     print "ok3"
 #    layer.BeginPolygon()
 #    layer.SetColor (Quantity_Color(Quantity_NOC_BLACK))
@@ -90,13 +79,12 @@ def set_layer(event=None):
 #    layer.AddVertex (-1,-1)
 #    layer.ClosePrimitive()
     layer.End()
-    display.Test()
+#    display.Test()
     display.Repaint()
 
 
 
 if __name__ == '__main__':
-    set_layer()
     add_menu('background')
     add_function_to_menu('background', set_background_image )
     add_function_to_menu('background', set_background_color )
