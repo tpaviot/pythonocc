@@ -30,7 +30,9 @@ class TestTopology(unittest.TestCase):
     def setUp(self):
         self.shape = BRepPrimAPI_MakeBox(10, 10, 10).Shape()
         self.topo = Topo(self.shape)
-        
+        self.topo_kbe = Topo(self.shape, kbe_types=True)
+        self.topo_unique = Topo(self.shape, ignore_orientation=True)
+
     def test_nested_iteration(self):
         '''check nested looping'''
         for f in self.topo.faces():
@@ -50,14 +52,23 @@ class TestTopology(unittest.TestCase):
 
     
     def test_number_of_topological_entities(self):
-        self.assert_(self.topo.number_of_vertices()==8)
-        self.assert_(self.topo.number_of_edges()==12)
+        self.assert_(self.topo.number_of_vertices()==48)
+        self.assert_(self.topo.number_of_edges()==24)
         self.assert_(self.topo.number_of_wires()==6)
         self.assert_(self.topo.number_of_faces()==6)
         self.assert_(self.topo.number_of_solids()==1)
         self.assert_(self.topo.number_of_comp_solids()==0)
         self.assert_(self.topo.number_of_compounds()==0)
-        
+
+    def test_number_of_unique_topological_entities(self):
+        self.assert_(self.topo_unique.number_of_vertices()==8)
+        self.assert_(self.topo_unique.number_of_edges()==12)
+        self.assert_(self.topo_unique.number_of_wires()==6)
+        self.assert_(self.topo_unique.number_of_faces()==6)
+        self.assert_(self.topo_unique.number_of_solids()==1)
+        self.assert_(self.topo_unique.number_of_comp_solids()==0)
+        self.assert_(self.topo_unique.number_of_compounds()==0)
+
 #===============================================================================
 # EDGE <-> FACE
 #===============================================================================

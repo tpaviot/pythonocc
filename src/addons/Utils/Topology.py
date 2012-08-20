@@ -91,13 +91,34 @@ class WireExplorer(object):
 
 class Topo(object):
     '''
-    sketch for a pythonic topology wrapper
-    note that `myShape` should be self, which is in return a occ.TopoShape
-    with this 
-    '''  
-    def __init__(self, myShape, kbe_types=False):
+    Topology traversal
+    '''
+    def __init__(self, myShape, kbe_types=False, ignore_orientation=False):
+        """
+        :param myShape: the shape which topology will be traversed
+
+        :param kbe_types: whether to return OCC.KBE topology types
+        KBE types offers a more consistent and pythonic API, since many useful
+        methods are bound to these objects
+
+        :param ignore_orientation: filter out TopoDS_* entities of similar TShape but different Orientation
+
+        for instance, a cube has 24 edges, 4 edges for each of 6 faces
+
+        that results in 48 vertices, while there are only 8 vertices that have a unique
+        geometric coordinate
+
+        in certain cases ( computing a graph from the topology ) its preferable to return
+        topological entities that share similar geometry, though differ in orientation
+        by setting the ``ignore_orientation`` variable
+        to True, in case of a cube, just 12 edges and only 8 vertices will be returned
+
+        for further reference see TopoDS_Shape IsEqual / IsSame methods
+
+        """
         self.myShape = myShape
         self.kbe_types = kbe_types
+        self.ignore_orientation = ignore_orientation
         
 
         self.topoTypes = {
@@ -110,14 +131,6 @@ class Topo(object):
                         TopAbs_COMPOUND:    TopoDS_compound,
                         TopAbs_COMPSOLID:   TopoDS_compsolid
                             }
-
-    def _loop_topo(self, topologyType, topologicalEntity=None, topologyTypeToAvoid=None):
-        '''
-        this could be a faces generator for a python TopoShape class
-        that way you can just do:
-        for face in srf.faces():
-            processFace(face)
-        '''
 
         if self.kbe_types:
             from OCC.KBE.vertex import  Vertex
@@ -132,11 +145,15 @@ class Topo(object):
                             TopAbs_SHELL:       Shell,
                             TopAbs_SOLID:       Solid,
                                 }
-            # TODO: it would be more elegant simply to update the dictionary...
-            #self.topoTypes.update(kbeTypes)
 
-
-        assert topologyType in self.topoTypes.keys(), '%s not one of %s' %( topologyType, self.topoTypes.keys() )   
+    def _loop_topo(self, topologyType, topologicalEntity=None, topologyTypeToAvoid=None):
+        '''
+        this could be a faces generator for a python TopoShape class
+        that way you can just do:
+        for face in srf.faces():
+            processFace(face)
+        '''
+        assert topologyType in self.topoTypes.keys(), '%s not one of %s' %( topologyType, self.topoTypes.keys() )
         self.topExp = TopExp_Explorer()
         # use self.myShape if nothing is specified
         if topologicalEntity is None and topologyTypeToAvoid is None:
@@ -154,9 +171,11 @@ class Topo(object):
         while self.topExp.More():
             current_item = self.topExp.Current()
             current_item_hash = current_item.__hash__()
+
             if not current_item_hash in hashes:
                 hashes.append(current_item_hash)
                 occ_seq.Append(current_item)
+
             self.topExp.Next()
         # Convert occ_seq to python list
         occ_iterator = TopTools_ListIteratorOfListOfShape(occ_seq)
@@ -171,7 +190,22 @@ class Topo(object):
             else:
                 seq.append(topo_to_add)
             occ_iterator.Next()
-        return iter(seq)
+
+        if self.ignore_orientation:
+            # filter out those entities that share the same TShape
+            # but do *not* share the same orientation
+            filter_orientation_seq = []
+            for i in seq:
+                _present = False
+                for j in filter_orientation_seq:
+                    if i.IsSame(j):
+                        _present = True
+                        break
+                if _present is False:
+                    filter_orientation_seq.append(i)
+            return filter_orientation_seq
+        else:
+            return iter(seq)
         
     def faces(self):
         '''
@@ -287,16 +321,28 @@ class Topo(object):
 
         topology_iterator = TopTools_ListIteratorOfListOfShape(results)
         while topology_iterator.More():
-            topo_entity  = self.topoTypes[topoTypeB](topology_iterator.Value())
 
+            topo_entity  = self.topoTypes[topoTypeB](topology_iterator.Value())
             if self.kbe_types:
                 if topoTypeB in self.kbeTypes:
                     topo_entity = self.kbeTypes[topoTypeB](topo_entity)
+                else:
+                    raise ValueError('none KBE types called')
 
             # return the entity if not in set
             # to assure we're not returning entities several times
             if not topo_entity in topo_set:
-                yield topo_entity 
+                if self.ignore_orientation:
+                    unique=True
+                    for i in topo_set:
+                        if i.IsSame(topo_entity):
+                            unique=False
+                            break
+                    if unique:
+                        yield topo_entity
+                else:
+                    yield topo_entity
+
             topo_set.add(topo_entity)
             topology_iterator.Next()
         

@@ -53,10 +53,10 @@ class TestWrapperFeatures(unittest.TestCase):
         self.assertNotEqual(P3 in l, True)
         self.assertEqual(l.index(P1),0)
         self.assertEqual(l.index(P2),1)
-        # Do the same for Vertices (TopoDS_Shape has a HashCode() method overloaded
+        # Do the same for Vertices ( TopoDS_Shape has a HashCode() method overloaded )
         V1 = BRepBuilderAPI_MakeVertex(P1).Vertex()
         V2 = BRepBuilderAPI_MakeVertex(P2).Vertex()
-        V3 = BRepBuilderAPI_MakeVertex(P3) .Vertex()
+        V3 = BRepBuilderAPI_MakeVertex(P3).Vertex()
         vl = [V1,V2]
         self.assertEqual(V1 in vl, True)
         self.assertNotEqual(V3 in vl, True)
@@ -67,7 +67,7 @@ class TestWrapperFeatures(unittest.TestCase):
         vl.reverse()
         self.assertEqual(vl.index(V1),1)
         self.assertEqual(vl.index(V2),0)
-        
+
     def  testDict(self):
         '''
         Test python dict features
