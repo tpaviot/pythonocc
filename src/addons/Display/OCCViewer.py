@@ -325,11 +325,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
         for shape in shapes:
             if material or texture:#careful: != operator segfaults
-                self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
-                shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-                if material:
-                    shape_to_display.SetMaterial(material)
                 if texture:
+                    self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
+                    shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                     filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
                     shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
                     shape_to_display.SetTextureMapOn()
@@ -337,6 +335,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
                     shape_to_display.SetTextureOrigin(True, originU, originV)
                     shape_to_display.SetDisplayMode(3)
+                elif material:
+                    shape_to_display = OCC.AIS.AIS_Shape(shape)
+                    shape_to_display.SetMaterial(material)
                 ais_shapes.append(shape_to_display.GetHandle())
             else:
                 # TODO: can we use .Set to attach all TopoDS_Shapes to this AIS_Shape instance?
@@ -352,16 +353,16 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 
                 if transparency:
                     shape_to_display.SetTransparency(transparency)
-
-
                 ais_shapes.append(shape_to_display.GetHandle())
-                self.Context.Display(shape_to_display.GetHandle(), False)
+                
 
             if update:
                 # only update when explicitely told to do so
                 self.Context.Display(shape_to_display.GetHandle(), True)
                 # especially this call takes up a lot of time...
                 self.FitAll()
+            else:
+                self.Context.Display(shape_to_display.GetHandle(), False)
 
         if SOLO:
             return  ais_shapes[0]
