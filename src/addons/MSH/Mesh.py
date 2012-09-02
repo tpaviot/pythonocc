@@ -397,6 +397,209 @@ class MEFISTOTriangleMesh(MeshBase):
         self.build_lists()
         return True
 
+class STLTriangleMesh(MeshBase):
+    ''' A mesh based on the MEFISTO2 triangle mesher.
+    '''
+    def __init__(self):
+        from OCC.SMESH import SMESH_Gen
+        from OCC.StdMeshers import StdMeshers_Regular_1D, StdMeshers_MEFISTO_2D, StdMeshers_Arithmetic1D
+
+        MeshBase.__init__(self)
+        self._mesh = None
+        self._mesh_data_source = None
+
+    def get_mesh(self):
+        return self._mesh
+
+    def get_nb_domains(self):
+        return self._mesh_data_source.NbDomains()
+
+    def get_nb_faces(self):
+        ''' @return: the number of faces (triangles in this case)
+        '''
+        return self._mesh_data_source.NbFaces()
+
+    def get_nb_nodes(self):
+        ''' @return: the number of nodes(vertices) of the mesh
+        '''
+        return self._mesh_data_source.NbNodes()
+
+    def build_lists(self):
+        ''' build 3 lists: faces, normals, vertices
+        '''
+        init_time = time.time()
+        # will return 3 lists
+        vertices = []
+        faces = []
+        face_normals=[]
+        vertex_normals = []
+        normals = []
+
+        #print v.GetNodeNormal()
+        #dict_vert_normals={}
+        # first, build nodes list:
+        #nodes_this = []
+        #for i in range(self.get_nb_nodes()):
+        #    node = self._mesh_data_source.nodeValue(i)
+        #    vertices.append([node.X(),node.Y(), node.Z()])
+        #    nodes_this.append(node.this)
+        # Traverse faces for this triangular mesh
+        j = 0
+        for a in range(self.get_nb_domains()):
+            for i in range(self.get_nb_faces()):
+                triangle_face = self._mesh_data_source.faceValue(i)
+                # First node
+                node_0 = triangle_face.GetNode(0)
+                n0_X = node_0.X()
+                n0_Y = node_0.Y()
+                n0_Z = node_0.Z()
+                vertices.append([n0_X,n0_Y,n0_Z])
+                # Second node
+                node_1 = triangle_face.GetNode(1)
+                n1_X = node_1.X()
+                n1_Y = node_1.Y()
+                n1_Z = node_1.Z()
+                vertices.append([n1_X,n1_Y,n1_Z])
+                # Third node
+                node_2 = triangle_face.GetNode(2)
+                n2_X = node_2.X()
+                n2_Y = node_2.Y()
+                n2_Z = node_2.Z()
+                vertices.append([n2_X,n2_Y,n2_Z])
+                # append faces indices
+                faces.append([j,j+1,j+2])
+                j = j + 3
+                # Compute normal for this face
+                # the cross product has to be computed
+                u0 = n1_X-n0_X
+                u1 = n1_Y-n0_Y
+                u2 = n1_Z-n0_Z
+                v0 = n2_X-n0_X
+                v1 = n2_Y-n0_Y
+                v2 = n2_Z-n0_Z
+                n_x = u1*v2-u2*v1
+                n_y = u2*v0-u0*v2
+                n_z=  u0*v1-u1*v0
+                n_magnitude = math_sqrt(n_x*n_x+n_y*n_y+n_z*n_z)
+                #print n_magnitude
+                #P0 = gp_XYZ(n0_X,n0_Y,n0_Z)
+                #P1 = gp_XYZ(n1_X,n1_Y,n1_Z)
+                #P2 = gp_XYZ(n2_X,n2_Y,n1_Z)
+
+                #face_normal = (P1-P0)^(P2-P0)
+                #if face_normal.Modulus()>0:
+                #    face_normal.Normalize()
+                #fn = [face_normal.X(),face_normal.Y(),face_normal.Z()]
+                if n_magnitude>0:
+                    fn = [n_x/n_magnitude, n_y/n_magnitude, n_z/n_magnitude]
+                face_normals.append(fn)
+                face_normals.append(fn)
+                face_normals.append(fn)
+            #print faces
+            #faces = range(self.get_nb_faces()*3)
+            #print faces
+            print "build_list method performed in %f seconds."%(time.time()-init_time)
+            self._vertices = vertices
+            self._faces = faces
+            self._face_normals = face_normals
+            return True#return vertices, faces, face_normals
+
+
+    def build_lists_shared_vertices(self):
+        ''' build 3 lists: faces, normals, vertices
+        '''
+        # will return 3 lists
+        #vertices = []
+        faces = []
+        face_normals=[]
+        vertex_normals = []
+        normals = []
+        #dict_vert_normals={}
+        # build the vertex list
+        # each vertex is added to the list according to its Mesh ID
+        vertices = range(self.get_nb_nodes())
+        vertex_normals = range(self.get_nb_nodes())
+
+        v = SMESH_MeshVSLink(self.get_mesh())
+        # first, build nodes list:
+        #nodes_this = []
+        for i in range(self.get_nb_nodes()):
+            node = self._mesh_data_source.nodeValue(i)
+            node_id = node.GetID()
+            vertices[node_id-1] = [node.X(),node.Y(), node.Z()]
+            # At the same time, build vertex normals list
+            #bool_var, node_normal_x, node_normal_y, node_normal_z = v.GetNormal(node_id,3)
+            #vertex_normals[node_id-1] = [node_normal_x, node_normal_y, node_normal_z]
+            #vertices.append([node.X(),node.Y(), node.Z()])
+            #nodes_this.append(node.this)
+        # Traverse faces for this triangular mesh
+        self._hashes = []
+        for i in range(self.get_nb_faces()):
+            triangle_face = self._mesh_data_source.faceValue(i)
+            triangle_face_id = triangle_face.GetID()
+
+            node_0_index = triangle_face.GetNode(0).GetID()-1
+            node_1_index = triangle_face.GetNode(1).GetID()-1
+            node_2_index = triangle_face.GetNode(2).GetID()-1
+            # Try de check whether the face is FORWARD or REVERSED
+            #try:
+                #print triangle_face_id
+                #topods_shape = self._mesh_data_source.IndexToShape(triangle_face_id)
+                #print topods_shape.ShapeType()
+                #print 'oui'
+                #if not hash(topods_shape) in self._hashes:
+                #    self._hashes.append(hash(topods_shape))
+            #print hash(topods_shape)
+            #    if topods_shape.Orientation() == TopAbs_REVERSED:
+            #        faces.append([node_2_index,node_1_index,node_0_index])
+            #        print 'REVERSED!!'
+            #    else:
+            #        faces.append([node_0_index,node_1_index,node_2_index])
+            #except:
+                #print 'bozozo'
+            into = random.randint(1,2)
+            if int==1:
+                faces.append([node_0_index,node_1_index,node_2_index])
+            else:
+                faces.append([node_2_index,node_1_index,node_0_index])
+            # Compute normal for this face
+            true_or_false, n_x,n_y,n_z = v.GetNormal(triangle_face_id,3)
+            face_normals.append([n_x,n_y,n_z])
+        #for i in range(self.get_nb_faces()):
+        #    print face_normals[i]
+        # Compute vertex normals
+        print self._hashes
+        self._vertices = vertices
+        self._faces = faces
+        self._face_normals = face_normals
+        return True
+
+    def compute(self):
+        aMeshGen = SMESH_Gen()
+        aMesh = aMeshGen.CreateMesh(0,True)
+        # 1D
+        an1DHypothesis = StdMeshers_Arithmetic1D(0,0,aMeshGen)#discretization of the wire
+        # The smallest and longer distance between edges is computed from the _precision value
+        min_dist = self.get_precision()/3.
+        max_dist = self.get_precision()*3.
+        an1DHypothesis.SetLength(min_dist,False) #the smallest distance between 2 points
+        an1DHypothesis.SetLength(max_dist,True) # the longest distance between 2 points
+        an1DAlgo = StdMeshers_Regular_1D(1,0,aMeshGen) # interpolation
+        # 2D
+        a2dAlgo = StdMeshers_MEFISTO_2D(2,0,aMeshGen)
+        aMesh.ShapeToMesh(self._shape)
+        #Assign hyptothesis to mesh
+        aMesh.AddHypothesis(self._shape,0)
+        aMesh.AddHypothesis(self._shape,1)
+        aMesh.AddHypothesis(self._shape,2)
+        #Compute the data
+        aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
+        self._mesh = aMesh
+        self._mesh_data_source = aMesh.GetMeshDS()
+        #print self._mesh_data_source
+        self.build_lists()
+        return True
+
 def test_quicktrianglemesh():
     import time
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
@@ -405,6 +608,43 @@ def test_quicktrianglemesh():
     a_mesh = QuickTriangleMesh()
     a_mesh.set_shape(box_shape)
     a_mesh.set_precision(0.3)
+    a_mesh.compute()
+    print 'Number of triangles: %i'%a_mesh.get_nb_faces()
+    print 'Number of vertices: %i'%a_mesh.get_nb_nodes()
+    #a_mesh.build_lists_shared_vertices()
+    print 'All done in %f seconds.'%(time.time()-init_time)
+    #
+    print "#################"
+    print a_mesh.get_vertices()
+    print "##############"
+    print a_mesh.get_normals()
+    print "################"
+    print a_mesh.get_faces()
+
+
+
+def test_stlmesh():
+    _stl_file = '/Users/localadmin/Documents/workspace/pythonocc/data/_3dmodels/aube_pleine.stl'
+
+    from OCC.TCollection import TCollection_AsciiString
+    import os
+    from OCC.RWStl import RWStl
+    from OCC.MeshVS import MeshVS_Mesh
+    from OCC.OSD import OSD_Path
+
+
+    def load_stl_data(_pth):
+        assert os.path.isfile(_pth), 'not a valid path {0}'.format(_pth)
+        _ascii_str = TCollection_AsciiString(_stl_file)
+        _osd_pth = OSD_Path(_ascii_str)
+        aSTLMesh = RWStl.ReadFile(_osd_pth).GetObject()
+        return aSTLMesh
+
+    _stl_data = load_stl_data(_stl_file)
+
+    import time
+    init_time = time.time()
+    a_mesh = STLTriangleMesh()
     a_mesh.compute()
     print 'Number of triangles: %i'%a_mesh.get_nb_faces()
     print 'Number of vertices: %i'%a_mesh.get_nb_nodes()
@@ -462,4 +702,5 @@ def test():
     start_display()
 
 if __name__=='__main__':
-    test_quicktrianglemesh()        
+    #test_quicktrianglemesh()
+    test_stlmesh()

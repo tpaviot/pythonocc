@@ -148,10 +148,6 @@ group_load = my_context.group_operations.CreateGroup(face_load, ShapeType['FACE'
 group_lock = my_context.group_operations.CreateGroup(face_lock, ShapeType['FACE'])
 
 
-
- 
-
-
 msh = SMESHDS_Mesh(0,1)
 msh.AddHypothesis(my_box_shape, an1DHypothesis)
 msh.AddHypothesis(my_box_shape, a2dHypothseis)
@@ -181,35 +177,15 @@ GR = SMESH_Group(0, aMesh, theType, 'jelle', theShape)
 
 submesh = aMesh.GetSubMesh(face_load.GetObject().GetValue())
 
-#import ipdb; ipdb.set_trace()
-
-
 aMeshGen.Compute(aMesh,aMesh.GetShapeToMesh())
 GR = SMESH_Group(0, aMesh, theType, 'jelle', theShape)
 
 # compute the mesh, set the group
-aMesh.AddGroup( group_load.GetType(), 'load', 0, group_load.GetShape())
-aMesh.AddGroup( group_lock.GetType(), 'lock', 1, group_lock.GetShape())
-
-#msh_grp = SMDS_MeshGroup()
+aMesh.AddGroup( group_load.GetType(), 'load', group_load.GetShape())
+aMesh.AddGroup( group_lock.GetType(), 'lock', group_lock.GetShape())
 
 
-#===============================================================================
-# SO WE GOT 2 CALID GROUPS, BUT NONE CAN BE ADDED TO "aMesh" !!!
-#===============================================================================
-
-
-
-#group_lock = SMESHDS_GroupOnGeom( 0, aMesh, SMDSAbs_Face, face_lock.GetObject().GetValue() )
-
-#submesh_load = aMesh.GetSubMesh(face_load.GetObject().GetValue())
-#submesh_lock = aMesh.GetSubMesh(face_lock.GetObject().GetValue())
-##import ipdb; ipdb.set_trace()
-#submesh_load.SetIsAlwaysComputed(True)
-#submesh_lock.SetIsAlwaysComputed(True)
-
-
-#aMesh.ExportMED("_TEST.med")  # write it to a file that can be solve with Code_Aster
+aMesh.ExportMED("_TEST.med")  # write it to a file that can be solve with Code_Aster
 aMesh.ExportUNV("_TEST_GROUPS.UNV")  # write it to a file that can be solve with Code_Aster
 
 

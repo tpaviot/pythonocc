@@ -70,8 +70,12 @@ class BaseDriver(object):
         self.Context.MoveTo(X,Y,self.View_handle)
       
     def FitAll(self):
-        self.View.ZFitAll()
-        self.View.FitAll()
+        if hasattr(self.View, 'Fitall'):
+            # Viewer2d
+            self.View.Fitall()
+        else:
+            self.View.ZFitAll()
+            self.View.FitAll()
     
     def SetWindow(self,window_handle):
         self._window_handle = window_handle
@@ -89,13 +93,21 @@ class BaseDriver(object):
         self.Context = self.Context_handle.GetObject()
         self.Viewer = self.Viewer_handle.GetObject()
         if create_default_lights:
-            self.Viewer.SetDefaultLights()
-            self.Viewer.SetLightOn()
+            try:
+                self.Viewer.SetDefaultLights()
+                self.Viewer.SetLightOn()
+            except AttributeError:
+                # Viewer2d doesnt have SetDefaultLights attr
+                pass
         self.View = self.View_handle.GetObject()
         self._inited = True
         
         # nessecary for text rendering
-        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        try:
+            self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        except AttributeError:
+            # Viewer2d doesnt have MainPrsMgr attr
+            pass
 
         
 class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
@@ -262,7 +274,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 self.Repaint()
             return aPresentation
 
-    def DisplayMessage(self,point,text_to_write, message_color=None, update=True):
+    def DisplayMessage(self,point,text_to_write, message_color=None, update=False):
         """
         :point: a gp_Pnt instance
         :text_to_write: a string
@@ -286,31 +298,6 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         return aPresentation
 
 
-#    def DisplayMessage(self,point,text_to_write, update=True):
-#        """
-#        point: a gp_Pnt instance
-#        text_to_write: a string
-#        """
-#        # TODO - should be imported!
-#        def to_string_extended(_str):
-#            from OCC.TCollection import TCollection_ExtendedString as String
-#            return String(_str)
-#
-#        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
-#        text_aspect = Prs3d.Prs3d_TextAspect()
-#        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
-#                                 text_aspect.GetHandle(),
-#                                  to_string_extended(text_to_write),
-#                                   point)
-#        aPresentation.Display()
-#        # it would be more coherent if a AIS_InteractiveObject would be returned
-#        if update:
-#            self.Repaint()
-#        return aPresentation
-##        self.Context.Display(anAIS.GetHandle())
-
-        
-#    def DisplayShape(self, , *shapes):
     def DisplayShape(self, shapes, material=None, texture=None, color=None, transparency=None, update=False):
         '''
         '''
@@ -349,12 +336,19 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                     shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
 
                 if color:
-                    shape_to_display.SetColor(color)
+                    if isinstance(color, Quantity_Color):
+                        shape_to_display.SetColor(color)
+                    elif isinstance(color, (tuple, list)):
+                        from OCC.Utils.Common import color as quantity_color
+                        clr = quantity_color(*color)
+                        self.Context.SetColor(shape_to_display.GetHandle(), clr, 0)
+                        #shape_to_display.SetColor(quantity_color(*color))
 
                 if transparency:
                     shape_to_display.SetTransparency(transparency)
+
                 ais_shapes.append(shape_to_display.GetHandle())
-                
+
 
             if update:
                 # only update when explicitely told to do so
@@ -369,7 +363,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             return ais_shapes
 
-    def DisplayColoredShape(self, shapes, color='YELLOW', update=True, ):
+    def DisplayColoredShape(self, shapes, color='YELLOW', update=False, ):
         ais_shapes = []
 
         if isinstance(color, str):

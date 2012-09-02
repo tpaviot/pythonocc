@@ -73,7 +73,9 @@ def safe_yield():
     if USED_BACKEND == 'wx':
         wx.SafeYield()
     elif USED_BACKEND == 'qt':
-        #QtCore.processEvents()
+        # this bit of magic allows for an interactive viewer
+        # while debugging with pdb.set_trace()
+        # I love it!
         QtGui.QApplication.processEvents()
             
 def init_display(screenX=1024, screenY=768):
@@ -116,7 +118,8 @@ def init_display(screenX=1024, screenY=768):
         wx.InitAllImageHandlers()
         win = AppFrame(None)
         win.Show(True)
-        wx.SafeYield()
+        #wx.SafeYield()
+        wx.Yield()
         win.canva.InitDriver()
         app.SetTopWindow(win)
         display = win.canva._display

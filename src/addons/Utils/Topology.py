@@ -95,6 +95,15 @@ class Topo(object):
     '''
     def __init__(self, myShape, kbe_types=False, ignore_orientation=False):
         """
+
+        implements topology traversal from any TopoDS_Shape
+        this class lets you find how various topological entities are connected from one to another
+        find the faces connected to an edge, find the vertices this edge is made from, get all faces connected to
+        a vertex, and find out how many topological elements are connected from a source
+
+        *note* when traversing TopoDS_Wire entities, its advised to use the specialized
+        ``WireExplorer`` class, which will return the vertices / edges in the expected order
+
         :param myShape: the shape which topology will be traversed
 
         :param kbe_types: whether to return OCC.KBE topology types
@@ -371,12 +380,27 @@ class Topo(object):
 # EDGE <-> FACE
 #===============================================================================
     def faces_from_edge(self, edge):
+        """
+
+        :param edge:
+        :return:
+        """
         return self._map_shapes_and_ancestors(TopAbs_EDGE,TopAbs_FACE,edge)
   
     def number_of_faces_from_edge(self, edge):
+        """
+
+        :param edge:
+        :return:
+        """
         return self._number_shapes_ancestors(TopAbs_EDGE,TopAbs_FACE,edge)
 
     def edges_from_face(self, face):
+        """
+
+        :param face:
+        :return:
+        """
         return self._loop_topo(TopAbs_EDGE, face)
   
     def number_of_edges_from_face(self, face):

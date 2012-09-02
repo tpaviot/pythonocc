@@ -44,7 +44,9 @@ class qtBaseViewer(QtGui.QWidget):
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
         self.setFocusPolicy(QtCore.Qt.WheelFocus)#Strong focus
+        # On X11, setting this attribute will disable all double buffering
         self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
+        # setting this flag implicitly disables double buffering for the widget
         self.setAttribute(QtCore.Qt.WA_NoSystemBackground)
     
     def GetHandle(self):

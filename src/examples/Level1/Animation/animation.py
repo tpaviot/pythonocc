@@ -66,6 +66,7 @@ def rotating_cube_2_axis(event=None):
         display.Context.UpdateCurrentViewer()
         angle += 0.001
         time.sleep(0.05)
+        import ipdb; ipdb.set_trace()
     
 if __name__ == '__main__':
     add_menu('animation')
