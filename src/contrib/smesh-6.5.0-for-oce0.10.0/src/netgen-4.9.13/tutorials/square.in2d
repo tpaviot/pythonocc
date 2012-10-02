@@ -1,0 +1,35 @@
+# keyword for 2D geometry, version 2 
+splinecurves2dv2
+
+
+# a global grading factor
+2
+
+
+# the points (point number, x and y coordinates)
+points
+1       0       0     -maxh=0.01
+2       1       0
+3       1       1
+4       0       1
+
+
+# boundary curves consisting of
+# dl    dr      np      p1      p1      flaglist
+# with 
+# dl ... sub-domain nr on left side 
+# dr ... sub-domain nr on right side 
+# np ... curve is given by 2 (or 3) points
+# p1, p2 ... points defining the curve
+# flagslist
+segments
+1       0       2       1       2       -bc=1  -maxh=0.1
+1       0       2       2       3       -bc=1
+1       0       2       3       4       -bc=1
+1       0       2       4       1       -bc=2
+
+
+materials
+1       domain1   -maxh=0.3
+
+
