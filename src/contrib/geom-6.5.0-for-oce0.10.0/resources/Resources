@@ -1,0 +1,29 @@
+formatlist:GEOM_ASCII|GEOM_BIN|GEOM_XML
+!
+! GEOM_ASCII format
+!
+GEOM_ASCII.Description: OCAF sample Document Version 1.0
+GEOM_ASCII.FileExtension: sta
+GEOM_ASCII.StoragePlugin: ad696000-5b34-11d1-b5ba-00a0c9064368
+GEOM_ASCII.RetrievalPlugin: ad696001-5b34-11d1-b5ba-00a0c9064368
+GEOM_ASCIISchema: ad696002-5b34-11d1-b5ba-00a0c9064368
+GEOM_ASCII.AttributeStoragePlugin: 47b0b826-d931-11d1-b5da-00a0c9064368
+GEOM_ASCII.AttributeRetrievalPlugin: 47b0b827-d931-11d1-b5da-00a0c9064368
+
+!
+! GEOM_BIN format
+!
+GEOM_BIN.Description: Bin Ocaf Document Version 1.0
+GEOM_BIN.FileExtension: cbf
+GEOM_BIN.StoragePlugin: 03a56835-8269-11d5-aab2-0050044b1af1
+GEOM_BIN.RetrievalPlugin: 03a56836-8269-11d5-aab2-0050044b1af1
+GEOM_BIN.AttributeStoragePlugin: 47b0b826-d931-11d1-b5da-00a0c9064368
+GEOM_BIN.AttributeRetrievalPlugin: 47b0b827-d931-11d1-b5da-00a0c9064368
+
+!
+! GEOM_XML format
+!
+GEOM_XML.Description: Xml Document Version 1.0
+GEOM_XML.FileExtension: xml
+GEOM_XML.StoragePlugin: 03a56820-8269-11d5-aab2-0050044b1af1
+GEOM_XML.RetrievalPlugin: 03a56822-8269-11d5-aab2-0050044b1af1
