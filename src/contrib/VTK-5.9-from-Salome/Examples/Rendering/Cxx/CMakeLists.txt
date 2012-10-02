@@ -1,0 +1,33 @@
+PROJECT (Rendering)
+
+IF(NOT VTK_BINARY_DIR)
+FIND_PACKAGE(VTK REQUIRED)
+IF(NOT VTK_USE_RENDERING)
+  MESSAGE(FATAL_ERROR "Example ${PROJECT_NAME} requires VTK_USE_RENDERING.")
+ENDIF(NOT VTK_USE_RENDERING)
+INCLUDE(${VTK_USE_FILE})
+ENDIF(NOT VTK_BINARY_DIR)
+
+INCLUDE_DIRECTORIES(
+  # in support of SurfaceLICDemo that includes 
+  # TestSurfaceLIC.h from the dir below
+  ${VTK_SOURCE_DIR}/Rendering/Testing/Cxx
+)
+
+SET(RENDERING_EXAMPLES_SRCS
+  Cylinder
+  SpecularSpheres
+  DiffuseSpheres
+  AmbientSpheres
+  MaterialObjects
+  SurfaceLICDemo
+  )
+
+IF(APPLE)
+  SET(EXECUTABLE_FLAG MACOSX_BUNDLE)
+ENDIF(APPLE)
+
+FOREACH(name ${RENDERING_EXAMPLES_SRCS})
+  ADD_EXECUTABLE(${name} ${EXECUTABLE_FLAG} ${name}.cxx)
+  TARGET_LINK_LIBRARIES(${name} vtkRendering vtkIO )
+ENDFOREACH(name)
