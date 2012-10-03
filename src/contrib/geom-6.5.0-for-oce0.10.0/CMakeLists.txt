@@ -36,6 +36,7 @@ ELSE(WIN32) #Unix
          SET(OCC_LIB_PATH "$ENV{OCEROOT}/lib")
     ENDIF(NOT OCC_LIB_PATH)
     #FIND_LIBRARY(OCC_LIB_PATH TKernel PATHS $ENV{OCEROOT}/lib)
+    SET(OCC_LIB_PATH /Library/OCE/0.10.0/lib)
     MESSAGE(${OCC_LIB_PATH})
 ENDIF(WIN32)
 
@@ -114,7 +115,7 @@ TARGET_LINK_LIBRARIES(GEOM TKernel TKBRep TKBO TKMath
                            TKService TKBool TKMesh TKShHealing
                            TKLCAF TKCAF TKCDF TKAdvTools TKXSBase
                            TKPShape PTKernel TKShapeSchema
-                           TKIGES TKSTEP TKSTL TKVRML
+                           TKIGES TKSTEPBase TKSTEP TKSTL TKVRML
                            TKPrim TKFillet TKOffset TKFeat
                            )
 
