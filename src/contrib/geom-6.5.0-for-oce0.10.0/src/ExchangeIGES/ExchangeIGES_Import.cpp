@@ -25,7 +25,7 @@
 
 #include "utilities.h"
 
-#include <Basics_Utils.hxx>
+//#include <Basics_Utils.hxx>
 
 #include <IFSelect_ReturnStatus.hxx>
 #include <IGESControl_Reader.hxx>
@@ -84,7 +84,7 @@ IGESIMPORT_EXPORT
                        const TDF_Label&               theShapeLabel)
   {
     // Set "C" numeric locale to save numbers correctly
-    Kernel_Utils::Localizer loc;
+    //Kernel_Utils::Localizer loc;
 
     IGESControl_Reader aReader;
     TopoDS_Shape aResShape;

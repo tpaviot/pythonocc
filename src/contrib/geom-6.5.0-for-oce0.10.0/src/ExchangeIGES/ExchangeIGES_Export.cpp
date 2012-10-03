@@ -26,7 +26,7 @@
 
 #include "utilities.h"
 
-#include <Basics_Utils.hxx>
+//#include <Basics_Utils.hxx>
 
 #include <IGESControl_Controller.hxx>
 #include <IGESControl_Writer.hxx>
@@ -154,7 +154,7 @@ IGESEXPORT_EXPORT
     //try
     {
       // Set "C" numeric locale to save numbers correctly
-      Kernel_Utils::Localizer loc;
+      //Kernel_Utils::Localizer loc;
 
       // initialize writer
       IGESControl_Controller::Init();

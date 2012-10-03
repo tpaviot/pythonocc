@@ -26,7 +26,7 @@
 
 #include "utilities.h"
 
-#include <Basics_Utils.hxx>
+//#include <Basics_Utils.hxx>
 
 #include <Basics_OCCTVersion.hxx>
 
@@ -101,7 +101,7 @@ extern "C"
   {
     MESSAGE("Import STEP model from file " << theFileName.ToCString());
     // Set "C" numeric locale to save numbers correctly
-    Kernel_Utils::Localizer loc;
+    //Kernel_Utils::Localizer loc;
     TopoDS_Shape aResShape;
     //VRV: OCC 4.0 migration
     STEPControl_Reader aReader;

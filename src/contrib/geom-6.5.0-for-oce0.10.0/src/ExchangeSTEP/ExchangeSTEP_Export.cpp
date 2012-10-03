@@ -27,7 +27,7 @@
 //
 #include "utilities.h"
 
-#include <Basics_Utils.hxx>
+//#include <Basics_Utils.hxx>
 
 #include <IFSelect_ReturnStatus.hxx>
 
@@ -71,7 +71,7 @@ STEPEXPORT_EXPORT
   try 
     {
       // Set "C" numeric locale to save numbers correctly
-      Kernel_Utils::Localizer loc;
+      //Kernel_Utils::Localizer loc;
 
       IFSelect_ReturnStatus status ;
       //VRV: OCC 4.0 migration
