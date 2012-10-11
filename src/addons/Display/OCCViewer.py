@@ -33,7 +33,7 @@ from OCC.Prs3d import Prs3d_Arrow
 from OCC.Quantity import Quantity_Color
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
-import os, os.path, types, sys, subprocess, math
+import os, os.path, types, sys, subprocess, math, itertools
 
 try:
     import OCC.NIS
@@ -48,6 +48,11 @@ def set_CSF_GraphicShr():
 
 if not (sys.platform == 'win32'):
     set_CSF_GraphicShr()
+
+
+modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX,
+                         TopAbs.TopAbs_SHELL, TopAbs.TopAbs_SOLID, ])
+from OCC.KBE.types_lut import topo_lut
 
 class BaseDriver(object):
     """
@@ -430,29 +435,19 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def Pan(self,Dx,Dy):
         self.View.Pan(Dx,Dy)
     
-    def SetSelectionMode(self,mode = OCC.TopAbs.TopAbs_FACE):
+    def SetSelectionMode(self, mode=None):
         self.Context.CloseAllContexts()
         self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(mode)
-        
-    def SetSelectionModeVertex(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
-        
-    def SetSelectionModeEdge(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
-        
-    def SetSelectionModeFace(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)        
-        
+        topo_level = modes.next()
+        print 'current topology selection mode:', topo_lut[topo_level]
+        if mode is None:
+            self.Context.ActivateStandardMode(topo_level)
+        else:
+            self.Context.ActivateStandardMode(mode)
+
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
-     
+
     def SetSelectionModeNeutral(self):
         self.Context.CloseAllContexts()
     
@@ -485,7 +480,18 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 print "Current selection (single):",self.selected_shape
         else:
             self.selected_shape = None
-    
+
+    def ShiftSelect(self,X,Y):
+        self.Context.ShiftSelect()
+        self.Context.InitSelected()
+
+        self.selected_shapes = []
+        while self.Context.MoreSelected():
+            if self.Context.HasSelectedShape():
+                self.selected_shapes.append(self.Context.SelectedShape())
+            self.Context.NextSelected()
+        print "Current selection (%i instances):"%len(self.selected_shapes),self.selected_shapes
+
     def Rotation(self,X,Y):
         self.View.Rotation(X,Y)
     

@@ -173,7 +173,7 @@ class wxViewer3d(wxBaseViewer):
         ord('F'): self._display.FitAll,
         #ord('F'): self._display.ExportToImage("essai.BMP"),
         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-        ord('G'): self._display.SetSelectionModeVertex
+        ord('G'): self._display.SetSelectionMode
         }                 
         
     def OnKeyDown(self,evt):
@@ -233,7 +233,11 @@ class wxViewer3d(wxBaseViewer):
             selected_shapes = self._display.SelectArea(Xmin,Ymin,Xmin+dx,Ymin+dy)
             self._select_area = False 
         else:
-            self._display.Select(pt.x,pt.y)
+            shift_down = wx.GetMouseState().ShiftDown()
+            if shift_down:
+                self._display.ShiftSelect(pt.x,pt.y)
+            else:
+                self._display.Select(pt.x,pt.y)
         
     def OnRightUp(self,evt):
         if self._zoom_area:
