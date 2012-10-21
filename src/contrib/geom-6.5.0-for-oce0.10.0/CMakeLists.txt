@@ -2,7 +2,17 @@
 
 PROJECT(GEOM)
 
+SET(GEOM_VERSION_MAJOR 6)
+SET(GEOM_VERSION_MINOR 5)
+SET(GEOM_VERSION_PATCH 0)
+#SET(GEOM_VERSION_TWEAK 0)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
+
+#######################################
+# Set the same ABI SOVERSION than OCE #
+#######################################
+SET(GEOM_ABI_SOVERSION 4)
+SET(GEOM_ABI_VERSION ${GEOM_ABI_SOVERSION}.0.0)
 
 SET(CMAKE_BUILD_TYPE "Release") # By default, build in release mode
 SET(BUILD_SHARED_LIBS ON)
@@ -10,45 +20,17 @@ SET(LIBRARY_OUTPUT_PATH cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
 
-###########################
-# Win32 specific settings #
-###########################
-IF(WIN32)
-  SET(CMAKE_CXX_FLAGS_RELEASE "/nologo /O2 /Ob1 /GF /EHsc /MD /GS /Gd /Gy /TP")
-  SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "/INCREMENTAL:NO /NOLOGO")
-  SET(LIBRARY_OUTPUT_PATH  ${CMAKE_BINARY_DIR}/win32/lib)
-ENDIF(WIN32)
-
-
-########################################
-# OpenCASCADE include and lib location #
-########################################
-# Find OpenCASCADE library, set include and lib path
-IF(WIN32)
-    # Under Windows, check the OCEROOT env variable
-    FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx 
-              $ENV{CASROOT}\\inc)
-    SET(OCC_LIB_PATH "$ENV{OCEROOT}\\win32\\lib")
-    # Find the Standard_Real.hxx header in this path
-ELSE(WIN32) #Unix
-    FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx $ENV{OCEROOT}/include/oce /usr/include/oce)
-    IF(NOT OCC_LIB_PATH)
-         SET(OCC_LIB_PATH "$ENV{OCEROOT}/lib")
-    ENDIF(NOT OCC_LIB_PATH)
-    #FIND_LIBRARY(OCC_LIB_PATH TKernel PATHS $ENV{OCEROOT}/lib)
-    SET(OCC_LIB_PATH /Library/OCE/0.10.0/lib)
-    MESSAGE(${OCC_LIB_PATH})
-ENDIF(WIN32)
-
-
-# Check that these paths are ok
-MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+################################################################
+# OpenCASCADE Community Edition (OCE) include and lib location #
+################################################################
+SET( OCE_INCLUDE_PATH /usr/local/include/oce CACHE
+  PATH "OCE headers location" )
+SET( OCE_LIB_PATH /usr/local/lib CACHE
+  PATH "OCE libraries location" )
 
 # Tells CMake where are the required headers
-INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCC_LIB_PATH})
-
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
+LINK_DIRECTORIES(${OCE_LIB_PATH})
 
 ############################
 # Check 32/64 bit platform #
@@ -59,6 +41,17 @@ IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8") # It is 64bit, 32 bit systems returns 4
 ELSE (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
     MESSAGE("-- Build 32bit")
 ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+
+#################
+# Release build #
+#################
+IF (NOT MSVC)
+  IF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+    SET( ${PROJECT_NAME}_BUILD_TYPE "Release" CACHE STRING "Build type" ) # By default set release build
+  ENDIF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+  SET( CMAKE_BUILD_TYPE ${${PROJECT_NAME}_BUILD_TYPE} CACHE INTERNAL "Build type,
+    immutable" FORCE )
+ENDIF(NOT MSVC)
 
 ######################################################
 # Configure Build settings according to the platform #
@@ -118,14 +111,57 @@ TARGET_LINK_LIBRARIES(GEOM TKernel TKBRep TKBO TKMath
                            TKIGES TKSTEPBase TKSTEP TKSTL TKVRML
                            TKPrim TKFillet TKOffset TKFeat
                            )
+SET_TARGET_PROPERTIES(GEOM PROPERTIES
+      SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
+      VERSION ${${PROJECT_NAME}_ABI_VERSION})
 
-#################################
-# Install lib in /usr/local/lib #
-#################################
-IF(NOT GEOM_INSTALL_LIB_DIR)
-  SET(GEOM_INSTALL_LIB_DIR ${CMAKE_INSTALL_PREFIX}/lib)
-ENDIF(NOT GEOM_INSTALL_LIB_DIR)
+####################
+# Install location #
+####################
+IF( NOT DEFINED ${PROJECT_NAME}_INSTALL_PREFIX )
+  IF( WIN32 )
+    SET(${PROJECT_NAME}_INSTALL_PREFIX
+      "c:/${PROJECT_NAME}-${${PROJECT_NAME}_VERSION}")
+  ELSE( WIN32 )
+    SET(${PROJECT_NAME}_INSTALL_PREFIX
+      "/usr/local")
+  ENDIF( WIN32 )
+ENDIF( NOT DEFINED ${PROJECT_NAME}_INSTALL_PREFIX )
 
+SET( ${PROJECT_NAME}_INSTALL_PREFIX ${${PROJECT_NAME}_INSTALL_PREFIX} CACHE
+  PATH "Install prefix prepended to target to create install location" )
+SET( CMAKE_INSTALL_PREFIX "${${PROJECT_NAME}_INSTALL_PREFIX}" CACHE INTERNAL "Prefix
+  prepended to install directories if target destination is not absolute,
+  immutable" FORCE )
+
+################
+# Install GEOM #
+################
 IF (UNIX)
-    INSTALL(TARGETS GEOM DESTINATION ${GEOM_INSTALL_LIB_DIR})
+    # Install lib (by default to /usr/local/lib)
+    INSTALL(TARGETS GEOM DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
+    # Install headers (by default to /usr/local/include/geom)
+    INSTALL(DIRECTORY inc/
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/include/geom
+            FILES_MATCHING PATTERN "*.h*"
+            )
 ENDIF(UNIX)
+
+########################
+# Packaging with CPack #
+# $ make package       #
+########################
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "GEOM library")
+SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.LINUX")
+SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENCE.lgpl.txt")
+SET(CPACK_SET_DESTDIR "ON")
+
+# Define version
+SET(CPACK_PACKAGE_VERSION_MAJOR ${GEOM_VERSION_MAJOR})
+SET(CPACK_PACKAGE_VERSION_MINOR ${GEOM_VERSION_MINOR})
+SET(CPACK_PACKAGE_VERSION_PATCH ${GEOM_VERSION_PATCH})
+SET(CPACK_PACKAGE_NAME ${PROJECT_NAME} )
+SET(CPACK_PACKAGE_CONTACT "pythonocc mailing list <pythonocc-users@gna.org>")
+INCLUDE(InstallRequiredSystemLibraries)
+ 
+INCLUDE(CPack)
