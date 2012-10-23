@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{0E365354-2D49-48ED-A780-5D11549D1A20}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="ExchangeBREP.dll">ExchangeBREP.bdsproj</Projects>
+      <Projects Name="ExchangeSTEP.dll">ExchangeSTEP.bdsproj</Projects>
+      <Projects Name="ExchangeIGES.dll">ExchangeIGES.bdsproj</Projects>
+      <Projects Name="ExchangeSTL.dll">ExchangeSTL.bdsproj</Projects>
+      <Projects Name="ExchangeVRML.dll">ExchangeVRML.bdsproj</Projects>
+      <Projects Name="ExchangeCSFDB.dll">ExchangeCSFDB.bdsproj</Projects>
+      <Projects Name="ShHealOper.dll">ShHealOper.bdsproj</Projects>
+      <Projects Name="Archimede.dll">Archimede.bdsproj</Projects>
+      <Projects Name="Partition.dll">Partition.bdsproj</Projects>
+      <Projects Name="Sketcher.dll">Sketcher.bdsproj</Projects>
+      <Projects Name="NMTDS.dll">NMTDS.bdsproj</Projects>
+      <Projects Name="NMTTools.dll">NMTTools.bdsproj</Projects>
+      <Projects Name="GEOMAlgo.dll">GEOMAlgo.bdsproj</Projects>
+      <Projects Name="GEOM.dll">GEOM.bdsproj</Projects>
+      <Projects Name="GEOMImpl.dll">GEOMImpl.bdsproj</Projects>
+      <Projects Name="Targets">ExchangeBREP.dll ExchangeSTEP.dll ExchangeIGES.dll ExchangeSTL.dll ExchangeVRML.dll ExchangeCSFDB.dll ShHealOper.dll Archimede.dll Partition.dll Sketcher.dll NMTDS.dll NMTTools.dll GEOMAlgo.dll GEOM.dll GEOMImpl.dll</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

@@ -1,0 +1,88 @@
+// Copyright (C) 2007-2012  CEA/DEN, EDF R&D, OPEN CASCADE
+//
+// Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+// CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License.
+//
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+//
+// See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+//
+
+#ifndef _GEOM_IOperations_HXX_
+#define _GEOM_IOperations_HXX_
+
+#include "GEOM_Engine.hxx"
+#include <TDocStd_Document.hxx>
+#include <TCollection_AsciiString.hxx>
+#include "GEOM_Object.hxx"
+#include "GEOM_Solver.hxx"
+
+#define OK "PAL_NO_ERROR"
+#define KO "PAL_NOT_DONE_ERROR"
+#define NOT_FOUND_ANY "NOT_FOUND_ANY"
+#define ALREADY_PRESENT "PAL_ELEMENT_ALREADY_PRESENT"
+#define NOT_EXISTS "PAL_ELEMENT_DOES_NOT_EXISTS"
+#define INVALID_TYPE "INVALID_TYPE_OF_ELEMENT"
+
+class GEOM_IOperations
+{
+ public:
+  Standard_EXPORT GEOM_IOperations(GEOM_Engine* theEngine, int theDocID);
+  Standard_EXPORT ~GEOM_IOperations();
+
+  //Starts a new operation (opens a tansaction)
+  Standard_EXPORT void StartOperation();
+ 
+  //Finishes the previously started operation (closes the transaction)
+  Standard_EXPORT void FinishOperation();
+
+  //Aborts the operation 
+  Standard_EXPORT void AbortOperation();
+ 
+  //Returns true if the last operation succided
+  Standard_EXPORT bool IsDone();
+
+  //Sets Not done error code
+  Standard_EXPORT void SetNotDone() { _errorCode = KO; }
+
+  //Sets an error code of the operation
+  Standard_EXPORT void SetErrorCode(const TCollection_AsciiString& theErrorCode) {
+    _errorCode = theErrorCode;    
+  } 
+ 
+  //Returns an error code of the last operatioin
+  Standard_EXPORT char* GetErrorCode() {
+    return (char*) _errorCode.ToCString();    
+  }
+  
+  //Returns a pointer to  GEOM_Engine which this operation interface is associated
+  Standard_EXPORT GEOM_Engine* GetEngine() { return _engine; }
+
+  //Return a pointer to Solver associated with this operation interface
+  Standard_EXPORT GEOM_Solver* GetSolver() { return _solver; }
+
+  //Returns an ID of the OCAF document where this operation stores the data
+  Standard_EXPORT int GetDocID() { return _docID; }
+
+ private:
+  
+  TCollection_AsciiString _errorCode;
+  GEOM_Engine*   _engine;
+  GEOM_Solver*   _solver;
+  int                     _docID;
+
+};
+
+#endif
