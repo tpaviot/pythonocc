@@ -38,21 +38,9 @@
 #include <TopoDS_Shape.hxx>
 
 #ifdef WNT
- #if defined STEPEXPORT_EXPORTS || defined STEPExport_EXPORTS
-  #if defined WIN32
    #define STEPEXPORT_EXPORT __declspec( dllexport )
   #else
    #define STEPEXPORT_EXPORT
-  #endif
- #else
-  #if defined WIN32
-   #define STEPEXPORT_EXPORT __declspec( dllimport )
-  #else
-   #define STEPEXPORT_EXPORT
-  #endif
- #endif
-#else
- #define STEPEXPORT_EXPORT
 #endif
 
 //=============================================================================

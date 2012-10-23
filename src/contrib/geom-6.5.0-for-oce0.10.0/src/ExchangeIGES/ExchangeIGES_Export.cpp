@@ -40,21 +40,9 @@
 #include <Standard_Failure.hxx>
 
 #ifdef WNT
- #if defined IGESEXPORT_EXPORTS || defined IGESExport_EXPORTS
-  #if defined WIN32
-   #define IGESEXPORT_EXPORT __declspec( dllexport )
+    #define IGESEXPORT_EXPORT __declspec( dllexport )
   #else
-   #define IGESEXPORT_EXPORT
-  #endif
- #else
-  #if defined WIN32
-   #define IGESEXPORT_EXPORT __declspec( dllimport )
-  #else
-   #define IGESEXPORT_EXPORT
-  #endif
- #endif
-#else
- #define IGESEXPORT_EXPORT
+    #define IGESEXPORT_EXPORT
 #endif
 
 //=============================================================================

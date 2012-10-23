@@ -52,21 +52,9 @@
 #include <gp_Pnt.hxx>
 
 #ifdef WNT
- #if defined IGESIMPORT_EXPORTS || defined IGESImport_EXPORTS
-  #if defined WIN32
-   #define IGESIMPORT_EXPORT __declspec( dllexport )
+    #define IGESIMPORT_EXPORT __declspec( dllexport )
   #else
    #define IGESIMPORT_EXPORT
-  #endif
- #else
-  #if defined WIN32
-   #define IGESIMPORT_EXPORT __declspec( dllimport )
-  #else
-   #define IGESIMPORT_EXPORT
-  #endif
- #endif
-#else
- #define IGESIMPORT_EXPORT
 #endif
 
 //=============================================================================
