@@ -43,44 +43,22 @@ ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 ##################################
 # Set/Check GEOM and SMESH paths #
 ##################################
-SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
-SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
-SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
-SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
 
-FIND_FILE(GEOM_hxx "BlockFix.hxx" PATHS ${GEOM_INCLUDE_PATH})
-IF(NOT GEOM_hxx)
-    MESSAGE(WARNING "Unable to find GEOM header files. You won't benefit from the GEOM wrapper.")
-ENDIF(NOT GEOM_hxx)
+#FIND_FILE(GEOM_hxx "BlockFix.hxx" PATHS ${GEOM_INCLUDE_PATH})
+#IF(NOT GEOM_hxx)
+#    MESSAGE(WARNING "Unable to find GEOM header files. You won't benefit from the GEOM wrapper.")
+#ENDIF(NOT GEOM_hxx)
 
-FIND_FILE(SMESH_hxx "SMESH_Mesh.hxx" PATHS ${SMESH_INCLUDE_PATH})
-IF(NOT SMESH_hxx)
-    MESSAGE(WARNING "Unable to find SMESH header files. You won't benefit from the SMESH wrapper.")
-ENDIF(NOT SMESH_hxx)
+#FIND_FILE(SMESH_hxx "SMESH_Mesh.hxx" PATHS ${SMESH_INCLUDE_PATH})
+#IF(NOT SMESH_hxx)
+#    MESSAGE(WARNING "Unable to find SMESH header files. You won't benefit from the SMESH wrapper.")
+#ENDIF(NOT SMESH_hxx)
 
 ###################
 # General options #
 ###################
-# By default, GEOM and SMESH wrappers are disabled
-IF(GEOM_hxx)
-    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
-ENDIF(GEOM_hxx)
-IF(SMESH_hxx)
-    OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
-ENDIF(SMESH_hxx)
-
-#
-# Add geom and smesh paths to the list of include directories
-# If not, enabling/disabling GEOM causes the whole pythonocc
-# to be rebuilt
-#
-INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/wrapper/geom/inc_pythonocc)
-INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
-
-###############################################
-# Boost headers are required to compile smesh #
-###############################################
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the salomegeometry library (enabling parametric modeling)" OFF)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the salomesmesh library (enabling advanced meshing features" OFF)
 
 ##########
 # Python #
@@ -103,23 +81,11 @@ ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 FIND_PACKAGE(SWIG)
 INCLUDE(${SWIG_USE_FILE})
 
-########################################
-# OpenCASCADE include and lib location #
-########################################
-# Find OpenCASCADE library, set include and lib path
-IF(UNIX)
-    FIND_PACKAGE(OCE)
-    IF(OCE_FOUND)
-        MESSAGE(STATUS "Found OCE version ${OCE_VERSION}")
-        SET(OCE_INCLUDE_PATH ${OCE_INCLUDE_DIRS})
-    ELSE(OCE_FOUND)
-        SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
-        SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
-    ENDIF(OCE_FOUND)
-ELSE(UNIX)
-SET(OCE_INCLUDE_PATH "UNDEFINED" CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH "UNDEFINED" CACHE PATH "OCE lib path" )
-ENDIF(UNIX)
+################################
+# OCE include and lib location #
+################################
+SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
+SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
 
 ##############################################
 # Installation directory                     #
@@ -151,10 +117,10 @@ LINK_DIRECTORIES(${OCE_LIB_PATH})
 # salomegeom #
 ##############
 IF(${PROJECT_NAME}_WRAP_GEOM)
-	SET(GEOM_LIBRARIES Archimede Exchange3DS ExchangeBREP ExchangeCSFDB
-		ExchangeIGES ExchangeOBJ ExchangeSTEP ExchangeSTL ExchangeVRML
-		GEOM GEOMAlgo GEOMImpl NMTDS NMTTools Partition
-		ShHealOper Sketcher)
+	SET(GEOM_INCLUDE_PATH /usr/local/include/geom CACHE PATH "geom include path" )
+	SET(GEOM_LIB_PATH /usr/local/lib CACHE PATH "geom library path" )
+	INCLUDE_DIRECTORIES(${GEOM_INCLUDE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/src/contrib/geom-6.5.0-for-oce0.10.0/inc_pythonocc)
+	SET(GEOM_LIBRARIES GEOM)
 	LINK_DIRECTORIES(${GEOM_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 
@@ -162,6 +128,10 @@ ENDIF(${PROJECT_NAME}_WRAP_GEOM)
 # salomesmesh #
 ##############
 IF(${PROJECT_NAME}_WRAP_SMESH)
+	SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
+	SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
+	INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
+	INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
 	SET(SMESH_LIBRARIES SMDS SMESHDS SMESH StdMeshers DriverDAT DriverSTL DriverUNV)
 	LINK_DIRECTORIES(${SMESH_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_SMESH)
