@@ -920,15 +920,23 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
-        #
-        # Overload __hash__() method for objects that inherits from Standard_Transient
-        #
-        if (('Handle_%s'%class_name in self.ALREADY_EXPOSED) or HAVE_HASHCODE):
+
+        if HAVE_HASHCODE:
             self.fp.write("\n%")
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            self.fp.write("\treturn HashCode(*(Handle_Standard_Transient*)&$self,2147483647);\n\t}\n};")
+            self.fp.write("\treturn $self->HashCode(2147483647);\n\t}\n};")
+        #
+        # Overload __hash__() method for objects that inherits from Standard_Transient
+        #
+        elif ('Handle_%s'%class_name in self.ALREADY_EXPOSED):
+            self.fp.write("\n%")
+            self.fp.write("extend %s {\n"%class_name)
+            handle_class_name = 'Handle_%s'%class_name
+            self.fp.write("\tStandard_Integer __hash__() {\n")
+            self.fp.write("\treturn HashCode((Standard_Address)$self,2147483647);\n\t}\n};")
+            
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
