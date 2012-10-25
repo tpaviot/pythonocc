@@ -540,14 +540,14 @@ UNIX_MODULES = [
 #
 SALOME_GEOM_MODULES = [
                        ('Archimede',[],[]),
-                       ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity'],[],\
+                       ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity','Storage','PCDM'],[],\
                         {'GEOM_SubShapeDriver':['GetID'],
                         'GEOM_Engine':['GetTextureGUID','DumpPython'],}),
-                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection'],[],
+                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection','BooleanOperations'],[],
                        {'GEOMAlgo_Gluer2':['KeepNonSolids'],
                        'GEOMAlgo_Gluer':['KeepNonSolids']}),
                        ('GEOMImpl',['gp','TopoDS','TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
-                                    'Aspect','Quantity'],\
+                                    'Aspect','Quantity', 'Handle_Storage','PCDM','BooleanOperations'],\
                         ['GEOMImpl_Block6Explorer','GEOMImpl_Template','Handle_GEOMImpl_Template'],\
                         {'GEOMImpl_IShapesOperations':['GetShapesOnCylinderOld','GetShapesOnSphereOld','GetShapeProperties'],\
                          'GEOMImpl_ITransformOperations':['ScaleShapeAlongAxes'],
