@@ -75,12 +75,12 @@ $HeaderURL$
 
 #include<Handle_Standard_Persistent.hxx>
 #include<Storage_stCONSTclCOM.hxx>
-#include<gp_Ax22d.hxx>
-#include<gp_Vec2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Vec2d.hxx>
+#include<gp_Ax22d.hxx>
+#include<gp_Trsf2d.hxx>
+#include<gp_Ax2d.hxx>
 #include<Handle_PColgp_HArray1OfPnt2d.hxx>
 #include<Handle_PColStd_HArray1OfReal.hxx>
 #include<Handle_PColStd_HArray1OfInteger.hxx>
-#include<gp_Ax2d.hxx>
-#include<gp_Trsf2d.hxx>
 %}

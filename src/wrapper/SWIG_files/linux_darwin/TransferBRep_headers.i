@@ -141,7 +141,15 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_Interface_Protocol.hxx>
+#include<Handle_Transfer_ActorOfTransientProcess.hxx>
+#include<Handle_Interface_InterfaceModel.hxx>
+#include<Interface_CheckIterator.hxx>
+#include<Handle_TColStd_HSequenceOfTransient.hxx>
+#include<Handle_TopTools_HSequenceOfShape.hxx>
 #include<TopoDS_Shape.hxx>
+#include<Handle_Transfer_TransientProcess.hxx>
+#include<Handle_Transfer_Finder.hxx>
 #include<Handle_Standard_Type.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Edge.hxx>
@@ -151,18 +159,10 @@ $HeaderURL$
 #include<TopoDS_Solid.hxx>
 #include<TopoDS_CompSolid.hxx>
 #include<TopoDS_Compound.hxx>
-#include<Handle_Transfer_Finder.hxx>
 #include<TransferBRep.hxx>
 #include<Handle_Transfer_Binder.hxx>
-#include<Handle_Transfer_TransientProcess.hxx>
-#include<Handle_TopTools_HSequenceOfShape.hxx>
-#include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Handle_Message_Printer.hxx>
 #include<Message_Msg.hxx>
-#include<Interface_CheckIterator.hxx>
-#include<Handle_Interface_InterfaceModel.hxx>
-#include<Handle_Interface_Protocol.hxx>
-#include<Handle_Transfer_ActorOfTransientProcess.hxx>
 %}

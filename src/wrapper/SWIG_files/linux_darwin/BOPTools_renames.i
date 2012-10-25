@@ -23,30 +23,24 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BOPTools_ListNodeOfListOfPave::DownCast;
+%rename(DownCast) Handle_BOPTools_SequenceNodeOfSequenceOfCurves::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock::DownCast;
-%rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger::DownCast;
 %rename(DownCast) Handle_BOPTools_ListNodeOfListOfCommonBlock::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo::DownCast;
 %rename(DownCast) Handle_BOPTools_ListNodeOfListOfCheckResults::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet::DownCast;
 %rename(DownCast) Handle_BOPTools_ListNodeOfListOfInterference::DownCast;
+%rename(DownCast) Handle_BOPTools_ListNodeOfListOfShapeEnum::DownCast;
 %rename(DownCast) Handle_BOPTools_HArray2OfIntersectionStatus::DownCast;
 %rename(DownCast) Handle_BOPTools_ListNodeOfListOfPaveBlock::DownCast;
-%rename(DownCast) Handle_BOPTools_ListNodeOfListOfShapeEnum::DownCast;
-%rename(DownCast) Handle_BOPTools_ListNodeOfListOfCoupleOfInteger::DownCast;
 %rename(DownCast) Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock::DownCast;
-%rename(DownCast) Handle_BOPTools_SequenceNodeOfSequenceOfCurves::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock::DownCast;
+%rename(DownCast) Handle_BOPTools_ListNodeOfListOfCoupleOfInteger::DownCast;
 %rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState::DownCast;
-%rename(ConvertState) BOPTools_StateFiller::ConvertState;
-%rename(SubType) BOPTools_StateFiller::SubType;
-%rename(HashCode) BOPTools_CoupleOfIntegerMapHasher::HashCode;
-%rename(IsEqual) BOPTools_CoupleOfIntegerMapHasher::IsEqual;
-%rename(TreatCompound) BOPTools_DSFiller::TreatCompound;
-%rename(Sort) BOPTools_QuickSortPave::Sort;
+%rename(DownCast) Handle_BOPTools_ListNodeOfListOfPave::DownCast;
+%rename(DownCast) Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger::DownCast;
 %rename(MakeNewVertex) BOPTools_Tools::MakeNewVertex;
 %rename(PointOnEdge) BOPTools_Tools::PointOnEdge;
 %rename(MakeSplitEdge) BOPTools_Tools::MakeSplitEdge;
@@ -57,6 +51,11 @@ $HeaderURL$
 %rename(MapShapes) BOPTools_Tools::MapShapes;
 %rename(CorrectRange) BOPTools_Tools::CorrectRange;
 %rename(CopySource) BOPTools_Tools::CopySource;
+%rename(ConvertState) BOPTools_StateFiller::ConvertState;
+%rename(SubType) BOPTools_StateFiller::SubType;
+%rename(HashCode) BOPTools_CoupleOfIntegerMapHasher::HashCode;
+%rename(IsEqual) BOPTools_CoupleOfIntegerMapHasher::IsEqual;
+%rename(TreatCompound) BOPTools_DSFiller::TreatCompound;
 %rename(RemovePCurveForEdgeOnFace) BOPTools_Tools2D::RemovePCurveForEdgeOnFace;
 %rename(BuildPCurveForEdgeOnFace) BOPTools_Tools2D::BuildPCurveForEdgeOnFace;
 %rename(EdgeTangent) BOPTools_Tools2D::EdgeTangent;
@@ -111,3 +110,4 @@ $HeaderURL$
 %rename(HasAnalyticSurfaceType) BOPTools_Tools3D::HasAnalyticSurfaceType;
 %rename(HashCode) BOPTools_PaveBlockMapHasher::HashCode;
 %rename(IsEqual) BOPTools_PaveBlockMapHasher::IsEqual;
+%rename(Sort) BOPTools_QuickSortPave::Sort;

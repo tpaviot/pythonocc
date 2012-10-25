@@ -188,5 +188,5 @@ $HeaderURL$
 %import TCollection.i
 %import Adaptor3d.i
 %import Standard.i
-%import GeomAbs.i
 %import TopAbs.i
+%import GeomAbs.i

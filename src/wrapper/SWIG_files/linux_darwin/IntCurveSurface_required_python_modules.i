@@ -30,7 +30,7 @@ import GarbageCollector
 import Bnd
 import Standard
 import gp
+import Adaptor3d
 import GeomAbs
 import Geom
-import Adaptor3d
 };

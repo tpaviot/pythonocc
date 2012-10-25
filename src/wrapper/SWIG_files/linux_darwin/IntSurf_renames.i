@@ -30,10 +30,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IntSurf_SequenceNodeOfSequenceOfCouple::DownCast;
 %rename(DownCast) Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S::DownCast;
 %rename(MakeTransition) IntSurf::MakeTransition;
-%rename(Value3d) IntSurf_InteriorPointTool::Value3d;
-%rename(Value2d) IntSurf_InteriorPointTool::Value2d;
-%rename(Direction3d) IntSurf_InteriorPointTool::Direction3d;
-%rename(Direction2d) IntSurf_InteriorPointTool::Direction2d;
 %rename(Value3d) IntSurf_PathPointTool::Value3d;
 %rename(Value2d) IntSurf_PathPointTool::Value2d;
 %rename(IsPassingPnt) IntSurf_PathPointTool::IsPassingPnt;
@@ -42,6 +38,10 @@ $HeaderURL$
 %rename(Direction2d) IntSurf_PathPointTool::Direction2d;
 %rename(Multiplicity) IntSurf_PathPointTool::Multiplicity;
 %rename(Parameters) IntSurf_PathPointTool::Parameters;
+%rename(Value3d) IntSurf_InteriorPointTool::Value3d;
+%rename(Value2d) IntSurf_InteriorPointTool::Value2d;
+%rename(Direction3d) IntSurf_InteriorPointTool::Direction3d;
+%rename(Direction2d) IntSurf_InteriorPointTool::Direction2d;
 %rename(Value) IntSurf_QuadricTool::Value;
 %rename(Gradient) IntSurf_QuadricTool::Gradient;
 %rename(ValueAndGradient) IntSurf_QuadricTool::ValueAndGradient;

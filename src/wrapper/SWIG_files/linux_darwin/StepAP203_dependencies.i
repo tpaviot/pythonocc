@@ -512,7 +512,7 @@ $HeaderURL$
 #include <StepData_WriterLib.hxx>
 %};
 
-%import StepBasic.i
 %import MMgt.i
+%import StepBasic.i
 %import Standard.i
 %import StepData.i

@@ -38,11 +38,11 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<TColStd_Array1OfReal.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<gp_Pnt2d.hxx>
 #include<CSLib.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Dir.hxx>
 #include<TColgp_Array2OfVec.hxx>
-#include<TColStd_Array1OfReal.hxx>
 %}

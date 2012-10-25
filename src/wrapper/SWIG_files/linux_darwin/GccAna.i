@@ -119,41 +119,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GccAna_Lin2dBisec;
-class GccAna_Lin2dBisec {
-	public:
-		%feature("autodoc", "1");
-		GccAna_Lin2dBisec(const gp_Lin2d Lin1, const gp_Lin2d Lin2);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSolutions() const;
-		%feature("autodoc", "1");
-		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
-		%feature("autodoc","Intersection1(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Intersection1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
-
-};
-%feature("shadow") GccAna_Lin2dBisec::~GccAna_Lin2dBisec %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GccAna_Lin2dBisec {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GccAna_Lin2dTanObl;
 class GccAna_Lin2dTanObl {
 	public:
@@ -187,6 +152,41 @@ def __del__(self):
 %}
 
 %extend GccAna_Lin2dTanObl {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GccAna_Lin2dBisec;
+class GccAna_Lin2dBisec {
+	public:
+		%feature("autodoc", "1");
+		GccAna_Lin2dBisec(const gp_Lin2d Lin1, const gp_Lin2d Lin2);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSolutions() const;
+		%feature("autodoc", "1");
+		gp_Lin2d ThisSolution(const Standard_Integer Index) const;
+		%feature("autodoc","Intersection1(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Intersection1(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+		%feature("autodoc","Intersection2(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Intersection2(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt2d & PntSol) const;
+
+};
+%feature("shadow") GccAna_Lin2dBisec::~GccAna_Lin2dBisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GccAna_Lin2dBisec {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -442,7 +442,7 @@ class GccAna_NoSolution : public Standard_Failure {
 };
 %extend GccAna_NoSolution {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccAna_NoSolution::~GccAna_NoSolution %{

@@ -103,19 +103,19 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Geom_Surface.hxx>
-#include<TopLoc_Location.hxx>
-#include<Handle_Poly_Triangulation.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<TopLoc_Location.hxx>
 #include<Handle_Geom2d_Curve.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<Handle_Poly_Triangulation.hxx>
 #include<Handle_Poly_Polygon3D.hxx>
 #include<Handle_Poly_Polygon2D.hxx>
 #include<Handle_Poly_PolygonOnTriangulation.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Handle_TopoDS_TShape.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<Handle_TopoDS_TShape.hxx>
 %}

@@ -761,11 +761,11 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TopoDS_Shape.hxx>
 #include<TDF_Label.hxx>
 #include<Quantity_Color.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
-#include<Handle_AIS_InteractiveObject.hxx>
 #include<XCAFPrs.hxx>
 #include<TopLoc_Location.hxx>
-#include<TopoDS_Shape.hxx>
+#include<Handle_AIS_InteractiveObject.hxx>
 %}

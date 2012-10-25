@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_XmlXCAFDrivers_DocumentRetrievalDriver;
-class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_DocumentRetrievalDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentRetrievalDriver(const Handle_XmlXCAFDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentRetrievalDriver(const XmlXCAFDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlXCAFDrivers_DocumentRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlXCAFDrivers_DocumentRetrievalDriver & operator=(const XmlXCAFDrivers_DocumentRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlXCAFDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
-	XmlXCAFDrivers_DocumentRetrievalDriver* GetObject() {
-	return (XmlXCAFDrivers_DocumentRetrievalDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlXCAFDrivers_DocumentRetrievalDriver::~Handle_XmlXCAFDrivers_DocumentRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlXCAFDrivers_DocumentStorageDriver;
 class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_DocumentStorageDriver {
 	public:
@@ -128,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XmlXCAFDrivers_DocumentRetrievalDriver;
+class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_DocumentRetrievalDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentRetrievalDriver(const Handle_XmlXCAFDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentRetrievalDriver(const XmlXCAFDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentRetrievalDriver & operator=(const Handle_XmlXCAFDrivers_DocumentRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlXCAFDrivers_DocumentRetrievalDriver & operator=(const XmlXCAFDrivers_DocumentRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlXCAFDrivers_DocumentRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
+	XmlXCAFDrivers_DocumentRetrievalDriver* GetObject() {
+	return (XmlXCAFDrivers_DocumentRetrievalDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlXCAFDrivers_DocumentRetrievalDriver::~Handle_XmlXCAFDrivers_DocumentRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlXCAFDrivers_DocumentRetrievalDriver;
 class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetrievalDriver {
 	public:
@@ -146,7 +146,7 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 };
 %extend XmlXCAFDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlXCAFDrivers_DocumentRetrievalDriver::~XmlXCAFDrivers_DocumentRetrievalDriver %{
@@ -183,7 +183,7 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 };
 %extend XmlXCAFDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlXCAFDrivers_DocumentStorageDriver::~XmlXCAFDrivers_DocumentStorageDriver %{

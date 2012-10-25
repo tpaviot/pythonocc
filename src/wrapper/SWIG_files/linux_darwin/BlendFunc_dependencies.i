@@ -179,7 +179,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
-%import Convert.i
-%import GeomAbs.i
 %import Blend.i
+%import Standard.i
+%import GeomAbs.i
+%import Convert.i

@@ -62,10 +62,10 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<gp_Trsf.hxx>
-#include<gp_Mat.hxx>
-#include<gp_XYZ.hxx>
 #include<XmlObjMgt.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<gp_Trsf.hxx>
+#include<gp_Mat.hxx>
+#include<gp_XYZ.hxx>
 %}

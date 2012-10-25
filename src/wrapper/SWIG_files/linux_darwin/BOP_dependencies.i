@@ -283,6 +283,6 @@ $HeaderURL$
 %import MMgt.i
 %import TCollection.i
 %import Standard.i
-%import BOPTools.i
 %import TopAbs.i
+%import BOPTools.i
 %import BooleanOperations.i

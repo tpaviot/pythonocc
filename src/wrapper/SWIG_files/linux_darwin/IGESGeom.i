@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_IGESGeom_BoundedSurface;
-class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESGeom_SpecificModule;
+class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BoundedSurface();
+		Handle_IGESGeom_SpecificModule();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BoundedSurface(const Handle_IGESGeom_BoundedSurface &aHandle);
+		Handle_IGESGeom_SpecificModule(const Handle_IGESGeom_SpecificModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BoundedSurface(const IGESGeom_BoundedSurface *anItem);
+		Handle_IGESGeom_SpecificModule(const IGESGeom_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BoundedSurface & operator=(const Handle_IGESGeom_BoundedSurface &aHandle);
+		Handle_IGESGeom_SpecificModule & operator=(const Handle_IGESGeom_SpecificModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BoundedSurface & operator=(const IGESGeom_BoundedSurface *anItem);
+		Handle_IGESGeom_SpecificModule & operator=(const IGESGeom_SpecificModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGeom_BoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGeom_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGeom_BoundedSurface {
-	IGESGeom_BoundedSurface* GetObject() {
-	return (IGESGeom_BoundedSurface*)$self->Access();
+%extend Handle_IGESGeom_SpecificModule {
+	IGESGeom_SpecificModule* GetObject() {
+	return (IGESGeom_SpecificModule*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESGeom_BoundedSurface::~Handle_IGESGeom_BoundedSurface %{
+%feature("shadow") Handle_IGESGeom_SpecificModule::~Handle_IGESGeom_SpecificModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESGeom_BoundedSurface {
+%extend Handle_IGESGeom_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESGeom_Direction;
+class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction(const Handle_IGESGeom_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction(const IGESGeom_Direction *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction & operator=(const Handle_IGESGeom_Direction &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction & operator=(const IGESGeom_Direction *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGeom_Direction DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_Direction {
+	IGESGeom_Direction* GetObject() {
+	return (IGESGeom_Direction*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGeom_Direction::~Handle_IGESGeom_Direction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGeom_Direction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -128,44 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_Flash;
-class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash(const Handle_IGESGeom_Flash &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash(const IGESGeom_Flash *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash & operator=(const Handle_IGESGeom_Flash &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Flash & operator=(const IGESGeom_Flash *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGeom_Flash DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_Flash {
-	IGESGeom_Flash* GetObject() {
-	return (IGESGeom_Flash*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGeom_Flash::~Handle_IGESGeom_Flash %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGeom_Flash {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESGeom_Boundary;
 class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 	public:
@@ -204,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESGeom_HArray1OfTransformationMatrix;
+class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix(const IGESGeom_HArray1OfTransformationMatrix *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const IGESGeom_HArray1OfTransformationMatrix *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGeom_HArray1OfTransformationMatrix DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
+	IGESGeom_HArray1OfTransformationMatrix* GetObject() {
+	return (IGESGeom_HArray1OfTransformationMatrix*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGeom_HArray1OfTransformationMatrix::~Handle_IGESGeom_HArray1OfTransformationMatrix %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESGeom_CurveOnSurface;
 class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -236,44 +274,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESGeom_CurveOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESGeom_SpecificModule;
-class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGeom_SpecificModule();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_SpecificModule(const Handle_IGESGeom_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_SpecificModule(const IGESGeom_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_SpecificModule & operator=(const Handle_IGESGeom_SpecificModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_SpecificModule & operator=(const IGESGeom_SpecificModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGeom_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_SpecificModule {
-	IGESGeom_SpecificModule* GetObject() {
-	return (IGESGeom_SpecificModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGeom_SpecificModule::~Handle_IGESGeom_SpecificModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGeom_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,6 +394,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESGeom_Flash;
+class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash(const Handle_IGESGeom_Flash &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash(const IGESGeom_Flash *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash & operator=(const Handle_IGESGeom_Flash &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Flash & operator=(const IGESGeom_Flash *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGeom_Flash DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_Flash {
+	IGESGeom_Flash* GetObject() {
+	return (IGESGeom_Flash*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGeom_Flash::~Handle_IGESGeom_Flash %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGeom_Flash {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESGeom_Line;
 class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	public:
@@ -432,44 +470,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_CircularArc;
-class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc(const Handle_IGESGeom_CircularArc &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc(const IGESGeom_CircularArc *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc & operator=(const Handle_IGESGeom_CircularArc &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_CircularArc & operator=(const IGESGeom_CircularArc *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGeom_CircularArc DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_CircularArc {
-	IGESGeom_CircularArc* GetObject() {
-	return (IGESGeom_CircularArc*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGeom_CircularArc::~Handle_IGESGeom_CircularArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGeom_CircularArc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESGeom_TransformationMatrix;
 class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity {
 	public:
@@ -502,6 +502,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESGeom_TransformationMatrix {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESGeom_RuledSurface;
+class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface();
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface(const Handle_IGESGeom_RuledSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface(const IGESGeom_RuledSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface & operator=(const Handle_IGESGeom_RuledSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_RuledSurface & operator=(const IGESGeom_RuledSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESGeom_RuledSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESGeom_RuledSurface {
+	IGESGeom_RuledSurface* GetObject() {
+	return (IGESGeom_RuledSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGeom_RuledSurface::~Handle_IGESGeom_RuledSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESGeom_RuledSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,29 +622,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_BSplineSurface;
-class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESGeom_BoundedSurface;
+class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BSplineSurface();
+		Handle_IGESGeom_BoundedSurface();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BSplineSurface(const Handle_IGESGeom_BSplineSurface &aHandle);
+		Handle_IGESGeom_BoundedSurface(const Handle_IGESGeom_BoundedSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BSplineSurface(const IGESGeom_BSplineSurface *anItem);
+		Handle_IGESGeom_BoundedSurface(const IGESGeom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BSplineSurface & operator=(const Handle_IGESGeom_BSplineSurface &aHandle);
+		Handle_IGESGeom_BoundedSurface & operator=(const Handle_IGESGeom_BoundedSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_BSplineSurface & operator=(const IGESGeom_BSplineSurface *anItem);
+		Handle_IGESGeom_BoundedSurface & operator=(const IGESGeom_BoundedSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGeom_BSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGeom_BoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGeom_BSplineSurface {
-	IGESGeom_BSplineSurface* GetObject() {
-	return (IGESGeom_BSplineSurface*)$self->Access();
+%extend Handle_IGESGeom_BoundedSurface {
+	IGESGeom_BoundedSurface* GetObject() {
+	return (IGESGeom_BoundedSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESGeom_BSplineSurface::~Handle_IGESGeom_BSplineSurface %{
+%feature("shadow") Handle_IGESGeom_BoundedSurface::~Handle_IGESGeom_BoundedSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -615,7 +653,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESGeom_BSplineSurface {
+%extend Handle_IGESGeom_BoundedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -660,29 +698,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_RuledSurface;
-class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESGeom_BSplineSurface;
+class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGeom_RuledSurface();
+		Handle_IGESGeom_BSplineSurface();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_RuledSurface(const Handle_IGESGeom_RuledSurface &aHandle);
+		Handle_IGESGeom_BSplineSurface(const Handle_IGESGeom_BSplineSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_RuledSurface(const IGESGeom_RuledSurface *anItem);
+		Handle_IGESGeom_BSplineSurface(const IGESGeom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_RuledSurface & operator=(const Handle_IGESGeom_RuledSurface &aHandle);
+		Handle_IGESGeom_BSplineSurface & operator=(const Handle_IGESGeom_BSplineSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_RuledSurface & operator=(const IGESGeom_RuledSurface *anItem);
+		Handle_IGESGeom_BSplineSurface & operator=(const IGESGeom_BSplineSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGeom_RuledSurface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGeom_BSplineSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGeom_RuledSurface {
-	IGESGeom_RuledSurface* GetObject() {
-	return (IGESGeom_RuledSurface*)$self->Access();
+%extend Handle_IGESGeom_BSplineSurface {
+	IGESGeom_BSplineSurface* GetObject() {
+	return (IGESGeom_BSplineSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESGeom_RuledSurface::~Handle_IGESGeom_RuledSurface %{
+%feature("shadow") Handle_IGESGeom_BSplineSurface::~Handle_IGESGeom_BSplineSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -691,7 +729,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESGeom_RuledSurface {
+%extend Handle_IGESGeom_BSplineSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -850,29 +888,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_ReadWriteModule;
-class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
+%nodefaultctor Handle_IGESGeom_CircularArc;
+class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGeom_ReadWriteModule();
+		Handle_IGESGeom_CircularArc();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_ReadWriteModule(const Handle_IGESGeom_ReadWriteModule &aHandle);
+		Handle_IGESGeom_CircularArc(const Handle_IGESGeom_CircularArc &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_ReadWriteModule(const IGESGeom_ReadWriteModule *anItem);
+		Handle_IGESGeom_CircularArc(const IGESGeom_CircularArc *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_ReadWriteModule & operator=(const Handle_IGESGeom_ReadWriteModule &aHandle);
+		Handle_IGESGeom_CircularArc & operator=(const Handle_IGESGeom_CircularArc &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_ReadWriteModule & operator=(const IGESGeom_ReadWriteModule *anItem);
+		Handle_IGESGeom_CircularArc & operator=(const IGESGeom_CircularArc *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGeom_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGeom_CircularArc DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGeom_ReadWriteModule {
-	IGESGeom_ReadWriteModule* GetObject() {
-	return (IGESGeom_ReadWriteModule*)$self->Access();
+%extend Handle_IGESGeom_CircularArc {
+	IGESGeom_CircularArc* GetObject() {
+	return (IGESGeom_CircularArc*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESGeom_ReadWriteModule::~Handle_IGESGeom_ReadWriteModule %{
+%feature("shadow") Handle_IGESGeom_CircularArc::~Handle_IGESGeom_CircularArc %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -881,45 +919,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESGeom_ReadWriteModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESGeom_Direction;
-class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction(const Handle_IGESGeom_Direction &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction(const IGESGeom_Direction *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction & operator=(const Handle_IGESGeom_Direction &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction & operator=(const IGESGeom_Direction *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGeom_Direction DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_Direction {
-	IGESGeom_Direction* GetObject() {
-	return (IGESGeom_Direction*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGeom_Direction::~Handle_IGESGeom_Direction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGeom_Direction {
+%extend Handle_IGESGeom_CircularArc {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1002,44 +1002,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_HArray1OfTransformationMatrix;
-class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESGeom_HArray1OfTransformationMatrix();
-		%feature("autodoc", "1");
-		Handle_IGESGeom_HArray1OfTransformationMatrix(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_HArray1OfTransformationMatrix(const IGESGeom_HArray1OfTransformationMatrix *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const Handle_IGESGeom_HArray1OfTransformationMatrix &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_HArray1OfTransformationMatrix & operator=(const IGESGeom_HArray1OfTransformationMatrix *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESGeom_HArray1OfTransformationMatrix DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
-	IGESGeom_HArray1OfTransformationMatrix* GetObject() {
-	return (IGESGeom_HArray1OfTransformationMatrix*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESGeom_HArray1OfTransformationMatrix::~Handle_IGESGeom_HArray1OfTransformationMatrix %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESGeom_HArray1OfTransformationMatrix {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESGeom_SplineSurface;
 class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -1116,29 +1078,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESGeom_OffsetCurve;
-class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESGeom_ReadWriteModule;
+class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESGeom_OffsetCurve();
+		Handle_IGESGeom_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESGeom_OffsetCurve(const Handle_IGESGeom_OffsetCurve &aHandle);
+		Handle_IGESGeom_ReadWriteModule(const Handle_IGESGeom_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_OffsetCurve(const IGESGeom_OffsetCurve *anItem);
+		Handle_IGESGeom_ReadWriteModule(const IGESGeom_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_OffsetCurve & operator=(const Handle_IGESGeom_OffsetCurve &aHandle);
+		Handle_IGESGeom_ReadWriteModule & operator=(const Handle_IGESGeom_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_OffsetCurve & operator=(const IGESGeom_OffsetCurve *anItem);
+		Handle_IGESGeom_ReadWriteModule & operator=(const IGESGeom_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESGeom_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESGeom_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESGeom_OffsetCurve {
-	IGESGeom_OffsetCurve* GetObject() {
-	return (IGESGeom_OffsetCurve*)$self->Access();
+%extend Handle_IGESGeom_ReadWriteModule {
+	IGESGeom_ReadWriteModule* GetObject() {
+	return (IGESGeom_ReadWriteModule*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESGeom_OffsetCurve::~Handle_IGESGeom_OffsetCurve %{
+%feature("shadow") Handle_IGESGeom_ReadWriteModule::~Handle_IGESGeom_ReadWriteModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1147,7 +1109,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESGeom_OffsetCurve {
+%extend Handle_IGESGeom_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1192,30 +1154,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_ToolBoundary;
-class IGESGeom_ToolBoundary {
+%nodefaultctor Handle_IGESGeom_OffsetCurve;
+class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolBoundary();
+		Handle_IGESGeom_OffsetCurve();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Boundary &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		Handle_IGESGeom_OffsetCurve(const Handle_IGESGeom_OffsetCurve &aHandle);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Boundary &ent, IGESData_IGESWriter & IW) const;
+		Handle_IGESGeom_OffsetCurve(const IGESGeom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Boundary &ent, Interface_EntityIterator & iter) const;
+		Handle_IGESGeom_OffsetCurve & operator=(const Handle_IGESGeom_OffsetCurve &aHandle);
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Boundary &ent) const;
+		Handle_IGESGeom_OffsetCurve & operator=(const IGESGeom_OffsetCurve *anItem);
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Boundary &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Boundary &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Boundary &entfrom, const Handle_IGESGeom_Boundary &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Boundary &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		static		Handle_IGESGeom_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") IGESGeom_ToolBoundary::~IGESGeom_ToolBoundary %{
+%extend Handle_IGESGeom_OffsetCurve {
+	IGESGeom_OffsetCurve* GetObject() {
+	return (IGESGeom_OffsetCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESGeom_OffsetCurve::~Handle_IGESGeom_OffsetCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1224,7 +1185,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ToolBoundary {
+%extend Handle_IGESGeom_OffsetCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1261,7 +1222,7 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_TrimmedSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_TrimmedSurface::~IGESGeom_TrimmedSurface %{
@@ -1302,7 +1263,7 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGeom_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_ReadWriteModule::~IGESGeom_ReadWriteModule %{
@@ -1321,95 +1282,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_ToolConicArc;
-class IGESGeom_ToolConicArc {
+%nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
+class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolConicArc();
+		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_ConicArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGeom_TransformationMatrix &V);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_ConicArc &ent, IGESData_IGESWriter & IW) const;
+		void Init(const Handle_IGESGeom_TransformationMatrix &V);
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_ConicArc &ent, Interface_EntityIterator & iter) const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_ConicArc &ent) const;
+		Standard_Integer Lower() const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_ConicArc &ent) const;
+		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_ConicArc &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_TransformationMatrix &Value);
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_ConicArc &entfrom, const Handle_IGESGeom_ConicArc &entto, Interface_CopyTool & TC) const;
+		const Handle_IGESGeom_TransformationMatrix & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_ConicArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolConicArc::~IGESGeom_ToolConicArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolConicArc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_SplineCurve;
-class IGESGeom_SplineCurve : public IGESData_IGESEntity {
-	public:
+		Handle_IGESGeom_TransformationMatrix & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		IGESGeom_SplineCurve();
+		const IGESGeom_Array1OfTransformationMatrix & Array1() const;
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer aType, const Standard_Integer aDegree, const Standard_Integer nbDimensions, const Handle_TColStd_HArray1OfReal &allBreakPoints, const Handle_TColStd_HArray2OfReal &allXPolynomials, const Handle_TColStd_HArray2OfReal &allYPolynomials, const Handle_TColStd_HArray2OfReal &allZPolynomials, const Handle_TColStd_HArray1OfReal &allXvalues, const Handle_TColStd_HArray1OfReal &allYvalues, const Handle_TColStd_HArray1OfReal &allZvalues);
-		%feature("autodoc", "1");
-		Standard_Integer SplineType() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbDimensions() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		Standard_Real BreakPoint(const Standard_Integer Index) const;
-		%feature("autodoc","XCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void XCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","YCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void YCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ZCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void ZCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","XValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void XValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","YValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void YValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ZValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void ZValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		IGESGeom_Array1OfTransformationMatrix & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESGeom_SplineCurve {
-	Handle_IGESGeom_SplineCurve GetHandle() {
-	return *(Handle_IGESGeom_SplineCurve*) &$self;
+%extend IGESGeom_HArray1OfTransformationMatrix {
+	Handle_IGESGeom_HArray1OfTransformationMatrix GetHandle() {
+	return *(Handle_IGESGeom_HArray1OfTransformationMatrix*) &$self;
 	}
 };
-%extend IGESGeom_SplineCurve {
+%extend IGESGeom_HArray1OfTransformationMatrix {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") IGESGeom_SplineCurve::~IGESGeom_SplineCurve %{
+%feature("shadow") IGESGeom_HArray1OfTransformationMatrix::~IGESGeom_HArray1OfTransformationMatrix %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1418,35 +1330,41 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_SplineCurve {
+%extend IGESGeom_HArray1OfTransformationMatrix {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESGeom_ToolLine;
-class IGESGeom_ToolLine {
+%nodefaultctor IGESGeom_TabulatedCylinder;
+class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolLine();
+		IGESGeom_TabulatedCylinder();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Line &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ anEnd);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Line &ent, IGESData_IGESWriter & IW) const;
+		Handle_IGESData_IGESEntity Directrix() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Line &ent, Interface_EntityIterator & iter) const;
+		gp_Pnt EndPoint() const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Line &ent) const;
+		gp_Pnt TransformedEndPoint() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Line &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Line &entfrom, const Handle_IGESGeom_Line &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Line &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESGeom_ToolLine::~IGESGeom_ToolLine %{
+%extend IGESGeom_TabulatedCylinder {
+	Handle_IGESGeom_TabulatedCylinder GetHandle() {
+	return *(Handle_IGESGeom_TabulatedCylinder*) &$self;
+	}
+};
+%extend IGESGeom_TabulatedCylinder {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_TabulatedCylinder::~IGESGeom_TabulatedCylinder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1455,7 +1373,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ToolLine {
+%extend IGESGeom_TabulatedCylinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1526,7 +1444,7 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_BSplineSurface::~IGESGeom_BSplineSurface %{
@@ -1539,180 +1457,6 @@ def __del__(self):
 %}
 
 %extend IGESGeom_BSplineSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_Array1OfBoundary;
-class IGESGeom_Array1OfBoundary {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Array1OfBoundary(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESGeom_Array1OfBoundary(const Handle_IGESGeom_Boundary &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_Boundary &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const IGESGeom_Array1OfBoundary & Assign(const IGESGeom_Array1OfBoundary &Other);
-		%feature("autodoc", "1");
-		const IGESGeom_Array1OfBoundary & operator=(const IGESGeom_Array1OfBoundary &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_Boundary &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESGeom_Boundary & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IGESGeom_Boundary & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Boundary & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Boundary & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") IGESGeom_Array1OfBoundary::~IGESGeom_Array1OfBoundary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_Array1OfBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolOffsetSurface;
-class IGESGeom_ToolOffsetSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolOffsetSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_OffsetSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_OffsetSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_OffsetSurface &entfrom, const Handle_IGESGeom_OffsetSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_OffsetSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolOffsetSurface::~IGESGeom_ToolOffsetSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolOffsetSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_Line;
-class IGESGeom_Line : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Line();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ aStart, const gp_XYZ anEnd);
-		%feature("autodoc", "1");
-		Standard_Integer Infinite() const;
-		%feature("autodoc", "1");
-		void SetInfinite(const Standard_Integer status);
-		%feature("autodoc", "1");
-		gp_Pnt StartPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedStartPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt EndPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_Line {
-	Handle_IGESGeom_Line GetHandle() {
-	return *(Handle_IGESGeom_Line*) &$self;
-	}
-};
-%extend IGESGeom_Line {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_Line::~IGESGeom_Line %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolPlane;
-class IGESGeom_ToolPlane {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolPlane();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Plane &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Plane &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Plane &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Plane &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Plane &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Plane &entfrom, const Handle_IGESGeom_Plane &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Plane &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolPlane::~IGESGeom_ToolPlane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolPlane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1753,7 +1497,7 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Flash {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Flash::~IGESGeom_Flash %{
@@ -1837,7 +1581,7 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CurveOnSurface::~IGESGeom_CurveOnSurface %{
@@ -1856,28 +1600,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_ToolSplineCurve;
-class IGESGeom_ToolSplineCurve {
+%nodefaultctor IGESGeom_BoundedSurface;
+class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolSplineCurve();
+		IGESGeom_BoundedSurface();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_SplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Standard_Integer aType, const Handle_IGESData_IGESEntity &aSurface, const Handle_IGESGeom_HArray1OfBoundary &allBounds);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_SplineCurve &ent, IGESData_IGESWriter & IW) const;
+		Standard_Integer RepresentationType() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_SplineCurve &ent, Interface_EntityIterator & iter) const;
+		Handle_IGESData_IGESEntity Surface() const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_SplineCurve &ent) const;
+		Standard_Integer NbBoundaries() const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_SplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Handle_IGESGeom_Boundary Boundary(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_SplineCurve &entfrom, const Handle_IGESGeom_SplineCurve &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_SplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESGeom_ToolSplineCurve::~IGESGeom_ToolSplineCurve %{
+%extend IGESGeom_BoundedSurface {
+	Handle_IGESGeom_BoundedSurface GetHandle() {
+	return *(Handle_IGESGeom_BoundedSurface*) &$self;
+	}
+};
+%extend IGESGeom_BoundedSurface {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_BoundedSurface::~IGESGeom_BoundedSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1886,7 +1638,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ToolSplineCurve {
+%extend IGESGeom_BoundedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1923,7 +1675,7 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_RuledSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_RuledSurface::~IGESGeom_RuledSurface %{
@@ -1936,6 +1688,45 @@ def __del__(self):
 %}
 
 %extend IGESGeom_RuledSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolFlash;
+class IGESGeom_ToolFlash {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolFlash();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_Flash &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_Flash &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Flash &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Flash &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_Flash &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_Flash &entfrom, const Handle_IGESGeom_Flash &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_Flash &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolFlash::~IGESGeom_ToolFlash %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolFlash {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1979,6 +1770,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESGeom_ToolConicArc;
+class IGESGeom_ToolConicArc {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolConicArc();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_ConicArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_ConicArc &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_ConicArc &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_ConicArc &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_ConicArc &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_ConicArc &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_ConicArc &entfrom, const Handle_IGESGeom_ConicArc &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_ConicArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolConicArc::~IGESGeom_ToolConicArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolConicArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESGeom_OffsetSurface;
 class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 	public:
@@ -2005,7 +1835,7 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_OffsetSurface::~IGESGeom_OffsetSurface %{
@@ -2018,6 +1848,43 @@ def __del__(self):
 %}
 
 %extend IGESGeom_OffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolSplineCurve;
+class IGESGeom_ToolSplineCurve {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolSplineCurve();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_SplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_SplineCurve &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_SplineCurve &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_SplineCurve &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_SplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_SplineCurve &entfrom, const Handle_IGESGeom_SplineCurve &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_SplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolSplineCurve::~IGESGeom_ToolSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2075,6 +1942,67 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESGeom_CircularArc;
+class IGESGeom_CircularArc : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_CircularArc();
+		%feature("autodoc", "1");
+		void Init(const Standard_Real aZT, const gp_XY aCenter, const gp_XY aStart, const gp_XY anEnd);
+		%feature("autodoc", "1");
+		gp_Pnt2d Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d StartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedStartPoint() const;
+		%feature("autodoc", "1");
+		Standard_Real ZPlane() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d EndPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedEndPoint() const;
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		gp_Dir Axis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedAxis() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_CircularArc {
+	Handle_IGESGeom_CircularArc GetHandle() {
+	return *(Handle_IGESGeom_CircularArc*) &$self;
+	}
+};
+%extend IGESGeom_CircularArc {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_CircularArc::~IGESGeom_CircularArc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_CircularArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESGeom;
 class IGESGeom {
 	public:
@@ -2096,43 +2024,6 @@ def __del__(self):
 %}
 
 %extend IGESGeom {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolCircularArc;
-class IGESGeom_ToolCircularArc {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolCircularArc();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_CircularArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_CircularArc &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_CircularArc &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CircularArc &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_CircularArc &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_CircularArc &entfrom, const Handle_IGESGeom_CircularArc &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_CircularArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolCircularArc::~IGESGeom_ToolCircularArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolCircularArc {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2214,7 +2105,7 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SplineSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SplineSurface::~IGESGeom_SplineSurface %{
@@ -2227,6 +2118,53 @@ def __del__(self):
 %}
 
 %extend IGESGeom_SplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_GeneralModule;
+class IGESGeom_GeneralModule : public IGESData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_GeneralModule();
+		%feature("autodoc", "1");
+		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
+		%feature("autodoc", "1");
+		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
+		%feature("autodoc", "1");
+		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_GeneralModule {
+	Handle_IGESGeom_GeneralModule GetHandle() {
+	return *(Handle_IGESGeom_GeneralModule*) &$self;
+	}
+};
+%extend IGESGeom_GeneralModule {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_GeneralModule::~IGESGeom_GeneralModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_GeneralModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2269,7 +2207,7 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfBoundary {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_HArray1OfBoundary::~IGESGeom_HArray1OfBoundary %{
@@ -2282,45 +2220,6 @@ def __del__(self):
 %}
 
 %extend IGESGeom_HArray1OfBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolCurveOnSurface;
-class IGESGeom_ToolCurveOnSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolCurveOnSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_CurveOnSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_CurveOnSurface &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CurveOnSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_CurveOnSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_CurveOnSurface &entfrom, const Handle_IGESGeom_CurveOnSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_CurveOnSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolCurveOnSurface::~IGESGeom_ToolCurveOnSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolCurveOnSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2364,32 +2263,66 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_Direction;
-class IGESGeom_Direction : public IGESData_IGESEntity {
+%nodefaultctor IGESGeom_ConicArc;
+class IGESGeom_ConicArc : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_Direction();
+		IGESGeom_ConicArc();
 		%feature("autodoc", "1");
-		void Init(const gp_XYZ aDirection);
+		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real F, const Standard_Real ZT, const gp_XY aStart, const gp_XY anEnd);
 		%feature("autodoc", "1");
-		gp_Vec Value() const;
+		Standard_Boolean OwnCorrect();
 		%feature("autodoc", "1");
-		gp_Vec TransformedValue() const;
+		Standard_Integer ComputedFormNumber() const;
+		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real ZPlane() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d StartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedStartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d EndPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedEndPoint() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFromEllipse() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFromParabola() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsFromHyperbola() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		gp_Dir Axis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedAxis() const;
+		%feature("autodoc","Definition() -> [Standard_Real, Standard_Real]");
+
+		void Definition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","TransformedDefinition() -> [Standard_Real, Standard_Real]");
+
+		void TransformedDefinition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ComputedDefinition() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESGeom_Direction {
-	Handle_IGESGeom_Direction GetHandle() {
-	return *(Handle_IGESGeom_Direction*) &$self;
+%extend IGESGeom_ConicArc {
+	Handle_IGESGeom_ConicArc GetHandle() {
+	return *(Handle_IGESGeom_ConicArc*) &$self;
 	}
 };
-%extend IGESGeom_Direction {
+%extend IGESGeom_ConicArc {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") IGESGeom_Direction::~IGESGeom_Direction %{
+%feature("shadow") IGESGeom_ConicArc::~IGESGeom_ConicArc %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2398,7 +2331,105 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_Direction {
+%extend IGESGeom_ConicArc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_Plane;
+class IGESGeom_Plane : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Plane();
+		%feature("autodoc", "1");
+		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Handle_IGESData_IGESEntity &aCurve, const gp_XYZ attach, const Standard_Real aSize);
+		%feature("autodoc", "1");
+		void SetFormNumber(const Standard_Integer form);
+		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","TransformedEquation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void TransformedEquation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasBoundingCurve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasBoundingCurveHole() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity BoundingCurve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasSymbolAttach() const;
+		%feature("autodoc", "1");
+		gp_Pnt SymbolAttach() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedSymbolAttach() const;
+		%feature("autodoc", "1");
+		Standard_Real SymbolSize() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Plane {
+	Handle_IGESGeom_Plane GetHandle() {
+	return *(Handle_IGESGeom_Plane*) &$self;
+	}
+};
+%extend IGESGeom_Plane {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_Plane::~IGESGeom_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolOffsetCurve;
+class IGESGeom_ToolOffsetCurve {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolOffsetCurve();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_OffsetCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_OffsetCurve &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_OffsetCurve &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_OffsetCurve &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetCurve &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_OffsetCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_OffsetCurve &entfrom, const Handle_IGESGeom_OffsetCurve &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_OffsetCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolOffsetCurve::~IGESGeom_ToolOffsetCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolOffsetCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2455,7 +2486,7 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_BSplineCurve::~IGESGeom_BSplineCurve %{
@@ -2474,28 +2505,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_ToolDirection;
-class IGESGeom_ToolDirection {
+%nodefaultctor IGESGeom_ToolPlane;
+class IGESGeom_ToolPlane {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolDirection();
+		IGESGeom_ToolPlane();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Direction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESGeom_Plane &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Direction &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESGeom_Plane &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Direction &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESGeom_Plane &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Direction &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Plane &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Direction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESGeom_Plane &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Direction &entfrom, const Handle_IGESGeom_Direction &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESGeom_Plane &entfrom, const Handle_IGESGeom_Plane &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Direction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESGeom_Plane &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESGeom_ToolDirection::~IGESGeom_ToolDirection %{
+%feature("shadow") IGESGeom_ToolPlane::~IGESGeom_ToolPlane %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2504,89 +2535,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ToolDirection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolBSplineCurve;
-class IGESGeom_ToolBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolBSplineCurve();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_BSplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_BSplineCurve &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_BSplineCurve &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_BSplineCurve &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_BSplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_BSplineCurve &entfrom, const Handle_IGESGeom_BSplineCurve &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_BSplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolBSplineCurve::~IGESGeom_ToolBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolBSplineCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_BoundedSurface;
-class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_BoundedSurface();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aType, const Handle_IGESData_IGESEntity &aSurface, const Handle_IGESGeom_HArray1OfBoundary &allBounds);
-		%feature("autodoc", "1");
-		Standard_Integer RepresentationType() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Surface() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbBoundaries() const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Boundary Boundary(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_BoundedSurface {
-	Handle_IGESGeom_BoundedSurface GetHandle() {
-	return *(Handle_IGESGeom_BoundedSurface*) &$self;
-	}
-};
-%extend IGESGeom_BoundedSurface {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_BoundedSurface::~IGESGeom_BoundedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_BoundedSurface {
+%extend IGESGeom_ToolPlane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2615,7 +2564,7 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CompositeCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CompositeCurve::~IGESGeom_CompositeCurve %{
@@ -2628,6 +2577,106 @@ def __del__(self):
 %}
 
 %extend IGESGeom_CompositeCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_Array1OfBoundary;
+class IGESGeom_Array1OfBoundary {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Array1OfBoundary(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESGeom_Array1OfBoundary(const Handle_IGESGeom_Boundary &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESGeom_Boundary &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const IGESGeom_Array1OfBoundary & Assign(const IGESGeom_Array1OfBoundary &Other);
+		%feature("autodoc", "1");
+		const IGESGeom_Array1OfBoundary & operator=(const IGESGeom_Array1OfBoundary &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_Boundary &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESGeom_Boundary & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IGESGeom_Boundary & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Boundary & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Boundary & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") IGESGeom_Array1OfBoundary::~IGESGeom_Array1OfBoundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Array1OfBoundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_Line;
+class IGESGeom_Line : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Line();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ aStart, const gp_XYZ anEnd);
+		%feature("autodoc", "1");
+		Standard_Integer Infinite() const;
+		%feature("autodoc", "1");
+		void SetInfinite(const Standard_Integer status);
+		%feature("autodoc", "1");
+		gp_Pnt StartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedStartPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt EndPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedEndPoint() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Line {
+	Handle_IGESGeom_Line GetHandle() {
+	return *(Handle_IGESGeom_Line*) &$self;
+	}
+};
+%extend IGESGeom_Line {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_Line::~IGESGeom_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Line {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2699,7 +2748,7 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SurfaceOfRevolution::~IGESGeom_SurfaceOfRevolution %{
@@ -2718,66 +2767,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_ConicArc;
-class IGESGeom_ConicArc : public IGESData_IGESEntity {
+%nodefaultctor IGESGeom_ToolCircularArc;
+class IGESGeom_ToolCircularArc {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ConicArc();
+		IGESGeom_ToolCircularArc();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Standard_Real E, const Standard_Real F, const Standard_Real ZT, const gp_XY aStart, const gp_XY anEnd);
+		void ReadOwnParams(const Handle_IGESGeom_CircularArc &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect();
+		void WriteOwnParams(const Handle_IGESGeom_CircularArc &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Integer ComputedFormNumber() const;
-		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void OwnShared(const Handle_IGESGeom_CircularArc &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Real ZPlane() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CircularArc &ent) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d StartPoint() const;
+		void OwnCheck(const Handle_IGESGeom_CircularArc &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedStartPoint() const;
+		void OwnCopy(const Handle_IGESGeom_CircularArc &entfrom, const Handle_IGESGeom_CircularArc &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		gp_Pnt2d EndPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFromEllipse() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFromParabola() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsFromHyperbola() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		gp_Dir Axis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedAxis() const;
-		%feature("autodoc","Definition() -> [Standard_Real, Standard_Real]");
-
-		void Definition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","TransformedDefinition() -> [Standard_Real, Standard_Real]");
-
-		void TransformedDefinition(gp_Pnt & Center, gp_Dir & MainAxis, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ComputedDefinition() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void ComputedDefinition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnDump(const Handle_IGESGeom_CircularArc &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESGeom_ConicArc {
-	Handle_IGESGeom_ConicArc GetHandle() {
-	return *(Handle_IGESGeom_ConicArc*) &$self;
-	}
-};
-%extend IGESGeom_ConicArc {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_ConicArc::~IGESGeom_ConicArc %{
+%feature("shadow") IGESGeom_ToolCircularArc::~IGESGeom_ToolCircularArc %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2786,41 +2797,35 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ConicArc {
+%extend IGESGeom_ToolCircularArc {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESGeom_TabulatedCylinder;
-class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
+%nodefaultctor IGESGeom_ToolDirection;
+class IGESGeom_ToolDirection {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_TabulatedCylinder();
+		IGESGeom_ToolDirection();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &aDirectrix, const gp_XYZ anEnd);
+		void ReadOwnParams(const Handle_IGESGeom_Direction &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Directrix() const;
+		void WriteOwnParams(const Handle_IGESGeom_Direction &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		gp_Pnt EndPoint() const;
+		void OwnShared(const Handle_IGESGeom_Direction &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Direction &ent) const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnCheck(const Handle_IGESGeom_Direction &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_Direction &entfrom, const Handle_IGESGeom_Direction &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_Direction &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESGeom_TabulatedCylinder {
-	Handle_IGESGeom_TabulatedCylinder GetHandle() {
-	return *(Handle_IGESGeom_TabulatedCylinder*) &$self;
-	}
-};
-%extend IGESGeom_TabulatedCylinder {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_TabulatedCylinder::~IGESGeom_TabulatedCylinder %{
+%feature("shadow") IGESGeom_ToolDirection::~IGESGeom_ToolDirection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2829,54 +2834,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_TabulatedCylinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_GeneralModule;
-class IGESGeom_GeneralModule : public IGESData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_GeneralModule();
-		%feature("autodoc", "1");
-		virtual		void OwnSharedCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		virtual		IGESData_DirChecker DirChecker(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent) const;
-		%feature("autodoc", "1");
-		virtual		void OwnCheckCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & entto) const;
-		%feature("autodoc", "1");
-		virtual		void OwnCopyCase(const Standard_Integer CN, const Handle_IGESData_IGESEntity &entfrom, const Handle_IGESData_IGESEntity &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_GeneralModule {
-	Handle_IGESGeom_GeneralModule GetHandle() {
-	return *(Handle_IGESGeom_GeneralModule*) &$self;
-	}
-};
-%extend IGESGeom_GeneralModule {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_GeneralModule::~IGESGeom_GeneralModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_GeneralModule {
+%extend IGESGeom_ToolDirection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2907,7 +2865,7 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 };
 %extend IGESGeom_TransformationMatrix {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_TransformationMatrix::~IGESGeom_TransformationMatrix %{
@@ -2962,7 +2920,7 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfCurveOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_HArray1OfCurveOnSurface::~IGESGeom_HArray1OfCurveOnSurface %{
@@ -3025,7 +2983,7 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CopiousData {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CopiousData::~IGESGeom_CopiousData %{
@@ -3038,6 +2996,153 @@ def __del__(self):
 %}
 
 %extend IGESGeom_CopiousData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolLine;
+class IGESGeom_ToolLine {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolLine();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_Line &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_Line &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_Line &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Line &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_Line &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_Line &entfrom, const Handle_IGESGeom_Line &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_Line &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolLine::~IGESGeom_ToolLine %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_Point;
+class IGESGeom_Point : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Point();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ aPoint, const Handle_IGESBasic_SubfigureDef &aSymbol);
+		%feature("autodoc", "1");
+		gp_Pnt Value() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedValue() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasDisplaySymbol() const;
+		%feature("autodoc", "1");
+		Handle_IGESBasic_SubfigureDef DisplaySymbol() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Point {
+	Handle_IGESGeom_Point GetHandle() {
+	return *(Handle_IGESGeom_Point*) &$self;
+	}
+};
+%extend IGESGeom_Point {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_Point::~IGESGeom_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_SplineCurve;
+class IGESGeom_SplineCurve : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_SplineCurve();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aType, const Standard_Integer aDegree, const Standard_Integer nbDimensions, const Handle_TColStd_HArray1OfReal &allBreakPoints, const Handle_TColStd_HArray2OfReal &allXPolynomials, const Handle_TColStd_HArray2OfReal &allYPolynomials, const Handle_TColStd_HArray2OfReal &allZPolynomials, const Handle_TColStd_HArray1OfReal &allXvalues, const Handle_TColStd_HArray1OfReal &allYvalues, const Handle_TColStd_HArray1OfReal &allZvalues);
+		%feature("autodoc", "1");
+		Standard_Integer SplineType() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbDimensions() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		Standard_Real BreakPoint(const Standard_Integer Index) const;
+		%feature("autodoc","XCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void XCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","YCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void YCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ZCoordPolynomial(Standard_Integer Index) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void ZCoordPolynomial(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","XValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void XValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","YValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void YValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ZValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void ZValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_SplineCurve {
+	Handle_IGESGeom_SplineCurve GetHandle() {
+	return *(Handle_IGESGeom_SplineCurve*) &$self;
+	}
+};
+%extend IGESGeom_SplineCurve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_SplineCurve::~IGESGeom_SplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_SplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3075,247 +3180,6 @@ def __del__(self):
 %}
 
 %extend IGESGeom_ToolCompositeCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_CircularArc;
-class IGESGeom_CircularArc : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_CircularArc();
-		%feature("autodoc", "1");
-		void Init(const Standard_Real aZT, const gp_XY aCenter, const gp_XY aStart, const gp_XY anEnd);
-		%feature("autodoc", "1");
-		gp_Pnt2d Center() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d StartPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedStartPoint() const;
-		%feature("autodoc", "1");
-		Standard_Real ZPlane() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d EndPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedEndPoint() const;
-		%feature("autodoc", "1");
-		Standard_Real Radius() const;
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		gp_Dir Axis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedAxis() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_CircularArc {
-	Handle_IGESGeom_CircularArc GetHandle() {
-	return *(Handle_IGESGeom_CircularArc*) &$self;
-	}
-};
-%extend IGESGeom_CircularArc {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_CircularArc::~IGESGeom_CircularArc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_CircularArc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolBoundedSurface;
-class IGESGeom_ToolBoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolBoundedSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_BoundedSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_BoundedSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_BoundedSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_BoundedSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_BoundedSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_BoundedSurface &entfrom, const Handle_IGESGeom_BoundedSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_BoundedSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolBoundedSurface::~IGESGeom_ToolBoundedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolBoundedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_Point;
-class IGESGeom_Point : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Point();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ aPoint, const Handle_IGESBasic_SubfigureDef &aSymbol);
-		%feature("autodoc", "1");
-		gp_Pnt Value() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedValue() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasDisplaySymbol() const;
-		%feature("autodoc", "1");
-		Handle_IGESBasic_SubfigureDef DisplaySymbol() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_Point {
-	Handle_IGESGeom_Point GetHandle() {
-	return *(Handle_IGESGeom_Point*) &$self;
-	}
-};
-%extend IGESGeom_Point {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_Point::~IGESGeom_Point %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_Point {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_Plane;
-class IGESGeom_Plane : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Plane();
-		%feature("autodoc", "1");
-		void Init(const Standard_Real A, const Standard_Real B, const Standard_Real C, const Standard_Real D, const Handle_IGESData_IGESEntity &aCurve, const gp_XYZ attach, const Standard_Real aSize);
-		%feature("autodoc", "1");
-		void SetFormNumber(const Standard_Integer form);
-		%feature("autodoc","Equation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Equation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","TransformedEquation() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void TransformedEquation(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBoundingCurve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBoundingCurveHole() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity BoundingCurve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasSymbolAttach() const;
-		%feature("autodoc", "1");
-		gp_Pnt SymbolAttach() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedSymbolAttach() const;
-		%feature("autodoc", "1");
-		Standard_Real SymbolSize() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_Plane {
-	Handle_IGESGeom_Plane GetHandle() {
-	return *(Handle_IGESGeom_Plane*) &$self;
-	}
-};
-%extend IGESGeom_Plane {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_Plane::~IGESGeom_Plane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_Plane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_ToolFlash;
-class IGESGeom_ToolFlash {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_ToolFlash();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_Flash &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_Flash &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_Flash &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Flash &ent) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Flash &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_Flash &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_Flash &entfrom, const Handle_IGESGeom_Flash &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_Flash &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESGeom_ToolFlash::~IGESGeom_ToolFlash %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_ToolFlash {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3395,7 +3259,7 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Boundary {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Boundary::~IGESGeom_Boundary %{
@@ -3485,7 +3349,7 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESGeom_SpecificModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SpecificModule::~IGESGeom_SpecificModule %{
@@ -3498,6 +3362,121 @@ def __del__(self):
 %}
 
 %extend IGESGeom_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolOffsetSurface;
+class IGESGeom_ToolOffsetSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolOffsetSurface();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_OffsetSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_OffsetSurface &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_OffsetSurface &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetSurface &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_OffsetSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_OffsetSurface &entfrom, const Handle_IGESGeom_OffsetSurface &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_OffsetSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolOffsetSurface::~IGESGeom_ToolOffsetSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolOffsetSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolBoundedSurface;
+class IGESGeom_ToolBoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolBoundedSurface();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_BoundedSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_BoundedSurface &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_BoundedSurface &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_BoundedSurface &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_BoundedSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_BoundedSurface &entfrom, const Handle_IGESGeom_BoundedSurface &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_BoundedSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolBoundedSurface::~IGESGeom_ToolBoundedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolBoundedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_Direction;
+class IGESGeom_Direction : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Direction();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ aDirection);
+		%feature("autodoc", "1");
+		gp_Vec Value() const;
+		%feature("autodoc", "1");
+		gp_Vec TransformedValue() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Direction {
+	Handle_IGESGeom_Direction GetHandle() {
+	return *(Handle_IGESGeom_Direction*) &$self;
+	}
+};
+%extend IGESGeom_Direction {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_Direction::~IGESGeom_Direction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Direction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3578,46 +3557,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
-class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
+%nodefaultctor IGESGeom_ToolBSplineCurve;
+class IGESGeom_ToolBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up);
+		IGESGeom_ToolBSplineCurve();
 		%feature("autodoc", "1");
-		IGESGeom_HArray1OfTransformationMatrix(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESGeom_TransformationMatrix &V);
+		void ReadOwnParams(const Handle_IGESGeom_BSplineCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_TransformationMatrix &V);
+		void WriteOwnParams(const Handle_IGESGeom_BSplineCurve &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void OwnShared(const Handle_IGESGeom_BSplineCurve &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_BSplineCurve &ent) const;
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void OwnCheck(const Handle_IGESGeom_BSplineCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESGeom_TransformationMatrix &Value);
+		void OwnCopy(const Handle_IGESGeom_BSplineCurve &entfrom, const Handle_IGESGeom_BSplineCurve &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		const Handle_IGESGeom_TransformationMatrix & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_TransformationMatrix & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESGeom_Array1OfTransformationMatrix & Array1() const;
-		%feature("autodoc", "1");
-		IGESGeom_Array1OfTransformationMatrix & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void OwnDump(const Handle_IGESGeom_BSplineCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%extend IGESGeom_HArray1OfTransformationMatrix {
-	Handle_IGESGeom_HArray1OfTransformationMatrix GetHandle() {
-	return *(Handle_IGESGeom_HArray1OfTransformationMatrix*) &$self;
-	}
-};
-%extend IGESGeom_HArray1OfTransformationMatrix {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_HArray1OfTransformationMatrix::~IGESGeom_HArray1OfTransformationMatrix %{
+%feature("shadow") IGESGeom_ToolBSplineCurve::~IGESGeom_ToolBSplineCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3626,37 +3587,37 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_HArray1OfTransformationMatrix {
+%extend IGESGeom_ToolBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESGeom_ToolOffsetCurve;
-class IGESGeom_ToolOffsetCurve {
+%nodefaultctor IGESGeom_ToolBoundary;
+class IGESGeom_ToolBoundary {
 	public:
 		%feature("autodoc", "1");
-		IGESGeom_ToolOffsetCurve();
+		IGESGeom_ToolBoundary();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESGeom_OffsetCurve &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESGeom_Boundary &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESGeom_OffsetCurve &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESGeom_Boundary &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESGeom_OffsetCurve &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESGeom_Boundary &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		Standard_Boolean OwnCorrect(const Handle_IGESGeom_OffsetCurve &ent) const;
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_Boundary &ent) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESGeom_OffsetCurve &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_Boundary &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESGeom_OffsetCurve &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESGeom_Boundary &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESGeom_OffsetCurve &entfrom, const Handle_IGESGeom_OffsetCurve &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESGeom_Boundary &entfrom, const Handle_IGESGeom_Boundary &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESGeom_OffsetCurve &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESGeom_Boundary &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESGeom_ToolOffsetCurve::~IGESGeom_ToolOffsetCurve %{
+%feature("shadow") IGESGeom_ToolBoundary::~IGESGeom_ToolBoundary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3665,7 +3626,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESGeom_ToolOffsetCurve {
+%extend IGESGeom_ToolBoundary {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3703,6 +3664,45 @@ def __del__(self):
 %}
 
 %extend IGESGeom_ToolSurfaceOfRevolution {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESGeom_ToolCurveOnSurface;
+class IGESGeom_ToolCurveOnSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_ToolCurveOnSurface();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESGeom_CurveOnSurface &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESGeom_CurveOnSurface &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		Standard_Boolean OwnCorrect(const Handle_IGESGeom_CurveOnSurface &ent) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESGeom_CurveOnSurface &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESGeom_CurveOnSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESGeom_CurveOnSurface &entfrom, const Handle_IGESGeom_CurveOnSurface &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESGeom_CurveOnSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESGeom_ToolCurveOnSurface::~IGESGeom_ToolCurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_ToolCurveOnSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3758,7 +3758,7 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_OffsetCurve::~IGESGeom_OffsetCurve %{

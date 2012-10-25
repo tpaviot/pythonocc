@@ -50,6 +50,13 @@ $HeaderURL$
 %include Blend_headers.i
 
 
+enum Blend_DecrochStatus {
+	Blend_NoDecroch,
+	Blend_DecrochRst1,
+	Blend_DecrochRst2,
+	Blend_DecrochBoth,
+	};
+
 enum Blend_Status {
 	Blend_StepTooLarge,
 	Blend_StepTooSmall,
@@ -59,13 +66,6 @@ enum Blend_Status {
 	Blend_OnRst2,
 	Blend_OnRst12,
 	Blend_OK,
-	};
-
-enum Blend_DecrochStatus {
-	Blend_NoDecroch,
-	Blend_DecrochRst1,
-	Blend_DecrochRst2,
-	Blend_DecrochBoth,
 	};
 
 
@@ -302,8 +302,8 @@ def __del__(self):
 };
 
 
-%nodefaultctor Blend_FuncInv;
-class Blend_FuncInv : public math_FunctionSetWithDerivatives {
+%nodefaultctor Blend_RstRstFunction;
+class Blend_RstRstFunction : public Blend_AppFunction {
 	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
@@ -316,16 +316,73 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
 		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		virtual		void Set(const Standard_Real Param);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
 		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
 		%feature("autodoc", "1");
 		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetMinimalDistance() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  Pnt1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  Pnt2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  PointOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt  PointOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d  Pnt2dOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Pnt2d  Pnt2dOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real ParameterOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsTangencyPoint() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec  TangentOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d  Tangent2dOnRst1() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec  TangentOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		const gp_Vec2d  Tangent2dOnRst2() const;
+		%feature("autodoc", "1");
+		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real GetSectionSize() const;
+		%feature("autodoc", "1");
+		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
+		%feature("autodoc", "1");
+		virtual		void Knots(TColStd_Array1OfReal & TKnots);
+		%feature("autodoc", "1");
+		virtual		void Mults(TColStd_Array1OfInteger & TMults);
+		%feature("autodoc", "1");
+		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 
 };
-%feature("shadow") Blend_FuncInv::~Blend_FuncInv %{
+%feature("shadow") Blend_RstRstFunction::~Blend_RstRstFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -334,7 +391,46 @@ def __del__(self):
 		pass
 %}
 
-%extend Blend_FuncInv {
+%extend Blend_RstRstFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Blend_CurvPointFuncInv;
+class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const gp_Pnt P);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") Blend_CurvPointFuncInv::~Blend_CurvPointFuncInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Blend_CurvPointFuncInv {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -406,6 +502,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Blend_FuncInv;
+class Blend_FuncInv : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Standard_Boolean OnFirst, const Handle_Adaptor2d_HCurve2d &COnSurf);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") Blend_FuncInv::~Blend_FuncInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Blend_FuncInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
 class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 	public:
@@ -424,7 +559,7 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend Blend_SequenceNodeOfSequenceOfPoint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Blend_SequenceNodeOfSequenceOfPoint::~Blend_SequenceNodeOfSequenceOfPoint %{
@@ -717,141 +852,6 @@ def __del__(self):
 %}
 
 %extend Blend_Function {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Blend_CurvPointFuncInv;
-class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const gp_Pnt P);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%feature("shadow") Blend_CurvPointFuncInv::~Blend_CurvPointFuncInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Blend_CurvPointFuncInv {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Blend_RstRstFunction;
-class Blend_RstRstFunction : public Blend_AppFunction {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real Param);
-		%feature("autodoc", "1");
-		virtual		void Set(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetMinimalDistance() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  Pnt1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  Pnt2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  PointOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt  PointOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d  Pnt2dOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Pnt2d  Pnt2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real ParameterOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsTangencyPoint() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec  TangentOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d  Tangent2dOnRst1() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec  TangentOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		const gp_Vec2d  Tangent2dOnRst2() const;
-		%feature("autodoc", "1");
-		virtual		Blend_DecrochStatus Decroch(const math_Vector &Sol, gp_Vec & NRst1, gp_Vec & TgRst1, gp_Vec & NRst2, gp_Vec & TgRst2) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real GetSectionSize() const;
-		%feature("autodoc", "1");
-		virtual		void GetMinimalWeight(TColStd_Array1OfReal & Weigths) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc","GetShape() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		virtual		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(const Standard_Real BoundTol, const Standard_Real SurfTol, const Standard_Real AngleTol, math_Vector & Tol3d, math_Vector & Tol1D) const;
-		%feature("autodoc", "1");
-		virtual		void Knots(TColStd_Array1OfReal & TKnots);
-		%feature("autodoc", "1");
-		virtual		void Mults(TColStd_Array1OfInteger & TMults);
-		%feature("autodoc", "1");
-		virtual		void Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfPnt2d & Poles2d, TColStd_Array1OfReal & Weigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Section(const Blend_Point &P, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColgp_Array1OfPnt2d & Poles2d, TColgp_Array1OfVec2d & DPoles2d, TColgp_Array1OfVec2d & D2Poles2d, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
-
-};
-%feature("shadow") Blend_RstRstFunction::~Blend_RstRstFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Blend_RstRstFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

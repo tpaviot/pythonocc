@@ -26,9 +26,9 @@ $HeaderURL$
 %rename(DownCast) Handle_BinTObjDrivers_ObjectDriver::DownCast;
 %rename(DownCast) Handle_BinTObjDrivers_ReferenceDriver::DownCast;
 %rename(DownCast) Handle_BinTObjDrivers_ModelDriver::DownCast;
+%rename(DownCast) Handle_BinTObjDrivers_DocumentRetrievalDriver::DownCast;
 %rename(DownCast) Handle_BinTObjDrivers_DocumentStorageDriver::DownCast;
 %rename(DownCast) Handle_BinTObjDrivers_XYZDriver::DownCast;
 %rename(DownCast) Handle_BinTObjDrivers_IntSparseArrayDriver::DownCast;
-%rename(DownCast) Handle_BinTObjDrivers_DocumentRetrievalDriver::DownCast;
 %rename(Factory) BinTObjDrivers::Factory;
 %rename(AddDrivers) BinTObjDrivers::AddDrivers;

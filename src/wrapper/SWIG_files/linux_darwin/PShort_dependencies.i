@@ -157,7 +157,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import PStandard.i
 %import Standard.i
+%import PStandard.i
 %import PMMgt.i
 %import DBC.i

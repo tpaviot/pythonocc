@@ -114,14 +114,13 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Trsf.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Vertex.hxx>
+#include<gp_Pnt.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>
@@ -139,14 +138,15 @@ $HeaderURL$
 #include<gp_Elips2d.hxx>
 #include<gp_Hypr2d.hxx>
 #include<gp_Parab2d.hxx>
-#include<BRepBuilderAPI.hxx>
+#include<gp_Trsf.hxx>
 #include<gp_GTrsf.hxx>
+#include<TopoDS_CompSolid.hxx>
+#include<TopoDS_Shell.hxx>
+#include<TopoDS_Solid.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Torus.hxx>
-#include<TopoDS_CompSolid.hxx>
-#include<TopoDS_Shell.hxx>
-#include<TopoDS_Solid.hxx>
+#include<BRepBuilderAPI.hxx>
 %}

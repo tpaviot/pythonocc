@@ -53,44 +53,6 @@ typedef TDocStd_XLink * TDocStd_XLinkPtr;
 
 
 
-%nodefaultctor Handle_TDocStd_ApplicationDelta;
-class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta();
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta(const Handle_TDocStd_ApplicationDelta &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta(const TDocStd_ApplicationDelta *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta & operator=(const Handle_TDocStd_ApplicationDelta &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta & operator=(const TDocStd_ApplicationDelta *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_ApplicationDelta DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_ApplicationDelta {
-	TDocStd_ApplicationDelta* GetObject() {
-	return (TDocStd_ApplicationDelta*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDocStd_ApplicationDelta::~Handle_TDocStd_ApplicationDelta %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDocStd_ApplicationDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDocStd_Modified;
 class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	public:
@@ -123,6 +85,44 @@ def __del__(self):
 %}
 
 %extend Handle_TDocStd_Modified {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDocStd_XLinkRoot;
+class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot();
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot(const Handle_TDocStd_XLinkRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot(const TDocStd_XLinkRoot *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot & operator=(const Handle_TDocStd_XLinkRoot &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_XLinkRoot & operator=(const TDocStd_XLinkRoot *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_XLinkRoot DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_XLinkRoot {
+	TDocStd_XLinkRoot* GetObject() {
+	return (TDocStd_XLinkRoot*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDocStd_XLinkRoot::~Handle_TDocStd_XLinkRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDocStd_XLinkRoot {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -167,82 +167,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDocStd_MultiTransactionManager;
-class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_MultiTransactionManager();
-		%feature("autodoc", "1");
-		Handle_TDocStd_MultiTransactionManager(const Handle_TDocStd_MultiTransactionManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_MultiTransactionManager(const TDocStd_MultiTransactionManager *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_MultiTransactionManager & operator=(const Handle_TDocStd_MultiTransactionManager &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_MultiTransactionManager & operator=(const TDocStd_MultiTransactionManager *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_MultiTransactionManager DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_MultiTransactionManager {
-	TDocStd_MultiTransactionManager* GetObject() {
-	return (TDocStd_MultiTransactionManager*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDocStd_MultiTransactionManager::~Handle_TDocStd_MultiTransactionManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDocStd_MultiTransactionManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDocStd_Application;
-class Handle_TDocStd_Application : public Handle_CDF_Application {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application();
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application(const TDocStd_Application *anItem);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application & operator=(const Handle_TDocStd_Application &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Application & operator=(const TDocStd_Application *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_Application DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDocStd_Application {
-	TDocStd_Application* GetObject() {
-	return (TDocStd_Application*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDocStd_Application {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TDocStd_Document;
 class Handle_TDocStd_Document : public Handle_CDM_Document {
 	public:
@@ -281,6 +205,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDocStd_MultiTransactionManager;
+class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager();
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager(const Handle_TDocStd_MultiTransactionManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager(const TDocStd_MultiTransactionManager *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager & operator=(const Handle_TDocStd_MultiTransactionManager &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_MultiTransactionManager & operator=(const TDocStd_MultiTransactionManager *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_MultiTransactionManager DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_MultiTransactionManager {
+	TDocStd_MultiTransactionManager* GetObject() {
+	return (TDocStd_MultiTransactionManager*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDocStd_MultiTransactionManager::~Handle_TDocStd_MultiTransactionManager %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDocStd_MultiTransactionManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDocStd_Owner;
 class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	public:
@@ -313,6 +275,44 @@ def __del__(self):
 %}
 
 %extend Handle_TDocStd_Owner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TDocStd_Application;
+class Handle_TDocStd_Application : public Handle_CDF_Application {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application();
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const Handle_TDocStd_Application &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Application & operator=(const TDocStd_Application *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_Application DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDocStd_Application {
+	TDocStd_Application* GetObject() {
+	return (TDocStd_Application*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDocStd_Application::~Handle_TDocStd_Application %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDocStd_Application {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -433,29 +433,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TDocStd_XLinkRoot;
-class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
+%nodefaultctor Handle_TDocStd_ApplicationDelta;
+class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_TDocStd_XLinkRoot();
+		Handle_TDocStd_ApplicationDelta();
 		%feature("autodoc", "1");
-		Handle_TDocStd_XLinkRoot(const Handle_TDocStd_XLinkRoot &aHandle);
+		Handle_TDocStd_ApplicationDelta(const Handle_TDocStd_ApplicationDelta &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDocStd_XLinkRoot(const TDocStd_XLinkRoot *anItem);
+		Handle_TDocStd_ApplicationDelta(const TDocStd_ApplicationDelta *anItem);
 		%feature("autodoc", "1");
-		Handle_TDocStd_XLinkRoot & operator=(const Handle_TDocStd_XLinkRoot &aHandle);
+		Handle_TDocStd_ApplicationDelta & operator=(const Handle_TDocStd_ApplicationDelta &aHandle);
 		%feature("autodoc", "1");
-		Handle_TDocStd_XLinkRoot & operator=(const TDocStd_XLinkRoot *anItem);
+		Handle_TDocStd_ApplicationDelta & operator=(const TDocStd_ApplicationDelta *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TDocStd_XLinkRoot DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TDocStd_ApplicationDelta DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TDocStd_XLinkRoot {
-	TDocStd_XLinkRoot* GetObject() {
-	return (TDocStd_XLinkRoot*)$self->Access();
+%extend Handle_TDocStd_ApplicationDelta {
+	TDocStd_ApplicationDelta* GetObject() {
+	return (TDocStd_ApplicationDelta*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TDocStd_XLinkRoot::~Handle_TDocStd_XLinkRoot %{
+%feature("shadow") Handle_TDocStd_ApplicationDelta::~Handle_TDocStd_ApplicationDelta %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -464,7 +464,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TDocStd_XLinkRoot {
+%extend Handle_TDocStd_ApplicationDelta {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -542,6 +542,106 @@ def __del__(self):
 };
 
 
+%nodefaultctor TDocStd_SequenceOfDocument;
+class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceOfDocument();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfDocument & Assign(const TDocStd_SequenceOfDocument &Other);
+		%feature("autodoc", "1");
+		const TDocStd_SequenceOfDocument & operator=(const TDocStd_SequenceOfDocument &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void Append(TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void Prepend(TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TDocStd_Document &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TDocStd_Document &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & First() const;
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TDocStd_Document & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TDocStd_Document &I);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") TDocStd_SequenceOfDocument::~TDocStd_SequenceOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_SequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_XLinkTool;
+class TDocStd_XLinkTool {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_XLinkTool();
+		%feature("autodoc", "1");
+		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		void UpdateLink(const TDF_Label &L);
+		%feature("autodoc", "1");
+		virtual		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Handle_TDF_DataSet DataSet() const;
+		%feature("autodoc", "1");
+		Handle_TDF_RelocationTable RelocationTable() const;
+
+};
+%feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_XLinkTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TDocStd_MultiTransactionManager;
 class TDocStd_MultiTransactionManager : public MMgt_TShared {
 	public:
@@ -608,7 +708,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %extend TDocStd_MultiTransactionManager {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_MultiTransactionManager::~TDocStd_MultiTransactionManager %{
@@ -671,7 +771,7 @@ class TDocStd_Application : public CDF_Application {
 };
 %extend TDocStd_Application {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Application::~TDocStd_Application %{
@@ -684,6 +784,211 @@ def __del__(self):
 %}
 
 %extend TDocStd_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
+class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceNodeOfSequenceOfDocument(const Handle_TDocStd_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	Handle_TDocStd_SequenceNodeOfSequenceOfDocument GetHandle() {
+	return *(Handle_TDocStd_SequenceNodeOfSequenceOfDocument*) &$self;
+	}
+};
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_SequenceNodeOfSequenceOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_Owner;
+class TDocStd_Owner : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		void SetDocument(const Handle_TDF_Data &indata, const Handle_TDocStd_Document &doc);
+		%feature("autodoc", "1");
+		static		Handle_TDocStd_Document GetDocument(const Handle_TDF_Data &ofdata);
+		%feature("autodoc", "1");
+		TDocStd_Owner();
+		%feature("autodoc", "1");
+		void SetDocument(const Handle_TDocStd_Document &document);
+		%feature("autodoc", "1");
+		Handle_TDocStd_Document GetDocument() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_Owner {
+	Handle_TDocStd_Owner GetHandle() {
+	return *(Handle_TDocStd_Owner*) &$self;
+	}
+};
+%extend TDocStd_Owner {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_Owner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_ApplicationDelta;
+class TDocStd_ApplicationDelta : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_ApplicationDelta();
+		%feature("autodoc", "1");
+		TDocStd_SequenceOfDocument & GetDocuments();
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & GetName() const;
+		%feature("autodoc", "1");
+		void SetName(const TCollection_ExtendedString &theName);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_ApplicationDelta {
+	Handle_TDocStd_ApplicationDelta GetHandle() {
+	return *(Handle_TDocStd_ApplicationDelta*) &$self;
+	}
+};
+%extend TDocStd_ApplicationDelta {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_ApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_Context;
+class TDocStd_Context {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_Context();
+		%feature("autodoc", "1");
+		void SetModifiedReferences(const Standard_Boolean Mod);
+		%feature("autodoc", "1");
+		Standard_Boolean ModifiedReferences() const;
+
+};
+%feature("shadow") TDocStd_Context::~TDocStd_Context %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_Context {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
+class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
+		%feature("autodoc", "1");
+		TDocStd_DataMapIteratorOfLabelIDMapDataMap(const TDocStd_LabelIDMapDataMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDocStd_LabelIDMapDataMap &aMap);
+		%feature("autodoc", "1");
+		const TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		const TDF_IDMap & Value() const;
+
+};
+%feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -719,6 +1024,266 @@ def __del__(self):
 %}
 
 %extend TDocStd_PathParser {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_Modified;
+class TDocStd_Modified : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEmpty(const TDF_Label &access);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Add(const TDF_Label &alabel);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Remove(const TDF_Label &alabel);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Contains(const TDF_Label &alabel);
+		%feature("autodoc", "1");
+		static		const TDF_LabelMap & Get(const TDF_Label &access);
+		%feature("autodoc", "1");
+		static		void Clear(const TDF_Label &access);
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		TDocStd_Modified();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean AddLabel(const TDF_Label &L);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveLabel(const TDF_Label &L);
+		%feature("autodoc", "1");
+		const TDF_LabelMap & Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_Modified {
+	Handle_TDocStd_Modified GetHandle() {
+	return *(Handle_TDocStd_Modified*) &$self;
+	}
+};
+%extend TDocStd_Modified {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_Modified {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
+class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_SequenceNodeOfSequenceOfApplicationDelta(const Handle_TDocStd_ApplicationDelta &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_TDocStd_ApplicationDelta & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta GetHandle() {
+	return *(Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta*) &$self;
+	}
+};
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd;
+class TDocStd {
+	public:
+		%feature("autodoc", "1");
+		TDocStd();
+		%feature("autodoc", "1");
+		static		void IDList(TDF_IDList & anIDList);
+
+};
+%feature("shadow") TDocStd::~TDocStd %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_LabelIDMapDataMap;
+class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap & Assign(const TDocStd_LabelIDMapDataMap &Other);
+		%feature("autodoc", "1");
+		TDocStd_LabelIDMapDataMap & operator=(const TDocStd_LabelIDMapDataMap &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		const TDF_IDMap & Find(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		const TDF_IDMap & operator()(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		TDF_IDMap & ChangeFind(const TDF_Label &K);
+		%feature("autodoc", "1");
+		TDF_IDMap & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
+
+};
+%feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_LabelIDMapDataMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_CompoundDelta;
+class TDocStd_CompoundDelta : public TDF_Delta {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_CompoundDelta();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_CompoundDelta {
+	Handle_TDocStd_CompoundDelta GetHandle() {
+	return *(Handle_TDocStd_CompoundDelta*) &$self;
+	}
+};
+%extend TDocStd_CompoundDelta {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_CompoundDelta {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
+class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TDocStd_DataMapNodeOfLabelIDMapDataMap(const TDF_Label &K, const TDF_IDMap &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TDF_Label & Key() const;
+		%feature("autodoc", "1");
+		TDF_IDMap & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap GetHandle() {
+	return *(Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap*) &$self;
+	}
+};
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -827,7 +1392,7 @@ class TDocStd_Document : public CDM_Document {
 };
 %extend TDocStd_Document {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_Document::~TDocStd_Document %{
@@ -840,571 +1405,6 @@ def __del__(self):
 %}
 
 %extend TDocStd_Document {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_ApplicationDelta;
-class TDocStd_ApplicationDelta : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_ApplicationDelta();
-		%feature("autodoc", "1");
-		TDocStd_SequenceOfDocument & GetDocuments();
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & GetName() const;
-		%feature("autodoc", "1");
-		void SetName(const TCollection_ExtendedString &theName);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_ApplicationDelta {
-	Handle_TDocStd_ApplicationDelta GetHandle() {
-	return *(Handle_TDocStd_ApplicationDelta*) &$self;
-	}
-};
-%extend TDocStd_ApplicationDelta {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_ApplicationDelta::~TDocStd_ApplicationDelta %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_ApplicationDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
-class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceNodeOfSequenceOfApplicationDelta(const Handle_TDocStd_ApplicationDelta &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TDocStd_ApplicationDelta & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta GetHandle() {
-	return *(Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta*) &$self;
-	}
-};
-%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_SequenceNodeOfSequenceOfApplicationDelta::~TDocStd_SequenceNodeOfSequenceOfApplicationDelta %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_Owner;
-class TDocStd_Owner : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		void SetDocument(const Handle_TDF_Data &indata, const Handle_TDocStd_Document &doc);
-		%feature("autodoc", "1");
-		static		Handle_TDocStd_Document GetDocument(const Handle_TDF_Data &ofdata);
-		%feature("autodoc", "1");
-		TDocStd_Owner();
-		%feature("autodoc", "1");
-		void SetDocument(const Handle_TDocStd_Document &document);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document GetDocument() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_Owner {
-	Handle_TDocStd_Owner GetHandle() {
-	return *(Handle_TDocStd_Owner*) &$self;
-	}
-};
-%extend TDocStd_Owner {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_Owner::~TDocStd_Owner %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_Owner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_Context;
-class TDocStd_Context {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_Context();
-		%feature("autodoc", "1");
-		void SetModifiedReferences(const Standard_Boolean Mod);
-		%feature("autodoc", "1");
-		Standard_Boolean ModifiedReferences() const;
-
-};
-%feature("shadow") TDocStd_Context::~TDocStd_Context %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_Context {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
-class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceNodeOfSequenceOfDocument(const Handle_TDocStd_Document &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_SequenceNodeOfSequenceOfDocument {
-	Handle_TDocStd_SequenceNodeOfSequenceOfDocument GetHandle() {
-	return *(Handle_TDocStd_SequenceNodeOfSequenceOfDocument*) &$self;
-	}
-};
-%extend TDocStd_SequenceNodeOfSequenceOfDocument {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_SequenceNodeOfSequenceOfDocument::~TDocStd_SequenceNodeOfSequenceOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_SequenceNodeOfSequenceOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_SequenceOfDocument;
-class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_SequenceOfDocument();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfDocument & Assign(const TDocStd_SequenceOfDocument &Other);
-		%feature("autodoc", "1");
-		const TDocStd_SequenceOfDocument & operator=(const TDocStd_SequenceOfDocument &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void Append(TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void Prepend(TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TDocStd_Document &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TDocStd_Document &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & First() const;
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TDocStd_SequenceOfDocument & S);
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TDocStd_Document & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TDocStd_Document &I);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TDocStd_Document & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") TDocStd_SequenceOfDocument::~TDocStd_SequenceOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_SequenceOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
-class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_DataMapNodeOfLabelIDMapDataMap(const TDF_Label &K, const TDF_IDMap &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		TDF_IDMap & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap GetHandle() {
-	return *(Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap*) &$self;
-	}
-};
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_DataMapNodeOfLabelIDMapDataMap::~TDocStd_DataMapNodeOfLabelIDMapDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_Modified;
-class TDocStd_Modified : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEmpty(const TDF_Label &access);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Add(const TDF_Label &alabel);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Remove(const TDF_Label &alabel);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Contains(const TDF_Label &alabel);
-		%feature("autodoc", "1");
-		static		const TDF_LabelMap & Get(const TDF_Label &access);
-		%feature("autodoc", "1");
-		static		void Clear(const TDF_Label &access);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		TDocStd_Modified();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean AddLabel(const TDF_Label &L);
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveLabel(const TDF_Label &L);
-		%feature("autodoc", "1");
-		const TDF_LabelMap & Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_Modified {
-	Handle_TDocStd_Modified GetHandle() {
-	return *(Handle_TDocStd_Modified*) &$self;
-	}
-};
-%extend TDocStd_Modified {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_Modified::~TDocStd_Modified %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_Modified {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_XLinkTool;
-class TDocStd_XLinkTool {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_XLinkTool();
-		%feature("autodoc", "1");
-		void CopyWithLink(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		void UpdateLink(const TDF_Label &L);
-		%feature("autodoc", "1");
-		virtual		void Copy(const TDF_Label &intarget, const TDF_Label &fromsource);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Handle_TDF_DataSet DataSet() const;
-		%feature("autodoc", "1");
-		Handle_TDF_RelocationTable RelocationTable() const;
-
-};
-%feature("shadow") TDocStd_XLinkTool::~TDocStd_XLinkTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_XLinkTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd;
-class TDocStd {
-	public:
-		%feature("autodoc", "1");
-		TDocStd();
-		%feature("autodoc", "1");
-		static		void IDList(TDF_IDList & anIDList);
-
-};
-%feature("shadow") TDocStd::~TDocStd %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_CompoundDelta;
-class TDocStd_CompoundDelta : public TDF_Delta {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_CompoundDelta();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDocStd_CompoundDelta {
-	Handle_TDocStd_CompoundDelta GetHandle() {
-	return *(Handle_TDocStd_CompoundDelta*) &$self;
-	}
-};
-%extend TDocStd_CompoundDelta {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TDocStd_CompoundDelta::~TDocStd_CompoundDelta %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_CompoundDelta {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_LabelIDMapDataMap;
-class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap & Assign(const TDocStd_LabelIDMapDataMap &Other);
-		%feature("autodoc", "1");
-		TDocStd_LabelIDMapDataMap & operator=(const TDocStd_LabelIDMapDataMap &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TDF_Label &K, const TDF_IDMap &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		const TDF_IDMap & Find(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		const TDF_IDMap & operator()(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		TDF_IDMap & ChangeFind(const TDF_Label &K);
-		%feature("autodoc", "1");
-		TDF_IDMap & operator()(const TDF_Label &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TDF_Label &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TDF_Label &K);
-
-};
-%feature("shadow") TDocStd_LabelIDMapDataMap::~TDocStd_LabelIDMapDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_LabelIDMapDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
-class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDocStd_DataMapIteratorOfLabelIDMapDataMap();
-		%feature("autodoc", "1");
-		TDocStd_DataMapIteratorOfLabelIDMapDataMap(const TDocStd_LabelIDMapDataMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDocStd_LabelIDMapDataMap &aMap);
-		%feature("autodoc", "1");
-		const TDF_Label & Key() const;
-		%feature("autodoc", "1");
-		const TDF_IDMap & Value() const;
-
-};
-%feature("shadow") TDocStd_DataMapIteratorOfLabelIDMapDataMap::~TDocStd_DataMapIteratorOfLabelIDMapDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1516,7 +1516,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %extend TDocStd_XLinkRoot {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLinkRoot::~TDocStd_XLinkRoot %{
@@ -1593,7 +1593,7 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %extend TDocStd_XLink {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDocStd_XLink::~TDocStd_XLink %{

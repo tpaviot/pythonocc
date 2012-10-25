@@ -23,7 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Dico_DictionaryOfTransient::DownCast;
 %rename(DownCast) Handle_Dico_StackItemOfDictionaryOfTransient::DownCast;
 %rename(DownCast) Handle_Dico_DictionaryOfInteger::DownCast;
-%rename(DownCast) Handle_Dico_DictionaryOfTransient::DownCast;
 %rename(DownCast) Handle_Dico_StackItemOfDictionaryOfInteger::DownCast;

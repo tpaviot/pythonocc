@@ -269,8 +269,8 @@ $HeaderURL$
 %import TCollection.i
 %import Standard.i
 %import IntRes2d.i
-%import GeomAbs.i
-%import TopAbs.i
-%import math.i
 %import IntCurveSurface.i
+%import GeomAbs.i
+%import math.i
 %import Intf.i
+%import TopAbs.i

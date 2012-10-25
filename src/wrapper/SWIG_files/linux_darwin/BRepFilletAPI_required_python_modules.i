@@ -30,9 +30,9 @@ import GarbageCollector
 import Standard
 import TopoDS
 import ChFiDS
+import TopOpeBRepBuild
 import TopTools
 import ChFi2d
-import TopOpeBRepBuild
 import Law
 import ChFi3d
 import Geom

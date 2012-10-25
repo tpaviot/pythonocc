@@ -475,9 +475,6 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Quantity_Color.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<V3d.hxx>
-#include<Graphic3d_Vector.hxx>
-#include<Handle_Graphic3d_Group.hxx>
 #include<Handle_Aspect_Window.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
 #include<TCollection_AsciiString.hxx>
@@ -491,6 +488,9 @@ $HeaderURL$
 #include<Handle_Aspect_Grid.hxx>
 #include<Handle_PlotMgt_PlotterDriver.hxx>
 #include<Handle_Image_PixMap.hxx>
+#include<V3d.hxx>
+#include<Graphic3d_Vector.hxx>
+#include<Handle_Graphic3d_Group.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
 #include<Handle_Visual3d_ViewManager.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>

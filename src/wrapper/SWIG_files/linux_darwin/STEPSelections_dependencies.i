@@ -348,7 +348,7 @@ $HeaderURL$
 
 %import MMgt.i
 %import XSControl.i
-%import TCollection.i
 %import IFSelect.i
 %import StepSelect.i
+%import TCollection.i
 %import Standard.i

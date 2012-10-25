@@ -33,7 +33,7 @@ import TColStd
 import TCollection
 import TopoDS
 import TopLoc
-import gp
 import Quantity
 import TopTools
+import gp
 };

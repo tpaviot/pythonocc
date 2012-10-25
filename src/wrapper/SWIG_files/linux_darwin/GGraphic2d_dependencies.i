@@ -430,6 +430,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
 %import Graphic2d.i
+%import Standard.i
 %import Aspect.i

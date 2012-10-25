@@ -39,9 +39,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<BRepAdaptor_Surface.hxx>
-#include<gp_Dir.hxx>
-#include<BRepAdaptor_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Vec.hxx>
+#include<gp_Dir.hxx>
+#include<BRepAdaptor_Curve.hxx>
 #include<BRepLProp.hxx>
 %}

@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import PColStd
 import PCollection
+import PColStd
 import PTopLoc
 import gp
 import Quantity

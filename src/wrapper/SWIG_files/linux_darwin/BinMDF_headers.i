@@ -56,8 +56,8 @@ $HeaderURL$
 #include<BinObjMgt_Persistent.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_Standard_Type.hxx>
+#include<BinMDF.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
 #include<TColStd_IndexedMapOfTransient.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
-#include<BinMDF.hxx>
 %}

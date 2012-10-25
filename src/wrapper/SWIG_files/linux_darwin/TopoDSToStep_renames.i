@@ -23,10 +23,10 @@ $Author$
 $HeaderURL$
 
 */
-%rename(CheckTopoDSShape) TopoDSToStep_FacetedTool::CheckTopoDSShape;
 %rename(DecodeBuilderError) TopoDSToStep::DecodeBuilderError;
 %rename(DecodeFaceError) TopoDSToStep::DecodeFaceError;
 %rename(DecodeWireError) TopoDSToStep::DecodeWireError;
 %rename(DecodeEdgeError) TopoDSToStep::DecodeEdgeError;
 %rename(DecodeVertexError) TopoDSToStep::DecodeVertexError;
 %rename(AddResult) TopoDSToStep::AddResult;
+%rename(CheckTopoDSShape) TopoDSToStep_FacetedTool::CheckTopoDSShape;

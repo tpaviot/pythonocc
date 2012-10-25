@@ -535,7 +535,7 @@ $HeaderURL$
 %};
 
 %import Graphic2d.i
-%import Viewer.i
 %import Aspect.i
+%import Viewer.i
 %import Standard.i
 %import Quantity.i

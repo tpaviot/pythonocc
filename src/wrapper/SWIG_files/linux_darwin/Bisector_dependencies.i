@@ -260,7 +260,7 @@ $HeaderURL$
 %};
 
 %import Geom2d.i
-%import Standard.i
-%import GeomAbs.i
-%import math.i
 %import IntRes2d.i
+%import Standard.i
+%import math.i
+%import GeomAbs.i

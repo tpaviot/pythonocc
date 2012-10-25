@@ -617,21 +617,25 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_SelectBasics_EntityOwner.hxx>
-#include<Handle_SelectMgr_Selection.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_SelectMgr_SelectableObject.hxx>
-#include<TopoDS_Face.hxx>
-#include<Select3D_ListOfSensitive.hxx>
-#include<Handle_SelectMgr_EntityOwner.hxx>
-#include<StdSelect.hxx>
-#include<Handle_Select3D_Projector.hxx>
-#include<Handle_V3d_View.hxx>
-#include<Handle_Prs3d_Drawer.hxx>
 #include<Handle_PrsMgr_PresentationManager.hxx>
 #include<Handle_PrsMgr_PresentationManager3d.hxx>
 #include<TopLoc_Location.hxx>
+#include<Handle_SelectBasics_EntityOwner.hxx>
 #include<Handle_V3d_Viewer.hxx>
+#include<Handle_V3d_View.hxx>
+#include<Handle_SelectMgr_EntityOwner.hxx>
+#include<Handle_Graphic3d_StructureManager.hxx>
+#include<Handle_SelectMgr_Selection.hxx>
+#include<TopoDS_Face.hxx>
+#include<Select3D_ListOfSensitive.hxx>
+#include<StdSelect.hxx>
+#include<Handle_Select3D_Projector.hxx>
+#include<Handle_Prs3d_Drawer.hxx>
+#include<Handle_V2d_View.hxx>
+#include<gp_Trsf2d.hxx>
+#include<gp_Pnt2d.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_Select2D_Projector.hxx>
 #include<SelectBasics_ListOfBox2d.hxx>
@@ -640,8 +644,4 @@ $HeaderURL$
 #include<Handle_Prs3d_Presentation.hxx>
 #include<Handle_Prs3d_Projector.hxx>
 #include<Handle_Geom_Transformation.hxx>
-#include<Handle_Graphic3d_StructureManager.hxx>
-#include<Handle_V2d_View.hxx>
-#include<gp_Trsf2d.hxx>
-#include<gp_Pnt2d.hxx>
 %}

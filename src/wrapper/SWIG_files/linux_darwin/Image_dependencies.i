@@ -416,8 +416,8 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Aspect.i
 %import MMgt.i
 %import TCollection.i
+%import Aspect.i
 %import Standard.i
 %import Quantity.i

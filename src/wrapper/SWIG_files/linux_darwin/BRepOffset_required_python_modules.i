@@ -29,9 +29,9 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopTools
-import Geom
 import TopoDS
 import BRepAlgo
 import GeomAbs
+import Geom
 import TopAbs
 };

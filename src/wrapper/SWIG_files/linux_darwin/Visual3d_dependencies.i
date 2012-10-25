@@ -736,8 +736,8 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
 %import TCollection.i
+%import Standard.i
 %import MMgt.i
 %import Graphic3d.i
 %import Aspect.i

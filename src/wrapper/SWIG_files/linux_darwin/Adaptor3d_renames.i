@@ -23,14 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Adaptor3d_HCurve::DownCast;
+%rename(DownCast) Handle_Adaptor3d_HIsoCurve::DownCast;
 %rename(DownCast) Handle_Adaptor3d_HSurface::DownCast;
 %rename(DownCast) Handle_Adaptor3d_HSurfaceOfLinearExtrusion::DownCast;
 %rename(DownCast) Handle_Adaptor3d_HSurfaceOfRevolution::DownCast;
-%rename(DownCast) Handle_Adaptor3d_HOffsetCurve::DownCast;
-%rename(DownCast) Handle_Adaptor3d_HCurve::DownCast;
-%rename(DownCast) Handle_Adaptor3d_HIsoCurve::DownCast;
-%rename(DownCast) Handle_Adaptor3d_HVertex::DownCast;
 %rename(DownCast) Handle_Adaptor3d_HCurveOnSurface::DownCast;
+%rename(DownCast) Handle_Adaptor3d_HOffsetCurve::DownCast;
+%rename(DownCast) Handle_Adaptor3d_HVertex::DownCast;
 %rename(DownCast) Handle_Adaptor3d_TopolTool::DownCast;
 %rename(FirstUParameter) Adaptor3d_HSurfaceTool::FirstUParameter;
 %rename(FirstVParameter) Adaptor3d_HSurfaceTool::FirstVParameter;

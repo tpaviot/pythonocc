@@ -23,5 +23,5 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_ShapeAlgo_AlgoContainer::DownCast;
 %rename(DownCast) Handle_ShapeAlgo_ToolContainer::DownCast;
+%rename(DownCast) Handle_ShapeAlgo_AlgoContainer::DownCast;

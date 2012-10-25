@@ -262,7 +262,7 @@ $HeaderURL$
 %import math.i
 %import Standard.i
 %import AppParCurves.i
-%import Approx.i
 %import IntImp.i
+%import Approx.i
 %import GeomAbs.i
 %import ApproxInt.i

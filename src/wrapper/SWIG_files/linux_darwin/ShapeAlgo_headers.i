@@ -88,6 +88,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_ShapeFix_Shape.hxx>
+#include<Handle_ShapeFix_EdgeProjAux.hxx>
 #include<Handle_ShapeAnalysis_Wire.hxx>
 #include<Handle_ShapeExtend_WireData.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
@@ -102,6 +104,4 @@ $HeaderURL$
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_ShapeFix_Shape.hxx>
-#include<Handle_ShapeFix_EdgeProjAux.hxx>
 %}

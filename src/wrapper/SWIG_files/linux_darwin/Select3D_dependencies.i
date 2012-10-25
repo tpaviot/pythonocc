@@ -156,6 +156,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import SelectBasics.i
 %import TCollection.i
+%import SelectBasics.i
 %import Standard.i

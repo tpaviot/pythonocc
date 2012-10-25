@@ -109,6 +109,66 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFilletAPI_MakeChamfer;
+class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
+	public:
+		%feature("autodoc", "1");
+		BRepFilletAPI_MakeChamfer(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Add(const Standard_Real Dis, const TopoDS_Edge E, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face F);
+		%feature("autodoc","GetDist(Standard_Integer IC) -> Standard_Real");
+
+		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge E, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face F);
+		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
+
+		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge E, const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face F);
+		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
+
+		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSymetric(const Standard_Integer IC) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTwoDistances(const Standard_Integer IC) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDistanceAngle(const Standard_Integer IC) const;
+		%feature("autodoc", "1");
+		virtual		void Build();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_HBuilder Builder() const;
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape EorV);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape F);
+
+};
+%feature("shadow") BRepFilletAPI_MakeChamfer::~BRepFilletAPI_MakeChamfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFilletAPI_MakeChamfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFilletAPI_MakeFillet2d;
 class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 	public:
@@ -174,102 +234,6 @@ def __del__(self):
 %}
 
 %extend BRepFilletAPI_MakeFillet2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFilletAPI_MakeChamfer;
-class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
-	public:
-		%feature("autodoc", "1");
-		BRepFilletAPI_MakeChamfer(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		void Add(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void Add(const Standard_Real Dis, const TopoDS_Edge E, const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void SetDist(const Standard_Real Dis, const Standard_Integer IC, const TopoDS_Face F);
-		%feature("autodoc","GetDist(Standard_Integer IC) -> Standard_Real");
-
-		void GetDist(const Standard_Integer IC, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Add(const Standard_Real Dis1, const Standard_Real Dis2, const TopoDS_Edge E, const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void SetDists(const Standard_Real Dis1, const Standard_Real Dis2, const Standard_Integer IC, const TopoDS_Face F);
-		%feature("autodoc","Dists(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
-
-		void Dists(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void AddDA(const Standard_Real Dis, const Standard_Real Angle, const TopoDS_Edge E, const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void SetDistAngle(const Standard_Real Dis, const Standard_Real Angle, const Standard_Integer IC, const TopoDS_Face F);
-		%feature("autodoc","GetDistAngle(Standard_Integer IC) -> [Standard_Real, Standard_Real]");
-
-		void GetDistAngle(const Standard_Integer IC, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Boolean & DisOnFace1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSymetric(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTwoDistances(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDistanceAngle(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		void ResetContour(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbContours() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Contour(const TopoDS_Edge E) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEdges(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		virtual		const TopoDS_Edge  Edge(const Standard_Integer I, const Standard_Integer J) const;
-		%feature("autodoc", "1");
-		virtual		void Remove(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Length(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		TopoDS_Vertex FirstVertex(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		TopoDS_Vertex LastVertex(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Abscissa(const Standard_Integer IC, const TopoDS_Vertex V) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real RelativeAbscissa(const Standard_Integer IC, const TopoDS_Vertex V) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean ClosedAndTangent(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Closed(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-		%feature("autodoc", "1");
-		virtual		void Reset();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_HBuilder Builder() const;
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape EorV);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDeleted(const TopoDS_Shape F);
-		%feature("autodoc", "1");
-		virtual		void Simulate(const Standard_Integer IC);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbSurf(const Standard_Integer IC) const;
-		%feature("autodoc", "1");
-		virtual		Handle_ChFiDS_SecHArray1 Sect(const Standard_Integer IC, const Standard_Integer IS) const;
-
-};
-%feature("shadow") BRepFilletAPI_MakeChamfer::~BRepFilletAPI_MakeChamfer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFilletAPI_MakeChamfer {
 	void _kill_pointed() {
 		delete $self;
 	}

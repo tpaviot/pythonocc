@@ -28,14 +28,14 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import IntPatch
 import AppParCurves
-import math
 import gp
 import Adaptor3d
 import IntSurf
+import math
 import Approx
 import TColStd
+import IntPatch
 import TopAbs
 import IntImp
 };

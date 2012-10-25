@@ -27,7 +27,7 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import GeomAbs
 import Standard
+import GeomAbs
 import TColStd
 };

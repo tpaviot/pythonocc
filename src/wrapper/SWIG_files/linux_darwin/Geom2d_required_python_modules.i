@@ -28,6 +28,6 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import GeomAbs
 import gp
+import GeomAbs
 };

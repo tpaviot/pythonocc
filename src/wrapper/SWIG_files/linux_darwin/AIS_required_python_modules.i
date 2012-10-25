@@ -40,10 +40,10 @@ import TCollection
 import DsgPrs
 import SelectMgr
 import Poly
-import Bnd
-import TopAbs
 import StdSelect
 import TopLoc
 import V3d
 import PrsMgr
+import Bnd
+import TopAbs
 };

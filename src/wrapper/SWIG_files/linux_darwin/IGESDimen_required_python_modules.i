@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import gp
 import IGESData
-import IGESGeom
 import IGESGraph
 import TCollection
+import IGESGeom
 };

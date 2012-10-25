@@ -357,10 +357,10 @@ $HeaderURL$
 #include <TDF_Transaction.hxx>
 %};
 
-%import MMgt.i
 %import TDF.i
-%import CDF.i
 %import CDM.i
+%import MMgt.i
+%import CDF.i
 %import TCollection.i
 %import Standard.i
 %import PCDM.i

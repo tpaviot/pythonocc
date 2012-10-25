@@ -27,14 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo.hxx>
-#include<Handle_NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock.hxx>
-#include<Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger.hxx>
-#include<Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape.hxx>
-#include<Handle_NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock.hxx>
-#include<Handle_NMTTools_ListNodeOfListOfCommonBlock.hxx>
-#include<Handle_NMTTools_ListNodeOfListOfCoupleOfShape.hxx>
-#include<Handle_NMTTools_StdMapNodeOfMapOfPaveBlock.hxx>
 #include<NMTTools_CheckerSI.hxx>
 #include<NMTTools_CommonBlock.hxx>
 #include<NMTTools_CommonBlockAPI.hxx>
@@ -43,29 +35,20 @@ $HeaderURL$
 #include<NMTTools_DEProcessor.hxx>
 #include<NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo.hxx>
 #include<NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock.hxx>
-#include<NMTTools_DataMapNodeOfDataMapOfIntegerFaceInfo.hxx>
-#include<NMTTools_DataMapNodeOfDataMapOfIntegerListOfPaveBlock.hxx>
 #include<NMTTools_DataMapOfIntegerFaceInfo.hxx>
 #include<NMTTools_DataMapOfIntegerListOfPaveBlock.hxx>
 #include<NMTTools_FaceInfo.hxx>
-#include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfIndexedMapOfInteger.hxx>
-#include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapeIndexedMapOfShape.hxx>
-#include<NMTTools_IndexedDataMapNodeOfIndexedDataMapOfShapePaveBlock.hxx>
 #include<NMTTools_IndexedDataMapOfIndexedMapOfInteger.hxx>
 #include<NMTTools_IndexedDataMapOfShapeIndexedMapOfShape.hxx>
 #include<NMTTools_IndexedDataMapOfShapePaveBlock.hxx>
-#include<NMTTools_IteratorOfCoupleOfShape.hxx>
 #include<NMTTools_ListIteratorOfListOfCommonBlock.hxx>
 #include<NMTTools_ListIteratorOfListOfCoupleOfShape.hxx>
-#include<NMTTools_ListNodeOfListOfCommonBlock.hxx>
-#include<NMTTools_ListNodeOfListOfCoupleOfShape.hxx>
 #include<NMTTools_ListOfCommonBlock.hxx>
 #include<NMTTools_ListOfCoupleOfShape.hxx>
 #include<NMTTools_MapIteratorOfMapOfPaveBlock.hxx>
 #include<NMTTools_MapOfPaveBlock.hxx>
 #include<NMTTools_PPaveFiller.hxx>
 #include<NMTTools_PaveFiller.hxx>
-#include<NMTTools_StdMapNodeOfMapOfPaveBlock.hxx>
 #include<NMTTools_Tools.hxx>
 
 // Additional headers necessary for compilation.

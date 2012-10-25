@@ -192,5 +192,5 @@ $HeaderURL$
 #include <math_Vector.hxx>
 %};
 
-%import Standard.i
 %import math.i
+%import Standard.i

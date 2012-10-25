@@ -25,15 +25,15 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion::DownCast;
 %rename(DownCast) Handle_MAT2d_SequenceNodeOfSequenceOfConnexion::DownCast;
+%rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec::DownCast;
 %rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion::DownCast;
 %rename(DownCast) Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::DownCast;
+%rename(DownCast) Handle_MAT2d_Circuit::DownCast;
 %rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger::DownCast;
 %rename(DownCast) Handle_MAT2d_Connexion::DownCast;
-%rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::DownCast;
-%rename(DownCast) Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::DownCast;
-%rename(DownCast) Handle_MAT2d_Circuit::DownCast;
 %rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d::DownCast;
-%rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec::DownCast;
+%rename(DownCast) Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve::DownCast;
 %rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d::DownCast;
+%rename(DownCast) Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger::DownCast;
 %rename(HashCode) MAT2d_MapBiIntHasher::HashCode;
 %rename(IsEqual) MAT2d_MapBiIntHasher::IsEqual;

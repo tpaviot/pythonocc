@@ -380,11 +380,11 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
+%import Prs3d.i
 %import Select2D.i
 %import SelectMgr.i
 %import TCollection.i
 %import PrsMgr.i
-%import Prs3d.i
 %import Standard.i
-%import TopAbs.i
 %import Quantity.i
+%import TopAbs.i

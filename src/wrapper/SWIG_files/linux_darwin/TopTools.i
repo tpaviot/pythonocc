@@ -53,29 +53,29 @@ typedef TopTools_LocationSet * TopTools_LocationSetPtr;
 
 
 
-%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
-class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TopTools_ListNodeOfListOfShape;
+class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger();
+		Handle_TopTools_ListNodeOfListOfShape();
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
+		Handle_TopTools_ListNodeOfListOfShape(const Handle_TopTools_ListNodeOfListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const TopTools_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
+		Handle_TopTools_ListNodeOfListOfShape(const TopTools_ListNodeOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
+		Handle_TopTools_ListNodeOfListOfShape & operator=(const Handle_TopTools_ListNodeOfListOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
+		Handle_TopTools_ListNodeOfListOfShape & operator=(const TopTools_ListNodeOfListOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_ListNodeOfListOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	TopTools_DataMapNodeOfDataMapOfShapeListOfInteger* GetObject() {
-	return (TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
+%extend Handle_TopTools_ListNodeOfListOfShape {
+	TopTools_ListNodeOfListOfShape* GetObject() {
+	return (TopTools_ListNodeOfListOfShape*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
+%feature("shadow") Handle_TopTools_ListNodeOfListOfShape::~Handle_TopTools_ListNodeOfListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -84,45 +84,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
-class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape(const Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape(const TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape & operator=(const Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape & operator=(const TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
-	TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape* GetObject() {
-	return (TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape::~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
+%extend Handle_TopTools_ListNodeOfListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -243,29 +205,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger;
-class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
+class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger();
+		Handle_TopTools_SequenceNodeOfSequenceOfShape();
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger(const Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger(const TopTools_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_SequenceNodeOfSequenceOfShape DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
-	TopTools_DataMapNodeOfDataMapOfShapeInteger* GetObject() {
-	return (TopTools_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
+	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
+	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger %{
+%feature("shadow") Handle_TopTools_SequenceNodeOfSequenceOfShape::~Handle_TopTools_SequenceNodeOfSequenceOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -274,7 +236,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
+%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -433,44 +395,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape;
-class Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape* GetObject() {
-	return (TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape::~Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TopTools_HArray1OfShape;
 class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	public:
@@ -503,120 +427,6 @@ def __del__(self):
 %}
 
 %extend Handle_TopTools_HArray1OfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
-class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress* GetObject() {
-	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
-class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const Handle_TopTools_SequenceNodeOfSequenceOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_SequenceNodeOfSequenceOfShape & operator=(const TopTools_SequenceNodeOfSequenceOfShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopTools_SequenceNodeOfSequenceOfShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	TopTools_SequenceNodeOfSequenceOfShape* GetObject() {
-	return (TopTools_SequenceNodeOfSequenceOfShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopTools_SequenceNodeOfSequenceOfShape::~Handle_TopTools_SequenceNodeOfSequenceOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopTools_SequenceNodeOfSequenceOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TopTools_ListNodeOfListOfShape;
-class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape();
-		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape(const Handle_TopTools_ListNodeOfListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape(const TopTools_ListNodeOfListOfShape *anItem);
-		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape & operator=(const Handle_TopTools_ListNodeOfListOfShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopTools_ListNodeOfListOfShape & operator=(const TopTools_ListNodeOfListOfShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopTools_ListNodeOfListOfShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopTools_ListNodeOfListOfShape {
-	TopTools_ListNodeOfListOfShape* GetObject() {
-	return (TopTools_ListNodeOfListOfShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopTools_ListNodeOfListOfShape::~Handle_TopTools_ListNodeOfListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopTools_ListNodeOfListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -661,29 +471,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeReal;
-class Handle_TopTools_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
+class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal();
+		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress();
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal(const Handle_TopTools_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal(const TopTools_DataMapNodeOfDataMapOfShapeReal *anItem);
+		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal & operator=(const TopTools_DataMapNodeOfDataMapOfShapeReal *anItem);
+		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress & operator=(const TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeReal {
-	TopTools_DataMapNodeOfDataMapOfShapeReal* GetObject() {
-	return (TopTools_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
+%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress* GetObject() {
+	return (TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeReal::~Handle_TopTools_DataMapNodeOfDataMapOfShapeReal %{
+%feature("shadow") Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -692,36 +502,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeReal {
+%extend Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_TopTools_HArray2OfShape;
-class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
+class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape();
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger();
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape(const Handle_TopTools_HArray2OfShape &aHandle);
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape(const TopTools_HArray2OfShape *anItem);
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const TopTools_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape & operator=(const Handle_TopTools_HArray2OfShape &aHandle);
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopTools_HArray2OfShape & operator=(const TopTools_HArray2OfShape *anItem);
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeListOfInteger *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopTools_HArray2OfShape DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopTools_HArray2OfShape {
-	TopTools_HArray2OfShape* GetObject() {
-	return (TopTools_HArray2OfShape*)$self->Access();
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	TopTools_DataMapNodeOfDataMapOfShapeListOfInteger* GetObject() {
+	return (TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TopTools_HArray2OfShape::~Handle_TopTools_HArray2OfShape %{
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -730,7 +540,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopTools_HArray2OfShape {
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -769,6 +579,196 @@ def __del__(self):
 %}
 
 %extend Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
+class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape(const Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape(const TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape & operator=(const Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape & operator=(const TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
+	TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape* GetObject() {
+	return (TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape::~Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeReal;
+class Handle_TopTools_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal();
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal(const Handle_TopTools_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal(const TopTools_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal & operator=(const TopTools_DataMapNodeOfDataMapOfShapeReal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeReal DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeReal {
+	TopTools_DataMapNodeOfDataMapOfShapeReal* GetObject() {
+	return (TopTools_DataMapNodeOfDataMapOfShapeReal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeReal::~Handle_TopTools_DataMapNodeOfDataMapOfShapeReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger;
+class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger();
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger(const Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger(const TopTools_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger & operator=(const TopTools_DataMapNodeOfDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
+	TopTools_DataMapNodeOfDataMapOfShapeInteger* GetObject() {
+	return (TopTools_DataMapNodeOfDataMapOfShapeInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger::~Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape;
+class Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape & operator=(const TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape* GetObject() {
+	return (TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape::~Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopTools_HArray2OfShape;
+class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape();
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape(const Handle_TopTools_HArray2OfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape(const TopTools_HArray2OfShape *anItem);
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape & operator=(const Handle_TopTools_HArray2OfShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopTools_HArray2OfShape & operator=(const TopTools_HArray2OfShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopTools_HArray2OfShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopTools_HArray2OfShape {
+	TopTools_HArray2OfShape* GetObject() {
+	return (TopTools_HArray2OfShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopTools_HArray2OfShape::~Handle_TopTools_HArray2OfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopTools_HArray2OfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -927,52 +927,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_ListOfShape;
-class TopTools_ListOfShape {
+%nodefaultctor TopTools_DataMapOfOrientedShapeShape;
+class TopTools_DataMapOfOrientedShapeShape : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TopTools_ListOfShape();
+		TopTools_DataMapOfOrientedShapeShape(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		void Assign(const TopTools_ListOfShape &Other);
+		TopTools_DataMapOfOrientedShapeShape & Assign(const TopTools_DataMapOfOrientedShapeShape &Other);
 		%feature("autodoc", "1");
-		void operator=(const TopTools_ListOfShape &Other);
+		TopTools_DataMapOfOrientedShapeShape & operator=(const TopTools_DataMapOfOrientedShapeShape &Other);
 		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape I);
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & theIt);
+		Standard_Boolean UnBind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		void Prepend(TopTools_ListOfShape & Other);
+		const TopoDS_Shape  Find(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape I);
+		const TopoDS_Shape  operator()(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & theIt);
+		TopoDS_Shape  ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		void Append(TopTools_ListOfShape & Other);
+		TopoDS_Shape  operator()(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		TopoDS_Shape  First() const;
+		Standard_Address Find1(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
-		TopoDS_Shape  Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopTools_ListIteratorOfListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
-%feature("shadow") TopTools_ListOfShape::~TopTools_ListOfShape %{
+%feature("shadow") TopTools_DataMapOfOrientedShapeShape::~TopTools_DataMapOfOrientedShapeShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -981,7 +969,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_ListOfShape {
+%extend TopTools_DataMapOfOrientedShapeShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1046,55 +1034,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeReal;
-class TopTools_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue() {
-				return (Standard_Real) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
-	Handle_TopTools_DataMapNodeOfDataMapOfShapeReal GetHandle() {
-	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeReal*) &$self;
-	}
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeReal::~TopTools_DataMapNodeOfDataMapOfShapeReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopTools;
 class TopTools {
 	public:
@@ -1152,7 +1091,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_Map
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_DataMapNodeOfDataMapOfIntegerListOfShape::~TopTools_DataMapNodeOfDataMapOfIntegerListOfShape %{
@@ -1291,7 +1230,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeInteger::~TopTools_DataMapNodeOfDataMapOfShapeInteger %{
@@ -1361,6 +1300,96 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
+class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopoDS_Shape K1, const Standard_Integer K2, const Standard_Address &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Standard_Address & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress GetHandle() {
+	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*) &$self;
+	}
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_MapOfOrientedShape;
+class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_MapOfOrientedShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_MapOfOrientedShape & Assign(const TopTools_MapOfOrientedShape &Other);
+		%feature("autodoc", "1");
+		TopTools_MapOfOrientedShape & operator=(const TopTools_MapOfOrientedShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const TopoDS_Shape aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const TopoDS_Shape aKey);
+
+};
+%feature("shadow") TopTools_MapOfOrientedShape::~TopTools_MapOfOrientedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_MapOfOrientedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
 class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_MapNode {
 	public:
@@ -1393,7 +1422,7 @@ class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_Ma
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape::~TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape %{
@@ -1463,7 +1492,7 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeShape : public TCollection_Map
 };
 %extend TopTools_DataMapNodeOfDataMapOfOrientedShapeShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_DataMapNodeOfDataMapOfOrientedShapeShape::~TopTools_DataMapNodeOfDataMapOfOrientedShapeShape %{
@@ -1482,46 +1511,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_HArray1OfShape;
-class TopTools_HArray1OfShape : public MMgt_TShared {
+%nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfShape;
+class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopTools_HArray1OfShape(const Standard_Integer Low, const Standard_Integer Up);
+		TopTools_IndexedMapNodeOfIndexedMapOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopTools_HArray1OfShape(const Standard_Integer Low, const Standard_Integer Up, const TopoDS_Shape V);
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TopoDS_Shape Value);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TopTools_Array1OfShape & Array1() const;
-		%feature("autodoc", "1");
-		TopTools_Array1OfShape & ChangeArray1();
+		TCollection_MapNodePtr & Next2() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopTools_HArray1OfShape {
-	Handle_TopTools_HArray1OfShape GetHandle() {
-	return *(Handle_TopTools_HArray1OfShape*) &$self;
+%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
+	Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape GetHandle() {
+	return *(Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape*) &$self;
 	}
 };
-%extend TopTools_HArray1OfShape {
+%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TopTools_HArray1OfShape::~TopTools_HArray1OfShape %{
+%feature("shadow") TopTools_IndexedMapNodeOfIndexedMapOfShape::~TopTools_IndexedMapNodeOfIndexedMapOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1530,420 +1555,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_HArray1OfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape;
-class TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
-	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
-	}
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape::~TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_Array2OfShape;
-class TopTools_Array2OfShape {
-	public:
-		%feature("autodoc", "1");
-		TopTools_Array2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TopTools_Array2OfShape(const TopoDS_Shape Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const TopTools_Array2OfShape & Assign(const TopTools_Array2OfShape &Other);
-		%feature("autodoc", "1");
-		const TopTools_Array2OfShape & operator=(const TopTools_Array2OfShape &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape Value);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") TopTools_Array2OfShape::~TopTools_Array2OfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_Array2OfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
-class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const TopoDS_Shape K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		TColStd_ListOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger GetHandle() {
-	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*) &$self;
-	}
-};
-%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_HArray2OfShape;
-class TopTools_HArray2OfShape : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopTools_HArray2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		TopTools_HArray2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const TopoDS_Shape V);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape V);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape Value);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		const TopTools_Array2OfShape & Array2() const;
-		%feature("autodoc", "1");
-		TopTools_Array2OfShape & ChangeArray2();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_HArray2OfShape {
-	Handle_TopTools_HArray2OfShape GetHandle() {
-	return *(Handle_TopTools_HArray2OfShape*) &$self;
-	}
-};
-%extend TopTools_HArray2OfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_HArray2OfShape::~TopTools_HArray2OfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_HArray2OfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_ShapeMapHasher;
-class TopTools_ShapeMapHasher {
-	public:
-		%feature("autodoc", "1");
-		TopTools_ShapeMapHasher();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const TopoDS_Shape S, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const TopoDS_Shape S1, const TopoDS_Shape S2);
-
-};
-%feature("shadow") TopTools_ShapeMapHasher::~TopTools_ShapeMapHasher %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_ShapeMapHasher {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_SequenceOfShape;
-class TopTools_SequenceOfShape : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		TopTools_SequenceOfShape();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & Assign(const TopTools_SequenceOfShape &Other);
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & operator=(const TopTools_SequenceOfShape &Other);
-		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape T);
-		%feature("autodoc", "1");
-		void Append(TopTools_SequenceOfShape & S);
-		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape T);
-		%feature("autodoc", "1");
-		void Prepend(TopTools_SequenceOfShape & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TopTools_SequenceOfShape & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const TopoDS_Shape T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TopTools_SequenceOfShape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  First() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TopTools_SequenceOfShape & S);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") TopTools_SequenceOfShape::~TopTools_SequenceOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_SequenceOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapOfShapeShape;
-class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeShape & Assign(const TopTools_DataMapOfShapeShape &Other);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeShape & operator=(const TopTools_DataMapOfShapeShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopTools_DataMapOfShapeShape::~TopTools_DataMapOfShapeShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapOfShapeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_ListIteratorOfListOfShape;
-class TopTools_ListIteratorOfListOfShape {
-	public:
-		%feature("autodoc", "1");
-		TopTools_ListIteratorOfListOfShape();
-		%feature("autodoc", "1");
-		TopTools_ListIteratorOfListOfShape(const TopTools_ListOfShape &L);
-		%feature("autodoc", "1");
-		void Initialize(const TopTools_ListOfShape &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
-
-};
-%feature("shadow") TopTools_ListIteratorOfListOfShape::~TopTools_ListIteratorOfListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_ListIteratorOfListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_IndexedMapOfShape;
-class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & Assign(const TopTools_IndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfShape & operator=(const TopTools_IndexedMapOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-
-};
-%feature("shadow") TopTools_IndexedMapOfShape::~TopTools_IndexedMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_IndexedMapOfShape {
+%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2071,6 +1683,699 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopTools_Array2OfShape;
+class TopTools_Array2OfShape {
+	public:
+		%feature("autodoc", "1");
+		TopTools_Array2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TopTools_Array2OfShape(const TopoDS_Shape Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const TopTools_Array2OfShape & Assign(const TopTools_Array2OfShape &Other);
+		%feature("autodoc", "1");
+		const TopTools_Array2OfShape & operator=(const TopTools_Array2OfShape &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape Value);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%feature("shadow") TopTools_Array2OfShape::~TopTools_Array2OfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_Array2OfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
+class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapNodeOfDataMapOfShapeListOfInteger(const TopoDS_Shape K, const TColStd_ListOfInteger &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		TColStd_ListOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger GetHandle() {
+	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeListOfInteger::~TopTools_DataMapNodeOfDataMapOfShapeListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_HArray2OfShape;
+class TopTools_HArray2OfShape : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopTools_HArray2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		TopTools_HArray2OfShape(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const TopoDS_Shape V);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const TopoDS_Shape Value);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const TopTools_Array2OfShape & Array2() const;
+		%feature("autodoc", "1");
+		TopTools_Array2OfShape & ChangeArray2();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_HArray2OfShape {
+	Handle_TopTools_HArray2OfShape GetHandle() {
+	return *(Handle_TopTools_HArray2OfShape*) &$self;
+	}
+};
+%extend TopTools_HArray2OfShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_HArray2OfShape::~TopTools_HArray2OfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_HArray2OfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_ShapeMapHasher;
+class TopTools_ShapeMapHasher {
+	public:
+		%feature("autodoc", "1");
+		TopTools_ShapeMapHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const TopoDS_Shape S, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const TopoDS_Shape S1, const TopoDS_Shape S2);
+
+};
+%feature("shadow") TopTools_ShapeMapHasher::~TopTools_ShapeMapHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_ShapeMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape;
+class TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape(const TopoDS_Shape K, const TopTools_SequenceOfShape &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		TopTools_SequenceOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape GetHandle() {
+	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape::~TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
+class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopoDS_Shape I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape GetHandle() {
+	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape*) &$self;
+	}
+};
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_IndexedDataMapOfShapeAddress;
+class TopTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_IndexedDataMapOfShapeAddress(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_IndexedDataMapOfShapeAddress & Assign(const TopTools_IndexedDataMapOfShapeAddress &Other);
+		%feature("autodoc", "1");
+		TopTools_IndexedDataMapOfShapeAddress & operator=(const TopTools_IndexedDataMapOfShapeAddress &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const Standard_Address &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Standard_Address &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Address & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Standard_Address & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Address & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Address & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Standard_Address & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
+
+};
+%feature("shadow") TopTools_IndexedDataMapOfShapeAddress::~TopTools_IndexedDataMapOfShapeAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_IndexedDataMapOfShapeAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapOfShapeShape;
+class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeShape & Assign(const TopTools_DataMapOfShapeShape &Other);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeShape & operator=(const TopTools_DataMapOfShapeShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") TopTools_DataMapOfShapeShape::~TopTools_DataMapOfShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapOfShapeShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_ListIteratorOfListOfShape;
+class TopTools_ListIteratorOfListOfShape {
+	public:
+		%feature("autodoc", "1");
+		TopTools_ListIteratorOfListOfShape();
+		%feature("autodoc", "1");
+		TopTools_ListIteratorOfListOfShape(const TopTools_ListOfShape &L);
+		%feature("autodoc", "1");
+		void Initialize(const TopTools_ListOfShape &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+
+};
+%feature("shadow") TopTools_ListIteratorOfListOfShape::~TopTools_ListIteratorOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_ListIteratorOfListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_IndexedMapOfOrientedShape;
+class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfOrientedShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfOrientedShape & Assign(const TopTools_IndexedMapOfOrientedShape &Other);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfOrientedShape & operator=(const TopTools_IndexedMapOfOrientedShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+
+};
+%feature("shadow") TopTools_IndexedMapOfOrientedShape::~TopTools_IndexedMapOfOrientedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_IndexedMapOfOrientedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_ListOfShape;
+class TopTools_ListOfShape {
+	public:
+		%feature("autodoc", "1");
+		TopTools_ListOfShape();
+		%feature("autodoc", "1");
+		void Assign(const TopTools_ListOfShape &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopTools_ListOfShape &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		void Prepend(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopTools_ListOfShape & Other);
+		%feature("autodoc", "1");
+		void Append(const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		void Append(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & theIt);
+		%feature("autodoc", "1");
+		void Append(TopTools_ListOfShape & Other);
+		%feature("autodoc", "1");
+		TopoDS_Shape  First() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopTools_ListIteratorOfListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TopoDS_Shape I, TopTools_ListIteratorOfListOfShape & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopTools_ListOfShape & Other, TopTools_ListIteratorOfListOfShape & It);
+
+};
+%feature("shadow") TopTools_ListOfShape::~TopTools_ListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_ListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_IndexedMapOfShape;
+class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & Assign(const TopTools_IndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		TopTools_IndexedMapOfShape & operator=(const TopTools_IndexedMapOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+
+};
+%feature("shadow") TopTools_IndexedMapOfShape::~TopTools_IndexedMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_IndexedMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapOfShapeListOfShape;
+class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeListOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeListOfShape & Assign(const TopTools_DataMapOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeListOfShape & operator=(const TopTools_DataMapOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_ListOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") TopTools_DataMapOfShapeListOfShape::~TopTools_DataMapOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
+class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger(const TopoDS_Shape K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetValue() {
+				return (Standard_Integer) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Integer value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger GetHandle() {
+	return *(Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger::~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_MapIteratorOfMapOfShape;
+class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopTools_MapIteratorOfMapOfShape();
+		%feature("autodoc", "1");
+		TopTools_MapIteratorOfMapOfShape(const TopTools_MapOfShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopTools_MapOfShape &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+
+};
+%feature("shadow") TopTools_MapIteratorOfMapOfShape::~TopTools_MapIteratorOfMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_MapIteratorOfMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopTools_DataMapOfShapeSequenceOfShape;
 class TopTools_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
 	public:
@@ -2120,42 +2425,50 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfShape;
-class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
+%nodefaultctor TopTools_DataMapOfShapeInteger;
+class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		TopTools_IndexedMapNodeOfIndexedMapOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TopTools_DataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
+		TopTools_DataMapOfShapeInteger & Assign(const TopTools_DataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfShapeInteger & operator=(const TopTools_DataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const TopoDS_Shape K) const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
+				Standard_Integer GetChangeFind(const TopoDS_Shape K) {
+				return (Standard_Integer) $self->ChangeFind(K);
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
+				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape K) {
+				$self->ChangeFind(K)=value;
 				}
 		};
 		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
+		Standard_Integer & operator()(const TopoDS_Shape K);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
-%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
-	Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape GetHandle() {
-	return *(Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape*) &$self;
-	}
-};
-%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_IndexedMapNodeOfIndexedMapOfShape::~TopTools_IndexedMapNodeOfIndexedMapOfShape %{
+%feature("shadow") TopTools_DataMapOfShapeInteger::~TopTools_DataMapOfShapeInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2164,7 +2477,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
+%extend TopTools_DataMapOfShapeInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2230,44 +2543,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
-class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollection_MapNode {
+%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeReal;
+class TopTools_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopoDS_Shape I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		TopTools_DataMapNodeOfDataMapOfShapeReal(const TopoDS_Shape K, const Standard_Real &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
+		TopoDS_Shape  Key() const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
 				}
 		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
-	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape GetHandle() {
-	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape*) &$self;
+%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
+	Handle_TopTools_DataMapNodeOfDataMapOfShapeReal GetHandle() {
+	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeReal*) &$self;
 	}
 };
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape %{
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeReal::~TopTools_DataMapNodeOfDataMapOfShapeReal %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2276,7 +2585,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
+%extend TopTools_DataMapNodeOfDataMapOfShapeReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2370,7 +2679,7 @@ class TopTools_HArray1OfListOfShape : public MMgt_TShared {
 };
 %extend TopTools_HArray1OfListOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_HArray1OfListOfShape::~TopTools_HArray1OfListOfShape %{
@@ -2468,7 +2777,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNo
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeListOfShape::~TopTools_DataMapNodeOfDataMapOfShapeListOfShape %{
@@ -2481,88 +2790,6 @@ def __del__(self):
 %}
 
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
-class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopTools_MapIteratorOfMapOfOrientedShape();
-		%feature("autodoc", "1");
-		TopTools_MapIteratorOfMapOfOrientedShape(const TopTools_MapOfOrientedShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopTools_MapOfOrientedShape &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-
-};
-%feature("shadow") TopTools_MapIteratorOfMapOfOrientedShape::~TopTools_MapIteratorOfMapOfOrientedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_MapIteratorOfMapOfOrientedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
-class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress(const TopoDS_Shape K1, const Standard_Integer K2, const Standard_Address &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Standard_Address & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress GetHandle() {
-	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress*) &$self;
-	}
-};
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2599,7 +2826,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_DataMapNodeOfDataMapOfIntegerShape::~TopTools_DataMapNodeOfDataMapOfIntegerShape %{
@@ -2612,85 +2839,6 @@ def __del__(self):
 %}
 
 %extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_HSequenceOfShape;
-class TopTools_HSequenceOfShape : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopTools_HSequenceOfShape();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const TopoDS_Shape anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const TopoDS_Shape anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const TopoDS_Shape anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const TopoDS_Shape anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const TopoDS_Shape anItem);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TopTools_SequenceOfShape & Sequence() const;
-		%feature("autodoc", "1");
-		TopTools_SequenceOfShape & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TopTools_HSequenceOfShape ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_HSequenceOfShape {
-	Handle_TopTools_HSequenceOfShape GetHandle() {
-	return *(Handle_TopTools_HSequenceOfShape*) &$self;
-	}
-};
-%extend TopTools_HSequenceOfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_HSequenceOfShape::~TopTools_HSequenceOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_HSequenceOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2773,30 +2921,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeShape;
-class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
+%nodefaultctor TopTools_HArray1OfShape;
+class TopTools_HArray1OfShape : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TopTools_DataMapNodeOfDataMapOfShapeShape(const TopoDS_Shape K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
+		TopTools_HArray1OfShape(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
+		TopTools_HArray1OfShape(const Standard_Integer Low, const Standard_Integer Up, const TopoDS_Shape V);
 		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
+		void Init(const TopoDS_Shape V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TopoDS_Shape Value);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TopTools_Array1OfShape & Array1() const;
+		%feature("autodoc", "1");
+		TopTools_Array1OfShape & ChangeArray1();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
-	Handle_TopTools_DataMapNodeOfDataMapOfShapeShape GetHandle() {
-	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeShape*) &$self;
+%extend TopTools_HArray1OfShape {
+	Handle_TopTools_HArray1OfShape GetHandle() {
+	return *(Handle_TopTools_HArray1OfShape*) &$self;
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
+%extend TopTools_HArray1OfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeShape::~TopTools_DataMapNodeOfDataMapOfShapeShape %{
+%feature("shadow") TopTools_HArray1OfShape::~TopTools_HArray1OfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2805,75 +2969,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_MapOfOrientedShape;
-class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_MapOfOrientedShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_MapOfOrientedShape & Assign(const TopTools_MapOfOrientedShape &Other);
-		%feature("autodoc", "1");
-		TopTools_MapOfOrientedShape & operator=(const TopTools_MapOfOrientedShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const TopoDS_Shape aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const TopoDS_Shape aKey);
-
-};
-%feature("shadow") TopTools_MapOfOrientedShape::~TopTools_MapOfOrientedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_MapOfOrientedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape;
-class TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape();
-		%feature("autodoc", "1");
-		TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape(const TopTools_DataMapOfOrientedShapeShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopTools_DataMapOfOrientedShapeShape &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Value() const;
-
-};
-%feature("shadow") TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape::~TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape {
+%extend TopTools_HArray1OfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2911,22 +3007,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger;
-class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
+%nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
+class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger();
+		TopTools_MapIteratorOfMapOfOrientedShape();
 		%feature("autodoc", "1");
-		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger(const TopTools_DataMapOfShapeListOfInteger &aMap);
+		TopTools_MapIteratorOfMapOfOrientedShape(const TopTools_MapOfOrientedShape &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const TopTools_DataMapOfShapeListOfInteger &aMap);
+		void Initialize(const TopTools_MapOfOrientedShape &aMap);
 		%feature("autodoc", "1");
 		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Value() const;
 
 };
-%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger::~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger %{
+%feature("shadow") TopTools_MapIteratorOfMapOfOrientedShape::~TopTools_MapIteratorOfMapOfOrientedShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2935,57 +3029,37 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger {
+%extend TopTools_MapIteratorOfMapOfOrientedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor TopTools_DataMapOfShapeInteger;
-class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
+%nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeShape;
+class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
+		TopTools_DataMapNodeOfDataMapOfShapeShape(const TopoDS_Shape K, const TopoDS_Shape I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeInteger & Assign(const TopTools_DataMapOfShapeInteger &Other);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeInteger & operator=(const TopTools_DataMapOfShapeInteger &Other);
+		TopoDS_Shape  Value() const;
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const TopoDS_Shape K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const TopoDS_Shape K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TopTools_DataMapOfShapeInteger::~TopTools_DataMapOfShapeInteger %{
+%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
+	Handle_TopTools_DataMapNodeOfDataMapOfShapeShape GetHandle() {
+	return *(Handle_TopTools_DataMapNodeOfDataMapOfShapeShape*) &$self;
+	}
+};
+%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_DataMapNodeOfDataMapOfShapeShape::~TopTools_DataMapNodeOfDataMapOfShapeShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2994,7 +3068,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_DataMapOfShapeInteger {
+%extend TopTools_DataMapNodeOfDataMapOfShapeShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3044,6 +3118,165 @@ def __del__(self):
 %}
 
 %extend TopTools_DataMapOfIntegerListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapOfIntegerShape;
+class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapOfIntegerShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfIntegerShape & Assign(const TopTools_DataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		TopTools_DataMapOfIntegerShape & operator=(const TopTools_DataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") TopTools_DataMapOfIntegerShape::~TopTools_DataMapOfIntegerShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapOfIntegerShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_HSequenceOfShape;
+class TopTools_HSequenceOfShape : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopTools_HSequenceOfShape();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const TopoDS_Shape anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const TopoDS_Shape anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const TopoDS_Shape anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const TopoDS_Shape anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TopTools_HSequenceOfShape &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const TopoDS_Shape anItem);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const TopTools_SequenceOfShape & Sequence() const;
+		%feature("autodoc", "1");
+		TopTools_SequenceOfShape & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_TopTools_HSequenceOfShape ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopTools_HSequenceOfShape {
+	Handle_TopTools_HSequenceOfShape GetHandle() {
+	return *(Handle_TopTools_HSequenceOfShape*) &$self;
+	}
+};
+%extend TopTools_HSequenceOfShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopTools_HSequenceOfShape::~TopTools_HSequenceOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_HSequenceOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger;
+class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger();
+		%feature("autodoc", "1");
+		TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger(const TopTools_DataMapOfShapeListOfInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopTools_DataMapOfShapeListOfInteger &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Value() const;
+
+};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger::~TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3130,7 +3363,7 @@ class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
 };
 %extend TopTools_StdMapNodeOfMapOfOrientedShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_StdMapNodeOfMapOfOrientedShape::~TopTools_StdMapNodeOfMapOfOrientedShape %{
@@ -3143,65 +3376,6 @@ def __del__(self):
 %}
 
 %extend TopTools_StdMapNodeOfMapOfOrientedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_IndexedDataMapOfShapeAddress;
-class TopTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapOfShapeAddress(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapOfShapeAddress & Assign(const TopTools_IndexedDataMapOfShapeAddress &Other);
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapOfShapeAddress & operator=(const TopTools_IndexedDataMapOfShapeAddress &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K, const Standard_Address &I);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Standard_Address &T);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Address & FindFromIndex(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Address & ChangeFromIndex(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const Standard_Integer I);
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Address & FindFromKey(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address & ChangeFromKey(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopTools_IndexedDataMapOfShapeAddress::~TopTools_IndexedDataMapOfShapeAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_IndexedDataMapOfShapeAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3226,7 +3400,7 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 };
 %extend TopTools_ListNodeOfListOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_ListNodeOfListOfShape::~TopTools_ListNodeOfListOfShape %{
@@ -3239,157 +3413,6 @@ def __del__(self):
 %}
 
 %extend TopTools_ListNodeOfListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapOfOrientedShapeShape;
-class TopTools_DataMapOfOrientedShapeShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapOfOrientedShapeShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfOrientedShapeShape & Assign(const TopTools_DataMapOfOrientedShapeShape &Other);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfOrientedShapeShape & operator=(const TopTools_DataMapOfOrientedShapeShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopTools_DataMapOfOrientedShapeShape::~TopTools_DataMapOfOrientedShapeShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapOfOrientedShapeShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
-class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
-	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape GetHandle() {
-	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape*) &$self;
-	}
-};
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_DataMapOfIntegerShape;
-class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_DataMapOfIntegerShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfIntegerShape & Assign(const TopTools_DataMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfIntegerShape & operator=(const TopTools_DataMapOfIntegerShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const TopoDS_Shape I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		TopoDS_Shape  ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		TopoDS_Shape  operator()(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const Standard_Integer &K);
-
-};
-%feature("shadow") TopTools_DataMapOfIntegerShape::~TopTools_DataMapOfIntegerShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_DataMapOfIntegerShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3421,6 +3444,37 @@ def __del__(self):
 %}
 
 %extend TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape;
+class TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape();
+		%feature("autodoc", "1");
+		TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape(const TopTools_DataMapOfOrientedShapeShape &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopTools_DataMapOfOrientedShapeShape &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value() const;
+
+};
+%feature("shadow") TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape::~TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_DataMapIteratorOfDataMapOfOrientedShapeShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3517,40 +3571,44 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
-class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_MapNode {
+%nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
+class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger(const TopoDS_Shape K, const Standard_Integer &I, const TCollection_MapNodePtr &n);
+		TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape(const TopoDS_Shape K1, const Standard_Integer K2, const TopTools_ListOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
 		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
+		TopoDS_Shape  Key1() const;
 		%feature("autodoc","1");
 		%extend {
-				Standard_Integer GetValue() {
-				return (Standard_Integer) $self->Value();
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
 				}
 		};
 		%feature("autodoc","1");
 		%extend {
-				void SetValue(Standard_Integer value ) {
-				$self->Value()=value;
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
 				}
 		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
-	Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger GetHandle() {
-	return *(Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger*) &$self;
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
+	Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape GetHandle() {
+	return *(Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape*) &$self;
 	}
 };
-%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger::~TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger %{
+%feature("shadow") TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape::~TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3559,52 +3617,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopTools_IndexedMapOfOrientedShape;
-class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfOrientedShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfOrientedShape & Assign(const TopTools_IndexedMapOfOrientedShape &Other);
-		%feature("autodoc", "1");
-		TopTools_IndexedMapOfOrientedShape & operator=(const TopTools_IndexedMapOfOrientedShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Add(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		void Substitute(const Standard_Integer I, const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		void RemoveLast();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  operator()(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Integer FindIndex(const TopoDS_Shape K) const;
-
-};
-%feature("shadow") TopTools_IndexedMapOfOrientedShape::~TopTools_IndexedMapOfOrientedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_IndexedMapOfOrientedShape {
+%extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3642,35 +3655,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_MapIteratorOfMapOfShape;
-class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopTools_MapIteratorOfMapOfShape();
-		%feature("autodoc", "1");
-		TopTools_MapIteratorOfMapOfShape(const TopTools_MapOfShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopTools_MapOfShape &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-
-};
-%feature("shadow") TopTools_MapIteratorOfMapOfShape::~TopTools_MapIteratorOfMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopTools_MapIteratorOfMapOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopTools_SequenceNodeOfSequenceOfShape;
 class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 	public:
@@ -3689,7 +3673,7 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 };
 %extend TopTools_SequenceNodeOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_SequenceNodeOfSequenceOfShape::~TopTools_SequenceNodeOfSequenceOfShape %{
@@ -3708,40 +3692,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTools_DataMapOfShapeListOfShape;
-class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
+%nodefaultctor TopTools_SequenceOfShape;
+class TopTools_SequenceOfShape : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeListOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeListOfShape & Assign(const TopTools_DataMapOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		TopTools_DataMapOfShapeListOfShape & operator=(const TopTools_DataMapOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		TopTools_SequenceOfShape();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_ListOfShape &I);
+		const TopTools_SequenceOfShape & Assign(const TopTools_SequenceOfShape &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		const TopTools_SequenceOfShape & operator=(const TopTools_SequenceOfShape &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
+		void Append(const TopoDS_Shape T);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Find(const TopoDS_Shape K) const;
+		void Append(TopTools_SequenceOfShape & S);
 		%feature("autodoc", "1");
-		const TopTools_ListOfShape & operator()(const TopoDS_Shape K) const;
+		void Prepend(const TopoDS_Shape T);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeFind(const TopoDS_Shape K);
+		void Prepend(TopTools_SequenceOfShape & S);
 		%feature("autodoc", "1");
-		TopTools_ListOfShape & operator()(const TopoDS_Shape K);
+		void InsertBefore(const Standard_Integer Index, const TopoDS_Shape I);
 		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
+		void InsertBefore(const Standard_Integer Index, TopTools_SequenceOfShape & S);
 		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
+		void InsertAfter(const Standard_Integer Index, const TopoDS_Shape T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TopTools_SequenceOfShape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  First() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TopTools_SequenceOfShape & S);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") TopTools_DataMapOfShapeListOfShape::~TopTools_DataMapOfShapeListOfShape %{
+%feature("shadow") TopTools_SequenceOfShape::~TopTools_SequenceOfShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3750,7 +3750,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTools_DataMapOfShapeListOfShape {
+%extend TopTools_SequenceOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3812,7 +3812,7 @@ class TopTools_StdMapNodeOfMapOfShape : public TCollection_MapNode {
 };
 %extend TopTools_StdMapNodeOfMapOfShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopTools_StdMapNodeOfMapOfShape::~TopTools_StdMapNodeOfMapOfShape %{

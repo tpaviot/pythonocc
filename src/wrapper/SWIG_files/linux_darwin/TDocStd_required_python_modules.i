@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TDF
 import Resource
 import PCDM
 import TCollection
-import TDF
 };

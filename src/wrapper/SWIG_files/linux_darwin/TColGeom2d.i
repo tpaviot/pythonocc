@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve;
-class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve & operator=(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
-	TColGeom2d_SequenceNodeOfSequenceOfCurve* GetObject() {
-	return (TColGeom2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve::~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TColGeom2d_HSequenceOfBoundedCurve;
 class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	public:
@@ -356,6 +318,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve;
+class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve();
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve & operator=(const Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve & operator=(const TColGeom2d_SequenceNodeOfSequenceOfCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	TColGeom2d_SequenceNodeOfSequenceOfCurve* GetObject() {
+	return (TColGeom2d_SequenceNodeOfSequenceOfCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve::~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TColGeom2d_HArray1OfBoundedCurve;
 class Handle_TColGeom2d_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 	public:
@@ -388,44 +388,6 @@ def __del__(self):
 %}
 
 %extend Handle_TColGeom2d_HArray1OfBoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TColGeom2d_HArray1OfBezierCurve;
-class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfBezierCurve();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfBezierCurve(const Handle_TColGeom2d_HArray1OfBezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfBezierCurve(const TColGeom2d_HArray1OfBezierCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfBezierCurve & operator=(const Handle_TColGeom2d_HArray1OfBezierCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfBezierCurve & operator=(const TColGeom2d_HArray1OfBezierCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TColGeom2d_HArray1OfBezierCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_HArray1OfBezierCurve {
-	TColGeom2d_HArray1OfBezierCurve* GetObject() {
-	return (TColGeom2d_HArray1OfBezierCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TColGeom2d_HArray1OfBezierCurve::~Handle_TColGeom2d_HArray1OfBezierCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TColGeom2d_HArray1OfBezierCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -470,42 +432,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColGeom2d_Array1OfBoundedCurve;
-class TColGeom2d_Array1OfBoundedCurve {
+%nodefaultctor Handle_TColGeom2d_HArray1OfBezierCurve;
+class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColGeom2d_Array1OfBoundedCurve(const Standard_Integer Low, const Standard_Integer Up);
+		Handle_TColGeom2d_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
-		TColGeom2d_Array1OfBoundedCurve(const Handle_Geom2d_BoundedCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Handle_TColGeom2d_HArray1OfBezierCurve(const Handle_TColGeom2d_HArray1OfBezierCurve &aHandle);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_BoundedCurve &V);
+		Handle_TColGeom2d_HArray1OfBezierCurve(const TColGeom2d_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		void Destroy();
+		Handle_TColGeom2d_HArray1OfBezierCurve & operator=(const Handle_TColGeom2d_HArray1OfBezierCurve &aHandle);
 		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
+		Handle_TColGeom2d_HArray1OfBezierCurve & operator=(const TColGeom2d_HArray1OfBezierCurve *anItem);
 		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfBoundedCurve & Assign(const TColGeom2d_Array1OfBoundedCurve &Other);
-		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfBoundedCurve & operator=(const TColGeom2d_Array1OfBoundedCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index);
+		static		Handle_TColGeom2d_HArray1OfBezierCurve DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") TColGeom2d_Array1OfBoundedCurve::~TColGeom2d_Array1OfBoundedCurve %{
+%extend Handle_TColGeom2d_HArray1OfBezierCurve {
+	TColGeom2d_HArray1OfBezierCurve* GetObject() {
+	return (TColGeom2d_HArray1OfBezierCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TColGeom2d_HArray1OfBezierCurve::~Handle_TColGeom2d_HArray1OfBezierCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -514,86 +463,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TColGeom2d_Array1OfBoundedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TColGeom2d_HSequenceOfBoundedCurve;
-class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColGeom2d_HSequenceOfBoundedCurve();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Geom2d_BoundedCurve &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom2d_BoundedCurve &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HSequenceOfBoundedCurve Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const TColGeom2d_SequenceOfBoundedCurve & Sequence() const;
-		%feature("autodoc", "1");
-		TColGeom2d_SequenceOfBoundedCurve & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HSequenceOfBoundedCurve ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColGeom2d_HSequenceOfBoundedCurve {
-	Handle_TColGeom2d_HSequenceOfBoundedCurve GetHandle() {
-	return *(Handle_TColGeom2d_HSequenceOfBoundedCurve*) &$self;
-	}
-};
-%extend TColGeom2d_HSequenceOfBoundedCurve {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TColGeom2d_HSequenceOfBoundedCurve::~TColGeom2d_HSequenceOfBoundedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColGeom2d_HSequenceOfBoundedCurve {
+%extend Handle_TColGeom2d_HArray1OfBezierCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -716,57 +586,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColGeom2d_Array1OfCurve;
-class TColGeom2d_Array1OfCurve {
-	public:
-		%feature("autodoc", "1");
-		TColGeom2d_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColGeom2d_Array1OfCurve(const Handle_Geom2d_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_Curve &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfCurve & Assign(const TColGeom2d_Array1OfCurve &Other);
-		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfCurve & operator=(const TColGeom2d_Array1OfCurve &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_Curve &Value);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") TColGeom2d_Array1OfCurve::~TColGeom2d_Array1OfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColGeom2d_Array1OfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TColGeom2d_HArray1OfBSplineCurve;
 class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
 	public:
@@ -803,7 +622,7 @@ class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HArray1OfBSplineCurve::~TColGeom2d_HArray1OfBSplineCurve %{
@@ -858,7 +677,7 @@ class TColGeom2d_HArray1OfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfGeometry {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HArray1OfGeometry::~TColGeom2d_HArray1OfGeometry %{
@@ -877,15 +696,23 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColGeom2d_HArray1OfBezierCurve;
-class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
+%nodefaultctor TColGeom2d_Array1OfBoundedCurve;
+class TColGeom2d_Array1OfBoundedCurve {
 	public:
 		%feature("autodoc", "1");
-		TColGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		TColGeom2d_Array1OfBoundedCurve(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		TColGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom2d_BezierCurve &V);
+		TColGeom2d_Array1OfBoundedCurve(const Handle_Geom2d_BoundedCurve &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom2d_BezierCurve &V);
+		void Init(const Handle_Geom2d_BoundedCurve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfBoundedCurve & Assign(const TColGeom2d_Array1OfBoundedCurve &Other);
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfBoundedCurve & operator=(const TColGeom2d_Array1OfBoundedCurve &Other);
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -893,30 +720,18 @@ class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer Upper() const;
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BezierCurve &Value);
+		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &Value);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_BezierCurve & Value(const Standard_Integer Index) const;
+		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_BezierCurve & ChangeValue(const Standard_Integer Index);
+		const Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		const TColGeom2d_Array1OfBezierCurve & Array1() const;
+		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		TColGeom2d_Array1OfBezierCurve & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index);
 
 };
-%extend TColGeom2d_HArray1OfBezierCurve {
-	Handle_TColGeom2d_HArray1OfBezierCurve GetHandle() {
-	return *(Handle_TColGeom2d_HArray1OfBezierCurve*) &$self;
-	}
-};
-%extend TColGeom2d_HArray1OfBezierCurve {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TColGeom2d_HArray1OfBezierCurve::~TColGeom2d_HArray1OfBezierCurve %{
+%feature("shadow") TColGeom2d_Array1OfBoundedCurve::~TColGeom2d_Array1OfBoundedCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -925,7 +740,44 @@ def __del__(self):
 		pass
 %}
 
-%extend TColGeom2d_HArray1OfBezierCurve {
+%extend TColGeom2d_Array1OfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TColGeom2d_SequenceNodeOfSequenceOfGeometry;
+class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		TColGeom2d_SequenceNodeOfSequenceOfGeometry(const Handle_Geom2d_Geometry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Geometry & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
+	Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry GetHandle() {
+	return *(Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry*) &$self;
+	}
+};
+%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TColGeom2d_SequenceNodeOfSequenceOfGeometry::~TColGeom2d_SequenceNodeOfSequenceOfGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1043,7 +895,7 @@ class TColGeom2d_HSequenceOfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HSequenceOfGeometry::~TColGeom2d_HSequenceOfGeometry %{
@@ -1080,7 +932,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNo
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve::~TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve %{
@@ -1150,28 +1002,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColGeom2d_SequenceNodeOfSequenceOfGeometry;
-class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
+%nodefaultctor TColGeom2d_SequenceOfBoundedCurve;
+class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		TColGeom2d_SequenceNodeOfSequenceOfGeometry(const Handle_Geom2d_Geometry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		TColGeom2d_SequenceOfBoundedCurve();
 		%feature("autodoc", "1");
-		Handle_Geom2d_Geometry & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const TColGeom2d_SequenceOfBoundedCurve & Assign(const TColGeom2d_SequenceOfBoundedCurve &Other);
+		%feature("autodoc", "1");
+		const TColGeom2d_SequenceOfBoundedCurve & operator=(const TColGeom2d_SequenceOfBoundedCurve &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Geom2d_BoundedCurve &T);
+		%feature("autodoc", "1");
+		void Append(TColGeom2d_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Geom2d_BoundedCurve &T);
+		%feature("autodoc", "1");
+		void Prepend(TColGeom2d_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BoundedCurve & First() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BoundedCurve & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &I);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
-	Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry GetHandle() {
-	return *(Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry*) &$self;
-	}
-};
-%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TColGeom2d_SequenceNodeOfSequenceOfGeometry::~TColGeom2d_SequenceNodeOfSequenceOfGeometry %{
+%feature("shadow") TColGeom2d_SequenceOfBoundedCurve::~TColGeom2d_SequenceOfBoundedCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1180,7 +1060,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
+%extend TColGeom2d_SequenceOfBoundedCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1312,7 +1192,7 @@ class TColGeom2d_HSequenceOfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HSequenceOfCurve::~TColGeom2d_HSequenceOfCurve %{
@@ -1331,56 +1211,70 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColGeom2d_SequenceOfBoundedCurve;
-class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
+%nodefaultctor TColGeom2d_HSequenceOfBoundedCurve;
+class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		TColGeom2d_SequenceOfBoundedCurve();
+		TColGeom2d_HSequenceOfBoundedCurve();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		const TColGeom2d_SequenceOfBoundedCurve & Assign(const TColGeom2d_SequenceOfBoundedCurve &Other);
+		void Append(const Handle_Geom2d_BoundedCurve &anItem);
 		%feature("autodoc", "1");
-		const TColGeom2d_SequenceOfBoundedCurve & operator=(const TColGeom2d_SequenceOfBoundedCurve &Other);
+		void Append(const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
 		%feature("autodoc", "1");
-		void Append(const Handle_Geom2d_BoundedCurve &T);
+		void Prepend(const Handle_Geom2d_BoundedCurve &anItem);
 		%feature("autodoc", "1");
-		void Append(TColGeom2d_SequenceOfBoundedCurve & S);
+		void Prepend(const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Geom2d_BoundedCurve &T);
+		void Reverse();
 		%feature("autodoc", "1");
-		void Prepend(TColGeom2d_SequenceOfBoundedCurve & S);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &I);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
 		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &T);
+		void InsertAfter(const Standard_Integer anIndex, const Handle_TColGeom2d_HSequenceOfBoundedCurve &aSequence);
 		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & First() const;
+		Handle_TColGeom2d_HSequenceOfBoundedCurve Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & Last() const;
+		void SetValue(const Standard_Integer anIndex, const Handle_Geom2d_BoundedCurve &anItem);
 		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, TColGeom2d_SequenceOfBoundedCurve & S);
+		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & Value(const Standard_Integer Index) const;
+		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index) const;
+		void Remove(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BoundedCurve &I);
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
 		%feature("autodoc", "1");
-		Handle_Geom2d_BoundedCurve & ChangeValue(const Standard_Integer Index);
+		const TColGeom2d_SequenceOfBoundedCurve & Sequence() const;
 		%feature("autodoc", "1");
-		Handle_Geom2d_BoundedCurve & operator()(const Standard_Integer Index);
+		TColGeom2d_SequenceOfBoundedCurve & ChangeSequence();
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
+		Handle_TColGeom2d_HSequenceOfBoundedCurve ShallowCopy() const;
 		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TColGeom2d_SequenceOfBoundedCurve::~TColGeom2d_SequenceOfBoundedCurve %{
+%extend TColGeom2d_HSequenceOfBoundedCurve {
+	Handle_TColGeom2d_HSequenceOfBoundedCurve GetHandle() {
+	return *(Handle_TColGeom2d_HSequenceOfBoundedCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HSequenceOfBoundedCurve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TColGeom2d_HSequenceOfBoundedCurve::~TColGeom2d_HSequenceOfBoundedCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1389,7 +1283,58 @@ def __del__(self):
 		pass
 %}
 
-%extend TColGeom2d_SequenceOfBoundedCurve {
+%extend TColGeom2d_HSequenceOfBoundedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TColGeom2d_Array1OfCurve;
+class TColGeom2d_Array1OfCurve {
+	public:
+		%feature("autodoc", "1");
+		TColGeom2d_Array1OfCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom2d_Array1OfCurve(const Handle_Geom2d_Curve &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_Curve &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfCurve & Assign(const TColGeom2d_Array1OfCurve &Other);
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfCurve & operator=(const TColGeom2d_Array1OfCurve &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom2d_Curve &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") TColGeom2d_Array1OfCurve::~TColGeom2d_Array1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColGeom2d_Array1OfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1432,7 +1377,7 @@ class TColGeom2d_HArray1OfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HArray1OfCurve::~TColGeom2d_HArray1OfCurve %{
@@ -1487,7 +1432,7 @@ class TColGeom2d_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_HArray1OfBoundedCurve::~TColGeom2d_HArray1OfBoundedCurve %{
@@ -1524,7 +1469,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColGeom2d_SequenceNodeOfSequenceOfCurve::~TColGeom2d_SequenceNodeOfSequenceOfCurve %{
@@ -1537,6 +1482,61 @@ def __del__(self):
 %}
 
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TColGeom2d_HArray1OfBezierCurve;
+class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColGeom2d_HArray1OfBezierCurve(const Standard_Integer Low, const Standard_Integer Up, const Handle_Geom2d_BezierCurve &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Geom2d_BezierCurve &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Geom2d_BezierCurve &Value);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_BezierCurve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_BezierCurve & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColGeom2d_Array1OfBezierCurve & Array1() const;
+		%feature("autodoc", "1");
+		TColGeom2d_Array1OfBezierCurve & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColGeom2d_HArray1OfBezierCurve {
+	Handle_TColGeom2d_HArray1OfBezierCurve GetHandle() {
+	return *(Handle_TColGeom2d_HArray1OfBezierCurve*) &$self;
+	}
+};
+%extend TColGeom2d_HArray1OfBezierCurve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TColGeom2d_HArray1OfBezierCurve::~TColGeom2d_HArray1OfBezierCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColGeom2d_HArray1OfBezierCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

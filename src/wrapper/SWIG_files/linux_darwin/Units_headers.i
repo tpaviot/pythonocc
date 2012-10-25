@@ -83,8 +83,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_TColStd_HSequenceOfHAsciiString.hxx>
+#include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<Units.hxx>
 %}

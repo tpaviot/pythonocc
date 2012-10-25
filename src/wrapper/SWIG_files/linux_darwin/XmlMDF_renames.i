@@ -24,10 +24,10 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_XmlMDF_ADriver::DownCast;
-%rename(DownCast) Handle_XmlMDF_ReferenceDriver::DownCast;
 %rename(DownCast) Handle_XmlMDF_TagSourceDriver::DownCast;
 %rename(DownCast) Handle_XmlMDF_DataMapNodeOfMapOfDriver::DownCast;
-%rename(DownCast) Handle_XmlMDF_ADriverTable::DownCast;
+%rename(DownCast) Handle_XmlMDF_ReferenceDriver::DownCast;
 %rename(DownCast) Handle_XmlMDF_DataMapNodeOfTypeADriverMap::DownCast;
+%rename(DownCast) Handle_XmlMDF_ADriverTable::DownCast;
 %rename(FromTo) XmlMDF::FromTo;
 %rename(AddDrivers) XmlMDF::AddDrivers;

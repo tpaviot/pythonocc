@@ -269,10 +269,10 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Geom.i
 %import Standard.i
-%import Message.i
 %import GeomAbs.i
+%import Message.i
 %import TopAbs.i

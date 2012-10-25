@@ -229,8 +229,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_Graphic3d_Structure.hxx>
 #include<Graphic3d_Vertex.hxx>
-#include<Graphic3d_Vector.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
+#include<Handle_Graphic3d_TextureEnv.hxx>
+#include<Graphic3d_Vector.hxx>
 #include<Quantity_Color.hxx>
 #include<Aspect_Background.hxx>
 #include<Aspect_GradientBackground.hxx>
@@ -241,12 +242,11 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
-#include<Handle_Graphic3d_TextureEnv.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
-#include<TColStd_SequenceOfInteger.hxx>
-#include<Handle_Graphic3d_DataStructureManager.hxx>
 #include<Handle_Graphic3d_AspectLine3d.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<Handle_Graphic3d_AspectText3d.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
+#include<Handle_Aspect_GraphicDevice.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
+#include<Handle_Graphic3d_DataStructureManager.hxx>
 %}

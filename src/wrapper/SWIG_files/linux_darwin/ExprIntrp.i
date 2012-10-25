@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
-class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
-	ExprIntrp_SequenceNodeOfSequenceOfNamedFunction* GetObject() {
-	return (ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollection_MapNode {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
+class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	ExprIntrp_StackNodeOfStackOfGeneralExpression* GetObject() {
+	return (ExprIntrp_StackNodeOfStackOfGeneralExpression*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression::~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,29 +242,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
-class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_ExprIntrp_GenRel;
+class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	public:
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression();
+		Handle_ExprIntrp_GenRel();
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		Handle_ExprIntrp_GenRel(const Handle_ExprIntrp_GenRel &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		Handle_ExprIntrp_GenRel(const ExprIntrp_GenRel *anItem);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression &aHandle);
+		Handle_ExprIntrp_GenRel & operator=(const Handle_ExprIntrp_GenRel &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression & operator=(const ExprIntrp_StackNodeOfStackOfGeneralExpression *anItem);
+		Handle_ExprIntrp_GenRel & operator=(const ExprIntrp_GenRel *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_GenRel DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	ExprIntrp_StackNodeOfStackOfGeneralExpression* GetObject() {
-	return (ExprIntrp_StackNodeOfStackOfGeneralExpression*)$self->Access();
+%extend Handle_ExprIntrp_GenRel {
+	ExprIntrp_GenRel* GetObject() {
+	return (ExprIntrp_GenRel*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression::~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression %{
+%feature("shadow") Handle_ExprIntrp_GenRel::~Handle_ExprIntrp_GenRel %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -273,7 +273,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
+%extend Handle_ExprIntrp_GenRel {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -318,6 +318,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
+class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression();
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const ExprIntrp_SequenceNodeOfSequenceOfNamedExpression *anItem);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression &aHandle);
+		%feature("autodoc", "1");
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedExpression *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	ExprIntrp_SequenceNodeOfSequenceOfNamedExpression* GetObject() {
+	return (ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ExprIntrp_GenFct;
 class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 	public:
@@ -356,29 +394,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
-class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
+class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression();
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction();
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression &aHandle);
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const ExprIntrp_SequenceNodeOfSequenceOfNamedExpression *anItem);
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression &aHandle);
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction &aHandle);
 		%feature("autodoc", "1");
-		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedExpression *anItem);
+		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction & operator=(const ExprIntrp_SequenceNodeOfSequenceOfNamedFunction *anItem);
 		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	ExprIntrp_SequenceNodeOfSequenceOfNamedExpression* GetObject() {
-	return (ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*)$self->Access();
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	ExprIntrp_SequenceNodeOfSequenceOfNamedFunction* GetObject() {
+	return (ExprIntrp_SequenceNodeOfSequenceOfNamedFunction*)$self->Access();
 	}
 };
-%feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
+%feature("shadow") Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -387,7 +425,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+%extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -432,44 +470,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ExprIntrp_GenRel;
-class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
-	public:
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel();
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel(const Handle_ExprIntrp_GenRel &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel(const ExprIntrp_GenRel *anItem);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel & operator=(const Handle_ExprIntrp_GenRel &aHandle);
-		%feature("autodoc", "1");
-		Handle_ExprIntrp_GenRel & operator=(const ExprIntrp_GenRel *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_GenRel DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ExprIntrp_GenRel {
-	ExprIntrp_GenRel* GetObject() {
-	return (ExprIntrp_GenRel*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ExprIntrp_GenRel::~Handle_ExprIntrp_GenRel %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ExprIntrp_GenRel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ExprIntrp_Generator;
 class ExprIntrp_Generator : public MMgt_TShared {
 	public:
@@ -496,7 +496,7 @@ class ExprIntrp_Generator : public MMgt_TShared {
 };
 %extend ExprIntrp_Generator {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_Generator::~ExprIntrp_Generator %{
@@ -536,7 +536,7 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenFct {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenFct::~ExprIntrp_GenFct %{
@@ -573,7 +573,7 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfNames::~ExprIntrp_StackNodeOfStackOfNames %{
@@ -592,28 +592,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
-class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_SeqNode {
+%nodefaultctor ExprIntrp_SyntaxError;
+class ExprIntrp_SyntaxError : public Standard_Failure {
 	public:
 		%feature("autodoc", "1");
-		ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_Expr_NamedExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		ExprIntrp_SyntaxError();
 		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & Value() const;
+		ExprIntrp_SyntaxError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_ExprIntrp_SyntaxError NewInstance(const char * aMessage="");
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression GetHandle() {
-	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*) &$self;
+%extend ExprIntrp_SyntaxError {
+	Handle_ExprIntrp_SyntaxError GetHandle() {
+	return *(Handle_ExprIntrp_SyntaxError*) &$self;
 	}
 };
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+%extend ExprIntrp_SyntaxError {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
+%feature("shadow") ExprIntrp_SyntaxError::~ExprIntrp_SyntaxError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -622,48 +628,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ExprIntrp_StackOfNames;
-class ExprIntrp_StackOfNames {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_StackOfNames();
-		%feature("autodoc", "1");
-		const ExprIntrp_StackOfNames & Assign(const ExprIntrp_StackOfNames &Other);
-		%feature("autodoc", "1");
-		const ExprIntrp_StackOfNames & operator=(const ExprIntrp_StackOfNames &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Top() const;
-		%feature("autodoc", "1");
-		void Push(const TCollection_AsciiString &I);
-		%feature("autodoc", "1");
-		void Pop();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		TCollection_AsciiString & ChangeTop();
-
-};
-%feature("shadow") ExprIntrp_StackOfNames::~ExprIntrp_StackOfNames %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ExprIntrp_StackOfNames {
+%extend ExprIntrp_SyntaxError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -768,6 +733,107 @@ def __del__(self):
 };
 
 
+%nodefaultctor ExprIntrp_StackOfNames;
+class ExprIntrp_StackOfNames {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_StackOfNames();
+		%feature("autodoc", "1");
+		const ExprIntrp_StackOfNames & Assign(const ExprIntrp_StackOfNames &Other);
+		%feature("autodoc", "1");
+		const ExprIntrp_StackOfNames & operator=(const ExprIntrp_StackOfNames &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Top() const;
+		%feature("autodoc", "1");
+		void Push(const TCollection_AsciiString &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		TCollection_AsciiString & ChangeTop();
+
+};
+%feature("shadow") ExprIntrp_StackOfNames::~ExprIntrp_StackOfNames %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ExprIntrp_StackOfNames {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
+class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_SequenceNodeOfSequenceOfNamedExpression(const Handle_Expr_NamedExpression &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression GetHandle() {
+	return *(Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression*) &$self;
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ExprIntrp;
+class ExprIntrp {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp();
+
+};
+%feature("shadow") ExprIntrp::~ExprIntrp %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ExprIntrp {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralExpression;
 class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	public:
@@ -801,94 +867,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ExprIntrp;
-class ExprIntrp {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp();
-
-};
-%feature("shadow") ExprIntrp::~ExprIntrp %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ExprIntrp {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ExprIntrp_SequenceOfNamedExpression;
-class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_SequenceOfNamedExpression();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ExprIntrp_SequenceOfNamedExpression & Assign(const ExprIntrp_SequenceOfNamedExpression &Other);
-		%feature("autodoc", "1");
-		const ExprIntrp_SequenceOfNamedExpression & operator=(const ExprIntrp_SequenceOfNamedExpression &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void Append(ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void Prepend(ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & First() const;
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") ExprIntrp_SequenceOfNamedExpression::~ExprIntrp_SequenceOfNamedExpression %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ExprIntrp_SequenceOfNamedExpression {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ExprIntrp_GenRel;
 class ExprIntrp_GenRel : public ExprIntrp_Generator {
 	public:
@@ -911,7 +889,7 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenRel {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenRel::~ExprIntrp_GenRel %{
@@ -981,7 +959,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralFunction::~ExprIntrp_StackNodeOfStackOfGeneralFunction %{
@@ -1051,7 +1029,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralRelation::~ExprIntrp_StackNodeOfStackOfGeneralRelation %{
@@ -1111,28 +1089,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
-class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode {
+%nodefaultctor ExprIntrp_SequenceOfNamedExpression;
+class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_MapNodePtr &n);
+		ExprIntrp_SequenceOfNamedExpression();
 		%feature("autodoc", "1");
-		Handle_Expr_GeneralExpression & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const ExprIntrp_SequenceOfNamedExpression & Assign(const ExprIntrp_SequenceOfNamedExpression &Other);
+		%feature("autodoc", "1");
+		const ExprIntrp_SequenceOfNamedExpression & operator=(const ExprIntrp_SequenceOfNamedExpression &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void Append(ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void Prepend(ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & First() const;
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression GetHandle() {
-	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression*) &$self;
-	}
-};
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralExpression::~ExprIntrp_StackNodeOfStackOfGeneralExpression %{
+%feature("shadow") ExprIntrp_SequenceOfNamedExpression::~ExprIntrp_SequenceOfNamedExpression %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1141,7 +1147,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+%extend ExprIntrp_SequenceOfNamedExpression {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1248,7 +1254,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
@@ -1261,6 +1267,43 @@ def __del__(self):
 %}
 
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
+class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_StackNodeOfStackOfGeneralExpression(const Handle_Expr_GeneralExpression &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Expr_GeneralExpression & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression GetHandle() {
+	return *(Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression*) &$self;
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralExpression::~ExprIntrp_StackNodeOfStackOfGeneralExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1289,7 +1332,7 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenExp {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenExp::~ExprIntrp_GenExp %{
@@ -1361,49 +1404,6 @@ def __del__(self):
 %}
 
 %extend ExprIntrp_Analysis {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ExprIntrp_SyntaxError;
-class ExprIntrp_SyntaxError : public Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_SyntaxError();
-		%feature("autodoc", "1");
-		ExprIntrp_SyntaxError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_ExprIntrp_SyntaxError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ExprIntrp_SyntaxError {
-	Handle_ExprIntrp_SyntaxError GetHandle() {
-	return *(Handle_ExprIntrp_SyntaxError*) &$self;
-	}
-};
-%extend ExprIntrp_SyntaxError {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") ExprIntrp_SyntaxError::~ExprIntrp_SyntaxError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ExprIntrp_SyntaxError {
 	void _kill_pointed() {
 		delete $self;
 	}

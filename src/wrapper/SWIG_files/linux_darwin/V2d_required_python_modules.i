@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Aspect
-import Graphic2d
 import Quantity
+import Graphic2d
+import Aspect
 };

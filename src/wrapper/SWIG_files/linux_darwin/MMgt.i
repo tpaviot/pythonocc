@@ -108,7 +108,7 @@ class MMgt_TShared : public Standard_Transient {
 };
 %extend MMgt_TShared {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MMgt_TShared::~MMgt_TShared %{

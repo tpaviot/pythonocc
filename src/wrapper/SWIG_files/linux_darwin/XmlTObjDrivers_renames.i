@@ -25,10 +25,10 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_XmlTObjDrivers_XYZDriver::DownCast;
 %rename(DownCast) Handle_XmlTObjDrivers_DocumentStorageDriver::DownCast;
-%rename(DownCast) Handle_XmlTObjDrivers_DocumentRetrievalDriver::DownCast;
-%rename(DownCast) Handle_XmlTObjDrivers_ReferenceDriver::DownCast;
 %rename(DownCast) Handle_XmlTObjDrivers_ObjectDriver::DownCast;
 %rename(DownCast) Handle_XmlTObjDrivers_IntSparseArrayDriver::DownCast;
+%rename(DownCast) Handle_XmlTObjDrivers_ReferenceDriver::DownCast;
+%rename(DownCast) Handle_XmlTObjDrivers_DocumentRetrievalDriver::DownCast;
 %rename(DownCast) Handle_XmlTObjDrivers_ModelDriver::DownCast;
 %rename(Factory) XmlTObjDrivers::Factory;
 %rename(AddDrivers) XmlTObjDrivers::AddDrivers;

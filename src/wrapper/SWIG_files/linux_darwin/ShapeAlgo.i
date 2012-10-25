@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_ShapeAlgo_ToolContainer;
+class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer();
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer & operator=(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeAlgo_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAlgo_ToolContainer {
+	ShapeAlgo_ToolContainer* GetObject() {
+	return (ShapeAlgo_ToolContainer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeAlgo_ToolContainer::~Handle_ShapeAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeAlgo_ToolContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
 class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	public:
@@ -90,29 +128,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeAlgo_ToolContainer;
-class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
+%nodefaultctor ShapeAlgo_ToolContainer;
+class ShapeAlgo_ToolContainer : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer();
+		ShapeAlgo_ToolContainer();
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer(const Handle_ShapeAlgo_ToolContainer &aHandle);
+		virtual		Handle_ShapeFix_Shape FixShape() const;
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer(const ShapeAlgo_ToolContainer *anItem);
+		virtual		Handle_ShapeFix_EdgeProjAux EdgeProjAux() const;
 		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer & operator=(const Handle_ShapeAlgo_ToolContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAlgo_ToolContainer & operator=(const ShapeAlgo_ToolContainer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAlgo_ToolContainer DownCast(const Handle_Standard_Transient &AnObject);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Handle_ShapeAlgo_ToolContainer {
-	ShapeAlgo_ToolContainer* GetObject() {
-	return (ShapeAlgo_ToolContainer*)$self->Access();
+%extend ShapeAlgo_ToolContainer {
+	Handle_ShapeAlgo_ToolContainer GetHandle() {
+	return *(Handle_ShapeAlgo_ToolContainer*) &$self;
 	}
 };
-%feature("shadow") Handle_ShapeAlgo_ToolContainer::~Handle_ShapeAlgo_ToolContainer %{
+%extend ShapeAlgo_ToolContainer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -121,7 +160,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_ShapeAlgo_ToolContainer {
+%extend ShapeAlgo_ToolContainer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -174,7 +213,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 };
 %extend ShapeAlgo_AlgoContainer {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeAlgo_AlgoContainer::~ShapeAlgo_AlgoContainer %{
@@ -187,45 +226,6 @@ def __del__(self):
 %}
 
 %extend ShapeAlgo_AlgoContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAlgo_ToolContainer;
-class ShapeAlgo_ToolContainer : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeAlgo_ToolContainer();
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeFix_Shape FixShape() const;
-		%feature("autodoc", "1");
-		virtual		Handle_ShapeFix_EdgeProjAux EdgeProjAux() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeAlgo_ToolContainer {
-	Handle_ShapeAlgo_ToolContainer GetHandle() {
-	return *(Handle_ShapeAlgo_ToolContainer*) &$self;
-	}
-};
-%extend ShapeAlgo_ToolContainer {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") ShapeAlgo_ToolContainer::~ShapeAlgo_ToolContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAlgo_ToolContainer {
 	void _kill_pointed() {
 		delete $self;
 	}

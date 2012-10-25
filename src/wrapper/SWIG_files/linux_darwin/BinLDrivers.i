@@ -158,7 +158,7 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend BinLDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinLDrivers_DocumentStorageDriver::~BinLDrivers_DocumentStorageDriver %{
@@ -226,6 +226,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor BinLDrivers;
+class BinLDrivers {
+	public:
+		%feature("autodoc", "1");
+		BinLDrivers();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
+		%feature("autodoc", "1");
+		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
+		%feature("autodoc", "1");
+		static		TCollection_AsciiString StorageVersion();
+
+};
+%feature("shadow") BinLDrivers::~BinLDrivers %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinLDrivers {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;
 class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
@@ -252,7 +281,7 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend BinLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinLDrivers_DocumentRetrievalDriver::~BinLDrivers_DocumentRetrievalDriver %{
@@ -265,35 +294,6 @@ def __del__(self):
 %}
 
 %extend BinLDrivers_DocumentRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BinLDrivers;
-class BinLDrivers {
-	public:
-		%feature("autodoc", "1");
-		BinLDrivers();
-		%feature("autodoc", "1");
-		static		Handle_Standard_Transient Factory(const Standard_GUID &theGUID);
-		%feature("autodoc", "1");
-		static		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &MsgDrv);
-		%feature("autodoc", "1");
-		static		TCollection_AsciiString StorageVersion();
-
-};
-%feature("shadow") BinLDrivers::~BinLDrivers %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinLDrivers {
 	void _kill_pointed() {
 		delete $self;
 	}

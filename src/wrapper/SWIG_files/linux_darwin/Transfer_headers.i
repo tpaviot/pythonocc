@@ -240,13 +240,13 @@ $HeaderURL$
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Handle_Interface_Protocol.hxx>
 #include<TColStd_IndexedMapOfTransient.hxx>
-#include<Handle_Standard_Type.hxx>
-#include<Handle_Interface_Check.hxx>
-#include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Message_Msg.hxx>
+#include<Handle_Interface_Check.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<Interface_CheckIterator.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
+#include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Handle_TColStd_HSequenceOfTransient.hxx>
 #include<Interface_GeneralLib.hxx>
 #include<Handle_Interface_HGraph.hxx>

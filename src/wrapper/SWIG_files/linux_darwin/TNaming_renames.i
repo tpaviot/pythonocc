@@ -23,14 +23,14 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_TNaming_DeltaOnRemoval::DownCast;
-%rename(DownCast) Handle_TNaming_TranslateTool::DownCast;
 %rename(DownCast) Handle_TNaming_DeltaOnModification::DownCast;
-%rename(DownCast) Handle_TNaming_NamedShape::DownCast;
 %rename(DownCast) Handle_TNaming_Naming::DownCast;
 %rename(DownCast) Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape::DownCast;
 %rename(DownCast) Handle_TNaming_UsedShapes::DownCast;
 %rename(DownCast) Handle_TNaming_ListNodeOfListOfNamedShape::DownCast;
+%rename(DownCast) Handle_TNaming_TranslateTool::DownCast;
+%rename(DownCast) Handle_TNaming_NamedShape::DownCast;
+%rename(DownCast) Handle_TNaming_DeltaOnRemoval::DownCast;
 %rename(DownCast) Handle_TNaming_ListNodeOfListOfMapOfShape::DownCast;
 %rename(DownCast) Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet::DownCast;
 %rename(DownCast) Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape::DownCast;
@@ -50,16 +50,16 @@ $HeaderURL$
 %rename(ValidUntil) TNaming_Tool::ValidUntil;
 %rename(FindShape) TNaming_Tool::FindShape;
 %rename(GetID) TNaming_UsedShapes::GetID;
-%rename(IsNew) TNaming_Localizer::IsNew;
-%rename(FindGenerator) TNaming_Localizer::FindGenerator;
-%rename(FindShapeContext) TNaming_Localizer::FindShapeContext;
-%rename(CopyTool) TNaming_CopyShape::CopyTool;
-%rename(Translate) TNaming_CopyShape::Translate;
 %rename(CurrentShape) TNaming_NamingTool::CurrentShape;
 %rename(CurrentShapeFromShape) TNaming_NamingTool::CurrentShapeFromShape;
 %rename(BuildDescendants) TNaming_NamingTool::BuildDescendants;
+%rename(CopyTool) TNaming_CopyShape::CopyTool;
+%rename(Translate) TNaming_CopyShape::Translate;
 %rename(IsIdentified) TNaming_Selector::IsIdentified;
 %rename(GetID) TNaming_NamedShape::GetID;
+%rename(IsNew) TNaming_Localizer::IsNew;
+%rename(FindGenerator) TNaming_Localizer::FindGenerator;
+%rename(FindShapeContext) TNaming_Localizer::FindShapeContext;
 %rename(GetID) TNaming_Naming::GetID;
 %rename(Insert) TNaming_Naming::Insert;
 %rename(Name) TNaming_Naming::Name;

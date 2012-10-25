@@ -133,6 +133,56 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomToStep_MakeSurface;
+class GeomToStep_MakeSurface : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeSurface(const Handle_Geom_Surface &C);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Surface & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeSurface::~GeomToStep_MakeSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
+class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeSurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &CSurf);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeSurfaceOfLinearExtrusion::~GeomToStep_MakeSurfaceOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeSurfaceOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomToStep_MakeAxis1Placement;
 class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 	public:
@@ -164,18 +214,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve;
-class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeAxis2Placement2d;
+class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom_BSplineCurve &Bsplin);
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 A);
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom2d_BSplineCurve &Bsplin);
+		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d A);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve & Value() const;
+		const Handle_StepGeom_Axis2Placement2d & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve::~GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve %{
+%feature("shadow") GeomToStep_MakeAxis2Placement2d::~GeomToStep_MakeAxis2Placement2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -184,25 +234,23 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve {
+%extend GeomToStep_MakeAxis2Placement2d {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
-class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeElementarySurface;
+class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom_BSplineCurve &Bsplin);
+		GeomToStep_MakeElementarySurface(const Handle_Geom_ElementarySurface &S);
 		%feature("autodoc", "1");
-		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom2d_BSplineCurve &Bsplin);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
+		const Handle_StepGeom_ElementarySurface & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeBSplineCurveWithKnots::~GeomToStep_MakeBSplineCurveWithKnots %{
+%feature("shadow") GeomToStep_MakeElementarySurface::~GeomToStep_MakeElementarySurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -211,40 +259,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeBSplineCurveWithKnots {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeAxis2Placement3d;
-class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d();
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Ax2 A);
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Ax3 A);
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const gp_Trsf T);
-		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement3d(const Handle_Geom_Axis2Placement &A);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Axis2Placement3d & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeAxis2Placement3d::~GeomToStep_MakeAxis2Placement3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeAxis2Placement3d {
+%extend GeomToStep_MakeElementarySurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -270,6 +285,33 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeParabola;
+class GeomToStep_MakeParabola : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeParabola(const Handle_Geom2d_Parabola &C);
+		%feature("autodoc", "1");
+		GeomToStep_MakeParabola(const Handle_Geom_Parabola &C);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Parabola & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeParabola::~GeomToStep_MakeParabola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeParabola {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -326,31 +368,6 @@ def __del__(self):
 %}
 
 %extend GeomToStep_MakeSweptSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
-class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeSurfaceOfLinearExtrusion(const Handle_Geom_SurfaceOfLinearExtrusion &CSurf);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfaceOfLinearExtrusion & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeSurfaceOfLinearExtrusion::~GeomToStep_MakeSurfaceOfLinearExtrusion %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeSurfaceOfLinearExtrusion {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -459,18 +476,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeAxis2Placement2d;
-class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve;
+class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax2 A);
+		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom_BSplineCurve &Bsplin);
 		%feature("autodoc", "1");
-		GeomToStep_MakeAxis2Placement2d(const gp_Ax22d A);
+		GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve(const Handle_Geom2d_BSplineCurve &Bsplin);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_Axis2Placement2d & Value() const;
+		const Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeAxis2Placement2d::~GeomToStep_MakeAxis2Placement2d %{
+%feature("shadow") GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve::~GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -479,7 +496,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeAxis2Placement2d {
+%extend GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -513,18 +530,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeParabola;
-class GeomToStep_MakeParabola : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeAxis2Placement3d;
+class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeParabola(const Handle_Geom2d_Parabola &C);
+		GeomToStep_MakeAxis2Placement3d();
 		%feature("autodoc", "1");
-		GeomToStep_MakeParabola(const Handle_Geom_Parabola &C);
+		GeomToStep_MakeAxis2Placement3d(const gp_Ax2 A);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_Parabola & Value() const;
+		GeomToStep_MakeAxis2Placement3d(const gp_Ax3 A);
+		%feature("autodoc", "1");
+		GeomToStep_MakeAxis2Placement3d(const gp_Trsf T);
+		%feature("autodoc", "1");
+		GeomToStep_MakeAxis2Placement3d(const Handle_Geom_Axis2Placement &A);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Axis2Placement3d & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeParabola::~GeomToStep_MakeParabola %{
+%feature("shadow") GeomToStep_MakeAxis2Placement3d::~GeomToStep_MakeAxis2Placement3d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -533,7 +556,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeParabola {
+%extend GeomToStep_MakeAxis2Placement3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -565,16 +588,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeSurface;
-class GeomToStep_MakeSurface : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakePolyline;
+class GeomToStep_MakePolyline : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeSurface(const Handle_Geom_Surface &C);
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_Surface & Value() const;
+		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Polyline & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeSurface::~GeomToStep_MakeSurface %{
+%feature("shadow") GeomToStep_MakePolyline::~GeomToStep_MakePolyline %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -583,7 +608,38 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeSurface {
+%extend GeomToStep_MakePolyline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToStep_MakeCartesianPoint;
+class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
+	public:
+		%feature("autodoc", "1");
+		GeomToStep_MakeCartesianPoint(const gp_Pnt P);
+		%feature("autodoc", "1");
+		GeomToStep_MakeCartesianPoint(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		GeomToStep_MakeCartesianPoint(const Handle_Geom_CartesianPoint &P);
+		%feature("autodoc", "1");
+		GeomToStep_MakeCartesianPoint(const Handle_Geom2d_CartesianPoint &P);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_CartesianPoint & Value() const;
+
+};
+%feature("shadow") GeomToStep_MakeCartesianPoint::~GeomToStep_MakeCartesianPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToStep_MakeCartesianPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -644,31 +700,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeElementarySurface;
-class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeElementarySurface(const Handle_Geom_ElementarySurface &S);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_ElementarySurface & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeElementarySurface::~GeomToStep_MakeElementarySurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeElementarySurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomToStep_MakeBoundedSurface;
 class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	public:
@@ -723,22 +754,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeCartesianPoint;
-class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeCylindricalSurface;
+class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const gp_Pnt P);
+		GeomToStep_MakeCylindricalSurface(const Handle_Geom_CylindricalSurface &CSurf);
 		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const Handle_Geom_CartesianPoint &P);
-		%feature("autodoc", "1");
-		GeomToStep_MakeCartesianPoint(const Handle_Geom2d_CartesianPoint &P);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_CartesianPoint & Value() const;
+		const Handle_StepGeom_CylindricalSurface & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeCartesianPoint::~GeomToStep_MakeCartesianPoint %{
+%feature("shadow") GeomToStep_MakeCylindricalSurface::~GeomToStep_MakeCylindricalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -747,7 +772,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeCartesianPoint {
+%extend GeomToStep_MakeCylindricalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -781,16 +806,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakeCylindricalSurface;
-class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
+class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakeCylindricalSurface(const Handle_Geom_CylindricalSurface &CSurf);
+		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom_BSplineCurve &Bsplin);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_CylindricalSurface & Value() const;
+		GeomToStep_MakeBSplineCurveWithKnots(const Handle_Geom2d_BSplineCurve &Bsplin);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_BSplineCurveWithKnots & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakeCylindricalSurface::~GeomToStep_MakeCylindricalSurface %{
+%feature("shadow") GeomToStep_MakeBSplineCurveWithKnots::~GeomToStep_MakeBSplineCurveWithKnots %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -799,38 +826,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakeCylindricalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomToStep_MakeVector;
-class GeomToStep_MakeVector : public GeomToStep_Root {
-	public:
-		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const gp_Vec V);
-		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const gp_Vec2d V);
-		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const Handle_Geom_Vector &V);
-		%feature("autodoc", "1");
-		GeomToStep_MakeVector(const Handle_Geom2d_Vector &V);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_Vector & Value() const;
-
-};
-%feature("shadow") GeomToStep_MakeVector::~GeomToStep_MakeVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToStep_MakeVector {
+%extend GeomToStep_MakeBSplineCurveWithKnots {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -891,18 +887,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToStep_MakePolyline;
-class GeomToStep_MakePolyline : public GeomToStep_Root {
+%nodefaultctor GeomToStep_MakeVector;
+class GeomToStep_MakeVector : public GeomToStep_Root {
 	public:
 		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt &P);
+		GeomToStep_MakeVector(const gp_Vec V);
 		%feature("autodoc", "1");
-		GeomToStep_MakePolyline(const TColgp_Array1OfPnt2d &P);
+		GeomToStep_MakeVector(const gp_Vec2d V);
 		%feature("autodoc", "1");
-		const Handle_StepGeom_Polyline & Value() const;
+		GeomToStep_MakeVector(const Handle_Geom_Vector &V);
+		%feature("autodoc", "1");
+		GeomToStep_MakeVector(const Handle_Geom2d_Vector &V);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_Vector & Value() const;
 
 };
-%feature("shadow") GeomToStep_MakePolyline::~GeomToStep_MakePolyline %{
+%feature("shadow") GeomToStep_MakeVector::~GeomToStep_MakeVector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -911,7 +911,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GeomToStep_MakePolyline {
+%extend GeomToStep_MakeVector {
 	void _kill_pointed() {
 		delete $self;
 	}

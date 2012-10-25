@@ -157,6 +157,122 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepAP214_RWAppliedDateAssignment;
+class RWStepAP214_RWAppliedDateAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedDateAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedDateAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAppliedDateAssignment::~RWStepAP214_RWAppliedDateAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAppliedDateAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
+class RWStepAP214_RWAutoDesignOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignOrganizationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAutoDesignOrganizationAssignment::~RWStepAP214_RWAutoDesignOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAutoDesignOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
+class RWStepAP214_RWAutoDesignApprovalAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignApprovalAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignApprovalAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAutoDesignApprovalAssignment::~RWStepAP214_RWAutoDesignApprovalAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAutoDesignApprovalAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedPresentedItem;
+class RWStepAP214_RWAppliedPresentedItem {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedPresentedItem();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPresentedItem &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedPresentedItem &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAppliedPresentedItem::~RWStepAP214_RWAppliedPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAppliedPresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepAP214_ReadWriteModule;
 class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 	public:
@@ -187,7 +303,7 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWStepAP214_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWStepAP214_ReadWriteModule::~RWStepAP214_ReadWriteModule %{
@@ -200,35 +316,6 @@ def __del__(self):
 %}
 
 %extend RWStepAP214_ReadWriteModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
-class RWStepAP214_RWAutoDesignNominalDateAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignNominalDateAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignNominalDateAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAutoDesignNominalDateAssignment::~RWStepAP214_RWAutoDesignNominalDateAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAutoDesignNominalDateAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -258,35 +345,6 @@ def __del__(self):
 %}
 
 %extend RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
-class RWStepAP214_RWAutoDesignOrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignOrganizationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignOrganizationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAutoDesignOrganizationAssignment::~RWStepAP214_RWAutoDesignOrganizationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAutoDesignOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -351,35 +409,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAutoDesignDateAndPersonAssignment;
-class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignDateAndPersonAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAutoDesignDateAndPersonAssignment::~RWStepAP214_RWAutoDesignDateAndPersonAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAutoDesignDateAndPersonAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP214_RWClass;
 class RWStepAP214_RWClass {
 	public:
@@ -409,20 +438,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedDateAssignment;
-class RWStepAP214_RWAppliedDateAssignment {
+%nodefaultctor RWStepAP214_GeneralModule;
+class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedDateAssignment();
+		RWStepAP214_GeneralModule();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDateAssignment &ent) const;
+		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedDateAssignment &ent, Interface_EntityIterator & iter) const;
+		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		%feature("autodoc", "1");
+		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") RWStepAP214_RWAppliedDateAssignment::~RWStepAP214_RWAppliedDateAssignment %{
+%extend RWStepAP214_GeneralModule {
+	Handle_RWStepAP214_GeneralModule GetHandle() {
+	return *(Handle_RWStepAP214_GeneralModule*) &$self;
+	}
+};
+%extend RWStepAP214_GeneralModule {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") RWStepAP214_GeneralModule::~RWStepAP214_GeneralModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -431,7 +478,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP214_RWAppliedDateAssignment {
+%extend RWStepAP214_GeneralModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -467,38 +514,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_GeneralModule;
-class RWStepAP214_GeneralModule : public StepData_GeneralModule {
+%nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
+class RWStepAP214_RWAutoDesignNominalDateAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_GeneralModule();
+		RWStepAP214_RWAutoDesignNominalDateAssignment();
 		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
 		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignNominalDateAssignment &ent) const;
 		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CategoryNumber(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
-		%feature("autodoc", "1");
-		virtual		Handle_TCollection_HAsciiString Name(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Share(const Handle_StepAP214_AutoDesignNominalDateAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%extend RWStepAP214_GeneralModule {
-	Handle_RWStepAP214_GeneralModule GetHandle() {
-	return *(Handle_RWStepAP214_GeneralModule*) &$self;
-	}
-};
-%extend RWStepAP214_GeneralModule {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") RWStepAP214_GeneralModule::~RWStepAP214_GeneralModule %{
+%feature("shadow") RWStepAP214_RWAutoDesignNominalDateAssignment::~RWStepAP214_RWAutoDesignNominalDateAssignment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -507,7 +536,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP214_GeneralModule {
+%extend RWStepAP214_RWAutoDesignNominalDateAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -601,35 +630,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
-class RWStepAP214_RWAppliedExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAppliedExternalIdentificationAssignment::~RWStepAP214_RWAppliedExternalIdentificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP214;
 class RWStepAP214 {
 	public:
@@ -684,64 +684,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedDocumentReference;
-class RWStepAP214_RWAppliedDocumentReference {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedDocumentReference();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDocumentReference &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDocumentReference &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedDocumentReference &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAppliedDocumentReference::~RWStepAP214_RWAppliedDocumentReference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAppliedDocumentReference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
-class RWStepAP214_RWExternallyDefinedGeneralProperty {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWExternallyDefinedGeneralProperty();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWExternallyDefinedGeneralProperty::~RWStepAP214_RWExternallyDefinedGeneralProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWExternallyDefinedGeneralProperty {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP214_RWAppliedSecurityClassificationAssignment;
 class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 	public:
@@ -771,20 +713,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
-class RWStepAP214_RWAutoDesignApprovalAssignment {
+%nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
+class RWStepAP214_RWAutoDesignActualDateAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignApprovalAssignment();
+		RWStepAP214_RWAutoDesignActualDateAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignApprovalAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignApprovalAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP214_AutoDesignActualDateAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepAP214_RWAutoDesignApprovalAssignment::~RWStepAP214_RWAutoDesignApprovalAssignment %{
+%feature("shadow") RWStepAP214_RWAutoDesignActualDateAssignment::~RWStepAP214_RWAutoDesignActualDateAssignment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -793,27 +735,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP214_RWAutoDesignApprovalAssignment {
+%extend RWStepAP214_RWAutoDesignActualDateAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
-class RWStepAP214_RWAppliedOrganizationAssignment {
+%nodefaultctor RWStepAP214_RWAppliedDocumentReference;
+class RWStepAP214_RWAppliedDocumentReference {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedOrganizationAssignment();
+		RWStepAP214_RWAppliedDocumentReference();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedDocumentReference &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedDocumentReference &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP214_AppliedDocumentReference &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepAP214_RWAppliedOrganizationAssignment::~RWStepAP214_RWAppliedOrganizationAssignment %{
+%feature("shadow") RWStepAP214_RWAppliedDocumentReference::~RWStepAP214_RWAppliedDocumentReference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -822,94 +764,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP214_RWAppliedOrganizationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAppliedPresentedItem;
-class RWStepAP214_RWAppliedPresentedItem {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAppliedPresentedItem();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedPresentedItem &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedPresentedItem &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AppliedPresentedItem &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAppliedPresentedItem::~RWStepAP214_RWAppliedPresentedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAppliedPresentedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
-class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWAutoDesignSecurityClassificationAssignment::~RWStepAP214_RWAutoDesignSecurityClassificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepAP214_RWExternallyDefinedClass;
-class RWStepAP214_RWExternallyDefinedClass {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214_RWExternallyDefinedClass();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_ExternallyDefinedClass &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP214_RWExternallyDefinedClass::~RWStepAP214_RWExternallyDefinedClass %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214_RWExternallyDefinedClass {
+%extend RWStepAP214_RWAppliedDocumentReference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -945,20 +800,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
-class RWStepAP214_RWAutoDesignActualDateAssignment {
+%nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
+class RWStepAP214_RWExternallyDefinedGeneralProperty {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP214_RWAutoDesignActualDateAssignment();
+		RWStepAP214_RWExternallyDefinedGeneralProperty();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignActualDateAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP214_AutoDesignActualDateAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP214_ExternallyDefinedGeneralProperty &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepAP214_RWAutoDesignActualDateAssignment::~RWStepAP214_RWAutoDesignActualDateAssignment %{
+%feature("shadow") RWStepAP214_RWExternallyDefinedGeneralProperty::~RWStepAP214_RWExternallyDefinedGeneralProperty %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -967,7 +822,152 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP214_RWAutoDesignActualDateAssignment {
+%extend RWStepAP214_RWExternallyDefinedGeneralProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
+class RWStepAP214_RWAppliedExternalIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedExternalIdentificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAppliedExternalIdentificationAssignment::~RWStepAP214_RWAppliedExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
+class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignSecurityClassificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignSecurityClassificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAutoDesignSecurityClassificationAssignment::~RWStepAP214_RWAutoDesignSecurityClassificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
+class RWStepAP214_RWAppliedOrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAppliedOrganizationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AppliedOrganizationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AppliedOrganizationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAppliedOrganizationAssignment::~RWStepAP214_RWAppliedOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAppliedOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWExternallyDefinedClass;
+class RWStepAP214_RWExternallyDefinedClass {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWExternallyDefinedClass();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_ExternallyDefinedClass &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_ExternallyDefinedClass &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWExternallyDefinedClass::~RWStepAP214_RWExternallyDefinedClass %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWExternallyDefinedClass {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214_RWAutoDesignDateAndPersonAssignment;
+class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214_RWAutoDesignDateAndPersonAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP214_AutoDesignDateAndPersonAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP214_RWAutoDesignDateAndPersonAssignment::~RWStepAP214_RWAutoDesignDateAndPersonAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}

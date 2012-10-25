@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Interface
 import TCollection
 import gp
+import Interface
 import TColStd
 };

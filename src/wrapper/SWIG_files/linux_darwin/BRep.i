@@ -166,6 +166,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BRep_CurveOnSurface;
+class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface();
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface(const Handle_BRep_CurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface(const BRep_CurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface & operator=(const Handle_BRep_CurveOnSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOnSurface & operator=(const BRep_CurveOnSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_CurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_CurveOnSurface {
+	BRep_CurveOnSurface* GetObject() {
+	return (BRep_CurveOnSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_CurveOnSurface::~Handle_BRep_CurveOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_CurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRep_Curve3D;
 class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 	public:
@@ -198,6 +236,44 @@ def __del__(self):
 %}
 
 %extend Handle_BRep_Curve3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRep_PointRepresentation;
+class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation();
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation(const Handle_BRep_PointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation(const BRep_PointRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & operator=(const Handle_BRep_PointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & operator=(const BRep_PointRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_PointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_PointRepresentation {
+	BRep_PointRepresentation* GetObject() {
+	return (BRep_PointRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_PointRepresentation::~Handle_BRep_PointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_PointRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,158 +356,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRep_CurveOn2Surfaces;
-class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces();
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces(const Handle_BRep_CurveOn2Surfaces &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces(const BRep_CurveOn2Surfaces *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces & operator=(const Handle_BRep_CurveOn2Surfaces &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOn2Surfaces & operator=(const BRep_CurveOn2Surfaces *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_CurveOn2Surfaces DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_CurveOn2Surfaces {
-	BRep_CurveOn2Surfaces* GetObject() {
-	return (BRep_CurveOn2Surfaces*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_CurveOn2Surfaces::~Handle_BRep_CurveOn2Surfaces %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_CurveOn2Surfaces {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRep_PointRepresentation;
-class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation();
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation(const Handle_BRep_PointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation(const BRep_PointRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & operator=(const Handle_BRep_PointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & operator=(const BRep_PointRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_PointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_PointRepresentation {
-	BRep_PointRepresentation* GetObject() {
-	return (BRep_PointRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_PointRepresentation::~Handle_BRep_PointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_PointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRep_PointsOnSurface;
-class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface();
-		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface(const Handle_BRep_PointsOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface(const BRep_PointsOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface & operator=(const Handle_BRep_PointsOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointsOnSurface & operator=(const BRep_PointsOnSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_PointsOnSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_PointsOnSurface {
-	BRep_PointsOnSurface* GetObject() {
-	return (BRep_PointsOnSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_PointsOnSurface::~Handle_BRep_PointsOnSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_PointsOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRep_PointOnCurve;
-class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve();
-		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve(const Handle_BRep_PointOnCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve(const BRep_PointOnCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve & operator=(const Handle_BRep_PointOnCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurve & operator=(const BRep_PointOnCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_PointOnCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_PointOnCurve {
-	BRep_PointOnCurve* GetObject() {
-	return (BRep_PointOnCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_PointOnCurve::~Handle_BRep_PointOnCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_PointOnCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRep_PolygonOnSurface;
 class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 	public:
@@ -508,29 +432,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRep_PointOnCurveOnSurface;
-class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
+%nodefaultctor Handle_BRep_PointsOnSurface;
+class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface();
+		Handle_BRep_PointsOnSurface();
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface(const Handle_BRep_PointOnCurveOnSurface &aHandle);
+		Handle_BRep_PointsOnSurface(const Handle_BRep_PointsOnSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface(const BRep_PointOnCurveOnSurface *anItem);
+		Handle_BRep_PointsOnSurface(const BRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface & operator=(const Handle_BRep_PointOnCurveOnSurface &aHandle);
+		Handle_BRep_PointsOnSurface & operator=(const Handle_BRep_PointsOnSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRep_PointOnCurveOnSurface & operator=(const BRep_PointOnCurveOnSurface *anItem);
+		Handle_BRep_PointsOnSurface & operator=(const BRep_PointsOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_PointOnCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointsOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRep_PointOnCurveOnSurface {
-	BRep_PointOnCurveOnSurface* GetObject() {
-	return (BRep_PointOnCurveOnSurface*)$self->Access();
+%extend Handle_BRep_PointsOnSurface {
+	BRep_PointsOnSurface* GetObject() {
+	return (BRep_PointsOnSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRep_PointOnCurveOnSurface::~Handle_BRep_PointOnCurveOnSurface %{
+%feature("shadow") Handle_BRep_PointsOnSurface::~Handle_BRep_PointsOnSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -539,45 +463,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRep_PointOnCurveOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRep_CurveOnSurface;
-class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface();
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface(const Handle_BRep_CurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface(const BRep_CurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface & operator=(const Handle_BRep_CurveOnSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveOnSurface & operator=(const BRep_CurveOnSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_CurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_CurveOnSurface {
-	BRep_CurveOnSurface* GetObject() {
-	return (BRep_CurveOnSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_CurveOnSurface::~Handle_BRep_CurveOnSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_CurveOnSurface {
+%extend Handle_BRep_PointsOnSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -616,6 +502,158 @@ def __del__(self):
 %}
 
 %extend Handle_BRep_PointOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRep_PointOnCurve;
+class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve();
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve(const Handle_BRep_PointOnCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve(const BRep_PointOnCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve & operator=(const Handle_BRep_PointOnCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_PointOnCurve & operator=(const BRep_PointOnCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_PointOnCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_PointOnCurve {
+	BRep_PointOnCurve* GetObject() {
+	return (BRep_PointOnCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_PointOnCurve::~Handle_BRep_PointOnCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_PointOnCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRep_TEdge;
+class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge();
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge(const Handle_BRep_TEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge(const BRep_TEdge *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge & operator=(const Handle_BRep_TEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_TEdge & operator=(const BRep_TEdge *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_TEdge DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_TEdge {
+	BRep_TEdge* GetObject() {
+	return (BRep_TEdge*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_TEdge::~Handle_BRep_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRep_ListNodeOfListOfPointRepresentation;
+class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation();
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation(const BRep_ListNodeOfListOfPointRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const BRep_ListNodeOfListOfPointRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_ListNodeOfListOfPointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_ListNodeOfListOfPointRepresentation {
+	BRep_ListNodeOfListOfPointRepresentation* GetObject() {
+	return (BRep_ListNodeOfListOfPointRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_ListNodeOfListOfPointRepresentation::~Handle_BRep_ListNodeOfListOfPointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_ListNodeOfListOfPointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BRep_CurveOn2Surfaces;
+class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces();
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces(const Handle_BRep_CurveOn2Surfaces &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces(const BRep_CurveOn2Surfaces *anItem);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces & operator=(const Handle_BRep_CurveOn2Surfaces &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveOn2Surfaces & operator=(const BRep_CurveOn2Surfaces *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRep_CurveOn2Surfaces DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRep_CurveOn2Surfaces {
+	BRep_CurveOn2Surfaces* GetObject() {
+	return (BRep_CurveOn2Surfaces*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRep_CurveOn2Surfaces::~Handle_BRep_CurveOn2Surfaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRep_CurveOn2Surfaces {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -698,44 +736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRep_ListNodeOfListOfPointRepresentation;
-class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation();
-		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation(const BRep_ListNodeOfListOfPointRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const Handle_BRep_ListNodeOfListOfPointRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRep_ListNodeOfListOfPointRepresentation & operator=(const BRep_ListNodeOfListOfPointRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRep_ListNodeOfListOfPointRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRep_ListNodeOfListOfPointRepresentation {
-	BRep_ListNodeOfListOfPointRepresentation* GetObject() {
-	return (BRep_ListNodeOfListOfPointRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRep_ListNodeOfListOfPointRepresentation::~Handle_BRep_ListNodeOfListOfPointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRep_ListNodeOfListOfPointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRep_CurveOnClosedSurface;
 class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 	public:
@@ -812,29 +812,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_BRep_TEdge;
-class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
+%nodefaultctor Handle_BRep_PointOnCurveOnSurface;
+class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 	public:
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge();
+		Handle_BRep_PointOnCurveOnSurface();
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge(const Handle_BRep_TEdge &aHandle);
+		Handle_BRep_PointOnCurveOnSurface(const Handle_BRep_PointOnCurveOnSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge(const BRep_TEdge *anItem);
+		Handle_BRep_PointOnCurveOnSurface(const BRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge & operator=(const Handle_BRep_TEdge &aHandle);
+		Handle_BRep_PointOnCurveOnSurface & operator=(const Handle_BRep_PointOnCurveOnSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_BRep_TEdge & operator=(const BRep_TEdge *anItem);
+		Handle_BRep_PointOnCurveOnSurface & operator=(const BRep_PointOnCurveOnSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_BRep_TEdge DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_BRep_PointOnCurveOnSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_BRep_TEdge {
-	BRep_TEdge* GetObject() {
-	return (BRep_TEdge*)$self->Access();
+%extend Handle_BRep_PointOnCurveOnSurface {
+	BRep_PointOnCurveOnSurface* GetObject() {
+	return (BRep_PointOnCurveOnSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_BRep_TEdge::~Handle_BRep_TEdge %{
+%feature("shadow") Handle_BRep_PointOnCurveOnSurface::~Handle_BRep_PointOnCurveOnSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -843,7 +843,116 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_BRep_TEdge {
+%extend Handle_BRep_PointOnCurveOnSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_PointRepresentation;
+class BRep_PointRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & Location() const;
+		%feature("autodoc", "1");
+		void Location(const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter2() const;
+		%feature("autodoc", "1");
+		virtual		void Parameter2(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		void Curve(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom2d_Curve & PCurve() const;
+		%feature("autodoc", "1");
+		virtual		void PCurve(const Handle_Geom2d_Curve &C);
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		virtual		void Surface(const Handle_Geom_Surface &S);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PointRepresentation {
+	Handle_BRep_PointRepresentation GetHandle() {
+	return *(Handle_BRep_PointRepresentation*) &$self;
+	}
+};
+%extend BRep_PointRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_PointRepresentation::~BRep_PointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_PointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend BRep_PointRepresentation {
+	BRep_PointRepresentation () {}
+};
+
+
+%nodefaultctor BRep_ListNodeOfListOfPointRepresentation;
+class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListNodeOfListOfPointRepresentation(const Handle_BRep_PointRepresentation &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_ListNodeOfListOfPointRepresentation {
+	Handle_BRep_ListNodeOfListOfPointRepresentation GetHandle() {
+	return *(Handle_BRep_ListNodeOfListOfPointRepresentation*) &$self;
+	}
+};
+%extend BRep_ListNodeOfListOfPointRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_ListNodeOfListOfPointRepresentation::~BRep_ListNodeOfListOfPointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_ListNodeOfListOfPointRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -940,7 +1049,7 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 };
 %extend BRep_CurveRepresentation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveRepresentation::~BRep_CurveRepresentation %{
@@ -953,41 +1062,6 @@ def __del__(self):
 %}
 
 %extend BRep_CurveRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_CurveOn2Surfaces;
-class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		BRep_CurveOn2Surfaces(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2, const GeomAbs_Shape C);
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
-
-};
-%extend BRep_CurveOn2Surfaces {
-	Handle_BRep_CurveOn2Surfaces GetHandle() {
-	return *(Handle_BRep_CurveOn2Surfaces*) &$self;
-	}
-};
-%extend BRep_CurveOn2Surfaces {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_CurveOn2Surfaces::~BRep_CurveOn2Surfaces %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_CurveOn2Surfaces {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1014,8 +1088,6 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
 		%feature("autodoc", "1");
 		virtual		void Update();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend BRep_GCurve {
@@ -1025,7 +1097,7 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 };
 %extend BRep_GCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_GCurve::~BRep_GCurve %{
@@ -1053,18 +1125,6 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 		void SetUVPoints(const gp_Pnt2d P1, const gp_Pnt2d P2);
 		%feature("autodoc", "1");
 		void UVPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCurveOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Surface & Surface() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom2d_Curve & PCurve() const;
-		%feature("autodoc", "1");
-		virtual		void PCurve(const Handle_Geom2d_Curve &C);
-		%feature("autodoc", "1");
-		virtual		Handle_BRep_CurveRepresentation Copy() const;
 
 };
 %extend BRep_CurveOnSurface {
@@ -1074,7 +1134,7 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 };
 %extend BRep_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveOnSurface::~BRep_CurveOnSurface %{
@@ -1093,81 +1153,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRep_PointRepresentation;
-class BRep_PointRepresentation : public MMgt_TShared {
+%nodefaultctor BRep_PointsOnSurface;
+class BRep_PointsOnSurface : public BRep_PointRepresentation {
 	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurve(const Handle_Geom_Curve &C, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & Location() const;
-		%feature("autodoc", "1");
-		void Location(const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		void Parameter(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter2() const;
-		%feature("autodoc", "1");
-		virtual		void Parameter2(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		void Curve(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom2d_Curve & PCurve() const;
-		%feature("autodoc", "1");
-		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 		%feature("autodoc", "1");
 		virtual		const Handle_Geom_Surface & Surface() const;
 		%feature("autodoc", "1");
 		virtual		void Surface(const Handle_Geom_Surface &S);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PointRepresentation {
-	Handle_BRep_PointRepresentation GetHandle() {
-	return *(Handle_BRep_PointRepresentation*) &$self;
-	}
-};
-%extend BRep_PointRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_PointRepresentation::~BRep_PointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_PointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend BRep_PointRepresentation {
-	BRep_PointRepresentation () {}
-};
-
-
-%nodefaultctor BRep_PointsOnSurface;
-class BRep_PointsOnSurface : public BRep_PointRepresentation {
-	public:
 
 };
 %extend BRep_PointsOnSurface {
@@ -1177,7 +1171,7 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 };
 %extend BRep_PointsOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointsOnSurface::~BRep_PointsOnSurface %{
@@ -1204,6 +1198,14 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 	public:
 		%feature("autodoc", "1");
 		BRep_PointOnCurveOnSurface(const Standard_Real P, const Handle_Geom2d_Curve &C, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnCurveOnSurface(const Handle_Geom2d_Curve &PC, const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom2d_Curve & PCurve() const;
+		%feature("autodoc", "1");
+		virtual		void PCurve(const Handle_Geom2d_Curve &C);
 
 };
 %extend BRep_PointOnCurveOnSurface {
@@ -1213,7 +1215,7 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 };
 %extend BRep_PointOnCurveOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointOnCurveOnSurface::~BRep_PointOnCurveOnSurface %{
@@ -1289,7 +1291,7 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 };
 %extend BRep_PointOnCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointOnCurve::~BRep_PointOnCurve %{
@@ -1302,218 +1304,6 @@ def __del__(self):
 %}
 
 %extend BRep_PointOnCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_ListOfPointRepresentation;
-class BRep_ListOfPointRepresentation {
-	public:
-		%feature("autodoc", "1");
-		BRep_ListOfPointRepresentation();
-		%feature("autodoc", "1");
-		void Assign(const BRep_ListOfPointRepresentation &Other);
-		%feature("autodoc", "1");
-		void operator=(const BRep_ListOfPointRepresentation &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_BRep_PointRepresentation &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
-		%feature("autodoc", "1");
-		void Prepend(BRep_ListOfPointRepresentation & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_BRep_PointRepresentation &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
-		%feature("autodoc", "1");
-		void Append(BRep_ListOfPointRepresentation & Other);
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & First() const;
-		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertBefore(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
-		%feature("autodoc", "1");
-		void InsertAfter(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
-
-};
-%feature("shadow") BRep_ListOfPointRepresentation::~BRep_ListOfPointRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_ListOfPointRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_PolygonOnTriangulation;
-class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
-	public:
-		%feature("autodoc", "1");
-		BRep_PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &P, const Handle_Poly_Triangulation &T, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPolygonOnTriangulation() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPolygonOnTriangulation(const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		void PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Poly_Triangulation & Triangulation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation() const;
-		%feature("autodoc", "1");
-		virtual		Handle_BRep_CurveRepresentation Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PolygonOnTriangulation {
-	Handle_BRep_PolygonOnTriangulation GetHandle() {
-	return *(Handle_BRep_PolygonOnTriangulation*) &$self;
-	}
-};
-%extend BRep_PolygonOnTriangulation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_PolygonOnTriangulation::~BRep_PolygonOnTriangulation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_PolygonOnTriangulation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_Curve3D;
-class BRep_Curve3D : public BRep_GCurve {
-	public:
-		%feature("autodoc", "1");
-		BRep_Curve3D(const Handle_Geom_Curve &C, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCurve3D() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Geom_Curve & Curve3D() const;
-		%feature("autodoc", "1");
-		virtual		void Curve3D(const Handle_Geom_Curve &C);
-		%feature("autodoc", "1");
-		virtual		Handle_BRep_CurveRepresentation Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_Curve3D {
-	Handle_BRep_Curve3D GetHandle() {
-	return *(Handle_BRep_Curve3D*) &$self;
-	}
-};
-%extend BRep_Curve3D {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_Curve3D::~BRep_Curve3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_Curve3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_TEdge;
-class BRep_TEdge : public TopoDS_TEdge {
-	public:
-		%feature("autodoc", "1");
-		BRep_TEdge();
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real T);
-		%feature("autodoc", "1");
-		void UpdateTolerance(const Standard_Real T);
-		%feature("autodoc", "1");
-		Standard_Boolean SameParameter() const;
-		%feature("autodoc", "1");
-		void SameParameter(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		Standard_Boolean SameRange() const;
-		%feature("autodoc", "1");
-		void SameRange(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		Standard_Boolean Degenerated() const;
-		%feature("autodoc", "1");
-		void Degenerated(const Standard_Boolean S);
-		%feature("autodoc", "1");
-		const BRep_ListOfCurveRepresentation & Curves() const;
-		%feature("autodoc", "1");
-		BRep_ListOfCurveRepresentation & ChangeCurves();
-		%feature("autodoc", "1");
-		virtual		Handle_TopoDS_TShape EmptyCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_TEdge {
-	Handle_BRep_TEdge GetHandle() {
-	return *(Handle_BRep_TEdge*) &$self;
-	}
-};
-%extend BRep_TEdge {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_TEdge::~BRep_TEdge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_TEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1636,6 +1426,271 @@ def __del__(self):
 %}
 
 %extend BRep_Tool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_PolygonOnTriangulation;
+class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		BRep_PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &P, const Handle_Poly_Triangulation &T, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPolygonOnTriangulation() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPolygonOnTriangulation(const Handle_Poly_Triangulation &T, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		void PolygonOnTriangulation(const Handle_Poly_PolygonOnTriangulation &P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Poly_Triangulation & Triangulation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation() const;
+		%feature("autodoc", "1");
+		virtual		Handle_BRep_CurveRepresentation Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PolygonOnTriangulation {
+	Handle_BRep_PolygonOnTriangulation GetHandle() {
+	return *(Handle_BRep_PolygonOnTriangulation*) &$self;
+	}
+};
+%extend BRep_PolygonOnTriangulation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_PolygonOnTriangulation::~BRep_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_PolygonOnTriangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_TEdge;
+class BRep_TEdge : public TopoDS_TEdge {
+	public:
+		%feature("autodoc", "1");
+		BRep_TEdge();
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		void UpdateTolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		Standard_Boolean SameParameter() const;
+		%feature("autodoc", "1");
+		void SameParameter(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		Standard_Boolean SameRange() const;
+		%feature("autodoc", "1");
+		void SameRange(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		Standard_Boolean Degenerated() const;
+		%feature("autodoc", "1");
+		void Degenerated(const Standard_Boolean S);
+		%feature("autodoc", "1");
+		const BRep_ListOfCurveRepresentation & Curves() const;
+		%feature("autodoc", "1");
+		BRep_ListOfCurveRepresentation & ChangeCurves();
+		%feature("autodoc", "1");
+		virtual		Handle_TopoDS_TShape EmptyCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_TEdge {
+	Handle_BRep_TEdge GetHandle() {
+	return *(Handle_BRep_TEdge*) &$self;
+	}
+};
+%extend BRep_TEdge {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_TEdge::~BRep_TEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_Curve3D;
+class BRep_Curve3D : public BRep_GCurve {
+	public:
+		%feature("autodoc", "1");
+		BRep_Curve3D(const Handle_Geom_Curve &C, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCurve3D() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Curve & Curve3D() const;
+		%feature("autodoc", "1");
+		virtual		void Curve3D(const Handle_Geom_Curve &C);
+		%feature("autodoc", "1");
+		virtual		Handle_BRep_CurveRepresentation Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_Curve3D {
+	Handle_BRep_Curve3D GetHandle() {
+	return *(Handle_BRep_Curve3D*) &$self;
+	}
+};
+%extend BRep_Curve3D {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_Curve3D::~BRep_Curve3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_Curve3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_ListOfPointRepresentation;
+class BRep_ListOfPointRepresentation {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListOfPointRepresentation();
+		%feature("autodoc", "1");
+		void Assign(const BRep_ListOfPointRepresentation &Other);
+		%feature("autodoc", "1");
+		void operator=(const BRep_ListOfPointRepresentation &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_BRep_PointRepresentation &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
+		%feature("autodoc", "1");
+		void Prepend(BRep_ListOfPointRepresentation & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_BRep_PointRepresentation &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & theIt);
+		%feature("autodoc", "1");
+		void Append(BRep_ListOfPointRepresentation & Other);
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & First() const;
+		%feature("autodoc", "1");
+		Handle_BRep_PointRepresentation & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertBefore(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_BRep_PointRepresentation &I, BRep_ListIteratorOfListOfPointRepresentation & It);
+		%feature("autodoc", "1");
+		void InsertAfter(BRep_ListOfPointRepresentation & Other, BRep_ListIteratorOfListOfPointRepresentation & It);
+
+};
+%feature("shadow") BRep_ListOfPointRepresentation::~BRep_ListOfPointRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_ListOfPointRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_CurveOn2Surfaces;
+class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
+	public:
+		%feature("autodoc", "1");
+		BRep_CurveOn2Surfaces(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2, const GeomAbs_Shape C);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRegularity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsRegularity(const Handle_Geom_Surface &S1, const Handle_Geom_Surface &S2, const TopLoc_Location &L1, const TopLoc_Location &L2) const;
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Surface & Surface() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Geom_Surface & Surface2() const;
+		%feature("autodoc", "1");
+		virtual		const TopLoc_Location & Location2() const;
+		%feature("autodoc", "1");
+		virtual		const GeomAbs_Shape & Continuity() const;
+		%feature("autodoc", "1");
+		virtual		void Continuity(const GeomAbs_Shape C);
+		%feature("autodoc", "1");
+		virtual		Handle_BRep_CurveRepresentation Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_CurveOn2Surfaces {
+	Handle_BRep_CurveOn2Surfaces GetHandle() {
+	return *(Handle_BRep_CurveOn2Surfaces*) &$self;
+	}
+};
+%extend BRep_CurveOn2Surfaces {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_CurveOn2Surfaces::~BRep_CurveOn2Surfaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_CurveOn2Surfaces {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1800,28 +1855,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRep_ListNodeOfListOfPointRepresentation;
-class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
+%nodefaultctor BRep_TVertex;
+class BRep_TVertex : public TopoDS_TVertex {
 	public:
 		%feature("autodoc", "1");
-		BRep_ListNodeOfListOfPointRepresentation(const Handle_BRep_PointRepresentation &I, const TCollection_MapNodePtr &n);
+		BRep_TVertex();
 		%feature("autodoc", "1");
-		Handle_BRep_PointRepresentation & Value() const;
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		void Tolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		void UpdateTolerance(const Standard_Real T);
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt() const;
+		%feature("autodoc", "1");
+		void Pnt(const gp_Pnt P);
+		%feature("autodoc", "1");
+		const BRep_ListOfPointRepresentation & Points() const;
+		%feature("autodoc", "1");
+		BRep_ListOfPointRepresentation & ChangePoints();
+		%feature("autodoc", "1");
+		virtual		Handle_TopoDS_TShape EmptyCopy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BRep_ListNodeOfListOfPointRepresentation {
-	Handle_BRep_ListNodeOfListOfPointRepresentation GetHandle() {
-	return *(Handle_BRep_ListNodeOfListOfPointRepresentation*) &$self;
+%extend BRep_TVertex {
+	Handle_BRep_TVertex GetHandle() {
+	return *(Handle_BRep_TVertex*) &$self;
 	}
 };
-%extend BRep_ListNodeOfListOfPointRepresentation {
+%extend BRep_TVertex {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") BRep_ListNodeOfListOfPointRepresentation::~BRep_ListNodeOfListOfPointRepresentation %{
+%feature("shadow") BRep_TVertex::~BRep_TVertex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1830,7 +1899,44 @@ def __del__(self):
 		pass
 %}
 
-%extend BRep_ListNodeOfListOfPointRepresentation {
+%extend BRep_TVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_ListNodeOfListOfCurveRepresentation;
+class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_CurveRepresentation &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_BRep_CurveRepresentation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	Handle_BRep_ListNodeOfListOfCurveRepresentation GetHandle() {
+	return *(Handle_BRep_ListNodeOfListOfCurveRepresentation*) &$self;
+	}
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_ListNodeOfListOfCurveRepresentation::~BRep_ListNodeOfListOfCurveRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_ListNodeOfListOfCurveRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1865,7 +1971,7 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 };
 %extend BRep_PolygonOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnSurface::~BRep_PolygonOnSurface %{
@@ -1878,86 +1984,6 @@ def __del__(self):
 %}
 
 %extend BRep_PolygonOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_PolygonOnClosedTriangulation;
-class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
-	public:
-		%feature("autodoc", "1");
-		BRep_PolygonOnClosedTriangulation(const Handle_Poly_PolygonOnTriangulation &P1, const Handle_Poly_PolygonOnTriangulation &P2, const Handle_Poly_Triangulation &Tr, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPolygonOnClosedTriangulation() const;
-		%feature("autodoc", "1");
-		virtual		void PolygonOnTriangulation2(const Handle_Poly_PolygonOnTriangulation &P2);
-		%feature("autodoc", "1");
-		virtual		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation2() const;
-		%feature("autodoc", "1");
-		virtual		Handle_BRep_CurveRepresentation Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PolygonOnClosedTriangulation {
-	Handle_BRep_PolygonOnClosedTriangulation GetHandle() {
-	return *(Handle_BRep_PolygonOnClosedTriangulation*) &$self;
-	}
-};
-%extend BRep_PolygonOnClosedTriangulation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_PolygonOnClosedTriangulation::~BRep_PolygonOnClosedTriangulation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_PolygonOnClosedTriangulation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRep_ListNodeOfListOfCurveRepresentation;
-class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRep_ListNodeOfListOfCurveRepresentation(const Handle_BRep_CurveRepresentation &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_BRep_CurveRepresentation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_ListNodeOfListOfCurveRepresentation {
-	Handle_BRep_ListNodeOfListOfCurveRepresentation GetHandle() {
-	return *(Handle_BRep_ListNodeOfListOfCurveRepresentation*) &$self;
-	}
-};
-%extend BRep_ListNodeOfListOfCurveRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_ListNodeOfListOfCurveRepresentation::~BRep_ListNodeOfListOfCurveRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_ListNodeOfListOfCurveRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2006,7 +2032,7 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 };
 %extend BRep_CurveOnClosedSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveOnClosedSurface::~BRep_CurveOnClosedSurface %{
@@ -2019,6 +2045,49 @@ def __del__(self):
 %}
 
 %extend BRep_CurveOnClosedSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRep_PointOnSurface;
+class BRep_PointOnSurface : public BRep_PointsOnSurface {
+	public:
+		%feature("autodoc", "1");
+		BRep_PointOnSurface(const Standard_Real P1, const Standard_Real P2, const Handle_Geom_Surface &S, const TopLoc_Location &L);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter2() const;
+		%feature("autodoc", "1");
+		virtual		void Parameter2(const Standard_Real P);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRep_PointOnSurface {
+	Handle_BRep_PointOnSurface GetHandle() {
+	return *(Handle_BRep_PointOnSurface*) &$self;
+	}
+};
+%extend BRep_PointOnSurface {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRep_PointOnSurface::~BRep_PointOnSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRep_PointOnSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2063,7 +2132,7 @@ class BRep_TFace : public TopoDS_TFace {
 };
 %extend BRep_TFace {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_TFace::~BRep_TFace %{
@@ -2143,49 +2212,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRep_PointOnSurface;
-class BRep_PointOnSurface : public BRep_PointsOnSurface {
-	public:
-		%feature("autodoc", "1");
-		BRep_PointOnSurface(const Standard_Real P1, const Standard_Real P2, const Handle_Geom_Surface &S, const TopLoc_Location &L);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPointOnSurface(const Handle_Geom_Surface &S, const TopLoc_Location &L) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter2() const;
-		%feature("autodoc", "1");
-		virtual		void Parameter2(const Standard_Real P);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRep_PointOnSurface {
-	Handle_BRep_PointOnSurface GetHandle() {
-	return *(Handle_BRep_PointOnSurface*) &$self;
-	}
-};
-%extend BRep_PointOnSurface {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRep_PointOnSurface::~BRep_PointOnSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRep_PointOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRep_PolygonOnClosedSurface;
 class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 	public:
@@ -2210,7 +2236,7 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 };
 %extend BRep_PolygonOnClosedSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnClosedSurface::~BRep_PolygonOnClosedSurface %{
@@ -2253,7 +2279,7 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 };
 %extend BRep_Polygon3D {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_Polygon3D::~BRep_Polygon3D %{
@@ -2272,42 +2298,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRep_TVertex;
-class BRep_TVertex : public TopoDS_TVertex {
+%nodefaultctor BRep_PolygonOnClosedTriangulation;
+class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 	public:
 		%feature("autodoc", "1");
-		BRep_TVertex();
+		BRep_PolygonOnClosedTriangulation(const Handle_Poly_PolygonOnTriangulation &P1, const Handle_Poly_PolygonOnTriangulation &P2, const Handle_Poly_Triangulation &Tr, const TopLoc_Location &L);
 		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
+		virtual		Standard_Boolean IsPolygonOnClosedTriangulation() const;
 		%feature("autodoc", "1");
-		void Tolerance(const Standard_Real T);
+		virtual		void PolygonOnTriangulation2(const Handle_Poly_PolygonOnTriangulation &P2);
 		%feature("autodoc", "1");
-		void UpdateTolerance(const Standard_Real T);
+		virtual		const Handle_Poly_PolygonOnTriangulation & PolygonOnTriangulation2() const;
 		%feature("autodoc", "1");
-		const gp_Pnt  Pnt() const;
-		%feature("autodoc", "1");
-		void Pnt(const gp_Pnt P);
-		%feature("autodoc", "1");
-		const BRep_ListOfPointRepresentation & Points() const;
-		%feature("autodoc", "1");
-		BRep_ListOfPointRepresentation & ChangePoints();
-		%feature("autodoc", "1");
-		virtual		Handle_TopoDS_TShape EmptyCopy() const;
+		virtual		Handle_BRep_CurveRepresentation Copy() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BRep_TVertex {
-	Handle_BRep_TVertex GetHandle() {
-	return *(Handle_BRep_TVertex*) &$self;
+%extend BRep_PolygonOnClosedTriangulation {
+	Handle_BRep_PolygonOnClosedTriangulation GetHandle() {
+	return *(Handle_BRep_PolygonOnClosedTriangulation*) &$self;
 	}
 };
-%extend BRep_TVertex {
+%extend BRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") BRep_TVertex::~BRep_TVertex %{
+%feature("shadow") BRep_PolygonOnClosedTriangulation::~BRep_PolygonOnClosedTriangulation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2316,7 +2334,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRep_TVertex {
+%extend BRep_PolygonOnClosedTriangulation {
 	void _kill_pointed() {
 		delete $self;
 	}

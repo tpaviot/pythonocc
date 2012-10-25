@@ -83,6 +83,7 @@ $HeaderURL$
 #include<gp_Dir.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Ax3.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Elips.hxx>
@@ -90,7 +91,6 @@ $HeaderURL$
 #include<gp_Parab.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
-#include<gp_Ax3.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>

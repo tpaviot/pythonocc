@@ -191,7 +191,7 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 };
 %extend BRepExtrema_UnCompatibleShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{
@@ -204,43 +204,6 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_UnCompatibleShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepExtrema_DistanceSS;
-class BRepExtrema_DistanceSS {
-	public:
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real DistValue() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq1Value() const;
-		%feature("autodoc", "1");
-		const BRepExtrema_SeqOfSolution & Seq2Value() const;
-		%feature("autodoc", "1");
-		void SetFlag(const Extrema_ExtFlag F);
-		%feature("autodoc", "1");
-		void SetAlgo(const Extrema_ExtAlgo A);
-
-};
-%feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepExtrema_DistanceSS {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -289,6 +252,43 @@ def __del__(self):
 %}
 
 %extend BRepExtrema_ExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepExtrema_DistanceSS;
+class BRepExtrema_DistanceSS {
+	public:
+		%feature("autodoc", "1");
+		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		BRepExtrema_DistanceSS(const TopoDS_Shape S1, const TopoDS_Shape S2, const Bnd_Box &B1, const Bnd_Box &B2, const Standard_Real DstRef, const Standard_Real aDeflection, const Extrema_ExtFlag F=Extrema_ExtFlag_MINMAX, const Extrema_ExtAlgo A=Extrema_ExtAlgo_Grad);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real DistValue() const;
+		%feature("autodoc", "1");
+		const BRepExtrema_SeqOfSolution & Seq1Value() const;
+		%feature("autodoc", "1");
+		const BRepExtrema_SeqOfSolution & Seq2Value() const;
+		%feature("autodoc", "1");
+		void SetFlag(const Extrema_ExtFlag F);
+		%feature("autodoc", "1");
+		void SetAlgo(const Extrema_ExtAlgo A);
+
+};
+%feature("shadow") BRepExtrema_DistanceSS::~BRepExtrema_DistanceSS %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepExtrema_DistanceSS {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -23,9 +23,9 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_StepSelect_StepType::DownCast;
+%rename(DownCast) Handle_StepSelect_ModelModifier::DownCast;
 %rename(DownCast) Handle_StepSelect_FileModifier::DownCast;
 %rename(DownCast) Handle_StepSelect_FloatFormat::DownCast;
-%rename(DownCast) Handle_StepSelect_ModelModifier::DownCast;
-%rename(DownCast) Handle_StepSelect_Activator::DownCast;
 %rename(DownCast) Handle_StepSelect_WorkLibrary::DownCast;
+%rename(DownCast) Handle_StepSelect_Activator::DownCast;
+%rename(DownCast) Handle_StepSelect_StepType::DownCast;

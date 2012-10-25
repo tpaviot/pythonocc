@@ -30,8 +30,8 @@ import GarbageCollector
 import Standard
 import PTopLoc
 import PPoly
-import gp
 import PGeom
 import PGeom2d
+import gp
 import GeomAbs
 };

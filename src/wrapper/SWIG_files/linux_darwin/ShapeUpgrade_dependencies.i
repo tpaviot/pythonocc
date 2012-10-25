@@ -173,5 +173,5 @@ $HeaderURL$
 %import MMgt.i
 %import Standard.i
 %import ShapeExtend.i
-%import TopAbs.i
 %import GeomAbs.i
+%import TopAbs.i

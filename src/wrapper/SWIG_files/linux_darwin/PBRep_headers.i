@@ -103,11 +103,11 @@ $HeaderURL$
 #include<PTopLoc_Location.hxx>
 #include<Handle_PPoly_PolygonOnTriangulation.hxx>
 #include<Handle_PPoly_Triangulation.hxx>
-#include<gp_Pnt.hxx>
-#include<Handle_PPoly_Polygon3D.hxx>
 #include<Handle_PGeom2d_Curve.hxx>
 #include<Handle_PGeom_Surface.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_PGeom_Curve.hxx>
 #include<Handle_PPoly_Polygon2D.hxx>
+#include<Handle_PPoly_Polygon3D.hxx>
 %}

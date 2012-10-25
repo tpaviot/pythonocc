@@ -23,6 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_XmlMPrsStd_AISPresentationDriver::DownCast;
 %rename(DownCast) Handle_XmlMPrsStd_PositionDriver::DownCast;
+%rename(DownCast) Handle_XmlMPrsStd_AISPresentationDriver::DownCast;
 %rename(AddDrivers) XmlMPrsStd::AddDrivers;

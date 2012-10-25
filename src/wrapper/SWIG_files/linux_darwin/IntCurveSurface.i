@@ -58,44 +58,6 @@ enum IntCurveSurface_TransitionOnCurve {
 
 
 
-%nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
-class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	IntCurveSurface_SequenceNodeOfSequenceOfPnt* GetObject() {
-	return (IntCurveSurface_SequenceNodeOfSequenceOfPnt*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt::~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg;
 class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollection_SeqNode {
 	public:
@@ -128,6 +90,44 @@ def __del__(self):
 %}
 
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
+class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt();
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt & operator=(const IntCurveSurface_SequenceNodeOfSequenceOfPnt *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	IntCurveSurface_SequenceNodeOfSequenceOfPnt* GetObject() {
+	return (IntCurveSurface_SequenceNodeOfSequenceOfPnt*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt::~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -176,6 +176,42 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor IntCurveSurface_Intersection;
+class IntCurveSurface_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoints() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionPoint & Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		const IntCurveSurface_IntersectionSegment & Segment(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") IntCurveSurface_Intersection::~IntCurveSurface_Intersection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_Intersection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend IntCurveSurface_Intersection {
+	IntCurveSurface_Intersection () {}
 };
 
 
@@ -286,64 +322,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntCurveSurface_TheHCurveTool;
-class IntCurveSurface_TheHCurveTool {
+%nodefaultctor IntCurveSurface_HInter;
+class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	public:
 		%feature("autodoc", "1");
-		IntCurveSurface_TheHCurveTool();
+		IntCurveSurface_HInter();
 		%feature("autodoc", "1");
-		static		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface);
 		%feature("autodoc", "1");
-		static		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &Polygon, const Handle_Adaptor3d_HSurface &Surface);
 		%feature("autodoc", "1");
-		static		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 		%feature("autodoc", "1");
-		static		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron, Bnd_BoundSortBox & BndBSB);
 		%feature("autodoc", "1");
-		static		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
-		%feature("autodoc", "1");
-		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
-		%feature("autodoc", "1");
-		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
-		%feature("autodoc", "1");
-		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
-		%feature("autodoc", "1");
-		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
-		%feature("autodoc", "1");
-		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
-		%feature("autodoc", "1");
-		static		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
-		%feature("autodoc", "1");
-		static		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		static		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
 
 };
-%feature("shadow") IntCurveSurface_TheHCurveTool::~IntCurveSurface_TheHCurveTool %{
+%feature("shadow") IntCurveSurface_HInter::~IntCurveSurface_HInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -352,41 +348,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntCurveSurface_TheHCurveTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
-class IntCurveSurface_TheQuadCurvExactHInter {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_TheQuadCurvExactHInter(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbRoots() const;
-		%feature("autodoc", "1");
-		Standard_Real Root(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals() const;
-		%feature("autodoc","Intervals(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") IntCurveSurface_TheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvExactHInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_TheQuadCurvExactHInter {
+%extend IntCurveSurface_HInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -432,24 +394,25 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntCurveSurface_Intersection;
-class IntCurveSurface_Intersection {
+%nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
+class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_TheQuadCurvExactHInter(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbPoints() const;
+		Standard_Integer NbRoots() const;
 		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionPoint & Point(const Standard_Integer Index) const;
+		Standard_Real Root(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const IntCurveSurface_IntersectionSegment & Segment(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Dump() const;
+		Standard_Integer NbIntervals() const;
+		%feature("autodoc","Intervals(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
+
+		void Intervals(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 
 };
-%feature("shadow") IntCurveSurface_Intersection::~IntCurveSurface_Intersection %{
+%feature("shadow") IntCurveSurface_TheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvExactHInter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -458,149 +421,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntCurveSurface_Intersection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend IntCurveSurface_Intersection {
-	IntCurveSurface_Intersection () {}
-};
-
-
-%nodefaultctor IntCurveSurface_HInter;
-class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_HInter();
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &Polygon, const Handle_Adaptor3d_HSurface &Surface);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const IntCurveSurface_ThePolygonOfHInter &ThePolygon, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron, Bnd_BoundSortBox & BndBSB);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Adaptor3d_HCurve &Curve, const Handle_Adaptor3d_HSurface &Surface, const IntCurveSurface_ThePolyhedronOfHInter &Polyhedron);
-
-};
-%feature("shadow") IntCurveSurface_HInter::~IntCurveSurface_HInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_HInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
-class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
-		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
-class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntCurveSurface_IntersectionPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt GetHandle() {
-	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt*) &$self;
-	}
-};
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfPnt::~IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
-class IntCurveSurface_ThePolygonToolOfHInter {
-	public:
-		%feature("autodoc", "1");
-		IntCurveSurface_ThePolygonToolOfHInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box & Bounding(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
-		%feature("autodoc", "1");
-		static		const gp_Pnt  BeginOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		const gp_Pnt  EndOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		void Dump(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
-
-};
-%feature("shadow") IntCurveSurface_ThePolygonToolOfHInter::~IntCurveSurface_ThePolygonToolOfHInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurveSurface_ThePolygonToolOfHInter {
+%extend IntCurveSurface_TheQuadCurvExactHInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -641,6 +462,75 @@ def __del__(self):
 %}
 
 %extend IntCurveSurface_TheExactHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
+class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter(const IntSurf_Quadric &Q, const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc","Value(Standard_Real Param) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real Param) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real Param, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real Param) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real Param, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter::~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
+class IntCurveSurface_ThePolygonToolOfHInter {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_ThePolygonToolOfHInter();
+		%feature("autodoc", "1");
+		static		const Bnd_Box & Bounding(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
+		%feature("autodoc", "1");
+		static		Standard_Real DeflectionOverEstimation(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Closed(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbSegments(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
+		%feature("autodoc", "1");
+		static		const gp_Pnt  BeginOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		static		const gp_Pnt  EndOfSeg(const IntCurveSurface_ThePolygonOfHInter &thePolygon, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		static		void Dump(const IntCurveSurface_ThePolygonOfHInter &thePolygon);
+
+};
+%feature("shadow") IntCurveSurface_ThePolygonToolOfHInter::~IntCurveSurface_ThePolygonToolOfHInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_ThePolygonToolOfHInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -716,7 +606,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfSeg::~IntCurveSurface_SequenceNodeOfSequenceOfSeg %{
@@ -841,6 +731,79 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntCurveSurface_TheHCurveTool;
+class IntCurveSurface_TheHCurveTool {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_TheHCurveTool();
+		%feature("autodoc", "1");
+		static		Standard_Real FirstParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Standard_Real LastParameter(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		GeomAbs_Shape Continuity(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbIntervals(const Handle_Adaptor3d_HCurve &C, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		static		void Intervals(const Handle_Adaptor3d_HCurve &C, TColStd_Array1OfReal & Tab, const GeomAbs_Shape Sh);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsClosed(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsPeriodic(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Standard_Real Period(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Pnt Value(const Handle_Adaptor3d_HCurve &C, const Standard_Real U);
+		%feature("autodoc", "1");
+		static		void D0(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P);
+		%feature("autodoc", "1");
+		static		void D1(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T);
+		%feature("autodoc", "1");
+		static		void D2(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & T, gp_Vec & N);
+		%feature("autodoc", "1");
+		static		void D3(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3);
+		%feature("autodoc", "1");
+		static		gp_Vec DN(const Handle_Adaptor3d_HCurve &C, const Standard_Real U, const Standard_Integer N);
+		%feature("autodoc", "1");
+		static		Standard_Real Resolution(const Handle_Adaptor3d_HCurve &C, const Standard_Real R3d);
+		%feature("autodoc", "1");
+		static		GeomAbs_CurveType GetType(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Lin Line(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Circ Circle(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Elips Ellipse(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Hypr Hyperbola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		gp_Parab Parabola(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BezierCurve Bezier(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BSplineCurve BSpline(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbSamples(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		static		void SamplePars(const Handle_Adaptor3d_HCurve &C, const Standard_Real U0, const Standard_Real U1, const Standard_Real Defl, const Standard_Integer NbMin, Handle_TColStd_HArray1OfReal & Pars);
+
+};
+%feature("shadow") IntCurveSurface_TheHCurveTool::~IntCurveSurface_TheHCurveTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_TheHCurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntCurveSurface_TheInterferenceOfHInter;
 class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	public:
@@ -886,6 +849,43 @@ def __del__(self):
 %}
 
 %extend IntCurveSurface_TheInterferenceOfHInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
+class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntCurveSurface_SequenceNodeOfSequenceOfPnt(const IntCurveSurface_IntersectionPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntCurveSurface_IntersectionPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt GetHandle() {
+	return *(Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt*) &$self;
+	}
+};
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntCurveSurface_SequenceNodeOfSequenceOfPnt::~IntCurveSurface_SequenceNodeOfSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}

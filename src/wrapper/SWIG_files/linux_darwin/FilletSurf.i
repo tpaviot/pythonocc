@@ -50,6 +50,18 @@ $HeaderURL$
 %include FilletSurf_headers.i
 
 
+enum FilletSurf_StatusDone {
+	FilletSurf_IsOk,
+	FilletSurf_IsNotOk,
+	FilletSurf_IsPartial,
+	};
+
+enum FilletSurf_StatusType {
+	FilletSurf_TwoExtremityOnEdge,
+	FilletSurf_OneExtremityOnEdge,
+	FilletSurf_NoExtremityOnEdge,
+	};
+
 enum FilletSurf_ErrorTypeStatus {
 	FilletSurf_EmptyList,
 	FilletSurf_EdgeNotG1,
@@ -59,25 +71,13 @@ enum FilletSurf_ErrorTypeStatus {
 	FilletSurf_PbFilletCompute,
 	};
 
-enum FilletSurf_StatusType {
-	FilletSurf_TwoExtremityOnEdge,
-	FilletSurf_OneExtremityOnEdge,
-	FilletSurf_NoExtremityOnEdge,
-	};
-
-enum FilletSurf_StatusDone {
-	FilletSurf_IsOk,
-	FilletSurf_IsNotOk,
-	FilletSurf_IsPartial,
-	};
-
 
 
 %nodefaultctor FilletSurf_InternalBuilder;
 class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 	public:
 		%feature("autodoc", "1");
-		FilletSurf_InternalBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Polynomial, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382563710212708e-5);
+		FilletSurf_InternalBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Polynomial, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
 		Standard_Integer Add(const TopTools_ListOfShape &E, const Standard_Real R);
 		%feature("autodoc", "1");
@@ -142,7 +142,7 @@ def __del__(self):
 class FilletSurf_Builder {
 	public:
 		%feature("autodoc", "1");
-		FilletSurf_Builder(const TopoDS_Shape S, const TopTools_ListOfShape &E, const Standard_Real R, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382563710212708e-5);
+		FilletSurf_Builder(const TopoDS_Shape S, const TopTools_ListOfShape &E, const Standard_Real R, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Tapp3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real Tapp2d=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");

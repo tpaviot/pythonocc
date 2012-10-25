@@ -28,12 +28,12 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import TDF
-import Standard
-import StepBasic
-import StepShape
-import TopoDS
 import XSControl
 import IFSelect
+import Standard
 import TCollection
+import StepBasic
 import STEPControl
+import StepShape
+import TopoDS
 };

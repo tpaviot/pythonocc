@@ -291,8 +291,8 @@ $HeaderURL$
 %import Approx.i
 %import TCollection.i
 %import Standard.i
-%import math.i
 %import GeomAbs.i
-%import Adaptor3d.i
 %import Convert.i
+%import math.i
+%import Adaptor3d.i
 %import AppBlend.i

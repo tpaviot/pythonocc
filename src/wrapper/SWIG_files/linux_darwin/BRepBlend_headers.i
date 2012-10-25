@@ -227,16 +227,18 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColgp_Array1OfPnt2d.hxx>
+#include<Blend_Point.hxx>
+#include<Blend_AppFunction.hxx>
+#include<TColgp_Array2OfPnt.hxx>
+#include<TColStd_Array2OfReal.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<TColStd_Array1OfInteger.hxx>
+#include<TColgp_Array1OfPnt2d.hxx>
+#include<TColgp_Array1OfPnt.hxx>
 #include<TColgp_Array1OfVec.hxx>
 #include<TColgp_Array1OfVec2d.hxx>
-#include<TColStd_Array1OfInteger.hxx>
 #include<gp_Pnt.hxx>
-#include<Blend_AppFunction.hxx>
 #include<math_Vector.hxx>
-#include<Blend_Point.hxx>
 #include<Blend_SurfRstFunction.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
@@ -247,6 +249,7 @@ $HeaderURL$
 #include<Handle_Law_Function.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
 #include<Blend_CSFunction.hxx>
+#include<Handle_Approx_SweepFunction.hxx>
 #include<Handle_Adaptor3d_HVertex.hxx>
 #include<IntSurf_Transition.hxx>
 #include<gp_Pnt2d.hxx>
@@ -258,17 +261,14 @@ $HeaderURL$
 #include<gp_Parab2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
-#include<Handle_Approx_SweepFunction.hxx>
-#include<TColgp_Array2OfPnt.hxx>
-#include<TColStd_Array2OfReal.hxx>
 #include<Blend_Function.hxx>
-#include<Blend_FuncInv.hxx>
 #include<gp_Lin.hxx>
 #include<gp_Elips.hxx>
 #include<gp_Hypr.hxx>
 #include<gp_Parab.hxx>
 #include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
+#include<Blend_FuncInv.hxx>
 #include<Blend_SurfPointFuncInv.hxx>
 #include<Blend_SurfCurvFuncInv.hxx>
 #include<Blend_RstRstFunction.hxx>

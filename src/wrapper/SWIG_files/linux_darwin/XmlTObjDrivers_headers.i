@@ -139,7 +139,7 @@ $HeaderURL$
 #include<Handle_TDF_Attribute.hxx>
 #include<XmlObjMgt_Persistent.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
-#include<TCollection_ExtendedString.hxx>
 #include<XmlTObjDrivers.hxx>
 #include<Standard_GUID.hxx>
+#include<TCollection_ExtendedString.hxx>
 %}

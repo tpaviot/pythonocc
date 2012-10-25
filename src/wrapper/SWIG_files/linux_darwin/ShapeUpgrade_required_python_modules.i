@@ -31,11 +31,11 @@ import TColStd
 import Standard
 import TColGeom
 import TopoDS
-import TopAbs
 import ShapeBuild
 import ShapeExtend
+import TopTools
 import TColGeom2d
 import Geom
 import ShapeAnalysis
-import TopTools
+import TopAbs
 };

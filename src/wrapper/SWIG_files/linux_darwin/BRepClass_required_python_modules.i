@@ -27,8 +27,8 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
+import TopoDS
 import TopAbs
 import Standard
 import IntRes2d
-import TopoDS
 };

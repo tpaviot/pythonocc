@@ -132,13 +132,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_XSControl_WorkSession.hxx>
+#include<Handle_IGESData_IGESModel.hxx>
 #include<Handle_Transfer_Finder.hxx>
 #include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_FinderProcess.hxx>
-#include<Handle_XSControl_WorkSession.hxx>
-#include<Handle_IGESData_IGESModel.hxx>
-#include<IGESToBRep_CurveAndSurface.hxx>
 #include<Handle_IGESToBRep_IGESBoundary.hxx>
+#include<IGESToBRep_CurveAndSurface.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>

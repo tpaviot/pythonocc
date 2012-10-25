@@ -29,7 +29,7 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Graphic3d
-import Quantity
 import Aspect
+import Quantity
 import TColStd
 };

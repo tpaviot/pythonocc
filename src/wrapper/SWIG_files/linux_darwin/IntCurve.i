@@ -101,41 +101,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntCurve_PConicTool;
-class IntCurve_PConicTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_PConicTool();
-		%feature("autodoc", "1");
-		static		Standard_Real EpsX(const IntCurve_PConic &C);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamples(const IntCurve_PConic &C);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
-		%feature("autodoc", "1");
-		static		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
-		%feature("autodoc", "1");
-		static		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
-		%feature("autodoc", "1");
-		static		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
-
-};
-%feature("shadow") IntCurve_PConicTool::~IntCurve_PConicTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurve_PConicTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
 class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDerivative {
 	public:
@@ -196,80 +161,6 @@ def __del__(self):
 %}
 
 %extend IntCurve_IntImpConicParConic {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurve_IConicTool;
-class IntCurve_IConicTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_IConicTool();
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const IntCurve_IConicTool &IT);
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const gp_Elips2d E);
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const gp_Lin2d L);
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const gp_Circ2d C);
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const gp_Parab2d P);
-		%feature("autodoc", "1");
-		IntCurve_IConicTool(const gp_Hypr2d H);
-		%feature("autodoc", "1");
-		gp_Pnt2d Value(const Standard_Real X) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		gp_Vec2d GradDistance(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		Standard_Real FindParameter(const gp_Pnt2d P) const;
-
-};
-%feature("shadow") IntCurve_IConicTool::~IntCurve_IConicTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurve_IConicTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntCurve_ProjectOnPConicTool;
-class IntCurve_ProjectOnPConicTool {
-	public:
-		%feature("autodoc", "1");
-		IntCurve_ProjectOnPConicTool();
-		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d Pnt, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
-
-};
-%feature("shadow") IntCurve_ProjectOnPConicTool::~IntCurve_ProjectOnPConicTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntCurve_ProjectOnPConicTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -353,6 +244,115 @@ def __del__(self):
 %}
 
 %extend IntCurve_IntConicConic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurve_ProjectOnPConicTool;
+class IntCurve_ProjectOnPConicTool {
+	public:
+		%feature("autodoc", "1");
+		IntCurve_ProjectOnPConicTool();
+		%feature("autodoc", "1");
+		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d Pnt, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		static		Standard_Real FindParameter(const IntCurve_PConic &C, const gp_Pnt2d Pnt, const Standard_Real LowParameter, const Standard_Real HighParameter, const Standard_Real Tol);
+
+};
+%feature("shadow") IntCurve_ProjectOnPConicTool::~IntCurve_ProjectOnPConicTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurve_ProjectOnPConicTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurve_IConicTool;
+class IntCurve_IConicTool {
+	public:
+		%feature("autodoc", "1");
+		IntCurve_IConicTool();
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const IntCurve_IConicTool &IT);
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const gp_Elips2d E);
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const gp_Lin2d L);
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const gp_Circ2d C);
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const gp_Parab2d P);
+		%feature("autodoc", "1");
+		IntCurve_IConicTool(const gp_Hypr2d H);
+		%feature("autodoc", "1");
+		gp_Pnt2d Value(const Standard_Real X) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		gp_Vec2d GradDistance(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		Standard_Real FindParameter(const gp_Pnt2d P) const;
+
+};
+%feature("shadow") IntCurve_IConicTool::~IntCurve_IConicTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurve_IConicTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntCurve_PConicTool;
+class IntCurve_PConicTool {
+	public:
+		%feature("autodoc", "1");
+		IntCurve_PConicTool();
+		%feature("autodoc", "1");
+		static		Standard_Real EpsX(const IntCurve_PConic &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbSamples(const IntCurve_PConic &C);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbSamples(const IntCurve_PConic &C, const Standard_Real U0, const Standard_Real U1);
+		%feature("autodoc", "1");
+		static		gp_Pnt2d Value(const IntCurve_PConic &C, const Standard_Real X);
+		%feature("autodoc", "1");
+		static		void D1(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T);
+		%feature("autodoc", "1");
+		static		void D2(const IntCurve_PConic &C, const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & T, gp_Vec2d & N);
+
+};
+%feature("shadow") IntCurve_PConicTool::~IntCurve_PConicTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntCurve_PConicTool {
 	void _kill_pointed() {
 		delete $self;
 	}

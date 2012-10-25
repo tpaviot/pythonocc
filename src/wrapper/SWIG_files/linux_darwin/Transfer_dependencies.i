@@ -245,6 +245,6 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import Interface.i
+%import TCollection.i
 %import Standard.i

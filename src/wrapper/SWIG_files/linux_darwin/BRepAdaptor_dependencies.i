@@ -191,6 +191,6 @@ $HeaderURL$
 %import Adaptor3d.i
 %import Adaptor2d.i
 %import MMgt.i
+%import Geom2dAdaptor.i
 %import Standard.i
 %import GeomAbs.i
-%import Geom2dAdaptor.i

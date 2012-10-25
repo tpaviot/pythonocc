@@ -69,24 +69,24 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_Adaptor2d_HCurve2d.hxx>
-#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Pnt.hxx>
+#include<Handle_Adaptor3d_HVertex.hxx>
+#include<Handle_Adaptor2d_HCurve2d.hxx>
+#include<IntSurf_Transition.hxx>
+#include<Handle_IntSurf_LineOn2S.hxx>
+#include<IntSurf_PntOn2S.hxx>
+#include<gp_Lin.hxx>
+#include<gp_Circ.hxx>
+#include<Handle_Adaptor3d_HSurface.hxx>
 #include<gp_Dir.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
-#include<gp_Vec.hxx>
 #include<Handle_Adaptor3d_TopolTool.hxx>
+#include<gp_Vec.hxx>
 #include<gp_Sphere.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Cone.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Lin.hxx>
-#include<IntSurf_PntOn2S.hxx>
-#include<IntSurf_PathPoint.hxx>
-#include<Handle_IntSurf_LineOn2S.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Handle_Adaptor3d_HVertex.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_Lin2d.hxx>
@@ -96,5 +96,5 @@ $HeaderURL$
 #include<gp_Parab2d.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
-#include<IntSurf_Transition.hxx>
+#include<IntSurf_PathPoint.hxx>
 %}

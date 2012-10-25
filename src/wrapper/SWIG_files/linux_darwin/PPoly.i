@@ -52,29 +52,29 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_PPoly_PolygonOnTriangulation;
-class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PPoly_HArray1OfTriangle;
+class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation();
+		Handle_PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		Handle_PPoly_HArray1OfTriangle(const Handle_PPoly_HArray1OfTriangle &aHandle);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation(const PPoly_PolygonOnTriangulation *anItem);
+		Handle_PPoly_HArray1OfTriangle(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation & operator=(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		Handle_PPoly_HArray1OfTriangle & operator=(const Handle_PPoly_HArray1OfTriangle &aHandle);
 		%feature("autodoc", "1");
-		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *anItem);
+		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PPoly_PolygonOnTriangulation DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_HArray1OfTriangle DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PPoly_PolygonOnTriangulation {
-	PPoly_PolygonOnTriangulation* GetObject() {
-	return (PPoly_PolygonOnTriangulation*)$self->Access();
+%extend Handle_PPoly_HArray1OfTriangle {
+	PPoly_HArray1OfTriangle* GetObject() {
+	return (PPoly_HArray1OfTriangle*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PPoly_PolygonOnTriangulation::~Handle_PPoly_PolygonOnTriangulation %{
+%feature("shadow") Handle_PPoly_HArray1OfTriangle::~Handle_PPoly_HArray1OfTriangle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -83,7 +83,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PPoly_PolygonOnTriangulation {
+%extend Handle_PPoly_HArray1OfTriangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -128,29 +128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PPoly_HArray1OfTriangle;
-class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
+%nodefaultctor Handle_PPoly_Polygon3D;
+class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	public:
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle();
+		Handle_PPoly_Polygon3D();
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle(const Handle_PPoly_HArray1OfTriangle &aHandle);
+		Handle_PPoly_Polygon3D(const Handle_PPoly_Polygon3D &aHandle);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle(const PPoly_HArray1OfTriangle *anItem);
+		Handle_PPoly_Polygon3D(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle & operator=(const Handle_PPoly_HArray1OfTriangle &aHandle);
+		Handle_PPoly_Polygon3D & operator=(const Handle_PPoly_Polygon3D &aHandle);
 		%feature("autodoc", "1");
-		Handle_PPoly_HArray1OfTriangle & operator=(const PPoly_HArray1OfTriangle *anItem);
+		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *anItem);
 		%feature("autodoc", "1");
-		static		Handle_PPoly_HArray1OfTriangle DownCast(const Handle_Standard_Persistent &AnObject);
+		static		Handle_PPoly_Polygon3D DownCast(const Handle_Standard_Persistent &AnObject);
 
 };
-%extend Handle_PPoly_HArray1OfTriangle {
-	PPoly_HArray1OfTriangle* GetObject() {
-	return (PPoly_HArray1OfTriangle*)$self->Access();
+%extend Handle_PPoly_Polygon3D {
+	PPoly_Polygon3D* GetObject() {
+	return (PPoly_Polygon3D*)$self->Access();
 	}
 };
-%feature("shadow") Handle_PPoly_HArray1OfTriangle::~Handle_PPoly_HArray1OfTriangle %{
+%feature("shadow") Handle_PPoly_Polygon3D::~Handle_PPoly_Polygon3D %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,7 +159,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_PPoly_HArray1OfTriangle {
+%extend Handle_PPoly_Polygon3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,44 +204,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PPoly_Polygon3D;
-class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D();
-		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D(const Handle_PPoly_Polygon3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D(const PPoly_Polygon3D *anItem);
-		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D & operator=(const Handle_PPoly_Polygon3D &aHandle);
-		%feature("autodoc", "1");
-		Handle_PPoly_Polygon3D & operator=(const PPoly_Polygon3D *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PPoly_Polygon3D DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PPoly_Polygon3D {
-	PPoly_Polygon3D* GetObject() {
-	return (PPoly_Polygon3D*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PPoly_Polygon3D::~Handle_PPoly_Polygon3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PPoly_Polygon3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandard_ArrayNode {
 	public:
@@ -274,6 +236,44 @@ def __del__(self):
 %}
 
 %extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PPoly_PolygonOnTriangulation;
+class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation();
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation(const PPoly_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation & operator=(const Handle_PPoly_PolygonOnTriangulation &aHandle);
+		%feature("autodoc", "1");
+		Handle_PPoly_PolygonOnTriangulation & operator=(const PPoly_PolygonOnTriangulation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PPoly_PolygonOnTriangulation DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PPoly_PolygonOnTriangulation {
+	PPoly_PolygonOnTriangulation* GetObject() {
+	return (PPoly_PolygonOnTriangulation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PPoly_PolygonOnTriangulation::~Handle_PPoly_PolygonOnTriangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PPoly_PolygonOnTriangulation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -330,7 +330,7 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 };
 %extend PPoly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PPoly_PolygonOnTriangulation::~PPoly_PolygonOnTriangulation %{
@@ -403,7 +403,7 @@ class PPoly_Triangulation : public Standard_Persistent {
 };
 %extend PPoly_Triangulation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PPoly_Triangulation::~PPoly_Triangulation %{
@@ -416,6 +416,77 @@ def __del__(self):
 %}
 
 %extend PPoly_Triangulation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PPoly_HArray1OfTriangle;
+class PPoly_HArray1OfTriangle : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		PPoly_Triangle Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Persistent ShallowCopy() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle();
+		%feature("autodoc", "1");
+		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
+		%feature("autodoc", "1");
+		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PPoly_HArray1OfTriangle {
+	Handle_PPoly_HArray1OfTriangle GetHandle() {
+	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
+	}
+};
+%extend PPoly_HArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PPoly_HArray1OfTriangle::~PPoly_HArray1OfTriangle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PPoly_HArray1OfTriangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -445,48 +516,6 @@ def __del__(self):
 %}
 
 %extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PPoly_Triangle;
-class PPoly_Triangle {
-	public:
-		%feature("autodoc", "1");
-		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
-		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		PPoly_Triangle();
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer Get_CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1) {
-				return (Standard_Integer) $self->_CSFDB_GetPPoly_TrianglemyNodes(i1);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void Set_CSFDB_GetPPoly_TrianglemyNodes(Standard_Integer value ,const Standard_Integer i1) {
-				$self->_CSFDB_GetPPoly_TrianglemyNodes(i1)=value;
-				}
-		};
-
-};
-%feature("shadow") PPoly_Triangle::~PPoly_Triangle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PPoly_Triangle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -543,7 +572,7 @@ class PPoly_Polygon3D : public Standard_Persistent {
 };
 %extend PPoly_Polygon3D {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PPoly_Polygon3D::~PPoly_Polygon3D %{
@@ -556,6 +585,63 @@ def __del__(self):
 %}
 
 %extend PPoly_Polygon3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PPoly_Polygon2D;
+class PPoly_Polygon2D : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PPoly_Polygon2D(const Handle_PColgp_HArray1OfPnt2d &Nodes, const Standard_Real Defl);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void Deflection(const Standard_Real Defl);
+		%feature("autodoc", "1");
+		Standard_Integer NbNodes() const;
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfPnt2d Nodes() const;
+		%feature("autodoc", "1");
+		void Nodes(const Handle_PColgp_HArray1OfPnt2d &Nodes);
+		%feature("autodoc", "1");
+		PPoly_Polygon2D();
+		%feature("autodoc", "1");
+		PPoly_Polygon2D(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPPoly_Polygon2DmyDeflection() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_Polygon2DmyDeflection(const Standard_Real p);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPPoly_Polygon2DmyNodes() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPPoly_Polygon2DmyNodes(const Handle_PColgp_HArray1OfPnt2d &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PPoly_Polygon2D {
+	Handle_PPoly_Polygon2D GetHandle() {
+	return *(Handle_PPoly_Polygon2D*) &$self;
+	}
+};
+%extend PPoly_Polygon2D {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PPoly_Polygon2D::~PPoly_Polygon2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PPoly_Polygon2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -629,7 +715,7 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PPoly_VArrayNodeOfFieldOfHArray1OfTriangle::~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle %{
@@ -648,62 +734,33 @@ def __del__(self):
 };
 
 
-%nodefaultctor PPoly_HArray1OfTriangle;
-class PPoly_HArray1OfTriangle : public Standard_Persistent {
+%nodefaultctor PPoly_Triangle;
+class PPoly_Triangle {
 	public:
 		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up);
+		PPoly_Triangle(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Standard_Integer Low, const Standard_Integer Up, const PPoly_Triangle &V);
+		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
+		%feature("autodoc","Get() -> [Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const PPoly_Triangle &Value);
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		PPoly_Triangle Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Persistent ShallowCopy() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string ShallowDumpToString() {
-			std::stringstream s;
-			self->ShallowDump(s);
-			return s.str();}
+		PPoly_Triangle();
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer Get_CSFDB_GetPPoly_TrianglemyNodes(const Standard_Integer i1) {
+				return (Standard_Integer) $self->_CSFDB_GetPPoly_TrianglemyNodes(i1);
+				}
 		};
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle();
-		%feature("autodoc", "1");
-		PPoly_HArray1OfTriangle(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleLowerBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleLowerBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		Standard_Integer _CSFDB_GetPPoly_HArray1OfTriangleUpperBound() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_HArray1OfTriangleUpperBound(const Standard_Integer p);
-		%feature("autodoc", "1");
-		const PPoly_FieldOfHArray1OfTriangle & _CSFDB_GetPPoly_HArray1OfTriangleData() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_GetPPoly_TrianglemyNodes(Standard_Integer value ,const Standard_Integer i1) {
+				$self->_CSFDB_GetPPoly_TrianglemyNodes(i1)=value;
+				}
+		};
 
 };
-%extend PPoly_HArray1OfTriangle {
-	Handle_PPoly_HArray1OfTriangle GetHandle() {
-	return *(Handle_PPoly_HArray1OfTriangle*) &$self;
-	}
-};
-%extend PPoly_HArray1OfTriangle {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") PPoly_HArray1OfTriangle::~PPoly_HArray1OfTriangle %{
+%feature("shadow") PPoly_Triangle::~PPoly_Triangle %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -712,64 +769,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PPoly_HArray1OfTriangle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PPoly_Polygon2D;
-class PPoly_Polygon2D : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PPoly_Polygon2D(const Handle_PColgp_HArray1OfPnt2d &Nodes, const Standard_Real Defl);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void Deflection(const Standard_Real Defl);
-		%feature("autodoc", "1");
-		Standard_Integer NbNodes() const;
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d Nodes() const;
-		%feature("autodoc", "1");
-		void Nodes(const Handle_PColgp_HArray1OfPnt2d &Nodes);
-		%feature("autodoc", "1");
-		PPoly_Polygon2D();
-		%feature("autodoc", "1");
-		PPoly_Polygon2D(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPPoly_Polygon2DmyDeflection() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_Polygon2DmyDeflection(const Standard_Real p);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray1OfPnt2d _CSFDB_GetPPoly_Polygon2DmyNodes() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPPoly_Polygon2DmyNodes(const Handle_PColgp_HArray1OfPnt2d &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PPoly_Polygon2D {
-	Handle_PPoly_Polygon2D GetHandle() {
-	return *(Handle_PPoly_Polygon2D*) &$self;
-	}
-};
-%extend PPoly_Polygon2D {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") PPoly_Polygon2D::~PPoly_Polygon2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PPoly_Polygon2D {
+%extend PPoly_Triangle {
 	void _kill_pointed() {
 		delete $self;
 	}

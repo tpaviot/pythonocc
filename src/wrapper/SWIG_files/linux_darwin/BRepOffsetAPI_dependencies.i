@@ -264,8 +264,8 @@ $HeaderURL$
 %import TCollection.i
 %import BRepBuilderAPI.i
 %import Standard.i
-%import BRepOffset.i
 %import GeomAbs.i
 %import Draft.i
 %import BRepPrimAPI.i
+%import BRepOffset.i
 %import Approx.i

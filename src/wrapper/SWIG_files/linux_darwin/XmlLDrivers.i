@@ -166,47 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlLDrivers_DocumentStorageDriver;
-class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
-	public:
-		%feature("autodoc", "1");
-		XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
-		%feature("autodoc", "1");
-		virtual		TCollection_ExtendedString SchemaName() const;
-		%feature("autodoc", "1");
-		virtual		void Write(const Handle_CDM_Document &theDocument, const TCollection_ExtendedString &theFileName);
-		%feature("autodoc", "1");
-		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlLDrivers_DocumentStorageDriver {
-	Handle_XmlLDrivers_DocumentStorageDriver GetHandle() {
-	return *(Handle_XmlLDrivers_DocumentStorageDriver*) &$self;
-	}
-};
-%extend XmlLDrivers_DocumentStorageDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XmlLDrivers_DocumentStorageDriver::~XmlLDrivers_DocumentStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlLDrivers_DocumentStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XmlLDrivers_DocumentRetrievalDriver;
 class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	public:
@@ -233,7 +192,7 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlLDrivers_DocumentRetrievalDriver::~XmlLDrivers_DocumentRetrievalDriver %{
@@ -246,6 +205,47 @@ def __del__(self):
 %}
 
 %extend XmlLDrivers_DocumentRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlLDrivers_DocumentStorageDriver;
+class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_DocumentStorageDriver(const TCollection_ExtendedString &theCopyright);
+		%feature("autodoc", "1");
+		virtual		TCollection_ExtendedString SchemaName() const;
+		%feature("autodoc", "1");
+		virtual		void Write(const Handle_CDM_Document &theDocument, const TCollection_ExtendedString &theFileName);
+		%feature("autodoc", "1");
+		virtual		Handle_XmlMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlLDrivers_DocumentStorageDriver {
+	Handle_XmlLDrivers_DocumentStorageDriver GetHandle() {
+	return *(Handle_XmlLDrivers_DocumentStorageDriver*) &$self;
+	}
+};
+%extend XmlLDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlLDrivers_DocumentStorageDriver::~XmlLDrivers_DocumentStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlLDrivers_DocumentStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -335,7 +335,7 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef::~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef %{
@@ -348,6 +348,35 @@ def __del__(self):
 %}
 
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlLDrivers_NamespaceDef;
+class XmlLDrivers_NamespaceDef {
+	public:
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef();
+		%feature("autodoc", "1");
+		XmlLDrivers_NamespaceDef(const TCollection_AsciiString &thePrefix, const TCollection_AsciiString &theURI);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Prefix() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & URI() const;
+
+};
+%feature("shadow") XmlLDrivers_NamespaceDef::~XmlLDrivers_NamespaceDef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlLDrivers_NamespaceDef {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -379,35 +408,6 @@ def __del__(self):
 %}
 
 %extend XmlLDrivers {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlLDrivers_NamespaceDef;
-class XmlLDrivers_NamespaceDef {
-	public:
-		%feature("autodoc", "1");
-		XmlLDrivers_NamespaceDef();
-		%feature("autodoc", "1");
-		XmlLDrivers_NamespaceDef(const TCollection_AsciiString &thePrefix, const TCollection_AsciiString &theURI);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Prefix() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & URI() const;
-
-};
-%feature("shadow") XmlLDrivers_NamespaceDef::~XmlLDrivers_NamespaceDef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlLDrivers_NamespaceDef {
 	void _kill_pointed() {
 		delete $self;
 	}

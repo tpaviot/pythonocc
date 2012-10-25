@@ -128,6 +128,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor PTopLoc_Datum3D;
+class PTopLoc_Datum3D : public Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		PTopLoc_Datum3D(const gp_Trsf T);
+		%feature("autodoc", "1");
+		gp_Trsf Transformation() const;
+		%feature("autodoc", "1");
+		PTopLoc_Datum3D();
+		%feature("autodoc", "1");
+		PTopLoc_Datum3D(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Trsf  _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PTopLoc_Datum3D {
+	Handle_PTopLoc_Datum3D GetHandle() {
+	return *(Handle_PTopLoc_Datum3D*) &$self;
+	}
+};
+%extend PTopLoc_Datum3D {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PTopLoc_Datum3D::~PTopLoc_Datum3D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTopLoc_Datum3D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PTopLoc_Location;
 class PTopLoc_Location {
 	public:
@@ -159,49 +202,6 @@ def __del__(self):
 %}
 
 %extend PTopLoc_Location {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTopLoc_Datum3D;
-class PTopLoc_Datum3D : public Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		PTopLoc_Datum3D(const gp_Trsf T);
-		%feature("autodoc", "1");
-		gp_Trsf Transformation() const;
-		%feature("autodoc", "1");
-		PTopLoc_Datum3D();
-		%feature("autodoc", "1");
-		PTopLoc_Datum3D(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Trsf  _CSFDB_GetPTopLoc_Datum3DmyTrsf() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PTopLoc_Datum3D {
-	Handle_PTopLoc_Datum3D GetHandle() {
-	return *(Handle_PTopLoc_Datum3D*) &$self;
-	}
-};
-%extend PTopLoc_Datum3D {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") PTopLoc_Datum3D::~PTopLoc_Datum3D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopLoc_Datum3D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -244,7 +244,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 };
 %extend PTopLoc_ItemLocation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopLoc_ItemLocation::~PTopLoc_ItemLocation %{

@@ -33,6 +33,6 @@ import Geom
 import Geom2d
 import Poly
 import GeomAbs
-import TopoDS
 import gp
+import TopoDS
 };

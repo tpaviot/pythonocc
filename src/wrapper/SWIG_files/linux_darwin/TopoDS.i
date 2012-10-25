@@ -280,44 +280,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopoDS_UnCompatibleShapes;
-class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes();
-		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes(const Handle_TopoDS_UnCompatibleShapes &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes(const TopoDS_UnCompatibleShapes *anItem);
-		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes & operator=(const Handle_TopoDS_UnCompatibleShapes &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopoDS_UnCompatibleShapes & operator=(const TopoDS_UnCompatibleShapes *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopoDS_UnCompatibleShapes DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopoDS_UnCompatibleShapes {
-	TopoDS_UnCompatibleShapes* GetObject() {
-	return (TopoDS_UnCompatibleShapes*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopoDS_UnCompatibleShapes::~Handle_TopoDS_UnCompatibleShapes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopoDS_UnCompatibleShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TopoDS_TCompound;
 class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	public:
@@ -394,29 +356,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopoDS_TShell;
-class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
+%nodefaultctor Handle_TopoDS_UnCompatibleShapes;
+class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 	public:
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell();
+		Handle_TopoDS_UnCompatibleShapes();
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell(const Handle_TopoDS_TShell &aHandle);
+		Handle_TopoDS_UnCompatibleShapes(const Handle_TopoDS_UnCompatibleShapes &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell(const TopoDS_TShell *anItem);
+		Handle_TopoDS_UnCompatibleShapes(const TopoDS_UnCompatibleShapes *anItem);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell & operator=(const Handle_TopoDS_TShell &aHandle);
+		Handle_TopoDS_UnCompatibleShapes & operator=(const Handle_TopoDS_UnCompatibleShapes &aHandle);
 		%feature("autodoc", "1");
-		Handle_TopoDS_TShell & operator=(const TopoDS_TShell *anItem);
+		Handle_TopoDS_UnCompatibleShapes & operator=(const TopoDS_UnCompatibleShapes *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TopoDS_TShell DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TopoDS_UnCompatibleShapes DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TopoDS_TShell {
-	TopoDS_TShell* GetObject() {
-	return (TopoDS_TShell*)$self->Access();
+%extend Handle_TopoDS_UnCompatibleShapes {
+	TopoDS_UnCompatibleShapes* GetObject() {
+	return (TopoDS_UnCompatibleShapes*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TopoDS_TShell::~Handle_TopoDS_TShell %{
+%feature("shadow") Handle_TopoDS_UnCompatibleShapes::~Handle_TopoDS_UnCompatibleShapes %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -425,7 +387,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TopoDS_TShell {
+%extend Handle_TopoDS_UnCompatibleShapes {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -464,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_TopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopoDS_TShell;
+class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopoDS_TShell();
+		%feature("autodoc", "1");
+		Handle_TopoDS_TShell(const Handle_TopoDS_TShell &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopoDS_TShell(const TopoDS_TShell *anItem);
+		%feature("autodoc", "1");
+		Handle_TopoDS_TShell & operator=(const Handle_TopoDS_TShell &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopoDS_TShell & operator=(const TopoDS_TShell *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopoDS_TShell DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopoDS_TShell {
+	TopoDS_TShell* GetObject() {
+	return (TopoDS_TShell*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopoDS_TShell::~Handle_TopoDS_TShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopoDS_TShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -540,6 +540,45 @@ def __del__(self):
 %}
 
 %extend Handle_TopoDS_TWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopoDS_ListNodeOfListOfShape;
+class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_ListNodeOfListOfShape(const TopoDS_ListNodeOfListOfShape arg0);
+		%feature("autodoc", "1");
+		TopoDS_ListNodeOfListOfShape(const TopoDS_Shape I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopoDS_ListNodeOfListOfShape {
+	Handle_TopoDS_ListNodeOfListOfShape GetHandle() {
+	return *(Handle_TopoDS_ListNodeOfListOfShape*) &$self;
+	}
+};
+%extend TopoDS_ListNodeOfListOfShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopoDS_ListNodeOfListOfShape::~TopoDS_ListNodeOfListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDS_ListNodeOfListOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -663,7 +702,7 @@ class TopoDS_Shape {
 };
 %extend TopoDS_Shape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return $self->HashCode(2147483647);
 	}
 };
 %feature("shadow") TopoDS_Shape::~TopoDS_Shape %{
@@ -702,13 +741,13 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDS_Compound;
-class TopoDS_Compound : public TopoDS_Shape {
+%nodefaultctor TopoDS_Vertex;
+class TopoDS_Vertex : public TopoDS_Shape {
 	public:
 		%feature("autodoc", "1");
-		TopoDS_Compound(const TopoDS_Compound arg0);
+		TopoDS_Vertex(const TopoDS_Vertex arg0);
 		%feature("autodoc", "1");
-		TopoDS_Compound();
+		TopoDS_Vertex();
 		%pythoncode {
 		def __eq__(self,right):
 			try:
@@ -725,7 +764,7 @@ class TopoDS_Compound : public TopoDS_Shape {
 		}
 
 };
-%feature("shadow") TopoDS_Compound::~TopoDS_Compound %{
+%feature("shadow") TopoDS_Vertex::~TopoDS_Vertex %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -734,46 +773,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopoDS_Compound {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopoDS_ListNodeOfListOfShape;
-class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_ListNodeOfListOfShape(const TopoDS_ListNodeOfListOfShape arg0);
-		%feature("autodoc", "1");
-		TopoDS_ListNodeOfListOfShape(const TopoDS_Shape I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_ListNodeOfListOfShape {
-	Handle_TopoDS_ListNodeOfListOfShape GetHandle() {
-	return *(Handle_TopoDS_ListNodeOfListOfShape*) &$self;
-	}
-};
-%extend TopoDS_ListNodeOfListOfShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopoDS_ListNodeOfListOfShape::~TopoDS_ListNodeOfListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_ListNodeOfListOfShape {
+%extend TopoDS_Vertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -861,7 +861,7 @@ class TopoDS_TShape : public MMgt_TShared {
 };
 %extend TopoDS_TShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TShape::~TopoDS_TShape %{
@@ -874,45 +874,6 @@ def __del__(self):
 %}
 
 %extend TopoDS_TShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopoDS_Builder;
-class TopoDS_Builder {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_Builder(const TopoDS_Builder arg0);
-		%feature("autodoc", "1");
-		TopoDS_Builder();
-		%feature("autodoc", "1");
-		void MakeWire(TopoDS_Wire & W) const;
-		%feature("autodoc", "1");
-		void MakeShell(TopoDS_Shell & S) const;
-		%feature("autodoc", "1");
-		void MakeSolid(TopoDS_Solid & S) const;
-		%feature("autodoc", "1");
-		void MakeCompSolid(TopoDS_CompSolid & C) const;
-		%feature("autodoc", "1");
-		void MakeCompound(TopoDS_Compound & C) const;
-		%feature("autodoc", "1");
-		void Add(TopoDS_Shape & S, const TopoDS_Shape C) const;
-		%feature("autodoc", "1");
-		void Remove(TopoDS_Shape & S, const TopoDS_Shape C) const;
-
-};
-%feature("shadow") TopoDS_Builder::~TopoDS_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_Builder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1082,7 +1043,7 @@ class TopoDS_TWire : public TopoDS_TShape {
 };
 %extend TopoDS_TWire {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TWire::~TopoDS_TWire %{
@@ -1212,7 +1173,7 @@ class TopoDS_HShape : public MMgt_TShared {
 };
 %extend TopoDS_HShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_HShape::~TopoDS_HShape %{
@@ -1256,16 +1217,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDS_Vertex;
-class TopoDS_Vertex : public TopoDS_Shape {
+%nodefaultctor TopoDS_TCompound;
+class TopoDS_TCompound : public TopoDS_TShape {
 	public:
 		%feature("autodoc", "1");
-		TopoDS_Vertex(const TopoDS_Vertex arg0);
+		TopoDS_TCompound();
 		%feature("autodoc", "1");
-		TopoDS_Vertex();
+		virtual		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TopoDS_TShape EmptyCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") TopoDS_Vertex::~TopoDS_Vertex %{
+%extend TopoDS_TCompound {
+	Handle_TopoDS_TCompound GetHandle() {
+	return *(Handle_TopoDS_TCompound*) &$self;
+	}
+};
+%extend TopoDS_TCompound {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopoDS_TCompound::~TopoDS_TCompound %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1274,7 +1249,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopoDS_Vertex {
+%extend TopoDS_TCompound {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1297,7 +1272,7 @@ class TopoDS_TEdge : public TopoDS_TShape {
 };
 %extend TopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TEdge::~TopoDS_TEdge %{
@@ -1310,6 +1285,31 @@ def __del__(self):
 %}
 
 %extend TopoDS_TEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopoDS_Compound;
+class TopoDS_Compound : public TopoDS_Shape {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_Compound(const TopoDS_Compound arg0);
+		%feature("autodoc", "1");
+		TopoDS_Compound();
+
+};
+%feature("shadow") TopoDS_Compound::~TopoDS_Compound %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDS_Compound {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1336,7 +1336,7 @@ class TopoDS_TShell : public TopoDS_TShape {
 };
 %extend TopoDS_TShell {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TShell::~TopoDS_TShell %{
@@ -1349,6 +1349,45 @@ def __del__(self):
 %}
 
 %extend TopoDS_TShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopoDS_Builder;
+class TopoDS_Builder {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_Builder(const TopoDS_Builder arg0);
+		%feature("autodoc", "1");
+		TopoDS_Builder();
+		%feature("autodoc", "1");
+		void MakeWire(TopoDS_Wire & W) const;
+		%feature("autodoc", "1");
+		void MakeShell(TopoDS_Shell & S) const;
+		%feature("autodoc", "1");
+		void MakeSolid(TopoDS_Solid & S) const;
+		%feature("autodoc", "1");
+		void MakeCompSolid(TopoDS_CompSolid & C) const;
+		%feature("autodoc", "1");
+		void MakeCompound(TopoDS_Compound & C) const;
+		%feature("autodoc", "1");
+		void Add(TopoDS_Shape & S, const TopoDS_Shape C) const;
+		%feature("autodoc", "1");
+		void Remove(TopoDS_Shape & S, const TopoDS_Shape C) const;
+
+};
+%feature("shadow") TopoDS_Builder::~TopoDS_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDS_Builder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1375,7 +1414,7 @@ class TopoDS_TFace : public TopoDS_TShape {
 };
 %extend TopoDS_TFace {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TFace::~TopoDS_TFace %{
@@ -1388,45 +1427,6 @@ def __del__(self):
 %}
 
 %extend TopoDS_TFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopoDS_TCompound;
-class TopoDS_TCompound : public TopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_TCompound();
-		%feature("autodoc", "1");
-		virtual		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TopoDS_TShape EmptyCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_TCompound {
-	Handle_TopoDS_TCompound GetHandle() {
-	return *(Handle_TopoDS_TCompound*) &$self;
-	}
-};
-%extend TopoDS_TCompound {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopoDS_TCompound::~TopoDS_TCompound %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_TCompound {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1453,7 +1453,7 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 };
 %extend TopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TCompSolid::~TopoDS_TCompSolid %{
@@ -1497,45 +1497,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopoDS_TSolid;
-class TopoDS_TSolid : public TopoDS_TShape {
-	public:
-		%feature("autodoc", "1");
-		TopoDS_TSolid();
-		%feature("autodoc", "1");
-		virtual		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TopoDS_TShape EmptyCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopoDS_TSolid {
-	Handle_TopoDS_TSolid GetHandle() {
-	return *(Handle_TopoDS_TSolid*) &$self;
-	}
-};
-%extend TopoDS_TSolid {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TopoDS_TSolid::~TopoDS_TSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopoDS_TSolid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopoDS_TVertex;
 class TopoDS_TVertex : public TopoDS_TShape {
 	public:
@@ -1552,7 +1513,7 @@ class TopoDS_TVertex : public TopoDS_TShape {
 };
 %extend TopoDS_TVertex {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TVertex::~TopoDS_TVertex %{
@@ -1590,6 +1551,45 @@ def __del__(self):
 %}
 
 %extend TopoDS_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopoDS_TSolid;
+class TopoDS_TSolid : public TopoDS_TShape {
+	public:
+		%feature("autodoc", "1");
+		TopoDS_TSolid();
+		%feature("autodoc", "1");
+		virtual		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TopoDS_TShape EmptyCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopoDS_TSolid {
+	Handle_TopoDS_TSolid GetHandle() {
+	return *(Handle_TopoDS_TSolid*) &$self;
+	}
+};
+%extend TopoDS_TSolid {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopoDS_TSolid::~TopoDS_TSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopoDS_TSolid {
 	void _kill_pointed() {
 		delete $self;
 	}

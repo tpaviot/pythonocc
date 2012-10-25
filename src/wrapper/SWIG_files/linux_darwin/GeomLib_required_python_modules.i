@@ -29,6 +29,6 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import Geom
-import gp
 import Geom2d
+import gp
 };

@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_GEOM_SubShapeDriver;
-class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver();
-		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver(const Handle_GEOM_SubShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver(const GEOM_SubShapeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver & operator=(const Handle_GEOM_SubShapeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOM_SubShapeDriver & operator=(const GEOM_SubShapeDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOM_SubShapeDriver {
-	GEOM_SubShapeDriver* GetObject() {
-	return (GEOM_SubShapeDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOM_SubShapeDriver::~Handle_GEOM_SubShapeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOM_SubShapeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_GEOM_Application;
 class Handle_GEOM_Application : public Handle_TDocStd_Application {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_GEOM_Application {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_GEOM_SubShapeDriver;
+class Handle_GEOM_SubShapeDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver();
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver(const Handle_GEOM_SubShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver(const GEOM_SubShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const Handle_GEOM_SubShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOM_SubShapeDriver & operator=(const GEOM_SubShapeDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GEOM_SubShapeDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOM_SubShapeDriver {
+	GEOM_SubShapeDriver* GetObject() {
+	return (GEOM_SubShapeDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GEOM_SubShapeDriver::~Handle_GEOM_SubShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GEOM_SubShapeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,49 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOM_SubShapeDriver;
-class GEOM_SubShapeDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOM_SubShapeDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOM_SubShapeDriver {
-	Handle_GEOM_SubShapeDriver GetHandle() {
-	return *(Handle_GEOM_SubShapeDriver*) &$self;
-	}
-};
-%extend GEOM_SubShapeDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_SubShapeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOM_Solver;
 class GEOM_Solver {
 	public:
@@ -294,8 +251,6 @@ class GEOM_Solver {
 		bool Update(int , TDF_LabelSequence & theSeq);
 		%feature("autodoc", "1");
 		bool UpdateObject(Handle_GEOM_Object , TDF_LabelSequence & theSeq);
-		%feature("autodoc", "1");
-		bool ComputeObject(Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		bool ComputeFunction(Handle_GEOM_Function );
 
@@ -310,45 +265,6 @@ def __del__(self):
 %}
 
 %extend GEOM_Solver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOM_Parameter;
-class GEOM_Parameter {
-	public:
-		%feature("autodoc", "1");
-		GEOM_Parameter();
-		%feature("autodoc", "1");
-		GEOM_Parameter(TCollection_AsciiString );
-		%feature("autodoc", "1");
-		GEOM_Parameter(Standard_Real );
-		%feature("autodoc", "1");
-		Standard_Boolean IsString() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDouble() const;
-		%feature("autodoc", "1");
-		Standard_Real GetDouble() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetString() const;
-		%feature("autodoc", "1");
-		void operator=(Standard_Real );
-		%feature("autodoc", "1");
-		void operator=(const TCollection_AsciiString &anAsciiString);
-
-};
-%feature("shadow") GEOM_Parameter::~GEOM_Parameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_Parameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -382,6 +298,10 @@ class GEOM_DataMapOfAsciiStringTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") GEOM_DataMapOfAsciiStringTransient::~GEOM_DataMapOfAsciiStringTransient %{
@@ -439,15 +359,13 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		static		GEOM_Engine * GetEngine();
 		%feature("autodoc", "1");
-		bool IsDocumentExistant(int );
-		%feature("autodoc", "1");
 		Handle_TDocStd_Document GetDocument(int , bool =true);
 		%feature("autodoc", "1");
 		int GetDocID(Handle_TDocStd_Document );
 		%feature("autodoc", "1");
 		Handle_TDocStd_Application GetApplication();
 		%feature("autodoc", "1");
-		Handle_GEOM_Object GetObject(int , const char *theEntry, bool =true);
+		Handle_GEOM_Object GetObject(int , char* theEntry, bool =true);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object AddObject(int , int );
 		%feature("autodoc", "1");
@@ -471,21 +389,11 @@ class GEOM_Engine {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfAsciiString GetAllDumpNames() const;
 		%feature("autodoc", "1");
-		double GetInterpreterEquationValue(int , const TCollection_AsciiString &theEquation);
+		int addTexture(int , int , int , const Handle_TColStd_HArray1OfByte &theTexture, const TCollection_AsciiString &theFileName="");
 		%feature("autodoc", "1");
-		void SetInterpreterConstant(int , const TCollection_AsciiString &theConstant, double , const TCollection_AsciiString &theDescription, bool =true);
+		Handle_TColStd_HArray1OfByte getTexture(int , int , Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & theFileName);
 		%feature("autodoc", "1");
-		void GetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient & theArray, Handle_TColStd_HArray1OfAsciiString & theDescriptions);
-		%feature("autodoc", "1");
-		void SetInterpreterConstantArray(int , Handle_TColStd_HArray1OfTransient , Handle_TColStd_HArray1OfAsciiString , bool );
-		%feature("autodoc", "1");
-		TDF_Label GetUserDataLabel(int );
-		%feature("autodoc", "1");
-		int AddTexture(int , int , int , const Handle_TColStd_HArray1OfByte &theTexture, const TCollection_AsciiString &theFileName="");
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfByte GetTexture(int , int , Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & theFileName);
-		%feature("autodoc", "1");
-		std::list<int,std::allocator<int> > GetAllTextures(int );
+		std::list<int,std::allocator<int> > getAllTextures(int );
 
 };
 %feature("shadow") GEOM_Engine::~GEOM_Engine %{
@@ -504,6 +412,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOM_IOperations;
+class GEOM_IOperations {
+	public:
+		%feature("autodoc", "1");
+		GEOM_IOperations(GEOM_Engine* theEngine, int );
+		%feature("autodoc", "1");
+		void StartOperation();
+		%feature("autodoc", "1");
+		void FinishOperation();
+		%feature("autodoc", "1");
+		void AbortOperation();
+		%feature("autodoc", "1");
+		bool IsDone();
+		%feature("autodoc", "1");
+		void SetNotDone();
+		%feature("autodoc", "1");
+		void SetErrorCode(const TCollection_AsciiString &theErrorCode);
+		%feature("autodoc", "1");
+		char * GetErrorCode();
+		%feature("autodoc", "1");
+		GEOM_Engine * GetEngine();
+		%feature("autodoc", "1");
+		GEOM_Solver * GetSolver();
+		%feature("autodoc", "1");
+		int GetDocID();
+
+};
+%feature("shadow") GEOM_IOperations::~GEOM_IOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOM_IOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOM_Application;
 class GEOM_Application : public TDocStd_Application {
 	public:
@@ -513,12 +464,6 @@ class GEOM_Application : public TDocStd_Application {
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
 		virtual		char * ResourcesName();
-		%feature("autodoc", "1");
-		virtual		void OnOpenTransaction(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		virtual		void OnCommitTransaction(const Handle_TDocStd_Document &theDoc);
-		%feature("autodoc", "1");
-		virtual		void OnAbortTransaction(const Handle_TDocStd_Document &theDoc);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -532,7 +477,7 @@ class GEOM_Application : public TDocStd_Application {
 };
 %extend GEOM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Application::~GEOM_Application %{
@@ -569,8 +514,6 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TDF_Label GetOwnerEntry();
 		%feature("autodoc", "1");
-		int GetDocumentID();
-		%feature("autodoc", "1");
 		TopoDS_Shape GetValue();
 		%feature("autodoc", "1");
 		void SetValue(TopoDS_Shape & theShape);
@@ -585,31 +528,19 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetDescription(const TCollection_AsciiString &theDescription);
 		%feature("autodoc", "1");
-		TCollection_AsciiString GetScriptCommand();
-		%feature("autodoc", "1");
-		void SetScriptCommand(const TCollection_AsciiString &theCommand);
-		%feature("autodoc", "1");
 		void SetReal(int , double );
-		%feature("autodoc", "1");
-		void SetReal(int , const TCollection_AsciiString &theValue);
 		%feature("autodoc", "1");
 		double GetReal(int );
 		%feature("autodoc", "1");
 		void SetRealArray(int , const Handle_TColStd_HArray1OfReal &theArray);
 		%feature("autodoc", "1");
-		void SetRealArray(int , const Handle_TColStd_HArray1OfAsciiString &theArray);
-		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal GetRealArray(int );
 		%feature("autodoc", "1");
 		void SetInteger(int , int );
 		%feature("autodoc", "1");
-		void SetInteger(int , const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
 		int GetInteger(int );
 		%feature("autodoc", "1");
 		void SetIntegerArray(int , const Handle_TColStd_HArray1OfInteger &theArray);
-		%feature("autodoc", "1");
-		void SetIntegerArray(int , const Handle_TColStd_HArray1OfAsciiString &theArray);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger GetIntegerArray(int );
 		%feature("autodoc", "1");
@@ -620,10 +551,6 @@ class GEOM_Function : public MMgt_TShared {
 		TCollection_AsciiString GetString(int );
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetReference(int );
-		%feature("autodoc", "1");
-		void SetReferenceLabel(int , const TDF_Label &theReference);
-		%feature("autodoc", "1");
-		TDF_Label GetReferenceLabel(int );
 		%feature("autodoc", "1");
 		void SetStringArray(int , const Handle_TColStd_HArray1OfExtendedString &theArray);
 		%feature("autodoc", "1");
@@ -637,6 +564,8 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		bool IsDone();
 		%feature("autodoc", "1");
+		void GetDependency(TDF_LabelSequence & theSeq);
+		%feature("autodoc", "1");
 		void AddSubShapeReference(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void RemoveSubShapeReference(Handle_GEOM_Function );
@@ -645,15 +574,9 @@ class GEOM_Function : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const TDataStd_ListOfExtendedString & GetSubShapeReferences();
 		%feature("autodoc", "1");
-		void GetDependency(TDF_LabelSequence & theSeq);
-		%feature("autodoc", "1");
 		TDF_Label GetHistoryEntry(const Standard_Boolean create=1);
 		%feature("autodoc", "1");
 		TDF_Label GetArgumentHistoryEntry(const TDF_Label &theArgumentRefEntry, const Standard_Boolean create=1);
-		%feature("autodoc", "1");
-		TCollection_AsciiString GetSingleValueAsString(int );
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfExtendedString GetArrayValueAsString(int );
 		%feature("autodoc", "1");
 		TDF_Label GetNamingEntry(const Standard_Boolean create=1);
 
@@ -665,7 +588,7 @@ class GEOM_Function : public MMgt_TShared {
 };
 %extend GEOM_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Function::~GEOM_Function %{
@@ -706,7 +629,7 @@ class GEOM_DataMapNodeOfDataMapOfAsciiStringTransient : public TCollection_MapNo
 };
 %extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::~GEOM_DataMapNodeOfDataMapOfAsciiStringTransient %{
@@ -719,6 +642,49 @@ def __del__(self):
 %}
 
 %extend GEOM_DataMapNodeOfDataMapOfAsciiStringTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOM_SubShapeDriver;
+class GEOM_SubShapeDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOM_SubShapeDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOM_SubShapeDriver {
+	Handle_GEOM_SubShapeDriver GetHandle() {
+	return *(Handle_GEOM_SubShapeDriver*) &$self;
+	}
+};
+%extend GEOM_SubShapeDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GEOM_SubShapeDriver::~GEOM_SubShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOM_SubShapeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -763,7 +729,7 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetName(const char *theName);
 		%feature("autodoc", "1");
-		const char * GetName();
+		char * GetName();
 		%feature("autodoc", "1");
 		void SetColor(const GEOM_Object::Color &theColor);
 		%feature("autodoc", "1");
@@ -801,8 +767,6 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function AddFunction(const Standard_GUID &theGUID, int );
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveFunction(Handle_GEOM_Function );
-		%feature("autodoc", "1");
 		int GetNbFunctions();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetFunction(int );
@@ -813,13 +777,7 @@ class GEOM_Object : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetLastDependency();
 		%feature("autodoc", "1");
-		Standard_Boolean IsDirty();
-		%feature("autodoc", "1");
-		void SetDirty(Standard_Boolean );
-		%feature("autodoc", "1");
 		TDF_Label GetFreeLabel();
-		%feature("autodoc", "1");
-		TDF_Label GetUserDataLabel();
 
 };
 %extend GEOM_Object {
@@ -829,7 +787,7 @@ class GEOM_Object : public MMgt_TShared {
 };
 %extend GEOM_Object {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOM_Object::~GEOM_Object %{
@@ -873,51 +831,6 @@ def __del__(self):
 %}
 
 %extend GEOM_DataMapIteratorOfDataMapOfAsciiStringTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOM_IOperations;
-class GEOM_IOperations {
-	public:
-		%feature("autodoc", "1");
-		GEOM_IOperations(GEOM_Engine* theEngine, int );
-		%feature("autodoc", "1");
-		void StartOperation();
-		%feature("autodoc", "1");
-		void OpenOperation();
-		%feature("autodoc", "1");
-		bool FinishOperation();
-		%feature("autodoc", "1");
-		void AbortOperation();
-		%feature("autodoc", "1");
-		bool IsDone();
-		%feature("autodoc", "1");
-		void SetNotDone();
-		%feature("autodoc", "1");
-		void SetErrorCode(const TCollection_AsciiString &theErrorCode);
-		%feature("autodoc", "1");
-		const char * GetErrorCode();
-		%feature("autodoc", "1");
-		GEOM_Engine * GetEngine();
-		%feature("autodoc", "1");
-		GEOM_Solver * GetSolver();
-		%feature("autodoc", "1");
-		int GetDocID();
-
-};
-%feature("shadow") GEOM_IOperations::~GEOM_IOperations %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOM_IOperations {
 	void _kill_pointed() {
 		delete $self;
 	}

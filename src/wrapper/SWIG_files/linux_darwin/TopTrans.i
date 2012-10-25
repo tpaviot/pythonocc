@@ -52,30 +52,24 @@ $HeaderURL$
 
 
 
-%nodefaultctor TopTrans_SurfaceTransition;
-class TopTrans_SurfaceTransition {
+%nodefaultctor TopTrans_CurveTransition;
+class TopTrans_CurveTransition {
 	public:
 		%feature("autodoc", "1");
-		TopTrans_SurfaceTransition();
+		TopTrans_CurveTransition();
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir Tgt, const gp_Dir Norm, const gp_Dir MaxD, const gp_Dir MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv);
+		void Reset(const gp_Dir Tgt, const gp_Dir Norm, const Standard_Real Curv);
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir Tgt, const gp_Dir Norm);
+		void Reset(const gp_Dir Tgt);
 		%feature("autodoc", "1");
-		void Compare(const Standard_Real Tole, const gp_Dir Norm, const gp_Dir MaxD, const gp_Dir MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv, const TopAbs_Orientation S, const TopAbs_Orientation O);
-		%feature("autodoc", "1");
-		void Compare(const Standard_Real Tole, const gp_Dir Norm, const TopAbs_Orientation S, const TopAbs_Orientation O);
+		void Compare(const Standard_Real Tole, const gp_Dir Tang, const gp_Dir Norm, const Standard_Real Curv, const TopAbs_Orientation S, const TopAbs_Orientation Or);
 		%feature("autodoc", "1");
 		TopAbs_State StateBefore() const;
 		%feature("autodoc", "1");
 		TopAbs_State StateAfter() const;
-		%feature("autodoc", "1");
-		static		TopAbs_State GetBefore(const TopAbs_Orientation Tran);
-		%feature("autodoc", "1");
-		static		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
 };
-%feature("shadow") TopTrans_SurfaceTransition::~TopTrans_SurfaceTransition %{
+%feature("shadow") TopTrans_CurveTransition::~TopTrans_CurveTransition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -84,7 +78,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTrans_SurfaceTransition {
+%extend TopTrans_CurveTransition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -146,24 +140,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopTrans_CurveTransition;
-class TopTrans_CurveTransition {
+%nodefaultctor TopTrans_SurfaceTransition;
+class TopTrans_SurfaceTransition {
 	public:
 		%feature("autodoc", "1");
-		TopTrans_CurveTransition();
+		TopTrans_SurfaceTransition();
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir Tgt, const gp_Dir Norm, const Standard_Real Curv);
+		void Reset(const gp_Dir Tgt, const gp_Dir Norm, const gp_Dir MaxD, const gp_Dir MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv);
 		%feature("autodoc", "1");
-		void Reset(const gp_Dir Tgt);
+		void Reset(const gp_Dir Tgt, const gp_Dir Norm);
 		%feature("autodoc", "1");
-		void Compare(const Standard_Real Tole, const gp_Dir Tang, const gp_Dir Norm, const Standard_Real Curv, const TopAbs_Orientation S, const TopAbs_Orientation Or);
+		void Compare(const Standard_Real Tole, const gp_Dir Norm, const gp_Dir MaxD, const gp_Dir MinD, const Standard_Real MaxCurv, const Standard_Real MinCurv, const TopAbs_Orientation S, const TopAbs_Orientation O);
+		%feature("autodoc", "1");
+		void Compare(const Standard_Real Tole, const gp_Dir Norm, const TopAbs_Orientation S, const TopAbs_Orientation O);
 		%feature("autodoc", "1");
 		TopAbs_State StateBefore() const;
 		%feature("autodoc", "1");
 		TopAbs_State StateAfter() const;
+		%feature("autodoc", "1");
+		static		TopAbs_State GetBefore(const TopAbs_Orientation Tran);
+		%feature("autodoc", "1");
+		static		TopAbs_State GetAfter(const TopAbs_Orientation Tran);
 
 };
-%feature("shadow") TopTrans_CurveTransition::~TopTrans_CurveTransition %{
+%feature("shadow") TopTrans_SurfaceTransition::~TopTrans_SurfaceTransition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -172,7 +172,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopTrans_CurveTransition {
+%extend TopTrans_SurfaceTransition {
 	void _kill_pointed() {
 		delete $self;
 	}

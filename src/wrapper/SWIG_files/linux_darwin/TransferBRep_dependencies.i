@@ -218,8 +218,8 @@ $HeaderURL$
 #include <Transfer_VoidBinder.hxx>
 %};
 
-%import MMgt.i
 %import Transfer.i
+%import MMgt.i
 %import TCollection.i
 %import Standard.i
 %import TopAbs.i

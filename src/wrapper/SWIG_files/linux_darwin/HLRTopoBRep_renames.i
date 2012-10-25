@@ -23,8 +23,8 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::DownCast;
 %rename(DownCast) Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData::DownCast;
+%rename(DownCast) Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData::DownCast;
 %rename(DownCast) Handle_HLRTopoBRep_OutLiner::DownCast;
 %rename(DownCast) Handle_HLRTopoBRep_ListNodeOfListOfVData::DownCast;
 %rename(Perform) HLRTopoBRep_FaceIsoLiner::Perform;

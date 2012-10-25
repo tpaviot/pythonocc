@@ -23,14 +23,14 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_STEPSelections_AssemblyComponent::DownCast;
 %rename(DownCast) Handle_STEPSelections_AssemblyLink::DownCast;
 %rename(DownCast) Handle_STEPSelections_SelectForTransfer::DownCast;
-%rename(DownCast) Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::DownCast;
 %rename(DownCast) Handle_STEPSelections_SelectGSCurves::DownCast;
-%rename(DownCast) Handle_STEPSelections_HSequenceOfAssemblyLink::DownCast;
 %rename(DownCast) Handle_STEPSelections_SelectDerived::DownCast;
+%rename(DownCast) Handle_STEPSelections_SelectInstances::DownCast;
 %rename(DownCast) Handle_STEPSelections_SelectAssembly::DownCast;
+%rename(DownCast) Handle_STEPSelections_HSequenceOfAssemblyLink::DownCast;
+%rename(DownCast) Handle_STEPSelections_AssemblyComponent::DownCast;
 %rename(DownCast) Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::DownCast;
 %rename(DownCast) Handle_STEPSelections_SelectFaces::DownCast;
-%rename(DownCast) Handle_STEPSelections_SelectInstances::DownCast;
+%rename(DownCast) Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::DownCast;

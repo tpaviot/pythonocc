@@ -213,6 +213,6 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import StepData.i
 %import TCollection.i
+%import StepData.i
 %import Standard.i

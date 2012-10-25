@@ -23,11 +23,11 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BRepTools_ReShape::DownCast;
 %rename(DownCast) Handle_BRepTools_Modification::DownCast;
-%rename(DownCast) Handle_BRepTools_NurbsConvertModification::DownCast;
 %rename(DownCast) Handle_BRepTools_GTrsfModification::DownCast;
 %rename(DownCast) Handle_BRepTools_TrsfModification::DownCast;
+%rename(DownCast) Handle_BRepTools_ReShape::DownCast;
+%rename(DownCast) Handle_BRepTools_NurbsConvertModification::DownCast;
 %rename(DownCast) Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d::DownCast;
 %rename(UVBounds) BRepTools::UVBounds;
 %rename(AddUVBounds) BRepTools::AddUVBounds;

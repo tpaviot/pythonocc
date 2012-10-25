@@ -60,20 +60,19 @@ enum BRepLib_EdgeError {
 	BRepLib_LineThroughIdenticPoints,
 	};
 
-enum BRepLib_ShapeModification {
-	BRepLib_Preserved,
-	BRepLib_Deleted,
-	BRepLib_Trimmed,
-	BRepLib_Merged,
-	BRepLib_BoundaryModified,
-	};
-
 enum BRepLib_FaceError {
 	BRepLib_FaceDone,
 	BRepLib_NoFace,
 	BRepLib_NotPlanar,
 	BRepLib_CurveProjectionFailed,
 	BRepLib_ParametersOutOfRange,
+	};
+
+enum BRepLib_ShellError {
+	BRepLib_ShellDone,
+	BRepLib_EmptyShell,
+	BRepLib_DisconnectedShell,
+	BRepLib_ShellParametersOutOfRange,
 	};
 
 enum BRepLib_WireError {
@@ -83,11 +82,12 @@ enum BRepLib_WireError {
 	BRepLib_NonManifoldWire,
 	};
 
-enum BRepLib_ShellError {
-	BRepLib_ShellDone,
-	BRepLib_EmptyShell,
-	BRepLib_DisconnectedShell,
-	BRepLib_ShellParametersOutOfRange,
+enum BRepLib_ShapeModification {
+	BRepLib_Preserved,
+	BRepLib_Deleted,
+	BRepLib_Trimmed,
+	BRepLib_Merged,
+	BRepLib_BoundaryModified,
 	};
 
 
@@ -493,11 +493,11 @@ class BRepLib {
 		%feature("autodoc", "1");
 		static		const Handle_Geom_Plane & Plane();
 		%feature("autodoc", "1");
-		static		Standard_Boolean CheckSameRange(const TopoDS_Edge E, const Standard_Real Confusion=9.99999999999999979886647629255615367252843506129522666015e-13);
+		static		Standard_Boolean CheckSameRange(const TopoDS_Edge E, const Standard_Real Confusion=9.9999999999999997988664762925561536725284350613e-13);
 		%feature("autodoc", "1");
-		static		void SameRange(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382563710212708e-5);
+		static		void SameRange(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
-		static		Standard_Boolean BuildCurve3d(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382563710212708e-5, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
+		static		Standard_Boolean BuildCurve3d(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
 		%feature("autodoc", "1");
 		static		Standard_Boolean BuildCurves3d(const TopoDS_Shape S, const Standard_Real Tolerance, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Integer MaxDegree=14, const Standard_Integer MaxSegment=0);
 		%feature("autodoc", "1");
@@ -507,17 +507,17 @@ class BRepLib {
 		%feature("autodoc", "1");
 		static		Standard_Boolean UpdateEdgeTolerance(const TopoDS_Shape S, const Standard_Real MinToleranceRequest, const Standard_Real MaxToleranceToCheck);
 		%feature("autodoc", "1");
-		static		void SameParameter(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382563710212708e-5);
+		static		void SameParameter(const TopoDS_Edge E, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5);
 		%feature("autodoc", "1");
-		static		void SameParameter(const TopoDS_Shape S, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean forced=0);
+		static		void SameParameter(const TopoDS_Shape S, const Standard_Real Tolerance=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean forced=0);
 		%feature("autodoc", "1");
 		static		void UpdateTolerances(const TopoDS_Shape S, const Standard_Boolean verifyFaceTolerance=0);
 		%feature("autodoc", "1");
 		static		Standard_Boolean OrientClosedSolid(TopoDS_Solid & solid);
 		%feature("autodoc", "1");
-		static		void EncodeRegularity(const TopoDS_Shape S, const Standard_Real TolAng=1.00000000000000003643219731549774157916554706559963960899e-10);
+		static		void EncodeRegularity(const TopoDS_Shape S, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
-		static		void EncodeRegularity(TopoDS_Edge & S, const TopoDS_Face F1, const TopoDS_Face F2, const Standard_Real TolAng=1.00000000000000003643219731549774157916554706559963960899e-10);
+		static		void EncodeRegularity(TopoDS_Edge & S, const TopoDS_Face F1, const TopoDS_Face F2, const Standard_Real TolAng=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		static		void SortFaces(const TopoDS_Shape S, TopTools_ListOfShape & LF);
 		%feature("autodoc", "1");
@@ -715,9 +715,9 @@ class BRepLib_FindSurface {
 		%feature("autodoc", "1");
 		BRepLib_FindSurface();
 		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x00000000000000001, const Standard_Boolean OnlyPlane=0);
+		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x00000000000000001, const Standard_Boolean OnlyPlane=0);
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
 		%feature("autodoc", "1");
 		Standard_Boolean Found() const;
 		%feature("autodoc", "1");

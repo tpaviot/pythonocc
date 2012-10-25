@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_BinMFunction_ScopeDriver;
-class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver();
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver(const BinMFunction_ScopeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver & operator=(const Handle_BinMFunction_ScopeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMFunction_ScopeDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMFunction_ScopeDriver {
-	BinMFunction_ScopeDriver* GetObject() {
-	return (BinMFunction_ScopeDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMFunction_ScopeDriver::~Handle_BinMFunction_ScopeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMFunction_ScopeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BinMFunction_GraphNodeDriver;
 class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -166,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BinMFunction_ScopeDriver;
+class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver();
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver(const Handle_BinMFunction_ScopeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver(const BinMFunction_ScopeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const Handle_BinMFunction_ScopeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMFunction_ScopeDriver & operator=(const BinMFunction_ScopeDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMFunction_ScopeDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMFunction_ScopeDriver {
+	BinMFunction_ScopeDriver* GetObject() {
+	return (BinMFunction_ScopeDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMFunction_ScopeDriver::~Handle_BinMFunction_ScopeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMFunction_ScopeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BinMFunction_FunctionDriver;
 class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 	public:
@@ -188,7 +188,7 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMFunction_FunctionDriver::~BinMFunction_FunctionDriver %{
@@ -232,47 +232,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMFunction_ScopeDriver;
-class BinMFunction_ScopeDriver : public BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		BinMFunction_ScopeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BinMFunction_ScopeDriver {
-	Handle_BinMFunction_ScopeDriver GetHandle() {
-	return *(Handle_BinMFunction_ScopeDriver*) &$self;
-	}
-};
-%extend BinMFunction_ScopeDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMFunction_ScopeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMFunction_GraphNodeDriver;
 class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 	public:
@@ -295,7 +254,7 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMFunction_GraphNodeDriver::~BinMFunction_GraphNodeDriver %{
@@ -308,6 +267,47 @@ def __del__(self):
 %}
 
 %extend BinMFunction_GraphNodeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMFunction_ScopeDriver;
+class BinMFunction_ScopeDriver : public BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		BinMFunction_ScopeDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const BinObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, BinObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BinMFunction_ScopeDriver {
+	Handle_BinMFunction_ScopeDriver GetHandle() {
+	return *(Handle_BinMFunction_ScopeDriver*) &$self;
+	}
+};
+%extend BinMFunction_ScopeDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMFunction_ScopeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

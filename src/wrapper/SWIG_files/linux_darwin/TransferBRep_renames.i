@@ -23,16 +23,14 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_TransferBRep_TransferResultInfo::DownCast;
 %rename(DownCast) Handle_TransferBRep_BinderOfShape::DownCast;
 %rename(DownCast) Handle_TransferBRep_ShapeBinder::DownCast;
-%rename(DownCast) Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::DownCast;
-%rename(DownCast) Handle_TransferBRep_HSequenceOfTransferResultInfo::DownCast;
-%rename(DownCast) Handle_TransferBRep_ShapeListBinder::DownCast;
 %rename(DownCast) Handle_TransferBRep_ShapeMapper::DownCast;
+%rename(DownCast) Handle_TransferBRep_HSequenceOfTransferResultInfo::DownCast;
+%rename(DownCast) Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::DownCast;
 %rename(DownCast) Handle_TransferBRep_OrientedShapeMapper::DownCast;
-%rename(Type) TransferBRep_ShapeInfo::Type;
-%rename(TypeName) TransferBRep_ShapeInfo::TypeName;
+%rename(DownCast) Handle_TransferBRep_ShapeListBinder::DownCast;
+%rename(DownCast) Handle_TransferBRep_TransferResultInfo::DownCast;
 %rename(ShapeResult) TransferBRep::ShapeResult;
 %rename(SetShapeResult) TransferBRep::SetShapeResult;
 %rename(Shapes) TransferBRep::Shapes;
@@ -47,3 +45,5 @@ $HeaderURL$
 %rename(Checked) TransferBRep::Checked;
 %rename(CheckedShapes) TransferBRep::CheckedShapes;
 %rename(CheckObject) TransferBRep::CheckObject;
+%rename(Type) TransferBRep_ShapeInfo::Type;
+%rename(TypeName) TransferBRep_ShapeInfo::TypeName;

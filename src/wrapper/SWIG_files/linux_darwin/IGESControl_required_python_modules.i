@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Transfer
 import IGESData
+import Transfer
 import IGESToBRep
 import Interface
 import IFSelect

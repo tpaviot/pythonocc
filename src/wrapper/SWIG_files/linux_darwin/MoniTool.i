@@ -66,29 +66,29 @@ enum MoniTool_ValueType {
 
 
 
-%nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient;
-class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_MoniTool_SignText;
+class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient();
+		Handle_MoniTool_SignText();
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient(const Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient &aHandle);
+		Handle_MoniTool_SignText(const Handle_MoniTool_SignText &aHandle);
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient(const MoniTool_DataMapNodeOfDataMapOfShapeTransient *anItem);
+		Handle_MoniTool_SignText(const MoniTool_SignText *anItem);
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient & operator=(const Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient &aHandle);
+		Handle_MoniTool_SignText & operator=(const Handle_MoniTool_SignText &aHandle);
 		%feature("autodoc", "1");
-		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient & operator=(const MoniTool_DataMapNodeOfDataMapOfShapeTransient *anItem);
+		Handle_MoniTool_SignText & operator=(const MoniTool_SignText *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MoniTool_SignText DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
-	MoniTool_DataMapNodeOfDataMapOfShapeTransient* GetObject() {
-	return (MoniTool_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
+%extend Handle_MoniTool_SignText {
+	MoniTool_SignText* GetObject() {
+	return (MoniTool_SignText*)$self->Access();
 	}
 };
-%feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient::~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
+%feature("shadow") Handle_MoniTool_SignText::~Handle_MoniTool_SignText %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -97,7 +97,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+%extend Handle_MoniTool_SignText {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -136,6 +136,82 @@ def __del__(self):
 %}
 
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MoniTool_IntVal;
+class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MoniTool_IntVal();
+		%feature("autodoc", "1");
+		Handle_MoniTool_IntVal(const Handle_MoniTool_IntVal &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_IntVal(const MoniTool_IntVal *anItem);
+		%feature("autodoc", "1");
+		Handle_MoniTool_IntVal & operator=(const Handle_MoniTool_IntVal &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_IntVal & operator=(const MoniTool_IntVal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MoniTool_IntVal DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MoniTool_IntVal {
+	MoniTool_IntVal* GetObject() {
+	return (MoniTool_IntVal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MoniTool_IntVal::~Handle_MoniTool_IntVal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MoniTool_IntVal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient;
+class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient();
+		%feature("autodoc", "1");
+		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient(const Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient(const MoniTool_DataMapNodeOfDataMapOfShapeTransient *anItem);
+		%feature("autodoc", "1");
+		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient & operator=(const Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient & operator=(const MoniTool_DataMapNodeOfDataMapOfShapeTransient *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	MoniTool_DataMapNodeOfDataMapOfShapeTransient* GetObject() {
+	return (MoniTool_DataMapNodeOfDataMapOfShapeTransient*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient::~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -218,44 +294,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MoniTool_SignText;
-class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MoniTool_SignText();
-		%feature("autodoc", "1");
-		Handle_MoniTool_SignText(const Handle_MoniTool_SignText &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_SignText(const MoniTool_SignText *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_SignText & operator=(const Handle_MoniTool_SignText &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_SignText & operator=(const MoniTool_SignText *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MoniTool_SignText DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MoniTool_SignText {
-	MoniTool_SignText* GetObject() {
-	return (MoniTool_SignText*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MoniTool_SignText::~Handle_MoniTool_SignText %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MoniTool_SignText {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MoniTool_Option;
 class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 	public:
@@ -288,44 +326,6 @@ def __del__(self):
 %}
 
 %extend Handle_MoniTool_Option {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MoniTool_IntVal;
-class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal();
-		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal(const Handle_MoniTool_IntVal &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal(const MoniTool_IntVal *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal & operator=(const Handle_MoniTool_IntVal &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_IntVal & operator=(const MoniTool_IntVal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MoniTool_IntVal DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MoniTool_IntVal {
-	MoniTool_IntVal* GetObject() {
-	return (MoniTool_IntVal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MoniTool_IntVal::~Handle_MoniTool_IntVal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MoniTool_IntVal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -484,44 +484,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MoniTool_Timer;
-class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer();
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer(const Handle_MoniTool_Timer &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer(const MoniTool_Timer *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer & operator=(const Handle_MoniTool_Timer &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer & operator=(const MoniTool_Timer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MoniTool_Timer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MoniTool_Timer {
-	MoniTool_Timer* GetObject() {
-	return (MoniTool_Timer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MoniTool_Timer::~Handle_MoniTool_Timer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MoniTool_Timer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MoniTool_TypedValue;
 class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	public:
@@ -554,44 +516,6 @@ def __del__(self):
 %}
 
 %extend Handle_MoniTool_TypedValue {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MoniTool_HSequenceOfElement;
-class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement();
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement(const Handle_MoniTool_HSequenceOfElement &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement(const MoniTool_HSequenceOfElement *anItem);
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement & operator=(const Handle_MoniTool_HSequenceOfElement &aHandle);
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement & operator=(const MoniTool_HSequenceOfElement *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MoniTool_HSequenceOfElement DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MoniTool_HSequenceOfElement {
-	MoniTool_HSequenceOfElement* GetObject() {
-	return (MoniTool_HSequenceOfElement*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MoniTool_HSequenceOfElement::~Handle_MoniTool_HSequenceOfElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MoniTool_HSequenceOfElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -674,6 +598,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MoniTool_HSequenceOfElement;
+class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement();
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement(const Handle_MoniTool_HSequenceOfElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement(const MoniTool_HSequenceOfElement *anItem);
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement & operator=(const Handle_MoniTool_HSequenceOfElement &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement & operator=(const MoniTool_HSequenceOfElement *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MoniTool_HSequenceOfElement DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MoniTool_HSequenceOfElement {
+	MoniTool_HSequenceOfElement* GetObject() {
+	return (MoniTool_HSequenceOfElement*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MoniTool_HSequenceOfElement::~Handle_MoniTool_HSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MoniTool_HSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MoniTool_Timer;
+class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer();
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer(const Handle_MoniTool_Timer &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer(const MoniTool_Timer *anItem);
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer & operator=(const Handle_MoniTool_Timer &aHandle);
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer & operator=(const MoniTool_Timer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MoniTool_Timer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MoniTool_Timer {
+	MoniTool_Timer* GetObject() {
+	return (MoniTool_Timer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MoniTool_Timer::~Handle_MoniTool_Timer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MoniTool_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MoniTool_RealVal;
 class MoniTool_RealVal : public MMgt_TShared {
 	public:
@@ -704,7 +704,7 @@ class MoniTool_RealVal : public MMgt_TShared {
 };
 %extend MoniTool_RealVal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_RealVal::~MoniTool_RealVal %{
@@ -723,18 +723,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor MoniTool_ElemHasher;
-class MoniTool_ElemHasher {
+%nodefaultctor MoniTool_DataMapNodeOfDataMapOfShapeTransient;
+class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		MoniTool_ElemHasher();
+		MoniTool_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MoniTool_ElemHasher::~MoniTool_ElemHasher %{
+%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient GetHandle() {
+	return *(Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_DataMapNodeOfDataMapOfShapeTransient::~MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -743,47 +755,77 @@ def __del__(self):
 		pass
 %}
 
-%extend MoniTool_ElemHasher {
+%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor MoniTool_DataMapOfShapeTransient;
-class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
+%nodefaultctor MoniTool_HSequenceOfElement;
+class MoniTool_HSequenceOfElement : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		MoniTool_DataMapOfShapeTransient(const Standard_Integer NbBuckets=1);
+		MoniTool_HSequenceOfElement();
 		%feature("autodoc", "1");
-		MoniTool_DataMapOfShapeTransient & Assign(const MoniTool_DataMapOfShapeTransient &Other);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		MoniTool_DataMapOfShapeTransient & operator=(const MoniTool_DataMapOfShapeTransient &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_Standard_Transient &I);
+		void Append(const Handle_MoniTool_Element &anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		void Append(const Handle_MoniTool_HSequenceOfElement &aSequence);
 		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
+		void Prepend(const Handle_MoniTool_Element &anItem);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Find(const TopoDS_Shape K) const;
+		void Prepend(const Handle_MoniTool_HSequenceOfElement &aSequence);
 		%feature("autodoc", "1");
-		const Handle_Standard_Transient & operator()(const TopoDS_Shape K) const;
+		void Reverse();
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape K);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
 		%feature("autodoc", "1");
-		Handle_Standard_Transient & operator()(const TopoDS_Shape K);
+		void InsertBefore(const Standard_Integer anIndex, const Handle_MoniTool_HSequenceOfElement &aSequence);
 		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
+		void InsertAfter(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
 		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
+		void InsertAfter(const Standard_Integer anIndex, const Handle_MoniTool_HSequenceOfElement &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
+		%feature("autodoc", "1");
+		const Handle_MoniTool_Element & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_MoniTool_Element & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const MoniTool_SequenceOfElement & Sequence() const;
+		%feature("autodoc", "1");
+		MoniTool_SequenceOfElement & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_MoniTool_HSequenceOfElement ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
+%extend MoniTool_HSequenceOfElement {
+	Handle_MoniTool_HSequenceOfElement GetHandle() {
+	return *(Handle_MoniTool_HSequenceOfElement*) &$self;
+	}
+};
+%extend MoniTool_HSequenceOfElement {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_HSequenceOfElement::~MoniTool_HSequenceOfElement %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -792,7 +834,7 @@ def __del__(self):
 		pass
 %}
 
-%extend MoniTool_DataMapOfShapeTransient {
+%extend MoniTool_HSequenceOfElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -864,7 +906,7 @@ class MoniTool_Timer : public MMgt_TShared {
 };
 %extend MoniTool_Timer {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Timer::~MoniTool_Timer %{
@@ -877,6 +919,160 @@ def __del__(self):
 %}
 
 %extend MoniTool_Timer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_SequenceNodeOfSequenceOfElement;
+class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_SequenceNodeOfSequenceOfElement(const Handle_MoniTool_Element &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_MoniTool_Element & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_SequenceNodeOfSequenceOfElement {
+	Handle_MoniTool_SequenceNodeOfSequenceOfElement GetHandle() {
+	return *(Handle_MoniTool_SequenceNodeOfSequenceOfElement*) &$self;
+	}
+};
+%extend MoniTool_SequenceNodeOfSequenceOfElement {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_SequenceNodeOfSequenceOfElement::~MoniTool_SequenceNodeOfSequenceOfElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_SequenceNodeOfSequenceOfElement {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
+class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_DataMapNodeOfDataMapOfTimer(const char * &K, const Handle_MoniTool_Timer &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_DataMapNodeOfDataMapOfTimer {
+	Handle_MoniTool_DataMapNodeOfDataMapOfTimer GetHandle() {
+	return *(Handle_MoniTool_DataMapNodeOfDataMapOfTimer*) &$self;
+	}
+};
+%extend MoniTool_DataMapNodeOfDataMapOfTimer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_DataMapNodeOfDataMapOfTimer::~MoniTool_DataMapNodeOfDataMapOfTimer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_DataMapNodeOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_DataMapOfShapeTransient;
+class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_DataMapOfShapeTransient(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		MoniTool_DataMapOfShapeTransient & Assign(const MoniTool_DataMapOfShapeTransient &Other);
+		%feature("autodoc", "1");
+		MoniTool_DataMapOfShapeTransient & operator=(const MoniTool_DataMapOfShapeTransient &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_Standard_Transient &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_DataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_TimerSentry;
+class MoniTool_TimerSentry {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_TimerSentry(const char * cname);
+		%feature("autodoc", "1");
+		MoniTool_TimerSentry(const Handle_MoniTool_Timer &timer);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Handle_MoniTool_Timer Timer() const;
+		%feature("autodoc", "1");
+		void Stop();
+
+};
+%feature("shadow") MoniTool_TimerSentry::~MoniTool_TimerSentry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_TimerSentry {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -913,7 +1109,7 @@ class MoniTool_IntVal : public MMgt_TShared {
 };
 %extend MoniTool_IntVal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_IntVal::~MoniTool_IntVal %{
@@ -926,45 +1122,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_IntVal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_DataMapNodeOfDataMapOfShapeTransient;
-class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_DataMapNodeOfDataMapOfShapeTransient(const TopoDS_Shape K, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
-	Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient GetHandle() {
-	return *(Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient*) &$self;
-	}
-};
-%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_DataMapNodeOfDataMapOfShapeTransient::~MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1040,7 +1197,7 @@ class MoniTool_Element : public MMgt_TShared {
 };
 %extend MoniTool_Element {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Element::~MoniTool_Element %{
@@ -1225,7 +1382,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 };
 %extend MoniTool_TypedValue {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_TypedValue::~MoniTool_TypedValue %{
@@ -1238,86 +1395,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_TypedValue {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_DataInfo;
-class MoniTool_DataInfo {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_DataInfo();
-		%feature("autodoc", "1");
-		static		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		static		char * TypeName(const Handle_Standard_Transient &ent);
-
-};
-%feature("shadow") MoniTool_DataInfo::~MoniTool_DataInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_DataInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
-class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
-	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
-	}
-};
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1348,7 +1425,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 };
 %extend MoniTool_TransientElem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_TransientElem::~MoniTool_TransientElem %{
@@ -1432,6 +1509,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
+class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
+	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MoniTool_Profile;
 class MoniTool_Profile : public MMgt_TShared {
 	public:
@@ -1496,7 +1626,7 @@ class MoniTool_Profile : public MMgt_TShared {
 };
 %extend MoniTool_Profile {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
@@ -1574,6 +1704,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor MoniTool_DataInfo;
+class MoniTool_DataInfo {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_DataInfo();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Type Type(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		static		char * TypeName(const Handle_Standard_Transient &ent);
+
+};
+%feature("shadow") MoniTool_DataInfo::~MoniTool_DataInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_DataInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MoniTool_SignText;
 class MoniTool_SignText : public MMgt_TShared {
 	public:
@@ -1594,7 +1751,7 @@ class MoniTool_SignText : public MMgt_TShared {
 };
 %extend MoniTool_SignText {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_SignText::~MoniTool_SignText %{
@@ -1627,7 +1784,7 @@ class MoniTool_SignShape : public MoniTool_SignText {
 };
 %extend MoniTool_SignShape {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_SignShape::~MoniTool_SignShape %{
@@ -1640,43 +1797,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_SignShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
-class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_DataMapNodeOfDataMapOfTimer(const char * &K, const Handle_MoniTool_Timer &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Timer & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_DataMapNodeOfDataMapOfTimer {
-	Handle_MoniTool_DataMapNodeOfDataMapOfTimer GetHandle() {
-	return *(Handle_MoniTool_DataMapNodeOfDataMapOfTimer*) &$self;
-	}
-};
-%extend MoniTool_DataMapNodeOfDataMapOfTimer {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_DataMapNodeOfDataMapOfTimer::~MoniTool_DataMapNodeOfDataMapOfTimer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_DataMapNodeOfDataMapOfTimer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1720,22 +1840,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor MoniTool_TimerSentry;
-class MoniTool_TimerSentry {
+%nodefaultctor MoniTool_DataMapIteratorOfDataMapOfTimer;
+class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		MoniTool_TimerSentry(const char * cname);
+		MoniTool_DataMapIteratorOfDataMapOfTimer();
 		%feature("autodoc", "1");
-		MoniTool_TimerSentry(const Handle_MoniTool_Timer &timer);
+		MoniTool_DataMapIteratorOfDataMapOfTimer(const MoniTool_DataMapOfTimer &aMap);
 		%feature("autodoc", "1");
-		void Destroy();
+		void Initialize(const MoniTool_DataMapOfTimer &aMap);
 		%feature("autodoc", "1");
-		Handle_MoniTool_Timer Timer() const;
-		%feature("autodoc", "1");
-		void Stop();
+		const Handle_MoniTool_Timer & Value() const;
 
 };
-%feature("shadow") MoniTool_TimerSentry::~MoniTool_TimerSentry %{
+%feature("shadow") MoniTool_DataMapIteratorOfDataMapOfTimer::~MoniTool_DataMapIteratorOfDataMapOfTimer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1744,7 +1862,34 @@ def __del__(self):
 		pass
 %}
 
-%extend MoniTool_TimerSentry {
+%extend MoniTool_DataMapIteratorOfDataMapOfTimer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_ElemHasher;
+class MoniTool_ElemHasher {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_ElemHasher();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const Handle_MoniTool_Element &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const Handle_MoniTool_Element &K1, const Handle_MoniTool_Element &K2);
+
+};
+%feature("shadow") MoniTool_ElemHasher::~MoniTool_ElemHasher %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_ElemHasher {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1804,43 +1949,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_IndexedDataMapOfShapeTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_SequenceNodeOfSequenceOfElement;
-class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_SequenceNodeOfSequenceOfElement(const Handle_MoniTool_Element &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_MoniTool_Element & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_SequenceNodeOfSequenceOfElement {
-	Handle_MoniTool_SequenceNodeOfSequenceOfElement GetHandle() {
-	return *(Handle_MoniTool_SequenceNodeOfSequenceOfElement*) &$self;
-	}
-};
-%extend MoniTool_SequenceNodeOfSequenceOfElement {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_SequenceNodeOfSequenceOfElement::~MoniTool_SequenceNodeOfSequenceOfElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_SequenceNodeOfSequenceOfElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1983,7 +2091,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 };
 %extend MoniTool_CaseData {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_CaseData::~MoniTool_CaseData %{
@@ -1996,85 +2104,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_CaseData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_HSequenceOfElement;
-class MoniTool_HSequenceOfElement : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_HSequenceOfElement();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_MoniTool_Element &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_MoniTool_HSequenceOfElement &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_MoniTool_Element &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_MoniTool_HSequenceOfElement &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_MoniTool_HSequenceOfElement &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_MoniTool_HSequenceOfElement &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_MoniTool_Element &anItem);
-		%feature("autodoc", "1");
-		const Handle_MoniTool_Element & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_MoniTool_Element & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const MoniTool_SequenceOfElement & Sequence() const;
-		%feature("autodoc", "1");
-		MoniTool_SequenceOfElement & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_MoniTool_HSequenceOfElement ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_HSequenceOfElement {
-	Handle_MoniTool_HSequenceOfElement GetHandle() {
-	return *(Handle_MoniTool_HSequenceOfElement*) &$self;
-	}
-};
-%extend MoniTool_HSequenceOfElement {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_HSequenceOfElement::~MoniTool_HSequenceOfElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_HSequenceOfElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2127,7 +2156,7 @@ class MoniTool_Option : public MMgt_TShared {
 };
 %extend MoniTool_Option {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Option::~MoniTool_Option %{
@@ -2140,35 +2169,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_Option {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_DataMapIteratorOfDataMapOfTimer;
-class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_DataMapIteratorOfDataMapOfTimer();
-		%feature("autodoc", "1");
-		MoniTool_DataMapIteratorOfDataMapOfTimer(const MoniTool_DataMapOfTimer &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const MoniTool_DataMapOfTimer &aMap);
-		%feature("autodoc", "1");
-		const Handle_MoniTool_Timer & Value() const;
-
-};
-%feature("shadow") MoniTool_DataMapIteratorOfDataMapOfTimer::~MoniTool_DataMapIteratorOfDataMapOfTimer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_DataMapIteratorOfDataMapOfTimer {
 	void _kill_pointed() {
 		delete $self;
 	}

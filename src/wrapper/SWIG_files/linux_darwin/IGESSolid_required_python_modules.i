@@ -27,8 +27,8 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import IGESData
 import Standard
+import IGESData
 import gp
 import IGESGeom
 };

@@ -52,35 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor RWStepAP203_RWChangeRequest;
-class RWStepAP203_RWChangeRequest {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWChangeRequest();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_ChangeRequest &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP203_RWChangeRequest::~RWStepAP203_RWChangeRequest %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP203_RWChangeRequest {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP203_RWCcDesignSecurityClassification;
 class RWStepAP203_RWCcDesignSecurityClassification {
 	public:
@@ -139,20 +110,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP203_RWCcDesignCertification;
-class RWStepAP203_RWCcDesignCertification {
+%nodefaultctor RWStepAP203_RWStartWork;
+class RWStepAP203_RWStartWork {
 	public:
 		%feature("autodoc", "1");
-		RWStepAP203_RWCcDesignCertification();
+		RWStepAP203_RWStartWork();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartWork &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignCertification &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartWork &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepAP203_RWCcDesignCertification::~RWStepAP203_RWCcDesignCertification %{
+%feature("shadow") RWStepAP203_RWStartWork::~RWStepAP203_RWStartWork %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -161,7 +132,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepAP203_RWCcDesignCertification {
+%extend RWStepAP203_RWStartWork {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -197,35 +168,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP203_RWStartWork;
-class RWStepAP203_RWStartWork {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP203_RWStartWork();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_StartWork &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_StartWork &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepAP203_StartWork &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepAP203_RWStartWork::~RWStepAP203_RWStartWork %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP203_RWStartWork {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP203_RWCcDesignContract;
 class RWStepAP203_RWCcDesignContract {
 	public:
@@ -249,6 +191,35 @@ def __del__(self):
 %}
 
 %extend RWStepAP203_RWCcDesignContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP203_RWChangeRequest;
+class RWStepAP203_RWChangeRequest {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWChangeRequest();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_ChangeRequest &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_ChangeRequest &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_ChangeRequest &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP203_RWChangeRequest::~RWStepAP203_RWChangeRequest %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP203_RWChangeRequest {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -307,6 +278,35 @@ def __del__(self):
 %}
 
 %extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP203_RWCcDesignCertification;
+class RWStepAP203_RWCcDesignCertification {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP203_RWCcDesignCertification();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepAP203_CcDesignCertification &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepAP203_CcDesignCertification &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepAP203_CcDesignCertification &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepAP203_RWCcDesignCertification::~RWStepAP203_RWCcDesignCertification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP203_RWCcDesignCertification {
 	void _kill_pointed() {
 		delete $self;
 	}

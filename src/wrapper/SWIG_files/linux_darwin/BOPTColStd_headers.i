@@ -55,8 +55,8 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
-#include<gp_Pnt2d.hxx>
 #include<TColStd_IndexedMapOfInteger.hxx>
+#include<gp_Pnt2d.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TCollection_AsciiString.hxx>
 %}

@@ -150,6 +150,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import PDF.i
 %import PMMgt.i
+%import PDF.i
 %import Standard.i

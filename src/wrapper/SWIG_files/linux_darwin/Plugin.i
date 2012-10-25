@@ -128,6 +128,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Plugin_MapOfFunctions;
+class Plugin_MapOfFunctions : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions & Assign(const Plugin_MapOfFunctions &Other);
+		%feature("autodoc", "1");
+		Plugin_MapOfFunctions & operator=(const Plugin_MapOfFunctions &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
+
+};
+%feature("shadow") Plugin_MapOfFunctions::~Plugin_MapOfFunctions %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plugin_MapOfFunctions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Plugin_DataMapIteratorOfMapOfFunctions;
 class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterator {
 	public:
@@ -175,7 +214,7 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 };
 %extend Plugin_DataMapNodeOfMapOfFunctions {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Plugin_DataMapNodeOfMapOfFunctions::~Plugin_DataMapNodeOfMapOfFunctions %{
@@ -218,7 +257,7 @@ class Plugin_Failure : public Standard_Failure {
 };
 %extend Plugin_Failure {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Plugin_Failure::~Plugin_Failure %{
@@ -231,45 +270,6 @@ def __del__(self):
 %}
 
 %extend Plugin_Failure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plugin_MapOfFunctions;
-class Plugin_MapOfFunctions : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions & Assign(const Plugin_MapOfFunctions &Other);
-		%feature("autodoc", "1");
-		Plugin_MapOfFunctions & operator=(const Plugin_MapOfFunctions &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TCollection_AsciiString &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TCollection_AsciiString &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
-
-};
-%feature("shadow") Plugin_MapOfFunctions::~Plugin_MapOfFunctions %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plugin_MapOfFunctions {
 	void _kill_pointed() {
 		delete $self;
 	}

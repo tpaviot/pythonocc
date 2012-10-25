@@ -128,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TPrsStd_DriverTable;
+class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const Handle_TPrsStd_DriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TPrsStd_DriverTable DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_DriverTable {
+	TPrsStd_DriverTable* GetObject() {
+	return (TPrsStd_DriverTable*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TPrsStd_DriverTable::~Handle_TPrsStd_DriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TPrsStd_DriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
 class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -166,29 +204,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TPrsStd_NamedShapeDriver;
-class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
+%nodefaultctor Handle_TPrsStd_AISPresentation;
+class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	public:
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver();
+		Handle_TPrsStd_AISPresentation();
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		Handle_TPrsStd_AISPresentation(const Handle_TPrsStd_AISPresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver(const TPrsStd_NamedShapeDriver *anItem);
+		Handle_TPrsStd_AISPresentation(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver & operator=(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		Handle_TPrsStd_AISPresentation & operator=(const Handle_TPrsStd_AISPresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
+		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TPrsStd_NamedShapeDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TPrsStd_AISPresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TPrsStd_NamedShapeDriver {
-	TPrsStd_NamedShapeDriver* GetObject() {
-	return (TPrsStd_NamedShapeDriver*)$self->Access();
+%extend Handle_TPrsStd_AISPresentation {
+	TPrsStd_AISPresentation* GetObject() {
+	return (TPrsStd_AISPresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TPrsStd_NamedShapeDriver::~Handle_TPrsStd_NamedShapeDriver %{
+%feature("shadow") Handle_TPrsStd_AISPresentation::~Handle_TPrsStd_AISPresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,7 +235,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TPrsStd_NamedShapeDriver {
+%extend Handle_TPrsStd_AISPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,44 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TPrsStd_DriverTable;
-class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const Handle_TPrsStd_DriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable(const TPrsStd_DriverTable *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable & operator=(const Handle_TPrsStd_DriverTable &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_DriverTable & operator=(const TPrsStd_DriverTable *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TPrsStd_DriverTable DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_DriverTable {
-	TPrsStd_DriverTable* GetObject() {
-	return (TPrsStd_DriverTable*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TPrsStd_DriverTable::~Handle_TPrsStd_DriverTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TPrsStd_DriverTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TPrsStd_PointDriver;
 class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -394,44 +394,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TPrsStd_AISPresentation;
-class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation();
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation(const Handle_TPrsStd_AISPresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation(const TPrsStd_AISPresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation & operator=(const Handle_TPrsStd_AISPresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_TPrsStd_AISPresentation & operator=(const TPrsStd_AISPresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TPrsStd_AISPresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TPrsStd_AISPresentation {
-	TPrsStd_AISPresentation* GetObject() {
-	return (TPrsStd_AISPresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TPrsStd_AISPresentation::~Handle_TPrsStd_AISPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TPrsStd_AISPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
 class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -464,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_TPrsStd_GeometryDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TPrsStd_NamedShapeDriver;
+class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver();
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver(const TPrsStd_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const Handle_TPrsStd_NamedShapeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_TPrsStd_NamedShapeDriver & operator=(const TPrsStd_NamedShapeDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TPrsStd_NamedShapeDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TPrsStd_NamedShapeDriver {
+	TPrsStd_NamedShapeDriver* GetObject() {
+	return (TPrsStd_NamedShapeDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TPrsStd_NamedShapeDriver::~Handle_TPrsStd_NamedShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TPrsStd_NamedShapeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -540,6 +540,322 @@ def __del__(self):
 };
 
 
+%nodefaultctor TPrsStd_Driver;
+class TPrsStd_Driver : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_Driver {
+	Handle_TPrsStd_Driver GetHandle() {
+	return *(Handle_TPrsStd_Driver*) &$self;
+	}
+};
+%extend TPrsStd_Driver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_Driver::~TPrsStd_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_NamedShapeDriver;
+class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_NamedShapeDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+
+};
+%extend TPrsStd_NamedShapeDriver {
+	Handle_TPrsStd_NamedShapeDriver GetHandle() {
+	return *(Handle_TPrsStd_NamedShapeDriver*) &$self;
+	}
+};
+%extend TPrsStd_NamedShapeDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_NamedShapeDriver::~TPrsStd_NamedShapeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_NamedShapeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
+class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver();
+		%feature("autodoc", "1");
+		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver(const TPrsStd_DataMapOfGUIDDriver &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TPrsStd_DataMapOfGUIDDriver &aMap);
+		%feature("autodoc", "1");
+		const Standard_GUID & Key() const;
+		%feature("autodoc", "1");
+		const Handle_TPrsStd_Driver & Value() const;
+
+};
+%feature("shadow") TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver::~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_AxisDriver;
+class TPrsStd_AxisDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_AxisDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_AxisDriver {
+	Handle_TPrsStd_AxisDriver GetHandle() {
+	return *(Handle_TPrsStd_AxisDriver*) &$self;
+	}
+};
+%extend TPrsStd_AxisDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_AxisDriver::~TPrsStd_AxisDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_AxisDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_AISViewer;
+class TPrsStd_AISViewer : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Has(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		static		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
+		%feature("autodoc", "1");
+		static		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
+		%feature("autodoc", "1");
+		static		void Update(const TDF_Label &acces);
+		%feature("autodoc", "1");
+		TPrsStd_AISViewer();
+		%feature("autodoc", "1");
+		void Update() const;
+		%feature("autodoc", "1");
+		void SetInteractiveContext(const Handle_AIS_InteractiveContext &ctx);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveContext GetInteractiveContext() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_AISViewer {
+	Handle_TPrsStd_AISViewer GetHandle() {
+	return *(Handle_TPrsStd_AISViewer*) &$self;
+	}
+};
+%extend TPrsStd_AISViewer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_AISViewer::~TPrsStd_AISViewer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_AISViewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_PointDriver;
+class TPrsStd_PointDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_PointDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_PointDriver {
+	Handle_TPrsStd_PointDriver GetHandle() {
+	return *(Handle_TPrsStd_PointDriver*) &$self;
+	}
+};
+%extend TPrsStd_PointDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_PointDriver::~TPrsStd_PointDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_PointDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_ConstraintDriver;
+class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_ConstraintDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_ConstraintDriver {
+	Handle_TPrsStd_ConstraintDriver GetHandle() {
+	return *(Handle_TPrsStd_ConstraintDriver*) &$self;
+	}
+};
+%extend TPrsStd_ConstraintDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_ConstraintDriver::~TPrsStd_ConstraintDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_ConstraintDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
+class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TPrsStd_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TPrsStd_Driver &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Standard_GUID & Key() const;
+		%feature("autodoc", "1");
+		Handle_TPrsStd_Driver & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
+	return *(Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
+	}
+};
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TPrsStd_AISPresentation;
 class TPrsStd_AISPresentation : public TDF_Attribute {
 	public:
@@ -578,7 +894,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void UnsetMaterial();
 		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
+		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
 		%feature("autodoc", "1");
 		Standard_Real Transparency() const;
 		%feature("autodoc", "1");
@@ -650,7 +966,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 };
 %extend TPrsStd_AISPresentation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_AISPresentation::~TPrsStd_AISPresentation %{
@@ -663,146 +979,6 @@ def __del__(self):
 %}
 
 %extend TPrsStd_AISPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_Driver;
-class TPrsStd_Driver : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_Driver {
-	Handle_TPrsStd_Driver GetHandle() {
-	return *(Handle_TPrsStd_Driver*) &$self;
-	}
-};
-%extend TPrsStd_Driver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_Driver::~TPrsStd_Driver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_Driver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_NamedShapeDriver;
-class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_NamedShapeDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_NamedShapeDriver {
-	Handle_TPrsStd_NamedShapeDriver GetHandle() {
-	return *(Handle_TPrsStd_NamedShapeDriver*) &$self;
-	}
-};
-%extend TPrsStd_NamedShapeDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_NamedShapeDriver::~TPrsStd_NamedShapeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_NamedShapeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
-class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver();
-		%feature("autodoc", "1");
-		TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver(const TPrsStd_DataMapOfGUIDDriver &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TPrsStd_DataMapOfGUIDDriver &aMap);
-		%feature("autodoc", "1");
-		const Standard_GUID & Key() const;
-		%feature("autodoc", "1");
-		const Handle_TPrsStd_Driver & Value() const;
-
-};
-%feature("shadow") TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver::~TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_GeometryDriver;
-class TPrsStd_GeometryDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_GeometryDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_GeometryDriver {
-	Handle_TPrsStd_GeometryDriver GetHandle() {
-	return *(Handle_TPrsStd_GeometryDriver*) &$self;
-	}
-};
-%extend TPrsStd_GeometryDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_GeometryDriver::~TPrsStd_GeometryDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_GeometryDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -827,7 +1003,7 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_PlaneDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_PlaneDriver::~TPrsStd_PlaneDriver %{
@@ -846,93 +1022,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor TPrsStd_AISViewer;
-class TPrsStd_AISViewer : public TDF_Attribute {
+%nodefaultctor TPrsStd_GeometryDriver;
+class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 	public:
 		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Has(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		static		Handle_TPrsStd_AISViewer New(const TDF_Label &access, const Handle_AIS_InteractiveContext &selector);
-		%feature("autodoc", "1");
-		static		Handle_TPrsStd_AISViewer New(const TDF_Label &acces, const Handle_V3d_Viewer &viewer);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const TDF_Label &acces, Handle_TPrsStd_AISViewer & A);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const TDF_Label &acces, Handle_AIS_InteractiveContext & IC);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const TDF_Label &acces, Handle_V3d_Viewer & V);
-		%feature("autodoc", "1");
-		static		void Update(const TDF_Label &acces);
-		%feature("autodoc", "1");
-		TPrsStd_AISViewer();
-		%feature("autodoc", "1");
-		void Update() const;
-		%feature("autodoc", "1");
-		void SetInteractiveContext(const Handle_AIS_InteractiveContext &ctx);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveContext GetInteractiveContext() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_AISViewer {
-	Handle_TPrsStd_AISViewer GetHandle() {
-	return *(Handle_TPrsStd_AISViewer*) &$self;
-	}
-};
-%extend TPrsStd_AISViewer {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_AISViewer::~TPrsStd_AISViewer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_AISViewer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_PointDriver;
-class TPrsStd_PointDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_PointDriver();
+		TPrsStd_GeometryDriver();
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend TPrsStd_PointDriver {
-	Handle_TPrsStd_PointDriver GetHandle() {
-	return *(Handle_TPrsStd_PointDriver*) &$self;
+%extend TPrsStd_GeometryDriver {
+	Handle_TPrsStd_GeometryDriver GetHandle() {
+	return *(Handle_TPrsStd_GeometryDriver*) &$self;
 	}
 };
-%extend TPrsStd_PointDriver {
+%extend TPrsStd_GeometryDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TPrsStd_PointDriver::~TPrsStd_PointDriver %{
+%feature("shadow") TPrsStd_GeometryDriver::~TPrsStd_GeometryDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -941,120 +1052,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TPrsStd_PointDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_AxisDriver;
-class TPrsStd_AxisDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_AxisDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_AxisDriver {
-	Handle_TPrsStd_AxisDriver GetHandle() {
-	return *(Handle_TPrsStd_AxisDriver*) &$self;
-	}
-};
-%extend TPrsStd_AxisDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_AxisDriver::~TPrsStd_AxisDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_AxisDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_ConstraintDriver;
-class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_ConstraintDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &aLabel, Handle_AIS_InteractiveObject & anAISObject);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_ConstraintDriver {
-	Handle_TPrsStd_ConstraintDriver GetHandle() {
-	return *(Handle_TPrsStd_ConstraintDriver*) &$self;
-	}
-};
-%extend TPrsStd_ConstraintDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_ConstraintDriver::~TPrsStd_ConstraintDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_ConstraintDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
-class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TPrsStd_DataMapNodeOfDataMapOfGUIDDriver(const Standard_GUID &K, const Handle_TPrsStd_Driver &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Standard_GUID & Key() const;
-		%feature("autodoc", "1");
-		Handle_TPrsStd_Driver & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver GetHandle() {
-	return *(Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver*) &$self;
-	}
-};
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
+%extend TPrsStd_GeometryDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1138,7 +1136,7 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 };
 %extend TPrsStd_DriverTable {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_DriverTable::~TPrsStd_DriverTable %{

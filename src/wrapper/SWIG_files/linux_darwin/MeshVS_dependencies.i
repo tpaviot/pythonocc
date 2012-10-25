@@ -716,10 +716,10 @@ $HeaderURL$
 #include <TColStd_StdMapNodeOfMapOfTransient.hxx>
 %};
 
+%import TCollection.i
 %import MMgt.i
 %import AIS.i
 %import Select3D.i
-%import TCollection.i
 %import SelectMgr.i
 %import SelectBasics.i
 %import Standard.i

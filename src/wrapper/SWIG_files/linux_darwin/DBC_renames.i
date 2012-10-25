@@ -23,7 +23,7 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::DownCast;
 %rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfInteger::DownCast;
-%rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfReal::DownCast;
+%rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfExtCharacter::DownCast;
 %rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfCharacter::DownCast;
+%rename(DownCast) Handle_DBC_VArrayNodeOfVArrayOfReal::DownCast;

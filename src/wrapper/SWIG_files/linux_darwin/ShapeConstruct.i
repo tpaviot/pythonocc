@@ -90,43 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeConstruct;
-class ShapeConstruct {
-	public:
-		%feature("autodoc", "1");
-		ShapeConstruct();
-		%feature("autodoc", "1");
-		static		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_BSplineCurve ConvertCurveToBSpline(const Handle_Geom2d_Curve &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol2d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
-		%feature("autodoc", "1");
-		static		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face theFace, TopoDS_Edge & theEdge);
-		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
-		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
-
-};
-%feature("shadow") ShapeConstruct::~ShapeConstruct %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeConstruct {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor ShapeConstruct_ProjectCurveOnSurface;
 class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	public:
@@ -169,9 +132,9 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status Status) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x00000000000000001);
+		virtual		Standard_Boolean Perform(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x000000001);
 		%feature("autodoc", "1");
-		Standard_Boolean PerformByProjLib(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x00000000000000001);
+		Standard_Boolean PerformByProjLib(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean PerformAdvanced(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d);
 		%feature("autodoc", "1");
@@ -185,7 +148,7 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 };
 %extend ShapeConstruct_ProjectCurveOnSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeConstruct_ProjectCurveOnSurface::~ShapeConstruct_ProjectCurveOnSurface %{
@@ -204,11 +167,48 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
+class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		%feature("autodoc", "1");
+		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		void Poles(TColgp_Array1OfPnt2d & Poles) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+
+};
+%feature("shadow") ShapeConstruct_CompBezierCurves2dToBSplineCurve2d::~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
 class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
+		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt &Poles);
 		%feature("autodoc", "1");
@@ -307,28 +307,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
-class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+%nodefaultctor ShapeConstruct;
+class ShapeConstruct {
 	public:
 		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
+		ShapeConstruct();
 		%feature("autodoc", "1");
-		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
+		static		Handle_Geom_BSplineCurve ConvertCurveToBSpline(const Handle_Geom_Curve &C3D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
-		void Perform();
+		static		Handle_Geom2d_BSplineCurve ConvertCurveToBSpline(const Handle_Geom2d_Curve &C2D, const Standard_Real First, const Standard_Real Last, const Standard_Real Tol2d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
+		static		Handle_Geom_BSplineSurface ConvertSurfaceToBSpline(const Handle_Geom_Surface &surf, const Standard_Real UF, const Standard_Real UL, const Standard_Real VF, const Standard_Real VL, const Standard_Real Tol3d, const GeomAbs_Shape Continuity, const Standard_Integer MaxSegments, const Standard_Integer MaxDegree);
 		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		void Poles(TColgp_Array1OfPnt2d & Poles) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		void KnotsAndMults(TColStd_Array1OfReal & Knots, TColStd_Array1OfInteger & Mults) const;
+		static		Standard_Boolean JoinPCurves(const Handle_TopTools_HSequenceOfShape &theEdges, const TopoDS_Face theFace, TopoDS_Edge & theEdge);
+		%feature("autodoc","JoinCurves(const c3d1, const ac3d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		Standard_Boolean JoinCurves(const Handle_Geom_Curve &c3d1, const Handle_Geom_Curve &ac3d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom_Curve & c3dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2);
+		%feature("autodoc","JoinCurves(const c2d1, const ac2d2, TopAbs_Orientation Orient1, TopAbs_Orientation Orient2, Standard_Boolean isError=0) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		static		Standard_Boolean JoinCurves(const Handle_Geom2d_Curve &c2d1, const Handle_Geom2d_Curve &ac2d2, const TopAbs_Orientation Orient1, const TopAbs_Orientation Orient2, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Handle_Geom2d_Curve & c2dOut, Standard_Boolean & isRev1, Standard_Boolean & isRev2, const Standard_Boolean isError=0);
 
 };
-%feature("shadow") ShapeConstruct_CompBezierCurves2dToBSplineCurve2d::~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d %{
+%feature("shadow") ShapeConstruct::~ShapeConstruct %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -337,7 +337,7 @@ def __del__(self):
 		pass
 %}
 
-%extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
+%extend ShapeConstruct {
 	void _kill_pointed() {
 		delete $self;
 	}

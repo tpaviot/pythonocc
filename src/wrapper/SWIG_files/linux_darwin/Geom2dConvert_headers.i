@@ -38,14 +38,14 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Geom2d_BoundedCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Geom2dConvert.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<TColGeom2d_Array1OfBSplineCurve.hxx>
 #include<TColStd_Array1OfReal.hxx>
 #include<Handle_TColGeom2d_HArray1OfBSplineCurve.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
+#include<Handle_Geom2d_BoundedCurve.hxx>
 #include<TColStd_Array1OfInteger.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<TColGeom2d_Array1OfBezierCurve.hxx>

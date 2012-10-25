@@ -50,18 +50,18 @@ $HeaderURL$
 %include BRepFeat_headers.i
 
 
+enum BRepFeat_Status {
+	BRepFeat_NoError,
+	BRepFeat_InvalidPlacement,
+	BRepFeat_HoleTooLong,
+	};
+
 enum BRepFeat_PerfSelection {
 	BRepFeat_NoSelection,
 	BRepFeat_SelectionFU,
 	BRepFeat_SelectionU,
 	BRepFeat_SelectionSh,
 	BRepFeat_SelectionShU,
-	};
-
-enum BRepFeat_Status {
-	BRepFeat_NoError,
-	BRepFeat_InvalidPlacement,
-	BRepFeat_HoleTooLong,
 	};
 
 enum BRepFeat_StatusError {
@@ -95,6 +95,81 @@ enum BRepFeat_StatusError {
 	BRepFeat_NullToolU,
 	};
 
+
+
+%nodefaultctor BRepFeat_Builder;
+class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S, const TopoDS_Shape T);
+		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
+
+};
+%feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFeat_Builder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend BRepFeat_Builder {
+	BRepFeat_Builder () {}
+};
+
+
+%nodefaultctor BRepFeat_MakeCylindricalHole;
+class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
+	public:
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole();
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S, const gp_Ax1 Axis);
+		%feature("autodoc", "1");
+		void Init(const gp_Ax1 Axis);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape S, const gp_Ax1 Axis);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Radius);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
+		%feature("autodoc", "1");
+		BRepFeat_Status Status() const;
+		%feature("autodoc", "1");
+		virtual		void Build();
+
+};
+%feature("shadow") BRepFeat_MakeCylindricalHole::~BRepFeat_MakeCylindricalHole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFeat_MakeCylindricalHole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor BRepFeat;
@@ -134,36 +209,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor BRepFeat_Builder;
-class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const TopoDS_Shape T);
-		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
-
-};
-%feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFeat_Builder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend BRepFeat_Builder {
-	BRepFeat_Builder () {}
 };
 
 
@@ -592,51 +637,6 @@ def __del__(self):
 %}
 
 %extend BRepFeat_Gluer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFeat_MakeCylindricalHole;
-class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole();
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S, const gp_Ax1 Axis);
-		%feature("autodoc", "1");
-		void Init(const gp_Ax1 Axis);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const gp_Ax1 Axis);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Radius, const Standard_Real PFrom, const Standard_Real PTo, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformThruNext(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformUntilEnd(const Standard_Real Radius, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		void PerformBlind(const Standard_Real Radius, const Standard_Real Length, const Standard_Boolean WithControl=1);
-		%feature("autodoc", "1");
-		BRepFeat_Status Status() const;
-		%feature("autodoc", "1");
-		virtual		void Build();
-
-};
-%feature("shadow") BRepFeat_MakeCylindricalHole::~BRepFeat_MakeCylindricalHole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFeat_MakeCylindricalHole {
 	void _kill_pointed() {
 		delete $self;
 	}

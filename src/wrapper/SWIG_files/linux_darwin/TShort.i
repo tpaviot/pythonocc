@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
-class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal();
-		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal(const Handle_TShort_SequenceNodeOfSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const Handle_TShort_SequenceNodeOfSequenceOfShortReal &aHandle);
-		%feature("autodoc", "1");
-		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TShort_SequenceNodeOfSequenceOfShortReal DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
-	TShort_SequenceNodeOfSequenceOfShortReal* GetObject() {
-	return (TShort_SequenceNodeOfSequenceOfShortReal*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TShort_SequenceNodeOfSequenceOfShortReal::~Handle_TShort_SequenceNodeOfSequenceOfShortReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TShort_HSequenceOfShortReal;
 class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_TShort_HArray1OfShortReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
+class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal();
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal(const Handle_TShort_SequenceNodeOfSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const Handle_TShort_SequenceNodeOfSequenceOfShortReal &aHandle);
+		%feature("autodoc", "1");
+		Handle_TShort_SequenceNodeOfSequenceOfShortReal & operator=(const TShort_SequenceNodeOfSequenceOfShortReal *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TShort_SequenceNodeOfSequenceOfShortReal DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
+	TShort_SequenceNodeOfSequenceOfShortReal* GetObject() {
+	return (TShort_SequenceNodeOfSequenceOfShortReal*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TShort_SequenceNodeOfSequenceOfShortReal::~Handle_TShort_SequenceNodeOfSequenceOfShortReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -240,7 +240,7 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HArray1OfShortReal::~TShort_HArray1OfShortReal %{
@@ -417,7 +417,7 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HArray2OfShortReal::~TShort_HArray2OfShortReal %{
@@ -509,7 +509,7 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 };
 %extend TShort_SequenceNodeOfSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_SequenceNodeOfSequenceOfShortReal::~TShort_SequenceNodeOfSequenceOfShortReal %{
@@ -588,7 +588,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 };
 %extend TShort_HSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TShort_HSequenceOfShortReal::~TShort_HSequenceOfShortReal %{

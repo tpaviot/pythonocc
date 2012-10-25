@@ -23,8 +23,8 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt::DownCast;
 %rename(DownCast) Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg::DownCast;
+%rename(DownCast) Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt::DownCast;
 %rename(Bounding) IntCurveSurface_ThePolyhedronToolOfHInter::Bounding;
 %rename(ComponentsBounding) IntCurveSurface_ThePolyhedronToolOfHInter::ComponentsBounding;
 %rename(DeflectionOverEstimation) IntCurveSurface_ThePolyhedronToolOfHInter::DeflectionOverEstimation;
@@ -35,6 +35,13 @@ $HeaderURL$
 %rename(IsOnBound) IntCurveSurface_ThePolyhedronToolOfHInter::IsOnBound;
 %rename(GetBorderDeflection) IntCurveSurface_ThePolyhedronToolOfHInter::GetBorderDeflection;
 %rename(Dump) IntCurveSurface_ThePolyhedronToolOfHInter::Dump;
+%rename(Bounding) IntCurveSurface_ThePolygonToolOfHInter::Bounding;
+%rename(DeflectionOverEstimation) IntCurveSurface_ThePolygonToolOfHInter::DeflectionOverEstimation;
+%rename(Closed) IntCurveSurface_ThePolygonToolOfHInter::Closed;
+%rename(NbSegments) IntCurveSurface_ThePolygonToolOfHInter::NbSegments;
+%rename(BeginOfSeg) IntCurveSurface_ThePolygonToolOfHInter::BeginOfSeg;
+%rename(EndOfSeg) IntCurveSurface_ThePolygonToolOfHInter::EndOfSeg;
+%rename(Dump) IntCurveSurface_ThePolygonToolOfHInter::Dump;
 %rename(FirstParameter) IntCurveSurface_TheHCurveTool::FirstParameter;
 %rename(LastParameter) IntCurveSurface_TheHCurveTool::LastParameter;
 %rename(Continuity) IntCurveSurface_TheHCurveTool::Continuity;
@@ -60,10 +67,3 @@ $HeaderURL$
 %rename(BSpline) IntCurveSurface_TheHCurveTool::BSpline;
 %rename(NbSamples) IntCurveSurface_TheHCurveTool::NbSamples;
 %rename(SamplePars) IntCurveSurface_TheHCurveTool::SamplePars;
-%rename(Bounding) IntCurveSurface_ThePolygonToolOfHInter::Bounding;
-%rename(DeflectionOverEstimation) IntCurveSurface_ThePolygonToolOfHInter::DeflectionOverEstimation;
-%rename(Closed) IntCurveSurface_ThePolygonToolOfHInter::Closed;
-%rename(NbSegments) IntCurveSurface_ThePolygonToolOfHInter::NbSegments;
-%rename(BeginOfSeg) IntCurveSurface_ThePolygonToolOfHInter::BeginOfSeg;
-%rename(EndOfSeg) IntCurveSurface_ThePolygonToolOfHInter::EndOfSeg;
-%rename(Dump) IntCurveSurface_ThePolygonToolOfHInter::Dump;

@@ -164,6 +164,6 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Convert.i
 %import Standard.i
+%import Convert.i
 %import GeomAbs.i

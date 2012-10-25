@@ -430,8 +430,8 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
+%import MMgt.i
 %import MFT.i
 %import Aspect.i
-%import MMgt.i
 %import Standard.i
 %import Quantity.i

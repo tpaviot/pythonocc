@@ -133,6 +133,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Select2D_SensitiveBox;
+class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox();
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox & operator=(const Handle_Select2D_SensitiveBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select2D_SensitiveBox & operator=(const Select2D_SensitiveBox *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Select2D_SensitiveBox DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select2D_SensitiveBox {
+	Select2D_SensitiveBox* GetObject() {
+	return (Select2D_SensitiveBox*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Select2D_SensitiveBox::~Handle_Select2D_SensitiveBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Select2D_SensitiveBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Select2D_SensitivePoint;
 class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 	public:
@@ -285,44 +323,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Select2D_SensitiveBox;
-class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox();
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox(const Handle_Select2D_SensitiveBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox(const Select2D_SensitiveBox *anItem);
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox & operator=(const Handle_Select2D_SensitiveBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select2D_SensitiveBox & operator=(const Select2D_SensitiveBox *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Select2D_SensitiveBox DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select2D_SensitiveBox {
-	Select2D_SensitiveBox* GetObject() {
-	return (Select2D_SensitiveBox*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Select2D_SensitiveBox::~Handle_Select2D_SensitiveBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Select2D_SensitiveBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Select2D_SensitiveEntity;
 class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	public:
@@ -355,7 +355,7 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select2D_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveEntity::~Select2D_SensitiveEntity %{
@@ -401,7 +401,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveCircle {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveCircle::~Select2D_SensitiveCircle %{
@@ -455,7 +455,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveSegment::~Select2D_SensitiveSegment %{
@@ -468,6 +468,52 @@ def __del__(self):
 %}
 
 %extend Select2D_SensitiveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Select2D_SensitivePoint;
+class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Select2D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt2d Location, const Standard_Real InitSensitivity=0);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real aSensitivity);
+		%feature("autodoc", "1");
+		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Location() const;
+		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
+
+		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Select2D_SensitivePoint {
+	Handle_Select2D_SensitivePoint GetHandle() {
+	return *(Handle_Select2D_SensitivePoint*) &$self;
+	}
+};
+%extend Select2D_SensitivePoint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Select2D_SensitivePoint::~Select2D_SensitivePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Select2D_SensitivePoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -497,7 +543,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveArc {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveArc::~Select2D_SensitiveArc %{
@@ -541,7 +587,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveBox {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_SensitiveBox::~Select2D_SensitiveBox %{
@@ -576,7 +622,7 @@ class Select2D_Projector : public MMgt_TShared {
 };
 %extend Select2D_Projector {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select2D_Projector::~Select2D_Projector %{
@@ -589,52 +635,6 @@ def __del__(self):
 %}
 
 %extend Select2D_Projector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Select2D_SensitivePoint;
-class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Select2D_SensitivePoint(const Handle_SelectBasics_EntityOwner &OwnerId, const gp_Pnt2d Location, const Standard_Real InitSensitivity=0);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real aSensitivity);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresul);
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Location() const;
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
-
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Select2D_SensitivePoint {
-	Handle_Select2D_SensitivePoint GetHandle() {
-	return *(Handle_Select2D_SensitivePoint*) &$self;
-	}
-};
-%extend Select2D_SensitivePoint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Select2D_SensitivePoint::~Select2D_SensitivePoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Select2D_SensitivePoint {
 	void _kill_pointed() {
 		delete $self;
 	}

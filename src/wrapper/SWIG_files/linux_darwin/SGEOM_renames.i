@@ -23,8 +23,8 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_GEOM_SubShapeDriver::DownCast;
 %rename(DownCast) Handle_GEOM_Application::DownCast;
+%rename(DownCast) Handle_GEOM_SubShapeDriver::DownCast;
 %rename(DownCast) Handle_GEOM_Object::DownCast;
 %rename(DownCast) Handle_GEOM_DataMapNodeOfDataMapOfAsciiStringTransient::DownCast;
 %rename(DownCast) Handle_GEOM_Function::DownCast;

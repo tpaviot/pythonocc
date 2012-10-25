@@ -181,7 +181,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<IGESGraph.hxx>
 #include<Handle_IGESData_IGESReaderData.hxx>
 #include<IGESData_ParamReader.hxx>
 #include<IGESData_IGESWriter.hxx>
@@ -193,14 +192,15 @@ $HeaderURL$
 #include<IGESData_IGESDumper.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<gp_XYZ.hxx>
-#include<gp_Pnt.hxx>
-#include<Handle_IGESData_IGESEntity.hxx>
-#include<Handle_IGESBasic_SubfigureDef.hxx>
 #include<gp_XY.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
+#include<Handle_IGESBasic_SubfigureDef.hxx>
+#include<IGESGraph.hxx>
 #include<Handle_TColStd_HArray1OfInteger.hxx>
+#include<gp_XYZ.hxx>
+#include<gp_Pnt.hxx>
 #include<Handle_IGESBasic_HArray1OfHArray1OfInteger.hxx>
+#include<Handle_IGESData_IGESEntity.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 %}

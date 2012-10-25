@@ -178,6 +178,6 @@ $HeaderURL$
 %};
 
 %import BRepTools.i
-%import Standard.i
 %import TopAbs.i
+%import Standard.i
 %import ShapeExtend.i

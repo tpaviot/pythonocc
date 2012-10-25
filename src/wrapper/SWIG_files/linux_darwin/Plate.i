@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
+class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	Plate_SequenceNodeOfSequenceOfLinearXYZConstraint* GetObject() {
+	return (Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint::~Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Plate_HArray1OfPinpointConstraint;
 class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 	public:
@@ -160,44 +198,6 @@ def __del__(self):
 %}
 
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
-class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint();
-		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
-		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
-		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint &aHandle);
-		%feature("autodoc", "1");
-		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint & operator=(const Plate_SequenceNodeOfSequenceOfLinearXYZConstraint *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	Plate_SequenceNodeOfSequenceOfLinearXYZConstraint* GetObject() {
-	return (Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint::~Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -324,6 +324,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor Plate_LinearScalarConstraint;
+class Plate_LinearScalarConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint();
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColgp_Array1OfXYZ &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColgp_Array2OfXYZ &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & GetPPC() const;
+		%feature("autodoc", "1");
+		const TColgp_Array2OfXYZ & Coeff() const;
+		%feature("autodoc", "1");
+		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ Value);
+
+};
+%feature("shadow") Plate_LinearScalarConstraint::~Plate_LinearScalarConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_LinearScalarConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Plate_SampledCurveConstraint;
 class Plate_SampledCurveConstraint {
 	public:
@@ -343,6 +382,43 @@ def __del__(self):
 %}
 
 %extend Plate_SampledCurveConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Plate_LinearXYZConstraint;
+class Plate_LinearXYZConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint();
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColStd_Array1OfReal &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColStd_Array2OfReal &coeff);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & GetPPC() const;
+		%feature("autodoc", "1");
+		const TColStd_Array2OfReal & Coeff() const;
+		%feature("autodoc", "1");
+		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
+
+};
+%feature("shadow") Plate_LinearXYZConstraint::~Plate_LinearXYZConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_LinearXYZConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -390,6 +466,98 @@ def __del__(self):
 };
 
 
+%nodefaultctor Plate_HArray1OfPinpointConstraint;
+class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up, const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		void Init(const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & Array1() const;
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	Handle_Plate_HArray1OfPinpointConstraint GetHandle() {
+	return *(Handle_Plate_HArray1OfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_HArray1OfPinpointConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Plate_HArray1OfPinpointConstraint::~Plate_HArray1OfPinpointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_HArray1OfPinpointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
+class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_PinpointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Plate_SequenceNodeOfSequenceOfPinpointConstraint::~Plate_SequenceNodeOfSequenceOfPinpointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Plate_D3;
 class Plate_D3 {
 	public:
@@ -409,111 +577,6 @@ def __del__(self):
 %}
 
 %extend Plate_D3 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_D2;
-class Plate_D2 {
-	public:
-		%feature("autodoc", "1");
-		Plate_D2(const gp_XYZ duu, const gp_XYZ duv, const gp_XYZ dvv);
-		%feature("autodoc", "1");
-		Plate_D2(const Plate_D2 &ref);
-
-};
-%feature("shadow") Plate_D2::~Plate_D2 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_D2 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_D1;
-class Plate_D1 {
-	public:
-		%feature("autodoc", "1");
-		Plate_D1(const gp_XYZ du, const gp_XYZ dv);
-		%feature("autodoc", "1");
-		Plate_D1(const Plate_D1 &ref);
-		%feature("autodoc", "1");
-		const gp_XYZ  DU() const;
-		%feature("autodoc", "1");
-		const gp_XYZ  DV() const;
-
-};
-%feature("shadow") Plate_D1::~Plate_D1 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_D1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_Array1OfPinpointConstraint;
-class Plate_Array1OfPinpointConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint(const Plate_PinpointConstraint &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & Assign(const Plate_Array1OfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & operator=(const Plate_Array1OfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Plate_Array1OfPinpointConstraint::~Plate_Array1OfPinpointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_Array1OfPinpointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -547,82 +610,6 @@ def __del__(self):
 %}
 
 %extend Plate_PinpointConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
-class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_LinearScalarConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Plate_SequenceNodeOfSequenceOfLinearScalarConstraint::~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_LinearScalarConstraint;
-class Plate_LinearScalarConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint();
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_PinpointConstraint &PPC1, const gp_XYZ coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColgp_Array1OfXYZ &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColgp_Array2OfXYZ &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearScalarConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & GetPPC() const;
-		%feature("autodoc", "1");
-		const TColgp_Array2OfXYZ & Coeff() const;
-		%feature("autodoc", "1");
-		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const gp_XYZ Value);
-
-};
-%feature("shadow") Plate_LinearScalarConstraint::~Plate_LinearScalarConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_LinearScalarConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -694,28 +681,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
-class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
+%nodefaultctor Plate_D1;
+class Plate_D1 {
 	public:
 		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_LinearXYZConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Plate_D1(const gp_XYZ du, const gp_XYZ dv);
 		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint & Value() const;
+		Plate_D1(const Plate_D1 &ref);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const gp_XYZ  DU() const;
+		%feature("autodoc", "1");
+		const gp_XYZ  DV() const;
 
 };
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Plate_SequenceNodeOfSequenceOfLinearXYZConstraint::~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint %{
+%feature("shadow") Plate_D1::~Plate_D1 %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -724,7 +703,32 @@ def __del__(self):
 		pass
 %}
 
-%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+%extend Plate_D1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Plate_D2;
+class Plate_D2 {
+	public:
+		%feature("autodoc", "1");
+		Plate_D2(const gp_XYZ duu, const gp_XYZ duv, const gp_XYZ dvv);
+		%feature("autodoc", "1");
+		Plate_D2(const Plate_D2 &ref);
+
+};
+%feature("shadow") Plate_D2::~Plate_D2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_D2 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -796,6 +800,131 @@ def __del__(self):
 };
 
 
+%nodefaultctor Plate_Array1OfPinpointConstraint;
+class Plate_Array1OfPinpointConstraint {
+	public:
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Plate_Array1OfPinpointConstraint(const Plate_PinpointConstraint &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Plate_PinpointConstraint &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & Assign(const Plate_Array1OfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		const Plate_Array1OfPinpointConstraint & operator=(const Plate_Array1OfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Plate_Array1OfPinpointConstraint::~Plate_Array1OfPinpointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_Array1OfPinpointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
+class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfLinearScalarConstraint(const Plate_LinearScalarConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_LinearScalarConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Plate_SequenceNodeOfSequenceOfLinearScalarConstraint::~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
+class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceNodeOfSequenceOfLinearXYZConstraint(const Plate_LinearXYZConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Plate_LinearXYZConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint GetHandle() {
+	return *(Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint*) &$self;
+	}
+};
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Plate_SequenceNodeOfSequenceOfLinearXYZConstraint::~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Plate_FreeGtoCConstraint;
 class Plate_FreeGtoCConstraint {
 	public:
@@ -850,43 +979,6 @@ def __del__(self):
 %}
 
 %extend Plate_LineConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
-class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceNodeOfSequenceOfPinpointConstraint(const Plate_PinpointConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
-	Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint GetHandle() {
-	return *(Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint*) &$self;
-	}
-};
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Plate_SequenceNodeOfSequenceOfPinpointConstraint::~Plate_SequenceNodeOfSequenceOfPinpointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -952,98 +1044,6 @@ def __del__(self):
 %}
 
 %extend Plate_SequenceOfLinearScalarConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_LinearXYZConstraint;
-class Plate_LinearXYZConstraint {
-	public:
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint();
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColStd_Array1OfReal &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Plate_Array1OfPinpointConstraint &ppc, const TColStd_Array2OfReal &coeff);
-		%feature("autodoc", "1");
-		Plate_LinearXYZConstraint(const Standard_Integer ColLen, const Standard_Integer RowLen);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & GetPPC() const;
-		%feature("autodoc", "1");
-		const TColStd_Array2OfReal & Coeff() const;
-		%feature("autodoc", "1");
-		void SetPPC(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		void SetCoeff(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
-
-};
-%feature("shadow") Plate_LinearXYZConstraint::~Plate_LinearXYZConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_LinearXYZConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_HArray1OfPinpointConstraint;
-class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Plate_HArray1OfPinpointConstraint(const Standard_Integer Low, const Standard_Integer Up, const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		void Init(const Plate_PinpointConstraint &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &Value);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Plate_Array1OfPinpointConstraint & Array1() const;
-		%feature("autodoc", "1");
-		Plate_Array1OfPinpointConstraint & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Plate_HArray1OfPinpointConstraint {
-	Handle_Plate_HArray1OfPinpointConstraint GetHandle() {
-	return *(Handle_Plate_HArray1OfPinpointConstraint*) &$self;
-	}
-};
-%extend Plate_HArray1OfPinpointConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Plate_HArray1OfPinpointConstraint::~Plate_HArray1OfPinpointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_HArray1OfPinpointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -52,6 +52,82 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_IGESSolid_SpecificModule;
+class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule(const Handle_IGESSolid_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule(const IGESSolid_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule & operator=(const Handle_IGESSolid_SpecificModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SpecificModule & operator=(const IGESSolid_SpecificModule *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_SpecificModule {
+	IGESSolid_SpecificModule* GetObject() {
+	return (IGESSolid_SpecificModule*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_SpecificModule::~Handle_IGESSolid_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_SpecificModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_EdgeList;
+class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList(const Handle_IGESSolid_EdgeList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList(const IGESSolid_EdgeList *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList & operator=(const Handle_IGESSolid_EdgeList &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList & operator=(const IGESSolid_EdgeList *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_EdgeList DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_EdgeList {
+	IGESSolid_EdgeList* GetObject() {
+	return (IGESSolid_EdgeList*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_EdgeList::~Handle_IGESSolid_EdgeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_EdgeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_Block;
 class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	public:
@@ -90,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_RightAngularWedge;
-class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_ToroidalSurface;
+class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_RightAngularWedge();
+		Handle_IGESSolid_ToroidalSurface();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_RightAngularWedge(const Handle_IGESSolid_RightAngularWedge &aHandle);
+		Handle_IGESSolid_ToroidalSurface(const Handle_IGESSolid_ToroidalSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_RightAngularWedge(const IGESSolid_RightAngularWedge *anItem);
+		Handle_IGESSolid_ToroidalSurface(const IGESSolid_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_RightAngularWedge & operator=(const Handle_IGESSolid_RightAngularWedge &aHandle);
+		Handle_IGESSolid_ToroidalSurface & operator=(const Handle_IGESSolid_ToroidalSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_RightAngularWedge & operator=(const IGESSolid_RightAngularWedge *anItem);
+		Handle_IGESSolid_ToroidalSurface & operator=(const IGESSolid_ToroidalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_RightAngularWedge DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ToroidalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_RightAngularWedge {
-	IGESSolid_RightAngularWedge* GetObject() {
-	return (IGESSolid_RightAngularWedge*)$self->Access();
+%extend Handle_IGESSolid_ToroidalSurface {
+	IGESSolid_ToroidalSurface* GetObject() {
+	return (IGESSolid_ToroidalSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_RightAngularWedge::~Handle_IGESSolid_RightAngularWedge %{
+%feature("shadow") Handle_IGESSolid_ToroidalSurface::~Handle_IGESSolid_ToroidalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -121,45 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_RightAngularWedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_Torus;
-class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Torus();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Torus(const Handle_IGESSolid_Torus &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Torus(const IGESSolid_Torus *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Torus & operator=(const Handle_IGESSolid_Torus &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Torus & operator=(const IGESSolid_Torus *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Torus DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_Torus {
-	IGESSolid_Torus* GetObject() {
-	return (IGESSolid_Torus*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_Torus::~Handle_IGESSolid_Torus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_Torus {
+%extend Handle_IGESSolid_ToroidalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,29 +280,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_SpecificModule;
-class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
+%nodefaultctor Handle_IGESSolid_RightAngularWedge;
+class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule();
+		Handle_IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule(const Handle_IGESSolid_SpecificModule &aHandle);
+		Handle_IGESSolid_RightAngularWedge(const Handle_IGESSolid_RightAngularWedge &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule(const IGESSolid_SpecificModule *anItem);
+		Handle_IGESSolid_RightAngularWedge(const IGESSolid_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule & operator=(const Handle_IGESSolid_SpecificModule &aHandle);
+		Handle_IGESSolid_RightAngularWedge & operator=(const Handle_IGESSolid_RightAngularWedge &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SpecificModule & operator=(const IGESSolid_SpecificModule *anItem);
+		Handle_IGESSolid_RightAngularWedge & operator=(const IGESSolid_RightAngularWedge *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SpecificModule DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_RightAngularWedge DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_SpecificModule {
-	IGESSolid_SpecificModule* GetObject() {
-	return (IGESSolid_SpecificModule*)$self->Access();
+%extend Handle_IGESSolid_RightAngularWedge {
+	IGESSolid_RightAngularWedge* GetObject() {
+	return (IGESSolid_RightAngularWedge*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_SpecificModule::~Handle_IGESSolid_SpecificModule %{
+%feature("shadow") Handle_IGESSolid_RightAngularWedge::~Handle_IGESSolid_RightAngularWedge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -273,7 +311,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_SpecificModule {
+%extend Handle_IGESSolid_RightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_CylindricalSurface;
+class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface(const Handle_IGESSolid_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface(const IGESSolid_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface & operator=(const Handle_IGESSolid_CylindricalSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_CylindricalSurface & operator=(const IGESSolid_CylindricalSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_CylindricalSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_CylindricalSurface {
+	IGESSolid_CylindricalSurface* GetObject() {
+	return (IGESSolid_CylindricalSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_CylindricalSurface::~Handle_IGESSolid_CylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_CylindricalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -312,44 +388,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSolid_HArray1OfLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_EdgeList;
-class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList(const Handle_IGESSolid_EdgeList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList(const IGESSolid_EdgeList *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList & operator=(const Handle_IGESSolid_EdgeList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList & operator=(const IGESSolid_EdgeList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_EdgeList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_EdgeList {
-	IGESSolid_EdgeList* GetObject() {
-	return (IGESSolid_EdgeList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_EdgeList::~Handle_IGESSolid_EdgeList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_EdgeList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -432,82 +470,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_CylindricalSurface;
-class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface(const Handle_IGESSolid_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface(const IGESSolid_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface & operator=(const Handle_IGESSolid_CylindricalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_CylindricalSurface & operator=(const IGESSolid_CylindricalSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_CylindricalSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_CylindricalSurface {
-	IGESSolid_CylindricalSurface* GetObject() {
-	return (IGESSolid_CylindricalSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_CylindricalSurface::~Handle_IGESSolid_CylindricalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_CylindricalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_SolidOfRevolution;
-class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution(const Handle_IGESSolid_SolidOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution(const IGESSolid_SolidOfRevolution *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution & operator=(const Handle_IGESSolid_SolidOfRevolution &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfRevolution & operator=(const IGESSolid_SolidOfRevolution *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidOfRevolution DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_SolidOfRevolution {
-	IGESSolid_SolidOfRevolution* GetObject() {
-	return (IGESSolid_SolidOfRevolution*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_SolidOfRevolution::~Handle_IGESSolid_SolidOfRevolution %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_SolidOfRevolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSolid_ConicalSurface;
 class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -584,29 +546,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_Face;
-class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_ManifoldSolid;
+class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face();
+		Handle_IGESSolid_ManifoldSolid();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face(const Handle_IGESSolid_Face &aHandle);
+		Handle_IGESSolid_ManifoldSolid(const Handle_IGESSolid_ManifoldSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face(const IGESSolid_Face *anItem);
+		Handle_IGESSolid_ManifoldSolid(const IGESSolid_ManifoldSolid *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & operator=(const Handle_IGESSolid_Face &aHandle);
+		Handle_IGESSolid_ManifoldSolid & operator=(const Handle_IGESSolid_ManifoldSolid &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & operator=(const IGESSolid_Face *anItem);
+		Handle_IGESSolid_ManifoldSolid & operator=(const IGESSolid_ManifoldSolid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Face DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ManifoldSolid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_Face {
-	IGESSolid_Face* GetObject() {
-	return (IGESSolid_Face*)$self->Access();
+%extend Handle_IGESSolid_ManifoldSolid {
+	IGESSolid_ManifoldSolid* GetObject() {
+	return (IGESSolid_ManifoldSolid*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_Face::~Handle_IGESSolid_Face %{
+%feature("shadow") Handle_IGESSolid_ManifoldSolid::~Handle_IGESSolid_ManifoldSolid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -615,7 +577,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_Face {
+%extend Handle_IGESSolid_ManifoldSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -654,6 +616,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSolid_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_Cylinder;
+class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder(const Handle_IGESSolid_Cylinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder(const IGESSolid_Cylinder *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder & operator=(const Handle_IGESSolid_Cylinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Cylinder & operator=(const IGESSolid_Cylinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_Cylinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Cylinder {
+	IGESSolid_Cylinder* GetObject() {
+	return (IGESSolid_Cylinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_Cylinder::~Handle_IGESSolid_Cylinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_Cylinder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -736,6 +736,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
+class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_SolidOfLinearExtrusion DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	IGESSolid_SolidOfLinearExtrusion* GetObject() {
+	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_SolidOfLinearExtrusion::~Handle_IGESSolid_SolidOfLinearExtrusion %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_Torus;
+class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Torus();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Torus(const Handle_IGESSolid_Torus &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Torus(const IGESSolid_Torus *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Torus & operator=(const Handle_IGESSolid_Torus &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Torus & operator=(const IGESSolid_Torus *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_Torus DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Torus {
+	IGESSolid_Torus* GetObject() {
+	return (IGESSolid_Torus*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_Torus::~Handle_IGESSolid_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_Torus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESSolid_BooleanTree;
 class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	public:
@@ -768,82 +844,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSolid_BooleanTree {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_Cylinder;
-class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder(const Handle_IGESSolid_Cylinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder(const IGESSolid_Cylinder *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder & operator=(const Handle_IGESSolid_Cylinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Cylinder & operator=(const IGESSolid_Cylinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Cylinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_Cylinder {
-	IGESSolid_Cylinder* GetObject() {
-	return (IGESSolid_Cylinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_Cylinder::~Handle_IGESSolid_Cylinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_Cylinder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESSolid_ManifoldSolid;
-class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid(const Handle_IGESSolid_ManifoldSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid(const IGESSolid_ManifoldSolid *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid & operator=(const Handle_IGESSolid_ManifoldSolid &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid & operator=(const IGESSolid_ManifoldSolid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ManifoldSolid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_ManifoldSolid {
-	IGESSolid_ManifoldSolid* GetObject() {
-	return (IGESSolid_ManifoldSolid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_ManifoldSolid::~Handle_IGESSolid_ManifoldSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_ManifoldSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -888,44 +888,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
-class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSolid_HArray1OfVertexList();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_HArray1OfVertexList(const Handle_IGESSolid_HArray1OfVertexList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_HArray1OfVertexList(const IGESSolid_HArray1OfVertexList *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_HArray1OfVertexList & operator=(const Handle_IGESSolid_HArray1OfVertexList &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_HArray1OfVertexList & operator=(const IGESSolid_HArray1OfVertexList *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSolid_HArray1OfVertexList DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSolid_HArray1OfVertexList {
-	IGESSolid_HArray1OfVertexList* GetObject() {
-	return (IGESSolid_HArray1OfVertexList*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSolid_HArray1OfVertexList::~Handle_IGESSolid_HArray1OfVertexList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSolid_HArray1OfVertexList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSolid_Sphere;
 class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	public:
@@ -964,29 +926,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
-class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_Loop;
+class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion();
+		Handle_IGESSolid_Loop();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const Handle_IGESSolid_SolidOfLinearExtrusion &aHandle);
+		Handle_IGESSolid_Loop & operator=(const Handle_IGESSolid_Loop &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_SolidOfLinearExtrusion & operator=(const IGESSolid_SolidOfLinearExtrusion *anItem);
+		Handle_IGESSolid_Loop & operator=(const IGESSolid_Loop *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_SolidOfLinearExtrusion DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_Loop DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_SolidOfLinearExtrusion {
-	IGESSolid_SolidOfLinearExtrusion* GetObject() {
-	return (IGESSolid_SolidOfLinearExtrusion*)$self->Access();
+%extend Handle_IGESSolid_Loop {
+	IGESSolid_Loop* GetObject() {
+	return (IGESSolid_Loop*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_SolidOfLinearExtrusion::~Handle_IGESSolid_SolidOfLinearExtrusion %{
+%feature("shadow") Handle_IGESSolid_Loop::~Handle_IGESSolid_Loop %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -995,36 +957,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_SolidOfLinearExtrusion {
+%extend Handle_IGESSolid_Loop {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_IGESSolid_ReadWriteModule;
-class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
+%nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
+class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule();
+		Handle_IGESSolid_HArray1OfVertexList();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule(const Handle_IGESSolid_ReadWriteModule &aHandle);
+		Handle_IGESSolid_HArray1OfVertexList(const Handle_IGESSolid_HArray1OfVertexList &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule(const IGESSolid_ReadWriteModule *anItem);
+		Handle_IGESSolid_HArray1OfVertexList(const IGESSolid_HArray1OfVertexList *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule & operator=(const Handle_IGESSolid_ReadWriteModule &aHandle);
+		Handle_IGESSolid_HArray1OfVertexList & operator=(const Handle_IGESSolid_HArray1OfVertexList &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ReadWriteModule & operator=(const IGESSolid_ReadWriteModule *anItem);
+		Handle_IGESSolid_HArray1OfVertexList & operator=(const IGESSolid_HArray1OfVertexList *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_HArray1OfVertexList DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_ReadWriteModule {
-	IGESSolid_ReadWriteModule* GetObject() {
-	return (IGESSolid_ReadWriteModule*)$self->Access();
+%extend Handle_IGESSolid_HArray1OfVertexList {
+	IGESSolid_HArray1OfVertexList* GetObject() {
+	return (IGESSolid_HArray1OfVertexList*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_ReadWriteModule::~Handle_IGESSolid_ReadWriteModule %{
+%feature("shadow") Handle_IGESSolid_HArray1OfVertexList::~Handle_IGESSolid_HArray1OfVertexList %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1033,7 +995,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_ReadWriteModule {
+%extend Handle_IGESSolid_HArray1OfVertexList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1116,29 +1078,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSolid_ToroidalSurface;
-class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_SolidOfRevolution;
+class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface();
+		Handle_IGESSolid_SolidOfRevolution();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		Handle_IGESSolid_SolidOfRevolution(const Handle_IGESSolid_SolidOfRevolution &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface(const IGESSolid_ToroidalSurface *anItem);
+		Handle_IGESSolid_SolidOfRevolution(const IGESSolid_SolidOfRevolution *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface & operator=(const Handle_IGESSolid_ToroidalSurface &aHandle);
+		Handle_IGESSolid_SolidOfRevolution & operator=(const Handle_IGESSolid_SolidOfRevolution &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_ToroidalSurface & operator=(const IGESSolid_ToroidalSurface *anItem);
+		Handle_IGESSolid_SolidOfRevolution & operator=(const IGESSolid_SolidOfRevolution *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_ToroidalSurface DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_SolidOfRevolution DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_ToroidalSurface {
-	IGESSolid_ToroidalSurface* GetObject() {
-	return (IGESSolid_ToroidalSurface*)$self->Access();
+%extend Handle_IGESSolid_SolidOfRevolution {
+	IGESSolid_SolidOfRevolution* GetObject() {
+	return (IGESSolid_SolidOfRevolution*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_ToroidalSurface::~Handle_IGESSolid_ToroidalSurface %{
+%feature("shadow") Handle_IGESSolid_SolidOfRevolution::~Handle_IGESSolid_SolidOfRevolution %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1147,36 +1109,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_ToroidalSurface {
+%extend Handle_IGESSolid_SolidOfRevolution {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_IGESSolid_Loop;
-class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
+%nodefaultctor Handle_IGESSolid_ReadWriteModule;
+class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop();
+		Handle_IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const Handle_IGESSolid_Loop &aHandle);
+		Handle_IGESSolid_ReadWriteModule(const Handle_IGESSolid_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop(const IGESSolid_Loop *anItem);
+		Handle_IGESSolid_ReadWriteModule(const IGESSolid_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator=(const Handle_IGESSolid_Loop &aHandle);
+		Handle_IGESSolid_ReadWriteModule & operator=(const Handle_IGESSolid_ReadWriteModule &aHandle);
 		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator=(const IGESSolid_Loop *anItem);
+		Handle_IGESSolid_ReadWriteModule & operator=(const IGESSolid_ReadWriteModule *anItem);
 		%feature("autodoc", "1");
-		static		Handle_IGESSolid_Loop DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_IGESSolid_ReadWriteModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_IGESSolid_Loop {
-	IGESSolid_Loop* GetObject() {
-	return (IGESSolid_Loop*)$self->Access();
+%extend Handle_IGESSolid_ReadWriteModule {
+	IGESSolid_ReadWriteModule* GetObject() {
+	return (IGESSolid_ReadWriteModule*)$self->Access();
 	}
 };
-%feature("shadow") Handle_IGESSolid_Loop::~Handle_IGESSolid_Loop %{
+%feature("shadow") Handle_IGESSolid_ReadWriteModule::~Handle_IGESSolid_ReadWriteModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1185,7 +1147,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_IGESSolid_Loop {
+%extend Handle_IGESSolid_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSolid_Face;
+class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face();
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face(const Handle_IGESSolid_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face(const IGESSolid_Face *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & operator=(const Handle_IGESSolid_Face &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & operator=(const IGESSolid_Face *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSolid_Face DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSolid_Face {
+	IGESSolid_Face* GetObject() {
+	return (IGESSolid_Face*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSolid_Face::~Handle_IGESSolid_Face %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSolid_Face {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1268,43 +1268,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ToolTorus;
-class IGESSolid_ToolTorus {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolTorus();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolTorus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESSolid_SolidOfRevolution;
 class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 	public:
@@ -1339,7 +1302,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfRevolution {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidOfRevolution::~IGESSolid_SolidOfRevolution %{
@@ -1394,7 +1357,7 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfShell {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfShell::~IGESSolid_HArray1OfShell %{
@@ -1407,43 +1370,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_HArray1OfShell {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolSolidInstance;
-class IGESSolid_ToolSolidInstance {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolSolidInstance();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SolidInstance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SolidInstance &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SolidInstance &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidInstance &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SolidInstance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SolidInstance &entfrom, const Handle_IGESSolid_SolidInstance &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolSolidInstance::~IGESSolid_ToolSolidInstance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolSolidInstance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1481,6 +1407,67 @@ def __del__(self):
 %}
 
 %extend IGESSolid_ToolSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_Ellipsoid;
+class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Ellipsoid();
+		%feature("autodoc", "1");
+		void Init(const gp_XYZ aSize, const gp_XYZ aCenter, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
+		%feature("autodoc", "1");
+		gp_XYZ Size() const;
+		%feature("autodoc", "1");
+		Standard_Real XLength() const;
+		%feature("autodoc", "1");
+		Standard_Real YLength() const;
+		%feature("autodoc", "1");
+		Standard_Real ZLength() const;
+		%feature("autodoc", "1");
+		gp_Pnt Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		gp_Dir XAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedXAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir YAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedYAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir ZAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedZAxis() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_Ellipsoid {
+	Handle_IGESSolid_Ellipsoid GetHandle() {
+	return *(Handle_IGESSolid_Ellipsoid*) &$self;
+	}
+};
+%extend IGESSolid_Ellipsoid {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_Ellipsoid::~IGESSolid_Ellipsoid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_Ellipsoid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1556,7 +1543,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConeFrustum {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ConeFrustum::~IGESSolid_ConeFrustum %{
@@ -1601,7 +1588,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SolidOfLinearExtrusion::~IGESSolid_SolidOfLinearExtrusion %{
@@ -1614,51 +1601,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_SolidOfLinearExtrusion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_BooleanTree;
-class IGESSolid_BooleanTree : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_BooleanTree();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &operands, const Handle_TColStd_HArray1OfInteger &operations);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOperand(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Operand(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Operation(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_BooleanTree {
-	Handle_IGESSolid_BooleanTree GetHandle() {
-	return *(Handle_IGESSolid_BooleanTree*) &$self;
-	}
-};
-%extend IGESSolid_BooleanTree {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_BooleanTree::~IGESSolid_BooleanTree %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_BooleanTree {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1710,6 +1652,53 @@ def __del__(self):
 %}
 
 %extend IGESSolid_Array1OfShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_SolidAssembly;
+class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SolidAssembly();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &allItems, const Handle_IGESGeom_HArray1OfTransformationMatrix &allMatrices);
+		%feature("autodoc", "1");
+		Standard_Boolean HasBrep() const;
+		%feature("autodoc", "1");
+		void SetBrep(const Standard_Boolean hasbrep);
+		%feature("autodoc", "1");
+		Standard_Integer NbItems() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Item(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_TransformationMatrix TransfMatrix(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SolidAssembly {
+	Handle_IGESSolid_SolidAssembly GetHandle() {
+	return *(Handle_IGESSolid_SolidAssembly*) &$self;
+	}
+};
+%extend IGESSolid_SolidAssembly {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_SolidAssembly::~IGESSolid_SolidAssembly %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_SolidAssembly {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1804,43 +1793,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ToolSphericalSurface;
-class IGESSolid_ToolSphericalSurface {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolSphericalSurface();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_SphericalSurface &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_SphericalSurface &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SphericalSurface &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_SphericalSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_SphericalSurface &entfrom, const Handle_IGESSolid_SphericalSurface &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolSphericalSurface::~IGESSolid_ToolSphericalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolSphericalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESSolid_CylindricalSurface;
 class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 	public:
@@ -1869,7 +1821,7 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_CylindricalSurface::~IGESSolid_CylindricalSurface %{
@@ -1882,253 +1834,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_CylindricalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_Ellipsoid;
-class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_Ellipsoid();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ aSize, const gp_XYZ aCenter, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
-		%feature("autodoc", "1");
-		gp_XYZ Size() const;
-		%feature("autodoc", "1");
-		Standard_Real XLength() const;
-		%feature("autodoc", "1");
-		Standard_Real YLength() const;
-		%feature("autodoc", "1");
-		Standard_Real ZLength() const;
-		%feature("autodoc", "1");
-		gp_Pnt Center() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
-		%feature("autodoc", "1");
-		gp_Dir XAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedXAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir YAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedYAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir ZAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedZAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_Ellipsoid {
-	Handle_IGESSolid_Ellipsoid GetHandle() {
-	return *(Handle_IGESSolid_Ellipsoid*) &$self;
-	}
-};
-%extend IGESSolid_Ellipsoid {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_Ellipsoid::~IGESSolid_Ellipsoid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_Ellipsoid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_Torus;
-class IGESSolid_Torus : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_Torus();
-		%feature("autodoc", "1");
-		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ aPoint, const gp_XYZ anAxisdir);
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real DiscRadius() const;
-		%feature("autodoc", "1");
-		gp_Pnt AxisPoint() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedAxisPoint() const;
-		%feature("autodoc", "1");
-		gp_Dir Axis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_Torus {
-	Handle_IGESSolid_Torus GetHandle() {
-	return *(Handle_IGESSolid_Torus*) &$self;
-	}
-};
-%extend IGESSolid_Torus {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_Torus::~IGESSolid_Torus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_Torus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_RightAngularWedge;
-class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_RightAngularWedge();
-		%feature("autodoc", "1");
-		void Init(const gp_XYZ aSize, const Standard_Real lowX, const gp_XYZ aCorner, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
-		%feature("autodoc", "1");
-		gp_XYZ Size() const;
-		%feature("autodoc", "1");
-		Standard_Real XBigLength() const;
-		%feature("autodoc", "1");
-		Standard_Real XSmallLength() const;
-		%feature("autodoc", "1");
-		Standard_Real YLength() const;
-		%feature("autodoc", "1");
-		Standard_Real ZLength() const;
-		%feature("autodoc", "1");
-		gp_Pnt Corner() const;
-		%feature("autodoc", "1");
-		gp_Pnt TransformedCorner() const;
-		%feature("autodoc", "1");
-		gp_Dir XAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedXAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir YAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedYAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir ZAxis() const;
-		%feature("autodoc", "1");
-		gp_Dir TransformedZAxis() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_RightAngularWedge {
-	Handle_IGESSolid_RightAngularWedge GetHandle() {
-	return *(Handle_IGESSolid_RightAngularWedge*) &$self;
-	}
-};
-%extend IGESSolid_RightAngularWedge {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_RightAngularWedge::~IGESSolid_RightAngularWedge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_RightAngularWedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolEllipsoid;
-class IGESSolid_ToolEllipsoid {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolEllipsoid();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Ellipsoid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Ellipsoid &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Ellipsoid &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Ellipsoid &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Ellipsoid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Ellipsoid &entfrom, const Handle_IGESSolid_Ellipsoid &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolEllipsoid::~IGESSolid_ToolEllipsoid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolEllipsoid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_SpecificModule;
-class IGESSolid_SpecificModule : public IGESData_SpecificModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SpecificModule();
-		%feature("autodoc", "1");
-		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_SpecificModule {
-	Handle_IGESSolid_SpecificModule GetHandle() {
-	return *(Handle_IGESSolid_SpecificModule*) &$self;
-	}
-};
-%extend IGESSolid_SpecificModule {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_SpecificModule::~IGESSolid_SpecificModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2159,7 +1864,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SelectedComponent {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_SelectedComponent::~IGESSolid_SelectedComponent %{
@@ -2172,6 +1877,88 @@ def __del__(self):
 %}
 
 %extend IGESSolid_SelectedComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_BooleanTree;
+class IGESSolid_BooleanTree : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_BooleanTree();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &operands, const Handle_TColStd_HArray1OfInteger &operations);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOperand(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Operand(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Operation(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_BooleanTree {
+	Handle_IGESSolid_BooleanTree GetHandle() {
+	return *(Handle_IGESSolid_BooleanTree*) &$self;
+	}
+};
+%extend IGESSolid_BooleanTree {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_BooleanTree::~IGESSolid_BooleanTree %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_BooleanTree {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolTorus;
+class IGESSolid_ToolTorus {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolTorus();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Torus &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Torus &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Torus &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Torus &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Torus &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Torus &entfrom, const Handle_IGESSolid_Torus &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Torus &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolTorus::~IGESSolid_ToolTorus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolTorus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2214,7 +2001,7 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfLoop {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfLoop::~IGESSolid_HArray1OfLoop %{
@@ -2227,286 +2014,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_HArray1OfLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_Array1OfLoop;
-class IGESSolid_Array1OfLoop {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_Array1OfLoop(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESSolid_Array1OfLoop(const Handle_IGESSolid_Loop &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_Loop &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const IGESSolid_Array1OfLoop & Assign(const IGESSolid_Array1OfLoop &Other);
-		%feature("autodoc", "1");
-		const IGESSolid_Array1OfLoop & operator=(const IGESSolid_Array1OfLoop &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Loop &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Loop & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Loop & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Loop & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") IGESSolid_Array1OfLoop::~IGESSolid_Array1OfLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_Array1OfLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_EdgeList;
-class IGESSolid_EdgeList : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_EdgeList();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &curves, const Handle_IGESSolid_HArray1OfVertexList &startVertexList, const Handle_TColStd_HArray1OfInteger &startVertexIndex, const Handle_IGESSolid_HArray1OfVertexList &endVertexList, const Handle_TColStd_HArray1OfInteger &endVertexIndex);
-		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Curve(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList StartVertexList(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer StartVertexIndex(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList EndVertexList(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer EndVertexIndex(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_EdgeList {
-	Handle_IGESSolid_EdgeList GetHandle() {
-	return *(Handle_IGESSolid_EdgeList*) &$self;
-	}
-};
-%extend IGESSolid_EdgeList {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_EdgeList::~IGESSolid_EdgeList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_EdgeList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_Array1OfFace;
-class IGESSolid_Array1OfFace {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_Array1OfFace(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESSolid_Array1OfFace(const Handle_IGESSolid_Face &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_Face &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const IGESSolid_Array1OfFace & Assign(const IGESSolid_Array1OfFace &Other);
-		%feature("autodoc", "1");
-		const IGESSolid_Array1OfFace & operator=(const IGESSolid_Array1OfFace &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Face &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Face & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_Face & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Face & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") IGESSolid_Array1OfFace::~IGESSolid_Array1OfFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_Array1OfFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolEdgeList;
-class IGESSolid_ToolEdgeList {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolEdgeList();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_EdgeList &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_EdgeList &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_EdgeList &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_EdgeList &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_EdgeList &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_EdgeList &entfrom, const Handle_IGESSolid_EdgeList &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_EdgeList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolEdgeList::~IGESSolid_ToolEdgeList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolEdgeList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolRightAngularWedge;
-class IGESSolid_ToolRightAngularWedge {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolRightAngularWedge();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_RightAngularWedge &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_RightAngularWedge &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_RightAngularWedge &entfrom, const Handle_IGESSolid_RightAngularWedge &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolRightAngularWedge::~IGESSolid_ToolRightAngularWedge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolRightAngularWedge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_HArray1OfVertexList;
-class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_HArray1OfVertexList(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		IGESSolid_HArray1OfVertexList(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESSolid_VertexList &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_VertexList &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_VertexList &Value);
-		%feature("autodoc", "1");
-		const Handle_IGESSolid_VertexList & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const IGESSolid_Array1OfVertexList & Array1() const;
-		%feature("autodoc", "1");
-		IGESSolid_Array1OfVertexList & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_HArray1OfVertexList {
-	Handle_IGESSolid_HArray1OfVertexList GetHandle() {
-	return *(Handle_IGESSolid_HArray1OfVertexList*) &$self;
-	}
-};
-%extend IGESSolid_HArray1OfVertexList {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_HArray1OfVertexList::~IGESSolid_HArray1OfVertexList %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_HArray1OfVertexList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2550,6 +2057,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESSolid_ToolEdgeList;
+class IGESSolid_ToolEdgeList {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolEdgeList();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_EdgeList &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_EdgeList &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_EdgeList &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_EdgeList &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_EdgeList &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_EdgeList &entfrom, const Handle_IGESSolid_EdgeList &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_EdgeList &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolEdgeList::~IGESSolid_ToolEdgeList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolEdgeList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESSolid_Shell;
 class IGESSolid_Shell : public IGESData_IGESEntity {
 	public:
@@ -2578,7 +2122,7 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Shell {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Shell::~IGESSolid_Shell %{
@@ -2666,7 +2210,7 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ToroidalSurface::~IGESSolid_ToroidalSurface %{
@@ -2679,6 +2223,49 @@ def __del__(self):
 %}
 
 %extend IGESSolid_ToroidalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_SolidInstance;
+class IGESSolid_SolidInstance : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SolidInstance();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESData_IGESEntity &anEntity);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBrep() const;
+		%feature("autodoc", "1");
+		void SetBrep(const Standard_Boolean brep);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Entity() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SolidInstance {
+	Handle_IGESSolid_SolidInstance GetHandle() {
+	return *(Handle_IGESSolid_SolidInstance*) &$self;
+	}
+};
+%extend IGESSolid_SolidInstance {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_SolidInstance::~IGESSolid_SolidInstance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_SolidInstance {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2722,34 +2309,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_SolidInstance;
-class IGESSolid_SolidInstance : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_SphericalSurface;
+class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_SolidInstance();
+		IGESSolid_SphericalSurface();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_IGESEntity &anEntity);
+		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
 		%feature("autodoc", "1");
-		Standard_Boolean IsBrep() const;
+		Handle_IGESGeom_Point Center() const;
 		%feature("autodoc", "1");
-		void SetBrep(const Standard_Boolean brep);
+		gp_Pnt TransformedCenter() const;
 		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Entity() const;
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Axis() const;
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction ReferenceDir() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsParametrised() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_SolidInstance {
-	Handle_IGESSolid_SolidInstance GetHandle() {
-	return *(Handle_IGESSolid_SolidInstance*) &$self;
+%extend IGESSolid_SphericalSurface {
+	Handle_IGESSolid_SphericalSurface GetHandle() {
+	return *(Handle_IGESSolid_SphericalSurface*) &$self;
 	}
 };
-%extend IGESSolid_SolidInstance {
+%extend IGESSolid_SphericalSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") IGESSolid_SolidInstance::~IGESSolid_SolidInstance %{
+%feature("shadow") IGESSolid_SphericalSurface::~IGESSolid_SphericalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2758,7 +2351,44 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_SolidInstance {
+%extend IGESSolid_SphericalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_SpecificModule;
+class IGESSolid_SpecificModule : public IGESData_SpecificModule {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_SpecificModule();
+		%feature("autodoc", "1");
+		virtual		void OwnDump(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_SpecificModule {
+	Handle_IGESSolid_SpecificModule GetHandle() {
+	return *(Handle_IGESSolid_SpecificModule*) &$self;
+	}
+};
+%extend IGESSolid_SpecificModule {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_SpecificModule::~IGESSolid_SpecificModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_SpecificModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2796,6 +2426,137 @@ def __del__(self):
 %}
 
 %extend IGESSolid_ToolLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolEllipsoid;
+class IGESSolid_ToolEllipsoid {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolEllipsoid();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Ellipsoid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Ellipsoid &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Ellipsoid &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Ellipsoid &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Ellipsoid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Ellipsoid &entfrom, const Handle_IGESSolid_Ellipsoid &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Ellipsoid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolEllipsoid::~IGESSolid_ToolEllipsoid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolEllipsoid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_Array1OfFace;
+class IGESSolid_Array1OfFace {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Array1OfFace(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESSolid_Array1OfFace(const Handle_IGESSolid_Face &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESSolid_Face &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const IGESSolid_Array1OfFace & Assign(const IGESSolid_Array1OfFace &Other);
+		%feature("autodoc", "1");
+		const IGESSolid_Array1OfFace & operator=(const IGESSolid_Array1OfFace &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Face &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_Face & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_Face & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Face & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") IGESSolid_Array1OfFace::~IGESSolid_Array1OfFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_Array1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_Sphere;
+class IGESSolid_Sphere : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Sphere();
+		%feature("autodoc", "1");
+		void Init(const Standard_Real aRadius, const gp_XYZ aCenter);
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc", "1");
+		gp_Pnt Center() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCenter() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_Sphere {
+	Handle_IGESSolid_Sphere GetHandle() {
+	return *(Handle_IGESSolid_Sphere*) &$self;
+	}
+};
+%extend IGESSolid_Sphere {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_Sphere::~IGESSolid_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_Sphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2869,7 +2630,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Cylinder {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Cylinder::~IGESSolid_Cylinder %{
@@ -2888,63 +2649,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_TopoBuilder;
-class IGESSolid_TopoBuilder {
+%nodefaultctor IGESSolid_ToolSphericalSurface;
+class IGESSolid_ToolSphericalSurface {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_TopoBuilder();
+		IGESSolid_ToolSphericalSurface();
 		%feature("autodoc", "1");
-		void Clear();
+		void ReadOwnParams(const Handle_IGESSolid_SphericalSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void AddVertex(const gp_XYZ val);
+		void WriteOwnParams(const Handle_IGESSolid_SphericalSurface &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbVertices() const;
+		void OwnShared(const Handle_IGESSolid_SphericalSurface &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		const gp_XYZ  Vertex(const Standard_Integer num) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SphericalSurface &ent) const;
 		%feature("autodoc", "1");
-		Handle_IGESSolid_VertexList VertexList() const;
+		void OwnCheck(const Handle_IGESSolid_SphericalSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
+		void OwnCopy(const Handle_IGESSolid_SphericalSurface &entfrom, const Handle_IGESSolid_SphericalSurface &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc","Edge(Standard_Integer num) -> [Standard_Integer, Standard_Integer]");
-
-		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_EdgeList EdgeList() const;
-		%feature("autodoc", "1");
-		void MakeLoop();
-		%feature("autodoc", "1");
-		void MakeEdge(const Standard_Integer edgetype, const Standard_Integer edge3d, const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void AddCurveUV(const Handle_IGESData_IGESEntity &curve, const Standard_Integer iso);
-		%feature("autodoc", "1");
-		void EndEdge();
-		%feature("autodoc", "1");
-		void MakeFace(const Handle_IGESData_IGESEntity &surface);
-		%feature("autodoc", "1");
-		void SetOuter();
-		%feature("autodoc", "1");
-		void AddInner();
-		%feature("autodoc", "1");
-		void EndFace(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void MakeShell();
-		%feature("autodoc", "1");
-		void EndSimpleShell();
-		%feature("autodoc", "1");
-		void SetMainShell(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void AddVoidShell(const Standard_Integer orientation);
-		%feature("autodoc", "1");
-		void EndSolid();
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Shell Shell() const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_ManifoldSolid Solid() const;
+		void OwnDump(const Handle_IGESSolid_SphericalSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESSolid_TopoBuilder::~IGESSolid_TopoBuilder %{
+%feature("shadow") IGESSolid_ToolSphericalSurface::~IGESSolid_ToolSphericalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2953,7 +2679,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_TopoBuilder {
+%extend IGESSolid_ToolSphericalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2997,34 +2723,54 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_Sphere;
-class IGESSolid_Sphere : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_RightAngularWedge;
+class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_Sphere();
+		IGESSolid_RightAngularWedge();
 		%feature("autodoc", "1");
-		void Init(const Standard_Real aRadius, const gp_XYZ aCenter);
+		void Init(const gp_XYZ aSize, const Standard_Real lowX, const gp_XYZ aCorner, const gp_XYZ anXAxis, const gp_XYZ anZAxis);
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		gp_XYZ Size() const;
 		%feature("autodoc", "1");
-		gp_Pnt Center() const;
+		Standard_Real XBigLength() const;
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
+		Standard_Real XSmallLength() const;
+		%feature("autodoc", "1");
+		Standard_Real YLength() const;
+		%feature("autodoc", "1");
+		Standard_Real ZLength() const;
+		%feature("autodoc", "1");
+		gp_Pnt Corner() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedCorner() const;
+		%feature("autodoc", "1");
+		gp_Dir XAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedXAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir YAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedYAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir ZAxis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedZAxis() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend IGESSolid_Sphere {
-	Handle_IGESSolid_Sphere GetHandle() {
-	return *(Handle_IGESSolid_Sphere*) &$self;
+%extend IGESSolid_RightAngularWedge {
+	Handle_IGESSolid_RightAngularWedge GetHandle() {
+	return *(Handle_IGESSolid_RightAngularWedge*) &$self;
 	}
 };
-%extend IGESSolid_Sphere {
+%extend IGESSolid_RightAngularWedge {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") IGESSolid_Sphere::~IGESSolid_Sphere %{
+%feature("shadow") IGESSolid_RightAngularWedge::~IGESSolid_RightAngularWedge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3033,35 +2779,39 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_Sphere {
+%extend IGESSolid_RightAngularWedge {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor IGESSolid_ToolManifoldSolid;
-class IGESSolid_ToolManifoldSolid {
+%nodefaultctor IGESSolid_ReadWriteModule;
+class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolManifoldSolid();
+		IGESSolid_ReadWriteModule();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, IGESData_IGESWriter & IW) const;
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_ManifoldSolid &ent, Interface_EntityIterator & iter) const;
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ManifoldSolid &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_ManifoldSolid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_ManifoldSolid &entfrom, const Handle_IGESSolid_ManifoldSolid &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESSolid_ToolManifoldSolid::~IGESSolid_ToolManifoldSolid %{
+%extend IGESSolid_ReadWriteModule {
+	Handle_IGESSolid_ReadWriteModule GetHandle() {
+	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESSolid_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3070,7 +2820,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_ToolManifoldSolid {
+%extend IGESSolid_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3099,7 +2849,7 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_VertexList {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_VertexList::~IGESSolid_VertexList %{
@@ -3155,6 +2905,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESSolid_ToolManifoldSolid;
+class IGESSolid_ToolManifoldSolid {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolManifoldSolid();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_ManifoldSolid &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_ManifoldSolid &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_ManifoldSolid &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_ManifoldSolid &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_ManifoldSolid &entfrom, const Handle_IGESSolid_ManifoldSolid &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_ManifoldSolid &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolManifoldSolid::~IGESSolid_ToolManifoldSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolManifoldSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESSolid_HArray1OfFace;
 class IGESSolid_HArray1OfFace : public MMgt_TShared {
 	public:
@@ -3191,7 +2978,7 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfFace {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_HArray1OfFace::~IGESSolid_HArray1OfFace %{
@@ -3204,6 +2991,43 @@ def __del__(self):
 %}
 
 %extend IGESSolid_HArray1OfFace {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolShell;
+class IGESSolid_ToolShell {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolShell();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolShell {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3263,7 +3087,7 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_PlaneSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_PlaneSurface::~IGESSolid_PlaneSurface %{
@@ -3282,40 +3106,42 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_SphericalSurface;
-class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_Array1OfLoop;
+class IGESSolid_Array1OfLoop {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_SphericalSurface();
+		IGESSolid_Array1OfLoop(const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESGeom_Point &aCenter, const Standard_Real aRadius, const Handle_IGESGeom_Direction &anAxis, const Handle_IGESGeom_Direction &aRefdir);
+		IGESSolid_Array1OfLoop(const Handle_IGESSolid_Loop &Item, const Standard_Integer Low, const Standard_Integer Up);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Point Center() const;
+		void Init(const Handle_IGESSolid_Loop &V);
 		%feature("autodoc", "1");
-		gp_Pnt TransformedCenter() const;
+		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Real Radius() const;
+		Standard_Boolean IsAllocated() const;
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Axis() const;
+		const IGESSolid_Array1OfLoop & Assign(const IGESSolid_Array1OfLoop &Other);
 		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction ReferenceDir() const;
+		const IGESSolid_Array1OfLoop & operator=(const IGESSolid_Array1OfLoop &Other);
 		%feature("autodoc", "1");
-		Standard_Boolean IsParametrised() const;
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_Loop &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_Loop & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_Loop & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Loop & operator()(const Standard_Integer Index);
 
 };
-%extend IGESSolid_SphericalSurface {
-	Handle_IGESSolid_SphericalSurface GetHandle() {
-	return *(Handle_IGESSolid_SphericalSurface*) &$self;
-	}
-};
-%extend IGESSolid_SphericalSurface {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_SphericalSurface::~IGESSolid_SphericalSurface %{
+%feature("shadow") IGESSolid_Array1OfLoop::~IGESSolid_Array1OfLoop %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3324,7 +3150,56 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_SphericalSurface {
+%extend IGESSolid_Array1OfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_Torus;
+class IGESSolid_Torus : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_Torus();
+		%feature("autodoc", "1");
+		void Init(const Standard_Real R1, const Standard_Real R2, const gp_XYZ aPoint, const gp_XYZ anAxisdir);
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real DiscRadius() const;
+		%feature("autodoc", "1");
+		gp_Pnt AxisPoint() const;
+		%feature("autodoc", "1");
+		gp_Pnt TransformedAxisPoint() const;
+		%feature("autodoc", "1");
+		gp_Dir Axis() const;
+		%feature("autodoc", "1");
+		gp_Dir TransformedAxis() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_Torus {
+	Handle_IGESSolid_Torus GetHandle() {
+	return *(Handle_IGESSolid_Torus*) &$self;
+	}
+};
+%extend IGESSolid_Torus {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_Torus::~IGESSolid_Torus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_Torus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3357,7 +3232,7 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Face {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Face::~IGESSolid_Face %{
@@ -3370,6 +3245,98 @@ def __del__(self):
 %}
 
 %extend IGESSolid_Face {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolRightAngularWedge;
+class IGESSolid_ToolRightAngularWedge {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolRightAngularWedge();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_RightAngularWedge &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_RightAngularWedge &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_RightAngularWedge &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_RightAngularWedge &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_RightAngularWedge &entfrom, const Handle_IGESSolid_RightAngularWedge &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_RightAngularWedge &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolRightAngularWedge::~IGESSolid_ToolRightAngularWedge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolRightAngularWedge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_HArray1OfVertexList;
+class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_HArray1OfVertexList(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		IGESSolid_HArray1OfVertexList(const Standard_Integer Low, const Standard_Integer Up, const Handle_IGESSolid_VertexList &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESSolid_VertexList &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_IGESSolid_VertexList &Value);
+		%feature("autodoc", "1");
+		const Handle_IGESSolid_VertexList & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_VertexList & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const IGESSolid_Array1OfVertexList & Array1() const;
+		%feature("autodoc", "1");
+		IGESSolid_Array1OfVertexList & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_HArray1OfVertexList {
+	Handle_IGESSolid_HArray1OfVertexList GetHandle() {
+	return *(Handle_IGESSolid_HArray1OfVertexList*) &$self;
+	}
+};
+%extend IGESSolid_HArray1OfVertexList {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_HArray1OfVertexList::~IGESSolid_HArray1OfVertexList %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_HArray1OfVertexList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3414,7 +3381,7 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Loop {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Loop::~IGESSolid_Loop %{
@@ -3500,7 +3467,7 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConicalSurface {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_ConicalSurface::~IGESSolid_ConicalSurface %{
@@ -3519,28 +3486,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ToolShell;
-class IGESSolid_ToolShell {
+%nodefaultctor IGESSolid_ToolSolidInstance;
+class IGESSolid_ToolSolidInstance {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolShell();
+		IGESSolid_ToolSolidInstance();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void ReadOwnParams(const Handle_IGESSolid_SolidInstance &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
+		void WriteOwnParams(const Handle_IGESSolid_SolidInstance &ent, IGESData_IGESWriter & IW) const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
+		void OwnShared(const Handle_IGESSolid_SolidInstance &ent, Interface_EntityIterator & iter) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_SolidInstance &ent) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		void OwnCheck(const Handle_IGESSolid_SolidInstance &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
+		void OwnCopy(const Handle_IGESSolid_SolidInstance &entfrom, const Handle_IGESSolid_SolidInstance &entto, Interface_CopyTool & TC) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		void OwnDump(const Handle_IGESSolid_SolidInstance &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
 };
-%feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
+%feature("shadow") IGESSolid_ToolSolidInstance::~IGESSolid_ToolSolidInstance %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3549,7 +3516,91 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_ToolShell {
+%extend IGESSolid_ToolSolidInstance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ManifoldSolid;
+class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ManifoldSolid();
+		%feature("autodoc", "1");
+		void Init(const Handle_IGESSolid_Shell &aShell, const Standard_Boolean shellflag, const Handle_IGESSolid_HArray1OfShell &voidShells, const Handle_TColStd_HArray1OfInteger &voidShellFlags);
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Shell Shell() const;
+		%feature("autodoc", "1");
+		Standard_Boolean OrientationFlag() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVoidShells() const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_Shell VoidShell(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Boolean VoidOrientationFlag(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_ManifoldSolid {
+	Handle_IGESSolid_ManifoldSolid GetHandle() {
+	return *(Handle_IGESSolid_ManifoldSolid*) &$self;
+	}
+};
+%extend IGESSolid_ManifoldSolid {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_ManifoldSolid::~IGESSolid_ManifoldSolid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ManifoldSolid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ToolPlaneSurface;
+class IGESSolid_ToolPlaneSurface {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolPlaneSurface();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_PlaneSurface &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_PlaneSurface &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_PlaneSurface &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_PlaneSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_PlaneSurface &entfrom, const Handle_IGESSolid_PlaneSurface &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolPlaneSurface::~IGESSolid_ToolPlaneSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolPlaneSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3630,28 +3681,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ToolPlaneSurface;
-class IGESSolid_ToolPlaneSurface {
+%nodefaultctor IGESSolid_EdgeList;
+class IGESSolid_EdgeList : public IGESData_IGESEntity {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ToolPlaneSurface();
+		IGESSolid_EdgeList();
 		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_PlaneSurface &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		void Init(const Handle_IGESData_HArray1OfIGESEntity &curves, const Handle_IGESSolid_HArray1OfVertexList &startVertexList, const Handle_TColStd_HArray1OfInteger &startVertexIndex, const Handle_IGESSolid_HArray1OfVertexList &endVertexList, const Handle_TColStd_HArray1OfInteger &endVertexIndex);
 		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_PlaneSurface &ent, IGESData_IGESWriter & IW) const;
+		Standard_Integer NbEdges() const;
 		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_PlaneSurface &ent, Interface_EntityIterator & iter) const;
+		Handle_IGESData_IGESEntity Curve(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_PlaneSurface &ent) const;
+		Handle_IGESSolid_VertexList StartVertexList(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_PlaneSurface &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		Standard_Integer StartVertexIndex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_PlaneSurface &entfrom, const Handle_IGESSolid_PlaneSurface &entto, Interface_CopyTool & TC) const;
+		Handle_IGESSolid_VertexList EndVertexList(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_PlaneSurface &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+		Standard_Integer EndVertexIndex(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IGESSolid_ToolPlaneSurface::~IGESSolid_ToolPlaneSurface %{
+%extend IGESSolid_EdgeList {
+	Handle_IGESSolid_EdgeList GetHandle() {
+	return *(Handle_IGESSolid_EdgeList*) &$self;
+	}
+};
+%extend IGESSolid_EdgeList {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_EdgeList::~IGESSolid_EdgeList %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3660,7 +3723,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_ToolPlaneSurface {
+%extend IGESSolid_EdgeList {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3741,94 +3804,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ReadWriteModule;
-class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_ReadWriteModule {
-	Handle_IGESSolid_ReadWriteModule GetHandle() {
-	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
-	}
-};
-%extend IGESSolid_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ReadWriteModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_SolidAssembly;
-class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_SolidAssembly();
-		%feature("autodoc", "1");
-		void Init(const Handle_IGESData_HArray1OfIGESEntity &allItems, const Handle_IGESGeom_HArray1OfTransformationMatrix &allMatrices);
-		%feature("autodoc", "1");
-		Standard_Boolean HasBrep() const;
-		%feature("autodoc", "1");
-		void SetBrep(const Standard_Boolean hasbrep);
-		%feature("autodoc", "1");
-		Standard_Integer NbItems() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Item(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESGeom_TransformationMatrix TransfMatrix(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_SolidAssembly {
-	Handle_IGESSolid_SolidAssembly GetHandle() {
-	return *(Handle_IGESSolid_SolidAssembly*) &$self;
-	}
-};
-%extend IGESSolid_SolidAssembly {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_SolidAssembly::~IGESSolid_SolidAssembly %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_SolidAssembly {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESSolid_GeneralModule;
 class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 	public:
@@ -3857,7 +3832,7 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESSolid_GeneralModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_GeneralModule::~IGESSolid_GeneralModule %{
@@ -3918,7 +3893,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Block {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESSolid_Block::~IGESSolid_Block %{
@@ -3937,38 +3912,63 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ManifoldSolid;
-class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
+%nodefaultctor IGESSolid_TopoBuilder;
+class IGESSolid_TopoBuilder {
 	public:
 		%feature("autodoc", "1");
-		IGESSolid_ManifoldSolid();
+		IGESSolid_TopoBuilder();
 		%feature("autodoc", "1");
-		void Init(const Handle_IGESSolid_Shell &aShell, const Standard_Boolean shellflag, const Handle_IGESSolid_HArray1OfShell &voidShells, const Handle_TColStd_HArray1OfInteger &voidShellFlags);
+		void Clear();
+		%feature("autodoc", "1");
+		void AddVertex(const gp_XYZ val);
+		%feature("autodoc", "1");
+		Standard_Integer NbVertices() const;
+		%feature("autodoc", "1");
+		const gp_XYZ  Vertex(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_VertexList VertexList() const;
+		%feature("autodoc", "1");
+		void AddEdge(const Handle_IGESData_IGESEntity &curve, const Standard_Integer vstart, const Standard_Integer vend);
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc","Edge(Standard_Integer num) -> [Standard_Integer, Standard_Integer]");
+
+		void Edge(const Standard_Integer num, Handle_IGESData_IGESEntity & curve, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Handle_IGESSolid_EdgeList EdgeList() const;
+		%feature("autodoc", "1");
+		void MakeLoop();
+		%feature("autodoc", "1");
+		void MakeEdge(const Standard_Integer edgetype, const Standard_Integer edge3d, const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void AddCurveUV(const Handle_IGESData_IGESEntity &curve, const Standard_Integer iso);
+		%feature("autodoc", "1");
+		void EndEdge();
+		%feature("autodoc", "1");
+		void MakeFace(const Handle_IGESData_IGESEntity &surface);
+		%feature("autodoc", "1");
+		void SetOuter();
+		%feature("autodoc", "1");
+		void AddInner();
+		%feature("autodoc", "1");
+		void EndFace(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void MakeShell();
+		%feature("autodoc", "1");
+		void EndSimpleShell();
+		%feature("autodoc", "1");
+		void SetMainShell(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void AddVoidShell(const Standard_Integer orientation);
+		%feature("autodoc", "1");
+		void EndSolid();
 		%feature("autodoc", "1");
 		Handle_IGESSolid_Shell Shell() const;
 		%feature("autodoc", "1");
-		Standard_Boolean OrientationFlag() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVoidShells() const;
-		%feature("autodoc", "1");
-		Handle_IGESSolid_Shell VoidShell(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Boolean VoidOrientationFlag(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Handle_IGESSolid_ManifoldSolid Solid() const;
 
 };
-%extend IGESSolid_ManifoldSolid {
-	Handle_IGESSolid_ManifoldSolid GetHandle() {
-	return *(Handle_IGESSolid_ManifoldSolid*) &$self;
-	}
-};
-%extend IGESSolid_ManifoldSolid {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_ManifoldSolid::~IGESSolid_ManifoldSolid %{
+%feature("shadow") IGESSolid_TopoBuilder::~IGESSolid_TopoBuilder %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3977,7 +3977,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IGESSolid_ManifoldSolid {
+%extend IGESSolid_TopoBuilder {
 	void _kill_pointed() {
 		delete $self;
 	}

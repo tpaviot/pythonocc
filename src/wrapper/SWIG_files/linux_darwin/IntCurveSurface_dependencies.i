@@ -226,6 +226,6 @@ $HeaderURL$
 
 %import TCollection.i
 %import Standard.i
-%import GeomAbs.i
 %import math.i
+%import GeomAbs.i
 %import Intf.i

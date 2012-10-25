@@ -23,6 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::DownCast;
 %rename(DownCast) Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt::DownCast;
+%rename(DownCast) Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::DownCast;
 %rename(DownCast) Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::DownCast;

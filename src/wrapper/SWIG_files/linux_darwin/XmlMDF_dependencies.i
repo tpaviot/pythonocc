@@ -151,5 +151,5 @@ $HeaderURL$
 
 %import MMgt.i
 %import TCollection.i
-%import XmlObjMgt.i
 %import Standard.i
+%import XmlObjMgt.i

@@ -50,12 +50,12 @@ $HeaderURL$
 %include NCollection_headers.i
 
 typedef NCollection_BaseCollection<double> NCollection_BaseCollReal;
-typedef NCollection_BaseCollection<char> NCollection_BaseCollCharacter;
+typedef NCollection_BaseCollection<unsigned int> NCollection_BaseCollBoolean;
 typedef NCollection_BaseCollection<Handle_Standard_Transient> NCollection_BaseCollTransient;
 typedef NCollection_BaseCollection<TCollection_ExtendedString> NCollection_BaseCollExtendedString;
 typedef NCollection_BaseCollection<TCollection_AsciiString> NCollection_BaseCollAsciiString;
-typedef NCollection_BaseCollection<unsigned int> NCollection_BaseCollBoolean;
 typedef NCollection_BaseCollection<int> NCollection_BaseCollInteger;
+typedef NCollection_BaseCollection<char> NCollection_BaseCollCharacter;
 
 
 
@@ -173,107 +173,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor NCollection_BaseAllocator;
-class NCollection_BaseAllocator : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void * Allocate(const size_t size);
-		%feature("autodoc", "1");
-		virtual		void Free(void* anAddress);
-		%feature("autodoc", "1");
-		static		const Handle_NCollection_BaseAllocator & CommonBaseAllocator();
-		%feature("autodoc", "1");
-		static		void StandardCallBack(const Standard_Boolean theIsAlloc, const Standard_Address theStorage, const Standard_Size theRoundSize, const Standard_Size theSize);
-		%feature("autodoc", "1");
-		static		void PrintMemUsageStatistics();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NCollection_BaseAllocator {
-	Handle_NCollection_BaseAllocator GetHandle() {
-	return *(Handle_NCollection_BaseAllocator*) &$self;
-	}
-};
-%extend NCollection_BaseAllocator {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NCollection_BaseAllocator::~NCollection_BaseAllocator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NCollection_BaseAllocator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend NCollection_BaseAllocator {
-	NCollection_BaseAllocator () {}
-};
-
-
-%nodefaultctor NCollection_HeapAllocator;
-class NCollection_HeapAllocator : public NCollection_BaseAllocator {
-	public:
-		%feature("autodoc", "1");
-		virtual		void * Allocate(const Standard_Size theSize);
-		%feature("autodoc", "1");
-		static		const Handle_NCollection_HeapAllocator & GlobalHeapAllocator();
-
-};
-%extend NCollection_HeapAllocator {
-	Handle_NCollection_HeapAllocator GetHandle() {
-	return *(Handle_NCollection_HeapAllocator*) &$self;
-	}
-};
-%extend NCollection_HeapAllocator {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NCollection_HeapAllocator::~NCollection_HeapAllocator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NCollection_HeapAllocator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend NCollection_HeapAllocator {
-	NCollection_HeapAllocator () {}
-};
-
-
-%nodefaultctor NCollection_SparseArrayBase;
-
-
-%nodefaultdtor NCollection_SparseArrayBase;
-class NCollection_SparseArrayBase {
-	public:
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer Size() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
-
-};
-
 %nodefaultctor NCollection_SeqNode;
 class NCollection_SeqNode {
 	public:
@@ -302,34 +201,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor NCollection_BaseSequence;
-class NCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-
-};
-%feature("shadow") NCollection_BaseSequence::~NCollection_BaseSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NCollection_BaseSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend NCollection_BaseSequence {
-	NCollection_BaseSequence () {}
 };
 
 
@@ -371,6 +242,67 @@ def __del__(self):
 };
 
 
+%nodefaultctor NCollection_SparseArrayBase;
+
+
+%nodefaultdtor NCollection_SparseArrayBase;
+class NCollection_SparseArrayBase {
+	public:
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Size() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
+
+};
+
+%nodefaultctor NCollection_BaseSequence;
+class NCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+
+};
+%feature("shadow") NCollection_BaseSequence::~NCollection_BaseSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NCollection_BaseSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend NCollection_BaseSequence {
+	NCollection_BaseSequence () {}
+};
+
+
+%nodefaultctor NCollection_BaseVector;
+
+
+%nodefaultdtor NCollection_BaseVector;
+class NCollection_BaseVector {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+
+};%extend NCollection_BaseVector {
+	NCollection_BaseVector () {}
+};
+
+
 %nodefaultctor NCollection_BaseList;
 class NCollection_BaseList {
 	public:
@@ -399,19 +331,49 @@ def __del__(self):
 };
 
 
-%nodefaultctor NCollection_BaseVector;
-
-
-%nodefaultdtor NCollection_BaseVector;
-class NCollection_BaseVector {
+%nodefaultctor NCollection_BaseAllocator;
+class NCollection_BaseAllocator : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		virtual		void * Allocate(const size_t size);
 		%feature("autodoc", "1");
-		void Clear();
+		virtual		void Free(void* anAddress);
+		%feature("autodoc", "1");
+		static		const Handle_NCollection_BaseAllocator & CommonBaseAllocator();
+		%feature("autodoc", "1");
+		static		void StandardCallBack(const Standard_Boolean theIsAlloc, const Standard_Address theStorage, const Standard_Size theRoundSize, const Standard_Size theSize);
+		%feature("autodoc", "1");
+		static		void PrintMemUsageStatistics();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
-};%extend NCollection_BaseVector {
-	NCollection_BaseVector () {}
+};
+%extend NCollection_BaseAllocator {
+	Handle_NCollection_BaseAllocator GetHandle() {
+	return *(Handle_NCollection_BaseAllocator*) &$self;
+	}
+};
+%extend NCollection_BaseAllocator {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NCollection_BaseAllocator::~NCollection_BaseAllocator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NCollection_BaseAllocator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend NCollection_BaseAllocator {
+	NCollection_BaseAllocator () {}
 };
 
 
@@ -421,17 +383,11 @@ class NCollection_IncAllocator : public NCollection_BaseAllocator {
 		%feature("autodoc", "1");
 		NCollection_IncAllocator(const size_t theBlockSize=24600);
 		%feature("autodoc", "1");
-		virtual		void * Allocate(const size_t size);
-		%feature("autodoc", "1");
-		virtual		void Free(void* anAddress);
-		%feature("autodoc", "1");
 		size_t GetMemSize() const;
 		%feature("autodoc", "1");
 		void * Reallocate(void* anAddress, const size_t oldSize, const size_t newSize);
 		%feature("autodoc", "1");
 		void Reset(const Standard_Boolean doReleaseMem=1);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend NCollection_IncAllocator {
@@ -441,7 +397,7 @@ class NCollection_IncAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_IncAllocator {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_IncAllocator::~NCollection_IncAllocator %{
@@ -482,4 +438,46 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor NCollection_HeapAllocator;
+class NCollection_HeapAllocator : public NCollection_BaseAllocator {
+	public:
+		%feature("autodoc", "1");
+		virtual		void * Allocate(const Standard_Size theSize);
+		%feature("autodoc", "1");
+		virtual		void Free(void* anAddress);
+		%feature("autodoc", "1");
+		static		const Handle_NCollection_HeapAllocator & GlobalHeapAllocator();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NCollection_HeapAllocator {
+	Handle_NCollection_HeapAllocator GetHandle() {
+	return *(Handle_NCollection_HeapAllocator*) &$self;
+	}
+};
+%extend NCollection_HeapAllocator {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NCollection_HeapAllocator::~NCollection_HeapAllocator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NCollection_HeapAllocator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend NCollection_HeapAllocator {
+	NCollection_HeapAllocator () {}
 };

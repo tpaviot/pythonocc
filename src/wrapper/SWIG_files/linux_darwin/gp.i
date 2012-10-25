@@ -235,6 +235,130 @@ def __del__(self):
 };
 
 
+%nodefaultctor gp_Hypr2d;
+class gp_Hypr2d {
+	public:
+		%feature("autodoc", "1");
+		gp_Hypr2d(const gp_Hypr2d arg0);
+		%feature("autodoc", "1");
+		gp_Hypr2d();
+		%feature("autodoc", "1");
+		gp_Hypr2d(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		gp_Hypr2d(const gp_Ax22d A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		void SetMajorRadius(const Standard_Real MajorRadius);
+		%feature("autodoc", "1");
+		void SetMinorRadius(const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax22d A);
+		%feature("autodoc", "1");
+		void SetXAxis(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		void SetYAxis(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		gp_Ax2d Asymptote1() const;
+		%feature("autodoc", "1");
+		gp_Ax2d Asymptote2() const;
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Hypr2d ConjugateBranch1() const;
+		%feature("autodoc", "1");
+		gp_Hypr2d ConjugateBranch2() const;
+		%feature("autodoc", "1");
+		gp_Ax2d Directrix1() const;
+		%feature("autodoc", "1");
+		gp_Ax2d Directrix2() const;
+		%feature("autodoc", "1");
+		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Focus1() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Focus2() const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Location() const;
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		gp_Hypr2d OtherBranch() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const gp_Ax22d  Axis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d YAxis() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		gp_Hypr2d Reversed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDirect() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		gp_Hypr2d Mirrored(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		gp_Hypr2d Mirrored(const gp_Ax2d A) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Hypr2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt2d P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Hypr2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		gp_Hypr2d Transformed(const gp_Trsf2d T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec2d V);
+		%feature("autodoc", "1");
+		gp_Hypr2d Translated(const gp_Vec2d V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
+		%feature("autodoc", "1");
+		gp_Hypr2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax22d  _CSFDB_Getgp_Hypr2dpos() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_Hypr2dmajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Hypr2dmajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_Hypr2dminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Hypr2dminorRadius(const Standard_Real p);
+
+};
+%feature("shadow") gp_Hypr2d::~gp_Hypr2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Hypr2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gp_Dir2d;
 class gp_Dir2d {
 	public:
@@ -427,6 +551,323 @@ def __del__(self):
 };
 
 
+%nodefaultctor gp_Mat2d;
+class gp_Mat2d {
+	public:
+		%feature("autodoc", "1");
+		gp_Mat2d(const gp_Mat2d arg0);
+		%feature("autodoc", "1");
+		gp_Mat2d();
+		%feature("autodoc", "1");
+		gp_Mat2d(const gp_XY Col1, const gp_XY Col2);
+		%feature("autodoc", "1");
+		void SetCol(const Standard_Integer Col, const gp_XY Value);
+		%feature("autodoc", "1");
+		void SetCols(const gp_XY Col1, const gp_XY Col2);
+		%feature("autodoc", "1");
+		void SetDiagonal(const Standard_Real X1, const Standard_Real X2);
+		%feature("autodoc", "1");
+		void SetIdentity();
+		%feature("autodoc", "1");
+		void SetRotation(const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void SetRow(const Standard_Integer Row, const gp_XY Value);
+		%feature("autodoc", "1");
+		void SetRows(const gp_XY Row1, const gp_XY Row2);
+		%feature("autodoc", "1");
+		void SetScale(const Standard_Real S);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
+		%feature("autodoc", "1");
+		gp_XY Column(const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Standard_Real Determinant() const;
+		%feature("autodoc", "1");
+		gp_XY Diagonal() const;
+		%feature("autodoc", "1");
+		gp_XY Row(const Standard_Integer Row) const;
+		%feature("autodoc", "1");
+		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
+				return (Standard_Real) $self->ChangeValue(Row,Col);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
+				$self->ChangeValue(Row,Col)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSingular() const;
+		%feature("autodoc", "1");
+		void Add(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		void operator+=(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		gp_Mat2d Added(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		gp_Mat2d operator+(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		void Divide(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void operator/=(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		gp_Mat2d Divided(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		gp_Mat2d operator/(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		gp_Mat2d Inverted() const;
+		%feature("autodoc", "1");
+		gp_Mat2d Multiplied(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		gp_Mat2d operator*(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		void Multiply(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		void PreMultiply(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		gp_Mat2d Multiplied(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		gp_Mat2d operator*(const Standard_Real Scalar) const;
+		%feature("autodoc", "1");
+		void Multiply(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void operator*=(const Standard_Real Scalar);
+		%feature("autodoc", "1");
+		void Power(const Standard_Integer N);
+		%feature("autodoc", "1");
+		gp_Mat2d Powered(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Subtract(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		void operator-=(const gp_Mat2d Other);
+		%feature("autodoc", "1");
+		gp_Mat2d Subtracted(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		gp_Mat2d operator-(const gp_Mat2d Other) const;
+		%feature("autodoc", "1");
+		void Transpose();
+		%feature("autodoc", "1");
+		gp_Mat2d Transposed() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real Get_CSFDB_Getgp_Mat2dmatrix(const Standard_Integer i1, const Standard_Integer i2) {
+				return (Standard_Real) $self->_CSFDB_Getgp_Mat2dmatrix(i1,i2);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void Set_CSFDB_Getgp_Mat2dmatrix(Standard_Real value ,const Standard_Integer i1, const Standard_Integer i2) {
+				$self->_CSFDB_Getgp_Mat2dmatrix(i1,i2)=value;
+				}
+		};
+
+};
+%feature("shadow") gp_Mat2d::~gp_Mat2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Mat2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Ax22d;
+class gp_Ax22d {
+	public:
+		%feature("autodoc", "1");
+		gp_Ax22d(const gp_Ax22d arg0);
+		%feature("autodoc", "1");
+		gp_Ax22d();
+		%feature("autodoc", "1");
+		gp_Ax22d(const gp_Pnt2d P, const gp_Dir2d Vx, const gp_Dir2d Vy);
+		%feature("autodoc", "1");
+		gp_Ax22d(const gp_Pnt2d P, const gp_Dir2d Vx, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		gp_Ax22d(const gp_Ax2d A, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax22d A1);
+		%feature("autodoc", "1");
+		void SetXAxis(const gp_Ax2d A1);
+		%feature("autodoc", "1");
+		void SetYAxis(const gp_Ax2d A1);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		void SetXDirection(const gp_Dir2d Vx);
+		%feature("autodoc", "1");
+		void SetYDirection(const gp_Dir2d Vy);
+		%feature("autodoc", "1");
+		gp_Ax2d XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d YAxis() const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Location() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  XDirection() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  YDirection() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		gp_Ax22d Mirrored(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		gp_Ax22d Mirrored(const gp_Ax2d A) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Ax22d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt2d P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Ax22d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		gp_Ax22d Transformed(const gp_Trsf2d T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec2d V);
+		%feature("autodoc", "1");
+		gp_Ax22d Translated(const gp_Vec2d V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
+		%feature("autodoc", "1");
+		gp_Ax22d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  _CSFDB_Getgp_Ax22dpoint() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  _CSFDB_Getgp_Ax22dvydir() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  _CSFDB_Getgp_Ax22dvxdir() const;
+
+};
+%feature("shadow") gp_Ax22d::~gp_Ax22d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Ax22d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Parab;
+class gp_Parab {
+	public:
+		%feature("autodoc", "1");
+		gp_Parab(const gp_Parab arg0);
+		%feature("autodoc", "1");
+		gp_Parab();
+		%feature("autodoc", "1");
+		gp_Parab(const gp_Ax2 A2, const Standard_Real Focal);
+		%feature("autodoc", "1");
+		gp_Parab(const gp_Ax1 D, const gp_Pnt F);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		void SetFocal(const Standard_Real Focal);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		const gp_Ax1  Axis() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Location() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const gp_Ax2  Position() const;
+		%feature("autodoc", "1");
+		gp_Ax1 XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax1 YAxis() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt P);
+		%feature("autodoc", "1");
+		gp_Parab Mirrored(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		gp_Parab Mirrored(const gp_Ax1 A1) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		gp_Parab Mirrored(const gp_Ax2 A2) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Parab Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Parab Scaled(const gp_Pnt P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		gp_Parab Transformed(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec V);
+		%feature("autodoc", "1");
+		gp_Parab Translated(const gp_Vec V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		gp_Parab Translated(const gp_Pnt P1, const gp_Pnt P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax2  _CSFDB_Getgp_Parabpos() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_ParabfocalLength() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_ParabfocalLength(const Standard_Real p);
+
+};
+%feature("shadow") gp_Parab::~gp_Parab %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Parab {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gp_XYZ;
 class gp_XYZ {
 	public:
@@ -581,84 +1022,48 @@ def __del__(self):
 };
 
 
-%nodefaultctor gp_Lin;
-class gp_Lin {
+%nodefaultctor gp;
+class gp {
 	public:
 		%feature("autodoc", "1");
-		gp_Lin(const gp_Lin arg0);
+		gp(const gp arg0);
 		%feature("autodoc", "1");
-		gp_Lin();
+		gp();
 		%feature("autodoc", "1");
-		gp_Lin(const gp_Ax1 A1);
+		static		Standard_Real Resolution();
 		%feature("autodoc", "1");
-		gp_Lin(const gp_Pnt P, const gp_Dir V);
+		static		const gp_Pnt  Origin();
 		%feature("autodoc", "1");
-		void Reverse();
+		static		const gp_Dir  DX();
 		%feature("autodoc", "1");
-		gp_Lin Reversed() const;
+		static		const gp_Dir  DY();
 		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir V);
+		static		const gp_Dir  DZ();
 		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt P);
+		static		const gp_Ax1  OX();
 		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax1 A1);
+		static		const gp_Ax1  OY();
 		%feature("autodoc", "1");
-		const gp_Dir  Direction() const;
+		static		const gp_Ax1  OZ();
 		%feature("autodoc", "1");
-		const gp_Pnt  Location() const;
+		static		const gp_Ax2  XOY();
 		%feature("autodoc", "1");
-		const gp_Ax1  Position() const;
+		static		const gp_Ax2  ZOX();
 		%feature("autodoc", "1");
-		Standard_Real Angle(const gp_Lin Other) const;
+		static		const gp_Ax2  YOZ();
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const gp_Pnt P, const Standard_Real LinearTolerance) const;
+		static		const gp_Pnt2d  Origin2d();
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Pnt P) const;
+		static		const gp_Dir2d  DX2d();
 		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_Lin Other) const;
+		static		const gp_Dir2d  DY2d();
 		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const gp_Pnt P) const;
+		static		const gp_Ax2d  OX2d();
 		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const gp_Lin Other) const;
-		%feature("autodoc", "1");
-		gp_Lin Normal(const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt P);
-		%feature("autodoc", "1");
-		gp_Lin Mirrored(const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		gp_Lin Mirrored(const gp_Ax1 A1) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		gp_Lin Mirrored(const gp_Ax2 A2) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Lin Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Lin Scaled(const gp_Pnt P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf T);
-		%feature("autodoc", "1");
-		gp_Lin Transformed(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec V);
-		%feature("autodoc", "1");
-		gp_Lin Translated(const gp_Vec V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		gp_Lin Translated(const gp_Pnt P1, const gp_Pnt P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax1  _CSFDB_Getgp_Linpos() const;
+		static		const gp_Ax2d  OY2d();
 
 };
-%feature("shadow") gp_Lin::~gp_Lin %{
+%feature("shadow") gp::~gp %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -667,144 +1072,7 @@ def __del__(self):
 		pass
 %}
 
-%extend gp_Lin {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Mat2d;
-class gp_Mat2d {
-	public:
-		%feature("autodoc", "1");
-		gp_Mat2d(const gp_Mat2d arg0);
-		%feature("autodoc", "1");
-		gp_Mat2d();
-		%feature("autodoc", "1");
-		gp_Mat2d(const gp_XY Col1, const gp_XY Col2);
-		%feature("autodoc", "1");
-		void SetCol(const Standard_Integer Col, const gp_XY Value);
-		%feature("autodoc", "1");
-		void SetCols(const gp_XY Col1, const gp_XY Col2);
-		%feature("autodoc", "1");
-		void SetDiagonal(const Standard_Real X1, const Standard_Real X2);
-		%feature("autodoc", "1");
-		void SetIdentity();
-		%feature("autodoc", "1");
-		void SetRotation(const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void SetRow(const Standard_Integer Row, const gp_XY Value);
-		%feature("autodoc", "1");
-		void SetRows(const gp_XY Row1, const gp_XY Row2);
-		%feature("autodoc", "1");
-		void SetScale(const Standard_Real S);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Standard_Real Value);
-		%feature("autodoc", "1");
-		gp_XY Column(const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Standard_Real Determinant() const;
-		%feature("autodoc", "1");
-		gp_XY Diagonal() const;
-		%feature("autodoc", "1");
-		gp_XY Row(const Standard_Integer Row) const;
-		%feature("autodoc", "1");
-		const Standard_Real & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetChangeValue(const Standard_Integer Row, const Standard_Integer Col) {
-				return (Standard_Real) $self->ChangeValue(Row,Col);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeValue(Standard_Real value ,const Standard_Integer Row, const Standard_Integer Col) {
-				$self->ChangeValue(Row,Col)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Real & operator()(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSingular() const;
-		%feature("autodoc", "1");
-		void Add(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		void operator+=(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		gp_Mat2d Added(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		gp_Mat2d operator+(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		void Divide(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void operator/=(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		gp_Mat2d Divided(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		gp_Mat2d operator/(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		gp_Mat2d Inverted() const;
-		%feature("autodoc", "1");
-		gp_Mat2d Multiplied(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		gp_Mat2d operator*(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		void Multiply(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		void PreMultiply(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		gp_Mat2d Multiplied(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		gp_Mat2d operator*(const Standard_Real Scalar) const;
-		%feature("autodoc", "1");
-		void Multiply(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void operator*=(const Standard_Real Scalar);
-		%feature("autodoc", "1");
-		void Power(const Standard_Integer N);
-		%feature("autodoc", "1");
-		gp_Mat2d Powered(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Subtract(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		void operator-=(const gp_Mat2d Other);
-		%feature("autodoc", "1");
-		gp_Mat2d Subtracted(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		gp_Mat2d operator-(const gp_Mat2d Other) const;
-		%feature("autodoc", "1");
-		void Transpose();
-		%feature("autodoc", "1");
-		gp_Mat2d Transposed() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real Get_CSFDB_Getgp_Mat2dmatrix(const Standard_Integer i1, const Standard_Integer i2) {
-				return (Standard_Real) $self->_CSFDB_Getgp_Mat2dmatrix(i1,i2);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void Set_CSFDB_Getgp_Mat2dmatrix(Standard_Real value ,const Standard_Integer i1, const Standard_Integer i2) {
-				$self->_CSFDB_Getgp_Mat2dmatrix(i1,i2)=value;
-				}
-		};
-
-};
-%feature("shadow") gp_Mat2d::~gp_Mat2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Mat2d {
+%extend gp {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1242,99 +1510,6 @@ def __del__(self):
 %}
 
 %extend gp_Vec {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Ax2;
-class gp_Ax2 {
-	public:
-		%feature("autodoc", "1");
-		gp_Ax2(const gp_Ax2 arg0);
-		%feature("autodoc", "1");
-		gp_Ax2();
-		%feature("autodoc", "1");
-		gp_Ax2(const gp_Pnt P, const gp_Dir N, const gp_Dir Vx);
-		%feature("autodoc", "1");
-		gp_Ax2(const gp_Pnt P, const gp_Dir V);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir V);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void SetXDirection(const gp_Dir Vx);
-		%feature("autodoc", "1");
-		void SetYDirection(const gp_Dir Vy);
-		%feature("autodoc", "1");
-		Standard_Real Angle(const gp_Ax2 Other) const;
-		%feature("autodoc", "1");
-		const gp_Ax1  Axis() const;
-		%feature("autodoc", "1");
-		const gp_Dir  Direction() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Location() const;
-		%feature("autodoc", "1");
-		const gp_Dir  XDirection() const;
-		%feature("autodoc", "1");
-		const gp_Dir  YDirection() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCoplanar(const gp_Ax2 Other, const Standard_Real LinearTolerance, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCoplanar(const gp_Ax1 A, const Standard_Real LinearTolerance, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt P);
-		%feature("autodoc", "1");
-		gp_Ax2 Mirrored(const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		gp_Ax2 Mirrored(const gp_Ax1 A1) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		gp_Ax2 Mirrored(const gp_Ax2 A2) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Ax2 Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Ax2 Scaled(const gp_Pnt P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf T);
-		%feature("autodoc", "1");
-		gp_Ax2 Transformed(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec V);
-		%feature("autodoc", "1");
-		gp_Ax2 Translated(const gp_Vec V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		gp_Ax2 Translated(const gp_Pnt P1, const gp_Pnt P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax1  _CSFDB_Getgp_Ax2axis() const;
-		%feature("autodoc", "1");
-		const gp_Dir  _CSFDB_Getgp_Ax2vydir() const;
-		%feature("autodoc", "1");
-		const gp_Dir  _CSFDB_Getgp_Ax2vxdir() const;
-
-};
-%feature("shadow") gp_Ax2::~gp_Ax2 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Ax2 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1811,6 +1986,122 @@ def __del__(self):
 };
 
 
+%nodefaultctor gp_Elips2d;
+class gp_Elips2d {
+	public:
+		%feature("autodoc", "1");
+		gp_Elips2d(const gp_Elips2d arg0);
+		%feature("autodoc", "1");
+		gp_Elips2d();
+		%feature("autodoc", "1");
+		gp_Elips2d(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		gp_Elips2d(const gp_Ax22d A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		void SetMajorRadius(const Standard_Real MajorRadius);
+		%feature("autodoc", "1");
+		void SetMinorRadius(const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax22d A);
+		%feature("autodoc", "1");
+		void SetXAxis(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		void SetYAxis(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		Standard_Real Area() const;
+		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
+
+		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Ax2d Directrix1() const;
+		%feature("autodoc", "1");
+		gp_Ax2d Directrix2() const;
+		%feature("autodoc", "1");
+		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Focus1() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Focus2() const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  Location() const;
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const gp_Ax22d  Axis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax2d YAxis() const;
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		gp_Elips2d Reversed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDirect() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		gp_Elips2d Mirrored(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2d A);
+		%feature("autodoc", "1");
+		gp_Elips2d Mirrored(const gp_Ax2d A) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Elips2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt2d P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Elips2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		gp_Elips2d Transformed(const gp_Trsf2d T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec2d V);
+		%feature("autodoc", "1");
+		gp_Elips2d Translated(const gp_Vec2d V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
+		%feature("autodoc", "1");
+		gp_Elips2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax22d  _CSFDB_Getgp_Elips2dpos() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_Elips2dmajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Elips2dmajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_Elips2dminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Elips2dminorRadius(const Standard_Real p);
+
+};
+%feature("shadow") gp_Elips2d::~gp_Elips2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Elips2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gp_Quaternion;
 class gp_Quaternion {
 	public:
@@ -1942,474 +2233,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor gp_Hypr;
-class gp_Hypr {
-	public:
-		%feature("autodoc", "1");
-		gp_Hypr(const gp_Hypr arg0);
-		%feature("autodoc", "1");
-		gp_Hypr();
-		%feature("autodoc", "1");
-		gp_Hypr(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void SetMajorRadius(const Standard_Real R);
-		%feature("autodoc", "1");
-		void SetMinorRadius(const Standard_Real R);
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		gp_Ax1 Asymptote1() const;
-		%feature("autodoc", "1");
-		gp_Ax1 Asymptote2() const;
-		%feature("autodoc", "1");
-		const gp_Ax1  Axis() const;
-		%feature("autodoc", "1");
-		gp_Hypr ConjugateBranch1() const;
-		%feature("autodoc", "1");
-		gp_Hypr ConjugateBranch2() const;
-		%feature("autodoc", "1");
-		gp_Ax1 Directrix1() const;
-		%feature("autodoc", "1");
-		gp_Ax1 Directrix2() const;
-		%feature("autodoc", "1");
-		Standard_Real Eccentricity() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		gp_Pnt Focus1() const;
-		%feature("autodoc", "1");
-		gp_Pnt Focus2() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Location() const;
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		gp_Hypr OtherBranch() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const gp_Ax2  Position() const;
-		%feature("autodoc", "1");
-		gp_Ax1 XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax1 YAxis() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt P);
-		%feature("autodoc", "1");
-		gp_Hypr Mirrored(const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		gp_Hypr Mirrored(const gp_Ax1 A1) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		gp_Hypr Mirrored(const gp_Ax2 A2) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Hypr Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Hypr Scaled(const gp_Pnt P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf T);
-		%feature("autodoc", "1");
-		gp_Hypr Transformed(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec V);
-		%feature("autodoc", "1");
-		gp_Hypr Translated(const gp_Vec V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		gp_Hypr Translated(const gp_Pnt P1, const gp_Pnt P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax2  _CSFDB_Getgp_Hyprpos() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_HyprmajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_HyprmajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_HyprminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_HyprminorRadius(const Standard_Real p);
-
-};
-%feature("shadow") gp_Hypr::~gp_Hypr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Hypr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Elips2d;
-class gp_Elips2d {
-	public:
-		%feature("autodoc", "1");
-		gp_Elips2d(const gp_Elips2d arg0);
-		%feature("autodoc", "1");
-		gp_Elips2d();
-		%feature("autodoc", "1");
-		gp_Elips2d(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		gp_Elips2d(const gp_Ax22d A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		void SetMajorRadius(const Standard_Real MajorRadius);
-		%feature("autodoc", "1");
-		void SetMinorRadius(const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax22d A);
-		%feature("autodoc", "1");
-		void SetXAxis(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		void SetYAxis(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		Standard_Real Area() const;
-		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		gp_Ax2d Directrix1() const;
-		%feature("autodoc", "1");
-		gp_Ax2d Directrix2() const;
-		%feature("autodoc", "1");
-		Standard_Real Eccentricity() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Focus1() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Focus2() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Location() const;
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const gp_Ax22d  Axis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d YAxis() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		gp_Elips2d Reversed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDirect() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		gp_Elips2d Mirrored(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		gp_Elips2d Mirrored(const gp_Ax2d A) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Elips2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt2d P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Elips2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		gp_Elips2d Transformed(const gp_Trsf2d T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec2d V);
-		%feature("autodoc", "1");
-		gp_Elips2d Translated(const gp_Vec2d V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
-		%feature("autodoc", "1");
-		gp_Elips2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax22d  _CSFDB_Getgp_Elips2dpos() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_Elips2dmajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Elips2dmajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_Elips2dminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Elips2dminorRadius(const Standard_Real p);
-
-};
-%feature("shadow") gp_Elips2d::~gp_Elips2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Elips2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Trsf;
-class gp_Trsf {
-	public:
-		%feature("autodoc", "1");
-		gp_Trsf(const gp_Trsf arg0);
-		%feature("autodoc", "1");
-		gp_Trsf();
-		%feature("autodoc", "1");
-		gp_Trsf(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		void SetMirror(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void SetMirror(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		void SetMirror(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		void SetRotation(const gp_Ax1 A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		void SetRotation(const gp_Quaternion R);
-		%feature("autodoc", "1");
-		void SetScale(const gp_Pnt P, const Standard_Real S);
-		%feature("autodoc", "1");
-		void SetDisplacement(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Ax3 ToSystem);
-		%feature("autodoc", "1");
-		void SetTransformation(const gp_Quaternion R, const gp_Vec T);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Vec V);
-		%feature("autodoc", "1");
-		void SetTranslation(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		void SetTranslationPart(const gp_Vec V);
-		%feature("autodoc", "1");
-		void SetScaleFactor(const Standard_Real S);
-		%feature("autodoc", "1");
-		void SetValues(const Standard_Real a11, const Standard_Real a12, const Standard_Real a13, const Standard_Real a14, const Standard_Real a21, const Standard_Real a22, const Standard_Real a23, const Standard_Real a24, const Standard_Real a31, const Standard_Real a32, const Standard_Real a33, const Standard_Real a34, const Standard_Real Tolang, const Standard_Real TolDist);
-		%feature("autodoc", "1");
-		Standard_Boolean IsNegative() const;
-		%feature("autodoc", "1");
-		gp_TrsfForm Form() const;
-		%feature("autodoc", "1");
-		Standard_Real ScaleFactor() const;
-		%feature("autodoc", "1");
-		const gp_XYZ  TranslationPart() const;
-		%feature("autodoc","GetRotation() -> Standard_Real");
-
-		Standard_Boolean GetRotation(gp_XYZ & theAxis, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		gp_Quaternion GetRotation() const;
-		%feature("autodoc", "1");
-		gp_Mat VectorialPart() const;
-		%feature("autodoc", "1");
-		const gp_Mat  HVectorialPart() const;
-		%feature("autodoc", "1");
-		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		void Invert();
-		%feature("autodoc", "1");
-		gp_Trsf Inverted() const;
-		%feature("autodoc", "1");
-		gp_Trsf Multiplied(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		gp_Trsf operator*(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		void Multiply(const gp_Trsf T);
-		%feature("autodoc", "1");
-		void operator*=(const gp_Trsf T);
-		%feature("autodoc", "1");
-		void PreMultiply(const gp_Trsf T);
-		%feature("autodoc", "1");
-		void Power(const Standard_Integer N);
-		%feature("autodoc", "1");
-		gp_Trsf Powered(const Standard_Integer N);
-		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Transforms(gp_XYZ & Coord) const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_Trsfscale() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Trsfscale(const Standard_Real p);
-		%feature("autodoc", "1");
-		gp_TrsfForm _CSFDB_Getgp_Trsfshape() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Trsfshape(const gp_TrsfForm p);
-		%feature("autodoc", "1");
-		const gp_Mat  _CSFDB_Getgp_Trsfmatrix() const;
-		%feature("autodoc", "1");
-		const gp_XYZ  _CSFDB_Getgp_Trsfloc() const;
-
-};
-%feature("shadow") gp_Trsf::~gp_Trsf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Trsf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Hypr2d;
-class gp_Hypr2d {
-	public:
-		%feature("autodoc", "1");
-		gp_Hypr2d(const gp_Hypr2d arg0);
-		%feature("autodoc", "1");
-		gp_Hypr2d();
-		%feature("autodoc", "1");
-		gp_Hypr2d(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		gp_Hypr2d(const gp_Ax22d A, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		void SetMajorRadius(const Standard_Real MajorRadius);
-		%feature("autodoc", "1");
-		void SetMinorRadius(const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax22d A);
-		%feature("autodoc", "1");
-		void SetXAxis(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		void SetYAxis(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		gp_Ax2d Asymptote1() const;
-		%feature("autodoc", "1");
-		gp_Ax2d Asymptote2() const;
-		%feature("autodoc","Coefficients() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Coefficients(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		gp_Hypr2d ConjugateBranch1() const;
-		%feature("autodoc", "1");
-		gp_Hypr2d ConjugateBranch2() const;
-		%feature("autodoc", "1");
-		gp_Ax2d Directrix1() const;
-		%feature("autodoc", "1");
-		gp_Ax2d Directrix2() const;
-		%feature("autodoc", "1");
-		Standard_Real Eccentricity() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Focus1() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Focus2() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Location() const;
-		%feature("autodoc", "1");
-		Standard_Real MajorRadius() const;
-		%feature("autodoc", "1");
-		Standard_Real MinorRadius() const;
-		%feature("autodoc", "1");
-		gp_Hypr2d OtherBranch() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const gp_Ax22d  Axis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d YAxis() const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		gp_Hypr2d Reversed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDirect() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		gp_Hypr2d Mirrored(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		gp_Hypr2d Mirrored(const gp_Ax2d A) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Hypr2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt2d P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Hypr2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		gp_Hypr2d Transformed(const gp_Trsf2d T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec2d V);
-		%feature("autodoc", "1");
-		gp_Hypr2d Translated(const gp_Vec2d V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
-		%feature("autodoc", "1");
-		gp_Hypr2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax22d  _CSFDB_Getgp_Hypr2dpos() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_Hypr2dmajorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Hypr2dmajorRadius(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_Hypr2dminorRadius() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_Hypr2dminorRadius(const Standard_Real p);
-
-};
-%feature("shadow") gp_Hypr2d::~gp_Hypr2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Hypr2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor gp_Trsf2d;
 class gp_Trsf2d {
 	public:
@@ -2502,99 +2325,6 @@ def __del__(self):
 %}
 
 %extend gp_Trsf2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Parab;
-class gp_Parab {
-	public:
-		%feature("autodoc", "1");
-		gp_Parab(const gp_Parab arg0);
-		%feature("autodoc", "1");
-		gp_Parab();
-		%feature("autodoc", "1");
-		gp_Parab(const gp_Ax2 A2, const Standard_Real Focal);
-		%feature("autodoc", "1");
-		gp_Parab(const gp_Ax1 D, const gp_Pnt F);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		void SetFocal(const Standard_Real Focal);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void SetPosition(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		const gp_Ax1  Axis() const;
-		%feature("autodoc", "1");
-		gp_Ax1 Directrix() const;
-		%feature("autodoc", "1");
-		Standard_Real Focal() const;
-		%feature("autodoc", "1");
-		gp_Pnt Focus() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Location() const;
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		const gp_Ax2  Position() const;
-		%feature("autodoc", "1");
-		gp_Ax1 XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax1 YAxis() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt P);
-		%feature("autodoc", "1");
-		gp_Parab Mirrored(const gp_Pnt P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax1 A1);
-		%feature("autodoc", "1");
-		gp_Parab Mirrored(const gp_Ax1 A1) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2 A2);
-		%feature("autodoc", "1");
-		gp_Parab Mirrored(const gp_Ax2 A2) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Parab Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Parab Scaled(const gp_Pnt P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf T);
-		%feature("autodoc", "1");
-		gp_Parab Transformed(const gp_Trsf T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec V);
-		%feature("autodoc", "1");
-		gp_Parab Translated(const gp_Vec V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		gp_Parab Translated(const gp_Pnt P1, const gp_Pnt P2) const;
-		%feature("autodoc", "1");
-		const gp_Ax2  _CSFDB_Getgp_Parabpos() const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_Getgp_ParabfocalLength() const;
-		%feature("autodoc", "1");
-		void _CSFDB_Setgp_ParabfocalLength(const Standard_Real p);
-
-};
-%feature("shadow") gp_Parab::~gp_Parab %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Parab {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2780,6 +2510,99 @@ def __del__(self):
 };
 
 
+%nodefaultctor gp_Ax2;
+class gp_Ax2 {
+	public:
+		%feature("autodoc", "1");
+		gp_Ax2(const gp_Ax2 arg0);
+		%feature("autodoc", "1");
+		gp_Ax2();
+		%feature("autodoc", "1");
+		gp_Ax2(const gp_Pnt P, const gp_Dir N, const gp_Dir Vx);
+		%feature("autodoc", "1");
+		gp_Ax2(const gp_Pnt P, const gp_Dir V);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		void SetDirection(const gp_Dir V);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetXDirection(const gp_Dir Vx);
+		%feature("autodoc", "1");
+		void SetYDirection(const gp_Dir Vy);
+		%feature("autodoc", "1");
+		Standard_Real Angle(const gp_Ax2 Other) const;
+		%feature("autodoc", "1");
+		const gp_Ax1  Axis() const;
+		%feature("autodoc", "1");
+		const gp_Dir  Direction() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Location() const;
+		%feature("autodoc", "1");
+		const gp_Dir  XDirection() const;
+		%feature("autodoc", "1");
+		const gp_Dir  YDirection() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCoplanar(const gp_Ax2 Other, const Standard_Real LinearTolerance, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCoplanar(const gp_Ax1 A, const Standard_Real LinearTolerance, const Standard_Real AngularTolerance) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt P);
+		%feature("autodoc", "1");
+		gp_Ax2 Mirrored(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		gp_Ax2 Mirrored(const gp_Ax1 A1) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		gp_Ax2 Mirrored(const gp_Ax2 A2) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Ax2 Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Ax2 Scaled(const gp_Pnt P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		gp_Ax2 Transformed(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec V);
+		%feature("autodoc", "1");
+		gp_Ax2 Translated(const gp_Vec V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		gp_Ax2 Translated(const gp_Pnt P1, const gp_Pnt P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax1  _CSFDB_Getgp_Ax2axis() const;
+		%feature("autodoc", "1");
+		const gp_Dir  _CSFDB_Getgp_Ax2vydir() const;
+		%feature("autodoc", "1");
+		const gp_Dir  _CSFDB_Getgp_Ax2vxdir() const;
+
+};
+%feature("shadow") gp_Ax2::~gp_Ax2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Ax2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor gp_Sphere;
 class gp_Sphere {
 	public:
@@ -2958,93 +2781,6 @@ def __del__(self):
 %}
 
 %extend gp_GTrsf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor gp_Ax22d;
-class gp_Ax22d {
-	public:
-		%feature("autodoc", "1");
-		gp_Ax22d(const gp_Ax22d arg0);
-		%feature("autodoc", "1");
-		gp_Ax22d();
-		%feature("autodoc", "1");
-		gp_Ax22d(const gp_Pnt2d P, const gp_Dir2d Vx, const gp_Dir2d Vy);
-		%feature("autodoc", "1");
-		gp_Ax22d(const gp_Pnt2d P, const gp_Dir2d Vx, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		gp_Ax22d(const gp_Ax2d A, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax22d A1);
-		%feature("autodoc", "1");
-		void SetXAxis(const gp_Ax2d A1);
-		%feature("autodoc", "1");
-		void SetYAxis(const gp_Ax2d A1);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		void SetXDirection(const gp_Dir2d Vx);
-		%feature("autodoc", "1");
-		void SetYDirection(const gp_Dir2d Vy);
-		%feature("autodoc", "1");
-		gp_Ax2d XAxis() const;
-		%feature("autodoc", "1");
-		gp_Ax2d YAxis() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Location() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  XDirection() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  YDirection() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		gp_Ax22d Mirrored(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		gp_Ax22d Mirrored(const gp_Ax2d A) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Ax22d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt2d P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Ax22d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		gp_Ax22d Transformed(const gp_Trsf2d T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec2d V);
-		%feature("autodoc", "1");
-		gp_Ax22d Translated(const gp_Vec2d V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
-		%feature("autodoc", "1");
-		gp_Ax22d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  _CSFDB_Getgp_Ax22dpoint() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  _CSFDB_Getgp_Ax22dvydir() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  _CSFDB_Getgp_Ax22dvxdir() const;
-
-};
-%feature("shadow") gp_Ax22d::~gp_Ax22d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Ax22d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3566,87 +3302,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor gp_Ax2d;
-class gp_Ax2d {
-	public:
-		%feature("autodoc", "1");
-		gp_Ax2d(const gp_Ax2d arg0);
-		%feature("autodoc", "1");
-		gp_Ax2d();
-		%feature("autodoc", "1");
-		gp_Ax2d(const gp_Pnt2d P, const gp_Dir2d V);
-		%feature("autodoc", "1");
-		void SetLocation(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		void SetDirection(const gp_Dir2d V);
-		%feature("autodoc", "1");
-		const gp_Pnt2d  Location() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  Direction() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCoaxial(const gp_Ax2d Other, const Standard_Real AngularTolerance, const Standard_Real LinearTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNormal(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOpposite(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsParallel(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
-		%feature("autodoc", "1");
-		Standard_Real Angle(const gp_Ax2d Other) const;
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		gp_Ax2d Reversed() const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		gp_Ax2d Mirrored(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		void Mirror(const gp_Ax2d A);
-		%feature("autodoc", "1");
-		gp_Ax2d Mirrored(const gp_Ax2d A) const;
-		%feature("autodoc", "1");
-		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
-		%feature("autodoc", "1");
-		gp_Ax2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
-		%feature("autodoc", "1");
-		void Scale(const gp_Pnt2d P, const Standard_Real S);
-		%feature("autodoc", "1");
-		gp_Ax2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
-		%feature("autodoc", "1");
-		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		gp_Ax2d Transformed(const gp_Trsf2d T) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Vec2d V);
-		%feature("autodoc", "1");
-		gp_Ax2d Translated(const gp_Vec2d V) const;
-		%feature("autodoc", "1");
-		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
-		%feature("autodoc", "1");
-		gp_Ax2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  _CSFDB_Getgp_Ax2dloc() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  _CSFDB_Getgp_Ax2dvdir() const;
-
-};
-%feature("shadow") gp_Ax2d::~gp_Ax2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend gp_Ax2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor gp_Circ;
 class gp_Circ {
 	public:
@@ -3736,6 +3391,99 @@ def __del__(self):
 %}
 
 %extend gp_Circ {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Lin;
+class gp_Lin {
+	public:
+		%feature("autodoc", "1");
+		gp_Lin(const gp_Lin arg0);
+		%feature("autodoc", "1");
+		gp_Lin();
+		%feature("autodoc", "1");
+		gp_Lin(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		gp_Lin(const gp_Pnt P, const gp_Dir V);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		gp_Lin Reversed() const;
+		%feature("autodoc", "1");
+		void SetDirection(const gp_Dir V);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		const gp_Dir  Direction() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Location() const;
+		%feature("autodoc", "1");
+		const gp_Ax1  Position() const;
+		%feature("autodoc", "1");
+		Standard_Real Angle(const gp_Lin Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const gp_Pnt P, const Standard_Real LinearTolerance) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const gp_Lin Other) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const gp_Lin Other) const;
+		%feature("autodoc", "1");
+		gp_Lin Normal(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt P);
+		%feature("autodoc", "1");
+		gp_Lin Mirrored(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		gp_Lin Mirrored(const gp_Ax1 A1) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		gp_Lin Mirrored(const gp_Ax2 A2) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Lin Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Lin Scaled(const gp_Pnt P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		gp_Lin Transformed(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec V);
+		%feature("autodoc", "1");
+		gp_Lin Translated(const gp_Vec V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		gp_Lin Translated(const gp_Pnt P1, const gp_Pnt P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax1  _CSFDB_Getgp_Linpos() const;
+
+};
+%feature("shadow") gp_Lin::~gp_Lin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Lin {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3922,48 +3670,72 @@ def __del__(self):
 };
 
 
-%nodefaultctor gp;
-class gp {
+%nodefaultctor gp_Ax2d;
+class gp_Ax2d {
 	public:
 		%feature("autodoc", "1");
-		gp(const gp arg0);
+		gp_Ax2d(const gp_Ax2d arg0);
 		%feature("autodoc", "1");
-		gp();
+		gp_Ax2d();
 		%feature("autodoc", "1");
-		static		Standard_Real Resolution();
+		gp_Ax2d(const gp_Pnt2d P, const gp_Dir2d V);
 		%feature("autodoc", "1");
-		static		const gp_Pnt  Origin();
+		void SetLocation(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		static		const gp_Dir  DX();
+		void SetDirection(const gp_Dir2d V);
 		%feature("autodoc", "1");
-		static		const gp_Dir  DY();
+		const gp_Pnt2d  Location() const;
 		%feature("autodoc", "1");
-		static		const gp_Dir  DZ();
+		const gp_Dir2d  Direction() const;
 		%feature("autodoc", "1");
-		static		const gp_Ax1  OX();
+		Standard_Boolean IsCoaxial(const gp_Ax2d Other, const Standard_Real AngularTolerance, const Standard_Real LinearTolerance) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax1  OY();
+		Standard_Boolean IsNormal(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax1  OZ();
+		Standard_Boolean IsOpposite(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax2  XOY();
+		Standard_Boolean IsParallel(const gp_Ax2d Other, const Standard_Real AngularTolerance) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax2  ZOX();
+		Standard_Real Angle(const gp_Ax2d Other) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax2  YOZ();
+		void Reverse();
 		%feature("autodoc", "1");
-		static		const gp_Pnt2d  Origin2d();
+		gp_Ax2d Reversed() const;
 		%feature("autodoc", "1");
-		static		const gp_Dir2d  DX2d();
+		void Mirror(const gp_Pnt2d P);
 		%feature("autodoc", "1");
-		static		const gp_Dir2d  DY2d();
+		gp_Ax2d Mirrored(const gp_Pnt2d P) const;
 		%feature("autodoc", "1");
-		static		const gp_Ax2d  OX2d();
+		void Mirror(const gp_Ax2d A);
 		%feature("autodoc", "1");
-		static		const gp_Ax2d  OY2d();
+		gp_Ax2d Mirrored(const gp_Ax2d A) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Pnt2d P, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Ax2d Rotated(const gp_Pnt2d P, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt2d P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Ax2d Scaled(const gp_Pnt2d P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		gp_Ax2d Transformed(const gp_Trsf2d T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec2d V);
+		%feature("autodoc", "1");
+		gp_Ax2d Translated(const gp_Vec2d V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt2d P1, const gp_Pnt2d P2);
+		%feature("autodoc", "1");
+		gp_Ax2d Translated(const gp_Pnt2d P1, const gp_Pnt2d P2) const;
+		%feature("autodoc", "1");
+		const gp_Pnt2d  _CSFDB_Getgp_Ax2dloc() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  _CSFDB_Getgp_Ax2dvdir() const;
 
 };
-%feature("shadow") gp::~gp %{
+%feature("shadow") gp_Ax2d::~gp_Ax2d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3972,7 +3744,235 @@ def __del__(self):
 		pass
 %}
 
-%extend gp {
+%extend gp_Ax2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Hypr;
+class gp_Hypr {
+	public:
+		%feature("autodoc", "1");
+		gp_Hypr(const gp_Hypr arg0);
+		%feature("autodoc", "1");
+		gp_Hypr();
+		%feature("autodoc", "1");
+		gp_Hypr(const gp_Ax2 A2, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		void SetLocation(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetMajorRadius(const Standard_Real R);
+		%feature("autodoc", "1");
+		void SetMinorRadius(const Standard_Real R);
+		%feature("autodoc", "1");
+		void SetPosition(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		gp_Ax1 Asymptote1() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Asymptote2() const;
+		%feature("autodoc", "1");
+		const gp_Ax1  Axis() const;
+		%feature("autodoc", "1");
+		gp_Hypr ConjugateBranch1() const;
+		%feature("autodoc", "1");
+		gp_Hypr ConjugateBranch2() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix1() const;
+		%feature("autodoc", "1");
+		gp_Ax1 Directrix2() const;
+		%feature("autodoc", "1");
+		Standard_Real Eccentricity() const;
+		%feature("autodoc", "1");
+		Standard_Real Focal() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus1() const;
+		%feature("autodoc", "1");
+		gp_Pnt Focus2() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Location() const;
+		%feature("autodoc", "1");
+		Standard_Real MajorRadius() const;
+		%feature("autodoc", "1");
+		Standard_Real MinorRadius() const;
+		%feature("autodoc", "1");
+		gp_Hypr OtherBranch() const;
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		const gp_Ax2  Position() const;
+		%feature("autodoc", "1");
+		gp_Ax1 XAxis() const;
+		%feature("autodoc", "1");
+		gp_Ax1 YAxis() const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Pnt P);
+		%feature("autodoc", "1");
+		gp_Hypr Mirrored(const gp_Pnt P) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		gp_Hypr Mirrored(const gp_Ax1 A1) const;
+		%feature("autodoc", "1");
+		void Mirror(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		gp_Hypr Mirrored(const gp_Ax2 A2) const;
+		%feature("autodoc", "1");
+		void Rotate(const gp_Ax1 A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		gp_Hypr Rotated(const gp_Ax1 A1, const Standard_Real Ang) const;
+		%feature("autodoc", "1");
+		void Scale(const gp_Pnt P, const Standard_Real S);
+		%feature("autodoc", "1");
+		gp_Hypr Scaled(const gp_Pnt P, const Standard_Real S) const;
+		%feature("autodoc", "1");
+		void Transform(const gp_Trsf T);
+		%feature("autodoc", "1");
+		gp_Hypr Transformed(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Vec V);
+		%feature("autodoc", "1");
+		gp_Hypr Translated(const gp_Vec V) const;
+		%feature("autodoc", "1");
+		void Translate(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		gp_Hypr Translated(const gp_Pnt P1, const gp_Pnt P2) const;
+		%feature("autodoc", "1");
+		const gp_Ax2  _CSFDB_Getgp_Hyprpos() const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_HyprmajorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_HyprmajorRadius(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_HyprminorRadius() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_HyprminorRadius(const Standard_Real p);
+
+};
+%feature("shadow") gp_Hypr::~gp_Hypr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Hypr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor gp_Trsf;
+class gp_Trsf {
+	public:
+		%feature("autodoc", "1");
+		gp_Trsf(const gp_Trsf arg0);
+		%feature("autodoc", "1");
+		gp_Trsf();
+		%feature("autodoc", "1");
+		gp_Trsf(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		void SetMirror(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void SetMirror(const gp_Ax1 A1);
+		%feature("autodoc", "1");
+		void SetMirror(const gp_Ax2 A2);
+		%feature("autodoc", "1");
+		void SetRotation(const gp_Ax1 A1, const Standard_Real Ang);
+		%feature("autodoc", "1");
+		void SetRotation(const gp_Quaternion R);
+		%feature("autodoc", "1");
+		void SetScale(const gp_Pnt P, const Standard_Real S);
+		%feature("autodoc", "1");
+		void SetDisplacement(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Ax3 FromSystem1, const gp_Ax3 ToSystem2);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Ax3 ToSystem);
+		%feature("autodoc", "1");
+		void SetTransformation(const gp_Quaternion R, const gp_Vec T);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Vec V);
+		%feature("autodoc", "1");
+		void SetTranslation(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		void SetTranslationPart(const gp_Vec V);
+		%feature("autodoc", "1");
+		void SetScaleFactor(const Standard_Real S);
+		%feature("autodoc", "1");
+		void SetValues(const Standard_Real a11, const Standard_Real a12, const Standard_Real a13, const Standard_Real a14, const Standard_Real a21, const Standard_Real a22, const Standard_Real a23, const Standard_Real a24, const Standard_Real a31, const Standard_Real a32, const Standard_Real a33, const Standard_Real a34, const Standard_Real Tolang, const Standard_Real TolDist);
+		%feature("autodoc", "1");
+		Standard_Boolean IsNegative() const;
+		%feature("autodoc", "1");
+		gp_TrsfForm Form() const;
+		%feature("autodoc", "1");
+		Standard_Real ScaleFactor() const;
+		%feature("autodoc", "1");
+		const gp_XYZ  TranslationPart() const;
+		%feature("autodoc","GetRotation() -> Standard_Real");
+
+		Standard_Boolean GetRotation(gp_XYZ & theAxis, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		gp_Quaternion GetRotation() const;
+		%feature("autodoc", "1");
+		gp_Mat VectorialPart() const;
+		%feature("autodoc", "1");
+		const gp_Mat  HVectorialPart() const;
+		%feature("autodoc", "1");
+		Standard_Real Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		void Invert();
+		%feature("autodoc", "1");
+		gp_Trsf Inverted() const;
+		%feature("autodoc", "1");
+		gp_Trsf Multiplied(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		gp_Trsf operator*(const gp_Trsf T) const;
+		%feature("autodoc", "1");
+		void Multiply(const gp_Trsf T);
+		%feature("autodoc", "1");
+		void operator*=(const gp_Trsf T);
+		%feature("autodoc", "1");
+		void PreMultiply(const gp_Trsf T);
+		%feature("autodoc", "1");
+		void Power(const Standard_Integer N);
+		%feature("autodoc", "1");
+		gp_Trsf Powered(const Standard_Integer N);
+		%feature("autodoc","Transforms() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Transforms(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Transforms(gp_XYZ & Coord) const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_Getgp_Trsfscale() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Trsfscale(const Standard_Real p);
+		%feature("autodoc", "1");
+		gp_TrsfForm _CSFDB_Getgp_Trsfshape() const;
+		%feature("autodoc", "1");
+		void _CSFDB_Setgp_Trsfshape(const gp_TrsfForm p);
+		%feature("autodoc", "1");
+		const gp_Mat  _CSFDB_Getgp_Trsfmatrix() const;
+		%feature("autodoc", "1");
+		const gp_XYZ  _CSFDB_Getgp_Trsfloc() const;
+
+};
+%feature("shadow") gp_Trsf::~gp_Trsf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend gp_Trsf {
 	void _kill_pointed() {
 		delete $self;
 	}

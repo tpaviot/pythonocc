@@ -167,40 +167,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepTopAdaptor_HVertex;
-class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
+%nodefaultctor BRepTopAdaptor_Tool;
+class BRepTopAdaptor_Tool {
 	public:
 		%feature("autodoc", "1");
-		BRepTopAdaptor_HVertex(const TopoDS_Vertex Vtx, const Handle_BRepAdaptor_HCurve2d &Curve);
+		BRepTopAdaptor_Tool();
 		%feature("autodoc", "1");
-		const TopoDS_Vertex  Vertex() const;
+		BRepTopAdaptor_Tool(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		TopoDS_Vertex  ChangeVertex();
+		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		virtual		gp_Pnt2d Value();
+		void Init(const TopoDS_Face F, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter(const Handle_Adaptor2d_HCurve2d &C);
+		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
 		%feature("autodoc", "1");
-		virtual		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C);
+		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
 		%feature("autodoc", "1");
-		virtual		TopAbs_Orientation Orientation();
+		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
+		Handle_Adaptor3d_HSurface GetSurface();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Destroy();
 
 };
-%extend BRepTopAdaptor_HVertex {
-	Handle_BRepTopAdaptor_HVertex GetHandle() {
-	return *(Handle_BRepTopAdaptor_HVertex*) &$self;
-	}
-};
-%extend BRepTopAdaptor_HVertex {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
+%feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -209,7 +199,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepTopAdaptor_HVertex {
+%extend BRepTopAdaptor_Tool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -241,6 +231,55 @@ def __del__(self):
 %}
 
 %extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepTopAdaptor_HVertex;
+class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
+	public:
+		%feature("autodoc", "1");
+		BRepTopAdaptor_HVertex(const TopoDS_Vertex Vtx, const Handle_BRepAdaptor_HCurve2d &Curve);
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  Vertex() const;
+		%feature("autodoc", "1");
+		TopoDS_Vertex  ChangeVertex();
+		%feature("autodoc", "1");
+		virtual		gp_Pnt2d Value();
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Resolution(const Handle_Adaptor2d_HCurve2d &C);
+		%feature("autodoc", "1");
+		virtual		TopAbs_Orientation Orientation();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSame(const Handle_Adaptor3d_HVertex &Other);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepTopAdaptor_HVertex {
+	Handle_BRepTopAdaptor_HVertex GetHandle() {
+	return *(Handle_BRepTopAdaptor_HVertex*) &$self;
+	}
+};
+%extend BRepTopAdaptor_HVertex {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepTopAdaptor_HVertex::~BRepTopAdaptor_HVertex %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepTopAdaptor_HVertex {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -354,7 +393,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_TopolTool::~BRepTopAdaptor_TopolTool %{
@@ -367,45 +406,6 @@ def __del__(self):
 %}
 
 %extend BRepTopAdaptor_TopolTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepTopAdaptor_Tool;
-class BRepTopAdaptor_Tool {
-	public:
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool();
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const TopoDS_Face F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		BRepTopAdaptor_Tool(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		void Init(const Handle_Adaptor3d_HSurface &Surface, const Standard_Real Tol2d);
-		%feature("autodoc", "1");
-		Handle_BRepTopAdaptor_TopolTool GetTopolTool();
-		%feature("autodoc", "1");
-		void SetTopolTool(const Handle_BRepTopAdaptor_TopolTool &TT);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HSurface GetSurface();
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") BRepTopAdaptor_Tool::~BRepTopAdaptor_Tool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepTopAdaptor_Tool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -481,7 +481,7 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTopAdaptor_DataMapNodeOfMapOfShapeTool::~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool %{

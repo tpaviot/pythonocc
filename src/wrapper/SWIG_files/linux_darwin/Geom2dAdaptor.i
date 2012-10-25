@@ -128,31 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dAdaptor;
-class Geom2dAdaptor {
-	public:
-		%feature("autodoc", "1");
-		Geom2dAdaptor();
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
-
-};
-%feature("shadow") Geom2dAdaptor::~Geom2dAdaptor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dAdaptor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Geom2dAdaptor_Curve;
 class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {
 	public:
@@ -242,6 +217,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor Geom2dAdaptor;
+class Geom2dAdaptor {
+	public:
+		%feature("autodoc", "1");
+		Geom2dAdaptor();
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_Curve MakeCurve(const Adaptor2d_Curve2d &HC);
+
+};
+%feature("shadow") Geom2dAdaptor::~Geom2dAdaptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dAdaptor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2dAdaptor_GHCurve;
 class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 	public:
@@ -266,7 +266,7 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 };
 %extend Geom2dAdaptor_GHCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dAdaptor_GHCurve::~Geom2dAdaptor_GHCurve %{
@@ -305,7 +305,7 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 };
 %extend Geom2dAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dAdaptor_HCurve::~Geom2dAdaptor_HCurve %{

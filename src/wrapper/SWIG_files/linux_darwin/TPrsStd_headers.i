@@ -335,10 +335,10 @@ $HeaderURL$
 #include<Handle_AIS_InteractiveObject.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TDF_Label.hxx>
-#include<Standard_GUID.hxx>
-#include<Handle_TDF_Attribute.hxx>
-#include<Handle_TDF_RelocationTable.hxx>
-#include<Handle_TDF_AttributeDelta.hxx>
 #include<Handle_AIS_InteractiveContext.hxx>
 #include<Handle_V3d_Viewer.hxx>
+#include<Handle_TDF_Attribute.hxx>
+#include<Handle_TDF_RelocationTable.hxx>
+#include<Standard_GUID.hxx>
+#include<Handle_TDF_AttributeDelta.hxx>
 %}

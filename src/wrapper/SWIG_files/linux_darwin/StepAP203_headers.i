@@ -345,6 +345,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_StepBasic_ProductDefinitionFormation.hxx>
+#include<Handle_StepRepr_AssemblyComponentUsage.hxx>
 #include<Handle_StepBasic_VersionedActionRequest.hxx>
 #include<Handle_StepBasic_DateAndTime.hxx>
 #include<Handle_StepBasic_DateTimeRole.hxx>
@@ -352,17 +354,15 @@ $HeaderURL$
 #include<Handle_StepBasic_ProductDefinition.hxx>
 #include<Handle_StepRepr_ShapeAspect.hxx>
 #include<Handle_StepBasic_SecurityClassification.hxx>
-#include<Handle_StepBasic_Approval.hxx>
-#include<Handle_StepBasic_ProductDefinitionFormation.hxx>
+#include<Handle_StepBasic_Action.hxx>
+#include<Handle_StepBasic_Certification.hxx>
 #include<Handle_StepRepr_ConfigurationItem.hxx>
 #include<Handle_StepBasic_Product.hxx>
 #include<Handle_StepBasic_Contract.hxx>
-#include<Handle_StepBasic_Action.hxx>
 #include<Handle_StepBasic_PersonAndOrganization.hxx>
 #include<Handle_StepBasic_PersonAndOrganizationRole.hxx>
-#include<Handle_StepRepr_AssemblyComponentUsage.hxx>
 #include<Handle_StepRepr_ConfigurationEffectivity.hxx>
-#include<Handle_StepBasic_Certification.hxx>
+#include<Handle_StepBasic_Approval.hxx>
 #include<Handle_StepBasic_Document.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 #include<Handle_StepBasic_ApprovalPersonOrganization.hxx>

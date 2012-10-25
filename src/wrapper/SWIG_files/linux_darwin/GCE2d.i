@@ -116,37 +116,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GCE2d_MakeArcOfHyperbola;
-class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const gp_Pnt2d P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Operator() const;
-
-};
-%feature("shadow") GCE2d_MakeArcOfHyperbola::~GCE2d_MakeArcOfHyperbola %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GCE2d_MakeArcOfHyperbola {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GCE2d_MakeParabola;
 class GCE2d_MakeParabola : public GCE2d_Root {
 	public:
@@ -219,32 +188,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor GCE2d_MakeCircle;
-class GCE2d_MakeCircle : public GCE2d_Root {
+%nodefaultctor GCE2d_MakeArcOfEllipse;
+class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d C);
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Ax2d A, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const gp_Pnt2d P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Ax22d A, const Standard_Real Radius);
+		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Boolean Sense=1);
 		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d Circ, const Standard_Real Dist);
+		const Handle_Geom2d_TrimmedCurve & Value() const;
 		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Circ2d Circ, const gp_Pnt2d Point);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d P1, const gp_Pnt2d P2, const gp_Pnt2d P3);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d P, const Standard_Real Radius, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		GCE2d_MakeCircle(const gp_Pnt2d Center, const gp_Pnt2d Point, const Standard_Boolean Sense=1);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Circle & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Circle & Operator() const;
+		const Handle_Geom2d_TrimmedCurve & Operator() const;
 
 };
-%feature("shadow") GCE2d_MakeCircle::~GCE2d_MakeCircle %{
+%feature("shadow") GCE2d_MakeArcOfEllipse::~GCE2d_MakeArcOfEllipse %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -253,7 +212,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GCE2d_MakeCircle {
+%extend GCE2d_MakeArcOfEllipse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -281,39 +240,6 @@ def __del__(self):
 %}
 
 %extend GCE2d_MakeScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GCE2d_MakeHyperbola;
-class GCE2d_MakeHyperbola : public GCE2d_Root {
-	public:
-		%feature("autodoc", "1");
-		GCE2d_MakeHyperbola(const gp_Hypr2d H);
-		%feature("autodoc", "1");
-		GCE2d_MakeHyperbola(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense);
-		%feature("autodoc", "1");
-		GCE2d_MakeHyperbola(const gp_Ax22d Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
-		%feature("autodoc", "1");
-		GCE2d_MakeHyperbola(const gp_Pnt2d S1, const gp_Pnt2d S2, const gp_Pnt2d Center);
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Hyperbola & Value() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Hyperbola & Operator() const;
-
-};
-%feature("shadow") GCE2d_MakeHyperbola::~GCE2d_MakeHyperbola %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GCE2d_MakeHyperbola {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -353,22 +279,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor GCE2d_MakeArcOfEllipse;
-class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
+%nodefaultctor GCE2d_MakeHyperbola;
+class GCE2d_MakeHyperbola : public GCE2d_Root {
 	public:
 		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
+		GCE2d_MakeHyperbola(const gp_Hypr2d H);
 		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const gp_Pnt2d P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
+		GCE2d_MakeHyperbola(const gp_Ax2d MajorAxis, const Standard_Real MajorRadius, const Standard_Real MinorRadius, const Standard_Boolean Sense);
 		%feature("autodoc", "1");
-		GCE2d_MakeArcOfEllipse(const gp_Elips2d Elips, const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Boolean Sense=1);
+		GCE2d_MakeHyperbola(const gp_Ax22d Axis, const Standard_Real MajorRadius, const Standard_Real MinorRadius);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
+		GCE2d_MakeHyperbola(const gp_Pnt2d S1, const gp_Pnt2d S2, const gp_Pnt2d Center);
 		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Operator() const;
+		const Handle_Geom2d_Hyperbola & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Hyperbola & Operator() const;
 
 };
-%feature("shadow") GCE2d_MakeArcOfEllipse::~GCE2d_MakeArcOfEllipse %{
+%feature("shadow") GCE2d_MakeHyperbola::~GCE2d_MakeHyperbola %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -377,7 +305,7 @@ def __del__(self):
 		pass
 %}
 
-%extend GCE2d_MakeArcOfEllipse {
+%extend GCE2d_MakeHyperbola {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -483,6 +411,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor GCE2d_MakeCircle;
+class GCE2d_MakeCircle : public GCE2d_Root {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d C);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Ax2d A, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Ax22d A, const Standard_Real Radius);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d Circ, const Standard_Real Dist);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Circ2d Circ, const gp_Pnt2d Point);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d P1, const gp_Pnt2d P2, const gp_Pnt2d P3);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d P, const Standard_Real Radius, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeCircle(const gp_Pnt2d Center, const gp_Pnt2d Point, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Circle & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Circle & Operator() const;
+
+};
+%feature("shadow") GCE2d_MakeCircle::~GCE2d_MakeCircle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GCE2d_MakeCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GCE2d_MakeRotation;
 class GCE2d_MakeRotation {
 	public:
@@ -504,6 +473,37 @@ def __del__(self):
 %}
 
 %extend GCE2d_MakeRotation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GCE2d_MakeArcOfHyperbola;
+class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
+	public:
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const Standard_Real Alpha1, const Standard_Real Alpha2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const gp_Pnt2d P, const Standard_Real Alpha, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		GCE2d_MakeArcOfHyperbola(const gp_Hypr2d Hypr, const gp_Pnt2d P1, const gp_Pnt2d P2, const Standard_Boolean Sense=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Operator() const;
+
+};
+%feature("shadow") GCE2d_MakeArcOfHyperbola::~GCE2d_MakeArcOfHyperbola %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GCE2d_MakeArcOfHyperbola {
 	void _kill_pointed() {
 		delete $self;
 	}

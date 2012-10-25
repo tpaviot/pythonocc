@@ -52,82 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_Law_Function;
-class Handle_Law_Function : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Function();
-		%feature("autodoc", "1");
-		Handle_Law_Function(const Handle_Law_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Function(const Law_Function *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Function & operator=(const Handle_Law_Function &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Function & operator=(const Law_Function *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Law_Function DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Function {
-	Law_Function* GetObject() {
-	return (Law_Function*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Law_Function::~Handle_Law_Function %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Law_Function {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Law_Constant;
-class Handle_Law_Constant : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Constant();
-		%feature("autodoc", "1");
-		Handle_Law_Constant(const Handle_Law_Constant &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Constant(const Law_Constant *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Constant & operator=(const Handle_Law_Constant &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Constant & operator=(const Law_Constant *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Law_Constant DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Constant {
-	Law_Constant* GetObject() {
-	return (Law_Constant*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Law_Constant::~Handle_Law_Constant %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Law_Constant {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Law_ListNodeOfLaws;
 class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	public:
@@ -166,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Law_Function;
+class Handle_Law_Function : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Function();
+		%feature("autodoc", "1");
+		Handle_Law_Function(const Handle_Law_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Function(const Law_Function *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Function & operator=(const Handle_Law_Function &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Function & operator=(const Law_Function *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Law_Function DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Function {
+	Law_Function* GetObject() {
+	return (Law_Function*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Law_Function::~Handle_Law_Function %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Law_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Law_BSpFunc;
 class Handle_Law_BSpFunc : public Handle_Law_Function {
 	public:
@@ -198,44 +160,6 @@ def __del__(self):
 %}
 
 %extend Handle_Law_BSpFunc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Law_Composite;
-class Handle_Law_Composite : public Handle_Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_Composite();
-		%feature("autodoc", "1");
-		Handle_Law_Composite(const Handle_Law_Composite &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Composite(const Law_Composite *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_Composite & operator=(const Handle_Law_Composite &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_Composite & operator=(const Law_Composite *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Law_Composite DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_Composite {
-	Law_Composite* GetObject() {
-	return (Law_Composite*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Law_Composite::~Handle_Law_Composite %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Law_Composite {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,6 +318,152 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Law_Constant;
+class Handle_Law_Constant : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Constant();
+		%feature("autodoc", "1");
+		Handle_Law_Constant(const Handle_Law_Constant &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Constant(const Law_Constant *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Constant & operator=(const Handle_Law_Constant &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Constant & operator=(const Law_Constant *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Law_Constant DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Constant {
+	Law_Constant* GetObject() {
+	return (Law_Constant*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Law_Constant::~Handle_Law_Constant %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Law_Constant {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Law_Composite;
+class Handle_Law_Composite : public Handle_Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_Composite();
+		%feature("autodoc", "1");
+		Handle_Law_Composite(const Handle_Law_Composite &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Composite(const Law_Composite *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_Composite & operator=(const Handle_Law_Composite &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_Composite & operator=(const Law_Composite *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Law_Composite DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_Composite {
+	Law_Composite* GetObject() {
+	return (Law_Composite*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Law_Composite::~Handle_Law_Composite %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Law_Composite {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_ListNodeOfLaws;
+class Law_ListNodeOfLaws : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Law_ListNodeOfLaws(const Handle_Law_Function &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_Law_Function & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_ListNodeOfLaws {
+	Handle_Law_ListNodeOfLaws GetHandle() {
+	return *(Handle_Law_ListNodeOfLaws*) &$self;
+	}
+};
+%extend Law_ListNodeOfLaws {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_ListNodeOfLaws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_ListIteratorOfLaws;
+class Law_ListIteratorOfLaws {
+	public:
+		%feature("autodoc", "1");
+		Law_ListIteratorOfLaws();
+		%feature("autodoc", "1");
+		Law_ListIteratorOfLaws(const Law_Laws &L);
+		%feature("autodoc", "1");
+		void Initialize(const Law_Laws &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Law_Function & Value() const;
+
+};
+%feature("shadow") Law_ListIteratorOfLaws::~Law_ListIteratorOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_ListIteratorOfLaws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Law_Function;
 class Law_Function : public MMgt_TShared {
 	public:
@@ -427,7 +497,7 @@ class Law_Function : public MMgt_TShared {
 };
 %extend Law_Function {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Function::~Law_Function %{
@@ -466,7 +536,7 @@ class Law_BSpFunc : public Law_Function {
 };
 %extend Law_BSpFunc {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_BSpFunc::~Law_BSpFunc %{
@@ -479,43 +549,6 @@ def __del__(self):
 %}
 
 %extend Law_BSpFunc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_ListNodeOfLaws;
-class Law_ListNodeOfLaws : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Law_ListNodeOfLaws(const Handle_Law_Function &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_Law_Function & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_ListNodeOfLaws {
-	Handle_Law_ListNodeOfLaws GetHandle() {
-	return *(Handle_Law_ListNodeOfLaws*) &$self;
-	}
-};
-%extend Law_ListNodeOfLaws {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_ListNodeOfLaws {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -546,7 +579,7 @@ class Law_Interpol : public Law_BSpFunc {
 };
 %extend Law_Interpol {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Interpol::~Law_Interpol %{
@@ -565,24 +598,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor Law_ListIteratorOfLaws;
-class Law_ListIteratorOfLaws {
+%nodefaultctor Law_Interpolate;
+class Law_Interpolate {
 	public:
 		%feature("autodoc", "1");
-		Law_ListIteratorOfLaws();
+		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		Law_ListIteratorOfLaws(const Law_Laws &L);
+		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
 		%feature("autodoc", "1");
-		void Initialize(const Law_Laws &L);
+		void Load(const Standard_Real InitialTangent, const Standard_Real FinalTangent);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		void Load(const TColStd_Array1OfReal &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
 		%feature("autodoc", "1");
-		void Next();
+		void Perform();
 		%feature("autodoc", "1");
-		Handle_Law_Function & Value() const;
+		const Handle_Law_BSpline & Curve() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
 
 };
-%feature("shadow") Law_ListIteratorOfLaws::~Law_ListIteratorOfLaws %{
+%feature("shadow") Law_Interpolate::~Law_Interpolate %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -591,7 +626,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Law_ListIteratorOfLaws {
+%extend Law_Interpolate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -643,7 +678,7 @@ class Law_Composite : public Law_Function {
 };
 %extend Law_Composite {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Composite::~Law_Composite %{
@@ -656,317 +691,6 @@ def __del__(self):
 %}
 
 %extend Law_Composite {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_BSplineKnotSplitting;
-class Law_BSplineKnotSplitting {
-	public:
-		%feature("autodoc", "1");
-		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
-		%feature("autodoc", "1");
-		Standard_Integer NbSplits() const;
-		%feature("autodoc", "1");
-		void Splitting(TColStd_Array1OfInteger & SplitValues) const;
-		%feature("autodoc", "1");
-		Standard_Integer SplitValue(const Standard_Integer Index) const;
-
-};
-%feature("shadow") Law_BSplineKnotSplitting::~Law_BSplineKnotSplitting %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_BSplineKnotSplitting {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_S;
-class Law_S : public Law_BSpFunc {
-	public:
-		%feature("autodoc", "1");
-		Law_S();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_S {
-	Handle_Law_S GetHandle() {
-	return *(Handle_Law_S*) &$self;
-	}
-};
-%extend Law_S {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Law_S::~Law_S %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_S {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_Linear;
-class Law_Linear : public Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Law_Linear();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_Linear {
-	Handle_Law_Linear GetHandle() {
-	return *(Handle_Law_Linear*) &$self;
-	}
-};
-%extend Law_Linear {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Law_Linear::~Law_Linear %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_Linear {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_Laws;
-class Law_Laws {
-	public:
-		%feature("autodoc", "1");
-		Law_Laws();
-		%feature("autodoc", "1");
-		void Assign(const Law_Laws &Other);
-		%feature("autodoc", "1");
-		void operator=(const Law_Laws &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
-		%feature("autodoc", "1");
-		void Prepend(Law_Laws & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
-		%feature("autodoc", "1");
-		void Append(Law_Laws & Other);
-		%feature("autodoc", "1");
-		Handle_Law_Function & First() const;
-		%feature("autodoc", "1");
-		Handle_Law_Function & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertBefore(Law_Laws & Other, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
-		%feature("autodoc", "1");
-		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
-
-};
-%feature("shadow") Law_Laws::~Law_Laws %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_Laws {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law;
-class Law {
-	public:
-		%feature("autodoc", "1");
-		Law();
-		%feature("autodoc", "1");
-		static		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
-		%feature("autodoc", "1");
-		static		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
-		%feature("autodoc", "1");
-		static		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
-		%feature("autodoc", "1");
-		static		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
-		%feature("autodoc", "1");
-		static		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
-
-};
-%feature("shadow") Law::~Law %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_Interpolate;
-class Law_Interpolate {
-	public:
-		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		Law_Interpolate(const Handle_TColStd_HArray1OfReal &Points, const Handle_TColStd_HArray1OfReal &Parameters, const Standard_Boolean PeriodicFlag, const Standard_Real Tolerance);
-		%feature("autodoc", "1");
-		void Load(const Standard_Real InitialTangent, const Standard_Real FinalTangent);
-		%feature("autodoc", "1");
-		void Load(const TColStd_Array1OfReal &Tangents, const Handle_TColStd_HArray1OfBoolean &TangentFlags);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const Handle_Law_BSpline & Curve() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-
-};
-%feature("shadow") Law_Interpolate::~Law_Interpolate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_Interpolate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Law_Constant;
-class Law_Constant : public Law_Function {
-	public:
-		%feature("autodoc", "1");
-		Law_Constant();
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Radius, const Standard_Real PFirst, const Standard_Real PLast);
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Value(const Standard_Real X);
-		%feature("autodoc","D1(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Law_Constant {
-	Handle_Law_Constant GetHandle() {
-	return *(Handle_Law_Constant*) &$self;
-	}
-};
-%extend Law_Constant {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Law_Constant::~Law_Constant %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Law_Constant {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1125,7 +849,7 @@ class Law_BSpline : public MMgt_TShared {
 };
 %extend Law_BSpline {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_BSpline::~Law_BSpline %{
@@ -1138,6 +862,282 @@ def __del__(self):
 %}
 
 %extend Law_BSpline {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_BSplineKnotSplitting;
+class Law_BSplineKnotSplitting {
+	public:
+		%feature("autodoc", "1");
+		Law_BSplineKnotSplitting(const Handle_Law_BSpline &BasisLaw, const Standard_Integer ContinuityRange);
+		%feature("autodoc", "1");
+		Standard_Integer NbSplits() const;
+		%feature("autodoc", "1");
+		void Splitting(TColStd_Array1OfInteger & SplitValues) const;
+		%feature("autodoc", "1");
+		Standard_Integer SplitValue(const Standard_Integer Index) const;
+
+};
+%feature("shadow") Law_BSplineKnotSplitting::~Law_BSplineKnotSplitting %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_BSplineKnotSplitting {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_S;
+class Law_S : public Law_BSpFunc {
+	public:
+		%feature("autodoc", "1");
+		Law_S();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Ddeb, const Standard_Real Pfin, const Standard_Real Valfin, const Standard_Real Dfin);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_S {
+	Handle_Law_S GetHandle() {
+	return *(Handle_Law_S*) &$self;
+	}
+};
+%extend Law_S {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Law_S::~Law_S %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_Laws;
+class Law_Laws {
+	public:
+		%feature("autodoc", "1");
+		Law_Laws();
+		%feature("autodoc", "1");
+		void Assign(const Law_Laws &Other);
+		%feature("autodoc", "1");
+		void operator=(const Law_Laws &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Law_Function &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		%feature("autodoc", "1");
+		void Prepend(Law_Laws & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Law_Function &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_Law_Function &I, Law_ListIteratorOfLaws & theIt);
+		%feature("autodoc", "1");
+		void Append(Law_Laws & Other);
+		%feature("autodoc", "1");
+		Handle_Law_Function & First() const;
+		%feature("autodoc", "1");
+		Handle_Law_Function & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertBefore(Law_Laws & Other, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_Law_Function &I, Law_ListIteratorOfLaws & It);
+		%feature("autodoc", "1");
+		void InsertAfter(Law_Laws & Other, Law_ListIteratorOfLaws & It);
+
+};
+%feature("shadow") Law_Laws::~Law_Laws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_Laws {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law;
+class Law {
+	public:
+		%feature("autodoc", "1");
+		Law();
+		%feature("autodoc", "1");
+		static		Handle_Law_BSpFunc MixBnd(const Handle_Law_Linear &Lin);
+		%feature("autodoc", "1");
+		static		Handle_TColStd_HArray1OfReal MixBnd(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Handle_Law_Linear &Lin);
+		%feature("autodoc", "1");
+		static		Handle_TColStd_HArray1OfReal MixTgt(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Boolean NulOnTheRight, const Standard_Integer Index);
+		%feature("autodoc", "1");
+		static		Handle_Law_BSpline Reparametrize(const Adaptor3d_Curve &Curve, const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasDF, const Standard_Boolean HasDL, const Standard_Real DFirst, const Standard_Real DLast, const Standard_Boolean Rev, const Standard_Integer NbPoints);
+		%feature("autodoc", "1");
+		static		Handle_Law_BSpline Scale(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+		%feature("autodoc", "1");
+		static		Handle_Law_BSpline ScaleCub(const Standard_Real First, const Standard_Real Last, const Standard_Boolean HasF, const Standard_Boolean HasL, const Standard_Real VFirst, const Standard_Real VLast);
+
+};
+%feature("shadow") Law::~Law %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_Linear;
+class Law_Linear : public Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Law_Linear();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Pdeb, const Standard_Real Valdeb, const Standard_Real Pfin, const Standard_Real Valfin);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Value(const Standard_Real X);
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_Linear {
+	Handle_Law_Linear GetHandle() {
+	return *(Handle_Law_Linear*) &$self;
+	}
+};
+%extend Law_Linear {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Law_Linear::~Law_Linear %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_Linear {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Law_Constant;
+class Law_Constant : public Law_Function {
+	public:
+		%feature("autodoc", "1");
+		Law_Constant();
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Radius, const Standard_Real PFirst, const Standard_Real PLast);
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Value(const Standard_Real X);
+		%feature("autodoc","D1(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		void D1(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","D2(Standard_Real X) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		void D2(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Handle_Law_Function Trim(const Standard_Real PFirst, const Standard_Real PLast, const Standard_Real Tol) const;
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		virtual		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Law_Constant {
+	Handle_Law_Constant GetHandle() {
+	return *(Handle_Law_Constant*) &$self;
+	}
+};
+%extend Law_Constant {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Law_Constant::~Law_Constant %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Law_Constant {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -52,6 +52,122 @@ $HeaderURL$
 
 
 
+%nodefaultctor RWStepBasic_RWActionAssignment;
+class RWStepBasic_RWActionAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWActionAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ActionAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ActionAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ActionAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWActionAssignment::~RWStepBasic_RWActionAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWActionAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
+class RWStepBasic_RWMassMeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWMassMeasureWithUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWMassMeasureWithUnit::~RWStepBasic_RWMassMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWMassMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWIdentificationRole;
+class RWStepBasic_RWIdentificationRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWIdentificationRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationRole &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWIdentificationRole::~RWStepBasic_RWIdentificationRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWIdentificationRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
+class RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWPlaneAngleMeasureWithUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWPlaneAngleMeasureWithUnit::~RWStepBasic_RWPlaneAngleMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndLengthUnit;
 class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	public:
@@ -102,35 +218,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWSecurityClassificationLevel {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
-class RWStepBasic_RWThermodynamicTemperatureUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWThermodynamicTemperatureUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWThermodynamicTemperatureUnit::~RWStepBasic_RWThermodynamicTemperatureUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWThermodynamicTemperatureUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -195,20 +282,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWActionAssignment;
-class RWStepBasic_RWActionAssignment {
+%nodefaultctor RWStepBasic_RWProductDefinitionEffectivity;
+class RWStepBasic_RWProductDefinitionEffectivity {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWActionAssignment();
+		RWStepBasic_RWProductDefinitionEffectivity();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ActionAssignment &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionEffectivity &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ActionAssignment &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionEffectivity &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ActionAssignment &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_ProductDefinitionEffectivity &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWActionAssignment::~RWStepBasic_RWActionAssignment %{
+%feature("shadow") RWStepBasic_RWProductDefinitionEffectivity::~RWStepBasic_RWProductDefinitionEffectivity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -217,36 +304,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWActionAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWProductDefinitionFormation;
-class RWStepBasic_RWProductDefinitionFormation {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionFormation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionFormation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionFormation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWProductDefinitionFormation::~RWStepBasic_RWProductDefinitionFormation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWProductDefinitionFormation {
+%extend RWStepBasic_RWProductDefinitionEffectivity {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -375,33 +433,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWCalendarDate;
-class RWStepBasic_RWCalendarDate {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWCalendarDate();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CalendarDate &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWCalendarDate::~RWStepBasic_RWCalendarDate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWCalendarDate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
 class RWStepBasic_RWProductCategoryRelationship {
 	public:
@@ -425,6 +456,35 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWProductCategoryRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndTimeUnit;
+class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWConversionBasedUnitAndTimeUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndTimeUnit::~RWStepBasic_RWConversionBasedUnitAndTimeUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -460,20 +520,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWGroup;
-class RWStepBasic_RWGroup {
+%nodefaultctor RWStepBasic_RWLengthUnit;
+class RWStepBasic_RWLengthUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWGroup();
+		RWStepBasic_RWLengthUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Group &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Group &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthUnit &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWGroup::~RWStepBasic_RWGroup %{
+%feature("shadow") RWStepBasic_RWLengthUnit::~RWStepBasic_RWLengthUnit %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -482,7 +542,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWGroup {
+%extend RWStepBasic_RWLengthUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -518,20 +578,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWEffectivity;
-class RWStepBasic_RWEffectivity {
+%nodefaultctor RWStepBasic_RWApprovalStatus;
+class RWStepBasic_RWApprovalStatus {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWEffectivity();
+		RWStepBasic_RWApprovalStatus();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Effectivity &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalStatus &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Effectivity &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
 
 };
-%feature("shadow") RWStepBasic_RWEffectivity::~RWStepBasic_RWEffectivity %{
+%feature("shadow") RWStepBasic_RWApprovalStatus::~RWStepBasic_RWApprovalStatus %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -540,262 +598,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWEffectivity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWProductConceptContext;
-class RWStepBasic_RWProductConceptContext {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWProductConceptContext();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductConceptContext &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductConceptContext &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWProductConceptContext::~RWStepBasic_RWProductConceptContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWProductConceptContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDateRole;
-class RWStepBasic_RWDateRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDateRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWDateRole::~RWStepBasic_RWDateRole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDateRole {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDocumentRepresentationType;
-class RWStepBasic_RWDocumentRepresentationType {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDocumentRepresentationType();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentRepresentationType &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentRepresentationType &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DocumentRepresentationType &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWDocumentRepresentationType::~RWStepBasic_RWDocumentRepresentationType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDocumentRepresentationType {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWProductDefinitionEffectivity;
-class RWStepBasic_RWProductDefinitionEffectivity {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionEffectivity();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionEffectivity &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionEffectivity &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionEffectivity &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWProductDefinitionEffectivity::~RWStepBasic_RWProductDefinitionEffectivity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWProductDefinitionEffectivity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDimensionalExponents;
-class RWStepBasic_RWDimensionalExponents {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDimensionalExponents();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DimensionalExponents &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DimensionalExponents &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWDimensionalExponents::~RWStepBasic_RWDimensionalExponents %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDimensionalExponents {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
-class RWStepBasic_RWPersonAndOrganizationRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWPersonAndOrganizationRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWPersonAndOrganizationRole::~RWStepBasic_RWPersonAndOrganizationRole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWPersonAndOrganizationRole {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDocumentProductAssociation;
-class RWStepBasic_RWDocumentProductAssociation {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDocumentProductAssociation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentProductAssociation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentProductAssociation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DocumentProductAssociation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWDocumentProductAssociation::~RWStepBasic_RWDocumentProductAssociation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDocumentProductAssociation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit;
-class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit::~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
-class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource::~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
+%extend RWStepBasic_RWApprovalStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -831,20 +634,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
-class RWStepBasic_RWProductDefinitionRelationship {
+%nodefaultctor RWStepBasic_RWDocumentRepresentationType;
+class RWStepBasic_RWDocumentRepresentationType {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionRelationship();
+		RWStepBasic_RWDocumentRepresentationType();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentRepresentationType &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentRepresentationType &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_DocumentRepresentationType &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWProductDefinitionRelationship::~RWStepBasic_RWProductDefinitionRelationship %{
+%feature("shadow") RWStepBasic_RWDocumentRepresentationType::~RWStepBasic_RWDocumentRepresentationType %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -853,7 +656,235 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWProductDefinitionRelationship {
+%extend RWStepBasic_RWDocumentRepresentationType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDimensionalExponents;
+class RWStepBasic_RWDimensionalExponents {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDimensionalExponents();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DimensionalExponents &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DimensionalExponents &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWDimensionalExponents::~RWStepBasic_RWDimensionalExponents %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDimensionalExponents {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWContract;
+class RWStepBasic_RWContract {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWContract();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Contract &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Contract &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWContract::~RWStepBasic_RWContract %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWContract {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDocumentProductAssociation;
+class RWStepBasic_RWDocumentProductAssociation {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDocumentProductAssociation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentProductAssociation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentProductAssociation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DocumentProductAssociation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWDocumentProductAssociation::~RWStepBasic_RWDocumentProductAssociation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDocumentProductAssociation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWCalendarDate;
+class RWStepBasic_RWCalendarDate {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWCalendarDate();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_CalendarDate &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_CalendarDate &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWCalendarDate::~RWStepBasic_RWCalendarDate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWCalendarDate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWVersionedActionRequest;
+class RWStepBasic_RWVersionedActionRequest {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWVersionedActionRequest();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_VersionedActionRequest &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_VersionedActionRequest &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWVersionedActionRequest::~RWStepBasic_RWVersionedActionRequest %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWVersionedActionRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
+class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource::~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWSolidAngleUnit;
+class RWStepBasic_RWSolidAngleUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSolidAngleUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SolidAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SolidAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_SolidAngleUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWSolidAngleUnit::~RWStepBasic_RWSolidAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSolidAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWContractAssignment;
+class RWStepBasic_RWContractAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWContractAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ContractAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWContractAssignment::~RWStepBasic_RWContractAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWContractAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1003,6 +1034,62 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
+class RWStepBasic_RWSiUnitAndRatioUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndRatioUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWSiUnitAndRatioUnit::~RWStepBasic_RWSiUnitAndRatioUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSiUnitAndRatioUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
+class RWStepBasic_RWConversionBasedUnitAndMassUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWConversionBasedUnitAndMassUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndMassUnit::~RWStepBasic_RWConversionBasedUnitAndMassUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWActionMethod;
 class RWStepBasic_RWActionMethod {
 	public:
@@ -1090,118 +1177,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
-class RWStepBasic_RWPlaneAngleMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWPlaneAngleMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_PlaneAngleMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWPlaneAngleMeasureWithUnit::~RWStepBasic_RWPlaneAngleMeasureWithUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWApprovalRole;
-class RWStepBasic_RWApprovalRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWApprovalRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalRole &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWApprovalRole::~RWStepBasic_RWApprovalRole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWApprovalRole {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWApprovalStatus;
-class RWStepBasic_RWApprovalStatus {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWApprovalStatus();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalStatus &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalStatus &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWApprovalStatus::~RWStepBasic_RWApprovalStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWApprovalStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
-class RWStepBasic_RWMassMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWMassMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MassMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_MassMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWMassMeasureWithUnit::~RWStepBasic_RWMassMeasureWithUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWMassMeasureWithUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWConversionBasedUnit;
 class RWStepBasic_RWConversionBasedUnit {
 	public:
@@ -1260,6 +1235,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepBasic_RWOrganizationalAddress;
+class RWStepBasic_RWOrganizationalAddress {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWOrganizationalAddress();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrganizationalAddress &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationalAddress &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWOrganizationalAddress::~RWStepBasic_RWOrganizationalAddress %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWOrganizationalAddress {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationRelationship;
 class RWStepBasic_RWProductDefinitionFormationRelationship {
 	public:
@@ -1283,288 +1287,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWProductDefinitionFormationRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWWeekOfYearAndDayDate;
-class RWStepBasic_RWWeekOfYearAndDayDate {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWWeekOfYearAndDayDate();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWWeekOfYearAndDayDate::~RWStepBasic_RWWeekOfYearAndDayDate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWWeekOfYearAndDayDate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDocumentRelationship;
-class RWStepBasic_RWDocumentRelationship {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDocumentRelationship();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentRelationship &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentRelationship &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DocumentRelationship &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWDocumentRelationship::~RWStepBasic_RWDocumentRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDocumentRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWVersionedActionRequest;
-class RWStepBasic_RWVersionedActionRequest {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWVersionedActionRequest();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_VersionedActionRequest &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_VersionedActionRequest &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_VersionedActionRequest &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWVersionedActionRequest::~RWStepBasic_RWVersionedActionRequest %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWVersionedActionRequest {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWExternalSource;
-class RWStepBasic_RWExternalSource {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWExternalSource();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalSource &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalSource &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWExternalSource::~RWStepBasic_RWExternalSource %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWExternalSource {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit;
-class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit::~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDocumentFile;
-class RWStepBasic_RWDocumentFile {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDocumentFile();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentFile &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentFile &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWDocumentFile::~RWStepBasic_RWDocumentFile %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDocumentFile {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWApprovalDateTime;
-class RWStepBasic_RWApprovalDateTime {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWApprovalDateTime();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalDateTime &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalDateTime &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ApprovalDateTime &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWApprovalDateTime::~RWStepBasic_RWApprovalDateTime %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWApprovalDateTime {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDateTimeRole;
-class RWStepBasic_RWDateTimeRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDateTimeRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateTimeRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateTimeRole &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWDateTimeRole::~RWStepBasic_RWDateTimeRole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDateTimeRole {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWDerivedUnit;
-class RWStepBasic_RWDerivedUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWDerivedUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DerivedUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWDerivedUnit::~RWStepBasic_RWDerivedUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWDerivedUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWApplicationContext;
-class RWStepBasic_RWApplicationContext {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWApplicationContext();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApplicationContext &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApplicationContext &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWApplicationContext::~RWStepBasic_RWApplicationContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWApplicationContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1600,18 +1322,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
-class RWStepBasic_RWSiUnitAndRatioUnit {
+%nodefaultctor RWStepBasic_RWWeekOfYearAndDayDate;
+class RWStepBasic_RWWeekOfYearAndDayDate {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndRatioUnit();
+		RWStepBasic_RWWeekOfYearAndDayDate();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndRatioUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_WeekOfYearAndDayDate &ent) const;
 
 };
-%feature("shadow") RWStepBasic_RWSiUnitAndRatioUnit::~RWStepBasic_RWSiUnitAndRatioUnit %{
+%feature("shadow") RWStepBasic_RWWeekOfYearAndDayDate::~RWStepBasic_RWWeekOfYearAndDayDate %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1620,27 +1342,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWSiUnitAndRatioUnit {
+%extend RWStepBasic_RWWeekOfYearAndDayDate {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepBasic_RWAction;
-class RWStepBasic_RWAction {
+%nodefaultctor RWStepBasic_RWGroup;
+class RWStepBasic_RWGroup {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWAction();
+		RWStepBasic_RWGroup();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Action &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Group &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Action &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Group &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_Group &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWAction::~RWStepBasic_RWAction %{
+%feature("shadow") RWStepBasic_RWGroup::~RWStepBasic_RWGroup %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1649,7 +1371,173 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWAction {
+%extend RWStepBasic_RWGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDocumentRelationship;
+class RWStepBasic_RWDocumentRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDocumentRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DocumentRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWDocumentRelationship::~RWStepBasic_RWDocumentRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDocumentRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit;
+class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit::~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDateTimeRole;
+class RWStepBasic_RWDateTimeRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDateTimeRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateTimeRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateTimeRole &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWDateTimeRole::~RWStepBasic_RWDateTimeRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDateTimeRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWApplicationContext;
+class RWStepBasic_RWApplicationContext {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWApplicationContext();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApplicationContext &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApplicationContext &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWApplicationContext::~RWStepBasic_RWApplicationContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWApplicationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
+class RWStepBasic_RWSiUnitAndAreaUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndAreaUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWSiUnitAndAreaUnit::~RWStepBasic_RWSiUnitAndAreaUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSiUnitAndAreaUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWPlaneAngleUnit;
+class RWStepBasic_RWPlaneAngleUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWPlaneAngleUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWPlaneAngleUnit::~RWStepBasic_RWPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWPlaneAngleUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1683,35 +1571,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
-class RWStepBasic_RWConversionBasedUnitAndMassUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndMassUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndMassUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWConversionBasedUnitAndMassUnit::~RWStepBasic_RWConversionBasedUnitAndMassUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWAddress;
 class RWStepBasic_RWAddress {
 	public:
@@ -1733,149 +1592,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWAddress {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
-class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWSiUnitAndPlaneAngleUnit::~RWStepBasic_RWSiUnitAndPlaneAngleUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
-class RWStepBasic_RWExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalIdentificationAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWExternalIdentificationAssignment::~RWStepBasic_RWExternalIdentificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWExternalIdentificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
-class RWStepBasic_RWLengthMeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWLengthMeasureWithUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWLengthMeasureWithUnit::~RWStepBasic_RWLengthMeasureWithUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWLengthMeasureWithUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWNamedUnit;
-class RWStepBasic_RWNamedUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWNamedUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_NamedUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_NamedUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_NamedUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWNamedUnit::~RWStepBasic_RWNamedUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWNamedUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
-class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWProductDefinitionWithAssociatedDocuments();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWProductDefinitionWithAssociatedDocuments::~RWStepBasic_RWProductDefinitionWithAssociatedDocuments %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1911,6 +1627,234 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
+class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndPlaneAngleUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndPlaneAngleUnit &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWSiUnitAndPlaneAngleUnit::~RWStepBasic_RWSiUnitAndPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
+class RWStepBasic_RWProductDefinitionRelationship {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductDefinitionRelationship();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionRelationship &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductDefinitionRelationship &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWProductDefinitionRelationship::~RWStepBasic_RWProductDefinitionRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWProductDefinitionRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
+class RWStepBasic_RWExternalIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWExternalIdentificationAssignment();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalIdentificationAssignment &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ExternalIdentificationAssignment &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWExternalIdentificationAssignment::~RWStepBasic_RWExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWExternalIdentificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDateAndTime;
+class RWStepBasic_RWDateAndTime {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDateAndTime();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateAndTime &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateAndTime &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWDateAndTime::~RWStepBasic_RWDateAndTime %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDateAndTime {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
+class RWStepBasic_RWSiUnitAndLengthUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWSiUnitAndLengthUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWSiUnitAndLengthUnit::~RWStepBasic_RWSiUnitAndLengthUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWSiUnitAndLengthUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWNamedUnit;
+class RWStepBasic_RWNamedUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWNamedUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_NamedUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_NamedUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_NamedUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWNamedUnit::~RWStepBasic_RWNamedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWNamedUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit;
+class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit::~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
+class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductDefinitionWithAssociatedDocuments();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductDefinitionWithAssociatedDocuments &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWProductDefinitionWithAssociatedDocuments::~RWStepBasic_RWProductDefinitionWithAssociatedDocuments %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWApprovalPersonOrganization;
 class RWStepBasic_RWApprovalPersonOrganization {
 	public:
@@ -1934,6 +1878,33 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWApprovalPersonOrganization {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWApprovalRole;
+class RWStepBasic_RWApprovalRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWApprovalRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalRole &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWApprovalRole::~RWStepBasic_RWApprovalRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWApprovalRole {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2110,20 +2081,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndTimeUnit;
-class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
+%nodefaultctor RWStepBasic_RWExternalSource;
+class RWStepBasic_RWExternalSource {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndTimeUnit();
+		RWStepBasic_RWExternalSource();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ExternalSource &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ExternalSource &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndTimeUnit &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_ExternalSource &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWConversionBasedUnitAndTimeUnit::~RWStepBasic_RWConversionBasedUnitAndTimeUnit %{
+%feature("shadow") RWStepBasic_RWExternalSource::~RWStepBasic_RWExternalSource %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2132,27 +2103,27 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
+%extend RWStepBasic_RWExternalSource {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor RWStepBasic_RWSolidAngleUnit;
-class RWStepBasic_RWSolidAngleUnit {
+%nodefaultctor RWStepBasic_RWMechanicalContext;
+class RWStepBasic_RWMechanicalContext {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWSolidAngleUnit();
+		RWStepBasic_RWMechanicalContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SolidAngleUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MechanicalContext &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SolidAngleUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MechanicalContext &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_SolidAngleUnit &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_MechanicalContext &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWSolidAngleUnit::~RWStepBasic_RWSolidAngleUnit %{
+%feature("shadow") RWStepBasic_RWMechanicalContext::~RWStepBasic_RWMechanicalContext %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2161,7 +2132,36 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWSolidAngleUnit {
+%extend RWStepBasic_RWMechanicalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDocumentFile;
+class RWStepBasic_RWDocumentFile {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDocumentFile();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DocumentFile &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DocumentFile &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DocumentFile &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWDocumentFile::~RWStepBasic_RWDocumentFile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDocumentFile {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2218,35 +2218,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWProduct {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWLengthUnit;
-class RWStepBasic_RWLengthUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWLengthUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_LengthUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWLengthUnit::~RWStepBasic_RWLengthUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWLengthUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2311,20 +2282,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWDateAndTime;
-class RWStepBasic_RWDateAndTime {
+%nodefaultctor RWStepBasic_RWGroupAssignment;
+class RWStepBasic_RWGroupAssignment {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWDateAndTime();
+		RWStepBasic_RWGroupAssignment();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateAndTime &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_GroupAssignment &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateAndTime &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_GroupAssignment &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_DateAndTime &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_GroupAssignment &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWDateAndTime::~RWStepBasic_RWDateAndTime %{
+%feature("shadow") RWStepBasic_RWGroupAssignment::~RWStepBasic_RWGroupAssignment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2333,7 +2304,36 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWDateAndTime {
+%extend RWStepBasic_RWGroupAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWProductDefinitionFormation;
+class RWStepBasic_RWProductDefinitionFormation {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWProductDefinitionFormation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductDefinitionFormation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductDefinitionFormation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductDefinitionFormation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWProductDefinitionFormation::~RWStepBasic_RWProductDefinitionFormation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWProductDefinitionFormation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2361,6 +2361,35 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWSiUnitAndVolumeUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
+class RWStepBasic_RWThermodynamicTemperatureUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWThermodynamicTemperatureUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ThermodynamicTemperatureUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ThermodynamicTemperatureUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWThermodynamicTemperatureUnit::~RWStepBasic_RWThermodynamicTemperatureUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWThermodynamicTemperatureUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2423,18 +2452,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
-class RWStepBasic_RWSiUnitAndLengthUnit {
+%nodefaultctor RWStepBasic_RWProductConceptContext;
+class RWStepBasic_RWProductConceptContext {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndLengthUnit();
+		RWStepBasic_RWProductConceptContext();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ProductConceptContext &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndLengthUnit &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ProductConceptContext &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ProductConceptContext &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWSiUnitAndLengthUnit::~RWStepBasic_RWSiUnitAndLengthUnit %{
+%feature("shadow") RWStepBasic_RWProductConceptContext::~RWStepBasic_RWProductConceptContext %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2443,36 +2474,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWSiUnitAndLengthUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWIdentificationRole;
-class RWStepBasic_RWIdentificationRole {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWIdentificationRole();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_IdentificationRole &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_IdentificationRole &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_IdentificationRole &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWIdentificationRole::~RWStepBasic_RWIdentificationRole %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWIdentificationRole {
+%extend RWStepBasic_RWProductConceptContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2508,64 +2510,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWMechanicalContext;
-class RWStepBasic_RWMechanicalContext {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWMechanicalContext();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_MechanicalContext &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_MechanicalContext &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_MechanicalContext &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWMechanicalContext::~RWStepBasic_RWMechanicalContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWMechanicalContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWContractAssignment;
-class RWStepBasic_RWContractAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWContractAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ContractAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ContractAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ContractAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWContractAssignment::~RWStepBasic_RWContractAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWContractAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWMeasureWithUnit;
 class RWStepBasic_RWMeasureWithUnit {
 	public:
@@ -2589,6 +2533,120 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
+class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWConversionBasedUnitAndAreaUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWConversionBasedUnitAndAreaUnit::~RWStepBasic_RWConversionBasedUnitAndAreaUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWEffectivity;
+class RWStepBasic_RWEffectivity {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWEffectivity();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Effectivity &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Effectivity &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Effectivity &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWEffectivity::~RWStepBasic_RWEffectivity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWEffectivity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWAction;
+class RWStepBasic_RWAction {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWAction();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Action &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Action &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_Action &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWAction::~RWStepBasic_RWAction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWAction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
+class RWStepBasic_RWPersonAndOrganizationRole {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWPersonAndOrganizationRole();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PersonAndOrganizationRole &ent) const;
+
+};
+%feature("shadow") RWStepBasic_RWPersonAndOrganizationRole::~RWStepBasic_RWPersonAndOrganizationRole %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWPersonAndOrganizationRole {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2647,35 +2705,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWProductType {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWOrganizationalAddress;
-class RWStepBasic_RWOrganizationalAddress {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWOrganizationalAddress();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_OrganizationalAddress &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_OrganizationalAddress &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_OrganizationalAddress &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWOrganizationalAddress::~RWStepBasic_RWOrganizationalAddress %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWOrganizationalAddress {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2881,6 +2910,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepBasic_RWApprovalDateTime;
+class RWStepBasic_RWApprovalDateTime {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWApprovalDateTime();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ApprovalDateTime &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ApprovalDateTime &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_ApprovalDateTime &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWApprovalDateTime::~RWStepBasic_RWApprovalDateTime %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWApprovalDateTime {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepBasic_RWPersonalAddress;
 class RWStepBasic_RWPersonalAddress {
 	public:
@@ -2939,20 +2997,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWContract;
-class RWStepBasic_RWContract {
+%nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
+class RWStepBasic_RWLengthMeasureWithUnit {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWContract();
+		RWStepBasic_RWLengthMeasureWithUnit();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_Contract &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_Contract &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_LengthMeasureWithUnit &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_Contract &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepBasic_LengthMeasureWithUnit &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepBasic_RWContract::~RWStepBasic_RWContract %{
+%feature("shadow") RWStepBasic_RWLengthMeasureWithUnit::~RWStepBasic_RWLengthMeasureWithUnit %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2961,7 +3019,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWContract {
+%extend RWStepBasic_RWLengthMeasureWithUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2997,20 +3055,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWPlaneAngleUnit;
-class RWStepBasic_RWPlaneAngleUnit {
+%nodefaultctor RWStepBasic_RWDateRole;
+class RWStepBasic_RWDateRole {
 	public:
 		%feature("autodoc", "1");
-		RWStepBasic_RWPlaneAngleUnit();
+		RWStepBasic_RWDateRole();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_PlaneAngleUnit &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DateRole &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_PlaneAngleUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_PlaneAngleUnit &ent, Interface_EntityIterator & iter) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DateRole &ent) const;
 
 };
-%feature("shadow") RWStepBasic_RWPlaneAngleUnit::~RWStepBasic_RWPlaneAngleUnit %{
+%feature("shadow") RWStepBasic_RWDateRole::~RWStepBasic_RWDateRole %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3019,7 +3075,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepBasic_RWPlaneAngleUnit {
+%extend RWStepBasic_RWDateRole {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3049,6 +3105,35 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepBasic_RWDerivedUnit;
+class RWStepBasic_RWDerivedUnit {
+	public:
+		%feature("autodoc", "1");
+		RWStepBasic_RWDerivedUnit();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_DerivedUnit &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_DerivedUnit &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepBasic_DerivedUnit &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepBasic_RWDerivedUnit::~RWStepBasic_RWDerivedUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepBasic_RWDerivedUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3169,33 +3254,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
-class RWStepBasic_RWSiUnitAndAreaUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWSiUnitAndAreaUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_SiUnitAndAreaUnit &ent) const;
-
-};
-%feature("shadow") RWStepBasic_RWSiUnitAndAreaUnit::~RWStepBasic_RWSiUnitAndAreaUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWSiUnitAndAreaUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWDocumentUsageConstraint;
 class RWStepBasic_RWDocumentUsageConstraint {
 	public:
@@ -3252,35 +3310,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepBasic_RWGroupAssignment;
-class RWStepBasic_RWGroupAssignment {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWGroupAssignment();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_GroupAssignment &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_GroupAssignment &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_GroupAssignment &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWGroupAssignment::~RWStepBasic_RWGroupAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWGroupAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepBasic_RWActionRequestSolution;
 class RWStepBasic_RWActionRequestSolution {
 	public:
@@ -3304,35 +3333,6 @@ def __del__(self):
 %}
 
 %extend RWStepBasic_RWActionRequestSolution {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
-class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
-	public:
-		%feature("autodoc", "1");
-		RWStepBasic_RWConversionBasedUnitAndAreaUnit();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepBasic_ConversionBasedUnitAndAreaUnit &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepBasic_RWConversionBasedUnitAndAreaUnit::~RWStepBasic_RWConversionBasedUnitAndAreaUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 	void _kill_pointed() {
 		delete $self;
 	}

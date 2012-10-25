@@ -355,7 +355,7 @@ class GccInt_Bisec : public MMgt_TShared {
 };
 %extend GccInt_Bisec {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_Bisec::~GccInt_Bisec %{
@@ -374,50 +374,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor GccInt_BHyper;
-class GccInt_BHyper : public GccInt_Bisec {
-	public:
-		%feature("autodoc", "1");
-		GccInt_BHyper(const gp_Hypr2d Hyper);
-
-};
-%extend GccInt_BHyper {
-	Handle_GccInt_BHyper GetHandle() {
-	return *(Handle_GccInt_BHyper*) &$self;
-	}
-};
-%extend GccInt_BHyper {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") GccInt_BHyper::~GccInt_BHyper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GccInt_BHyper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GccInt_BParab;
 class GccInt_BParab : public GccInt_Bisec {
 	public:
 		%feature("autodoc", "1");
 		GccInt_BParab(const gp_Parab2d Parab);
-		%feature("autodoc", "1");
-		virtual		gp_Parab2d Parabola() const;
-		%feature("autodoc", "1");
-		virtual		GccInt_IType ArcType() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend GccInt_BParab {
@@ -427,7 +388,7 @@ class GccInt_BParab : public GccInt_Bisec {
 };
 %extend GccInt_BParab {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BParab::~GccInt_BParab %{
@@ -466,7 +427,7 @@ class GccInt_BCirc : public GccInt_Bisec {
 };
 %extend GccInt_BCirc {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BCirc::~GccInt_BCirc %{
@@ -505,7 +466,7 @@ class GccInt_BElips : public GccInt_Bisec {
 };
 %extend GccInt_BElips {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BElips::~GccInt_BElips %{
@@ -544,7 +505,7 @@ class GccInt_BPoint : public GccInt_Bisec {
 };
 %extend GccInt_BPoint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BPoint::~GccInt_BPoint %{
@@ -583,7 +544,7 @@ class GccInt_BLine : public GccInt_Bisec {
 };
 %extend GccInt_BLine {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GccInt_BLine::~GccInt_BLine %{
@@ -596,6 +557,45 @@ def __del__(self):
 %}
 
 %extend GccInt_BLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GccInt_BHyper;
+class GccInt_BHyper : public GccInt_Bisec {
+	public:
+		%feature("autodoc", "1");
+		GccInt_BHyper(const gp_Hypr2d Hyper);
+		%feature("autodoc", "1");
+		virtual		gp_Hypr2d Hyperbola() const;
+		%feature("autodoc", "1");
+		virtual		GccInt_IType ArcType() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GccInt_BHyper {
+	Handle_GccInt_BHyper GetHandle() {
+	return *(Handle_GccInt_BHyper*) &$self;
+	}
+};
+%extend GccInt_BHyper {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GccInt_BHyper::~GccInt_BHyper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GccInt_BHyper {
 	void _kill_pointed() {
 		delete $self;
 	}

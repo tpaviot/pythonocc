@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Viewer_View;
-class Handle_Viewer_View : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Viewer_View();
-		%feature("autodoc", "1");
-		Handle_Viewer_View(const Handle_Viewer_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Viewer_View(const Viewer_View *anItem);
-		%feature("autodoc", "1");
-		Handle_Viewer_View & operator=(const Handle_Viewer_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Viewer_View & operator=(const Viewer_View *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Viewer_View DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Viewer_View {
-	Viewer_View* GetObject() {
-	return (Viewer_View*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Viewer_View::~Handle_Viewer_View %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Viewer_View {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Viewer_Viewer;
 class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 	public:
@@ -166,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Viewer_View;
+class Handle_Viewer_View : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Viewer_View();
+		%feature("autodoc", "1");
+		Handle_Viewer_View(const Handle_Viewer_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Viewer_View(const Viewer_View *anItem);
+		%feature("autodoc", "1");
+		Handle_Viewer_View & operator=(const Handle_Viewer_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Viewer_View & operator=(const Viewer_View *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Viewer_View DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Viewer_View {
+	Viewer_View* GetObject() {
+	return (Viewer_View*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Viewer_View::~Handle_Viewer_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Viewer_View {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Viewer_View;
 class Viewer_View : public MMgt_TShared {
 	public:
@@ -188,7 +188,7 @@ class Viewer_View : public MMgt_TShared {
 };
 %extend Viewer_View {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_View::~Viewer_View %{
@@ -229,7 +229,7 @@ class Viewer_Viewer : public MMgt_TShared {
 };
 %extend Viewer_Viewer {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_Viewer::~Viewer_Viewer %{
@@ -272,7 +272,7 @@ class Viewer_BadValue : public Standard_OutOfRange {
 };
 %extend Viewer_BadValue {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_BadValue::~Viewer_BadValue %{

@@ -58,13 +58,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_TColgp_HSequenceOfPnt.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<Handle_TColgp_HSequenceOfPnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>
@@ -79,19 +79,19 @@ $HeaderURL$
 #include<gp_Hypr.hxx>
 #include<gp_Cylinder.hxx>
 #include<gp_Sphere.hxx>
+#include<gp_Torus.hxx>
 #include<ProjLib.hxx>
 #include<gp_Pln.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Cone.hxx>
-#include<gp_Torus.hxx>
-#include<gp_Ax3.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Vec.hxx>
-#include<Handle_Geom_BezierCurve.hxx>
 #include<Handle_Geom_BSplineCurve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<Adaptor3d_Surface.hxx>
+#include<gp_Ax3.hxx>
+#include<gp_Dir.hxx>
+#include<gp_Vec.hxx>
+#include<Handle_Geom_BezierCurve.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
 %}

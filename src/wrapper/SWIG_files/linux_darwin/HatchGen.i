@@ -50,19 +50,19 @@ $HeaderURL$
 %include HatchGen_headers.i
 
 
+enum HatchGen_IntersectionType {
+	HatchGen_TRUE,
+	HatchGen_TOUCH,
+	HatchGen_TANGENT,
+	HatchGen_UNDETERMINED,
+	};
+
 enum HatchGen_ErrorStatus {
 	HatchGen_NoProblem,
 	HatchGen_TrimFailure,
 	HatchGen_TransitionFailure,
 	HatchGen_IncoherentParity,
 	HatchGen_IncompatibleStates,
-	};
-
-enum HatchGen_IntersectionType {
-	HatchGen_TRUE,
-	HatchGen_TOUCH,
-	HatchGen_TANGENT,
-	HatchGen_UNDETERMINED,
 	};
 
 
@@ -175,92 +175,6 @@ def __del__(self):
 %}
 
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_IntersectionPoint;
-class HatchGen_IntersectionPoint {
-	public:
-		%feature("autodoc", "1");
-		void SetIndex(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		void SetParameter(const Standard_Real Parameter);
-		%feature("autodoc", "1");
-		Standard_Real Parameter() const;
-		%feature("autodoc", "1");
-		void SetPosition(const TopAbs_Orientation Position);
-		%feature("autodoc", "1");
-		TopAbs_Orientation Position() const;
-		%feature("autodoc", "1");
-		void SetStateBefore(const TopAbs_State State);
-		%feature("autodoc", "1");
-		TopAbs_State StateBefore() const;
-		%feature("autodoc", "1");
-		void SetStateAfter(const TopAbs_State State);
-		%feature("autodoc", "1");
-		TopAbs_State StateAfter() const;
-		%feature("autodoc", "1");
-		void SetSegmentBeginning(const Standard_Boolean State=1);
-		%feature("autodoc", "1");
-		Standard_Boolean SegmentBeginning() const;
-		%feature("autodoc", "1");
-		void SetSegmentEnd(const Standard_Boolean State=1);
-		%feature("autodoc", "1");
-		Standard_Boolean SegmentEnd() const;
-		%feature("autodoc", "1");
-		virtual		void Dump(const Standard_Integer Index=0) const;
-
-};
-%feature("shadow") HatchGen_IntersectionPoint::~HatchGen_IntersectionPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_IntersectionPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HatchGen_PointOnElement;
-class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
-	public:
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement();
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement(const HatchGen_PointOnElement &Point);
-		%feature("autodoc", "1");
-		HatchGen_PointOnElement(const IntRes2d_IntersectionPoint &Point);
-		%feature("autodoc", "1");
-		void SetIntersectionType(const HatchGen_IntersectionType Type);
-		%feature("autodoc", "1");
-		HatchGen_IntersectionType IntersectionType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIdentical(const HatchGen_PointOnElement &Point, const Standard_Real Confusion) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDifferent(const HatchGen_PointOnElement &Point, const Standard_Real Confusion) const;
-
-};
-%feature("shadow") HatchGen_PointOnElement::~HatchGen_PointOnElement %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HatchGen_PointOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -381,6 +295,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor HatchGen_IntersectionPoint;
+class HatchGen_IntersectionPoint {
+	public:
+		%feature("autodoc", "1");
+		void SetIndex(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		void SetParameter(const Standard_Real Parameter);
+		%feature("autodoc", "1");
+		Standard_Real Parameter() const;
+		%feature("autodoc", "1");
+		void SetPosition(const TopAbs_Orientation Position);
+		%feature("autodoc", "1");
+		TopAbs_Orientation Position() const;
+		%feature("autodoc", "1");
+		void SetStateBefore(const TopAbs_State State);
+		%feature("autodoc", "1");
+		TopAbs_State StateBefore() const;
+		%feature("autodoc", "1");
+		void SetStateAfter(const TopAbs_State State);
+		%feature("autodoc", "1");
+		TopAbs_State StateAfter() const;
+		%feature("autodoc", "1");
+		void SetSegmentBeginning(const Standard_Boolean State=1);
+		%feature("autodoc", "1");
+		Standard_Boolean SegmentBeginning() const;
+		%feature("autodoc", "1");
+		void SetSegmentEnd(const Standard_Boolean State=1);
+		%feature("autodoc", "1");
+		Standard_Boolean SegmentEnd() const;
+		%feature("autodoc", "1");
+		virtual		void Dump(const Standard_Integer Index=0) const;
+
+};
+%feature("shadow") HatchGen_IntersectionPoint::~HatchGen_IntersectionPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_IntersectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HatchGen_PointOnHatching;
 class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 	public:
@@ -408,8 +373,6 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 		Standard_Boolean IsEqual(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsGreater(const HatchGen_PointOnHatching &Point, const Standard_Real Confusion) const;
-		%feature("autodoc", "1");
-		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
 %feature("shadow") HatchGen_PointOnHatching::~HatchGen_PointOnHatching %{
@@ -422,6 +385,43 @@ def __del__(self):
 %}
 
 %extend HatchGen_PointOnHatching {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
+class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		HatchGen_SequenceNodeOfPointsOnElement(const HatchGen_PointOnElement &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		HatchGen_PointOnElement & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	Handle_HatchGen_SequenceNodeOfPointsOnElement GetHandle() {
+	return *(Handle_HatchGen_SequenceNodeOfPointsOnElement*) &$self;
+	}
+};
+%extend HatchGen_SequenceNodeOfPointsOnElement {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HatchGen_SequenceNodeOfPointsOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -446,7 +446,7 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfDomains {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HatchGen_SequenceNodeOfDomains::~HatchGen_SequenceNodeOfDomains %{
@@ -483,7 +483,7 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfPointsOnHatching {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HatchGen_SequenceNodeOfPointsOnHatching::~HatchGen_SequenceNodeOfPointsOnHatching %{
@@ -502,28 +502,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
-class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
+%nodefaultctor HatchGen_PointOnElement;
+class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
 		%feature("autodoc", "1");
-		HatchGen_SequenceNodeOfPointsOnElement(const HatchGen_PointOnElement &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		HatchGen_PointOnElement();
 		%feature("autodoc", "1");
-		HatchGen_PointOnElement & Value() const;
+		HatchGen_PointOnElement(const HatchGen_PointOnElement &Point);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		HatchGen_PointOnElement(const IntRes2d_IntersectionPoint &Point);
+		%feature("autodoc", "1");
+		void SetIntersectionType(const HatchGen_IntersectionType Type);
+		%feature("autodoc", "1");
+		HatchGen_IntersectionType IntersectionType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIdentical(const HatchGen_PointOnElement &Point, const Standard_Real Confusion) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDifferent(const HatchGen_PointOnElement &Point, const Standard_Real Confusion) const;
+		%feature("autodoc", "1");
+		virtual		void Dump(const Standard_Integer Index=0) const;
 
 };
-%extend HatchGen_SequenceNodeOfPointsOnElement {
-	Handle_HatchGen_SequenceNodeOfPointsOnElement GetHandle() {
-	return *(Handle_HatchGen_SequenceNodeOfPointsOnElement*) &$self;
-	}
-};
-%extend HatchGen_SequenceNodeOfPointsOnElement {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") HatchGen_SequenceNodeOfPointsOnElement::~HatchGen_SequenceNodeOfPointsOnElement %{
+%feature("shadow") HatchGen_PointOnElement::~HatchGen_PointOnElement %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -532,7 +532,7 @@ def __del__(self):
 		pass
 %}
 
-%extend HatchGen_SequenceNodeOfPointsOnElement {
+%extend HatchGen_PointOnElement {
 	void _kill_pointed() {
 		delete $self;
 	}

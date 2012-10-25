@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_STEPSelections_AssemblyComponent;
-class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent(const Handle_STEPSelections_AssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent(const STEPSelections_AssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & operator=(const Handle_STEPSelections_AssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & operator=(const STEPSelections_AssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPSelections_AssemblyComponent DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_AssemblyComponent {
-	STEPSelections_AssemblyComponent* GetObject() {
-	return (STEPSelections_AssemblyComponent*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPSelections_AssemblyComponent::~Handle_STEPSelections_AssemblyComponent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPSelections_AssemblyComponent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_STEPSelections_AssemblyLink;
 class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	public:
@@ -166,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
-class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent* GetObject() {
-	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_STEPSelections_SelectGSCurves;
 class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplore {
 	public:
@@ -236,44 +160,6 @@ def __del__(self):
 %}
 
 %extend Handle_STEPSelections_SelectGSCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
-class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPSelections_HSequenceOfAssemblyLink DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
-	STEPSelections_HSequenceOfAssemblyLink* GetObject() {
-	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPSelections_HSequenceOfAssemblyLink::~Handle_STEPSelections_HSequenceOfAssemblyLink %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -318,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_STEPSelections_SelectInstances;
+class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectInstances();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectInstances(const Handle_STEPSelections_SelectInstances &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectInstances(const STEPSelections_SelectInstances *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectInstances & operator=(const Handle_STEPSelections_SelectInstances &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_SelectInstances & operator=(const STEPSelections_SelectInstances *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPSelections_SelectInstances DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_SelectInstances {
+	STEPSelections_SelectInstances* GetObject() {
+	return (STEPSelections_SelectInstances*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPSelections_SelectInstances::~Handle_STEPSelections_SelectInstances %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPSelections_SelectInstances {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_STEPSelections_SelectAssembly;
 class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplore {
 	public:
@@ -350,6 +274,82 @@ def __del__(self):
 %}
 
 %extend Handle_STEPSelections_SelectAssembly {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
+class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink(const STEPSelections_HSequenceOfAssemblyLink *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const Handle_STEPSelections_HSequenceOfAssemblyLink &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink & operator=(const STEPSelections_HSequenceOfAssemblyLink *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPSelections_HSequenceOfAssemblyLink DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	STEPSelections_HSequenceOfAssemblyLink* GetObject() {
+	return (STEPSelections_HSequenceOfAssemblyLink*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPSelections_HSequenceOfAssemblyLink::~Handle_STEPSelections_HSequenceOfAssemblyLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPSelections_HSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_STEPSelections_AssemblyComponent;
+class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent(const Handle_STEPSelections_AssemblyComponent &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent(const STEPSelections_AssemblyComponent *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & operator=(const Handle_STEPSelections_AssemblyComponent &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & operator=(const STEPSelections_AssemblyComponent *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPSelections_AssemblyComponent DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPSelections_AssemblyComponent {
+	STEPSelections_AssemblyComponent* GetObject() {
+	return (STEPSelections_AssemblyComponent*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPSelections_AssemblyComponent::~Handle_STEPSelections_AssemblyComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPSelections_AssemblyComponent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -432,29 +432,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_STEPSelections_SelectInstances;
-class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplore {
+%nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
+class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances();
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent();
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances(const Handle_STEPSelections_SelectInstances &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances(const STEPSelections_SelectInstances *anItem);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances & operator=(const Handle_STEPSelections_SelectInstances &aHandle);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent &aHandle);
 		%feature("autodoc", "1");
-		Handle_STEPSelections_SelectInstances & operator=(const STEPSelections_SelectInstances *anItem);
+		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent & operator=(const STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent *anItem);
 		%feature("autodoc", "1");
-		static		Handle_STEPSelections_SelectInstances DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_STEPSelections_SelectInstances {
-	STEPSelections_SelectInstances* GetObject() {
-	return (STEPSelections_SelectInstances*)$self->Access();
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent* GetObject() {
+	return (STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*)$self->Access();
 	}
 };
-%feature("shadow") Handle_STEPSelections_SelectInstances::~Handle_STEPSelections_SelectInstances %{
+%feature("shadow") Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -463,371 +463,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_STEPSelections_SelectInstances {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
-class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_HSequenceOfAssemblyLink();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
-		%feature("autodoc", "1");
-		const Handle_STEPSelections_AssemblyLink & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyLink & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const STEPSelections_SequenceOfAssemblyLink & Sequence() const;
-		%feature("autodoc", "1");
-		STEPSelections_SequenceOfAssemblyLink & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_HSequenceOfAssemblyLink {
-	Handle_STEPSelections_HSequenceOfAssemblyLink GetHandle() {
-	return *(Handle_STEPSelections_HSequenceOfAssemblyLink*) &$self;
-	}
-};
-%extend STEPSelections_HSequenceOfAssemblyLink {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_HSequenceOfAssemblyLink {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_AssemblyComponent;
-class STEPSelections_AssemblyComponent : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_AssemblyComponent();
-		%feature("autodoc", "1");
-		STEPSelections_AssemblyComponent(const Handle_StepShape_ShapeDefinitionRepresentation &sdr, const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation GetSDR() const;
-		%feature("autodoc", "1");
-		Handle_STEPSelections_HSequenceOfAssemblyLink GetList() const;
-		%feature("autodoc", "1");
-		void SetSDR(const Handle_StepShape_ShapeDefinitionRepresentation &sdr);
-		%feature("autodoc", "1");
-		void SetList(const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_AssemblyComponent {
-	Handle_STEPSelections_AssemblyComponent GetHandle() {
-	return *(Handle_STEPSelections_AssemblyComponent*) &$self;
-	}
-};
-%extend STEPSelections_AssemblyComponent {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_AssemblyComponent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
-class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_AssemblyLink &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyLink & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink GetHandle() {
-	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*) &$self;
-	}
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
-class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_AssemblyComponent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent GetHandle() {
-	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*) &$self;
-	}
-};
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_Counter;
-class STEPSelections_Counter {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_Counter();
-		%feature("autodoc", "1");
-		void Count(const Interface_Graph &graph, const Handle_Standard_Transient &start);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Integer NbInstancesOfFaces() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbInstancesOfShells() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbInstancesOfSolids() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbInstancesOfEdges() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbInstancesOfWires() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSourceFaces() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSourceShells() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSourceSolids() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSourceEdges() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbSourceWires() const;
-
-};
-%feature("shadow") STEPSelections_Counter::~STEPSelections_Counter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_Counter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectGSCurves;
-class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectGSCurves();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SelectGSCurves {
-	Handle_STEPSelections_SelectGSCurves GetHandle() {
-	return *(Handle_STEPSelections_SelectGSCurves*) &$self;
-	}
-};
-%extend STEPSelections_SelectGSCurves {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SelectGSCurves {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectInstances;
-class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectInstances();
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SelectInstances {
-	Handle_STEPSelections_SelectInstances GetHandle() {
-	return *(Handle_STEPSelections_SelectInstances*) &$self;
-	}
-};
-%extend STEPSelections_SelectInstances {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SelectInstances {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectFaces;
-class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectFaces();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString ExploreLabel() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SelectFaces {
-	Handle_STEPSelections_SelectFaces GetHandle() {
-	return *(Handle_STEPSelections_SelectFaces*) &$self;
-	}
-};
-%extend STEPSelections_SelectFaces {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SelectFaces {
+%extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -899,6 +535,334 @@ def __del__(self):
 };
 
 
+%nodefaultctor STEPSelections_AssemblyExplorer;
+class STEPSelections_AssemblyExplorer {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_AssemblyExplorer(const Interface_Graph &G);
+		%feature("autodoc", "1");
+		void Init(const Interface_Graph &G);
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDefinitionRepresentation FindSDRWithProduct(const Handle_StepBasic_ProductDefinition &product) const;
+		%feature("autodoc", "1");
+		void FillListWithGraph(const Handle_STEPSelections_AssemblyComponent &cmp);
+		%feature("autodoc", "1");
+		Handle_Standard_Transient FindItemWithNAUO(const Handle_StepRepr_NextAssemblyUsageOccurrence &nauo) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbAssemblies() const;
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent Root(const Standard_Integer rank=1) const;
+
+};
+%feature("shadow") STEPSelections_AssemblyExplorer::~STEPSelections_AssemblyExplorer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_AssemblyExplorer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_AssemblyComponent;
+class STEPSelections_AssemblyComponent : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_AssemblyComponent();
+		%feature("autodoc", "1");
+		STEPSelections_AssemblyComponent(const Handle_StepShape_ShapeDefinitionRepresentation &sdr, const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
+		%feature("autodoc", "1");
+		Handle_StepShape_ShapeDefinitionRepresentation GetSDR() const;
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink GetList() const;
+		%feature("autodoc", "1");
+		void SetSDR(const Handle_StepShape_ShapeDefinitionRepresentation &sdr);
+		%feature("autodoc", "1");
+		void SetList(const Handle_STEPSelections_HSequenceOfAssemblyLink &list);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_AssemblyComponent {
+	Handle_STEPSelections_AssemblyComponent GetHandle() {
+	return *(Handle_STEPSelections_AssemblyComponent*) &$self;
+	}
+};
+%extend STEPSelections_AssemblyComponent {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_AssemblyComponent::~STEPSelections_AssemblyComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_AssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SelectGSCurves;
+class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectGSCurves();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectGSCurves {
+	Handle_STEPSelections_SelectGSCurves GetHandle() {
+	return *(Handle_STEPSelections_SelectGSCurves*) &$self;
+	}
+};
+%extend STEPSelections_SelectGSCurves {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SelectGSCurves::~STEPSelections_SelectGSCurves %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SelectGSCurves {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SelectForTransfer;
+class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectForTransfer();
+		%feature("autodoc", "1");
+		STEPSelections_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectForTransfer {
+	Handle_STEPSelections_SelectForTransfer GetHandle() {
+	return *(Handle_STEPSelections_SelectForTransfer*) &$self;
+	}
+};
+%extend STEPSelections_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SelectForTransfer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
+class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent(const Handle_STEPSelections_AssemblyComponent &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyComponent & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent GetHandle() {
+	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent*) &$self;
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent::~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
+class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SequenceNodeOfSequenceOfAssemblyLink(const Handle_STEPSelections_AssemblyLink &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyLink & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink GetHandle() {
+	return *(Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink*) &$self;
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SequenceNodeOfSequenceOfAssemblyLink::~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_Counter;
+class STEPSelections_Counter {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_Counter();
+		%feature("autodoc", "1");
+		void Count(const Interface_Graph &graph, const Handle_Standard_Transient &start);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer NbInstancesOfFaces() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbInstancesOfShells() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbInstancesOfSolids() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbInstancesOfEdges() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbInstancesOfWires() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSourceFaces() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSourceShells() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSourceSolids() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSourceEdges() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbSourceWires() const;
+
+};
+%feature("shadow") STEPSelections_Counter::~STEPSelections_Counter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_Counter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SelectInstances;
+class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectInstances();
+		%feature("autodoc", "1");
+		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectInstances {
+	Handle_STEPSelections_SelectInstances GetHandle() {
+	return *(Handle_STEPSelections_SelectInstances*) &$self;
+	}
+};
+%extend STEPSelections_SelectInstances {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SelectInstances::~STEPSelections_SelectInstances %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SelectInstances {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor STEPSelections_SelectDerived;
 class STEPSelections_SelectDerived : public StepSelect_StepType {
 	public:
@@ -917,7 +881,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 };
 %extend STEPSelections_SelectDerived {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectDerived::~STEPSelections_SelectDerived %{
@@ -930,6 +894,85 @@ def __del__(self):
 %}
 
 %extend STEPSelections_SelectDerived {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
+class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_HSequenceOfAssemblyLink();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_STEPSelections_AssemblyLink &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_STEPSelections_AssemblyLink &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_STEPSelections_HSequenceOfAssemblyLink &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_STEPSelections_AssemblyLink &anItem);
+		%feature("autodoc", "1");
+		const Handle_STEPSelections_AssemblyLink & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_STEPSelections_AssemblyLink & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const STEPSelections_SequenceOfAssemblyLink & Sequence() const;
+		%feature("autodoc", "1");
+		STEPSelections_SequenceOfAssemblyLink & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_STEPSelections_HSequenceOfAssemblyLink ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_HSequenceOfAssemblyLink {
+	Handle_STEPSelections_HSequenceOfAssemblyLink GetHandle() {
+	return *(Handle_STEPSelections_HSequenceOfAssemblyLink*) &$self;
+	}
+};
+%extend STEPSelections_HSequenceOfAssemblyLink {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_HSequenceOfAssemblyLink::~STEPSelections_HSequenceOfAssemblyLink %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_HSequenceOfAssemblyLink {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1021,7 +1064,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectAssembly {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPSelections_SelectAssembly::~STEPSelections_SelectAssembly %{
@@ -1034,88 +1077,6 @@ def __del__(self):
 %}
 
 %extend STEPSelections_SelectAssembly {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_SelectForTransfer;
-class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_SelectForTransfer();
-		%feature("autodoc", "1");
-		STEPSelections_SelectForTransfer(const Handle_XSControl_TransferReader &TR);
-		%feature("autodoc", "1");
-		virtual		Interface_EntityIterator RootResult(const Interface_Graph &G) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend STEPSelections_SelectForTransfer {
-	Handle_STEPSelections_SelectForTransfer GetHandle() {
-	return *(Handle_STEPSelections_SelectForTransfer*) &$self;
-	}
-};
-%extend STEPSelections_SelectForTransfer {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") STEPSelections_SelectForTransfer::~STEPSelections_SelectForTransfer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_SelectForTransfer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor STEPSelections_AssemblyExplorer;
-class STEPSelections_AssemblyExplorer {
-	public:
-		%feature("autodoc", "1");
-		STEPSelections_AssemblyExplorer(const Interface_Graph &G);
-		%feature("autodoc", "1");
-		void Init(const Interface_Graph &G);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		Handle_StepShape_ShapeDefinitionRepresentation FindSDRWithProduct(const Handle_StepBasic_ProductDefinition &product) const;
-		%feature("autodoc", "1");
-		void FillListWithGraph(const Handle_STEPSelections_AssemblyComponent &cmp);
-		%feature("autodoc", "1");
-		Handle_Standard_Transient FindItemWithNAUO(const Handle_StepRepr_NextAssemblyUsageOccurrence &nauo) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbAssemblies() const;
-		%feature("autodoc", "1");
-		Handle_STEPSelections_AssemblyComponent Root(const Standard_Integer rank=1) const;
-
-};
-%feature("shadow") STEPSelections_AssemblyExplorer::~STEPSelections_AssemblyExplorer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend STEPSelections_AssemblyExplorer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1152,7 +1113,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyLink {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPSelections_AssemblyLink::~STEPSelections_AssemblyLink %{
@@ -1165,6 +1126,45 @@ def __del__(self):
 %}
 
 %extend STEPSelections_AssemblyLink {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor STEPSelections_SelectFaces;
+class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
+	public:
+		%feature("autodoc", "1");
+		STEPSelections_SelectFaces();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Explore(const Standard_Integer level, const Handle_Standard_Transient &ent, const Interface_Graph &G, Interface_EntityIterator & explored) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString ExploreLabel() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend STEPSelections_SelectFaces {
+	Handle_STEPSelections_SelectFaces GetHandle() {
+	return *(Handle_STEPSelections_SelectFaces*) &$self;
+	}
+};
+%extend STEPSelections_SelectFaces {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") STEPSelections_SelectFaces::~STEPSelections_SelectFaces %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend STEPSelections_SelectFaces {
 	void _kill_pointed() {
 		delete $self;
 	}

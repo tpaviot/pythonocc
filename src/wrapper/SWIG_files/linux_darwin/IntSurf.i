@@ -293,6 +293,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
+class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		IntSurf_PntOn2S & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntSurf_ListNodeOfListOfPntOn2S::~IntSurf_ListNodeOfListOfPntOn2S %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_ListNodeOfListOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntSurf;
 class IntSurf {
 	public:
@@ -312,43 +349,6 @@ def __del__(self):
 %}
 
 %extend IntSurf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
-class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_SequenceNodeOfSequenceOfPathPoint(const IntSurf_PathPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntSurf_PathPoint & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
-	Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint GetHandle() {
-	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint*) &$self;
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPathPoint::~IntSurf_SequenceNodeOfSequenceOfPathPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -390,169 +390,6 @@ def __del__(self):
 %}
 
 %extend IntSurf_Transition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_InteriorPointTool;
-class IntSurf_InteriorPointTool {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_InteriorPointTool();
-		%feature("autodoc", "1");
-		static		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
-		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
-
-		static		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
-		%feature("autodoc", "1");
-		static		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
-
-};
-%feature("shadow") IntSurf_InteriorPointTool::~IntSurf_InteriorPointTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_InteriorPointTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_SequenceOfPathPoint;
-class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_SequenceOfPathPoint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const IntSurf_SequenceOfPathPoint & Assign(const IntSurf_SequenceOfPathPoint &Other);
-		%feature("autodoc", "1");
-		const IntSurf_SequenceOfPathPoint & operator=(const IntSurf_SequenceOfPathPoint &Other);
-		%feature("autodoc", "1");
-		void Append(const IntSurf_PathPoint &T);
-		%feature("autodoc", "1");
-		void Append(IntSurf_SequenceOfPathPoint & S);
-		%feature("autodoc", "1");
-		void Prepend(const IntSurf_PathPoint &T);
-		%feature("autodoc", "1");
-		void Prepend(IntSurf_SequenceOfPathPoint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const IntSurf_PathPoint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const IntSurf_PathPoint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & First() const;
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const IntSurf_PathPoint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const IntSurf_PathPoint &I);
-		%feature("autodoc", "1");
-		IntSurf_PathPoint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		IntSurf_PathPoint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") IntSurf_SequenceOfPathPoint::~IntSurf_SequenceOfPathPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_SequenceOfPathPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_Couple;
-class IntSurf_Couple {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_Couple();
-		%feature("autodoc", "1");
-		IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
-		%feature("autodoc", "1");
-		Standard_Integer First() const;
-		%feature("autodoc", "1");
-		Standard_Integer Second() const;
-
-};
-%feature("shadow") IntSurf_Couple::~IntSurf_Couple %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_Couple {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
-class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -786,28 +623,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
-class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
+%nodefaultctor IntSurf_Couple;
+class IntSurf_Couple {
 	public:
 		%feature("autodoc", "1");
-		IntSurf_SequenceNodeOfSequenceOfCouple(const IntSurf_Couple &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		IntSurf_Couple();
 		%feature("autodoc", "1");
-		IntSurf_Couple & Value() const;
+		IntSurf_Couple(const Standard_Integer Index1, const Standard_Integer Index2);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Integer First() const;
+		%feature("autodoc", "1");
+		Standard_Integer Second() const;
 
 };
-%extend IntSurf_SequenceNodeOfSequenceOfCouple {
-	Handle_IntSurf_SequenceNodeOfSequenceOfCouple GetHandle() {
-	return *(Handle_IntSurf_SequenceNodeOfSequenceOfCouple*) &$self;
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfCouple {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IntSurf_SequenceNodeOfSequenceOfCouple::~IntSurf_SequenceNodeOfSequenceOfCouple %{
+%feature("shadow") IntSurf_Couple::~IntSurf_Couple %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -816,7 +645,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntSurf_SequenceNodeOfSequenceOfCouple {
+%extend IntSurf_Couple {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -888,6 +717,84 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntSurf_PathPointTool;
+class IntSurf_PathPointTool {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_PathPointTool();
+		%feature("autodoc", "1");
+		static		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
+		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
+
+		static		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsTangent(const IntSurf_PathPoint &PStart);
+		%feature("autodoc", "1");
+		static		gp_Vec Direction3d(const IntSurf_PathPoint &PStart);
+		%feature("autodoc", "1");
+		static		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
+		%feature("autodoc", "1");
+		static		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
+		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult) -> [Standard_Real, Standard_Real]");
+
+		static		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") IntSurf_PathPointTool::~IntSurf_PathPointTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_PathPointTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
+class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_SequenceNodeOfSequenceOfPathPoint(const IntSurf_PathPoint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntSurf_PathPoint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint GetHandle() {
+	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPathPoint::~IntSurf_SequenceNodeOfSequenceOfPathPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntSurf_InteriorPoint;
 class IntSurf_InteriorPoint {
 	public:
@@ -946,7 +853,7 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 };
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
@@ -959,6 +866,43 @@ def __del__(self):
 %}
 
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
+class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_SequenceNodeOfSequenceOfCouple(const IntSurf_Couple &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntSurf_Couple & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_SequenceNodeOfSequenceOfCouple {
+	Handle_IntSurf_SequenceNodeOfSequenceOfCouple GetHandle() {
+	return *(Handle_IntSurf_SequenceNodeOfSequenceOfCouple*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfCouple {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfCouple::~IntSurf_SequenceNodeOfSequenceOfCouple %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_SequenceNodeOfSequenceOfCouple {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1030,6 +974,38 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntSurf_InteriorPointTool;
+class IntSurf_InteriorPointTool {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_InteriorPointTool();
+		%feature("autodoc", "1");
+		static		gp_Pnt Value3d(const IntSurf_InteriorPoint &PStart);
+		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
+
+		static		void Value2d(const IntSurf_InteriorPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		static		gp_Vec Direction3d(const IntSurf_InteriorPoint &PStart);
+		%feature("autodoc", "1");
+		static		gp_Dir2d Direction2d(const IntSurf_InteriorPoint &PStart);
+
+};
+%feature("shadow") IntSurf_InteriorPointTool::~IntSurf_InteriorPointTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_InteriorPointTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntSurf_LineOn2S;
 class IntSurf_LineOn2S : public MMgt_TShared {
 	public:
@@ -1066,7 +1042,7 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 };
 %extend IntSurf_LineOn2S {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_LineOn2S::~IntSurf_LineOn2S %{
@@ -1079,43 +1055,6 @@ def __del__(self):
 %}
 
 %extend IntSurf_LineOn2S {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
-class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_ListNodeOfListOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Handle_IntSurf_ListNodeOfListOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_ListNodeOfListOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_ListNodeOfListOfPntOn2S {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") IntSurf_ListNodeOfListOfPntOn2S::~IntSurf_ListNodeOfListOfPntOn2S %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_ListNodeOfListOfPntOn2S {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1155,32 +1094,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntSurf_PathPointTool;
-class IntSurf_PathPointTool {
+%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
+class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		IntSurf_PathPointTool();
+		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		static		gp_Pnt Value3d(const IntSurf_PathPoint &PStart);
-		%feature("autodoc","Value2d(const PStart) -> [Standard_Real, Standard_Real]");
-
-		static		void Value2d(const IntSurf_PathPoint &PStart, Standard_Real &OutValue, Standard_Real &OutValue);
+		IntSurf_PntOn2S & Value() const;
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsPassingPnt(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsTangent(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
-		static		gp_Vec Direction3d(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
-		static		gp_Dir2d Direction2d(const IntSurf_PathPoint &PStart);
-		%feature("autodoc", "1");
-		static		Standard_Integer Multiplicity(const IntSurf_PathPoint &PStart);
-		%feature("autodoc","Parameters(const PStart, Standard_Integer Mult) -> [Standard_Real, Standard_Real]");
-
-		static		void Parameters(const IntSurf_PathPoint &PStart, const Standard_Integer Mult, Standard_Real &OutValue, Standard_Real &OutValue);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") IntSurf_PathPointTool::~IntSurf_PathPointTool %{
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1189,7 +1124,7 @@ def __del__(self):
 		pass
 %}
 
-%extend IntSurf_PathPointTool {
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1222,6 +1157,71 @@ def __del__(self):
 %}
 
 %extend IntSurf_QuadricTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntSurf_SequenceOfPathPoint;
+class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_SequenceOfPathPoint();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const IntSurf_SequenceOfPathPoint & Assign(const IntSurf_SequenceOfPathPoint &Other);
+		%feature("autodoc", "1");
+		const IntSurf_SequenceOfPathPoint & operator=(const IntSurf_SequenceOfPathPoint &Other);
+		%feature("autodoc", "1");
+		void Append(const IntSurf_PathPoint &T);
+		%feature("autodoc", "1");
+		void Append(IntSurf_SequenceOfPathPoint & S);
+		%feature("autodoc", "1");
+		void Prepend(const IntSurf_PathPoint &T);
+		%feature("autodoc", "1");
+		void Prepend(IntSurf_SequenceOfPathPoint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const IntSurf_PathPoint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const IntSurf_PathPoint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & First() const;
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, IntSurf_SequenceOfPathPoint & S);
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const IntSurf_PathPoint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const IntSurf_PathPoint &I);
+		%feature("autodoc", "1");
+		IntSurf_PathPoint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		IntSurf_PathPoint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") IntSurf_SequenceOfPathPoint::~IntSurf_SequenceOfPathPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_SequenceOfPathPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

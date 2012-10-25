@@ -135,44 +135,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Draft_Modification;
-class Handle_Draft_Modification : public Handle_BRepTools_Modification {
-	public:
-		%feature("autodoc", "1");
-		Handle_Draft_Modification();
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
-		%feature("autodoc", "1");
-		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Draft_Modification DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Draft_Modification {
-	Draft_Modification* GetObject() {
-	return (Draft_Modification*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Draft_Modification {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
 	public:
@@ -205,6 +167,44 @@ def __del__(self):
 %}
 
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Draft_Modification;
+class Handle_Draft_Modification : public Handle_BRepTools_Modification {
+	public:
+		%feature("autodoc", "1");
+		Handle_Draft_Modification();
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Handle_Draft_Modification &aHandle);
+		%feature("autodoc", "1");
+		Handle_Draft_Modification & operator=(const Draft_Modification *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Draft_Modification DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Draft_Modification {
+	Draft_Modification* GetObject() {
+	return (Draft_Modification*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Draft_Modification::~Handle_Draft_Modification %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Draft_Modification {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -463,7 +463,7 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %extend Draft_Modification {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Draft_Modification::~Draft_Modification %{
@@ -502,7 +502,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfVertexVertexInfo::~Draft_DataMapNodeOfDataMapOfVertexVertexInfo %{
@@ -541,7 +541,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
@@ -693,7 +693,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Draft_DataMapNodeOfDataMapOfFaceFaceInfo::~Draft_DataMapNodeOfDataMapOfFaceFaceInfo %{

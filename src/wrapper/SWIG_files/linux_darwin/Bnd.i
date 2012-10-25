@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Bnd_HArray1OfSphere;
-class Handle_Bnd_HArray1OfSphere : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfSphere();
-		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfSphere(const Handle_Bnd_HArray1OfSphere &aHandle);
-		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfSphere(const Bnd_HArray1OfSphere *anItem);
-		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfSphere & operator=(const Handle_Bnd_HArray1OfSphere &aHandle);
-		%feature("autodoc", "1");
-		Handle_Bnd_HArray1OfSphere & operator=(const Bnd_HArray1OfSphere *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Bnd_HArray1OfSphere DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Bnd_HArray1OfSphere {
-	Bnd_HArray1OfSphere* GetObject() {
-	return (Bnd_HArray1OfSphere*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Bnd_HArray1OfSphere::~Handle_Bnd_HArray1OfSphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Bnd_HArray1OfSphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Bnd_HArray1OfBox2d;
 class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	public:
@@ -166,6 +128,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Bnd_HArray1OfSphere;
+class Handle_Bnd_HArray1OfSphere : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfSphere();
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfSphere(const Handle_Bnd_HArray1OfSphere &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfSphere(const Bnd_HArray1OfSphere *anItem);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfSphere & operator=(const Handle_Bnd_HArray1OfSphere &aHandle);
+		%feature("autodoc", "1");
+		Handle_Bnd_HArray1OfSphere & operator=(const Bnd_HArray1OfSphere *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Bnd_HArray1OfSphere DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Bnd_HArray1OfSphere {
+	Bnd_HArray1OfSphere* GetObject() {
+	return (Bnd_HArray1OfSphere*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Bnd_HArray1OfSphere::~Handle_Bnd_HArray1OfSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Bnd_HArray1OfSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Bnd_HArray1OfBox;
 class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	public:
@@ -198,6 +198,61 @@ def __del__(self):
 %}
 
 %extend Handle_Bnd_HArray1OfBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_HArray1OfBox;
+class Bnd_HArray1OfBox : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Box &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
+		%feature("autodoc", "1");
+		const Bnd_Box & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox & Array1() const;
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Bnd_HArray1OfBox {
+	Handle_Bnd_HArray1OfBox GetHandle() {
+	return *(Handle_Bnd_HArray1OfBox*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_HArray1OfBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -271,46 +326,58 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bnd_HArray1OfSphere;
-class Bnd_HArray1OfSphere : public MMgt_TShared {
+%nodefaultctor Bnd_B2f;
+class Bnd_B2f {
 	public:
 		%feature("autodoc", "1");
-		Bnd_HArray1OfSphere(const Standard_Integer Low, const Standard_Integer Up);
+		Bnd_B2f();
 		%feature("autodoc", "1");
-		Bnd_HArray1OfSphere(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Sphere &V);
+		Bnd_B2f(const gp_XY theCenter, const gp_XY theHSize);
 		%feature("autodoc", "1");
-		void Init(const Bnd_Sphere &V);
+		Standard_Boolean IsVoid() const;
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
+		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
+		void Add(const gp_XY thePnt);
 		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
+		void Add(const gp_Pnt2d thePnt);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Sphere &Value);
+		void Add(const Bnd_B2f &theBox);
 		%feature("autodoc", "1");
-		const Bnd_Sphere & Value(const Standard_Integer Index) const;
+		gp_XY CornerMin() const;
 		%feature("autodoc", "1");
-		Bnd_Sphere & ChangeValue(const Standard_Integer Index);
+		gp_XY CornerMax() const;
 		%feature("autodoc", "1");
-		const Bnd_Array1OfSphere & Array1() const;
+		Standard_Real SquareExtent() const;
 		%feature("autodoc", "1");
-		Bnd_Array1OfSphere & ChangeArray1();
+		void Enlarge(const Standard_Real aDiff);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Boolean Limit(const Bnd_B2f &theOtherBox);
+		%feature("autodoc", "1");
+		Bnd_B2f Transformed(const gp_Trsf2d theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XY thePnt) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XY theCenter, const Standard_Real theRadius, const Standard_Boolean isCircleHollow=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B2f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B2f &theOtherBox, const gp_Trsf2d theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax2d theLine) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XY theP0, const gp_XY theP1) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B2f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B2f &theBox, const gp_Trsf2d theTrsf) const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_XY theCenter);
+		%feature("autodoc", "1");
+		void SetHSize(const gp_XY theHSize);
 
 };
-%extend Bnd_HArray1OfSphere {
-	Handle_Bnd_HArray1OfSphere GetHandle() {
-	return *(Handle_Bnd_HArray1OfSphere*) &$self;
-	}
-};
-%extend Bnd_HArray1OfSphere {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bnd_HArray1OfSphere::~Bnd_HArray1OfSphere %{
+%feature("shadow") Bnd_B2f::~Bnd_B2f %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -319,7 +386,42 @@ def __del__(self):
 		pass
 %}
 
-%extend Bnd_HArray1OfSphere {
+%extend Bnd_B2f {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_BoundSortBox2d;
+class Bnd_BoundSortBox2d {
+	public:
+		%feature("autodoc", "1");
+		Bnd_BoundSortBox2d();
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") Bnd_BoundSortBox2d::~Bnd_BoundSortBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_BoundSortBox2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -344,7 +446,7 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Bnd_SequenceNodeOfSeqOfBox::~Bnd_SequenceNodeOfSeqOfBox %{
@@ -363,58 +465,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bnd_B3f;
-class Bnd_B3f {
+%nodefaultctor Bnd_SeqOfBox;
+class Bnd_SeqOfBox : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Bnd_B3f();
-		%feature("autodoc", "1");
-		Bnd_B3f(const gp_XYZ theCenter, const gp_XYZ theHSize);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
+		Bnd_SeqOfBox();
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		void Add(const gp_XYZ thePnt);
+		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
 		%feature("autodoc", "1");
-		void Add(const gp_Pnt thePnt);
+		const Bnd_SeqOfBox & operator=(const Bnd_SeqOfBox &Other);
 		%feature("autodoc", "1");
-		void Add(const Bnd_B3f &theBox);
+		void Append(const Bnd_Box &T);
 		%feature("autodoc", "1");
-		gp_XYZ CornerMin() const;
+		void Append(Bnd_SeqOfBox & S);
 		%feature("autodoc", "1");
-		gp_XYZ CornerMax() const;
+		void Prepend(const Bnd_Box &T);
 		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
+		void Prepend(Bnd_SeqOfBox & S);
 		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real aDiff);
+		void InsertBefore(const Standard_Integer Index, const Bnd_Box &I);
 		%feature("autodoc", "1");
-		Standard_Boolean Limit(const Bnd_B3f &theOtherBox);
+		void InsertBefore(const Standard_Integer Index, Bnd_SeqOfBox & S);
 		%feature("autodoc", "1");
-		Bnd_B3f Transformed(const gp_Trsf theTrsf) const;
+		void InsertAfter(const Standard_Integer Index, const Bnd_Box &T);
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
+		void InsertAfter(const Standard_Integer Index, Bnd_SeqOfBox & S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
+		const Bnd_Box & First() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3f &theBox) const;
+		const Bnd_Box & Last() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B3f &theOtherBox, const gp_Trsf theTrsf) const;
+		void Split(const Standard_Integer Index, Bnd_SeqOfBox & S);
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
+		const Bnd_Box & Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
+		const Bnd_Box & operator()(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3f &theBox) const;
+		void SetValue(const Standard_Integer Index, const Bnd_Box &I);
 		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B3f &theBox, const gp_Trsf theTrsf) const;
+		Bnd_Box & ChangeValue(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetCenter(const gp_XYZ theCenter);
+		Bnd_Box & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
-		void SetHSize(const gp_XYZ theHSize);
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%feature("shadow") Bnd_B3f::~Bnd_B3f %{
+%feature("shadow") Bnd_SeqOfBox::~Bnd_SeqOfBox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -423,62 +523,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Bnd_B3f {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_HArray1OfBox2d;
-class Bnd_HArray1OfBox2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box2d &V);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Box2d &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
-		%feature("autodoc", "1");
-		const Bnd_Box2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox2d & Array1() const;
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox2d & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Bnd_HArray1OfBox2d {
-	Handle_Bnd_HArray1OfBox2d GetHandle() {
-	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
-	}
-};
-%extend Bnd_HArray1OfBox2d {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bnd_HArray1OfBox2d::~Bnd_HArray1OfBox2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_HArray1OfBox2d {
+%extend Bnd_SeqOfBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -595,428 +640,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bnd_Array1OfBox2d;
-class Bnd_Array1OfBox2d {
-	public:
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox2d(const Bnd_Box2d &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Box2d &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox2d & Assign(const Bnd_Array1OfBox2d &Other);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox2d & operator=(const Bnd_Array1OfBox2d &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
-		%feature("autodoc", "1");
-		const Bnd_Box2d & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Bnd_Box2d & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Bnd_Box2d & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Bnd_Array1OfBox2d::~Bnd_Array1OfBox2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_Array1OfBox2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_B2f;
-class Bnd_B2f {
-	public:
-		%feature("autodoc", "1");
-		Bnd_B2f();
-		%feature("autodoc", "1");
-		Bnd_B2f(const gp_XY theCenter, const gp_XY theHSize);
-		%feature("autodoc", "1");
-		Standard_Boolean IsVoid() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Add(const gp_XY thePnt);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt2d thePnt);
-		%feature("autodoc", "1");
-		void Add(const Bnd_B2f &theBox);
-		%feature("autodoc", "1");
-		gp_XY CornerMin() const;
-		%feature("autodoc", "1");
-		gp_XY CornerMax() const;
-		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
-		%feature("autodoc", "1");
-		void Enlarge(const Standard_Real aDiff);
-		%feature("autodoc", "1");
-		Standard_Boolean Limit(const Bnd_B2f &theOtherBox);
-		%feature("autodoc", "1");
-		Bnd_B2f Transformed(const gp_Trsf2d theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XY thePnt) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XY theCenter, const Standard_Real theRadius, const Standard_Boolean isCircleHollow=0) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B2f &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_B2f &theOtherBox, const gp_Trsf2d theTrsf) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_Ax2d theLine) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const gp_XY theP0, const gp_XY theP1) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B2f &theBox) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsIn(const Bnd_B2f &theBox, const gp_Trsf2d theTrsf) const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_XY theCenter);
-		%feature("autodoc", "1");
-		void SetHSize(const gp_XY theHSize);
-
-};
-%feature("shadow") Bnd_B2f::~Bnd_B2f %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_B2f {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_BoundSortBox2d;
-class Bnd_BoundSortBox2d {
-	public:
-		%feature("autodoc", "1");
-		Bnd_BoundSortBox2d();
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox2d &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box2d &CompleteBox, const Standard_Integer nbComponents);
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box2d &theBox, const Standard_Integer boxIndex);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const Bnd_Box2d &theBox);
-		%feature("autodoc", "1");
-		void Dump() const;
-
-};
-%feature("shadow") Bnd_BoundSortBox2d::~Bnd_BoundSortBox2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_BoundSortBox2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_SeqOfBox;
-class Bnd_SeqOfBox : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Bnd_SeqOfBox();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Bnd_SeqOfBox & Assign(const Bnd_SeqOfBox &Other);
-		%feature("autodoc", "1");
-		const Bnd_SeqOfBox & operator=(const Bnd_SeqOfBox &Other);
-		%feature("autodoc", "1");
-		void Append(const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void Append(Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		void Prepend(const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void Prepend(Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Bnd_Box &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		const Bnd_Box & First() const;
-		%feature("autodoc", "1");
-		const Bnd_Box & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Bnd_SeqOfBox & S);
-		%feature("autodoc", "1");
-		const Bnd_Box & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Bnd_Box & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box &I);
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Bnd_Box & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Bnd_SeqOfBox::~Bnd_SeqOfBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_SeqOfBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_Sphere;
-class Bnd_Sphere {
-	public:
-		%feature("autodoc", "1");
-		Bnd_Sphere();
-		%feature("autodoc", "1");
-		Bnd_Sphere(const gp_XYZ theCntr, const Standard_Real theRad, const Standard_Integer theU, const Standard_Integer theV);
-		%feature("autodoc", "1");
-		Standard_Integer U() const;
-		%feature("autodoc", "1");
-		Standard_Integer V() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid() const;
-		%feature("autodoc", "1");
-		void SetValid(const Standard_Boolean isValid);
-		%feature("autodoc", "1");
-		const gp_XYZ  Center() const;
-		%feature("autodoc", "1");
-		Standard_Real Radius() const;
-		%feature("autodoc","Distances(const theXYZ) -> [Standard_Real, Standard_Real]");
-
-		void Distances(const gp_XYZ theXYZ, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","SquareDistances(const theXYZ) -> [Standard_Real, Standard_Real]");
-
-		void SquareDistances(const gp_XYZ theXYZ, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Project(const theNode) -> Standard_Real");
-
-		Standard_Boolean Project(const gp_XYZ theNode, gp_XYZ & theProjNode, Standard_Real &OutValue, Standard_Boolean & theInside) const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const gp_XYZ theNode) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const gp_XYZ theNode) const;
-		%feature("autodoc", "1");
-		void Add(const Bnd_Sphere &theOther);
-		%feature("autodoc", "1");
-		Standard_Boolean IsOut(const Bnd_Sphere &theOther) const;
-		%feature("autodoc","IsOut(const thePnt) -> Standard_Real");
-
-		Standard_Boolean IsOut(const gp_XYZ thePnt, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareExtent() const;
-
-};
-%feature("shadow") Bnd_Sphere::~Bnd_Sphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_Sphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_Array1OfSphere;
-class Bnd_Array1OfSphere {
-	public:
-		%feature("autodoc", "1");
-		Bnd_Array1OfSphere(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_Array1OfSphere(const Bnd_Sphere &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Sphere &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Bnd_Array1OfSphere & Assign(const Bnd_Array1OfSphere &Other);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfSphere & operator=(const Bnd_Array1OfSphere &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Sphere &Value);
-		%feature("autodoc", "1");
-		const Bnd_Sphere & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Bnd_Sphere & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Sphere & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Bnd_Sphere & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Bnd_Array1OfSphere::~Bnd_Array1OfSphere %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_Array1OfSphere {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_HArray1OfBox;
-class Bnd_HArray1OfBox : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Bnd_HArray1OfBox(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box &V);
-		%feature("autodoc", "1");
-		void Init(const Bnd_Box &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Bnd_Box &Value);
-		%feature("autodoc", "1");
-		const Bnd_Box & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Bnd_Box & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Bnd_Array1OfBox & Array1() const;
-		%feature("autodoc", "1");
-		Bnd_Array1OfBox & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Bnd_HArray1OfBox {
-	Handle_Bnd_HArray1OfBox GetHandle() {
-	return *(Handle_Bnd_HArray1OfBox*) &$self;
-	}
-};
-%extend Bnd_HArray1OfBox {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bnd_HArray1OfBox::~Bnd_HArray1OfBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_HArray1OfBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bnd_BoundSortBox;
-class Bnd_BoundSortBox {
-	public:
-		%feature("autodoc", "1");
-		Bnd_BoundSortBox();
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box &CompleteBox, const Handle_Bnd_HArray1OfBox &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Handle_Bnd_HArray1OfBox &SetOfBox);
-		%feature("autodoc", "1");
-		void Initialize(const Bnd_Box &CompleteBox, const Standard_Integer nbComponents);
-		%feature("autodoc", "1");
-		void Add(const Bnd_Box &theBox, const Standard_Integer boxIndex);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const Bnd_Box &theBox);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & Compare(const gp_Pln P);
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") Bnd_BoundSortBox::~Bnd_BoundSortBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bnd_BoundSortBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Bnd_B3d;
 class Bnd_B3d {
 	public:
@@ -1084,6 +707,328 @@ def __del__(self):
 };
 
 
+%nodefaultctor Bnd_B3f;
+class Bnd_B3f {
+	public:
+		%feature("autodoc", "1");
+		Bnd_B3f();
+		%feature("autodoc", "1");
+		Bnd_B3f(const gp_XYZ theCenter, const gp_XYZ theHSize);
+		%feature("autodoc", "1");
+		Standard_Boolean IsVoid() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Add(const gp_XYZ thePnt);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt thePnt);
+		%feature("autodoc", "1");
+		void Add(const Bnd_B3f &theBox);
+		%feature("autodoc", "1");
+		gp_XYZ CornerMin() const;
+		%feature("autodoc", "1");
+		gp_XYZ CornerMax() const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+		%feature("autodoc", "1");
+		void Enlarge(const Standard_Real aDiff);
+		%feature("autodoc", "1");
+		Standard_Boolean Limit(const Bnd_B3f &theOtherBox);
+		%feature("autodoc", "1");
+		Bnd_B3f Transformed(const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ thePnt) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_XYZ theCenter, const Standard_Real theRadius, const Standard_Boolean isSphereHollow=0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_B3f &theOtherBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax1 theLine, const Standard_Boolean isRay=0, const Standard_Real theOverthickness=0.0) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const gp_Ax3 thePlane) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3f &theBox) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsIn(const Bnd_B3f &theBox, const gp_Trsf theTrsf) const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_XYZ theCenter);
+		%feature("autodoc", "1");
+		void SetHSize(const gp_XYZ theHSize);
+
+};
+%feature("shadow") Bnd_B3f::~Bnd_B3f %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_B3f {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_Sphere;
+class Bnd_Sphere {
+	public:
+		%feature("autodoc", "1");
+		Bnd_Sphere();
+		%feature("autodoc", "1");
+		Bnd_Sphere(const gp_XYZ theCntr, const Standard_Real theRad, const Standard_Integer theU, const Standard_Integer theV);
+		%feature("autodoc", "1");
+		Standard_Integer U() const;
+		%feature("autodoc", "1");
+		Standard_Integer V() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid() const;
+		%feature("autodoc", "1");
+		void SetValid(const Standard_Boolean isValid);
+		%feature("autodoc", "1");
+		const gp_XYZ  Center() const;
+		%feature("autodoc", "1");
+		Standard_Real Radius() const;
+		%feature("autodoc","Distances(const theXYZ) -> [Standard_Real, Standard_Real]");
+
+		void Distances(const gp_XYZ theXYZ, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","SquareDistances(const theXYZ) -> [Standard_Real, Standard_Real]");
+
+		void SquareDistances(const gp_XYZ theXYZ, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Project(const theNode) -> Standard_Real");
+
+		Standard_Boolean Project(const gp_XYZ theNode, gp_XYZ & theProjNode, Standard_Real &OutValue, Standard_Boolean & theInside) const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const gp_XYZ theNode) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const gp_XYZ theNode) const;
+		%feature("autodoc", "1");
+		void Add(const Bnd_Sphere &theOther);
+		%feature("autodoc", "1");
+		Standard_Boolean IsOut(const Bnd_Sphere &theOther) const;
+		%feature("autodoc","IsOut(const thePnt) -> Standard_Real");
+
+		Standard_Boolean IsOut(const gp_XYZ thePnt, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareExtent() const;
+
+};
+%feature("shadow") Bnd_Sphere::~Bnd_Sphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_Sphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_HArray1OfBox2d;
+class Bnd_HArray1OfBox2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_HArray1OfBox2d(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Box2d &V);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Box2d &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
+		%feature("autodoc", "1");
+		const Bnd_Box2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox2d & Array1() const;
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox2d & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Bnd_HArray1OfBox2d {
+	Handle_Bnd_HArray1OfBox2d GetHandle() {
+	return *(Handle_Bnd_HArray1OfBox2d*) &$self;
+	}
+};
+%extend Bnd_HArray1OfBox2d {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Bnd_HArray1OfBox2d::~Bnd_HArray1OfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_HArray1OfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_Array1OfBox2d;
+class Bnd_Array1OfBox2d {
+	public:
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox2d(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_Array1OfBox2d(const Bnd_Box2d &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Box2d &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox2d & Assign(const Bnd_Array1OfBox2d &Other);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfBox2d & operator=(const Bnd_Array1OfBox2d &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Box2d &Value);
+		%feature("autodoc", "1");
+		const Bnd_Box2d & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Bnd_Box2d & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Box2d & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Bnd_Box2d & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Bnd_Array1OfBox2d::~Bnd_Array1OfBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_Array1OfBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_Array1OfSphere;
+class Bnd_Array1OfSphere {
+	public:
+		%feature("autodoc", "1");
+		Bnd_Array1OfSphere(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_Array1OfSphere(const Bnd_Sphere &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Sphere &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Bnd_Array1OfSphere & Assign(const Bnd_Array1OfSphere &Other);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfSphere & operator=(const Bnd_Array1OfSphere &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Sphere &Value);
+		%feature("autodoc", "1");
+		const Bnd_Sphere & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Bnd_Sphere & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Sphere & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Bnd_Sphere & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Bnd_Array1OfSphere::~Bnd_Array1OfSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_Array1OfSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_BoundSortBox;
+class Bnd_BoundSortBox {
+	public:
+		%feature("autodoc", "1");
+		Bnd_BoundSortBox();
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box &CompleteBox, const Handle_Bnd_HArray1OfBox &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Handle_Bnd_HArray1OfBox &SetOfBox);
+		%feature("autodoc", "1");
+		void Initialize(const Bnd_Box &CompleteBox, const Standard_Integer nbComponents);
+		%feature("autodoc", "1");
+		void Add(const Bnd_Box &theBox, const Standard_Integer boxIndex);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const Bnd_Box &theBox);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & Compare(const gp_Pln P);
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") Bnd_BoundSortBox::~Bnd_BoundSortBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_BoundSortBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Bnd_Array1OfBox;
 class Bnd_Array1OfBox {
 	public:
@@ -1129,6 +1074,61 @@ def __del__(self):
 %}
 
 %extend Bnd_Array1OfBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bnd_HArray1OfSphere;
+class Bnd_HArray1OfSphere : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Bnd_HArray1OfSphere(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Bnd_HArray1OfSphere(const Standard_Integer Low, const Standard_Integer Up, const Bnd_Sphere &V);
+		%feature("autodoc", "1");
+		void Init(const Bnd_Sphere &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Bnd_Sphere &Value);
+		%feature("autodoc", "1");
+		const Bnd_Sphere & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Bnd_Sphere & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Bnd_Array1OfSphere & Array1() const;
+		%feature("autodoc", "1");
+		Bnd_Array1OfSphere & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Bnd_HArray1OfSphere {
+	Handle_Bnd_HArray1OfSphere GetHandle() {
+	return *(Handle_Bnd_HArray1OfSphere*) &$self;
+	}
+};
+%extend Bnd_HArray1OfSphere {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Bnd_HArray1OfSphere::~Bnd_HArray1OfSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bnd_HArray1OfSphere {
 	void _kill_pointed() {
 		delete $self;
 	}

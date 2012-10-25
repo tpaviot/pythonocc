@@ -213,7 +213,13 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<TopoDS_Wire.hxx>
 #include<TopTools_ListOfShape.hxx>
+#include<TopoDS_Face.hxx>
+#include<TopoDS_Vertex.hxx>
+#include<TopoDS_Edge.hxx>
+#include<TopoDS_Shell.hxx>
+#include<TopoDS_Solid.hxx>
 #include<TopOpeBRepDS_BuildTool.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<TopTools_MapOfShape.hxx>
@@ -222,20 +228,14 @@ $HeaderURL$
 #include<TopTools_IndexedMapOfOrientedShape.hxx>
 #include<TopOpeBRepDS_CurveIterator.hxx>
 #include<TopOpeBRepDS_PointIterator.hxx>
-#include<TopoDS_Vertex.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<gp_Pnt.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<TopOpeBRepTool_ShapeExplorer.hxx>
-#include<TopoDS_Face.hxx>
 #include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_SequenceOfShape.hxx>
 #include<TopTools_IndexedDataMapOfShapeShape.hxx>
 #include<gp_Pnt2d.hxx>
-#include<TopoDS_Wire.hxx>
-#include<TopoDS_Shell.hxx>
-#include<TopoDS_Solid.hxx>
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<TopOpeBRepDS_IndexedDataMapOfShapeWithState.hxx>
 #include<TopTools_IndexedDataMapOfShapeListOfShape.hxx>

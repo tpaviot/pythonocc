@@ -255,6 +255,6 @@ $HeaderURL$
 
 %import Standard.i
 %import TopAbs.i
-%import math.i
 %import GeomAbs.i
 %import ChFiDS.i
+%import math.i

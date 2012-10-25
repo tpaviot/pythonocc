@@ -23,26 +23,26 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_IGESGraph_Color::DownCast;
-%rename(DownCast) Handle_IGESGraph_DrawingUnits::DownCast;
 %rename(DownCast) Handle_IGESGraph_DrawingSize::DownCast;
+%rename(DownCast) Handle_IGESGraph_LineFontDefPattern::DownCast;
 %rename(DownCast) Handle_IGESGraph_Pick::DownCast;
-%rename(DownCast) Handle_IGESGraph_TextFontDef::DownCast;
-%rename(DownCast) Handle_IGESGraph_Protocol::DownCast;
 %rename(DownCast) Handle_IGESGraph_GeneralModule::DownCast;
 %rename(DownCast) Handle_IGESGraph_HArray1OfColor::DownCast;
+%rename(DownCast) Handle_IGESGraph_Protocol::DownCast;
+%rename(DownCast) Handle_IGESGraph_DrawingUnits::DownCast;
+%rename(DownCast) Handle_IGESGraph_HArray1OfTextFontDef::DownCast;
 %rename(DownCast) Handle_IGESGraph_ReadWriteModule::DownCast;
 %rename(DownCast) Handle_IGESGraph_DefinitionLevel::DownCast;
-%rename(DownCast) Handle_IGESGraph_NominalSize::DownCast;
+%rename(DownCast) Handle_IGESGraph_HArray1OfTextDisplayTemplate::DownCast;
+%rename(DownCast) Handle_IGESGraph_LineFontPredefined::DownCast;
+%rename(DownCast) Handle_IGESGraph_SpecificModule::DownCast;
+%rename(DownCast) Handle_IGESGraph_Color::DownCast;
 %rename(DownCast) Handle_IGESGraph_UniformRectGrid::DownCast;
 %rename(DownCast) Handle_IGESGraph_TextDisplayTemplate::DownCast;
 %rename(DownCast) Handle_IGESGraph_HighLight::DownCast;
-%rename(DownCast) Handle_IGESGraph_LineFontDefPattern::DownCast;
 %rename(DownCast) Handle_IGESGraph_LineFontDefTemplate::DownCast;
-%rename(DownCast) Handle_IGESGraph_SpecificModule::DownCast;
-%rename(DownCast) Handle_IGESGraph_LineFontPredefined::DownCast;
+%rename(DownCast) Handle_IGESGraph_NominalSize::DownCast;
+%rename(DownCast) Handle_IGESGraph_TextFontDef::DownCast;
 %rename(DownCast) Handle_IGESGraph_IntercharacterSpacing::DownCast;
-%rename(DownCast) Handle_IGESGraph_HArray1OfTextFontDef::DownCast;
-%rename(DownCast) Handle_IGESGraph_HArray1OfTextDisplayTemplate::DownCast;
 %rename(Init) IGESGraph::Init;
 %rename(Protocol) IGESGraph::Protocol;

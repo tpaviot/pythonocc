@@ -171,17 +171,17 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Shape.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<TopOpeBRepDS.hxx>
-#include<gp_Pnt.hxx>
-#include<TopOpeBRepTool_GeomTool.hxx>
-#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
 #include<TColStd_MapOfInteger.hxx>
+#include<gp_Pnt.hxx>
+#include<TopOpeBRepTool_GeomTool.hxx>
+#include<Handle_Geom_Curve.hxx>
+#include<TopoDS_Vertex.hxx>
+#include<Handle_Geom_Surface.hxx>
+#include<TopOpeBRepDS.hxx>
 %}

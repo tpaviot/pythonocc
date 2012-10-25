@@ -23,23 +23,23 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_V3d_UnMapped::DownCast;
-%rename(DownCast) Handle_V3d_View::DownCast;
-%rename(DownCast) Handle_V3d_PerspectiveView::DownCast;
-%rename(DownCast) Handle_V3d_OrthographicView::DownCast;
-%rename(DownCast) Handle_V3d_ColorScaleLayerItem::DownCast;
 %rename(DownCast) Handle_V3d_Light::DownCast;
 %rename(DownCast) Handle_V3d_PositionLight::DownCast;
-%rename(DownCast) Handle_V3d_SpotLight::DownCast;
-%rename(DownCast) Handle_V3d_CircularGrid::DownCast;
-%rename(DownCast) Handle_V3d_Plane::DownCast;
+%rename(DownCast) Handle_V3d_PositionalLight::DownCast;
+%rename(DownCast) Handle_V3d_UnMapped::DownCast;
+%rename(DownCast) Handle_V3d_RectangularGrid::DownCast;
 %rename(DownCast) Handle_V3d_LayerMgr::DownCast;
+%rename(DownCast) Handle_V3d_SpotLight::DownCast;
+%rename(DownCast) Handle_V3d_View::DownCast;
+%rename(DownCast) Handle_V3d_PerspectiveView::DownCast;
+%rename(DownCast) Handle_V3d_Plane::DownCast;
+%rename(DownCast) Handle_V3d_OrthographicView::DownCast;
+%rename(DownCast) Handle_V3d_ColorScaleLayerItem::DownCast;
 %rename(DownCast) Handle_V3d_Viewer::DownCast;
 %rename(DownCast) Handle_V3d_ColorScale::DownCast;
 %rename(DownCast) Handle_V3d_DirectionalLight::DownCast;
-%rename(DownCast) Handle_V3d_RectangularGrid::DownCast;
+%rename(DownCast) Handle_V3d_CircularGrid::DownCast;
 %rename(DownCast) Handle_V3d_AmbientLight::DownCast;
-%rename(DownCast) Handle_V3d_PositionalLight::DownCast;
 %rename(GetProjAxis) V3d::GetProjAxis;
 %rename(ArrowOfRadius) V3d::ArrowOfRadius;
 %rename(CircleInPlane) V3d::CircleInPlane;

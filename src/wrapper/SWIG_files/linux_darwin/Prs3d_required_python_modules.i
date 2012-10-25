@@ -29,9 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Graphic3d
 import Standard
-import Quantity
-import gp
 import Geom
+import Quantity
 import TColStd
 import HLRAlgo
 import Aspect
@@ -39,4 +38,5 @@ import TopoDS
 import Bnd
 import TopTools
 import Poly
+import gp
 };

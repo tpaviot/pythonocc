@@ -52,158 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_Units_Quantity;
-class Handle_Units_Quantity : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_Quantity();
-		%feature("autodoc", "1");
-		Handle_Units_Quantity(const Handle_Units_Quantity &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity(const Units_Quantity *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & operator=(const Handle_Units_Quantity &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & operator=(const Units_Quantity *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_Quantity DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_Quantity {
-	Units_Quantity* GetObject() {
-	return (Units_Quantity*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_Quantity::~Handle_Units_Quantity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_Quantity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_QuantitiesSequence;
-class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence();
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence(const Handle_Units_QuantitiesSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence(const Units_QuantitiesSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence & operator=(const Handle_Units_QuantitiesSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence & operator=(const Units_QuantitiesSequence *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_QuantitiesSequence DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_QuantitiesSequence {
-	Units_QuantitiesSequence* GetObject() {
-	return (Units_QuantitiesSequence*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_QuantitiesSequence::~Handle_Units_QuantitiesSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_QuantitiesSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
-class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence();
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence(const Units_SequenceNodeOfQtsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Units_SequenceNodeOfQtsSequence *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_SequenceNodeOfQtsSequence DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_SequenceNodeOfQtsSequence {
-	Units_SequenceNodeOfQtsSequence* GetObject() {
-	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_SequenceNodeOfQtsSequence::~Handle_Units_SequenceNodeOfQtsSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_SequenceNodeOfQtsSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_SequenceNodeOfTksSequence;
-class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfTksSequence();
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfTksSequence(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfTksSequence(const Units_SequenceNodeOfTksSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfTksSequence & operator=(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_SequenceNodeOfTksSequence & operator=(const Units_SequenceNodeOfTksSequence *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_SequenceNodeOfTksSequence DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_SequenceNodeOfTksSequence {
-	Units_SequenceNodeOfTksSequence* GetObject() {
-	return (Units_SequenceNodeOfTksSequence*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_SequenceNodeOfTksSequence::~Handle_Units_SequenceNodeOfTksSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_SequenceNodeOfTksSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Units_Lexicon;
 class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 	public:
@@ -280,29 +128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Units_UnitsDictionary;
-class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Units_Quantity;
+class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary();
+		Handle_Units_Quantity();
 		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary(const Handle_Units_UnitsDictionary &aHandle);
+		Handle_Units_Quantity(const Handle_Units_Quantity &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary(const Units_UnitsDictionary *anItem);
+		Handle_Units_Quantity(const Units_Quantity *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary & operator=(const Handle_Units_UnitsDictionary &aHandle);
+		Handle_Units_Quantity & operator=(const Handle_Units_Quantity &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_UnitsDictionary & operator=(const Units_UnitsDictionary *anItem);
+		Handle_Units_Quantity & operator=(const Units_Quantity *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Units_UnitsDictionary DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Units_Quantity DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Units_UnitsDictionary {
-	Units_UnitsDictionary* GetObject() {
-	return (Units_UnitsDictionary*)$self->Access();
+%extend Handle_Units_Quantity {
+	Units_Quantity* GetObject() {
+	return (Units_Quantity*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Units_UnitsDictionary::~Handle_Units_UnitsDictionary %{
+%feature("shadow") Handle_Units_Quantity::~Handle_Units_Quantity %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -311,7 +159,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Units_UnitsDictionary {
+%extend Handle_Units_Quantity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_SequenceNodeOfTksSequence;
+class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence();
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence(const Units_SequenceNodeOfTksSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence & operator=(const Handle_Units_SequenceNodeOfTksSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfTksSequence & operator=(const Units_SequenceNodeOfTksSequence *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_SequenceNodeOfTksSequence DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_SequenceNodeOfTksSequence {
+	Units_SequenceNodeOfTksSequence* GetObject() {
+	return (Units_SequenceNodeOfTksSequence*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_SequenceNodeOfTksSequence::~Handle_Units_SequenceNodeOfTksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_SequenceNodeOfTksSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
+class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence();
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence(const Units_SequenceNodeOfQtsSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Handle_Units_SequenceNodeOfQtsSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_SequenceNodeOfQtsSequence & operator=(const Units_SequenceNodeOfQtsSequence *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_SequenceNodeOfQtsSequence DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_SequenceNodeOfQtsSequence {
+	Units_SequenceNodeOfQtsSequence* GetObject() {
+	return (Units_SequenceNodeOfQtsSequence*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_SequenceNodeOfQtsSequence::~Handle_Units_SequenceNodeOfQtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_SequenceNodeOfQtsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -388,82 +312,6 @@ def __del__(self):
 %}
 
 %extend Handle_Units_Unit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_UnitsSequence;
-class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence(const Handle_Units_UnitsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence(const Units_UnitsSequence *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence & operator=(const Handle_Units_UnitsSequence &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence & operator=(const Units_UnitsSequence *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_UnitsSequence DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_UnitsSequence {
-	Units_UnitsSequence* GetObject() {
-	return (Units_UnitsSequence*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_UnitsSequence::~Handle_Units_UnitsSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_UnitsSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_UnitsSystem;
-class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSystem();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSystem(const Handle_Units_UnitsSystem &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSystem(const Units_UnitsSystem *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSystem & operator=(const Handle_Units_UnitsSystem &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSystem & operator=(const Units_UnitsSystem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_UnitsSystem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_UnitsSystem {
-	Units_UnitsSystem* GetObject() {
-	return (Units_UnitsSystem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_UnitsSystem::~Handle_Units_UnitsSystem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_UnitsSystem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -622,29 +470,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Units_TokensSequence;
-class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Units_UnitsSequence;
+class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Units_TokensSequence();
+		Handle_Units_UnitsSequence();
 		%feature("autodoc", "1");
-		Handle_Units_TokensSequence(const Handle_Units_TokensSequence &aHandle);
+		Handle_Units_UnitsSequence(const Handle_Units_UnitsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_TokensSequence(const Units_TokensSequence *anItem);
+		Handle_Units_UnitsSequence(const Units_UnitsSequence *anItem);
 		%feature("autodoc", "1");
-		Handle_Units_TokensSequence & operator=(const Handle_Units_TokensSequence &aHandle);
+		Handle_Units_UnitsSequence & operator=(const Handle_Units_UnitsSequence &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_TokensSequence & operator=(const Units_TokensSequence *anItem);
+		Handle_Units_UnitsSequence & operator=(const Units_UnitsSequence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Units_TokensSequence DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Units_UnitsSequence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Units_TokensSequence {
-	Units_TokensSequence* GetObject() {
-	return (Units_TokensSequence*)$self->Access();
+%extend Handle_Units_UnitsSequence {
+	Units_UnitsSequence* GetObject() {
+	return (Units_UnitsSequence*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Units_TokensSequence::~Handle_Units_TokensSequence %{
+%feature("shadow") Handle_Units_UnitsSequence::~Handle_Units_UnitsSequence %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -653,45 +501,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Units_TokensSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Units_Dimensions;
-class Handle_Units_Dimensions : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Units_Dimensions();
-		%feature("autodoc", "1");
-		Handle_Units_Dimensions(const Handle_Units_Dimensions &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_Dimensions(const Units_Dimensions *anItem);
-		%feature("autodoc", "1");
-		Handle_Units_Dimensions & operator=(const Handle_Units_Dimensions &aHandle);
-		%feature("autodoc", "1");
-		Handle_Units_Dimensions & operator=(const Units_Dimensions *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Units_Dimensions DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Units_Dimensions {
-	Units_Dimensions* GetObject() {
-	return (Units_Dimensions*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Units_Dimensions::~Handle_Units_Dimensions %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Units_Dimensions {
+%extend Handle_Units_UnitsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -736,52 +546,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Units_UnitsSystem;
-class Units_UnitsSystem : public MMgt_TShared {
+%nodefaultctor Handle_Units_Dimensions;
+class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Units_UnitsSystem();
+		Handle_Units_Dimensions();
 		%feature("autodoc", "1");
-		Units_UnitsSystem(const char * aName, const Standard_Boolean Verbose=0);
+		Handle_Units_Dimensions(const Handle_Units_Dimensions &aHandle);
 		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence QuantitiesSequence() const;
+		Handle_Units_Dimensions(const Units_Dimensions *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfInteger ActiveUnitsSequence() const;
+		Handle_Units_Dimensions & operator=(const Handle_Units_Dimensions &aHandle);
 		%feature("autodoc", "1");
-		void Specify(const char * aquantity, const char * aunit);
+		Handle_Units_Dimensions & operator=(const Units_Dimensions *anItem);
 		%feature("autodoc", "1");
-		void Remove(const char * aquantity, const char * aunit);
-		%feature("autodoc", "1");
-		void Activate(const char * aquantity, const char * aunit);
-		%feature("autodoc", "1");
-		void Activates();
-		%feature("autodoc", "1");
-		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
-		%feature("autodoc", "1");
-		Standard_Real ConvertValueToUserSystem(const char * aquantity, const Standard_Real avalue, const char * aunit) const;
-		%feature("autodoc", "1");
-		Standard_Real ConvertSIValueToUserSystem(const char * aquantity, const Standard_Real avalue) const;
-		%feature("autodoc", "1");
-		Standard_Real ConvertUserSystemValueToSI(const char * aquantity, const Standard_Real avalue) const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_Units_Dimensions DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Units_UnitsSystem {
-	Handle_Units_UnitsSystem GetHandle() {
-	return *(Handle_Units_UnitsSystem*) &$self;
+%extend Handle_Units_Dimensions {
+	Units_Dimensions* GetObject() {
+	return (Units_Dimensions*)$self->Access();
 	}
 };
-%extend Units_UnitsSystem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_UnitsSystem::~Units_UnitsSystem %{
+%feature("shadow") Handle_Units_Dimensions::~Handle_Units_Dimensions %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -790,7 +577,196 @@ def __del__(self):
 		pass
 %}
 
-%extend Units_UnitsSystem {
+%extend Handle_Units_Dimensions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_TokensSequence;
+class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence();
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence(const Handle_Units_TokensSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence(const Units_TokensSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Handle_Units_TokensSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_TokensSequence & operator=(const Units_TokensSequence *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_TokensSequence DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_TokensSequence {
+	Units_TokensSequence* GetObject() {
+	return (Units_TokensSequence*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_TokensSequence::~Handle_Units_TokensSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_TokensSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_QuantitiesSequence;
+class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence();
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence(const Handle_Units_QuantitiesSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence(const Units_QuantitiesSequence *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence & operator=(const Handle_Units_QuantitiesSequence &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence & operator=(const Units_QuantitiesSequence *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_QuantitiesSequence DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_QuantitiesSequence {
+	Units_QuantitiesSequence* GetObject() {
+	return (Units_QuantitiesSequence*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_QuantitiesSequence::~Handle_Units_QuantitiesSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_QuantitiesSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_UnitsDictionary;
+class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary(const Handle_Units_UnitsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary(const Units_UnitsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary & operator=(const Handle_Units_UnitsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsDictionary & operator=(const Units_UnitsDictionary *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_UnitsDictionary DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_UnitsDictionary {
+	Units_UnitsDictionary* GetObject() {
+	return (Units_UnitsDictionary*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_UnitsDictionary::~Handle_Units_UnitsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_UnitsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Units_UnitsSystem;
+class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem(const Handle_Units_UnitsSystem &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem(const Units_UnitsSystem *anItem);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem & operator=(const Handle_Units_UnitsSystem &aHandle);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSystem & operator=(const Units_UnitsSystem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Units_UnitsSystem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Units_UnitsSystem {
+	Units_UnitsSystem* GetObject() {
+	return (Units_UnitsSystem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Units_UnitsSystem::~Handle_Units_UnitsSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Units_UnitsSystem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Units_SequenceNodeOfUtsSequence;
+class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Units_SequenceNodeOfUtsSequence(const Handle_Units_Unit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Units_Unit & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	Handle_Units_SequenceNodeOfUtsSequence GetHandle() {
+	return *(Handle_Units_SequenceNodeOfUtsSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfUtsSequence {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_SequenceNodeOfUtsSequence::~Units_SequenceNodeOfUtsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_SequenceNodeOfUtsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -825,7 +801,7 @@ class Units_Lexicon : public MMgt_TShared {
 };
 %extend Units_Lexicon {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_Lexicon::~Units_Lexicon %{
@@ -862,7 +838,7 @@ class Units_UnitsLexicon : public Units_Lexicon {
 };
 %extend Units_UnitsLexicon {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_UnitsLexicon::~Units_UnitsLexicon %{
@@ -905,7 +881,7 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 };
 %extend Units_NoSuchType {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_NoSuchType::~Units_NoSuchType %{
@@ -918,43 +894,6 @@ def __del__(self):
 %}
 
 %extend Units_NoSuchType {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Units_SequenceNodeOfTksSequence;
-class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Units_SequenceNodeOfTksSequence(const Handle_Units_Token &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_Units_Token & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_SequenceNodeOfTksSequence {
-	Handle_Units_SequenceNodeOfTksSequence GetHandle() {
-	return *(Handle_Units_SequenceNodeOfTksSequence*) &$self;
-	}
-};
-%extend Units_SequenceNodeOfTksSequence {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_SequenceNodeOfTksSequence::~Units_SequenceNodeOfTksSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Units_SequenceNodeOfTksSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1019,6 +958,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Units_TksSequence;
+class Units_TksSequence : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Units_TksSequence();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Units_TksSequence & Assign(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		const Units_TksSequence & operator=(const Units_TksSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Append(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void Prepend(Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & First() const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Units_TksSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Token & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
+		%feature("autodoc", "1");
+		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Units_Token & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Units_TksSequence::~Units_TksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_TksSequence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Units_Unit;
 class Units_Unit : public MMgt_TShared {
 	public:
@@ -1059,7 +1063,7 @@ class Units_Unit : public MMgt_TShared {
 };
 %extend Units_Unit {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_Unit::~Units_Unit %{
@@ -1072,6 +1076,43 @@ def __del__(self):
 %}
 
 %extend Units_Unit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Units_SequenceNodeOfTksSequence;
+class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Units_SequenceNodeOfTksSequence(const Handle_Units_Token &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_Units_Token & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_SequenceNodeOfTksSequence {
+	Handle_Units_SequenceNodeOfTksSequence GetHandle() {
+	return *(Handle_Units_SequenceNodeOfTksSequence*) &$self;
+	}
+};
+%extend Units_SequenceNodeOfTksSequence {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_SequenceNodeOfTksSequence::~Units_SequenceNodeOfTksSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_SequenceNodeOfTksSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1106,7 +1147,7 @@ class Units_ShiftedUnit : public Units_Unit {
 };
 %extend Units_ShiftedUnit {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_ShiftedUnit::~Units_ShiftedUnit %{
@@ -1119,85 +1160,6 @@ def __del__(self):
 %}
 
 %extend Units_ShiftedUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Units_UnitsSequence;
-class Units_UnitsSequence : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Units_UnitsSequence();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
-		%feature("autodoc", "1");
-		const Handle_Units_Unit & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Units_Unit & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Units_UtsSequence & Sequence() const;
-		%feature("autodoc", "1");
-		Units_UtsSequence & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Units_UnitsSequence ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_UnitsSequence {
-	Handle_Units_UnitsSequence GetHandle() {
-	return *(Handle_Units_UnitsSequence*) &$self;
-	}
-};
-%extend Units_UnitsSequence {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_UnitsSequence::~Units_UnitsSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Units_UnitsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1271,56 +1233,38 @@ def __del__(self):
 };
 
 
-%nodefaultctor Units_QtsSequence;
-class Units_QtsSequence : public TCollection_BaseSequence {
+%nodefaultctor Units_UnitsDictionary;
+class Units_UnitsDictionary : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Units_QtsSequence();
+		Units_UnitsDictionary();
 		%feature("autodoc", "1");
-		void Clear();
+		void Creates(const char * afilename);
 		%feature("autodoc", "1");
-		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
+		Handle_Units_QuantitiesSequence Sequence() const;
 		%feature("autodoc", "1");
-		const Units_QtsSequence & operator=(const Units_QtsSequence &Other);
+		Standard_Boolean UpToDate() const;
 		%feature("autodoc", "1");
-		void Append(const Handle_Units_Quantity &T);
+		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
 		%feature("autodoc", "1");
-		void Append(Units_QtsSequence & S);
+		void Dump(const Standard_Integer alevel) const;
 		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Quantity &T);
+		void Dump(const Handle_Units_Dimensions &adimensions) const;
 		%feature("autodoc", "1");
-		void Prepend(Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Units_Quantity &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Units_Quantity &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & First() const;
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Units_QtsSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Units_Quantity & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Units_Quantity &I);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Units_Quantity & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Units_QtsSequence::~Units_QtsSequence %{
+%extend Units_UnitsDictionary {
+	Handle_Units_UnitsDictionary GetHandle() {
+	return *(Handle_Units_UnitsDictionary*) &$self;
+	}
+};
+%extend Units_UnitsDictionary {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_UnitsDictionary::~Units_UnitsDictionary %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1329,7 +1273,86 @@ def __del__(self):
 		pass
 %}
 
-%extend Units_QtsSequence {
+%extend Units_UnitsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Units_UnitsSequence;
+class Units_UnitsSequence : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Units_UnitsSequence();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Units_UnitsSequence &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Units_Unit &anItem);
+		%feature("autodoc", "1");
+		const Handle_Units_Unit & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Units_Unit & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Units_UtsSequence & Sequence() const;
+		%feature("autodoc", "1");
+		Units_UtsSequence & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Units_UnitsSequence ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_UnitsSequence {
+	Handle_Units_UnitsSequence GetHandle() {
+	return *(Handle_Units_UnitsSequence*) &$self;
+	}
+};
+%extend Units_UnitsSequence {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_UnitsSequence::~Units_UnitsSequence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_UnitsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1396,7 +1419,7 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 };
 %extend Units_QuantitiesSequence {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_QuantitiesSequence::~Units_QuantitiesSequence %{
@@ -1409,49 +1432,6 @@ def __del__(self):
 %}
 
 %extend Units_QuantitiesSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Units_NoSuchUnit;
-class Units_NoSuchUnit : public Standard_NoSuchObject {
-	public:
-		%feature("autodoc", "1");
-		Units_NoSuchUnit();
-		%feature("autodoc", "1");
-		Units_NoSuchUnit(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Units_NoSuchUnit NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_NoSuchUnit {
-	Handle_Units_NoSuchUnit GetHandle() {
-	return *(Handle_Units_NoSuchUnit*) &$self;
-	}
-};
-%extend Units_NoSuchUnit {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_NoSuchUnit::~Units_NoSuchUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Units_NoSuchUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1544,7 +1524,7 @@ class Units_Token : public MMgt_TShared {
 };
 %extend Units_Token {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_Token::~Units_Token %{
@@ -1579,7 +1559,7 @@ class Units_ShiftedToken : public Units_Token {
 };
 %extend Units_ShiftedToken {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_ShiftedToken::~Units_ShiftedToken %{
@@ -1592,6 +1572,110 @@ def __del__(self):
 %}
 
 %extend Units_ShiftedToken {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Units_NoSuchUnit;
+class Units_NoSuchUnit : public Standard_NoSuchObject {
+	public:
+		%feature("autodoc", "1");
+		Units_NoSuchUnit();
+		%feature("autodoc", "1");
+		Units_NoSuchUnit(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Units_NoSuchUnit NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_NoSuchUnit {
+	Handle_Units_NoSuchUnit GetHandle() {
+	return *(Handle_Units_NoSuchUnit*) &$self;
+	}
+};
+%extend Units_NoSuchUnit {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_NoSuchUnit::~Units_NoSuchUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_NoSuchUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Units_UnitsSystem;
+class Units_UnitsSystem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Units_UnitsSystem();
+		%feature("autodoc", "1");
+		Units_UnitsSystem(const char * aName, const Standard_Boolean Verbose=0);
+		%feature("autodoc", "1");
+		Handle_Units_QuantitiesSequence QuantitiesSequence() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfInteger ActiveUnitsSequence() const;
+		%feature("autodoc", "1");
+		void Specify(const char * aquantity, const char * aunit);
+		%feature("autodoc", "1");
+		void Remove(const char * aquantity, const char * aunit);
+		%feature("autodoc", "1");
+		void Activate(const char * aquantity, const char * aunit);
+		%feature("autodoc", "1");
+		void Activates();
+		%feature("autodoc", "1");
+		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
+		%feature("autodoc", "1");
+		Standard_Real ConvertValueToUserSystem(const char * aquantity, const Standard_Real avalue, const char * aunit) const;
+		%feature("autodoc", "1");
+		Standard_Real ConvertSIValueToUserSystem(const char * aquantity, const Standard_Real avalue) const;
+		%feature("autodoc", "1");
+		Standard_Real ConvertUserSystemValueToSI(const char * aquantity, const Standard_Real avalue) const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Units_UnitsSystem {
+	Handle_Units_UnitsSystem GetHandle() {
+	return *(Handle_Units_UnitsSystem*) &$self;
+	}
+};
+%extend Units_UnitsSystem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Units_UnitsSystem::~Units_UnitsSystem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Units_UnitsSystem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1663,53 +1747,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Units_UnitsDictionary;
-class Units_UnitsDictionary : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Units_UnitsDictionary();
-		%feature("autodoc", "1");
-		void Creates(const char * afilename);
-		%feature("autodoc", "1");
-		Handle_Units_QuantitiesSequence Sequence() const;
-		%feature("autodoc", "1");
-		Standard_Boolean UpToDate() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString ActiveUnit(const char * aquantity) const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer alevel) const;
-		%feature("autodoc", "1");
-		void Dump(const Handle_Units_Dimensions &adimensions) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Units_UnitsDictionary {
-	Handle_Units_UnitsDictionary GetHandle() {
-	return *(Handle_Units_UnitsDictionary*) &$self;
-	}
-};
-%extend Units_UnitsDictionary {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_UnitsDictionary::~Units_UnitsDictionary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Units_UnitsDictionary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Units_Explorer;
 class Units_Explorer {
 	public:
@@ -1757,71 +1794,6 @@ def __del__(self):
 %}
 
 %extend Units_Explorer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Units_TksSequence;
-class Units_TksSequence : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Units_TksSequence();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Units_TksSequence & Assign(const Units_TksSequence &Other);
-		%feature("autodoc", "1");
-		const Units_TksSequence & operator=(const Units_TksSequence &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Append(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void Prepend(Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Units_Token &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & First() const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Units_TksSequence & S);
-		%feature("autodoc", "1");
-		const Handle_Units_Token & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Units_Token & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Units_Token &I);
-		%feature("autodoc", "1");
-		Handle_Units_Token & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Units_Token & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Units_TksSequence::~Units_TksSequence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Units_TksSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1939,7 +1911,7 @@ class Units_TokensSequence : public MMgt_TShared {
 };
 %extend Units_TokensSequence {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_TokensSequence::~Units_TokensSequence %{
@@ -1987,28 +1959,56 @@ def __del__(self):
 };
 
 
-%nodefaultctor Units_SequenceNodeOfUtsSequence;
-class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
+%nodefaultctor Units_QtsSequence;
+class Units_QtsSequence : public TCollection_BaseSequence {
 	public:
 		%feature("autodoc", "1");
-		Units_SequenceNodeOfUtsSequence(const Handle_Units_Unit &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Units_QtsSequence();
 		%feature("autodoc", "1");
-		Handle_Units_Unit & Value() const;
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const Units_QtsSequence & Assign(const Units_QtsSequence &Other);
+		%feature("autodoc", "1");
+		const Units_QtsSequence & operator=(const Units_QtsSequence &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void Append(Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void Prepend(Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Units_Quantity &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Units_Quantity &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & First() const;
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Units_QtsSequence & S);
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Units_Quantity & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Units_Quantity &I);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Units_Quantity & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
 
 };
-%extend Units_SequenceNodeOfUtsSequence {
-	Handle_Units_SequenceNodeOfUtsSequence GetHandle() {
-	return *(Handle_Units_SequenceNodeOfUtsSequence*) &$self;
-	}
-};
-%extend Units_SequenceNodeOfUtsSequence {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Units_SequenceNodeOfUtsSequence::~Units_SequenceNodeOfUtsSequence %{
+%feature("shadow") Units_QtsSequence::~Units_QtsSequence %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2017,7 +2017,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Units_SequenceNodeOfUtsSequence {
+%extend Units_QtsSequence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2042,7 +2042,7 @@ class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfQtsSequence {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Units_SequenceNodeOfQtsSequence::~Units_SequenceNodeOfQtsSequence %{

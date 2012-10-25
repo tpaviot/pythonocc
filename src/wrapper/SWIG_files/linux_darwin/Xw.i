@@ -50,6 +50,15 @@ $HeaderURL$
 %include Xw_headers.i
 
 
+enum Xw_WindowQuality {
+	Xw_WQ_3DQUALITY,
+	Xw_WQ_PICTUREQUALITY,
+	Xw_WQ_DRAWINGQUALITY,
+	Xw_WQ_SAMEQUALITY,
+	Xw_WQ_TRANSPARENT,
+	Xw_WQ_OVERLAY,
+	};
+
 enum Xw_TypeOfVisual {
 	Xw_TOV_STATICGRAY,
 	Xw_TOV_GRAYSCALE,
@@ -64,15 +73,6 @@ enum Xw_TypeOfVisual {
 	Xw_TOV_OVERLAY,
 	};
 
-enum Xw_WindowQuality {
-	Xw_WQ_3DQUALITY,
-	Xw_WQ_PICTUREQUALITY,
-	Xw_WQ_DRAWINGQUALITY,
-	Xw_WQ_SAMEQUALITY,
-	Xw_WQ_TRANSPARENT,
-	Xw_WQ_OVERLAY,
-	};
-
 enum Xw_TypeOfMapping {
 	Xw_TOM_HARDRAMP,
 	Xw_TOM_SIMPLERAMP,
@@ -83,29 +83,29 @@ enum Xw_TypeOfMapping {
 
 
 
-%nodefaultctor Handle_Xw_TextManager;
-class Handle_Xw_TextManager : public Handle_MFT_TextManager {
+%nodefaultctor Handle_Xw_HListOfMFTFonts;
+class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Xw_TextManager();
+		Handle_Xw_HListOfMFTFonts();
 		%feature("autodoc", "1");
-		Handle_Xw_TextManager(const Handle_Xw_TextManager &aHandle);
+		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_TextManager(const Xw_TextManager *anItem);
+		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_TextManager & operator=(const Handle_Xw_TextManager &aHandle);
+		Handle_Xw_HListOfMFTFonts & operator=(const Handle_Xw_HListOfMFTFonts &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_TextManager & operator=(const Xw_TextManager *anItem);
+		Handle_Xw_HListOfMFTFonts & operator=(const Xw_HListOfMFTFonts *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Xw_TextManager DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Xw_HListOfMFTFonts DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Xw_TextManager {
-	Xw_TextManager* GetObject() {
-	return (Xw_TextManager*)$self->Access();
+%extend Handle_Xw_HListOfMFTFonts {
+	Xw_HListOfMFTFonts* GetObject() {
+	return (Xw_HListOfMFTFonts*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Xw_TextManager::~Handle_Xw_TextManager %{
+%feature("shadow") Handle_Xw_HListOfMFTFonts::~Handle_Xw_HListOfMFTFonts %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -114,121 +114,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Xw_TextManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Xw_Window;
-class Handle_Xw_Window : public Handle_Aspect_Window {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_Window();
-		%feature("autodoc", "1");
-		Handle_Xw_Window(const Handle_Xw_Window &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_Window(const Xw_Window *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_Window & operator=(const Handle_Xw_Window &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_Window & operator=(const Xw_Window *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Xw_Window DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_Window {
-	Xw_Window* GetObject() {
-	return (Xw_Window*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Xw_Window::~Handle_Xw_Window %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Xw_Window {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Xw_IconBox;
-class Handle_Xw_IconBox : public Handle_Xw_Window {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_IconBox();
-		%feature("autodoc", "1");
-		Handle_Xw_IconBox(const Handle_Xw_IconBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_IconBox(const Xw_IconBox *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_IconBox & operator=(const Handle_Xw_IconBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_IconBox & operator=(const Xw_IconBox *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Xw_IconBox DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_IconBox {
-	Xw_IconBox* GetObject() {
-	return (Xw_IconBox*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Xw_IconBox::~Handle_Xw_IconBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Xw_IconBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Xw_Driver;
-class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_Driver();
-		%feature("autodoc", "1");
-		Handle_Xw_Driver(const Handle_Xw_Driver &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_Driver(const Xw_Driver *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_Driver & operator=(const Handle_Xw_Driver &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_Driver & operator=(const Xw_Driver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Xw_Driver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_Driver {
-	Xw_Driver* GetObject() {
-	return (Xw_Driver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Xw_Driver::~Handle_Xw_Driver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Xw_Driver {
+%extend Handle_Xw_HListOfMFTFonts {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -273,29 +159,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Xw_HListOfMFTFonts;
-class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Xw_TextManager;
+class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	public:
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts();
+		Handle_Xw_TextManager();
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Handle_Xw_HListOfMFTFonts &aHandle);
+		Handle_Xw_TextManager(const Handle_Xw_TextManager &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts(const Xw_HListOfMFTFonts *anItem);
+		Handle_Xw_TextManager(const Xw_TextManager *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts & operator=(const Handle_Xw_HListOfMFTFonts &aHandle);
+		Handle_Xw_TextManager & operator=(const Handle_Xw_TextManager &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_HListOfMFTFonts & operator=(const Xw_HListOfMFTFonts *anItem);
+		Handle_Xw_TextManager & operator=(const Xw_TextManager *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Xw_HListOfMFTFonts DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Xw_TextManager DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Xw_HListOfMFTFonts {
-	Xw_HListOfMFTFonts* GetObject() {
-	return (Xw_HListOfMFTFonts*)$self->Access();
+%extend Handle_Xw_TextManager {
+	Xw_TextManager* GetObject() {
+	return (Xw_TextManager*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Xw_HListOfMFTFonts::~Handle_Xw_HListOfMFTFonts %{
+%feature("shadow") Handle_Xw_TextManager::~Handle_Xw_TextManager %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -304,7 +190,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Xw_HListOfMFTFonts {
+%extend Handle_Xw_TextManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Xw_Driver;
+class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_Driver();
+		%feature("autodoc", "1");
+		Handle_Xw_Driver(const Handle_Xw_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Driver(const Xw_Driver *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Driver & operator=(const Handle_Xw_Driver &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Driver & operator=(const Xw_Driver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Xw_Driver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_Driver {
+	Xw_Driver* GetObject() {
+	return (Xw_Driver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Xw_Driver::~Handle_Xw_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Xw_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Xw_WidthMap;
+class Handle_Xw_WidthMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap();
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap(const Handle_Xw_WidthMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap(const Xw_WidthMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap & operator=(const Handle_Xw_WidthMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_WidthMap & operator=(const Xw_WidthMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Xw_WidthMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_WidthMap {
+	Xw_WidthMap* GetObject() {
+	return (Xw_WidthMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Xw_WidthMap::~Handle_Xw_WidthMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Xw_WidthMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -387,29 +349,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Xw_WidthMap;
-class Handle_Xw_WidthMap : public Handle_Standard_Transient {
+%nodefaultctor Handle_Xw_MarkMap;
+class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 	public:
 		%feature("autodoc", "1");
-		Handle_Xw_WidthMap();
+		Handle_Xw_MarkMap();
 		%feature("autodoc", "1");
-		Handle_Xw_WidthMap(const Handle_Xw_WidthMap &aHandle);
+		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_WidthMap(const Xw_WidthMap *anItem);
+		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
 		%feature("autodoc", "1");
-		Handle_Xw_WidthMap & operator=(const Handle_Xw_WidthMap &aHandle);
+		Handle_Xw_MarkMap & operator=(const Handle_Xw_MarkMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_Xw_WidthMap & operator=(const Xw_WidthMap *anItem);
+		Handle_Xw_MarkMap & operator=(const Xw_MarkMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Xw_WidthMap DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Xw_MarkMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Xw_WidthMap {
-	Xw_WidthMap* GetObject() {
-	return (Xw_WidthMap*)$self->Access();
+%extend Handle_Xw_MarkMap {
+	Xw_MarkMap* GetObject() {
+	return (Xw_MarkMap*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Xw_WidthMap::~Handle_Xw_WidthMap %{
+%feature("shadow") Handle_Xw_MarkMap::~Handle_Xw_MarkMap %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -418,7 +380,83 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Xw_WidthMap {
+%extend Handle_Xw_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Xw_Window;
+class Handle_Xw_Window : public Handle_Aspect_Window {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_Window();
+		%feature("autodoc", "1");
+		Handle_Xw_Window(const Handle_Xw_Window &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Window(const Xw_Window *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Handle_Xw_Window &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_Window & operator=(const Xw_Window *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Xw_Window DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_Window {
+	Xw_Window* GetObject() {
+	return (Xw_Window*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Xw_Window::~Handle_Xw_Window %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Xw_Window {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Xw_IconBox;
+class Handle_Xw_IconBox : public Handle_Xw_Window {
+	public:
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox();
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox(const Handle_Xw_IconBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox(const Xw_IconBox *anItem);
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox & operator=(const Handle_Xw_IconBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_Xw_IconBox & operator=(const Xw_IconBox *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Xw_IconBox DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Xw_IconBox {
+	Xw_IconBox* GetObject() {
+	return (Xw_IconBox*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Xw_IconBox::~Handle_Xw_IconBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Xw_IconBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -501,150 +539,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Xw_MarkMap;
-class Handle_Xw_MarkMap : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap();
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Handle_Xw_MarkMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap(const Xw_MarkMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap & operator=(const Handle_Xw_MarkMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_MarkMap & operator=(const Xw_MarkMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Xw_MarkMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_MarkMap {
-	Xw_MarkMap* GetObject() {
-	return (Xw_MarkMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Xw_MarkMap::~Handle_Xw_MarkMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Xw_MarkMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Xw_ListOfMFTFonts;
-class Xw_ListOfMFTFonts {
-	public:
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & operator=(const Xw_ListOfMFTFonts &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Xw_ListOfMFTFonts::~Xw_ListOfMFTFonts %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Xw_ListOfMFTFonts {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Xw_HListOfMFTFonts;
-class Xw_HListOfMFTFonts : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Xw_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Xw_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up, const Handle_MFT_FontManager &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_MFT_FontManager &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
-		%feature("autodoc", "1");
-		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Xw_ListOfMFTFonts & Array1() const;
-		%feature("autodoc", "1");
-		Xw_ListOfMFTFonts & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_HListOfMFTFonts {
-	Handle_Xw_HListOfMFTFonts GetHandle() {
-	return *(Handle_Xw_HListOfMFTFonts*) &$self;
-	}
-};
-%extend Xw_HListOfMFTFonts {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Xw_HListOfMFTFonts::~Xw_HListOfMFTFonts %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Xw_HListOfMFTFonts {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Xw_GraphicDevice;
 class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	public:
@@ -697,7 +591,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 };
 %extend Xw_GraphicDevice {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_GraphicDevice::~Xw_GraphicDevice %{
@@ -716,6 +610,61 @@ def __del__(self):
 };
 %extend Xw_GraphicDevice {
 	Xw_GraphicDevice () {}
+};
+
+
+%nodefaultctor Xw_HListOfMFTFonts;
+class Xw_HListOfMFTFonts : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Xw_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Xw_HListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up, const Handle_MFT_FontManager &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_MFT_FontManager &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & Array1() const;
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_HListOfMFTFonts {
+	Handle_Xw_HListOfMFTFonts GetHandle() {
+	return *(Handle_Xw_HListOfMFTFonts*) &$self;
+	}
+};
+%extend Xw_HListOfMFTFonts {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Xw_HListOfMFTFonts::~Xw_HListOfMFTFonts %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Xw_HListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
 };
 
 
@@ -770,17 +719,17 @@ class Xw_Driver : public Aspect_WindowDriver {
 		%feature("autodoc", "1");
 		virtual		void DrawText(const char * Text, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
 		%feature("autodoc", "1");
-		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
 		%feature("autodoc", "1");
-		virtual		void DrawPolyText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		virtual		void DrawPolyText(const char * aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
 		%feature("autodoc", "1");
 		virtual		void DrawPoint(const Standard_ShortReal X, const Standard_ShortReal Y);
 		%feature("autodoc", "1");
 		virtual		void DrawMarker(const Standard_Integer aMarker, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal Width, const Standard_ShortReal Height, const Standard_ShortReal Angle=0.0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal aXradius, const Standard_ShortReal aYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.283184999999999575948095298372209072113037109375e+0);
+		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal aXradius, const Standard_ShortReal aYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.283184999999999575948095298372209072113037109375e+0);
+		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
 		%feature("autodoc", "1");
 		virtual		void BeginPolyline(const Standard_Integer aNumber);
 		%feature("autodoc", "1");
@@ -817,13 +766,13 @@ class Xw_Driver : public Aspect_WindowDriver {
 
 		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x00000000000000001) const;
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x00000000000000001) const;
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
-		virtual		void TextSize(const char * aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x00000000000000001) const;
+		virtual		void TextSize(const char * aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
-		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x00000000000000001) const;
+		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
@@ -882,7 +831,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 };
 %extend Xw_Driver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_Driver::~Xw_Driver %{
@@ -898,6 +847,52 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
+};
+
+
+%nodefaultctor Xw_WidthMap;
+class Xw_WidthMap : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Xw_WidthMap(const char * Connexion);
+		%feature("autodoc", "1");
+		virtual		void SetEntry(const Aspect_WidthMapEntry &Entry);
+		%feature("autodoc", "1");
+		virtual		void SetEntries(const Handle_Aspect_WidthMap &Widthmap);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer FreeWidths() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_WidthMap {
+	Handle_Xw_WidthMap GetHandle() {
+	return *(Handle_Xw_WidthMap*) &$self;
+	}
+};
+%extend Xw_WidthMap {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Xw_WidthMap::~Xw_WidthMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Xw_WidthMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Xw_WidthMap {
+	Xw_WidthMap () {}
 };
 
 
@@ -968,7 +963,7 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 %extend Xw_ColorMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_ColorMap::~Xw_ColorMap %{
@@ -990,34 +985,46 @@ def __del__(self):
 };
 
 
-%nodefaultctor Xw_FontMap;
-class Xw_FontMap : public Standard_Transient {
+%nodefaultctor Xw_TextManager;
+class Xw_TextManager : public MFT_TextManager {
 	public:
 		%feature("autodoc", "1");
-		Xw_FontMap(const char * Connexion);
+		Xw_TextManager(const Standard_Address aDrawable, const Standard_Address aWidthMap);
 		%feature("autodoc", "1");
-		virtual		void SetEntry(const Aspect_FontMapEntry &Entry);
+		virtual		void BeginString(const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anOrientation, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant, const Standard_Integer aPaintType);
 		%feature("autodoc", "1");
-		virtual		void SetEntries(const Handle_Aspect_FontMap &Fontmap);
+		virtual		Standard_Boolean BeginChar(const Standard_Integer aCharCode, const Quantity_Length X, const Quantity_Length Y);
 		%feature("autodoc", "1");
-		virtual		void Destroy();
+		virtual		Standard_Boolean SetCharBoundingBox(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
 		%feature("autodoc", "1");
-		Standard_Integer FreeFonts() const;
+		virtual		Standard_Boolean SetCharEncoding(const char * anEncoding);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Moveto(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Lineto(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Curveto(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
+		%feature("autodoc", "1");
+		virtual		void ClosePath();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean EndChar(const Quantity_Length X, const Quantity_Length Y);
+		%feature("autodoc", "1");
+		virtual		void EndString();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_FontMap {
-	Handle_Xw_FontMap GetHandle() {
-	return *(Handle_Xw_FontMap*) &$self;
+%extend Xw_TextManager {
+	Handle_Xw_TextManager GetHandle() {
+	return *(Handle_Xw_TextManager*) &$self;
 	}
 };
-%extend Xw_FontMap {
+%extend Xw_TextManager {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") Xw_FontMap::~Xw_FontMap %{
+%feature("shadow") Xw_TextManager::~Xw_TextManager %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1026,53 +1033,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Xw_FontMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Xw_FontMap {
-	Xw_FontMap () {}
-};
-
-
-%nodefaultctor Xw_PixMap;
-class Xw_PixMap : public Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Xw_PixMap(const Handle_Aspect_Window &aWindow, const Standard_Integer aWidth, const Standard_Integer anHeight, const Standard_Integer aDepth=0);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_PixMap {
-	Handle_Xw_PixMap GetHandle() {
-	return *(Handle_Xw_PixMap*) &$self;
-	}
-};
-%extend Xw_PixMap {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Xw_PixMap::~Xw_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Xw_PixMap {
+%extend Xw_TextManager {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1230,7 +1191,7 @@ class Xw_Window : public Aspect_Window {
 };
 %extend Xw_Window {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_Window::~Xw_Window %{
@@ -1284,7 +1245,7 @@ class Xw_IconBox : public Xw_Window {
 };
 %extend Xw_IconBox {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_IconBox::~Xw_IconBox %{
@@ -1303,89 +1264,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Xw_TextManager;
-class Xw_TextManager : public MFT_TextManager {
+%nodefaultctor Xw_PixMap;
+class Xw_PixMap : public Aspect_PixMap {
 	public:
 		%feature("autodoc", "1");
-		Xw_TextManager(const Standard_Address aDrawable, const Standard_Address aWidthMap);
-		%feature("autodoc", "1");
-		virtual		void BeginString(const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anOrientation, const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant, const Standard_Integer aPaintType);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BeginChar(const Standard_Integer aCharCode, const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetCharBoundingBox(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetCharEncoding(const char * anEncoding);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Moveto(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Lineto(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Curveto(const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2, const Quantity_Length X3, const Quantity_Length Y3, const Quantity_Length X4, const Quantity_Length Y4);
-		%feature("autodoc", "1");
-		virtual		void ClosePath();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean EndChar(const Quantity_Length X, const Quantity_Length Y);
-		%feature("autodoc", "1");
-		virtual		void EndString();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_TextManager {
-	Handle_Xw_TextManager GetHandle() {
-	return *(Handle_Xw_TextManager*) &$self;
-	}
-};
-%extend Xw_TextManager {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Xw_TextManager::~Xw_TextManager %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Xw_TextManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Xw_WidthMap;
-class Xw_WidthMap : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Xw_WidthMap(const char * Connexion);
-		%feature("autodoc", "1");
-		virtual		void SetEntry(const Aspect_WidthMapEntry &Entry);
-		%feature("autodoc", "1");
-		virtual		void SetEntries(const Handle_Aspect_WidthMap &Widthmap);
+		Xw_PixMap(const Handle_Aspect_Window &aWindow, const Standard_Integer aWidth, const Standard_Integer anHeight, const Standard_Integer aDepth=0);
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		Standard_Integer FreeWidths() const;
+		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
+		%feature("autodoc", "1");
+		virtual		Aspect_Handle PixmapID() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Xw_WidthMap {
-	Handle_Xw_WidthMap GetHandle() {
-	return *(Handle_Xw_WidthMap*) &$self;
+%extend Xw_PixMap {
+	Handle_Xw_PixMap GetHandle() {
+	return *(Handle_Xw_PixMap*) &$self;
 	}
 };
-%extend Xw_WidthMap {
+%extend Xw_PixMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") Xw_WidthMap::~Xw_WidthMap %{
+%feature("shadow") Xw_PixMap::~Xw_PixMap %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1394,13 +1300,107 @@ def __del__(self):
 		pass
 %}
 
-%extend Xw_WidthMap {
+%extend Xw_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
-%extend Xw_WidthMap {
-	Xw_WidthMap () {}
+
+
+%nodefaultctor Xw_FontMap;
+class Xw_FontMap : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Xw_FontMap(const char * Connexion);
+		%feature("autodoc", "1");
+		virtual		void SetEntry(const Aspect_FontMapEntry &Entry);
+		%feature("autodoc", "1");
+		virtual		void SetEntries(const Handle_Aspect_FontMap &Fontmap);
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Integer FreeFonts() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Xw_FontMap {
+	Handle_Xw_FontMap GetHandle() {
+	return *(Handle_Xw_FontMap*) &$self;
+	}
+};
+%extend Xw_FontMap {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Xw_FontMap::~Xw_FontMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Xw_FontMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Xw_FontMap {
+	Xw_FontMap () {}
+};
+
+
+%nodefaultctor Xw_ListOfMFTFonts;
+class Xw_ListOfMFTFonts {
+	public:
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Xw_ListOfMFTFonts(const Handle_MFT_FontManager &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_MFT_FontManager &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & Assign(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		const Xw_ListOfMFTFonts & operator=(const Xw_ListOfMFTFonts &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_MFT_FontManager &Value);
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_MFT_FontManager & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_MFT_FontManager & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") Xw_ListOfMFTFonts::~Xw_ListOfMFTFonts %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Xw_ListOfMFTFonts {
+	void _kill_pointed() {
+		delete $self;
+	}
 };
 
 
@@ -1428,7 +1428,7 @@ class Xw_TypeMap : public Standard_Transient {
 };
 %extend Xw_TypeMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_TypeMap::~Xw_TypeMap %{
@@ -1474,7 +1474,7 @@ class Xw_MarkMap : public Standard_Transient {
 };
 %extend Xw_MarkMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Xw_MarkMap::~Xw_MarkMap %{

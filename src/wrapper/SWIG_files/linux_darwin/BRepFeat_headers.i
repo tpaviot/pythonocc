@@ -50,8 +50,9 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<BRepFeat.hxx>
 #include<TopoDS_Shape.hxx>
+#include<gp_Ax1.hxx>
+#include<BRepFeat.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom_Curve.hxx>
@@ -65,5 +66,4 @@ $HeaderURL$
 #include<TopoDS_Compound.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Vec.hxx>
-#include<gp_Ax1.hxx>
 %}

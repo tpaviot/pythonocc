@@ -500,6 +500,6 @@ $HeaderURL$
 %import TCollection.i
 %import AIS.i
 %import TPrsStd.i
-%import Graphic3d.i
 %import Standard.i
+%import Graphic3d.i
 %import TopAbs.i

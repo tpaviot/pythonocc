@@ -46,17 +46,18 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<Handle_Geom_BSplineCurve.hxx>
+#include<Handle_Geom_BSplineSurface.hxx>
+#include<TColStd_Array1OfReal.hxx>
 #include<Handle_Geom_Curve.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Pnt2d.hxx>
-#include<TColgp_Array1OfPnt.hxx>
-#include<TColStd_Array1OfReal.hxx>
-#include<Handle_Geom_BSplineCurve.hxx>
-#include<Handle_Geom2d_BSplineCurve.hxx>
 #include<math_Vector.hxx>
 #include<AdvApprox_ApproxAFunction.hxx>
+#include<Handle_Geom2d_BSplineCurve.hxx>
+#include<TColgp_Array1OfPnt.hxx>
 #include<gp_Mat.hxx>
 #include<GeomLib.hxx>
 #include<gp_Ax2.hxx>
@@ -69,5 +70,4 @@ $HeaderURL$
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<Adaptor3d_Curve.hxx>
-#include<Handle_Geom_BSplineSurface.hxx>
 %}

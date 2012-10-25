@@ -258,7 +258,7 @@ $HeaderURL$
 %import Standard.i
 %import math.i
 %import AppParCurves.i
-%import IntImp.i
 %import Approx.i
+%import IntImp.i
 %import ApproxInt.i
 %import TopAbs.i

@@ -853,11 +853,11 @@ $HeaderURL$
 #include <Visual3d_ZClippingDefinitionError.hxx>
 %};
 
+%import MMgt.i
 %import Standard.i
+%import Aspect.i
 %import Viewer.i
 %import Visual3d.i
-%import MMgt.i
-%import Aspect.i
 %import Quantity.i
 %import OSD.i
 %import Image.i

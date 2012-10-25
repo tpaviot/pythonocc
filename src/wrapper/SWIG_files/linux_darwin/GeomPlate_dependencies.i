@@ -272,5 +272,5 @@ $HeaderURL$
 %import TCollection.i
 %import Geom.i
 %import Standard.i
-%import AdvApp2Var.i
 %import GeomAbs.i
+%import AdvApp2Var.i

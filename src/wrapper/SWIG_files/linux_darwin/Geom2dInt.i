@@ -122,6 +122,90 @@ def __del__(self):
 };
 
 
+%nodefaultctor Geom2dInt_GInter;
+class Geom2dInt_GInter : public IntRes2d_Intersection {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_GInter();
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d &C1, const Standard_Real TolDomain) const;
+
+};
+%feature("shadow") Geom2dInt_GInter::~Geom2dInt_GInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dInt_GInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
+class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
+		%feature("autodoc","Perform(const Poly1, const Poly2) -> [Standard_Integer, Standard_Integer, Standard_Real, Standard_Real]");
+
+		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
+		%feature("autodoc", "1");
+		Standard_Integer NbRoots() const;
+		%feature("autodoc","Roots() -> [Standard_Real, Standard_Real]");
+
+		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean AnErrorOccurred() const;
+
+};
+%feature("shadow") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_FunctionWithDerivative {
 	public:
@@ -220,90 +304,6 @@ def __del__(self):
 %}
 
 %extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_GInter;
-class Geom2dInt_GInter : public IntRes2d_Intersection {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_GInter();
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C, const IntRes2d_Domain &D, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Geom2dInt_GInter(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const IntRes2d_Domain &D1, const Adaptor2d_Curve2d &C2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Perform(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		IntRes2d_Domain ComputeDomain(const Adaptor2d_Curve2d &C1, const Standard_Real TolDomain) const;
-
-};
-%feature("shadow") Geom2dInt_GInter::~Geom2dInt_GInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_GInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real Tol);
-		%feature("autodoc","Perform(const Poly1, const Poly2) -> [Standard_Integer, Standard_Integer, Standard_Real, Standard_Real]");
-
-		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
-		%feature("autodoc", "1");
-		Standard_Integer NbRoots() const;
-		%feature("autodoc","Roots() -> [Standard_Real, Standard_Real]");
-
-		void Roots(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Boolean AnErrorOccurred() const;
-
-};
-%feature("shadow") Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -535,7 +535,7 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 };
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{

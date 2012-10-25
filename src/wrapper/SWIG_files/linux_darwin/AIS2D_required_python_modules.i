@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Graphic2d
 import Quantity
+import Graphic2d
 import MMgt
 import V2d
 };

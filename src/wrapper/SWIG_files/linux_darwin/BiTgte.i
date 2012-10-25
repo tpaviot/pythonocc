@@ -61,44 +61,6 @@ enum BiTgte_ContactType {
 
 
 
-%nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
-class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
-		%feature("autodoc", "1");
-		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	BiTgte_DataMapNodeOfDataMapOfShapeBox* GetObject() {
-	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox::~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BiTgte_HCurveOnEdge;
 class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	public:
@@ -169,6 +131,44 @@ def __del__(self):
 %}
 
 %extend Handle_BiTgte_HCurveOnVertex {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
+class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox();
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox & operator=(const BiTgte_DataMapNodeOfDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	BiTgte_DataMapNodeOfDataMapOfShapeBox* GetObject() {
+	return (BiTgte_DataMapNodeOfDataMapOfShapeBox*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox::~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -258,30 +258,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
-class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
+%nodefaultctor BiTgte_HCurveOnEdge;
+class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	public:
 		%feature("autodoc", "1");
-		BiTgte_DataMapNodeOfDataMapOfShapeBox(const TopoDS_Shape K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
+		BiTgte_HCurveOnEdge();
 		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
+		BiTgte_HCurveOnEdge(const BiTgte_CurveOnEdge &C);
 		%feature("autodoc", "1");
-		Bnd_Box & Value() const;
+		void Set(const BiTgte_CurveOnEdge &C);
+		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		Adaptor3d_Curve & GetCurve();
+		%feature("autodoc", "1");
+		BiTgte_CurveOnEdge & ChangeCurve();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
-	Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox GetHandle() {
-	return *(Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox*) &$self;
+%extend BiTgte_HCurveOnEdge {
+	Handle_BiTgte_HCurveOnEdge GetHandle() {
+	return *(Handle_BiTgte_HCurveOnEdge*) &$self;
 	}
 };
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+%extend BiTgte_HCurveOnEdge {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") BiTgte_DataMapNodeOfDataMapOfShapeBox::~BiTgte_DataMapNodeOfDataMapOfShapeBox %{
+%feature("shadow") BiTgte_HCurveOnEdge::~BiTgte_HCurveOnEdge %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -290,7 +296,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+%extend BiTgte_HCurveOnEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -323,7 +329,7 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnVertex {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BiTgte_HCurveOnVertex::~BiTgte_HCurveOnVertex %{
@@ -342,36 +348,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BiTgte_HCurveOnEdge;
-class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
+%nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
+class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BiTgte_HCurveOnEdge();
+		BiTgte_DataMapNodeOfDataMapOfShapeBox(const TopoDS_Shape K, const Bnd_Box &I, const TCollection_MapNodePtr &n);
 		%feature("autodoc", "1");
-		BiTgte_HCurveOnEdge(const BiTgte_CurveOnEdge &C);
+		TopoDS_Shape  Key() const;
 		%feature("autodoc", "1");
-		void Set(const BiTgte_CurveOnEdge &C);
-		%feature("autodoc", "1");
-		virtual		const Adaptor3d_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		Adaptor3d_Curve & GetCurve();
-		%feature("autodoc", "1");
-		BiTgte_CurveOnEdge & ChangeCurve();
+		Bnd_Box & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend BiTgte_HCurveOnEdge {
-	Handle_BiTgte_HCurveOnEdge GetHandle() {
-	return *(Handle_BiTgte_HCurveOnEdge*) &$self;
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox GetHandle() {
+	return *(Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox*) &$self;
 	}
 };
-%extend BiTgte_HCurveOnEdge {
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") BiTgte_HCurveOnEdge::~BiTgte_HCurveOnEdge %{
+%feature("shadow") BiTgte_DataMapNodeOfDataMapOfShapeBox::~BiTgte_DataMapNodeOfDataMapOfShapeBox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -380,7 +380,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BiTgte_HCurveOnEdge {
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -465,37 +465,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BiTgte_DataMapIteratorOfDataMapOfShapeBox;
-class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BiTgte_DataMapIteratorOfDataMapOfShapeBox();
-		%feature("autodoc", "1");
-		BiTgte_DataMapIteratorOfDataMapOfShapeBox(const BiTgte_DataMapOfShapeBox &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BiTgte_DataMapOfShapeBox &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Bnd_Box & Value() const;
-
-};
-%feature("shadow") BiTgte_DataMapIteratorOfDataMapOfShapeBox::~BiTgte_DataMapIteratorOfDataMapOfShapeBox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BiTgte_DataMapOfShapeBox;
 class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 	public:
@@ -539,6 +508,37 @@ def __del__(self):
 %}
 
 %extend BiTgte_DataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BiTgte_DataMapIteratorOfDataMapOfShapeBox;
+class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BiTgte_DataMapIteratorOfDataMapOfShapeBox();
+		%feature("autodoc", "1");
+		BiTgte_DataMapIteratorOfDataMapOfShapeBox(const BiTgte_DataMapOfShapeBox &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BiTgte_DataMapOfShapeBox &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const Bnd_Box & Value() const;
+
+};
+%feature("shadow") BiTgte_DataMapIteratorOfDataMapOfShapeBox::~BiTgte_DataMapIteratorOfDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
 	void _kill_pointed() {
 		delete $self;
 	}

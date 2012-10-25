@@ -52,35 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
-class RWStepElement_RWSurface3dElementDescriptor {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurface3dElementDescriptor();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepElement_RWSurface3dElementDescriptor::~RWStepElement_RWSurface3dElementDescriptor %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepElement_RWSurface3dElementDescriptor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepElement_RWAnalysisItemWithinRepresentation;
 class RWStepElement_RWAnalysisItemWithinRepresentation {
 	public:
@@ -133,35 +104,6 @@ def __del__(self):
 %}
 
 %extend RWStepElement_RWSurfaceSectionField {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
-class RWStepElement_RWCurveElementSectionDefinition {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWCurveElementSectionDefinition();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_CurveElementSectionDefinition &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepElement_RWCurveElementSectionDefinition::~RWStepElement_RWCurveElementSectionDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepElement_RWCurveElementSectionDefinition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -226,20 +168,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepElement_RWUniformSurfaceSection;
-class RWStepElement_RWUniformSurfaceSection {
+%nodefaultctor RWStepElement_RWSurfaceSection;
+class RWStepElement_RWSurfaceSection {
 	public:
 		%feature("autodoc", "1");
-		RWStepElement_RWUniformSurfaceSection();
+		RWStepElement_RWSurfaceSection();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_UniformSurfaceSection &ent) const;
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSection &ent) const;
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_UniformSurfaceSection &ent) const;
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSection &ent) const;
 		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_UniformSurfaceSection &ent, Interface_EntityIterator & iter) const;
+		void Share(const Handle_StepElement_SurfaceSection &ent, Interface_EntityIterator & iter) const;
 
 };
-%feature("shadow") RWStepElement_RWUniformSurfaceSection::~RWStepElement_RWUniformSurfaceSection %{
+%feature("shadow") RWStepElement_RWSurfaceSection::~RWStepElement_RWSurfaceSection %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -248,7 +190,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWStepElement_RWUniformSurfaceSection {
+%extend RWStepElement_RWSurfaceSection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -313,6 +255,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
+class RWStepElement_RWCurveElementSectionDefinition {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWCurveElementSectionDefinition();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_CurveElementSectionDefinition &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_CurveElementSectionDefinition &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepElement_RWCurveElementSectionDefinition::~RWStepElement_RWCurveElementSectionDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepElement_RWCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor RWStepElement_RWVolume3dElementDescriptor;
 class RWStepElement_RWVolume3dElementDescriptor {
 	public:
@@ -365,6 +336,64 @@ def __del__(self):
 %}
 
 %extend RWStepElement_RWSurfaceElementProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepElement_RWUniformSurfaceSection;
+class RWStepElement_RWUniformSurfaceSection {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWUniformSurfaceSection();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_UniformSurfaceSection &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_UniformSurfaceSection &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_UniformSurfaceSection &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepElement_RWUniformSurfaceSection::~RWStepElement_RWUniformSurfaceSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepElement_RWUniformSurfaceSection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
+class RWStepElement_RWSurface3dElementDescriptor {
+	public:
+		%feature("autodoc", "1");
+		RWStepElement_RWSurface3dElementDescriptor();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_Surface3dElementDescriptor &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepElement_Surface3dElementDescriptor &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepElement_RWSurface3dElementDescriptor::~RWStepElement_RWSurface3dElementDescriptor %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepElement_RWSurface3dElementDescriptor {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -452,35 +481,6 @@ def __del__(self):
 %}
 
 %extend RWStepElement_RWCurveElementEndReleasePacket {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor RWStepElement_RWSurfaceSection;
-class RWStepElement_RWSurfaceSection {
-	public:
-		%feature("autodoc", "1");
-		RWStepElement_RWSurfaceSection();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepElement_SurfaceSection &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepElement_SurfaceSection &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepElement_SurfaceSection &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepElement_RWSurfaceSection::~RWStepElement_RWSurfaceSection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepElement_RWSurfaceSection {
 	void _kill_pointed() {
 		delete $self;
 	}

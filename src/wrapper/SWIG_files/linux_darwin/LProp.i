@@ -197,7 +197,7 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 };
 %extend LProp_SequenceNodeOfSequenceOfCIType {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LProp_SequenceNodeOfSequenceOfCIType::~LProp_SequenceNodeOfSequenceOfCIType %{
@@ -240,7 +240,7 @@ class LProp_BadContinuity : public Standard_Failure {
 };
 %extend LProp_BadContinuity {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LProp_BadContinuity::~LProp_BadContinuity %{
@@ -410,7 +410,7 @@ class LProp_NotDefined : public Standard_Failure {
 };
 %extend LProp_NotDefined {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") LProp_NotDefined::~LProp_NotDefined %{

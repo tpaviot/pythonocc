@@ -28,8 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Extrema
 import IntRes2d
+import Extrema
 import GeomAbs
 import gp
 };

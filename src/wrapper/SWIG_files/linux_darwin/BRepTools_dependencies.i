@@ -243,6 +243,6 @@ $HeaderURL$
 %import MMgt.i
 %import TCollection.i
 %import Standard.i
-%import GeomAbs.i
-%import TopTools.i
 %import TopAbs.i
+%import TopTools.i
+%import GeomAbs.i

@@ -240,7 +240,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import Standard.i
 %import TCollection.i
+%import MMgt.i
 %import Quantity.i

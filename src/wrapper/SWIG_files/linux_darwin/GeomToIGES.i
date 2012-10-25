@@ -85,81 +85,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomToIGES_GeomSurface;
-class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
-	public:
-		%feature("autodoc", "1");
-		GeomToIGES_GeomSurface();
-		%feature("autodoc", "1");
-		GeomToIGES_GeomSurface(const GeomToIGES_GeomEntity &GE);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_Surface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BoundedSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BSplineSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BezierSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_RectangularTrimmedSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ElementarySurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_Plane &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_CylindricalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ConicalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SphericalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ToroidalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SweptSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SurfaceOfLinearExtrusion &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SurfaceOfRevolution &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_OffsetSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferPlaneSurface(const Handle_Geom_Plane &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferCylindricalSurface(const Handle_Geom_CylindricalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferConicalSurface(const Handle_Geom_ConicalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferSphericalSurface(const Handle_Geom_SphericalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity TransferToroidalSurface(const Handle_Geom_ToroidalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
-		%feature("autodoc", "1");
-		Standard_Real Length() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetBRepMode() const;
-		%feature("autodoc", "1");
-		void SetBRepMode(const Standard_Boolean flag);
-		%feature("autodoc", "1");
-		Standard_Boolean GetAnalyticMode() const;
-		%feature("autodoc", "1");
-		void SetAnalyticMode(const Standard_Boolean flag);
-
-};
-%feature("shadow") GeomToIGES_GeomSurface::~GeomToIGES_GeomSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomToIGES_GeomSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomToIGES_GeomCurve;
 class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 	public:
@@ -232,6 +157,81 @@ def __del__(self):
 %}
 
 %extend GeomToIGES_GeomPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomToIGES_GeomSurface;
+class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
+	public:
+		%feature("autodoc", "1");
+		GeomToIGES_GeomSurface();
+		%feature("autodoc", "1");
+		GeomToIGES_GeomSurface(const GeomToIGES_GeomEntity &GE);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_Surface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BoundedSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BSplineSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_BezierSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_RectangularTrimmedSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ElementarySurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_Plane &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_CylindricalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ConicalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SphericalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_ToroidalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SweptSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SurfaceOfLinearExtrusion &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_SurfaceOfRevolution &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSurface(const Handle_Geom_OffsetSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferPlaneSurface(const Handle_Geom_Plane &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferCylindricalSurface(const Handle_Geom_CylindricalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferConicalSurface(const Handle_Geom_ConicalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferSphericalSurface(const Handle_Geom_SphericalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity TransferToroidalSurface(const Handle_Geom_ToroidalSurface &start, const Standard_Real Udeb, const Standard_Real Ufin, const Standard_Real Vdeb, const Standard_Real Vfin);
+		%feature("autodoc", "1");
+		Standard_Real Length() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetBRepMode() const;
+		%feature("autodoc", "1");
+		void SetBRepMode(const Standard_Boolean flag);
+		%feature("autodoc", "1");
+		Standard_Boolean GetAnalyticMode() const;
+		%feature("autodoc", "1");
+		void SetAnalyticMode(const Standard_Boolean flag);
+
+};
+%feature("shadow") GeomToIGES_GeomSurface::~GeomToIGES_GeomSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomToIGES_GeomSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

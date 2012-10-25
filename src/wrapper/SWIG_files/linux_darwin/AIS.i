@@ -49,11 +49,22 @@ $HeaderURL$
 
 %include AIS_headers.i
 
-typedef NCollection_BaseCollection<NCollection_TListIterator<Handle_Standard_Transient> > AIS_BaseCollItListTransient;
 typedef NCollection_List<Handle_Standard_Transient> AIS_NListTransient;
 typedef NCollection_TListIterator<Handle_Standard_Transient> AIS_NListIteratorOfListTransient;
 typedef NCollection_DataMap<Handle_Standard_Transient, NCollection_TListIterator<Handle_Standard_Transient>, NCollection_DefaultHasher<Handle_Standard_Transient> > AIS_NDataMapOfTransientIteratorOfListTransient;
 typedef AIS_InteractiveContext * AIS_PToContext;
+typedef NCollection_BaseCollection<NCollection_TListIterator<Handle_Standard_Transient> > AIS_BaseCollItListTransient;
+
+enum AIS_KindOfUnit {
+	AIS_TOU_LENGTH,
+	AIS_TOU_SURFACE,
+	AIS_TOU_VOLUME,
+	AIS_TOU_PLANE_ANGLE,
+	AIS_TOU_SOLID_ANGLE,
+	AIS_TOU_MASS,
+	AIS_TOU_FORCE,
+	AIS_TOU_TIME,
+	};
 
 enum AIS_StatusOfPick {
 	AIS_SOP_Error,
@@ -61,6 +72,23 @@ enum AIS_StatusOfPick {
 	AIS_SOP_Removed,
 	AIS_SOP_OneSelected,
 	AIS_SOP_SeveralSelected,
+	};
+
+enum AIS_KindOfDimension {
+	AIS_KOD_NONE,
+	AIS_KOD_LENGTH,
+	AIS_KOD_PLANEANGLE,
+	AIS_KOD_SOLIDANGLE,
+	AIS_KOD_AREA,
+	AIS_KOD_VOLUME,
+	AIS_KOD_MASS,
+	AIS_KOD_TIME,
+	AIS_KOD_RADIUS,
+	AIS_KOD_DIAMETER,
+	AIS_KOD_CHAMF2D,
+	AIS_KOD_CHAMF3D,
+	AIS_KOD_OFFSET,
+	AIS_KOD_ELLIPSERADIUS,
 	};
 
 enum AIS_TypeOfAxis {
@@ -127,17 +155,6 @@ enum AIS_DisplayMode {
 	AIS_ExactHLR,
 	};
 
-enum AIS_KindOfUnit {
-	AIS_TOU_LENGTH,
-	AIS_TOU_SURFACE,
-	AIS_TOU_VOLUME,
-	AIS_TOU_PLANE_ANGLE,
-	AIS_TOU_SOLID_ANGLE,
-	AIS_TOU_MASS,
-	AIS_TOU_FORCE,
-	AIS_TOU_TIME,
-	};
-
 enum AIS_StatusOfDetection {
 	AIS_SOD_Error,
 	AIS_SOD_Nothing,
@@ -166,23 +183,6 @@ enum AIS_DisplayStatus {
 	AIS_DS_FullErased,
 	AIS_DS_Temporary,
 	AIS_DS_None,
-	};
-
-enum AIS_KindOfDimension {
-	AIS_KOD_NONE,
-	AIS_KOD_LENGTH,
-	AIS_KOD_PLANEANGLE,
-	AIS_KOD_SOLIDANGLE,
-	AIS_KOD_AREA,
-	AIS_KOD_VOLUME,
-	AIS_KOD_MASS,
-	AIS_KOD_TIME,
-	AIS_KOD_RADIUS,
-	AIS_KOD_DIAMETER,
-	AIS_KOD_CHAMF2D,
-	AIS_KOD_CHAMF3D,
-	AIS_KOD_OFFSET,
-	AIS_KOD_ELLIPSERADIUS,
 	};
 
 enum AIS_TypeOfPlane {
@@ -289,82 +289,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_ConcentricRelation;
-class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation(const Handle_AIS_ConcentricRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation(const AIS_ConcentricRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation & operator=(const Handle_AIS_ConcentricRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_ConcentricRelation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_ConcentricRelation {
-	AIS_ConcentricRelation* GetObject() {
-	return (AIS_ConcentricRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_ConcentricRelation::~Handle_AIS_ConcentricRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_ConcentricRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_SymmetricRelation;
-class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation(const Handle_AIS_SymmetricRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation(const AIS_SymmetricRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation & operator=(const Handle_AIS_SymmetricRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_SymmetricRelation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_SymmetricRelation {
-	AIS_SymmetricRelation* GetObject() {
-	return (AIS_SymmetricRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_SymmetricRelation::~Handle_AIS_SymmetricRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_SymmetricRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_DiameterDimension;
 class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 	public:
@@ -403,29 +327,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
-class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_AIS_MultipleConnectedInteractive;
+class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive();
+		Handle_AIS_MultipleConnectedInteractive();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		Handle_AIS_MultipleConnectedInteractive(const Handle_AIS_MultipleConnectedInteractive &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		Handle_AIS_MultipleConnectedInteractive(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		Handle_AIS_MultipleConnectedInteractive & operator=(const Handle_AIS_MultipleConnectedInteractive &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_MultipleConnectedInteractive DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	AIS_DataMapNodeOfDataMapofIntegerListOfinteractive* GetObject() {
-	return (AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*)$self->Access();
+%extend Handle_AIS_MultipleConnectedInteractive {
+	AIS_MultipleConnectedInteractive* GetObject() {
+	return (AIS_MultipleConnectedInteractive*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
+%feature("shadow") Handle_AIS_MultipleConnectedInteractive::~Handle_AIS_MultipleConnectedInteractive %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -434,7 +358,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+%extend Handle_AIS_MultipleConnectedInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -549,6 +473,44 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_DataMapNodeOfDataMapOfIOStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_TangentRelation;
+class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation(const Handle_AIS_TangentRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_TangentRelation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_TangentRelation {
+	AIS_TangentRelation* GetObject() {
+	return (AIS_TangentRelation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_TangentRelation::~Handle_AIS_TangentRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_TangentRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -707,29 +669,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_AngleDimension;
-class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
+%nodefaultctor Handle_AIS_Point;
+class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension();
+		Handle_AIS_Point();
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension(const Handle_AIS_AngleDimension &aHandle);
+		Handle_AIS_Point(const Handle_AIS_Point &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
+		Handle_AIS_Point(const AIS_Point *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
+		Handle_AIS_Point & operator=(const Handle_AIS_Point &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
+		Handle_AIS_Point & operator=(const AIS_Point *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_AngleDimension DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Point DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_AngleDimension {
-	AIS_AngleDimension* GetObject() {
-	return (AIS_AngleDimension*)$self->Access();
+%extend Handle_AIS_Point {
+	AIS_Point* GetObject() {
+	return (AIS_Point*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_AngleDimension::~Handle_AIS_AngleDimension %{
+%feature("shadow") Handle_AIS_Point::~Handle_AIS_Point %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -738,7 +700,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_AngleDimension {
+%extend Handle_AIS_Point {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -783,29 +745,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_Line;
-class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
+%nodefaultctor Handle_AIS_Drawer;
+class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_Line();
+		Handle_AIS_Drawer();
 		%feature("autodoc", "1");
-		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
+		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_Line(const AIS_Line *anItem);
+		Handle_AIS_Drawer(const AIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
+		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_Line & operator=(const AIS_Line *anItem);
+		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_Line DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_Drawer DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_Line {
-	AIS_Line* GetObject() {
-	return (AIS_Line*)$self->Access();
+%extend Handle_AIS_Drawer {
+	AIS_Drawer* GetObject() {
+	return (AIS_Drawer*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_Line::~Handle_AIS_Line %{
+%feature("shadow") Handle_AIS_Drawer::~Handle_AIS_Drawer %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -814,83 +776,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_TangentRelation;
-class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation(const Handle_AIS_TangentRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation(const AIS_TangentRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation & operator=(const Handle_AIS_TangentRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TangentRelation & operator=(const AIS_TangentRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_TangentRelation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_TangentRelation {
-	AIS_TangentRelation* GetObject() {
-	return (AIS_TangentRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_TangentRelation::~Handle_AIS_TangentRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_TangentRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_MultipleConnectedInteractive;
-class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive();
-		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive(const Handle_AIS_MultipleConnectedInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive(const AIS_MultipleConnectedInteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive & operator=(const Handle_AIS_MultipleConnectedInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_MultipleConnectedInteractive & operator=(const AIS_MultipleConnectedInteractive *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_MultipleConnectedInteractive DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_MultipleConnectedInteractive {
-	AIS_MultipleConnectedInteractive* GetObject() {
-	return (AIS_MultipleConnectedInteractive*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_MultipleConnectedInteractive::~Handle_AIS_MultipleConnectedInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_MultipleConnectedInteractive {
+%extend Handle_AIS_Drawer {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -935,29 +821,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
-class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_AIS_ConcentricRelation;
+class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC();
+		Handle_AIS_ConcentricRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		Handle_AIS_ConcentricRelation(const Handle_AIS_ConcentricRelation &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
+		Handle_AIS_ConcentricRelation(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
+		Handle_AIS_ConcentricRelation & operator=(const Handle_AIS_ConcentricRelation &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
+		Handle_AIS_ConcentricRelation & operator=(const AIS_ConcentricRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_DataMapNodeOfDataMapOfILC DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_ConcentricRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
-	AIS_DataMapNodeOfDataMapOfILC* GetObject() {
-	return (AIS_DataMapNodeOfDataMapOfILC*)$self->Access();
+%extend Handle_AIS_ConcentricRelation {
+	AIS_ConcentricRelation* GetObject() {
+	return (AIS_ConcentricRelation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfILC::~Handle_AIS_DataMapNodeOfDataMapOfILC %{
+%feature("shadow") Handle_AIS_ConcentricRelation::~Handle_AIS_ConcentricRelation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -966,7 +852,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
+%extend Handle_AIS_ConcentricRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1125,29 +1011,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_PerpendicularRelation;
-class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
+%nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
+class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation();
+		Handle_AIS_DataMapNodeOfDataMapOfILC();
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation(const Handle_AIS_PerpendicularRelation &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfILC(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation(const AIS_PerpendicularRelation *anItem);
+		Handle_AIS_DataMapNodeOfDataMapOfILC(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation & operator=(const Handle_AIS_PerpendicularRelation &aHandle);
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const Handle_AIS_DataMapNodeOfDataMapOfILC &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *anItem);
+		Handle_AIS_DataMapNodeOfDataMapOfILC & operator=(const AIS_DataMapNodeOfDataMapOfILC *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_PerpendicularRelation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_DataMapNodeOfDataMapOfILC DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_PerpendicularRelation {
-	AIS_PerpendicularRelation* GetObject() {
-	return (AIS_PerpendicularRelation*)$self->Access();
+%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
+	AIS_DataMapNodeOfDataMapOfILC* GetObject() {
+	return (AIS_DataMapNodeOfDataMapOfILC*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_PerpendicularRelation::~Handle_AIS_PerpendicularRelation %{
+%feature("shadow") Handle_AIS_DataMapNodeOfDataMapOfILC::~Handle_AIS_DataMapNodeOfDataMapOfILC %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1156,7 +1042,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_PerpendicularRelation {
+%extend Handle_AIS_DataMapNodeOfDataMapOfILC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1195,6 +1081,44 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_AttributeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
+class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_SequenceNodeOfSequenceOfDimension DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
+	AIS_SequenceNodeOfSequenceOfDimension* GetObject() {
+	return (AIS_SequenceNodeOfSequenceOfDimension*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfDimension::~Handle_AIS_SequenceNodeOfSequenceOfDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1277,6 +1201,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_Line;
+class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_Line();
+		%feature("autodoc", "1");
+		Handle_AIS_Line(const Handle_AIS_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Line(const AIS_Line *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const Handle_AIS_Line &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_Line & operator=(const AIS_Line *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_Line DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_Line {
+	AIS_Line* GetObject() {
+	return (AIS_Line*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_Line::~Handle_AIS_Line %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_Line {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_DimensionOwner;
 class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 	public:
@@ -1315,29 +1277,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_BadEdgeFilter;
-class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
+%nodefaultctor Handle_AIS_PerpendicularRelation;
+class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter();
+		Handle_AIS_PerpendicularRelation();
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter(const Handle_AIS_BadEdgeFilter &aHandle);
+		Handle_AIS_PerpendicularRelation(const Handle_AIS_PerpendicularRelation &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
+		Handle_AIS_PerpendicularRelation(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
+		Handle_AIS_PerpendicularRelation & operator=(const Handle_AIS_PerpendicularRelation &aHandle);
 		%feature("autodoc", "1");
-		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
+		Handle_AIS_PerpendicularRelation & operator=(const AIS_PerpendicularRelation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_AIS_BadEdgeFilter DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_AIS_PerpendicularRelation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_AIS_BadEdgeFilter {
-	AIS_BadEdgeFilter* GetObject() {
-	return (AIS_BadEdgeFilter*)$self->Access();
+%extend Handle_AIS_PerpendicularRelation {
+	AIS_PerpendicularRelation* GetObject() {
+	return (AIS_PerpendicularRelation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_AIS_BadEdgeFilter::~Handle_AIS_BadEdgeFilter %{
+%feature("shadow") Handle_AIS_PerpendicularRelation::~Handle_AIS_PerpendicularRelation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1346,7 +1308,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_AIS_BadEdgeFilter {
+%extend Handle_AIS_PerpendicularRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1543,44 +1505,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_ParallelRelation;
-class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation();
-		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation(const Handle_AIS_ParallelRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation(const AIS_ParallelRelation *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation & operator=(const Handle_AIS_ParallelRelation &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_ParallelRelation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_ParallelRelation {
-	AIS_ParallelRelation* GetObject() {
-	return (AIS_ParallelRelation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_ParallelRelation::~Handle_AIS_ParallelRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_ParallelRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_Axis;
 class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 	public:
@@ -1657,44 +1581,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfInteractive;
-class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive();
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_SequenceNodeOfSequenceOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
-	AIS_SequenceNodeOfSequenceOfInteractive* GetObject() {
-	return (AIS_SequenceNodeOfSequenceOfInteractive*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfInteractive::~Handle_AIS_SequenceNodeOfSequenceOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_C0RegularityFilter;
 class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -1727,6 +1613,44 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_C0RegularityFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
+class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive & operator=(const AIS_DataMapNodeOfDataMapofIntegerListOfinteractive *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	AIS_DataMapNodeOfDataMapofIntegerListOfinteractive* GetObject() {
+	return (AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1771,44 +1695,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_Point;
-class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_Point();
-		%feature("autodoc", "1");
-		Handle_AIS_Point(const Handle_AIS_Point &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Point(const AIS_Point *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Point & operator=(const Handle_AIS_Point &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Point & operator=(const AIS_Point *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_Point DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_Point {
-	AIS_Point* GetObject() {
-	return (AIS_Point*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_Point::~Handle_AIS_Point %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_Point {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_MaxRadiusDimension;
 class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 	public:
@@ -1841,44 +1727,6 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_MaxRadiusDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
-class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive();
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_StdMapNodeOfMapOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
-	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
-	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_StdMapNodeOfMapOfInteractive::~Handle_AIS_StdMapNodeOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1923,44 +1771,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_Drawer;
-class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer();
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const Handle_AIS_Drawer &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_Drawer & operator=(const AIS_Drawer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_Drawer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_Drawer {
-	AIS_Drawer* GetObject() {
-	return (AIS_Drawer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_Drawer::~Handle_AIS_Drawer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_LocalContext;
 class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 	public:
@@ -1993,6 +1803,82 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
+class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const Handle_AIS_StdMapNodeOfMapOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_StdMapNodeOfMapOfInteractive & operator=(const AIS_StdMapNodeOfMapOfInteractive *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_StdMapNodeOfMapOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	AIS_StdMapNodeOfMapOfInteractive* GetObject() {
+	return (AIS_StdMapNodeOfMapOfInteractive*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_StdMapNodeOfMapOfInteractive::~Handle_AIS_StdMapNodeOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_StdMapNodeOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_BadEdgeFilter;
+class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter();
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter(const Handle_AIS_BadEdgeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter(const AIS_BadEdgeFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter & operator=(const Handle_AIS_BadEdgeFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_BadEdgeFilter & operator=(const AIS_BadEdgeFilter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_BadEdgeFilter DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_BadEdgeFilter {
+	AIS_BadEdgeFilter* GetObject() {
+	return (AIS_BadEdgeFilter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_BadEdgeFilter::~Handle_AIS_BadEdgeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_BadEdgeFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2037,6 +1923,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfInteractive;
+class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive();
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const Handle_AIS_SequenceNodeOfSequenceOfInteractive &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SequenceNodeOfSequenceOfInteractive & operator=(const AIS_SequenceNodeOfSequenceOfInteractive *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_SequenceNodeOfSequenceOfInteractive DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
+	AIS_SequenceNodeOfSequenceOfInteractive* GetObject() {
+	return (AIS_SequenceNodeOfSequenceOfInteractive*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfInteractive::~Handle_AIS_SequenceNodeOfSequenceOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_Shape;
 class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 	public:
@@ -2075,82 +1999,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_AIS_TexturedShape;
-class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape();
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_TexturedShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_TexturedShape {
-	AIS_TexturedShape* GetObject() {
-	return (AIS_TexturedShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_TexturedShape::~Handle_AIS_TexturedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_TexturedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
-class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension();
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const Handle_AIS_SequenceNodeOfSequenceOfDimension &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_SequenceNodeOfSequenceOfDimension & operator=(const AIS_SequenceNodeOfSequenceOfDimension *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_SequenceNodeOfSequenceOfDimension DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
-	AIS_SequenceNodeOfSequenceOfDimension* GetObject() {
-	return (AIS_SequenceNodeOfSequenceOfDimension*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_SequenceNodeOfSequenceOfDimension::~Handle_AIS_SequenceNodeOfSequenceOfDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_AIS_MidPointRelation;
 class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	public:
@@ -2183,6 +2031,44 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_MidPointRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_SymmetricRelation;
+class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation(const Handle_AIS_SymmetricRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation(const AIS_SymmetricRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation & operator=(const Handle_AIS_SymmetricRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_SymmetricRelation & operator=(const AIS_SymmetricRelation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_SymmetricRelation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_SymmetricRelation {
+	AIS_SymmetricRelation* GetObject() {
+	return (AIS_SymmetricRelation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_SymmetricRelation::~Handle_AIS_SymmetricRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_SymmetricRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2265,6 +2151,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_ParallelRelation;
+class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation();
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation(const Handle_AIS_ParallelRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation(const AIS_ParallelRelation *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation & operator=(const Handle_AIS_ParallelRelation &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_ParallelRelation & operator=(const AIS_ParallelRelation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_ParallelRelation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_ParallelRelation {
+	AIS_ParallelRelation* GetObject() {
+	return (AIS_ParallelRelation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_ParallelRelation::~Handle_AIS_ParallelRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_ParallelRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfSelStat;
 class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNode {
 	public:
@@ -2303,6 +2227,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_TexturedShape;
+class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape();
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_TexturedShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_TexturedShape {
+	AIS_TexturedShape* GetObject() {
+	return (AIS_TexturedShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_TexturedShape::~Handle_AIS_TexturedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_ListNodeOfListOfInteractive;
 class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode {
 	public:
@@ -2335,6 +2297,44 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_ListNodeOfListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_AIS_AngleDimension;
+class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension();
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension(const Handle_AIS_AngleDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension(const AIS_AngleDimension *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const Handle_AIS_AngleDimension &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_AngleDimension & operator=(const AIS_AngleDimension *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_AngleDimension DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_AngleDimension {
+	AIS_AngleDimension* GetObject() {
+	return (AIS_AngleDimension*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_AngleDimension::~Handle_AIS_AngleDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_AngleDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2563,7 +2563,7 @@ class AIS_Drawer : public Prs3d_Drawer {
 };
 %extend AIS_Drawer {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Drawer::~AIS_Drawer %{
@@ -2690,7 +2690,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		virtual		void UnsetMaterial();
 		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
+		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
 		%feature("autodoc", "1");
 		Standard_Boolean IsTransparent() const;
 		%feature("autodoc", "1");
@@ -2743,7 +2743,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 };
 %extend AIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_InteractiveObject::~AIS_InteractiveObject %{
@@ -2822,7 +2822,7 @@ class AIS_Relation : public AIS_InteractiveObject {
 };
 %extend AIS_Relation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Relation::~AIS_Relation %{
@@ -2841,11 +2841,58 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_DiameterDimension;
+class AIS_DiameterDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_DiameterDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_DiameterDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Boolean aDiamSymbol, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		Standard_Boolean DiamSymbol();
+		%feature("autodoc", "1");
+		void SetDiamSymbol(const Standard_Boolean aDiamSymbol);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+
+};
+%extend AIS_DiameterDimension {
+	Handle_AIS_DiameterDimension GetHandle() {
+	return *(Handle_AIS_DiameterDimension*) &$self;
+	}
+};
+%extend AIS_DiameterDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_DiameterDimension::~AIS_DiameterDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DiameterDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_EllipseRadiusDimension;
 class AIS_EllipseRadiusDimension : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
 		void ComputeGeometry();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend AIS_EllipseRadiusDimension {
@@ -2855,7 +2902,7 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 };
 %extend AIS_EllipseRadiusDimension {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_EllipseRadiusDimension::~AIS_EllipseRadiusDimension %{
@@ -2894,7 +2941,7 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfSelStat {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfSelStat::~AIS_DataMapNodeOfDataMapOfSelStat %{
@@ -3004,7 +3051,7 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 };
 %extend AIS_ExclusionFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ExclusionFilter::~AIS_ExclusionFilter %{
@@ -3017,6 +3064,71 @@ def __del__(self):
 %}
 
 %extend AIS_ExclusionFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_SequenceOfDimension;
+class AIS_SequenceOfDimension : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		AIS_SequenceOfDimension();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const AIS_SequenceOfDimension & Assign(const AIS_SequenceOfDimension &Other);
+		%feature("autodoc", "1");
+		const AIS_SequenceOfDimension & operator=(const AIS_SequenceOfDimension &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_AIS_Relation &T);
+		%feature("autodoc", "1");
+		void Append(AIS_SequenceOfDimension & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_AIS_Relation &T);
+		%feature("autodoc", "1");
+		void Prepend(AIS_SequenceOfDimension & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_AIS_Relation &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, AIS_SequenceOfDimension & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_AIS_Relation &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, AIS_SequenceOfDimension & S);
+		%feature("autodoc", "1");
+		const Handle_AIS_Relation & First() const;
+		%feature("autodoc", "1");
+		const Handle_AIS_Relation & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, AIS_SequenceOfDimension & S);
+		%feature("autodoc", "1");
+		const Handle_AIS_Relation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_AIS_Relation & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_AIS_Relation &I);
+		%feature("autodoc", "1");
+		Handle_AIS_Relation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_AIS_Relation & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") AIS_SequenceOfDimension::~AIS_SequenceOfDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_SequenceOfDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3047,7 +3159,7 @@ class AIS_Triangulation : public AIS_InteractiveObject {
 };
 %extend AIS_Triangulation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
@@ -3100,7 +3212,7 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 };
 %extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
@@ -3119,34 +3231,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_MidPointRelation;
-class AIS_MidPointRelation : public AIS_Relation {
+%nodefaultctor AIS_ConnectedInteractive;
+class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_MidPointRelation(const TopoDS_Shape aSymmTool, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
+		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
+		virtual		AIS_KindOfInteractive Type() const;
 		%feature("autodoc", "1");
-		void SetTool(const TopoDS_Shape aMidPointTool);
+		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
-		const TopoDS_Shape  GetTool() const;
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConnection() const;
+		%feature("autodoc", "1");
+		const Handle_AIS_InteractiveObject & ConnectedTo() const;
+		%feature("autodoc", "1");
+		void Disconnect();
 		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation();
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_MidPointRelation {
-	Handle_AIS_MidPointRelation GetHandle() {
-	return *(Handle_AIS_MidPointRelation*) &$self;
+%extend AIS_ConnectedInteractive {
+	Handle_AIS_ConnectedInteractive GetHandle() {
+	return *(Handle_AIS_ConnectedInteractive*) &$self;
 	}
 };
-%extend AIS_MidPointRelation {
+%extend AIS_ConnectedInteractive {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") AIS_MidPointRelation::~AIS_MidPointRelation %{
+%feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3155,7 +3285,46 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS_MidPointRelation {
+%extend AIS_ConnectedInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_ConnectedShape;
+class AIS_ConnectedShape : public AIS_ConnectedInteractive {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape();
+
+};
+%extend AIS_ConnectedShape {
+	Handle_AIS_ConnectedShape GetHandle() {
+	return *(Handle_AIS_ConnectedShape*) &$self;
+	}
+};
+%extend AIS_ConnectedShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ConnectedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3227,70 +3396,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Circle;
-class AIS_Circle : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle);
-		%feature("autodoc", "1");
-		AIS_Circle(const Handle_Geom_Circle &aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Circle & Circle() const;
-		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
-
-		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetCircle(const Handle_Geom_Circle &C);
-		%feature("autodoc", "1");
-		void SetFirstParam(const Standard_Real U);
-		%feature("autodoc", "1");
-		void SetLastParam(const Standard_Real U);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Circle {
-	Handle_AIS_Circle GetHandle() {
-	return *(Handle_AIS_Circle*) &$self;
-	}
-};
-%extend AIS_Circle {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Circle::~AIS_Circle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Circle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_Line;
 class AIS_Line : public AIS_InteractiveObject {
 	public:
@@ -3333,7 +3438,7 @@ class AIS_Line : public AIS_InteractiveObject {
 };
 %extend AIS_Line {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Line::~AIS_Line %{
@@ -3386,7 +3491,7 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 };
 %extend AIS_AttributeFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
@@ -3399,67 +3504,6 @@ def __del__(self):
 %}
 
 %extend AIS_AttributeFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ConnectedInteractive;
-class AIS_ConnectedInteractive : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConnection() const;
-		%feature("autodoc", "1");
-		const Handle_AIS_InteractiveObject & ConnectedTo() const;
-		%feature("autodoc", "1");
-		void Disconnect();
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation();
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConnectedInteractive {
-	Handle_AIS_ConnectedInteractive GetHandle() {
-	return *(Handle_AIS_ConnectedInteractive*) &$self;
-	}
-};
-%extend AIS_ConnectedInteractive {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ConnectedInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3523,7 +3567,7 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 };
 %extend AIS_BadEdgeFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_BadEdgeFilter::~AIS_BadEdgeFilter %{
@@ -3536,55 +3580,6 @@ def __del__(self):
 %}
 
 %extend AIS_BadEdgeFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapOfIOStatus;
-class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus & Assign(const AIS_DataMapOfIOStatus &Other);
-		%feature("autodoc", "1");
-		AIS_DataMapOfIOStatus & operator=(const AIS_DataMapOfIOStatus &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Handle_AIS_InteractiveObject &K);
-		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & Find(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		const Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
-		%feature("autodoc", "1");
-		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const Handle_AIS_InteractiveObject &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const Handle_AIS_InteractiveObject &K);
-
-};
-%feature("shadow") AIS_DataMapOfIOStatus::~AIS_DataMapOfIOStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapOfIOStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3609,7 +3604,7 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 };
 %extend AIS_TypeFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_TypeFilter::~AIS_TypeFilter %{
@@ -3642,7 +3637,7 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 };
 %extend AIS_SignatureFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_SignatureFilter::~AIS_SignatureFilter %{
@@ -3655,6 +3650,49 @@ def __del__(self):
 %}
 
 %extend AIS_SignatureFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_OffsetDimension;
+class AIS_OffsetDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_OffsetDimension(const TopoDS_Shape FistShape, const TopoDS_Shape SecondShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		void SetRelativePos(const gp_Trsf aTrsf);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_OffsetDimension {
+	Handle_AIS_OffsetDimension GetHandle() {
+	return *(Handle_AIS_OffsetDimension*) &$self;
+	}
+};
+%extend AIS_OffsetDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_OffsetDimension::~AIS_OffsetDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_OffsetDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3715,7 +3753,7 @@ class AIS_Axis : public AIS_InteractiveObject {
 };
 %extend AIS_Axis {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Axis::~AIS_Axis %{
@@ -3738,7 +3776,7 @@ def __del__(self):
 class AIS_LocalStatus : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		AIS_LocalStatus(const Standard_Boolean IsTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DisplayMode=-0x00000000000000001, const Standard_Integer SelectionMode=-0x00000000000000001, const Standard_Integer HilightMode=0, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE);
+		AIS_LocalStatus(const Standard_Boolean IsTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DisplayMode=-0x000000001, const Standard_Integer SelectionMode=-0x000000001, const Standard_Integer HilightMode=0, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE);
 		%feature("autodoc", "1");
 		Standard_Boolean Decomposed() const;
 		%feature("autodoc", "1");
@@ -3796,7 +3834,7 @@ class AIS_LocalStatus : public MMgt_TShared {
 };
 %extend AIS_LocalStatus {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_LocalStatus::~AIS_LocalStatus %{
@@ -3821,11 +3859,11 @@ class AIS_FixRelation : public AIS_Relation {
 		%feature("autodoc", "1");
 		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane, const TopoDS_Wire aWire);
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane, const TopoDS_Wire aWire, const gp_Pnt aPosition, const Standard_Real anArrowSize=1.00000000000000002081668171172168513294309377670288085938e-2);
+		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane, const TopoDS_Wire aWire, const gp_Pnt aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
-		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const Standard_Real anArrowSize=1.00000000000000002081668171172168513294309377670288085938e-2);
+		AIS_FixRelation(const TopoDS_Shape aShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		TopoDS_Wire Wire();
 		%feature("autodoc", "1");
@@ -3845,7 +3883,7 @@ class AIS_FixRelation : public AIS_Relation {
 };
 %extend AIS_FixRelation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_FixRelation::~AIS_FixRelation %{
@@ -3864,62 +3902,13 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
-class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Standard_Integer &K, const AIS_ListOfInteractive &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		AIS_ListOfInteractive & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive GetHandle() {
-	return *(Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*) &$self;
-	}
-};
-%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_ParallelRelation;
 class AIS_ParallelRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
 		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
-		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.00000000000000002081668171172168513294309377670288085938e-2);
+		AIS_ParallelRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
@@ -3935,7 +3924,7 @@ class AIS_ParallelRelation : public AIS_Relation {
 };
 %extend AIS_ParallelRelation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ParallelRelation::~AIS_ParallelRelation %{
@@ -4066,7 +4055,7 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 };
 %extend AIS_PerpendicularRelation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_PerpendicularRelation::~AIS_PerpendicularRelation %{
@@ -4109,7 +4098,7 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 };
 %extend AIS_Chamf3dDimension {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Chamf3dDimension::~AIS_Chamf3dDimension %{
@@ -4164,7 +4153,7 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 };
 %extend AIS_MultipleConnectedInteractive {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MultipleConnectedInteractive::~AIS_MultipleConnectedInteractive %{
@@ -4259,7 +4248,7 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 };
 %extend AIS_Trihedron {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Trihedron::~AIS_Trihedron %{
@@ -4278,106 +4267,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Shape;
-class AIS_Shape : public AIS_InteractiveObject {
+%nodefaultctor AIS_MidPointRelation;
+class AIS_MidPointRelation : public AIS_Relation {
 	public:
 		%feature("autodoc", "1");
-		AIS_Shape(const TopoDS_Shape shap);
+		AIS_MidPointRelation(const TopoDS_Shape aSymmTool, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
+		virtual		Standard_Boolean IsMovable() const;
 		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
+		void SetTool(const TopoDS_Shape aMidPointTool);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		const TopoDS_Shape  GetTool() const;
 		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape ashap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationAngle();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationAngle();
-		%feature("autodoc", "1");
-		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real UserAngle() const;
-		%feature("autodoc", "1");
-		void SetOwnDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
-		%feature("autodoc", "1");
-		virtual		void UnsetMaterial();
-		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
-		%feature("autodoc", "1");
-		virtual		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box & BoundingBox();
-		%feature("autodoc", "1");
-		virtual		Quantity_NameOfColor Color() const;
-		%feature("autodoc", "1");
-		virtual		void Color(Quantity_Color & aColor) const;
-		%feature("autodoc", "1");
-		virtual		Graphic3d_NameOfMaterial Material() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Transparency() const;
-		%feature("autodoc", "1");
-		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
-		%feature("autodoc", "1");
-		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
-		%feature("autodoc", "1");
-		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_Shape {
-	Handle_AIS_Shape GetHandle() {
-	return *(Handle_AIS_Shape*) &$self;
+%extend AIS_MidPointRelation {
+	Handle_AIS_MidPointRelation GetHandle() {
+	return *(Handle_AIS_MidPointRelation*) &$self;
 	}
 };
-%extend AIS_Shape {
+%extend AIS_MidPointRelation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") AIS_Shape::~AIS_Shape %{
+%feature("shadow") AIS_MidPointRelation::~AIS_MidPointRelation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4386,7 +4303,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS_Shape {
+%extend AIS_MidPointRelation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4494,7 +4411,7 @@ class AIS_Point : public AIS_InteractiveObject {
 };
 %extend AIS_Point {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Point::~AIS_Point %{
@@ -4544,34 +4461,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Chamf2dDimension;
-class AIS_Chamf2dDimension : public AIS_Relation {
+%nodefaultctor AIS_DataMapOfIOStatus;
+class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		AIS_DataMapOfIOStatus(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		AIS_DataMapOfIOStatus & Assign(const AIS_DataMapOfIOStatus &Other);
 		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
+		AIS_DataMapOfIOStatus & operator=(const AIS_DataMapOfIOStatus &Other);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		void Clear();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Boolean Bind(const Handle_AIS_InteractiveObject &K, const Handle_AIS_GlobalStatus &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Handle_AIS_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Handle_AIS_InteractiveObject &K);
+		%feature("autodoc", "1");
+		const Handle_AIS_GlobalStatus & Find(const Handle_AIS_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		const Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
+		%feature("autodoc", "1");
+		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_AIS_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_AIS_InteractiveObject &K);
 
 };
-%extend AIS_Chamf2dDimension {
-	Handle_AIS_Chamf2dDimension GetHandle() {
-	return *(Handle_AIS_Chamf2dDimension*) &$self;
-	}
-};
-%extend AIS_Chamf2dDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
+%feature("shadow") AIS_DataMapOfIOStatus::~AIS_DataMapOfIOStatus %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4580,90 +4503,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS_Chamf2dDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_TexturedShape;
-class AIS_TexturedShape : public AIS_Shape {
-	public:
-		%feature("autodoc", "1");
-		AIS_TexturedShape(const TopoDS_Shape shap);
-		%feature("autodoc", "1");
-		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
-		%feature("autodoc", "1");
-		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
-		%feature("autodoc", "1");
-		void SetTextureMapOn();
-		%feature("autodoc", "1");
-		void SetTextureMapOff();
-		%feature("autodoc", "1");
-		void EnableTextureModulate();
-		%feature("autodoc", "1");
-		void DisableTextureModulate();
-		%feature("autodoc", "1");
-		void UpdateAttributes();
-		%feature("autodoc", "1");
-		Standard_Boolean TextureMapState() const;
-		%feature("autodoc", "1");
-		Standard_Real URepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		char * TextureFile() const;
-		%feature("autodoc", "1");
-		Standard_Real VRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ShowTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureUOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureVOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleU() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleV() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureScale() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureModulate() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_TexturedShape {
-	Handle_AIS_TexturedShape GetHandle() {
-	return *(Handle_AIS_TexturedShape*) &$self;
-	}
-};
-%extend AIS_TexturedShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_TexturedShape {
+%extend AIS_DataMapOfIOStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4762,7 +4602,7 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 };
 %extend AIS_C0RegularityFilter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_C0RegularityFilter::~AIS_C0RegularityFilter %{
@@ -4799,7 +4639,7 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 };
 %extend AIS_ListNodeOfListOfInteractive {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ListNodeOfListOfInteractive::~AIS_ListNodeOfListOfInteractive %{
@@ -4838,7 +4678,7 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfIOStatus::~AIS_DataMapNodeOfDataMapOfIOStatus %{
@@ -4851,53 +4691,6 @@ def __del__(self):
 %}
 
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DiameterDimension;
-class AIS_DiameterDimension : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_DiameterDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_DiameterDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Boolean aDiamSymbol, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		Standard_Boolean DiamSymbol();
-		%feature("autodoc", "1");
-		void SetDiamSymbol(const Standard_Boolean aDiamSymbol);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_DiameterDimension {
-	Handle_AIS_DiameterDimension GetHandle() {
-	return *(Handle_AIS_DiameterDimension*) &$self;
-	}
-};
-%extend AIS_DiameterDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_DiameterDimension::~AIS_DiameterDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DiameterDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4924,7 +4717,7 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 };
 %extend AIS_DimensionOwner {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DimensionOwner::~AIS_DimensionOwner %{
@@ -4937,1989 +4730,6 @@ def __del__(self):
 %}
 
 %extend AIS_DimensionOwner {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_PlaneTrihedron;
-class AIS_PlaneTrihedron : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		Handle_Geom_Plane Component();
-		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		Handle_AIS_Line XAxis() const;
-		%feature("autodoc", "1");
-		Handle_AIS_Line YAxis() const;
-		%feature("autodoc", "1");
-		Handle_AIS_Point Position() const;
-		%feature("autodoc", "1");
-		void SetLength(const Standard_Real theLength);
-		%feature("autodoc", "1");
-		Standard_Real GetLength() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		void SetXLabel(const TCollection_AsciiString &aLabel);
-		%feature("autodoc", "1");
-		void SetYLabel(const TCollection_AsciiString &aLabel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_PlaneTrihedron {
-	Handle_AIS_PlaneTrihedron GetHandle() {
-	return *(Handle_AIS_PlaneTrihedron*) &$self;
-	}
-};
-%extend AIS_PlaneTrihedron {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_PlaneTrihedron {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
-class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const Handle_AIS_LocalContext &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_AIS_LocalContext & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	Handle_AIS_DataMapNodeOfDataMapOfILC GetHandle() {
-	return *(Handle_AIS_DataMapNodeOfDataMapOfILC*) &$self;
-	}
-};
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_DataMapNodeOfDataMapOfILC::~AIS_DataMapNodeOfDataMapOfILC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapNodeOfDataMapOfILC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_OffsetDimension;
-class AIS_OffsetDimension : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_OffsetDimension(const TopoDS_Shape FistShape, const TopoDS_Shape SecondShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		void SetRelativePos(const gp_Trsf aTrsf);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_OffsetDimension {
-	Handle_AIS_OffsetDimension GetHandle() {
-	return *(Handle_AIS_OffsetDimension*) &$self;
-	}
-};
-%extend AIS_OffsetDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_OffsetDimension::~AIS_OffsetDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_OffsetDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ListIteratorOfListOfInteractive;
-class AIS_ListIteratorOfListOfInteractive {
-	public:
-		%feature("autodoc", "1");
-		AIS_ListIteratorOfListOfInteractive();
-		%feature("autodoc", "1");
-		AIS_ListIteratorOfListOfInteractive(const AIS_ListOfInteractive &L);
-		%feature("autodoc", "1");
-		void Initialize(const AIS_ListOfInteractive &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & Value() const;
-
-};
-%feature("shadow") AIS_ListIteratorOfListOfInteractive::~AIS_ListIteratorOfListOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ListIteratorOfListOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ConcentricRelation;
-class AIS_ConcentricRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConcentricRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConcentricRelation {
-	Handle_AIS_ConcentricRelation GetHandle() {
-	return *(Handle_AIS_ConcentricRelation*) &$self;
-	}
-};
-%extend AIS_ConcentricRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_ConcentricRelation::~AIS_ConcentricRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ConcentricRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_IdenticRelation;
-class AIS_IdenticRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_IdenticRelation(const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_IdenticRelation {
-	Handle_AIS_IdenticRelation GetHandle() {
-	return *(Handle_AIS_IdenticRelation*) &$self;
-	}
-};
-%extend AIS_IdenticRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_IdenticRelation::~AIS_IdenticRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_IdenticRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_Selection;
-class AIS_Selection : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		AIS_Selection(const char * aName);
-		%feature("autodoc", "1");
-		static		void Remove(const char * aName);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Find(const char * aName);
-		%feature("autodoc", "1");
-		static		Standard_Boolean CreateSelection(const char * aName);
-		%feature("autodoc", "1");
-		static		Handle_AIS_Selection Selection(const char * aName);
-		%feature("autodoc", "1");
-		static		Standard_Boolean SetCurrentSelection(const char * aName);
-		%feature("autodoc", "1");
-		static		Handle_AIS_Selection CurrentSelection();
-		%feature("autodoc", "1");
-		static		void Select();
-		%feature("autodoc", "1");
-		static		AIS_SelectStatus Select(const Handle_Standard_Transient &anObject);
-		%feature("autodoc", "1");
-		static		AIS_SelectStatus AddSelect(const Handle_Standard_Transient &anObject);
-		%feature("autodoc", "1");
-		static		void ClearAndSelect(const Handle_Standard_Transient &anObject);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsSelected(const Handle_Standard_Transient &anObject);
-		%feature("autodoc", "1");
-		static		Standard_Integer Extent();
-		%feature("autodoc", "1");
-		static		Handle_Standard_Transient Single();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbStored() const;
-		%feature("autodoc", "1");
-		const AIS_NListTransient & Objects() const;
-		%feature("autodoc", "1");
-		static		Standard_Integer Index(const char * aName);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Selection {
-	Handle_AIS_Selection GetHandle() {
-	return *(Handle_AIS_Selection*) &$self;
-	}
-};
-%extend AIS_Selection {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Selection::~AIS_Selection %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Selection {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_Plane;
-class AIS_Plane : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const gp_Pnt aPmin, const gp_Pnt aPmax, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		AIS_Plane(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
-		%feature("autodoc", "1");
-		void SetSize(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		void SetSize(const Standard_Real Xval, const Standard_Real YVal);
-		%feature("autodoc", "1");
-		void UnsetSize();
-		%feature("autodoc","Size() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasOwnSize() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		const Handle_Geom_Plane & Component();
-		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aComponent);
-		%feature("autodoc", "1");
-		Standard_Boolean PlaneAttributes(Handle_Geom_Plane & aComponent, gp_Pnt & aCenter, gp_Pnt & aPmin, gp_Pnt & aPmax);
-		%feature("autodoc", "1");
-		void SetPlaneAttributes(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const gp_Pnt aPmin, const gp_Pnt aPmax);
-		%feature("autodoc", "1");
-		const gp_Pnt  Center() const;
-		%feature("autodoc", "1");
-		void SetCenter(const gp_Pnt aCenter);
-		%feature("autodoc", "1");
-		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType);
-		%feature("autodoc", "1");
-		Handle_Geom_Axis2Placement Axis2Placement();
-		%feature("autodoc", "1");
-		AIS_TypeOfPlane TypeOfPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean IsXYZPlane();
-		%feature("autodoc", "1");
-		Standard_Boolean CurrentMode();
-		%feature("autodoc", "1");
-		void SetCurrentMode(const Standard_Boolean aCurrentMode);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void ComputeSelection(const Handle_SelectMgr_Selection &aSelection, const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Plane {
-	Handle_AIS_Plane GetHandle() {
-	return *(Handle_AIS_Plane*) &$self;
-	}
-};
-%extend AIS_Plane {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Plane::~AIS_Plane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Plane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
-class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
-	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
-	}
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
-class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_InteractiveObject &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_SequenceNodeOfSequenceOfInteractive {
-	Handle_AIS_SequenceNodeOfSequenceOfInteractive GetHandle() {
-	return *(Handle_AIS_SequenceNodeOfSequenceOfInteractive*) &$self;
-	}
-};
-%extend AIS_SequenceNodeOfSequenceOfInteractive {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_SequenceNodeOfSequenceOfInteractive::~AIS_SequenceNodeOfSequenceOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_SequenceNodeOfSequenceOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapofIntegerListOfinteractive;
-class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive & Assign(const AIS_DataMapofIntegerListOfinteractive &Other);
-		%feature("autodoc", "1");
-		AIS_DataMapofIntegerListOfinteractive & operator=(const AIS_DataMapofIntegerListOfinteractive &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const AIS_ListOfInteractive & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const AIS_ListOfInteractive & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		AIS_ListOfInteractive & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const Standard_Integer &K);
-
-};
-%feature("shadow") AIS_DataMapofIntegerListOfinteractive::~AIS_DataMapofIntegerListOfinteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapofIntegerListOfinteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_SymmetricRelation;
-class AIS_SymmetricRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_SymmetricRelation(const TopoDS_Shape aSymmTool, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		void SetTool(const TopoDS_Shape aSymmetricTool);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  GetTool() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_SymmetricRelation {
-	Handle_AIS_SymmetricRelation GetHandle() {
-	return *(Handle_AIS_SymmetricRelation*) &$self;
-	}
-};
-%extend AIS_SymmetricRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_SymmetricRelation::~AIS_SymmetricRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_SymmetricRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_GlobalStatus;
-class AIS_GlobalStatus : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		AIS_GlobalStatus();
-		%feature("autodoc", "1");
-		AIS_GlobalStatus(const AIS_DisplayStatus aStat, const Standard_Integer aDispMode, const Standard_Integer aSelMode, const Standard_Boolean ishilighted=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
-		%feature("autodoc", "1");
-		void SetGraphicStatus(const AIS_DisplayStatus aStat);
-		%feature("autodoc", "1");
-		void AddDisplayMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void AddSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void SetLayerIndex(const Standard_Integer AnIndex);
-		%feature("autodoc", "1");
-		void SetHilightStatus(const Standard_Boolean aStat);
-		%feature("autodoc", "1");
-		void SetHilightColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSubIntensityOn() const;
-		%feature("autodoc", "1");
-		void SubIntensityOn();
-		%feature("autodoc", "1");
-		void SubIntensityOff();
-		%feature("autodoc", "1");
-		void RemoveDisplayMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void RemoveSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void ClearSelectionModes();
-		%feature("autodoc", "1");
-		AIS_DisplayStatus GraphicStatus() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & DisplayedModes() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & SelectionModes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor HilightColor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_GlobalStatus {
-	Handle_AIS_GlobalStatus GetHandle() {
-	return *(Handle_AIS_GlobalStatus*) &$self;
-	}
-};
-%extend AIS_GlobalStatus {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_GlobalStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_SequenceOfDimension;
-class AIS_SequenceOfDimension : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		AIS_SequenceOfDimension();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const AIS_SequenceOfDimension & Assign(const AIS_SequenceOfDimension &Other);
-		%feature("autodoc", "1");
-		const AIS_SequenceOfDimension & operator=(const AIS_SequenceOfDimension &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_AIS_Relation &T);
-		%feature("autodoc", "1");
-		void Append(AIS_SequenceOfDimension & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_AIS_Relation &T);
-		%feature("autodoc", "1");
-		void Prepend(AIS_SequenceOfDimension & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_AIS_Relation &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, AIS_SequenceOfDimension & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_AIS_Relation &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, AIS_SequenceOfDimension & S);
-		%feature("autodoc", "1");
-		const Handle_AIS_Relation & First() const;
-		%feature("autodoc", "1");
-		const Handle_AIS_Relation & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, AIS_SequenceOfDimension & S);
-		%feature("autodoc", "1");
-		const Handle_AIS_Relation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_AIS_Relation & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_AIS_Relation &I);
-		%feature("autodoc", "1");
-		Handle_AIS_Relation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_AIS_Relation & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") AIS_SequenceOfDimension::~AIS_SequenceOfDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_SequenceOfDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive;
-class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
-		%feature("autodoc", "1");
-		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive(const AIS_DataMapofIntegerListOfinteractive &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const AIS_DataMapofIntegerListOfinteractive &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const AIS_ListOfInteractive & Value() const;
-
-};
-%feature("shadow") AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive::~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_InteractiveContext;
-class AIS_InteractiveContext : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer);
-		%feature("autodoc", "1");
-		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer, const Handle_V3d_Viewer &Collector);
-		%feature("autodoc", "1");
-		virtual		void Delete() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCollectorClosed() const;
-		%feature("autodoc", "1");
-		void CloseCollector();
-		%feature("autodoc", "1");
-		void OpenCollector();
-		%feature("autodoc", "1");
-		void SetAutoActivateSelection(const Standard_Boolean Auto);
-		%feature("autodoc", "1");
-		Standard_Boolean GetAutoActivateSelection() const;
-		%feature("autodoc", "1");
-		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer amode, const Standard_Integer aSelectionMode, const Standard_Boolean updateviewer=1, const Standard_Boolean allowdecomposition=1);
-		%feature("autodoc", "1");
-		void Load(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer SelectionMode=-0x00000000000000001, const Standard_Boolean AllowDecomp=0);
-		%feature("autodoc", "1");
-		void Erase(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=0);
-		%feature("autodoc", "1");
-		void EraseMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void EraseAll(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void DisplayAll(const Standard_Boolean OnlyFromCollector=0, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void DisplayFromCollector(const Handle_AIS_InteractiveObject &anIObj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void EraseSelected(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void DisplaySelected(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		Standard_Boolean KeepTemporary(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x00000000000000001);
-		%feature("autodoc", "1");
-		void Clear(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void ClearPrs(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode=0, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void Remove(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void RemoveAll(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void Hilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void HilightWithColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aCol, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void Unhilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aPriority);
-		%feature("autodoc", "1");
-		void SetZLayer(const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theLayerId);
-		%feature("autodoc", "1");
-		Standard_Integer GetZLayer(const Handle_AIS_InteractiveObject &theIObj) const;
-		%feature("autodoc", "1");
-		void Redisplay(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
-		%feature("autodoc", "1");
-		void Redisplay(const AIS_KindOfInteractive aTypeOfObject, const Standard_Integer Signature=-0x00000000000000001, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void RecomputePrsOnly(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
-		%feature("autodoc", "1");
-		void RecomputeSelectionOnly(const Handle_AIS_InteractiveObject &anIObj);
-		%feature("autodoc", "1");
-		void Update(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnsetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetSelectionMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void UnsetSelectionMode(const Handle_AIS_InteractiveObject &aniobj);
-		%feature("autodoc", "1");
-		void SetSensitivityMode(const StdSelect_SensitivityMode aMode);
-		%feature("autodoc", "1");
-		StdSelect_SensitivityMode SensitivityMode() const;
-		%feature("autodoc", "1");
-		void SetSensitivity(const Standard_Real aPrecision);
-		%feature("autodoc", "1");
-		Standard_Real Sensitivity() const;
-		%feature("autodoc", "1");
-		void SetPixelTolerance(const Standard_Integer aPrecision=4);
-		%feature("autodoc", "1");
-		Standard_Integer PixelTolerance() const;
-		%feature("autodoc", "1");
-		void SetLocation(const Handle_AIS_InteractiveObject &aniobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		void ResetLocation(const Handle_AIS_InteractiveObject &aniobj);
-		%feature("autodoc", "1");
-		Standard_Boolean HasLocation(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		const TopLoc_Location & Location(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void SetCurrentFacingModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
-		%feature("autodoc", "1");
-		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aColor, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_Color &aColor, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnsetColor(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetMaterial(const Handle_AIS_InteractiveObject &aniobj, const Graphic3d_NameOfMaterial aName, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnsetMaterial(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnsetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDegenerateModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
-		%feature("autodoc", "1");
-		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel, const Quantity_Ratio aSkipRatio=0.0);
-		%feature("autodoc", "1");
-		void SetLocalAttributes(const Handle_AIS_InteractiveObject &aniobj, const Handle_AIS_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnsetLocalAttributes(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
-		%feature("autodoc","PolygonOffsets(const anObj) -> [Standard_Integer, Standard_Real, Standard_Real]");
-
-		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		Standard_Real TrihedronSize() const;
-		%feature("autodoc", "1");
-		void SetPlaneSize(const Standard_Real aSizeX, const Standard_Real aSizeY, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetPlaneSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
-		%feature("autodoc","PlaneSize() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean PlaneSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		AIS_DisplayStatus DisplayStatus(const Handle_AIS_InteractiveObject &anIobj) const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & DisplayedModes(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &anIobj) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anIobj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInCollector(const Handle_AIS_InteractiveObject &anIObj) const;
-		%feature("autodoc", "1");
-		Standard_Integer DisplayPriority(const Handle_AIS_InteractiveObject &anIobj) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasColor(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor Color(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void Color(const Handle_AIS_InteractiveObject &aniobj, Quantity_Color & acolor) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Width(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void UpdateCurrentViewer();
-		%feature("autodoc", "1");
-		void UpdateCollector();
-		%feature("autodoc", "1");
-		Standard_Integer DisplayMode() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor HilightColor() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor SelectionColor() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor PreSelectionColor() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor DefaultColor() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor SubIntensityColor() const;
-		%feature("autodoc", "1");
-		void SetHilightColor(const Quantity_NameOfColor aHiCol);
-		%feature("autodoc", "1");
-		void SelectionColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		void SetPreselectionColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		void SetSubIntensityColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		void SetDisplayMode(const AIS_DisplayMode AMode, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetHLRDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetHLRDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		Standard_Real DeviationCoefficient() const;
-		%feature("autodoc", "1");
-		void SetDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real DeviationAngle() const;
-		%feature("autodoc", "1");
-		void SetHLRDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		Standard_Real HLRDeviationCoefficient() const;
-		%feature("autodoc", "1");
-		void SetHLRAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real HLRAngle() const;
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Handle_Prs3d_LineAspect HiddenLineAspect() const;
-		%feature("autodoc", "1");
-		void SetHiddenLineAspect(const Handle_Prs3d_LineAspect &anAspect) const;
-		%feature("autodoc", "1");
-		Standard_Boolean DrawHiddenLine() const;
-		%feature("autodoc", "1");
-		void EnableDrawHiddenLine() const;
-		%feature("autodoc", "1");
-		void DisableDrawHiddenLine() const;
-		%feature("autodoc", "1");
-		void SetIsoNumber(const Standard_Integer NbIsos, const AIS_TypeOfIso WhichIsos=AIS_TOI_Both);
-		%feature("autodoc", "1");
-		Standard_Integer IsoNumber(const AIS_TypeOfIso WhichIsos=AIS_TOI_Both);
-		%feature("autodoc", "1");
-		void IsoOnPlane(const Standard_Boolean SwitchOn);
-		%feature("autodoc", "1");
-		Standard_Boolean IsoOnPlane() const;
-		%feature("autodoc", "1");
-		void SetSelectedAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1, const Standard_Boolean updateViewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		Standard_Boolean HasNextDetected() const;
-		%feature("autodoc", "1");
-		Standard_Integer HilightNextDetected(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		Standard_Integer HilightPreviousDetected(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick Select(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetToHilightSelected(const Standard_Boolean toHilight);
-		%feature("autodoc", "1");
-		Standard_Boolean ToHilightSelected() const;
-		%feature("autodoc", "1");
-		void SetCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void AddOrRemoveCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UpdateCurrent();
-		%feature("autodoc", "1");
-		Standard_Boolean WasCurrentTouched() const;
-		%feature("autodoc", "1");
-		void SetOkCurrent();
-		%feature("autodoc", "1");
-		Standard_Boolean IsCurrent(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void InitCurrent();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreCurrent() const;
-		%feature("autodoc", "1");
-		void NextCurrent();
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject Current() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbCurrents();
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject FirstCurrentObject();
-		%feature("autodoc", "1");
-		void HilightCurrents(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnhilightCurrents(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void ClearCurrents(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetSelected(const Handle_AIS_InteractiveObject &aniObj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetSelectedCurrent();
-		%feature("autodoc", "1");
-		void UpdateSelected(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void HilightSelected(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void UnhilightSelected(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void ClearSelected(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const TopoDS_Shape aShape, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void AddOrRemoveSelected(const Handle_SelectMgr_EntityOwner &anOwner, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSelected(const Handle_AIS_InteractiveObject &aniobj) const;
-		%feature("autodoc", "1");
-		void InitSelected();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreSelected() const;
-		%feature("autodoc", "1");
-		void NextSelected();
-		%feature("autodoc", "1");
-		Standard_Integer NbSelected();
-		%feature("autodoc", "1");
-		Standard_Boolean HasSelectedShape() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape SelectedShape() const;
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner SelectedOwner() const;
-		%feature("autodoc", "1");
-		void EntityOwners(SelectMgr_IndexedMapOfOwner & theOwners, const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theMode=-0x00000000000000001) const;
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject Interactive() const;
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject SelectedInteractive() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasApplicative() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient Applicative() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasDetected() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasDetectedShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  DetectedShape() const;
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject DetectedInteractive() const;
-		%feature("autodoc", "1");
-		Handle_SelectMgr_EntityOwner DetectedOwner() const;
-		%feature("autodoc", "1");
-		void InitDetected();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreDetected() const;
-		%feature("autodoc", "1");
-		void NextDetected();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  DetectedCurrentShape() const;
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject DetectedCurrentObject() const;
-		%feature("autodoc", "1");
-		Standard_Integer OpenLocalContext(const Standard_Boolean UseDisplayedObjects=1, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Boolean AcceptEraseOfObjects=0, const Standard_Boolean BothViewers=0);
-		%feature("autodoc", "1");
-		void CloseLocalContext(const Standard_Integer Index=-0x00000000000000001, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		Standard_Integer IndexOfCurrentLocal() const;
-		%feature("autodoc", "1");
-		void CloseAllContexts(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void ResetOriginalState(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void ClearLocalContext(const AIS_ClearMode TheMode=AIS_CM_All);
-		%feature("autodoc", "1");
-		void UseDisplayedObjects();
-		%feature("autodoc", "1");
-		void NotUseDisplayedObjects();
-		%feature("autodoc", "1");
-		Standard_Boolean BeginImmediateDraw();
-		%feature("autodoc", "1");
-		Standard_Boolean ImmediateAdd(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ImmediateRemove(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		Standard_Boolean EndImmediateDraw(const Handle_V3d_View &aView, const Standard_Boolean DoubleBuf=0);
-		%feature("autodoc", "1");
-		Standard_Boolean EndImmediateDraw(const Standard_Boolean DoubleBuf=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsImmediateModeOn() const;
-		%feature("autodoc", "1");
-		void Drag(const Handle_V3d_View &aView, const Handle_AIS_InteractiveObject &anObject, const Handle_Geom_Transformation &aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean update=0, const Standard_Boolean zBuffer=0);
-		%feature("autodoc", "1");
-		void SetAutomaticHilight(const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		Standard_Boolean AutomaticHilight() const;
-		%feature("autodoc", "1");
-		void SetZDetection(const Standard_Boolean aStatus=0);
-		%feature("autodoc", "1");
-		Standard_Boolean ZDetection() const;
-		%feature("autodoc", "1");
-		void Activate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_AIS_InteractiveObject &anIObj);
-		%feature("autodoc", "1");
-		void Deactivate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void ActivatedModes(const Handle_AIS_InteractiveObject &anIobj, TColStd_ListOfInteger & theList) const;
-		%feature("autodoc", "1");
-		void SetShapeDecomposition(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean aStatus);
-		%feature("autodoc", "1");
-		void SetTemporaryAttributes(const Handle_AIS_InteractiveObject &anObj, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SubIntensityOn(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SubIntensityOff(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SubIntensityOn(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SubIntensityOff(const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void AddFilter(const Handle_SelectMgr_Filter &aFilter);
-		%feature("autodoc", "1");
-		void RemoveFilter(const Handle_SelectMgr_Filter &aFilter);
-		%feature("autodoc", "1");
-		void RemoveFilters();
-		%feature("autodoc", "1");
-		void ActivateStandardMode(const TopAbs_ShapeEnum aStandardActivation);
-		%feature("autodoc", "1");
-		void DeactivateStandardMode(const TopAbs_ShapeEnum aStandardActivation);
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & ActivatedStandardModes() const;
-		%feature("autodoc", "1");
-		const SelectMgr_ListOfFilter & Filters() const;
-		%feature("autodoc", "1");
-		const Handle_Prs3d_Drawer & DefaultDrawer() const;
-		%feature("autodoc", "1");
-		const Handle_V3d_Viewer & CurrentViewer() const;
-		%feature("autodoc", "1");
-		void DisplayedObjects(AIS_ListOfInteractive & aListOfIO, const Standard_Boolean OnlyFromNeutral=0) const;
-		%feature("autodoc", "1");
-		void DisplayedObjects(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & aListOfIO, const Standard_Boolean OnlyFromNeutral=0) const;
-		%feature("autodoc", "1");
-		const Handle_V3d_Viewer & Collector() const;
-		%feature("autodoc", "1");
-		void ObjectsInCollector(AIS_ListOfInteractive & aListOfIO) const;
-		%feature("autodoc", "1");
-		void ObjectsInCollector(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & aListOfIO) const;
-		%feature("autodoc", "1");
-		void ErasedObjects(AIS_ListOfInteractive & theListOfIO) const;
-		%feature("autodoc", "1");
-		void ErasedObjects(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & theListOfIO) const;
-		%feature("autodoc", "1");
-		void ObjectsByDisplayStatus(const AIS_DisplayStatus theStatus, AIS_ListOfInteractive & theListOfIO) const;
-		%feature("autodoc", "1");
-		void ObjectsByDisplayStatus(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, const AIS_DisplayStatus theStatus, AIS_ListOfInteractive & theListOfIO) const;
-		%feature("autodoc", "1");
-		void ObjectsInside(AIS_ListOfInteractive & aListOfIO, const AIS_KindOfInteractive WhichKind=AIS_KOI_None, const Standard_Integer WhichSignature=-0x00000000000000001) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasOpenedContext() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & CurrentName() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & SelectionName() const;
-		%feature("autodoc", "1");
-		char * DomainOfMainViewer() const;
-		%feature("autodoc", "1");
-		char * DomainOfCollector() const;
-		%feature("autodoc", "1");
-		Handle_AIS_LocalContext LocalContext() const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_SelectionManager & SelectionManager() const;
-		%feature("autodoc", "1");
-		const Handle_PrsMgr_PresentationManager3d & MainPrsMgr() const;
-		%feature("autodoc", "1");
-		const Handle_PrsMgr_PresentationManager3d & CollectorPrsMgr() const;
-		%feature("autodoc", "1");
-		const Handle_StdSelect_ViewerSelector3d & MainSelector() const;
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector3d LocalSelector() const;
-		%feature("autodoc", "1");
-		const Handle_StdSelect_ViewerSelector3d & CollectorSelector() const;
-		%feature("autodoc", "1");
-		Standard_Integer PurgeDisplay(const Standard_Boolean CollectorToo=0);
-		%feature("autodoc", "1");
-		Standard_Integer HighestIndex() const;
-		%feature("autodoc", "1");
-		void DisplayActiveAreas(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void ClearActiveAreas(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void DisplayActiveSensitive(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void ClearActiveSensitive(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void DisplayActiveSensitive(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void DisplayActiveAreas(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
-		%feature("autodoc","IsInLocal(const anObject) -> Standard_Integer");
-
-		Standard_Boolean IsInLocal(const Handle_AIS_InteractiveObject &anObject, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_InteractiveContext {
-	Handle_AIS_InteractiveContext GetHandle() {
-	return *(Handle_AIS_InteractiveContext*) &$self;
-	}
-};
-%extend AIS_InteractiveContext {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_InteractiveContext::~AIS_InteractiveContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_InteractiveContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MapOfInteractive;
-class AIS_MapOfInteractive : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive & Assign(const AIS_MapOfInteractive &Other);
-		%feature("autodoc", "1");
-		AIS_MapOfInteractive & operator=(const AIS_MapOfInteractive &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
-
-};
-%feature("shadow") AIS_MapOfInteractive::~AIS_MapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_GraphicTool;
-class AIS_GraphicTool {
-	public:
-		%feature("autodoc", "1");
-		AIS_GraphicTool();
-		%feature("autodoc", "1");
-		static		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
-		%feature("autodoc", "1");
-		static		void GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_Color & TheLineColor);
-		%feature("autodoc", "1");
-		static		Standard_Real GetLineWidth(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
-		%feature("autodoc", "1");
-		static		Aspect_TypeOfLine GetLineType(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
-		%feature("autodoc","GetLineAtt(const aDrawer, AIS_TypeOfAttribute TheTypeOfAttributes) -> Standard_Real");
-
-		static		void GetLineAtt(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_NameOfColor & aCol, Standard_Real &OutValue, Aspect_TypeOfLine & aTyp);
-		%feature("autodoc", "1");
-		static		Quantity_NameOfColor GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		static		void GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer, Quantity_Color & aColor);
-		%feature("autodoc", "1");
-		static		Graphic3d_MaterialAspect GetMaterial(const Handle_Prs3d_Drawer &aDrawer);
-
-};
-%feature("shadow") AIS_GraphicTool::~AIS_GraphicTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_GraphicTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MultipleConnectedShape;
-class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
-	public:
-		%feature("autodoc", "1");
-		AIS_MultipleConnectedShape(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape ashap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MultipleConnectedShape {
-	Handle_AIS_MultipleConnectedShape GetHandle() {
-	return *(Handle_AIS_MultipleConnectedShape*) &$self;
-	}
-};
-%extend AIS_MultipleConnectedShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_MultipleConnectedShape::~AIS_MultipleConnectedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MultipleConnectedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_AngleDimension;
-class AIS_AngleDimension : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aCone, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aCone, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.00000000000000002081668171172168513294309377670288085938e-2);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const gp_Ax1 anAxis, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const gp_Ax1 anAxis, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aFFace, const TopoDS_Face aSFace, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_AngleDimension(const TopoDS_Face aFFace, const TopoDS_Face aSFace, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.00000000000000002081668171172168513294309377670288085938e-3);
-		%feature("autodoc", "1");
-		const gp_Ax1  Axis() const;
-		%feature("autodoc", "1");
-		void SetAxis(const gp_Ax1 anAxis);
-		%feature("autodoc", "1");
-		void SetConeFace(const TopoDS_Face aConeFace);
-		%feature("autodoc", "1");
-		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
-		%feature("autodoc", "1");
-		virtual		void SetSecondShape(const TopoDS_Shape aSShape);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_AngleDimension {
-	Handle_AIS_AngleDimension GetHandle() {
-	return *(Handle_AIS_AngleDimension*) &$self;
-	}
-};
-%extend AIS_AngleDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_AngleDimension::~AIS_AngleDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_AngleDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_DataMapOfILC;
-class AIS_DataMapOfILC : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		AIS_DataMapOfILC(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		AIS_DataMapOfILC & Assign(const AIS_DataMapOfILC &Other);
-		%feature("autodoc", "1");
-		AIS_DataMapOfILC & operator=(const AIS_DataMapOfILC &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS_LocalContext &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Handle_AIS_LocalContext & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Handle_AIS_LocalContext & operator()(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Handle_AIS_LocalContext & ChangeFind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Handle_AIS_LocalContext & operator()(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const Standard_Integer &K);
-
-};
-%feature("shadow") AIS_DataMapOfILC::~AIS_DataMapOfILC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_DataMapOfILC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_TangentRelation;
-class AIS_TangentRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_TangentRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Integer anExternRef=0);
-		%feature("autodoc", "1");
-		Standard_Integer ExternRef();
-		%feature("autodoc", "1");
-		void SetExternRef(const Standard_Integer aRef);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_TangentRelation {
-	Handle_AIS_TangentRelation GetHandle() {
-	return *(Handle_AIS_TangentRelation*) &$self;
-	}
-};
-%extend AIS_TangentRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_TangentRelation::~AIS_TangentRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_TangentRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_EqualRadiusRelation;
-class AIS_EqualRadiusRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_EqualRadiusRelation(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_EqualRadiusRelation {
-	Handle_AIS_EqualRadiusRelation GetHandle() {
-	return *(Handle_AIS_EqualRadiusRelation*) &$self;
-	}
-};
-%extend AIS_EqualRadiusRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_EqualRadiusRelation::~AIS_EqualRadiusRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_EqualRadiusRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MapIteratorOfMapOfInteractive;
-class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		AIS_MapIteratorOfMapOfInteractive();
-		%feature("autodoc", "1");
-		AIS_MapIteratorOfMapOfInteractive(const AIS_MapOfInteractive &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const AIS_MapOfInteractive &aMap);
-		%feature("autodoc", "1");
-		const Handle_AIS_InteractiveObject & Key() const;
-
-};
-%feature("shadow") AIS_MapIteratorOfMapOfInteractive::~AIS_MapIteratorOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MapIteratorOfMapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_EqualDistanceRelation;
-class AIS_EqualDistanceRelation : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_EqualDistanceRelation(const TopoDS_Shape aShape1, const TopoDS_Shape aShape2, const TopoDS_Shape aShape3, const TopoDS_Shape aShape4, const Handle_Geom_Plane &aPlane);
-		%feature("autodoc", "1");
-		void SetShape3(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape3() const;
-		%feature("autodoc", "1");
-		void SetShape4(const TopoDS_Shape aShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape4() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		static		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Edge FirstEdge, const TopoDS_Edge SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc", "1");
-		static		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Vertex FirstVertex, const TopoDS_Vertex SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc", "1");
-		static		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_EqualDistanceRelation {
-	Handle_AIS_EqualDistanceRelation GetHandle() {
-	return *(Handle_AIS_EqualDistanceRelation*) &$self;
-	}
-};
-%extend AIS_EqualDistanceRelation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_EqualDistanceRelation::~AIS_EqualDistanceRelation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_EqualDistanceRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ConnectedShape;
-class AIS_ConnectedShape : public AIS_ConnectedInteractive {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConnectedShape {
-	Handle_AIS_ConnectedShape GetHandle() {
-	return *(Handle_AIS_ConnectedShape*) &$self;
-	}
-};
-%extend AIS_ConnectedShape {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ConnectedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MaxRadiusDimension;
-class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
-	public:
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MaxRadiusDimension {
-	Handle_AIS_MaxRadiusDimension GetHandle() {
-	return *(Handle_AIS_MaxRadiusDimension*) &$self;
-	}
-};
-%extend AIS_MaxRadiusDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MaxRadiusDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_LengthDimension;
-class AIS_LengthDimension : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Face Face, const TopoDS_Edge Edge, const Standard_Real Val, const TCollection_ExtendedString &Text);
-		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_LengthDimension(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const AIS_TypeOfDist aTypeDist, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
-		%feature("autodoc", "1");
-		virtual		void SetSecondShape(const TopoDS_Shape aSShape);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		AIS_TypeOfDist TypeOfDist() const;
-		%feature("autodoc", "1");
-		void SetTypeOfDist(const AIS_TypeOfDist aTypeDist);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc","ComputeTwoEdgesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstEdge, const SecondEdge, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
-
-		static		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge FirstEdge, const TopoDS_Edge SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc","ComputeOneEdgeOneVertexLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstShape, const SecondShape, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
-
-		static		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc","ComputeTwoVerticesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstVertex, const SecondVertex, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox, AIS_TypeOfDist TypeDist) -> [Standard_Integer, Standard_Real]");
-
-		static		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex FirstVertex, const TopoDS_Vertex SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_LengthDimension {
-	Handle_AIS_LengthDimension GetHandle() {
-	return *(Handle_AIS_LengthDimension*) &$self;
-	}
-};
-%extend AIS_LengthDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_LengthDimension::~AIS_LengthDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_LengthDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_RadiusDimension;
-class AIS_RadiusDimension : public AIS_Relation {
-	public:
-		%feature("autodoc", "1");
-		AIS_RadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_RadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
-		%feature("autodoc", "1");
-		Standard_Boolean DrawFromCenter() const;
-		%feature("autodoc", "1");
-		void SetDrawFromCenter(const Standard_Boolean drawfromcenter);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_RadiusDimension {
-	Handle_AIS_RadiusDimension GetHandle() {
-	return *(Handle_AIS_RadiusDimension*) &$self;
-	}
-};
-%extend AIS_RadiusDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_RadiusDimension::~AIS_RadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_RadiusDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MinRadiusDimension;
-class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
-	public:
-		%feature("autodoc", "1");
-		AIS_MinRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_MinRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MinRadiusDimension {
-	Handle_AIS_MinRadiusDimension GetHandle() {
-	return *(Handle_AIS_MinRadiusDimension*) &$self;
-	}
-};
-%extend AIS_MinRadiusDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_MinRadiusDimension::~AIS_MinRadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MinRadiusDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_SequenceNodeOfSequenceOfDimension;
-class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_Relation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_AIS_Relation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_SequenceNodeOfSequenceOfDimension {
-	Handle_AIS_SequenceNodeOfSequenceOfDimension GetHandle() {
-	return *(Handle_AIS_SequenceNodeOfSequenceOfDimension*) &$self;
-	}
-};
-%extend AIS_SequenceNodeOfSequenceOfDimension {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") AIS_SequenceNodeOfSequenceOfDimension::~AIS_SequenceNodeOfSequenceOfDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_SequenceNodeOfSequenceOfDimension {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7150,7 +4960,7 @@ class AIS_LocalContext : public MMgt_TShared {
 };
 %extend AIS_LocalContext {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_LocalContext::~AIS_LocalContext %{
@@ -7163,6 +4973,2180 @@ def __del__(self):
 %}
 
 %extend AIS_LocalContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
+class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapNodeOfDataMapOfILC(const Standard_Integer &K, const Handle_AIS_LocalContext &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	Handle_AIS_DataMapNodeOfDataMapOfILC GetHandle() {
+	return *(Handle_AIS_DataMapNodeOfDataMapOfILC*) &$self;
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_DataMapNodeOfDataMapOfILC::~AIS_DataMapNodeOfDataMapOfILC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DataMapNodeOfDataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MapOfInteractive;
+class AIS_MapOfInteractive : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive & Assign(const AIS_MapOfInteractive &Other);
+		%feature("autodoc", "1");
+		AIS_MapOfInteractive & operator=(const AIS_MapOfInteractive &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_AIS_InteractiveObject &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_AIS_InteractiveObject &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_AIS_InteractiveObject &aKey);
+
+};
+%feature("shadow") AIS_MapOfInteractive::~AIS_MapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Plane;
+class AIS_Plane : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const gp_Pnt aPmin, const gp_Pnt aPmax, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		AIS_Plane(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType, const Standard_Boolean aCurrentMode=0);
+		%feature("autodoc", "1");
+		void SetSize(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		void SetSize(const Standard_Real Xval, const Standard_Real YVal);
+		%feature("autodoc", "1");
+		void UnsetSize();
+		%feature("autodoc","Size() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasOwnSize() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Plane & Component();
+		%feature("autodoc", "1");
+		void SetComponent(const Handle_Geom_Plane &aComponent);
+		%feature("autodoc", "1");
+		Standard_Boolean PlaneAttributes(Handle_Geom_Plane & aComponent, gp_Pnt & aCenter, gp_Pnt & aPmin, gp_Pnt & aPmax);
+		%feature("autodoc", "1");
+		void SetPlaneAttributes(const Handle_Geom_Plane &aComponent, const gp_Pnt aCenter, const gp_Pnt aPmin, const gp_Pnt aPmax);
+		%feature("autodoc", "1");
+		const gp_Pnt  Center() const;
+		%feature("autodoc", "1");
+		void SetCenter(const gp_Pnt aCenter);
+		%feature("autodoc", "1");
+		void SetAxis2Placement(const Handle_Geom_Axis2Placement &aComponent, const AIS_TypeOfPlane aPlaneType);
+		%feature("autodoc", "1");
+		Handle_Geom_Axis2Placement Axis2Placement();
+		%feature("autodoc", "1");
+		AIS_TypeOfPlane TypeOfPlane();
+		%feature("autodoc", "1");
+		Standard_Boolean IsXYZPlane();
+		%feature("autodoc", "1");
+		Standard_Boolean CurrentMode();
+		%feature("autodoc", "1");
+		void SetCurrentMode(const Standard_Boolean aCurrentMode);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		void SetContext(const Handle_AIS_InteractiveContext &aCtx);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void ComputeSelection(const Handle_SelectMgr_Selection &aSelection, const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Plane {
+	Handle_AIS_Plane GetHandle() {
+	return *(Handle_AIS_Plane*) &$self;
+	}
+};
+%extend AIS_Plane {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Plane::~AIS_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_ListIteratorOfListOfInteractive;
+class AIS_ListIteratorOfListOfInteractive {
+	public:
+		%feature("autodoc", "1");
+		AIS_ListIteratorOfListOfInteractive();
+		%feature("autodoc", "1");
+		AIS_ListIteratorOfListOfInteractive(const AIS_ListOfInteractive &L);
+		%feature("autodoc", "1");
+		void Initialize(const AIS_ListOfInteractive &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & Value() const;
+
+};
+%feature("shadow") AIS_ListIteratorOfListOfInteractive::~AIS_ListIteratorOfListOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ListIteratorOfListOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_ConcentricRelation;
+class AIS_ConcentricRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConcentricRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_ConcentricRelation {
+	Handle_AIS_ConcentricRelation GetHandle() {
+	return *(Handle_AIS_ConcentricRelation*) &$self;
+	}
+};
+%extend AIS_ConcentricRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_ConcentricRelation::~AIS_ConcentricRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ConcentricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_IdenticRelation;
+class AIS_IdenticRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_IdenticRelation(const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_IdenticRelation {
+	Handle_AIS_IdenticRelation GetHandle() {
+	return *(Handle_AIS_IdenticRelation*) &$self;
+	}
+};
+%extend AIS_IdenticRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_IdenticRelation::~AIS_IdenticRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_IdenticRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Selection;
+class AIS_Selection : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS_Selection(const char * aName);
+		%feature("autodoc", "1");
+		static		void Remove(const char * aName);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Find(const char * aName);
+		%feature("autodoc", "1");
+		static		Standard_Boolean CreateSelection(const char * aName);
+		%feature("autodoc", "1");
+		static		Handle_AIS_Selection Selection(const char * aName);
+		%feature("autodoc", "1");
+		static		Standard_Boolean SetCurrentSelection(const char * aName);
+		%feature("autodoc", "1");
+		static		Handle_AIS_Selection CurrentSelection();
+		%feature("autodoc", "1");
+		static		void Select();
+		%feature("autodoc", "1");
+		static		AIS_SelectStatus Select(const Handle_Standard_Transient &anObject);
+		%feature("autodoc", "1");
+		static		AIS_SelectStatus AddSelect(const Handle_Standard_Transient &anObject);
+		%feature("autodoc", "1");
+		static		void ClearAndSelect(const Handle_Standard_Transient &anObject);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsSelected(const Handle_Standard_Transient &anObject);
+		%feature("autodoc", "1");
+		static		Standard_Integer Extent();
+		%feature("autodoc", "1");
+		static		Handle_Standard_Transient Single();
+		%feature("autodoc", "1");
+		void Init();
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbStored() const;
+		%feature("autodoc", "1");
+		const AIS_NListTransient & Objects() const;
+		%feature("autodoc", "1");
+		static		Standard_Integer Index(const char * aName);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Selection {
+	Handle_AIS_Selection GetHandle() {
+	return *(Handle_AIS_Selection*) &$self;
+	}
+};
+%extend AIS_Selection {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Selection::~AIS_Selection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Selection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
+class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
+	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
+	}
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
+class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_SequenceNodeOfSequenceOfInteractive(const Handle_AIS_InteractiveObject &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_SequenceNodeOfSequenceOfInteractive {
+	Handle_AIS_SequenceNodeOfSequenceOfInteractive GetHandle() {
+	return *(Handle_AIS_SequenceNodeOfSequenceOfInteractive*) &$self;
+	}
+};
+%extend AIS_SequenceNodeOfSequenceOfInteractive {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_SequenceNodeOfSequenceOfInteractive::~AIS_SequenceNodeOfSequenceOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Circle;
+class AIS_Circle : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Circle(const Handle_Geom_Circle &aCircle);
+		%feature("autodoc", "1");
+		AIS_Circle(const Handle_Geom_Circle &aCircle, const Standard_Real aUStart, const Standard_Real aUEnd, const Standard_Boolean aSens=1);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		const Handle_Geom_Circle & Circle() const;
+		%feature("autodoc","Parameters() -> [Standard_Real, Standard_Real]");
+
+		void Parameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetCircle(const Handle_Geom_Circle &C);
+		%feature("autodoc", "1");
+		void SetFirstParam(const Standard_Real U);
+		%feature("autodoc", "1");
+		void SetLastParam(const Standard_Real U);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Circle {
+	Handle_AIS_Circle GetHandle() {
+	return *(Handle_AIS_Circle*) &$self;
+	}
+};
+%extend AIS_Circle {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Circle::~AIS_Circle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Circle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_SymmetricRelation;
+class AIS_SymmetricRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_SymmetricRelation(const TopoDS_Shape aSymmTool, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		void SetTool(const TopoDS_Shape aSymmetricTool);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  GetTool() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_SymmetricRelation {
+	Handle_AIS_SymmetricRelation GetHandle() {
+	return *(Handle_AIS_SymmetricRelation*) &$self;
+	}
+};
+%extend AIS_SymmetricRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_SymmetricRelation::~AIS_SymmetricRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_SymmetricRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Chamf2dDimension;
+class AIS_Chamf2dDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Chamf2dDimension {
+	Handle_AIS_Chamf2dDimension GetHandle() {
+	return *(Handle_AIS_Chamf2dDimension*) &$self;
+	}
+};
+%extend AIS_Chamf2dDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Chamf2dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_GlobalStatus;
+class AIS_GlobalStatus : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS_GlobalStatus();
+		%feature("autodoc", "1");
+		AIS_GlobalStatus(const AIS_DisplayStatus aStat, const Standard_Integer aDispMode, const Standard_Integer aSelMode, const Standard_Boolean ishilighted=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
+		%feature("autodoc", "1");
+		void SetGraphicStatus(const AIS_DisplayStatus aStat);
+		%feature("autodoc", "1");
+		void AddDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void AddSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void SetLayerIndex(const Standard_Integer AnIndex);
+		%feature("autodoc", "1");
+		void SetHilightStatus(const Standard_Boolean aStat);
+		%feature("autodoc", "1");
+		void SetHilightColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSubIntensityOn() const;
+		%feature("autodoc", "1");
+		void SubIntensityOn();
+		%feature("autodoc", "1");
+		void SubIntensityOff();
+		%feature("autodoc", "1");
+		void RemoveDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void RemoveSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void ClearSelectionModes();
+		%feature("autodoc", "1");
+		AIS_DisplayStatus GraphicStatus() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & DisplayedModes() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & SelectionModes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHilighted() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor HilightColor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_GlobalStatus {
+	Handle_AIS_GlobalStatus GetHandle() {
+	return *(Handle_AIS_GlobalStatus*) &$self;
+	}
+};
+%extend AIS_GlobalStatus {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_GlobalStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive;
+class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive();
+		%feature("autodoc", "1");
+		AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive(const AIS_DataMapofIntegerListOfinteractive &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const AIS_DataMapofIntegerListOfinteractive &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const AIS_ListOfInteractive & Value() const;
+
+};
+%feature("shadow") AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive::~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_InteractiveContext;
+class AIS_InteractiveContext : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer);
+		%feature("autodoc", "1");
+		AIS_InteractiveContext(const Handle_V3d_Viewer &MainViewer, const Handle_V3d_Viewer &Collector);
+		%feature("autodoc", "1");
+		virtual		void Delete() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCollectorClosed() const;
+		%feature("autodoc", "1");
+		void CloseCollector();
+		%feature("autodoc", "1");
+		void OpenCollector();
+		%feature("autodoc", "1");
+		void SetAutoActivateSelection(const Standard_Boolean Auto);
+		%feature("autodoc", "1");
+		Standard_Boolean GetAutoActivateSelection() const;
+		%feature("autodoc", "1");
+		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void Display(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer amode, const Standard_Integer aSelectionMode, const Standard_Boolean updateviewer=1, const Standard_Boolean allowdecomposition=1);
+		%feature("autodoc", "1");
+		void Load(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer SelectionMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
+		%feature("autodoc", "1");
+		void Erase(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean PutInCollector=0);
+		%feature("autodoc", "1");
+		void EraseMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void EraseAll(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void DisplayAll(const Standard_Boolean OnlyFromCollector=0, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void DisplayFromCollector(const Handle_AIS_InteractiveObject &anIObj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void EraseSelected(const Standard_Boolean PutInCollector=0, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void DisplaySelected(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		Standard_Boolean KeepTemporary(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x000000001);
+		%feature("autodoc", "1");
+		void Clear(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void ClearPrs(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode=0, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void Remove(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void RemoveAll(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void Hilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void HilightWithColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aCol, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void Unhilight(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aPriority);
+		%feature("autodoc", "1");
+		void SetZLayer(const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		Standard_Integer GetZLayer(const Handle_AIS_InteractiveObject &theIObj) const;
+		%feature("autodoc", "1");
+		void Redisplay(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
+		%feature("autodoc", "1");
+		void Redisplay(const AIS_KindOfInteractive aTypeOfObject, const Standard_Integer Signature=-0x000000001, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void RecomputePrsOnly(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
+		%feature("autodoc", "1");
+		void RecomputeSelectionOnly(const Handle_AIS_InteractiveObject &anIObj);
+		%feature("autodoc", "1");
+		void Update(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnsetDisplayMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetSelectionMode(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void UnsetSelectionMode(const Handle_AIS_InteractiveObject &aniobj);
+		%feature("autodoc", "1");
+		void SetSensitivityMode(const StdSelect_SensitivityMode aMode);
+		%feature("autodoc", "1");
+		StdSelect_SensitivityMode SensitivityMode() const;
+		%feature("autodoc", "1");
+		void SetSensitivity(const Standard_Real aPrecision);
+		%feature("autodoc", "1");
+		Standard_Real Sensitivity() const;
+		%feature("autodoc", "1");
+		void SetPixelTolerance(const Standard_Integer aPrecision=4);
+		%feature("autodoc", "1");
+		Standard_Integer PixelTolerance() const;
+		%feature("autodoc", "1");
+		void SetLocation(const Handle_AIS_InteractiveObject &aniobj, const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		void ResetLocation(const Handle_AIS_InteractiveObject &aniobj);
+		%feature("autodoc", "1");
+		Standard_Boolean HasLocation(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		const TopLoc_Location & Location(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		void SetCurrentFacingModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfFacingModel aModel=Aspect_TOFM_BOTH_SIDE);
+		%feature("autodoc", "1");
+		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_NameOfColor aColor, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetColor(const Handle_AIS_InteractiveObject &aniobj, const Quantity_Color &aColor, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnsetColor(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetMaterial(const Handle_AIS_InteractiveObject &aniobj, const Graphic3d_NameOfMaterial aName, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnsetMaterial(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnsetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDegenerateModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
+		%feature("autodoc", "1");
+		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel, const Quantity_Ratio aSkipRatio=0.0);
+		%feature("autodoc", "1");
+		void SetLocalAttributes(const Handle_AIS_InteractiveObject &aniobj, const Handle_AIS_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnsetLocalAttributes(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
+		%feature("autodoc","PolygonOffsets(const anObj) -> [Standard_Integer, Standard_Real, Standard_Real]");
+
+		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		Standard_Real TrihedronSize() const;
+		%feature("autodoc", "1");
+		void SetPlaneSize(const Standard_Real aSizeX, const Standard_Real aSizeY, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetPlaneSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
+		%feature("autodoc","PlaneSize() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean PlaneSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		AIS_DisplayStatus DisplayStatus(const Handle_AIS_InteractiveObject &anIobj) const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & DisplayedModes(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &anIobj) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed(const Handle_AIS_InteractiveObject &aniobj, const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anIobj, Standard_Boolean & WithColor, Quantity_NameOfColor & theHiCol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInCollector(const Handle_AIS_InteractiveObject &anIObj) const;
+		%feature("autodoc", "1");
+		Standard_Integer DisplayPriority(const Handle_AIS_InteractiveObject &anIobj) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasColor(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor Color(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		void Color(const Handle_AIS_InteractiveObject &aniobj, Quantity_Color & acolor) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Width(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		void UpdateCurrentViewer();
+		%feature("autodoc", "1");
+		void UpdateCollector();
+		%feature("autodoc", "1");
+		Standard_Integer DisplayMode() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor HilightColor() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor SelectionColor() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor PreSelectionColor() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor DefaultColor() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor SubIntensityColor() const;
+		%feature("autodoc", "1");
+		void SetHilightColor(const Quantity_NameOfColor aHiCol);
+		%feature("autodoc", "1");
+		void SelectionColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		void SetPreselectionColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		void SetSubIntensityColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		void SetDisplayMode(const AIS_DisplayMode AMode, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetHLRDeviationCoefficient(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aCoefficient, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetHLRDeviationAngle(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real anAngle, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		Standard_Real DeviationCoefficient() const;
+		%feature("autodoc", "1");
+		void SetDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real DeviationAngle() const;
+		%feature("autodoc", "1");
+		void SetHLRDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		Standard_Real HLRDeviationCoefficient() const;
+		%feature("autodoc", "1");
+		void SetHLRAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real HLRAngle() const;
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Handle_Prs3d_LineAspect HiddenLineAspect() const;
+		%feature("autodoc", "1");
+		void SetHiddenLineAspect(const Handle_Prs3d_LineAspect &anAspect) const;
+		%feature("autodoc", "1");
+		Standard_Boolean DrawHiddenLine() const;
+		%feature("autodoc", "1");
+		void EnableDrawHiddenLine() const;
+		%feature("autodoc", "1");
+		void DisableDrawHiddenLine() const;
+		%feature("autodoc", "1");
+		void SetIsoNumber(const Standard_Integer NbIsos, const AIS_TypeOfIso WhichIsos=AIS_TOI_Both);
+		%feature("autodoc", "1");
+		Standard_Integer IsoNumber(const AIS_TypeOfIso WhichIsos=AIS_TOI_Both);
+		%feature("autodoc", "1");
+		void IsoOnPlane(const Standard_Boolean SwitchOn);
+		%feature("autodoc", "1");
+		Standard_Boolean IsoOnPlane() const;
+		%feature("autodoc", "1");
+		void SetSelectedAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1, const Standard_Boolean updateViewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfDetection MoveTo(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		Standard_Boolean HasNextDetected() const;
+		%feature("autodoc", "1");
+		Standard_Integer HilightNextDetected(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		Standard_Integer HilightPreviousDetected(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick Select(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick Select(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick Select(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick ShiftSelect(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick ShiftSelect(const TColgp_Array1OfPnt2d &Polyline, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		AIS_StatusOfPick ShiftSelect(const Standard_Integer XPMin, const Standard_Integer YPMin, const Standard_Integer XPMax, const Standard_Integer YPMax, const Handle_V3d_View &aView, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetToHilightSelected(const Standard_Boolean toHilight);
+		%feature("autodoc", "1");
+		Standard_Boolean ToHilightSelected() const;
+		%feature("autodoc", "1");
+		void SetCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void AddOrRemoveCurrentObject(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UpdateCurrent();
+		%feature("autodoc", "1");
+		Standard_Boolean WasCurrentTouched() const;
+		%feature("autodoc", "1");
+		void SetOkCurrent();
+		%feature("autodoc", "1");
+		Standard_Boolean IsCurrent(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		void InitCurrent();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreCurrent() const;
+		%feature("autodoc", "1");
+		void NextCurrent();
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject Current() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbCurrents();
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject FirstCurrentObject();
+		%feature("autodoc", "1");
+		void HilightCurrents(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnhilightCurrents(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void ClearCurrents(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetSelected(const Handle_AIS_InteractiveObject &aniObj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SetSelectedCurrent();
+		%feature("autodoc", "1");
+		void UpdateSelected(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void AddOrRemoveSelected(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void HilightSelected(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void UnhilightSelected(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void ClearSelected(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void AddOrRemoveSelected(const TopoDS_Shape aShape, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void AddOrRemoveSelected(const Handle_SelectMgr_EntityOwner &anOwner, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSelected(const Handle_AIS_InteractiveObject &aniobj) const;
+		%feature("autodoc", "1");
+		void InitSelected();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreSelected() const;
+		%feature("autodoc", "1");
+		void NextSelected();
+		%feature("autodoc", "1");
+		Standard_Integer NbSelected();
+		%feature("autodoc", "1");
+		Standard_Boolean HasSelectedShape() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape SelectedShape() const;
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner SelectedOwner() const;
+		%feature("autodoc", "1");
+		void EntityOwners(SelectMgr_IndexedMapOfOwner & theOwners, const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theMode=-0x000000001) const;
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject Interactive() const;
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject SelectedInteractive() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasApplicative() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient Applicative() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasDetected() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasDetectedShape() const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  DetectedShape() const;
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject DetectedInteractive() const;
+		%feature("autodoc", "1");
+		Handle_SelectMgr_EntityOwner DetectedOwner() const;
+		%feature("autodoc", "1");
+		void InitDetected();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreDetected() const;
+		%feature("autodoc", "1");
+		void NextDetected();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  DetectedCurrentShape() const;
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject DetectedCurrentObject() const;
+		%feature("autodoc", "1");
+		Standard_Integer OpenLocalContext(const Standard_Boolean UseDisplayedObjects=1, const Standard_Boolean AllowShapeDecomposition=1, const Standard_Boolean AcceptEraseOfObjects=0, const Standard_Boolean BothViewers=0);
+		%feature("autodoc", "1");
+		void CloseLocalContext(const Standard_Integer Index=-0x000000001, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		Standard_Integer IndexOfCurrentLocal() const;
+		%feature("autodoc", "1");
+		void CloseAllContexts(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void ResetOriginalState(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void ClearLocalContext(const AIS_ClearMode TheMode=AIS_CM_All);
+		%feature("autodoc", "1");
+		void UseDisplayedObjects();
+		%feature("autodoc", "1");
+		void NotUseDisplayedObjects();
+		%feature("autodoc", "1");
+		Standard_Boolean BeginImmediateDraw();
+		%feature("autodoc", "1");
+		Standard_Boolean ImmediateAdd(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ImmediateRemove(const Handle_AIS_InteractiveObject &anIObj, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		Standard_Boolean EndImmediateDraw(const Handle_V3d_View &aView, const Standard_Boolean DoubleBuf=0);
+		%feature("autodoc", "1");
+		Standard_Boolean EndImmediateDraw(const Standard_Boolean DoubleBuf=0);
+		%feature("autodoc", "1");
+		Standard_Boolean IsImmediateModeOn() const;
+		%feature("autodoc", "1");
+		void Drag(const Handle_V3d_View &aView, const Handle_AIS_InteractiveObject &anObject, const Handle_Geom_Transformation &aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean update=0, const Standard_Boolean zBuffer=0);
+		%feature("autodoc", "1");
+		void SetAutomaticHilight(const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		Standard_Boolean AutomaticHilight() const;
+		%feature("autodoc", "1");
+		void SetZDetection(const Standard_Boolean aStatus=0);
+		%feature("autodoc", "1");
+		Standard_Boolean ZDetection() const;
+		%feature("autodoc", "1");
+		void Activate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		void Deactivate(const Handle_AIS_InteractiveObject &anIObj);
+		%feature("autodoc", "1");
+		void Deactivate(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void ActivatedModes(const Handle_AIS_InteractiveObject &anIobj, TColStd_ListOfInteger & theList) const;
+		%feature("autodoc", "1");
+		void SetShapeDecomposition(const Handle_AIS_InteractiveObject &anIobj, const Standard_Boolean aStatus);
+		%feature("autodoc", "1");
+		void SetTemporaryAttributes(const Handle_AIS_InteractiveObject &anObj, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SubIntensityOn(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SubIntensityOff(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SubIntensityOn(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void SubIntensityOff(const Standard_Boolean updateviewer=1);
+		%feature("autodoc", "1");
+		void AddFilter(const Handle_SelectMgr_Filter &aFilter);
+		%feature("autodoc", "1");
+		void RemoveFilter(const Handle_SelectMgr_Filter &aFilter);
+		%feature("autodoc", "1");
+		void RemoveFilters();
+		%feature("autodoc", "1");
+		void ActivateStandardMode(const TopAbs_ShapeEnum aStandardActivation);
+		%feature("autodoc", "1");
+		void DeactivateStandardMode(const TopAbs_ShapeEnum aStandardActivation);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & ActivatedStandardModes() const;
+		%feature("autodoc", "1");
+		const SelectMgr_ListOfFilter & Filters() const;
+		%feature("autodoc", "1");
+		const Handle_Prs3d_Drawer & DefaultDrawer() const;
+		%feature("autodoc", "1");
+		const Handle_V3d_Viewer & CurrentViewer() const;
+		%feature("autodoc", "1");
+		void DisplayedObjects(AIS_ListOfInteractive & aListOfIO, const Standard_Boolean OnlyFromNeutral=0) const;
+		%feature("autodoc", "1");
+		void DisplayedObjects(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & aListOfIO, const Standard_Boolean OnlyFromNeutral=0) const;
+		%feature("autodoc", "1");
+		const Handle_V3d_Viewer & Collector() const;
+		%feature("autodoc", "1");
+		void ObjectsInCollector(AIS_ListOfInteractive & aListOfIO) const;
+		%feature("autodoc", "1");
+		void ObjectsInCollector(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & aListOfIO) const;
+		%feature("autodoc", "1");
+		void ErasedObjects(AIS_ListOfInteractive & theListOfIO) const;
+		%feature("autodoc", "1");
+		void ErasedObjects(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, AIS_ListOfInteractive & theListOfIO) const;
+		%feature("autodoc", "1");
+		void ObjectsByDisplayStatus(const AIS_DisplayStatus theStatus, AIS_ListOfInteractive & theListOfIO) const;
+		%feature("autodoc", "1");
+		void ObjectsByDisplayStatus(const AIS_KindOfInteractive WhichKind, const Standard_Integer WhichSignature, const AIS_DisplayStatus theStatus, AIS_ListOfInteractive & theListOfIO) const;
+		%feature("autodoc", "1");
+		void ObjectsInside(AIS_ListOfInteractive & aListOfIO, const AIS_KindOfInteractive WhichKind=AIS_KOI_None, const Standard_Integer WhichSignature=-0x000000001) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasOpenedContext() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & CurrentName() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & SelectionName() const;
+		%feature("autodoc", "1");
+		char * DomainOfMainViewer() const;
+		%feature("autodoc", "1");
+		char * DomainOfCollector() const;
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext LocalContext() const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_SelectionManager & SelectionManager() const;
+		%feature("autodoc", "1");
+		const Handle_PrsMgr_PresentationManager3d & MainPrsMgr() const;
+		%feature("autodoc", "1");
+		const Handle_PrsMgr_PresentationManager3d & CollectorPrsMgr() const;
+		%feature("autodoc", "1");
+		const Handle_StdSelect_ViewerSelector3d & MainSelector() const;
+		%feature("autodoc", "1");
+		Handle_StdSelect_ViewerSelector3d LocalSelector() const;
+		%feature("autodoc", "1");
+		const Handle_StdSelect_ViewerSelector3d & CollectorSelector() const;
+		%feature("autodoc", "1");
+		Standard_Integer PurgeDisplay(const Standard_Boolean CollectorToo=0);
+		%feature("autodoc", "1");
+		Standard_Integer HighestIndex() const;
+		%feature("autodoc", "1");
+		void DisplayActiveAreas(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void ClearActiveAreas(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void DisplayActiveSensitive(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void ClearActiveSensitive(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void DisplayActiveSensitive(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void DisplayActiveAreas(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
+		%feature("autodoc","IsInLocal(const anObject) -> Standard_Integer");
+
+		Standard_Boolean IsInLocal(const Handle_AIS_InteractiveObject &anObject, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_InteractiveContext {
+	Handle_AIS_InteractiveContext GetHandle() {
+	return *(Handle_AIS_InteractiveContext*) &$self;
+	}
+};
+%extend AIS_InteractiveContext {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_InteractiveContext::~AIS_InteractiveContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Shape;
+class AIS_Shape : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Shape(const TopoDS_Shape shap);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Shape ashap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationAngle();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationAngle();
+		%feature("autodoc", "1");
+		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real UserAngle() const;
+		%feature("autodoc", "1");
+		void SetOwnDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		const Bnd_Box & BoundingBox();
+		%feature("autodoc", "1");
+		virtual		Quantity_NameOfColor Color() const;
+		%feature("autodoc", "1");
+		virtual		void Color(Quantity_Color & aColor) const;
+		%feature("autodoc", "1");
+		virtual		Graphic3d_NameOfMaterial Material() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Transparency() const;
+		%feature("autodoc", "1");
+		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
+		%feature("autodoc", "1");
+		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
+		%feature("autodoc", "1");
+		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Shape {
+	Handle_AIS_Shape GetHandle() {
+	return *(Handle_AIS_Shape*) &$self;
+	}
+};
+%extend AIS_Shape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Shape::~AIS_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_TexturedShape;
+class AIS_TexturedShape : public AIS_Shape {
+	public:
+		%feature("autodoc", "1");
+		AIS_TexturedShape(const TopoDS_Shape shap);
+		%feature("autodoc", "1");
+		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
+		%feature("autodoc", "1");
+		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
+		%feature("autodoc", "1");
+		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
+		%feature("autodoc", "1");
+		void SetTextureMapOn();
+		%feature("autodoc", "1");
+		void SetTextureMapOff();
+		%feature("autodoc", "1");
+		void EnableTextureModulate();
+		%feature("autodoc", "1");
+		void DisableTextureModulate();
+		%feature("autodoc", "1");
+		void UpdateAttributes();
+		%feature("autodoc", "1");
+		Standard_Boolean TextureMapState() const;
+		%feature("autodoc", "1");
+		Standard_Real URepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		char * TextureFile() const;
+		%feature("autodoc", "1");
+		Standard_Real VRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ShowTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureUOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureVOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleU() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleV() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureScale() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureModulate() const;
+
+};
+%extend AIS_TexturedShape {
+	Handle_AIS_TexturedShape GetHandle() {
+	return *(Handle_AIS_TexturedShape*) &$self;
+	}
+};
+%extend AIS_TexturedShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_PlaneTrihedron;
+class AIS_PlaneTrihedron : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane Component();
+		%feature("autodoc", "1");
+		void SetComponent(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_AIS_Line XAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Line YAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Point Position() const;
+		%feature("autodoc", "1");
+		void SetLength(const Standard_Real theLength);
+		%feature("autodoc", "1");
+		Standard_Real GetLength() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetXLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		void SetYLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_PlaneTrihedron {
+	Handle_AIS_PlaneTrihedron GetHandle() {
+	return *(Handle_AIS_PlaneTrihedron*) &$self;
+	}
+};
+%extend AIS_PlaneTrihedron {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_PlaneTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_DataMapofIntegerListOfinteractive;
+class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive & Assign(const AIS_DataMapofIntegerListOfinteractive &Other);
+		%feature("autodoc", "1");
+		AIS_DataMapofIntegerListOfinteractive & operator=(const AIS_DataMapofIntegerListOfinteractive &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const AIS_ListOfInteractive &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const AIS_ListOfInteractive & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const AIS_ListOfInteractive & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		AIS_ListOfInteractive & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") AIS_DataMapofIntegerListOfinteractive::~AIS_DataMapofIntegerListOfinteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_GraphicTool;
+class AIS_GraphicTool {
+	public:
+		%feature("autodoc", "1");
+		AIS_GraphicTool();
+		%feature("autodoc", "1");
+		static		Quantity_NameOfColor GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		%feature("autodoc", "1");
+		static		void GetLineColor(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_Color & TheLineColor);
+		%feature("autodoc", "1");
+		static		Standard_Real GetLineWidth(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		%feature("autodoc", "1");
+		static		Aspect_TypeOfLine GetLineType(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes);
+		%feature("autodoc","GetLineAtt(const aDrawer, AIS_TypeOfAttribute TheTypeOfAttributes) -> Standard_Real");
+
+		static		void GetLineAtt(const Handle_Prs3d_Drawer &aDrawer, const AIS_TypeOfAttribute TheTypeOfAttributes, Quantity_NameOfColor & aCol, Standard_Real &OutValue, Aspect_TypeOfLine & aTyp);
+		%feature("autodoc", "1");
+		static		Quantity_NameOfColor GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer);
+		%feature("autodoc", "1");
+		static		void GetInteriorColor(const Handle_Prs3d_Drawer &aDrawer, Quantity_Color & aColor);
+		%feature("autodoc", "1");
+		static		Graphic3d_MaterialAspect GetMaterial(const Handle_Prs3d_Drawer &aDrawer);
+
+};
+%feature("shadow") AIS_GraphicTool::~AIS_GraphicTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_GraphicTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MultipleConnectedShape;
+class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
+	public:
+		%feature("autodoc", "1");
+		AIS_MultipleConnectedShape(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		void Set(const TopoDS_Shape ashap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MultipleConnectedShape {
+	Handle_AIS_MultipleConnectedShape GetHandle() {
+	return *(Handle_AIS_MultipleConnectedShape*) &$self;
+	}
+};
+%extend AIS_MultipleConnectedShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_MultipleConnectedShape::~AIS_MultipleConnectedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MultipleConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
+class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapNodeOfDataMapofIntegerListOfinteractive(const Standard_Integer &K, const AIS_ListOfInteractive &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		AIS_ListOfInteractive & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive GetHandle() {
+	return *(Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive*) &$self;
+	}
+};
+%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_AngleDimension;
+class AIS_AngleDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aCone, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aCone, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-2);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const gp_Ax1 anAxis, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const gp_Ax1 anAxis, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aFFace, const TopoDS_Face aSFace, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_AngleDimension(const TopoDS_Face aFFace, const TopoDS_Face aSFace, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=1.0000000000000000208166817117216851329430937767e-3);
+		%feature("autodoc", "1");
+		const gp_Ax1  Axis() const;
+		%feature("autodoc", "1");
+		void SetAxis(const gp_Ax1 anAxis);
+		%feature("autodoc", "1");
+		void SetConeFace(const TopoDS_Face aConeFace);
+		%feature("autodoc", "1");
+		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
+		%feature("autodoc", "1");
+		virtual		void SetSecondShape(const TopoDS_Shape aSShape);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_AngleDimension {
+	Handle_AIS_AngleDimension GetHandle() {
+	return *(Handle_AIS_AngleDimension*) &$self;
+	}
+};
+%extend AIS_AngleDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_AngleDimension::~AIS_AngleDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_AngleDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_DataMapOfILC;
+class AIS_DataMapOfILC : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		AIS_DataMapOfILC(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		AIS_DataMapOfILC & Assign(const AIS_DataMapOfILC &Other);
+		%feature("autodoc", "1");
+		AIS_DataMapOfILC & operator=(const AIS_DataMapOfILC &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Handle_AIS_LocalContext &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Handle_AIS_LocalContext & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Handle_AIS_LocalContext & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Handle_AIS_LocalContext & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") AIS_DataMapOfILC::~AIS_DataMapOfILC %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_DataMapOfILC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_TangentRelation;
+class AIS_TangentRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_TangentRelation(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Integer anExternRef=0);
+		%feature("autodoc", "1");
+		Standard_Integer ExternRef();
+		%feature("autodoc", "1");
+		void SetExternRef(const Standard_Integer aRef);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_TangentRelation {
+	Handle_AIS_TangentRelation GetHandle() {
+	return *(Handle_AIS_TangentRelation*) &$self;
+	}
+};
+%extend AIS_TangentRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_TangentRelation::~AIS_TangentRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_TangentRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_EqualRadiusRelation;
+class AIS_EqualRadiusRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_EqualRadiusRelation(const TopoDS_Edge aFirstEdge, const TopoDS_Edge aSecondEdge, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_EqualRadiusRelation {
+	Handle_AIS_EqualRadiusRelation GetHandle() {
+	return *(Handle_AIS_EqualRadiusRelation*) &$self;
+	}
+};
+%extend AIS_EqualRadiusRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_EqualRadiusRelation::~AIS_EqualRadiusRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_EqualRadiusRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_RadiusDimension;
+class AIS_RadiusDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_RadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_RadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		Standard_Boolean DrawFromCenter() const;
+		%feature("autodoc", "1");
+		void SetDrawFromCenter(const Standard_Boolean drawfromcenter);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_RadiusDimension {
+	Handle_AIS_RadiusDimension GetHandle() {
+	return *(Handle_AIS_RadiusDimension*) &$self;
+	}
+};
+%extend AIS_RadiusDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_RadiusDimension::~AIS_RadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_RadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MapIteratorOfMapOfInteractive;
+class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		AIS_MapIteratorOfMapOfInteractive();
+		%feature("autodoc", "1");
+		AIS_MapIteratorOfMapOfInteractive(const AIS_MapOfInteractive &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const AIS_MapOfInteractive &aMap);
+		%feature("autodoc", "1");
+		const Handle_AIS_InteractiveObject & Key() const;
+
+};
+%feature("shadow") AIS_MapIteratorOfMapOfInteractive::~AIS_MapIteratorOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MapIteratorOfMapOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_EqualDistanceRelation;
+class AIS_EqualDistanceRelation : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_EqualDistanceRelation(const TopoDS_Shape aShape1, const TopoDS_Shape aShape2, const TopoDS_Shape aShape3, const TopoDS_Shape aShape4, const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		void SetShape3(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape3() const;
+		%feature("autodoc", "1");
+		void SetShape4(const TopoDS_Shape aShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape4() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		static		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Edge FirstEdge, const TopoDS_Edge SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc", "1");
+		static		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Vertex FirstVertex, const TopoDS_Vertex SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc", "1");
+		static		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const Standard_Real ArrowSize, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, gp_Pnt & FirstExtreme, gp_Pnt & SecondExtreme, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_EqualDistanceRelation {
+	Handle_AIS_EqualDistanceRelation GetHandle() {
+	return *(Handle_AIS_EqualDistanceRelation*) &$self;
+	}
+};
+%extend AIS_EqualDistanceRelation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_EqualDistanceRelation::~AIS_EqualDistanceRelation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_EqualDistanceRelation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MaxRadiusDimension;
+class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
+	public:
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MaxRadiusDimension {
+	Handle_AIS_MaxRadiusDimension GetHandle() {
+	return *(Handle_AIS_MaxRadiusDimension*) &$self;
+	}
+};
+%extend AIS_MaxRadiusDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MaxRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_LengthDimension;
+class AIS_LengthDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_LengthDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_LengthDimension(const TopoDS_Face aFirstFace, const TopoDS_Face aSecondFace, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		AIS_LengthDimension(const TopoDS_Face Face, const TopoDS_Edge Edge, const Standard_Real Val, const TCollection_ExtendedString &Text);
+		%feature("autodoc", "1");
+		AIS_LengthDimension(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_LengthDimension(const TopoDS_Shape aFShape, const TopoDS_Shape aSShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const AIS_TypeOfDist aTypeDist, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetFirstShape(const TopoDS_Shape aFShape);
+		%feature("autodoc", "1");
+		virtual		void SetSecondShape(const TopoDS_Shape aSShape);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		AIS_TypeOfDist TypeOfDist() const;
+		%feature("autodoc", "1");
+		void SetTypeOfDist(const AIS_TypeOfDist aTypeDist);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc","ComputeTwoEdgesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstEdge, const SecondEdge, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
+
+		static		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge FirstEdge, const TopoDS_Edge SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc","ComputeOneEdgeOneVertexLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstShape, const SecondShape, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox) -> [Standard_Integer, Standard_Real]");
+
+		static		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape FirstShape, const TopoDS_Shape SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc","ComputeTwoVerticesLength(const aPresentation, const aDrawer, const aText, Standard_Real ArrowSize, const FirstVertex, const SecondVertex, const Plane, Standard_Boolean AutomaticPos, Standard_Boolean IsSetBndBox, const BndBox, AIS_TypeOfDist TypeDist) -> [Standard_Integer, Standard_Real]");
+
+		static		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex FirstVertex, const TopoDS_Vertex SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_LengthDimension {
+	Handle_AIS_LengthDimension GetHandle() {
+	return *(Handle_AIS_LengthDimension*) &$self;
+	}
+};
+%extend AIS_LengthDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_LengthDimension::~AIS_LengthDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_LengthDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_MinRadiusDimension;
+class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
+	public:
+		%feature("autodoc", "1");
+		AIS_MinRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_MinRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MinRadiusDimension {
+	Handle_AIS_MinRadiusDimension GetHandle() {
+	return *(Handle_AIS_MinRadiusDimension*) &$self;
+	}
+};
+%extend AIS_MinRadiusDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_MinRadiusDimension::~AIS_MinRadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MinRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_SequenceNodeOfSequenceOfDimension;
+class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_SequenceNodeOfSequenceOfDimension(const Handle_AIS_Relation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_AIS_Relation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_SequenceNodeOfSequenceOfDimension {
+	Handle_AIS_SequenceNodeOfSequenceOfDimension GetHandle() {
+	return *(Handle_AIS_SequenceNodeOfSequenceOfDimension*) &$self;
+	}
+};
+%extend AIS_SequenceNodeOfSequenceOfDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_SequenceNodeOfSequenceOfDimension::~AIS_SequenceNodeOfSequenceOfDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_SequenceNodeOfSequenceOfDimension {
 	void _kill_pointed() {
 		delete $self;
 	}

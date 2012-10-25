@@ -39,9 +39,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Geom_Curve.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Vec.hxx>
-#include<Handle_Geom_Surface.hxx>
 #include<gp_Dir.hxx>
+#include<gp_Pnt.hxx>
+#include<Handle_Geom_Surface.hxx>
 #include<GeomLProp.hxx>
+#include<gp_Vec.hxx>
 %}

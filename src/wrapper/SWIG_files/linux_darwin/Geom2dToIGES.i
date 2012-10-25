@@ -85,37 +85,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dToIGES_Geom2dVector;
-class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
-	public:
-		%feature("autodoc", "1");
-		Geom2dToIGES_Geom2dVector();
-		%feature("autodoc", "1");
-		Geom2dToIGES_Geom2dVector(const Geom2dToIGES_Geom2dEntity &G2dE);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Vector &start);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_VectorWithMagnitude &start);
-		%feature("autodoc", "1");
-		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Direction &start);
-
-};
-%feature("shadow") Geom2dToIGES_Geom2dVector::~Geom2dToIGES_Geom2dVector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dToIGES_Geom2dVector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Geom2dToIGES_Geom2dCurve;
 class Geom2dToIGES_Geom2dCurve : public Geom2dToIGES_Geom2dEntity {
 	public:
@@ -166,6 +135,37 @@ def __del__(self):
 %}
 
 %extend Geom2dToIGES_Geom2dPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dToIGES_Geom2dVector;
+class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
+	public:
+		%feature("autodoc", "1");
+		Geom2dToIGES_Geom2dVector();
+		%feature("autodoc", "1");
+		Geom2dToIGES_Geom2dVector(const Geom2dToIGES_Geom2dEntity &G2dE);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Vector &start);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_VectorWithMagnitude &start);
+		%feature("autodoc", "1");
+		Handle_IGESGeom_Direction Transfer2dVector(const Handle_Geom2d_Direction &start);
+
+};
+%feature("shadow") Geom2dToIGES_Geom2dVector::~Geom2dToIGES_Geom2dVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dToIGES_Geom2dVector {
 	void _kill_pointed() {
 		delete $self;
 	}

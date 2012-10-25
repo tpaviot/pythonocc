@@ -202,6 +202,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox;
+class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public math_BFGS {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
+
+};
+%feature("shadow") BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepApprox_MyGradientbisOfTheComputeLineOfApprox;
 class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 	public:
@@ -237,64 +262,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox;
-class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public math_BFGS {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance3d, const Standard_Real Tolerance2d, const Standard_Real Eps, const Standard_Integer NbIterations=200);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolutionReached(math_MultipleVarFunctionWithGradient & F) const;
-
-};
-%feature("shadow") BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox;
-class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.00000000000000003643219731549774157916554706559963960899e-10);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintMatrix() const;
-		%feature("autodoc", "1");
-		const math_Vector & Duale() const;
-		%feature("autodoc", "1");
-		const math_Matrix & ConstraintDerivative(const BRepApprox_TheMultiLineOfApprox &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
-		%feature("autodoc", "1");
-		const math_Matrix & InverseMatrix() const;
-
-};
-%feature("shadow") BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepApprox_ApproxLine;
 class BRepApprox_ApproxLine : public MMgt_TShared {
 	public:
@@ -317,7 +284,7 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 };
 %extend BRepApprox_ApproxLine {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepApprox_ApproxLine::~BRepApprox_ApproxLine %{
@@ -330,6 +297,100 @@ def __del__(self):
 %}
 
 %extend BRepApprox_ApproxLine {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox;
+class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public math_MultipleVarFunctionWithGradient {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc","Value(const X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
+		%feature("autodoc","Values(const X) -> Standard_Real");
+
+		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
+		%feature("autodoc", "1");
+		const math_Vector & NewParameters() const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiCurve & CurveValue();
+		%feature("autodoc", "1");
+		Standard_Real Error(const Standard_Integer IPoint, const Standard_Integer CurveIndex) const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError3d() const;
+		%feature("autodoc", "1");
+		Standard_Real MaxError2d() const;
+		%feature("autodoc", "1");
+		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
+		%feature("autodoc", "1");
+		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
+
+};
+%feature("shadow") BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
+class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
+		%feature("autodoc", "1");
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const TColStd_Array1OfReal &Param, const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
+		%feature("autodoc", "1");
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
+		%feature("autodoc", "1");
+		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		const IntSurf_PntOn2S & Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent() const;
+		%feature("autodoc", "1");
+		const gp_Dir  Direction() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  DirectionOnS1() const;
+		%feature("autodoc", "1");
+		const gp_Dir2d  DirectionOnS2() const;
+		%feature("autodoc", "1");
+		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
+
+};
+%feature("shadow") BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox::~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -395,65 +456,6 @@ def __del__(self):
 %}
 
 %extend BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
-class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &PS, const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const BRepAdaptor_Surface &PS);
-		%feature("autodoc", "1");
-		void SetImplicitSurface(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent();
-		%feature("autodoc", "1");
-		const gp_Vec  Direction3d();
-		%feature("autodoc", "1");
-		const gp_Dir2d  Direction2d();
-		%feature("autodoc", "1");
-		const BRepAdaptor_Surface & PSurface() const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & ISurface() const;
-
-};
-%feature("shadow") BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox::~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -529,7 +531,7 @@ def __del__(self):
 class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.00000000000000003643219731549774157916554706559963960899e-10);
+		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -552,111 +554,6 @@ def __del__(self):
 %}
 
 %extend BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox;
-class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public math_MultipleVarFunctionWithGradient {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const math_Vector &Parameters, const Standard_Integer Deg);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc","Value(const X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const math_Vector &X, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Gradient(const math_Vector &X, math_Vector & G);
-		%feature("autodoc","Values(const X) -> Standard_Real");
-
-		virtual		Standard_Boolean Values(const math_Vector &X, Standard_Real &OutValue, math_Vector & G);
-		%feature("autodoc", "1");
-		const math_Vector & NewParameters() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & CurveValue();
-		%feature("autodoc", "1");
-		Standard_Real Error(const Standard_Integer IPoint, const Standard_Integer CurveIndex) const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError3d() const;
-		%feature("autodoc", "1");
-		Standard_Real MaxError2d() const;
-		%feature("autodoc", "1");
-		AppParCurves_Constraint FirstConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer FirstPoint) const;
-		%feature("autodoc", "1");
-		AppParCurves_Constraint LastConstraint(const Handle_AppParCurves_HArray1OfConstraintCouple &TheConstraints, const Standard_Integer LastPoint) const;
-
-};
-%feature("shadow") BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepApprox_TheComputeLineBezierOfApprox;
-class BRepApprox_TheComputeLineBezierOfApprox {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
-		%feature("autodoc", "1");
-		void Perform(const BRepApprox_TheMultiLineOfApprox &Line);
-		%feature("autodoc", "1");
-		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
-		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
-		%feature("autodoc", "1");
-		void SetConstraints(const AppParCurves_Constraint firstC, const AppParCurves_Constraint lastC);
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllApproximated() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
-
-		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbMultiCurves() const;
-		%feature("autodoc", "1");
-		const AppParCurves_MultiCurve & Value(const Standard_Integer Index=1) const;
-		%feature("autodoc", "1");
-		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index=1);
-		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & SplineValue();
-		%feature("autodoc", "1");
-		void Parametrization(Approx_ParametrizationType & partype) const;
-		%feature("autodoc", "1");
-		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
-
-};
-%feature("shadow") BRepApprox_TheComputeLineBezierOfApprox::~BRepApprox_TheComputeLineBezierOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_TheComputeLineBezierOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -751,53 +648,6 @@ def __del__(self):
 %}
 
 %extend BRepApprox_Approx {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox;
-class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
-	public:
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox();
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const TColStd_Array1OfReal &Param, const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &S1, const BRepAdaptor_Surface &S2, const Standard_Real TolTangency);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld);
-		%feature("autodoc", "1");
-		IntImp_ConstIsoparametric Perform(const TColStd_Array1OfReal &Param, math_FunctionSetRoot & Rsnld, const IntImp_ConstIsoparametric ChoixIso);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		const IntSurf_PntOn2S & Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent() const;
-		%feature("autodoc", "1");
-		const gp_Dir  Direction() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  DirectionOnS1() const;
-		%feature("autodoc", "1");
-		const gp_Dir2d  DirectionOnS2() const;
-		%feature("autodoc", "1");
-		BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox & Function();
-
-};
-%feature("shadow") BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox::~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -974,53 +824,49 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepApprox_TheComputeLineOfApprox;
-class BRepApprox_TheComputeLineOfApprox {
+%nodefaultctor BRepApprox_TheComputeLineBezierOfApprox;
+class BRepApprox_TheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		void Interpol(const BRepApprox_TheMultiLineOfApprox &Line);
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
 		void Perform(const BRepApprox_TheMultiLineOfApprox &Line);
-		%feature("autodoc", "1");
-		void SetParameters(const math_Vector &ThePar);
-		%feature("autodoc", "1");
-		void SetKnots(const TColStd_Array1OfReal &Knots);
-		%feature("autodoc", "1");
-		void SetKnotsAndMultiplicities(const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults);
 		%feature("autodoc", "1");
 		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
 		%feature("autodoc", "1");
 		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
-		%feature("autodoc", "1");
-		void SetContinuity(const Standard_Integer C);
 		%feature("autodoc", "1");
 		void SetConstraints(const AppParCurves_Constraint firstC, const AppParCurves_Constraint lastC);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllApproximated() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsToleranceReached() const;
-		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
+		%feature("autodoc","Error(Standard_Integer Index) -> [Standard_Real, Standard_Real]");
 
-		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Error(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		const AppParCurves_MultiBSpCurve & Value() const;
+		Standard_Integer NbMultiCurves() const;
 		%feature("autodoc", "1");
-		AppParCurves_MultiBSpCurve & ChangeValue();
+		const AppParCurves_MultiCurve & Value(const Standard_Integer Index=1) const;
 		%feature("autodoc", "1");
-		const TColStd_Array1OfReal & Parameters() const;
+		AppParCurves_MultiCurve & ChangeValue(const Standard_Integer Index=1);
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & SplineValue();
+		%feature("autodoc", "1");
+		void Parametrization(Approx_ParametrizationType & partype) const;
+		%feature("autodoc", "1");
+		const TColStd_Array1OfReal & Parameters(const Standard_Integer Index=1) const;
 
 };
-%feature("shadow") BRepApprox_TheComputeLineOfApprox::~BRepApprox_TheComputeLineOfApprox %{
+%feature("shadow") BRepApprox_TheComputeLineBezierOfApprox::~BRepApprox_TheComputeLineBezierOfApprox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1029,7 +875,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepApprox_TheComputeLineOfApprox {
+%extend BRepApprox_TheComputeLineBezierOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1110,44 +956,24 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
-class BRepApprox_TheMultiLineToolOfApprox {
+%nodefaultctor BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox;
+class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_TheMultiLineToolOfApprox();
+		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
 		%feature("autodoc", "1");
-		static		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		static		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		const math_Matrix & ConstraintMatrix() const;
 		%feature("autodoc", "1");
-		static		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
+		const math_Vector & Duale() const;
 		%feature("autodoc", "1");
-		static		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
+		const math_Matrix & ConstraintDerivative(const BRepApprox_TheMultiLineOfApprox &SSP, const math_Vector &Parameters, const Standard_Integer Deg, const math_Matrix &DA);
 		%feature("autodoc", "1");
-		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
-		%feature("autodoc", "1");
-		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
-		%feature("autodoc", "1");
-		static		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
-		%feature("autodoc", "1");
-		static		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
+		const math_Matrix & InverseMatrix() const;
 
 };
-%feature("shadow") BRepApprox_TheMultiLineToolOfApprox::~BRepApprox_TheMultiLineToolOfApprox %{
+%feature("shadow") BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox::~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1156,7 +982,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepApprox_TheMultiLineToolOfApprox {
+%extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1252,6 +1078,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepApprox_TheMultiLineToolOfApprox;
+class BRepApprox_TheMultiLineToolOfApprox {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheMultiLineToolOfApprox();
+		%feature("autodoc", "1");
+		static		Standard_Integer FirstPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		static		Standard_Integer LastPoint(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbP2d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		static		Standard_Integer NbP3d(const BRepApprox_TheMultiLineOfApprox &ML);
+		%feature("autodoc", "1");
+		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt);
+		%feature("autodoc", "1");
+		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		static		void Value(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfPnt & TabPnt, TColgp_Array1OfPnt2d & TabPnt2d);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Tangency(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer Index, TColgp_Array1OfVec & TabVec, TColgp_Array1OfVec2d & TabVec2d);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec2d & arg2);
+		%feature("autodoc", "1");
+		static		Standard_Boolean Curvature(const BRepApprox_TheMultiLineOfApprox &arg0, const Standard_Integer arg1, TColgp_Array1OfVec & arg2, TColgp_Array1OfVec2d & arg3);
+		%feature("autodoc", "1");
+		static		BRepApprox_TheMultiLineOfApprox MakeMLBetween(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer I1, const Standard_Integer I2, const Standard_Integer NbPMin);
+		%feature("autodoc", "1");
+		static		Approx_Status WhatStatus(const BRepApprox_TheMultiLineOfApprox &ML, const Standard_Integer arg1, const Standard_Integer arg2);
+
+};
+%feature("shadow") BRepApprox_TheMultiLineToolOfApprox::~BRepApprox_TheMultiLineToolOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_TheMultiLineToolOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepApprox_MyBSplGradientOfTheComputeLineOfApprox;
 class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 	public:
@@ -1308,6 +1187,127 @@ def __del__(self):
 %}
 
 %extend BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepApprox_TheComputeLineOfApprox;
+class BRepApprox_TheComputeLineOfApprox {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		BRepApprox_TheComputeLineOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		BRepApprox_TheComputeLineOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		void Interpol(const BRepApprox_TheMultiLineOfApprox &Line);
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		%feature("autodoc", "1");
+		void Perform(const BRepApprox_TheMultiLineOfApprox &Line);
+		%feature("autodoc", "1");
+		void SetParameters(const math_Vector &ThePar);
+		%feature("autodoc", "1");
+		void SetKnots(const TColStd_Array1OfReal &Knots);
+		%feature("autodoc", "1");
+		void SetKnotsAndMultiplicities(const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults);
+		%feature("autodoc", "1");
+		void SetDegrees(const Standard_Integer degreemin, const Standard_Integer degreemax);
+		%feature("autodoc", "1");
+		void SetTolerances(const Standard_Real Tolerance3d, const Standard_Real Tolerance2d);
+		%feature("autodoc", "1");
+		void SetContinuity(const Standard_Integer C);
+		%feature("autodoc", "1");
+		void SetConstraints(const AppParCurves_Constraint firstC, const AppParCurves_Constraint lastC);
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllApproximated() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsToleranceReached() const;
+		%feature("autodoc","Error() -> [Standard_Real, Standard_Real]");
+
+		void Error(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		const AppParCurves_MultiBSpCurve & Value() const;
+		%feature("autodoc", "1");
+		AppParCurves_MultiBSpCurve & ChangeValue();
+		%feature("autodoc", "1");
+		const TColStd_Array1OfReal & Parameters() const;
+
+};
+%feature("shadow") BRepApprox_TheComputeLineOfApprox::~BRepApprox_TheComputeLineOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_TheComputeLineOfApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox;
+class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox();
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const BRepAdaptor_Surface &PS, const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const BRepAdaptor_Surface &PS);
+		%feature("autodoc", "1");
+		void SetImplicitSurface(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent();
+		%feature("autodoc", "1");
+		const gp_Vec  Direction3d();
+		%feature("autodoc", "1");
+		const gp_Dir2d  Direction2d();
+		%feature("autodoc", "1");
+		const BRepAdaptor_Surface & PSurface() const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & ISurface() const;
+
+};
+%feature("shadow") BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox::~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox {
 	void _kill_pointed() {
 		delete $self;
 	}

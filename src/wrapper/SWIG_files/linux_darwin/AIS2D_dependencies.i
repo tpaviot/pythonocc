@@ -536,9 +536,9 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
+%import TCollection.i
 %import MMgt.i
 %import Graphic2d.i
-%import TCollection.i
 %import Standard.i
-%import Aspect.i
 %import Quantity.i
+%import Aspect.i

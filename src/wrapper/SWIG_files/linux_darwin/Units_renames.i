@@ -23,24 +23,24 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Units_Quantity::DownCast;
-%rename(DownCast) Handle_Units_QuantitiesSequence::DownCast;
-%rename(DownCast) Handle_Units_SequenceNodeOfQtsSequence::DownCast;
-%rename(DownCast) Handle_Units_SequenceNodeOfTksSequence::DownCast;
 %rename(DownCast) Handle_Units_Lexicon::DownCast;
 %rename(DownCast) Handle_Units_UnitsLexicon::DownCast;
-%rename(DownCast) Handle_Units_UnitsDictionary::DownCast;
+%rename(DownCast) Handle_Units_Quantity::DownCast;
+%rename(DownCast) Handle_Units_SequenceNodeOfTksSequence::DownCast;
+%rename(DownCast) Handle_Units_SequenceNodeOfQtsSequence::DownCast;
 %rename(DownCast) Handle_Units_NoSuchType::DownCast;
 %rename(DownCast) Handle_Units_Unit::DownCast;
-%rename(DownCast) Handle_Units_UnitsSequence::DownCast;
-%rename(DownCast) Handle_Units_UnitsSystem::DownCast;
 %rename(DownCast) Handle_Units_Token::DownCast;
 %rename(DownCast) Handle_Units_ShiftedToken::DownCast;
 %rename(DownCast) Handle_Units_SequenceNodeOfUtsSequence::DownCast;
 %rename(DownCast) Handle_Units_NoSuchUnit::DownCast;
-%rename(DownCast) Handle_Units_TokensSequence::DownCast;
-%rename(DownCast) Handle_Units_Dimensions::DownCast;
+%rename(DownCast) Handle_Units_UnitsSequence::DownCast;
 %rename(DownCast) Handle_Units_ShiftedUnit::DownCast;
+%rename(DownCast) Handle_Units_Dimensions::DownCast;
+%rename(DownCast) Handle_Units_TokensSequence::DownCast;
+%rename(DownCast) Handle_Units_QuantitiesSequence::DownCast;
+%rename(DownCast) Handle_Units_UnitsDictionary::DownCast;
+%rename(DownCast) Handle_Units_UnitsSystem::DownCast;
 %rename(Raise) Units_NoSuchType::Raise;
 %rename(NewInstance) Units_NoSuchType::NewInstance;
 %rename(Raise) Units_NoSuchUnit::Raise;

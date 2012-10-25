@@ -23,25 +23,26 @@ $Author$
 $HeaderURL$
 
 */
-%rename(Add) DsgPrs_SymbPresentation::Add;
+%rename(Add) DsgPrs_ShadedPlanePresentation::Add;
 %rename(Add) DsgPrs_FilletRadiusPresentation::Add;
 %rename(Add) DsgPrs_MidPointPresentation::Add;
 %rename(Add) DsgPrs_ShapeDirPresentation::Add;
+%rename(Add) DsgPrs_EqualRadiusPresentation::Add;
 %rename(Add) DsgPrs_LengthPresentation::Add;
+%rename(Add) DsgPrs_SymbPresentation::Add;
 %rename(Add) DsgPrs_IdenticPresentation::Add;
 %rename(Add) DsgPrs_DiameterPresentation::Add;
 %rename(Add) DsgPrs_FixPresentation::Add;
+%rename(Ax2) DsgPrs_DatumTool::Ax2;
 %rename(Add) DsgPrs_EllipseRadiusPresentation::Add;
-%rename(Add) DsgPrs_EqualDistancePresentation::Add;
-%rename(AddInterval) DsgPrs_EqualDistancePresentation::AddInterval;
-%rename(AddIntervalBetweenTwoArcs) DsgPrs_EqualDistancePresentation::AddIntervalBetweenTwoArcs;
 %rename(Add) DsgPrs_DatumPrs::Add;
 %rename(Add) DsgPrs_AnglePresentation::Add;
 %rename(Add) DsgPrs_TangentPresentation::Add;
-%rename(Ax2) DsgPrs_DatumTool::Ax2;
-%rename(Add) DsgPrs_ParalPresentation::Add;
 %rename(Add) DsgPrs_Chamf2dPresentation::Add;
-%rename(Add) DsgPrs_EqualRadiusPresentation::Add;
+%rename(Add) DsgPrs_EqualDistancePresentation::Add;
+%rename(AddInterval) DsgPrs_EqualDistancePresentation::AddInterval;
+%rename(AddIntervalBetweenTwoArcs) DsgPrs_EqualDistancePresentation::AddIntervalBetweenTwoArcs;
+%rename(Add) DsgPrs_ParalPresentation::Add;
 %rename(Add) DsgPrs_XYZPlanePresentation::Add;
 %rename(Add) DsgPrs_OffsetPresentation::Add;
 %rename(AddAxes) DsgPrs_OffsetPresentation::AddAxes;
@@ -53,7 +54,6 @@ $HeaderURL$
 %rename(ComputeRadiusLine) DsgPrs::ComputeRadiusLine;
 %rename(ComputeFilletRadiusPresentation) DsgPrs::ComputeFilletRadiusPresentation;
 %rename(DistanceFromApex) DsgPrs::DistanceFromApex;
-%rename(Add) DsgPrs_ShadedPlanePresentation::Add;
-%rename(Add) DsgPrs_XYZAxisPresentation::Add;
 %rename(Add) DsgPrs_ConcentricPresentation::Add;
 %rename(Add) DsgPrs_SymmetricPresentation::Add;
+%rename(Add) DsgPrs_XYZAxisPresentation::Add;

@@ -27,12 +27,12 @@ $HeaderURL$
 %rename(DownCast) Handle_IntPatch_Line::DownCast;
 %rename(DownCast) Handle_IntPatch_ALine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::DownCast;
-%rename(DownCast) Handle_IntPatch_TheIWLineOfTheIWalking::DownCast;
 %rename(DownCast) Handle_IntPatch_GLine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::DownCast;
 %rename(DownCast) Handle_IntPatch_WLine::DownCast;
 %rename(DownCast) Handle_IntPatch_RLine::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfPoint::DownCast;
+%rename(DownCast) Handle_IntPatch_TheIWLineOfTheIWalking::DownCast;
 %rename(DownCast) Handle_IntPatch_SequenceNodeOfSequenceOfLine::DownCast;
 %rename(PutVertexOnLine) IntPatch_RstInt::PutVertexOnLine;
 %rename(FirstParameter) IntPatch_HCurve2dTool::FirstParameter;

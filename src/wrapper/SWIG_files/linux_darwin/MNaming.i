@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_MNaming_NamingRetrievalDriver_1;
+class Handle_MNaming_NamingRetrievalDriver_1 : public Handle_MDF_ARDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver_1();
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver_1(const Handle_MNaming_NamingRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver_1(const MNaming_NamingRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver_1 & operator=(const Handle_MNaming_NamingRetrievalDriver_1 &aHandle);
+		%feature("autodoc", "1");
+		Handle_MNaming_NamingRetrievalDriver_1 & operator=(const MNaming_NamingRetrievalDriver_1 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MNaming_NamingRetrievalDriver_1 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MNaming_NamingRetrievalDriver_1 {
+	MNaming_NamingRetrievalDriver_1* GetObject() {
+	return (MNaming_NamingRetrievalDriver_1*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MNaming_NamingRetrievalDriver_1::~Handle_MNaming_NamingRetrievalDriver_1 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MNaming_NamingRetrievalDriver_1 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MNaming_NamingRetrievalDriver;
 class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -84,44 +122,6 @@ def __del__(self):
 %}
 
 %extend Handle_MNaming_NamingRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MNaming_NamedShapeStorageDriver;
-class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver(const MNaming_NamedShapeStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver & operator=(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MNaming_NamedShapeStorageDriver & operator=(const MNaming_NamedShapeStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MNaming_NamedShapeStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MNaming_NamedShapeStorageDriver {
-	MNaming_NamedShapeStorageDriver* GetObject() {
-	return (MNaming_NamedShapeStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MNaming_NamedShapeStorageDriver::~Handle_MNaming_NamedShapeStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MNaming_NamedShapeStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -204,29 +204,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MNaming_NamingRetrievalDriver_1;
-class Handle_MNaming_NamingRetrievalDriver_1 : public Handle_MDF_ARDriver {
+%nodefaultctor Handle_MNaming_NamedShapeStorageDriver;
+class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver_1();
+		Handle_MNaming_NamedShapeStorageDriver();
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver_1(const Handle_MNaming_NamingRetrievalDriver_1 &aHandle);
+		Handle_MNaming_NamedShapeStorageDriver(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver_1(const MNaming_NamingRetrievalDriver_1 *anItem);
+		Handle_MNaming_NamedShapeStorageDriver(const MNaming_NamedShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver_1 & operator=(const Handle_MNaming_NamingRetrievalDriver_1 &aHandle);
+		Handle_MNaming_NamedShapeStorageDriver & operator=(const Handle_MNaming_NamedShapeStorageDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_MNaming_NamingRetrievalDriver_1 & operator=(const MNaming_NamingRetrievalDriver_1 *anItem);
+		Handle_MNaming_NamedShapeStorageDriver & operator=(const MNaming_NamedShapeStorageDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_MNaming_NamingRetrievalDriver_1 DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_MNaming_NamedShapeStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_MNaming_NamingRetrievalDriver_1 {
-	MNaming_NamingRetrievalDriver_1* GetObject() {
-	return (MNaming_NamingRetrievalDriver_1*)$self->Access();
+%extend Handle_MNaming_NamedShapeStorageDriver {
+	MNaming_NamedShapeStorageDriver* GetObject() {
+	return (MNaming_NamedShapeStorageDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_MNaming_NamingRetrievalDriver_1::~Handle_MNaming_NamingRetrievalDriver_1 %{
+%feature("shadow") Handle_MNaming_NamedShapeStorageDriver::~Handle_MNaming_NamedShapeStorageDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,50 +235,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_MNaming_NamingRetrievalDriver_1 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MNaming_NamedShapeRetrievalDriver;
-class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
-	public:
-		%feature("autodoc", "1");
-		MNaming_NamedShapeRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MNaming_NamedShapeRetrievalDriver {
-	Handle_MNaming_NamedShapeRetrievalDriver GetHandle() {
-	return *(Handle_MNaming_NamedShapeRetrievalDriver*) &$self;
-	}
-};
-%extend MNaming_NamedShapeRetrievalDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MNaming_NamedShapeRetrievalDriver::~MNaming_NamedShapeRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MNaming_NamedShapeRetrievalDriver {
+%extend Handle_MNaming_NamedShapeStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -312,49 +269,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MNaming_NamingStorageDriver;
-class MNaming_NamingStorageDriver : public MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		MNaming_NamingStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		virtual		Handle_PDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MNaming_NamingStorageDriver {
-	Handle_MNaming_NamingStorageDriver GetHandle() {
-	return *(Handle_MNaming_NamingStorageDriver*) &$self;
-	}
-};
-%extend MNaming_NamingStorageDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") MNaming_NamingStorageDriver::~MNaming_NamingStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MNaming_NamingStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MNaming_NamingRetrievalDriver;
 class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -379,7 +293,7 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 };
 %extend MNaming_NamingRetrievalDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamingRetrievalDriver::~MNaming_NamingRetrievalDriver %{
@@ -392,6 +306,92 @@ def __del__(self):
 %}
 
 %extend MNaming_NamingRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MNaming_NamedShapeRetrievalDriver;
+class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
+	public:
+		%feature("autodoc", "1");
+		MNaming_NamedShapeRetrievalDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_PDF_Attribute &Source, const Handle_TDF_Attribute &Target, const Handle_MDF_RRelocationTable &RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MNaming_NamedShapeRetrievalDriver {
+	Handle_MNaming_NamedShapeRetrievalDriver GetHandle() {
+	return *(Handle_MNaming_NamedShapeRetrievalDriver*) &$self;
+	}
+};
+%extend MNaming_NamedShapeRetrievalDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MNaming_NamedShapeRetrievalDriver::~MNaming_NamedShapeRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MNaming_NamedShapeRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MNaming_NamingStorageDriver;
+class MNaming_NamingStorageDriver : public MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		MNaming_NamingStorageDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		virtual		Handle_PDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, const Handle_PDF_Attribute &Target, const Handle_MDF_SRelocationTable &RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MNaming_NamingStorageDriver {
+	Handle_MNaming_NamingStorageDriver GetHandle() {
+	return *(Handle_MNaming_NamingStorageDriver*) &$self;
+	}
+};
+%extend MNaming_NamingStorageDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MNaming_NamingStorageDriver::~MNaming_NamingStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MNaming_NamingStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -422,7 +422,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 };
 %extend MNaming_NamedShapeStorageDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamedShapeStorageDriver::~MNaming_NamedShapeStorageDriver %{
@@ -465,7 +465,7 @@ class MNaming_NamingRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MNaming_NamingRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MNaming_NamingRetrievalDriver_1::~MNaming_NamingRetrievalDriver_1 %{

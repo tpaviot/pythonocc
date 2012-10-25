@@ -49,15 +49,43 @@ $HeaderURL$
 
 %include V3d_headers.i
 
-typedef V3d_Viewer * V3d_ViewerPointer;
-typedef double V3d_Parameter;
 typedef V3d_LayerMgr * V3d_LayerMgrPointer;
-typedef double V3d_Coordinate;
+typedef V3d_Viewer * V3d_ViewerPointer;
 typedef V3d_View * V3d_ViewPointer;
+typedef double V3d_Parameter;
+typedef double V3d_Coordinate;
 
 enum V3d_TypeOfProjectionModel {
 	V3d_TPM_SCREEN,
 	V3d_TPM_WALKTHROUGH,
+	};
+
+enum V3d_TypeOfLight {
+	V3d_AMBIENT,
+	V3d_DIRECTIONAL,
+	V3d_POSITIONAL,
+	V3d_SPOT,
+	};
+
+enum V3d_TypeOfPickLight {
+	V3d_POSITIONLIGHT,
+	V3d_SPACELIGHT,
+	V3d_RADIUSTEXTLIGHT,
+	V3d_ExtRADIUSLIGHT,
+	V3d_IntRADIUSLIGHT,
+	V3d_NOTHING,
+	};
+
+enum V3d_TypeOfRepresentation {
+	V3d_SIMPLE,
+	V3d_COMPLETE,
+	V3d_PARTIAL,
+	V3d_SAMELAST,
+	};
+
+enum V3d_TypeOfUpdate {
+	V3d_ASAP,
+	V3d_WAIT,
 	};
 
 enum V3d_TypeOfVisualization {
@@ -65,10 +93,38 @@ enum V3d_TypeOfVisualization {
 	V3d_ZBUFFER,
 	};
 
+enum V3d_TypeOfZclipping {
+	V3d_OFF,
+	V3d_BACK,
+	V3d_FRONT,
+	V3d_SLICE,
+	};
+
+enum V3d_TypeOfPickCamera {
+	V3d_POSITIONCAMERA,
+	V3d_SPACECAMERA,
+	V3d_RADIUSTEXTCAMERA,
+	V3d_ExtRADIUSCAMERA,
+	V3d_IntRADIUSCAMERA,
+	V3d_NOTHINGCAMERA,
+	};
+
+enum V3d_TypeOfBackfacingModel {
+	V3d_TOBM_AUTOMATIC,
+	V3d_TOBM_ALWAYS_DISPLAYED,
+	V3d_TOBM_NEVER_DISPLAYED,
+	};
+
 enum V3d_TypeOfSurfaceDetail {
 	V3d_TEX_NONE,
 	V3d_TEX_ENVIRONMENT,
 	V3d_TEX_ALL,
+	};
+
+enum V3d_TypeOfAxe {
+	V3d_X,
+	V3d_Y,
+	V3d_Z,
 	};
 
 enum V3d_TypeOfOrientation {
@@ -105,11 +161,6 @@ enum V3d_TypeOfView {
 	V3d_PERSPECTIVE,
 	};
 
-enum V3d_TypeOfUpdate {
-	V3d_ASAP,
-	V3d_WAIT,
-	};
-
 enum V3d_TypeOfShadingModel {
 	V3d_COLOR,
 	V3d_MULTICOLOR,
@@ -118,57 +169,120 @@ enum V3d_TypeOfShadingModel {
 	V3d_HIDDEN,
 	};
 
-enum V3d_TypeOfBackfacingModel {
-	V3d_TOBM_AUTOMATIC,
-	V3d_TOBM_ALWAYS_DISPLAYED,
-	V3d_TOBM_NEVER_DISPLAYED,
-	};
 
-enum V3d_TypeOfPickLight {
-	V3d_POSITIONLIGHT,
-	V3d_SPACELIGHT,
-	V3d_RADIUSTEXTLIGHT,
-	V3d_ExtRADIUSLIGHT,
-	V3d_IntRADIUSLIGHT,
-	V3d_NOTHING,
-	};
 
-enum V3d_TypeOfRepresentation {
-	V3d_SIMPLE,
-	V3d_COMPLETE,
-	V3d_PARTIAL,
-	V3d_SAMELAST,
-	};
+%nodefaultctor Handle_V3d_Light;
+class Handle_V3d_Light : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_Light();
+		%feature("autodoc", "1");
+		Handle_V3d_Light(const Handle_V3d_Light &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Light(const V3d_Light *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_Light & operator=(const Handle_V3d_Light &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Light & operator=(const V3d_Light *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_Light DownCast(const Handle_Standard_Transient &AnObject);
 
-enum V3d_TypeOfZclipping {
-	V3d_OFF,
-	V3d_BACK,
-	V3d_FRONT,
-	V3d_SLICE,
-	};
+};
+%extend Handle_V3d_Light {
+	V3d_Light* GetObject() {
+	return (V3d_Light*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_Light::~Handle_V3d_Light %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
 
-enum V3d_TypeOfAxe {
-	V3d_X,
-	V3d_Y,
-	V3d_Z,
-	};
+%extend Handle_V3d_Light {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
-enum V3d_TypeOfPickCamera {
-	V3d_POSITIONCAMERA,
-	V3d_SPACECAMERA,
-	V3d_RADIUSTEXTCAMERA,
-	V3d_ExtRADIUSCAMERA,
-	V3d_IntRADIUSCAMERA,
-	V3d_NOTHINGCAMERA,
-	};
 
-enum V3d_TypeOfLight {
-	V3d_AMBIENT,
-	V3d_DIRECTIONAL,
-	V3d_POSITIONAL,
-	V3d_SPOT,
-	};
+%nodefaultctor Handle_V3d_PositionLight;
+class Handle_V3d_PositionLight : public Handle_V3d_Light {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight();
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight(const Handle_V3d_PositionLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight(const V3d_PositionLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight & operator=(const Handle_V3d_PositionLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionLight & operator=(const V3d_PositionLight *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_PositionLight DownCast(const Handle_Standard_Transient &AnObject);
 
+};
+%extend Handle_V3d_PositionLight {
+	V3d_PositionLight* GetObject() {
+	return (V3d_PositionLight*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_PositionLight::~Handle_V3d_PositionLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_PositionLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V3d_PositionalLight;
+class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight();
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight(const Handle_V3d_PositionalLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight(const V3d_PositionalLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight & operator=(const Handle_V3d_PositionalLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_PositionalLight & operator=(const V3d_PositionalLight *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_PositionalLight DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_PositionalLight {
+	V3d_PositionalLight* GetObject() {
+	return (V3d_PositionalLight*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_PositionalLight::~Handle_V3d_PositionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_PositionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_V3d_UnMapped;
@@ -203,6 +317,120 @@ def __del__(self):
 %}
 
 %extend Handle_V3d_UnMapped {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V3d_RectangularGrid;
+class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid();
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid(const Handle_V3d_RectangularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid(const V3d_RectangularGrid *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid & operator=(const Handle_V3d_RectangularGrid &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_RectangularGrid & operator=(const V3d_RectangularGrid *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_RectangularGrid DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_RectangularGrid {
+	V3d_RectangularGrid* GetObject() {
+	return (V3d_RectangularGrid*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_RectangularGrid::~Handle_V3d_RectangularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_RectangularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V3d_LayerMgr;
+class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr();
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr(const Handle_V3d_LayerMgr &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr(const V3d_LayerMgr *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr & operator=(const Handle_V3d_LayerMgr &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_LayerMgr & operator=(const V3d_LayerMgr *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_LayerMgr DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_LayerMgr {
+	V3d_LayerMgr* GetObject() {
+	return (V3d_LayerMgr*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_LayerMgr::~Handle_V3d_LayerMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_LayerMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_V3d_SpotLight;
+class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight();
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight(const Handle_V3d_SpotLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight(const V3d_SpotLight *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight & operator=(const Handle_V3d_SpotLight &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_SpotLight & operator=(const V3d_SpotLight *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_SpotLight DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_SpotLight {
+	V3d_SpotLight* GetObject() {
+	return (V3d_SpotLight*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_SpotLight::~Handle_V3d_SpotLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_SpotLight {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -285,6 +513,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_V3d_Plane;
+class Handle_V3d_Plane : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_V3d_Plane();
+		%feature("autodoc", "1");
+		Handle_V3d_Plane(const Handle_V3d_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Plane(const V3d_Plane *anItem);
+		%feature("autodoc", "1");
+		Handle_V3d_Plane & operator=(const Handle_V3d_Plane &aHandle);
+		%feature("autodoc", "1");
+		Handle_V3d_Plane & operator=(const V3d_Plane *anItem);
+		%feature("autodoc", "1");
+		static		Handle_V3d_Plane DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_V3d_Plane {
+	V3d_Plane* GetObject() {
+	return (V3d_Plane*)$self->Access();
+	}
+};
+%feature("shadow") Handle_V3d_Plane::~Handle_V3d_Plane %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_V3d_Plane {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_V3d_OrthographicView;
 class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	public:
@@ -355,234 +621,6 @@ def __del__(self):
 %}
 
 %extend Handle_V3d_ColorScaleLayerItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_Light;
-class Handle_V3d_Light : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_Light();
-		%feature("autodoc", "1");
-		Handle_V3d_Light(const Handle_V3d_Light &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Light(const V3d_Light *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_Light & operator=(const Handle_V3d_Light &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Light & operator=(const V3d_Light *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_Light DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_Light {
-	V3d_Light* GetObject() {
-	return (V3d_Light*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_Light::~Handle_V3d_Light %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_Light {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_PositionLight;
-class Handle_V3d_PositionLight : public Handle_V3d_Light {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_PositionLight();
-		%feature("autodoc", "1");
-		Handle_V3d_PositionLight(const Handle_V3d_PositionLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionLight(const V3d_PositionLight *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionLight & operator=(const Handle_V3d_PositionLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionLight & operator=(const V3d_PositionLight *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_PositionLight DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_PositionLight {
-	V3d_PositionLight* GetObject() {
-	return (V3d_PositionLight*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_PositionLight::~Handle_V3d_PositionLight %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_PositionLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_SpotLight;
-class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_SpotLight();
-		%feature("autodoc", "1");
-		Handle_V3d_SpotLight(const Handle_V3d_SpotLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_SpotLight(const V3d_SpotLight *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_SpotLight & operator=(const Handle_V3d_SpotLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_SpotLight & operator=(const V3d_SpotLight *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_SpotLight DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_SpotLight {
-	V3d_SpotLight* GetObject() {
-	return (V3d_SpotLight*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_SpotLight::~Handle_V3d_SpotLight %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_SpotLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_CircularGrid;
-class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid();
-		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid(const Handle_V3d_CircularGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid(const V3d_CircularGrid *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid & operator=(const Handle_V3d_CircularGrid &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_CircularGrid & operator=(const V3d_CircularGrid *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_CircularGrid {
-	V3d_CircularGrid* GetObject() {
-	return (V3d_CircularGrid*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_CircularGrid::~Handle_V3d_CircularGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_CircularGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_Plane;
-class Handle_V3d_Plane : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_Plane();
-		%feature("autodoc", "1");
-		Handle_V3d_Plane(const Handle_V3d_Plane &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Plane(const V3d_Plane *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_Plane & operator=(const Handle_V3d_Plane &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Plane & operator=(const V3d_Plane *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_Plane DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_Plane {
-	V3d_Plane* GetObject() {
-	return (V3d_Plane*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_Plane::~Handle_V3d_Plane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_Plane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_V3d_LayerMgr;
-class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr();
-		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr(const Handle_V3d_LayerMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr(const V3d_LayerMgr *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr & operator=(const Handle_V3d_LayerMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_LayerMgr & operator=(const V3d_LayerMgr *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_LayerMgr DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_LayerMgr {
-	V3d_LayerMgr* GetObject() {
-	return (V3d_LayerMgr*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_LayerMgr::~Handle_V3d_LayerMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_LayerMgr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -703,29 +741,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_V3d_RectangularGrid;
-class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
+%nodefaultctor Handle_V3d_CircularGrid;
+class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	public:
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid();
+		Handle_V3d_CircularGrid();
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid(const Handle_V3d_RectangularGrid &aHandle);
+		Handle_V3d_CircularGrid(const Handle_V3d_CircularGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid(const V3d_RectangularGrid *anItem);
+		Handle_V3d_CircularGrid(const V3d_CircularGrid *anItem);
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid & operator=(const Handle_V3d_RectangularGrid &aHandle);
+		Handle_V3d_CircularGrid & operator=(const Handle_V3d_CircularGrid &aHandle);
 		%feature("autodoc", "1");
-		Handle_V3d_RectangularGrid & operator=(const V3d_RectangularGrid *anItem);
+		Handle_V3d_CircularGrid & operator=(const V3d_CircularGrid *anItem);
 		%feature("autodoc", "1");
-		static		Handle_V3d_RectangularGrid DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_V3d_CircularGrid DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_V3d_RectangularGrid {
-	V3d_RectangularGrid* GetObject() {
-	return (V3d_RectangularGrid*)$self->Access();
+%extend Handle_V3d_CircularGrid {
+	V3d_CircularGrid* GetObject() {
+	return (V3d_CircularGrid*)$self->Access();
 	}
 };
-%feature("shadow") Handle_V3d_RectangularGrid::~Handle_V3d_RectangularGrid %{
+%feature("shadow") Handle_V3d_CircularGrid::~Handle_V3d_CircularGrid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -734,7 +772,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_V3d_RectangularGrid {
+%extend Handle_V3d_CircularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -779,44 +817,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_V3d_PositionalLight;
-class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight();
-		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight(const Handle_V3d_PositionalLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight(const V3d_PositionalLight *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight & operator=(const Handle_V3d_PositionalLight &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_PositionalLight & operator=(const V3d_PositionalLight *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_PositionalLight DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_PositionalLight {
-	V3d_PositionalLight* GetObject() {
-	return (V3d_PositionalLight*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_PositionalLight::~Handle_V3d_PositionalLight %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_PositionalLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor V3d_Light;
 class V3d_Light : public MMgt_TShared {
 	public:
@@ -850,7 +850,7 @@ class V3d_Light : public MMgt_TShared {
 };
 %extend V3d_Light {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_Light::~V3d_Light %{
@@ -886,7 +886,7 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %extend V3d_AmbientLight {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
@@ -905,50 +905,37 @@ def __del__(self):
 };
 
 
-%nodefaultctor V3d_PositionLight;
-class V3d_PositionLight : public V3d_Light {
+%nodefaultctor V3d_Plane;
+class V3d_Plane : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		V3d_Plane(const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
 		%feature("autodoc", "1");
-		void SetTarget(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		void SetPlane(const Quantity_Parameter A, const Quantity_Parameter B, const Quantity_Parameter C, const Quantity_Parameter D);
 		%feature("autodoc", "1");
-		void SetRadius(const Quantity_Parameter Radius);
-		%feature("autodoc", "1");
-		void OnHideFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void OnSeeFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void Tracking(const Handle_V3d_View &aView, const V3d_TypeOfPickLight WathPick, const Standard_Integer Xpix, const Standard_Integer Ypix);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation=V3d_SIMPLE);
+		virtual		void Display(const Handle_V3d_View &aView, const Quantity_Color &aColor=Quantity_NOC_GRAY);
 		%feature("autodoc", "1");
 		void Erase();
-		%feature("autodoc", "1");
-		Quantity_Parameter Radius() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
 
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend V3d_PositionLight {
-	Handle_V3d_PositionLight GetHandle() {
-	return *(Handle_V3d_PositionLight*) &$self;
+%extend V3d_Plane {
+	Handle_V3d_Plane GetHandle() {
+	return *(Handle_V3d_Plane*) &$self;
 	}
 };
-%extend V3d_PositionLight {
+%extend V3d_Plane {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
+%feature("shadow") V3d_Plane::~V3d_Plane %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -957,7 +944,7 @@ def __del__(self):
 		pass
 %}
 
-%extend V3d_PositionLight {
+%extend V3d_Plane {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -999,7 +986,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %extend V3d_ColorScale {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
@@ -1012,91 +999,6 @@ def __del__(self):
 %}
 
 %extend V3d_ColorScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d;
-class V3d {
-	public:
-		%feature("autodoc", "1");
-		V3d();
-		%feature("autodoc", "1");
-		static		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
-		%feature("autodoc", "1");
-		static		void ArrowOfRadius(const Handle_Graphic3d_Group &garrow, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter DX, const V3d_Parameter DY, const V3d_Parameter DZ, const Quantity_PlaneAngle Alpha, const V3d_Parameter Lng);
-		%feature("autodoc", "1");
-		static		void CircleInPlane(const Handle_Graphic3d_Group &gcircle, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter VX, const V3d_Parameter VY, const V3d_Parameter VZ, const V3d_Parameter Radius);
-		%feature("autodoc", "1");
-		static		void SwitchViewsinWindow(const Handle_V3d_View &aPreviousView, const Handle_V3d_View &aNextView);
-		%feature("autodoc", "1");
-		static		void DrawSphere(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
-		%feature("autodoc", "1");
-		static		void PickGrid(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
-		%feature("autodoc", "1");
-		static		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
-
-};
-%feature("shadow") V3d::~V3d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_CircularGrid;
-class V3d_CircularGrid : public Aspect_CircularGrid {
-	public:
-		%feature("autodoc", "1");
-		V3d_CircularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		virtual		void Erase() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real]");
-
-		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetGraphicValues(const Standard_Real Radius, const Standard_Real OffSet);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_CircularGrid {
-	Handle_V3d_CircularGrid GetHandle() {
-	return *(Handle_V3d_CircularGrid*) &$self;
-	}
-};
-%extend V3d_CircularGrid {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_CircularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1193,9 +1095,9 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Standard_Boolean IsActivePlane(const Handle_V3d_Plane &aPlane) const;
 		%feature("autodoc", "1");
-		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
+		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.00000000000000044408920985006261616945266723633e-1, const Standard_Real AxisDiametr=5.00000000000000027755575615628913510590791702271e-2, const Standard_Integer NbFacettes=12);
 		%feature("autodoc", "1");
-		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const V3d_TypeOfVisualization AMode=V3d_WIREFRAME);
+		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755341e-2, const V3d_TypeOfVisualization AMode=V3d_WIREFRAME);
 		%feature("autodoc", "1");
 		void TriedronErase();
 		%feature("autodoc", "1");
@@ -1285,11 +1187,11 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void SetAxialScale(const Standard_Real Sx, const Standard_Real Sy, const Standard_Real Sz);
 		%feature("autodoc", "1");
-		void FitAll(const Quantity_Coefficient Coef=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Boolean FitZ=0, const Standard_Boolean update=1);
+		void FitAll(const Quantity_Coefficient Coef=1.0000000000000000208166817117216851329430937767e-2, const Standard_Boolean FitZ=0, const Standard_Boolean update=1);
 		%feature("autodoc", "1");
 		void ZFitAll(const Quantity_Coefficient Coef=1.0e+0);
 		%feature("autodoc", "1");
-		void DepthFitAll(const Quantity_Coefficient Aspect=1.00000000000000002081668171172168513294309377670288085938e-2, const Quantity_Coefficient Margin=1.00000000000000002081668171172168513294309377670288085938e-2);
+		void DepthFitAll(const Quantity_Coefficient Aspect=1.0000000000000000208166817117216851329430937767e-2, const Quantity_Coefficient Margin=1.0000000000000000208166817117216851329430937767e-2);
 		%feature("autodoc", "1");
 		void FitAll(const V3d_Coordinate Umin, const V3d_Coordinate Vmin, const V3d_Coordinate Umax, const V3d_Coordinate Vmax);
 		%feature("autodoc", "1");
@@ -1495,7 +1397,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Standard_Boolean Dump(const char * theFile, const Aspect_FormatOfSheetPaper theFormat, const Image_TypeOfImage theBufferType=Image_TOI_RGB);
 		%feature("autodoc", "1");
-		Standard_Boolean Print(const Aspect_Handle hPrnDC=0l, const Standard_Boolean showDialog=1, const Standard_Boolean showBackground=1, const char * filename=0l, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH) const;
+		Standard_Boolean Print(const Aspect_Handle hPrnDC=0, const Standard_Boolean showDialog=1, const Standard_Boolean showBackground=1, const char * filename=0, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH) const;
 		%feature("autodoc", "1");
 		Handle_Image_PixMap ToPixMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const Image_TypeOfImage theBufferType=Image_TOI_RGB, const Standard_Boolean theForceCentered=1);
 		%feature("autodoc", "1");
@@ -1525,7 +1427,7 @@ class V3d_View : public Viewer_View {
 };
 %extend V3d_View {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_View::~V3d_View %{
@@ -1547,30 +1449,50 @@ def __del__(self):
 };
 
 
-%nodefaultctor V3d_OrthographicView;
-class V3d_OrthographicView : public V3d_View {
+%nodefaultctor V3d_PositionLight;
+class V3d_PositionLight : public V3d_Light {
 	public:
 		%feature("autodoc", "1");
-		V3d_OrthographicView(const Handle_V3d_Viewer &VM);
+		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
 		%feature("autodoc", "1");
-		V3d_OrthographicView(const Handle_V3d_Viewer &VM, const Handle_V3d_PerspectiveView &V);
+		void SetTarget(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
 		%feature("autodoc", "1");
-		V3d_OrthographicView(const Handle_V3d_Viewer &VM, const Handle_V3d_OrthographicView &V);
+		void SetRadius(const Quantity_Parameter Radius);
 		%feature("autodoc", "1");
-		Handle_V3d_OrthographicView Copy() const;
+		void OnHideFace(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void OnSeeFace(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		void Tracking(const Handle_V3d_View &aView, const V3d_TypeOfPickLight WathPick, const Standard_Integer Xpix, const Standard_Integer Ypix);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation=V3d_SIMPLE);
+		%feature("autodoc", "1");
+		void Erase();
+		%feature("autodoc", "1");
+		Quantity_Parameter Radius() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend V3d_OrthographicView {
-	Handle_V3d_OrthographicView GetHandle() {
-	return *(Handle_V3d_OrthographicView*) &$self;
+%extend V3d_PositionLight {
+	Handle_V3d_PositionLight GetHandle() {
+	return *(Handle_V3d_PositionLight*) &$self;
 	}
 };
-%extend V3d_OrthographicView {
+%extend V3d_PositionLight {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
+%feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1579,41 +1501,46 @@ def __del__(self):
 		pass
 %}
 
-%extend V3d_OrthographicView {
+%extend V3d_PositionLight {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor V3d_UnMapped;
-class V3d_UnMapped : public Standard_DomainError {
+%nodefaultctor V3d_RectangularGrid;
+class V3d_RectangularGrid : public Aspect_RectangularGrid {
 	public:
 		%feature("autodoc", "1");
-		V3d_UnMapped();
+		V3d_RectangularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
 		%feature("autodoc", "1");
-		V3d_UnMapped(const char * AString);
+		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
 		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
+		virtual		void Display();
 		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
+		virtual		void Erase() const;
 		%feature("autodoc", "1");
-		static		Handle_V3d_UnMapped NewInstance(const char * aMessage="");
+		virtual		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend V3d_UnMapped {
-	Handle_V3d_UnMapped GetHandle() {
-	return *(Handle_V3d_UnMapped*) &$self;
+%extend V3d_RectangularGrid {
+	Handle_V3d_RectangularGrid GetHandle() {
+	return *(Handle_V3d_RectangularGrid*) &$self;
 	}
 };
-%extend V3d_UnMapped {
+%extend V3d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
+%feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1622,7 +1549,7 @@ def __del__(self):
 		pass
 %}
 
-%extend V3d_UnMapped {
+%extend V3d_RectangularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1633,9 +1560,9 @@ def __del__(self):
 class V3d_SpotLight : public V3d_PositionLight {
 	public:
 		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.2359900000000003661426717371796257793903350830078125e-1);
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
 		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.2359900000000003661426717371796257793903350830078125e-1);
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
 		%feature("autodoc", "1");
 		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
 		%feature("autodoc", "1");
@@ -1673,7 +1600,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %extend V3d_SpotLight {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
@@ -1692,39 +1619,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor V3d_PositionalLight;
-class V3d_PositionalLight : public V3d_PositionLight {
+%nodefaultctor V3d;
+class V3d {
 	public:
 		%feature("autodoc", "1");
-		V3d_PositionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0);
+		V3d();
 		%feature("autodoc", "1");
-		V3d_PositionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0);
+		static		Graphic3d_Vector GetProjAxis(const V3d_TypeOfOrientation Orientation);
 		%feature("autodoc", "1");
-		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		static		void ArrowOfRadius(const Handle_Graphic3d_Group &garrow, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter DX, const V3d_Parameter DY, const V3d_Parameter DZ, const Quantity_PlaneAngle Alpha, const V3d_Parameter Lng);
 		%feature("autodoc", "1");
-		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
+		static		void CircleInPlane(const Handle_Graphic3d_Group &gcircle, const V3d_Coordinate X0, const V3d_Coordinate Y0, const V3d_Coordinate Z0, const V3d_Parameter VX, const V3d_Parameter VY, const V3d_Parameter VZ, const V3d_Parameter Radius);
 		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+		static		void SwitchViewsinWindow(const Handle_V3d_View &aPreviousView, const Handle_V3d_View &aNextView);
+		%feature("autodoc", "1");
+		static		void DrawSphere(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
+		%feature("autodoc", "1");
+		static		void PickGrid(const Handle_V3d_Viewer &aViewer, const Quantity_Length aRadius=1000);
+		%feature("autodoc", "1");
+		static		void SetPlane(const Handle_V3d_Viewer &aViewer, const Quantity_Length x1, const Quantity_Length y1, const Quantity_Length z1, const Quantity_Length x2, const Quantity_Length y2, const Quantity_Length z2);
 
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
 };
-%extend V3d_PositionalLight {
-	Handle_V3d_PositionalLight GetHandle() {
-	return *(Handle_V3d_PositionalLight*) &$self;
-	}
-};
-%extend V3d_PositionalLight {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
+%feature("shadow") V3d::~V3d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1733,101 +1649,7 @@ def __del__(self):
 		pass
 %}
 
-%extend V3d_PositionalLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_RectangularGrid;
-class V3d_RectangularGrid : public Aspect_RectangularGrid {
-	public:
-		%feature("autodoc", "1");
-		V3d_RectangularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
-		%feature("autodoc", "1");
-		virtual		void Display();
-		%feature("autodoc", "1");
-		virtual		void Erase() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		void SetGraphicValues(const Standard_Real XSize, const Standard_Real YSize, const Standard_Real OffSet);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_RectangularGrid {
-	Handle_V3d_RectangularGrid GetHandle() {
-	return *(Handle_V3d_RectangularGrid*) &$self;
-	}
-};
-%extend V3d_RectangularGrid {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_RectangularGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_Plane;
-class V3d_Plane : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		V3d_Plane(const Quantity_Parameter A=0.0, const Quantity_Parameter B=0.0, const Quantity_Parameter C=1.0e+0, const Quantity_Parameter D=0.0);
-		%feature("autodoc", "1");
-		void SetPlane(const Quantity_Parameter A, const Quantity_Parameter B, const Quantity_Parameter C, const Quantity_Parameter D);
-		%feature("autodoc", "1");
-		virtual		void Display(const Handle_V3d_View &aView, const Quantity_Color &aColor=Quantity_NOC_GRAY);
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc","Plane() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_Plane {
-	Handle_V3d_Plane GetHandle() {
-	return *(Handle_V3d_Plane*) &$self;
-	}
-};
-%extend V3d_Plane {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_Plane::~V3d_Plane %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_Plane {
+%extend V3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2056,7 +1878,7 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %extend V3d_Viewer {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_Viewer::~V3d_Viewer %{
@@ -2069,6 +1891,54 @@ def __del__(self):
 %}
 
 %extend V3d_Viewer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_CircularGrid;
+class V3d_CircularGrid : public Aspect_CircularGrid {
+	public:
+		%feature("autodoc", "1");
+		V3d_CircularGrid(const V3d_ViewerPointer &aViewer, const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
+		%feature("autodoc", "1");
+		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
+		%feature("autodoc", "1");
+		virtual		void Display();
+		%feature("autodoc", "1");
+		virtual		void Erase() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc","GraphicValues() -> [Standard_Real, Standard_Real]");
+
+		void GraphicValues(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetGraphicValues(const Standard_Real Radius, const Standard_Real OffSet);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_CircularGrid {
+	Handle_V3d_CircularGrid GetHandle() {
+	return *(Handle_V3d_CircularGrid*) &$self;
+	}
+};
+%extend V3d_CircularGrid {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_CircularGrid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2095,7 +1965,7 @@ class V3d_ColorScaleLayerItem : public Visual3d_LayerItem {
 };
 %extend V3d_ColorScaleLayerItem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScaleLayerItem::~V3d_ColorScaleLayerItem %{
@@ -2108,6 +1978,263 @@ def __del__(self):
 %}
 
 %extend V3d_ColorScaleLayerItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_UnMapped;
+class V3d_UnMapped : public Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		V3d_UnMapped();
+		%feature("autodoc", "1");
+		V3d_UnMapped(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_V3d_UnMapped NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_UnMapped {
+	Handle_V3d_UnMapped GetHandle() {
+	return *(Handle_V3d_UnMapped*) &$self;
+	}
+};
+%extend V3d_UnMapped {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_UnMapped {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_LayerMgr;
+class V3d_LayerMgr : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		V3d_LayerMgr(const Handle_V3d_View &aView);
+		%feature("autodoc", "1");
+		const Handle_Visual3d_Layer & Overlay() const;
+		%feature("autodoc", "1");
+		Handle_V3d_View View() const;
+		%feature("autodoc", "1");
+		void ColorScaleDisplay();
+		%feature("autodoc", "1");
+		void ColorScaleErase();
+		%feature("autodoc", "1");
+		Standard_Boolean ColorScaleIsDisplayed() const;
+		%feature("autodoc", "1");
+		Handle_Aspect_ColorScale ColorScale() const;
+		%feature("autodoc", "1");
+		void Compute();
+		%feature("autodoc", "1");
+		void Resized();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_LayerMgr {
+	Handle_V3d_LayerMgr GetHandle() {
+	return *(Handle_V3d_LayerMgr*) &$self;
+	}
+};
+%extend V3d_LayerMgr {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_LayerMgr {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_PositionalLight;
+class V3d_PositionalLight : public V3d_PositionLight {
+	public:
+		%feature("autodoc", "1");
+		V3d_PositionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0);
+		%feature("autodoc", "1");
+		V3d_PositionalLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0);
+		%feature("autodoc", "1");
+		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
+		%feature("autodoc", "1");
+		void SetAttenuation(const Quantity_Coefficient A1, const Quantity_Coefficient A2);
+		%feature("autodoc", "1");
+		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
+		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_PositionalLight {
+	Handle_V3d_PositionalLight GetHandle() {
+	return *(Handle_V3d_PositionalLight*) &$self;
+	}
+};
+%extend V3d_PositionalLight {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_PositionalLight {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_OrthographicView;
+class V3d_OrthographicView : public V3d_View {
+	public:
+		%feature("autodoc", "1");
+		V3d_OrthographicView(const Handle_V3d_Viewer &VM);
+		%feature("autodoc", "1");
+		V3d_OrthographicView(const Handle_V3d_Viewer &VM, const Handle_V3d_PerspectiveView &V);
+		%feature("autodoc", "1");
+		V3d_OrthographicView(const Handle_V3d_Viewer &VM, const Handle_V3d_OrthographicView &V);
+		%feature("autodoc", "1");
+		Handle_V3d_OrthographicView Copy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_OrthographicView {
+	Handle_V3d_OrthographicView GetHandle() {
+	return *(Handle_V3d_OrthographicView*) &$self;
+	}
+};
+%extend V3d_OrthographicView {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_OrthographicView {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_ListOfTransient;
+class V3d_ListOfTransient : public TColStd_ListOfTransient {
+	public:
+		%feature("autodoc", "1");
+		V3d_ListOfTransient();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_Standard_Transient &aTransient) const;
+		%feature("autodoc", "1");
+		void Remove(const Handle_Standard_Transient &aTransient);
+
+};
+%feature("shadow") V3d_ListOfTransient::~V3d_ListOfTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_ListOfTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor V3d_PerspectiveView;
+class V3d_PerspectiveView : public V3d_View {
+	public:
+		%feature("autodoc", "1");
+		V3d_PerspectiveView(const Handle_V3d_Viewer &VM);
+		%feature("autodoc", "1");
+		V3d_PerspectiveView(const Handle_V3d_Viewer &VM, const Handle_V3d_OrthographicView &V);
+		%feature("autodoc", "1");
+		V3d_PerspectiveView(const Handle_V3d_Viewer &VM, const Handle_V3d_PerspectiveView &V);
+		%feature("autodoc", "1");
+		Handle_V3d_PerspectiveView Copy() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Quantity_PlaneAngle Angle);
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Angle() const;
+		%feature("autodoc", "1");
+		void SetPerspective(const Quantity_PlaneAngle Angle, const Standard_Real UVRatio, const Standard_Real ZNear, const Standard_Real ZFar);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend V3d_PerspectiveView {
+	Handle_V3d_PerspectiveView GetHandle() {
+	return *(Handle_V3d_PerspectiveView*) &$self;
+	}
+};
+%extend V3d_PerspectiveView {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend V3d_PerspectiveView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2151,7 +2278,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %extend V3d_DirectionalLight {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{
@@ -2164,131 +2291,6 @@ def __del__(self):
 %}
 
 %extend V3d_DirectionalLight {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_PerspectiveView;
-class V3d_PerspectiveView : public V3d_View {
-	public:
-		%feature("autodoc", "1");
-		V3d_PerspectiveView(const Handle_V3d_Viewer &VM);
-		%feature("autodoc", "1");
-		V3d_PerspectiveView(const Handle_V3d_Viewer &VM, const Handle_V3d_OrthographicView &V);
-		%feature("autodoc", "1");
-		V3d_PerspectiveView(const Handle_V3d_Viewer &VM, const Handle_V3d_PerspectiveView &V);
-		%feature("autodoc", "1");
-		Handle_V3d_PerspectiveView Copy() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle Angle);
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		void SetPerspective(const Quantity_PlaneAngle Angle, const Standard_Real UVRatio, const Standard_Real ZNear, const Standard_Real ZFar);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_PerspectiveView {
-	Handle_V3d_PerspectiveView GetHandle() {
-	return *(Handle_V3d_PerspectiveView*) &$self;
-	}
-};
-%extend V3d_PerspectiveView {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_PerspectiveView {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_ListOfTransient;
-class V3d_ListOfTransient : public TColStd_ListOfTransient {
-	public:
-		%feature("autodoc", "1");
-		V3d_ListOfTransient();
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_Standard_Transient &aTransient) const;
-		%feature("autodoc", "1");
-		void Remove(const Handle_Standard_Transient &aTransient);
-
-};
-%feature("shadow") V3d_ListOfTransient::~V3d_ListOfTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_ListOfTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_LayerMgr;
-class V3d_LayerMgr : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		V3d_LayerMgr(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		const Handle_Visual3d_Layer & Overlay() const;
-		%feature("autodoc", "1");
-		Handle_V3d_View View() const;
-		%feature("autodoc", "1");
-		void ColorScaleDisplay();
-		%feature("autodoc", "1");
-		void ColorScaleErase();
-		%feature("autodoc", "1");
-		Standard_Boolean ColorScaleIsDisplayed() const;
-		%feature("autodoc", "1");
-		Handle_Aspect_ColorScale ColorScale() const;
-		%feature("autodoc", "1");
-		void Compute();
-		%feature("autodoc", "1");
-		void Resized();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_LayerMgr {
-	Handle_V3d_LayerMgr GetHandle() {
-	return *(Handle_V3d_LayerMgr*) &$self;
-	}
-};
-%extend V3d_LayerMgr {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_LayerMgr {
 	void _kill_pointed() {
 		delete $self;
 	}

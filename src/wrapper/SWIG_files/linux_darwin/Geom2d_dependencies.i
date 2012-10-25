@@ -187,7 +187,7 @@ $HeaderURL$
 #include <gp_XYZ.hxx>
 %};
 
-%import Standard.i
 %import MMgt.i
+%import Standard.i
 %import GeomAbs.i
 %import gp.i

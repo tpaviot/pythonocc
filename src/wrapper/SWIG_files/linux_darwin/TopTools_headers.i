@@ -125,6 +125,6 @@ $HeaderURL$
 #include<TopLoc_Location.hxx>
 #include<Handle_Message_ProgressIndicator.hxx>
 #include<TopTools.hxx>
-#include<TColStd_ListOfInteger.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<TColStd_ListOfInteger.hxx>
 %}

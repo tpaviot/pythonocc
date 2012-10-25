@@ -128,29 +128,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_PropertyDefinition;
-class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_ParametricRepresentationContext;
+class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition();
+		Handle_StepRepr_ParametricRepresentationContext();
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition(const Handle_StepRepr_PropertyDefinition &aHandle);
+		Handle_StepRepr_ParametricRepresentationContext(const Handle_StepRepr_ParametricRepresentationContext &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition(const StepRepr_PropertyDefinition *anItem);
+		Handle_StepRepr_ParametricRepresentationContext(const StepRepr_ParametricRepresentationContext *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition & operator=(const Handle_StepRepr_PropertyDefinition &aHandle);
+		Handle_StepRepr_ParametricRepresentationContext & operator=(const Handle_StepRepr_ParametricRepresentationContext &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition & operator=(const StepRepr_PropertyDefinition *anItem);
+		Handle_StepRepr_ParametricRepresentationContext & operator=(const StepRepr_ParametricRepresentationContext *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PropertyDefinition DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ParametricRepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_PropertyDefinition {
-	StepRepr_PropertyDefinition* GetObject() {
-	return (StepRepr_PropertyDefinition*)$self->Access();
+%extend Handle_StepRepr_ParametricRepresentationContext {
+	StepRepr_ParametricRepresentationContext* GetObject() {
+	return (StepRepr_ParametricRepresentationContext*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_PropertyDefinition::~Handle_StepRepr_PropertyDefinition %{
+%feature("shadow") Handle_StepRepr_ParametricRepresentationContext::~Handle_StepRepr_ParametricRepresentationContext %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -159,7 +159,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_PropertyDefinition {
+%extend Handle_StepRepr_ParametricRepresentationContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -242,29 +242,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_HArray1OfMaterialPropertyRepresentation;
-class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_ProductConcept;
+class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation();
+		Handle_StepRepr_ProductConcept();
 		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation(const Handle_StepRepr_HArray1OfMaterialPropertyRepresentation &aHandle);
+		Handle_StepRepr_ProductConcept(const Handle_StepRepr_ProductConcept &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation(const StepRepr_HArray1OfMaterialPropertyRepresentation *anItem);
+		Handle_StepRepr_ProductConcept(const StepRepr_ProductConcept *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation & operator=(const Handle_StepRepr_HArray1OfMaterialPropertyRepresentation &aHandle);
+		Handle_StepRepr_ProductConcept & operator=(const Handle_StepRepr_ProductConcept &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation & operator=(const StepRepr_HArray1OfMaterialPropertyRepresentation *anItem);
+		Handle_StepRepr_ProductConcept & operator=(const StepRepr_ProductConcept *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ProductConcept DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
-	StepRepr_HArray1OfMaterialPropertyRepresentation* GetObject() {
-	return (StepRepr_HArray1OfMaterialPropertyRepresentation*)$self->Access();
+%extend Handle_StepRepr_ProductConcept {
+	StepRepr_ProductConcept* GetObject() {
+	return (StepRepr_ProductConcept*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_HArray1OfMaterialPropertyRepresentation::~Handle_StepRepr_HArray1OfMaterialPropertyRepresentation %{
+%feature("shadow") Handle_StepRepr_ProductConcept::~Handle_StepRepr_ProductConcept %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -273,7 +273,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
+%extend Handle_StepRepr_ProductConcept {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_ShapeAspectRelationship;
+class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship();
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship(const Handle_StepRepr_ShapeAspectRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship(const StepRepr_ShapeAspectRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship & operator=(const Handle_StepRepr_ShapeAspectRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship & operator=(const StepRepr_ShapeAspectRelationship *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_ShapeAspectRelationship DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_ShapeAspectRelationship {
+	StepRepr_ShapeAspectRelationship* GetObject() {
+	return (StepRepr_ShapeAspectRelationship*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_ShapeAspectRelationship::~Handle_StepRepr_ShapeAspectRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_ShapeAspectRelationship {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,6 +432,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepRepr_ShapeRepresentationRelationship;
+class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_RepresentationRelationship {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship();
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship(const Handle_StepRepr_ShapeRepresentationRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship(const StepRepr_ShapeRepresentationRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship & operator=(const Handle_StepRepr_ShapeRepresentationRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeRepresentationRelationship & operator=(const StepRepr_ShapeRepresentationRelationship *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_ShapeRepresentationRelationship DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_ShapeRepresentationRelationship {
+	StepRepr_ShapeRepresentationRelationship* GetObject() {
+	return (StepRepr_ShapeRepresentationRelationship*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_ShapeRepresentationRelationship::~Handle_StepRepr_ShapeRepresentationRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_ShapeRepresentationRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_RepresentationRelationshipWithTransformation;
+class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Handle_StepRepr_ShapeRepresentationRelationship {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationRelationshipWithTransformation();
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationRelationshipWithTransformation(const Handle_StepRepr_RepresentationRelationshipWithTransformation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationRelationshipWithTransformation(const StepRepr_RepresentationRelationshipWithTransformation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationRelationshipWithTransformation & operator=(const Handle_StepRepr_RepresentationRelationshipWithTransformation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationRelationshipWithTransformation & operator=(const StepRepr_RepresentationRelationshipWithTransformation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_RepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
+	StepRepr_RepresentationRelationshipWithTransformation* GetObject() {
+	return (StepRepr_RepresentationRelationshipWithTransformation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_RepresentationRelationshipWithTransformation::~Handle_StepRepr_RepresentationRelationshipWithTransformation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRelationship;
 class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShared {
 	public:
@@ -432,29 +546,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_AssemblyComponentUsage;
-class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDefinitionUsage {
+%nodefaultctor Handle_StepRepr_DataEnvironment;
+class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage();
+		Handle_StepRepr_DataEnvironment();
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage(const Handle_StepRepr_AssemblyComponentUsage &aHandle);
+		Handle_StepRepr_DataEnvironment(const Handle_StepRepr_DataEnvironment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage(const StepRepr_AssemblyComponentUsage *anItem);
+		Handle_StepRepr_DataEnvironment(const StepRepr_DataEnvironment *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage & operator=(const Handle_StepRepr_AssemblyComponentUsage &aHandle);
+		Handle_StepRepr_DataEnvironment & operator=(const Handle_StepRepr_DataEnvironment &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage & operator=(const StepRepr_AssemblyComponentUsage *anItem);
+		Handle_StepRepr_DataEnvironment & operator=(const StepRepr_DataEnvironment *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_AssemblyComponentUsage DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_DataEnvironment DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_AssemblyComponentUsage {
-	StepRepr_AssemblyComponentUsage* GetObject() {
-	return (StepRepr_AssemblyComponentUsage*)$self->Access();
+%extend Handle_StepRepr_DataEnvironment {
+	StepRepr_DataEnvironment* GetObject() {
+	return (StepRepr_DataEnvironment*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_AssemblyComponentUsage::~Handle_StepRepr_AssemblyComponentUsage %{
+%feature("shadow") Handle_StepRepr_DataEnvironment::~Handle_StepRepr_DataEnvironment %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -463,36 +577,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_AssemblyComponentUsage {
+%extend Handle_StepRepr_DataEnvironment {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepRepr_Representation;
-class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
+class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation();
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation(const Handle_StepRepr_Representation &aHandle);
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation(const StepRepr_Representation *anItem);
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation & operator=(const Handle_StepRepr_Representation &aHandle);
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation & operator=(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_Representation & operator=(const StepRepr_Representation *anItem);
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation & operator=(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_Representation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_Representation {
-	StepRepr_Representation* GetObject() {
-	return (StepRepr_Representation*)$self->Access();
+%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	StepRepr_HSequenceOfMaterialPropertyRepresentation* GetObject() {
+	return (StepRepr_HSequenceOfMaterialPropertyRepresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_Representation::~Handle_StepRepr_Representation %{
+%feature("shadow") Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation::~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -501,45 +615,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_Representation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_ShapeRepresentationRelationship;
-class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_RepresentationRelationship {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship();
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship(const Handle_StepRepr_ShapeRepresentationRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship(const StepRepr_ShapeRepresentationRelationship *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship & operator=(const Handle_StepRepr_ShapeRepresentationRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationship & operator=(const StepRepr_ShapeRepresentationRelationship *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeRepresentationRelationship DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_ShapeRepresentationRelationship {
-	StepRepr_ShapeRepresentationRelationship* GetObject() {
-	return (StepRepr_ShapeRepresentationRelationship*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_ShapeRepresentationRelationship::~Handle_StepRepr_ShapeRepresentationRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_ShapeRepresentationRelationship {
+%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,29 +660,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_ConfigurationItem;
-class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_AssemblyComponentUsage;
+class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDefinitionUsage {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationItem();
+		Handle_StepRepr_AssemblyComponentUsage();
 		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationItem(const Handle_StepRepr_ConfigurationItem &aHandle);
+		Handle_StepRepr_AssemblyComponentUsage(const Handle_StepRepr_AssemblyComponentUsage &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationItem(const StepRepr_ConfigurationItem *anItem);
+		Handle_StepRepr_AssemblyComponentUsage(const StepRepr_AssemblyComponentUsage *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationItem & operator=(const Handle_StepRepr_ConfigurationItem &aHandle);
+		Handle_StepRepr_AssemblyComponentUsage & operator=(const Handle_StepRepr_AssemblyComponentUsage &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationItem & operator=(const StepRepr_ConfigurationItem *anItem);
+		Handle_StepRepr_AssemblyComponentUsage & operator=(const StepRepr_AssemblyComponentUsage *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ConfigurationItem DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_AssemblyComponentUsage DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_ConfigurationItem {
-	StepRepr_ConfigurationItem* GetObject() {
-	return (StepRepr_ConfigurationItem*)$self->Access();
+%extend Handle_StepRepr_AssemblyComponentUsage {
+	StepRepr_AssemblyComponentUsage* GetObject() {
+	return (StepRepr_AssemblyComponentUsage*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_ConfigurationItem::~Handle_StepRepr_ConfigurationItem %{
+%feature("shadow") Handle_StepRepr_AssemblyComponentUsage::~Handle_StepRepr_AssemblyComponentUsage %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -615,7 +691,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_ConfigurationItem {
+%extend Handle_StepRepr_AssemblyComponentUsage {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -812,29 +888,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_PromissoryUsageOccurrence;
-class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
+%nodefaultctor Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation;
+class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public Handle_StepRepr_RepresentationRelationshipWithTransformation {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_PromissoryUsageOccurrence();
+		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_PromissoryUsageOccurrence(const Handle_StepRepr_PromissoryUsageOccurrence &aHandle);
+		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PromissoryUsageOccurrence(const StepRepr_PromissoryUsageOccurrence *anItem);
+		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation(const StepRepr_ShapeRepresentationRelationshipWithTransformation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PromissoryUsageOccurrence & operator=(const Handle_StepRepr_PromissoryUsageOccurrence &aHandle);
+		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation & operator=(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_PromissoryUsageOccurrence & operator=(const StepRepr_PromissoryUsageOccurrence *anItem);
+		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation & operator=(const StepRepr_ShapeRepresentationRelationshipWithTransformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_PromissoryUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_PromissoryUsageOccurrence {
-	StepRepr_PromissoryUsageOccurrence* GetObject() {
-	return (StepRepr_PromissoryUsageOccurrence*)$self->Access();
+%extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	StepRepr_ShapeRepresentationRelationshipWithTransformation* GetObject() {
+	return (StepRepr_ShapeRepresentationRelationshipWithTransformation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_PromissoryUsageOccurrence::~Handle_StepRepr_PromissoryUsageOccurrence %{
+%feature("shadow") Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation::~Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -843,45 +919,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_PromissoryUsageOccurrence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_MaterialProperty;
-class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefinition {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialProperty();
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialProperty(const Handle_StepRepr_MaterialProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialProperty(const StepRepr_MaterialProperty *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialProperty & operator=(const Handle_StepRepr_MaterialProperty &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialProperty & operator=(const StepRepr_MaterialProperty *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_MaterialProperty DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_MaterialProperty {
-	StepRepr_MaterialProperty* GetObject() {
-	return (StepRepr_MaterialProperty*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_MaterialProperty::~Handle_StepRepr_MaterialProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_MaterialProperty {
+%extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -920,44 +958,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepRepr_AssemblyComponentUsageSubstitute {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_DataEnvironment;
-class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment();
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment(const Handle_StepRepr_DataEnvironment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment(const StepRepr_DataEnvironment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment & operator=(const Handle_StepRepr_DataEnvironment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment & operator=(const StepRepr_DataEnvironment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_DataEnvironment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_DataEnvironment {
-	StepRepr_DataEnvironment* GetObject() {
-	return (StepRepr_DataEnvironment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_DataEnvironment::~Handle_StepRepr_DataEnvironment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_DataEnvironment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1040,29 +1040,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_ProductDefinitionShape;
-class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDefinition {
+%nodefaultctor Handle_StepRepr_RepresentationMap;
+class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape();
+		Handle_StepRepr_RepresentationMap();
 		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape(const Handle_StepRepr_ProductDefinitionShape &aHandle);
+		Handle_StepRepr_RepresentationMap(const Handle_StepRepr_RepresentationMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape(const StepRepr_ProductDefinitionShape *anItem);
+		Handle_StepRepr_RepresentationMap(const StepRepr_RepresentationMap *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape & operator=(const Handle_StepRepr_ProductDefinitionShape &aHandle);
+		Handle_StepRepr_RepresentationMap & operator=(const Handle_StepRepr_RepresentationMap &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape & operator=(const StepRepr_ProductDefinitionShape *anItem);
+		Handle_StepRepr_RepresentationMap & operator=(const StepRepr_RepresentationMap *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ProductDefinitionShape DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_RepresentationMap DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_ProductDefinitionShape {
-	StepRepr_ProductDefinitionShape* GetObject() {
-	return (StepRepr_ProductDefinitionShape*)$self->Access();
+%extend Handle_StepRepr_RepresentationMap {
+	StepRepr_RepresentationMap* GetObject() {
+	return (StepRepr_RepresentationMap*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_ProductDefinitionShape::~Handle_StepRepr_ProductDefinitionShape %{
+%feature("shadow") Handle_StepRepr_RepresentationMap::~Handle_StepRepr_RepresentationMap %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1071,7 +1071,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_ProductDefinitionShape {
+%extend Handle_StepRepr_RepresentationMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1110,44 +1110,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepRepr_MaterialDesignation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_RepresentationMap;
-class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap();
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap(const Handle_StepRepr_RepresentationMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap(const StepRepr_RepresentationMap *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap & operator=(const Handle_StepRepr_RepresentationMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap & operator=(const StepRepr_RepresentationMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_RepresentationMap {
-	StepRepr_RepresentationMap* GetObject() {
-	return (StepRepr_RepresentationMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_RepresentationMap::~Handle_StepRepr_RepresentationMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_RepresentationMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1230,29 +1192,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_ShapeAspectRelationship;
-class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
+class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship();
+		Handle_StepRepr_PropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship(const Handle_StepRepr_ShapeAspectRelationship &aHandle);
+		Handle_StepRepr_PropertyDefinitionRepresentation(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship(const StepRepr_ShapeAspectRelationship *anItem);
+		Handle_StepRepr_PropertyDefinitionRepresentation(const StepRepr_PropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship & operator=(const Handle_StepRepr_ShapeAspectRelationship &aHandle);
+		Handle_StepRepr_PropertyDefinitionRepresentation & operator=(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship & operator=(const StepRepr_ShapeAspectRelationship *anItem);
+		Handle_StepRepr_PropertyDefinitionRepresentation & operator=(const StepRepr_PropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspectRelationship DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_ShapeAspectRelationship {
-	StepRepr_ShapeAspectRelationship* GetObject() {
-	return (StepRepr_ShapeAspectRelationship*)$self->Access();
+%extend Handle_StepRepr_PropertyDefinitionRepresentation {
+	StepRepr_PropertyDefinitionRepresentation* GetObject() {
+	return (StepRepr_PropertyDefinitionRepresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_ShapeAspectRelationship::~Handle_StepRepr_ShapeAspectRelationship %{
+%feature("shadow") Handle_StepRepr_PropertyDefinitionRepresentation::~Handle_StepRepr_PropertyDefinitionRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1261,36 +1223,36 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_ShapeAspectRelationship {
+%extend Handle_StepRepr_PropertyDefinitionRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Handle_StepRepr_ShapeAspectTransition;
-class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
+%nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
+class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition();
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition(const Handle_StepRepr_ShapeAspectTransition &aHandle);
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition(const StepRepr_ShapeAspectTransition *anItem);
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition & operator=(const Handle_StepRepr_ShapeAspectTransition &aHandle);
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation & operator=(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectTransition & operator=(const StepRepr_ShapeAspectTransition *anItem);
+		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation & operator=(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeAspectTransition DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_ShapeAspectTransition {
-	StepRepr_ShapeAspectTransition* GetObject() {
-	return (StepRepr_ShapeAspectTransition*)$self->Access();
+%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	StepRepr_StructuralResponsePropertyDefinitionRepresentation* GetObject() {
+	return (StepRepr_StructuralResponsePropertyDefinitionRepresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_ShapeAspectTransition::~Handle_StepRepr_ShapeAspectTransition %{
+%feature("shadow") Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation::~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1299,7 +1261,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_ShapeAspectTransition {
+%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1420,6 +1382,120 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepRepr_PropertyDefinition;
+class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition();
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition(const Handle_StepRepr_PropertyDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition(const StepRepr_PropertyDefinition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition & operator=(const Handle_StepRepr_PropertyDefinition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition & operator=(const StepRepr_PropertyDefinition *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_PropertyDefinition DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_PropertyDefinition {
+	StepRepr_PropertyDefinition* GetObject() {
+	return (StepRepr_PropertyDefinition*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_PropertyDefinition::~Handle_StepRepr_PropertyDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_PropertyDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_ProductDefinitionShape;
+class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape();
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape(const Handle_StepRepr_ProductDefinitionShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape(const StepRepr_ProductDefinitionShape *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape & operator=(const Handle_StepRepr_ProductDefinitionShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape & operator=(const StepRepr_ProductDefinitionShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_ProductDefinitionShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_ProductDefinitionShape {
+	StepRepr_ProductDefinitionShape* GetObject() {
+	return (StepRepr_ProductDefinitionShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_ProductDefinitionShape::~Handle_StepRepr_ProductDefinitionShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_ProductDefinitionShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_ShapeAspectTransition;
+class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectTransition();
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectTransition(const Handle_StepRepr_ShapeAspectTransition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectTransition(const StepRepr_ShapeAspectTransition *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectTransition & operator=(const Handle_StepRepr_ShapeAspectTransition &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectTransition & operator=(const StepRepr_ShapeAspectTransition *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_ShapeAspectTransition DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_ShapeAspectTransition {
+	StepRepr_ShapeAspectTransition* GetObject() {
+	return (StepRepr_ShapeAspectTransition*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_ShapeAspectTransition::~Handle_StepRepr_ShapeAspectTransition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_ShapeAspectTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepRepr_HArray1OfRepresentationItem;
 class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	public:
@@ -1458,29 +1534,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
-class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepRepr_PromissoryUsageOccurrence;
+class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation();
+		Handle_StepRepr_PromissoryUsageOccurrence();
 		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
+		Handle_StepRepr_PromissoryUsageOccurrence(const Handle_StepRepr_PromissoryUsageOccurrence &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
+		Handle_StepRepr_PromissoryUsageOccurrence(const StepRepr_PromissoryUsageOccurrence *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation & operator=(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aHandle);
+		Handle_StepRepr_PromissoryUsageOccurrence & operator=(const Handle_StepRepr_PromissoryUsageOccurrence &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation & operator=(const StepRepr_HSequenceOfMaterialPropertyRepresentation *anItem);
+		Handle_StepRepr_PromissoryUsageOccurrence & operator=(const StepRepr_PromissoryUsageOccurrence *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_PromissoryUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	StepRepr_HSequenceOfMaterialPropertyRepresentation* GetObject() {
-	return (StepRepr_HSequenceOfMaterialPropertyRepresentation*)$self->Access();
+%extend Handle_StepRepr_PromissoryUsageOccurrence {
+	StepRepr_PromissoryUsageOccurrence* GetObject() {
+	return (StepRepr_PromissoryUsageOccurrence*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation::~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation %{
+%feature("shadow") Handle_StepRepr_PromissoryUsageOccurrence::~Handle_StepRepr_PromissoryUsageOccurrence %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1489,83 +1565,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
-class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation(const StepRepr_PropertyDefinitionRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation & operator=(const Handle_StepRepr_PropertyDefinitionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation & operator=(const StepRepr_PropertyDefinitionRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_PropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_PropertyDefinitionRepresentation {
-	StepRepr_PropertyDefinitionRepresentation* GetObject() {
-	return (StepRepr_PropertyDefinitionRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_PropertyDefinitionRepresentation::~Handle_StepRepr_PropertyDefinitionRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_PropertyDefinitionRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
-class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation & operator=(const Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation & operator=(const StepRepr_StructuralResponsePropertyDefinitionRepresentation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
-	StepRepr_StructuralResponsePropertyDefinitionRepresentation* GetObject() {
-	return (StepRepr_StructuralResponsePropertyDefinitionRepresentation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation::~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+%extend Handle_StepRepr_PromissoryUsageOccurrence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1686,29 +1686,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
-class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
+%nodefaultctor Handle_StepRepr_Representation;
+class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence();
+		Handle_StepRepr_Representation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
+		Handle_StepRepr_Representation(const Handle_StepRepr_Representation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
+		Handle_StepRepr_Representation(const StepRepr_Representation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence & operator=(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
+		Handle_StepRepr_Representation & operator=(const Handle_StepRepr_Representation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SpecifiedHigherUsageOccurrence & operator=(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
+		Handle_StepRepr_Representation & operator=(const StepRepr_Representation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SpecifiedHigherUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_Representation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
-	StepRepr_SpecifiedHigherUsageOccurrence* GetObject() {
-	return (StepRepr_SpecifiedHigherUsageOccurrence*)$self->Access();
+%extend Handle_StepRepr_Representation {
+	StepRepr_Representation* GetObject() {
+	return (StepRepr_Representation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_SpecifiedHigherUsageOccurrence::~Handle_StepRepr_SpecifiedHigherUsageOccurrence %{
+%feature("shadow") Handle_StepRepr_Representation::~Handle_StepRepr_Representation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1717,7 +1717,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
+%extend Handle_StepRepr_Representation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1762,6 +1762,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepRepr_DefinitionalRepresentation;
+class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation();
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation(const Handle_StepRepr_DefinitionalRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation(const StepRepr_DefinitionalRepresentation *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation & operator=(const Handle_StepRepr_DefinitionalRepresentation &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DefinitionalRepresentation & operator=(const StepRepr_DefinitionalRepresentation *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_DefinitionalRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_DefinitionalRepresentation {
+	StepRepr_DefinitionalRepresentation* GetObject() {
+	return (StepRepr_DefinitionalRepresentation*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_DefinitionalRepresentation::~Handle_StepRepr_DefinitionalRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_DefinitionalRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepRepr_ValueRange;
 class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentationItem {
 	public:
@@ -1794,44 +1832,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepRepr_ValueRange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_ProductConcept;
-class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept();
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept(const Handle_StepRepr_ProductConcept &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept(const StepRepr_ProductConcept *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept & operator=(const Handle_StepRepr_ProductConcept &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept & operator=(const StepRepr_ProductConcept *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_ProductConcept DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_ProductConcept {
-	StepRepr_ProductConcept* GetObject() {
-	return (StepRepr_ProductConcept*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_ProductConcept::~Handle_StepRepr_ProductConcept %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_ProductConcept {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1876,29 +1876,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_DefinitionalRepresentation;
-class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Representation {
+%nodefaultctor Handle_StepRepr_HArray1OfMaterialPropertyRepresentation;
+class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation();
+		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation();
 		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation(const Handle_StepRepr_DefinitionalRepresentation &aHandle);
+		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation(const Handle_StepRepr_HArray1OfMaterialPropertyRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation(const StepRepr_DefinitionalRepresentation *anItem);
+		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation(const StepRepr_HArray1OfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation & operator=(const Handle_StepRepr_DefinitionalRepresentation &aHandle);
+		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation & operator=(const Handle_StepRepr_HArray1OfMaterialPropertyRepresentation &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_DefinitionalRepresentation & operator=(const StepRepr_DefinitionalRepresentation *anItem);
+		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation & operator=(const StepRepr_HArray1OfMaterialPropertyRepresentation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_DefinitionalRepresentation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_HArray1OfMaterialPropertyRepresentation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_DefinitionalRepresentation {
-	StepRepr_DefinitionalRepresentation* GetObject() {
-	return (StepRepr_DefinitionalRepresentation*)$self->Access();
+%extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
+	StepRepr_HArray1OfMaterialPropertyRepresentation* GetObject() {
+	return (StepRepr_HArray1OfMaterialPropertyRepresentation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_DefinitionalRepresentation::~Handle_StepRepr_DefinitionalRepresentation %{
+%feature("shadow") Handle_StepRepr_HArray1OfMaterialPropertyRepresentation::~Handle_StepRepr_HArray1OfMaterialPropertyRepresentation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1907,7 +1907,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_DefinitionalRepresentation {
+%extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1952,29 +1952,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_SuppliedPartRelationship;
-class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_ProductDefinitionRelationship {
+%nodefaultctor Handle_StepRepr_ConfigurationItem;
+class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship();
+		Handle_StepRepr_ConfigurationItem();
 		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship(const Handle_StepRepr_SuppliedPartRelationship &aHandle);
+		Handle_StepRepr_ConfigurationItem(const Handle_StepRepr_ConfigurationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship(const StepRepr_SuppliedPartRelationship *anItem);
+		Handle_StepRepr_ConfigurationItem(const StepRepr_ConfigurationItem *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship & operator=(const Handle_StepRepr_SuppliedPartRelationship &aHandle);
+		Handle_StepRepr_ConfigurationItem & operator=(const Handle_StepRepr_ConfigurationItem &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship & operator=(const StepRepr_SuppliedPartRelationship *anItem);
+		Handle_StepRepr_ConfigurationItem & operator=(const StepRepr_ConfigurationItem *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_SuppliedPartRelationship DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_ConfigurationItem DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_SuppliedPartRelationship {
-	StepRepr_SuppliedPartRelationship* GetObject() {
-	return (StepRepr_SuppliedPartRelationship*)$self->Access();
+%extend Handle_StepRepr_ConfigurationItem {
+	StepRepr_ConfigurationItem* GetObject() {
+	return (StepRepr_ConfigurationItem*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_SuppliedPartRelationship::~Handle_StepRepr_SuppliedPartRelationship %{
+%feature("shadow") Handle_StepRepr_ConfigurationItem::~Handle_StepRepr_ConfigurationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1983,7 +1983,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_SuppliedPartRelationship {
+%extend Handle_StepRepr_ConfigurationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
+class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence();
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence & operator=(const Handle_StepRepr_SpecifiedHigherUsageOccurrence &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_SpecifiedHigherUsageOccurrence & operator=(const StepRepr_SpecifiedHigherUsageOccurrence *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_SpecifiedHigherUsageOccurrence DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
+	StepRepr_SpecifiedHigherUsageOccurrence* GetObject() {
+	return (StepRepr_SpecifiedHigherUsageOccurrence*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_SpecifiedHigherUsageOccurrence::~Handle_StepRepr_SpecifiedHigherUsageOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2022,82 +2060,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepRepr_ExternallyDefinedRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_RepresentationRelationshipWithTransformation;
-class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Handle_StepRepr_ShapeRepresentationRelationship {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationRelationshipWithTransformation();
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationRelationshipWithTransformation(const Handle_StepRepr_RepresentationRelationshipWithTransformation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationRelationshipWithTransformation(const StepRepr_RepresentationRelationshipWithTransformation *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationRelationshipWithTransformation & operator=(const Handle_StepRepr_RepresentationRelationshipWithTransformation &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationRelationshipWithTransformation & operator=(const StepRepr_RepresentationRelationshipWithTransformation *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_RepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
-	StepRepr_RepresentationRelationshipWithTransformation* GetObject() {
-	return (StepRepr_RepresentationRelationshipWithTransformation*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_RepresentationRelationshipWithTransformation::~Handle_StepRepr_RepresentationRelationshipWithTransformation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepRepr_ParametricRepresentationContext;
-class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepRepr_ParametricRepresentationContext();
-		%feature("autodoc", "1");
-		Handle_StepRepr_ParametricRepresentationContext(const Handle_StepRepr_ParametricRepresentationContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ParametricRepresentationContext(const StepRepr_ParametricRepresentationContext *anItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ParametricRepresentationContext & operator=(const Handle_StepRepr_ParametricRepresentationContext &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ParametricRepresentationContext & operator=(const StepRepr_ParametricRepresentationContext *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepRepr_ParametricRepresentationContext DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepRepr_ParametricRepresentationContext {
-	StepRepr_ParametricRepresentationContext* GetObject() {
-	return (StepRepr_ParametricRepresentationContext*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepRepr_ParametricRepresentationContext::~Handle_StepRepr_ParametricRepresentationContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepRepr_ParametricRepresentationContext {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2180,6 +2142,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepRepr_MaterialProperty;
+class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialProperty();
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialProperty(const Handle_StepRepr_MaterialProperty &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialProperty(const StepRepr_MaterialProperty *anItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialProperty & operator=(const Handle_StepRepr_MaterialProperty &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialProperty & operator=(const StepRepr_MaterialProperty *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepRepr_MaterialProperty DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepRepr_MaterialProperty {
+	StepRepr_MaterialProperty* GetObject() {
+	return (StepRepr_MaterialProperty*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepRepr_MaterialProperty::~Handle_StepRepr_MaterialProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepRepr_MaterialProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepRepr_ConfigurationDesign;
 class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 	public:
@@ -2218,29 +2218,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation;
-class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public Handle_StepRepr_RepresentationRelationshipWithTransformation {
+%nodefaultctor Handle_StepRepr_SuppliedPartRelationship;
+class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_ProductDefinitionRelationship {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation();
+		Handle_StepRepr_SuppliedPartRelationship();
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &aHandle);
+		Handle_StepRepr_SuppliedPartRelationship(const Handle_StepRepr_SuppliedPartRelationship &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation(const StepRepr_ShapeRepresentationRelationshipWithTransformation *anItem);
+		Handle_StepRepr_SuppliedPartRelationship(const StepRepr_SuppliedPartRelationship *anItem);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation & operator=(const Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation &aHandle);
+		Handle_StepRepr_SuppliedPartRelationship & operator=(const Handle_StepRepr_SuppliedPartRelationship &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation & operator=(const StepRepr_ShapeRepresentationRelationshipWithTransformation *anItem);
+		Handle_StepRepr_SuppliedPartRelationship & operator=(const StepRepr_SuppliedPartRelationship *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepRepr_SuppliedPartRelationship DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
-	StepRepr_ShapeRepresentationRelationshipWithTransformation* GetObject() {
-	return (StepRepr_ShapeRepresentationRelationshipWithTransformation*)$self->Access();
+%extend Handle_StepRepr_SuppliedPartRelationship {
+	StepRepr_SuppliedPartRelationship* GetObject() {
+	return (StepRepr_SuppliedPartRelationship*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation::~Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation %{
+%feature("shadow") Handle_StepRepr_SuppliedPartRelationship::~Handle_StepRepr_SuppliedPartRelationship %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2249,7 +2249,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
+%extend Handle_StepRepr_SuppliedPartRelationship {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2307,6 +2307,85 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepRepr_HSequenceOfMaterialPropertyRepresentation;
+class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_HSequenceOfMaterialPropertyRepresentation();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
+		%feature("autodoc", "1");
+		const Handle_StepRepr_MaterialPropertyRepresentation & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialPropertyRepresentation & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const StepRepr_SequenceOfMaterialPropertyRepresentation & Sequence() const;
+		%feature("autodoc", "1");
+		StepRepr_SequenceOfMaterialPropertyRepresentation & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation GetHandle() {
+	return *(Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_HSequenceOfMaterialPropertyRepresentation::~StepRepr_HSequenceOfMaterialPropertyRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepRepr_CharacterizedDefinition;
 class StepRepr_CharacterizedDefinition : public StepData_SelectType {
 	public:
@@ -2346,125 +2425,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_ShapeAspectRelationship;
-class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ShapeAspectRelationship();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_ShapeAspect &aRelatingShapeAspect, const Handle_StepRepr_ShapeAspect &aRelatedShapeAspect);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect RelatingShapeAspect() const;
-		%feature("autodoc", "1");
-		void SetRelatingShapeAspect(const Handle_StepRepr_ShapeAspect &RelatingShapeAspect);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect RelatedShapeAspect() const;
-		%feature("autodoc", "1");
-		void SetRelatedShapeAspect(const Handle_StepRepr_ShapeAspect &RelatedShapeAspect);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ShapeAspectRelationship {
-	Handle_StepRepr_ShapeAspectRelationship GetHandle() {
-	return *(Handle_StepRepr_ShapeAspectRelationship*) &$self;
-	}
-};
-%extend StepRepr_ShapeAspectRelationship {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ShapeAspectRelationship::~StepRepr_ShapeAspectRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ShapeAspectRelationship {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ShapeAspectTransition;
-class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ShapeAspectTransition();
-
-};
-%extend StepRepr_ShapeAspectTransition {
-	Handle_StepRepr_ShapeAspectTransition GetHandle() {
-	return *(Handle_StepRepr_ShapeAspectTransition*) &$self;
-	}
-};
-%extend StepRepr_ShapeAspectTransition {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ShapeAspectTransition::~StepRepr_ShapeAspectTransition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ShapeAspectTransition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ShapeDefinition;
-class StepRepr_ShapeDefinition : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ShapeDefinition();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductDefinitionShape ProductDefinitionShape() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspect ShapeAspect() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
-
-};
-%feature("shadow") StepRepr_ShapeDefinition::~StepRepr_ShapeDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ShapeDefinition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepRepr_ConfigurationDesign;
 class StepRepr_ConfigurationDesign : public MMgt_TShared {
 	public:
@@ -2491,7 +2451,7 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationDesign {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ConfigurationDesign::~StepRepr_ConfigurationDesign %{
@@ -2544,7 +2504,7 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationRelationship::~StepRepr_RepresentationRelationship %{
@@ -2577,7 +2537,7 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 };
 %extend StepRepr_ShapeRepresentationRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeRepresentationRelationship::~StepRepr_ShapeRepresentationRelationship %{
@@ -2616,7 +2576,7 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationRelationshipWithTransformation::~StepRepr_RepresentationRelationshipWithTransformation %{
@@ -2669,7 +2629,7 @@ class StepRepr_Representation : public MMgt_TShared {
 };
 %extend StepRepr_Representation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_Representation::~StepRepr_Representation %{
@@ -2724,7 +2684,7 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HArray1OfMaterialPropertyRepresentation::~StepRepr_HArray1OfMaterialPropertyRepresentation %{
@@ -2743,13 +2703,13 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_PropertyDefinition;
-class StepRepr_PropertyDefinition : public MMgt_TShared {
+%nodefaultctor StepRepr_ShapeAspectRelationship;
+class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_PropertyDefinition();
+		StepRepr_ShapeAspectRelationship();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const StepRepr_CharacterizedDefinition &aDefinition);
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_ShapeAspect &aRelatingShapeAspect, const Handle_StepRepr_ShapeAspect &aRelatedShapeAspect);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
@@ -2761,24 +2721,28 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasDescription() const;
 		%feature("autodoc", "1");
-		StepRepr_CharacterizedDefinition Definition() const;
+		Handle_StepRepr_ShapeAspect RelatingShapeAspect() const;
 		%feature("autodoc", "1");
-		void SetDefinition(const StepRepr_CharacterizedDefinition &Definition);
+		void SetRelatingShapeAspect(const Handle_StepRepr_ShapeAspect &RelatingShapeAspect);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect RelatedShapeAspect() const;
+		%feature("autodoc", "1");
+		void SetRelatedShapeAspect(const Handle_StepRepr_ShapeAspect &RelatedShapeAspect);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_PropertyDefinition {
-	Handle_StepRepr_PropertyDefinition GetHandle() {
-	return *(Handle_StepRepr_PropertyDefinition*) &$self;
+%extend StepRepr_ShapeAspectRelationship {
+	Handle_StepRepr_ShapeAspectRelationship GetHandle() {
+	return *(Handle_StepRepr_ShapeAspectRelationship*) &$self;
 	}
 };
-%extend StepRepr_PropertyDefinition {
+%extend StepRepr_ShapeAspectRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_PropertyDefinition::~StepRepr_PropertyDefinition %{
+%feature("shadow") StepRepr_ShapeAspectRelationship::~StepRepr_ShapeAspectRelationship %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2787,31 +2751,31 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_PropertyDefinition {
+%extend StepRepr_ShapeAspectRelationship {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor StepRepr_ProductDefinitionShape;
-class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
+%nodefaultctor StepRepr_ShapeAspectDerivingRelationship;
+class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRelationship {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_ProductDefinitionShape();
+		StepRepr_ShapeAspectDerivingRelationship();
 
 };
-%extend StepRepr_ProductDefinitionShape {
-	Handle_StepRepr_ProductDefinitionShape GetHandle() {
-	return *(Handle_StepRepr_ProductDefinitionShape*) &$self;
+%extend StepRepr_ShapeAspectDerivingRelationship {
+	Handle_StepRepr_ShapeAspectDerivingRelationship GetHandle() {
+	return *(Handle_StepRepr_ShapeAspectDerivingRelationship*) &$self;
 	}
 };
-%extend StepRepr_ProductDefinitionShape {
+%extend StepRepr_ShapeAspectDerivingRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_ProductDefinitionShape::~StepRepr_ProductDefinitionShape %{
+%feature("shadow") StepRepr_ShapeAspectDerivingRelationship::~StepRepr_ShapeAspectDerivingRelationship %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2820,7 +2784,62 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_ProductDefinitionShape {
+%extend StepRepr_ShapeAspectDerivingRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ProductConcept;
+class StepRepr_ProductConcept : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ProductConcept();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductConceptContext &aMarketContext);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Id() const;
+		%feature("autodoc", "1");
+		void SetId(const Handle_TCollection_HAsciiString &Id);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductConceptContext MarketContext() const;
+		%feature("autodoc", "1");
+		void SetMarketContext(const Handle_StepBasic_ProductConceptContext &MarketContext);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ProductConcept {
+	Handle_StepRepr_ProductConcept GetHandle() {
+	return *(Handle_StepRepr_ProductConcept*) &$self;
+	}
+};
+%extend StepRepr_ProductConcept {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ProductConcept::~StepRepr_ProductConcept %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ProductConcept {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2843,7 +2862,7 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 };
 %extend StepRepr_SuppliedPartRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_SuppliedPartRelationship::~StepRepr_SuppliedPartRelationship %{
@@ -2896,7 +2915,7 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspect {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ShapeAspect::~StepRepr_ShapeAspect %{
@@ -2920,8 +2939,6 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 	public:
 		%feature("autodoc", "1");
 		StepRepr_DerivedShapeAspect();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend StepRepr_DerivedShapeAspect {
@@ -2931,7 +2948,7 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_DerivedShapeAspect {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_DerivedShapeAspect::~StepRepr_DerivedShapeAspect %{
@@ -2964,7 +2981,7 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 };
 %extend StepRepr_Extension {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_Extension::~StepRepr_Extension %{
@@ -2983,46 +3000,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_ProductConcept;
-class StepRepr_ProductConcept : public MMgt_TShared {
+%nodefaultctor StepRepr_SequenceNodeOfSequenceOfRepresentationItem;
+class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_ProductConcept();
+		StepRepr_SequenceNodeOfSequenceOfRepresentationItem(const Handle_StepRepr_RepresentationItem &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductConceptContext &aMarketContext);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Id() const;
-		%feature("autodoc", "1");
-		void SetId(const Handle_TCollection_HAsciiString &Id);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductConceptContext MarketContext() const;
-		%feature("autodoc", "1");
-		void SetMarketContext(const Handle_StepBasic_ProductConceptContext &MarketContext);
+		Handle_StepRepr_RepresentationItem & Value() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_ProductConcept {
-	Handle_StepRepr_ProductConcept GetHandle() {
-	return *(Handle_StepRepr_ProductConcept*) &$self;
+%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
+	Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem*) &$self;
 	}
 };
-%extend StepRepr_ProductConcept {
+%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_ProductConcept::~StepRepr_ProductConcept %{
+%feature("shadow") StepRepr_SequenceNodeOfSequenceOfRepresentationItem::~StepRepr_SequenceNodeOfSequenceOfRepresentationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3031,7 +3030,62 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_ProductConcept {
+%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_HArray1OfPropertyDefinitionRepresentation;
+class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfPropertyDefinitionRepresentation(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfPropertyDefinitionRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_PropertyDefinitionRepresentation &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_PropertyDefinitionRepresentation &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepRepr_PropertyDefinitionRepresentation &Value);
+		%feature("autodoc", "1");
+		const Handle_StepRepr_PropertyDefinitionRepresentation & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinitionRepresentation & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepRepr_Array1OfPropertyDefinitionRepresentation & Array1() const;
+		%feature("autodoc", "1");
+		StepRepr_Array1OfPropertyDefinitionRepresentation & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
+	Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation GetHandle() {
+	return *(Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_HArray1OfPropertyDefinitionRepresentation::~StepRepr_HArray1OfPropertyDefinitionRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3054,7 +3108,7 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 };
 %extend StepRepr_ProductDefinitionUsage {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ProductDefinitionUsage::~StepRepr_ProductDefinitionUsage %{
@@ -3099,7 +3153,7 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationContext {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationContext::~StepRepr_RepresentationContext %{
@@ -3132,7 +3186,7 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 };
 %extend StepRepr_ParametricRepresentationContext {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_ParametricRepresentationContext::~StepRepr_ParametricRepresentationContext %{
@@ -3177,7 +3231,7 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 };
 %extend StepRepr_MaterialDesignation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_MaterialDesignation::~StepRepr_MaterialDesignation %{
@@ -3196,34 +3250,44 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_AssemblyComponentUsage;
-class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
+%nodefaultctor StepRepr_PropertyDefinitionRelationship;
+class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_AssemblyComponentUsage();
+		StepRepr_PropertyDefinitionRelationship();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasReferenceDesignator, const Handle_TCollection_HAsciiString &aReferenceDesignator);
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_PropertyDefinition &aRelatingPropertyDefinition, const Handle_StepRepr_PropertyDefinition &aRelatedPropertyDefinition);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString ReferenceDesignator() const;
+		Handle_TCollection_HAsciiString Name() const;
 		%feature("autodoc", "1");
-		void SetReferenceDesignator(const Handle_TCollection_HAsciiString &ReferenceDesignator);
+		void SetName(const Handle_TCollection_HAsciiString &Name);
 		%feature("autodoc", "1");
-		Standard_Boolean HasReferenceDesignator() const;
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition RelatingPropertyDefinition() const;
+		%feature("autodoc", "1");
+		void SetRelatingPropertyDefinition(const Handle_StepRepr_PropertyDefinition &RelatingPropertyDefinition);
+		%feature("autodoc", "1");
+		Handle_StepRepr_PropertyDefinition RelatedPropertyDefinition() const;
+		%feature("autodoc", "1");
+		void SetRelatedPropertyDefinition(const Handle_StepRepr_PropertyDefinition &RelatedPropertyDefinition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_AssemblyComponentUsage {
-	Handle_StepRepr_AssemblyComponentUsage GetHandle() {
-	return *(Handle_StepRepr_AssemblyComponentUsage*) &$self;
+%extend StepRepr_PropertyDefinitionRelationship {
+	Handle_StepRepr_PropertyDefinitionRelationship GetHandle() {
+	return *(Handle_StepRepr_PropertyDefinitionRelationship*) &$self;
 	}
 };
-%extend StepRepr_AssemblyComponentUsage {
+%extend StepRepr_PropertyDefinitionRelationship {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_AssemblyComponentUsage::~StepRepr_AssemblyComponentUsage %{
+%feature("shadow") StepRepr_PropertyDefinitionRelationship::~StepRepr_PropertyDefinitionRelationship %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3232,105 +3296,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_AssemblyComponentUsage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_SpecifiedHigherUsageOccurrence;
-class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_SpecifiedHigherUsageOccurrence();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepRepr_AssemblyComponentUsage &aUpperUsage, const Handle_StepRepr_NextAssemblyUsageOccurrence &aNextUsage);
-		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage UpperUsage() const;
-		%feature("autodoc", "1");
-		void SetUpperUsage(const Handle_StepRepr_AssemblyComponentUsage &UpperUsage);
-		%feature("autodoc", "1");
-		Handle_StepRepr_NextAssemblyUsageOccurrence NextUsage() const;
-		%feature("autodoc", "1");
-		void SetNextUsage(const Handle_StepRepr_NextAssemblyUsageOccurrence &NextUsage);
-
-};
-%extend StepRepr_SpecifiedHigherUsageOccurrence {
-	Handle_StepRepr_SpecifiedHigherUsageOccurrence GetHandle() {
-	return *(Handle_StepRepr_SpecifiedHigherUsageOccurrence*) &$self;
-	}
-};
-%extend StepRepr_SpecifiedHigherUsageOccurrence {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_SpecifiedHigherUsageOccurrence::~StepRepr_SpecifiedHigherUsageOccurrence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_SpecifiedHigherUsageOccurrence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_HArray1OfRepresentationItem;
-class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_RepresentationItem &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_RepresentationItem &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepRepr_RepresentationItem &Value);
-		%feature("autodoc", "1");
-		const Handle_StepRepr_RepresentationItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepRepr_Array1OfRepresentationItem & Array1() const;
-		%feature("autodoc", "1");
-		StepRepr_Array1OfRepresentationItem & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_HArray1OfRepresentationItem {
-	Handle_StepRepr_HArray1OfRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_HArray1OfRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_HArray1OfRepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_HArray1OfRepresentationItem::~StepRepr_HArray1OfRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_HArray1OfRepresentationItem {
+%extend StepRepr_PropertyDefinitionRelationship {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3363,7 +3329,7 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_FunctionallyDefinedTransformation::~StepRepr_FunctionallyDefinedTransformation %{
@@ -3376,223 +3342,6 @@ def __del__(self):
 %}
 
 %extend StepRepr_FunctionallyDefinedTransformation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_PropertyDefinitionRepresentation;
-class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_PropertyDefinitionRepresentation();
-		%feature("autodoc", "1");
-		void Init(const StepRepr_RepresentedDefinition &aDefinition, const Handle_StepRepr_Representation &aUsedRepresentation);
-		%feature("autodoc", "1");
-		StepRepr_RepresentedDefinition Definition() const;
-		%feature("autodoc", "1");
-		void SetDefinition(const StepRepr_RepresentedDefinition &Definition);
-		%feature("autodoc", "1");
-		Handle_StepRepr_Representation UsedRepresentation() const;
-		%feature("autodoc", "1");
-		void SetUsedRepresentation(const Handle_StepRepr_Representation &UsedRepresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_PropertyDefinitionRepresentation {
-	Handle_StepRepr_PropertyDefinitionRepresentation GetHandle() {
-	return *(Handle_StepRepr_PropertyDefinitionRepresentation*) &$self;
-	}
-};
-%extend StepRepr_PropertyDefinitionRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_PropertyDefinitionRepresentation::~StepRepr_PropertyDefinitionRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_PropertyDefinitionRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_MaterialPropertyRepresentation;
-class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefinitionRepresentation {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MaterialPropertyRepresentation();
-		%feature("autodoc", "1");
-		void Init(const StepRepr_RepresentedDefinition &aPropertyDefinitionRepresentation_Definition, const Handle_StepRepr_Representation &aPropertyDefinitionRepresentation_UsedRepresentation, const Handle_StepRepr_DataEnvironment &aDependentEnvironment);
-		%feature("autodoc", "1");
-		Handle_StepRepr_DataEnvironment DependentEnvironment() const;
-		%feature("autodoc", "1");
-		void SetDependentEnvironment(const Handle_StepRepr_DataEnvironment &DependentEnvironment);
-
-};
-%extend StepRepr_MaterialPropertyRepresentation {
-	Handle_StepRepr_MaterialPropertyRepresentation GetHandle() {
-	return *(Handle_StepRepr_MaterialPropertyRepresentation*) &$self;
-	}
-};
-%extend StepRepr_MaterialPropertyRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_MaterialPropertyRepresentation::~StepRepr_MaterialPropertyRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_MaterialPropertyRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_RepresentationItem;
-class StepRepr_RepresentationItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_RepresentationItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_RepresentationItem {
-	Handle_StepRepr_RepresentationItem GetHandle() {
-	return *(Handle_StepRepr_RepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_RepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_RepresentationItem::~StepRepr_RepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_RepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_MappedItem;
-class StepRepr_MappedItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MappedItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepRepr_RepresentationMap &aMappingSource, const Handle_StepRepr_RepresentationItem &aMappingTarget);
-		%feature("autodoc", "1");
-		void SetMappingSource(const Handle_StepRepr_RepresentationMap &aMappingSource);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationMap MappingSource() const;
-		%feature("autodoc", "1");
-		void SetMappingTarget(const Handle_StepRepr_RepresentationItem &aMappingTarget);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem MappingTarget() const;
-
-};
-%extend StepRepr_MappedItem {
-	Handle_StepRepr_MappedItem GetHandle() {
-	return *(Handle_StepRepr_MappedItem*) &$self;
-	}
-};
-%extend StepRepr_MappedItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_MappedItem::~StepRepr_MappedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_MappedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ReprItemAndLengthMeasureWithUnit;
-class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ReprItemAndLengthMeasureWithUnit();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_MeasureWithUnit &aMWU, const Handle_StepRepr_RepresentationItem &aRI);
-		%feature("autodoc", "1");
-		void SetLengthMeasureWithUnit(const Handle_StepBasic_LengthMeasureWithUnit &aLMWU);
-		%feature("autodoc", "1");
-		Handle_StepBasic_LengthMeasureWithUnit GetLengthMeasureWithUnit() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_MeasureRepresentationItem GetMeasureRepresentationItem() const;
-		%feature("autodoc", "1");
-		void SetMeasureWithUnit(const Handle_StepBasic_MeasureWithUnit &aMWU);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit GetMeasureWithUnit() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem GetRepresentationItem() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
-	Handle_StepRepr_ReprItemAndLengthMeasureWithUnit GetHandle() {
-	return *(Handle_StepRepr_ReprItemAndLengthMeasureWithUnit*) &$self;
-	}
-};
-%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ReprItemAndLengthMeasureWithUnit::~StepRepr_ReprItemAndLengthMeasureWithUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3664,44 +3413,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_PropertyDefinitionRelationship;
-class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
+%nodefaultctor StepRepr_RepresentationItem;
+class StepRepr_RepresentationItem : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_PropertyDefinitionRelationship();
+		StepRepr_RepresentationItem();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_PropertyDefinition &aRelatingPropertyDefinition, const Handle_StepRepr_PropertyDefinition &aRelatedPropertyDefinition);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition RelatingPropertyDefinition() const;
-		%feature("autodoc", "1");
-		void SetRelatingPropertyDefinition(const Handle_StepRepr_PropertyDefinition &RelatingPropertyDefinition);
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinition RelatedPropertyDefinition() const;
-		%feature("autodoc", "1");
-		void SetRelatedPropertyDefinition(const Handle_StepRepr_PropertyDefinition &RelatedPropertyDefinition);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_PropertyDefinitionRelationship {
-	Handle_StepRepr_PropertyDefinitionRelationship GetHandle() {
-	return *(Handle_StepRepr_PropertyDefinitionRelationship*) &$self;
+%extend StepRepr_RepresentationItem {
+	Handle_StepRepr_RepresentationItem GetHandle() {
+	return *(Handle_StepRepr_RepresentationItem*) &$self;
 	}
 };
-%extend StepRepr_PropertyDefinitionRelationship {
+%extend StepRepr_RepresentationItem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_PropertyDefinitionRelationship::~StepRepr_PropertyDefinitionRelationship %{
+%feature("shadow") StepRepr_RepresentationItem::~StepRepr_RepresentationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3710,33 +3447,43 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_PropertyDefinitionRelationship {
+%extend StepRepr_RepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor StepRepr_ShapeAspectDerivingRelationship;
-class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRelationship {
+%nodefaultctor StepRepr_CompoundRepresentationItem;
+class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_ShapeAspectDerivingRelationship();
+		StepRepr_CompoundRepresentationItem();
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepRepr_HArray1OfRepresentationItem &item_element);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HArray1OfRepresentationItem ItemElement() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbItemElement() const;
+		%feature("autodoc", "1");
+		void SetItemElement(const Handle_StepRepr_HArray1OfRepresentationItem &item_element);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem ItemElementValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void SetItemElementValue(const Standard_Integer num, const Handle_StepRepr_RepresentationItem &anelement);
 
 };
-%extend StepRepr_ShapeAspectDerivingRelationship {
-	Handle_StepRepr_ShapeAspectDerivingRelationship GetHandle() {
-	return *(Handle_StepRepr_ShapeAspectDerivingRelationship*) &$self;
+%extend StepRepr_CompoundRepresentationItem {
+	Handle_StepRepr_CompoundRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_CompoundRepresentationItem*) &$self;
 	}
 };
-%extend StepRepr_ShapeAspectDerivingRelationship {
+%extend StepRepr_CompoundRepresentationItem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_ShapeAspectDerivingRelationship::~StepRepr_ShapeAspectDerivingRelationship %{
+%feature("shadow") StepRepr_CompoundRepresentationItem::~StepRepr_CompoundRepresentationItem %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3745,7 +3492,382 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_ShapeAspectDerivingRelationship {
+%extend StepRepr_CompoundRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ShapeDefinition;
+class StepRepr_ShapeDefinition : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ShapeDefinition();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductDefinitionShape ProductDefinitionShape() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspect ShapeAspect() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ShapeAspectRelationship ShapeAspectRelationship() const;
+
+};
+%feature("shadow") StepRepr_ShapeDefinition::~StepRepr_ShapeDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ShapeDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_AssemblyComponentUsage;
+class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_AssemblyComponentUsage();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasReferenceDesignator, const Handle_TCollection_HAsciiString &aReferenceDesignator);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString ReferenceDesignator() const;
+		%feature("autodoc", "1");
+		void SetReferenceDesignator(const Handle_TCollection_HAsciiString &ReferenceDesignator);
+		%feature("autodoc", "1");
+		Standard_Boolean HasReferenceDesignator() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_AssemblyComponentUsage {
+	Handle_StepRepr_AssemblyComponentUsage GetHandle() {
+	return *(Handle_StepRepr_AssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_AssemblyComponentUsage {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_AssemblyComponentUsage::~StepRepr_AssemblyComponentUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_AssemblyComponentUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_SpecifiedHigherUsageOccurrence;
+class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_SpecifiedHigherUsageOccurrence();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepRepr_AssemblyComponentUsage &aUpperUsage, const Handle_StepRepr_NextAssemblyUsageOccurrence &aNextUsage);
+		%feature("autodoc", "1");
+		Handle_StepRepr_AssemblyComponentUsage UpperUsage() const;
+		%feature("autodoc", "1");
+		void SetUpperUsage(const Handle_StepRepr_AssemblyComponentUsage &UpperUsage);
+		%feature("autodoc", "1");
+		Handle_StepRepr_NextAssemblyUsageOccurrence NextUsage() const;
+		%feature("autodoc", "1");
+		void SetNextUsage(const Handle_StepRepr_NextAssemblyUsageOccurrence &NextUsage);
+
+};
+%extend StepRepr_SpecifiedHigherUsageOccurrence {
+	Handle_StepRepr_SpecifiedHigherUsageOccurrence GetHandle() {
+	return *(Handle_StepRepr_SpecifiedHigherUsageOccurrence*) &$self;
+	}
+};
+%extend StepRepr_SpecifiedHigherUsageOccurrence {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_SpecifiedHigherUsageOccurrence::~StepRepr_SpecifiedHigherUsageOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_SpecifiedHigherUsageOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_MakeFromUsageOption;
+class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MakeFromUsageOption();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Integer aRanking, const Handle_TCollection_HAsciiString &aRankingRationale, const Handle_StepBasic_MeasureWithUnit &aQuantity);
+		%feature("autodoc", "1");
+		Standard_Integer Ranking() const;
+		%feature("autodoc", "1");
+		void SetRanking(const Standard_Integer Ranking);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString RankingRationale() const;
+		%feature("autodoc", "1");
+		void SetRankingRationale(const Handle_TCollection_HAsciiString &RankingRationale);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Quantity() const;
+		%feature("autodoc", "1");
+		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_MakeFromUsageOption {
+	Handle_StepRepr_MakeFromUsageOption GetHandle() {
+	return *(Handle_StepRepr_MakeFromUsageOption*) &$self;
+	}
+};
+%extend StepRepr_MakeFromUsageOption {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_MakeFromUsageOption::~StepRepr_MakeFromUsageOption %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_MakeFromUsageOption {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ConfigurationEffectivity;
+class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffectivity {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ConfigurationEffectivity();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aEffectivity_Id, const Handle_StepBasic_ProductDefinitionRelationship &aProductDefinitionEffectivity_Usage, const Handle_StepRepr_ConfigurationDesign &aConfiguration);
+		%feature("autodoc", "1");
+		Handle_StepRepr_ConfigurationDesign Configuration() const;
+		%feature("autodoc", "1");
+		void SetConfiguration(const Handle_StepRepr_ConfigurationDesign &Configuration);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ConfigurationEffectivity {
+	Handle_StepRepr_ConfigurationEffectivity GetHandle() {
+	return *(Handle_StepRepr_ConfigurationEffectivity*) &$self;
+	}
+};
+%extend StepRepr_ConfigurationEffectivity {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ConfigurationEffectivity::~StepRepr_ConfigurationEffectivity %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ConfigurationEffectivity {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation;
+class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_MaterialPropertyRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_StepRepr_MaterialPropertyRepresentation & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
+	Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation GetHandle() {
+	return *(Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation::~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_PropertyDefinitionRepresentation;
+class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_PropertyDefinitionRepresentation();
+		%feature("autodoc", "1");
+		void Init(const StepRepr_RepresentedDefinition &aDefinition, const Handle_StepRepr_Representation &aUsedRepresentation);
+		%feature("autodoc", "1");
+		StepRepr_RepresentedDefinition Definition() const;
+		%feature("autodoc", "1");
+		void SetDefinition(const StepRepr_RepresentedDefinition &Definition);
+		%feature("autodoc", "1");
+		Handle_StepRepr_Representation UsedRepresentation() const;
+		%feature("autodoc", "1");
+		void SetUsedRepresentation(const Handle_StepRepr_Representation &UsedRepresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_PropertyDefinitionRepresentation {
+	Handle_StepRepr_PropertyDefinitionRepresentation GetHandle() {
+	return *(Handle_StepRepr_PropertyDefinitionRepresentation*) &$self;
+	}
+};
+%extend StepRepr_PropertyDefinitionRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_PropertyDefinitionRepresentation::~StepRepr_PropertyDefinitionRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_PropertyDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_MaterialPropertyRepresentation;
+class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefinitionRepresentation {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MaterialPropertyRepresentation();
+		%feature("autodoc", "1");
+		void Init(const StepRepr_RepresentedDefinition &aPropertyDefinitionRepresentation_Definition, const Handle_StepRepr_Representation &aPropertyDefinitionRepresentation_UsedRepresentation, const Handle_StepRepr_DataEnvironment &aDependentEnvironment);
+		%feature("autodoc", "1");
+		Handle_StepRepr_DataEnvironment DependentEnvironment() const;
+		%feature("autodoc", "1");
+		void SetDependentEnvironment(const Handle_StepRepr_DataEnvironment &DependentEnvironment);
+
+};
+%extend StepRepr_MaterialPropertyRepresentation {
+	Handle_StepRepr_MaterialPropertyRepresentation GetHandle() {
+	return *(Handle_StepRepr_MaterialPropertyRepresentation*) &$self;
+	}
+};
+%extend StepRepr_MaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_MaterialPropertyRepresentation::~StepRepr_MaterialPropertyRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_MaterialPropertyRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_MappedItem;
+class StepRepr_MappedItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MappedItem();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepRepr_RepresentationMap &aMappingSource, const Handle_StepRepr_RepresentationItem &aMappingTarget);
+		%feature("autodoc", "1");
+		void SetMappingSource(const Handle_StepRepr_RepresentationMap &aMappingSource);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationMap MappingSource() const;
+		%feature("autodoc", "1");
+		void SetMappingTarget(const Handle_StepRepr_RepresentationItem &aMappingTarget);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem MappingTarget() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_MappedItem {
+	Handle_StepRepr_MappedItem GetHandle() {
+	return *(Handle_StepRepr_MappedItem*) &$self;
+	}
+};
+%extend StepRepr_MappedItem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_MappedItem::~StepRepr_MappedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_MappedItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3781,6 +3903,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepRepr_ShapeAspectTransition;
+class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ShapeAspectTransition();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ShapeAspectTransition {
+	Handle_StepRepr_ShapeAspectTransition GetHandle() {
+	return *(Handle_StepRepr_ShapeAspectTransition*) &$self;
+	}
+};
+%extend StepRepr_ShapeAspectTransition {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ShapeAspectTransition::~StepRepr_ShapeAspectTransition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ShapeAspectTransition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepRepr_RepresentationMap;
 class StepRepr_RepresentationMap : public MMgt_TShared {
 	public:
@@ -3807,7 +3964,7 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_RepresentationMap::~StepRepr_RepresentationMap %{
@@ -3912,86 +4069,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_CompoundRepresentationItem;
-class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_CompoundRepresentationItem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepRepr_HArray1OfRepresentationItem &item_element);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfRepresentationItem ItemElement() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbItemElement() const;
-		%feature("autodoc", "1");
-		void SetItemElement(const Handle_StepRepr_HArray1OfRepresentationItem &item_element);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem ItemElementValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void SetItemElementValue(const Standard_Integer num, const Handle_StepRepr_RepresentationItem &anelement);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_CompoundRepresentationItem {
-	Handle_StepRepr_CompoundRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_CompoundRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_CompoundRepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_CompoundRepresentationItem::~StepRepr_CompoundRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_CompoundRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ValueRange;
-class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ValueRange();
-
-};
-%extend StepRepr_ValueRange {
-	Handle_StepRepr_ValueRange GetHandle() {
-	return *(Handle_StepRepr_ValueRange*) &$self;
-	}
-};
-%extend StepRepr_ValueRange {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ValueRange::~StepRepr_ValueRange %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ValueRange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepRepr_NextAssemblyUsageOccurrence;
 class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUsage {
 	public:
@@ -4008,7 +4085,7 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_NextAssemblyUsageOccurrence::~StepRepr_NextAssemblyUsageOccurrence %{
@@ -4043,7 +4120,7 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_StructuralResponsePropertyDefinitionRepresentation::~StepRepr_StructuralResponsePropertyDefinitionRepresentation %{
@@ -4056,6 +4133,61 @@ def __del__(self):
 %}
 
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_HArray1OfRepresentationItem;
+class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepRepr_HArray1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_RepresentationItem &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_RepresentationItem &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepRepr_RepresentationItem &Value);
+		%feature("autodoc", "1");
+		const Handle_StepRepr_RepresentationItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepRepr_Array1OfRepresentationItem & Array1() const;
+		%feature("autodoc", "1");
+		StepRepr_Array1OfRepresentationItem & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_HArray1OfRepresentationItem {
+	Handle_StepRepr_HArray1OfRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_HArray1OfRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_HArray1OfRepresentationItem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_HArray1OfRepresentationItem::~StepRepr_HArray1OfRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_HArray1OfRepresentationItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4090,7 +4222,7 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 };
 %extend StepRepr_GlobalUnitAssignedContext {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_GlobalUnitAssignedContext::~StepRepr_GlobalUnitAssignedContext %{
@@ -4103,487 +4235,6 @@ def __del__(self):
 %}
 
 %extend StepRepr_GlobalUnitAssignedContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ItemDefinedTransformation;
-class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ItemDefinedTransformation();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_RepresentationItem &aTransformItem1, const Handle_StepRepr_RepresentationItem &aTransformItem2);
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetTransformItem1(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem TransformItem1() const;
-		%feature("autodoc", "1");
-		void SetTransformItem2(const Handle_StepRepr_RepresentationItem &aItem);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem TransformItem2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ItemDefinedTransformation {
-	Handle_StepRepr_ItemDefinedTransformation GetHandle() {
-	return *(Handle_StepRepr_ItemDefinedTransformation*) &$self;
-	}
-};
-%extend StepRepr_ItemDefinedTransformation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ItemDefinedTransformation::~StepRepr_ItemDefinedTransformation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ItemDefinedTransformation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_HArray1OfPropertyDefinitionRepresentation;
-class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfPropertyDefinitionRepresentation(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepRepr_HArray1OfPropertyDefinitionRepresentation(const Standard_Integer Low, const Standard_Integer Up, const Handle_StepRepr_PropertyDefinitionRepresentation &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_PropertyDefinitionRepresentation &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepRepr_PropertyDefinitionRepresentation &Value);
-		%feature("autodoc", "1");
-		const Handle_StepRepr_PropertyDefinitionRepresentation & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_PropertyDefinitionRepresentation & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepRepr_Array1OfPropertyDefinitionRepresentation & Array1() const;
-		%feature("autodoc", "1");
-		StepRepr_Array1OfPropertyDefinitionRepresentation & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
-	Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation GetHandle() {
-	return *(Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation*) &$self;
-	}
-};
-%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_HArray1OfPropertyDefinitionRepresentation::~StepRepr_HArray1OfPropertyDefinitionRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ExternallyDefinedRepresentation;
-class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ExternallyDefinedRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ExternallyDefinedRepresentation {
-	Handle_StepRepr_ExternallyDefinedRepresentation GetHandle() {
-	return *(Handle_StepRepr_ExternallyDefinedRepresentation*) &$self;
-	}
-};
-%extend StepRepr_ExternallyDefinedRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ExternallyDefinedRepresentation::~StepRepr_ExternallyDefinedRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ExternallyDefinedRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_DefinitionalRepresentation;
-class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_DefinitionalRepresentation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_DefinitionalRepresentation {
-	Handle_StepRepr_DefinitionalRepresentation GetHandle() {
-	return *(Handle_StepRepr_DefinitionalRepresentation*) &$self;
-	}
-};
-%extend StepRepr_DefinitionalRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_DefinitionalRepresentation::~StepRepr_DefinitionalRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_DefinitionalRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_SequenceNodeOfSequenceOfRepresentationItem;
-class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_SequenceNodeOfSequenceOfRepresentationItem(const Handle_StepRepr_RepresentationItem &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
-	Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_SequenceNodeOfSequenceOfRepresentationItem::~StepRepr_SequenceNodeOfSequenceOfRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ShapeRepresentationRelationshipWithTransformation;
-class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRepr_RepresentationRelationshipWithTransformation {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ShapeRepresentationRelationshipWithTransformation();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
-	Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation GetHandle() {
-	return *(Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation*) &$self;
-	}
-};
-%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ShapeRepresentationRelationshipWithTransformation::~StepRepr_ShapeRepresentationRelationshipWithTransformation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ConfigurationEffectivity;
-class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffectivity {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ConfigurationEffectivity();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aEffectivity_Id, const Handle_StepBasic_ProductDefinitionRelationship &aProductDefinitionEffectivity_Usage, const Handle_StepRepr_ConfigurationDesign &aConfiguration);
-		%feature("autodoc", "1");
-		Handle_StepRepr_ConfigurationDesign Configuration() const;
-		%feature("autodoc", "1");
-		void SetConfiguration(const Handle_StepRepr_ConfigurationDesign &Configuration);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ConfigurationEffectivity {
-	Handle_StepRepr_ConfigurationEffectivity GetHandle() {
-	return *(Handle_StepRepr_ConfigurationEffectivity*) &$self;
-	}
-};
-%extend StepRepr_ConfigurationEffectivity {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ConfigurationEffectivity::~StepRepr_ConfigurationEffectivity %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ConfigurationEffectivity {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_QuantifiedAssemblyComponentUsage;
-class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_QuantifiedAssemblyComponentUsage();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepBasic_MeasureWithUnit &aQuantity);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Quantity() const;
-		%feature("autodoc", "1");
-		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	Handle_StepRepr_QuantifiedAssemblyComponentUsage GetHandle() {
-	return *(Handle_StepRepr_QuantifiedAssemblyComponentUsage*) &$self;
-	}
-};
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_QuantifiedAssemblyComponentUsage::~StepRepr_QuantifiedAssemblyComponentUsage %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_QuantifiedAssemblyComponentUsage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_AssemblyComponentUsageSubstitute;
-class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_AssemblyComponentUsageSubstitute();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDef, const Handle_StepRepr_AssemblyComponentUsage &aBase, const Handle_StepRepr_AssemblyComponentUsage &aSubs);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Definition() const;
-		%feature("autodoc", "1");
-		void SetDefinition(const Handle_TCollection_HAsciiString &aDef);
-		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage Base() const;
-		%feature("autodoc", "1");
-		void SetBase(const Handle_StepRepr_AssemblyComponentUsage &aBase);
-		%feature("autodoc", "1");
-		Handle_StepRepr_AssemblyComponentUsage Substitute() const;
-		%feature("autodoc", "1");
-		void SetSubstitute(const Handle_StepRepr_AssemblyComponentUsage &aSubstitute);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_AssemblyComponentUsageSubstitute {
-	Handle_StepRepr_AssemblyComponentUsageSubstitute GetHandle() {
-	return *(Handle_StepRepr_AssemblyComponentUsageSubstitute*) &$self;
-	}
-};
-%extend StepRepr_AssemblyComponentUsageSubstitute {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_AssemblyComponentUsageSubstitute::~StepRepr_AssemblyComponentUsageSubstitute %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_AssemblyComponentUsageSubstitute {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_GlobalUncertaintyAssignedContext;
-class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_RepresentationContext {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_GlobalUncertaintyAssignedContext();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
-		%feature("autodoc", "1");
-		void SetUncertainty(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
-		%feature("autodoc", "1");
-		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit Uncertainty() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_UncertaintyMeasureWithUnit UncertaintyValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbUncertainty() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_GlobalUncertaintyAssignedContext {
-	Handle_StepRepr_GlobalUncertaintyAssignedContext GetHandle() {
-	return *(Handle_StepRepr_GlobalUncertaintyAssignedContext*) &$self;
-	}
-};
-%extend StepRepr_GlobalUncertaintyAssignedContext {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_GlobalUncertaintyAssignedContext::~StepRepr_GlobalUncertaintyAssignedContext %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_GlobalUncertaintyAssignedContext {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_DataEnvironment;
-class StepRepr_DataEnvironment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_DataEnvironment();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &aElements);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation Elements() const;
-		%feature("autodoc", "1");
-		void SetElements(const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &Elements);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_DataEnvironment {
-	Handle_StepRepr_DataEnvironment GetHandle() {
-	return *(Handle_StepRepr_DataEnvironment*) &$self;
-	}
-};
-%extend StepRepr_DataEnvironment {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_DataEnvironment::~StepRepr_DataEnvironment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_DataEnvironment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4650,7 +4301,7 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepRepr_HSequenceOfRepresentationItem::~StepRepr_HSequenceOfRepresentationItem %{
@@ -4669,26 +4320,26 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepRepr_CompositeShapeAspect;
-class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
+%nodefaultctor StepRepr_ValueRange;
+class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 	public:
 		%feature("autodoc", "1");
-		StepRepr_CompositeShapeAspect();
+		StepRepr_ValueRange();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepRepr_CompositeShapeAspect {
-	Handle_StepRepr_CompositeShapeAspect GetHandle() {
-	return *(Handle_StepRepr_CompositeShapeAspect*) &$self;
+%extend StepRepr_ValueRange {
+	Handle_StepRepr_ValueRange GetHandle() {
+	return *(Handle_StepRepr_ValueRange*) &$self;
 	}
 };
-%extend StepRepr_CompositeShapeAspect {
+%extend StepRepr_ValueRange {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepRepr_CompositeShapeAspect::~StepRepr_CompositeShapeAspect %{
+%feature("shadow") StepRepr_ValueRange::~StepRepr_ValueRange %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -4697,502 +4348,7 @@ def __del__(self):
 		pass
 %}
 
-%extend StepRepr_CompositeShapeAspect {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_Array1OfRepresentationItem;
-class StepRepr_Array1OfRepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_Array1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepRepr_Array1OfRepresentationItem(const Handle_StepRepr_RepresentationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepRepr_RepresentationItem &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const StepRepr_Array1OfRepresentationItem & Assign(const StepRepr_Array1OfRepresentationItem &Other);
-		%feature("autodoc", "1");
-		const StepRepr_Array1OfRepresentationItem & operator=(const StepRepr_Array1OfRepresentationItem &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_StepRepr_RepresentationItem &Value);
-		%feature("autodoc", "1");
-		const Handle_StepRepr_RepresentationItem & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_StepRepr_RepresentationItem & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") StepRepr_Array1OfRepresentationItem::~StepRepr_Array1OfRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_Array1OfRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_DescriptiveRepresentationItem;
-class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_DescriptiveRepresentationItem();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_DescriptiveRepresentationItem {
-	Handle_StepRepr_DescriptiveRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_DescriptiveRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_DescriptiveRepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_DescriptiveRepresentationItem::~StepRepr_DescriptiveRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_DescriptiveRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_StructuralResponseProperty;
-class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_StructuralResponseProperty();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_StructuralResponseProperty {
-	Handle_StepRepr_StructuralResponseProperty GetHandle() {
-	return *(Handle_StepRepr_StructuralResponseProperty*) &$self;
-	}
-};
-%extend StepRepr_StructuralResponseProperty {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_StructuralResponseProperty::~StepRepr_StructuralResponseProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_StructuralResponseProperty {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_MeasureRepresentationItem;
-class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MeasureRepresentationItem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_MeasureValueMember &aValueComponent, const StepBasic_Unit &aUnitComponent);
-		%feature("autodoc", "1");
-		void SetMeasure(const Handle_StepBasic_MeasureWithUnit &Measure);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Measure() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_MeasureRepresentationItem {
-	Handle_StepRepr_MeasureRepresentationItem GetHandle() {
-	return *(Handle_StepRepr_MeasureRepresentationItem*) &$self;
-	}
-};
-%extend StepRepr_MeasureRepresentationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_MeasureRepresentationItem::~StepRepr_MeasureRepresentationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_MeasureRepresentationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_MaterialProperty;
-class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MaterialProperty();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_MaterialProperty {
-	Handle_StepRepr_MaterialProperty GetHandle() {
-	return *(Handle_StepRepr_MaterialProperty*) &$self;
-	}
-};
-%extend StepRepr_MaterialProperty {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_MaterialProperty::~StepRepr_MaterialProperty %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_MaterialProperty {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_PromissoryUsageOccurrence;
-class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_PromissoryUsageOccurrence();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_PromissoryUsageOccurrence {
-	Handle_StepRepr_PromissoryUsageOccurrence GetHandle() {
-	return *(Handle_StepRepr_PromissoryUsageOccurrence*) &$self;
-	}
-};
-%extend StepRepr_PromissoryUsageOccurrence {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_PromissoryUsageOccurrence::~StepRepr_PromissoryUsageOccurrence %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_PromissoryUsageOccurrence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_HSequenceOfMaterialPropertyRepresentation;
-class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_HSequenceOfMaterialPropertyRepresentation();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_StepRepr_MaterialPropertyRepresentation &anItem);
-		%feature("autodoc", "1");
-		const Handle_StepRepr_MaterialPropertyRepresentation & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialPropertyRepresentation & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const StepRepr_SequenceOfMaterialPropertyRepresentation & Sequence() const;
-		%feature("autodoc", "1");
-		StepRepr_SequenceOfMaterialPropertyRepresentation & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation GetHandle() {
-	return *(Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation*) &$self;
-	}
-};
-%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_HSequenceOfMaterialPropertyRepresentation::~StepRepr_HSequenceOfMaterialPropertyRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation;
-class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation(const Handle_StepRepr_MaterialPropertyRepresentation &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Handle_StepRepr_MaterialPropertyRepresentation & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
-	Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation GetHandle() {
-	return *(Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation*) &$self;
-	}
-};
-%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation::~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ConfigurationItem;
-class StepRepr_ConfigurationItem : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ConfigurationItem();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_ProductConcept &aItemConcept, const Standard_Boolean hasPurpose, const Handle_TCollection_HAsciiString &aPurpose);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Id() const;
-		%feature("autodoc", "1");
-		void SetId(const Handle_TCollection_HAsciiString &Id);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
-		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &Description);
-		%feature("autodoc", "1");
-		Standard_Boolean HasDescription() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_ProductConcept ItemConcept() const;
-		%feature("autodoc", "1");
-		void SetItemConcept(const Handle_StepRepr_ProductConcept &ItemConcept);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Purpose() const;
-		%feature("autodoc", "1");
-		void SetPurpose(const Handle_TCollection_HAsciiString &Purpose);
-		%feature("autodoc", "1");
-		Standard_Boolean HasPurpose() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_ConfigurationItem {
-	Handle_StepRepr_ConfigurationItem GetHandle() {
-	return *(Handle_StepRepr_ConfigurationItem*) &$self;
-	}
-};
-%extend StepRepr_ConfigurationItem {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_ConfigurationItem::~StepRepr_ConfigurationItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ConfigurationItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_ConfigurationDesignItem;
-class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_ConfigurationDesignItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinition ProductDefinition() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
-
-};
-%feature("shadow") StepRepr_ConfigurationDesignItem::~StepRepr_ConfigurationDesignItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_ConfigurationDesignItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepRepr_MakeFromUsageOption;
-class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
-	public:
-		%feature("autodoc", "1");
-		StepRepr_MakeFromUsageOption();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Integer aRanking, const Handle_TCollection_HAsciiString &aRankingRationale, const Handle_StepBasic_MeasureWithUnit &aQuantity);
-		%feature("autodoc", "1");
-		Standard_Integer Ranking() const;
-		%feature("autodoc", "1");
-		void SetRanking(const Standard_Integer Ranking);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString RankingRationale() const;
-		%feature("autodoc", "1");
-		void SetRankingRationale(const Handle_TCollection_HAsciiString &RankingRationale);
-		%feature("autodoc", "1");
-		Handle_StepBasic_MeasureWithUnit Quantity() const;
-		%feature("autodoc", "1");
-		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepRepr_MakeFromUsageOption {
-	Handle_StepRepr_MakeFromUsageOption GetHandle() {
-	return *(Handle_StepRepr_MakeFromUsageOption*) &$self;
-	}
-};
-%extend StepRepr_MakeFromUsageOption {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") StepRepr_MakeFromUsageOption::~StepRepr_MakeFromUsageOption %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepRepr_MakeFromUsageOption {
+%extend StepRepr_ValueRange {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5258,6 +4414,852 @@ def __del__(self):
 %}
 
 %extend StepRepr_SequenceOfRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ExternallyDefinedRepresentation;
+class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ExternallyDefinedRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ExternallyDefinedRepresentation {
+	Handle_StepRepr_ExternallyDefinedRepresentation GetHandle() {
+	return *(Handle_StepRepr_ExternallyDefinedRepresentation*) &$self;
+	}
+};
+%extend StepRepr_ExternallyDefinedRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ExternallyDefinedRepresentation::~StepRepr_ExternallyDefinedRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ExternallyDefinedRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_CompositeShapeAspect;
+class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_CompositeShapeAspect();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_CompositeShapeAspect {
+	Handle_StepRepr_CompositeShapeAspect GetHandle() {
+	return *(Handle_StepRepr_CompositeShapeAspect*) &$self;
+	}
+};
+%extend StepRepr_CompositeShapeAspect {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_CompositeShapeAspect::~StepRepr_CompositeShapeAspect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_CompositeShapeAspect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ShapeRepresentationRelationshipWithTransformation;
+class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRepr_RepresentationRelationshipWithTransformation {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ShapeRepresentationRelationshipWithTransformation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation GetHandle() {
+	return *(Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation*) &$self;
+	}
+};
+%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ShapeRepresentationRelationshipWithTransformation::~StepRepr_ShapeRepresentationRelationshipWithTransformation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_AssemblyComponentUsageSubstitute;
+class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_AssemblyComponentUsageSubstitute();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDef, const Handle_StepRepr_AssemblyComponentUsage &aBase, const Handle_StepRepr_AssemblyComponentUsage &aSubs);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Definition() const;
+		%feature("autodoc", "1");
+		void SetDefinition(const Handle_TCollection_HAsciiString &aDef);
+		%feature("autodoc", "1");
+		Handle_StepRepr_AssemblyComponentUsage Base() const;
+		%feature("autodoc", "1");
+		void SetBase(const Handle_StepRepr_AssemblyComponentUsage &aBase);
+		%feature("autodoc", "1");
+		Handle_StepRepr_AssemblyComponentUsage Substitute() const;
+		%feature("autodoc", "1");
+		void SetSubstitute(const Handle_StepRepr_AssemblyComponentUsage &aSubstitute);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_AssemblyComponentUsageSubstitute {
+	Handle_StepRepr_AssemblyComponentUsageSubstitute GetHandle() {
+	return *(Handle_StepRepr_AssemblyComponentUsageSubstitute*) &$self;
+	}
+};
+%extend StepRepr_AssemblyComponentUsageSubstitute {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_AssemblyComponentUsageSubstitute::~StepRepr_AssemblyComponentUsageSubstitute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_AssemblyComponentUsageSubstitute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_QuantifiedAssemblyComponentUsage;
+class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_QuantifiedAssemblyComponentUsage();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Id, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Name, const Standard_Boolean hasProductDefinitionRelationship_Description, const Handle_TCollection_HAsciiString &aProductDefinitionRelationship_Description, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatingProductDefinition, const Handle_StepBasic_ProductDefinition &aProductDefinitionRelationship_RelatedProductDefinition, const Standard_Boolean hasAssemblyComponentUsage_ReferenceDesignator, const Handle_TCollection_HAsciiString &aAssemblyComponentUsage_ReferenceDesignator, const Handle_StepBasic_MeasureWithUnit &aQuantity);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Quantity() const;
+		%feature("autodoc", "1");
+		void SetQuantity(const Handle_StepBasic_MeasureWithUnit &Quantity);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	Handle_StepRepr_QuantifiedAssemblyComponentUsage GetHandle() {
+	return *(Handle_StepRepr_QuantifiedAssemblyComponentUsage*) &$self;
+	}
+};
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_QuantifiedAssemblyComponentUsage::~StepRepr_QuantifiedAssemblyComponentUsage %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_QuantifiedAssemblyComponentUsage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_GlobalUncertaintyAssignedContext;
+class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_RepresentationContext {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_GlobalUncertaintyAssignedContext();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aContextIdentifier, const Handle_TCollection_HAsciiString &aContextType, const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
+		%feature("autodoc", "1");
+		void SetUncertainty(const Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit &aUncertainty);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit Uncertainty() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_UncertaintyMeasureWithUnit UncertaintyValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbUncertainty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_GlobalUncertaintyAssignedContext {
+	Handle_StepRepr_GlobalUncertaintyAssignedContext GetHandle() {
+	return *(Handle_StepRepr_GlobalUncertaintyAssignedContext*) &$self;
+	}
+};
+%extend StepRepr_GlobalUncertaintyAssignedContext {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_GlobalUncertaintyAssignedContext::~StepRepr_GlobalUncertaintyAssignedContext %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_GlobalUncertaintyAssignedContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_DescriptiveRepresentationItem;
+class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_DescriptiveRepresentationItem();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_DescriptiveRepresentationItem {
+	Handle_StepRepr_DescriptiveRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_DescriptiveRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_DescriptiveRepresentationItem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_DescriptiveRepresentationItem::~StepRepr_DescriptiveRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_DescriptiveRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_DataEnvironment;
+class StepRepr_DataEnvironment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_DataEnvironment();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &aElements);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation Elements() const;
+		%feature("autodoc", "1");
+		void SetElements(const Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation &Elements);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_DataEnvironment {
+	Handle_StepRepr_DataEnvironment GetHandle() {
+	return *(Handle_StepRepr_DataEnvironment*) &$self;
+	}
+};
+%extend StepRepr_DataEnvironment {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_DataEnvironment::~StepRepr_DataEnvironment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_DataEnvironment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_PromissoryUsageOccurrence;
+class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsage {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_PromissoryUsageOccurrence();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_PromissoryUsageOccurrence {
+	Handle_StepRepr_PromissoryUsageOccurrence GetHandle() {
+	return *(Handle_StepRepr_PromissoryUsageOccurrence*) &$self;
+	}
+};
+%extend StepRepr_PromissoryUsageOccurrence {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_PromissoryUsageOccurrence::~StepRepr_PromissoryUsageOccurrence %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_PromissoryUsageOccurrence {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_DefinitionalRepresentation;
+class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_DefinitionalRepresentation();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_DefinitionalRepresentation {
+	Handle_StepRepr_DefinitionalRepresentation GetHandle() {
+	return *(Handle_StepRepr_DefinitionalRepresentation*) &$self;
+	}
+};
+%extend StepRepr_DefinitionalRepresentation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_DefinitionalRepresentation::~StepRepr_DefinitionalRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_DefinitionalRepresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_Array1OfRepresentationItem;
+class StepRepr_Array1OfRepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_Array1OfRepresentationItem(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepRepr_Array1OfRepresentationItem(const Handle_StepRepr_RepresentationItem &Item, const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepRepr_RepresentationItem &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		Standard_Boolean IsAllocated() const;
+		%feature("autodoc", "1");
+		const StepRepr_Array1OfRepresentationItem & Assign(const StepRepr_Array1OfRepresentationItem &Other);
+		%feature("autodoc", "1");
+		const StepRepr_Array1OfRepresentationItem & operator=(const StepRepr_Array1OfRepresentationItem &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_StepRepr_RepresentationItem &Value);
+		%feature("autodoc", "1");
+		const Handle_StepRepr_RepresentationItem & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_StepRepr_RepresentationItem & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem & operator()(const Standard_Integer Index);
+
+};
+%feature("shadow") StepRepr_Array1OfRepresentationItem::~StepRepr_Array1OfRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_Array1OfRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_PropertyDefinition;
+class StepRepr_PropertyDefinition : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_PropertyDefinition();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const StepRepr_CharacterizedDefinition &aDefinition);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		StepRepr_CharacterizedDefinition Definition() const;
+		%feature("autodoc", "1");
+		void SetDefinition(const StepRepr_CharacterizedDefinition &Definition);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_PropertyDefinition {
+	Handle_StepRepr_PropertyDefinition GetHandle() {
+	return *(Handle_StepRepr_PropertyDefinition*) &$self;
+	}
+};
+%extend StepRepr_PropertyDefinition {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_PropertyDefinition::~StepRepr_PropertyDefinition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_PropertyDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ProductDefinitionShape;
+class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ProductDefinitionShape();
+
+};
+%extend StepRepr_ProductDefinitionShape {
+	Handle_StepRepr_ProductDefinitionShape GetHandle() {
+	return *(Handle_StepRepr_ProductDefinitionShape*) &$self;
+	}
+};
+%extend StepRepr_ProductDefinitionShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ProductDefinitionShape::~StepRepr_ProductDefinitionShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ProductDefinitionShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ConfigurationDesignItem;
+class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ConfigurationDesignItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinition ProductDefinition() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation ProductDefinitionFormation() const;
+
+};
+%feature("shadow") StepRepr_ConfigurationDesignItem::~StepRepr_ConfigurationDesignItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ConfigurationDesignItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_MeasureRepresentationItem;
+class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MeasureRepresentationItem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_MeasureValueMember &aValueComponent, const StepBasic_Unit &aUnitComponent);
+		%feature("autodoc", "1");
+		void SetMeasure(const Handle_StepBasic_MeasureWithUnit &Measure);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit Measure() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_MeasureRepresentationItem {
+	Handle_StepRepr_MeasureRepresentationItem GetHandle() {
+	return *(Handle_StepRepr_MeasureRepresentationItem*) &$self;
+	}
+};
+%extend StepRepr_MeasureRepresentationItem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_MeasureRepresentationItem::~StepRepr_MeasureRepresentationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_MeasureRepresentationItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_MaterialProperty;
+class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_MaterialProperty();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_MaterialProperty {
+	Handle_StepRepr_MaterialProperty GetHandle() {
+	return *(Handle_StepRepr_MaterialProperty*) &$self;
+	}
+};
+%extend StepRepr_MaterialProperty {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_MaterialProperty::~StepRepr_MaterialProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_MaterialProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ReprItemAndLengthMeasureWithUnit;
+class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_RepresentationItem {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ReprItemAndLengthMeasureWithUnit();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_MeasureWithUnit &aMWU, const Handle_StepRepr_RepresentationItem &aRI);
+		%feature("autodoc", "1");
+		void SetLengthMeasureWithUnit(const Handle_StepBasic_LengthMeasureWithUnit &aLMWU);
+		%feature("autodoc", "1");
+		Handle_StepBasic_LengthMeasureWithUnit GetLengthMeasureWithUnit() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_MeasureRepresentationItem GetMeasureRepresentationItem() const;
+		%feature("autodoc", "1");
+		void SetMeasureWithUnit(const Handle_StepBasic_MeasureWithUnit &aMWU);
+		%feature("autodoc", "1");
+		Handle_StepBasic_MeasureWithUnit GetMeasureWithUnit() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem GetRepresentationItem() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
+	Handle_StepRepr_ReprItemAndLengthMeasureWithUnit GetHandle() {
+	return *(Handle_StepRepr_ReprItemAndLengthMeasureWithUnit*) &$self;
+	}
+};
+%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ReprItemAndLengthMeasureWithUnit::~StepRepr_ReprItemAndLengthMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ReprItemAndLengthMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ItemDefinedTransformation;
+class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ItemDefinedTransformation();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_RepresentationItem &aTransformItem1, const Handle_StepRepr_RepresentationItem &aTransformItem2);
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &aName);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetTransformItem1(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem TransformItem1() const;
+		%feature("autodoc", "1");
+		void SetTransformItem2(const Handle_StepRepr_RepresentationItem &aItem);
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem TransformItem2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ItemDefinedTransformation {
+	Handle_StepRepr_ItemDefinedTransformation GetHandle() {
+	return *(Handle_StepRepr_ItemDefinedTransformation*) &$self;
+	}
+};
+%extend StepRepr_ItemDefinedTransformation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ItemDefinedTransformation::~StepRepr_ItemDefinedTransformation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ItemDefinedTransformation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_StructuralResponseProperty;
+class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_StructuralResponseProperty();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_StructuralResponseProperty {
+	Handle_StepRepr_StructuralResponseProperty GetHandle() {
+	return *(Handle_StepRepr_StructuralResponseProperty*) &$self;
+	}
+};
+%extend StepRepr_StructuralResponseProperty {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_StructuralResponseProperty::~StepRepr_StructuralResponseProperty %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_StructuralResponseProperty {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepRepr_ConfigurationItem;
+class StepRepr_ConfigurationItem : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepRepr_ConfigurationItem();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aName, const Standard_Boolean hasDescription, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepRepr_ProductConcept &aItemConcept, const Standard_Boolean hasPurpose, const Handle_TCollection_HAsciiString &aPurpose);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Id() const;
+		%feature("autodoc", "1");
+		void SetId(const Handle_TCollection_HAsciiString &Id);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetDescription(const Handle_TCollection_HAsciiString &Description);
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescription() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_ProductConcept ItemConcept() const;
+		%feature("autodoc", "1");
+		void SetItemConcept(const Handle_StepRepr_ProductConcept &ItemConcept);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Purpose() const;
+		%feature("autodoc", "1");
+		void SetPurpose(const Handle_TCollection_HAsciiString &Purpose);
+		%feature("autodoc", "1");
+		Standard_Boolean HasPurpose() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepRepr_ConfigurationItem {
+	Handle_StepRepr_ConfigurationItem GetHandle() {
+	return *(Handle_StepRepr_ConfigurationItem*) &$self;
+	}
+};
+%extend StepRepr_ConfigurationItem {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepRepr_ConfigurationItem::~StepRepr_ConfigurationItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepRepr_ConfigurationItem {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -263,7 +263,7 @@ $HeaderURL$
 #include <TDF_Transaction.hxx>
 %};
 
-%import TCollection.i
 %import MMgt.i
 %import TDF.i
+%import TCollection.i
 %import Standard.i

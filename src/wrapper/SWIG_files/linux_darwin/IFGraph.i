@@ -95,37 +95,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IFGraph_AllConnected;
-class IFGraph_AllConnected : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph);
-		%feature("autodoc", "1");
-		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%feature("shadow") IFGraph_AllConnected::~IFGraph_AllConnected %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFGraph_AllConnected {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IFGraph_SubPartsIterator;
 class IFGraph_SubPartsIterator {
 	public:
@@ -222,6 +191,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor IFGraph_SCRoots;
+class IFGraph_SCRoots : public IFGraph_StrongComponants {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
+
+};
+%feature("shadow") IFGraph_SCRoots::~IFGraph_SCRoots %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFGraph_SCRoots {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IFGraph_ConnectedComponants;
 class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	public:
@@ -243,6 +239,37 @@ def __del__(self):
 %}
 
 %extend IFGraph_ConnectedComponants {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFGraph_AllConnected;
+class IFGraph_AllConnected : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph);
+		%feature("autodoc", "1");
+		IFGraph_AllConnected(const Interface_Graph &agraph, const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%feature("shadow") IFGraph_AllConnected::~IFGraph_AllConnected %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFGraph_AllConnected {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -282,37 +309,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IFGraph_Articulations;
-class IFGraph_Articulations : public Interface_GraphContent {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		void GetFromEntity(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void GetFromIter(const Interface_EntityIterator &iter);
-		%feature("autodoc", "1");
-		void ResetData();
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%feature("shadow") IFGraph_Articulations::~IFGraph_Articulations %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFGraph_Articulations {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IFGraph_ExternalSources;
 class IFGraph_ExternalSources : public Interface_GraphContent {
 	public:
@@ -340,6 +336,37 @@ def __del__(self):
 %}
 
 %extend IFGraph_ExternalSources {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IFGraph_Articulations;
+class IFGraph_Articulations : public Interface_GraphContent {
+	public:
+		%feature("autodoc", "1");
+		IFGraph_Articulations(const Interface_Graph &agraph, const Standard_Boolean whole);
+		%feature("autodoc", "1");
+		void GetFromEntity(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void GetFromIter(const Interface_EntityIterator &iter);
+		%feature("autodoc", "1");
+		void ResetData();
+		%feature("autodoc", "1");
+		virtual		void Evaluate();
+
+};
+%feature("shadow") IFGraph_Articulations::~IFGraph_Articulations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IFGraph_Articulations {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -381,35 +408,6 @@ def __del__(self):
 %}
 
 %extend IFGraph_Cumulate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IFGraph_SCRoots;
-class IFGraph_SCRoots : public IFGraph_StrongComponants {
-	public:
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(IFGraph_SCRoots & arg0);
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(const Interface_Graph &agraph, const Standard_Boolean whole);
-		%feature("autodoc", "1");
-		IFGraph_SCRoots(IFGraph_StrongComponants & subparts);
-		%feature("autodoc", "1");
-		virtual		void Evaluate();
-
-};
-%feature("shadow") IFGraph_SCRoots::~IFGraph_SCRoots %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IFGraph_SCRoots {
 	void _kill_pointed() {
 		delete $self;
 	}

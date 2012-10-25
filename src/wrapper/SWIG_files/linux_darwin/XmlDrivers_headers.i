@@ -215,7 +215,7 @@ $HeaderURL$
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_XmlMDF_ADriverTable.hxx>
 #include<Handle_CDM_MessageDriver.hxx>
-#include<Handle_XmlMDF_ADriver.hxx>
 #include<XmlDrivers.hxx>
 #include<Standard_GUID.hxx>
+#include<Handle_XmlMDF_ADriver.hxx>
 %}

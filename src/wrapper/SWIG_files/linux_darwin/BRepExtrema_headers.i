@@ -129,6 +129,6 @@ $HeaderURL$
 #include<gp_Pnt.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
-#include<Bnd_Box.hxx>
 #include<TopoDS_Edge.hxx>
+#include<Bnd_Box.hxx>
 %}

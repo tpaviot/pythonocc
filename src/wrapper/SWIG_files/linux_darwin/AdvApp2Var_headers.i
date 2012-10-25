@@ -104,11 +104,11 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_SequenceOfReal.hxx>
-#include<gp_XY.hxx>
-#include<gp_Pnt.hxx>
 #include<Handle_TColgp_HArray2OfPnt.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<AdvApprox_Cutting.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
+#include<gp_XY.hxx>
+#include<gp_Pnt.hxx>
 %}

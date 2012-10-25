@@ -204,36 +204,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bisector_Curve;
-class Bisector_Curve : public Geom2d_Curve {
+%nodefaultctor Bisector_Inter;
+class Bisector_Inter : public IntRes2d_Intersection {
 	public:
 		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter(const gp_Pnt2d P) const;
+		Bisector_Inter();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsExtendAtStart() const;
+		Bisector_Inter(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsExtendAtEnd() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real IntervalFirst(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real IntervalLast(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void Perform(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
 
 };
-%extend Bisector_Curve {
-	Handle_Bisector_Curve GetHandle() {
-	return *(Handle_Bisector_Curve*) &$self;
-	}
-};
-%extend Bisector_Curve {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bisector_Curve::~Bisector_Curve %{
+%feature("shadow") Bisector_Inter::~Bisector_Inter %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -242,223 +224,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Bisector_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bisector_BisecPC;
-class Bisector_BisecPC : public Bisector_Curve {
-	public:
-		%feature("autodoc", "1");
-		Bisector_BisecPC();
-		%feature("autodoc", "1");
-		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real DistMax=500);
-		%feature("autodoc", "1");
-		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real UMin, const Standard_Real UMax);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real DistMax=500);
-		%feature("autodoc", "1");
-		virtual		void Reverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape IntervalContinuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
-		%feature("autodoc", "1");
-		Standard_Real LinkBisCurve(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real LinkCurveBis(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-
-};
-%extend Bisector_BisecPC {
-	Handle_Bisector_BisecPC GetHandle() {
-	return *(Handle_Bisector_BisecPC*) &$self;
-	}
-};
-%extend Bisector_BisecPC {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bisector_BisecPC::~Bisector_BisecPC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_BisecPC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bisector_FunctionH;
-class Bisector_FunctionH : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d P1, const gp_Vec2d T1);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-
-};
-%feature("shadow") Bisector_FunctionH::~Bisector_FunctionH %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_FunctionH {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Bisector_BisecCC;
-class Bisector_BisecCC : public Bisector_Curve {
-	public:
-		%feature("autodoc", "1");
-		Bisector_BisecCC();
-		%feature("autodoc", "1");
-		Bisector_BisecCC(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d Origin, const Standard_Real DistMax=500);
-		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d Origin, const Standard_Real DistMax=500);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsExtendAtStart() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsExtendAtEnd() const;
-		%feature("autodoc", "1");
-		virtual		void Reverse();
-		%feature("autodoc", "1");
-		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Handle_Bisector_BisecCC ChangeGuide() const;
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		virtual		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		virtual		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbIntervals() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real IntervalFirst(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real IntervalLast(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape IntervalContinuity() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc","ValueAndDist(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		gp_Pnt2d ValueAndDist(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","ValueByInt(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		gp_Pnt2d ValueByInt(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
-		%feature("autodoc", "1");
-		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
-		%feature("autodoc", "1");
-		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
-		%feature("autodoc", "1");
-		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
-		%feature("autodoc", "1");
-		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Real LinkBisCurve(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Real LinkCurveBis(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Parameter(const gp_Pnt2d P) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve Curve(const Standard_Integer IndCurve) const;
-		%feature("autodoc", "1");
-		const Bisector_PolyBis & Polygon() const;
-		%feature("autodoc", "1");
-		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Bisector_BisecCC {
-	Handle_Bisector_BisecCC GetHandle() {
-	return *(Handle_Bisector_BisecCC*) &$self;
-	}
-};
-%extend Bisector_BisecCC {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") Bisector_BisecCC::~Bisector_BisecCC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_BisecCC {
+%extend Bisector_Inter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -501,42 +267,36 @@ def __del__(self):
 };
 
 
-%nodefaultctor Bisector_PointOnBis;
-class Bisector_PointOnBis {
+%nodefaultctor Bisector_Curve;
+class Bisector_Curve : public Geom2d_Curve {
 	public:
 		%feature("autodoc", "1");
-		Bisector_PointOnBis();
+		virtual		Standard_Real Parameter(const gp_Pnt2d P) const;
 		%feature("autodoc", "1");
-		Bisector_PointOnBis(const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamBis, const Standard_Real Distance, const gp_Pnt2d Point);
+		virtual		Standard_Boolean IsExtendAtStart() const;
 		%feature("autodoc", "1");
-		void ParamOnC1(const Standard_Real Param);
+		virtual		Standard_Boolean IsExtendAtEnd() const;
 		%feature("autodoc", "1");
-		void ParamOnC2(const Standard_Real Param);
+		virtual		Standard_Integer NbIntervals() const;
 		%feature("autodoc", "1");
-		void ParamOnBis(const Standard_Real Param);
+		virtual		Standard_Real IntervalFirst(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Distance(const Standard_Real Distance);
+		virtual		Standard_Real IntervalLast(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void IsInfinite(const Standard_Boolean Infinite);
-		%feature("autodoc", "1");
-		void Point(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		Standard_Real ParamOnC1() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnC2() const;
-		%feature("autodoc", "1");
-		Standard_Real ParamOnBis() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance() const;
-		%feature("autodoc", "1");
-		gp_Pnt2d Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInfinite() const;
-		%feature("autodoc", "1");
-		void Dump() const;
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Bisector_PointOnBis::~Bisector_PointOnBis %{
+%extend Bisector_Curve {
+	Handle_Bisector_Curve GetHandle() {
+	return *(Handle_Bisector_Curve*) &$self;
+	}
+};
+%extend Bisector_Curve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Bisector_Curve::~Bisector_Curve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -545,33 +305,87 @@ def __del__(self):
 		pass
 %}
 
-%extend Bisector_PointOnBis {
+%extend Bisector_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Bisector_Bisec;
-class Bisector_Bisec {
+%nodefaultctor Bisector_BisecCC;
+class Bisector_BisecCC : public Bisector_Curve {
 	public:
 		%feature("autodoc", "1");
-		Bisector_Bisec();
+		Bisector_BisecCC();
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		Bisector_BisecCC(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d Origin, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const Standard_Real Side1, const Standard_Real Side2, const gp_Pnt2d Origin, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		virtual		void Reverse();
 		%feature("autodoc", "1");
-		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
 		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & Value() const;
+		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		const Handle_Geom2d_TrimmedCurve & ChangeValue();
+		Handle_Bisector_BisecCC ChangeGuide() const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape IntervalContinuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc","ValueAndDist(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		gp_Pnt2d ValueAndDist(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","ValueByInt(Standard_Real U) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		gp_Pnt2d ValueByInt(const Standard_Real U, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Real LinkBisCurve(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Real LinkCurveBis(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Handle_Geom2d_Curve Curve(const Standard_Integer IndCurve) const;
+		%feature("autodoc", "1");
+		const Bisector_PolyBis & Polygon() const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
 
 };
-%feature("shadow") Bisector_Bisec::~Bisector_Bisec %{
+%extend Bisector_BisecCC {
+	Handle_Bisector_BisecCC GetHandle() {
+	return *(Handle_Bisector_BisecCC*) &$self;
+	}
+};
+%extend Bisector_BisecCC {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Bisector_BisecCC::~Bisector_BisecCC %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -580,50 +394,93 @@ def __del__(self):
 		pass
 %}
 
-%extend Bisector_Bisec {
+%extend Bisector_BisecCC {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Bisector_Inter;
-class Bisector_Inter : public IntRes2d_Intersection {
+%nodefaultctor Bisector_BisecPC;
+class Bisector_BisecPC : public Bisector_Curve {
 	public:
 		%feature("autodoc", "1");
-		Bisector_Inter();
+		Bisector_BisecPC();
 		%feature("autodoc", "1");
-		Bisector_Inter(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real DistMax=500);
 		%feature("autodoc", "1");
-		void Perform(const Bisector_Bisec &C1, const IntRes2d_Domain &D1, const Bisector_Bisec &C2, const IntRes2d_Domain &D2, const Standard_Real TolConf, const Standard_Real Tol, const Standard_Boolean ComunElement);
+		Bisector_BisecPC(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real UMin, const Standard_Real UMax);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const Standard_Real Side, const Standard_Real DistMax=500);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsExtendAtStart() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsExtendAtEnd() const;
+		%feature("autodoc", "1");
+		virtual		void Reverse();
+		%feature("autodoc", "1");
+		virtual		Standard_Real ReversedParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		virtual		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real IntervalFirst(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real IntervalLast(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape IntervalContinuity() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		void D0(const Standard_Real U, gp_Pnt2d & P) const;
+		%feature("autodoc", "1");
+		virtual		void D1(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V) const;
+		%feature("autodoc", "1");
+		virtual		void D2(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2) const;
+		%feature("autodoc", "1");
+		virtual		void D3(const Standard_Real U, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3) const;
+		%feature("autodoc", "1");
+		virtual		gp_Vec2d DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		void Dump(const Standard_Integer Deep=0, const Standard_Integer Offset=0) const;
+		%feature("autodoc", "1");
+		Standard_Real LinkBisCurve(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Real LinkCurveBis(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Parameter(const gp_Pnt2d P) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Bisector_Inter::~Bisector_Inter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Bisector_Inter {
-	void _kill_pointed() {
-		delete $self;
+%extend Bisector_BisecPC {
+	Handle_Bisector_BisecPC GetHandle() {
+	return *(Handle_Bisector_BisecPC*) &$self;
 	}
 };
-
-
-%nodefaultctor Bisector;
-class Bisector {
-	public:
-		%feature("autodoc", "1");
-		Bisector();
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
-
+%extend Bisector_BisecPC {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
 };
-%feature("shadow") Bisector::~Bisector %{
+%feature("shadow") Bisector_BisecPC::~Bisector_BisecPC %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -632,7 +489,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Bisector {
+%extend Bisector_BisecPC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -719,7 +576,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %extend Bisector_BisecAna {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Bisector_BisecAna::~Bisector_BisecAna %{
@@ -771,6 +628,149 @@ def __del__(self):
 %}
 
 %extend Bisector_PolyBis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector_PointOnBis;
+class Bisector_PointOnBis {
+	public:
+		%feature("autodoc", "1");
+		Bisector_PointOnBis();
+		%feature("autodoc", "1");
+		Bisector_PointOnBis(const Standard_Real Param1, const Standard_Real Param2, const Standard_Real ParamBis, const Standard_Real Distance, const gp_Pnt2d Point);
+		%feature("autodoc", "1");
+		void ParamOnC1(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void ParamOnC2(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void ParamOnBis(const Standard_Real Param);
+		%feature("autodoc", "1");
+		void Distance(const Standard_Real Distance);
+		%feature("autodoc", "1");
+		void IsInfinite(const Standard_Boolean Infinite);
+		%feature("autodoc", "1");
+		void Point(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		Standard_Real ParamOnC1() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnC2() const;
+		%feature("autodoc", "1");
+		Standard_Real ParamOnBis() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance() const;
+		%feature("autodoc", "1");
+		gp_Pnt2d Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfinite() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+
+};
+%feature("shadow") Bisector_PointOnBis::~Bisector_PointOnBis %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_PointOnBis {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector;
+class Bisector {
+	public:
+		%feature("autodoc", "1");
+		Bisector();
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsConvex(const Handle_Geom2d_Curve &Cu, const Standard_Real Sign);
+
+};
+%feature("shadow") Bisector::~Bisector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector_FunctionH;
+class Bisector_FunctionH : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		Bisector_FunctionH(const Handle_Geom2d_Curve &C2, const gp_Pnt2d P1, const gp_Vec2d T1);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+
+};
+%feature("shadow") Bisector_FunctionH::~Bisector_FunctionH %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_FunctionH {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Bisector_Bisec;
+class Bisector_Bisec {
+	public:
+		%feature("autodoc", "1");
+		Bisector_Bisec();
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu1, const Handle_Geom2d_Curve &Cu2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Curve &Cu, const Handle_Geom2d_Point &Pnt, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt, const Handle_Geom2d_Curve &Cu, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		void Perform(const Handle_Geom2d_Point &Pnt1, const Handle_Geom2d_Point &Pnt2, const gp_Pnt2d P, const gp_Vec2d V1, const gp_Vec2d V2, const Standard_Real Sense, const Standard_Real Tolerance=0.0, const Standard_Boolean oncurve=1);
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & Value() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_TrimmedCurve & ChangeValue();
+
+};
+%feature("shadow") Bisector_Bisec::~Bisector_Bisec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Bisector_Bisec {
 	void _kill_pointed() {
 		delete $self;
 	}

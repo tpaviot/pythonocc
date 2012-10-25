@@ -23,8 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(WriteCurve2d) BinTools_Curve2dSet::WriteCurve2d;
-%rename(ReadCurve2d) BinTools_Curve2dSet::ReadCurve2d;
 %rename(PutReal) BinTools::PutReal;
 %rename(PutInteger) BinTools::PutInteger;
 %rename(PutBool) BinTools::PutBool;
@@ -37,3 +35,5 @@ $HeaderURL$
 %rename(ReadSurface) BinTools_SurfaceSet::ReadSurface;
 %rename(WriteCurve) BinTools_CurveSet::WriteCurve;
 %rename(ReadCurve) BinTools_CurveSet::ReadCurve;
+%rename(WriteCurve2d) BinTools_Curve2dSet::WriteCurve2d;
+%rename(ReadCurve2d) BinTools_Curve2dSet::ReadCurve2d;

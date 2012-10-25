@@ -27,18 +27,18 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopOpeBRepTool
 import Standard
-import TopOpeBRepDS
 import TopoDS
-import gp
-import TopAbs
-import Geom
-import Geom2d
-import TopTools
-import BRepTopAdaptor
-import IntSurf
 import Geom2dAdaptor
 import BRepAdaptor
+import TopOpeBRepTool
+import TopTools
+import TopOpeBRepDS
+import TopAbs
+import BRepTopAdaptor
+import gp
+import Geom
+import Geom2d
 import IntRes2d
+import IntSurf
 };

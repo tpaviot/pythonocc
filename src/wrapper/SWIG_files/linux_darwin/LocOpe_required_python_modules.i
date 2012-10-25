@@ -28,11 +28,11 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopTools
-import gp
 import TopoDS
+import TopTools
 import TColGeom
 import Geom
+import gp
 import TopAbs
 import BOP
 };

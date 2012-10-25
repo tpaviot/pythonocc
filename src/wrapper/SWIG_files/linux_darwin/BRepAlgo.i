@@ -57,44 +57,6 @@ enum BRepAlgo_CheckStatus {
 
 
 
-%nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
-class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference();
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
-	BRepAlgo_DataMapNodeOfDataMapOfShapeInterference* GetObject() {
-	return (BRepAlgo_DataMapNodeOfDataMapOfShapeInterference*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_BRepAlgo_AsDes;
 class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	public:
@@ -127,82 +89,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepAlgo_AsDes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
-class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger();
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
-	BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger* GetObject() {
-	return (BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepAlgo_EdgeConnector;
-class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector();
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector(const Handle_BRepAlgo_EdgeConnector &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector(const BRepAlgo_EdgeConnector *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector & operator=(const Handle_BRepAlgo_EdgeConnector &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepAlgo_EdgeConnector & operator=(const BRepAlgo_EdgeConnector *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepAlgo_EdgeConnector DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepAlgo_EdgeConnector {
-	BRepAlgo_EdgeConnector* GetObject() {
-	return (BRepAlgo_EdgeConnector*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepAlgo_EdgeConnector::~Handle_BRepAlgo_EdgeConnector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepAlgo_EdgeConnector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -247,38 +133,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepAlgo_Loop;
-class BRepAlgo_Loop {
+%nodefaultctor Handle_BRepAlgo_EdgeConnector;
+class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Loop();
+		Handle_BRepAlgo_EdgeConnector();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F);
+		Handle_BRepAlgo_EdgeConnector(const Handle_BRepAlgo_EdgeConnector &aHandle);
 		%feature("autodoc", "1");
-		void AddEdge(TopoDS_Edge & E, const TopTools_ListOfShape &LV);
+		Handle_BRepAlgo_EdgeConnector(const BRepAlgo_EdgeConnector *anItem);
 		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge E);
+		Handle_BRepAlgo_EdgeConnector & operator=(const Handle_BRepAlgo_EdgeConnector &aHandle);
 		%feature("autodoc", "1");
-		void AddConstEdges(const TopTools_ListOfShape &LE);
+		Handle_BRepAlgo_EdgeConnector & operator=(const BRepAlgo_EdgeConnector *anItem);
 		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		void CutEdge(const TopoDS_Edge E, const TopTools_ListOfShape &VonE, TopTools_ListOfShape & NE) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewWires() const;
-		%feature("autodoc", "1");
-		void WiresToFaces();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewEdges(const TopoDS_Edge E) const;
-		%feature("autodoc", "1");
-		void GetVerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap) const;
-		%feature("autodoc", "1");
-		void VerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap);
+		static		Handle_BRepAlgo_EdgeConnector DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") BRepAlgo_Loop::~BRepAlgo_Loop %{
+%extend Handle_BRepAlgo_EdgeConnector {
+	BRepAlgo_EdgeConnector* GetObject() {
+	return (BRepAlgo_EdgeConnector*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepAlgo_EdgeConnector::~Handle_BRepAlgo_EdgeConnector %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -287,57 +164,36 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepAlgo_Loop {
+%extend Handle_BRepAlgo_EdgeConnector {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor BRepAlgo_DataMapOfShapeBoolean;
-class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
+%nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
+class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeBoolean(const Standard_Integer NbBuckets=1);
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger();
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeBoolean & Assign(const BRepAlgo_DataMapOfShapeBoolean &Other);
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
 		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapOfShapeBoolean &Other);
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger &aHandle);
 		%feature("autodoc", "1");
-		void Clear();
+		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger & operator=(const BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger *anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Boolean &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const Standard_Boolean & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetChangeFind(const TopoDS_Shape K) {
-				return (Standard_Boolean) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Boolean value ,const TopoDS_Shape K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Boolean & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
+		static		Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") BRepAlgo_DataMapOfShapeBoolean::~BRepAlgo_DataMapOfShapeBoolean %{
+%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger* GetObject() {
+	return (BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -346,55 +202,36 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepAlgo_DataMapOfShapeBoolean {
+%extend Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor BRepAlgo_AsDes;
-class BRepAlgo_AsDes : public MMgt_TShared {
+%nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
+class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_AsDes();
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference();
 		%feature("autodoc", "1");
-		void Clear();
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference &aHandle);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape S, const TopoDS_Shape SS);
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape S, const TopTools_ListOfShape &SS);
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference &aHandle);
 		%feature("autodoc", "1");
-		Standard_Boolean HasAscendant(const TopoDS_Shape S) const;
+		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference & operator=(const BRepAlgo_DataMapNodeOfDataMapOfShapeInterference *anItem);
 		%feature("autodoc", "1");
-		Standard_Boolean HasDescendant(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Descendant(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & ChangeDescendant(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
-		%feature("autodoc", "1");
-		void Remove(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		Standard_Boolean HasCommonDescendant(const TopoDS_Shape S1, const TopoDS_Shape S2, TopTools_ListOfShape & LC) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		static		Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend BRepAlgo_AsDes {
-	Handle_BRepAlgo_AsDes GetHandle() {
-	return *(Handle_BRepAlgo_AsDes*) &$self;
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	BRepAlgo_DataMapNodeOfDataMapOfShapeInterference* GetObject() {
+	return (BRepAlgo_DataMapNodeOfDataMapOfShapeInterference*)$self->Access();
 	}
 };
-%extend BRepAlgo_AsDes {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRepAlgo_AsDes::~BRepAlgo_AsDes %{
+%feature("shadow") Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -403,369 +240,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepAlgo_AsDes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
-class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const TopoDS_Shape K, const Standard_Boolean &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Boolean GetValue() {
-				return (Standard_Boolean) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Boolean value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
-	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean GetHandle() {
-	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean*) &$self;
-	}
-};
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_Image;
-class BRepAlgo_Image {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_Image();
-		%feature("autodoc", "1");
-		void SetRoot(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
-		%feature("autodoc", "1");
-		void Bind(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Remove(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Roots() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsImage(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  ImageFrom(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Root(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasImage(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Image(const TopoDS_Shape S) const;
-		%feature("autodoc", "1");
-		void LastImage(const TopoDS_Shape S, TopTools_ListOfShape & L) const;
-		%feature("autodoc", "1");
-		void Compact();
-		%feature("autodoc", "1");
-		void Filter(const TopoDS_Shape S, const TopAbs_ShapeEnum ShapeType);
-
-};
-%feature("shadow") BRepAlgo_Image::~BRepAlgo_Image %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_Image {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_EdgeConnector;
-class BRepAlgo_EdgeConnector : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_EdgeConnector();
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Edge e);
-		%feature("autodoc", "1");
-		void Add(TopTools_ListOfShape & LOEdge);
-		%feature("autodoc", "1");
-		void AddStart(const TopoDS_Shape e);
-		%feature("autodoc", "1");
-		void AddStart(TopTools_ListOfShape & LOEdge);
-		%feature("autodoc", "1");
-		void ClearStartElement();
-		%feature("autodoc", "1");
-		TopTools_ListOfShape & MakeBlock();
-		%feature("autodoc", "1");
-		void Done();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsWire(const TopoDS_Shape W);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepAlgo_EdgeConnector {
-	Handle_BRepAlgo_EdgeConnector GetHandle() {
-	return *(Handle_BRepAlgo_EdgeConnector*) &$self;
-	}
-};
-%extend BRepAlgo_EdgeConnector {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRepAlgo_EdgeConnector::~BRepAlgo_EdgeConnector %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_EdgeConnector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_BooleanOperations;
-class BRepAlgo_BooleanOperations {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_BooleanOperations();
-		%feature("autodoc", "1");
-		void Shapes2d(const TopoDS_Shape S1, const TopoDS_Shape S2);
-		%feature("autodoc", "1");
-		void Shapes(const TopoDS_Shape S1, const TopoDS_Shape S2);
-		%feature("autodoc", "1");
-		void SetApproxParameters(const Standard_Integer NbPntMax, const Standard_Real Tol3D, const Standard_Real Tol2D, const Standard_Boolean RelativeTol);
-		%feature("autodoc", "1");
-		void Define(const TopoDS_Shape S1, const TopoDS_Shape S2, Handle_TopOpeBRepDS_HDataStructure & HDS);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Common();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Fus();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Cut();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Section();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  ShapeFrom(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDeleted(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_HDataStructure & DataStructure() const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_HDataStructure & ChangeDataStructure();
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepBuild_HBuilder & Builder() const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_HBuilder & ChangeBuilder();
-		%feature("autodoc", "1");
-		BRepAlgo_DSAccess & DataStructureAccess();
-
-};
-%feature("shadow") BRepAlgo_BooleanOperations::~BRepAlgo_BooleanOperations %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_BooleanOperations {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_DataMapOfShapeInterference;
-class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeInterference(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeInterference & Assign(const BRepAlgo_DataMapOfShapeInterference &Other);
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapOfShapeInterference & operator=(const BRepAlgo_DataMapOfShapeInterference &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_TopOpeBRepDS_Interference &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepAlgo_DataMapOfShapeInterference::~BRepAlgo_DataMapOfShapeInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapOfShapeInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo;
-class BRepAlgo {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo();
-		%feature("autodoc", "1");
-		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape S);
-
-};
-%feature("shadow") BRepAlgo::~BRepAlgo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
-class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean();
-		%feature("autodoc", "1");
-		BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean(const BRepAlgo_DataMapOfShapeBoolean &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepAlgo_DataMapOfShapeBoolean &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Standard_Boolean & Value() const;
-
-};
-%feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean::~BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
-class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const TColStd_SequenceOfInteger &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		TColStd_SequenceOfInteger & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
-	Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger GetHandle() {
-	return *(Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*) &$self;
-	}
-};
-%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+%extend Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -797,30 +272,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepAlgo_FaceRestrictor;
-class BRepAlgo_FaceRestrictor {
+%nodefaultctor BRepAlgo;
+class BRepAlgo {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_FaceRestrictor();
+		BRepAlgo();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
+		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
 		%feature("autodoc", "1");
-		void Add(TopoDS_Wire & W);
+		static		Standard_Boolean IsValid(const TopoDS_Shape S);
 		%feature("autodoc", "1");
-		void Clear();
+		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
 		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopoDS_Face Current() const;
+		static		Standard_Boolean IsTopologicallyValid(const TopoDS_Shape S);
 
 };
-%feature("shadow") BRepAlgo_FaceRestrictor::~BRepAlgo_FaceRestrictor %{
+%feature("shadow") BRepAlgo::~BRepAlgo %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -829,7 +296,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepAlgo_FaceRestrictor {
+%extend BRepAlgo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -899,6 +366,106 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepAlgo_Loop;
+class BRepAlgo_Loop {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_Loop();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void AddEdge(TopoDS_Edge & E, const TopTools_ListOfShape &LV);
+		%feature("autodoc", "1");
+		void AddConstEdge(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void AddConstEdges(const TopTools_ListOfShape &LE);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		void CutEdge(const TopoDS_Edge E, const TopTools_ListOfShape &VonE, TopTools_ListOfShape & NE) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewWires() const;
+		%feature("autodoc", "1");
+		void WiresToFaces();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces() const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewEdges(const TopoDS_Edge E) const;
+		%feature("autodoc", "1");
+		void GetVerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap) const;
+		%feature("autodoc", "1");
+		void VerticesForSubstitute(TopTools_DataMapOfShapeShape & VerVerMap);
+
+};
+%feature("shadow") BRepAlgo_Loop::~BRepAlgo_Loop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_EdgeConnector;
+class BRepAlgo_EdgeConnector : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_EdgeConnector();
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Edge e);
+		%feature("autodoc", "1");
+		void Add(TopTools_ListOfShape & LOEdge);
+		%feature("autodoc", "1");
+		void AddStart(const TopoDS_Shape e);
+		%feature("autodoc", "1");
+		void AddStart(TopTools_ListOfShape & LOEdge);
+		%feature("autodoc", "1");
+		void ClearStartElement();
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & MakeBlock();
+		%feature("autodoc", "1");
+		void Done();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsWire(const TopoDS_Shape W);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepAlgo_EdgeConnector {
+	Handle_BRepAlgo_EdgeConnector GetHandle() {
+	return *(Handle_BRepAlgo_EdgeConnector*) &$self;
+	}
+};
+%extend BRepAlgo_EdgeConnector {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepAlgo_EdgeConnector::~BRepAlgo_EdgeConnector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_EdgeConnector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_BasicMapIterator {
 	public:
@@ -950,7 +517,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
@@ -963,6 +530,65 @@ def __del__(self):
 %}
 
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_DataMapOfShapeBoolean;
+class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeBoolean(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeBoolean & Assign(const BRepAlgo_DataMapOfShapeBoolean &Other);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeBoolean & operator=(const BRepAlgo_DataMapOfShapeBoolean &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Boolean &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const Standard_Boolean & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Standard_Boolean & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetChangeFind(const TopoDS_Shape K) {
+				return (Standard_Boolean) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Boolean value ,const TopoDS_Shape K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Boolean & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepAlgo_DataMapOfShapeBoolean::~BRepAlgo_DataMapOfShapeBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_DataMapOfShapeBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1018,6 +644,112 @@ def __del__(self):
 %}
 
 %extend BRepAlgo_NormalProjection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_AsDes;
+class BRepAlgo_AsDes : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_AsDes();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape S, const TopoDS_Shape SS);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape S, const TopTools_ListOfShape &SS);
+		%feature("autodoc", "1");
+		Standard_Boolean HasAscendant(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasDescendant(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Ascendant(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Descendant(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		TopTools_ListOfShape & ChangeDescendant(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Replace(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
+		%feature("autodoc", "1");
+		void Remove(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		Standard_Boolean HasCommonDescendant(const TopoDS_Shape S1, const TopoDS_Shape S2, TopTools_ListOfShape & LC) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepAlgo_AsDes {
+	Handle_BRepAlgo_AsDes GetHandle() {
+	return *(Handle_BRepAlgo_AsDes*) &$self;
+	}
+};
+%extend BRepAlgo_AsDes {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepAlgo_AsDes::~BRepAlgo_AsDes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_AsDes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
+class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean(const TopoDS_Shape K, const Standard_Boolean &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Boolean GetValue() {
+				return (Standard_Boolean) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Boolean value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean GetHandle() {
+	return *(Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean*) &$self;
+	}
+};
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1148,6 +880,118 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepAlgo_Image;
+class BRepAlgo_Image {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_Image();
+		%feature("autodoc", "1");
+		void SetRoot(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		void Bind(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
+		%feature("autodoc", "1");
+		void Bind(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape OldS, const TopoDS_Shape NewS);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Shape OldS, const TopTools_ListOfShape &NewS);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Remove(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Roots() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsImage(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  ImageFrom(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Root(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasImage(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Image(const TopoDS_Shape S) const;
+		%feature("autodoc", "1");
+		void LastImage(const TopoDS_Shape S, TopTools_ListOfShape & L) const;
+		%feature("autodoc", "1");
+		void Compact();
+		%feature("autodoc", "1");
+		void Filter(const TopoDS_Shape S, const TopAbs_ShapeEnum ShapeType);
+
+};
+%feature("shadow") BRepAlgo_Image::~BRepAlgo_Image %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_Image {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_BooleanOperations;
+class BRepAlgo_BooleanOperations {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_BooleanOperations();
+		%feature("autodoc", "1");
+		void Shapes2d(const TopoDS_Shape S1, const TopoDS_Shape S2);
+		%feature("autodoc", "1");
+		void Shapes(const TopoDS_Shape S1, const TopoDS_Shape S2);
+		%feature("autodoc", "1");
+		void SetApproxParameters(const Standard_Integer NbPntMax, const Standard_Real Tol3D, const Standard_Real Tol2D, const Standard_Boolean RelativeTol);
+		%feature("autodoc", "1");
+		void Define(const TopoDS_Shape S1, const TopoDS_Shape S2, Handle_TopOpeBRepDS_HDataStructure & HDS);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Common();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Fus();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Cut();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Section();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  ShapeFrom(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Modified(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDeleted(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_HDataStructure & DataStructure() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_HDataStructure & ChangeDataStructure();
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepBuild_HBuilder & Builder() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_HBuilder & ChangeBuilder();
+		%feature("autodoc", "1");
+		BRepAlgo_DSAccess & DataStructureAccess();
+
+};
+%feature("shadow") BRepAlgo_BooleanOperations::~BRepAlgo_BooleanOperations %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_BooleanOperations {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepAlgo_Section;
 class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	public:
@@ -1207,14 +1051,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepAlgo_Fuse;
-class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
+%nodefaultctor BRepAlgo_FaceRestrictor;
+class BRepAlgo_FaceRestrictor {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgo_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2);
+		BRepAlgo_FaceRestrictor();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face F, const Standard_Boolean Proj=0, const Standard_Boolean ControlOrientation=0);
+		%feature("autodoc", "1");
+		void Add(TopoDS_Wire & W);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopoDS_Face Current() const;
 
 };
-%feature("shadow") BRepAlgo_Fuse::~BRepAlgo_Fuse %{
+%feature("shadow") BRepAlgo_FaceRestrictor::~BRepAlgo_FaceRestrictor %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1223,7 +1083,56 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepAlgo_Fuse {
+%extend BRepAlgo_FaceRestrictor {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_DataMapOfShapeInterference;
+class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeInterference(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeInterference & Assign(const BRepAlgo_DataMapOfShapeInterference &Other);
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapOfShapeInterference & operator=(const BRepAlgo_DataMapOfShapeInterference &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const Handle_TopOpeBRepDS_Interference &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_Interference & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepAlgo_DataMapOfShapeInterference::~BRepAlgo_DataMapOfShapeInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_DataMapOfShapeInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1295,6 +1204,60 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
+class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean();
+		%feature("autodoc", "1");
+		BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean(const BRepAlgo_DataMapOfShapeBoolean &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepAlgo_DataMapOfShapeBoolean &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const Standard_Boolean & Value() const;
+
+};
+%feature("shadow") BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean::~BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_Fuse;
+class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2);
+
+};
+%feature("shadow") BRepAlgo_Fuse::~BRepAlgo_Fuse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_Fuse {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepAlgo_Cut;
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	public:
@@ -1312,6 +1275,43 @@ def __del__(self):
 %}
 
 %extend BRepAlgo_Cut {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
+class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger(const TColStd_SequenceOfInteger &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		TColStd_SequenceOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger GetHandle() {
+	return *(Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger*) &$self;
+	}
+};
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

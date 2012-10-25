@@ -23,12 +23,12 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::DownCast;
 %rename(DownCast) Handle_BRepAlgo_AsDes::DownCast;
-%rename(DownCast) Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::DownCast;
-%rename(DownCast) Handle_BRepAlgo_EdgeConnector::DownCast;
 %rename(DownCast) Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::DownCast;
+%rename(DownCast) Handle_BRepAlgo_EdgeConnector::DownCast;
+%rename(DownCast) Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::DownCast;
+%rename(DownCast) Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::DownCast;
+%rename(Deboucle3D) BRepAlgo_Tool::Deboucle3D;
 %rename(ConcatenateWire) BRepAlgo::ConcatenateWire;
 %rename(IsValid) BRepAlgo::IsValid;
 %rename(IsTopologicallyValid) BRepAlgo::IsTopologicallyValid;
-%rename(Deboucle3D) BRepAlgo_Tool::Deboucle3D;

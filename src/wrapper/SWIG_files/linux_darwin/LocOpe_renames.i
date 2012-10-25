@@ -23,14 +23,14 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_LocOpe_ProjectedWires::DownCast;
 %rename(DownCast) Handle_LocOpe_HBuilder::DownCast;
+%rename(DownCast) Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt::DownCast;
+%rename(DownCast) Handle_LocOpe_SequenceNodeOfSequenceOfPntFace::DownCast;
 %rename(DownCast) Handle_LocOpe_GeneratedShape::DownCast;
 %rename(DownCast) Handle_LocOpe_GluedShape::DownCast;
 %rename(DownCast) Handle_LocOpe_SequenceNodeOfSequenceOfLin::DownCast;
-%rename(DownCast) Handle_LocOpe_ProjectedWires::DownCast;
-%rename(DownCast) Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt::DownCast;
 %rename(DownCast) Handle_LocOpe_WiresOnShape::DownCast;
-%rename(DownCast) Handle_LocOpe_SequenceNodeOfSequenceOfPntFace::DownCast;
 %rename(DownCast) Handle_LocOpe_SequenceNodeOfSequenceOfCirc::DownCast;
 %rename(Closed) LocOpe::Closed;
 %rename(TgtFaces) LocOpe::TgtFaces;

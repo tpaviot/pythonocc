@@ -554,14 +554,14 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<ShapeBuild.hxx>
 #include<Handle_Geom_Plane.hxx>
-#include<TopoDS_Vertex.hxx>
-#include<gp_Pnt.hxx>
 #include<TopoDS_Shape.hxx>
 #include<TopoDS_Edge.hxx>
+#include<TopoDS_Vertex.hxx>
 #include<TopoDS_Face.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<TopLoc_Location.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<gp_Trsf2d.hxx>
 #include<Handle_Geom_Curve.hxx>
+#include<gp_Pnt.hxx>
 %}

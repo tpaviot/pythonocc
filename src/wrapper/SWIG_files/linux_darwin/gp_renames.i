@@ -24,7 +24,6 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_gp_VectorWithNullMagnitude::DownCast;
-%rename(Interpolate) gp_QuaternionNLerp::Interpolate;
 %rename(Resolution) gp::Resolution;
 %rename(Origin) gp::Origin;
 %rename(DX) gp::DX;
@@ -41,3 +40,4 @@ $HeaderURL$
 %rename(DY2d) gp::DY2d;
 %rename(OX2d) gp::OX2d;
 %rename(OY2d) gp::OY2d;
+%rename(Interpolate) gp_QuaternionNLerp::Interpolate;

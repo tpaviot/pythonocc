@@ -136,5 +136,5 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import Standard.i
 %import PMMgt.i
+%import Standard.i

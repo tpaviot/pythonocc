@@ -770,8 +770,6 @@ $HeaderURL$
 #include <StdSelect_TypeOfEdge.hxx>
 #include <StdSelect_TypeOfFace.hxx>
 #include <StdSelect_TypeOfResult.hxx>
-#include <StdSelect_ViewerSelector2d.hxx>
-#include <StdSelect_ViewerSelector3d.hxx>
 #include <TopAbs_Orientation.hxx>
 #include <TopAbs_ShapeEnum.hxx>
 #include <TopAbs_State.hxx>
@@ -779,8 +777,8 @@ $HeaderURL$
 
 %import SelectMgr.i
 %import TCollection.i
-%import MMgt.i
 %import Prs3d.i
+%import MMgt.i
 %import Aspect.i
 %import Quantity.i
 %import Standard.i

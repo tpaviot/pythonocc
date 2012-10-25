@@ -28,11 +28,11 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import SelectBasics
-import TopAbs
-import Select3D
 import TopoDS
+import SelectBasics
 import Prs3d
 import Graphic3d
+import TopAbs
+import Select3D
 import TCollection
 };

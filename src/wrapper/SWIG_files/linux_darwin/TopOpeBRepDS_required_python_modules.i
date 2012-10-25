@@ -29,11 +29,11 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import TopAbs
-import Geom
-import TopoDS
-import TopTools
-import TCollection
 import Geom2d
+import TopTools
+import TopoDS
+import TCollection
 import gp
 import TopOpeBRepTool
+import Geom
 };

@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
-class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMPrsStd_AISPresentationDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMPrsStd_AISPresentationDriver {
-	XmlMPrsStd_AISPresentationDriver* GetObject() {
-	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMPrsStd_AISPresentationDriver::~Handle_XmlMPrsStd_AISPresentationDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMPrsStd_AISPresentationDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMPrsStd_PositionDriver;
 class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMPrsStd_PositionDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMPrsStd_AISPresentationDriver;
+class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver(const XmlMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const Handle_XmlMPrsStd_AISPresentationDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMPrsStd_AISPresentationDriver & operator=(const XmlMPrsStd_AISPresentationDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMPrsStd_AISPresentationDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
+	XmlMPrsStd_AISPresentationDriver* GetObject() {
+	return (XmlMPrsStd_AISPresentationDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMPrsStd_AISPresentationDriver::~Handle_XmlMPrsStd_AISPresentationDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMPrsStd_AISPresentationDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -175,7 +175,7 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_AISPresentationDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMPrsStd_AISPresentationDriver::~XmlMPrsStd_AISPresentationDriver %{
@@ -216,7 +216,7 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_PositionDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMPrsStd_PositionDriver::~XmlMPrsStd_PositionDriver %{

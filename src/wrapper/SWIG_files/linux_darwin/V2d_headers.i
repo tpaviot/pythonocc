@@ -59,7 +59,11 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<V2d.hxx>
 #include<Handle_Graphic2d_GraphicObject.hxx>
+#include<Handle_Aspect_WindowDriver.hxx>
+#include<Handle_Graphic2d_DisplayList.hxx>
+#include<Handle_PlotMgt_PlotterDriver.hxx>
 #include<Handle_Graphic2d_View.hxx>
+#include<Quantity_Color.hxx>
 #include<Handle_Aspect_GenericColorMap.hxx>
 #include<Handle_Aspect_TypeMap.hxx>
 #include<Handle_Aspect_WidthMap.hxx>
@@ -67,8 +71,4 @@ $HeaderURL$
 #include<Handle_Aspect_MarkMap.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
 #include<Handle_Aspect_ColorMap.hxx>
-#include<Quantity_Color.hxx>
-#include<Handle_Aspect_WindowDriver.hxx>
-#include<Handle_Graphic2d_DisplayList.hxx>
-#include<Handle_PlotMgt_PlotterDriver.hxx>
 %}

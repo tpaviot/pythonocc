@@ -151,7 +151,7 @@ $HeaderURL$
 #include <Standard_math.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
-%import GeomAbs.i
+%import MMgt.i
 %import Standard.i
+%import GeomAbs.i

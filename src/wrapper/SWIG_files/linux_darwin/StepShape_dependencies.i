@@ -540,8 +540,8 @@ $HeaderURL$
 #include <StepRepr_ValueRange.hxx>
 %};
 
-%import StepGeom.i
 %import StepRepr.i
 %import MMgt.i
+%import StepGeom.i
 %import Standard.i
 %import StepData.i

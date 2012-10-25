@@ -166,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NLPlate_StackNodeOfStackOfPlate;
-class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode {
+%nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
+class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCollection_SeqNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_NLPlate_StackNodeOfStackOfPlate();
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint();
 		%feature("autodoc", "1");
-		Handle_NLPlate_StackNodeOfStackOfPlate(const Handle_NLPlate_StackNodeOfStackOfPlate &aHandle);
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_NLPlate_StackNodeOfStackOfPlate(const NLPlate_StackNodeOfStackOfPlate *anItem);
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
 		%feature("autodoc", "1");
-		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const Handle_NLPlate_StackNodeOfStackOfPlate &aHandle);
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
 		%feature("autodoc", "1");
-		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const NLPlate_StackNodeOfStackOfPlate *anItem);
+		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
 		%feature("autodoc", "1");
-		static		Handle_NLPlate_StackNodeOfStackOfPlate DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_NLPlate_StackNodeOfStackOfPlate {
-	NLPlate_StackNodeOfStackOfPlate* GetObject() {
-	return (NLPlate_StackNodeOfStackOfPlate*)$self->Access();
+%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	NLPlate_SequenceNodeOfSequenceOfHGPPConstraint* GetObject() {
+	return (NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*)$self->Access();
 	}
 };
-%feature("shadow") Handle_NLPlate_StackNodeOfStackOfPlate::~Handle_NLPlate_StackNodeOfStackOfPlate %{
+%feature("shadow") Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -197,7 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NLPlate_StackNodeOfStackOfPlate {
+%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -394,29 +394,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
-class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCollection_SeqNode {
+%nodefaultctor Handle_NLPlate_StackNodeOfStackOfPlate;
+class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint();
+		Handle_NLPlate_StackNodeOfStackOfPlate();
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		Handle_NLPlate_StackNodeOfStackOfPlate(const Handle_NLPlate_StackNodeOfStackOfPlate &aHandle);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		Handle_NLPlate_StackNodeOfStackOfPlate(const NLPlate_StackNodeOfStackOfPlate *anItem);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint &aHandle);
+		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const Handle_NLPlate_StackNodeOfStackOfPlate &aHandle);
 		%feature("autodoc", "1");
-		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint & operator=(const NLPlate_SequenceNodeOfSequenceOfHGPPConstraint *anItem);
+		Handle_NLPlate_StackNodeOfStackOfPlate & operator=(const NLPlate_StackNodeOfStackOfPlate *anItem);
 		%feature("autodoc", "1");
-		static		Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_NLPlate_StackNodeOfStackOfPlate DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	NLPlate_SequenceNodeOfSequenceOfHGPPConstraint* GetObject() {
-	return (NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*)$self->Access();
+%extend Handle_NLPlate_StackNodeOfStackOfPlate {
+	NLPlate_StackNodeOfStackOfPlate* GetObject() {
+	return (NLPlate_StackNodeOfStackOfPlate*)$self->Access();
 	}
 };
-%feature("shadow") Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
+%feature("shadow") Handle_NLPlate_StackNodeOfStackOfPlate::~Handle_NLPlate_StackNodeOfStackOfPlate %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -425,185 +425,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_HGPPConstraint;
-class NLPlate_HGPPConstraint : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void SetUVFreeSliding(const Standard_Boolean UVFree);
-		%feature("autodoc", "1");
-		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
-		%feature("autodoc", "1");
-		virtual		void SetActiveOrder(const Standard_Integer ActiveOrder);
-		%feature("autodoc", "1");
-		virtual		void SetUV(const gp_XY UV);
-		%feature("autodoc", "1");
-		virtual		void SetOrientation(const Standard_Integer Orient=0);
-		%feature("autodoc", "1");
-		virtual		void SetG0Criterion(const Standard_Real TolDist);
-		%feature("autodoc", "1");
-		virtual		void SetG1Criterion(const Standard_Real TolAng);
-		%feature("autodoc", "1");
-		virtual		void SetG2Criterion(const Standard_Real TolCurv);
-		%feature("autodoc", "1");
-		virtual		void SetG3Criterion(const Standard_Real TolG3);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean UVFreeSliding() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IncrementalLoadAllowed() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer ActiveOrder() const;
-		%feature("autodoc", "1");
-		virtual		const gp_XY  UV() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Orientation();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsG0() const;
-		%feature("autodoc", "1");
-		virtual		const gp_XYZ  G0Target() const;
-		%feature("autodoc", "1");
-		virtual		const Plate_D1 & G1Target() const;
-		%feature("autodoc", "1");
-		virtual		const Plate_D2 & G2Target() const;
-		%feature("autodoc", "1");
-		virtual		const Plate_D3 & G3Target() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real G0Criterion() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real G1Criterion() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real G2Criterion() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real G3Criterion() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NLPlate_HGPPConstraint {
-	Handle_NLPlate_HGPPConstraint GetHandle() {
-	return *(Handle_NLPlate_HGPPConstraint*) &$self;
-	}
-};
-%extend NLPlate_HGPPConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_HGPPConstraint::~NLPlate_HGPPConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_HGPPConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG1Constraint;
-class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG1Constraint(const gp_XY UV, const Plate_D1 &D1T);
-
-};
-%extend NLPlate_HPG1Constraint {
-	Handle_NLPlate_HPG1Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG1Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG1Constraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_HPG1Constraint::~NLPlate_HPG1Constraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_HPG1Constraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG2Constraint;
-class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG2Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
-
-};
-%extend NLPlate_HPG2Constraint {
-	Handle_NLPlate_HPG2Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG2Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG2Constraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_HPG2Constraint::~NLPlate_HPG2Constraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_HPG2Constraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG3Constraint;
-class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG3Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
-
-};
-%extend NLPlate_HPG3Constraint {
-	Handle_NLPlate_HPG3Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG3Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG3Constraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_HPG3Constraint::~NLPlate_HPG3Constraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_HPG3Constraint {
+%extend Handle_NLPlate_StackNodeOfStackOfPlate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -675,15 +497,27 @@ def __del__(self):
 };
 
 
-%nodefaultctor NLPlate_HPG0Constraint;
-class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
+%nodefaultctor NLPlate_HGPPConstraint;
+class NLPlate_HGPPConstraint : public MMgt_TShared {
 	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG0Constraint(const gp_XY UV, const gp_XYZ Value);
 		%feature("autodoc", "1");
 		virtual		void SetUVFreeSliding(const Standard_Boolean UVFree);
 		%feature("autodoc", "1");
 		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
+		%feature("autodoc", "1");
+		virtual		void SetActiveOrder(const Standard_Integer ActiveOrder);
+		%feature("autodoc", "1");
+		virtual		void SetUV(const gp_XY UV);
+		%feature("autodoc", "1");
+		virtual		void SetOrientation(const Standard_Integer Orient=0);
+		%feature("autodoc", "1");
+		virtual		void SetG0Criterion(const Standard_Real TolDist);
+		%feature("autodoc", "1");
+		virtual		void SetG1Criterion(const Standard_Real TolAng);
+		%feature("autodoc", "1");
+		virtual		void SetG2Criterion(const Standard_Real TolCurv);
+		%feature("autodoc", "1");
+		virtual		void SetG3Criterion(const Standard_Real TolG3);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean UVFreeSliding() const;
 		%feature("autodoc", "1");
@@ -691,11 +525,62 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer ActiveOrder() const;
 		%feature("autodoc", "1");
+		virtual		const gp_XY  UV() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Orientation();
+		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsG0() const;
 		%feature("autodoc", "1");
 		virtual		const gp_XYZ  G0Target() const;
 		%feature("autodoc", "1");
+		virtual		const Plate_D1 & G1Target() const;
+		%feature("autodoc", "1");
+		virtual		const Plate_D2 & G2Target() const;
+		%feature("autodoc", "1");
+		virtual		const Plate_D3 & G3Target() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real G0Criterion() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real G1Criterion() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real G2Criterion() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real G3Criterion() const;
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_HGPPConstraint {
+	Handle_NLPlate_HGPPConstraint GetHandle() {
+	return *(Handle_NLPlate_HGPPConstraint*) &$self;
+	}
+};
+%extend NLPlate_HGPPConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_HGPPConstraint::~NLPlate_HGPPConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_HGPPConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG0Constraint;
+class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG0Constraint(const gp_XY UV, const gp_XYZ Value);
 
 };
 %extend NLPlate_HPG0Constraint {
@@ -705,7 +590,7 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 };
 %extend NLPlate_HPG0Constraint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0Constraint::~NLPlate_HPG0Constraint %{
@@ -729,12 +614,6 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	public:
 		%feature("autodoc", "1");
 		NLPlate_HPG0G1Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T);
-		%feature("autodoc", "1");
-		virtual		void SetOrientation(const Standard_Integer Orient=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Orientation();
-		%feature("autodoc", "1");
-		virtual		const Plate_D1 & G1Target() const;
 
 };
 %extend NLPlate_HPG0G1Constraint {
@@ -744,7 +623,7 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 };
 %extend NLPlate_HPG0G1Constraint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0G1Constraint::~NLPlate_HPG0G1Constraint %{
@@ -768,8 +647,6 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
 		%feature("autodoc", "1");
 		NLPlate_HPG0G2Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T, const Plate_D2 &D2T);
-		%feature("autodoc", "1");
-		virtual		const Plate_D2 & G2Target() const;
 
 };
 %extend NLPlate_HPG0G2Constraint {
@@ -779,7 +656,7 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 };
 %extend NLPlate_HPG0G2Constraint {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NLPlate_HPG0G2Constraint::~NLPlate_HPG0G2Constraint %{
@@ -798,28 +675,32 @@ def __del__(self):
 };
 
 
-%nodefaultctor NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
-class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNode {
+%nodefaultctor NLPlate_StackOfPlate;
+class NLPlate_StackOfPlate {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_HGPPConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		NLPlate_StackOfPlate();
 		%feature("autodoc", "1");
-		Handle_NLPlate_HGPPConstraint & Value() const;
+		const NLPlate_StackOfPlate & Assign(const NLPlate_StackOfPlate &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		const NLPlate_StackOfPlate & operator=(const NLPlate_StackOfPlate &Other);
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Depth() const;
+		%feature("autodoc", "1");
+		const Plate_Plate & Top() const;
+		%feature("autodoc", "1");
+		void Push(const Plate_Plate &I);
+		%feature("autodoc", "1");
+		void Pop();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Plate_Plate & ChangeTop();
 
 };
-%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint GetHandle() {
-	return *(Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*) &$self;
-	}
-};
-%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
+%feature("shadow") NLPlate_StackOfPlate::~NLPlate_StackOfPlate %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -828,83 +709,7 @@ def __del__(self):
 		pass
 %}
 
-%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_HPG0G3Constraint;
-class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_HPG0G3Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer ActiveOrder() const;
-		%feature("autodoc", "1");
-		virtual		const Plate_D3 & G3Target() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NLPlate_HPG0G3Constraint {
-	Handle_NLPlate_HPG0G3Constraint GetHandle() {
-	return *(Handle_NLPlate_HPG0G3Constraint*) &$self;
-	}
-};
-%extend NLPlate_HPG0G3Constraint {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_HPG0G3Constraint::~NLPlate_HPG0G3Constraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_HPG0G3Constraint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NLPlate_StackNodeOfStackOfPlate;
-class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		NLPlate_StackNodeOfStackOfPlate(const Plate_Plate &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Plate_Plate & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NLPlate_StackNodeOfStackOfPlate {
-	Handle_NLPlate_StackNodeOfStackOfPlate GetHandle() {
-	return *(Handle_NLPlate_StackNodeOfStackOfPlate*) &$self;
-	}
-};
-%extend NLPlate_StackNodeOfStackOfPlate {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") NLPlate_StackNodeOfStackOfPlate::~NLPlate_StackNodeOfStackOfPlate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NLPlate_StackNodeOfStackOfPlate {
+%extend NLPlate_StackOfPlate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -958,32 +763,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor NLPlate_StackOfPlate;
-class NLPlate_StackOfPlate {
+%nodefaultctor NLPlate_HPG1Constraint;
+class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	public:
 		%feature("autodoc", "1");
-		NLPlate_StackOfPlate();
+		NLPlate_HPG1Constraint(const gp_XY UV, const Plate_D1 &D1T);
 		%feature("autodoc", "1");
-		const NLPlate_StackOfPlate & Assign(const NLPlate_StackOfPlate &Other);
+		virtual		void SetIncrementalLoadAllowed(const Standard_Boolean ILA);
 		%feature("autodoc", "1");
-		const NLPlate_StackOfPlate & operator=(const NLPlate_StackOfPlate &Other);
+		virtual		void SetOrientation(const Standard_Integer Orient=0);
 		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
+		virtual		Standard_Boolean IncrementalLoadAllowed() const;
 		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
+		virtual		Standard_Integer ActiveOrder() const;
 		%feature("autodoc", "1");
-		const Plate_Plate & Top() const;
+		virtual		Standard_Boolean IsG0() const;
 		%feature("autodoc", "1");
-		void Push(const Plate_Plate &I);
+		virtual		Standard_Integer Orientation();
 		%feature("autodoc", "1");
-		void Pop();
+		virtual		const Plate_D1 & G1Target() const;
 		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Plate_Plate & ChangeTop();
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") NLPlate_StackOfPlate::~NLPlate_StackOfPlate %{
+%extend NLPlate_HPG1Constraint {
+	Handle_NLPlate_HPG1Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG1Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG1Constraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_HPG1Constraint::~NLPlate_HPG1Constraint %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -992,7 +805,194 @@ def __del__(self):
 		pass
 %}
 
-%extend NLPlate_StackOfPlate {
+%extend NLPlate_HPG1Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG2Constraint;
+class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG2Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T);
+		%feature("autodoc", "1");
+		virtual		const Plate_D2 & G2Target() const;
+
+};
+%extend NLPlate_HPG2Constraint {
+	Handle_NLPlate_HPG2Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG2Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG2Constraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_HPG2Constraint::~NLPlate_HPG2Constraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_HPG2Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG3Constraint;
+class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG3Constraint(const gp_XY UV, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer ActiveOrder() const;
+		%feature("autodoc", "1");
+		virtual		const Plate_D3 & G3Target() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_HPG3Constraint {
+	Handle_NLPlate_HPG3Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG3Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG3Constraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_HPG3Constraint::~NLPlate_HPG3Constraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_HPG3Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
+class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_SequenceNodeOfSequenceOfHGPPConstraint(const Handle_NLPlate_HGPPConstraint &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Handle_NLPlate_HGPPConstraint & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint GetHandle() {
+	return *(Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint*) &$self;
+	}
+};
+%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_SequenceNodeOfSequenceOfHGPPConstraint::~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_HPG0G3Constraint;
+class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_HPG0G3Constraint(const gp_XY UV, const gp_XYZ Value, const Plate_D1 &D1T, const Plate_D2 &D2T, const Plate_D3 &D3T);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer ActiveOrder() const;
+		%feature("autodoc", "1");
+		virtual		const Plate_D3 & G3Target() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_HPG0G3Constraint {
+	Handle_NLPlate_HPG0G3Constraint GetHandle() {
+	return *(Handle_NLPlate_HPG0G3Constraint*) &$self;
+	}
+};
+%extend NLPlate_HPG0G3Constraint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_HPG0G3Constraint::~NLPlate_HPG0G3Constraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_HPG0G3Constraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NLPlate_StackNodeOfStackOfPlate;
+class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NLPlate_StackNodeOfStackOfPlate(const Plate_Plate &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Plate_Plate & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
+	Handle_NLPlate_StackNodeOfStackOfPlate GetHandle() {
+	return *(Handle_NLPlate_StackNodeOfStackOfPlate*) &$self;
+	}
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NLPlate_StackNodeOfStackOfPlate::~NLPlate_StackNodeOfStackOfPlate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NLPlate_StackNodeOfStackOfPlate {
 	void _kill_pointed() {
 		delete $self;
 	}

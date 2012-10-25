@@ -63,33 +63,6 @@ enum BSplCLib_MultDistribution {
 
 
 
-%nodefaultctor BSplCLib_EvaluatorFunction;
-class BSplCLib_EvaluatorFunction {
-	public:
-		%feature("autodoc","Evaluate(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
-
-		virtual		void Evaluate(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","operator()(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
-
-		void operator()(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
-
-};
-%feature("shadow") BSplCLib_EvaluatorFunction::~BSplCLib_EvaluatorFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BSplCLib_EvaluatorFunction {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BSplCLib;
 class BSplCLib {
 	public:
@@ -454,6 +427,33 @@ def __del__(self):
 %}
 
 %extend BSplCLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BSplCLib_EvaluatorFunction;
+class BSplCLib_EvaluatorFunction {
+	public:
+		%feature("autodoc","Evaluate(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
+
+		virtual		void Evaluate(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","operator()(Standard_Integer theDerivativeRequest, const theStartEnd, Standard_Real theParameter) -> [Standard_Real, Standard_Integer]");
+
+		void operator()(const Standard_Integer theDerivativeRequest, const Standard_Real *theStartEnd, const Standard_Real theParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+
+};
+%feature("shadow") BSplCLib_EvaluatorFunction::~BSplCLib_EvaluatorFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BSplCLib_EvaluatorFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

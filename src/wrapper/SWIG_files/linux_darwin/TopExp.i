@@ -91,45 +91,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopExp;
-class TopExp {
-	public:
-		%feature("autodoc", "1");
-		TopExp();
-		%feature("autodoc", "1");
-		static		void MapShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
-		%feature("autodoc", "1");
-		static		void MapShapes(const TopoDS_Shape S, TopTools_IndexedMapOfShape & M);
-		%feature("autodoc", "1");
-		static		void MapShapesAndAncestors(const TopoDS_Shape S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
-		%feature("autodoc", "1");
-		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		static		TopoDS_Vertex LastVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		static		void Vertices(const TopoDS_Edge E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
-		%feature("autodoc", "1");
-		static		void Vertices(const TopoDS_Wire W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
-		%feature("autodoc", "1");
-		static		Standard_Boolean CommonVertex(const TopoDS_Edge E1, const TopoDS_Edge E2, TopoDS_Vertex & V);
-
-};
-%feature("shadow") TopExp::~TopExp %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopExp {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
 class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	public:
@@ -148,7 +109,7 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 };
 %extend TopExp_StackNodeOfStackOfIterator {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopExp_StackNodeOfStackOfIterator::~TopExp_StackNodeOfStackOfIterator %{
@@ -161,6 +122,39 @@ def __del__(self):
 %}
 
 %extend TopExp_StackNodeOfStackOfIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopExp_StackIteratorOfStackOfIterator;
+class TopExp_StackIteratorOfStackOfIterator {
+	public:
+		%feature("autodoc", "1");
+		TopExp_StackIteratorOfStackOfIterator();
+		%feature("autodoc", "1");
+		TopExp_StackIteratorOfStackOfIterator(const TopExp_StackOfIterator &S);
+		%feature("autodoc", "1");
+		void Initialize(const TopExp_StackOfIterator &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const TopoDS_Iterator  Value() const;
+
+};
+%feature("shadow") TopExp_StackIteratorOfStackOfIterator::~TopExp_StackIteratorOfStackOfIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopExp_StackIteratorOfStackOfIterator {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -249,24 +243,30 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopExp_StackIteratorOfStackOfIterator;
-class TopExp_StackIteratorOfStackOfIterator {
+%nodefaultctor TopExp;
+class TopExp {
 	public:
 		%feature("autodoc", "1");
-		TopExp_StackIteratorOfStackOfIterator();
+		TopExp();
 		%feature("autodoc", "1");
-		TopExp_StackIteratorOfStackOfIterator(const TopExp_StackOfIterator &S);
+		static		void MapShapes(const TopoDS_Shape S, const TopAbs_ShapeEnum T, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
-		void Initialize(const TopExp_StackOfIterator &S);
+		static		void MapShapes(const TopoDS_Shape S, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		static		void MapShapesAndAncestors(const TopoDS_Shape S, const TopAbs_ShapeEnum TS, const TopAbs_ShapeEnum TA, TopTools_IndexedDataMapOfShapeListOfShape & M);
 		%feature("autodoc", "1");
-		void Next();
+		static		TopoDS_Vertex FirstVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
 		%feature("autodoc", "1");
-		const TopoDS_Iterator  Value() const;
+		static		TopoDS_Vertex LastVertex(const TopoDS_Edge E, const Standard_Boolean CumOri=0);
+		%feature("autodoc", "1");
+		static		void Vertices(const TopoDS_Edge E, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast, const Standard_Boolean CumOri=0);
+		%feature("autodoc", "1");
+		static		void Vertices(const TopoDS_Wire W, TopoDS_Vertex & Vfirst, TopoDS_Vertex & Vlast);
+		%feature("autodoc", "1");
+		static		Standard_Boolean CommonVertex(const TopoDS_Edge E1, const TopoDS_Edge E2, TopoDS_Vertex & V);
 
 };
-%feature("shadow") TopExp_StackIteratorOfStackOfIterator::~TopExp_StackIteratorOfStackOfIterator %{
+%feature("shadow") TopExp::~TopExp %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -275,7 +275,7 @@ def __del__(self):
 		pass
 %}
 
-%extend TopExp_StackIteratorOfStackOfIterator {
+%extend TopExp {
 	void _kill_pointed() {
 		delete $self;
 	}

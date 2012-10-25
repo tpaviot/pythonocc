@@ -218,5 +218,5 @@ $HeaderURL$
 %import Adaptor2d.i
 %import Standard.i
 %import GeomAbs.i
-%import math.i
 %import TopAbs.i
+%import math.i

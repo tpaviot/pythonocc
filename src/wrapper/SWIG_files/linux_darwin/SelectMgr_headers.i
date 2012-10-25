@@ -631,8 +631,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_SelectBasics_SensitiveEntity.hxx>
 #include<Handle_SelectBasics_EntityOwner.hxx>
+#include<Handle_SelectBasics_SensitiveEntity.hxx>
 #include<Handle_PrsMgr_PresentationManager3d.hxx>
 #include<Handle_Prs3d_Presentation.hxx>
 #include<Handle_PrsMgr_PresentationManager.hxx>

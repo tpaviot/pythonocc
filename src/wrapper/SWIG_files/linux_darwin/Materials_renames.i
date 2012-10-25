@@ -24,8 +24,8 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_Materials_SequenceNodeOfMtsSequence::DownCast;
-%rename(DownCast) Handle_Materials_MaterialDefinition::DownCast;
 %rename(DownCast) Handle_Materials_FuzzyInstance::DownCast;
+%rename(DownCast) Handle_Materials_MaterialDefinition::DownCast;
 %rename(DownCast) Handle_Materials_Color::DownCast;
 %rename(DownCast) Handle_Materials_Material::DownCast;
 %rename(DownCast) Handle_Materials_MaterialsDictionary::DownCast;

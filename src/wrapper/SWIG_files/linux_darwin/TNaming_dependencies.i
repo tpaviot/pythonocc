@@ -267,7 +267,7 @@ $HeaderURL$
 %};
 
 %import TDF.i
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
 %import TopAbs.i

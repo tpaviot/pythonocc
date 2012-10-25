@@ -588,8 +588,8 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import Aspect.i
 %import Standard.i
+%import Aspect.i
 %import TCollection.i
 %import Xw.i
 %import Quantity.i

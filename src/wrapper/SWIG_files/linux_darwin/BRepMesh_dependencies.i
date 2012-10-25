@@ -216,8 +216,8 @@ $HeaderURL$
 %};
 
 %import TCollection.i
-%import Standard.i
 %import MMgt.i
+%import Standard.i
 %import NCollection.i
 %import TopAbs.i
 %import GeomAbs.i

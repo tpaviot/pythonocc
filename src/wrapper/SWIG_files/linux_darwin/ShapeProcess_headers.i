@@ -450,10 +450,10 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<ShapeProcess.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_BRepTools_Modification.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
+#include<ShapeProcess.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<Handle_Message_Messenger.hxx>

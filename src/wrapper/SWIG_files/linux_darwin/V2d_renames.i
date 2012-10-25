@@ -24,12 +24,12 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_V2d_BackgroundGraphicObject::DownCast;
-%rename(DownCast) Handle_V2d_RectangularGraphicGrid::DownCast;
-%rename(DownCast) Handle_V2d_View::DownCast;
-%rename(DownCast) Handle_V2d_Viewer::DownCast;
-%rename(DownCast) Handle_V2d_RectangularGrid::DownCast;
 %rename(DownCast) Handle_V2d_CircularGraphicGrid::DownCast;
 %rename(DownCast) Handle_V2d_CircularGrid::DownCast;
+%rename(DownCast) Handle_V2d_RectangularGrid::DownCast;
+%rename(DownCast) Handle_V2d_View::DownCast;
+%rename(DownCast) Handle_V2d_Viewer::DownCast;
+%rename(DownCast) Handle_V2d_RectangularGraphicGrid::DownCast;
 %rename(Draw) V2d::Draw;
 %rename(ColorMap) V2d_DefaultMap::ColorMap;
 %rename(TypeMap) V2d_DefaultMap::TypeMap;

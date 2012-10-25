@@ -23,34 +23,27 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_IntTools_ListNodeOfListOfSurfaceRangeSample::DownCast;
-%rename(DownCast) Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox::DownCast;
-%rename(DownCast) Handle_IntTools_StdMapNodeOfMapOfSurfaceSample::DownCast;
 %rename(DownCast) Handle_IntTools_TopolTool::DownCast;
-%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts::DownCast;
-%rename(DownCast) Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox::DownCast;
-%rename(DownCast) Handle_IntTools_ListNodeOfListOfCurveRangeSample::DownCast;
+%rename(DownCast) Handle_IntTools_ListNodeOfListOfSurfaceRangeSample::DownCast;
 %rename(DownCast) Handle_IntTools_StdMapNodeOfMapOfCurveSample::DownCast;
-%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfRoots::DownCast;
-%rename(DownCast) Handle_IntTools_Context::DownCast;
-%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfCurves::DownCast;
 %rename(DownCast) Handle_IntTools_ListNodeOfListOfBox::DownCast;
 %rename(DownCast) Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress::DownCast;
+%rename(DownCast) Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox::DownCast;
 %rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfRanges::DownCast;
+%rename(DownCast) Handle_IntTools_ListNodeOfListOfCurveRangeSample::DownCast;
+%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfCurves::DownCast;
+%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts::DownCast;
+%rename(DownCast) Handle_IntTools_StdMapNodeOfMapOfSurfaceSample::DownCast;
+%rename(DownCast) Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox::DownCast;
+%rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfRoots::DownCast;
+%rename(DownCast) Handle_IntTools_Context::DownCast;
 %rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces::DownCast;
 %rename(HashCode) IntTools_SurfaceRangeSampleMapHasher::HashCode;
 %rename(IsEqual) IntTools_SurfaceRangeSampleMapHasher::IsEqual;
-%rename(Sort) IntTools_QuickSort::Sort;
-%rename(IsEqDistance) IntTools_EdgeFace::IsEqDistance;
-%rename(Length) IntTools::Length;
-%rename(RemoveIdenticalRoots) IntTools::RemoveIdenticalRoots;
-%rename(SortRoots) IntTools::SortRoots;
-%rename(FindRootStates) IntTools::FindRootStates;
-%rename(Parameter) IntTools::Parameter;
-%rename(GetRadius) IntTools::GetRadius;
-%rename(PrepareArgs) IntTools::PrepareArgs;
 %rename(HashCode) IntTools_CurveRangeSampleMapHasher::HashCode;
 %rename(IsEqual) IntTools_CurveRangeSampleMapHasher::IsEqual;
+%rename(IsEqDistance) IntTools_EdgeFace::IsEqDistance;
+%rename(Sort) IntTools_QuickSort::Sort;
 %rename(Sort) IntTools_QuickSortRange::Sort;
 %rename(ComputeVV) IntTools_Tools::ComputeVV;
 %rename(HasInternalEdge) IntTools_Tools::HasInternalEdge;
@@ -64,3 +57,10 @@ $HeaderURL$
 %rename(IsDirsCoinside) IntTools_Tools::IsDirsCoinside;
 %rename(IsClosed) IntTools_Tools::IsClosed;
 %rename(CurveTolerance) IntTools_Tools::CurveTolerance;
+%rename(Length) IntTools::Length;
+%rename(RemoveIdenticalRoots) IntTools::RemoveIdenticalRoots;
+%rename(SortRoots) IntTools::SortRoots;
+%rename(FindRootStates) IntTools::FindRootStates;
+%rename(Parameter) IntTools::Parameter;
+%rename(GetRadius) IntTools::GetRadius;
+%rename(PrepareArgs) IntTools::PrepareArgs;

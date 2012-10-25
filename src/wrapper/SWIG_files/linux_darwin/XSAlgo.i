@@ -134,41 +134,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XSAlgo_ToolContainer;
-class XSAlgo_ToolContainer : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		XSAlgo_ToolContainer();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XSAlgo_ToolContainer {
-	Handle_XSAlgo_ToolContainer GetHandle() {
-	return *(Handle_XSAlgo_ToolContainer*) &$self;
-	}
-};
-%extend XSAlgo_ToolContainer {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XSAlgo_ToolContainer::~XSAlgo_ToolContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XSAlgo_ToolContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XSAlgo;
 class XSAlgo {
 	public:
@@ -192,6 +157,41 @@ def __del__(self):
 %}
 
 %extend XSAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XSAlgo_ToolContainer;
+class XSAlgo_ToolContainer : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		XSAlgo_ToolContainer();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XSAlgo_ToolContainer {
+	Handle_XSAlgo_ToolContainer GetHandle() {
+	return *(Handle_XSAlgo_ToolContainer*) &$self;
+	}
+};
+%extend XSAlgo_ToolContainer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XSAlgo_ToolContainer::~XSAlgo_ToolContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XSAlgo_ToolContainer {
 	void _kill_pointed() {
 		delete $self;
 	}

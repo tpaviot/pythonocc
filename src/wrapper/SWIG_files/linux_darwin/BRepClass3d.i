@@ -222,6 +222,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
+class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter();
+		%feature("autodoc", "1");
+		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const BRepClass3d_MapOfInter &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Key() const;
+		%feature("autodoc", "1");
+		const Standard_Address & Value() const;
+
+};
+%feature("shadow") BRepClass3d_DataMapIteratorOfMapOfInter::~BRepClass3d_DataMapIteratorOfMapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepClass3d_DataMapIteratorOfMapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepClass3d_Intersector3d;
 class BRepClass3d_Intersector3d {
 	public:
@@ -259,37 +290,6 @@ def __del__(self):
 %}
 
 %extend BRepClass3d_Intersector3d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
-class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter();
-		%feature("autodoc", "1");
-		BRepClass3d_DataMapIteratorOfMapOfInter(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepClass3d_MapOfInter &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Key() const;
-		%feature("autodoc", "1");
-		const Standard_Address & Value() const;
-
-};
-%feature("shadow") BRepClass3d_DataMapIteratorOfMapOfInter::~BRepClass3d_DataMapIteratorOfMapOfInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepClass3d_DataMapIteratorOfMapOfInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -351,7 +351,7 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 };
 %extend BRepClass3d_DataMapNodeOfMapOfInter {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepClass3d_DataMapNodeOfMapOfInter::~BRepClass3d_DataMapNodeOfMapOfInter %{

@@ -90,44 +90,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDF_ReferenceDriver;
-class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ReferenceDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ReferenceDriver(const Handle_XmlMDF_ReferenceDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ReferenceDriver(const XmlMDF_ReferenceDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ReferenceDriver & operator=(const Handle_XmlMDF_ReferenceDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDF_ReferenceDriver & operator=(const XmlMDF_ReferenceDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDF_ReferenceDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDF_ReferenceDriver {
-	XmlMDF_ReferenceDriver* GetObject() {
-	return (XmlMDF_ReferenceDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDF_ReferenceDriver::~Handle_XmlMDF_ReferenceDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDF_ReferenceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMDF_TagSourceDriver;
 class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -204,29 +166,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDF_ADriverTable;
-class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
+%nodefaultctor Handle_XmlMDF_ReferenceDriver;
+class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	public:
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable();
+		Handle_XmlMDF_ReferenceDriver();
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable(const Handle_XmlMDF_ADriverTable &aHandle);
+		Handle_XmlMDF_ReferenceDriver(const Handle_XmlMDF_ReferenceDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable(const XmlMDF_ADriverTable *anItem);
+		Handle_XmlMDF_ReferenceDriver(const XmlMDF_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable & operator=(const Handle_XmlMDF_ADriverTable &aHandle);
+		Handle_XmlMDF_ReferenceDriver & operator=(const Handle_XmlMDF_ReferenceDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_XmlMDF_ADriverTable & operator=(const XmlMDF_ADriverTable *anItem);
+		Handle_XmlMDF_ReferenceDriver & operator=(const XmlMDF_ReferenceDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_XmlMDF_ADriverTable DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_XmlMDF_ReferenceDriver DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_XmlMDF_ADriverTable {
-	XmlMDF_ADriverTable* GetObject() {
-	return (XmlMDF_ADriverTable*)$self->Access();
+%extend Handle_XmlMDF_ReferenceDriver {
+	XmlMDF_ReferenceDriver* GetObject() {
+	return (XmlMDF_ReferenceDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_XmlMDF_ADriverTable::~Handle_XmlMDF_ADriverTable %{
+%feature("shadow") Handle_XmlMDF_ReferenceDriver::~Handle_XmlMDF_ReferenceDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -235,7 +197,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_XmlMDF_ADriverTable {
+%extend Handle_XmlMDF_ReferenceDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -280,20 +242,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMDF;
-class XmlMDF {
+%nodefaultctor Handle_XmlMDF_ADriverTable;
+class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		XmlMDF();
+		Handle_XmlMDF_ADriverTable();
 		%feature("autodoc", "1");
-		static		void FromTo(const Handle_TDF_Data &aSource, XmlObjMgt_Element & aTarget, XmlObjMgt_SRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
+		Handle_XmlMDF_ADriverTable(const Handle_XmlMDF_ADriverTable &aHandle);
 		%feature("autodoc", "1");
-		static		Standard_Boolean FromTo(const XmlObjMgt_Element &aSource, Handle_TDF_Data & aTarget, XmlObjMgt_RRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
+		Handle_XmlMDF_ADriverTable(const XmlMDF_ADriverTable *anItem);
 		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+		Handle_XmlMDF_ADriverTable & operator=(const Handle_XmlMDF_ADriverTable &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDF_ADriverTable & operator=(const XmlMDF_ADriverTable *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDF_ADriverTable DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") XmlMDF::~XmlMDF %{
+%extend Handle_XmlMDF_ADriverTable {
+	XmlMDF_ADriverTable* GetObject() {
+	return (XmlMDF_ADriverTable*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDF_ADriverTable::~Handle_XmlMDF_ADriverTable %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -302,7 +273,7 @@ def __del__(self):
 		pass
 %}
 
-%extend XmlMDF {
+%extend Handle_XmlMDF_ADriverTable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -329,7 +300,7 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfTypeADriverMap::~XmlMDF_DataMapNodeOfTypeADriverMap %{
@@ -342,90 +313,6 @@ def __del__(self):
 %}
 
 %extend XmlMDF_DataMapNodeOfTypeADriverMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_ADriver;
-class XmlMDF_ADriver : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer VersionNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Type SourceType() const;
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & TypeName() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &aSource, const Handle_TDF_Attribute &aTarget, XmlObjMgt_RRelocationTable & aRelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &aSource, XmlObjMgt_Persistent & aTarget, XmlObjMgt_SRelocationTable & aRelocTable) const;
-		%feature("autodoc", "1");
-		void WriteMessage(const TCollection_ExtendedString &theMessage) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDF_ADriver {
-	Handle_XmlMDF_ADriver GetHandle() {
-	return *(Handle_XmlMDF_ADriver*) &$self;
-	}
-};
-%extend XmlMDF_ADriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_ADriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_ReferenceDriver;
-class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-
-};
-%extend XmlMDF_ReferenceDriver {
-	Handle_XmlMDF_ReferenceDriver GetHandle() {
-	return *(Handle_XmlMDF_ReferenceDriver*) &$self;
-	}
-};
-%extend XmlMDF_ReferenceDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_ReferenceDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -452,7 +339,7 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 };
 %extend XmlMDF_DataMapNodeOfMapOfDriver {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDF_DataMapNodeOfMapOfDriver::~XmlMDF_DataMapNodeOfMapOfDriver %{
@@ -465,119 +352,6 @@ def __del__(self):
 %}
 
 %extend XmlMDF_DataMapNodeOfMapOfDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_TagSourceDriver;
-class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDF_TagSourceDriver {
-	Handle_XmlMDF_TagSourceDriver GetHandle() {
-	return *(Handle_XmlMDF_TagSourceDriver*) &$self;
-	}
-};
-%extend XmlMDF_TagSourceDriver {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_TagSourceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
-class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_DataMapIteratorOfMapOfDriver();
-		%feature("autodoc", "1");
-		XmlMDF_DataMapIteratorOfMapOfDriver(const XmlMDF_MapOfDriver &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XmlMDF_MapOfDriver &aMap);
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Key() const;
-		%feature("autodoc", "1");
-		const Handle_XmlMDF_ADriver & Value() const;
-
-};
-%feature("shadow") XmlMDF_DataMapIteratorOfMapOfDriver::~XmlMDF_DataMapIteratorOfMapOfDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_DataMapIteratorOfMapOfDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_ADriverTable;
-class XmlMDF_ADriverTable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_ADriverTable();
-		%feature("autodoc", "1");
-		void AddDriver(const Handle_XmlMDF_ADriver &anHDriver);
-		%feature("autodoc", "1");
-		const XmlMDF_TypeADriverMap & GetDrivers() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_XmlMDF_ADriver & anHDriver) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDF_ADriverTable {
-	Handle_XmlMDF_ADriverTable GetHandle() {
-	return *(Handle_XmlMDF_ADriverTable*) &$self;
-	}
-};
-%extend XmlMDF_ADriverTable {
-	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_ADriverTable {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -633,6 +407,154 @@ def __del__(self):
 };
 
 
+%nodefaultctor XmlMDF_ADriver;
+class XmlMDF_ADriver : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer VersionNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Type SourceType() const;
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & TypeName() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &aSource, const Handle_TDF_Attribute &aTarget, XmlObjMgt_RRelocationTable & aRelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &aSource, XmlObjMgt_Persistent & aTarget, XmlObjMgt_SRelocationTable & aRelocTable) const;
+		%feature("autodoc", "1");
+		void WriteMessage(const TCollection_ExtendedString &theMessage) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDF_ADriver {
+	Handle_XmlMDF_ADriver GetHandle() {
+	return *(Handle_XmlMDF_ADriver*) &$self;
+	}
+};
+%extend XmlMDF_ADriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDF_ADriver::~XmlMDF_ADriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_ADriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF_TagSourceDriver;
+class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_TagSourceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDF_TagSourceDriver {
+	Handle_XmlMDF_TagSourceDriver GetHandle() {
+	return *(Handle_XmlMDF_TagSourceDriver*) &$self;
+	}
+};
+%extend XmlMDF_TagSourceDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDF_TagSourceDriver::~XmlMDF_TagSourceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_TagSourceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF;
+class XmlMDF {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF();
+		%feature("autodoc", "1");
+		static		void FromTo(const Handle_TDF_Data &aSource, XmlObjMgt_Element & aTarget, XmlObjMgt_SRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
+		%feature("autodoc", "1");
+		static		Standard_Boolean FromTo(const XmlObjMgt_Element &aSource, Handle_TDF_Data & aTarget, XmlObjMgt_RRelocationTable & aReloc, const Handle_XmlMDF_ADriverTable &aDrivers);
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_XmlMDF_ADriverTable &aDriverTable, const Handle_CDM_MessageDriver &theMessageDriver);
+
+};
+%feature("shadow") XmlMDF::~XmlMDF %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
+class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_DataMapIteratorOfMapOfDriver();
+		%feature("autodoc", "1");
+		XmlMDF_DataMapIteratorOfMapOfDriver(const XmlMDF_MapOfDriver &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XmlMDF_MapOfDriver &aMap);
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Key() const;
+		%feature("autodoc", "1");
+		const Handle_XmlMDF_ADriver & Value() const;
+
+};
+%feature("shadow") XmlMDF_DataMapIteratorOfMapOfDriver::~XmlMDF_DataMapIteratorOfMapOfDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_DataMapIteratorOfMapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlMDF_MapOfDriver;
 class XmlMDF_MapOfDriver : public TCollection_BasicMap {
 	public:
@@ -676,6 +598,88 @@ def __del__(self):
 %}
 
 %extend XmlMDF_MapOfDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF_ADriverTable;
+class XmlMDF_ADriverTable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_ADriverTable();
+		%feature("autodoc", "1");
+		void AddDriver(const Handle_XmlMDF_ADriver &anHDriver);
+		%feature("autodoc", "1");
+		const XmlMDF_TypeADriverMap & GetDrivers() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_XmlMDF_ADriver & anHDriver) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDF_ADriverTable {
+	Handle_XmlMDF_ADriverTable GetHandle() {
+	return *(Handle_XmlMDF_ADriverTable*) &$self;
+	}
+};
+%extend XmlMDF_ADriverTable {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_ADriverTable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF_ReferenceDriver;
+class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_ReferenceDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDF_ReferenceDriver {
+	Handle_XmlMDF_ReferenceDriver GetHandle() {
+	return *(Handle_XmlMDF_ReferenceDriver*) &$self;
+	}
+};
+%extend XmlMDF_ReferenceDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDF_ReferenceDriver::~XmlMDF_ReferenceDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_ReferenceDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

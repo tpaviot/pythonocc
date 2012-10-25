@@ -23,7 +23,7 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BinMFunction_ScopeDriver::DownCast;
 %rename(DownCast) Handle_BinMFunction_GraphNodeDriver::DownCast;
 %rename(DownCast) Handle_BinMFunction_FunctionDriver::DownCast;
+%rename(DownCast) Handle_BinMFunction_ScopeDriver::DownCast;
 %rename(AddDrivers) BinMFunction::AddDrivers;

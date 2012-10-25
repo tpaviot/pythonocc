@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_RWHeaderSection_GeneralModule;
-class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule();
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule & operator=(const Handle_RWHeaderSection_GeneralModule &aHandle);
-		%feature("autodoc", "1");
-		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *anItem);
-		%feature("autodoc", "1");
-		static		Handle_RWHeaderSection_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_RWHeaderSection_GeneralModule {
-	RWHeaderSection_GeneralModule* GetObject() {
-	return (RWHeaderSection_GeneralModule*)$self->Access();
-	}
-};
-%feature("shadow") Handle_RWHeaderSection_GeneralModule::~Handle_RWHeaderSection_GeneralModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_RWHeaderSection_GeneralModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_RWHeaderSection_ReadWriteModule;
 class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteModule {
 	public:
@@ -128,18 +90,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWHeaderSection_RWFileSchema;
-class RWHeaderSection_RWFileSchema {
+%nodefaultctor Handle_RWHeaderSection_GeneralModule;
+class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
 	public:
 		%feature("autodoc", "1");
-		RWHeaderSection_RWFileSchema();
+		Handle_RWHeaderSection_GeneralModule();
 		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
+		Handle_RWHeaderSection_GeneralModule(const Handle_RWHeaderSection_GeneralModule &aHandle);
 		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
+		Handle_RWHeaderSection_GeneralModule(const RWHeaderSection_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule & operator=(const Handle_RWHeaderSection_GeneralModule &aHandle);
+		%feature("autodoc", "1");
+		Handle_RWHeaderSection_GeneralModule & operator=(const RWHeaderSection_GeneralModule *anItem);
+		%feature("autodoc", "1");
+		static		Handle_RWHeaderSection_GeneralModule DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%feature("shadow") RWHeaderSection_RWFileSchema::~RWHeaderSection_RWFileSchema %{
+%extend Handle_RWHeaderSection_GeneralModule {
+	RWHeaderSection_GeneralModule* GetObject() {
+	return (RWHeaderSection_GeneralModule*)$self->Access();
+	}
+};
+%feature("shadow") Handle_RWHeaderSection_GeneralModule::~Handle_RWHeaderSection_GeneralModule %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -148,7 +121,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWHeaderSection_RWFileSchema {
+%extend Handle_RWHeaderSection_GeneralModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -210,7 +183,7 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWHeaderSection_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_ReadWriteModule::~RWHeaderSection_ReadWriteModule %{
@@ -223,6 +196,31 @@ def __del__(self):
 %}
 
 %extend RWHeaderSection_ReadWriteModule {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWHeaderSection;
+class RWHeaderSection {
+	public:
+		%feature("autodoc", "1");
+		RWHeaderSection();
+		%feature("autodoc", "1");
+		static		void Init();
+
+};
+%feature("shadow") RWHeaderSection::~RWHeaderSection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWHeaderSection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -256,16 +254,18 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWHeaderSection;
-class RWHeaderSection {
+%nodefaultctor RWHeaderSection_RWFileSchema;
+class RWHeaderSection_RWFileSchema {
 	public:
 		%feature("autodoc", "1");
-		RWHeaderSection();
+		RWHeaderSection_RWFileSchema();
 		%feature("autodoc", "1");
-		static		void Init();
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_HeaderSection_FileSchema &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_HeaderSection_FileSchema &ent) const;
 
 };
-%feature("shadow") RWHeaderSection::~RWHeaderSection %{
+%feature("shadow") RWHeaderSection_RWFileSchema::~RWHeaderSection_RWFileSchema %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -274,7 +274,7 @@ def __del__(self):
 		pass
 %}
 
-%extend RWHeaderSection {
+%extend RWHeaderSection_RWFileSchema {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -305,7 +305,7 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 };
 %extend RWHeaderSection_GeneralModule {
 	Standard_Integer __hash__() {
-	return HashCode(*(Handle_Standard_Transient*)&$self,2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_GeneralModule::~RWHeaderSection_GeneralModule %{

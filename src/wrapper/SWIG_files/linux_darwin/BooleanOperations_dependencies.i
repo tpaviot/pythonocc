@@ -143,5 +143,5 @@ $HeaderURL$
 %};
 
 %import TCollection.i
-%import TopAbs.i
 %import Standard.i
+%import TopAbs.i

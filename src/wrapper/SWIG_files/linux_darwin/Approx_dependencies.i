@@ -179,5 +179,5 @@ $HeaderURL$
 %import MMgt.i
 %import TCollection.i
 %import Standard.i
-%import AppParCurves.i
 %import GeomAbs.i
+%import AppParCurves.i
