@@ -120,7 +120,8 @@ def make_vertex(pnt):
     return vertex.Shape()
 
 def make_face(shape):
-    face = BRepBuilderAPI_MakeFace(shape)
+    tol_degen = 1e-6
+    face = BRepBuilderAPI_MakeFace(shape, tol_degen)
     face.Build()
     return face.Shape()
 
