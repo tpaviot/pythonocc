@@ -143,7 +143,7 @@ IF (UNIX)
     # Install headers (by default to /usr/local/include/geom)
     INSTALL(DIRECTORY inc/
             DESTINATION ${CMAKE_INSTALL_PREFIX}/include/geom
-            FILES_MATCHING PATTERN "*.h*"
+            FILES_MATCHING PATTERN "*.*"
             )
 ENDIF(UNIX)
 
