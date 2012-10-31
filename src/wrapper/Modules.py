@@ -215,9 +215,9 @@ COMMON_MODULES = [
            ('BRep',['Adaptor3d'],[]),
            ('BRepAdaptor',['math'],[]),
            ('BRepPrimAPI',[],[]),    
-           ('BRepMesh',[],['BRepMesh_DiscretFactory','BRepMesh_CircleInspector'],{'BRepMesh_SurfaceGrid':['SetTrianglesOnPlane']}),
+           ('BRepMesh',[],['BRepMesh_DiscretFactory','BRepMesh_CircleInspector','BRepMesh_VertexInspector'],{'BRepMesh_SurfaceGrid':['SetTrianglesOnPlane']}),
            ('BRepBlend',['math','Contap','Convert','AppParCurves','Adaptor3d'],[]),
-           ('BRepBuilderAPI',['TopoDS'],[]),
+           ('BRepBuilderAPI',['TopoDS'],[],{'BRepBuilderAPI_VertexInspector':'Inspect'}),
            ('BRepCheck',[],[]),
            ('BRepClass',[],[],{'BRepClass_FaceClassifier':'BRepClass_FaceClassifier'}),
            ('BRepClass3d',['TopoDS_Shell','math'],[]),
@@ -491,18 +491,17 @@ WIN_MODULES = [
              ('StdSelect',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','SelectBasics','Image','OSD'],[],\
              {'StdSelect_Shape':['Shape'],'StdSelect_BRepOwner':['Set']}),
              ('DsgPrs',[],[],{'DsgPrs_RadiusPresentation':['Add']}),
-             ('AIS',['Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image','OSD'],[],{"AIS_LocalContext":["Reactivate"]}),
-             ('NIS',['Graphic3d','TCollection','Quantity','Viewer','TColStd','Aspect','Image','Visual3d','OSD'],[],{'NIS_InteractiveObject':['SetAttribute'],\
-                                             'NIS_Triangulated':['Polygon','tri_line_intersect','seg_line_intersect'],\
+             ('AIS',['Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image','OSD','Select2D'],[],{"AIS_LocalContext":["Reactivate"]}),
+             ('NIS',['Graphic3d','TCollection','Quantity','Viewer','TColStd','Aspect','Image','Visual3d','OSD'],['NIS_Triangulated'],{'NIS_InteractiveObject':['SetAttribute'],\
                                              'NIS_InteractiveContext':['GetDrawers']}),
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
-                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics','Image','OSD'],[]),
+                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics','Image','OSD','StdSelect','Select2D'],[]),
              ('Visual3d',[],[],{'Visual3d_View':['GetGraduatedTrihedron']}),
              ('TPrsStd',['Aspect','Image','OSD'],[]),
-             ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity','Image','OSD'],[]),
+             ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity','Image','OSD', 'Select2D', 'StdSelect'],[]),
              #('WNT',[],[]), gccxml error
              ('Image',[],[]),
-             ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d','Image','OSD','Select2D'],[]),
+             ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d','Image','OSD','Select2D','StdSelect'],[]),
              ]
 
 UNIX_MODULES = [
@@ -543,7 +542,7 @@ SALOME_GEOM_MODULES = [
                        ('SGEOM',['TDataStd','TColStd','TDF','CDM','CDF','Quantity','Storage','PCDM'],[],\
                         {'GEOM_SubShapeDriver':['GetID'],
                         'GEOM_Engine':['GetTextureGUID','DumpPython'],}),
-                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection','BooleanOperations'],[],
+                       ('GEOMAlgo',['gp','TopoDS','Handle_TCollection','BooleanOperations'],['GEOMAlgo_GetInPlaceIterator'],
                        {'GEOMAlgo_Gluer2':['KeepNonSolids'],
                        'GEOMAlgo_Gluer':['KeepNonSolids']}),
                        ('GEOMImpl',['gp','TopoDS','TDataStd','TDocStd','CDM','TDF','Handle_TCollection','CDF',
