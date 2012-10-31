@@ -266,8 +266,6 @@ class ModularBuilder(object):
         """
         Generate the file for dependencies.
         """
-        if self.MODULE_NAME=='GeomPlate' and sys.platform=='win32': #keep the file on the disk
-            return True
         if self.MODULE_NAME=='GEOM':
             self.MODULE_NAME='SGEOM'#back to the good name
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
@@ -1169,12 +1167,13 @@ class ModularBuilder(object):
                           'Aspect_XWD.hxx',
                           'NCollection_EBTree.hxx','NCollection_CellFilter.hxx',
                           'Standard_StdAllocator.hxx',
-                          'StdSelect_ViewerSelector2d.hxx','StdSelect_ViewerSelector3d.hxx',
                           'Image_PixelFieldOfDIndexedImage.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
+            HXX_TO_EXCLUDE.append('StdSelect_ViewerSelector2d.hxx')
+            HXX_TO_EXCLUDE.append('StdSelect_ViewerSelector3d.hxx')
         # Also remove all headers that contain 'Test' (for instance BOPTest.hxx').
         # These are just unit tests and missing from Debian Package
         if self.MODULE_NAME!='TopBas':
