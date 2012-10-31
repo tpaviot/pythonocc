@@ -260,7 +260,7 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfSensitive::~SelectBasics_ListNodeOfListOfSensitive %{
@@ -375,7 +375,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %extend SelectBasics_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectBasics_EntityOwner::~SelectBasics_EntityOwner %{
@@ -412,7 +412,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectBasics_ListNodeOfListOfBox2d::~SelectBasics_ListNodeOfListOfBox2d %{
@@ -603,7 +603,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SequenceNodeOfSequenceOfOwner::~SelectBasics_SequenceNodeOfSequenceOfOwner %{
@@ -687,7 +687,7 @@ def __del__(self):
 class SelectBasics_SensitiveEntity : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
+		virtual		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
 		%feature("autodoc", "1");
 		const Handle_SelectBasics_EntityOwner & OwnerId() const;
 		%feature("autodoc", "1");
@@ -722,7 +722,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %extend SelectBasics_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectBasics_SensitiveEntity::~SelectBasics_SensitiveEntity %{

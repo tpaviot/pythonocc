@@ -383,7 +383,7 @@ class MFT_TextManager : public MMgt_TShared {
 };
 %extend MFT_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MFT_TextManager::~MFT_TextManager %{
@@ -420,7 +420,7 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontHandle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MFT_SequenceNodeOfListOfFontHandle::~MFT_SequenceNodeOfListOfFontHandle %{
@@ -463,7 +463,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 };
 %extend MFT_FontManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MFT_FontManagerDefinitionError::~MFT_FontManagerDefinitionError %{
@@ -506,7 +506,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 };
 %extend MFT_FontManagerError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MFT_FontManagerError::~MFT_FontManagerError %{
@@ -642,7 +642,7 @@ class MFT_FontManager : public MMgt_TShared {
 };
 %extend MFT_FontManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MFT_FontManager::~MFT_FontManager %{

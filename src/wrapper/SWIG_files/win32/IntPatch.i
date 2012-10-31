@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include IntPatch_headers.i
 
+typedef Intf_InterferencePolygon2d IntPatch_SearchPnt;
 
 enum IntPatch_IType {
 	IntPatch_Lin,
@@ -481,43 +482,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_PolygoTool;
-class IntPatch_PolygoTool {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_PolygoTool();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const IntPatch_Polygo &Line);
-		%feature("autodoc", "1");
-		static		gp_Pnt2d BeginOfSeg(const IntPatch_Polygo &Line, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		gp_Pnt2d EndOfSeg(const IntPatch_Polygo &Line, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		void Dump(const IntPatch_Polygo &Line);
-
-};
-%feature("shadow") IntPatch_PolygoTool::~IntPatch_PolygoTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_PolygoTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPatch_HCurve2dTool;
 class IntPatch_HCurve2dTool {
 	public:
@@ -625,7 +589,7 @@ class IntPatch_Line : public MMgt_TShared {
 };
 %extend IntPatch_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_Line::~IntPatch_Line %{
@@ -700,7 +664,7 @@ class IntPatch_ALine : public IntPatch_Line {
 };
 %extend IntPatch_ALine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_ALine::~IntPatch_ALine %{
@@ -737,7 +701,7 @@ class IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds : public TCollect
 };
 %extend IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfPathPointOfTheSOnBounds %{
@@ -774,7 +738,7 @@ class IntPatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend IntPatch_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfLine::~IntPatch_SequenceNodeOfSequenceOfLine %{
@@ -941,7 +905,7 @@ class IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking : public TCollection_
 };
 %extend IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking::~IntPatch_SequenceNodeOfSequenceOfIWLineOfTheIWalking %{
@@ -1074,7 +1038,7 @@ class IntPatch_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend IntPatch_SequenceNodeOfSequenceOfPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfPoint::~IntPatch_SequenceNodeOfSequenceOfPoint %{
@@ -1550,7 +1514,7 @@ class IntPatch_WLine : public IntPatch_Line {
 };
 %extend IntPatch_WLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_WLine::~IntPatch_WLine %{
@@ -1629,20 +1593,22 @@ def __del__(self):
 
 
 %nodefaultctor IntPatch_Polygo;
-class IntPatch_Polygo {
+class IntPatch_Polygo : public Intf_Polygon2d {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Error() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Closed() const;
+		Standard_Real Error() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
 		virtual		gp_Pnt2d Point(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real DeflectionOverEstimation() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
+		%feature("autodoc", "1");
+		void Dump() const;
 
 };
 %feature("shadow") IntPatch_Polygo::~IntPatch_Polygo %{
@@ -1666,6 +1632,8 @@ class IntPatch_PolyArc : public IntPatch_Polygo {
 	public:
 		%feature("autodoc", "1");
 		IntPatch_PolyArc(const Handle_Adaptor2d_HCurve2d &A, const Standard_Integer NbSample, const Standard_Real Pfirst, const Standard_Real Plast, const Bnd_Box2d &BoxOtherPolygon);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Closed() const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -1875,7 +1843,7 @@ class IntPatch_TheIWLineOfTheIWalking : public MMgt_TShared {
 };
 %extend IntPatch_TheIWLineOfTheIWalking {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_TheIWLineOfTheIWalking::~IntPatch_TheIWLineOfTheIWalking %{
@@ -1907,12 +1875,6 @@ class IntPatch_PolyLine : public IntPatch_Polygo {
 		void SetRLine(const Standard_Boolean OnFirst, const Handle_IntPatch_RLine &Line);
 		%feature("autodoc", "1");
 		void ResetError();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Error() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Closed() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbPoints() const;
 		%feature("autodoc", "1");
@@ -2365,7 +2327,7 @@ class IntPatch_GLine : public IntPatch_Line {
 };
 %extend IntPatch_GLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_GLine::~IntPatch_GLine %{
@@ -2567,39 +2529,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPatch_SearchPnt;
-class IntPatch_SearchPnt : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt();
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt(const IntPatch_Polygo &Obje1, const IntPatch_Polygo &Obje2);
-		%feature("autodoc", "1");
-		IntPatch_SearchPnt(const IntPatch_Polygo &Obje);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polygo &Obje1, const IntPatch_Polygo &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const IntPatch_Polygo &Obje);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
-
-};
-%feature("shadow") IntPatch_SearchPnt::~IntPatch_SearchPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_SearchPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPatch_ImpPrmIntersection;
 class IntPatch_ImpPrmIntersection {
 	public:
@@ -2659,7 +2588,7 @@ class IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds : public TCollectio
 };
 %extend IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds::~IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds %{

@@ -31,7 +31,6 @@ $HeaderURL$
 #include<Geom2dInt_GInter.hxx>
 #include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_IntConicCurveOfGInter.hxx>
-#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
@@ -43,7 +42,6 @@ $HeaderURL$
 #include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheProjPCurOfGInter.hxx>
 #include<Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 

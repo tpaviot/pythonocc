@@ -867,7 +867,7 @@ class MDF_ASDriver : public MMgt_TShared {
 };
 %extend MDF_ASDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ASDriver::~MDF_ASDriver %{
@@ -902,7 +902,7 @@ class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 };
 %extend MDF_TagSourceStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_TagSourceStorageDriver::~MDF_TagSourceStorageDriver %{
@@ -939,7 +939,7 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 };
 %extend MDF_ListNodeOfDriverListOfARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ListNodeOfDriverListOfARDriverTable::~MDF_ListNodeOfDriverListOfARDriverTable %{
@@ -1105,7 +1105,7 @@ class MDF_ASDriverTable : public MMgt_TShared {
 };
 %extend MDF_ASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ASDriverTable::~MDF_ASDriverTable %{
@@ -1144,7 +1144,7 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 };
 %extend MDF_DataMapNodeOfTypeARDriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_DataMapNodeOfTypeARDriverMap::~MDF_DataMapNodeOfTypeARDriverMap %{
@@ -1221,6 +1221,10 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 		MDF_DriverListOfARDriverTable & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		MDF_DriverListOfARDriverTable & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") MDF_TypeDriverListMapOfARDriverTable::~MDF_TypeDriverListMapOfARDriverTable %{
@@ -1266,6 +1270,10 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 		Handle_MDF_ARDriver & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		Handle_MDF_ARDriver & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") MDF_TypeARDriverMap::~MDF_TypeARDriverMap %{
@@ -1308,7 +1316,7 @@ class MDF_ARDriver : public MMgt_TShared {
 };
 %extend MDF_ARDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ARDriver::~MDF_ARDriver %{
@@ -1343,7 +1351,7 @@ class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDF_TagSourceRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_TagSourceRetrievalDriver::~MDF_TagSourceRetrievalDriver %{
@@ -1389,6 +1397,10 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 		MDF_DriverListOfASDriverTable & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		MDF_DriverListOfASDriverTable & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") MDF_TypeDriverListMapOfASDriverTable::~MDF_TypeDriverListMapOfASDriverTable %{
@@ -1431,7 +1443,7 @@ class MDF_ARDriverTable : public MMgt_TShared {
 };
 %extend MDF_ARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ARDriverTable::~MDF_ARDriverTable %{
@@ -1470,7 +1482,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_Map
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable::~MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable %{
@@ -1601,7 +1613,7 @@ class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 };
 %extend MDF_ListNodeOfDriverListOfASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ListNodeOfDriverListOfASDriverTable::~MDF_ListNodeOfDriverListOfASDriverTable %{
@@ -1644,7 +1656,7 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 };
 %extend MDF_ReferenceStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ReferenceStorageDriver::~MDF_ReferenceStorageDriver %{
@@ -1695,7 +1707,7 @@ class MDF_RRelocationTable : public MMgt_TShared {
 };
 %extend MDF_RRelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_RRelocationTable::~MDF_RRelocationTable %{
@@ -1732,7 +1744,7 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 };
 %extend MDF_SequenceNodeOfARDriverSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_SequenceNodeOfARDriverSequence::~MDF_SequenceNodeOfARDriverSequence %{
@@ -1783,7 +1795,7 @@ class MDF_SRelocationTable : public MMgt_TShared {
 };
 %extend MDF_SRelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_SRelocationTable::~MDF_SRelocationTable %{
@@ -1822,7 +1834,7 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 };
 %extend MDF_DataMapNodeOfTypeASDriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_DataMapNodeOfTypeASDriverMap::~MDF_DataMapNodeOfTypeASDriverMap %{
@@ -1959,7 +1971,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_Map
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable::~MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable %{
@@ -2069,7 +2081,7 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 };
 %extend MDF_ASDriverHSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ASDriverHSequence::~MDF_ASDriverHSequence %{
@@ -2149,7 +2161,7 @@ class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDF_ReferenceRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ReferenceRetrievalDriver::~MDF_ReferenceRetrievalDriver %{
@@ -2251,7 +2263,7 @@ class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 };
 %extend MDF_SequenceNodeOfASDriverSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_SequenceNodeOfASDriverSequence::~MDF_SequenceNodeOfASDriverSequence %{
@@ -2297,6 +2309,10 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 		Handle_MDF_ASDriver & ChangeFind(const Handle_Standard_Type &K);
 		%feature("autodoc", "1");
 		Handle_MDF_ASDriver & operator()(const Handle_Standard_Type &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Type &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Type &K);
 
 };
 %feature("shadow") MDF_TypeASDriverMap::~MDF_TypeASDriverMap %{
@@ -2375,7 +2391,7 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 };
 %extend MDF_ARDriverHSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDF_ARDriverHSequence::~MDF_ARDriverHSequence %{

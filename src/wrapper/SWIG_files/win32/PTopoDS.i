@@ -1282,7 +1282,7 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfShape1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_HArray1OfShape1::~PTopoDS_HArray1OfShape1 %{
@@ -1329,7 +1329,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape::~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape %{
@@ -1368,7 +1368,7 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 };
 %extend PTopoDS_TWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TWire::~PTopoDS_TWire %{
@@ -1407,7 +1407,7 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 };
 %extend PTopoDS_TShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TShell::~PTopoDS_TShell %{
@@ -1466,7 +1466,7 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 %extend PTopoDS_HShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_HShape::~PTopoDS_HShape %{
@@ -1501,7 +1501,7 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 };
 %extend PTopoDS_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Shell::~PTopoDS_Shell %{
@@ -1540,7 +1540,7 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TEdge1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TEdge1::~PTopoDS_TEdge1 %{
@@ -1585,7 +1585,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1::~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 %{
@@ -1624,7 +1624,7 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompound1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompound1::~PTopoDS_TCompound1 %{
@@ -1661,7 +1661,7 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 };
 %extend PTopoDS_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Wire::~PTopoDS_Wire %{
@@ -1700,7 +1700,7 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 %extend PTopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TEdge::~PTopoDS_TEdge %{
@@ -1739,7 +1739,7 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TShell1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TShell1::~PTopoDS_TShell1 %{
@@ -1776,7 +1776,7 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 };
 %extend PTopoDS_Compound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Compound::~PTopoDS_Compound %{
@@ -1813,7 +1813,7 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 };
 %extend PTopoDS_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Edge::~PTopoDS_Edge %{
@@ -1852,7 +1852,7 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TSolid::~PTopoDS_TSolid %{
@@ -1891,7 +1891,7 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompSolid::~PTopoDS_TCompSolid %{
@@ -1930,7 +1930,7 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompound::~PTopoDS_TCompound %{
@@ -1969,7 +1969,7 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TSolid1::~PTopoDS_TSolid1 %{
@@ -2008,7 +2008,7 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TVertex1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TVertex1::~PTopoDS_TVertex1 %{
@@ -2074,7 +2074,7 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 };
 %extend PTopoDS_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Solid::~PTopoDS_Solid %{
@@ -2181,7 +2181,7 @@ class PTopoDS_Face : public PTopoDS_HShape {
 };
 %extend PTopoDS_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Face::~PTopoDS_Face %{
@@ -2252,7 +2252,7 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_HArray1OfHShape::~PTopoDS_HArray1OfHShape %{
@@ -2291,7 +2291,7 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TWire1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TWire1::~PTopoDS_TWire1 %{
@@ -2369,7 +2369,7 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 };
 %extend PTopoDS_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_Vertex::~PTopoDS_Vertex %{
@@ -2406,7 +2406,7 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 %extend PTopoDS_CompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_CompSolid::~PTopoDS_CompSolid %{
@@ -2445,7 +2445,7 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 };
 %extend PTopoDS_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TVertex::~PTopoDS_TVertex %{
@@ -2484,7 +2484,7 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 };
 %extend PTopoDS_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TFace::~PTopoDS_TFace %{
@@ -2523,7 +2523,7 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TCompSolid1::~PTopoDS_TCompSolid1 %{
@@ -2609,7 +2609,7 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TFace1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PTopoDS_TFace1::~PTopoDS_TFace1 %{

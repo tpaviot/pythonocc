@@ -473,6 +473,10 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 		const TopOpeBRepBuild_VertexInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_VertexInfo & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo::~TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo %{
@@ -552,7 +556,7 @@ class TopOpeBRepBuild_Loop : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_Loop::~TopOpeBRepBuild_Loop %{
@@ -603,7 +607,7 @@ class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 };
 %extend TopOpeBRepBuild_Pave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_Pave::~TopOpeBRepBuild_Pave %{
@@ -829,6 +833,10 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
@@ -1088,7 +1096,7 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfListOfLoop::~TopOpeBRepBuild_ListNodeOfListOfListOfLoop %{
@@ -1400,7 +1408,7 @@ class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfPave::~TopOpeBRepBuild_ListNodeOfListOfPave %{
@@ -2135,7 +2143,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_HBuilder::~TopOpeBRepBuild_HBuilder %{
@@ -2172,7 +2180,7 @@ class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfLoop::~TopOpeBRepBuild_ListNodeOfListOfLoop %{
@@ -2338,7 +2346,7 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 };
 %extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo::~TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo %{
@@ -2482,7 +2490,7 @@ class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapN
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape::~TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape %{
@@ -2595,7 +2603,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape %{

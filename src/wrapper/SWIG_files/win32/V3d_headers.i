@@ -28,7 +28,6 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<Handle_V3d_AmbientLight.hxx>
-#include<Handle_V3d_Camera.hxx>
 #include<Handle_V3d_CircularGrid.hxx>
 #include<Handle_V3d_ColorScale.hxx>
 #include<Handle_V3d_ColorScaleLayerItem.hxx>
@@ -47,7 +46,6 @@ $HeaderURL$
 #include<Handle_V3d_Viewer.hxx>
 #include<V3d.hxx>
 #include<V3d_AmbientLight.hxx>
-#include<V3d_Camera.hxx>
 #include<V3d_CircularGrid.hxx>
 #include<V3d_ColorScale.hxx>
 #include<V3d_ColorScaleLayerItem.hxx>
@@ -159,6 +157,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -478,6 +477,8 @@ $HeaderURL$
 #include<Handle_Aspect_Window.hxx>
 #include<Quantity_Color.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
+#include<TCollection_ExtendedString.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_Aspect_ColorScale.hxx>
 #include<Visual3d_ViewOrientation.hxx>
 #include<Visual3d_ViewMapping.hxx>
@@ -494,5 +495,5 @@ $HeaderURL$
 #include<Handle_Aspect_GraphicDevice.hxx>
 #include<Handle_Visual3d_ViewManager.hxx>
 #include<Handle_Graphic3d_AspectMarker3d.hxx>
-#include<TCollection_ExtendedString.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
 %}

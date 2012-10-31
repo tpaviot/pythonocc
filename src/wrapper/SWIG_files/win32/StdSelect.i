@@ -77,6 +77,11 @@ enum StdSelect_TypeOfEdge {
 	StdSelect_Circle,
 	};
 
+enum StdSelect_SensitivityMode {
+	StdSelect_SM_WINDOW,
+	StdSelect_SM_VIEW,
+	};
+
 
 
 %nodefaultctor Handle_StdSelect_SensitiveText2d;
@@ -534,6 +539,10 @@ class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		const Handle_StdSelect_Prs & FindFromKey(const Handle_SelectBasics_EntityOwner &K) const;
 		%feature("autodoc", "1");
 		Handle_StdSelect_Prs & ChangeFromKey(const Handle_SelectBasics_EntityOwner &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_SelectBasics_EntityOwner &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_SelectBasics_EntityOwner &K);
 
 };
 %feature("shadow") StdSelect_IndexedDataMapOfOwnerPrs::~StdSelect_IndexedDataMapOfOwnerPrs %{
@@ -574,7 +583,7 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_ShapeTypeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_ShapeTypeFilter::~StdSelect_ShapeTypeFilter %{
@@ -677,7 +686,7 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_FaceFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_FaceFilter::~StdSelect_FaceFilter %{
@@ -720,7 +729,7 @@ class StdSelect_EdgeFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_EdgeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_EdgeFilter::~StdSelect_EdgeFilter %{
@@ -773,7 +782,7 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 };
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
@@ -821,7 +830,7 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 };
 %extend StdSelect_SensitiveText2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_SensitiveText2d::~StdSelect_SensitiveText2d %{
@@ -860,7 +869,7 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 };
 %extend StdSelect_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_Shape::~StdSelect_Shape %{
@@ -897,7 +906,7 @@ class StdSelect_Prs : public Prs3d_Presentation {
 };
 %extend StdSelect_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_Prs::~StdSelect_Prs %{
@@ -940,7 +949,7 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 };
 %extend StdSelect_TextProjector2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_TextProjector2d::~StdSelect_TextProjector2d %{
@@ -993,7 +1002,7 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 };
 %extend StdSelect_ViewerSelector2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_ViewerSelector2d::~StdSelect_ViewerSelector2d %{
@@ -1022,9 +1031,15 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 		%feature("autodoc", "1");
 		virtual		void Convert(const Handle_SelectMgr_Selection &aSelection);
 		%feature("autodoc", "1");
-		void Set(const Standard_Integer aSensitivity);
-		%feature("autodoc", "1");
 		void Set(const Handle_Select3D_Projector &aProj);
+		%feature("autodoc", "1");
+		void SetSensitivityMode(const StdSelect_SensitivityMode aMode);
+		%feature("autodoc", "1");
+		StdSelect_SensitivityMode SensitivityMode() const;
+		%feature("autodoc", "1");
+		void SetPixelTolerance(const Standard_Integer aTolerance);
+		%feature("autodoc", "1");
+		Standard_Integer PixelTolerance() const;
 		%feature("autodoc", "1");
 		void Pick(const Standard_Integer XPix, const Standard_Integer YPix, const Handle_V3d_View &aView);
 		%feature("autodoc", "1");
@@ -1058,7 +1073,7 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 };
 %extend StdSelect_ViewerSelector3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_ViewerSelector3d::~StdSelect_ViewerSelector3d %{
@@ -1117,6 +1132,8 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 		%feature("autodoc", "1");
 		virtual		void ResetLocation();
 		%feature("autodoc", "1");
+		virtual		void SetZLayer(const Handle_PrsMgr_PresentationManager &thePrsMgr, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1127,7 +1144,7 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 };
 %extend StdSelect_BRepOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdSelect_BRepOwner::~StdSelect_BRepOwner %{

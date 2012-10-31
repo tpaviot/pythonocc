@@ -74,6 +74,8 @@ $HeaderURL$
 %rename(FactorBandedMatrix) BSplCLib::FactorBandedMatrix;
 %rename(SolveBandedSystem) BSplCLib::SolveBandedSystem;
 %rename(MergeBSplineKnots) BSplCLib::MergeBSplineKnots;
+%rename(FunctionReparameterise) BSplCLib::FunctionReparameterise;
+%rename(FunctionMultiply) BSplCLib::FunctionMultiply;
 %rename(TangExtendToConstraint) BSplCLib::TangExtendToConstraint;
 %rename(CacheD0) BSplCLib::CacheD0;
 %rename(CoefsD0) BSplCLib::CoefsD0;

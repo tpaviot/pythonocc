@@ -186,7 +186,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt %{
@@ -275,6 +275,10 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 		BRepMAT2d_SequenceOfBasicElt & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		BRepMAT2d_SequenceOfBasicElt & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepMAT2d_DataMapOfShapeSequenceOfBasicElt::~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt %{
@@ -440,7 +444,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape::~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape %{
@@ -486,6 +490,10 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_MAT_BasicElt &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_MAT_BasicElt &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_MAT_BasicElt &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_MAT_BasicElt &K);
 
 };
 %feature("shadow") BRepMAT2d_DataMapOfBasicEltShape::~BRepMAT2d_DataMapOfBasicEltShape %{
@@ -559,7 +567,7 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 };
 %extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepMAT2d_SequenceNodeOfSequenceOfBasicElt::~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt %{

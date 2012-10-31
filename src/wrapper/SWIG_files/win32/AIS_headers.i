@@ -255,6 +255,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -511,6 +512,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -542,7 +544,6 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WNT.hxx>
-#include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
 #include<OSD_WhoAmI.hxx>
 #include<PrsMgr_KindOfPrs.hxx>
@@ -560,6 +561,14 @@ $HeaderURL$
 #include<PrsMgr_Prs.hxx>
 #include<PrsMgr_SequenceNodeOfPresentations.hxx>
 #include<PrsMgr_TypeOfPresentation3d.hxx>
+#include<Select2D_Projector.hxx>
+#include<Select2D_SensitiveArc.hxx>
+#include<Select2D_SensitiveBox.hxx>
+#include<Select2D_SensitiveCircle.hxx>
+#include<Select2D_SensitiveEntity.hxx>
+#include<Select2D_SensitivePoint.hxx>
+#include<Select2D_SensitiveSegment.hxx>
+#include<Select2D_TypeOfSelection.hxx>
 #include<SelectBasics.hxx>
 #include<SelectBasics_BasicTool.hxx>
 #include<SelectBasics_EntityOwner.hxx>
@@ -590,6 +599,7 @@ $HeaderURL$
 #include<Handle_Prs3d_AngleAspect.hxx>
 #include<Handle_Prs3d_RadiusAspect.hxx>
 #include<Handle_Prs3d_Drawer.hxx>
+#include<Handle_SelectMgr_EntityOwner.hxx>
 #include<Quantity_Color.hxx>
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Handle_Geom_Transformation.hxx>
@@ -601,15 +611,12 @@ $HeaderURL$
 #include<TCollection_ExtendedString.hxx>
 #include<Handle_Prs3d_Projector.hxx>
 #include<Handle_SelectMgr_SelectableObject.hxx>
-#include<Handle_SelectMgr_EntityOwner.hxx>
 #include<TColStd_ListOfInteger.hxx>
-#include<Handle_Poly_Triangulation.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Geom_Axis2Placement.hxx>
+#include<TopLoc_Location.hxx>
 #include<TColgp_Array1OfPnt.hxx>
 #include<Handle_Geom_Circle.hxx>
-#include<TopLoc_Location.hxx>
 #include<Handle_PrsMgr_PresentationManager2d.hxx>
 #include<Handle_Graphic2d_GraphicObject.hxx>
 #include<Handle_SelectMgr_Selection.hxx>
@@ -635,8 +642,9 @@ $HeaderURL$
 #include<Handle_V3d_View.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<TColStd_MapOfTransient.hxx>
+#include<Handle_Poly_Triangulation.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
 #include<Handle_V3d_Viewer.hxx>
 #include<SelectMgr_IndexedMapOfOwner.hxx>
 #include<Handle_StdSelect_ViewerSelector3d.hxx>
-#include<Handle_PrsMgr_PresentationManager3d.hxx>
 %}

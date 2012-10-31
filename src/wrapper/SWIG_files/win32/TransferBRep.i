@@ -569,7 +569,7 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_TransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_TransferResultInfo::~TransferBRep_TransferResultInfo %{
@@ -612,7 +612,7 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 %extend TransferBRep_OrientedShapeMapper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_OrientedShapeMapper::~TransferBRep_OrientedShapeMapper %{
@@ -691,7 +691,7 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_HSequenceOfTransferResultInfo::~TransferBRep_HSequenceOfTransferResultInfo %{
@@ -738,7 +738,7 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 };
 %extend TransferBRep_BinderOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_BinderOfShape::~TransferBRep_BinderOfShape %{
@@ -793,7 +793,7 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 };
 %extend TransferBRep_ShapeBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_ShapeBinder::~TransferBRep_ShapeBinder %{
@@ -929,7 +929,7 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 %extend TransferBRep_ShapeListBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_ShapeListBinder::~TransferBRep_ShapeListBinder %{
@@ -993,7 +993,7 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 };
 %extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo::~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo %{

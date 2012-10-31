@@ -261,6 +261,10 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 		BRepOffset_Offset & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		BRepOffset_Offset & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepOffset_DataMapOfShapeOffset::~BRepOffset_DataMapOfShapeOffset %{
@@ -306,6 +310,10 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopTools_MapOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepOffset_DataMapOfShapeMapOfShape::~BRepOffset_DataMapOfShapeMapOfShape %{
@@ -420,7 +428,7 @@ class BRepOffset_MakeOffset {
 		%feature("autodoc", "1");
 		const BRepAlgo_Image & OffsetEdgesFromShapes() const;
 		%feature("autodoc", "1");
-		const TopTools_MapOfShape & ClosingFaces() const;
+		const TopTools_IndexedMapOfShape & ClosingFaces() const;
 
 };
 %feature("shadow") BRepOffset_MakeOffset::~BRepOffset_MakeOffset %{
@@ -656,6 +664,10 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 		BRepOffset_ListOfInterval & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		BRepOffset_ListOfInterval & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepOffset_DataMapOfShapeListOfInterval::~BRepOffset_DataMapOfShapeListOfInterval %{
@@ -694,7 +706,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval::~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval %{
@@ -764,7 +776,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape::~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape %{
@@ -867,7 +879,7 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffset_ListNodeOfListOfInterval::~BRepOffset_ListNodeOfListOfInterval %{
@@ -937,7 +949,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffset_DataMapNodeOfDataMapOfShapeOffset::~BRepOffset_DataMapNodeOfDataMapOfShapeOffset %{
@@ -992,7 +1004,7 @@ class BRepOffset_Tool {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape Deboucle3D(const TopoDS_Shape S, const TopTools_MapOfShape &Boundary);
 		%feature("autodoc", "1");
-		static		void CorrectOrientation(const TopoDS_Shape SI, const TopTools_MapOfShape &NewEdges, Handle_BRepAlgo_AsDes & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
+		static		void CorrectOrientation(const TopoDS_Shape SI, const TopTools_IndexedMapOfShape &NewEdges, Handle_BRepAlgo_AsDes & AsDes, BRepAlgo_Image & InitOffset, const Standard_Real Offset);
 		%feature("autodoc", "1");
 		static		Standard_Real Gabarit(const Handle_Geom_Curve &aCurve);
 
@@ -1019,7 +1031,7 @@ class BRepOffset_Inter2d {
 		%feature("autodoc", "1");
 		BRepOffset_Inter2d();
 		%feature("autodoc", "1");
-		static		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face F, const TopTools_MapOfShape &NewEdges, const Standard_Real Tol);
+		static		void Compute(const Handle_BRepAlgo_AsDes &AsDes, const TopoDS_Face F, const TopTools_IndexedMapOfShape &NewEdges, const Standard_Real Tol);
 		%feature("autodoc", "1");
 		static		void ConnexIntByInt(const TopoDS_Face FI, BRepOffset_Offset & OFI, TopTools_DataMapOfShapeShape & MES, const TopTools_DataMapOfShapeShape &Build, const Handle_BRepAlgo_AsDes &AsDes, const Standard_Real Offset, const Standard_Real Tol);
 
@@ -1054,9 +1066,9 @@ class BRepOffset_Inter3d {
 		%feature("autodoc", "1");
 		void ConnexIntByInt(const TopoDS_Shape SI, const BRepOffset_DataMapOfShapeOffset &MapSF, const BRepOffset_Analyse &A, TopTools_DataMapOfShapeShape & MES, TopTools_DataMapOfShapeShape & Build, TopTools_ListOfShape & Failed);
 		%feature("autodoc", "1");
-		void ContextIntByInt(const TopTools_MapOfShape &ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_DataMapOfShapeOffset &MapSF, const BRepOffset_Analyse &A, TopTools_DataMapOfShapeShape & MES, TopTools_DataMapOfShapeShape & Build, TopTools_ListOfShape & Failed);
+		void ContextIntByInt(const TopTools_IndexedMapOfShape &ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_DataMapOfShapeOffset &MapSF, const BRepOffset_Analyse &A, TopTools_DataMapOfShapeShape & MES, TopTools_DataMapOfShapeShape & Build, TopTools_ListOfShape & Failed);
 		%feature("autodoc", "1");
-		void ContextIntByArc(const TopTools_MapOfShape &ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_Analyse &Analyse, const BRepAlgo_Image &InitOffsetFace, BRepAlgo_Image & InitOffsetEdge);
+		void ContextIntByArc(const TopTools_IndexedMapOfShape &ContextFaces, const Standard_Boolean ExtentContext, const BRepOffset_Analyse &Analyse, const BRepAlgo_Image &InitOffsetFace, BRepAlgo_Image & InitOffsetEdge);
 		%feature("autodoc", "1");
 		void AddCommonEdges(const TopTools_ListOfShape &SetOfFaces);
 		%feature("autodoc", "1");
@@ -1064,11 +1076,11 @@ class BRepOffset_Inter3d {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone(const TopoDS_Face F1, const TopoDS_Face F2) const;
 		%feature("autodoc", "1");
-		TopTools_MapOfShape & TouchedFaces();
+		TopTools_IndexedMapOfShape & TouchedFaces();
 		%feature("autodoc", "1");
 		Handle_BRepAlgo_AsDes AsDes() const;
 		%feature("autodoc", "1");
-		TopTools_MapOfShape & NewEdges();
+		TopTools_IndexedMapOfShape & NewEdges();
 
 };
 %feature("shadow") BRepOffset_Inter3d::~BRepOffset_Inter3d %{

@@ -179,7 +179,7 @@ class XSAlgo_ToolContainer : public MMgt_TShared {
 };
 %extend XSAlgo_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XSAlgo_ToolContainer::~XSAlgo_ToolContainer %{

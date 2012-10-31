@@ -27,6 +27,7 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_IntTools_Context.hxx>
 #include<Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox.hxx>
 #include<Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox.hxx>
 #include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
@@ -84,7 +85,6 @@ $HeaderURL$
 #include<IntTools_MapOfCurveSample.hxx>
 #include<IntTools_MapOfSurfaceSample.hxx>
 #include<IntTools_MarkedRangeSet.hxx>
-#include<IntTools_PContext.hxx>
 #include<IntTools_PntOn2Faces.hxx>
 #include<IntTools_PntOnFace.hxx>
 #include<IntTools_QuickSort.hxx>

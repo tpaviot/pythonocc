@@ -726,7 +726,7 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 };
 %extend PXCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Volume::~PXCAFDoc_Volume %{
@@ -793,7 +793,7 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_SeqNodeOfGraphNodeSequence::~PXCAFDoc_SeqNodeOfGraphNodeSequence %{
@@ -830,7 +830,7 @@ class PXCAFDoc_MaterialTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_MaterialTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_MaterialTool::~PXCAFDoc_MaterialTool %{
@@ -877,7 +877,7 @@ class PXCAFDoc_Area : public PDF_Attribute {
 };
 %extend PXCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Area::~PXCAFDoc_Area %{
@@ -942,7 +942,7 @@ class PXCAFDoc_DimTol : public PDF_Attribute {
 };
 %extend PXCAFDoc_DimTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_DimTol::~PXCAFDoc_DimTol %{
@@ -987,7 +987,7 @@ class PXCAFDoc_Color : public PDF_Attribute {
 };
 %extend PXCAFDoc_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Color::~PXCAFDoc_Color %{
@@ -1024,7 +1024,7 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_DocumentTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
@@ -1061,7 +1061,7 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ColorTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_ColorTool::~PXCAFDoc_ColorTool %{
@@ -1106,7 +1106,7 @@ class PXCAFDoc_Location : public PDF_Attribute {
 };
 %extend PXCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Location::~PXCAFDoc_Location %{
@@ -1165,7 +1165,7 @@ class PXCAFDoc_Datum : public PDF_Attribute {
 };
 %extend PXCAFDoc_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Datum::~PXCAFDoc_Datum %{
@@ -1202,7 +1202,7 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_LayerTool::~PXCAFDoc_LayerTool %{
@@ -1239,7 +1239,7 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_ShapeTool::~PXCAFDoc_ShapeTool %{
@@ -1284,7 +1284,7 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 };
 %extend PXCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Centroid::~PXCAFDoc_Centroid %{
@@ -1355,7 +1355,7 @@ class PXCAFDoc_Material : public PDF_Attribute {
 };
 %extend PXCAFDoc_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_Material::~PXCAFDoc_Material %{
@@ -1464,7 +1464,7 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 };
 %extend PXCAFDoc_GraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_GraphNodeSequence::~PXCAFDoc_GraphNodeSequence %{
@@ -1562,7 +1562,7 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 };
 %extend PXCAFDoc_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_GraphNode::~PXCAFDoc_GraphNode %{
@@ -1599,7 +1599,7 @@ class PXCAFDoc_DimTolTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PXCAFDoc_DimTolTool::~PXCAFDoc_DimTolTool %{

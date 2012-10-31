@@ -51,7 +51,7 @@ $HeaderURL$
 
 typedef NCollection_BaseCollection<SelectMgr_SequenceOfOwner> SelectMgr_CollectionOfSequenceOfOwner;
 typedef SelectMgr_SelectableObject * SelectMgr_SOPtr;
-typedef NCollection_DataMap<Handle_SelectMgr_SelectableObject, SelectMgr_SequenceOfOwner> SelectMgr_DataMapOfObjectOwners;
+typedef NCollection_DataMap<Handle_SelectMgr_SelectableObject, SelectMgr_SequenceOfOwner, NCollection_DefaultHasher<Handle_SelectMgr_SelectableObject> > SelectMgr_DataMapOfObjectOwners;
 
 enum SelectMgr_TypeOfUpdate {
 	SelectMgr_TOU_Full,
@@ -809,7 +809,7 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfOwner::~SelectMgr_SequenceNodeOfSequenceOfOwner %{
@@ -877,7 +877,7 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_ListNodeOfListOfFilter::~SelectMgr_ListNodeOfListOfFilter %{
@@ -914,7 +914,7 @@ class SelectMgr_Filter : public MMgt_TShared {
 };
 %extend SelectMgr_Filter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_Filter::~SelectMgr_Filter %{
@@ -957,7 +957,7 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 };
 %extend SelectMgr_CompositionFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_CompositionFilter::~SelectMgr_CompositionFilter %{
@@ -992,7 +992,7 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_AndFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_AndFilter::~SelectMgr_AndFilter %{
@@ -1147,6 +1147,8 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsForcedHilight() const;
 		%feature("autodoc", "1");
+		virtual		void SetZLayer(const Handle_PrsMgr_PresentationManager &thePrsMgr, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1157,7 +1159,7 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 };
 %extend SelectMgr_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_EntityOwner::~SelectMgr_EntityOwner %{
@@ -1206,7 +1208,7 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive::~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive %{
@@ -1243,7 +1245,7 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_OrFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_OrFilter::~SelectMgr_OrFilter %{
@@ -1298,7 +1300,7 @@ class SelectMgr_Selection : public MMgt_TShared {
 };
 %extend SelectMgr_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_Selection::~SelectMgr_Selection %{
@@ -1344,6 +1346,10 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 		SelectMgr_SequenceOfSelector & ChangeFind(const Handle_SelectMgr_SelectableObject &K);
 		%feature("autodoc", "1");
 		SelectMgr_SequenceOfSelector & operator()(const Handle_SelectMgr_SelectableObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_SelectMgr_SelectableObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_SelectMgr_SelectableObject &K);
 
 };
 %feature("shadow") SelectMgr_DataMapOfObjectSelectors::~SelectMgr_DataMapOfObjectSelectors %{
@@ -1394,7 +1400,7 @@ class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 };
 %extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_IndexedMapNodeOfIndexedMapOfOwner::~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner %{
@@ -1476,7 +1482,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelector::~SelectMgr_SequenceNodeOfSequenceOfSelector %{
@@ -1621,7 +1627,7 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfSelectionActivation::~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation %{
@@ -1689,7 +1695,7 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfFilter::~SelectMgr_SequenceNodeOfSequenceOfFilter %{
@@ -1752,6 +1758,8 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation GetSelectPresentation(const Handle_PrsMgr_PresentationManager3d &TheMgr);
 		%feature("autodoc", "1");
+		virtual		void SetZLayer(const Handle_PrsMgr_PresentationManager &thePrsMgr, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1762,7 +1770,7 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 %extend SelectMgr_SelectableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SelectableObject::~SelectMgr_SelectableObject %{
@@ -1818,6 +1826,10 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 		const SelectMgr_SortCriterion & FindFromKey(const Handle_SelectBasics_EntityOwner &K) const;
 		%feature("autodoc", "1");
 		SelectMgr_SortCriterion & ChangeFromKey(const Handle_SelectBasics_EntityOwner &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_SelectBasics_EntityOwner &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_SelectBasics_EntityOwner &K);
 
 };
 %feature("shadow") SelectMgr_IndexedDataMapOfOwnerCriterion::~SelectMgr_IndexedDataMapOfOwnerCriterion %{
@@ -1873,6 +1885,10 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Handle_SelectMgr_Selection &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_SelectMgr_Selection &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_SelectMgr_Selection &K);
 
 };
 %feature("shadow") SelectMgr_DataMapOfSelectionActivation::~SelectMgr_DataMapOfSelectionActivation %{
@@ -2088,7 +2104,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_SequenceNodeOfSequenceOfSelection::~SelectMgr_SequenceNodeOfSequenceOfSelection %{
@@ -2134,6 +2150,10 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 		Handle_SelectBasics_SensitiveEntity & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_SelectBasics_SensitiveEntity & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") SelectMgr_DataMapOfIntegerSensitive::~SelectMgr_DataMapOfIntegerSensitive %{
@@ -2172,7 +2192,7 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_DataMapNodeOfDataMapOfObjectSelectors::~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors %{
@@ -2252,7 +2272,7 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion::~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion %{

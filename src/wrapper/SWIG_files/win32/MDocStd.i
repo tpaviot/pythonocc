@@ -230,7 +230,7 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend MDocStd_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDocStd_DocumentRetrievalDriver::~MDocStd_DocumentRetrievalDriver %{
@@ -273,7 +273,7 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDocStd_XLinkRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDocStd_XLinkRetrievalDriver::~MDocStd_XLinkRetrievalDriver %{
@@ -318,7 +318,7 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend MDocStd_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDocStd_DocumentStorageDriver::~MDocStd_DocumentStorageDriver %{
@@ -361,7 +361,7 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 };
 %extend MDocStd_XLinkStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDocStd_XLinkStorageDriver::~MDocStd_XLinkStorageDriver %{

@@ -242,29 +242,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GEOMImpl_ThickSolidDriver;
-class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
+%nodefaultctor Handle_GEOMImpl_Fillet2dDriver;
+class Handle_GEOMImpl_Fillet2dDriver : public Handle_TFunction_Driver {
 	public:
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver();
+		Handle_GEOMImpl_Fillet2dDriver();
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver(const Handle_GEOMImpl_ThickSolidDriver &aHandle);
+		Handle_GEOMImpl_Fillet2dDriver(const Handle_GEOMImpl_Fillet2dDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver(const GEOMImpl_ThickSolidDriver *anItem);
+		Handle_GEOMImpl_Fillet2dDriver(const GEOMImpl_Fillet2dDriver *anItem);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver & operator=(const Handle_GEOMImpl_ThickSolidDriver &aHandle);
+		Handle_GEOMImpl_Fillet2dDriver & operator=(const Handle_GEOMImpl_Fillet2dDriver &aHandle);
 		%feature("autodoc", "1");
-		Handle_GEOMImpl_ThickSolidDriver & operator=(const GEOMImpl_ThickSolidDriver *anItem);
+		Handle_GEOMImpl_Fillet2dDriver & operator=(const GEOMImpl_Fillet2dDriver *anItem);
 		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_ThickSolidDriver const DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_GEOMImpl_Fillet2dDriver const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_GEOMImpl_ThickSolidDriver {
-	GEOMImpl_ThickSolidDriver* GetObject() {
-	return (GEOMImpl_ThickSolidDriver*)$self->Access();
+%extend Handle_GEOMImpl_Fillet2dDriver {
+	GEOMImpl_Fillet2dDriver* GetObject() {
+	return (GEOMImpl_Fillet2dDriver*)$self->Access();
 	}
 };
-%feature("shadow") Handle_GEOMImpl_ThickSolidDriver::~Handle_GEOMImpl_ThickSolidDriver %{
+%feature("shadow") Handle_GEOMImpl_Fillet2dDriver::~Handle_GEOMImpl_Fillet2dDriver %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -273,7 +273,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_GEOMImpl_ThickSolidDriver {
+%extend Handle_GEOMImpl_Fillet2dDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -318,82 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GEOMImpl_DraftDriver;
-class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver(const Handle_GEOMImpl_DraftDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver(const GEOMImpl_DraftDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver & operator=(const Handle_GEOMImpl_DraftDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_DraftDriver & operator=(const GEOMImpl_DraftDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_DraftDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_DraftDriver {
-	GEOMImpl_DraftDriver* GetObject() {
-	return (GEOMImpl_DraftDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOMImpl_DraftDriver::~Handle_GEOMImpl_DraftDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOMImpl_DraftDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GEOMImpl_VariableFilletDriver;
-class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver(const Handle_GEOMImpl_VariableFilletDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver(const GEOMImpl_VariableFilletDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver & operator=(const Handle_GEOMImpl_VariableFilletDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_VariableFilletDriver & operator=(const GEOMImpl_VariableFilletDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_VariableFilletDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_VariableFilletDriver {
-	GEOMImpl_VariableFilletDriver* GetObject() {
-	return (GEOMImpl_VariableFilletDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOMImpl_VariableFilletDriver::~Handle_GEOMImpl_VariableFilletDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOMImpl_VariableFilletDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_GEOMImpl_ImportDriver;
 class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 	public:
@@ -426,44 +350,6 @@ def __del__(self):
 %}
 
 %extend Handle_GEOMImpl_ImportDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GEOMImpl_MarkerDriver;
-class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver(const Handle_GEOMImpl_MarkerDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver(const GEOMImpl_MarkerDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver & operator=(const Handle_GEOMImpl_MarkerDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_MarkerDriver & operator=(const GEOMImpl_MarkerDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_MarkerDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_MarkerDriver {
-	GEOMImpl_MarkerDriver* GetObject() {
-	return (GEOMImpl_MarkerDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOMImpl_MarkerDriver::~Handle_GEOMImpl_MarkerDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOMImpl_MarkerDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -964,6 +850,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GEOMImpl_MarkerDriver;
+class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_MarkerDriver();
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_MarkerDriver(const Handle_GEOMImpl_MarkerDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_MarkerDriver(const GEOMImpl_MarkerDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_MarkerDriver & operator=(const Handle_GEOMImpl_MarkerDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_GEOMImpl_MarkerDriver & operator=(const GEOMImpl_MarkerDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GEOMImpl_MarkerDriver const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GEOMImpl_MarkerDriver {
+	GEOMImpl_MarkerDriver* GetObject() {
+	return (GEOMImpl_MarkerDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GEOMImpl_MarkerDriver::~Handle_GEOMImpl_MarkerDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GEOMImpl_MarkerDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GEOMImpl_ScaleDriver;
 class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 	public:
@@ -1306,44 +1230,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_GEOMImpl_CurveDriver;
-class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver(const Handle_GEOMImpl_CurveDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver(const GEOMImpl_CurveDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver & operator=(const Handle_GEOMImpl_CurveDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_CurveDriver & operator=(const GEOMImpl_CurveDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_CurveDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_CurveDriver {
-	GEOMImpl_CurveDriver* GetObject() {
-	return (GEOMImpl_CurveDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOMImpl_CurveDriver::~Handle_GEOMImpl_CurveDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOMImpl_CurveDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_GEOMImpl_PipeDriver;
 class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
 	public:
@@ -1604,44 +1490,6 @@ def __del__(self):
 %}
 
 %extend Handle_GEOMImpl_BlockDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_GEOMImpl_PlateDriver;
-class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver();
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver(const Handle_GEOMImpl_PlateDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver(const GEOMImpl_PlateDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver & operator=(const Handle_GEOMImpl_PlateDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_GEOMImpl_PlateDriver & operator=(const GEOMImpl_PlateDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_GEOMImpl_PlateDriver const DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_GEOMImpl_PlateDriver {
-	GEOMImpl_PlateDriver* GetObject() {
-	return (GEOMImpl_PlateDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_GEOMImpl_PlateDriver::~Handle_GEOMImpl_PlateDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_GEOMImpl_PlateDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1990,6 +1838,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMImpl_IShapes;
+class GEOMImpl_IShapes {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_IShapes(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetShapes(const Handle_TColStd_HSequenceOfTransient &theShapes);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfTransient GetShapes();
+		%feature("autodoc", "1");
+		void SetBase(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetBase();
+		%feature("autodoc", "1");
+		void SetIsPlanar(const Standard_Boolean isPlanarWanted);
+		%feature("autodoc", "1");
+		Standard_Boolean GetIsPlanar();
+		%feature("autodoc", "1");
+		void SetSubShapeType(const Standard_Integer theType);
+		%feature("autodoc", "1");
+		Standard_Integer GetSubShapeType();
+		%feature("autodoc", "1");
+		void SetIndices(const Handle_TColStd_HArray1OfInteger &theIndices);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger GetIndices();
+		%feature("autodoc", "1");
+		void SetTolerance(const Standard_Real theValue);
+		%feature("autodoc", "1");
+		Standard_Real GetTolerance();
+		%feature("autodoc", "1");
+		void SetAngularTolerance(const Standard_Real theValue);
+		%feature("autodoc", "1");
+		Standard_Real GetAngularTolerance();
+
+};
+%feature("shadow") GEOMImpl_IShapes::~GEOMImpl_IShapes %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_IShapes {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMImpl_MarkerDriver;
 class GEOMImpl_MarkerDriver : public TFunction_Driver {
 	public:
@@ -2016,7 +1915,7 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MarkerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MarkerDriver::~GEOMImpl_MarkerDriver %{
@@ -2086,29 +1985,17 @@ class GEOMImpl_IScale {
 		%feature("autodoc", "1");
 		void SetFactor(double );
 		%feature("autodoc", "1");
-		void SetFactor(const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
 		double GetFactor();
 		%feature("autodoc", "1");
 		void SetPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint();
 		%feature("autodoc", "1");
-		void SetVector(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetVector();
-		%feature("autodoc", "1");
 		void SetFactorX(double );
-		%feature("autodoc", "1");
-		void SetFactorX(const TCollection_AsciiString &theValue);
 		%feature("autodoc", "1");
 		void SetFactorY(double );
 		%feature("autodoc", "1");
-		void SetFactorY(const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
 		void SetFactorZ(double );
-		%feature("autodoc", "1");
-		void SetFactorZ(const TCollection_AsciiString &theValue);
 		%feature("autodoc", "1");
 		double GetFactorX();
 		%feature("autodoc", "1");
@@ -2127,43 +2014,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IScale {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_ICurve;
-class GEOMImpl_ICurve {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_ICurve(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetEdge(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetTool(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPar(double );
-		%feature("autodoc", "1");
-		void SetPar(const TCollection_AsciiString &theP);
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetEdge();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetTool();
-		%feature("autodoc", "1");
-		double GetPar();
-
-};
-%feature("shadow") GEOMImpl_ICurve::~GEOMImpl_ICurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_ICurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2196,7 +2046,7 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ScaleDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ScaleDriver::~GEOMImpl_ScaleDriver %{
@@ -2228,7 +2078,7 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEdge(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeEdgeOnCurveByLength(Handle_GEOM_Object , const GEOM_Parameter &theLength, Handle_GEOM_Object );
+		Handle_GEOM_Object MakeEdgeOnCurveByLength(Handle_GEOM_Object , const Standard_Real theLength, Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeEdgeWire(Handle_GEOM_Object , const Standard_Real theLinearTolerance, const Standard_Real theAngularTolerance);
 		%feature("autodoc", "1");
@@ -2306,9 +2156,13 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetInPlace(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
+		Handle_GEOM_Object GetInPlaceOld(Handle_GEOM_Object , Handle_GEOM_Object );
+		%feature("autodoc", "1");
 		Handle_GEOM_Object GetInPlaceByHistory(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object GetSame(const Handle_GEOM_Object &theShapeWhere, const Handle_GEOM_Object &theShapeWhat);
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfInteger GetSameIDs(const Handle_GEOM_Object &theShapeWhere, const Handle_GEOM_Object &theShapeWhat);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfInteger GetShapesOnBoxIDs(const Handle_GEOM_Object &theBox, const Handle_GEOM_Object &theShape, const Standard_Integer theShapeType, GEOMAlgo_State );
 		%feature("autodoc", "1");
@@ -2396,6 +2250,8 @@ class GEOMImpl_IPartition {
 		%feature("autodoc", "1");
 		void SetLimit(int );
 		%feature("autodoc", "1");
+		void SetKeepNonlimitShapes(int );
+		%feature("autodoc", "1");
 		void SetShapes(const Handle_TColStd_HSequenceOfTransient &theShapes);
 		%feature("autodoc", "1");
 		void SetTools(const Handle_TColStd_HSequenceOfTransient &theShapes);
@@ -2407,6 +2263,8 @@ class GEOMImpl_IPartition {
 		void SetMaterials(const Handle_TColStd_HArray1OfInteger &theMaterials);
 		%feature("autodoc", "1");
 		int GetLimit();
+		%feature("autodoc", "1");
+		int GetKeepNonlimitShapes();
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetShapes();
 		%feature("autodoc", "1");
@@ -2425,10 +2283,6 @@ class GEOMImpl_IPartition {
 		Handle_GEOM_Function GetShape();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPlane();
-		%feature("autodoc", "1");
-		void SetKeepNonlimitShapes(int );
-		%feature("autodoc", "1");
-		int GetKeepNonlimitShapes();
 
 };
 %feature("shadow") GEOMImpl_IPartition::~GEOMImpl_IPartition %{
@@ -2664,7 +2518,7 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MirrorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MirrorDriver::~GEOMImpl_MirrorDriver %{
@@ -2689,21 +2543,15 @@ class GEOMImpl_IBox {
 		%feature("autodoc", "1");
 		GEOMImpl_IBox(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetDX(const TCollection_AsciiString &theX);
-		%feature("autodoc", "1");
-		void SetDX(const double &theX);
+		void SetDX(double );
 		%feature("autodoc", "1");
 		double GetDX();
 		%feature("autodoc", "1");
-		void SetDY(const TCollection_AsciiString &theY);
-		%feature("autodoc", "1");
-		void SetDY(const double &theY);
+		void SetDY(double );
 		%feature("autodoc", "1");
 		double GetDY();
 		%feature("autodoc", "1");
-		void SetDZ(const TCollection_AsciiString &theZ);
-		%feature("autodoc", "1");
-		void SetDZ(const double &theZ);
+		void SetDZ(double );
 		%feature("autodoc", "1");
 		double GetDZ();
 		%feature("autodoc", "1");
@@ -2748,6 +2596,8 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape MakeScaledPrism(const TopoDS_Shape theShapeBase, const gp_Vec theVector, const Standard_Real theScaleFactor, const gp_Pnt theCDG=gp::Origin(), bool =false);
 		%feature("autodoc", "1");
+		static		TopoDS_Shape MakeDraftPrism(const TopoDS_Shape theInitShape, const TopoDS_Shape theBaseShape, const Standard_Real theHeight, const Standard_Real theAngle, bool , const TopoDS_Shape theSupport);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
@@ -2760,7 +2610,7 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PrismDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PrismDriver::~GEOMImpl_PrismDriver %{
@@ -2812,29 +2662,27 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		GEOMImpl_IBasicOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointXYZ(const GEOM_Parameter &theX, const GEOM_Parameter &theY, const GEOM_Parameter &theZ);
+		Handle_GEOM_Object MakePointXYZ(double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointWithReference(Handle_GEOM_Object , const GEOM_Parameter &theX, const GEOM_Parameter &theY, const GEOM_Parameter &theZ);
+		Handle_GEOM_Object MakePointWithReference(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointOnCurve(Handle_GEOM_Object , const GEOM_Parameter &theParameter);
+		Handle_GEOM_Object MakePointOnCurve(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointOnCurveByLength(Handle_GEOM_Object , const GEOM_Parameter &theLength, Handle_GEOM_Object );
+		Handle_GEOM_Object MakePointOnCurveByLength(Handle_GEOM_Object , double , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointOnCurveByCoord(Handle_GEOM_Object , const GEOM_Parameter &theXParam, const GEOM_Parameter &theYParam, const GEOM_Parameter &theZParam);
+		Handle_GEOM_Object MakePointOnCurveByCoord(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePointOnLinesIntersection(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointOnSurface(Handle_GEOM_Object , const GEOM_Parameter &theUParameter, const GEOM_Parameter &theVParameter);
+		Handle_GEOM_Object MakePointOnSurface(Handle_GEOM_Object , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePointOnSurfaceByCoord(Handle_GEOM_Object , const GEOM_Parameter &theXParam, const GEOM_Parameter &theYParam, const GEOM_Parameter &theZParam);
+		Handle_GEOM_Object MakePointOnSurfaceByCoord(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeVectorDXDYDZ(const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		Handle_GEOM_Object MakeVectorDXDYDZ(double , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeVectorTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeTangentOnCurve(const Handle_GEOM_Object &theCurve, const GEOM_Parameter &theParameter);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeVectorPntDXDYDZ(Handle_GEOM_Object , const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		Handle_GEOM_Object MakeTangentOnCurve(const Handle_GEOM_Object &theCurve, double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeLineTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -2842,27 +2690,23 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeLine(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlaneThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theSize);
+		Handle_GEOM_Object MakePlaneThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlanePntVec(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theSize);
+		Handle_GEOM_Object MakePlanePntVec(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlaneFace(Handle_GEOM_Object , const GEOM_Parameter &theSize);
+		Handle_GEOM_Object MakePlaneFace(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlane2Vec(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theSize);
+		Handle_GEOM_Object MakePlane2Vec(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlaneLCS(Handle_GEOM_Object , const GEOM_Parameter &theSize, const GEOM_Parameter &theOrientation);
+		Handle_GEOM_Object MakePlaneLCS(Handle_GEOM_Object , double , int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeMarker(const GEOM_Parameter &theOX, const GEOM_Parameter &theOY, const GEOM_Parameter &theOZ, const GEOM_Parameter &theXDX, const GEOM_Parameter &theXDY, const GEOM_Parameter &theXDZ, const GEOM_Parameter &theYDX, const GEOM_Parameter &theYDY, const GEOM_Parameter &theYDZ);
+		Handle_GEOM_Object MakeMarker(double , double , double , double , double , double , double , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeMarkerFromShape(const Handle_GEOM_Object &theShape);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeMarkerPntTwoVec(const Handle_GEOM_Object &theOrigin, const Handle_GEOM_Object &theXVec, const Handle_GEOM_Object &theYVec);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeTangentPlaneOnFace(const Handle_GEOM_Object &theFace, const GEOM_Parameter &theParamU, const GEOM_Parameter &theParamV, const GEOM_Parameter &theSize);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFaceThreePnt(const Handle_GEOM_Object thePnt1, const Handle_GEOM_Object thePnt2, const Handle_GEOM_Object thePnt3);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFaceFourPnt(const Handle_GEOM_Object thePnt1, const Handle_GEOM_Object thePnt2, const Handle_GEOM_Object thePnt3, const Handle_GEOM_Object thePnt4);
+		Handle_GEOM_Object MakeTangentPlaneOnFace(const Handle_GEOM_Object &theFace, double , double , double );
 
 };
 %feature("shadow") GEOMImpl_IBasicOperations::~GEOMImpl_IBasicOperations %{
@@ -2907,6 +2751,10 @@ class GEOMImpl_IFilling {
 		%feature("autodoc", "1");
 		int GetNbIter();
 		%feature("autodoc", "1");
+		void SetApprox(bool );
+		%feature("autodoc", "1");
+		bool GetApprox();
+		%feature("autodoc", "1");
 		void SetMethod(int );
 		%feature("autodoc", "1");
 		int GetMethod();
@@ -2914,10 +2762,6 @@ class GEOMImpl_IFilling {
 		void SetShape(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetShape();
-		%feature("autodoc", "1");
-		void SetApprox(bool );
-		%feature("autodoc", "1");
-		bool GetApprox();
 
 };
 %feature("shadow") GEOMImpl_IFilling::~GEOMImpl_IFilling %{
@@ -2942,17 +2786,11 @@ class GEOMImpl_IVector {
 		%feature("autodoc", "1");
 		GEOMImpl_IVector(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetDX(const TCollection_AsciiString &theDX);
+		void SetDX(double );
 		%feature("autodoc", "1");
-		void SetDY(const TCollection_AsciiString &theDY);
+		void SetDY(double );
 		%feature("autodoc", "1");
-		void SetDZ(const TCollection_AsciiString &theDZ);
-		%feature("autodoc", "1");
-		void SetDX(const double &theDX);
-		%feature("autodoc", "1");
-		void SetDY(const double &theDY);
-		%feature("autodoc", "1");
-		void SetDZ(const double &theDZ);
+		void SetDZ(double );
 		%feature("autodoc", "1");
 		double GetDX();
 		%feature("autodoc", "1");
@@ -2972,7 +2810,7 @@ class GEOMImpl_IVector {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetCurve();
 		%feature("autodoc", "1");
-		void SetParameter(const TCollection_AsciiString &theParam);
+		void SetParameter(double );
 		%feature("autodoc", "1");
 		double GetParameter();
 
@@ -3034,7 +2872,7 @@ class GEOMImpl_I3DSketcher {
 		%feature("autodoc", "1");
 		GEOMImpl_I3DSketcher(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetCoordinates(const Handle_TColStd_HArray1OfAsciiString &theValue);
+		void SetCoordinates(const Handle_TColStd_HArray1OfReal &theValue);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal GetCoordinates();
 
@@ -3067,8 +2905,6 @@ class GEOMImpl_IFillet1d {
 		%feature("autodoc", "1");
 		void SetR(double );
 		%feature("autodoc", "1");
-		void SetR(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
 		void SetLength(int );
 		%feature("autodoc", "1");
 		void SetVertex(int , int );
@@ -3090,6 +2926,45 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IFillet1d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMImpl_IFillet2d;
+class GEOMImpl_IFillet2d {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_IFillet2d(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetShape(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetShape();
+		%feature("autodoc", "1");
+		void SetR(double );
+		%feature("autodoc", "1");
+		void SetLength(int );
+		%feature("autodoc", "1");
+		void SetVertex(int , int );
+		%feature("autodoc", "1");
+		double GetR();
+		%feature("autodoc", "1");
+		int GetLength();
+		%feature("autodoc", "1");
+		int GetVertex(int );
+
+};
+%feature("shadow") GEOMImpl_IFillet2d::~GEOMImpl_IFillet2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_IFillet2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3145,21 +3020,19 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object TranslateTwoPointsCopy(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object TranslateDXDYDZ(Handle_GEOM_Object , const GEOM_Parameter &theX, const GEOM_Parameter &theY, const GEOM_Parameter &theZ);
+		Handle_GEOM_Object TranslateDXDYDZ(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object TranslateDXDYDZCopy(Handle_GEOM_Object , const GEOM_Parameter &theX, const GEOM_Parameter &theY, const GEOM_Parameter &theZ);
+		Handle_GEOM_Object TranslateDXDYDZCopy(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object TranslateVector(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object TranslateVectorCopy(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object TranslateVectorDistance(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theDistance, bool );
+		Handle_GEOM_Object TranslateVectorDistance(Handle_GEOM_Object , Handle_GEOM_Object , double , bool );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Translate1D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep, const GEOM_Parameter &theNbTimes);
+		Handle_GEOM_Object Translate1D(Handle_GEOM_Object , Handle_GEOM_Object , double , Standard_Integer );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Translate2D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep1, const GEOM_Parameter &theNbTimes1, Handle_GEOM_Object , const GEOM_Parameter &theStep2, const GEOM_Parameter &theNbTimes2);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object TranslateAlongRail(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theStep, const GEOM_Parameter &theNbTimes, const GEOM_Parameter &theType);
+		Handle_GEOM_Object Translate2D(Handle_GEOM_Object , Handle_GEOM_Object , double , Standard_Integer , Handle_GEOM_Object , double , Standard_Integer );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MirrorPlane(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3173,33 +3046,29 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MirrorPointCopy(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object OffsetShape(Handle_GEOM_Object , const GEOM_Parameter &theOffset, const GEOM_Parameter &theHeightOffset, bool );
+		Handle_GEOM_Object OffsetShape(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object OffsetShapeCopy(Handle_GEOM_Object , const GEOM_Parameter &theOffset, const GEOM_Parameter &theHeightOffset, bool );
+		Handle_GEOM_Object OffsetShapeCopy(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object ProjectShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object ScaleShape(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
+		Handle_GEOM_Object ScaleShape(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object ScaleShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object ScaleShapeAffine(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object ScaleShapeAffineCopy(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theFactor);
+		Handle_GEOM_Object ScaleShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object PositionShape(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object PositionShapeCopy(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object PositionAlongPath(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theDistance, bool , bool );
+		Handle_GEOM_Object PositionAlongPath(Handle_GEOM_Object , Handle_GEOM_Object , double , bool , bool );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Rotate(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle);
+		Handle_GEOM_Object Rotate(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object RotateCopy(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle);
+		Handle_GEOM_Object RotateCopy(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Rotate1D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theNbTimes);
+		Handle_GEOM_Object Rotate1D(Handle_GEOM_Object , Handle_GEOM_Object , Standard_Integer );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Rotate2D(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle, const GEOM_Parameter &theNbTimes1, const GEOM_Parameter &theStep, const GEOM_Parameter &theNbTimes2, const GEOM_Parameter &theElevationStep);
+		Handle_GEOM_Object Rotate2D(Handle_GEOM_Object , Handle_GEOM_Object , double , Standard_Integer , double , Standard_Integer );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object RotateThreePoints(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -3230,17 +3099,11 @@ class GEOMImpl_IPoint {
 		%feature("autodoc", "1");
 		GEOMImpl_IPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetX(const TCollection_AsciiString &theX);
+		void SetX(double );
 		%feature("autodoc", "1");
-		void SetY(const TCollection_AsciiString &theY);
+		void SetY(double );
 		%feature("autodoc", "1");
-		void SetZ(const TCollection_AsciiString &theZ);
-		%feature("autodoc", "1");
-		void SetX(const double theX);
-		%feature("autodoc", "1");
-		void SetY(const double theY);
-		%feature("autodoc", "1");
-		void SetZ(const double theZ);
+		void SetZ(double );
 		%feature("autodoc", "1");
 		double GetX();
 		%feature("autodoc", "1");
@@ -3254,19 +3117,13 @@ class GEOMImpl_IPoint {
 		%feature("autodoc", "1");
 		void SetCurve(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		Handle_GEOM_Function GetCurve();
-		%feature("autodoc", "1");
-		void SetParameter(const double &theParam);
-		%feature("autodoc", "1");
-		void SetParameter(const TCollection_AsciiString &theParam);
-		%feature("autodoc", "1");
-		double GetParameter();
-		%feature("autodoc", "1");
 		void SetSurface(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetLine1(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetLine2(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetCurve();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetSurface();
 		%feature("autodoc", "1");
@@ -3274,15 +3131,15 @@ class GEOMImpl_IPoint {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetLine2();
 		%feature("autodoc", "1");
+		void SetParameter(double );
+		%feature("autodoc", "1");
 		void SetParameter2(double );
-		%feature("autodoc", "1");
-		void SetParameter2(const TCollection_AsciiString &theParam);
-		%feature("autodoc", "1");
-		double GetParameter2();
 		%feature("autodoc", "1");
 		void SetLength(double );
 		%feature("autodoc", "1");
-		void SetLength(const TCollection_AsciiString &theLength);
+		double GetParameter();
+		%feature("autodoc", "1");
+		double GetParameter2();
 		%feature("autodoc", "1");
 		double GetLength();
 
@@ -3329,7 +3186,7 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_TranslateDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_TranslateDriver::~GEOMImpl_TranslateDriver %{
@@ -3374,7 +3231,7 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CopyDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CopyDriver::~GEOMImpl_CopyDriver %{
@@ -3410,8 +3267,6 @@ class GEOMImpl_ICircle {
 		void SetVector(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetRadius(double );
-		%feature("autodoc", "1");
-		void SetRadius(const TCollection_AsciiString &theR);
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint1();
 		%feature("autodoc", "1");
@@ -3468,7 +3323,7 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BooleanDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BooleanDriver::~GEOMImpl_BooleanDriver %{
@@ -3513,7 +3368,7 @@ class GEOMImpl_3DSketcherDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_3DSketcherDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_3DSketcherDriver::~GEOMImpl_3DSketcherDriver %{
@@ -3599,6 +3454,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMImpl_Fillet2dDriver;
+class GEOMImpl_Fillet2dDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_Fillet2dDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_Fillet2dDriver {
+	Handle_GEOMImpl_Fillet2dDriver GetHandle() {
+	return *(Handle_GEOMImpl_Fillet2dDriver*) &$self;
+	}
+};
+%extend GEOMImpl_Fillet2dDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GEOMImpl_Fillet2dDriver::~GEOMImpl_Fillet2dDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_Fillet2dDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMImpl_ICopy;
 class GEOMImpl_ICopy {
 	public:
@@ -3636,15 +3536,19 @@ class GEOMImpl_IFillet {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetShape();
 		%feature("autodoc", "1");
-		void SetR(const double &theR);
+		void SetR(double );
 		%feature("autodoc", "1");
-		void SetR(const TCollection_AsciiString &theR);
+		void SetR1(double );
+		%feature("autodoc", "1");
+		void SetR2(double );
 		%feature("autodoc", "1");
 		double GetR();
 		%feature("autodoc", "1");
-		void SetLength(int );
+		double GetR1();
 		%feature("autodoc", "1");
-		void SetLength(const TCollection_AsciiString &theLen);
+		double GetR2();
+		%feature("autodoc", "1");
+		void SetLength(int );
 		%feature("autodoc", "1");
 		int GetLength();
 		%feature("autodoc", "1");
@@ -3652,25 +3556,9 @@ class GEOMImpl_IFillet {
 		%feature("autodoc", "1");
 		void SetFace(int , int );
 		%feature("autodoc", "1");
-		void SetVertex(int , int );
-		%feature("autodoc", "1");
 		int GetEdge(int );
 		%feature("autodoc", "1");
 		int GetFace(int );
-		%feature("autodoc", "1");
-		int GetVertex(int );
-		%feature("autodoc", "1");
-		void SetR1(double );
-		%feature("autodoc", "1");
-		void SetR2(double );
-		%feature("autodoc", "1");
-		void SetR1(const TCollection_AsciiString &theR1);
-		%feature("autodoc", "1");
-		void SetR2(const TCollection_AsciiString &theR2);
-		%feature("autodoc", "1");
-		double GetR1();
-		%feature("autodoc", "1");
-		double GetR2();
 
 };
 %feature("shadow") GEOMImpl_IFillet::~GEOMImpl_IFillet %{
@@ -3754,7 +3642,7 @@ class GEOMImpl_ProjectionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ProjectionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ProjectionDriver::~GEOMImpl_ProjectionDriver %{
@@ -3799,7 +3687,7 @@ class GEOMImpl_Fillet1dDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_Fillet1dDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_Fillet1dDriver::~GEOMImpl_Fillet1dDriver %{
@@ -3844,7 +3732,7 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_VectorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_VectorDriver::~GEOMImpl_VectorDriver %{
@@ -3889,7 +3777,7 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_TorusDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_TorusDriver::~GEOMImpl_TorusDriver %{
@@ -3934,7 +3822,7 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FaceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FaceDriver::~GEOMImpl_FaceDriver %{
@@ -3979,7 +3867,7 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ChamferDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ChamferDriver::~GEOMImpl_ChamferDriver %{
@@ -3992,51 +3880,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_ChamferDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_DraftDriver;
-class GEOMImpl_DraftDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_DraftDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_DraftDriver {
-	Handle_GEOMImpl_DraftDriver GetHandle() {
-	return *(Handle_GEOMImpl_DraftDriver*) &$self;
-	}
-};
-%extend GEOMImpl_DraftDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_DraftDriver::~GEOMImpl_DraftDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_DraftDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4112,7 +3955,7 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_RotateDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
@@ -4157,7 +4000,7 @@ class GEOMImpl_DiskDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_DiskDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_DiskDriver::~GEOMImpl_DiskDriver %{
@@ -4170,110 +4013,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_DiskDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_IFace;
-class GEOMImpl_IFace {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IFace(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPoint1(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPoint2(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPoint3(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPoint4(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPoint1();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPoint2();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPoint3();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPoint4();
-		%feature("autodoc", "1");
-		void SetRef1(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetRef1();
-		%feature("autodoc", "1");
-		void SetOrientation(int );
-		%feature("autodoc", "1");
-		int GetOrientation();
-		%feature("autodoc", "1");
-		void SetH(double );
-		%feature("autodoc", "1");
-		void SetH(const TCollection_AsciiString &theH);
-		%feature("autodoc", "1");
-		void SetW(double );
-		%feature("autodoc", "1");
-		void SetW(const TCollection_AsciiString &SetW);
-		%feature("autodoc", "1");
-		double GetH();
-		%feature("autodoc", "1");
-		double GetW();
-
-};
-%feature("shadow") GEOMImpl_IFace::~GEOMImpl_IFace %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_OffsetDriver;
-class GEOMImpl_OffsetDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_OffsetDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_OffsetDriver {
-	Handle_GEOMImpl_OffsetDriver GetHandle() {
-	return *(Handle_GEOMImpl_OffsetDriver*) &$self;
-	}
-};
-%extend GEOMImpl_OffsetDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_OffsetDriver::~GEOMImpl_OffsetDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_OffsetDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4306,7 +4045,7 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ArchimedeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ArchimedeDriver::~GEOMImpl_ArchimedeDriver %{
@@ -4351,7 +4090,7 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ShapeDriver::~GEOMImpl_ShapeDriver %{
@@ -4396,7 +4135,7 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PolylineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PolylineDriver::~GEOMImpl_PolylineDriver %{
@@ -4462,8 +4201,6 @@ class GEOMImpl_ISketcher {
 		%feature("autodoc", "1");
 		void SetWorkingPlane(int , double );
 		%feature("autodoc", "1");
-		void SetWorkingPlane(int , const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
 		double GetWorkingPlane(int );
 		%feature("autodoc", "1");
 		void SetWorkingPlane(Handle_GEOM_Function );
@@ -4501,15 +4238,7 @@ class GEOMImpl_IEllipse {
 		%feature("autodoc", "1");
 		void SetRMinor(double );
 		%feature("autodoc", "1");
-		void SetRMajor(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetRMinor(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
 		void SetVectorMajor(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPMajor(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetPMinor(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetCenter();
 		%feature("autodoc", "1");
@@ -4518,10 +4247,6 @@ class GEOMImpl_IEllipse {
 		double GetRMajor();
 		%feature("autodoc", "1");
 		double GetRMinor();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPMajor();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPMinor();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetVectorMajor();
 
@@ -4570,7 +4295,7 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PipeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PipeDriver::~GEOMImpl_PipeDriver %{
@@ -4615,7 +4340,7 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ThruSectionsDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ThruSectionsDriver::~GEOMImpl_ThruSectionsDriver %{
@@ -4634,51 +4359,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMImpl_PlateDriver;
-class GEOMImpl_PlateDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_PlateDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_PlateDriver {
-	Handle_GEOMImpl_PlateDriver GetHandle() {
-	return *(Handle_GEOMImpl_PlateDriver*) &$self;
-	}
-};
-%extend GEOMImpl_PlateDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_PlateDriver::~GEOMImpl_PlateDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_PlateDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMImpl_IChamfer;
 class GEOMImpl_IChamfer {
 	public:
@@ -4689,23 +4369,21 @@ class GEOMImpl_IChamfer {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetShape();
 		%feature("autodoc", "1");
-		void SetD(const double &theD);
+		void SetD(double );
 		%feature("autodoc", "1");
-		void SetD1(const double &theD);
+		void SetD1(double );
 		%feature("autodoc", "1");
-		void SetD2(const double &theD);
+		void SetD2(double );
 		%feature("autodoc", "1");
-		void SetD(const TCollection_AsciiString &theD);
-		%feature("autodoc", "1");
-		void SetD1(const TCollection_AsciiString &theD);
-		%feature("autodoc", "1");
-		void SetD2(const TCollection_AsciiString &theD);
+		void SetAngle(double );
 		%feature("autodoc", "1");
 		double GetD();
 		%feature("autodoc", "1");
 		double GetD1();
 		%feature("autodoc", "1");
 		double GetD2();
+		%feature("autodoc", "1");
+		double GetAngle();
 		%feature("autodoc", "1");
 		void SetLength(int );
 		%feature("autodoc", "1");
@@ -4717,27 +4395,13 @@ class GEOMImpl_IChamfer {
 		%feature("autodoc", "1");
 		void SetFace2(int );
 		%feature("autodoc", "1");
-		void Set2DEdge1(int );
-		%feature("autodoc", "1");
-		void Set2DEdge2(int );
+		void SetEdge(int , int );
 		%feature("autodoc", "1");
 		int GetFace(int );
 		%feature("autodoc", "1");
 		int GetFace1();
 		%feature("autodoc", "1");
 		int GetFace2();
-		%feature("autodoc", "1");
-		int Get2DEdge1();
-		%feature("autodoc", "1");
-		int Get2DEdge2();
-		%feature("autodoc", "1");
-		void SetAngle(double );
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
-		%feature("autodoc", "1");
-		void SetEdge(int , int );
 		%feature("autodoc", "1");
 		int GetEdge(int );
 
@@ -4784,7 +4448,7 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_HealingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_HealingDriver::~GEOMImpl_HealingDriver %{
@@ -4806,20 +4470,21 @@ def __del__(self):
 %nodefaultctor GEOMImpl_ICurvesOperations;
 class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 	public:
+		enum CurveType {
+			Polyline,
+			Bezier,
+			Interpolation,
+		};
 		%feature("autodoc", "1");
 		GEOMImpl_ICurvesOperations(GEOM_Engine* theEngine, int );
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePolyline(std::list<Handle_GEOM_Object>, bool =false);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCircleThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeCircleCenter2Pnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeCirclePntVecR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR);
+		Handle_GEOM_Object MakeCirclePntVecR(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeEllipse(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor, Handle_GEOM_Object );
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeEllipseThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
+		Handle_GEOM_Object MakeEllipse(Handle_GEOM_Object , Handle_GEOM_Object , double , double , Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeArc(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -4827,19 +4492,17 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeArcOfEllipse(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
+		Handle_GEOM_Object MakePolyline(std::list<Handle_GEOM_Object>, bool =false);
+		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSplineBezier(std::list<Handle_GEOM_Object>, bool =false);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeSplineInterpolation(std::list<Handle_GEOM_Object>, bool =false, bool =false);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSketcher(const TCollection_AsciiString &theCommand, std::list<GEOM_Parameter>);
+		Handle_GEOM_Object MakeSketcher(const char *theCommand, std::list<double>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object Make3DSketcher(std::list<TCollection_AsciiString>);
+		Handle_GEOM_Object Make3DSketcher(std::list<double>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSketcherOnPlane(const TCollection_AsciiString &theCommand, Handle_GEOM_Object );
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeCurveSplitByParam(Handle_GEOM_Object , const GEOM_Parameter &thePar);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeCurveSplitByCurve(Handle_GEOM_Object , Handle_GEOM_Object );
+		Handle_GEOM_Object MakeSketcherOnPlane(const char *theCommand, Handle_GEOM_Object );
 
 };
 %feature("shadow") GEOMImpl_ICurvesOperations::~GEOMImpl_ICurvesOperations %{
@@ -4875,8 +4538,6 @@ class GEOMImpl_IDisk {
 		void SetVector(Handle_GEOM_Function );
 		%feature("autodoc", "1");
 		void SetRadius(double );
-		%feature("autodoc", "1");
-		void SetRadius(const TCollection_AsciiString &theR);
 		%feature("autodoc", "1");
 		void SetOrientation(double );
 		%feature("autodoc", "1");
@@ -4937,7 +4598,7 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PartitionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PartitionDriver::~GEOMImpl_PartitionDriver %{
@@ -4962,29 +4623,9 @@ class GEOMImpl_ISphere {
 		%feature("autodoc", "1");
 		GEOMImpl_ISphere(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetR(const double &theR);
-		%feature("autodoc", "1");
-		void SetR(const TCollection_AsciiString &theR);
+		void SetR(double );
 		%feature("autodoc", "1");
 		double GetR();
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
-		%feature("autodoc", "1");
-		void SetVCoordStart(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetVCoordStart(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetVCoordStart();
-		%feature("autodoc", "1");
-		void SetVCoordEnd(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetVCoordEnd(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetVCoordEnd();
 		%feature("autodoc", "1");
 		void SetPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -5033,7 +4674,7 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FilletDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FilletDriver::~GEOMImpl_FilletDriver %{
@@ -5117,6 +4758,8 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		bool CheckShape(Handle_GEOM_Object , const Standard_Boolean theIsCheckGeom, TCollection_AsciiString & theDump);
 		%feature("autodoc", "1");
+		bool CheckSelfIntersections(Handle_GEOM_Object , Handle_TColStd_HSequenceOfInteger & theIntersections);
+		%feature("autodoc", "1");
 		TCollection_AsciiString IsGoodForSolid(Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		TCollection_AsciiString WhatIs(Handle_GEOM_Object );
@@ -5191,25 +4834,17 @@ class GEOMImpl_ITranslate {
 		%feature("autodoc", "1");
 		void SetStep1(double );
 		%feature("autodoc", "1");
-		void SetStep1(const TCollection_AsciiString &theStep);
-		%feature("autodoc", "1");
 		double GetStep1();
 		%feature("autodoc", "1");
 		void SetNbIter1(int );
-		%feature("autodoc", "1");
-		void SetNbIter1(const TCollection_AsciiString &theNbIter);
 		%feature("autodoc", "1");
 		int GetNbIter1();
 		%feature("autodoc", "1");
 		void SetStep2(double );
 		%feature("autodoc", "1");
-		void SetStep2(const TCollection_AsciiString &theStep);
-		%feature("autodoc", "1");
 		double GetStep2();
 		%feature("autodoc", "1");
 		void SetNbIter2(int );
-		%feature("autodoc", "1");
-		void SetNbIter2(const TCollection_AsciiString &theNbIter);
 		%feature("autodoc", "1");
 		int GetNbIter2();
 		%feature("autodoc", "1");
@@ -5219,31 +4854,19 @@ class GEOMImpl_ITranslate {
 		%feature("autodoc", "1");
 		void SetDX(double );
 		%feature("autodoc", "1");
-		void SetDX(const TCollection_AsciiString &theDX);
-		%feature("autodoc", "1");
 		double GetDX();
 		%feature("autodoc", "1");
-		void SetDY(double );
+		void SetDistance(double );
 		%feature("autodoc", "1");
-		void SetDY(const TCollection_AsciiString &theDY);
+		double GetDistance();
+		%feature("autodoc", "1");
+		void SetDY(double );
 		%feature("autodoc", "1");
 		double GetDY();
 		%feature("autodoc", "1");
 		void SetDZ(double );
 		%feature("autodoc", "1");
-		void SetDZ(const TCollection_AsciiString &theDZ);
-		%feature("autodoc", "1");
 		double GetDZ();
-		%feature("autodoc", "1");
-		void SetDistance(double );
-		%feature("autodoc", "1");
-		void SetDistance(const TCollection_AsciiString &theDistance);
-		%feature("autodoc", "1");
-		double GetDistance();
-		%feature("autodoc", "1");
-		void SetRailShape(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetRailShape();
 
 };
 %feature("shadow") GEOMImpl_ITranslate::~GEOMImpl_ITranslate %{
@@ -5256,6 +4879,45 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_ITranslate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMImpl_IFace;
+class GEOMImpl_IFace {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_IFace(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		void SetRef1(Handle_GEOM_Function );
+		%feature("autodoc", "1");
+		Handle_GEOM_Function GetRef1();
+		%feature("autodoc", "1");
+		void SetOrientation(int );
+		%feature("autodoc", "1");
+		int GetOrientation();
+		%feature("autodoc", "1");
+		void SetH(double );
+		%feature("autodoc", "1");
+		void SetW(double );
+		%feature("autodoc", "1");
+		double GetH();
+		%feature("autodoc", "1");
+		double GetW();
+
+};
+%feature("shadow") GEOMImpl_IFace::~GEOMImpl_IFace %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_IFace {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5282,8 +4944,6 @@ class GEOMImpl_IRotate {
 		%feature("autodoc", "1");
 		void SetAngle(Standard_Real );
 		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
 		Standard_Real GetAngle();
 		%feature("autodoc", "1");
 		void SetAxis(Handle_GEOM_Function );
@@ -5296,27 +4956,15 @@ class GEOMImpl_IRotate {
 		%feature("autodoc", "1");
 		void SetStep(double );
 		%feature("autodoc", "1");
-		void SetStep(const TCollection_AsciiString &theStep);
-		%feature("autodoc", "1");
 		double GetStep();
 		%feature("autodoc", "1");
 		void SetNbIter1(int );
-		%feature("autodoc", "1");
-		void SetNbIter1(const TCollection_AsciiString &theNbIter);
 		%feature("autodoc", "1");
 		int GetNbIter1();
 		%feature("autodoc", "1");
 		void SetNbIter2(int );
 		%feature("autodoc", "1");
-		void SetNbIter2(const TCollection_AsciiString &theNbIter);
-		%feature("autodoc", "1");
 		int GetNbIter2();
-		%feature("autodoc", "1");
-		void SetElevationStep(double );
-		%feature("autodoc", "1");
-		void SetElevationStep(const TCollection_AsciiString &theElevationStep);
-		%feature("autodoc", "1");
-		double GetElevationStep();
 		%feature("autodoc", "1");
 		void SetDir2(gp_XYZ );
 		%feature("autodoc", "1");
@@ -5333,49 +4981,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IRotate {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_IThickSolid;
-class GEOMImpl_IThickSolid {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IThickSolid(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetShape(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetShape();
-		%feature("autodoc", "1");
-		void SetOffset(const double &theOffset);
-		%feature("autodoc", "1");
-		void SetOffset(const TCollection_AsciiString &theOffset);
-		%feature("autodoc", "1");
-		double GetOffset();
-		%feature("autodoc", "1");
-		void SetLength(int );
-		%feature("autodoc", "1");
-		void SetLength(const TCollection_AsciiString &theLen);
-		%feature("autodoc", "1");
-		int GetLength();
-		%feature("autodoc", "1");
-		void SetFace(int , int );
-		%feature("autodoc", "1");
-		int GetFace(int );
-
-};
-%feature("shadow") GEOMImpl_IThickSolid::~GEOMImpl_IThickSolid %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IThickSolid {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5461,7 +5066,7 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_GlueDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_GlueDriver::~GEOMImpl_GlueDriver %{
@@ -5506,7 +5111,7 @@ class GEOMImpl_PipeTShapeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PipeTShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PipeTShapeDriver::~GEOMImpl_PipeTShapeDriver %{
@@ -5562,23 +5167,9 @@ class GEOMImpl_IRevolution {
 		%feature("autodoc", "1");
 		GEOMImpl_IRevolution(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
+		void SetAngle(double );
 		%feature("autodoc", "1");
 		double GetAngle();
-		%feature("autodoc", "1");
-		void SetConeAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		void SetConeAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		double GetConeAngle();
-		%feature("autodoc", "1");
-		void SetOffset(const double &theOffset);
-		%feature("autodoc", "1");
-		void SetOffset(const TCollection_AsciiString &theOffset);
-		%feature("autodoc", "1");
-		double GetOffset();
 		%feature("autodoc", "1");
 		void SetAxis(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -5631,7 +5222,7 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ExportDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ExportDriver::~GEOMImpl_ExportDriver %{
@@ -5705,55 +5296,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMImpl_IDraft;
-class GEOMImpl_IDraft {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IDraft(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetShape(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetShape();
-		%feature("autodoc", "1");
-		void SetPlane(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetPlane();
-		%feature("autodoc", "1");
-		void SetStationary(int );
-		%feature("autodoc", "1");
-		int GetStationary();
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
-		%feature("autodoc", "1");
-		void SetLength(int );
-		%feature("autodoc", "1");
-		int GetLength();
-		%feature("autodoc", "1");
-		void SetFace(int , int );
-		%feature("autodoc", "1");
-		int GetFace(int );
-
-};
-%feature("shadow") GEOMImpl_IDraft::~GEOMImpl_IDraft %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IDraft {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMImpl_IOffset;
 class GEOMImpl_IOffset {
 	public:
@@ -5766,15 +5308,7 @@ class GEOMImpl_IOffset {
 		%feature("autodoc", "1");
 		void SetValue(double );
 		%feature("autodoc", "1");
-		void SetValue(const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
 		double GetValue();
-		%feature("autodoc", "1");
-		void SetAltValue(double );
-		%feature("autodoc", "1");
-		void SetAltValue(const TCollection_AsciiString &theValue);
-		%feature("autodoc", "1");
-		double GetAltValue();
 
 };
 %feature("shadow") GEOMImpl_IOffset::~GEOMImpl_IOffset %{
@@ -5894,7 +5428,7 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SplineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SplineDriver::~GEOMImpl_SplineDriver %{
@@ -5988,7 +5522,7 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_LineDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_LineDriver::~GEOMImpl_LineDriver %{
@@ -6007,110 +5541,17 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMImpl_IShapes;
-class GEOMImpl_IShapes {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IShapes(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetShapes(const Handle_TColStd_HSequenceOfTransient &theShapes);
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfTransient GetShapes();
-		%feature("autodoc", "1");
-		void SetBase(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetBase();
-		%feature("autodoc", "1");
-		void SetIsPlanar(const Standard_Boolean isPlanarWanted);
-		%feature("autodoc", "1");
-		Standard_Boolean GetIsPlanar();
-		%feature("autodoc", "1");
-		void SetSubShapeType(const Standard_Integer theType);
-		%feature("autodoc", "1");
-		Standard_Integer GetSubShapeType();
-		%feature("autodoc", "1");
-		void SetIndices(const Handle_TColStd_HArray1OfInteger &theIndices);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger GetIndices();
-		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real theValue);
-		%feature("autodoc", "1");
-		Standard_Real GetTolerance();
-		%feature("autodoc", "1");
-		void SetAngularTolerance(const Standard_Real theValue);
-		%feature("autodoc", "1");
-		Standard_Real GetAngularTolerance();
-
-};
-%feature("shadow") GEOMImpl_IShapes::~GEOMImpl_IShapes %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMImpl_IMarker;
 class GEOMImpl_IMarker {
 	public:
 		%feature("autodoc", "1");
 		GEOMImpl_IMarker(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetOrigin(const TCollection_AsciiString &theX, const TCollection_AsciiString &theY, const TCollection_AsciiString &theZ);
+		void SetOrigin(const double theX, const double theY, const double theZ);
 		%feature("autodoc", "1");
-		void SetXDir(const TCollection_AsciiString &theDX, const TCollection_AsciiString &theDY, const TCollection_AsciiString &theDZ);
+		void SetXDir(const double theDX, const double theDY, const double theDZ);
 		%feature("autodoc", "1");
-		void SetYDir(const TCollection_AsciiString &theDX, const TCollection_AsciiString &theDY, const TCollection_AsciiString &theDZ);
-		%feature("autodoc", "1");
-		void SetOrigin(const double &theX, const double &theY, const double &theZ);
-		%feature("autodoc", "1");
-		void SetXDir(const double &theDX, const double &theDY, const double &theDZ);
-		%feature("autodoc", "1");
-		void SetYDir(const double &theDX, const double &theDY, const double &theDZ);
-		%feature("autodoc", "1");
-		void SetOX(const TCollection_AsciiString &theOX);
-		%feature("autodoc", "1");
-		void SetOY(const TCollection_AsciiString &theOY);
-		%feature("autodoc", "1");
-		void SetOZ(const TCollection_AsciiString &theOZ);
-		%feature("autodoc", "1");
-		void SetXDX(const TCollection_AsciiString &theXDX);
-		%feature("autodoc", "1");
-		void SetXDY(const TCollection_AsciiString &theXDY);
-		%feature("autodoc", "1");
-		void SetXDZ(const TCollection_AsciiString &theXDZ);
-		%feature("autodoc", "1");
-		void SetYDX(const TCollection_AsciiString &theYDX);
-		%feature("autodoc", "1");
-		void SetYDY(const TCollection_AsciiString &theYDY);
-		%feature("autodoc", "1");
-		void SetYDZ(const TCollection_AsciiString &theYDZ);
-		%feature("autodoc", "1");
-		void SetOX(const double &theOX);
-		%feature("autodoc", "1");
-		void SetOY(const double &theOY);
-		%feature("autodoc", "1");
-		void SetOZ(const double &theOZ);
-		%feature("autodoc", "1");
-		void SetXDX(const double &theXDX);
-		%feature("autodoc", "1");
-		void SetXDY(const double &theXDY);
-		%feature("autodoc", "1");
-		void SetXDZ(const double &theXDZ);
-		%feature("autodoc", "1");
-		void SetYDX(const double &theYDX);
-		%feature("autodoc", "1");
-		void SetYDY(const double &theYDY);
-		%feature("autodoc", "1");
-		void SetYDZ(const double &theYDZ);
+		void SetYDir(const double theDX, const double theDY, const double theDZ);
 		%feature("autodoc", "1");
 		void SetShape(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -6177,7 +5618,7 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_FillingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_FillingDriver::~GEOMImpl_FillingDriver %{
@@ -6222,7 +5663,7 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_RevolutionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_RevolutionDriver::~GEOMImpl_RevolutionDriver %{
@@ -6247,23 +5688,13 @@ class GEOMImpl_ICylinder {
 		%feature("autodoc", "1");
 		GEOMImpl_ICylinder(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetR(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetR(const double &theR);
+		void SetR(double );
 		%feature("autodoc", "1");
 		double GetR();
 		%feature("autodoc", "1");
-		void SetH(const TCollection_AsciiString &theH);
-		%feature("autodoc", "1");
-		void SetH(const double &theH);
+		void SetH(double );
 		%feature("autodoc", "1");
 		double GetH();
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
 		%feature("autodoc", "1");
 		void SetPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -6316,7 +5747,7 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SphereDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SphereDriver::~GEOMImpl_SphereDriver %{
@@ -6329,51 +5760,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_SphereDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_VariableFilletDriver;
-class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_VariableFilletDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_VariableFilletDriver {
-	Handle_GEOMImpl_VariableFilletDriver GetHandle() {
-	return *(Handle_GEOMImpl_VariableFilletDriver*) &$self;
-	}
-};
-%extend GEOMImpl_VariableFilletDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_VariableFilletDriver::~GEOMImpl_VariableFilletDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_VariableFilletDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6448,9 +5834,9 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient GetBlocksByParts(Handle_GEOM_Object , const Handle_TColStd_HSequenceOfTransient &theParts);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeMultiTransformation1D(Handle_GEOM_Object , const Standard_Integer theDirFace1, const Standard_Integer theDirFace2, const GEOM_Parameter &theNbTimes);
+		Handle_GEOM_Object MakeMultiTransformation1D(Handle_GEOM_Object , const Standard_Integer theDirFace1, const Standard_Integer theDirFace2, const Standard_Integer theNbTimes);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeMultiTransformation2D(Handle_GEOM_Object , const Standard_Integer theDirFace1U, const Standard_Integer theDirFace2U, const GEOM_Parameter &theNbTimesU, const Standard_Integer theDirFace1V, const Standard_Integer theDirFace2V, const GEOM_Parameter &theNbTimesV);
+		Handle_GEOM_Object MakeMultiTransformation2D(Handle_GEOM_Object , const Standard_Integer theDirFace1U, const Standard_Integer theDirFace2U, const Standard_Integer theNbTimesU, const Standard_Integer theDirFace1V, const Standard_Integer theDirFace2V, const Standard_Integer theNbTimesV);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfTransient Propagate(Handle_GEOM_Object );
 
@@ -6497,7 +5883,7 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PlaneDriver::~GEOMImpl_PlaneDriver %{
@@ -6530,6 +5916,8 @@ class GEOMImpl_IPrism {
 		%feature("autodoc", "1");
 		void SetLastPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
+		void SetInitShape(Handle_GEOM_Function );
+		%feature("autodoc", "1");
 		Handle_GEOM_Function GetBase();
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetVector();
@@ -6538,29 +5926,13 @@ class GEOMImpl_IPrism {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetLastPoint();
 		%feature("autodoc", "1");
-		void SetH(const double &theH);
-		%feature("autodoc", "1");
-		void SetH(const TCollection_AsciiString &theH);
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		double GetH();
-		%feature("autodoc", "1");
-		double GetAngle();
+		Handle_GEOM_Function GetInitShape();
 		%feature("autodoc", "1");
 		void SetDX(double );
 		%feature("autodoc", "1");
-		void SetDX(const TCollection_AsciiString &theDX);
-		%feature("autodoc", "1");
 		void SetDY(double );
 		%feature("autodoc", "1");
-		void SetDY(const TCollection_AsciiString &theDY);
-		%feature("autodoc", "1");
 		void SetDZ(double );
-		%feature("autodoc", "1");
-		void SetDZ(const TCollection_AsciiString &theDZ);
 		%feature("autodoc", "1");
 		double GetDX();
 		%feature("autodoc", "1");
@@ -6568,11 +5940,21 @@ class GEOMImpl_IPrism {
 		%feature("autodoc", "1");
 		double GetDZ();
 		%feature("autodoc", "1");
+		void SetH(double );
+		%feature("autodoc", "1");
 		void SetScale(double );
 		%feature("autodoc", "1");
-		void SetScale(const TCollection_AsciiString &theH);
+		void SetDraftAngle(double );
+		%feature("autodoc", "1");
+		double GetH();
 		%feature("autodoc", "1");
 		double GetScale();
+		%feature("autodoc", "1");
+		double GetDraftAngle();
+		%feature("autodoc", "1");
+		void SetFuseFlag(int );
+		%feature("autodoc", "1");
+		int GetFuseFlag();
 
 };
 %feature("shadow") GEOMImpl_IPrism::~GEOMImpl_IPrism %{
@@ -6656,7 +6038,7 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BoxDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BoxDriver::~GEOMImpl_BoxDriver %{
@@ -6685,31 +6067,9 @@ class GEOMImpl_ITorus {
 		%feature("autodoc", "1");
 		void SetVector(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetRMajor(const double &theR);
+		void SetRMajor(double );
 		%feature("autodoc", "1");
-		void SetRMinor(const double &theR);
-		%feature("autodoc", "1");
-		void SetRMajor(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetRMinor(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
-		%feature("autodoc", "1");
-		void SetVCoordStart(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetVCoordStart(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetVCoordStart();
-		%feature("autodoc", "1");
-		void SetVCoordEnd(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetVCoordEnd(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetVCoordEnd();
+		void SetRMinor(double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetCenter();
 		%feature("autodoc", "1");
@@ -6730,6 +6090,51 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_ITorus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GEOMImpl_OffsetDriver;
+class GEOMImpl_OffsetDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_OffsetDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_OffsetDriver {
+	Handle_GEOMImpl_OffsetDriver GetHandle() {
+	return *(Handle_GEOMImpl_OffsetDriver*) &$self;
+	}
+};
+%extend GEOMImpl_OffsetDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GEOMImpl_OffsetDriver::~GEOMImpl_OffsetDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_OffsetDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6797,7 +6202,7 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PositionDriver::~GEOMImpl_PositionDriver %{
@@ -6842,7 +6247,7 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_BlockDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_BlockDriver::~GEOMImpl_BlockDriver %{
@@ -6887,7 +6292,7 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_PointDriver::~GEOMImpl_PointDriver %{
@@ -6930,8 +6335,6 @@ class GEOMImpl_IPosition {
 		%feature("autodoc", "1");
 		void SetDistance(double );
 		%feature("autodoc", "1");
-		void SetDistance(const TCollection_AsciiString &theDistance);
-		%feature("autodoc", "1");
 		double GetDistance();
 		%feature("autodoc", "1");
 		void SetReverse(bool );
@@ -6949,51 +6352,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IPosition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_CurveDriver;
-class GEOMImpl_CurveDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_CurveDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_CurveDriver {
-	Handle_GEOMImpl_CurveDriver GetHandle() {
-	return *(Handle_GEOMImpl_CurveDriver*) &$self;
-	}
-};
-%extend GEOMImpl_CurveDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_CurveDriver::~GEOMImpl_CurveDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_CurveDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7094,7 +6452,7 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_SketcherDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_SketcherDriver::~GEOMImpl_SketcherDriver %{
@@ -7139,7 +6497,7 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ConeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ConeDriver::~GEOMImpl_ConeDriver %{
@@ -7158,110 +6516,61 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMImpl_ThickSolidDriver;
-class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_ThickSolidDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_ThickSolidDriver {
-	Handle_GEOMImpl_ThickSolidDriver GetHandle() {
-	return *(Handle_GEOMImpl_ThickSolidDriver*) &$self;
-	}
-};
-%extend GEOMImpl_ThickSolidDriver {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_ThickSolidDriver::~GEOMImpl_ThickSolidDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_ThickSolidDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMImpl_I3DPrimOperations;
 class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 	public:
 		%feature("autodoc", "1");
 		GEOMImpl_I3DPrimOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeBoxDXDYDZ(const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		Handle_GEOM_Object MakeBoxDXDYDZ(double , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeBoxTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFaceHW(const GEOM_Parameter &theH, const GEOM_Parameter &theW, int );
+		Handle_GEOM_Object MakeFaceHW(double , double , int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFaceObjHW(Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theW);
+		Handle_GEOM_Object MakeFaceObjHW(Handle_GEOM_Object , double , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeDiskThreePnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeDiskPntVecR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR);
+		Handle_GEOM_Object MakeDiskPntVecR(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeDiskR(const GEOM_Parameter &theR, int );
+		Handle_GEOM_Object MakeDiskR(double , int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeCylinderRH(const GEOM_Parameter &theR, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeCylinderRH(double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeCylinderPntVecRH(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeCylinderPntVecRH(Handle_GEOM_Object , Handle_GEOM_Object , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeConeR1R2H(const GEOM_Parameter &theR1, const GEOM_Parameter &theR2, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeConeR1R2H(double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeConePntVecR1R2H(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theR1, const GEOM_Parameter &theR2, const GEOM_Parameter &theH, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeConePntVecR1R2H(Handle_GEOM_Object , Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSphereR(const GEOM_Parameter &theR, const GEOM_Parameter &theVmin=0.0, const GEOM_Parameter &theVmax=0.0, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeSphereR(double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeSpherePntR(Handle_GEOM_Object , const GEOM_Parameter &theR, const GEOM_Parameter &theVmin=0.0, const GEOM_Parameter &theVmax=0.0, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeSpherePntR(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeTorusRR(const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor, const GEOM_Parameter &theVmin=0.0, const GEOM_Parameter &theVmax=0.0, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeTorusRR(double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeTorusPntVecRR(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theRMajor, const GEOM_Parameter &theRMinor, const GEOM_Parameter &theVmin=0.0, const GEOM_Parameter &theVmax=0.0, const GEOM_Parameter &theAngle=0.0);
+		Handle_GEOM_Object MakeTorusPntVecRR(Handle_GEOM_Object , Handle_GEOM_Object , double , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismVecH(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theScaleFactor=-1.0e+0);
+		Handle_GEOM_Object MakePrismVecH(Handle_GEOM_Object , Handle_GEOM_Object , double , double =-1.0e+0);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismVecH2Ways(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH);
+		Handle_GEOM_Object MakePrismVecH2Ways(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theScaleFactor);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismVecHAng(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theH, const GEOM_Parameter &theAng, const GEOM_Parameter &theScaleFactor);
+		Handle_GEOM_Object MakePrismTwoPnt(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object , double =-1.0e+0);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePrismTwoPnt2Ways(Handle_GEOM_Object , Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismDXDYDZ(Handle_GEOM_Object , const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		Handle_GEOM_Object MakePrismDXDYDZ(Handle_GEOM_Object , double , double , double , double =-1.0e+0);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePrismDXDYDZ2Ways(Handle_GEOM_Object , const GEOM_Parameter &theDX, const GEOM_Parameter &theDY, const GEOM_Parameter &theDZ);
+		Handle_GEOM_Object MakePrismDXDYDZ2Ways(Handle_GEOM_Object , double , double , double );
+		%feature("autodoc", "1");
+		Handle_GEOM_Object MakeDraftPrism(Handle_GEOM_Object , Handle_GEOM_Object , double , double , bool );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePipe(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePipeRigid(Handle_GEOM_Object , Handle_GEOM_Object );
+		Handle_GEOM_Object MakeRevolutionAxisAngle(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeRevolutionAxisAngle(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeRevolutionAxisAngleOffset(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle, const GEOM_Parameter &theOffset, const GEOM_Parameter &theConeAngle=0.0);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeRevolutionAxisAngle2Ways(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle);
+		Handle_GEOM_Object MakeRevolutionAxisAngle2Ways(Handle_GEOM_Object , Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakeFilling(Handle_GEOM_Object , int , int , double , double , int , int , bool );
 		%feature("autodoc", "1");
@@ -7270,8 +6579,6 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 		Handle_GEOM_Object MakePipeWithDifferentSections(const Handle_TColStd_HSequenceOfTransient &theBases, const Handle_TColStd_HSequenceOfTransient &theLocations, const Handle_GEOM_Object &thePath, bool , bool );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePipeWithShellSections(const Handle_TColStd_HSequenceOfTransient &theBases, const Handle_TColStd_HSequenceOfTransient &theSubBases, const Handle_TColStd_HSequenceOfTransient &theLocations, const Handle_GEOM_Object &thePath, bool , bool );
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakePlateWithShapesList(std::list<Handle_GEOM_Object>, Handle_GEOM_Object );
 		%feature("autodoc", "1");
 		Handle_GEOM_Object MakePipeShellsWithoutPath(const Handle_TColStd_HSequenceOfTransient &theBases, const Handle_TColStd_HSequenceOfTransient &theLocations);
 		%feature("autodoc", "1");
@@ -7320,7 +6627,7 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CylinderDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CylinderDriver::~GEOMImpl_CylinderDriver %{
@@ -7345,21 +6652,15 @@ class GEOMImpl_IArchimede {
 		%feature("autodoc", "1");
 		GEOMImpl_IArchimede(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetWeight(const double &theWeight);
-		%feature("autodoc", "1");
-		void SetWeight(const TCollection_AsciiString &theWeight);
+		void SetWeight(Standard_Real );
 		%feature("autodoc", "1");
 		Standard_Real GetWeight();
 		%feature("autodoc", "1");
-		void SetDensity(const double &theDensity);
-		%feature("autodoc", "1");
-		void SetDensity(const TCollection_AsciiString &theDensity);
+		void SetDensity(Standard_Real );
 		%feature("autodoc", "1");
 		Standard_Real GetDensity();
 		%feature("autodoc", "1");
-		void SetDeflection(const double &theDeflection);
-		%feature("autodoc", "1");
-		void SetDeflection(const TCollection_AsciiString &theDeflection);
+		void SetDeflection(Standard_Real );
 		%feature("autodoc", "1");
 		Standard_Real GetDeflection();
 		%feature("autodoc", "1");
@@ -7410,7 +6711,7 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ArcDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ArcDriver::~GEOMImpl_ArcDriver %{
@@ -7435,15 +6736,11 @@ class GEOMImpl_IPlane {
 		%feature("autodoc", "1");
 		GEOMImpl_IPlane(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetSize(const double &theSize);
-		%feature("autodoc", "1");
-		void SetSize(const TCollection_AsciiString &theSize);
+		void SetSize(double );
 		%feature("autodoc", "1");
 		double GetSize();
 		%feature("autodoc", "1");
 		void SetOrientation(double );
-		%feature("autodoc", "1");
-		void SetOrientation(const TCollection_AsciiString &theOrientation);
 		%feature("autodoc", "1");
 		double GetOrientation();
 		%feature("autodoc", "1");
@@ -7483,15 +6780,11 @@ class GEOMImpl_IPlane {
 		%feature("autodoc", "1");
 		Handle_GEOM_Function GetPoint3();
 		%feature("autodoc", "1");
-		void SetParameterU(const double &theParamU);
-		%feature("autodoc", "1");
-		void SetParameterU(const TCollection_AsciiString &theParamU);
+		void SetParameterU(double );
 		%feature("autodoc", "1");
 		double GetParameterU();
 		%feature("autodoc", "1");
-		void SetParameterV(const double &theParamV);
-		%feature("autodoc", "1");
-		void SetParameterV(const TCollection_AsciiString &theParamV);
+		void SetParameterV(double );
 		%feature("autodoc", "1");
 		double GetParameterV();
 
@@ -7518,29 +6811,17 @@ class GEOMImpl_ICone {
 		%feature("autodoc", "1");
 		GEOMImpl_ICone(Handle_GEOM_Function );
 		%feature("autodoc", "1");
-		void SetR1(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetR1(const double &theR);
+		void SetR1(double );
 		%feature("autodoc", "1");
 		double GetR1();
 		%feature("autodoc", "1");
-		void SetR2(const TCollection_AsciiString &theR);
-		%feature("autodoc", "1");
-		void SetR2(const double &theR);
+		void SetR2(double );
 		%feature("autodoc", "1");
 		double GetR2();
 		%feature("autodoc", "1");
-		void SetH(const TCollection_AsciiString &theH);
-		%feature("autodoc", "1");
-		void SetH(const double &theH);
+		void SetH(double );
 		%feature("autodoc", "1");
 		double GetH();
-		%feature("autodoc", "1");
-		void SetAngle(const TCollection_AsciiString &theAngle);
-		%feature("autodoc", "1");
-		void SetAngle(const double &theAngle);
-		%feature("autodoc", "1");
-		double GetAngle();
 		%feature("autodoc", "1");
 		void SetPoint(Handle_GEOM_Function );
 		%feature("autodoc", "1");
@@ -7561,41 +6842,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_ICone {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_IPlate;
-class GEOMImpl_IPlate {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IPlate(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetLength(int );
-		%feature("autodoc", "1");
-		void SetShape(int , Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetInitialShape(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		int GetLength();
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetShape(int );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetInitialShape();
-
-};
-%feature("shadow") GEOMImpl_IPlate::~GEOMImpl_IPlate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IPlate {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7635,45 +6881,35 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		GEOMImpl_ILocalOperations(GEOM_Engine* theEngine, int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFilletAll(Handle_GEOM_Object , const GEOM_Parameter &theR);
+		Handle_GEOM_Object MakeFilletAll(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFilletEdges(Handle_GEOM_Object , const GEOM_Parameter &theR, std::list<int>);
+		Handle_GEOM_Object MakeFilletEdges(Handle_GEOM_Object , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFilletEdgesR1R2(Handle_GEOM_Object , const GEOM_Parameter &theR1, const GEOM_Parameter &theR2, std::list<int>);
+		Handle_GEOM_Object MakeFilletEdgesR1R2(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFilletFaces(Handle_GEOM_Object , const GEOM_Parameter &theR, std::list<int>);
+		Handle_GEOM_Object MakeFilletFaces(Handle_GEOM_Object , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFilletFacesR1R2(Handle_GEOM_Object , const GEOM_Parameter &theR1, const GEOM_Parameter &theR2, std::list<int>);
+		Handle_GEOM_Object MakeFilletFacesR1R2(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeVariableFillet(Handle_GEOM_Object , std::list<GEOM_Parameter>, std::list<GEOM_Parameter>, std::list<int>);
+		Handle_GEOM_Object MakeFillet2D(Handle_GEOM_Object , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFillet2DVertices(Handle_GEOM_Object , const GEOM_Parameter &theR, std::list<int>);
+		Handle_GEOM_Object MakeFillet1D(Handle_GEOM_Object , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeFillet1D(Handle_GEOM_Object , const GEOM_Parameter &theR, std::list<int>);
+		Handle_GEOM_Object MakeChamferAll(Handle_GEOM_Object , double );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferAll(Handle_GEOM_Object , const GEOM_Parameter &theD);
+		Handle_GEOM_Object MakeChamferEdge(Handle_GEOM_Object , double , double , int , int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferEdge(Handle_GEOM_Object , const GEOM_Parameter &theD1, const GEOM_Parameter &theD2, int , int );
+		Handle_GEOM_Object MakeChamferEdgeAD(Handle_GEOM_Object , double , double , int , int );
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferFaces(Handle_GEOM_Object , const GEOM_Parameter &theD1, const GEOM_Parameter &theD2, std::list<int>);
+		Handle_GEOM_Object MakeChamferFaces(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamfer2DEdges(Handle_GEOM_Object , const GEOM_Parameter &theD1, const GEOM_Parameter &theD2, int , int );
+		Handle_GEOM_Object MakeChamferFacesAD(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferFacesAD(Handle_GEOM_Object , const GEOM_Parameter &theD, const GEOM_Parameter &theAngle, std::list<int>);
+		Handle_GEOM_Object MakeChamferEdges(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferEdges(Handle_GEOM_Object , const GEOM_Parameter &theD1, const GEOM_Parameter &theD2, std::list<int>);
+		Handle_GEOM_Object MakeChamferEdgesAD(Handle_GEOM_Object , double , double , std::list<int>);
 		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferEdgesAD(Handle_GEOM_Object , const GEOM_Parameter &theD, const GEOM_Parameter &theAngle, std::list<int>);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeChamferEdgeAD(Handle_GEOM_Object , const GEOM_Parameter &theD, const GEOM_Parameter &theAngle, int , int );
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeThickSolid(Handle_GEOM_Object , const GEOM_Parameter &theOffset, std::list<int>);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeDraftFacesAngle(Handle_GEOM_Object , Handle_GEOM_Object , const GEOM_Parameter &theAngle, std::list<int>);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeDraftFacesAngleWithStationaryFace(Handle_GEOM_Object , int , const GEOM_Parameter &theAngle, std::list<int>);
-		%feature("autodoc", "1");
-		Handle_GEOM_Object MakeArchimede(Handle_GEOM_Object , const GEOM_Parameter &theWeight, const GEOM_Parameter &theWaterDensity, const GEOM_Parameter &theMeshingDeflection);
+		Handle_GEOM_Object MakeArchimede(Handle_GEOM_Object , double , double , double );
 		%feature("autodoc", "1");
 		Standard_Integer GetSubShapeIndex(Handle_GEOM_Object , Handle_GEOM_Object );
 		%feature("autodoc", "1");
@@ -7690,49 +6926,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_ILocalOperations {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_IVariableFillet;
-class GEOMImpl_IVariableFillet {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_IVariableFillet(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		void SetShape(Handle_GEOM_Function );
-		%feature("autodoc", "1");
-		Handle_GEOM_Function GetShape();
-		%feature("autodoc", "1");
-		void SetEdgesArray(const Handle_TColStd_HArray1OfInteger &theArray);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger GetEdgesArray();
-		%feature("autodoc", "1");
-		void SetParamsArray(const Handle_TColStd_HArray1OfReal &theArray);
-		%feature("autodoc", "1");
-		void SetParamsArray(const Handle_TColStd_HArray1OfAsciiString &theArray);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal GetParamsArray();
-		%feature("autodoc", "1");
-		void SetRadiusArray(const Handle_TColStd_HArray1OfReal &theArray);
-		%feature("autodoc", "1");
-		void SetRadiusArray(const Handle_TColStd_HArray1OfAsciiString &theArray);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal GetRadiusArray();
-
-};
-%feature("shadow") GEOMImpl_IVariableFillet::~GEOMImpl_IVariableFillet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_IVariableFillet {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7794,7 +6987,7 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_CircleDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_CircleDriver::~GEOMImpl_CircleDriver %{
@@ -7839,7 +7032,7 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_EllipseDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_EllipseDriver::~GEOMImpl_EllipseDriver %{
@@ -7879,10 +7072,6 @@ class GEOMImpl_IBlockTrsf {
 		void SetNbIterU(int );
 		%feature("autodoc", "1");
 		void SetNbIterV(int );
-		%feature("autodoc", "1");
-		void SetNbIterU(const TCollection_AsciiString &theNbIter);
-		%feature("autodoc", "1");
-		void SetNbIterV(const TCollection_AsciiString &theNbIter);
 		%feature("autodoc", "1");
 		void SetOptimumNbFaces(int );
 		%feature("autodoc", "1");
@@ -7943,7 +7132,7 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_MeasureDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_MeasureDriver::~GEOMImpl_MeasureDriver %{
@@ -7988,7 +7177,7 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 };
 %extend GEOMImpl_ImportDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GEOMImpl_ImportDriver::~GEOMImpl_ImportDriver %{

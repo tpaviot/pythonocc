@@ -1752,7 +1752,7 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 };
 %extend StepAP214_AppliedOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedOrganizationAssignment::~StepAP214_AppliedOrganizationAssignment %{
@@ -1836,7 +1836,7 @@ class StepAP214_Class : public StepBasic_Group {
 };
 %extend StepAP214_Class {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_Class::~StepAP214_Class %{
@@ -1877,7 +1877,7 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 };
 %extend StepAP214_ExternallyDefinedGeneralProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_ExternallyDefinedGeneralProperty::~StepAP214_ExternallyDefinedGeneralProperty %{
@@ -1932,7 +1932,7 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfExternalIdentificationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfExternalIdentificationItem::~StepAP214_HArray1OfExternalIdentificationItem %{
@@ -2130,7 +2130,7 @@ class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignReferencingItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignReferencingItem::~StepAP214_HArray1OfAutoDesignReferencingItem %{
@@ -2322,7 +2322,7 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 };
 %extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignNominalDateAndTimeAssignment::~StepAP214_AutoDesignNominalDateAndTimeAssignment %{
@@ -2377,7 +2377,7 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfGroupItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfGroupItem::~StepAP214_HArray1OfGroupItem %{
@@ -2432,7 +2432,7 @@ class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfApprovalItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfApprovalItem::~StepAP214_HArray1OfApprovalItem %{
@@ -2479,7 +2479,7 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AutoDesignGroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignGroupAssignment::~StepAP214_AutoDesignGroupAssignment %{
@@ -2526,7 +2526,7 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 };
 %extend StepAP214_AutoDesignDateAndPersonAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignDateAndPersonAssignment::~StepAP214_AutoDesignDateAndPersonAssignment %{
@@ -2573,7 +2573,7 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 };
 %extend StepAP214_AppliedApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedApprovalAssignment::~StepAP214_AppliedApprovalAssignment %{
@@ -2628,7 +2628,7 @@ class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDateAndTimeItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfDateAndTimeItem::~StepAP214_HArray1OfDateAndTimeItem %{
@@ -2669,7 +2669,7 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 };
 %extend StepAP214_ExternallyDefinedClass {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_ExternallyDefinedClass::~StepAP214_ExternallyDefinedClass %{
@@ -2724,7 +2724,7 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDocumentReferenceItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfDocumentReferenceItem::~StepAP214_HArray1OfDocumentReferenceItem %{
@@ -2858,7 +2858,7 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 };
 %extend StepAP214_AppliedDocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDocumentReference::~StepAP214_AppliedDocumentReference %{
@@ -2964,7 +2964,7 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDateItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfDateItem::~StepAP214_HArray1OfDateItem %{
@@ -3095,7 +3095,7 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfSecurityClassificationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfSecurityClassificationItem::~StepAP214_HArray1OfSecurityClassificationItem %{
@@ -3191,7 +3191,7 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 };
 %extend StepAP214_AutoDesignDocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignDocumentReference::~StepAP214_AutoDesignDocumentReference %{
@@ -3297,7 +3297,7 @@ class StepAP214_HArray1OfAutoDesignDatedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDatedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignDatedItem::~StepAP214_HArray1OfAutoDesignDatedItem %{
@@ -3344,7 +3344,7 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 };
 %extend StepAP214_AutoDesignSecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignSecurityClassificationAssignment::~StepAP214_AutoDesignSecurityClassificationAssignment %{
@@ -3542,7 +3542,7 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 };
 %extend StepAP214_AppliedDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDateAndTimeAssignment::~StepAP214_AppliedDateAndTimeAssignment %{
@@ -3653,7 +3653,7 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 };
 %extend StepAP214_AppliedSecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedSecurityClassificationAssignment::~StepAP214_AppliedSecurityClassificationAssignment %{
@@ -3708,7 +3708,7 @@ class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPersonAndOrganizationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfPersonAndOrganizationItem::~StepAP214_HArray1OfPersonAndOrganizationItem %{
@@ -3763,7 +3763,7 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPresentedItemSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfPresentedItemSelect::~StepAP214_HArray1OfPresentedItemSelect %{
@@ -3810,7 +3810,7 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 };
 %extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignPersonAndOrganizationAssignment::~StepAP214_AutoDesignPersonAndOrganizationAssignment %{
@@ -3865,7 +3865,7 @@ class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignGroupedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignGroupedItem::~StepAP214_HArray1OfAutoDesignGroupedItem %{
@@ -3941,7 +3941,7 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 };
 %extend StepAP214_AutoDesignApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignApprovalAssignment::~StepAP214_AutoDesignApprovalAssignment %{
@@ -3996,7 +3996,7 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignDateAndPersonItem::~StepAP214_HArray1OfAutoDesignDateAndPersonItem %{
@@ -4041,7 +4041,7 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 };
 %extend StepAP214_AppliedPresentedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedPresentedItem::~StepAP214_AppliedPresentedItem %{
@@ -4088,7 +4088,7 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 };
 %extend StepAP214_AutoDesignOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignOrganizationAssignment::~StepAP214_AutoDesignOrganizationAssignment %{
@@ -4229,7 +4229,7 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 };
 %extend StepAP214_AutoDesignNominalDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignNominalDateAssignment::~StepAP214_AutoDesignNominalDateAssignment %{
@@ -4270,7 +4270,7 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AppliedGroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedGroupAssignment::~StepAP214_AppliedGroupAssignment %{
@@ -4311,7 +4311,7 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 };
 %extend StepAP214_RepItemGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_RepItemGroup::~StepAP214_RepItemGroup %{
@@ -4465,7 +4465,7 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 };
 %extend StepAP214_AutoDesignPresentedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignPresentedItem::~StepAP214_AutoDesignPresentedItem %{
@@ -4602,7 +4602,7 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignPresentedItemSelect::~StepAP214_HArray1OfAutoDesignPresentedItemSelect %{
@@ -4708,7 +4708,7 @@ class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignGeneralOrgItem::~StepAP214_HArray1OfAutoDesignGeneralOrgItem %{
@@ -4839,7 +4839,7 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 };
 %extend StepAP214_AppliedDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedDateAssignment::~StepAP214_AppliedDateAssignment %{
@@ -4886,7 +4886,7 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 };
 %extend StepAP214_AppliedPersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedPersonAndOrganizationAssignment::~StepAP214_AppliedPersonAndOrganizationAssignment %{
@@ -4962,7 +4962,7 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 };
 %extend StepAP214_AutoDesignActualDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignActualDateAndTimeAssignment::~StepAP214_AutoDesignActualDateAndTimeAssignment %{
@@ -5009,7 +5009,7 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 };
 %extend StepAP214_AutoDesignActualDateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AutoDesignActualDateAssignment::~StepAP214_AutoDesignActualDateAssignment %{
@@ -5130,7 +5130,7 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 };
 %extend StepAP214_AppliedExternalIdentificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
@@ -5185,7 +5185,7 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfOrganizationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfOrganizationItem::~StepAP214_HArray1OfOrganizationItem %{
@@ -5240,7 +5240,7 @@ class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepAP214_HArray1OfAutoDesignDateAndTimeItem::~StepAP214_HArray1OfAutoDesignDateAndTimeItem %{

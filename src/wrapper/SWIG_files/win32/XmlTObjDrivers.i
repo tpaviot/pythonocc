@@ -367,7 +367,7 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ModelDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_ModelDriver::~XmlTObjDrivers_ModelDriver %{
@@ -408,7 +408,7 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_IntSparseArrayDriver::~XmlTObjDrivers_IntSparseArrayDriver %{
@@ -445,7 +445,7 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_DocumentStorageDriver::~XmlTObjDrivers_DocumentStorageDriver %{
@@ -486,7 +486,7 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_XYZDriver::~XmlTObjDrivers_XYZDriver %{
@@ -523,7 +523,7 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 };
 %extend XmlTObjDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_DocumentRetrievalDriver::~XmlTObjDrivers_DocumentRetrievalDriver %{
@@ -564,7 +564,7 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_ReferenceDriver::~XmlTObjDrivers_ReferenceDriver %{
@@ -605,7 +605,7 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ObjectDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlTObjDrivers_ObjectDriver::~XmlTObjDrivers_ObjectDriver %{

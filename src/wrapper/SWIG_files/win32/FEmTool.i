@@ -450,7 +450,7 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 };
 %extend FEmTool_ListNodeOfListOfVectors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_ListNodeOfListOfVectors::~FEmTool_ListNodeOfListOfVectors %{
@@ -495,7 +495,7 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 };
 %extend FEmTool_ElementaryCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_ElementaryCriterion::~FEmTool_ElementaryCriterion %{
@@ -538,7 +538,7 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearFlexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearFlexion::~FEmTool_LinearFlexion %{
@@ -581,7 +581,7 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearJerk {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearJerk::~FEmTool_LinearJerk %{
@@ -679,7 +679,7 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 };
 %extend FEmTool_LinearTension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_LinearTension::~FEmTool_LinearTension %{
@@ -777,7 +777,7 @@ class FEmTool_Curve : public MMgt_TShared {
 };
 %extend FEmTool_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_Curve::~FEmTool_Curve %{
@@ -838,7 +838,7 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 };
 %extend FEmTool_SparseMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_SparseMatrix::~FEmTool_SparseMatrix %{
@@ -889,7 +889,7 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 };
 %extend FEmTool_ProfileMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_ProfileMatrix::~FEmTool_ProfileMatrix %{
@@ -995,7 +995,7 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 };
 %extend FEmTool_HAssemblyTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_HAssemblyTable::~FEmTool_HAssemblyTable %{
@@ -1187,7 +1187,7 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 };
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") FEmTool_SequenceNodeOfSeqOfLinConstr::~FEmTool_SequenceNodeOfSeqOfLinConstr %{

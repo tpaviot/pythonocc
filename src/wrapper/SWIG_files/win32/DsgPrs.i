@@ -340,33 +340,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DsgPrs_OffsetPresentation;
-class DsgPrs_OffsetPresentation {
-	public:
-		%feature("autodoc", "1");
-		DsgPrs_OffsetPresentation();
-		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
-		%feature("autodoc", "1");
-		static		void AddAxes(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
-
-};
-%feature("shadow") DsgPrs_OffsetPresentation::~DsgPrs_OffsetPresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DsgPrs_OffsetPresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DsgPrs_DatumPrs;
 class DsgPrs_DatumPrs : public Prs3d_Root {
 	public:
@@ -544,6 +517,33 @@ def __del__(self):
 %}
 
 %extend DsgPrs_SymmetricPresentation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DsgPrs_OffsetPresentation;
+class DsgPrs_OffsetPresentation {
+	public:
+		%feature("autodoc", "1");
+		DsgPrs_OffsetPresentation();
+		%feature("autodoc", "1");
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
+		%feature("autodoc", "1");
+		static		void AddAxes(const Handle_Prs3d_Presentation &aPresentation, const Handle_Prs3d_Drawer &aDrawer, const TCollection_ExtendedString &aText, const gp_Pnt AttachmentPoint1, const gp_Pnt AttachmentPoint2, const gp_Dir aDirection, const gp_Dir aDirection2, const gp_Pnt OffsetPoint);
+
+};
+%feature("shadow") DsgPrs_OffsetPresentation::~DsgPrs_OffsetPresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DsgPrs_OffsetPresentation {
 	void _kill_pointed() {
 		delete $self;
 	}

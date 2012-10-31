@@ -1867,7 +1867,7 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ReferenceList::~TDataStd_ReferenceList %{
@@ -1999,7 +1999,7 @@ class TDataStd_BooleanList : public TDF_Attribute {
 };
 %extend TDataStd_BooleanList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_BooleanList::~TDataStd_BooleanList %{
@@ -2064,7 +2064,7 @@ class TDataStd_Real : public TDF_Attribute {
 };
 %extend TDataStd_Real {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Real::~TDataStd_Real %{
@@ -2101,7 +2101,7 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ListNodeOfListOfExtendedString::~TDataStd_ListNodeOfListOfExtendedString %{
@@ -2142,7 +2142,7 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringByte::~TDataStd_HDataMapOfStringByte %{
@@ -2181,7 +2181,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger %{
@@ -2260,7 +2260,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ExtStringArray::~TDataStd_ExtStringArray %{
@@ -2372,7 +2372,7 @@ class TDataStd_NoteBook : public TDF_Attribute {
 };
 %extend TDataStd_NoteBook {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_NoteBook::~TDataStd_NoteBook %{
@@ -2413,7 +2413,7 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringReal::~TDataStd_HDataMapOfStringReal %{
@@ -2450,7 +2450,7 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfIntArray::~TDataStd_DeltaOnModificationOfIntArray %{
@@ -2513,7 +2513,7 @@ class TDataStd_Directory : public TDF_Attribute {
 };
 %extend TDataStd_Directory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Directory::~TDataStd_Directory %{
@@ -2568,7 +2568,7 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 };
 %extend TDataStd_HLabelArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HLabelArray1::~TDataStd_HLabelArray1 %{
@@ -2645,7 +2645,7 @@ class TDataStd_RealList : public TDF_Attribute {
 };
 %extend TDataStd_RealList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_RealList::~TDataStd_RealList %{
@@ -2701,6 +2701,10 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringReal::~TDataStd_DataMapOfStringReal %{
@@ -2831,7 +2835,7 @@ class TDataStd_TreeNode : public TDF_Attribute {
 };
 %extend TDataStd_TreeNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_TreeNode::~TDataStd_TreeNode %{
@@ -2872,7 +2876,7 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringHArray1OfInteger::~TDataStd_HDataMapOfStringHArray1OfInteger %{
@@ -2999,7 +3003,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 %extend TDataStd_NamedData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_NamedData::~TDataStd_NamedData %{
@@ -3062,7 +3066,7 @@ class TDataStd_Expression : public TDF_Attribute {
 };
 %extend TDataStd_Expression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Expression::~TDataStd_Expression %{
@@ -3099,7 +3103,7 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfExtStringArray::~TDataStd_DeltaOnModificationOfExtStringArray %{
@@ -3178,7 +3182,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 };
 %extend TDataStd_IntPackedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_IntPackedMap::~TDataStd_IntPackedMap %{
@@ -3255,6 +3259,10 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 		Handle_TColStd_HArray1OfInteger & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringHArray1OfInteger::~TDataStd_DataMapOfStringHArray1OfInteger %{
@@ -3293,7 +3301,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringByte::~TDataStd_DataMapNodeOfDataMapOfStringByte %{
@@ -3332,7 +3340,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal::~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal %{
@@ -3378,6 +3386,10 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 		TCollection_ExtendedString & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		TCollection_ExtendedString & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringString::~TDataStd_DataMapOfStringString %{
@@ -3454,7 +3466,7 @@ class TDataStd_IntegerList : public TDF_Attribute {
 };
 %extend TDataStd_IntegerList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_IntegerList::~TDataStd_IntegerList %{
@@ -3515,7 +3527,7 @@ class TDataStd_Integer : public TDF_Attribute {
 };
 %extend TDataStd_Integer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
@@ -3552,7 +3564,7 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 };
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfIntPackedMap::~TDataStd_DeltaOnModificationOfIntPackedMap %{
@@ -3601,7 +3613,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringReal::~TDataStd_DataMapNodeOfDataMapOfStringReal %{
@@ -3658,7 +3670,7 @@ class TDataStd_UAttribute : public TDF_Attribute {
 };
 %extend TDataStd_UAttribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_UAttribute::~TDataStd_UAttribute %{
@@ -3733,7 +3745,7 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ReferenceArray::~TDataStd_ReferenceArray %{
@@ -3797,7 +3809,7 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ListNodeOfListOfByte::~TDataStd_ListNodeOfListOfByte %{
@@ -3860,7 +3872,7 @@ class TDataStd_Relation : public TDF_Attribute {
 };
 %extend TDataStd_Relation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Relation::~TDataStd_Relation %{
@@ -3899,7 +3911,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DataMapNodeOfDataMapOfStringString::~TDataStd_DataMapNodeOfDataMapOfStringString %{
@@ -3936,7 +3948,7 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfRealArray::~TDataStd_DeltaOnModificationOfRealArray %{
@@ -3982,6 +3994,10 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 		Standard_Byte & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		Standard_Byte & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringByte::~TDataStd_DataMapOfStringByte %{
@@ -4058,7 +4074,7 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ExtStringList::~TDataStd_ExtStringList %{
@@ -4145,7 +4161,7 @@ class TDataStd_Variable : public TDF_Attribute {
 };
 %extend TDataStd_Variable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Variable::~TDataStd_Variable %{
@@ -4208,7 +4224,7 @@ class TDataStd_Comment : public TDF_Attribute {
 };
 %extend TDataStd_Comment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
@@ -4271,7 +4287,7 @@ class TDataStd_Current : public TDF_Attribute {
 };
 %extend TDataStd_Current {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Current::~TDataStd_Current %{
@@ -4350,7 +4366,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 };
 %extend TDataStd_RealArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_RealArray::~TDataStd_RealArray %{
@@ -4363,6 +4379,37 @@ def __del__(self):
 %}
 
 %extend TDataStd_RealArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
+class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte();
+		%feature("autodoc", "1");
+		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Key() const;
+		%feature("autodoc", "1");
+		const Standard_Byte & Value() const;
+
+};
+%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4396,6 +4443,10 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 		Handle_TColStd_HArray1OfReal & ChangeFind(const TCollection_ExtendedString &K);
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TDataStd_DataMapOfStringHArray1OfReal::~TDataStd_DataMapOfStringHArray1OfReal %{
@@ -4408,37 +4459,6 @@ def __del__(self):
 %}
 
 %extend TDataStd_DataMapOfStringHArray1OfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
-class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte();
-		%feature("autodoc", "1");
-		TDataStd_DataMapIteratorOfDataMapOfStringByte(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TDataStd_DataMapOfStringByte &aMap);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Key() const;
-		%feature("autodoc", "1");
-		const Standard_Byte & Value() const;
-
-};
-%feature("shadow") TDataStd_DataMapIteratorOfDataMapOfStringByte::~TDataStd_DataMapIteratorOfDataMapOfStringByte %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4551,7 +4571,7 @@ class TDataStd_AsciiString : public TDF_Attribute {
 };
 %extend TDataStd_AsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_AsciiString::~TDataStd_AsciiString %{
@@ -4630,7 +4650,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 };
 %extend TDataStd_IntegerArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_IntegerArray::~TDataStd_IntegerArray %{
@@ -4781,7 +4801,7 @@ class TDataStd_Name : public TDF_Attribute {
 };
 %extend TDataStd_Name {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Name::~TDataStd_Name %{
@@ -4818,7 +4838,7 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_DeltaOnModificationOfByteArray::~TDataStd_DeltaOnModificationOfByteArray %{
@@ -4859,7 +4879,7 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringString::~TDataStd_HDataMapOfStringString %{
@@ -4914,7 +4934,7 @@ class TDataStd_Tick : public TDF_Attribute {
 };
 %extend TDataStd_Tick {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_Tick::~TDataStd_Tick %{
@@ -4987,7 +5007,7 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 };
 %extend TDataStd_BooleanArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_BooleanArray::~TDataStd_BooleanArray %{
@@ -5063,7 +5083,7 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringInteger::~TDataStd_HDataMapOfStringInteger %{
@@ -5142,7 +5162,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 };
 %extend TDataStd_ByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_ByteArray::~TDataStd_ByteArray %{
@@ -5247,7 +5267,7 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDataStd_HDataMapOfStringHArray1OfReal::~TDataStd_HDataMapOfStringHArray1OfReal %{

@@ -440,7 +440,7 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 };
 %extend PShort_HSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_HSequenceOfShortReal::~PShort_HSequenceOfShortReal %{
@@ -487,7 +487,7 @@ class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode 
 };
 %extend PShort_VArrayNodeOfFieldOfHArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_VArrayNodeOfFieldOfHArray1OfShortReal::~PShort_VArrayNodeOfFieldOfHArray1OfShortReal %{
@@ -575,7 +575,7 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 };
 %extend PShort_VArrayNodeOfFieldOfHArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_VArrayNodeOfFieldOfHArray2OfShortReal::~PShort_VArrayNodeOfFieldOfHArray2OfShortReal %{
@@ -660,7 +660,7 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 };
 %extend PShort_HArray2OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_HArray2OfShortReal::~PShort_HArray2OfShortReal %{
@@ -760,7 +760,7 @@ class PShort_HArray1OfShortReal : public Standard_Persistent {
 };
 %extend PShort_HArray1OfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_HArray1OfShortReal::~PShort_HArray1OfShortReal %{
@@ -858,7 +858,7 @@ class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 };
 %extend PShort_SeqNodeOfHSequenceOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PShort_SeqNodeOfHSequenceOfShortReal::~PShort_SeqNodeOfHSequenceOfShortReal %{

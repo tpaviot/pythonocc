@@ -1062,7 +1062,7 @@ class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_DirectoryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_DirectoryDriver::~XmlMDataStd_DirectoryDriver %{
@@ -1103,7 +1103,7 @@ class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntegerListDriver::~XmlMDataStd_IntegerListDriver %{
@@ -1144,7 +1144,7 @@ class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ReferenceArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ReferenceArrayDriver::~XmlMDataStd_ReferenceArrayDriver %{
@@ -1185,7 +1185,7 @@ class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExpressionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExpressionDriver::~XmlMDataStd_ExpressionDriver %{
@@ -1226,7 +1226,7 @@ class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_BooleanListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_BooleanListDriver::~XmlMDataStd_BooleanListDriver %{
@@ -1267,7 +1267,7 @@ class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_VariableDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_VariableDriver::~XmlMDataStd_VariableDriver %{
@@ -1308,7 +1308,7 @@ class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NamedDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NamedDataDriver::~XmlMDataStd_NamedDataDriver %{
@@ -1349,7 +1349,7 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_TreeNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_TreeNodeDriver::~XmlMDataStd_TreeNodeDriver %{
@@ -1390,7 +1390,7 @@ class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntegerArrayDriver::~XmlMDataStd_IntegerArrayDriver %{
@@ -1431,7 +1431,7 @@ class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RealArrayDriver::~XmlMDataStd_RealArrayDriver %{
@@ -1472,7 +1472,7 @@ class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntegerDriver::~XmlMDataStd_IntegerDriver %{
@@ -1513,7 +1513,7 @@ class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExtStringListDriver::~XmlMDataStd_ExtStringListDriver %{
@@ -1554,7 +1554,7 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RelationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RelationDriver::~XmlMDataStd_RelationDriver %{
@@ -1595,7 +1595,7 @@ class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_TickDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_TickDriver::~XmlMDataStd_TickDriver %{
@@ -1636,7 +1636,7 @@ class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RealListDriver::~XmlMDataStd_RealListDriver %{
@@ -1677,7 +1677,7 @@ class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_AsciiStringDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_AsciiStringDriver::~XmlMDataStd_AsciiStringDriver %{
@@ -1718,7 +1718,7 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_UAttributeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_UAttributeDriver::~XmlMDataStd_UAttributeDriver %{
@@ -1759,7 +1759,7 @@ class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ReferenceListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
@@ -1829,7 +1829,7 @@ class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ByteArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ByteArrayDriver::~XmlMDataStd_ByteArrayDriver %{
@@ -1870,7 +1870,7 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntPackedMapDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_IntPackedMapDriver::~XmlMDataStd_IntPackedMapDriver %{
@@ -1911,7 +1911,7 @@ class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_RealDriver::~XmlMDataStd_RealDriver %{
@@ -1952,7 +1952,7 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_ExtStringArrayDriver::~XmlMDataStd_ExtStringArrayDriver %{
@@ -1993,7 +1993,7 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NameDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NameDriver::~XmlMDataStd_NameDriver %{
@@ -2034,7 +2034,7 @@ class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NoteBookDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_NoteBookDriver::~XmlMDataStd_NoteBookDriver %{
@@ -2075,7 +2075,7 @@ class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_CommentDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_CommentDriver::~XmlMDataStd_CommentDriver %{
@@ -2116,7 +2116,7 @@ class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_BooleanArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMDataStd_BooleanArrayDriver::~XmlMDataStd_BooleanArrayDriver %{

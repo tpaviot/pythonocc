@@ -57,37 +57,6 @@ enum CDF_SubComponentStatus {
 	CDF_SCS_Modified,
 	};
 
-enum CDF_StoreStatus {
-	CDF_SS_OK,
-	CDF_SS_DriverFailure,
-	CDF_SS_WriteFailure,
-	CDF_SS_Failure,
-	};
-
-enum CDF_RetrievableStatus {
-	CDF_RS_OK,
-	CDF_RS_AlreadyRetrievedAndModified,
-	CDF_RS_AlreadyRetrieved,
-	CDF_RS_UnknownDocument,
-	CDF_RS_NoDriver,
-	CDF_RS_UnknownFileDriver,
-	CDF_RS_WrongResource,
-	CDF_RS_OpenError,
-	CDF_RS_NoVersion,
-	CDF_RS_NoModel,
-	CDF_RS_NoSchema,
-	CDF_RS_NoDocument,
-	CDF_RS_ExtensionFailure,
-	CDF_RS_WrongStreamMode,
-	CDF_RS_FormatFailure,
-	CDF_RS_TypeFailure,
-	CDF_RS_TypeNotFoundInSchema,
-	CDF_RS_UnrecognizedFileFormat,
-	CDF_RS_MakeFailure,
-	CDF_RS_PermissionDenied,
-	CDF_RS_DriverFailure,
-	};
-
 enum CDF_StoreSetNameStatus {
 	CDF_SSNS_OK,
 	CDF_SSNS_ReplacingAnExistentDocument,
@@ -399,7 +368,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %extend CDF_MetaDataDriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverError::~CDF_MetaDataDriverError %{
@@ -461,13 +430,13 @@ class CDF_Application : public CDM_Application {
 		%feature("autodoc", "1");
 		Handle_CDM_Document Retrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aVersion, const Standard_Boolean UseStorageConfiguration=1);
 		%feature("autodoc", "1");
-		CDF_RetrievableStatus CanRetrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName);
+		PCDM_ReaderStatus CanRetrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName);
 		%feature("autodoc", "1");
-		CDF_RetrievableStatus CanRetrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aVersion);
+		PCDM_ReaderStatus CanRetrieve(const TCollection_ExtendedString &aFolder, const TCollection_ExtendedString &aName, const TCollection_ExtendedString &aVersion);
 		%feature("autodoc", "1");
 		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
 		%feature("autodoc", "1");
-		CDF_RetrievableStatus GetRetrieveStatus() const;
+		PCDM_ReaderStatus GetRetrieveStatus() const;
 		%feature("autodoc", "1");
 		Standard_Boolean FindReader(const TCollection_ExtendedString &aFileName);
 		%feature("autodoc", "1");
@@ -495,7 +464,7 @@ class CDF_Application : public CDM_Application {
 };
 %extend CDF_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_Application::~CDF_Application %{
@@ -551,7 +520,7 @@ class CDF_StoreList : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Boolean IsConsistent() const;
 		%feature("autodoc", "1");
-		CDF_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
+		PCDM_StoreStatus Store(Handle_CDM_MetaData & aMetaData, TCollection_ExtendedString & aStatusAssociatedText);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -571,7 +540,7 @@ class CDF_StoreList : public Standard_Transient {
 };
 %extend CDF_StoreList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_StoreList::~CDF_StoreList %{
@@ -636,7 +605,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %extend CDF_MetaDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriver::~CDF_MetaDataDriver %{
@@ -671,7 +640,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %extend CDF_MetaDataDriverFactory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_MetaDataDriverFactory::~CDF_MetaDataDriverFactory %{
@@ -724,7 +693,7 @@ class CDF_Session : public Standard_Transient {
 };
 %extend CDF_Session {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_Session::~CDF_Session %{
@@ -771,7 +740,7 @@ class CDF_Directory : public Standard_Transient {
 };
 %extend CDF_Directory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") CDF_Directory::~CDF_Directory %{
@@ -856,7 +825,7 @@ class CDF_Store {
 		%feature("autodoc", "1");
 		void SetMain();
 		%feature("autodoc", "1");
-		CDF_StoreStatus StoreStatus() const;
+		PCDM_StoreStatus StoreStatus() const;
 		%feature("autodoc", "1");
 		Standard_ExtString AssociatedStatusText() const;
 		%feature("autodoc", "1");

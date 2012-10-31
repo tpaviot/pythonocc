@@ -56,7 +56,6 @@ $HeaderURL$
 #include<IntPatch_PolyArc.hxx>
 #include<IntPatch_PolyLine.hxx>
 #include<IntPatch_Polygo.hxx>
-#include<IntPatch_PolygoTool.hxx>
 #include<IntPatch_Polyhedron.hxx>
 #include<IntPatch_PolyhedronTool.hxx>
 #include<IntPatch_PrmPrmIntersection.hxx>
@@ -93,9 +92,9 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_Pnt2d.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>

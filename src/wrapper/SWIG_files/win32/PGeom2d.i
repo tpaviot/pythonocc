@@ -830,7 +830,7 @@ class PGeom2d_Geometry : public Standard_Persistent {
 };
 %extend PGeom2d_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Geometry::~PGeom2d_Geometry %{
@@ -865,7 +865,7 @@ class PGeom2d_Curve : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Curve::~PGeom2d_Curve %{
@@ -900,7 +900,7 @@ class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BoundedCurve::~PGeom2d_BoundedCurve %{
@@ -941,7 +941,7 @@ class PGeom2d_Conic : public PGeom2d_Curve {
 };
 %extend PGeom2d_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Conic::~PGeom2d_Conic %{
@@ -1007,7 +1007,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_TrimmedCurve::~PGeom2d_TrimmedCurve %{
@@ -1054,7 +1054,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Parabola::~PGeom2d_Parabola %{
@@ -1095,7 +1095,7 @@ class PGeom2d_Vector : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Vector::~PGeom2d_Vector %{
@@ -1135,7 +1135,7 @@ class PGeom2d_Point : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Point::~PGeom2d_Point %{
@@ -1178,7 +1178,7 @@ class PGeom2d_CartesianPoint : public PGeom2d_Point {
 };
 %extend PGeom2d_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_CartesianPoint::~PGeom2d_CartesianPoint %{
@@ -1217,7 +1217,7 @@ class PGeom2d_Direction : public PGeom2d_Vector {
 };
 %extend PGeom2d_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Direction::~PGeom2d_Direction %{
@@ -1264,7 +1264,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 };
 %extend PGeom2d_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Circle::~PGeom2d_Circle %{
@@ -1319,7 +1319,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Hyperbola::~PGeom2d_Hyperbola %{
@@ -1374,7 +1374,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_OffsetCurve::~PGeom2d_OffsetCurve %{
@@ -1419,7 +1419,7 @@ class PGeom2d_Transformation : public Standard_Persistent {
 };
 %extend PGeom2d_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Transformation::~PGeom2d_Transformation %{
@@ -1458,7 +1458,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 };
 %extend PGeom2d_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_VectorWithMagnitude::~PGeom2d_VectorWithMagnitude %{
@@ -1521,7 +1521,7 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BezierCurve::~PGeom2d_BezierCurve %{
@@ -1566,7 +1566,7 @@ class PGeom2d_Line : public PGeom2d_Curve {
 };
 %extend PGeom2d_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Line::~PGeom2d_Line %{
@@ -1661,7 +1661,7 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_BSplineCurve::~PGeom2d_BSplineCurve %{
@@ -1716,7 +1716,7 @@ class PGeom2d_Ellipse : public PGeom2d_Conic {
 };
 %extend PGeom2d_Ellipse {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_Ellipse::~PGeom2d_Ellipse %{
@@ -1761,7 +1761,7 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 };
 %extend PGeom2d_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PGeom2d_AxisPlacement::~PGeom2d_AxisPlacement %{

@@ -213,7 +213,7 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMFunction_FunctionDriver::~BinMFunction_FunctionDriver %{
@@ -254,7 +254,7 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMFunction_GraphNodeDriver::~BinMFunction_GraphNodeDriver %{
@@ -295,7 +295,7 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_ScopeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMFunction_ScopeDriver::~BinMFunction_ScopeDriver %{

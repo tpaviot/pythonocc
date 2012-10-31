@@ -115,6 +115,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -371,6 +372,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -402,7 +404,6 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WNT.hxx>
-#include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
 #include<OSD_WhoAmI.hxx>
 #include<Quantity_AbsorbedDose.hxx>
@@ -733,12 +734,9 @@ $HeaderURL$
 #include<TColStd_MapIteratorOfPackedMapOfInteger.hxx>
 #include<Quantity_Color.hxx>
 #include<gp_Trsf.hxx>
-#include<gp_Ax1.hxx>
 #include<Bnd_B3f.hxx>
-#include<gp_XYZ.hxx>
-#include<gp_XY.hxx>
-#include<gp_Pnt.hxx>
 #include<TColStd_PackedMapOfInteger.hxx>
+#include<gp_Ax1.hxx>
 #include<Handle_Poly_Triangulation.hxx>
 #include<TopoDS_Shape.hxx>
 #include<Handle_Standard_Type.hxx>

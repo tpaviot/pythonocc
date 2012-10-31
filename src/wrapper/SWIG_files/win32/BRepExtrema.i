@@ -147,7 +147,7 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 };
 %extend BRepExtrema_UnCompatibleShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepExtrema_UnCompatibleShape::~BRepExtrema_UnCompatibleShape %{

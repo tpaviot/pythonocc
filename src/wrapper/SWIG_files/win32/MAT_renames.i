@@ -23,7 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_MAT_TListNodeOfListOfBisector::DownCast;
 %rename(DownCast) Handle_MAT_ListOfBisector::DownCast;
 %rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt::DownCast;
 %rename(DownCast) Handle_MAT_SequenceNodeOfSequenceOfArc::DownCast;
@@ -32,6 +31,7 @@ $HeaderURL$
 %rename(DownCast) Handle_MAT_Node::DownCast;
 %rename(DownCast) Handle_MAT_Bisector::DownCast;
 %rename(DownCast) Handle_MAT_DataMapNodeOfDataMapOfIntegerNode::DownCast;
+%rename(DownCast) Handle_MAT_TListNodeOfListOfBisector::DownCast;
 %rename(DownCast) Handle_MAT_ListOfEdge::DownCast;
 %rename(DownCast) Handle_MAT_SequenceNodeOfSequenceOfBasicElt::DownCast;
 %rename(DownCast) Handle_MAT_Arc::DownCast;

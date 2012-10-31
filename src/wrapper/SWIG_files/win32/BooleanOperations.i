@@ -294,6 +294,10 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 				$self->ChangeFromKey(K)=value;
 				}
 		};
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BooleanOperations_IndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapOfShapeInteger %{
@@ -553,6 +557,10 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 		const BooleanOperations_AncestorsSeqAndSuccessorsSeq & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BooleanOperations_AncestorsSeqAndSuccessorsSeq & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors %{
@@ -659,7 +667,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSucces
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors %{
@@ -722,7 +730,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 };
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::~BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger %{

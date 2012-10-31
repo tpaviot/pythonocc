@@ -1734,7 +1734,7 @@ class Geom_Geometry : public MMgt_TShared {
 };
 %extend Geom_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Geometry::~Geom_Geometry %{
@@ -1801,7 +1801,7 @@ class Geom_Curve : public Geom_Geometry {
 };
 %extend Geom_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Curve::~Geom_Curve %{
@@ -1836,7 +1836,7 @@ class Geom_BoundedCurve : public Geom_Curve {
 };
 %extend Geom_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BoundedCurve::~Geom_BoundedCurve %{
@@ -1923,7 +1923,7 @@ class Geom_Surface : public Geom_Geometry {
 };
 %extend Geom_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Surface::~Geom_Surface %{
@@ -1954,7 +1954,7 @@ class Geom_BoundedSurface : public Geom_Surface {
 };
 %extend Geom_BoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BoundedSurface::~Geom_BoundedSurface %{
@@ -2158,7 +2158,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 };
 %extend Geom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BSplineSurface::~Geom_BSplineSurface %{
@@ -2206,7 +2206,7 @@ class Geom_Point : public Geom_Geometry {
 };
 %extend Geom_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Point::~Geom_Point %{
@@ -2355,7 +2355,7 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 };
 %extend Geom_BezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BezierSurface::~Geom_BezierSurface %{
@@ -2423,7 +2423,7 @@ class Geom_Vector : public Geom_Geometry {
 };
 %extend Geom_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Vector::~Geom_Vector %{
@@ -2470,7 +2470,7 @@ class Geom_AxisPlacement : public Geom_Geometry {
 };
 %extend Geom_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_AxisPlacement::~Geom_AxisPlacement %{
@@ -2513,7 +2513,7 @@ class Geom_UndefinedDerivative : public Standard_DomainError {
 };
 %extend Geom_UndefinedDerivative {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_UndefinedDerivative::~Geom_UndefinedDerivative %{
@@ -2550,7 +2550,7 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 };
 %extend Geom_SequenceNodeOfSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SequenceNodeOfSequenceOfSurface::~Geom_SequenceNodeOfSequenceOfSurface %{
@@ -2641,7 +2641,7 @@ class Geom_OffsetCurve : public Geom_Curve {
 };
 %extend Geom_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_OffsetCurve::~Geom_OffsetCurve %{
@@ -2680,7 +2680,7 @@ class Geom_SweptSurface : public Geom_Surface {
 };
 %extend Geom_SweptSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SweptSurface::~Geom_SweptSurface %{
@@ -2785,7 +2785,7 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 };
 %extend Geom_SurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SurfaceOfRevolution::~Geom_SurfaceOfRevolution %{
@@ -2870,7 +2870,7 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 };
 %extend Geom_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_VectorWithMagnitude::~Geom_VectorWithMagnitude %{
@@ -2929,7 +2929,7 @@ class Geom_Conic : public Geom_Curve {
 };
 %extend Geom_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Conic::~Geom_Conic %{
@@ -3130,7 +3130,7 @@ class Geom_Circle : public Geom_Conic {
 };
 %extend Geom_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Circle::~Geom_Circle %{
@@ -3189,7 +3189,7 @@ class Geom_ElementarySurface : public Geom_Surface {
 };
 %extend Geom_ElementarySurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_ElementarySurface::~Geom_ElementarySurface %{
@@ -3273,7 +3273,7 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_ToroidalSurface::~Geom_ToroidalSurface %{
@@ -3316,7 +3316,7 @@ class Geom_UndefinedValue : public Standard_DomainError {
 };
 %extend Geom_UndefinedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_UndefinedValue::~Geom_UndefinedValue %{
@@ -3411,7 +3411,7 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 };
 %extend Geom_RectangularTrimmedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_RectangularTrimmedSurface::~Geom_RectangularTrimmedSurface %{
@@ -3496,7 +3496,7 @@ class Geom_Line : public Geom_Curve {
 };
 %extend Geom_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Line::~Geom_Line %{
@@ -3545,7 +3545,7 @@ class Geom_Axis1Placement : public Geom_AxisPlacement {
 };
 %extend Geom_Axis1Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Axis1Placement::~Geom_Axis1Placement %{
@@ -3631,7 +3631,7 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_CylindricalSurface::~Geom_CylindricalSurface %{
@@ -3718,7 +3718,7 @@ class Geom_Ellipse : public Geom_Conic {
 };
 %extend Geom_Ellipse {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Ellipse::~Geom_Ellipse %{
@@ -3755,7 +3755,7 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 };
 %extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SequenceNodeOfSequenceOfBSplineSurface::~Geom_SequenceNodeOfSequenceOfBSplineSurface %{
@@ -3885,7 +3885,7 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 };
 %extend Geom_SurfaceOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SurfaceOfLinearExtrusion::~Geom_SurfaceOfLinearExtrusion %{
@@ -3964,7 +3964,7 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 };
 %extend Geom_HSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_HSequenceOfSurface::~Geom_HSequenceOfSurface %{
@@ -4049,7 +4049,7 @@ class Geom_SphericalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_SphericalSurface::~Geom_SphericalSurface %{
@@ -4143,7 +4143,7 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_ConicalSurface::~Geom_ConicalSurface %{
@@ -4260,7 +4260,7 @@ class Geom_OffsetSurface : public Geom_Surface {
 };
 %extend Geom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_OffsetSurface::~Geom_OffsetSurface %{
@@ -4339,7 +4339,7 @@ class Geom_TrimmedCurve : public Geom_BoundedCurve {
 };
 %extend Geom_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_TrimmedCurve::~Geom_TrimmedCurve %{
@@ -4429,7 +4429,7 @@ class Geom_Plane : public Geom_ElementarySurface {
 };
 %extend Geom_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Plane::~Geom_Plane %{
@@ -4484,7 +4484,7 @@ class Geom_Axis2Placement : public Geom_AxisPlacement {
 };
 %extend Geom_Axis2Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Axis2Placement::~Geom_Axis2Placement %{
@@ -4567,7 +4567,7 @@ class Geom_Parabola : public Geom_Conic {
 };
 %extend Geom_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Parabola::~Geom_Parabola %{
@@ -4632,7 +4632,7 @@ class Geom_Direction : public Geom_Vector {
 };
 %extend Geom_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Direction::~Geom_Direction %{
@@ -4718,7 +4718,7 @@ class Geom_Transformation : public MMgt_TShared {
 };
 %extend Geom_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Transformation::~Geom_Transformation %{
@@ -4815,7 +4815,7 @@ class Geom_Hyperbola : public Geom_Conic {
 };
 %extend Geom_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_Hyperbola::~Geom_Hyperbola %{
@@ -4925,7 +4925,7 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 };
 %extend Geom_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BezierCurve::~Geom_BezierCurve %{
@@ -4987,7 +4987,7 @@ class Geom_CartesianPoint : public Geom_Point {
 };
 %extend Geom_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_CartesianPoint::~Geom_CartesianPoint %{
@@ -5155,7 +5155,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 };
 %extend Geom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_BSplineCurve::~Geom_BSplineCurve %{
@@ -5234,7 +5234,7 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 };
 %extend Geom_HSequenceOfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom_HSequenceOfBSplineSurface::~Geom_HSequenceOfBSplineSurface %{

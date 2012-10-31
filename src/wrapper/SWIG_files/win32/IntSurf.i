@@ -311,7 +311,7 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 };
 %extend IntSurf_ListNodeOfListOfPntOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_ListNodeOfListOfPntOn2S::~IntSurf_ListNodeOfListOfPntOn2S %{
@@ -616,7 +616,7 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfCouple::~IntSurf_SequenceNodeOfSequenceOfCouple %{
@@ -723,7 +723,7 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfPathPoint::~IntSurf_SequenceNodeOfSequenceOfPathPoint %{
@@ -800,7 +800,7 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 };
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfInteriorPoint::~IntSurf_SequenceNodeOfSequenceOfInteriorPoint %{
@@ -1050,7 +1050,7 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 };
 %extend IntSurf_LineOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_LineOn2S::~IntSurf_LineOn2S %{
@@ -1087,7 +1087,7 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
