@@ -46,6 +46,7 @@ $HeaderURL$
 #include <Handle_ShapeUpgrade_SplitSurfaceArea.hxx>
 #include <Handle_ShapeUpgrade_SplitSurfaceContinuity.hxx>
 #include <Handle_ShapeUpgrade_Tool.hxx>
+#include <Handle_ShapeUpgrade_UnifySameDomain.hxx>
 #include <Handle_ShapeUpgrade_WireDivide.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
@@ -106,6 +107,7 @@ $HeaderURL$
 #include <ShapeUpgrade_SplitSurfaceArea.hxx>
 #include <ShapeUpgrade_SplitSurfaceContinuity.hxx>
 #include <ShapeUpgrade_Tool.hxx>
+#include <ShapeUpgrade_UnifySameDomain.hxx>
 #include <ShapeUpgrade_WireDivide.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>

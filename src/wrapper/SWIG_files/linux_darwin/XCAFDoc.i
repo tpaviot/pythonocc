@@ -1162,7 +1162,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDF_Label AddShape(const TopoDS_Shape S, const Standard_Boolean makeAssembly=1, const Standard_Boolean makePrepare=1);
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveShape(const TDF_Label &L) const;
+		Standard_Boolean RemoveShape(const TDF_Label &L, const Standard_Boolean removeCompletely=1) const;
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");

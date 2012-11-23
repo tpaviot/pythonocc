@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom2d_OffsetCurve;
-class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve();
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_OffsetCurve {
-	Geom2d_OffsetCurve* GetObject() {
-	return (Geom2d_OffsetCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom2d_OffsetCurve::~Handle_Geom2d_OffsetCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom2d_OffsetCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Geom2d_Conic;
 class Handle_Geom2d_Conic : public Handle_Geom2d_Curve {
 	public:
@@ -350,6 +312,44 @@ def __del__(self):
 %}
 
 %extend Handle_Geom2d_Parabola {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Geom2d_OffsetCurve;
+class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve();
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_OffsetCurve {
+	Geom2d_OffsetCurve* GetObject() {
+	return (Geom2d_OffsetCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom2d_OffsetCurve::~Handle_Geom2d_OffsetCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom2d_OffsetCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -584,6 +584,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Geom2d_UndefinedValue;
+class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue();
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue(const Handle_Geom2d_UndefinedValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue(const Geom2d_UndefinedValue *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue & operator=(const Handle_Geom2d_UndefinedValue &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_UndefinedValue & operator=(const Geom2d_UndefinedValue *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_UndefinedValue DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_UndefinedValue {
+	Geom2d_UndefinedValue* GetObject() {
+	return (Geom2d_UndefinedValue*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom2d_UndefinedValue::~Handle_Geom2d_UndefinedValue %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom2d_UndefinedValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Geom2d_Line;
 class Handle_Geom2d_Line : public Handle_Geom2d_Curve {
 	public:
@@ -692,44 +730,6 @@ def __del__(self):
 %}
 
 %extend Handle_Geom2d_VectorWithMagnitude {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Geom2d_UndefinedValue;
-class Handle_Geom2d_UndefinedValue : public Handle_Standard_DomainError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue();
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue(const Handle_Geom2d_UndefinedValue &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue(const Geom2d_UndefinedValue *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue & operator=(const Handle_Geom2d_UndefinedValue &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_UndefinedValue & operator=(const Geom2d_UndefinedValue *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_UndefinedValue DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_UndefinedValue {
-	Geom2d_UndefinedValue* GetObject() {
-	return (Geom2d_UndefinedValue*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom2d_UndefinedValue::~Handle_Geom2d_UndefinedValue %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom2d_UndefinedValue {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -35,6 +35,5 @@ import Geom
 import TopAbs
 import BRepAlgo
 import gp
-import NMTTools
 import BOPTColStd
 };

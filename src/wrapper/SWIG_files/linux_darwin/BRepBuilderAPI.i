@@ -568,8 +568,6 @@ class BRepBuilderAPI_VertexInspector : public NCollection_CellFilter_InspectorXY
 		void SetCurrent(const gp_XYZ theCurPnt);
 		%feature("autodoc", "1");
 		const TColStd_ListOfInteger & ResInd();
-		%feature("autodoc", "1");
-		NCollection_CellFilter_Action Inspect(const Standard_Integer theTarget);
 
 };
 %feature("shadow") BRepBuilderAPI_VertexInspector::~BRepBuilderAPI_VertexInspector %{

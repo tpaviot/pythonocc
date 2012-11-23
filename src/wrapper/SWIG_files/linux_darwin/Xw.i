@@ -501,44 +501,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Xw_PixMap;
-class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap();
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap(const Handle_Xw_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap(const Xw_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap & operator=(const Handle_Xw_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Xw_PixMap & operator=(const Xw_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Xw_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Xw_PixMap {
-	Xw_PixMap* GetObject() {
-	return (Xw_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Xw_PixMap::~Handle_Xw_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Xw_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Xw_GraphicDevice;
 class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	public:
@@ -1094,7 +1056,7 @@ class Xw_Window : public Aspect_Window {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean DumpArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Aspect_PixMap ToPixMap() const;
+		virtual		Standard_Boolean ToPixMap(Image_PixMap & theImage) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Load(const char * aFilename) const;
 		%feature("autodoc", "1");
@@ -1258,49 +1220,6 @@ def __del__(self):
 %}
 
 %extend Xw_IconBox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Xw_PixMap;
-class Xw_PixMap : public Aspect_PixMap {
-	public:
-		%feature("autodoc", "1");
-		Xw_PixMap(const Handle_Aspect_Window &aWindow, const Standard_Integer aWidth, const Standard_Integer anHeight, const Standard_Integer aDepth=0);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Xw_PixMap {
-	Handle_Xw_PixMap GetHandle() {
-	return *(Handle_Xw_PixMap*) &$self;
-	}
-};
-%extend Xw_PixMap {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Xw_PixMap::~Xw_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Xw_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}

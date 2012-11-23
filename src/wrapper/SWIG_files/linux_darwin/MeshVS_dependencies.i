@@ -718,10 +718,10 @@ $HeaderURL$
 
 %import TCollection.i
 %import MMgt.i
-%import AIS.i
 %import Select3D.i
 %import SelectMgr.i
 %import SelectBasics.i
+%import AIS.i
 %import Standard.i
-%import Quantity.i
 %import TColStd.i
+%import Quantity.i

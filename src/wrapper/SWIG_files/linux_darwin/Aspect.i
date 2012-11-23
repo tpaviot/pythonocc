@@ -815,44 +815,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Aspect_PixMap;
-class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap();
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_PixMap {
-	Aspect_PixMap* GetObject() {
-	return (Aspect_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_PixMap::~Handle_Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Aspect_DriverDefinitionError;
 class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -2509,52 +2471,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Aspect_PixMap;
-class Aspect_PixMap : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
-
-		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_PixMap {
-	Handle_Aspect_PixMap GetHandle() {
-	return *(Handle_Aspect_PixMap*) &$self;
-	}
-};
-%extend Aspect_PixMap {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Aspect_UndefinedMap;
 class Aspect_UndefinedMap : public Standard_OutOfRange {
 	public:
@@ -3703,6 +3619,129 @@ def __del__(self):
 };
 
 
+%nodefaultctor Aspect_FontStyle;
+class Aspect_FontStyle {
+	public:
+		%feature("autodoc", "1");
+		Aspect_FontStyle();
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const char * Style);
+		%feature("autodoc", "1");
+		Aspect_FontStyle & Assign(const Aspect_FontStyle &Other);
+		%feature("autodoc", "1");
+		Aspect_FontStyle & operator=(const Aspect_FontStyle &Other);
+		%feature("autodoc", "1");
+		void SetValues(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		void SetValues(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		void SetValues(const char * Style);
+		%feature("autodoc", "1");
+		void SetFamily(const char * aName);
+		%feature("autodoc", "1");
+		void SetWeight(const char * aName);
+		%feature("autodoc", "1");
+		void SetRegistry(const char * aName);
+		%feature("autodoc", "1");
+		void SetEncoding(const char * aName);
+		%feature("autodoc", "1");
+		Aspect_TypeOfFont Style() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		char * Value() const;
+		%feature("autodoc", "1");
+		Quantity_Length Size() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Slant() const;
+		%feature("autodoc", "1");
+		Standard_Boolean CapsHeight() const;
+		%feature("autodoc", "1");
+		char * AliasName() const;
+		%feature("autodoc", "1");
+		char * FullName() const;
+		%feature("autodoc", "1");
+		char * Foundry() const;
+		%feature("autodoc", "1");
+		char * Family() const;
+		%feature("autodoc", "1");
+		char * Weight() const;
+		%feature("autodoc", "1");
+		char * Registry() const;
+		%feature("autodoc", "1");
+		char * Encoding() const;
+		%feature("autodoc", "1");
+		char * SSlant() const;
+		%feature("autodoc", "1");
+		char * SWidth() const;
+		%feature("autodoc", "1");
+		char * SStyle() const;
+		%feature("autodoc", "1");
+		char * SPixelSize() const;
+		%feature("autodoc", "1");
+		char * SPointSize() const;
+		%feature("autodoc", "1");
+		char * SResolutionX() const;
+		%feature("autodoc", "1");
+		char * SResolutionY() const;
+		%feature("autodoc", "1");
+		char * SSpacing() const;
+		%feature("autodoc", "1");
+		char * SAverageWidth() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_FontStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
 class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 	public:
@@ -4422,8 +4461,6 @@ class Aspect_Window : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean DumpArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
-		virtual		Handle_Aspect_PixMap ToPixMap() const;
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean Load(const char * aFilename) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean LoadArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height) const;
@@ -4758,129 +4795,6 @@ def __del__(self):
 %}
 
 %extend Aspect_Array1OfEdge {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_FontStyle;
-class Aspect_FontStyle {
-	public:
-		%feature("autodoc", "1");
-		Aspect_FontStyle();
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const char * Style);
-		%feature("autodoc", "1");
-		Aspect_FontStyle & Assign(const Aspect_FontStyle &Other);
-		%feature("autodoc", "1");
-		Aspect_FontStyle & operator=(const Aspect_FontStyle &Other);
-		%feature("autodoc", "1");
-		void SetValues(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		void SetValues(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		void SetValues(const char * Style);
-		%feature("autodoc", "1");
-		void SetFamily(const char * aName);
-		%feature("autodoc", "1");
-		void SetWeight(const char * aName);
-		%feature("autodoc", "1");
-		void SetRegistry(const char * aName);
-		%feature("autodoc", "1");
-		void SetEncoding(const char * aName);
-		%feature("autodoc", "1");
-		Aspect_TypeOfFont Style() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		char * Value() const;
-		%feature("autodoc", "1");
-		Quantity_Length Size() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Slant() const;
-		%feature("autodoc", "1");
-		Standard_Boolean CapsHeight() const;
-		%feature("autodoc", "1");
-		char * AliasName() const;
-		%feature("autodoc", "1");
-		char * FullName() const;
-		%feature("autodoc", "1");
-		char * Foundry() const;
-		%feature("autodoc", "1");
-		char * Family() const;
-		%feature("autodoc", "1");
-		char * Weight() const;
-		%feature("autodoc", "1");
-		char * Registry() const;
-		%feature("autodoc", "1");
-		char * Encoding() const;
-		%feature("autodoc", "1");
-		char * SSlant() const;
-		%feature("autodoc", "1");
-		char * SWidth() const;
-		%feature("autodoc", "1");
-		char * SStyle() const;
-		%feature("autodoc", "1");
-		char * SPixelSize() const;
-		%feature("autodoc", "1");
-		char * SPointSize() const;
-		%feature("autodoc", "1");
-		char * SResolutionX() const;
-		%feature("autodoc", "1");
-		char * SResolutionY() const;
-		%feature("autodoc", "1");
-		char * SSpacing() const;
-		%feature("autodoc", "1");
-		char * SAverageWidth() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
-		%extend{
-			bool __eq_wrapper__(const Aspect_FontStyle &Other) {
-				if (*self==Other) return true;
-				else return false;
-			}
-		}
-		%feature("autodoc", "1");
-		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
-		%extend{
-			bool __ne_wrapper__(const Aspect_FontStyle &Other) {
-				if (*self!=Other) return true;
-				else return false;
-			}
-		}
-		%pythoncode {
-		def __eq__(self,right):
-			try:
-				return self.__eq_wrapper__(right)
-			except:
-				return False
-		}
-		%pythoncode {
-		def __ne__(self,right):
-			try:
-				return self.__ne_wrapper__(right)
-			except:
-				return True
-		}
-
-};
-%feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_FontStyle {
 	void _kill_pointed() {
 		delete $self;
 	}

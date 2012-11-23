@@ -27,16 +27,16 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Graphic3d
 import Standard
 import SelectMgr
+import Graphic3d
+import TCollection
 import TColStd
 import Bnd
 import gp
+import Select3D
+import Quantity
 import SelectBasics
 import PrsMgr
-import Quantity
-import TCollection
-import Select3D
 import Aspect
 };

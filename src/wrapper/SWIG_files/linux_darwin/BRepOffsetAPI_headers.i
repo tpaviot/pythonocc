@@ -37,6 +37,7 @@ $HeaderURL$
 #include<BRepOffsetAPI_MakePipe.hxx>
 #include<BRepOffsetAPI_MakePipeShell.hxx>
 #include<BRepOffsetAPI_MakeThickSolid.hxx>
+#include<BRepOffsetAPI_MiddlePath.hxx>
 #include<BRepOffsetAPI_NormalProjection.hxx>
 #include<BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal.hxx>
 #include<BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape.hxx>
@@ -200,6 +201,7 @@ $HeaderURL$
 #include<TopTools_MapIteratorOfMapOfShape.hxx>
 #include<TopTools_MapOfOrientedShape.hxx>
 #include<TopTools_MapOfShape.hxx>
+#include<TopTools_MutexForShapeProvider.hxx>
 #include<TopTools_OrientedShapeMapHasher.hxx>
 #include<TopTools_SequenceNodeOfSequenceOfShape.hxx>
 #include<TopTools_SequenceOfShape.hxx>

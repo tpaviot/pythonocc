@@ -139,7 +139,6 @@ $HeaderURL$
 #include<InterfaceGraphic_Labels.hxx>
 #include<InterfaceGraphic_Portability.hxx>
 #include<InterfaceGraphic_PrimitiveArray.hxx>
-#include<InterfaceGraphic_RawBufferData.hxx>
 #include<InterfaceGraphic_X11.hxx>
 #include<InterfaceGraphic_XWD.hxx>
 #include<InterfaceGraphic_degeneration.hxx>

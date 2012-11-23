@@ -506,6 +506,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepOffsetAPI_MiddlePath;
+class BRepOffsetAPI_MiddlePath : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_MiddlePath(const TopoDS_Shape aShape, const TopoDS_Shape StartShape, const TopoDS_Shape EndShape);
+		%feature("autodoc", "1");
+		virtual		void Build();
+
+};
+%feature("shadow") BRepOffsetAPI_MiddlePath::~BRepOffsetAPI_MiddlePath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffsetAPI_MiddlePath {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepOffsetAPI_MakeOffsetShape;
 class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 	public:

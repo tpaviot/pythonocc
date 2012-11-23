@@ -77,6 +77,7 @@ enum TNaming_NameType {
 	TNaming_FILTERBYNEIGHBOURGS,
 	TNaming_ORIENTATION,
 	TNaming_WIREIN,
+	TNaming_SHELLIN,
 	};
 
 
@@ -912,8 +913,6 @@ class TNaming_Builder {
 		%feature("autodoc", "1");
 		void Modify(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
 		%feature("autodoc", "1");
-		void Replace(const TopoDS_Shape oldShape, const TopoDS_Shape newShape);
-		%feature("autodoc", "1");
 		void Select(const TopoDS_Shape aShape, const TopoDS_Shape inShape);
 		%feature("autodoc", "1");
 		Handle_TNaming_NamedShape NamedShape() const;
@@ -1718,8 +1717,6 @@ class TNaming_NamedShape : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
 		%feature("autodoc", "1");
-		void OldPaste(const Handle_TDF_Attribute &intoAttribute, const Handle_TDF_RelocationTable &aRelocTationable) const;
-		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
 		virtual		void BeforeRemoval();
@@ -2263,6 +2260,10 @@ class TNaming {
 		static		TopoDS_Shape FindUniqueContextSet(const TopoDS_Shape S, const TopoDS_Shape Context, Handle_TopTools_HArray1OfShape & Arr);
 		%feature("autodoc", "1");
 		static		Standard_Boolean SubstituteSShape(const TDF_Label &accesslabel, const TopoDS_Shape From, TopoDS_Shape & To);
+		%feature("autodoc", "1");
+		static		Standard_Boolean OuterWire(const TopoDS_Face theFace, TopoDS_Wire & theWire);
+		%feature("autodoc", "1");
+		static		Standard_Boolean OuterShell(const TopoDS_Solid theSolid, TopoDS_Shell & theShell);
 		%feature("autodoc", "1");
 		static		void IDList(TDF_IDList & anIDList);
 		%feature("autodoc", "1");

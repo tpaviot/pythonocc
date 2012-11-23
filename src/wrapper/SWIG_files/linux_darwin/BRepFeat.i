@@ -400,6 +400,8 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
+		void SetCheckInterior(const Standard_Boolean ToCheckInterior);
+		%feature("autodoc", "1");
 		void Add(const TopoDS_Wire W, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge E, const TopoDS_Face F);

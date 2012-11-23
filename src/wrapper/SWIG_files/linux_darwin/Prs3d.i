@@ -1508,6 +1508,14 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetSectionAspect(const Handle_Prs3d_LineAspect &anAspect);
 		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryAspect(const Handle_Prs3d_LineAspect &theAspect);
+		%feature("autodoc", "1");
+		virtual		Handle_Prs3d_LineAspect FaceBoundaryAspect();
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };

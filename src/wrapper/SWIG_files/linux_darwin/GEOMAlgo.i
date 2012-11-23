@@ -1364,41 +1364,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GEOMAlgo_GetInPlaceIterator;
-class GEOMAlgo_GetInPlaceIterator {
-	public:
-		%feature("autodoc", "1");
-		GEOMAlgo_GetInPlaceIterator();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void AppendPair(const NMTTools_CoupleOfShape &theCS);
-		%feature("autodoc", "1");
-		void Initialize(const TopAbs_ShapeEnum theT1, const TopAbs_ShapeEnum theT2);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const NMTTools_CoupleOfShape & Value() const;
-
-};
-%feature("shadow") GEOMAlgo_GetInPlaceIterator::~GEOMAlgo_GetInPlaceIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMAlgo_GetInPlaceIterator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GEOMAlgo_WireSolid;
 class GEOMAlgo_WireSolid : public GEOMAlgo_ShapeSolid {
 	public:

@@ -163,8 +163,6 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
-#include<OSD_FontAspect.hxx>
-#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
@@ -175,7 +173,6 @@ $HeaderURL$
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_MemInfo.hxx>
-#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
@@ -201,7 +198,6 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
-#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -215,7 +211,6 @@ $HeaderURL$
 #include<Xw_IconBox.hxx>
 #include<Xw_ListOfMFTFonts.hxx>
 #include<Xw_MarkMap.hxx>
-#include<Xw_PixMap.hxx>
 #include<Xw_TextManager.hxx>
 #include<Xw_TypeMap.hxx>
 #include<Xw_TypeOfMapping.hxx>
@@ -242,6 +237,7 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
+#include<Image_PixMap.hxx>
 #include<Handle_Graphic3d_AspectLine3d.hxx>
 #include<Handle_Graphic3d_AspectFillArea3d.hxx>
 #include<Handle_Graphic3d_AspectText3d.hxx>

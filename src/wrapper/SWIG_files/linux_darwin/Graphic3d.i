@@ -101,6 +101,12 @@ enum Graphic3d_TypeOfMaterial {
 	Graphic3d_MATERIAL_PHYSIC,
 	};
 
+enum Graphic3d_BufferType {
+	Graphic3d_BT_RGB,
+	Graphic3d_BT_RGBA,
+	Graphic3d_BT_Depth,
+	};
+
 enum Graphic3d_TypeOfPolygon {
 	Graphic3d_TOP_UNKNOWN,
 	Graphic3d_TOP_COMPLEX,
@@ -153,6 +159,13 @@ enum Graphic3d_GroupAspect {
 	Graphic3d_ASPECT_TEXT,
 	Graphic3d_ASPECT_MARKER,
 	Graphic3d_ASPECT_FILL_AREA,
+	};
+
+enum Graphic3d_TypeOfTextureMode {
+	Graphic3d_TOTM_OBJECT,
+	Graphic3d_TOTM_SPHERE,
+	Graphic3d_TOTM_EYE,
+	Graphic3d_TOTM_MANUAL,
 	};
 
 enum Graphic3d_TypeOfTexture {
@@ -239,13 +252,6 @@ enum Graphic3d_NameOfTexturePlane {
 	Graphic3d_NOTP_YZ,
 	Graphic3d_NOTP_ZX,
 	Graphic3d_NOTP_UNKNOWN,
-	};
-
-enum Graphic3d_TypeOfTextureMode {
-	Graphic3d_TOTM_OBJECT,
-	Graphic3d_TOTM_SPHERE,
-	Graphic3d_TOTM_EYE,
-	Graphic3d_TOTM_MANUAL,
 	};
 
 enum Graphic3d_TypeOfComposition {
@@ -629,6 +635,44 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_MaterialDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Graphic3d_ArrayOfPolylines;
+class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines(const Handle_Graphic3d_ArrayOfPolylines &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines(const Graphic3d_ArrayOfPolylines *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines & operator=(const Handle_Graphic3d_ArrayOfPolylines &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPolylines & operator=(const Graphic3d_ArrayOfPolylines *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_ArrayOfPolylines DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_ArrayOfPolylines {
+	Graphic3d_ArrayOfPolylines* GetObject() {
+	return (Graphic3d_ArrayOfPolylines*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_ArrayOfPolylines::~Handle_Graphic3d_ArrayOfPolylines %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_ArrayOfPolylines {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1737,44 +1781,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Graphic3d_ArrayOfPolylines;
-class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPolylines();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPolylines(const Handle_Graphic3d_ArrayOfPolylines &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPolylines(const Graphic3d_ArrayOfPolylines *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPolylines & operator=(const Handle_Graphic3d_ArrayOfPolylines &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPolylines & operator=(const Graphic3d_ArrayOfPolylines *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_ArrayOfPolylines DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_ArrayOfPolylines {
-	Graphic3d_ArrayOfPolylines* GetObject() {
-	return (Graphic3d_ArrayOfPolylines*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_ArrayOfPolylines::~Handle_Graphic3d_ArrayOfPolylines %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_ArrayOfPolylines {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Graphic3d_Group;
 class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 	public:
@@ -2656,85 +2662,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_HSequenceOfStructure;
-class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_HSequenceOfStructure();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Structure & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Graphic3d_Structure & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfStructure & Sequence() const;
-		%feature("autodoc", "1");
-		Graphic3d_SequenceOfStructure & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_HSequenceOfStructure {
-	Handle_Graphic3d_HSequenceOfStructure GetHandle() {
-	return *(Handle_Graphic3d_HSequenceOfStructure*) &$self;
-	}
-};
-%extend Graphic3d_HSequenceOfStructure {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_HSequenceOfStructure {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_Array2OfVertexC;
 class Graphic3d_Array2OfVertexC {
 	public:
@@ -2784,6 +2711,41 @@ def __del__(self):
 %}
 
 %extend Graphic3d_Array2OfVertexC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_ArrayOfPolylines;
+class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
+	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
+	}
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ArrayOfPolylines {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5330,6 +5292,85 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_HSequenceOfStructure;
+class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_HSequenceOfStructure();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_Graphic3d_Structure &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Graphic3d_Structure &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Structure & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfStructure & Sequence() const;
+		%feature("autodoc", "1");
+		Graphic3d_SequenceOfStructure & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_HSequenceOfStructure {
+	Handle_Graphic3d_HSequenceOfStructure GetHandle() {
+	return *(Handle_Graphic3d_HSequenceOfStructure*) &$self;
+	}
+};
+%extend Graphic3d_HSequenceOfStructure {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_HSequenceOfStructure {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_StructureManager;
 class Graphic3d_StructureManager : public MMgt_TShared {
 	public:
@@ -5549,7 +5590,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		%feature("autodoc", "1");
 		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
 		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0);
+		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean BackFace() const;
 		%feature("autodoc", "1");
@@ -5568,9 +5609,9 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		Aspect_TypeOfDegenerateModel DegenerateModel(Quantity_Ratio & aRatio) const;
 		%feature("autodoc", "1");
 		static		Aspect_TypeOfDegenerateModel DefaultDegenerateModel(Quantity_Ratio & aRatio);
-		%feature("autodoc","PolygonOffsets() -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets() -> Standard_Integer");
 
-		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -5839,41 +5880,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_ArrayOfQuadrangles {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_ArrayOfPolylines;
-class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_ArrayOfPolylines {
-	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
-	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
-	}
-};
-%extend Graphic3d_ArrayOfPolylines {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_ArrayOfPolylines {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6494,7 +6500,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		%feature("autodoc", "1");
 		virtual		void FBOChangeViewport(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr, const Standard_Integer width, const Standard_Integer height);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &view, Image_CRawBufferData & buffer);
+		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &theCView, Image_PixMap & theImage, const Graphic3d_BufferType &theBufferType);
 		%feature("autodoc", "1");
 		virtual		void SetGLLightEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
 		%feature("autodoc", "1");
@@ -6794,9 +6800,9 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real GetTextAngle() const;
 		%feature("autodoc", "1");
-		void SetTextFontAspect(const OSD_FontAspect AFontAspect);
+		void SetTextFontAspect(const Font_FontAspect AFontAspect);
 		%feature("autodoc", "1");
-		OSD_FontAspect GetTextFontAspect() const;
+		Font_FontAspect GetTextFontAspect() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

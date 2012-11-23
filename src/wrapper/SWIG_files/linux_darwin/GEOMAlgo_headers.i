@@ -220,5 +220,4 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<NMTTools_PaveFiller.hxx>
-#include<NMTTools_CoupleOfShape.hxx>
 %}

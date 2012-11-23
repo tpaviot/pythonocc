@@ -23,13 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-
-%pythoncode {
-#importing required modules
-import GarbageCollector
-import Standard
-import TopoDS
-import TCollection
-import TopAbs
-import Bnd
-};
+%rename(DownCast) Handle_Font_FontMgr::DownCast;
+%rename(DownCast) Handle_Font_SystemFont::DownCast;
+%rename(GetInstance) Font_FontMgr::GetInstance;

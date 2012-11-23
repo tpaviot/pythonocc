@@ -43,7 +43,6 @@ $HeaderURL$
 %rename(DownCast) Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun::DownCast;
 %rename(DownCast) Handle_BRepMesh_IncrementalMesh::DownCast;
 %rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal::DownCast;
-%rename(IsEqual) BRepMesh_VertexInspector::IsEqual;
 %rename(Sort) BRepMesh_HeapSortIndexedVertexOfDelaun::Sort;
 %rename(Mesh) BRepMesh::Mesh;
 %rename(Discret) BRepMesh_IncrementalMesh::Discret;

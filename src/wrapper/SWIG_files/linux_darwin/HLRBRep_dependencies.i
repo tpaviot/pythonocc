@@ -265,12 +265,12 @@ $HeaderURL$
 #include <math_Vector.hxx>
 %};
 
-%import MMgt.i
 %import TCollection.i
+%import MMgt.i
 %import Standard.i
-%import IntRes2d.i
-%import IntCurveSurface.i
 %import GeomAbs.i
+%import IntRes2d.i
+%import TopAbs.i
+%import IntCurveSurface.i
 %import math.i
 %import Intf.i
-%import TopAbs.i

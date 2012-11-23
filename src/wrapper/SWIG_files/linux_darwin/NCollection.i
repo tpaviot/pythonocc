@@ -251,11 +251,11 @@ class NCollection_SparseArrayBase {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Size() const;
+		Standard_Size Size() const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
+		Standard_Boolean HasValue(const Standard_Size theIndex) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
+		Standard_Boolean UnsetValue(const Standard_Size theIndex);
 
 };
 
@@ -410,31 +410,6 @@ def __del__(self):
 %}
 
 %extend NCollection_IncAllocator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NCollection_ListNode;
-class NCollection_ListNode {
-	public:
-		%feature("autodoc", "1");
-		NCollection_ListNode(NCollection_ListNode* theNext);
-		%feature("autodoc", "1");
-		NCollection_ListNode * Next() const;
-
-};
-%feature("shadow") NCollection_ListNode::~NCollection_ListNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NCollection_ListNode {
 	void _kill_pointed() {
 		delete $self;
 	}

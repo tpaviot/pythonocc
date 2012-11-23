@@ -812,82 +812,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom_BoundedSurface;
-class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface(const Handle_Geom_BoundedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface(const Geom_BoundedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface & operator=(const Handle_Geom_BoundedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_BoundedSurface & operator=(const Geom_BoundedSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom_BoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_BoundedSurface {
-	Geom_BoundedSurface* GetObject() {
-	return (Geom_BoundedSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom_BoundedSurface::~Handle_Geom_BoundedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom_BoundedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Geom_RectangularTrimmedSurface;
-class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface(const Geom_RectangularTrimmedSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface & operator=(const Handle_Geom_RectangularTrimmedSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_RectangularTrimmedSurface & operator=(const Geom_RectangularTrimmedSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom_RectangularTrimmedSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_RectangularTrimmedSurface {
-	Geom_RectangularTrimmedSurface* GetObject() {
-	return (Geom_RectangularTrimmedSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom_RectangularTrimmedSurface::~Handle_Geom_RectangularTrimmedSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom_RectangularTrimmedSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Geom_SphericalSurface;
 class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 	public:
@@ -1034,6 +958,44 @@ def __del__(self):
 %}
 
 %extend Handle_Geom_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Geom_BoundedSurface;
+class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface(const Handle_Geom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface(const Geom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface & operator=(const Handle_Geom_BoundedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_BoundedSurface & operator=(const Geom_BoundedSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BoundedSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_BoundedSurface {
+	Geom_BoundedSurface* GetObject() {
+	return (Geom_BoundedSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom_BoundedSurface::~Handle_Geom_BoundedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom_BoundedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1224,6 +1186,44 @@ def __del__(self):
 %}
 
 %extend Handle_Geom_HSequenceOfBSplineSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Geom_RectangularTrimmedSurface;
+class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_RectangularTrimmedSurface();
+		%feature("autodoc", "1");
+		Handle_Geom_RectangularTrimmedSurface(const Handle_Geom_RectangularTrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_RectangularTrimmedSurface(const Geom_RectangularTrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_RectangularTrimmedSurface & operator=(const Handle_Geom_RectangularTrimmedSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_RectangularTrimmedSurface & operator=(const Geom_RectangularTrimmedSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom_RectangularTrimmedSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_RectangularTrimmedSurface {
+	Geom_RectangularTrimmedSurface* GetObject() {
+	return (Geom_RectangularTrimmedSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom_RectangularTrimmedSurface::~Handle_Geom_RectangularTrimmedSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom_RectangularTrimmedSurface {
 	void _kill_pointed() {
 		delete $self;
 	}

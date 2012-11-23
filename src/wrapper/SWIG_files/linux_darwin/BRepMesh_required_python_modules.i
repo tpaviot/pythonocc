@@ -28,7 +28,6 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import NCollection
 import TopoDS
 import gp
 import Poly

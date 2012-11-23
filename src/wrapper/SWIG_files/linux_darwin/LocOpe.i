@@ -823,6 +823,8 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Shape S);
 		%feature("autodoc", "1");
+		void SetCheckInterior(const Standard_Boolean ToCheckInterior);
+		%feature("autodoc", "1");
 		void Bind(const TopoDS_Wire W, const TopoDS_Face F);
 		%feature("autodoc", "1");
 		void Bind(const TopoDS_Compound Comp, const TopoDS_Face F);

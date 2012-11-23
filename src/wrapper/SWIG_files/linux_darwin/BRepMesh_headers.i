@@ -138,8 +138,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<gp_XY.hxx>
 #include<TColStd_Array1OfInteger.hxx>
+#include<gp_XY.hxx>
 #include<BRepMesh.hxx>
 #include<TopoDS_Shape.hxx>
 #include<gp_Circ2d.hxx>
@@ -157,6 +157,7 @@ $HeaderURL$
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<gp_Dir.hxx>
 #include<TopTools_DataMapOfShapeReal.hxx>
+#include<TopTools_MutexForShapeProvider.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<Bnd_Box2d.hxx>
 %}

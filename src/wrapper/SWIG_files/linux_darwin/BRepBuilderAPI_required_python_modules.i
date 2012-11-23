@@ -31,6 +31,5 @@ import Standard
 import TopoDS
 import TopTools
 import TColStd
-import NCollection
 import Geom
 };

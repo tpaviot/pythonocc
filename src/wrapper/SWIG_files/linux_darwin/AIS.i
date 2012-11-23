@@ -2525,6 +2525,18 @@ class AIS_Drawer : public Prs3d_Drawer {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect VectorAspect();
 		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryAspect(const Handle_Prs3d_LineAspect &theAspect);
+		%feature("autodoc", "1");
+		virtual		Handle_Prs3d_LineAspect FaceBoundaryAspect();
+		%feature("autodoc", "1");
+		Standard_Boolean IsOwnFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOwnFaceBoundaryAspect() const;
+		%feature("autodoc", "1");
 		Standard_Boolean HasDatumAspect() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_DatumAspect DatumAspect();
@@ -2726,12 +2738,12 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		void SetAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1);
 		%feature("autodoc", "1");
-		virtual		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0);
+		virtual		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasPolygonOffsets() const;
-		%feature("autodoc","PolygonOffsets() -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets() -> Standard_Integer");
 
-		virtual		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		virtual		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4582,6 +4594,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_MaxRadiusDimension;
+class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
+	public:
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_MaxRadiusDimension {
+	Handle_AIS_MaxRadiusDimension GetHandle() {
+	return *(Handle_AIS_MaxRadiusDimension*) &$self;
+	}
+};
+%extend AIS_MaxRadiusDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_MaxRadiusDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_C0RegularityFilter;
 class AIS_C0RegularityFilter : public SelectMgr_Filter {
 	public:
@@ -5801,12 +5852,12 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UnsetLocalAttributes(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
+		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
-		%feature("autodoc","PolygonOffsets(const anObj) -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets(const anObj) -> Standard_Integer");
 
-		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -6966,45 +7017,6 @@ def __del__(self):
 %}
 
 %extend AIS_EqualDistanceRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_MaxRadiusDimension;
-class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
-	public:
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText);
-		%feature("autodoc", "1");
-		AIS_MaxRadiusDimension(const TopoDS_Shape aShape, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_MaxRadiusDimension {
-	Handle_AIS_MaxRadiusDimension GetHandle() {
-	return *(Handle_AIS_MaxRadiusDimension*) &$self;
-	}
-};
-%extend AIS_MaxRadiusDimension {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_MaxRadiusDimension {
 	void _kill_pointed() {
 		delete $self;
 	}

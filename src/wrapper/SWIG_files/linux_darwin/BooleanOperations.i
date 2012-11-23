@@ -214,58 +214,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BooleanOperations_ShapeAndInterferences;
-class BooleanOperations_ShapeAndInterferences {
-	public:
-		%feature("autodoc", "1");
-		BooleanOperations_ShapeAndInterferences();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  GetShape() const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum GetShapeType() const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape GetState() const;
-		%feature("autodoc", "1");
-		void SetState(const BooleanOperations_StateOfShape theState);
-		%feature("autodoc", "1");
-		const Bnd_Box & GetBoundingBox() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfAncestors() const;
-		%feature("autodoc", "1");
-		Standard_Integer NumberOfSuccessors() const;
-		%feature("autodoc", "1");
-		Standard_Integer GetAncestor(const Standard_Integer index) const;
-		%feature("autodoc", "1");
-		Standard_Integer GetSuccessor(const Standard_Integer index) const;
-		%feature("autodoc","GetAncestors() -> Standard_Integer");
-
-		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
-		%feature("autodoc","GetSuccessors() -> Standard_Integer");
-
-		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation GetOrientation(const Standard_Integer index) const;
-		%feature("autodoc","GetOrientations() -> Standard_Integer");
-
-		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
-
-};
-%feature("shadow") BooleanOperations_ShapeAndInterferences::~BooleanOperations_ShapeAndInterferences %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BooleanOperations_ShapeAndInterferences {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BooleanOperations_Explorer;
 class BooleanOperations_Explorer {
 	public:
@@ -364,6 +312,58 @@ def __del__(self):
 %}
 
 %extend BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BooleanOperations_ShapeAndInterferences;
+class BooleanOperations_ShapeAndInterferences {
+	public:
+		%feature("autodoc", "1");
+		BooleanOperations_ShapeAndInterferences();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  GetShape() const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum GetShapeType() const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape GetState() const;
+		%feature("autodoc", "1");
+		void SetState(const BooleanOperations_StateOfShape theState);
+		%feature("autodoc", "1");
+		const Bnd_Box & GetBoundingBox() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfAncestors() const;
+		%feature("autodoc", "1");
+		Standard_Integer NumberOfSuccessors() const;
+		%feature("autodoc", "1");
+		Standard_Integer GetAncestor(const Standard_Integer index) const;
+		%feature("autodoc", "1");
+		Standard_Integer GetSuccessor(const Standard_Integer index) const;
+		%feature("autodoc","GetAncestors() -> Standard_Integer");
+
+		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
+		%feature("autodoc","GetSuccessors() -> Standard_Integer");
+
+		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation GetOrientation(const Standard_Integer index) const;
+		%feature("autodoc","GetOrientations() -> Standard_Integer");
+
+		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
+
+};
+%feature("shadow") BooleanOperations_ShapeAndInterferences::~BooleanOperations_ShapeAndInterferences %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BooleanOperations_ShapeAndInterferences {
 	void _kill_pointed() {
 		delete $self;
 	}

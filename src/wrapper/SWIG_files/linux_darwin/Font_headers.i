@@ -23,13 +23,22 @@ $Author$
 $HeaderURL$
 
 */
+%{
 
-%pythoncode {
-#importing required modules
-import GarbageCollector
-import Standard
-import TopoDS
-import TCollection
-import TopAbs
-import Bnd
-};
+// Headers necessary to define wrapped classes.
+
+#include<Font_FontAspect.hxx>
+#include<Font_FontMgr.hxx>
+#include<Font_NListOfSystemFont.hxx>
+#include<Font_SystemFont.hxx>
+#include<Handle_Font_FontMgr.hxx>
+#include<Handle_Font_SystemFont.hxx>
+
+// Additional headers necessary for compilation.
+
+
+// Needed headers necessary for compilation.
+
+#include<Handle_Standard_Transient.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
+%}

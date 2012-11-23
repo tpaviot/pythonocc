@@ -30,7 +30,6 @@ $HeaderURL$
 #include <Handle_Image_DataMapNodeOfColorPixelDataMap.hxx>
 #include <Handle_Image_DataMapNodeOfLookupTable.hxx>
 #include <Handle_Image_Image.hxx>
-#include <Handle_Image_PixMap.hxx>
 #include <Handle_Image_PseudoColorImage.hxx>
 #include <Handle_MMgt_TShared.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
@@ -62,10 +61,11 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
+#include <Image_AlienPixMap.hxx>
 #include <Image_AveragePixelInterpolation.hxx>
 #include <Image_BalancedPixelInterpolation.hxx>
 #include <Image_BilinearPixelInterpolation.hxx>
-#include <Image_CRawBufferData.hxx>
+#include <Image_Color.hxx>
 #include <Image_ColorImage.hxx>
 #include <Image_ColorPixelDataMap.hxx>
 #include <Image_ColorPixelMapHasher.hxx>
@@ -76,13 +76,14 @@ $HeaderURL$
 #include <Image_DataMapIteratorOfLookupTable.hxx>
 #include <Image_DataMapNodeOfColorPixelDataMap.hxx>
 #include <Image_DataMapNodeOfLookupTable.hxx>
+#include <Image_Diff.hxx>
 #include <Image_DitheringMethod.hxx>
 #include <Image_FlipType.hxx>
-#include <Image_HPrivateImage.hxx>
 #include <Image_Image.hxx>
 #include <Image_IndexPixelMapHasher.hxx>
 #include <Image_LookupTable.hxx>
 #include <Image_PixMap.hxx>
+#include <Image_PixMapData.hxx>
 #include <Image_PixelAddress.hxx>
 #include <Image_PixelFieldOfDColorImage.hxx>
 #include <Image_PixelInterpolation.hxx>

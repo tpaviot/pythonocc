@@ -28,8 +28,5 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import TopoDS
 import TCollection
-import TopAbs
-import Bnd
 };

@@ -49,6 +49,7 @@ $HeaderURL$
 #include<Handle_ShapeUpgrade_SplitSurfaceArea.hxx>
 #include<Handle_ShapeUpgrade_SplitSurfaceContinuity.hxx>
 #include<Handle_ShapeUpgrade_Tool.hxx>
+#include<Handle_ShapeUpgrade_UnifySameDomain.hxx>
 #include<Handle_ShapeUpgrade_WireDivide.hxx>
 #include<ShapeUpgrade.hxx>
 #include<ShapeUpgrade_ClosedEdgeDivide.hxx>
@@ -81,6 +82,7 @@ $HeaderURL$
 #include<ShapeUpgrade_SplitSurfaceArea.hxx>
 #include<ShapeUpgrade_SplitSurfaceContinuity.hxx>
 #include<ShapeUpgrade_Tool.hxx>
+#include<ShapeUpgrade_UnifySameDomain.hxx>
 #include<ShapeUpgrade_WireDivide.hxx>
 
 // Additional headers necessary for compilation.
