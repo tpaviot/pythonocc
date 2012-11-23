@@ -94,6 +94,7 @@ LIST(APPEND OCC_MODULES
 	FEmTool
 	FairCurve
 	FilletSurf
+	Font
 	GC
 	GCE2d
 	GCPnts
