@@ -42,6 +42,12 @@
 #include <GEOMImpl_Gen.hxx>
 #include <GEOMImpl_IShapesOperations.hxx>
 
+#define SETPARAM(aFUNC,aVAL)  \
+  if (aVAL.IsString())         \
+  aFUNC( aVAL.GetString() ); \
+  else                         \
+  aFUNC( aVAL.GetDouble() );
+
 #include <GEOM_Function.hxx>
 #include <GEOM_PythonDump.hxx>
 
@@ -91,7 +97,7 @@ GEOMImpl_ILocalOperations::~GEOMImpl_ILocalOperations()
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletAll
-                                    (Handle(GEOM_Object) theShape, double theR)
+                                    (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR)
 {
   SetErrorCode(KO);
 
@@ -112,7 +118,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletAll
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
 
   //Compute the Fillet value
   try {
@@ -144,7 +150,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletAll
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdges
-       (Handle(GEOM_Object) theShape, double theR, std::list<int> theEdges)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR, std::list<int> theEdges)
 {
   SetErrorCode(KO);
 
@@ -165,7 +171,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdges
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
   int aLen = theEdges.size();
   aCI.SetLength(aLen);
 
@@ -213,7 +219,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdges
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdgesR1R2
-       (Handle(GEOM_Object) theShape, double theR1, double theR2, std::list<int> theEdges)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR1, const GEOM_Parameter& theR2, std::list<int> theEdges)
 {
   SetErrorCode(KO);
 
@@ -234,8 +240,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdgesR1R2
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR1(theR1);
-  aCI.SetR2(theR2);
+  SETPARAM(aCI.SetR1,theR1);
+  SETPARAM(aCI.SetR2,theR2);
   int aLen = theEdges.size();
   aCI.SetLength(aLen);
 
@@ -284,7 +290,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletEdgesR1R2
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFaces
-       (Handle(GEOM_Object) theShape, double theR, std::list<int> theFaces)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR, std::list<int> theFaces)
 {
   SetErrorCode(KO);
 
@@ -305,7 +311,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFaces
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
   int aLen = theFaces.size();
   aCI.SetLength(aLen);
 
@@ -353,7 +359,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFaces
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFacesR1R2
-       (Handle(GEOM_Object) theShape, double theR1, double theR2, std::list<int> theFaces)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR1, const GEOM_Parameter& theR2, std::list<int> theFaces)
 {
   SetErrorCode(KO);
 
@@ -374,8 +380,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFacesR1R2
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR1(theR1);
-  aCI.SetR2(theR2);
+  SETPARAM(aCI.SetR1,theR1);
+  SETPARAM(aCI.SetR2,theR2);
   int aLen = theFaces.size();
   aCI.SetLength(aLen);
 
@@ -423,7 +429,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFilletFacesR1R2
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet2D
-       (Handle(GEOM_Object) theShape, double theR, std::list<int> theVertexes)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR, std::list<int> theVertexes)
 {
   SetErrorCode(KO);
 
@@ -444,7 +450,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet2D
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
   int aLen = theVertexes.size();
   aCI.SetLength(aLen);
 
@@ -492,7 +498,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet2D
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet1D
-       (Handle(GEOM_Object) theShape, double theR, std::list<int> theVertexes)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR, std::list<int> theVertexes)
 {
   SetErrorCode(KO);
 
@@ -513,7 +519,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet1D
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
   int aLen = theVertexes.size();
   aCI.SetLength(aLen);
 
@@ -561,7 +567,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeFillet1D
  *  MakeChamferAll
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferAll (Handle(GEOM_Object) theShape, double theD)
+Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferAll (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD)
 {
   SetErrorCode(KO);
 
@@ -582,7 +588,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferAll (Handle(GEOM_Objec
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetD(theD);
+  SETPARAM(aCI.SetD,theD);
 
   //Compute the Chamfer value
   try {
@@ -614,7 +620,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferAll (Handle(GEOM_Objec
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdge
-                            (Handle(GEOM_Object) theShape, double theD1, double theD2,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                              int theFace1, int theFace2)
 {
   SetErrorCode(KO);
@@ -636,8 +642,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdge
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetD1(theD1);
-  aCI.SetD2(theD2);
+  SETPARAM(aCI.SetD1,theD1);
+  SETPARAM(aCI.SetD2,theD2);
   aCI.SetFace1(theFace1);
   aCI.SetFace2(theFace2);
 
@@ -672,7 +678,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdge
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgeAD
-                            (Handle(GEOM_Object) theShape, double theD, double theAngle,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                              int theFace1, int theFace2)
 {
   SetErrorCode(KO);
@@ -694,8 +700,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgeAD
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetD(theD);
-  aCI.SetAngle(theAngle);
+  SETPARAM(aCI.SetD, theD);
+  SETPARAM(aCI.SetAngle, theAngle);
   aCI.SetFace1(theFace1);
   aCI.SetFace2(theFace2);
 
@@ -729,7 +735,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgeAD
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFaces
-                            (Handle(GEOM_Object) theShape, double theD1, double theD2,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                              std::list<int> theFaces)
 {
   SetErrorCode(KO);
@@ -751,8 +757,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFaces
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetD1(theD1);
-  aCI.SetD2(theD2);
+  SETPARAM(aCI.SetD1,theD1);
+  SETPARAM(aCI.SetD2,theD2);
   int aLen = theFaces.size();
   aCI.SetLength(aLen);
 
@@ -800,7 +806,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFaces
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFacesAD
-                            (Handle(GEOM_Object) theShape, double theD, double theAngle,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                              std::list<int> theFaces)
 {
   SetErrorCode(KO);
@@ -822,8 +828,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFacesAD
   if (aRefShape.IsNull()) return NULL;
 
   aCI.SetShape(aRefShape);
-  aCI.SetD(theD);
-  aCI.SetAngle(theAngle);
+  SETPARAM(aCI.SetD1,theD1);
+  SETPARAM(aCI.SetD2,theD2);
   int aLen = theFaces.size();
   aCI.SetLength(aLen);
 
@@ -871,7 +877,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferFacesAD
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdges
-                            (Handle(GEOM_Object) theShape, double theD1, double theD2,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                              std::list<int> theEdges)
 {
   SetErrorCode(KO);
@@ -894,8 +900,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdges
   if (aRefShape.IsNull()) { MESSAGE ("Shape is NULL!!!"); return NULL;}
 
   aCI.SetShape(aRefShape);
-  aCI.SetD1(theD1);
-  aCI.SetD2(theD2);
+  SETPARAM(aCI.SetD1,theD1);
+  SETPARAM(aCI.SetD2,theD2);
   int aLen = theEdges.size();
   aCI.SetLength(aLen);
 
@@ -943,7 +949,7 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdges
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgesAD
-                            (Handle(GEOM_Object) theShape, double theD, double theAngle,
+                            (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                              std::list<int> theEdges)
 {
   SetErrorCode(KO);
@@ -966,8 +972,8 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgesAD
   if (aRefShape.IsNull()) { MESSAGE ("Shape is NULL!!!"); return NULL;}
 
   aCI.SetShape(aRefShape);
-  aCI.SetD(theD);
-  aCI.SetAngle(theAngle);
+  SETPARAM(aCI.SetD,theD);
+  SETPARAM(aCI.SetAngle,theAngle);
   int aLen = theEdges.size();
   aCI.SetLength(aLen);
 
@@ -1015,9 +1021,9 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeChamferEdgesAD
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeArchimede (Handle(GEOM_Object) theShape,
-                                                              double theWeight,
-                                                              double theWaterDensity,
-                                                              double theMeshingDeflection)
+                                                              const GEOM_Parameter& theWeight,
+                                                              const GEOM_Parameter& theWaterDensity,
+                                                              const GEOM_Parameter& theMeshingDeflection)
 {
   SetErrorCode(KO);
 
@@ -1037,9 +1043,9 @@ Handle(GEOM_Object) GEOMImpl_ILocalOperations::MakeArchimede (Handle(GEOM_Object
   if (aRefShape.IsNull()) return NULL;
 
   aAI.SetBasicShape(aRefShape);
-  aAI.SetWeight(theWeight);
-  aAI.SetDensity(theWaterDensity);
-  aAI.SetDeflection(theMeshingDeflection);
+  SETPARAM(aAI.SetWeight,theWeight);
+  SETPARAM(aAI.SetDensity,theDensity);
+  SETPARAM(aAI.SetDeflection,theDeflection);
 
   //Compute the Archimede value
   try {

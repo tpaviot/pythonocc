@@ -26,6 +26,12 @@
 
 #include <GEOMImpl_I3DPrimOperations.hxx>
 
+#define SETPARAM(aFUNC,aVAL)  \
+  if (aVAL.IsString())         \
+  aFUNC( aVAL.GetString() ); \
+  else                         \
+  aFUNC( aVAL.GetDouble() );
+
 #include "utilities.h"
 //#include <OpUtil.hxx>
 //#include <Utils_ExceptHandlers.hxx>
@@ -102,7 +108,7 @@ GEOMImpl_I3DPrimOperations::~GEOMImpl_I3DPrimOperations()
  *  MakeBoxDXDYDZ
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxDXDYDZ (double theDX, double theDY, double theDZ)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxDXDYDZ (const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ)
 {
   SetErrorCode(KO);
 
@@ -118,9 +124,9 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxDXDYDZ (double theDX, dou
 
   GEOMImpl_IBox aBI (aFunction);
 
-  aBI.SetDX(theDX);
-  aBI.SetDY(theDY);
-  aBI.SetDZ(theDZ);
+  SETPARAM(aBI.SetDX,theDX);
+  SETPARAM(aBI.SetDY,theDY);
+  SETPARAM(aBI.SetDZ,theDZ);
 
   //Compute the box value
   try {
@@ -137,10 +143,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxDXDYDZ (double theDX, dou
     SetErrorCode(aFail->GetMessageString());
     return NULL;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aBox << " = geompy.MakeBoxDXDYDZ("
-    << theDX << ", " << theDY << ", " << theDZ << ")";
 
   SetErrorCode(OK);
   return aBox;
@@ -195,10 +197,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxTwoPnt (Handle(GEOM_Objec
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aBox << " = geompy.MakeBoxTwoPnt("
-    << thePnt1 << ", " << thePnt2 << ")";
-
   SetErrorCode(OK);
   return aBox;
 }
@@ -208,11 +206,11 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeBoxTwoPnt (Handle(GEOM_Objec
  *  MakeFaceHW
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceHW (double theH, double theW, int theOrientation)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceHW (const GEOM_Parameter& theH, const GEOM_Parameter& theW, int theOrientation)
 {
   SetErrorCode(KO);
 
-  if (theH == 0 || theW == 0) return NULL;
+  //if (theH == 0 || theW == 0) return NULL;
 
   //Add a new Face object
   Handle(GEOM_Object) aFace = GetEngine()->AddObject(GetDocID(), GEOM_FACE);
@@ -226,8 +224,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceHW (double theH, double 
 
   GEOMImpl_IFace aFI (aFunction);
 
-  aFI.SetH(theH);
-  aFI.SetW(theW);
+  SETPARAM(AFI.SetH,theH);
+  SETPARAM(AFI.SetW,theW);
   aFI.SetOrientation(theOrientation);
 
   //Compute the Face
@@ -246,10 +244,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceHW (double theH, double 
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aFace << " = geompy.MakeFaceHW("
-    << theH << ", " << theW << ", " << theOrientation << ")";
-
   SetErrorCode(OK);
   return aFace;
 }
@@ -260,7 +254,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceHW (double theH, double 
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceObjHW (Handle(GEOM_Object) theObj,
-                                                               double theH, double theW)
+                                                               const GEOM_Parameter& theH, const GEOM_Parameter& theW)
 {
   SetErrorCode(KO);
 
@@ -284,8 +278,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceObjHW (Handle(GEOM_Objec
     return aFace;
 
   aFI.SetRef1(aRefFunction1);
-  aFI.SetH(theH);
-  aFI.SetW(theW);
+  SETPARAM(aFI.SetH,theH);
+  SETPARAM(aFI.SetW,theW);
 
   //Compute the Face
   try {
@@ -303,10 +297,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceObjHW (Handle(GEOM_Objec
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aFace << " = geompy.MakeFaceObjHW("
-    << theObj << ", " << theH << ", " << theW << ")";
-
   SetErrorCode(OK);
   return aFace;
 }
@@ -317,7 +307,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFaceObjHW (Handle(GEOM_Objec
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskPntVecR
-      (Handle(GEOM_Object) thePnt, Handle(GEOM_Object) theVec, double theR)
+      (Handle(GEOM_Object) thePnt, Handle(GEOM_Object) theVec, const GEOM_Parameter& theR)
 {
   SetErrorCode(KO);
 
@@ -343,7 +333,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskPntVecR
 
   aCI.SetCenter(aRefPnt);
   aCI.SetVector(aRefVec);
-  aCI.SetRadius(theR);
+  SETPARAM(aCI.SetRadius,theR);
 
   //Compute the Disk value
   try {
@@ -360,10 +350,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskPntVecR
     SetErrorCode(aFail->GetMessageString());
     return NULL;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aDisk << " = geompy.MakeDiskPntVecR("
-    << thePnt << ", " << theVec << ", " << theR << ")";
 
   SetErrorCode(OK);
   return aDisk;
@@ -421,10 +407,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskThreePnt (Handle(GEOM_Ob
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aDisk << " = geompy.MakeDiskThreePnt("
-    << thePnt1 << ", " << thePnt2 << ", " << thePnt3 << ")";
-
   SetErrorCode(OK);
   return aDisk;
 }
@@ -434,11 +416,11 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskThreePnt (Handle(GEOM_Ob
  *  MakeDiskR
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskR (double theR, int theOrientation)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskR (const GEOM_Parameter& theR, int theOrientation)
 {
   SetErrorCode(KO);
 
-  if (theR == 0 ) return NULL;
+  //if (theR == 0 ) return NULL;
 
   //Add a new Disk object
   Handle(GEOM_Object) aDisk = GetEngine()->AddObject(GetDocID(), GEOM_FACE);
@@ -452,7 +434,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskR (double theR, int theO
 
   GEOMImpl_IDisk aDI (aFunction);
 
-  aDI.SetRadius(theR);
+  SETPARAM(aDI.SetRadius,theR);
   aDI.SetOrientation(theOrientation);
 
   //Compute the Disk
@@ -471,10 +453,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskR (double theR, int theO
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aDisk << " = geompy.MakeDiskR("
-    << theR << ", " << theOrientation << ")";
-
   SetErrorCode(OK);
   return aDisk;
 }
@@ -484,7 +462,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDiskR (double theR, int theO
  *  MakeCylinderRH
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderRH (double theR, double theH)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderRH (const GEOM_Parameter& theR, const GEOM_Parameter& theH)
 {
   SetErrorCode(KO);
 
@@ -500,8 +478,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderRH (double theR, dou
 
   GEOMImpl_ICylinder aCI (aFunction);
 
-  aCI.SetR(theR);
-  aCI.SetH(theH);
+  SETPARAM(aCI.SetR,theR);
+  SETPARAM(aCI.SetH,theH);
 
   //Compute the Cylinder value
   try {
@@ -519,10 +497,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderRH (double theR, dou
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aCylinder
-    << " = geompy.MakeCylinderRH(" << theR << ", " << theH << ")";
-
   SetErrorCode(OK);
   return aCylinder;
 }
@@ -535,7 +509,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderRH (double theR, dou
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderPntVecRH (Handle(GEOM_Object) thePnt,
                                                                       Handle(GEOM_Object) theVec,
-                                                                      double theR, double theH)
+                                                                      const GEOM_Parameter& theR, const GEOM_Parameter& theH)
 {
   SetErrorCode(KO);
 
@@ -561,9 +535,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderPntVecRH (Handle(GEO
 
   aCI.SetPoint(aRefPnt);
   aCI.SetVector(aRefVec);
-  aCI.SetR(theR);
-  aCI.SetH(theH);
-
+  SETPARAM(aCI.SetR,theR);
+  SETPARAM(aCI.SetH,theH);
   //Compute the Cylinder value
   try {
 #if OCC_VERSION_LARGE > 0x06010000
@@ -580,10 +553,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderPntVecRH (Handle(GEO
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aCylinder << " = geompy.MakeCylinder("
-    << thePnt << ", " << theVec << ", " << theR << ", " << theH << ")";
-
   SetErrorCode(OK);
   return aCylinder;
 }
@@ -594,8 +563,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeCylinderPntVecRH (Handle(GEO
  *  MakeConeR1R2H
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConeR1R2H (double theR1, double theR2,
-                                                               double theH)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConeR1R2H (const GEOM_Parameter& theR1, const GEOM_Parameter& theR2,
+                                                               const GEOM_Parameter& theH)
 {
   SetErrorCode(KO);
 
@@ -612,9 +581,10 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConeR1R2H (double theR1, dou
 
   GEOMImpl_ICone aCI (aFunction);
 
-  aCI.SetR1(theR1);
-  aCI.SetR2(theR2);
-  aCI.SetH(theH);
+  SETPARAM(aCI.SetR1,theR1);
+  SETPARAM(aCI.SetR2,theR2);
+  SETPARAM(aCI.SetH,theH);
+
 
   //Compute the Cone value
   try {
@@ -632,10 +602,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConeR1R2H (double theR1, dou
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aCone << " = geompy.MakeConeR1R2H("
-    << theR1 << ", " << theR2 << ", " << theH << ")";
-
   SetErrorCode(OK);
   return aCone;
 }
@@ -648,8 +614,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConeR1R2H (double theR1, dou
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConePntVecR1R2H (Handle(GEOM_Object) thePnt,
                                                                      Handle(GEOM_Object) theVec,
-                                                                     double theR1, double theR2,
-                                                                     double theH)
+                                                                     const GEOM_Parameter& theR1, const GEOM_Parameter& theR2,
+                                                                     const GEOM_Parameter& theH)
 {
   SetErrorCode(KO);
 
@@ -675,9 +641,9 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConePntVecR1R2H (Handle(GEOM
 
   aCI.SetPoint(aRefPnt);
   aCI.SetVector(aRefVec);
-  aCI.SetR1(theR1);
-  aCI.SetR2(theR2);
-  aCI.SetH(theH);
+  SETPARAM(aCI.SetR1,theR1);
+  SETPARAM(aCI.SetR2,theR2);
+  SETPARAM(aCI.SetH,theH);
 
   //Compute the Cone value
   try {
@@ -695,10 +661,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConePntVecR1R2H (Handle(GEOM
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aCone << " = geompy.MakeCone(" << thePnt
-    << ", " << theVec << ", " << theR1 << ", " << theR2 << ", " << theH << ")";
-
   SetErrorCode(OK);
   return aCone;
 }
@@ -709,7 +671,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeConePntVecR1R2H (Handle(GEOM
  *  MakeSphereR
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSphereR (double theR)
+Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSphereR (const GEOM_Parameter& theR)
 {
   SetErrorCode(KO);
 
@@ -725,8 +687,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSphereR (double theR)
 
   GEOMImpl_ISphere aCI (aFunction);
 
-  aCI.SetR(theR);
-
+  SETPARAM(aCI.SetR,theR);
   //Compute the Sphere value
   try {
 #if OCC_VERSION_LARGE > 0x06010000
@@ -742,10 +703,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSphereR (double theR)
     SetErrorCode(aFail->GetMessageString());
     return NULL;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aSphere << " = geompy.MakeSphereR(" << theR << ")";
-
   SetErrorCode(OK);
   return aSphere;
 }
@@ -757,7 +714,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSphereR (double theR)
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSpherePntR (Handle(GEOM_Object) thePnt,
-                                                                double theR)
+                                                                const GEOM_Parameter& theR)
 {
   SetErrorCode(KO);
 
@@ -780,7 +737,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSpherePntR (Handle(GEOM_Obje
   if (aRefPnt.IsNull()) return NULL;
 
   aCI.SetPoint(aRefPnt);
-  aCI.SetR(theR);
+  SETPARAM(aCI.SetR,theR);
 
   //Compute the Sphere value
   try {
@@ -798,10 +755,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSpherePntR (Handle(GEOM_Obje
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aSphere
-    << " = geompy.MakeSpherePntR(" << thePnt << ", " << theR << ")";
-
   SetErrorCode(OK);
   return aSphere;
 }
@@ -813,7 +766,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeSpherePntR (Handle(GEOM_Obje
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusRR
-                                           (double theRMajor, double theRMinor)
+                                           (const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor)
 {
   SetErrorCode(KO);
 
@@ -830,8 +783,9 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusRR
 
   GEOMImpl_ITorus aCI (aFunction);
 
-  aCI.SetRMajor(theRMajor);
-  aCI.SetRMinor(theRMinor);
+  SETPARAM(aCI.SetRMajor,theRMajor);
+  SETPARAM(aCI.SetRMinor,theRMinor);
+
 
   //Compute the Torus value
   try {
@@ -849,10 +803,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusRR
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << anEll << " = geompy.MakeTorusRR("
-    << theRMajor << ", " << theRMinor << ")";
-
   SetErrorCode(OK);
   return anEll;
 }
@@ -864,7 +814,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusRR
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusPntVecRR
                        (Handle(GEOM_Object) thePnt, Handle(GEOM_Object) theVec,
-                        double theRMajor, double theRMinor)
+                        const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor)
 {
   SetErrorCode(KO);
 
@@ -890,8 +840,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusPntVecRR
 
   aCI.SetCenter(aRefPnt);
   aCI.SetVector(aRefVec);
-  aCI.SetRMajor(theRMajor);
-  aCI.SetRMinor(theRMinor);
+  SETPARAM(aCI.SetRMajor,theRMajor);
+  SETPARAM(aCI.SetRMinor,theRMinor);
 
   //Compute the Torus value
   try {
@@ -909,10 +859,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusPntVecRR
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << anEll << " = geompy.MakeTorus(" << thePnt
-    << ", " << theVec << ", " << theRMajor << ", " << theRMinor << ")";
-
   SetErrorCode(OK);
   return anEll;
 }
@@ -925,7 +871,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeTorusPntVecRR
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH (Handle(GEOM_Object) theBase,
                                                                Handle(GEOM_Object) theVec,
-                                                               double theH, double theScaleFactor)
+                                                               const GEOM_Parameter& theH, const GEOM_Parameter& theScaleFactor)
 {
   SetErrorCode(KO);
 
@@ -951,8 +897,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH (Handle(GEOM_Objec
 
   aCI.SetBase(aRefBase);
   aCI.SetVector(aRefVec);
-  aCI.SetH(theH);
-  aCI.SetScale(theScaleFactor);
+  SETPARAM(aCI.SetH,theH);
+  SETPARAM(aCI.SetScale,theScaleFactor);
 
   //Compute the Prism value
   try {
@@ -971,14 +917,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH (Handle(GEOM_Objec
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump pd (aFunction);
-  pd << aPrism << " = geompy.MakePrismVecH(" << theBase << ", " << theVec << ", " << theH;
-  if (theScaleFactor > Precision::Confusion())
-    pd << ", " << theScaleFactor << ")";
-  else
-    pd << ")";
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -990,7 +928,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH (Handle(GEOM_Objec
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH2Ways (Handle(GEOM_Object) theBase,
                                                                     Handle(GEOM_Object) theVec,
-                                                                    double theH)
+                                                                    const GEOM_Parameter& theH)
 {
   SetErrorCode(KO);
 
@@ -1016,7 +954,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH2Ways (Handle(GEOM_
 
   aCI.SetBase(aRefBase);
   aCI.SetVector(aRefVec);
-  aCI.SetH(theH);
+  SETPARAM(aCI.SetH,theH);
 
   //Compute the Prism value
   try {
@@ -1035,10 +973,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH2Ways (Handle(GEOM_
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aPrism << " = geompy.MakePrismVecH2Ways("
-    << theBase << ", " << theVec << ", " << theH << ")";
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -1051,7 +985,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismVecH2Ways (Handle(GEOM_
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismTwoPnt
        (Handle(GEOM_Object) theBase,
         Handle(GEOM_Object) thePoint1, Handle(GEOM_Object) thePoint2,
-        double theScaleFactor)
+        const GEOM_Parameter& theScaleFactor)
 {
   SetErrorCode(KO);
 
@@ -1079,7 +1013,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismTwoPnt
   aCI.SetBase(aRefBase);
   aCI.SetFirstPoint(aRefPnt1);
   aCI.SetLastPoint(aRefPnt2);
-  aCI.SetScale(theScaleFactor);
+  SETPARAM(aCI.SetScale,theScaleFactor);
 
   //Compute the Prism value
   try {
@@ -1097,14 +1031,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismTwoPnt
     SetErrorCode(aFail->GetMessageString());
     return NULL;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump pd (aFunction);
-  pd << aPrism << " = geompy.MakePrism(" << theBase << ", " << thePoint1 << ", " << thePoint2;
-  if (theScaleFactor > Precision::Confusion())
-    pd << ", " << theScaleFactor << ")";
-  else
-    pd << ")";
 
   SetErrorCode(OK);
   return aPrism;
@@ -1163,10 +1089,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismTwoPnt2Ways
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aPrism << " = geompy.MakePrism2Ways("
-    << theBase << ", " << thePoint1 << ", " << thePoint2 << ")";
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -1177,8 +1099,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismTwoPnt2Ways
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ
-       (Handle(GEOM_Object) theBase, double theDX, double theDY, double theDZ,
-        double theScaleFactor)
+       (Handle(GEOM_Object) theBase, const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ,
+        const GEOM_Parameter& theScaleFactor)
 {
   SetErrorCode(KO);
 
@@ -1202,10 +1124,10 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ
   if (aRefBase.IsNull()) return NULL;
 
   aCI.SetBase(aRefBase);
-  aCI.SetDX(theDX);
-  aCI.SetDY(theDY);
-  aCI.SetDZ(theDZ);
-  aCI.SetScale(theScaleFactor);
+  SETPARAM(aCI.SetDX,theDX);
+  SETPARAM(aCI.SetDY,theDY);
+  SETPARAM(aCI.SetDZ,theDZ);
+  SETPARAM(aCI.SetScale,theScaleFactor);
 
   //Compute the Prism value
   try {
@@ -1223,15 +1145,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump pd (aFunction);
-  pd << aPrism << " = geompy.MakePrismDXDYDZ("
-     << theBase << ", " << theDX << ", " << theDY << ", " << theDZ;
-  if (theScaleFactor > Precision::Confusion())
-    pd << ", " << theScaleFactor << ")";
-  else
-    pd << ")";
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -1242,7 +1155,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ2Ways
-       (Handle(GEOM_Object) theBase, double theDX, double theDY, double theDZ)
+       (Handle(GEOM_Object) theBase, const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ)
 {
   SetErrorCode(KO);
 
@@ -1266,9 +1179,9 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ2Ways
   if (aRefBase.IsNull()) return NULL;
 
   aCI.SetBase(aRefBase);
-  aCI.SetDX(theDX);
-  aCI.SetDY(theDY);
-  aCI.SetDZ(theDZ);
+  SETPARAM(aCI.SetDX,theDX);
+  SETPARAM(aCI.SetDY,theDY);
+  SETPARAM(aCI.SetDZ,theDZ);
 
   //Compute the Prism value
   try {
@@ -1286,10 +1199,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ2Ways
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aPrism << " = geompy.MakePrismDXDYDZ2Ways("
-    << theBase << ", " << theDX << ", " << theDY << ", " << theDZ << ")";
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -1300,7 +1209,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePrismDXDYDZ2Ways
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDraftPrism
-       (Handle(GEOM_Object) theInitShape ,Handle(GEOM_Object) theBase, double theHeight, double theAngle, bool theFuse)
+       (Handle(GEOM_Object) theInitShape ,Handle(GEOM_Object) theBase, const GEOM_Parameter& theHeight, const GEOM_Parameter& theAngle, bool theFuse)
 {
   SetErrorCode(KO);
 
@@ -1337,8 +1246,8 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDraftPrism
   // Set parameters 
   aCI.SetBase(aRefBase);
   aCI.SetInitShape(aRefInit);
-  aCI.SetH(theHeight);
-  aCI.SetDraftAngle(theAngle);
+  SETPARAM(aCI.SetH,theHeight);
+  SETPARAM(aCI.SetDraftAngle,theAngle);
   if ( theFuse )
     aCI.SetFuseFlag(1);
   else
@@ -1360,18 +1269,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeDraftPrism
     return NULL;
   }
   
-  //Make a Python command
-  if(theFuse)
-  {
-    GEOM::TPythonDump(aFunction) << aPrism << " = geompy.MakeExtrudedBoss("
-      << theInitShape << ", " << theBase << ", " << theHeight << ", " << theAngle << ")";
-  }
-  else
-  {   
-    GEOM::TPythonDump(aFunction) << aPrism << " = geompy.MakeExtrudedCut("
-      << theInitShape << ", " << theBase << ", " << theHeight << ", " << theAngle << ")";
-  }
-
   SetErrorCode(OK);
   return aPrism;
 }
@@ -1425,10 +1322,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipe (Handle(GEOM_Object) th
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aPipe << " = geompy.MakePipe("
-    << theBase << ", " << thePath << ")";
-
   SetErrorCode(OK);
   return aPipe;
 }
@@ -1441,7 +1334,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipe (Handle(GEOM_Object) th
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle (Handle(GEOM_Object) theBase,
                                                                          Handle(GEOM_Object) theAxis,
-                                                                         double theAngle)
+                                                                         const GEOM_Parameter& theAngle)
 {
   SetErrorCode(KO);
 
@@ -1467,7 +1360,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle (Handle(
 
   aCI.SetBase(aRefBase);
   aCI.SetAxis(aRefAxis);
-  aCI.SetAngle(theAngle);
+  SETPARAM(aCI.SetAngle,theAngle);
 
   //Compute the Revolution value
   try {
@@ -1485,10 +1378,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle (Handle(
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aRevolution << " = geompy.MakeRevolution("
-    << theBase << ", " << theAxis << ", " << theAngle * 180.0 / M_PI << "*math.pi/180.0)";
-
   SetErrorCode(OK);
   return aRevolution;
 }
@@ -1499,7 +1388,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle (Handle(
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle2Ways
-                   (Handle(GEOM_Object) theBase, Handle(GEOM_Object) theAxis, double theAngle)
+                   (Handle(GEOM_Object) theBase, Handle(GEOM_Object) theAxis, const GEOM_Parameter& theAngle)
 {
   SetErrorCode(KO);
 
@@ -1525,7 +1414,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle2Ways
 
   aCI.SetBase(aRefBase);
   aCI.SetAxis(aRefAxis);
-  aCI.SetAngle(theAngle);
+  SETPARAM(aCI.SetAngle,theAngle);
 
   //Compute the Revolution value
   try {
@@ -1543,10 +1432,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle2Ways
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aRevolution << " = geompy.MakeRevolution2Ways("
-    << theBase << ", " << theAxis << ", " << theAngle * 180.0 / M_PI << "*math.pi/180.0)";
-
   SetErrorCode(OK);
   return aRevolution;
 }
@@ -1557,9 +1442,9 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeRevolutionAxisAngle2Ways
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFilling
-       (Handle(GEOM_Object) theShape, int theMinDeg, int theMaxDeg,
-        double theTol2D, double theTol3D, int theNbIter,
-        int theMethod, bool isApprox)
+       (Handle(GEOM_Object) theShape, const GEOM_Parameter& theMinDeg, const GEOM_Parameter& theMaxDeg,
+        const GEOM_Parameter& theTol2D, const GEOM_Parameter& theTol3D, const GEOM_Parameter& theNbIter,
+        const GEOM_Parameter& theMethod, bool isApprox)
 {
   SetErrorCode(KO);
 
@@ -1582,13 +1467,13 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFilling
   if (aRefShape.IsNull()) return NULL;
 
   aFI.SetShape(aRefShape);
-  aFI.SetMinDeg(theMinDeg);
-  aFI.SetMaxDeg(theMaxDeg);
-  aFI.SetTol2D(theTol2D);
-  aFI.SetTol3D(theTol3D);
-  aFI.SetNbIter(theNbIter);
+  SETPARAM(aFI.SetMinDeg,theMinDeg);
+  SETPARAM(aFI.SetMaxDeg,theMaxDeg);
+  SETPARAM(aFI.SetTol2D,theTol2D);
+  SETPARAM(aFI.SetTol3D,theTol3D);
+  SETPARAM(aFI.SetNbIter,theNbIter);
   aFI.SetApprox(isApprox);
-  aFI.SetMethod(theMethod);
+  SETPARAM(aFI.SetMethod,theMethod);
 
   //Compute the Solid value
   try {
@@ -1609,18 +1494,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFilling
     return NULL;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump pd (aFunction);
-  pd << aFilling << " = geompy.MakeFilling("
-     << theShape << ", " << theMinDeg << ", " << theMaxDeg << ", "
-     << theTol2D << ", " << theTol3D << ", " << theNbIter  << ", ";
-  if( theMethod==1 ) pd << "GEOM.FOM_UseOri";
-  else if( theMethod==2 ) pd << "GEOM.FOM_AutoCorrect";
-  else pd << "GEOM.FOM_Default";
-  if(isApprox)
-    pd << ", " << isApprox ;
-  pd << ")";
-
   SetErrorCode(OK);
   return aFilling;
 }
@@ -1633,7 +1506,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeFilling
 Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeThruSections(
                                                 const Handle(TColStd_HSequenceOfTransient)& theSeqSections,
                                                 bool theModeSolid,
-                                                double thePreci,
+                                                const GEOM_Parameter& thePreci,
                                                 bool theRuled)
 {
   Handle(GEOM_Object) anObj;
@@ -1684,7 +1557,7 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeThruSections(
 
   aCI.SetSections(aSeqSections);
   aCI.SetSolidMode(theModeSolid);
-  aCI.SetPrecision(thePreci);
+  SETPARAM(aCI.SetPrecision,thePreci);
 
   //Compute the ThruSections value
   try {
@@ -1701,26 +1574,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakeThruSections(
     SetErrorCode(aFail->GetMessageString());
     return anObj;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump pyDump(aFunction);
-  pyDump << aThruSect << " = geompy.MakeThruSections([";
-
-  for(i =1 ; i <= nbObj; i++) {
-
-    Handle(Standard_Transient) anItem = theSeqSections->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) aSectObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!aSectObj.IsNull()) {
-      pyDump<< aSectObj;
-      if(i < nbObj)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "],"<<theModeSolid << "," << thePreci <<","<< theRuled <<")";
 
   SetErrorCode(OK);
   return aThruSect;
@@ -1825,42 +1678,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipeWithDifferentSections(
     SetErrorCode(aFail->GetMessageString());
     return anObj;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump pyDump(aFunction);
-  pyDump << aPipeDS << " = geompy.MakePipeWithDifferentSections([";
-
-  for(i =1 ; i <= nbBases; i++) {
-
-    Handle(Standard_Transient) anItem = theBases->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbBases)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], [";
-
-  for(i =1 ; i <= nbLocs; i++) {
-
-    Handle(Standard_Transient) anItem = theLocations->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbLocs)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], "<<thePath<<","<<theWithContact << "," << theWithCorrections<<")";
 
   SetErrorCode(OK);
   return aPipeDS;
@@ -1985,58 +1802,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipeWithShellSections(
     return anObj;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump pyDump(aFunction);
-  pyDump << aPipeDS << " = geompy.MakePipeWithShellSections([";
-
-  for(i =1 ; i <= nbBases; i++) {
-
-    Handle(Standard_Transient) anItem = theBases->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbBases)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], [";
-
-  for(i =1 ; i <= nbSubBases; i++) {
-
-    Handle(Standard_Transient) anItem = theSubBases->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbBases)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], [";
-
-  for(i =1 ; i <= nbLocs; i++) {
-
-    Handle(Standard_Transient) anItem = theLocations->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbLocs)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], "<<thePath<<","<<theWithContact << "," << theWithCorrections<<")";
-
   SetErrorCode(OK);
   return aPipeDS;
 
@@ -2132,42 +1897,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipeShellsWithoutPath(
     return anObj;
   }
 
-  //Make a Python command
-  GEOM::TPythonDump pyDump(aFunction);
-  pyDump << aPipeDS << " = geompy.MakePipeShellsWithoutPath([";
-
-  for(i =1 ; i <= nbBases; i++) {
-
-    Handle(Standard_Transient) anItem = theBases->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbBases)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "], [";
-
-  for(i =1 ; i <= nbLocs; i++) {
-
-    Handle(Standard_Transient) anItem = theLocations->Value(i);
-    if(anItem.IsNull())
-      continue;
-
-    Handle(GEOM_Object) anObj = Handle(GEOM_Object)::DownCast(anItem);
-    if(!anObj.IsNull()) {
-      pyDump<< anObj;
-      if(i < nbLocs)
-        pyDump<<", ";
-    }
-  }
-
-  pyDump<< "])";
-
   SetErrorCode(OK);
   return aPipeDS;
 
@@ -2225,10 +1954,6 @@ Handle(GEOM_Object) GEOMImpl_I3DPrimOperations::MakePipeBiNormalAlongVector (Han
     SetErrorCode(aFail->GetMessageString());
     return NULL;
   }
-
-  //Make a Python command
-  GEOM::TPythonDump(aFunction) << aPipe << " = geompy.MakePipeBiNormalAlongVector("
-    << theBase << ", " << thePath << ", " << theVec << ")";
 
   SetErrorCode(OK);
   return aPipe;

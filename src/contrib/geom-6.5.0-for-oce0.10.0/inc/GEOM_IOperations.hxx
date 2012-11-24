@@ -28,6 +28,7 @@
 #include <TCollection_AsciiString.hxx>
 #include "GEOM_Object.hxx"
 #include "GEOM_Solver.hxx"
+#include "GEOM_Parameter.hxx"
 
 #define OK "PAL_NO_ERROR"
 #define KO "PAL_NOT_DONE_ERROR"

@@ -36,44 +36,44 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
   Standard_EXPORT GEOMImpl_ILocalOperations(GEOM_Engine* theEngine, int theDocID);
   Standard_EXPORT ~GEOMImpl_ILocalOperations();
 
-  Standard_EXPORT Handle(GEOM_Object) MakeFilletAll   (Handle(GEOM_Object) theShape, double theR);
-  Standard_EXPORT Handle(GEOM_Object) MakeFilletEdges (Handle(GEOM_Object) theShape, double theR,
+  Standard_EXPORT Handle(GEOM_Object) MakeFilletAll   (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR);
+  Standard_EXPORT Handle(GEOM_Object) MakeFilletEdges (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR,
                                                        std::list<int> theEdges);
   Standard_EXPORT Handle(GEOM_Object) MakeFilletEdgesR1R2 (Handle(GEOM_Object) theShape,
-                                                           double theR1, double theR2,
+                                                           const GEOM_Parameter& theR1, const GEOM_Parameter& theR2,
                                                            std::list<int> theEdges);
-  Standard_EXPORT Handle(GEOM_Object) MakeFilletFaces (Handle(GEOM_Object) theShape, double theR,
+  Standard_EXPORT Handle(GEOM_Object) MakeFilletFaces (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR,
                                                        std::list<int> theFaces);
   Standard_EXPORT Handle(GEOM_Object) MakeFilletFacesR1R2 (Handle(GEOM_Object) theShape,
-                                                           double theR1, double theR2,
+                                                           const GEOM_Parameter& theR1, const GEOM_Parameter& theR2,
                                                            std::list<int> theFaces);
-  Standard_EXPORT Handle(GEOM_Object) MakeFillet2D (Handle(GEOM_Object) theShape, double theR,
+  Standard_EXPORT Handle(GEOM_Object) MakeFillet2D (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR,
                                                     std::list<int> theVertexes);
-  Standard_EXPORT Handle(GEOM_Object) MakeFillet1D (Handle(GEOM_Object) theShape, double theR,
+  Standard_EXPORT Handle(GEOM_Object) MakeFillet1D (Handle(GEOM_Object) theShape, const GEOM_Parameter& theR,
                                                     std::list<int> theVertexes);
 
-  Standard_EXPORT Handle(GEOM_Object) MakeChamferAll   (Handle(GEOM_Object) theShape, double theD);
+  Standard_EXPORT Handle(GEOM_Object) MakeChamferAll   (Handle(GEOM_Object) theShape, const GEOM_Parameter& theD);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferEdge  (Handle(GEOM_Object) theShape,
-                                        double theD1, double theD2,
+                                        const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                                         int theFace1, int theFace2);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferEdgeAD  (Handle(GEOM_Object) theShape,
-                                        double theD, double theAngle,
+                                        const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                                         int theFace1, int theFace2);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferFaces (Handle(GEOM_Object) theShape,
-                                                        double theD1, double theD2,
+                                                        const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                                                         std::list<int> theFaces);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferFacesAD (Handle(GEOM_Object) theShape,
-                                                          double theD, double theAngle,
+                                                          const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                                                           std::list<int> theFaces);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferEdges (Handle(GEOM_Object) theShape,
-                                                        double theD1, double theD2,
+                                                        const GEOM_Parameter& theD1, const GEOM_Parameter& theD2,
                                                         std::list<int> theEdges);
   Standard_EXPORT Handle(GEOM_Object) MakeChamferEdgesAD (Handle(GEOM_Object) theShape,
-                                                          double theD, double theAngle,
+                                                          const GEOM_Parameter& theD, const GEOM_Parameter& theAngle,
                                                           std::list<int> theEdges);
   Standard_EXPORT Handle(GEOM_Object) MakeArchimede (Handle(GEOM_Object) theShape,
-                                                     double theWeight, double theWaterDensity,
-                                                     double theMeshingDeflection);
+                                                     const GEOM_Parameter& theWeight, const GEOM_Parameter& theWaterDensity,
+                                                     const GEOM_Parameter& theMeshingDeflection);
   
   Standard_EXPORT Standard_Integer GetSubShapeIndex (Handle(GEOM_Object) theShape,
                                                      Handle(GEOM_Object) theSubShape);

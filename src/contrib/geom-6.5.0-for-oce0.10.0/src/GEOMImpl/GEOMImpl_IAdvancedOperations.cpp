@@ -36,6 +36,12 @@
 
 #include <Basics_OCCTVersion.hxx>
 
+#define SETPARAM(aFUNC,aVAL)  \
+  if (aVAL.IsString())         \
+  aFUNC( aVAL.GetString() ); \
+  else                         \
+  aFUNC( aVAL.GetDouble() );
+
 #include <utilities.h>
 //#include <OpUtil.hxx>
 //#include <Utils_ExceptHandlers.hxx>

@@ -35,85 +35,85 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
   Standard_EXPORT GEOMImpl_I3DPrimOperations(GEOM_Engine* theEngine, int theDocID);
   Standard_EXPORT ~GEOMImpl_I3DPrimOperations();
 
-  Standard_EXPORT Handle(GEOM_Object) MakeBoxDXDYDZ (double theDX, double theDY, double theDZ);
+  Standard_EXPORT Handle(GEOM_Object) MakeBoxDXDYDZ (const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ);
   Standard_EXPORT Handle(GEOM_Object) MakeBoxTwoPnt (Handle(GEOM_Object) thePnt1,
                                                      Handle(GEOM_Object) thePnt2);
-  Standard_EXPORT Handle(GEOM_Object) MakeFaceHW (double theH, double theW, int theOrientation);
+  Standard_EXPORT Handle(GEOM_Object) MakeFaceHW (const GEOM_Parameter& theH, const GEOM_Parameter& theW, int theOrientation);
   Standard_EXPORT Handle(GEOM_Object) MakeFaceObjHW (Handle(GEOM_Object) theObj,
-                                                     double theH, double theW);
+                                                     const GEOM_Parameter& theH, const GEOM_Parameter& theW);
   Standard_EXPORT Handle(GEOM_Object) MakeDiskThreePnt (Handle(GEOM_Object) thePnt1,
                                                         Handle(GEOM_Object) thePnt2,
                                                         Handle(GEOM_Object) thePnt3);
   Standard_EXPORT Handle(GEOM_Object) MakeDiskPntVecR (Handle(GEOM_Object) thePnt1,
                                                        Handle(GEOM_Object) theVec,
-                                                       double theR);
-  Standard_EXPORT Handle(GEOM_Object) MakeDiskR (double theR, int theOrientation);
-  Standard_EXPORT Handle(GEOM_Object) MakeCylinderRH       (double theR, double theH);
+                                                       const GEOM_Parameter& theR);
+  Standard_EXPORT Handle(GEOM_Object) MakeDiskR (const GEOM_Parameter& theR, int theOrientation);
+  Standard_EXPORT Handle(GEOM_Object) MakeCylinderRH       (const GEOM_Parameter& theR, const GEOM_Parameter& theH);
   Standard_EXPORT Handle(GEOM_Object) MakeCylinderPntVecRH (Handle(GEOM_Object) thePnt,
                                             Handle(GEOM_Object) theVec,
-                                            double theR, double theH);
+                                            const GEOM_Parameter& theR, const GEOM_Parameter& theH);
 
-  Standard_EXPORT Handle(GEOM_Object) MakeConeR1R2H       (double theR1, double theR2, double theH);
+  Standard_EXPORT Handle(GEOM_Object) MakeConeR1R2H       (const GEOM_Parameter& theR1, const GEOM_Parameter& theR2, const GEOM_Parameter& theH);
   Standard_EXPORT Handle(GEOM_Object) MakeConePntVecR1R2H (Handle(GEOM_Object) thePnt,
                                            Handle(GEOM_Object) theVec,
-                                           double theR1, double theR2, double theH);
+                                           const GEOM_Parameter& theR1, const GEOM_Parameter& theR2, const GEOM_Parameter& theH);
 
-  Standard_EXPORT Handle(GEOM_Object) MakeSphereR    (double theR);
-  Standard_EXPORT Handle(GEOM_Object) MakeSpherePntR (Handle(GEOM_Object) thePnt, double theR);
+  Standard_EXPORT Handle(GEOM_Object) MakeSphereR    (const GEOM_Parameter& theR);
+  Standard_EXPORT Handle(GEOM_Object) MakeSpherePntR (Handle(GEOM_Object) thePnt, const GEOM_Parameter& theR);
 
-  Standard_EXPORT Handle(GEOM_Object) MakeTorusRR (double theRMajor, double theRMinor);
+  Standard_EXPORT Handle(GEOM_Object) MakeTorusRR (const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor);
 
   Standard_EXPORT Handle(GEOM_Object) MakeTorusPntVecRR (Handle(GEOM_Object) thePnt,
                                          Handle(GEOM_Object) theVec,
-                                         double theRMajor, double theRMinor);
+                                         const GEOM_Parameter& theRMajor, const GEOM_Parameter& theRMinor);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismVecH (Handle(GEOM_Object) theBase,
                                                      Handle(GEOM_Object) theVec,
-                                                     double theH, double theScaleFactor = -1.0);
+                                                     const GEOM_Parameter& theH, const GEOM_Parameter& theScaleFactor = -1.0);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismVecH2Ways (Handle(GEOM_Object) theBase,
-                                                          Handle(GEOM_Object) theVec, double theH);
+                                                          Handle(GEOM_Object) theVec, const GEOM_Parameter& theH);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismTwoPnt (Handle(GEOM_Object) theBase,
                                                        Handle(GEOM_Object) thePoint1,
                                                        Handle(GEOM_Object) thePoint2,
-                                                       double theScaleFactor = -1.0);
+                                                       const GEOM_Parameter& theScaleFactor = -1.0);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismTwoPnt2Ways (Handle(GEOM_Object) theBase,
                                                             Handle(GEOM_Object) thePoint1,
                                                             Handle(GEOM_Object) thePoint2);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismDXDYDZ (Handle(GEOM_Object) theBase,
-                                                       double theDX, double theDY, double theDZ,
-                                                       double theScaleFactor = -1.0);
+                                                       const GEOM_Parameter& theDX, double theDY, const GEOM_Parameter& theDZ,
+                                                       const GEOM_Parameter& theScaleFactor = -1.0);
 
   Standard_EXPORT Handle(GEOM_Object) MakePrismDXDYDZ2Ways (Handle(GEOM_Object) theBase,
-                                                            double theDX, double theDY, double theDZ);
+                                                            const GEOM_Parameter& theDX, const GEOM_Parameter& theDY, const GEOM_Parameter& theDZ);
   
   Standard_EXPORT Handle(GEOM_Object) MakeDraftPrism  (Handle(GEOM_Object) theInitShape, Handle(GEOM_Object) theBase,
-                                                       double theHeight, double theAngle, bool theFuse);
+                                                       const GEOM_Parameter& theHeight, const GEOM_Parameter& theAngle, bool theFuse);
   
   Standard_EXPORT Handle(GEOM_Object) MakePipe (Handle(GEOM_Object) theBase,
                                                 Handle(GEOM_Object) thePath);
 
   Standard_EXPORT Handle(GEOM_Object) MakeRevolutionAxisAngle (Handle(GEOM_Object) theBase,
                                                                Handle(GEOM_Object) theAxis,
-                                                               double theAngle);
+                                                               const GEOM_Parameter& theAngle);
 
   Standard_EXPORT Handle(GEOM_Object) MakeRevolutionAxisAngle2Ways (Handle(GEOM_Object) theBase,
                                                                     Handle(GEOM_Object) theAxis,
-                                                                    double theAngle);
+                                                                    const GEOM_Parameter& theAngle);
 
   Standard_EXPORT Handle(GEOM_Object) MakeFilling (Handle(GEOM_Object) theShape,
-                                                   int theMinDeg, int theMaxDeg,
-                                                   double theTol2D, double theTol3D,
-                                                   int theNbIter, int theMethod,
+                                                   const GEOM_Parameter& theMinDeg, const GEOM_Parameter& theMaxDeg,
+                                                   const GEOM_Parameter& theTol2D, const GEOM_Parameter& theTol3D,
+                                                   const GEOM_Parameter& theNbIter, const GEOM_Parameter& theMethod,
                                                    bool isApprox);
 
   Standard_EXPORT Handle(GEOM_Object) MakeThruSections
                                       (const Handle(TColStd_HSequenceOfTransient)& theSeqSections,
                                        bool theModeSolid,
-                                       double thePreci,
+                                       const GEOM_Parameter& thePreci,
                                        bool theRuled);
 
   Standard_EXPORT Handle(GEOM_Object) MakePipeWithDifferentSections(

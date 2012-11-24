@@ -27,6 +27,7 @@
 
 #include "GEOM_Object.hxx"
 #include "GEOM_Function.hxx"
+#include "GEOM_Parameter.hxx"
 
 #include <TCollection_AsciiString.hxx>
 

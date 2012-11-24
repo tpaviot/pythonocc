@@ -24,6 +24,12 @@
 
 #include <GEOMImpl_ITransformOperations.hxx>
 
+#define SETPARAM(aFUNC,aVAL)  \
+    if (aVAL.IsString())         \
+          aFUNC( aVAL.GetString() ); \
+    else                         \
+          aFUNC( aVAL.GetDouble() );
+
 #include <GEOMImpl_TranslateDriver.hxx>
 #include <GEOMImpl_MirrorDriver.hxx>
 #include <GEOMImpl_ProjectionDriver.hxx>
@@ -156,7 +162,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateTwoPoints
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateDXDYDZ
-       (Handle(GEOM_Object) theObject, double theX, double theY,  double theZ)
+       (Handle(GEOM_Object) theObject, const GEOM_Parameter& theX, const GEOM_Parameter& theY,  const GEOM_Parameter& theZ)
 {
   SetErrorCode(KO);
 
@@ -174,9 +180,9 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateDXDYDZ
   if (aFunction->GetDriverGUID() != GEOMImpl_TranslateDriver::GetID()) return NULL;
 
   GEOMImpl_ITranslate aTI(aFunction);
-  aTI.SetDX(theX);
-  aTI.SetDY(theY);
-  aTI.SetDZ(theZ);
+  SETPARAM(aTI.SetDX,theX);
+  SETPARAM(aTI.SetDY,theY);
+  SETPARAM(aTI.SetDZ,theZ);
   aTI.SetOriginal(aLastFunction);
 
   //Compute the translation
@@ -265,7 +271,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateTwoPointsCopy
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateDXDYDZCopy
-       (Handle(GEOM_Object) theObject, double theX, double theY,  double theZ)
+       (Handle(GEOM_Object) theObject, const GEOM_Parameter& theX, const GEOM_Parameter& theY,  const GEOM_Parameter& theZ)
 {
   SetErrorCode(KO);
 
@@ -285,9 +291,9 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateDXDYDZCopy
   if (aFunction->GetDriverGUID() != GEOMImpl_TranslateDriver::GetID()) return NULL;
 
   GEOMImpl_ITranslate aTI(aFunction);
-  aTI.SetDX(theX);
-  aTI.SetDY(theY);
-  aTI.SetDZ(theZ);
+  SETPARAM(aTI.SetDX,theX);
+  SETPARAM(aTI.SetDY,theY);
+  SETPARAM(aTI.SetDZ,theZ);
   aTI.SetOriginal(aLastFunction);
 
   //Compute the translation
@@ -428,7 +434,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateVectorCopy
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateVectorDistance
-       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theVector, double theDistance, bool theCopy)
+       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theVector, const GEOM_Parameter& theDistance, bool theCopy)
 {
   SetErrorCode(KO);
 
@@ -455,7 +461,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateVectorDistance
 
   GEOMImpl_ITranslate aTI(aFunction);
   aTI.SetVector(theVector->GetLastFunction());
-  aTI.SetDistance(theDistance);
+  SETPARAM(aTI.SetDistance,theDistance);
 //  aTI.SetShape(theObject->GetValue());
   aTI.SetOriginal(aLastFunction);
 
@@ -496,7 +502,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::TranslateVectorDistance
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::Translate1D
        (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theVector,
-        double theStep, Standard_Integer theNbTimes)
+        const GEOM_Parameter& theStep, const GEOM_Parameter& theNbTimes)
 {
   SetErrorCode(KO);
 
@@ -518,8 +524,8 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Translate1D
   GEOMImpl_ITranslate aTI(aFunction);
   aTI.SetVector(theVector->GetLastFunction());
   aTI.SetOriginal(aLastFunction);
-  aTI.SetStep1(theStep);
-  aTI.SetNbIter1(theNbTimes);
+  SETPARAM(aTI.SetStep1,theStep);
+  SETPARAM(aTI.SetNbIter1,theNbTimes);
 
   //Compute the translation
   try {
@@ -552,11 +558,11 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Translate1D
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::Translate2D (Handle(GEOM_Object) theObject,
                                                                 Handle(GEOM_Object) theVector,
-                                                                double theStep1,
-                                                                Standard_Integer theNbTimes1,
+                                                                const GEOM_Parameter& theStep1,
+                                                                const GEOM_Parameter& theNbTimes1,
                                                                 Handle(GEOM_Object) theVector2,
-                                                                double theStep2,
-                                                                Standard_Integer theNbTimes2)
+                                                                const GEOM_Parameter& theStep2,
+                                                                const GEOM_Parameter& theNbTimes2)
 {
   SetErrorCode(KO);
 
@@ -579,10 +585,10 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Translate2D (Handle(GEOM_Obje
   aTI.SetVector(theVector->GetLastFunction());
   aTI.SetVector2(theVector2->GetLastFunction());
   aTI.SetOriginal(aLastFunction);
-  aTI.SetStep1(theStep1);
-  aTI.SetNbIter1(theNbTimes1);
-  aTI.SetStep2(theStep2);
-  aTI.SetNbIter2(theNbTimes2);
+  SETPARAM(aTI.SetStep1,theStep1);
+  SETPARAM(aTI.SetNbIter1,theNbTimes1);
+  SETPARAM(aTI.SetStep2,theStep2);
+  SETPARAM(aTI.SetNbIter2,theNbTimes2);
 
   //Compute the translation
   try {
@@ -1080,7 +1086,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::MirrorAxisCopy
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::OffsetShape
-                              (Handle(GEOM_Object) theObject, double theOffset)
+                              (Handle(GEOM_Object) theObject, const GEOM_Parameter& theOffset)
 {
   SetErrorCode(KO);
 
@@ -1099,7 +1105,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::OffsetShape
 
   GEOMImpl_IOffset aTI (aFunction);
   aTI.SetShape(anOriginal);
-  aTI.SetValue(theOffset);
+  SETPARAM(aTI.SetValue,theOffset);
 
   //Compute the offset
   try {
@@ -1131,7 +1137,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::OffsetShape
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::OffsetShapeCopy
-                              (Handle(GEOM_Object) theObject, double theOffset)
+                              (Handle(GEOM_Object) theObject, const GEOM_Parameter& theOffset)
 {
   SetErrorCode(KO);
 
@@ -1153,7 +1159,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::OffsetShapeCopy
 
   GEOMImpl_IOffset aTI (aFunction);
   aTI.SetShape(anOriginal);
-  aTI.SetValue(theOffset);
+  SETPARAM(aTI.SetValue,theOffset);
 
   //Compute the offset
   try {
@@ -1240,7 +1246,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ProjectShapeCopy
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShape
-       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) thePoint, double theFactor)
+       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) thePoint, const GEOM_Parameter& theFactor)
 {
   SetErrorCode(KO);
 
@@ -1260,7 +1266,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShape
   // Set arguments
   GEOMImpl_IScale aTI (aFunction);
   aTI.SetShape(anOriginal);
-  aTI.SetFactor(theFactor);
+  SETPARAM(aTI.SetFactor,theFactor);
 
   // Set point argument
   if (!thePoint.IsNull()) {
@@ -1298,7 +1304,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShape
  */
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShapeCopy
-       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) thePoint, double theFactor)
+       (Handle(GEOM_Object) theObject, Handle(GEOM_Object) thePoint, const GEOM_Parameter& theFactor)
 {
   SetErrorCode(KO);
 
@@ -1321,7 +1327,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShapeCopy
   // Set arguments
   GEOMImpl_IScale aTI (aFunction);
   aTI.SetShape(anOriginal);
-  aTI.SetFactor(theFactor);
+  SETPARAM(aTI.SetFactor,theFactor);
 
   // Set point argument
   if (!thePoint.IsNull()) {
@@ -1360,9 +1366,9 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShapeCopy
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShapeAlongAxes (Handle(GEOM_Object) theObject,
                                                                         Handle(GEOM_Object) thePoint,
-                                                                        double theFactorX,
-                                                                        double theFactorY,
-                                                                        double theFactorZ,
+                                                                        const GEOM_Parameter& theFactorX,
+                                                                        const GEOM_Parameter& theFactorY,
+                                                                        const GEOM_Parameter& theFactorZ,
                                                                         bool   doCopy)
 {
   SetErrorCode(KO);
@@ -1390,9 +1396,9 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::ScaleShapeAlongAxes (Handle(G
   // Set arguments
   GEOMImpl_IScale aTI (aFunction);
   aTI.SetShape(anOriginal);
-  aTI.SetFactorX(theFactorX);
-  aTI.SetFactorY(theFactorY);
-  aTI.SetFactorZ(theFactorZ);
+  SETPARAM(aTI.SetFactorX,theFactorX);
+  SETPARAM(aTI.SetFactorY,theFactorY);
+  SETPARAM(aTI.SetFactorZ,theFactorZ);
 
   // Set point (optional argument)
   if (!thePoint.IsNull()) {
@@ -1555,7 +1561,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::PositionShapeCopy
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::PositionAlongPath
        (Handle(GEOM_Object) theObject, Handle(GEOM_Object) thePath,
-        double theDistance, bool theCopy, bool theReverse)
+        const GEOM_Parameter& theDistance, bool theCopy, bool theReverse)
 {
   SetErrorCode(KO);
 
@@ -1583,7 +1589,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::PositionAlongPath
   GEOMImpl_IPosition aTI (aFunction);
   aTI.SetShape(anOriginal);
   aTI.SetPath(thePath->GetLastFunction());
-  aTI.SetDistance(theDistance);
+  SETPARAM(aTI.SetDistance,theDistance);
   aTI.SetReverse(theReverse);
 
   //Compute the position
@@ -1624,7 +1630,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::PositionAlongPath
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate (Handle(GEOM_Object) theObject,
                                                            Handle(GEOM_Object) theAxis,
-                                                           double theAngle)
+                                                           const GEOM_Parameter& theAngle)
 {
   SetErrorCode(KO);
 
@@ -1647,7 +1653,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate (Handle(GEOM_Object) t
   GEOMImpl_IRotate aRI(aFunction);
   aRI.SetAxis(anAF);
   aRI.SetOriginal(aLastFunction);
-  aRI.SetAngle(theAngle);
+  SETPARAM(aRI.SetAngle,theAngle);
 
   //Compute the translation
   try {
@@ -1678,7 +1684,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate (Handle(GEOM_Object) t
  *  Rotate
  */
 //=============================================================================
-Handle(GEOM_Object) GEOMImpl_ITransformOperations::RotateCopy (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theAxis, double theAngle)
+Handle(GEOM_Object) GEOMImpl_ITransformOperations::RotateCopy (Handle(GEOM_Object) theObject, Handle(GEOM_Object) theAxis, const GEOM_Parameter& theAngle)
 {
   SetErrorCode(KO);
 
@@ -1700,7 +1706,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::RotateCopy (Handle(GEOM_Objec
   GEOMImpl_IRotate aRI(aFunction);
   aRI.SetAxis(theAxis->GetLastFunction());
   aRI.SetOriginal(aLastFunction);
-  aRI.SetAngle(theAngle);
+  SETPARAM(aRI.SetAngle,theAngle);
 
   //Compute the translation
   try {
@@ -1733,7 +1739,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::RotateCopy (Handle(GEOM_Objec
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate1D (Handle(GEOM_Object) theObject,
                                                              Handle(GEOM_Object) theAxis,
-                                                             Standard_Integer theNbTimes)
+                                                             const GEOM_Parameter& theNbTimes)
 {
   SetErrorCode(KO);
 
@@ -1755,7 +1761,7 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate1D (Handle(GEOM_Object)
   GEOMImpl_IRotate aRI(aFunction);
   aRI.SetOriginal(aLastFunction);
   aRI.SetAxis(theAxis->GetLastFunction());
-  aRI.SetNbIter1(theNbTimes);
+  SETPARAM(aRI.SetNbIter1,theNbTimes);
 
   //Compute the translation
   try {
@@ -1788,10 +1794,10 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate1D (Handle(GEOM_Object)
 //=============================================================================
 Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate2D (Handle(GEOM_Object) theObject,
                                                              Handle(GEOM_Object) theAxis,
-                                                             double theAngle,
-                                                             Standard_Integer theNbTimes1,
-                                                             double theStep,
-                                                             Standard_Integer theNbTimes2)
+                                                             const GEOM_Parameter& theAngle,
+                                                             const GEOM_Parameter& theNbTimes1,
+                                                             const GEOM_Parameter& theStep,
+                                                             const GEOM_Parameter& theNbTimes2)
 {
   SetErrorCode(KO);
 
@@ -1813,11 +1819,11 @@ Handle(GEOM_Object) GEOMImpl_ITransformOperations::Rotate2D (Handle(GEOM_Object)
   GEOMImpl_IRotate aRI(aFunction);
   aRI.SetAxis(theAxis->GetLastFunction());
   aRI.SetOriginal(aLastFunction);
-  aRI.SetNbIter1(theNbTimes1);
-  aRI.SetNbIter2(theNbTimes2);
-  aRI.SetAngle(theAngle);
-  aRI.SetStep(theStep);
-
+  SETPARAM(aRI.SetNbIter1,theNbTimes1);
+  SETPARAM(aRI.SetNbIter2,theNbTimes2);
+  SETPARAM(aRI.SetAngle,theAngle);
+  SETPARAM(aRI.SetStep,theStep);
+  
   //Compute the translation
   try {
 #if OCC_VERSION_LARGE > 0x06010000

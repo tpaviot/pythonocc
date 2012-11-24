@@ -49,10 +49,10 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations
                                                               Handle(GEOM_Object) thePoint2);
 
   Standard_EXPORT Handle(GEOM_Object) TranslateDXDYDZ (Handle(GEOM_Object) theObject,
-                                                       double theX, double theY,  double theZ);
+                                                       const GEOM_Parameter& theX, const GEOM_Parameter& theY,  const GEOM_Parameter& theZ);
 
   Standard_EXPORT Handle(GEOM_Object) TranslateDXDYDZCopy (Handle(GEOM_Object) theObject,
-                                                           double theX, double theY,  double theZ);
+                                                           const GEOM_Parameter& theX, const GEOM_Parameter& theY,  const GEOM_Parameter& theZ);
 
   Standard_EXPORT Handle(GEOM_Object) TranslateVector (Handle(GEOM_Object) theObject,
                                                        Handle(GEOM_Object) theVector);
@@ -62,21 +62,21 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations
 
   Standard_EXPORT Handle(GEOM_Object) TranslateVectorDistance (Handle(GEOM_Object) theObject,
                                                                Handle(GEOM_Object) theVector,
-                                                               double theDistance,
+                                                               const GEOM_Parameter& theDistance,
                                                                bool theCopy);
 
   Standard_EXPORT Handle(GEOM_Object) Translate1D (Handle(GEOM_Object) theObject,
                                                    Handle(GEOM_Object) theVector,
-                                                   double theStep,
-                                                   Standard_Integer theNbTimes);
+                                                   const GEOM_Parameter& theStep,
+                                                   const GEOM_Parameter& theNbTimes);
 
   Standard_EXPORT Handle(GEOM_Object) Translate2D (Handle(GEOM_Object) theObject,
                                                    Handle(GEOM_Object) theVector,
-                                                   double theStep1,
-                                                   Standard_Integer theNbTimes1,
+                                                   const GEOM_Parameter& theStep1,
+                                                   const GEOM_Parameter& theNbTimes1,
                                                    Handle(GEOM_Object) theVector2,
-                                                   double theStep2,
-                                                   Standard_Integer theNbTimes2);
+                                                   const GEOM_Parameter& theStep2,
+                                                   const GEOM_Parameter& theNbTimes2);
 
   /*
   Standard_EXPORT static TopoDS_Shape TranslateShape1D (const TopoDS_Shape&  theShape,
@@ -115,17 +115,17 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations
 
   Standard_EXPORT Handle(GEOM_Object) ScaleShape (Handle(GEOM_Object) theObject,
                                                   Handle(GEOM_Object) thePoint,
-                                                  double theFactor);
+                                                  const GEOM_Parameter& theFactor);
 
   Standard_EXPORT Handle(GEOM_Object) ScaleShapeCopy (Handle(GEOM_Object) theObject,
                                                       Handle(GEOM_Object) thePoint,
-                                                      double theFactor);
+                                                      const GEOM_Parameter& theFactor);
 
   Standard_EXPORT Handle(GEOM_Object) ScaleShapeAlongAxes (Handle(GEOM_Object) theObject,
                                                            Handle(GEOM_Object) thePoint,
-                                                           double theFactorX,
-                                                           double theFactorY,
-                                                           double theFactorZ,
+                                                           const GEOM_Parameter& theFactorX,
+                                                           const GEOM_Parameter& theFactorY,
+                                                           const GEOM_Parameter& theFactorZ,
                                                            bool doCopy);
 
   Standard_EXPORT Handle(GEOM_Object) PositionShape (Handle(GEOM_Object) theObject,
@@ -138,28 +138,28 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations
 
   Standard_EXPORT Handle(GEOM_Object) PositionAlongPath (Handle(GEOM_Object) theObject,
                                                          Handle(GEOM_Object) thePath,
-                                                         double theDistance,
+                                                         const GEOM_Parameter& theDistance,
                                                          bool   theCopy,
                                                          bool   theReverse);
 
   Standard_EXPORT Handle(GEOM_Object) Rotate (Handle(GEOM_Object) theObject,
                                               Handle(GEOM_Object) theAxis,
-                                              double theAngle);
+                                              const GEOM_Parameter& theAngle);
 
   Standard_EXPORT Handle(GEOM_Object) RotateCopy (Handle(GEOM_Object) theObject,
                                                   Handle(GEOM_Object) theAxis,
-                                                  double theAngle);
+                                                  const GEOM_Parameter& theAngle);
 
   Standard_EXPORT Handle(GEOM_Object) Rotate1D (Handle(GEOM_Object) theObject,
                                                 Handle(GEOM_Object) theAxis,
-                                                Standard_Integer theNbTimes);
+                                                const GEOM_Parameter& theNbTimes);
 
   Standard_EXPORT Handle(GEOM_Object) Rotate2D (Handle(GEOM_Object) theObject,
                                                 Handle(GEOM_Object) theAxis,
-                                                double theAngle,
-                                                Standard_Integer theNbTimes1,
-                                                double theStep,
-                                                Standard_Integer theNbTimes2);
+                                                const GEOM_Parameter& theAngle,
+                                                const GEOM_Parameter& theNbTimes1,
+                                                const GEOM_Parameter& theStep,
+                                                const GEOM_Parameter& theNbTimes2);
 
   Standard_EXPORT Handle(GEOM_Object) RotateThreePoints (Handle(GEOM_Object) theObject,
                                                          Handle(GEOM_Object) theCentPoint,
