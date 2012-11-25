@@ -28,11 +28,11 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TCollection
 import TColStd
 import TDocStd
 import TDF
 import TopoDS
-import TCollection
 import TDataStd
 import Aspect
 };

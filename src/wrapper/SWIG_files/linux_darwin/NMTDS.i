@@ -49,28 +49,11 @@ $HeaderURL$
 
 %include NMTDS_headers.i
 
-typedef NCollection_List<BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors> NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors;
-typedef NCollection_List<NMTDS_Pair> NMTDS_ListOfPair;
-typedef NCollection_TListIterator<NMTDS_PassKey> NMTDS_ListIteratorOfListOfPassKey;
-typedef NCollection_DataMap<int, TColStd_MapOfInteger, TColStd_MapIntegerHasher> NMTDS_DataMapOfIntegerMapOfInteger;
-typedef NCollection_IndexedDataMap<TopoDS_Shape,Bnd_Box,TopTools_ShapeMapHasher> NMTDS_IndexedDataMapOfShapeBox;
-typedef NCollection_List<NMTDS_PassKeyBoolean> NMTDS_ListOfPassKeyBoolean;
-typedef NCollection_IndexedDataMap<TopoDS_Shape,NMTDS_BndSphere,TopTools_ShapeMapHasher> NMTDS_IndexedDataMapOfShapeBndSphere;
-typedef NCollection_TListIterator<NMTDS_Pair> NMTDS_ListIteratorOfListOfPair;
-typedef NCollection_TListIterator<NMTDS_PairBoolean> NMTDS_ListIteratorOfListOfPairBoolean;
-typedef NCollection_List<NMTDS_PairBoolean> NMTDS_ListOfPairBoolean;
 typedef NMTDS_ShapesDataStructure * NMTDS_PShapesDataStructure;
-typedef NCollection_TListIterator<NMTDS_PassKeyBoolean> NMTDS_ListIteratorOfListOfPassKeyBoolean;
-typedef NCollection_IndexedDataMap<int,TopoDS_Shape,TColStd_MapIntegerHasher> NMTDS_IndexedDataMapOfIntegerShape;
-typedef NCollection_Map<NMTDS_PassKeyBoolean, NMTDS_PassKeyMapHasher> NMTDS_MapOfPassKeyBoolean;
-typedef NCollection_TListIterator<BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors> NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
 typedef NMTDS_Iterator * NMTDS_PIterator;
-typedef NCollection_Map<NMTDS_PairBoolean, NMTDS_PairMapHasher> NMTDS_MapOfPairBoolean;
-typedef NCollection_List<NMTDS_PassKey> NMTDS_ListOfPassKey;
 typedef NCollection_UBTree<int, Bnd_Box> NMTDS_BoxBndTree;
 typedef NMTDS_InterfPool * NMTDS_PInterfPool;
 typedef NCollection_UBTree<int, NMTDS_BndSphere> NMTDS_BndSphereTree;
-typedef NCollection_Map<NMTDS_PassKey, NMTDS_PassKeyMapHasher> NMTDS_MapOfPassKey;
 
 enum NMTDS_InterfType {
 	NMTDS_TI_VV,
@@ -82,6 +65,510 @@ enum NMTDS_InterfType {
 	NMTDS_TI_UNKNOWN,
 	};
 
+
+
+%nodefaultctor Handle_NMTDS_StdMapNodeOfMapOfPassKey;
+class Handle_NMTDS_StdMapNodeOfMapOfPassKey : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey();
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey(const Handle_NMTDS_StdMapNodeOfMapOfPassKey &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey(const NMTDS_StdMapNodeOfMapOfPassKey *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const Handle_NMTDS_StdMapNodeOfMapOfPassKey &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKey & operator=(const NMTDS_StdMapNodeOfMapOfPassKey *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_StdMapNodeOfMapOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
+	NMTDS_StdMapNodeOfMapOfPassKey* GetObject() {
+	return (NMTDS_StdMapNodeOfMapOfPassKey*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKey::~Handle_NMTDS_StdMapNodeOfMapOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
+class Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean & operator=(const NMTDS_StdMapNodeOfMapOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	NMTDS_StdMapNodeOfMapOfPassKeyBoolean* GetObject() {
+	return (NMTDS_StdMapNodeOfMapOfPassKeyBoolean*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKey;
+class Handle_NMTDS_ListNodeOfListOfPassKey : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKey();
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKey(const Handle_NMTDS_ListNodeOfListOfPassKey &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKey(const NMTDS_ListNodeOfListOfPassKey *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const Handle_NMTDS_ListNodeOfListOfPassKey &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKey & operator=(const NMTDS_ListNodeOfListOfPassKey *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_ListNodeOfListOfPassKey const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_ListNodeOfListOfPassKey {
+	NMTDS_ListNodeOfListOfPassKey* GetObject() {
+	return (NMTDS_ListNodeOfListOfPassKey*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKey::~Handle_NMTDS_ListNodeOfListOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_ListNodeOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_ListNodeOfListOfPassKeyBoolean;
+class Handle_NMTDS_ListNodeOfListOfPassKeyBoolean : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const Handle_NMTDS_ListNodeOfListOfPassKeyBoolean &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean & operator=(const NMTDS_ListNodeOfListOfPassKeyBoolean *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_ListNodeOfListOfPassKeyBoolean const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
+	NMTDS_ListNodeOfListOfPassKeyBoolean* GetObject() {
+	return (NMTDS_ListNodeOfListOfPassKeyBoolean*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::~Handle_NMTDS_ListNodeOfListOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_ListNodeOfListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
+class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger();
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger* GetObject() {
+	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
+class Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger();
+		%feature("autodoc", "1");
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger & operator=(const NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger* GetObject() {
+	return (NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
+class Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors();
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors & operator=(const NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors* GetObject() {
+	return (NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
+class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox();
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox* GetObject() {
+	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
+class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape();
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape* GetObject() {
+	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere;
+class Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere();
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere *anItem);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere & operator=(const Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere &aHandle);
+		%feature("autodoc", "1");
+		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere & operator=(const NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere const DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere* GetObject() {
+	return (NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::~Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
+class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const Standard_Integer &K1, const Standard_Integer K2, const BooleanOperations_IndexedDataMapOfShapeInteger &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger GetHandle() {
+	return *(Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger*) &$self;
+	}
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors;
+class NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors();
+		%feature("autodoc", "1");
+		void Assign(const NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I);
+		%feature("autodoc", "1");
+		void Prepend(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors & Other);
+		%feature("autodoc", "1");
+		void Append(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I);
+		%feature("autodoc", "1");
+		void Append(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors & Other);
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & First() const;
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors & Other, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors & Other, NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors & It);
+
+};
+%feature("shadow") NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor NMTDS_PassKeyShapeMapHasher;
@@ -105,6 +592,586 @@ def __del__(self):
 %}
 
 %extend NMTDS_PassKeyShapeMapHasher {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger;
+class NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & Assign(const NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger & operator=(const NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const BooleanOperations_IndexedDataMapOfShapeInteger &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const BooleanOperations_IndexedDataMapOfShapeInteger &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_IndexedDataMapOfShapeInteger & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_IndexedDataMapOfShapeInteger & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeInteger & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeInteger & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const BooleanOperations_IndexedDataMapOfShapeInteger & FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeInteger & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K1);
+
+};
+%feature("shadow") NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::~NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
+class NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger(const Standard_Integer &K, const TColStd_MapOfInteger &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger GetHandle() {
+	return *(Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger*) &$self;
+	}
+};
+%extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
+class NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors GetHandle() {
+	return *(Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors*) &$self;
+	}
+};
+%extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_StdMapNodeOfMapOfPassKeyBoolean;
+class NMTDS_StdMapNodeOfMapOfPassKeyBoolean : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_StdMapNodeOfMapOfPassKeyBoolean(const NMTDS_PassKeyBoolean &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTDS_PassKeyBoolean & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean GetHandle() {
+	return *(Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean*) &$self;
+	}
+};
+%extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_StdMapNodeOfMapOfPassKeyBoolean::~NMTDS_StdMapNodeOfMapOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_StdMapNodeOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListIteratorOfListOfPassKey;
+class NMTDS_ListIteratorOfListOfPassKey {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfPassKey();
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfPassKey(const NMTDS_ListOfPassKey &L);
+		%feature("autodoc", "1");
+		void Initialize(const NMTDS_ListOfPassKey &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		NMTDS_PassKey & Value() const;
+
+};
+%feature("shadow") NMTDS_ListIteratorOfListOfPassKey::~NMTDS_ListIteratorOfListOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListIteratorOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_DataMapOfIntegerMapOfInteger;
+class NMTDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_DataMapOfIntegerMapOfInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_DataMapOfIntegerMapOfInteger & Assign(const NMTDS_DataMapOfIntegerMapOfInteger &Other);
+		%feature("autodoc", "1");
+		NMTDS_DataMapOfIntegerMapOfInteger & operator=(const NMTDS_DataMapOfIntegerMapOfInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const TColStd_MapOfInteger &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & operator()(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & ChangeFind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		TColStd_MapOfInteger & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") NMTDS_DataMapOfIntegerMapOfInteger::~NMTDS_DataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_DataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger;
+class NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger();
+		%feature("autodoc", "1");
+		NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger(const NMTDS_DataMapOfIntegerMapOfInteger &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTDS_DataMapOfIntegerMapOfInteger &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const TColStd_MapOfInteger & Value() const;
+
+};
+%feature("shadow") NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger::~NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapOfShapeBox;
+class NMTDS_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBox(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBox & Assign(const NMTDS_IndexedDataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBox & operator=(const NMTDS_IndexedDataMapOfShapeBox &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const Bnd_Box &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const Bnd_Box &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Bnd_Box & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Bnd_Box & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Bnd_Box & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K1);
+
+};
+%feature("shadow") NMTDS_IndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
+class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox(const TopoDS_Shape K1, const Standard_Integer K2, const Bnd_Box &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Bnd_Box & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox GetHandle() {
+	return *(Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox*) &$self;
+	}
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListOfPassKeyBoolean;
+class NMTDS_ListOfPassKeyBoolean {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		void Assign(const NMTDS_ListOfPassKeyBoolean &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTDS_ListOfPassKeyBoolean &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const NMTDS_PassKeyBoolean &I);
+		%feature("autodoc", "1");
+		void Prepend(const NMTDS_PassKeyBoolean &I, NMTDS_ListIteratorOfListOfPassKeyBoolean & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTDS_ListOfPassKeyBoolean & Other);
+		%feature("autodoc", "1");
+		void Append(const NMTDS_PassKeyBoolean &I);
+		%feature("autodoc", "1");
+		void Append(const NMTDS_PassKeyBoolean &I, NMTDS_ListIteratorOfListOfPassKeyBoolean & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTDS_ListOfPassKeyBoolean & Other);
+		%feature("autodoc", "1");
+		NMTDS_PassKeyBoolean & First() const;
+		%feature("autodoc", "1");
+		NMTDS_PassKeyBoolean & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const NMTDS_PassKeyBoolean &I, NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTDS_ListOfPassKeyBoolean & Other, NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const NMTDS_PassKeyBoolean &I, NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTDS_ListOfPassKeyBoolean & Other, NMTDS_ListIteratorOfListOfPassKeyBoolean & It);
+
+};
+%feature("shadow") NMTDS_ListOfPassKeyBoolean::~NMTDS_ListOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere;
+class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere(const TopoDS_Shape K1, const Standard_Integer K2, const NMTDS_BndSphere &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere GetHandle() {
+	return *(Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere*) &$self;
+	}
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapOfShapeBndSphere;
+class NMTDS_IndexedDataMapOfShapeBndSphere : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere & Assign(const NMTDS_IndexedDataMapOfShapeBndSphere &Other);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfShapeBndSphere & operator=(const NMTDS_IndexedDataMapOfShapeBndSphere &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const TopoDS_Shape K, const NMTDS_BndSphere &I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const TopoDS_Shape K, const NMTDS_BndSphere &T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const NMTDS_BndSphere & FindFromKey(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		NMTDS_BndSphere & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K1);
+
+};
+%feature("shadow") NMTDS_IndexedDataMapOfShapeBndSphere::~NMTDS_IndexedDataMapOfShapeBndSphere %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapOfShapeBndSphere {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -162,101 +1229,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor NMTDS_Pair;
-class NMTDS_Pair {
-	public:
-		%feature("autodoc", "1");
-		NMTDS_Pair();
-		%feature("autodoc", "1");
-		NMTDS_Pair(const NMTDS_Pair &Other);
-		%feature("autodoc", "1");
-		NMTDS_Pair & operator=(const NMTDS_Pair &Other);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void SetIds(const Standard_Integer aI1, const Standard_Integer aI2);
-		%feature("autodoc","Ids() -> [Standard_Integer, Standard_Integer]");
-
-		void Ids(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const NMTDS_Pair &aOther) const;
-		%feature("autodoc", "1");
-		Standard_Integer HashCode(const Standard_Integer Upper) const;
-
-};
-%extend NMTDS_Pair {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") NMTDS_Pair::~NMTDS_Pair %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTDS_Pair {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NMTDS_PairBoolean;
-class NMTDS_PairBoolean : public NMTDS_Pair {
-	public:
-		%feature("autodoc", "1");
-		NMTDS_PairBoolean();
-		%feature("autodoc", "1");
-		void SetFlag(const Standard_Boolean aFlag);
-		%feature("autodoc", "1");
-		NMTDS_PairBoolean & operator=(const NMTDS_PairBoolean &Other);
-		%feature("autodoc", "1");
-		Standard_Boolean Flag() const;
-
-};
-%feature("shadow") NMTDS_PairBoolean::~NMTDS_PairBoolean %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NMTDS_PairBoolean {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor NMTDS_InterfPool;
 class NMTDS_InterfPool {
 	public:
 		%feature("autodoc", "1");
 		NMTDS_InterfPool();
 		%feature("autodoc", "1");
-		Standard_Boolean Add(const NMTDS_PairBoolean &aPKB, const NMTDS_InterfType aType);
+		Standard_Boolean Add(const NMTDS_PassKeyBoolean &aPKB, const NMTDS_InterfType aType);
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_Integer aInd1, const Standard_Integer aInd2, const NMTDS_InterfType aType);
 		%feature("autodoc", "1");
 		Standard_Boolean Add(const Standard_Integer aInd1, const Standard_Integer aInd2, const Standard_Boolean bFlag, const NMTDS_InterfType aType);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const NMTDS_PairBoolean &aPKB) const;
+		Standard_Boolean Contains(const NMTDS_PassKeyBoolean &aPKB) const;
 		%feature("autodoc", "1");
 		Standard_Boolean Contains(const Standard_Integer aInd1, const Standard_Integer aInd2) const;
 		%feature("autodoc", "1");
-		const NMTDS_ListOfPairBoolean & Get() const;
+		const NMTDS_ListOfPassKeyBoolean & Get() const;
 		%feature("autodoc", "1");
-		const NMTDS_ListOfPairBoolean & Get(const NMTDS_InterfType aType) const;
+		const NMTDS_ListOfPassKeyBoolean & Get(const NMTDS_InterfType aType) const;
 		%feature("autodoc", "1");
-		const NMTDS_ListOfPairBoolean & Get(const Standard_Integer aInd) const;
+		const NMTDS_ListOfPassKeyBoolean & Get(const Standard_Integer aInd) const;
 		%feature("autodoc", "1");
-		const NMTDS_ListOfPairBoolean & Get(const Standard_Integer aInd, const NMTDS_InterfType aType) const;
+		const NMTDS_ListOfPassKeyBoolean & Get(const Standard_Integer aInd, const NMTDS_InterfType aType) const;
 		%feature("autodoc", "1");
 		BOPTools_CArray1OfSSInterference & SSInterferences();
 		%feature("autodoc", "1");
@@ -269,8 +1264,6 @@ class NMTDS_InterfPool {
 		BOPTools_CArray1OfVEInterference & VEInterferences();
 		%feature("autodoc", "1");
 		BOPTools_CArray1OfVVInterference & VVInterferences();
-		%feature("autodoc", "1");
-		void Purge();
 
 };
 %feature("shadow") NMTDS_InterfPool::~NMTDS_InterfPool %{
@@ -283,6 +1276,39 @@ def __del__(self):
 %}
 
 %extend NMTDS_InterfPool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListIteratorOfListOfPassKeyBoolean;
+class NMTDS_ListIteratorOfListOfPassKeyBoolean {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfPassKeyBoolean(const NMTDS_ListOfPassKeyBoolean &L);
+		%feature("autodoc", "1");
+		void Initialize(const NMTDS_ListOfPassKeyBoolean &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		NMTDS_PassKeyBoolean & Value() const;
+
+};
+%feature("shadow") NMTDS_ListIteratorOfListOfPassKeyBoolean::~NMTDS_ListIteratorOfListOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListIteratorOfListOfPassKeyBoolean {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -312,6 +1338,65 @@ def __del__(self):
 %}
 
 %extend NMTDS_BoxBndTreeSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapOfIntegerShape;
+class NMTDS_IndexedDataMapOfIntegerShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerShape & Assign(const NMTDS_IndexedDataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapOfIntegerShape & operator=(const NMTDS_IndexedDataMapOfIntegerShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Integer Add(const Standard_Integer &K, const TopoDS_Shape I);
+		%feature("autodoc", "1");
+		void Substitute(const Standard_Integer I, const Standard_Integer &K, const TopoDS_Shape T);
+		%feature("autodoc", "1");
+		void RemoveLast();
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & FindKey(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindFromIndex(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  operator()(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFromIndex(const Standard_Integer I);
+		%feature("autodoc", "1");
+		TopoDS_Shape  operator()(const Standard_Integer I);
+		%feature("autodoc", "1");
+		Standard_Integer FindIndex(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  FindFromKey(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K1) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K1);
+
+};
+%feature("shadow") NMTDS_IndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapOfIntegerShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapOfIntegerShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -416,6 +1501,113 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTDS_MapOfPassKeyBoolean;
+class NMTDS_MapOfPassKeyBoolean : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKeyBoolean(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKeyBoolean & Assign(const NMTDS_MapOfPassKeyBoolean &Other);
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKeyBoolean & operator=(const NMTDS_MapOfPassKeyBoolean &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const NMTDS_PassKeyBoolean &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const NMTDS_PassKeyBoolean &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const NMTDS_PassKeyBoolean &aKey);
+
+};
+%feature("shadow") NMTDS_MapOfPassKeyBoolean::~NMTDS_MapOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_MapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors;
+class NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors();
+		%feature("autodoc", "1");
+		NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors(const NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors &L);
+		%feature("autodoc", "1");
+		void Initialize(const NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & Value() const;
+
+};
+%feature("shadow") NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors::~NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListNodeOfListOfPassKeyBoolean;
+class NMTDS_ListNodeOfListOfPassKeyBoolean : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListNodeOfListOfPassKeyBoolean(const NMTDS_PassKeyBoolean &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTDS_PassKeyBoolean & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_ListNodeOfListOfPassKeyBoolean {
+	Handle_NMTDS_ListNodeOfListOfPassKeyBoolean GetHandle() {
+	return *(Handle_NMTDS_ListNodeOfListOfPassKeyBoolean*) &$self;
+	}
+};
+%extend NMTDS_ListNodeOfListOfPassKeyBoolean {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_ListNodeOfListOfPassKeyBoolean::~NMTDS_ListNodeOfListOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListNodeOfListOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTDS_PassKeyMapHasher;
 class NMTDS_PassKeyMapHasher {
 	public:
@@ -483,6 +1675,43 @@ def __del__(self):
 %}
 
 %extend NMTDS_Iterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_StdMapNodeOfMapOfPassKey;
+class NMTDS_StdMapNodeOfMapOfPassKey : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_StdMapNodeOfMapOfPassKey(const NMTDS_PassKey &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTDS_PassKey & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_StdMapNodeOfMapOfPassKey {
+	Handle_NMTDS_StdMapNodeOfMapOfPassKey GetHandle() {
+	return *(Handle_NMTDS_StdMapNodeOfMapOfPassKey*) &$self;
+	}
+};
+%extend NMTDS_StdMapNodeOfMapOfPassKey {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_StdMapNodeOfMapOfPassKey::~NMTDS_StdMapNodeOfMapOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_StdMapNodeOfMapOfPassKey {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -590,6 +1819,67 @@ def __del__(self):
 %}
 
 %extend NMTDS_BndSphereTreeSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListOfPassKey;
+class NMTDS_ListOfPassKey {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListOfPassKey();
+		%feature("autodoc", "1");
+		void Assign(const NMTDS_ListOfPassKey &Other);
+		%feature("autodoc", "1");
+		void operator=(const NMTDS_ListOfPassKey &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const NMTDS_PassKey &I);
+		%feature("autodoc", "1");
+		void Prepend(const NMTDS_PassKey &I, NMTDS_ListIteratorOfListOfPassKey & theIt);
+		%feature("autodoc", "1");
+		void Prepend(NMTDS_ListOfPassKey & Other);
+		%feature("autodoc", "1");
+		void Append(const NMTDS_PassKey &I);
+		%feature("autodoc", "1");
+		void Append(const NMTDS_PassKey &I, NMTDS_ListIteratorOfListOfPassKey & theIt);
+		%feature("autodoc", "1");
+		void Append(NMTDS_ListOfPassKey & Other);
+		%feature("autodoc", "1");
+		NMTDS_PassKey & First() const;
+		%feature("autodoc", "1");
+		NMTDS_PassKey & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(NMTDS_ListIteratorOfListOfPassKey & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const NMTDS_PassKey &I, NMTDS_ListIteratorOfListOfPassKey & It);
+		%feature("autodoc", "1");
+		void InsertBefore(NMTDS_ListOfPassKey & Other, NMTDS_ListIteratorOfListOfPassKey & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const NMTDS_PassKey &I, NMTDS_ListIteratorOfListOfPassKey & It);
+		%feature("autodoc", "1");
+		void InsertAfter(NMTDS_ListOfPassKey & Other, NMTDS_ListIteratorOfListOfPassKey & It);
+
+};
+%feature("shadow") NMTDS_ListOfPassKey::~NMTDS_ListOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListOfPassKey {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -712,6 +2002,80 @@ def __del__(self):
 };
 
 
+%nodefaultctor NMTDS_MapOfPassKey;
+class NMTDS_MapOfPassKey : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKey(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKey & Assign(const NMTDS_MapOfPassKey &Other);
+		%feature("autodoc", "1");
+		NMTDS_MapOfPassKey & operator=(const NMTDS_MapOfPassKey &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const NMTDS_PassKey &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const NMTDS_PassKey &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const NMTDS_PassKey &aKey);
+
+};
+%feature("shadow") NMTDS_MapOfPassKey::~NMTDS_MapOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_MapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_ListNodeOfListOfPassKey;
+class NMTDS_ListNodeOfListOfPassKey : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_ListNodeOfListOfPassKey(const NMTDS_PassKey &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		NMTDS_PassKey & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_ListNodeOfListOfPassKey {
+	Handle_NMTDS_ListNodeOfListOfPassKey GetHandle() {
+	return *(Handle_NMTDS_ListNodeOfListOfPassKey*) &$self;
+	}
+};
+%extend NMTDS_ListNodeOfListOfPassKey {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_ListNodeOfListOfPassKey::~NMTDS_ListNodeOfListOfPassKey %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_ListNodeOfListOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NMTDS_IteratorCheckerSI;
 class NMTDS_IteratorCheckerSI : public NMTDS_Iterator {
 	public:
@@ -735,18 +2099,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor NMTDS_PairMapHasher;
-class NMTDS_PairMapHasher {
+%nodefaultctor NMTDS_MapIteratorOfMapOfPassKey;
+class NMTDS_MapIteratorOfMapOfPassKey : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		NMTDS_PairMapHasher();
+		NMTDS_MapIteratorOfMapOfPassKey();
 		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const NMTDS_Pair &aPKey, const Standard_Integer Upper);
+		NMTDS_MapIteratorOfMapOfPassKey(const NMTDS_MapOfPassKey &aMap);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const NMTDS_Pair &aPKey1, const NMTDS_Pair &aPKey2);
+		void Initialize(const NMTDS_MapOfPassKey &aMap);
+		%feature("autodoc", "1");
+		const NMTDS_PassKey & Key() const;
 
 };
-%feature("shadow") NMTDS_PairMapHasher::~NMTDS_PairMapHasher %{
+%feature("shadow") NMTDS_MapIteratorOfMapOfPassKey::~NMTDS_MapIteratorOfMapOfPassKey %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -755,7 +2121,99 @@ def __del__(self):
 		pass
 %}
 
-%extend NMTDS_PairMapHasher {
+%extend NMTDS_MapIteratorOfMapOfPassKey {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_MapIteratorOfMapOfPassKeyBoolean;
+class NMTDS_MapIteratorOfMapOfPassKeyBoolean : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_MapIteratorOfMapOfPassKeyBoolean();
+		%feature("autodoc", "1");
+		NMTDS_MapIteratorOfMapOfPassKeyBoolean(const NMTDS_MapOfPassKeyBoolean &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const NMTDS_MapOfPassKeyBoolean &aMap);
+		%feature("autodoc", "1");
+		const NMTDS_PassKeyBoolean & Key() const;
+
+};
+%feature("shadow") NMTDS_MapIteratorOfMapOfPassKeyBoolean::~NMTDS_MapIteratorOfMapOfPassKeyBoolean %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_MapIteratorOfMapOfPassKeyBoolean {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape;
+class NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape(const Standard_Integer &K1, const Standard_Integer K2, const TopoDS_Shape I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape GetHandle() {
+	return *(Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape*) &$self;
+	}
+};
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::~NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape {
 	void _kill_pointed() {
 		delete $self;
 	}

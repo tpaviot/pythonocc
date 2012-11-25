@@ -27,7 +27,39 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Sketcher.hxx>
+#include<Sketcher_AnalyserSnap.hxx>
+#include<Sketcher_Arc.hxx>
+#include<Sketcher_Command.hxx>
+#include<Sketcher_CommandArc3P.hxx>
+#include<Sketcher_CommandArcCenter2P.hxx>
+#include<Sketcher_CommandBezierCurve.hxx>
+#include<Sketcher_CommandCircle2PTan.hxx>
+#include<Sketcher_CommandCircle3P.hxx>
+#include<Sketcher_CommandCircle3Tan.hxx>
+#include<Sketcher_CommandCircleCenterRadius.hxx>
+#include<Sketcher_CommandCircleP2Tan.hxx>
+#include<Sketcher_CommandLine2P.hxx>
+#include<Sketcher_CommandPoint.hxx>
+#include<Sketcher_CommandTrim.hxx>
+#include<Sketcher_Edge.hxx>
+#include<Sketcher_GUI.hxx>
+#include<Sketcher_Object.hxx>
+#include<Sketcher_ObjectGeometryType.hxx>
+#include<Sketcher_ObjectType.hxx>
+#include<Sketcher_ObjectTypeOfMethod.hxx>
 #include<Sketcher_Profile.hxx>
+#include<Sketcher_Snap.hxx>
+#include<Sketcher_SnapCenter.hxx>
+#include<Sketcher_SnapEnd.hxx>
+#include<Sketcher_SnapIntersection.hxx>
+#include<Sketcher_SnapLine.hxx>
+#include<Sketcher_SnapLineParallel.hxx>
+#include<Sketcher_SnapLinePerpendicular.hxx>
+#include<Sketcher_SnapMiddle.hxx>
+#include<Sketcher_SnapNearest.hxx>
+#include<Sketcher_SnapTangent.hxx>
+#include<Sketcher_SnapType.hxx>
 
 // Additional headers necessary for compilation.
 

@@ -382,8 +382,8 @@ $HeaderURL$
 #include <TFunction_Scope.hxx>
 %};
 
-%import TDocStd.i
 %import TFunction.i
+%import TDocStd.i
 %import MMgt.i
 %import TCollection.i
 %import Standard.i

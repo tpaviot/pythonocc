@@ -27,6 +27,12 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Partition_Inter2d.hxx>
+#include<Partition_Inter3d.hxx>
+#include<Partition_Loop.hxx>
+#include<Partition_Loop2d.hxx>
+#include<Partition_Loop3d.hxx>
+#include<Partition_Spliter.hxx>
 
 // Additional headers necessary for compilation.
 

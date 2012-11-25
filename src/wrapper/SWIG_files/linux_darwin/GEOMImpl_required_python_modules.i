@@ -33,4 +33,5 @@ import TCollection
 import TopoDS
 import TopAbs
 import gp
+import TDF
 };

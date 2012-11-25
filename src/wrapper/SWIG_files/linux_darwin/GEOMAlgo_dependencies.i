@@ -54,6 +54,11 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
+#include <Handle_TCollection_AVLBaseNode.hxx>
+#include <Handle_TCollection_HAsciiString.hxx>
+#include <Handle_TCollection_HExtendedString.hxx>
+#include <Handle_TCollection_MapNode.hxx>
+#include <Handle_TCollection_SeqNode.hxx>
 #include <MMgt_StackManager.hxx>
 #include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
@@ -141,32 +146,9 @@ $HeaderURL$
 #include <TopAbs_Orientation.hxx>
 #include <TopAbs_ShapeEnum.hxx>
 #include <TopAbs_State.hxx>
-#include <NMTTools_CheckerSI.hxx>
-#include <NMTTools_CommonBlock.hxx>
-#include <NMTTools_CommonBlockAPI.hxx>
-#include <NMTTools_CommonBlockPool.hxx>
-#include <NMTTools_CoupleOfShape.hxx>
-#include <NMTTools_DEProcessor.hxx>
-#include <NMTTools_DataMapIteratorOfDataMapOfIntegerFaceInfo.hxx>
-#include <NMTTools_DataMapIteratorOfDataMapOfIntegerListOfPaveBlock.hxx>
-#include <NMTTools_DataMapOfIntegerFaceInfo.hxx>
-#include <NMTTools_DataMapOfIntegerListOfPaveBlock.hxx>
-#include <NMTTools_FaceInfo.hxx>
-#include <NMTTools_IndexedDataMapOfIndexedMapOfInteger.hxx>
-#include <NMTTools_IndexedDataMapOfShapeIndexedMapOfShape.hxx>
-#include <NMTTools_IndexedDataMapOfShapePaveBlock.hxx>
-#include <NMTTools_ListIteratorOfListOfCommonBlock.hxx>
-#include <NMTTools_ListIteratorOfListOfCoupleOfShape.hxx>
-#include <NMTTools_ListOfCommonBlock.hxx>
-#include <NMTTools_ListOfCoupleOfShape.hxx>
-#include <NMTTools_MapIteratorOfMapOfPaveBlock.hxx>
-#include <NMTTools_MapOfPaveBlock.hxx>
-#include <NMTTools_PPaveFiller.hxx>
-#include <NMTTools_PaveFiller.hxx>
-#include <NMTTools_Tools.hxx>
 %};
 
+%import TCollection.i
 %import MMgt.i
 %import Standard.i
 %import TopAbs.i
-%import NMTTools.i

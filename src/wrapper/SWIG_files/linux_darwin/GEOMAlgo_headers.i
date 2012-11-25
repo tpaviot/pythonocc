@@ -43,30 +43,38 @@ $HeaderURL$
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyInteger.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfPassKeyShapeShape.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfRealListOfShape.hxx>
-#include<GEOMAlgo_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
-#include<GEOMAlgo_DataMapIteratorOfDataMapOfShapePnt.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<GEOMAlgo_DataMapIteratorOfDataMapOfShapeShapeSet.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include<GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet.hxx>
 #include<GEOMAlgo_DataMapOfOrientedShapeShape.hxx>
 #include<GEOMAlgo_DataMapOfPassKeyInteger.hxx>
 #include<GEOMAlgo_DataMapOfPassKeyShapeShape.hxx>
 #include<GEOMAlgo_DataMapOfRealListOfShape.hxx>
-#include<GEOMAlgo_DataMapOfShapeMapOfShape.hxx>
-#include<GEOMAlgo_DataMapOfShapePnt.hxx>
 #include<GEOMAlgo_DataMapOfShapeReal.hxx>
 #include<GEOMAlgo_DataMapOfShapeShapeSet.hxx>
 #include<GEOMAlgo_FinderShapeOn.hxx>
 #include<GEOMAlgo_FinderShapeOn1.hxx>
 #include<GEOMAlgo_FinderShapeOn2.hxx>
 #include<GEOMAlgo_FinderShapeOnQuad.hxx>
-#include<GEOMAlgo_GetInPlace.hxx>
 #include<GEOMAlgo_GlueAnalyser.hxx>
 #include<GEOMAlgo_GlueDetector.hxx>
 #include<GEOMAlgo_Gluer.hxx>
 #include<GEOMAlgo_Gluer2.hxx>
 #include<GEOMAlgo_GluerAlgo.hxx>
 #include<GEOMAlgo_HAlgo.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo.hxx>
+#include<GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState.hxx>
 #include<GEOMAlgo_IndexedDataMapOfIntegerShape.hxx>
+#include<GEOMAlgo_IndexedDataMapOfPassKeyListOfShape.hxx>
 #include<GEOMAlgo_IndexedDataMapOfPassKeyShapeListOfShape.hxx>
 #include<GEOMAlgo_IndexedDataMapOfShapeBox.hxx>
 #include<GEOMAlgo_IndexedDataMapOfShapeShapeInfo.hxx>
@@ -77,6 +85,8 @@ $HeaderURL$
 #include<GEOMAlgo_KindOfShape.hxx>
 #include<GEOMAlgo_ListIteratorOfListOfCoupleOfShapes.hxx>
 #include<GEOMAlgo_ListIteratorOfListOfPnt.hxx>
+#include<GEOMAlgo_ListNodeOfListOfCoupleOfShapes.hxx>
+#include<GEOMAlgo_ListNodeOfListOfPnt.hxx>
 #include<GEOMAlgo_ListOfCoupleOfShapes.hxx>
 #include<GEOMAlgo_ListOfPnt.hxx>
 #include<GEOMAlgo_PWireEdgeSet.hxx>
@@ -103,6 +113,25 @@ $HeaderURL$
 #include<GEOMAlgo_WireEdgeSet.hxx>
 #include<GEOMAlgo_WireSolid.hxx>
 #include<GEOMAlgo_WireSplitter.hxx>
+#include<Handle_GEOMAlgo_Clsf.hxx>
+#include<Handle_GEOMAlgo_ClsfBox.hxx>
+#include<Handle_GEOMAlgo_ClsfSolid.hxx>
+#include<Handle_GEOMAlgo_ClsfSurf.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include<Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet.hxx>
+#include<Handle_GEOMAlgo_HAlgo.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo.hxx>
+#include<Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState.hxx>
+#include<Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes.hxx>
+#include<Handle_GEOMAlgo_ListNodeOfListOfPnt.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -220,4 +249,5 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<NMTTools_PaveFiller.hxx>
+#include<NMTTools_ListOfCoupleOfShape.hxx>
 %}
