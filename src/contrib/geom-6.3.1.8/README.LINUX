@@ -1,0 +1,20 @@
+For compilation on a Linux system, please 
+
+- get the latest revision using svn, e.g. 
+  svn co https://salomegeometry.svn.sourceforge.net/svnroot/salomegeometry salomegeometry 
+- cd to salomegeometry/adm/lin 
+- run autoreconf --install
+- run ./configure 
+- run make 
+
+or 
+
+- use the "download tarball" feature of "Browse SVN" in the trunk project folder
+- unpack the tarball 
+- cd to adm/lin in the unpacked project folder
+- remove the files src, inc and resources in this folder
+- create symbolic links named inc, src and resources pointing to ../../inc, ../../src and ../../resources
+- run autoreconf --install
+- run ./configure 
+- run make 
+
