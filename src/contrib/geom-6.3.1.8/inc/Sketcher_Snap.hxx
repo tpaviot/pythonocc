@@ -61,7 +61,7 @@ class Sketcher_Snap : public MMgt_TShared
     Standard_EXPORT virtual void DrawRelation();
     Standard_EXPORT virtual void EraseRelation();
     Standard_EXPORT virtual void setFirstPnt(const gp_Pnt2d& p);
-    Standard_EXPORT virtual void setFirstPnt(const gp_Pnt2d& p,TangentType ttype);
+    Standard_EXPORT virtual void setFirstPnt(const gp_Pnt2d& p, Sketcher_TangentType ttype);
 
   protected:
     Standard_EXPORT Standard_Boolean countProject();

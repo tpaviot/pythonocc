@@ -230,7 +230,7 @@ void Sketcher_AnalyserSnap::Cancel()
   isLine            = Standard_False;
 }
 //------------------------------------------------------------------------------
-gp_Pnt2d Sketcher_AnalyserSnap::MouseInputException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, TangentType CType, Standard_Boolean TangentOnly)
+gp_Pnt2d Sketcher_AnalyserSnap::MouseInputException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, Sketcher_TangentType CType, Standard_Boolean TangentOnly)
 {
   if (myCurrentSnap == SnapAnalyse || myCurrentSnap ==  SnapParallel || myCurrentSnap ==  SnapPerpendicular || myCurrentSnap == SnapTangent) {
     storedPnt2d = p1;
@@ -247,7 +247,7 @@ gp_Pnt2d Sketcher_AnalyserSnap::MouseInputException(const gp_Pnt2d& p1, const gp
   else return MouseInput(thePnt2d);
 }
 //------------------------------------------------------------------------------
-gp_Pnt2d Sketcher_AnalyserSnap::MouseMoveException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, TangentType CType, Standard_Boolean TangentOnly)
+gp_Pnt2d Sketcher_AnalyserSnap::MouseMoveException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, Sketcher_TangentType CType, Standard_Boolean TangentOnly)
 {
   if (myCurrentSnap == SnapAnalyse || myCurrentSnap ==  SnapParallel || myCurrentSnap ==  SnapPerpendicular || myCurrentSnap == SnapTangent) {
     storedPnt2d = p1;

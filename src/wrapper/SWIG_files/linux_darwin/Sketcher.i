@@ -58,6 +58,13 @@ enum Sketcher_ObjectGeometryType {
 	CurveSketcherObject,
 	};
 
+enum Sketcher_TangentType {
+	NothingTangent,
+	Line_FirstPnt,
+	Line_SecondPnt,
+	Circle_CenterPnt,
+	};
+
 enum Sketcher_ObjectType {
 	MainSketcherType,
 	AuxiliarySketcherType,
@@ -1114,7 +1121,7 @@ class Sketcher_Snap : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void setFirstPnt(const gp_Pnt2d p);
 		%feature("autodoc", "1");
-		virtual		void setFirstPnt(const gp_Pnt2d p, TangentType );
+		virtual		void setFirstPnt(const gp_Pnt2d p, Sketcher_TangentType );
 
 };
 %extend Sketcher_Snap {
@@ -1239,9 +1246,9 @@ class Sketcher_AnalyserSnap : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Cancel();
 		%feature("autodoc", "1");
-		gp_Pnt2d MouseInputException(const gp_Pnt2d p1, const gp_Pnt2d thePnt2d, TangentType , Standard_Boolean );
+		gp_Pnt2d MouseInputException(const gp_Pnt2d p1, const gp_Pnt2d thePnt2d, Sketcher_TangentType , Standard_Boolean );
 		%feature("autodoc", "1");
-		gp_Pnt2d MouseMoveException(const gp_Pnt2d p1, const gp_Pnt2d thePnt2d, TangentType , Standard_Boolean );
+		gp_Pnt2d MouseMoveException(const gp_Pnt2d p1, const gp_Pnt2d thePnt2d, Sketcher_TangentType , Standard_Boolean );
 		%feature("autodoc", "1");
 		const gp_Pnt2d  GetCurrentBestPnt2D();
 
@@ -2080,7 +2087,7 @@ class Sketcher_SnapTangent : public Sketcher_Snap {
 		%feature("autodoc", "1");
 		virtual		void EraseRelation();
 		%feature("autodoc", "1");
-		virtual		void setFirstPnt(const gp_Pnt2d p, TangentType );
+		virtual		void setFirstPnt(const gp_Pnt2d p, Sketcher_TangentType );
 
 };
 %extend Sketcher_SnapTangent {

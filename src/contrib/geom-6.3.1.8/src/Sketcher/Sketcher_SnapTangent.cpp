@@ -160,7 +160,7 @@ void Sketcher_SnapTangent::EraseRelation()
   myContext->Remove(myTanRelation);
 }
 //------------------------------------------------------------------------------
-void Sketcher_SnapTangent::setFirstPnt(const gp_Pnt2d& p,TangentType ttype)
+void Sketcher_SnapTangent::setFirstPnt(const gp_Pnt2d& p, Sketcher_TangentType ttype)
 {
   myFirstPnt2d = p;
   myTangentType = ttype;

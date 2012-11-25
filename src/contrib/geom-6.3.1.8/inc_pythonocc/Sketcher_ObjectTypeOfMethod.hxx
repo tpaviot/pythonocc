@@ -37,7 +37,7 @@ enum Sketcher_ObjectTypeOfMethod {
   Trim_Method
 };
 //------------------------------------------------------------------------------
-enum TangentType {
+enum Sketcher_TangentType {
   NothingTangent,
   Line_FirstPnt,
   Line_SecondPnt,

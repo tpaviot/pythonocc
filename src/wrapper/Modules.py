@@ -560,8 +560,7 @@ SALOME_GEOM_MODULES = [
                          {'NMTTools_IteratorOfCoupleOfShape':['DS']}),
                         ('Partition',['TopoDS','gp'],[]),
                         ('ShHealOper',['Geom','Handle_TCollection','Handle_Message','Handle_ShapeExtend'],[]),
-                        ('Sketcher',[],[]),
-                       ]
+                        ]
 
 #
 # SalomeSMESH modules
@@ -602,10 +601,14 @@ SALOME_SMESH_MODULES = [('SMDSAbs',[],[]),
                          ]
 if sys.platform!='win32':
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],[],{'StdMeshers_Hexa_3D':['OppositeVertex'],'StdMeshers_MEFISTO_2D':['LoadPoints']}),)
+    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','Xw','MFT','Aspect','Font','Handle_TCollection','Viewer'],[]),
+                       )
 else:
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
+    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','WNT','Aspect','Font','Handle_TCollection','Viewer'],[]),
+                       )
 
 #ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
 

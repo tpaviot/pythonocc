@@ -45,8 +45,8 @@ class Sketcher_AnalyserSnap : public MMgt_TShared
     Standard_EXPORT gp_Pnt2d MouseInput(const gp_Pnt2d& thePnt2d);
     Standard_EXPORT gp_Pnt2d MouseMove(const gp_Pnt2d& thePnt2d);
     Standard_EXPORT void Cancel();
-    Standard_EXPORT gp_Pnt2d MouseInputException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, TangentType CType, Standard_Boolean TangentOnly);
-    Standard_EXPORT gp_Pnt2d MouseMoveException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, TangentType CType, Standard_Boolean TangentOnly);
+    Standard_EXPORT gp_Pnt2d MouseInputException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, Sketcher_TangentType CType, Standard_Boolean TangentOnly);
+    Standard_EXPORT gp_Pnt2d MouseMoveException(const gp_Pnt2d& p1, const gp_Pnt2d& thePnt2d, Sketcher_TangentType CType, Standard_Boolean TangentOnly);
 
     Standard_EXPORT const gp_Pnt2d& GetCurrentBestPnt2D();
 
@@ -65,7 +65,7 @@ class Sketcher_AnalyserSnap : public MMgt_TShared
 
     gp_Pnt2d                                myPnt2d;
     gp_Pnt2d                                storedPnt2d;
-    TangentType                             storedTangentType;
+    Sketcher_TangentType                             storedTangentType;
     Standard_Boolean                        isTangent;
     Standard_Boolean                        isLine;
 

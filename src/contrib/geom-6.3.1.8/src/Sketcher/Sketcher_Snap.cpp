@@ -145,7 +145,7 @@ void Sketcher_Snap::setFirstPnt(const gp_Pnt2d& p)
 {
 }
 //------------------------------------------------------------------------------
-void Sketcher_Snap::setFirstPnt(const gp_Pnt2d& p,TangentType ttype)
+void Sketcher_Snap::setFirstPnt(const gp_Pnt2d& p, Sketcher_TangentType ttype)
 {
 }
 //------------------------------------------------------------------------------

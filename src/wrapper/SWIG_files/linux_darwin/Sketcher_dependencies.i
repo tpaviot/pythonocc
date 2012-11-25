@@ -340,6 +340,5 @@ $HeaderURL$
 %import MMgt.i
 %import Geom2d.i
 %import Standard.i
-%import TangentType.i
 %import V3d.i
 %import Quantity.i

@@ -46,7 +46,7 @@ class Sketcher_SnapTangent : public Sketcher_Snap
     Standard_EXPORT Sketcher_SnapType GetSnapType();
     Standard_EXPORT void DrawRelation();
     Standard_EXPORT void EraseRelation();
-    Standard_EXPORT void setFirstPnt(const gp_Pnt2d& p,TangentType ttype);
+    Standard_EXPORT void setFirstPnt(const gp_Pnt2d& p, Sketcher_TangentType ttype);
 
   private:
     Standard_EXPORT void SelectLine_FirstPntEvent();
@@ -55,7 +55,7 @@ class Sketcher_SnapTangent : public Sketcher_Snap
     Standard_EXPORT void SelectLine_SecondPntEvent();
     Standard_EXPORT void SelectCurveCenterEvent();
 
-    TangentType                 myTangentType;
+    Sketcher_TangentType                 myTangentType;
     Standard_Real               radiusDistance;
 
     gp_Pnt2d                    myFirstPnt2d;
