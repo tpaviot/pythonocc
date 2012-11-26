@@ -204,7 +204,7 @@ def build_geom_plate(edges):
     plate = GeomPlate_MakeApprox(srf, 1e-04, 100, 9, 1e-03, 0)
     
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
-    face = make_face(plate.Surface(), uMin, uMax, vMin, vMax)
+    face = make_face(plate.Surface(), uMin, uMax, vMin, vMax, 1e-6)
     return face
 
 
