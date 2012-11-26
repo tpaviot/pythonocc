@@ -70,7 +70,6 @@ def main():
     # Create Sketcher
     #===============================================================================
     Cmd = "Sketch:F 0 0:TT 0 100:C 100 180:WW"
-    #import ipdb; ipdb.set_trace()
     
     
     ## Return list of variables value from salome notebook
