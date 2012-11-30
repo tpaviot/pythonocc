@@ -17,6 +17,9 @@ For instance the set of methods after:
 Can be a module, class or namespace.
 
 '''
+
+import functools
+
 from OCC.gp import *
 
 from OCC.TopoDS import *
