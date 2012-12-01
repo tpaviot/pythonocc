@@ -262,7 +262,7 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWHeaderSection_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_ReadWriteModule::~RWHeaderSection_ReadWriteModule %{
@@ -305,7 +305,7 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 };
 %extend RWHeaderSection_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWHeaderSection_GeneralModule::~RWHeaderSection_GeneralModule %{

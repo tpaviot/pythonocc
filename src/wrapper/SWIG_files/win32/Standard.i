@@ -58,6 +58,7 @@ typedef unsigned char Standard_Byte;
 typedef Standard_Persistent * Standard_OId;
 typedef double Standard_Real;
 typedef short int const * Standard_ExtString;
+typedef time_t Standard_Time;
 typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef char Standard_Character;
 typedef short int Standard_ExtCharacter;
@@ -255,110 +256,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_NumericError;
-class Handle_Standard_NumericError : public Handle_Standard_Failure {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError();
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError(const Handle_Standard_NumericError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError(const Standard_NumericError *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError & operator=(const Handle_Standard_NumericError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_NumericError DownCast(const Handle_Standard_Transient &AnObject);
-		%pythoncode {
-		def __eq__(self,right):
-			try:
-				return self.__eq_wrapper__(right)
-			except:
-				return False
-		}
-		%pythoncode {
-		def __ne__(self,right):
-			try:
-				return self.__ne_wrapper__(right)
-			except:
-				return True
-		}
-
-};
-%extend Handle_Standard_NumericError {
-	Standard_NumericError* GetObject() {
-	return (Standard_NumericError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_NumericError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Standard_Overflow;
-class Handle_Standard_Overflow : public Handle_Standard_NumericError {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow();
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow(const Standard_Overflow *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow & operator=(const Handle_Standard_Overflow &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_Overflow DownCast(const Handle_Standard_Transient &AnObject);
-		%pythoncode {
-		def __eq__(self,right):
-			try:
-				return self.__eq_wrapper__(right)
-			except:
-				return False
-		}
-		%pythoncode {
-		def __ne__(self,right):
-			try:
-				return self.__ne_wrapper__(right)
-			except:
-				return True
-		}
-
-};
-%extend Handle_Standard_Overflow {
-	Standard_Overflow* GetObject() {
-	return (Standard_Overflow*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_Overflow {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Standard_DomainError;
 class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	public:
@@ -374,6 +271,20 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 		Handle_Standard_DomainError & operator=(const Standard_DomainError *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_DomainError DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_DomainError {
@@ -412,6 +323,20 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 		Handle_Standard_RangeError & operator=(const Standard_RangeError *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_RangeError DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_RangeError {
@@ -450,6 +375,20 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 		Handle_Standard_OutOfRange & operator=(const Standard_OutOfRange *anItem);
 		%feature("autodoc", "1");
 		static		Handle_Standard_OutOfRange DownCast(const Handle_Standard_Transient &AnObject);
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
 
 };
 %extend Handle_Standard_OutOfRange {
@@ -619,6 +558,44 @@ def __del__(self):
 %}
 
 %extend Handle_Standard_DimensionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Standard_NumericError;
+class Handle_Standard_NumericError : public Handle_Standard_Failure {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError();
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError(const Handle_Standard_NumericError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError(const Standard_NumericError *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError & operator=(const Handle_Standard_NumericError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_NumericError & operator=(const Standard_NumericError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_NumericError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_NumericError {
+	Standard_NumericError* GetObject() {
+	return (Standard_NumericError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_NumericError::~Handle_Standard_NumericError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_NumericError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1133,6 +1110,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Standard_Overflow;
+class Handle_Standard_Overflow : public Handle_Standard_NumericError {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow();
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Handle_Standard_Overflow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow(const Standard_Overflow *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow & operator=(const Handle_Standard_Overflow &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Overflow & operator=(const Standard_Overflow *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_Overflow DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_Overflow {
+	Standard_Overflow* GetObject() {
+	return (Standard_Overflow*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_Overflow::~Handle_Standard_Overflow %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_Overflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Standard_DimensionMismatch;
 class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError {
 	public:
@@ -1369,8 +1384,6 @@ class Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Delete() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -1401,7 +1414,7 @@ class Standard_Transient {
 };
 %extend Standard_Transient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Transient::~Standard_Transient %{
@@ -1468,7 +1481,7 @@ class Standard_Failure : public Standard_Transient {
 };
 %extend Standard_Failure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Failure::~Standard_Failure %{
@@ -1507,7 +1520,7 @@ class Standard_DomainError : public Standard_Failure {
 };
 %extend Standard_DomainError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_DomainError::~Standard_DomainError %{
@@ -1544,7 +1557,7 @@ class Standard_RangeError : public Standard_DomainError {
 };
 %extend Standard_RangeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_RangeError::~Standard_RangeError %{
@@ -1581,7 +1594,7 @@ class Standard_NegativeValue : public Standard_RangeError {
 };
 %extend Standard_NegativeValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NegativeValue::~Standard_NegativeValue %{
@@ -1624,7 +1637,7 @@ class Standard_NumericError : public Standard_Failure {
 };
 %extend Standard_NumericError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NumericError::~Standard_NumericError %{
@@ -1661,7 +1674,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 };
 %extend Standard_DivideByZero {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_DivideByZero::~Standard_DivideByZero %{
@@ -1704,7 +1717,7 @@ class Standard_LicenseError : public Standard_Failure {
 };
 %extend Standard_LicenseError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_LicenseError::~Standard_LicenseError %{
@@ -1741,7 +1754,7 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 };
 %extend Standard_TooManyUsers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_TooManyUsers::~Standard_TooManyUsers %{
@@ -1815,7 +1828,7 @@ class Standard_ProgramError : public Standard_Failure {
 };
 %extend Standard_ProgramError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_ProgramError::~Standard_ProgramError %{
@@ -1893,7 +1906,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 %extend Standard_NotImplemented {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NotImplemented::~Standard_NotImplemented %{
@@ -1936,7 +1949,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 };
 %extend Standard_AbortiveTransaction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_AbortiveTransaction::~Standard_AbortiveTransaction %{
@@ -2043,7 +2056,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 };
 %extend Standard_MultiplyDefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_MultiplyDefined::~Standard_MultiplyDefined %{
@@ -2086,7 +2099,7 @@ class Standard_Overflow : public Standard_NumericError {
 };
 %extend Standard_Overflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Overflow::~Standard_Overflow %{
@@ -2129,7 +2142,7 @@ class Standard_NullObject : public Standard_DomainError {
 };
 %extend Standard_NullObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NullObject::~Standard_NullObject %{
@@ -2172,7 +2185,7 @@ class Standard_NullValue : public Standard_RangeError {
 };
 %extend Standard_NullValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NullValue::~Standard_NullValue %{
@@ -2273,7 +2286,7 @@ class Standard_NoMoreObject : public Standard_DomainError {
 };
 %extend Standard_NoMoreObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NoMoreObject::~Standard_NoMoreObject %{
@@ -2316,7 +2329,7 @@ class Standard_TypeMismatch : public Standard_DomainError {
 };
 %extend Standard_TypeMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_TypeMismatch::~Standard_TypeMismatch %{
@@ -2359,7 +2372,7 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 };
 %extend Standard_LicenseNotFound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_LicenseNotFound::~Standard_LicenseNotFound %{
@@ -2396,8 +2409,6 @@ class Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Boolean IsInstance(const Handle_Standard_Type &arg0) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
-		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
 			std::string ShallowDumpToString() {
@@ -2414,7 +2425,7 @@ class Standard_Persistent {
 };
 %extend Standard_Persistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Persistent::~Standard_Persistent %{
@@ -2514,7 +2525,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 };
 %extend Standard_ImmutableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_ImmutableObject::~Standard_ImmutableObject %{
@@ -2557,7 +2568,7 @@ class Standard_NoSuchObject : public Standard_DomainError {
 };
 %extend Standard_NoSuchObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_NoSuchObject::~Standard_NoSuchObject %{
@@ -2806,7 +2817,7 @@ class Standard_DimensionError : public Standard_DomainError {
 };
 %extend Standard_DimensionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_DimensionError::~Standard_DimensionError %{
@@ -2843,7 +2854,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 };
 %extend Standard_DimensionMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_DimensionMismatch::~Standard_DimensionMismatch %{
@@ -2922,7 +2933,7 @@ class Standard_Type : public Standard_Transient {
 };
 %extend Standard_Type {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Type::~Standard_Type %{
@@ -2965,7 +2976,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 };
 %extend Standard_ConstructionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_ConstructionError::~Standard_ConstructionError %{
@@ -3008,7 +3019,7 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 };
 %extend Standard_OutOfMemory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
@@ -3084,7 +3095,7 @@ class Standard_OutOfRange : public Standard_RangeError {
 };
 %extend Standard_OutOfRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_OutOfRange::~Standard_OutOfRange %{
@@ -3127,7 +3138,7 @@ class Standard_Underflow : public Standard_NumericError {
 };
 %extend Standard_Underflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Standard_Underflow::~Standard_Underflow %{

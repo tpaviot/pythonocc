@@ -606,7 +606,7 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ProjLib_HProjectedCurve::~ProjLib_HProjectedCurve %{
@@ -815,7 +815,7 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt::~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt %{
@@ -935,7 +935,7 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ProjLib_HSequenceOfHSequenceOfPnt::~ProjLib_HSequenceOfHSequenceOfPnt %{
@@ -1098,7 +1098,7 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HCompProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ProjLib_HCompProjectedCurve::~ProjLib_HCompProjectedCurve %{

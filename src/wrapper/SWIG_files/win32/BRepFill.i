@@ -905,7 +905,7 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 };
 %extend BRepFill_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_CurveConstraint::~BRepFill_CurveConstraint %{
@@ -951,6 +951,10 @@ class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 		TopTools_DataMapOfShapeShape & ChangeFind(const Handle_MAT_Node &K);
 		%feature("autodoc", "1");
 		TopTools_DataMapOfShapeShape & operator()(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_MAT_Node &K);
 
 };
 %feature("shadow") BRepFill_DataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapOfNodeDataMapOfShapeShape %{
@@ -1009,7 +1013,7 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 };
 %extend BRepFill_SectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_SectionLaw::~BRepFill_SectionLaw %{
@@ -1132,7 +1136,7 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 };
 %extend BRepFill_NSections {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_NSections::~BRepFill_NSections %{
@@ -1224,6 +1228,8 @@ class BRepFill_Filling {
 		%feature("autodoc", "1");
 		TopoDS_Face Face() const;
 		%feature("autodoc", "1");
+		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
+		%feature("autodoc", "1");
 		Standard_Real G0Error() const;
 		%feature("autodoc", "1");
 		Standard_Real G1Error() const;
@@ -1308,7 +1314,7 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 };
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfFaceAndOrder %{
@@ -1418,6 +1424,10 @@ class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_Basi
 		TopTools_DataMapOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopTools_DataMapOfShapeListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepFill_DataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapOfShapeDataMapOfShapeListOfShape %{
@@ -1533,6 +1543,10 @@ class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
 		TColStd_SequenceOfReal & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TColStd_SequenceOfReal & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepFill_DataMapOfShapeSequenceOfReal::~BRepFill_DataMapOfShapeSequenceOfReal %{
@@ -1578,6 +1592,10 @@ class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_MAT_Node &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_MAT_Node &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_MAT_Node &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_MAT_Node &K);
 
 };
 %feature("shadow") BRepFill_DataMapOfNodeShape::~BRepFill_DataMapOfNodeShape %{
@@ -1689,7 +1707,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 };
 %extend BRepFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_LocationLaw::~BRepFill_LocationLaw %{
@@ -1722,7 +1740,7 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_Edge3DLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_Edge3DLaw::~BRepFill_Edge3DLaw %{
@@ -1757,7 +1775,7 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 };
 %extend BRepFill_DraftLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DraftLaw::~BRepFill_DraftLaw %{
@@ -1944,6 +1962,10 @@ class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 		TColgp_SequenceOfPnt & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TColgp_SequenceOfPnt & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepFill_DataMapOfShapeSequenceOfPnt::~BRepFill_DataMapOfShapeSequenceOfPnt %{
@@ -2013,7 +2035,7 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 };
 %extend BRepFill_ListNodeOfListOfOffsetWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_ListNodeOfListOfOffsetWire::~BRepFill_ListNodeOfListOfOffsetWire %{
@@ -2108,7 +2130,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt %{
@@ -2143,7 +2165,7 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_ACRLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_ACRLaw::~BRepFill_ACRLaw %{
@@ -2180,7 +2202,7 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_EdgeOnSurfLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_EdgeOnSurfLaw::~BRepFill_EdgeOnSurfLaw %{
@@ -2219,7 +2241,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape %{
@@ -2298,6 +2320,10 @@ class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
 		TopTools_ListOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepFill_DataMapOfOrientedShapeListOfShape::~BRepFill_DataMapOfOrientedShapeListOfShape %{
@@ -2352,7 +2378,7 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 };
 %extend BRepFill_ShapeLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_ShapeLaw::~BRepFill_ShapeLaw %{
@@ -2408,6 +2434,10 @@ class BRepFill_IndexedDataMapOfOrientedShapeListOfShape : public TCollection_Bas
 		const TopTools_ListOfShape & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopTools_ListOfShape & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepFill_IndexedDataMapOfOrientedShapeListOfShape::~BRepFill_IndexedDataMapOfOrientedShapeListOfShape %{
@@ -2516,7 +2546,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape %{
@@ -2679,7 +2709,7 @@ class BRepFill_PipeShell : public MMgt_TShared {
 };
 %extend BRepFill_PipeShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_PipeShell::~BRepFill_PipeShell %{
@@ -2718,7 +2748,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfNodeShape::~BRepFill_DataMapNodeOfDataMapOfNodeShape %{
@@ -2891,7 +2921,7 @@ class BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape : pu
 };
 %extend BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape::~BRepFill_IndexedDataMapNodeOfIndexedDataMapOfOrientedShapeListOfShape %{
@@ -3135,7 +3165,7 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 };
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfSection::~BRepFill_SequenceNodeOfSequenceOfSection %{
@@ -3235,7 +3265,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal::~BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal %{
@@ -3352,7 +3382,7 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 };
 %extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape::~BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape %{
@@ -3389,7 +3419,7 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 };
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder::~BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder %{

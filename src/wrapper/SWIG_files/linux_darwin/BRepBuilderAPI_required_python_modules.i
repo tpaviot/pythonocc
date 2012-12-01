@@ -30,5 +30,6 @@ import GarbageCollector
 import Standard
 import TopoDS
 import TopTools
+import TColStd
 import Geom
 };

@@ -43,6 +43,7 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESSelect_RemoveCurves::DownCast;
 %rename(DownCast) Handle_IGESSelect_SelectSingleViewFrom::DownCast;
 %rename(DownCast) Handle_IGESSelect_EditHeader::DownCast;
+%rename(DownCast) Handle_IGESSelect_SelectBypassSubfigure::DownCast;
 %rename(DownCast) Handle_IGESSelect_ComputeStatus::DownCast;
 %rename(DownCast) Handle_IGESSelect_RebuildDrawings::DownCast;
 %rename(DownCast) Handle_IGESSelect_SelectFromDrawing::DownCast;
@@ -50,7 +51,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESSelect_CounterOfLevelNumber::DownCast;
 %rename(DownCast) Handle_IGESSelect_SetLabel::DownCast;
 %rename(DownCast) Handle_IGESSelect_EditDirPart::DownCast;
-%rename(DownCast) Handle_IGESSelect_SelectBypassSubfigure::DownCast;
 %rename(DownCast) Handle_IGESSelect_SelectBasicGeom::DownCast;
 %rename(DownCast) Handle_IGESSelect_DispPerDrawing::DownCast;
 %rename(DownCast) Handle_IGESSelect_AddFileComment::DownCast;

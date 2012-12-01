@@ -247,57 +247,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
-class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		gp_Pnt2d  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d GetHandle() {
-	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*) &$self;
-	}
-};
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntPoly_ShapeSection;
 class IntPoly_ShapeSection {
 	public:
@@ -570,7 +519,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d %{
@@ -607,7 +556,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt::~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt %{
@@ -620,6 +569,57 @@ def __del__(self):
 %}
 
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
+class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d(const gp_Pnt2d K1, const Standard_Integer K2, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		gp_Pnt2d  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d GetHandle() {
+	return *(Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d*) &$self;
+	}
+};
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -703,7 +703,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPoly_IndexedMapNodeOfIndexedMapOfPnt::~IntPoly_IndexedMapNodeOfIndexedMapOfPnt %{

@@ -350,7 +350,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfNode::~AdvApp2Var_SequenceNodeOfSequenceOfNode %{
@@ -430,6 +430,8 @@ class AdvApp2Var_Patch {
 		AdvApp2Var_Patch(const Standard_Real U0, const Standard_Real U1, const Standard_Real V0, const Standard_Real V1, const Standard_Integer iu, const Standard_Integer iv);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDiscretised() const;
+		%feature("autodoc", "1");
+		void Discretise(const AdvApp2Var_Context &Conditions, const AdvApp2Var_Framework &Constraints, const AdvApp2Var_EvaluatorFunc2Var &func);
 		%feature("autodoc", "1");
 		Standard_Boolean IsApproximated() const;
 		%feature("autodoc", "1");
@@ -689,7 +691,7 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfStrip::~AdvApp2Var_SequenceNodeOfStrip %{
@@ -767,6 +769,31 @@ def __del__(self):
 %}
 
 %extend AdvApp2Var_SequenceOfPatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AdvApp2Var_EvaluatorFunc2Var;
+class AdvApp2Var_EvaluatorFunc2Var {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Evaluate(Standard_Integer* theDimension, Standard_Real* theUStartEnd, Standard_Real* theVStartEnd, Standard_Integer* theFavorIso, Standard_Real* theConstParam, Standard_Integer* theNbParams, Standard_Real* theParameters, Standard_Integer* theUOrder, Standard_Integer* theVOrder, Standard_Real* theResult, Standard_Integer* theErrorCode) const;
+		%feature("autodoc", "1");
+		void operator()(Standard_Integer* theDimension, Standard_Real* theUStartEnd, Standard_Real* theVStartEnd, Standard_Integer* theFavorIso, Standard_Real* theConstParam, Standard_Integer* theNbParams, Standard_Real* theParameters, Standard_Integer* theUOrder, Standard_Integer* theVOrder, Standard_Real* theResult, Standard_Integer* theErrorCode) const;
+
+};
+%feature("shadow") AdvApp2Var_EvaluatorFunc2Var::~AdvApp2Var_EvaluatorFunc2Var %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AdvApp2Var_EvaluatorFunc2Var {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -856,7 +883,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfPatch::~AdvApp2Var_SequenceNodeOfSequenceOfPatch %{
@@ -956,7 +983,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AdvApp2Var_SequenceNodeOfSequenceOfStrip::~AdvApp2Var_SequenceNodeOfSequenceOfStrip %{

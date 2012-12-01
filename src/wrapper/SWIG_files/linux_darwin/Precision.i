@@ -62,6 +62,8 @@ class Precision {
 		%feature("autodoc", "1");
 		static		Standard_Real Confusion();
 		%feature("autodoc", "1");
+		static		Standard_Real SquareConfusion();
+		%feature("autodoc", "1");
 		static		Standard_Real Intersection();
 		%feature("autodoc", "1");
 		static		Standard_Real Approximation();

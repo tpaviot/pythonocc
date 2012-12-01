@@ -35,8 +35,8 @@ import TColStd
 import gp
 import GeomAPI
 import BRepClass3d
-import TCollection
 import Geom
 import Geom2d
 import GeomAbs
+import TCollection
 };

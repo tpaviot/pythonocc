@@ -373,7 +373,7 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V2d_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_CircularGrid::~V2d_CircularGrid %{
@@ -412,7 +412,7 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_RectangularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_RectangularGraphicGrid::~V2d_RectangularGraphicGrid %{
@@ -570,7 +570,7 @@ class V2d_View : public Viewer_View {
 };
 %extend V2d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_View::~V2d_View %{
@@ -613,7 +613,7 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V2d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_RectangularGrid::~V2d_RectangularGrid %{
@@ -652,7 +652,7 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_CircularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_CircularGraphicGrid::~V2d_CircularGraphicGrid %{
@@ -689,7 +689,7 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 };
 %extend V2d_BackgroundGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_BackgroundGraphicObject::~V2d_BackgroundGraphicObject %{
@@ -826,7 +826,7 @@ class V2d_Viewer : public Viewer_Viewer {
 };
 %extend V2d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V2d_Viewer::~V2d_Viewer %{

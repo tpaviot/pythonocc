@@ -1,0 +1,88 @@
+// Copyright (C) 2005  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+// CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+// 
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either 
+// version 2.1 of the License.
+// 
+// This library is distributed in the hope that it will be useful 
+// but WITHOUT ANY WARRANTY; without even the implied warranty of 
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+// Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public  
+// License along with this library; if not, write to the Free Software 
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+//
+-- See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+//
+--  GEOM PARTITION : partition algorithm
+--
+--  Copyright (C) 2003  CEA/DEN, EDF R&D
+--
+--
+--
+--  File   : Partition_Loop3d.cdl
+--  Module : GEOM
+
+class Loop3d from Partition
+
+        ---Purpose: Builds the shells from a set of faces.
+        --          Provides  methods   for   comparing  faces  mutual
+        --          location.
+        
+uses
+    Vec                              from gp,
+    MapOfOrientedShape               from TopTools,
+    IndexedDataMapOfShapeListOfShape from TopTools,
+    Face                             from TopoDS,
+    Edge                             from TopoDS,
+    ListOfShape                      from TopTools,
+    Shape                            from TopoDS
+    
+is
+
+    Create;
+    
+    AddConstFaces  (me : in out; S : Shape from TopoDS)
+	---Purpose: Add faces of <S> as unique faces in the result.
+    is static;
+
+    AddSectionFaces  (me : in out; S : Shape from TopoDS)
+	---Purpose: Add faces of <S> as double faces in the result.
+    is static;
+
+    MakeShells (me : in out; AvoidFacesMap : MapOfOrientedShape from TopTools)
+        returns ListOfShape from TopTools is static;
+        ---Purpose: Make and return shells. 
+        --          <AvoidFacesMap> can contain faces that must not be
+        --          added to result shells.
+        ---C++: return const &
+    
+    
+        ---Category: class methods
+    
+    IsInside (myclass; E        : Edge    from TopoDS;
+                       F1, F2   : Face    from TopoDS;
+                       CountDot : Boolean from Standard;
+                       Dot      : in out Real    from Standard;
+                       GoodOri  : in out Boolean from Standard)
+        returns Boolean from Standard;
+        ---Purpose: check if <F2> is inside <F1> by edge <E>.
+        --          if <CountDot>, compute <Dot>: scalar production of
+        --          normalized  vectors  pointing  inside  faces,  and
+        --          check if faces are oriented well for sewing
+    
+    Normal (myclass; E : Edge from TopoDS;
+                     F : Face from TopoDS) returns Vec from gp;
+    
+    
+fields
+
+    myNewShells : ListOfShape from TopTools; -- result
+    
+    myFaces     : ListOfShape from TopTools;
+    myEFMap     : IndexedDataMapOfShapeListOfShape from TopTools;
+    
+end Loop3d;

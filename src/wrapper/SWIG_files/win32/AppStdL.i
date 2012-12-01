@@ -112,7 +112,7 @@ class AppStdL_Application : public TDocStd_Application {
 };
 %extend AppStdL_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AppStdL_Application::~AppStdL_Application %{

@@ -58,7 +58,6 @@ $HeaderURL$
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
 #include <Handle_V3d_AmbientLight.hxx>
-#include <Handle_V3d_Camera.hxx>
 #include <Handle_V3d_CircularGrid.hxx>
 #include <Handle_V3d_ColorScale.hxx>
 #include <Handle_V3d_ColorScaleLayerItem.hxx>
@@ -85,6 +84,8 @@ $HeaderURL$
 #include <NCollection_BaseVector.hxx>
 #include <NCollection_Comparator.hxx>
 #include <NCollection_DataMap.hxx>
+#include <NCollection_DefaultHasher.hxx>
+#include <NCollection_DefineAlloc.hxx>
 #include <NCollection_DefineArray1.hxx>
 #include <NCollection_DefineArray2.hxx>
 #include <NCollection_DefineBaseCollection.hxx>
@@ -231,11 +232,13 @@ $HeaderURL$
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
+#include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
+#include <Standard_DefineAlloc.hxx>
 #include <Standard_DefineException.hxx>
 #include <Standard_DefineHandle.hxx>
 #include <Standard_DimensionError.hxx>
@@ -289,12 +292,11 @@ $HeaderURL$
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
-#include <Standard_Static.hxx>
-#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
 #include <Standard_ThreadId.hxx>
+#include <Standard_Time.hxx>
 #include <Standard_TooManyUsers.hxx>
 #include <Standard_Transient.hxx>
 #include <Standard_Type.hxx>
@@ -307,7 +309,6 @@ $HeaderURL$
 #include <Standard_ctype.hxx>
 #include <Standard_math.hxx>
 #include <V3d_AmbientLight.hxx>
-#include <V3d_Camera.hxx>
 #include <V3d_CircularGrid.hxx>
 #include <V3d_ColorScale.hxx>
 #include <V3d_ColorScaleLayerItem.hxx>

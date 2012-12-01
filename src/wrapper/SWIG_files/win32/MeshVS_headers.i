@@ -205,6 +205,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -461,6 +462,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
@@ -492,7 +494,6 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WNT.hxx>
-#include<OSD_WNT_1.hxx>
 #include<OSD_WNT_BREAK.hxx>
 #include<OSD_WhoAmI.hxx>
 #include<Prs3d.hxx>
@@ -538,6 +539,34 @@ $HeaderURL$
 #include<PrsMgr_Prs.hxx>
 #include<PrsMgr_SequenceNodeOfPresentations.hxx>
 #include<PrsMgr_TypeOfPresentation3d.hxx>
+#include<Select2D_Projector.hxx>
+#include<Select2D_SensitiveArc.hxx>
+#include<Select2D_SensitiveBox.hxx>
+#include<Select2D_SensitiveCircle.hxx>
+#include<Select2D_SensitiveEntity.hxx>
+#include<Select2D_SensitivePoint.hxx>
+#include<Select2D_SensitiveSegment.hxx>
+#include<Select2D_TypeOfSelection.hxx>
+#include<StdSelect.hxx>
+#include<StdSelect_BRepHilighter.hxx>
+#include<StdSelect_BRepOwner.hxx>
+#include<StdSelect_BRepSelectionTool.hxx>
+#include<StdSelect_DisplayMode.hxx>
+#include<StdSelect_EdgeFilter.hxx>
+#include<StdSelect_FaceFilter.hxx>
+#include<StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs.hxx>
+#include<StdSelect_IndexedDataMapOfOwnerPrs.hxx>
+#include<StdSelect_Prs.hxx>
+#include<StdSelect_SensitiveText2d.hxx>
+#include<StdSelect_SensitivityMode.hxx>
+#include<StdSelect_Shape.hxx>
+#include<StdSelect_ShapeTypeFilter.hxx>
+#include<StdSelect_TextProjector2d.hxx>
+#include<StdSelect_TypeOfEdge.hxx>
+#include<StdSelect_TypeOfFace.hxx>
+#include<StdSelect_TypeOfResult.hxx>
+#include<StdSelect_ViewerSelector2d.hxx>
+#include<StdSelect_ViewerSelector3d.hxx>
 
 // Needed headers necessary for compilation.
 

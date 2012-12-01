@@ -49,8 +49,8 @@ $HeaderURL$
 
 %include TDF_headers.i
 
-typedef Handle_NCollection_BaseAllocator TDF_HAllocator;
 typedef TDF_LabelNode * TDF_LabelNodePtr;
+typedef Handle_NCollection_BaseAllocator TDF_HAllocator;
 
 
 
@@ -1492,7 +1492,7 @@ class TDF_AttributeDelta : public MMgt_TShared {
 };
 %extend TDF_AttributeDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_AttributeDelta::~TDF_AttributeDelta %{
@@ -1665,7 +1665,7 @@ class TDF_Attribute : public MMgt_TShared {
 };
 %extend TDF_Attribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_Attribute::~TDF_Attribute %{
@@ -1729,7 +1729,7 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfDeltaList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_ListNodeOfDeltaList::~TDF_ListNodeOfDeltaList %{
@@ -1770,7 +1770,7 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfGUIDProgIDMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DoubleMapNodeOfGUIDProgIDMap::~TDF_DoubleMapNodeOfGUIDProgIDMap %{
@@ -1816,6 +1816,10 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 		TDF_Label & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") TDF_LabelDataMap::~TDF_LabelDataMap %{
@@ -1848,7 +1852,7 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DeltaOnRemoval::~TDF_DeltaOnRemoval %{
@@ -1883,7 +1887,7 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TDF_DefaultDeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DefaultDeltaOnRemoval::~TDF_DefaultDeltaOnRemoval %{
@@ -1920,7 +1924,7 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 };
 %extend TDF_SequenceNodeOfLabelSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_SequenceNodeOfLabelSequence::~TDF_SequenceNodeOfLabelSequence %{
@@ -1957,7 +1961,7 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfAttributeDeltaList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_ListNodeOfAttributeDeltaList::~TDF_ListNodeOfAttributeDeltaList %{
@@ -2060,7 +2064,7 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DataMapNodeOfLabelDataMap::~TDF_DataMapNodeOfLabelDataMap %{
@@ -2109,7 +2113,7 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelIntegerMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DataMapNodeOfLabelIntegerMap::~TDF_DataMapNodeOfLabelIntegerMap %{
@@ -2257,7 +2261,7 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfLabelList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_ListNodeOfLabelList::~TDF_ListNodeOfLabelList %{
@@ -2294,7 +2298,7 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 };
 %extend TDF_SequenceNodeOfAttributeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_SequenceNodeOfAttributeSequence::~TDF_SequenceNodeOfAttributeSequence %{
@@ -2357,7 +2361,7 @@ class TDF_DataSet : public MMgt_TShared {
 };
 %extend TDF_DataSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DataSet::~TDF_DataSet %{
@@ -2478,7 +2482,7 @@ class TDF_TagSource : public TDF_Attribute {
 };
 %extend TDF_TagSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_TagSource::~TDF_TagSource %{
@@ -2548,7 +2552,7 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnForget {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DeltaOnForget::~TDF_DeltaOnForget %{
@@ -2616,7 +2620,7 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfAttributeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_StdMapNodeOfAttributeMap::~TDF_StdMapNodeOfAttributeMap %{
@@ -2653,7 +2657,7 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnResume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DeltaOnResume::~TDF_DeltaOnResume %{
@@ -2770,7 +2774,7 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DeltaOnModification::~TDF_DeltaOnModification %{
@@ -2875,7 +2879,7 @@ class TDF_RelocationTable : public MMgt_TShared {
 };
 %extend TDF_RelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_RelocationTable::~TDF_RelocationTable %{
@@ -2989,6 +2993,10 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 		TDF_Label & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") TDF_LabelLabelMap::~TDF_LabelLabelMap %{
@@ -3103,7 +3111,7 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfIDList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_ListNodeOfIDList::~TDF_ListNodeOfIDList %{
@@ -3142,7 +3150,7 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfAttributeDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DataMapNodeOfAttributeDataMap::~TDF_DataMapNodeOfAttributeDataMap %{
@@ -3181,7 +3189,7 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelLabelMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DataMapNodeOfLabelLabelMap::~TDF_DataMapNodeOfLabelLabelMap %{
@@ -3319,6 +3327,10 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 		Handle_TDF_Attribute & ChangeFind(const Handle_TDF_Attribute &K);
 		%feature("autodoc", "1");
 		Handle_TDF_Attribute & operator()(const Handle_TDF_Attribute &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_TDF_Attribute &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_TDF_Attribute &K);
 
 };
 %feature("shadow") TDF_AttributeDataMap::~TDF_AttributeDataMap %{
@@ -3501,7 +3513,7 @@ class TDF_Reference : public TDF_Attribute {
 };
 %extend TDF_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_Reference::~TDF_Reference %{
@@ -3607,7 +3619,7 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DoubleMapNodeOfAttributeDoubleMap::~TDF_DoubleMapNodeOfAttributeDoubleMap %{
@@ -3825,7 +3837,7 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfAttributeList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_ListNodeOfAttributeList::~TDF_ListNodeOfAttributeList %{
@@ -3917,7 +3929,7 @@ class TDF_Data : public MMgt_TShared {
 };
 %extend TDF_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_Data::~TDF_Data %{
@@ -4035,7 +4047,7 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 };
 %extend TDF_IndexedMapNodeOfAttributeIndexedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_IndexedMapNodeOfAttributeIndexedMap::~TDF_IndexedMapNodeOfAttributeIndexedMap %{
@@ -4361,7 +4373,7 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfLabelDoubleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DoubleMapNodeOfLabelDoubleMap::~TDF_DoubleMapNodeOfLabelDoubleMap %{
@@ -4427,7 +4439,7 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfIDMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_StdMapNodeOfIDMap::~TDF_StdMapNodeOfIDMap %{
@@ -4482,7 +4494,7 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 };
 %extend TDF_HAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_HAttributeArray1::~TDF_HAttributeArray1 %{
@@ -4548,7 +4560,7 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfLabelMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_StdMapNodeOfLabelMap::~TDF_StdMapNodeOfLabelMap %{
@@ -4585,7 +4597,7 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TDF_DefaultDeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DefaultDeltaOnModification::~TDF_DefaultDeltaOnModification %{
@@ -4689,7 +4701,7 @@ class TDF_Delta : public MMgt_TShared {
 };
 %extend TDF_Delta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_Delta::~TDF_Delta %{
@@ -4740,7 +4752,7 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 };
 %extend TDF_IndexedMapNodeOfLabelIndexedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_IndexedMapNodeOfLabelIndexedMap::~TDF_IndexedMapNodeOfLabelIndexedMap %{
@@ -4872,7 +4884,7 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnAddition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TDF_DeltaOnAddition::~TDF_DeltaOnAddition %{
@@ -4928,6 +4940,10 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") TDF_LabelIntegerMap::~TDF_LabelIntegerMap %{

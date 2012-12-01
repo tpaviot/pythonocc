@@ -1018,7 +1018,7 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 };
 %extend AppDef_MyCriterionOfTheVariational {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AppDef_MyCriterionOfTheVariational::~AppDef_MyCriterionOfTheVariational %{
@@ -1408,7 +1408,7 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 };
 %extend AppDef_HArray1OfMultiPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AppDef_HArray1OfMultiPointConstraint::~AppDef_HArray1OfMultiPointConstraint %{

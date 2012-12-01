@@ -51,7 +51,7 @@ $HeaderURL$
 
 typedef NCollection_TListIterator<Handle_Standard_Transient> AIS_NListIteratorOfListTransient;
 typedef NCollection_List<Handle_Standard_Transient> AIS_NListTransient;
-typedef NCollection_DataMap<Handle_Standard_Transient, NCollection_TListIterator<Handle_Standard_Transient> > AIS_NDataMapOfTransientIteratorOfListTransient;
+typedef NCollection_DataMap<Handle_Standard_Transient, NCollection_TListIterator<Handle_Standard_Transient>, NCollection_DefaultHasher<Handle_Standard_Transient> > AIS_NDataMapOfTransientIteratorOfListTransient;
 typedef AIS_InteractiveContext * AIS_PToContext;
 typedef NCollection_BaseCollection<NCollection_TListIterator<Handle_Standard_Transient> > AIS_BaseCollItListTransient;
 
@@ -2563,7 +2563,7 @@ class AIS_Drawer : public Prs3d_Drawer {
 };
 %extend AIS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Drawer::~AIS_Drawer %{
@@ -2576,6 +2576,59 @@ def __del__(self):
 %}
 
 %extend AIS_Drawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_AttributeFilter;
+class AIS_AttributeFilter : public SelectMgr_Filter {
+	public:
+		%feature("autodoc", "1");
+		AIS_AttributeFilter();
+		%feature("autodoc", "1");
+		AIS_AttributeFilter(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		AIS_AttributeFilter(const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Standard_Boolean HasColor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasWidth() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Real aWid);
+		%feature("autodoc", "1");
+		void UnsetColor();
+		%feature("autodoc", "1");
+		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_AttributeFilter {
+	Handle_AIS_AttributeFilter GetHandle() {
+	return *(Handle_AIS_AttributeFilter*) &$self;
+	}
+};
+%extend AIS_AttributeFilter {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_AttributeFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2743,7 +2796,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 };
 %extend AIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_InteractiveObject::~AIS_InteractiveObject %{
@@ -2822,7 +2875,7 @@ class AIS_Relation : public AIS_InteractiveObject {
 };
 %extend AIS_Relation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Relation::~AIS_Relation %{
@@ -2863,7 +2916,7 @@ class AIS_DiameterDimension : public AIS_Relation {
 };
 %extend AIS_DiameterDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DiameterDimension::~AIS_DiameterDimension %{
@@ -2902,7 +2955,7 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 };
 %extend AIS_EllipseRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_EllipseRadiusDimension::~AIS_EllipseRadiusDimension %{
@@ -2941,7 +2994,7 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfSelStat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfSelStat::~AIS_DataMapNodeOfDataMapOfSelStat %{
@@ -2987,6 +3040,10 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 		Handle_AIS_LocalStatus & ChangeFind(const Handle_SelectMgr_SelectableObject &K);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalStatus & operator()(const Handle_SelectMgr_SelectableObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_SelectMgr_SelectableObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_SelectMgr_SelectableObject &K);
 
 };
 %feature("shadow") AIS_DataMapOfSelStat::~AIS_DataMapOfSelStat %{
@@ -3047,7 +3104,7 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 };
 %extend AIS_ExclusionFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ExclusionFilter::~AIS_ExclusionFilter %{
@@ -3131,49 +3188,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Triangulation;
-class AIS_Triangulation : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Triangulation(const Handle_Poly_Triangulation &aTriangulation);
-		%feature("autodoc", "1");
-		void SetColors(const Handle_TColStd_HArray1OfInteger &aColor);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger GetColors() const;
-		%feature("autodoc", "1");
-		void SetTriangulation(const Handle_Poly_Triangulation &aTriangulation);
-		%feature("autodoc", "1");
-		Handle_Poly_Triangulation GetTriangulation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Triangulation {
-	Handle_AIS_Triangulation GetHandle() {
-	return *(Handle_AIS_Triangulation*) &$self;
-	}
-};
-%extend AIS_Triangulation {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Triangulation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapNode {
 	public:
@@ -3208,7 +3222,7 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 };
 %extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs %{
@@ -3323,7 +3337,7 @@ class AIS_Shape : public AIS_InteractiveObject {
 };
 %extend AIS_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Shape::~AIS_Shape %{
@@ -3404,7 +3418,7 @@ class AIS_TexturedShape : public AIS_Shape {
 };
 %extend AIS_TexturedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
@@ -3461,6 +3475,8 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
+		virtual		void SetLocation(const TopLoc_Location &aLoc);
+		%feature("autodoc", "1");
 		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
 		virtual		AIS_KindOfInteractive Type() const;
@@ -3497,7 +3513,7 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 };
 %extend AIS_Trihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Trihedron::~AIS_Trihedron %{
@@ -3626,7 +3642,7 @@ class AIS_Circle : public AIS_InteractiveObject {
 };
 %extend AIS_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Circle::~AIS_Circle %{
@@ -3687,7 +3703,7 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 };
 %extend AIS_ConnectedInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
@@ -3763,7 +3779,7 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 };
 %extend AIS_BadEdgeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_BadEdgeFilter::~AIS_BadEdgeFilter %{
@@ -3809,6 +3825,10 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 		Handle_AIS_GlobalStatus & ChangeFind(const Handle_AIS_InteractiveObject &K);
 		%feature("autodoc", "1");
 		Handle_AIS_GlobalStatus & operator()(const Handle_AIS_InteractiveObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_AIS_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_AIS_InteractiveObject &K);
 
 };
 %feature("shadow") AIS_DataMapOfIOStatus::~AIS_DataMapOfIOStatus %{
@@ -3845,7 +3865,7 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 };
 %extend AIS_TypeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_TypeFilter::~AIS_TypeFilter %{
@@ -3878,7 +3898,7 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 };
 %extend AIS_SignatureFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_SignatureFilter::~AIS_SignatureFilter %{
@@ -3921,7 +3941,7 @@ class AIS_OffsetDimension : public AIS_Relation {
 };
 %extend AIS_OffsetDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_OffsetDimension::~AIS_OffsetDimension %{
@@ -3994,7 +4014,7 @@ class AIS_Axis : public AIS_InteractiveObject {
 };
 %extend AIS_Axis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Axis::~AIS_Axis %{
@@ -4075,7 +4095,7 @@ class AIS_LocalStatus : public MMgt_TShared {
 };
 %extend AIS_LocalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_LocalStatus::~AIS_LocalStatus %{
@@ -4124,7 +4144,7 @@ class AIS_FixRelation : public AIS_Relation {
 };
 %extend AIS_FixRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_FixRelation::~AIS_FixRelation %{
@@ -4165,7 +4185,7 @@ class AIS_ParallelRelation : public AIS_Relation {
 };
 %extend AIS_ParallelRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ParallelRelation::~AIS_ParallelRelation %{
@@ -4235,7 +4255,7 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 };
 %extend AIS_PerpendicularRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_PerpendicularRelation::~AIS_PerpendicularRelation %{
@@ -4278,7 +4298,7 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 };
 %extend AIS_Chamf3dDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Chamf3dDimension::~AIS_Chamf3dDimension %{
@@ -4333,7 +4353,7 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 };
 %extend AIS_MultipleConnectedInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MultipleConnectedInteractive::~AIS_MultipleConnectedInteractive %{
@@ -4376,7 +4396,7 @@ class AIS_MidPointRelation : public AIS_Relation {
 };
 %extend AIS_MidPointRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MidPointRelation::~AIS_MidPointRelation %{
@@ -4432,6 +4452,10 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 		const Handle_Prs3d_Presentation & FindFromKey(const Handle_SelectMgr_EntityOwner &K) const;
 		%feature("autodoc", "1");
 		Handle_Prs3d_Presentation & ChangeFromKey(const Handle_SelectMgr_EntityOwner &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_SelectMgr_EntityOwner &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_SelectMgr_EntityOwner &K);
 
 };
 %feature("shadow") AIS_IndexedDataMapOfOwnerPrs::~AIS_IndexedDataMapOfOwnerPrs %{
@@ -4532,7 +4556,7 @@ class AIS_Point : public AIS_InteractiveObject {
 };
 %extend AIS_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Point::~AIS_Point %{
@@ -4606,7 +4630,7 @@ class AIS_Chamf2dDimension : public AIS_Relation {
 };
 %extend AIS_Chamf2dDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
@@ -4717,7 +4741,7 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 };
 %extend AIS_C0RegularityFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_C0RegularityFilter::~AIS_C0RegularityFilter %{
@@ -4730,59 +4754,6 @@ def __del__(self):
 %}
 
 %extend AIS_C0RegularityFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_AttributeFilter;
-class AIS_AttributeFilter : public SelectMgr_Filter {
-	public:
-		%feature("autodoc", "1");
-		AIS_AttributeFilter();
-		%feature("autodoc", "1");
-		AIS_AttributeFilter(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		AIS_AttributeFilter(const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Standard_Boolean HasColor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasWidth() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aWid);
-		%feature("autodoc", "1");
-		void UnsetColor();
-		%feature("autodoc", "1");
-		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_AttributeFilter {
-	Handle_AIS_AttributeFilter GetHandle() {
-	return *(Handle_AIS_AttributeFilter*) &$self;
-	}
-};
-%extend AIS_AttributeFilter {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_AttributeFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4807,7 +4778,7 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 };
 %extend AIS_ListNodeOfListOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ListNodeOfListOfInteractive::~AIS_ListNodeOfListOfInteractive %{
@@ -4907,7 +4878,7 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfIOStatus::~AIS_DataMapNodeOfDataMapOfIOStatus %{
@@ -4946,7 +4917,7 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 };
 %extend AIS_DimensionOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DimensionOwner::~AIS_DimensionOwner %{
@@ -5011,7 +4982,7 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 };
 %extend AIS_PlaneTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
@@ -5172,6 +5143,10 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anObject, const Standard_Integer Prior);
 		%feature("autodoc", "1");
+		void SetZLayer(const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		Standard_Integer GetZLayer(const Handle_AIS_InteractiveObject &theIObj) const;
+		%feature("autodoc", "1");
 		Standard_Integer DisplayedObjects(TColStd_MapOfTransient & theMapToFill) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsIn(const Handle_AIS_InteractiveObject &anObject) const;
@@ -5196,9 +5171,17 @@ class AIS_LocalContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsHilighted(const Handle_AIS_InteractiveObject &anObject, Standard_Boolean & WithColor, Quantity_NameOfColor & HiCol) const;
 		%feature("autodoc", "1");
+		void SetSensitivityMode(const StdSelect_SensitivityMode aMode);
+		%feature("autodoc", "1");
+		StdSelect_SensitivityMode SensitivityMode() const;
+		%feature("autodoc", "1");
 		void SetSensitivity(const Standard_Real aPrecision);
 		%feature("autodoc", "1");
-		void SetSensitivity(const Standard_Integer aPrecision=2);
+		Standard_Real Sensitivity() const;
+		%feature("autodoc", "1");
+		void SetPixelTolerance(const Standard_Integer aPrecision=2);
+		%feature("autodoc", "1");
+		Standard_Integer PixelTolerance() const;
 		%feature("autodoc", "1");
 		Standard_Boolean BeginImmediateDraw();
 		%feature("autodoc", "1");
@@ -5242,7 +5225,7 @@ class AIS_LocalContext : public MMgt_TShared {
 };
 %extend AIS_LocalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_LocalContext::~AIS_LocalContext %{
@@ -5291,7 +5274,7 @@ class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfILC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapOfILC::~AIS_DataMapNodeOfDataMapOfILC %{
@@ -5422,7 +5405,7 @@ class AIS_Plane : public AIS_InteractiveObject {
 };
 %extend AIS_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Plane::~AIS_Plane %{
@@ -5459,7 +5442,7 @@ class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
 };
 %extend AIS_SequenceNodeOfSequenceOfDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_SequenceNodeOfSequenceOfDimension::~AIS_SequenceNodeOfSequenceOfDimension %{
@@ -5472,6 +5455,49 @@ def __del__(self):
 %}
 
 %extend AIS_SequenceNodeOfSequenceOfDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Triangulation;
+class AIS_Triangulation : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Triangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		void SetColors(const Handle_TColStd_HArray1OfInteger &aColor);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger GetColors() const;
+		%feature("autodoc", "1");
+		void SetTriangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		Handle_Poly_Triangulation GetTriangulation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Triangulation {
+	Handle_AIS_Triangulation GetHandle() {
+	return *(Handle_AIS_Triangulation*) &$self;
+	}
+};
+%extend AIS_Triangulation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Triangulation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5529,7 +5555,7 @@ class AIS_ConcentricRelation : public AIS_Relation {
 };
 %extend AIS_ConcentricRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ConcentricRelation::~AIS_ConcentricRelation %{
@@ -5590,7 +5616,7 @@ class AIS_Line : public AIS_InteractiveObject {
 };
 %extend AIS_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Line::~AIS_Line %{
@@ -5629,7 +5655,7 @@ class AIS_IdenticRelation : public AIS_Relation {
 };
 %extend AIS_IdenticRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_IdenticRelation::~AIS_IdenticRelation %{
@@ -5704,7 +5730,7 @@ class AIS_Selection : public MMgt_TShared {
 };
 %extend AIS_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_Selection::~AIS_Selection %{
@@ -5741,7 +5767,7 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 };
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_SequenceNodeOfSequenceOfInteractive::~AIS_SequenceNodeOfSequenceOfInteractive %{
@@ -5778,7 +5804,7 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 };
 %extend AIS_StdMapNodeOfMapOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
@@ -5824,6 +5850,10 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 		AIS_ListOfInteractive & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		AIS_ListOfInteractive & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") AIS_DataMapofIntegerListOfinteractive::~AIS_DataMapofIntegerListOfinteractive %{
@@ -5866,7 +5896,7 @@ class AIS_SymmetricRelation : public AIS_Relation {
 };
 %extend AIS_SymmetricRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_SymmetricRelation::~AIS_SymmetricRelation %{
@@ -5941,7 +5971,7 @@ class AIS_GlobalStatus : public MMgt_TShared {
 };
 %extend AIS_GlobalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
@@ -6049,6 +6079,10 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetDisplayPriority(const Handle_AIS_InteractiveObject &anIobj, const Standard_Integer aPriority);
 		%feature("autodoc", "1");
+		void SetZLayer(const Handle_AIS_InteractiveObject &theIObj, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		Standard_Integer GetZLayer(const Handle_AIS_InteractiveObject &theIObj) const;
+		%feature("autodoc", "1");
 		void Redisplay(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1, const Standard_Boolean allmodes=0);
 		%feature("autodoc", "1");
 		void Redisplay(const AIS_KindOfInteractive aTypeOfObject, const Standard_Integer Signature=-0x000000001, const Standard_Boolean updateviewer=1);
@@ -6067,9 +6101,17 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UnsetSelectionMode(const Handle_AIS_InteractiveObject &aniobj);
 		%feature("autodoc", "1");
+		void SetSensitivityMode(const StdSelect_SensitivityMode aMode);
+		%feature("autodoc", "1");
+		StdSelect_SensitivityMode SensitivityMode() const;
+		%feature("autodoc", "1");
 		void SetSensitivity(const Standard_Real aPrecision);
 		%feature("autodoc", "1");
-		void SetSensitivity(const Standard_Integer aPrecision=4);
+		Standard_Real Sensitivity() const;
+		%feature("autodoc", "1");
+		void SetPixelTolerance(const Standard_Integer aPrecision=4);
+		%feature("autodoc", "1");
+		Standard_Integer PixelTolerance() const;
 		%feature("autodoc", "1");
 		void SetLocation(const Handle_AIS_InteractiveObject &aniobj, const TopLoc_Location &aLocation);
 		%feature("autodoc", "1");
@@ -6494,7 +6536,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 };
 %extend AIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_InteractiveContext::~AIS_InteractiveContext %{
@@ -6541,7 +6583,7 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 };
 %extend AIS_MultipleConnectedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MultipleConnectedShape::~AIS_MultipleConnectedShape %{
@@ -6590,7 +6632,7 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 };
 %extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_DataMapNodeOfDataMapofIntegerListOfinteractive::~AIS_DataMapNodeOfDataMapofIntegerListOfinteractive %{
@@ -6655,7 +6697,7 @@ class AIS_AngleDimension : public AIS_Relation {
 };
 %extend AIS_AngleDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_AngleDimension::~AIS_AngleDimension %{
@@ -6701,6 +6743,10 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 		Handle_AIS_LocalContext & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_AIS_LocalContext & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") AIS_DataMapOfILC::~AIS_DataMapOfILC %{
@@ -6741,7 +6787,7 @@ class AIS_TangentRelation : public AIS_Relation {
 };
 %extend AIS_TangentRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_TangentRelation::~AIS_TangentRelation %{
@@ -6778,7 +6824,7 @@ class AIS_EqualRadiusRelation : public AIS_Relation {
 };
 %extend AIS_EqualRadiusRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_EqualRadiusRelation::~AIS_EqualRadiusRelation %{
@@ -6827,7 +6873,7 @@ class AIS_RadiusDimension : public AIS_Relation {
 };
 %extend AIS_RadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_RadiusDimension::~AIS_RadiusDimension %{
@@ -6907,7 +6953,7 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 };
 %extend AIS_EqualDistanceRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_EqualDistanceRelation::~AIS_EqualDistanceRelation %{
@@ -6946,8 +6992,6 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 		%feature("autodoc", "1");
 		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager3d &aPresentationManager, const Handle_Prs3d_Presentation &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
 		const TopoDS_Shape  Shape();
@@ -6962,7 +7006,7 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 };
 %extend AIS_ConnectedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
@@ -7001,7 +7045,7 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %extend AIS_MaxRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MaxRadiusDimension::~AIS_MaxRadiusDimension %{
@@ -7067,7 +7111,7 @@ class AIS_LengthDimension : public AIS_Relation {
 };
 %extend AIS_LengthDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_LengthDimension::~AIS_LengthDimension %{
@@ -7106,7 +7150,7 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %extend AIS_MinRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS_MinRadiusDimension::~AIS_MinRadiusDimension %{

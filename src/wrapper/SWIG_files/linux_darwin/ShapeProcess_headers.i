@@ -103,7 +103,6 @@ $HeaderURL$
 #include<Geom2dInt_GInter.hxx>
 #include<Geom2dInt_Geom2dCurveTool.hxx>
 #include<Geom2dInt_IntConicCurveOfGInter.hxx>
-#include<Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter.hxx>
@@ -115,7 +114,6 @@ $HeaderURL$
 #include<Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter.hxx>
 #include<Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter.hxx>
 #include<Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter.hxx>
-#include<Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter.hxx>
 #include<Geom2dInt_TheProjPCurOfGInter.hxx>
 #include<Geom2dLProp_CLProps2d.hxx>
 #include<Geom2dLProp_CurAndInf2d.hxx>
@@ -459,6 +457,7 @@ $HeaderURL$
 #include<TCollection_AsciiString.hxx>
 #include<Handle_Resource_Manager.hxx>
 #include<Handle_Message_Messenger.hxx>
+#include<Handle_Message_ProgressIndicator.hxx>
 #include<Handle_ShapeBuild_ReShape.hxx>
 #include<Handle_ShapeExtend_MsgRegistrator.hxx>
 #include<BRepTools_Modifier.hxx>

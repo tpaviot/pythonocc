@@ -106,7 +106,7 @@ class IntStart_SITopolTool : public MMgt_TShared {
 };
 %extend IntStart_SITopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntStart_SITopolTool::~IntStart_SITopolTool %{

@@ -198,7 +198,7 @@ class GraphTools_SC : public MMgt_TShared {
 };
 %extend GraphTools_SC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GraphTools_SC::~GraphTools_SC %{
@@ -499,7 +499,7 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 };
 %extend GraphTools_ListNodeOfSCList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GraphTools_ListNodeOfSCList::~GraphTools_ListNodeOfSCList %{
@@ -536,7 +536,7 @@ class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode 
 };
 %extend GraphTools_ListNodeOfListOfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GraphTools_ListNodeOfListOfSequenceOfInteger::~GraphTools_ListNodeOfListOfSequenceOfInteger %{

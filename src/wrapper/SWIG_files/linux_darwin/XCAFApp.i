@@ -112,7 +112,7 @@ class XCAFApp_Application : public TDocStd_Application {
 };
 %extend XCAFApp_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFApp_Application::~XCAFApp_Application %{
@@ -135,3 +135,6 @@ Handle_XCAFApp_Application GetApplication()
 return XCAFApp_Application::GetApplication();
 }
 %}
+%extend XCAFApp_Application {
+	XCAFApp_Application () {}
+};

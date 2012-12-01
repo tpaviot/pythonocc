@@ -248,9 +248,3 @@ $HeaderURL$
 %rename(NbSamplesV) HLRBRep_SurfaceTool::NbSamplesV;
 %rename(AddInterference) HLRBRep_EdgeIList::AddInterference;
 %rename(ProcessComplex) HLRBRep_EdgeIList::ProcessComplex;
-%rename(Bounding) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::Bounding;
-%rename(DeflectionOverEstimation) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::DeflectionOverEstimation;
-%rename(Closed) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::Closed;
-%rename(NbSegments) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::NbSegments;
-%rename(BeginOfSeg) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::BeginOfSeg;
-%rename(EndOfSeg) HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::EndOfSeg;

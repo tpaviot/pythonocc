@@ -1253,7 +1253,7 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGeom_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_ReadWriteModule::~IGESGeom_ReadWriteModule %{
@@ -1292,7 +1292,7 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESGeom_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SpecificModule::~IGESGeom_SpecificModule %{
@@ -1335,7 +1335,7 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 };
 %extend IGESGeom_TabulatedCylinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_TabulatedCylinder::~IGESGeom_TabulatedCylinder %{
@@ -1390,7 +1390,7 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Boundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Boundary::~IGESGeom_Boundary %{
@@ -1431,7 +1431,7 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Direction::~IGESGeom_Direction %{
@@ -1517,7 +1517,7 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_TrimmedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_TrimmedSurface::~IGESGeom_TrimmedSurface %{
@@ -1603,7 +1603,7 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Line::~IGESGeom_Line %{
@@ -1656,7 +1656,7 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Flash {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Flash::~IGESGeom_Flash %{
@@ -1740,7 +1740,7 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CurveOnSurface::~IGESGeom_CurveOnSurface %{
@@ -1826,7 +1826,7 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_RuledSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_RuledSurface::~IGESGeom_RuledSurface %{
@@ -1871,7 +1871,7 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Point::~IGESGeom_Point %{
@@ -2031,7 +2031,7 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_OffsetSurface::~IGESGeom_OffsetSurface %{
@@ -2076,7 +2076,7 @@ class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_BoundedSurface::~IGESGeom_BoundedSurface %{
@@ -2195,7 +2195,7 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_HArray1OfBoundary::~IGESGeom_HArray1OfBoundary %{
@@ -2346,7 +2346,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 };
 %extend IGESGeom_ConicArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_ConicArc::~IGESGeom_ConicArc %{
@@ -2405,7 +2405,7 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_Plane::~IGESGeom_Plane %{
@@ -2462,7 +2462,7 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SplineSurface::~IGESGeom_SplineSurface %{
@@ -2577,7 +2577,7 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CompositeCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CompositeCurve::~IGESGeom_CompositeCurve %{
@@ -2698,7 +2698,7 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SurfaceOfRevolution::~IGESGeom_SurfaceOfRevolution %{
@@ -2781,7 +2781,7 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_BSplineSurface::~IGESGeom_BSplineSurface %{
@@ -2865,7 +2865,7 @@ class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESGeom_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_GeneralModule::~IGESGeom_GeneralModule %{
@@ -2908,7 +2908,7 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 };
 %extend IGESGeom_TransformationMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_TransformationMatrix::~IGESGeom_TransformationMatrix %{
@@ -2963,7 +2963,7 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_HArray1OfCurveOnSurface::~IGESGeom_HArray1OfCurveOnSurface %{
@@ -3026,7 +3026,7 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CopiousData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CopiousData::~IGESGeom_CopiousData %{
@@ -3165,7 +3165,7 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_SplineCurve::~IGESGeom_SplineCurve %{
@@ -3257,7 +3257,7 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfTransformationMatrix {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_HArray1OfTransformationMatrix::~IGESGeom_HArray1OfTransformationMatrix %{
@@ -3318,7 +3318,7 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CircularArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_CircularArc::~IGESGeom_CircularArc %{
@@ -3602,7 +3602,7 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_BSplineCurve::~IGESGeom_BSplineCurve %{
@@ -3758,7 +3758,7 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGeom_OffsetCurve::~IGESGeom_OffsetCurve %{

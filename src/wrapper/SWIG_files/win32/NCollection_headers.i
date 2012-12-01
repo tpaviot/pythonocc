@@ -37,6 +37,8 @@ $HeaderURL$
 #include<NCollection_BaseVector.hxx>
 #include<NCollection_Comparator.hxx>
 #include<NCollection_DataMap.hxx>
+#include<NCollection_DefaultHasher.hxx>
+#include<NCollection_DefineAlloc.hxx>
 #include<NCollection_DefineArray1.hxx>
 #include<NCollection_DefineArray2.hxx>
 #include<NCollection_DefineBaseCollection.hxx>

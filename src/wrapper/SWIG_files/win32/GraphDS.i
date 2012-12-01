@@ -122,7 +122,7 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 };
 %extend GraphDS_DataMapNodeOfEntityRoleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GraphDS_DataMapNodeOfEntityRoleMap::~GraphDS_DataMapNodeOfEntityRoleMap %{
@@ -168,6 +168,10 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 		GraphDS_EntityRole & ChangeFind(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		GraphDS_EntityRole & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") GraphDS_EntityRoleMap::~GraphDS_EntityRoleMap %{

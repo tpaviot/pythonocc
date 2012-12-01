@@ -28,20 +28,17 @@
 #include "TColStd_HSequenceOfTransient.hxx"
 #include "TColStd_HArray1OfInteger.hxx"
 
+#define SHAPE_ARG_SHAPES    1 // for Wire, Shell, Solid and Compound
+#define SHAPE_ARG_BASE      2 // for Face, Solid and Sub-shape
+#define SHAPE_ARG_PLANAR    3 // for Face
+#define SHAPE_ARG_SUBTYPE   4 // for Sub-shape
+#define SHAPE_ARG_INDICES   5 // for Sub-shape
+#define SHAPE_ARG_TOLERANCE 6 // linear tolerance (for Wire, Edge)
+#define SHAPE_ARG_ANGLE_TOL 7 // angular tolerance (for Edge)
+
 class GEOMImpl_IShapes
 {
  public:
-
-  enum {
-    SHAPE_ARG_SHAPES    = 1, // for Wire, Shell, Solid and Compound
-    SHAPE_ARG_BASE      = 2, // for Face, Solid and Sub-shape
-    SHAPE_ARG_PLANAR    = 3, // for Face
-    SHAPE_ARG_SUBTYPE   = 4, // for Sub-shape
-    SHAPE_ARG_INDICES   = 5, // for Sub-shape
-    SHAPE_ARG_TOLERANCE = 6, // linear tolerance (for Wire, Edge)
-    SHAPE_ARG_ANGLE_TOL = 7, // angular tolerance (for Edge)
-  };
-
   GEOMImpl_IShapes(Handle(GEOM_Function) theFunction): _func(theFunction) {}
 
   void SetShapes(const Handle(TColStd_HSequenceOfTransient)& theShapes)

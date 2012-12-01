@@ -465,7 +465,7 @@ class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfCharacter::~DBC_VArrayNodeOfVArrayOfCharacter %{
@@ -563,7 +563,7 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfReal::~DBC_VArrayNodeOfVArrayOfReal %{
@@ -680,7 +680,7 @@ class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfInteger::~DBC_VArrayNodeOfVArrayOfInteger %{
@@ -727,7 +727,7 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 };
 %extend DBC_VArrayNodeOfVArrayOfExtCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") DBC_VArrayNodeOfVArrayOfExtCharacter::~DBC_VArrayNodeOfVArrayOfExtCharacter %{

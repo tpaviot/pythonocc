@@ -342,6 +342,10 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 		TColgp_SequenceOfPnt2d & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TColgp_SequenceOfPnt2d & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepTools_MapOfVertexPnt2d::~BRepTools_MapOfVertexPnt2d %{
@@ -416,7 +420,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %extend BRepTools_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_ReShape::~BRepTools_ReShape %{
@@ -579,7 +583,7 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %extend BRepTools_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_Modification::~BRepTools_Modification %{
@@ -614,7 +618,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_TrsfModification::~BRepTools_TrsfModification %{
@@ -675,6 +679,8 @@ class BRepTools {
 		static		void UpdateFaceUVPoints(const TopoDS_Face F);
 		%feature("autodoc", "1");
 		static		void Clean(const TopoDS_Shape S);
+		%feature("autodoc", "1");
+		static		void RemoveUnusedPCurves(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		static		Standard_Boolean Triangulation(const TopoDS_Shape S, const Standard_Real deflec);
 		%feature("autodoc", "1");
@@ -752,7 +758,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_GTrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_GTrsfModification::~BRepTools_GTrsfModification %{
@@ -933,7 +939,7 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_DataMapNodeOfMapOfVertexPnt2d::~BRepTools_DataMapNodeOfMapOfVertexPnt2d %{
@@ -985,7 +991,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %extend BRepTools_NurbsConvertModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepTools_NurbsConvertModification::~BRepTools_NurbsConvertModification %{

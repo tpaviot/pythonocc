@@ -34,5 +34,4 @@ $HeaderURL$
 %rename(DownCast) Handle_Xw_Window::DownCast;
 %rename(DownCast) Handle_Xw_IconBox::DownCast;
 %rename(DownCast) Handle_Xw_TypeMap::DownCast;
-%rename(DownCast) Handle_Xw_PixMap::DownCast;
 %rename(SetTrace) Xw::SetTrace;

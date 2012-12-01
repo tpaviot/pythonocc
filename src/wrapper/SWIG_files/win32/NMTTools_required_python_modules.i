@@ -32,7 +32,5 @@ import TopoDS
 import NMTDS
 import IntTools
 import BOPTools
-import TCollection
 import TColStd
-import TopTools
 };

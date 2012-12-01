@@ -521,7 +521,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfRINames : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfRINames {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRINames::~StepToTopoDS_DataMapNodeOfDataMapOfRINames %{
@@ -591,7 +591,7 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfPointEdgeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointEdgeMap::~StepToTopoDS_DataMapNodeOfPointEdgeMap %{
@@ -688,7 +688,7 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfPointVertexMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfPointVertexMap::~StepToTopoDS_DataMapNodeOfPointVertexMap %{
@@ -734,6 +734,10 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_StepShape_TopologicalRepresentationItem &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_StepShape_TopologicalRepresentationItem &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepShape_TopologicalRepresentationItem &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepShape_TopologicalRepresentationItem &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfTRI::~StepToTopoDS_DataMapOfTRI %{
@@ -810,6 +814,10 @@ class StepToTopoDS_DataMapOfRINames : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const TCollection_AsciiString &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfRINames::~StepToTopoDS_DataMapOfRINames %{
@@ -843,6 +851,8 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 		Standard_Boolean Init(const Handle_StepGeom_CompositeCurve &CC, const Handle_Transfer_TransientProcess &TP, const Handle_StepGeom_Surface &S, const Handle_Geom_Surface &Surf);
 		%feature("autodoc", "1");
 		const TopoDS_Wire  Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsInfiniteSegment() const;
 
 };
 %feature("shadow") StepToTopoDS_TranslateCompositeCurve::~StepToTopoDS_TranslateCompositeCurve %{
@@ -888,6 +898,10 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 		TopoDS_Vertex  ChangeFind(const Handle_StepGeom_CartesianPoint &K);
 		%feature("autodoc", "1");
 		TopoDS_Vertex  operator()(const Handle_StepGeom_CartesianPoint &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepGeom_CartesianPoint &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepGeom_CartesianPoint &K);
 
 };
 %feature("shadow") StepToTopoDS_PointVertexMap::~StepToTopoDS_PointVertexMap %{
@@ -949,7 +963,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfRI : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfRI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfRI::~StepToTopoDS_DataMapNodeOfDataMapOfRI %{
@@ -1233,6 +1247,10 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 		TopoDS_Edge  ChangeFind(const StepToTopoDS_PointPair &K);
 		%feature("autodoc", "1");
 		TopoDS_Edge  operator()(const StepToTopoDS_PointPair &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const StepToTopoDS_PointPair &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const StepToTopoDS_PointPair &K);
 
 };
 %feature("shadow") StepToTopoDS_PointEdgeMap::~StepToTopoDS_PointEdgeMap %{
@@ -1333,7 +1351,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 };
 %extend StepToTopoDS_DataMapNodeOfDataMapOfTRI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepToTopoDS_DataMapNodeOfDataMapOfTRI::~StepToTopoDS_DataMapNodeOfDataMapOfTRI %{
@@ -1480,6 +1498,10 @@ class StepToTopoDS_DataMapOfRI : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const Handle_StepRepr_RepresentationItem &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const Handle_StepRepr_RepresentationItem &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepRepr_RepresentationItem &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepRepr_RepresentationItem &K);
 
 };
 %feature("shadow") StepToTopoDS_DataMapOfRI::~StepToTopoDS_DataMapOfRI %{

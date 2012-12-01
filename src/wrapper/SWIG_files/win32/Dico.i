@@ -276,7 +276,7 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Dico_DictionaryOfInteger::~Dico_DictionaryOfInteger %{
@@ -356,7 +356,7 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfInteger::~Dico_StackItemOfDictionaryOfInteger %{
@@ -399,7 +399,7 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Dico_StackItemOfDictionaryOfTransient::~Dico_StackItemOfDictionaryOfTransient %{
@@ -468,7 +468,7 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Dico_DictionaryOfTransient::~Dico_DictionaryOfTransient %{

@@ -197,7 +197,7 @@ class NCollection_BaseAllocator : public MMgt_TShared {
 };
 %extend NCollection_BaseAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_BaseAllocator::~NCollection_BaseAllocator %{
@@ -239,7 +239,7 @@ class NCollection_HeapAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_HeapAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_HeapAllocator::~NCollection_HeapAllocator %{
@@ -401,7 +401,7 @@ class NCollection_IncAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_IncAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_IncAllocator::~NCollection_IncAllocator %{

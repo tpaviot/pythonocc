@@ -119,7 +119,7 @@ class PS_Driver : public PlotMgt_PlotterDriver {
 };
 %extend PS_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PS_Driver::~PS_Driver %{

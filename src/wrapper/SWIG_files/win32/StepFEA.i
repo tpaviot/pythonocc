@@ -2777,7 +2777,7 @@ class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 };
 %extend StepFEA_SymmetricTensor43dMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SymmetricTensor43dMember::~StepFEA_SymmetricTensor43dMember %{
@@ -2832,7 +2832,7 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementEndOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementEndOffset::~StepFEA_HArray1OfCurveElementEndOffset %{
@@ -2867,7 +2867,7 @@ class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_Representa
 };
 %extend StepFEA_FeaMaterialPropertyRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaMaterialPropertyRepresentationItem::~StepFEA_FeaMaterialPropertyRepresentationItem %{
@@ -2912,7 +2912,7 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_FeaSurfaceSectionGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaSurfaceSectionGeometricRelationship::~StepFEA_FeaSurfaceSectionGeometricRelationship %{
@@ -2991,7 +2991,7 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfElementRepresentation::~StepFEA_HSequenceOfElementRepresentation %{
@@ -3028,7 +3028,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementRepresentation::~StepFEA_SequenceNodeOfSequenceOfElementRepresentation %{
@@ -3124,7 +3124,7 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 };
 %extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaSecantCoefficientOfLinearThermalExpansion::~StepFEA_FeaSecantCoefficientOfLinearThermalExpansion %{
@@ -3165,7 +3165,7 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 };
 %extend StepFEA_FeaParametricPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaParametricPoint::~StepFEA_FeaParametricPoint %{
@@ -3210,7 +3210,7 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementEndRelease {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementEndRelease::~StepFEA_CurveElementEndRelease %{
@@ -3245,7 +3245,7 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepFEA_FeaRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaRepresentationItem::~StepFEA_FeaRepresentationItem %{
@@ -3288,7 +3288,7 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 };
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ParametricSurface3dElementCoordinateSystem::~StepFEA_ParametricSurface3dElementCoordinateSystem %{
@@ -3323,7 +3323,7 @@ class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialProper
 };
 %extend StepFEA_FeaMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaMaterialPropertyRepresentation::~StepFEA_FeaMaterialPropertyRepresentation %{
@@ -3364,7 +3364,7 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementLocation::~StepFEA_CurveElementLocation %{
@@ -3472,7 +3472,7 @@ class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 };
 %extend StepFEA_DegreeOfFreedomMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_DegreeOfFreedomMember::~StepFEA_DegreeOfFreedomMember %{
@@ -3551,7 +3551,7 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfElementGeometricRelationship::~StepFEA_HSequenceOfElementGeometricRelationship %{
@@ -3643,7 +3643,7 @@ class StepFEA_NodeRepresentation : public StepRepr_Representation {
 };
 %extend StepFEA_NodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeRepresentation::~StepFEA_NodeRepresentation %{
@@ -3676,7 +3676,7 @@ class StepFEA_Node : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_Node::~StepFEA_Node %{
@@ -3731,7 +3731,7 @@ class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementInterval::~StepFEA_HArray1OfCurveElementInterval %{
@@ -3786,7 +3786,7 @@ class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfElementRepresentation::~StepFEA_HArray1OfElementRepresentation %{
@@ -3827,7 +3827,7 @@ class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepr
 };
 %extend StepFEA_FeaShellMembraneStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaShellMembraneStiffness::~StepFEA_FeaShellMembraneStiffness %{
@@ -3876,7 +3876,7 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_ElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ElementGeometricRelationship::~StepFEA_ElementGeometricRelationship %{
@@ -4005,7 +4005,7 @@ class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_Se
 };
 %extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfNodeRepresentation::~StepFEA_SequenceNodeOfSequenceOfNodeRepresentation %{
@@ -4050,7 +4050,7 @@ class StepFEA_CurveElementInterval : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementInterval::~StepFEA_CurveElementInterval %{
@@ -4085,7 +4085,7 @@ class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 };
 %extend StepFEA_NodeDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeDefinition::~StepFEA_NodeDefinition %{
@@ -4140,7 +4140,7 @@ class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfDegreeOfFreedom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfDegreeOfFreedom::~StepFEA_HArray1OfDegreeOfFreedom %{
@@ -4181,7 +4181,7 @@ class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresen
 };
 %extend StepFEA_FeaMoistureAbsorption {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaMoistureAbsorption::~StepFEA_FeaMoistureAbsorption %{
@@ -4222,7 +4222,7 @@ class StepFEA_ElementRepresentation : public StepRepr_Representation {
 };
 %extend StepFEA_ElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ElementRepresentation::~StepFEA_ElementRepresentation %{
@@ -4273,7 +4273,7 @@ class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentatio
 };
 %extend StepFEA_Curve3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_Curve3dElementRepresentation::~StepFEA_Curve3dElementRepresentation %{
@@ -4314,7 +4314,7 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 };
 %extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaShellMembraneBendingCouplingStiffness::~StepFEA_FeaShellMembraneBendingCouplingStiffness %{
@@ -4410,7 +4410,7 @@ class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ConstantSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ConstantSurface3dElementCoordinateSystem::~StepFEA_ConstantSurface3dElementCoordinateSystem %{
@@ -4451,7 +4451,7 @@ class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresenta
 };
 %extend StepFEA_FeaLinearElasticity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaLinearElasticity::~StepFEA_FeaLinearElasticity %{
@@ -4555,7 +4555,7 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 };
 %extend StepFEA_Surface3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_Surface3dElementRepresentation::~StepFEA_Surface3dElementRepresentation %{
@@ -4641,7 +4641,7 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_Curve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_Curve3dElementProperty::~StepFEA_Curve3dElementProperty %{
@@ -4676,7 +4676,7 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 };
 %extend StepFEA_FeaModelDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaModelDefinition::~StepFEA_FeaModelDefinition %{
@@ -4711,7 +4711,7 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithSolutionCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeWithSolutionCoordinateSystem::~StepFEA_NodeWithSolutionCoordinateSystem %{
@@ -4752,7 +4752,7 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ParametricCurve3dElementCoordinateDirection::~StepFEA_ParametricCurve3dElementCoordinateDirection %{
@@ -4793,7 +4793,7 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 };
 %extend StepFEA_FeaGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaGroup::~StepFEA_FeaGroup %{
@@ -4834,7 +4834,7 @@ class StepFEA_FreedomsList : public MMgt_TShared {
 };
 %extend StepFEA_FreedomsList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FreedomsList::~StepFEA_FreedomsList %{
@@ -4906,7 +4906,7 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepFEA_NodeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeSet::~StepFEA_NodeSet %{
@@ -4947,7 +4947,7 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %extend StepFEA_FeaMassDensity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaMassDensity::~StepFEA_FeaMassDensity %{
@@ -4988,7 +4988,7 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 };
 %extend StepFEA_CurveElementIntervalConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementIntervalConstant::~StepFEA_CurveElementIntervalConstant %{
@@ -5023,7 +5023,7 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeWithVector::~StepFEA_NodeWithVector %{
@@ -5060,7 +5060,7 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 };
 %extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty::~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty %{
@@ -5101,7 +5101,7 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 };
 %extend StepFEA_ElementGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ElementGroup::~StepFEA_ElementGroup %{
@@ -5180,7 +5180,7 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfCurve3dElementProperty::~StepFEA_HSequenceOfCurve3dElementProperty %{
@@ -5229,7 +5229,7 @@ class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentati
 };
 %extend StepFEA_Volume3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_Volume3dElementRepresentation::~StepFEA_Volume3dElementRepresentation %{
@@ -5274,7 +5274,7 @@ class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 };
 %extend StepFEA_FreedomAndCoefficient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FreedomAndCoefficient::~StepFEA_FreedomAndCoefficient %{
@@ -5353,7 +5353,7 @@ class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HSequenceOfNodeRepresentation::~StepFEA_HSequenceOfNodeRepresentation %{
@@ -5394,7 +5394,7 @@ class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepre
 };
 %extend StepFEA_FeaShellBendingStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaShellBendingStiffness::~StepFEA_FeaShellBendingStiffness %{
@@ -5435,7 +5435,7 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ParametricCurve3dElementCoordinateSystem::~StepFEA_ParametricCurve3dElementCoordinateSystem %{
@@ -5480,7 +5480,7 @@ class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementEndOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementEndOffset::~StepFEA_CurveElementEndOffset %{
@@ -5521,7 +5521,7 @@ class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementI
 };
 %extend StepFEA_CurveElementIntervalLinearlyVarying {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_CurveElementIntervalLinearlyVarying::~StepFEA_CurveElementIntervalLinearlyVarying %{
@@ -5558,7 +5558,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCol
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship::~StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship %{
@@ -5603,7 +5603,7 @@ class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 };
 %extend StepFEA_FeaAxis2Placement3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaAxis2Placement3d::~StepFEA_FeaAxis2Placement3d %{
@@ -5644,7 +5644,7 @@ class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_ArbitraryVolume3dElementCoordinateSystem::~StepFEA_ArbitraryVolume3dElementCoordinateSystem %{
@@ -5679,7 +5679,7 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_GeometricNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_GeometricNode::~StepFEA_GeometricNode %{
@@ -5720,7 +5720,7 @@ class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyReprese
 };
 %extend StepFEA_FeaShellShearStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaShellShearStiffness::~StepFEA_FeaShellShearStiffness %{
@@ -5761,7 +5761,7 @@ class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 };
 %extend StepFEA_NodeGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_NodeGroup::~StepFEA_NodeGroup %{
@@ -5802,7 +5802,7 @@ class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_
 };
 %extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion::~StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion %{
@@ -5845,7 +5845,7 @@ class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 };
 %extend StepFEA_SymmetricTensor23dMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_SymmetricTensor23dMember::~StepFEA_SymmetricTensor23dMember %{
@@ -5934,7 +5934,7 @@ class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_DummyNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_DummyNode::~StepFEA_DummyNode %{
@@ -6052,7 +6052,7 @@ class StepFEA_FeaModel : public StepRepr_Representation {
 };
 %extend StepFEA_FeaModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaModel::~StepFEA_FeaModel %{
@@ -6093,7 +6093,7 @@ class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %extend StepFEA_FeaAreaDensity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaAreaDensity::~StepFEA_FeaAreaDensity %{
@@ -6148,7 +6148,7 @@ class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementEndRelease {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfCurveElementEndRelease::~StepFEA_HArray1OfCurveElementEndRelease %{
@@ -6183,7 +6183,7 @@ class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 };
 %extend StepFEA_FeaModel3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaModel3d::~StepFEA_FeaModel3d %{
@@ -6224,7 +6224,7 @@ class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepres
 };
 %extend StepFEA_AlignedSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_AlignedSurface3dElementCoordinateSystem::~StepFEA_AlignedSurface3dElementCoordinateSystem %{
@@ -6279,7 +6279,7 @@ class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_HArray1OfNodeRepresentation::~StepFEA_HArray1OfNodeRepresentation %{
@@ -6389,7 +6389,7 @@ class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_FeaCurveSectionGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_FeaCurveSectionGeometricRelationship::~StepFEA_FeaCurveSectionGeometricRelationship %{
@@ -6495,7 +6495,7 @@ class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresen
 };
 %extend StepFEA_AlignedCurve3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepFEA_AlignedCurve3dElementCoordinateSystem::~StepFEA_AlignedCurve3dElementCoordinateSystem %{

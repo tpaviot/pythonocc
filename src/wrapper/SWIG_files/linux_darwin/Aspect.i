@@ -155,6 +155,11 @@ enum Aspect_CardinalPoints {
 	Aspect_CP_Center,
 	};
 
+enum Aspect_PrintAlgo {
+	Aspect_PA_STRETCH,
+	Aspect_PA_TILE,
+	};
+
 enum Aspect_ListingType {
 	Aspect_LPID_DIRPLOT,
 	Aspect_LPID_DIRPARPLO,
@@ -804,44 +809,6 @@ def __del__(self):
 %}
 
 %extend Handle_Aspect_WindowDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Aspect_PixMap;
-class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap();
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_PixMap {
-	Aspect_PixMap* GetObject() {
-	return (Aspect_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_PixMap::~Handle_Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2384,7 +2351,7 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfFontMapEntry::~Aspect_SequenceNodeOfSequenceOfFontMapEntry %{
@@ -2419,7 +2386,7 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 };
 %extend Aspect_GraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDevice::~Aspect_GraphicDevice %{
@@ -2485,7 +2452,7 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_ColorMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorMapDefinitionError::~Aspect_ColorMapDefinitionError %{
@@ -2498,52 +2465,6 @@ def __del__(self):
 %}
 
 %extend Aspect_ColorMapDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_PixMap;
-class Aspect_PixMap : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
-
-		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_PixMap {
-	Handle_Aspect_PixMap GetHandle() {
-	return *(Handle_Aspect_PixMap*) &$self;
-	}
-};
-%extend Aspect_PixMap {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2574,7 +2495,7 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 };
 %extend Aspect_UndefinedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_UndefinedMap::~Aspect_UndefinedMap %{
@@ -2616,7 +2537,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 };
 %extend Aspect_AspectMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectMarker::~Aspect_AspectMarker %{
@@ -2672,7 +2593,7 @@ class Aspect_ColorMap : public MMgt_TShared {
 };
 %extend Aspect_ColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorMap::~Aspect_ColorMap %{
@@ -2708,7 +2629,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorCubeColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorCubeColorMap::~Aspect_ColorCubeColorMap %{
@@ -2881,7 +2802,7 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_PixmapError::~Aspect_PixmapError %{
@@ -2989,7 +2910,7 @@ class Aspect_WindowError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowError::~Aspect_WindowError %{
@@ -3120,7 +3041,7 @@ class Aspect_Driver : public MMgt_TShared {
 };
 %extend Aspect_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_Driver::~Aspect_Driver %{
@@ -3163,7 +3084,7 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectFillAreaDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectFillAreaDefinitionError::~Aspect_AspectFillAreaDefinitionError %{
@@ -3206,7 +3127,7 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
@@ -3249,7 +3170,7 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_LineStyleDefinitionError::~Aspect_LineStyleDefinitionError %{
@@ -3299,7 +3220,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorRampColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorRampColorMap::~Aspect_ColorRampColorMap %{
@@ -3385,7 +3306,7 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_GenericColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_GenericColorMap::~Aspect_GenericColorMap %{
@@ -3428,7 +3349,7 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_PixmapDefinitionError::~Aspect_PixmapDefinitionError %{
@@ -3475,7 +3396,7 @@ class Aspect_TypeMap : public MMgt_TShared {
 };
 %extend Aspect_TypeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_TypeMap::~Aspect_TypeMap %{
@@ -3512,7 +3433,7 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfMarkMapEntry::~Aspect_SequenceNodeOfSequenceOfMarkMapEntry %{
@@ -3559,7 +3480,7 @@ class Aspect_MarkMap : public MMgt_TShared {
 };
 %extend Aspect_MarkMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkMap::~Aspect_MarkMap %{
@@ -3636,7 +3557,7 @@ class Aspect_Grid : public MMgt_TShared {
 };
 %extend Aspect_Grid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_Grid::~Aspect_Grid %{
@@ -3679,7 +3600,7 @@ class Aspect_CircularGrid : public Aspect_Grid {
 };
 %extend Aspect_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_CircularGrid::~Aspect_CircularGrid %{
@@ -3692,6 +3613,129 @@ def __del__(self):
 %}
 
 %extend Aspect_CircularGrid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Aspect_FontStyle;
+class Aspect_FontStyle {
+	public:
+		%feature("autodoc", "1");
+		Aspect_FontStyle();
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		Aspect_FontStyle(const char * Style);
+		%feature("autodoc", "1");
+		Aspect_FontStyle & Assign(const Aspect_FontStyle &Other);
+		%feature("autodoc", "1");
+		Aspect_FontStyle & operator=(const Aspect_FontStyle &Other);
+		%feature("autodoc", "1");
+		void SetValues(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		void SetValues(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
+		%feature("autodoc", "1");
+		void SetValues(const char * Style);
+		%feature("autodoc", "1");
+		void SetFamily(const char * aName);
+		%feature("autodoc", "1");
+		void SetWeight(const char * aName);
+		%feature("autodoc", "1");
+		void SetRegistry(const char * aName);
+		%feature("autodoc", "1");
+		void SetEncoding(const char * aName);
+		%feature("autodoc", "1");
+		Aspect_TypeOfFont Style() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		char * Value() const;
+		%feature("autodoc", "1");
+		Quantity_Length Size() const;
+		%feature("autodoc", "1");
+		Quantity_PlaneAngle Slant() const;
+		%feature("autodoc", "1");
+		Standard_Boolean CapsHeight() const;
+		%feature("autodoc", "1");
+		char * AliasName() const;
+		%feature("autodoc", "1");
+		char * FullName() const;
+		%feature("autodoc", "1");
+		char * Foundry() const;
+		%feature("autodoc", "1");
+		char * Family() const;
+		%feature("autodoc", "1");
+		char * Weight() const;
+		%feature("autodoc", "1");
+		char * Registry() const;
+		%feature("autodoc", "1");
+		char * Encoding() const;
+		%feature("autodoc", "1");
+		char * SSlant() const;
+		%feature("autodoc", "1");
+		char * SWidth() const;
+		%feature("autodoc", "1");
+		char * SStyle() const;
+		%feature("autodoc", "1");
+		char * SPixelSize() const;
+		%feature("autodoc", "1");
+		char * SPointSize() const;
+		%feature("autodoc", "1");
+		char * SResolutionX() const;
+		%feature("autodoc", "1");
+		char * SResolutionY() const;
+		%feature("autodoc", "1");
+		char * SSpacing() const;
+		%feature("autodoc", "1");
+		char * SAverageWidth() const;
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __eq_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self==Other) return true;
+				else return false;
+			}
+		}
+		%feature("autodoc", "1");
+		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
+		%extend{
+			bool __ne_wrapper__(const Aspect_FontStyle &Other) {
+				if (*self!=Other) return true;
+				else return false;
+			}
+		}
+		%pythoncode {
+		def __eq__(self,right):
+			try:
+				return self.__eq_wrapper__(right)
+			except:
+				return False
+		}
+		%pythoncode {
+		def __ne__(self,right):
+			try:
+				return self.__ne_wrapper__(right)
+			except:
+				return True
+		}
+
+};
+%feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_FontStyle {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3716,7 +3760,7 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfTypeMapEntry::~Aspect_SequenceNodeOfSequenceOfTypeMapEntry %{
@@ -3824,7 +3868,7 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_GraphicDeviceDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDeviceDefinitionError::~Aspect_GraphicDeviceDefinitionError %{
@@ -3873,7 +3917,7 @@ class Aspect_WidthMap : public MMgt_TShared {
 };
 %extend Aspect_WidthMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_WidthMap::~Aspect_WidthMap %{
@@ -3916,7 +3960,7 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_EdgeDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_EdgeDefinitionError::~Aspect_EdgeDefinitionError %{
@@ -3959,7 +4003,7 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkMapDefinitionError::~Aspect_MarkMapDefinitionError %{
@@ -4002,7 +4046,7 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_FontStyleDefinitionError::~Aspect_FontStyleDefinitionError %{
@@ -4092,7 +4136,7 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectMarkerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectMarkerDefinitionError::~Aspect_AspectMarkerDefinitionError %{
@@ -4135,7 +4179,7 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_TypeMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_TypeMapDefinitionError::~Aspect_TypeMapDefinitionError %{
@@ -4356,7 +4400,7 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkerStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_MarkerStyleDefinitionError::~Aspect_MarkerStyleDefinitionError %{
@@ -4416,8 +4460,6 @@ class Aspect_Window : public MMgt_TShared {
 		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean DumpArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_PixMap ToPixMap() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Load(const char * aFilename) const;
 		%feature("autodoc", "1");
@@ -4482,7 +4524,7 @@ class Aspect_Window : public MMgt_TShared {
 };
 %extend Aspect_Window {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_Window::~Aspect_Window %{
@@ -4525,7 +4567,7 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PolyStyleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
@@ -4568,7 +4610,7 @@ class Aspect_DriverError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_DriverError::~Aspect_DriverError %{
@@ -4689,7 +4731,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 };
 %extend Aspect_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_RectangularGrid::~Aspect_RectangularGrid %{
@@ -4759,129 +4801,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Aspect_FontStyle;
-class Aspect_FontStyle {
-	public:
-		%feature("autodoc", "1");
-		Aspect_FontStyle();
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		Aspect_FontStyle(const char * Style);
-		%feature("autodoc", "1");
-		Aspect_FontStyle & Assign(const Aspect_FontStyle &Other);
-		%feature("autodoc", "1");
-		Aspect_FontStyle & operator=(const Aspect_FontStyle &Other);
-		%feature("autodoc", "1");
-		void SetValues(const Aspect_TypeOfFont Type, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		void SetValues(const char * Style, const Quantity_Length Size, const Quantity_PlaneAngle Slant=0.0, const Standard_Boolean CapsHeight=0);
-		%feature("autodoc", "1");
-		void SetValues(const char * Style);
-		%feature("autodoc", "1");
-		void SetFamily(const char * aName);
-		%feature("autodoc", "1");
-		void SetWeight(const char * aName);
-		%feature("autodoc", "1");
-		void SetRegistry(const char * aName);
-		%feature("autodoc", "1");
-		void SetEncoding(const char * aName);
-		%feature("autodoc", "1");
-		Aspect_TypeOfFont Style() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		char * Value() const;
-		%feature("autodoc", "1");
-		Quantity_Length Size() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Slant() const;
-		%feature("autodoc", "1");
-		Standard_Boolean CapsHeight() const;
-		%feature("autodoc", "1");
-		char * AliasName() const;
-		%feature("autodoc", "1");
-		char * FullName() const;
-		%feature("autodoc", "1");
-		char * Foundry() const;
-		%feature("autodoc", "1");
-		char * Family() const;
-		%feature("autodoc", "1");
-		char * Weight() const;
-		%feature("autodoc", "1");
-		char * Registry() const;
-		%feature("autodoc", "1");
-		char * Encoding() const;
-		%feature("autodoc", "1");
-		char * SSlant() const;
-		%feature("autodoc", "1");
-		char * SWidth() const;
-		%feature("autodoc", "1");
-		char * SStyle() const;
-		%feature("autodoc", "1");
-		char * SPixelSize() const;
-		%feature("autodoc", "1");
-		char * SPointSize() const;
-		%feature("autodoc", "1");
-		char * SResolutionX() const;
-		%feature("autodoc", "1");
-		char * SResolutionY() const;
-		%feature("autodoc", "1");
-		char * SSpacing() const;
-		%feature("autodoc", "1");
-		char * SAverageWidth() const;
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
-		%extend{
-			bool __eq_wrapper__(const Aspect_FontStyle &Other) {
-				if (*self==Other) return true;
-				else return false;
-			}
-		}
-		%feature("autodoc", "1");
-		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
-		%extend{
-			bool __ne_wrapper__(const Aspect_FontStyle &Other) {
-				if (*self!=Other) return true;
-				else return false;
-			}
-		}
-		%pythoncode {
-		def __eq__(self,right):
-			try:
-				return self.__eq_wrapper__(right)
-			except:
-				return False
-		}
-		%pythoncode {
-		def __ne__(self,right):
-			try:
-				return self.__ne_wrapper__(right)
-			except:
-				return True
-		}
-
-};
-%feature("shadow") Aspect_FontStyle::~Aspect_FontStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_FontStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Aspect_LineWidthDefinitionError;
 class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4906,7 +4825,7 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineWidthDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_LineWidthDefinitionError::~Aspect_LineWidthDefinitionError %{
@@ -4943,7 +4862,7 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColorMapEntry::~Aspect_SequenceNodeOfSequenceOfColorMapEntry %{
@@ -5081,7 +5000,7 @@ class Aspect_BadAccess : public Standard_DomainError {
 };
 %extend Aspect_BadAccess {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_BadAccess::~Aspect_BadAccess %{
@@ -5184,7 +5103,7 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectLineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectLineDefinitionError::~Aspect_AspectLineDefinitionError %{
@@ -5296,7 +5215,7 @@ class Aspect_FontMap : public MMgt_TShared {
 };
 %extend Aspect_FontMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_FontMap::~Aspect_FontMap %{
@@ -5486,7 +5405,7 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_IdentDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_IdentDefinitionError::~Aspect_IdentDefinitionError %{
@@ -5594,7 +5513,7 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowDefinitionError::~Aspect_WindowDefinitionError %{
@@ -5694,7 +5613,7 @@ class Aspect_WindowDriver : public Aspect_Driver {
 };
 %extend Aspect_WindowDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_WindowDriver::~Aspect_WindowDriver %{
@@ -5731,7 +5650,7 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfWidthMapEntry::~Aspect_SequenceNodeOfSequenceOfWidthMapEntry %{
@@ -5876,7 +5795,7 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 };
 %extend Aspect_GraphicDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_GraphicDriver::~Aspect_GraphicDriver %{
@@ -5922,7 +5841,7 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WidthMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_WidthMapDefinitionError::~Aspect_WidthMapDefinitionError %{
@@ -5977,7 +5896,7 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 };
 %extend Aspect_AspectFillArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectFillArea::~Aspect_AspectFillArea %{
@@ -6023,7 +5942,7 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontMapDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_FontMapDefinitionError::~Aspect_FontMapDefinitionError %{
@@ -6065,7 +5984,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 };
 %extend Aspect_AspectLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_AspectLine::~Aspect_AspectLine %{
@@ -6105,7 +6024,7 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_SequenceNodeOfSequenceOfColor::~Aspect_SequenceNodeOfSequenceOfColor %{
@@ -6247,7 +6166,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 };
 %extend Aspect_ColorScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Aspect_ColorScale::~Aspect_ColorScale %{

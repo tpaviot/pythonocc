@@ -31,11 +31,11 @@ import Standard
 import GeomAbs
 import gp
 import Geom2d
-import Bnd
 import IntSurf
 import IntAna
 import Adaptor3d
 import IntImp
 import IntWalk
 import Adaptor2d
+import Bnd
 };

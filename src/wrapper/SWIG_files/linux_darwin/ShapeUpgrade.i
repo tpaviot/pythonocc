@@ -698,6 +698,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_UnifySameDomain;
+class Handle_ShapeUpgrade_UnifySameDomain : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain(const Handle_ShapeUpgrade_UnifySameDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain(const ShapeUpgrade_UnifySameDomain *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain & operator=(const Handle_ShapeUpgrade_UnifySameDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain & operator=(const ShapeUpgrade_UnifySameDomain *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_UnifySameDomain DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_UnifySameDomain {
+	ShapeUpgrade_UnifySameDomain* GetObject() {
+	return (ShapeUpgrade_UnifySameDomain*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_UnifySameDomain::~Handle_ShapeUpgrade_UnifySameDomain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_UnifySameDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
 class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 	public:
@@ -956,7 +994,7 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 };
 %extend ShapeUpgrade_SplitCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve::~ShapeUpgrade_SplitCurve %{
@@ -995,7 +1033,7 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3d::~ShapeUpgrade_SplitCurve3d %{
@@ -1042,7 +1080,7 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ConvertCurve3dToBezier::~ShapeUpgrade_ConvertCurve3dToBezier %{
@@ -1187,7 +1225,7 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 };
 %extend ShapeUpgrade_SplitSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitSurface::~ShapeUpgrade_SplitSurface %{
@@ -1226,7 +1264,7 @@ class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceAngle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceAngle::~ShapeUpgrade_SplitSurfaceAngle %{
@@ -1281,7 +1319,7 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 };
 %extend ShapeUpgrade_Tool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_Tool::~ShapeUpgrade_Tool %{
@@ -1354,7 +1392,7 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_RemoveInternalWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_RemoveInternalWires::~ShapeUpgrade_RemoveInternalWires %{
@@ -1400,7 +1438,7 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_FixSmallCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_FixSmallCurves::~ShapeUpgrade_FixSmallCurves %{
@@ -1482,7 +1520,7 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_EdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_EdgeDivide::~ShapeUpgrade_EdgeDivide %{
@@ -1517,7 +1555,7 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ClosedEdgeDivide::~ShapeUpgrade_ClosedEdgeDivide %{
@@ -1645,7 +1683,7 @@ class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceContinuity::~ShapeUpgrade_SplitSurfaceContinuity %{
@@ -1683,7 +1721,7 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 };
 %extend ShapeUpgrade_FixSmallBezierCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_FixSmallBezierCurves::~ShapeUpgrade_FixSmallBezierCurves %{
@@ -1732,7 +1770,7 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitSurfaceArea::~ShapeUpgrade_SplitSurfaceArea %{
@@ -1775,7 +1813,7 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2d::~ShapeUpgrade_SplitCurve2d %{
@@ -1832,7 +1870,7 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_FaceDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_FaceDivide::~ShapeUpgrade_FaceDivide %{
@@ -1879,7 +1917,7 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 };
 %extend ShapeUpgrade_FaceDivideArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_FaceDivideArea::~ShapeUpgrade_FaceDivideArea %{
@@ -1989,7 +2027,7 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 };
 %extend ShapeUpgrade_ClosedFaceDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ClosedFaceDivide::~ShapeUpgrade_ClosedFaceDivide %{
@@ -2032,7 +2070,7 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_SplitCurve3dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve3dContinuity::~ShapeUpgrade_SplitCurve3dContinuity %{
@@ -2105,7 +2143,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_WireDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_WireDivide::~ShapeUpgrade_WireDivide %{
@@ -2177,7 +2215,7 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShapeUpgrade_SplitCurve2dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_SplitCurve2dContinuity::~ShapeUpgrade_SplitCurve2dContinuity %{
@@ -2234,7 +2272,7 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 };
 %extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ConvertSurfaceToBezierBasis::~ShapeUpgrade_ConvertSurfaceToBezierBasis %{
@@ -2278,6 +2316,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeUpgrade_UnifySameDomain;
+class ShapeUpgrade_UnifySameDomain : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_UnifySameDomain();
+		%feature("autodoc", "1");
+		ShapeUpgrade_UnifySameDomain(const TopoDS_Shape aShape, const Standard_Boolean UnifyEdges=1, const Standard_Boolean UnifyFaces=1, const Standard_Boolean ConcatBSplines=0);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Shape aShape, const Standard_Boolean UnifyEdges=1, const Standard_Boolean UnifyFaces=1, const Standard_Boolean ConcatBSplines=0);
+		%feature("autodoc", "1");
+		void Build();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Generated(const TopoDS_Shape aShape) const;
+		%feature("autodoc", "1");
+		void UnifyFaces();
+		%feature("autodoc", "1");
+		void UnifyEdges();
+		%feature("autodoc", "1");
+		void UnifyFacesAndEdges();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_UnifySameDomain {
+	Handle_ShapeUpgrade_UnifySameDomain GetHandle() {
+	return *(Handle_ShapeUpgrade_UnifySameDomain*) &$self;
+	}
+};
+%extend ShapeUpgrade_UnifySameDomain {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_UnifySameDomain::~ShapeUpgrade_UnifySameDomain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_UnifySameDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
 class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	public:
@@ -2300,7 +2389,7 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShapeUpgrade_ConvertCurve2dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_ConvertCurve2dToBezier::~ShapeUpgrade_ConvertCurve2dToBezier %{
@@ -2345,7 +2434,7 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 };
 %extend ShapeUpgrade_RemoveLocations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeUpgrade_RemoveLocations::~ShapeUpgrade_RemoveLocations %{

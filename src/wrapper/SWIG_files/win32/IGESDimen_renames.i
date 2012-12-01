@@ -35,6 +35,7 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESDimen_WitnessLine::DownCast;
 %rename(DownCast) Handle_IGESDimen_CurveDimension::DownCast;
 %rename(DownCast) Handle_IGESDimen_GeneralModule::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionUnits::DownCast;
 %rename(DownCast) Handle_IGESDimen_BasicDimension::DownCast;
 %rename(DownCast) Handle_IGESDimen_Section::DownCast;
 %rename(DownCast) Handle_IGESDimen_OrdinateDimension::DownCast;
@@ -49,7 +50,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESDimen_NewGeneralNote::DownCast;
 %rename(DownCast) Handle_IGESDimen_GeneralNote::DownCast;
 %rename(DownCast) Handle_IGESDimen_LinearDimension::DownCast;
-%rename(DownCast) Handle_IGESDimen_DimensionUnits::DownCast;
 %rename(DownCast) Handle_IGESDimen_SpecificModule::DownCast;
 %rename(DownCast) Handle_IGESDimen_CenterLine::DownCast;
 %rename(Init) IGESDimen::Init;

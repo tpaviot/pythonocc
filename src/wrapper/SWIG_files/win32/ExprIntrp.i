@@ -496,7 +496,7 @@ class ExprIntrp_Generator : public MMgt_TShared {
 };
 %extend ExprIntrp_Generator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_Generator::~ExprIntrp_Generator %{
@@ -536,7 +536,7 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenFct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenFct::~ExprIntrp_GenFct %{
@@ -573,7 +573,7 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfNames::~ExprIntrp_StackNodeOfStackOfNames %{
@@ -746,7 +746,7 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 };
 %extend ExprIntrp_SyntaxError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_SyntaxError::~ExprIntrp_SyntaxError %{
@@ -783,7 +783,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedExpression::~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression %{
@@ -880,7 +880,7 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenRel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenRel::~ExprIntrp_GenRel %{
@@ -983,7 +983,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralRelation::~ExprIntrp_StackNodeOfStackOfGeneralRelation %{
@@ -1061,7 +1061,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralExpression::~ExprIntrp_StackNodeOfStackOfGeneralExpression %{
@@ -1098,7 +1098,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_StackNodeOfStackOfGeneralFunction::~ExprIntrp_StackNodeOfStackOfGeneralFunction %{
@@ -1258,7 +1258,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_SequenceNodeOfSequenceOfNamedFunction::~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction %{
@@ -1332,7 +1332,7 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenExp {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ExprIntrp_GenExp::~ExprIntrp_GenExp %{

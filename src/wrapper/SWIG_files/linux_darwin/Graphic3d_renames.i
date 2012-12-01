@@ -33,6 +33,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Graphic3d_ArrayOfPrimitives::DownCast;
 %rename(DownCast) Handle_Graphic3d_ArrayOfPolygons::DownCast;
 %rename(DownCast) Handle_Graphic3d_MaterialDefinitionError::DownCast;
+%rename(DownCast) Handle_Graphic3d_ArrayOfPolylines::DownCast;
 %rename(DownCast) Handle_Graphic3d_StructureManager::DownCast;
 %rename(DownCast) Handle_Graphic3d_VectorError::DownCast;
 %rename(DownCast) Handle_Graphic3d_ArrayOfTriangles::DownCast;
@@ -62,7 +63,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Graphic3d_AspectText3d::DownCast;
 %rename(DownCast) Handle_Graphic3d_HSequenceOfGroup::DownCast;
 %rename(DownCast) Handle_Graphic3d_HSequenceOfStructure::DownCast;
-%rename(DownCast) Handle_Graphic3d_ArrayOfPolylines::DownCast;
 %rename(DownCast) Handle_Graphic3d_Group::DownCast;
 %rename(DownCast) Handle_Graphic3d_AspectMarker3d::DownCast;
 %rename(DownCast) Handle_Graphic3d_ArrayOfTriangleStrips::DownCast;

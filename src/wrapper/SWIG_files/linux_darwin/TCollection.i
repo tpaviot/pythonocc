@@ -540,7 +540,7 @@ class TCollection_SeqNode : public MMgt_TShared {
 };
 %extend TCollection_SeqNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
@@ -632,7 +632,7 @@ class TCollection_MapNode : public MMgt_TShared {
 };
 %extend TCollection_MapNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TCollection_MapNode::~TCollection_MapNode %{
@@ -754,7 +754,7 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 };
 %extend TCollection_AVLBaseNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TCollection_AVLBaseNode::~TCollection_AVLBaseNode %{
@@ -953,9 +953,9 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		Standard_ExtCharacter Value(const Standard_Integer where) const;
 		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const TCollection_ExtendedString &astring, const Standard_Integer Upper);
+		static		Standard_Integer HashCode(const TCollection_ExtendedString &theString, const Standard_Integer theUpper);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const TCollection_ExtendedString &string1, const TCollection_ExtendedString &string2);
+		static		Standard_Boolean IsEqual(const TCollection_ExtendedString &theString1, const TCollection_ExtendedString &theString2);
 		%feature("autodoc", "1");
 		Standard_Integer ToUTF8CString(Standard_PCharacter & theCString) const;
 		%feature("autodoc", "1");
@@ -1088,7 +1088,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 };
 %extend TCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TCollection_HExtendedString::~TCollection_HExtendedString %{
@@ -1394,7 +1394,7 @@ class TCollection_HAsciiString : public MMgt_TShared {
 };
 %extend TCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TCollection_HAsciiString::~TCollection_HAsciiString %{

@@ -719,7 +719,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select3D_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveEntity::~Select3D_SensitiveEntity %{
@@ -758,7 +758,7 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveBox::~Select3D_SensitiveBox %{
@@ -795,7 +795,7 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitiveTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_ListNodeOfListOfSensitiveTriangle::~Select3D_ListNodeOfListOfSensitiveTriangle %{
@@ -849,7 +849,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitivePoint::~Select3D_SensitivePoint %{
@@ -907,8 +907,6 @@ class Select3D_Projector : public Standard_Transient {
 		%feature("autodoc", "1");
 		Select3D_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
-		Select3D_Projector(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus, const gp_Vec2d v1, const gp_Vec2d v2, const gp_Vec2d v3);
-		%feature("autodoc", "1");
 		Select3D_Projector(const gp_GTrsf GT, const Standard_Boolean Persp, const Standard_Real Focus);
 		%feature("autodoc", "1");
 		void Set(const gp_Trsf T, const Standard_Boolean Persp, const Standard_Real Focus);
@@ -916,8 +914,6 @@ class Select3D_Projector : public Standard_Transient {
 		void SetView(const Handle_V3d_View &V);
 		%feature("autodoc", "1");
 		const Handle_V3d_View & View() const;
-		%feature("autodoc", "1");
-		virtual		void Directions(gp_Vec2d & D1, gp_Vec2d & D2, gp_Vec2d & D3) const;
 		%feature("autodoc", "1");
 		virtual		void Scaled(const Standard_Boolean On=0);
 		%feature("autodoc", "1");
@@ -942,8 +938,6 @@ class Select3D_Projector : public Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		void Project(const gp_Pnt P, const gp_Vec D1, gp_Pnt2d & Pout, gp_Vec2d & D1out) const;
 		%feature("autodoc", "1");
-		virtual		void BoxAdd(const gp_Pnt2d P, Bnd_Box & B) const;
-		%feature("autodoc", "1");
 		virtual		gp_Lin Shoot(const Standard_Real X, const Standard_Real Y) const;
 		%feature("autodoc", "1");
 		Standard_Real DepthMin() const;
@@ -966,7 +960,7 @@ class Select3D_Projector : public Standard_Transient {
 };
 %extend Select3D_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_Projector::~Select3D_Projector %{
@@ -1034,7 +1028,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveSegment::~Select3D_SensitiveSegment %{
@@ -1065,8 +1059,6 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		void Points2D(TColgp_Array1OfPnt2d & aArrayOf2dPnt);
 		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1077,7 +1069,7 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitivePoly::~Select3D_SensitivePoly %{
@@ -1124,6 +1116,8 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 		static		Standard_Integer Status(const gp_XY p0, const gp_XY p1, const gp_XY p2, const gp_XY aPoint, const Standard_Real aTol, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
+		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &theLocation);
 
 };
 %extend Select3D_SensitiveTriangle {
@@ -1133,7 +1127,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveTriangle::~Select3D_SensitiveTriangle %{
@@ -1197,6 +1191,8 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		void SetLastPrj(const Handle_Select3D_Projector &aPrj);
 		%feature("autodoc", "1");
+		virtual		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
+		%feature("autodoc", "1");
 		const Select3D_ListOfSensitive & GetEntities() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -1209,7 +1205,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveGroup::~Select3D_SensitiveGroup %{
@@ -1247,6 +1243,8 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &theLocation);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1257,7 +1255,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveFace::~Select3D_SensitiveFace %{
@@ -1425,6 +1423,8 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &theLocation);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1435,7 +1435,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveCurve::~Select3D_SensitiveCurve %{
@@ -1530,7 +1530,7 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 };
 %extend Select3D_SequenceNodeOfSensitiveEntitySequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SequenceNodeOfSensitiveEntitySequence::~Select3D_SequenceNodeOfSensitiveEntitySequence %{
@@ -1603,7 +1603,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveTriangulation::~Select3D_SensitiveTriangulation %{
@@ -1716,6 +1716,8 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
+		virtual		void Set(const Handle_SelectBasics_EntityOwner &TheOwnerId);
+		%feature("autodoc", "1");
 		virtual		void SetLastPrj(const Handle_Select3D_Projector &aPrj);
 		%feature("autodoc", "1");
 		Handle_Select3D_SensitiveEntity GetLastDetected() const;
@@ -1730,7 +1732,7 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveWire::~Select3D_SensitiveWire %{
@@ -1777,6 +1779,10 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		void Dump(Standard_OStream & S, const Standard_Boolean FullDump=1) const;
 		%feature("autodoc", "1");
+		virtual		Handle_Select3D_SensitiveEntity GetConnected(const TopLoc_Location &theLocation);
+		%feature("autodoc", "1");
+		virtual		void Project(const Handle_Select3D_Projector &aProjector);
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1787,7 +1793,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCircle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_SensitiveCircle::~Select3D_SensitiveCircle %{
@@ -1839,6 +1845,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Select3D_PointData;
+class Select3D_PointData {
+	public:
+		%feature("autodoc", "1");
+		Select3D_PointData(const Standard_Integer theNbPoints);
+		%feature("autodoc", "1");
+		void SetPnt(const Standard_Integer theIndex, const Select3D_Pnt &theValue);
+		%feature("autodoc", "1");
+		void SetPnt(const Standard_Integer theIndex, const gp_Pnt theValue);
+		%feature("autodoc", "1");
+		void SetPnt2d(const Standard_Integer theIndex, const Select3D_Pnt2d &theValue);
+		%feature("autodoc", "1");
+		void SetPnt2d(const Standard_Integer theIndex, const gp_Pnt2d theValue);
+		%feature("autodoc", "1");
+		Select3D_Pnt Pnt(const Standard_Integer theIndex) const;
+		%feature("autodoc", "1");
+		Select3D_Pnt2d Pnt2d(const Standard_Integer theIndex) const;
+		%feature("autodoc", "1");
+		Standard_Integer const Size() const;
+
+};
+%feature("shadow") Select3D_PointData::~Select3D_PointData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Select3D_PointData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Select3D_ListNodeOfListOfSensitive;
 class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	public:
@@ -1857,7 +1900,7 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Select3D_ListNodeOfListOfSensitive::~Select3D_ListNodeOfListOfSensitive %{

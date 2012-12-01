@@ -16,18 +16,12 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
-#from OCC.BRepPrimAPI import *
-#from OCC.BRepAlgoAPI import *
 from OCC.TopOpeBRepTool import *
-#from OCC.BRepBuilderAPI import *
 from OCC.BRepFilletAPI import *
-#from OCC.Geom import *
-#from OCC.TopoDS import *
 from OCC.TopExp import *
-#from OCC.TopAbs import *
-#from OCC.TColgp import *
 
-import time, math, sys
+from math import cos,pi
+import time, sys
 from OCC.Utils.Construct import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
@@ -37,7 +31,6 @@ def fuse(event=None):
     box1 = BRepPrimAPI_MakeBox(2,1,1).Shape()
     box2 = BRepPrimAPI_MakeBox(2,1,1).Shape()
     box1 = translate_topods_from_vector(box1, gp_Vec(.5,.5,0))
-    #sph = BRepPrimAPI_MakeSphere(.5,.5,.5).Shape()
     fuse = BRepAlgoAPI_Fuse(box1,box2).Shape()
     display.DisplayShape(fuse)
     
@@ -179,9 +172,9 @@ def variable_filleting(event=None):
     
     TabPoint2 = TColgp_Array1OfPnt2d(0,20)
     for i in range(0,20):
-        Point2d = gp_Pnt2d(i*2*math.pi/19,60*math.cos(i*math.pi/19-math.pi/2)+10)
+        Point2d = gp_Pnt2d(i*2*pi/19,60*cos(i*pi/19-pi/2)+10)
         TabPoint2.SetValue(i,Point2d)
-    #    append(Point2d)
+    
     exp2 = TopExp_Explorer(Cylinder,TopAbs_EDGE)
     fillet.Add(TabPoint2,TopoDS_edge(exp2.Current()))
     fillet.Build()

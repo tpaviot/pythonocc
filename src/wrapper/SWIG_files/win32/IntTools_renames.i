@@ -36,6 +36,7 @@ $HeaderURL$
 %rename(DownCast) Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox::DownCast;
 %rename(DownCast) Handle_IntTools_StdMapNodeOfMapOfSurfaceSample::DownCast;
 %rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfRoots::DownCast;
+%rename(DownCast) Handle_IntTools_Context::DownCast;
 %rename(DownCast) Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces::DownCast;
 %rename(HashCode) IntTools_SurfaceRangeSampleMapHasher::HashCode;
 %rename(IsEqual) IntTools_SurfaceRangeSampleMapHasher::IsEqual;

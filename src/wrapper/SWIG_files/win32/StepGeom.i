@@ -3651,7 +3651,7 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 };
 %extend StepGeom_GeometricRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_GeometricRepresentationItem::~StepGeom_GeometricRepresentationItem %{
@@ -3684,7 +3684,7 @@ class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Surface::~StepGeom_Surface %{
@@ -3717,7 +3717,7 @@ class StepGeom_BoundedSurface : public StepGeom_Surface {
 };
 %extend StepGeom_BoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BoundedSurface::~StepGeom_BoundedSurface %{
@@ -3788,7 +3788,7 @@ class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
 };
 %extend StepGeom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineSurface::~StepGeom_BSplineSurface %{
@@ -3859,7 +3859,7 @@ class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 };
 %extend StepGeom_BSplineSurfaceWithKnots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineSurfaceWithKnots::~StepGeom_BSplineSurfaceWithKnots %{
@@ -3894,7 +3894,7 @@ class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Curve::~StepGeom_Curve %{
@@ -3939,7 +3939,7 @@ class StepGeom_CurveReplica : public StepGeom_Curve {
 };
 %extend StepGeom_CurveReplica {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CurveReplica::~StepGeom_CurveReplica %{
@@ -3980,7 +3980,7 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 };
 %extend StepGeom_OrientedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_OrientedSurface::~StepGeom_OrientedSurface %{
@@ -4041,7 +4041,7 @@ class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 };
 %extend StepGeom_HArray2OfCartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray2OfCartesianPoint::~StepGeom_HArray2OfCartesianPoint %{
@@ -4076,7 +4076,7 @@ class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Point::~StepGeom_Point %{
@@ -4125,7 +4125,7 @@ class StepGeom_CartesianPoint : public StepGeom_Point {
 };
 %extend StepGeom_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CartesianPoint::~StepGeom_CartesianPoint %{
@@ -4160,7 +4160,7 @@ class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 };
 %extend StepGeom_UniformSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_UniformSurface::~StepGeom_UniformSurface %{
@@ -4262,7 +4262,7 @@ class StepGeom_PointReplica : public StepGeom_Point {
 };
 %extend StepGeom_PointReplica {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_PointReplica::~StepGeom_PointReplica %{
@@ -4305,7 +4305,7 @@ class StepGeom_Conic : public StepGeom_Curve {
 };
 %extend StepGeom_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Conic::~StepGeom_Conic %{
@@ -4348,7 +4348,7 @@ class StepGeom_Ellipse : public StepGeom_Conic {
 };
 %extend StepGeom_Ellipse {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Ellipse::~StepGeom_Ellipse %{
@@ -4403,7 +4403,7 @@ class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfSurfaceBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfSurfaceBoundary::~StepGeom_HArray1OfSurfaceBoundary %{
@@ -4456,7 +4456,7 @@ class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext 
 };
 %extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_GeometricRepresentationContextAndParametricRepresentationContext::~StepGeom_GeometricRepresentationContextAndParametricRepresentationContext %{
@@ -4491,7 +4491,7 @@ class StepGeom_BoundedCurve : public StepGeom_Curve {
 };
 %extend StepGeom_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BoundedCurve::~StepGeom_BoundedCurve %{
@@ -4552,7 +4552,7 @@ class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
 };
 %extend StepGeom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineCurve::~StepGeom_BSplineCurve %{
@@ -4585,7 +4585,7 @@ class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 };
 %extend StepGeom_QuasiUniformCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_QuasiUniformCurve::~StepGeom_QuasiUniformCurve %{
@@ -4636,7 +4636,7 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 };
 %extend StepGeom_CompositeCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CompositeCurve::~StepGeom_CompositeCurve %{
@@ -4669,7 +4669,7 @@ class StepGeom_CompositeCurveOnSurface : public StepGeom_CompositeCurve {
 };
 %extend StepGeom_CompositeCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CompositeCurveOnSurface::~StepGeom_CompositeCurveOnSurface %{
@@ -4702,7 +4702,7 @@ class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 };
 %extend StepGeom_BoundaryCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BoundaryCurve::~StepGeom_BoundaryCurve %{
@@ -4761,7 +4761,7 @@ class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineS
 };
 %extend StepGeom_BezierSurfaceAndRationalBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BezierSurfaceAndRationalBSplineSurface::~StepGeom_BezierSurfaceAndRationalBSplineSurface %{
@@ -4808,7 +4808,7 @@ class StepGeom_SurfaceReplica : public StepGeom_Surface {
 };
 %extend StepGeom_SurfaceReplica {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfaceReplica::~StepGeom_SurfaceReplica %{
@@ -4932,7 +4932,7 @@ class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeo
 };
 %extend StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface::~StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface %{
@@ -4981,7 +4981,7 @@ class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 };
 %extend StepGeom_CompositeCurveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CompositeCurveSegment::~StepGeom_CompositeCurveSegment %{
@@ -5104,7 +5104,7 @@ class StepGeom_ElementarySurface : public StepGeom_Surface {
 };
 %extend StepGeom_ElementarySurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_ElementarySurface::~StepGeom_ElementarySurface %{
@@ -5143,7 +5143,7 @@ class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 };
 %extend StepGeom_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SphericalSurface::~StepGeom_SphericalSurface %{
@@ -5210,7 +5210,7 @@ class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepres
 };
 %extend StepGeom_CartesianTransformationOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CartesianTransformationOperator::~StepGeom_CartesianTransformationOperator %{
@@ -5257,7 +5257,7 @@ class StepGeom_Pcurve : public StepGeom_Curve {
 };
 %extend StepGeom_Pcurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Pcurve::~StepGeom_Pcurve %{
@@ -5329,7 +5329,7 @@ class StepGeom_SweptSurface : public StepGeom_Surface {
 };
 %extend StepGeom_SweptSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SweptSurface::~StepGeom_SweptSurface %{
@@ -5368,7 +5368,7 @@ class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 };
 %extend StepGeom_SurfaceOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfaceOfLinearExtrusion::~StepGeom_SurfaceOfLinearExtrusion %{
@@ -5417,7 +5417,7 @@ class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 };
 %extend StepGeom_CurveBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CurveBoundedSurface::~StepGeom_CurveBoundedSurface %{
@@ -5472,7 +5472,7 @@ class StepGeom_SurfaceCurve : public StepGeom_Curve {
 };
 %extend StepGeom_SurfaceCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfaceCurve::~StepGeom_SurfaceCurve %{
@@ -5507,7 +5507,7 @@ class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 };
 %extend StepGeom_SurfaceCurveAndBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfaceCurveAndBoundedCurve::~StepGeom_SurfaceCurveAndBoundedCurve %{
@@ -5550,7 +5550,7 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Placement::~StepGeom_Placement %{
@@ -5593,7 +5593,7 @@ class StepGeom_Axis1Placement : public StepGeom_Placement {
 };
 %extend StepGeom_Axis1Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Axis1Placement::~StepGeom_Axis1Placement %{
@@ -5660,7 +5660,7 @@ class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 };
 %extend StepGeom_RectangularTrimmedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_RectangularTrimmedSurface::~StepGeom_RectangularTrimmedSurface %{
@@ -5703,7 +5703,7 @@ class StepGeom_Circle : public StepGeom_Conic {
 };
 %extend StepGeom_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Circle::~StepGeom_Circle %{
@@ -5797,7 +5797,7 @@ class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCu
 };
 %extend StepGeom_ReparametrisedCompositeCurveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_ReparametrisedCompositeCurveSegment::~StepGeom_ReparametrisedCompositeCurveSegment %{
@@ -5846,7 +5846,7 @@ class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
 };
 %extend StepGeom_RectangularCompositeSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_RectangularCompositeSurface::~StepGeom_RectangularCompositeSurface %{
@@ -5881,7 +5881,7 @@ class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
 };
 %extend StepGeom_OuterBoundaryCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_OuterBoundaryCurve::~StepGeom_OuterBoundaryCurve %{
@@ -5938,7 +5938,7 @@ class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve
 };
 %extend StepGeom_BezierCurveAndRationalBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BezierCurveAndRationalBSplineCurve::~StepGeom_BezierCurveAndRationalBSplineCurve %{
@@ -6046,7 +6046,7 @@ class StepGeom_SurfacePatch : public MMgt_TShared {
 };
 %extend StepGeom_SurfacePatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfacePatch::~StepGeom_SurfacePatch %{
@@ -6123,7 +6123,7 @@ class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BS
 };
 %extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve::~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve %{
@@ -6178,7 +6178,7 @@ class StepGeom_HArray1OfCompositeCurveSegment : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfCompositeCurveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfCompositeCurveSegment::~StepGeom_HArray1OfCompositeCurveSegment %{
@@ -6295,7 +6295,7 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 };
 %extend StepGeom_SeamCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SeamCurve::~StepGeom_SeamCurve %{
@@ -6452,7 +6452,7 @@ class StepGeom_PointOnSurface : public StepGeom_Point {
 };
 %extend StepGeom_PointOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_PointOnSurface::~StepGeom_PointOnSurface %{
@@ -6507,7 +6507,7 @@ class StepGeom_HArray1OfTrimmingSelect : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfTrimmingSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfTrimmingSelect::~StepGeom_HArray1OfTrimmingSelect %{
@@ -6554,7 +6554,7 @@ class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 };
 %extend StepGeom_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_ConicalSurface::~StepGeom_ConicalSurface %{
@@ -6597,7 +6597,7 @@ class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 };
 %extend StepGeom_SurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_SurfaceOfRevolution::~StepGeom_SurfaceOfRevolution %{
@@ -6664,7 +6664,7 @@ class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
 };
 %extend StepGeom_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_TrimmedCurve::~StepGeom_TrimmedCurve %{
@@ -6705,7 +6705,7 @@ class StepGeom_TrimmingMember : public StepData_SelectReal {
 };
 %extend StepGeom_TrimmingMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_TrimmingMember::~StepGeom_TrimmingMember %{
@@ -6791,7 +6791,7 @@ class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTran
 };
 %extend StepGeom_CartesianTransformationOperator2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CartesianTransformationOperator2d::~StepGeom_CartesianTransformationOperator2d %{
@@ -6838,7 +6838,7 @@ class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTran
 };
 %extend StepGeom_CartesianTransformationOperator3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CartesianTransformationOperator3d::~StepGeom_CartesianTransformationOperator3d %{
@@ -6899,7 +6899,7 @@ class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 };
 %extend StepGeom_HArray2OfSurfacePatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray2OfSurfacePatch::~StepGeom_HArray2OfSurfacePatch %{
@@ -6981,7 +6981,7 @@ class StepGeom_DegeneratePcurve : public StepGeom_Point {
 };
 %extend StepGeom_DegeneratePcurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_DegeneratePcurve::~StepGeom_DegeneratePcurve %{
@@ -7020,7 +7020,7 @@ class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 };
 %extend StepGeom_EvaluatedDegeneratePcurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_EvaluatedDegeneratePcurve::~StepGeom_EvaluatedDegeneratePcurve %{
@@ -7077,7 +7077,7 @@ class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplin
 };
 %extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_QuasiUniformCurveAndRationalBSplineCurve::~StepGeom_QuasiUniformCurveAndRationalBSplineCurve %{
@@ -7134,7 +7134,7 @@ class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurv
 };
 %extend StepGeom_UniformCurveAndRationalBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_UniformCurveAndRationalBSplineCurve::~StepGeom_UniformCurveAndRationalBSplineCurve %{
@@ -7177,7 +7177,7 @@ class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 };
 %extend StepGeom_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_CylindricalSurface::~StepGeom_CylindricalSurface %{
@@ -7224,7 +7224,7 @@ class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 };
 %extend StepGeom_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_ToroidalSurface::~StepGeom_ToroidalSurface %{
@@ -7263,7 +7263,7 @@ class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 };
 %extend StepGeom_DegenerateToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_DegenerateToroidalSurface::~StepGeom_DegenerateToroidalSurface %{
@@ -7318,7 +7318,7 @@ class StepGeom_HArray1OfCurve : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfCurve::~StepGeom_HArray1OfCurve %{
@@ -7353,7 +7353,7 @@ class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 };
 %extend StepGeom_QuasiUniformSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_QuasiUniformSurface::~StepGeom_QuasiUniformSurface %{
@@ -7400,7 +7400,7 @@ class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Vector::~StepGeom_Vector %{
@@ -7447,7 +7447,7 @@ class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 };
 %extend StepGeom_Axis2Placement2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Axis2Placement2d::~StepGeom_Axis2Placement2d %{
@@ -7502,7 +7502,7 @@ class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfCartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfCartesianPoint::~StepGeom_HArray1OfCartesianPoint %{
@@ -7537,7 +7537,7 @@ class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 };
 %extend StepGeom_BezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BezierSurface::~StepGeom_BezierSurface %{
@@ -7592,7 +7592,7 @@ class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 };
 %extend StepGeom_Axis2Placement3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Axis2Placement3d::~StepGeom_Axis2Placement3d %{
@@ -7651,7 +7651,7 @@ class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BS
 };
 %extend StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface::~StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface %{
@@ -7700,7 +7700,7 @@ class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
 };
 %extend StepGeom_RationalBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_RationalBSplineSurface::~StepGeom_RationalBSplineSurface %{
@@ -7755,7 +7755,7 @@ class StepGeom_OffsetCurve3d : public StepGeom_Curve {
 };
 %extend StepGeom_OffsetCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_OffsetCurve3d::~StepGeom_OffsetCurve3d %{
@@ -7816,7 +7816,7 @@ class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : publ
 };
 %extend StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext::~StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext %{
@@ -7863,7 +7863,7 @@ class StepGeom_Hyperbola : public StepGeom_Conic {
 };
 %extend StepGeom_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Hyperbola::~StepGeom_Hyperbola %{
@@ -7918,7 +7918,7 @@ class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfBoundaryCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfBoundaryCurve::~StepGeom_HArray1OfBoundaryCurve %{
@@ -7965,7 +7965,7 @@ class StepGeom_Polyline : public StepGeom_BoundedCurve {
 };
 %extend StepGeom_Polyline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Polyline::~StepGeom_Polyline %{
@@ -8012,7 +8012,7 @@ class StepGeom_PointOnCurve : public StepGeom_Point {
 };
 %extend StepGeom_PointOnCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_PointOnCurve::~StepGeom_PointOnCurve %{
@@ -8047,7 +8047,7 @@ class StepGeom_Plane : public StepGeom_ElementarySurface {
 };
 %extend StepGeom_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Plane::~StepGeom_Plane %{
@@ -8094,7 +8094,7 @@ class StepGeom_Line : public StepGeom_Curve {
 };
 %extend StepGeom_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Line::~StepGeom_Line %{
@@ -8129,7 +8129,7 @@ class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 };
 %extend StepGeom_IntersectionCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_IntersectionCurve::~StepGeom_IntersectionCurve %{
@@ -8188,7 +8188,7 @@ class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSpline
 };
 %extend StepGeom_UniformSurfaceAndRationalBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_UniformSurfaceAndRationalBSplineSurface::~StepGeom_UniformSurfaceAndRationalBSplineSurface %{
@@ -8231,7 +8231,7 @@ class StepGeom_Parabola : public StepGeom_Conic {
 };
 %extend StepGeom_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Parabola::~StepGeom_Parabola %{
@@ -8278,7 +8278,7 @@ class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 };
 %extend StepGeom_RationalBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_RationalBSplineCurve::~StepGeom_RationalBSplineCurve %{
@@ -8313,7 +8313,7 @@ class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
 };
 %extend StepGeom_UniformCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_UniformCurve::~StepGeom_UniformCurve %{
@@ -8368,7 +8368,7 @@ class StepGeom_HArray1OfPcurveOrSurface : public MMgt_TShared {
 };
 %extend StepGeom_HArray1OfPcurveOrSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_HArray1OfPcurveOrSurface::~StepGeom_HArray1OfPcurveOrSurface %{
@@ -8415,7 +8415,7 @@ class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepGeom_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_Direction::~StepGeom_Direction %{
@@ -8458,7 +8458,7 @@ class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationCo
 };
 %extend StepGeom_GeometricRepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_GeometricRepresentationContext::~StepGeom_GeometricRepresentationContext %{
@@ -8493,7 +8493,7 @@ class StepGeom_BezierCurve : public StepGeom_BSplineCurve {
 };
 %extend StepGeom_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BezierCurve::~StepGeom_BezierCurve %{
@@ -8552,7 +8552,7 @@ class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 };
 %extend StepGeom_BSplineCurveWithKnots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_BSplineCurveWithKnots::~StepGeom_BSplineCurveWithKnots %{
@@ -8654,7 +8654,7 @@ class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public 
 };
 %extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx::~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx %{
@@ -8705,7 +8705,7 @@ class StepGeom_OffsetSurface : public StepGeom_Surface {
 };
 %extend StepGeom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepGeom_OffsetSurface::~StepGeom_OffsetSurface %{

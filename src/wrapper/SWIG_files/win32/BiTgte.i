@@ -284,7 +284,7 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BiTgte_HCurveOnEdge::~BiTgte_HCurveOnEdge %{
@@ -323,7 +323,7 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BiTgte_DataMapNodeOfDataMapOfShapeBox::~BiTgte_DataMapNodeOfDataMapOfShapeBox %{
@@ -368,7 +368,7 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BiTgte_HCurveOnVertex::~BiTgte_HCurveOnVertex %{
@@ -606,6 +606,10 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 		Bnd_Box & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Bnd_Box & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BiTgte_DataMapOfShapeBox::~BiTgte_DataMapOfShapeBox %{

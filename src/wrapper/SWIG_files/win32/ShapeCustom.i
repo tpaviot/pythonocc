@@ -351,7 +351,7 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 };
 %extend ShapeCustom_SweptToElementary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_SweptToElementary::~ShapeCustom_SweptToElementary %{
@@ -401,7 +401,7 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 %extend ShapeCustom_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_TrsfModification::~ShapeCustom_TrsfModification %{
@@ -592,7 +592,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 %extend ShapeCustom_BSplineRestriction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_BSplineRestriction::~ShapeCustom_BSplineRestriction %{
@@ -852,7 +852,7 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 };
 %extend ShapeCustom_RestrictionParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_RestrictionParameters::~ShapeCustom_RestrictionParameters %{
@@ -904,7 +904,7 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_ConvertToRevolution::~ShapeCustom_ConvertToRevolution %{
@@ -985,7 +985,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 };
 %extend ShapeCustom_DirectModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_DirectModification::~ShapeCustom_DirectModification %{
@@ -1045,7 +1045,7 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToBSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeCustom_ConvertToBSpline::~ShapeCustom_ConvertToBSpline %{

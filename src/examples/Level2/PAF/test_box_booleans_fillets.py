@@ -64,7 +64,6 @@ def main():
     yy1.Append(li1_geom.GetHandle())
     yy2.Append(li2_geom.GetHandle())
 
-    import ipdb; ipdb.set_trace()
     my_context.boolean_operations.MakeBoolean(li1_geom.GetHandle(),li2_geom.GetHandle(),3, show=True)
 
     #TColgp_HSequenceOfDir
@@ -90,7 +89,6 @@ def main():
 #
 #
 #
-#    import ipdb; ipdb.set_trace()
 
     # configuring presentations
     #===========================================================================

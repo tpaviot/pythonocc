@@ -802,7 +802,7 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 };
 %extend Prs3d_Presentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_Presentation::~Prs3d_Presentation %{
@@ -837,7 +837,7 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 };
 %extend Prs3d_CompositeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_CompositeAspect::~Prs3d_CompositeAspect %{
@@ -873,14 +873,6 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 		Handle_Prs3d_ArrowAspect ArrowAspect() const;
 		%feature("autodoc", "1");
 		void SetArrowAspect(const Handle_Prs3d_ArrowAspect &anAspect);
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
 
 };
 %extend Prs3d_AngleAspect {
@@ -890,7 +882,7 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_AngleAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_AngleAspect::~Prs3d_AngleAspect %{
@@ -989,14 +981,6 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Quantity_Length ThirdAxisLength() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1007,7 +991,7 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_DatumAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_DatumAspect::~Prs3d_DatumAspect %{
@@ -1042,7 +1026,7 @@ class Prs3d_BasicAspect : public MMgt_TShared {
 };
 %extend Prs3d_BasicAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_BasicAspect::~Prs3d_BasicAspect %{
@@ -1080,14 +1064,6 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		void SetScale(const Standard_Real aScale);
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d Aspect() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
 		%feature("autodoc","GetTextureSize() -> [Standard_Integer, Standard_Integer]");
 
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
@@ -1102,7 +1078,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_PointAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_PointAspect::~Prs3d_PointAspect %{
@@ -1143,14 +1119,6 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1161,7 +1129,7 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_ArrowAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_ArrowAspect::~Prs3d_ArrowAspect %{
@@ -1251,7 +1219,7 @@ class Prs3d_Projector : public MMgt_TShared {
 };
 %extend Prs3d_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_Projector::~Prs3d_Projector %{
@@ -1288,14 +1256,6 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1306,7 +1266,7 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_LineAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_LineAspect::~Prs3d_LineAspect %{
@@ -1385,7 +1345,7 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_PlaneAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_PlaneAspect::~Prs3d_PlaneAspect %{
@@ -1548,13 +1508,13 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetSectionAspect(const Handle_Prs3d_LineAspect &anAspect);
 		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled);
 		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
+		virtual		Standard_Boolean IsFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryAspect(const Handle_Prs3d_LineAspect &theAspect);
+		%feature("autodoc", "1");
+		virtual		Handle_Prs3d_LineAspect FaceBoundaryAspect();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1566,7 +1526,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 };
 %extend Prs3d_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_Drawer::~Prs3d_Drawer %{
@@ -1690,14 +1650,6 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectText3d Aspect() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1708,7 +1660,7 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_TextAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_TextAspect::~Prs3d_TextAspect %{
@@ -1739,14 +1691,6 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 		%feature("autodoc", "1");
 		Standard_Integer Number() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1757,7 +1701,7 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 };
 %extend Prs3d_IsoAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_IsoAspect::~Prs3d_IsoAspect %{
@@ -1800,7 +1744,7 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 };
 %extend Prs3d_InvalidAngle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_InvalidAngle::~Prs3d_InvalidAngle %{
@@ -1851,7 +1795,7 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 };
 %extend Prs3d_PlaneSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_PlaneSet::~Prs3d_PlaneSet %{
@@ -1913,7 +1857,7 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_RadiusAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_RadiusAspect::~Prs3d_RadiusAspect %{
@@ -1968,7 +1912,7 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_ShadingAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_ShadingAspect::~Prs3d_ShadingAspect %{
@@ -2044,14 +1988,6 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Standard_Boolean DrawSecondArrow() const;
 		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string PrintToString() {
-			std::stringstream s;
-			self->Print(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -2062,7 +1998,7 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_LengthAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Prs3d_LengthAspect::~Prs3d_LengthAspect %{

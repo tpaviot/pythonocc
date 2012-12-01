@@ -95,7 +95,6 @@ $HeaderURL$
 #include<Aspect_MarkMapEntry.hxx>
 #include<Aspect_MarkerStyle.hxx>
 #include<Aspect_MarkerStyleDefinitionError.hxx>
-#include<Aspect_PixMap.hxx>
 #include<Aspect_Pixel.hxx>
 #include<Aspect_PixmapDefinitionError.hxx>
 #include<Aspect_PixmapError.hxx>
@@ -103,6 +102,7 @@ $HeaderURL$
 #include<Aspect_PlotterOrigin.hxx>
 #include<Aspect_PolyStyleDefinitionError.hxx>
 #include<Aspect_PolygonOffsetMode.hxx>
+#include<Aspect_PrintAlgo.hxx>
 #include<Aspect_RGBPixel.hxx>
 #include<Aspect_RectangularGrid.hxx>
 #include<Aspect_RenderingContext.hxx>
@@ -204,8 +204,6 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
-#include<OSD_FontAspect.hxx>
-#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
@@ -215,7 +213,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
-#include<OSD_NListOfSystemFont.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
@@ -241,7 +239,6 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
-#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -344,11 +341,13 @@ $HeaderURL$
 #include<Standard_AbortiveTransaction.hxx>
 #include<Standard_Address.hxx>
 #include<Standard_AncestorIterator.hxx>
+#include<Standard_Assert.hxx>
 #include<Standard_Boolean.hxx>
 #include<Standard_Byte.hxx>
 #include<Standard_CString.hxx>
 #include<Standard_Character.hxx>
 #include<Standard_ConstructionError.hxx>
+#include<Standard_DefineAlloc.hxx>
 #include<Standard_DefineException.hxx>
 #include<Standard_DefineHandle.hxx>
 #include<Standard_DimensionError.hxx>
@@ -402,11 +401,11 @@ $HeaderURL$
 #include<Standard_SStream.hxx>
 #include<Standard_ShortReal.hxx>
 #include<Standard_Size.hxx>
-#include<Standard_Static.hxx>
 #include<Standard_Storable.hxx>
 #include<Standard_Stream.hxx>
 #include<Standard_String.hxx>
 #include<Standard_ThreadId.hxx>
+#include<Standard_Time.hxx>
 #include<Standard_TooManyUsers.hxx>
 #include<Standard_Transient.hxx>
 #include<Standard_Type.hxx>

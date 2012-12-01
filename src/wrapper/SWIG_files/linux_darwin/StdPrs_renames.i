@@ -27,7 +27,6 @@ $HeaderURL$
 %rename(Match) StdPrs_Vertex::Match;
 %rename(Add) StdPrs_WFSurface::Add;
 %rename(Coord) StdPrs_ToolPoint::Coord;
-%rename(Add) StdPrs_ShadedPoleSurface::Add;
 %rename(Add) StdPrs_Point::Add;
 %rename(Match) StdPrs_Point::Match;
 %rename(Add) StdPrs_Plane::Add;

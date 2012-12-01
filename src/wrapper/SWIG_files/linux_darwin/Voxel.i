@@ -417,7 +417,7 @@ class Voxel_Prs : public AIS_InteractiveObject {
 };
 %extend Voxel_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Voxel_Prs::~Voxel_Prs %{

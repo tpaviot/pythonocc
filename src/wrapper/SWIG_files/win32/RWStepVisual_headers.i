@@ -372,7 +372,6 @@ $HeaderURL$
 #include<Handle_StepVisual_OverRidingStyledItem.hxx>
 #include<Handle_StepVisual_SurfaceStyleUsage.hxx>
 #include<Handle_StepVisual_TextStyleWithBoxCharacteristics.hxx>
-#include<Handle_StepVisual_Colour.hxx>
 #include<Handle_StepVisual_ContextDependentOverRidingStyledItem.hxx>
 #include<Handle_StepVisual_CurveStyle.hxx>
 #include<Handle_StepVisual_TextStyle.hxx>
@@ -397,6 +396,7 @@ $HeaderURL$
 #include<Handle_StepVisual_CameraUsage.hxx>
 #include<Handle_StepVisual_PresentationRepresentation.hxx>
 #include<Handle_StepVisual_CurveStyleFont.hxx>
+#include<Handle_StepVisual_Colour.hxx>
 #include<Handle_StepVisual_PresentationLayerUsage.hxx>
 #include<Handle_StepVisual_ExternallyDefinedCurveFont.hxx>
 #include<Handle_StepVisual_DraughtingPreDefinedCurveFont.hxx>

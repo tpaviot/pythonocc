@@ -269,6 +269,10 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const XCAFPrs_Style &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const XCAFPrs_Style &K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfStyleShape::~XCAFPrs_DataMapOfStyleShape %{
@@ -324,6 +328,20 @@ class XCAFPrs_AISObject : public AIS_Shape {
 		%feature("autodoc", "1");
 		XCAFPrs_AISObject(const TDF_Label &lab);
 		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -334,7 +352,7 @@ class XCAFPrs_AISObject : public AIS_Shape {
 };
 %extend XCAFPrs_AISObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_AISObject::~XCAFPrs_AISObject %{
@@ -380,6 +398,10 @@ class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 		XCAFPrs_Style & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		XCAFPrs_Style & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfShapeStyle::~XCAFPrs_DataMapOfShapeStyle %{
@@ -449,7 +471,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode 
 };
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleTransient::~XCAFPrs_DataMapNodeOfDataMapOfStyleTransient %{
@@ -488,7 +510,7 @@ class XCAFPrs_Driver : public TPrsStd_Driver {
 };
 %extend XCAFPrs_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
@@ -534,6 +556,10 @@ class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const XCAFPrs_Style &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const XCAFPrs_Style &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const XCAFPrs_Style &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const XCAFPrs_Style &K);
 
 };
 %feature("shadow") XCAFPrs_DataMapOfStyleTransient::~XCAFPrs_DataMapOfStyleTransient %{
@@ -572,7 +598,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 };
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfStyleShape::~XCAFPrs_DataMapNodeOfDataMapOfStyleShape %{
@@ -735,7 +761,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {
 };
 %extend XCAFPrs_DataMapNodeOfDataMapOfShapeStyle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFPrs_DataMapNodeOfDataMapOfShapeStyle::~XCAFPrs_DataMapNodeOfDataMapOfShapeStyle %{

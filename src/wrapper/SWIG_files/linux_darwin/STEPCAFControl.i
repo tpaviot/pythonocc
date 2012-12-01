@@ -541,7 +541,7 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_ExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_ExternFile::~STEPCAFControl_ExternFile %{
@@ -587,6 +587,10 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 		Handle_StepBasic_ProductDefinition & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Handle_StepBasic_ProductDefinition & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapePD::~STEPCAFControl_DataMapOfShapePD %{
@@ -655,7 +659,7 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_DictionaryOfExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DictionaryOfExternFile::~STEPCAFControl_DictionaryOfExternFile %{
@@ -778,6 +782,10 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 		Handle_StepShape_ShapeDefinitionRepresentation & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfShapeSDR::~STEPCAFControl_DataMapOfShapeSDR %{
@@ -816,7 +824,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR::~STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR %{
@@ -859,7 +867,7 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 };
 %extend STEPCAFControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_ActorWrite::~STEPCAFControl_ActorWrite %{
@@ -933,7 +941,7 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 };
 %extend STEPCAFControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_Controller::~STEPCAFControl_Controller %{
@@ -972,7 +980,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelShape::~STEPCAFControl_DataMapNodeOfDataMapOfLabelShape %{
@@ -1015,7 +1023,7 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_StackItemOfDictionaryOfExternFile::~STEPCAFControl_StackItemOfDictionaryOfExternFile %{
@@ -1054,7 +1062,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile %{
@@ -1162,6 +1170,10 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & ChangeFind(const Handle_StepBasic_ProductDefinition &K);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepBasic_ProductDefinition &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepBasic_ProductDefinition &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepBasic_ProductDefinition &K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfPDExternFile::~STEPCAFControl_DataMapOfPDExternFile %{
@@ -1207,6 +1219,10 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & ChangeFind(const Handle_StepShape_ShapeDefinitionRepresentation &K);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile & operator()(const Handle_StepShape_ShapeDefinitionRepresentation &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_StepShape_ShapeDefinitionRepresentation &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_StepShape_ShapeDefinitionRepresentation &K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfSDRExternFile::~STEPCAFControl_DataMapOfSDRExternFile %{
@@ -1252,6 +1268,10 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 		Handle_STEPCAFControl_ExternFile & ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		Handle_STEPCAFControl_ExternFile & operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfLabelExternFile::~STEPCAFControl_DataMapOfLabelExternFile %{
@@ -1290,7 +1310,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile %{
@@ -1329,7 +1349,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile::~STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile %{
@@ -1375,6 +1395,10 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 		TopoDS_Shape  ChangeFind(const TDF_Label &K);
 		%feature("autodoc", "1");
 		TopoDS_Shape  operator()(const TDF_Label &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TDF_Label &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TDF_Label &K);
 
 };
 %feature("shadow") STEPCAFControl_DataMapOfLabelShape::~STEPCAFControl_DataMapOfLabelShape %{
@@ -1519,7 +1543,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") STEPCAFControl_DataMapNodeOfDataMapOfShapePD::~STEPCAFControl_DataMapNodeOfDataMapOfShapePD %{

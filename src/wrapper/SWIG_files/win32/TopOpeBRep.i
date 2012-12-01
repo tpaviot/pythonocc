@@ -401,7 +401,7 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 };
 %extend TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_SequenceNodeOfSequenceOfPoint2d::~TopOpeBRep_SequenceNodeOfSequenceOfPoint2d %{
@@ -440,7 +440,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_DataMapNodeOfDataMapOfTopolTool::~TopOpeBRep_DataMapNodeOfDataMapOfTopolTool %{
@@ -495,7 +495,7 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfLineInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_HArray1OfLineInter::~TopOpeBRep_HArray1OfLineInter %{
@@ -849,7 +849,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxff2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_Hctxff2d::~TopOpeBRep_Hctxff2d %{
@@ -1353,7 +1353,7 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 };
 %extend TopOpeBRep_FFDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_FFDumper::~TopOpeBRep_FFDumper %{
@@ -1593,7 +1593,7 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxee2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_Hctxee2d::~TopOpeBRep_Hctxee2d %{
@@ -1965,6 +1965,10 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 		Handle_BRepTopAdaptor_TopolTool & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Handle_BRepTopAdaptor_TopolTool & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRep_DataMapOfTopolTool::~TopOpeBRep_DataMapOfTopolTool %{
@@ -2152,7 +2156,7 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 };
 %extend TopOpeBRep_ListNodeOfListOfBipoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_ListNodeOfListOfBipoint::~TopOpeBRep_ListNodeOfListOfBipoint %{
@@ -2207,7 +2211,7 @@ class TopOpeBRep_HArray1OfVPointInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfVPointInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRep_HArray1OfVPointInter::~TopOpeBRep_HArray1OfVPointInter %{

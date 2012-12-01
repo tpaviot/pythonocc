@@ -1062,7 +1062,7 @@ class BinMDataStd_VariableDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_VariableDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_VariableDriver::~BinMDataStd_VariableDriver %{
@@ -1103,7 +1103,7 @@ class BinMDataStd_IntegerArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_IntegerArrayDriver::~BinMDataStd_IntegerArrayDriver %{
@@ -1144,7 +1144,7 @@ class BinMDataStd_UAttributeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_UAttributeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_UAttributeDriver::~BinMDataStd_UAttributeDriver %{
@@ -1185,7 +1185,7 @@ class BinMDataStd_TickDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TickDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_TickDriver::~BinMDataStd_TickDriver %{
@@ -1226,7 +1226,7 @@ class BinMDataStd_BooleanArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_BooleanArrayDriver::~BinMDataStd_BooleanArrayDriver %{
@@ -1267,7 +1267,7 @@ class BinMDataStd_NoteBookDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NoteBookDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_NoteBookDriver::~BinMDataStd_NoteBookDriver %{
@@ -1308,7 +1308,7 @@ class BinMDataStd_CommentDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_CommentDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_CommentDriver::~BinMDataStd_CommentDriver %{
@@ -1349,7 +1349,7 @@ class BinMDataStd_NameDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NameDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_NameDriver::~BinMDataStd_NameDriver %{
@@ -1390,7 +1390,7 @@ class BinMDataStd_ExtStringListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ExtStringListDriver::~BinMDataStd_ExtStringListDriver %{
@@ -1431,7 +1431,7 @@ class BinMDataStd_ReferenceArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ReferenceArrayDriver::~BinMDataStd_ReferenceArrayDriver %{
@@ -1472,7 +1472,7 @@ class BinMDataStd_TreeNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TreeNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_TreeNodeDriver::~BinMDataStd_TreeNodeDriver %{
@@ -1513,7 +1513,7 @@ class BinMDataStd_IntegerDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_IntegerDriver::~BinMDataStd_IntegerDriver %{
@@ -1554,7 +1554,7 @@ class BinMDataStd_RelationDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RelationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_RelationDriver::~BinMDataStd_RelationDriver %{
@@ -1595,7 +1595,7 @@ class BinMDataStd_RealListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_RealListDriver::~BinMDataStd_RealListDriver %{
@@ -1636,7 +1636,7 @@ class BinMDataStd_IntPackedMapDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntPackedMapDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_IntPackedMapDriver::~BinMDataStd_IntPackedMapDriver %{
@@ -1677,7 +1677,7 @@ class BinMDataStd_ByteArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ByteArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ByteArrayDriver::~BinMDataStd_ByteArrayDriver %{
@@ -1718,7 +1718,7 @@ class BinMDataStd_RealArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_RealArrayDriver::~BinMDataStd_RealArrayDriver %{
@@ -1759,7 +1759,7 @@ class BinMDataStd_RealDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_RealDriver::~BinMDataStd_RealDriver %{
@@ -1800,7 +1800,7 @@ class BinMDataStd_BooleanListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_BooleanListDriver::~BinMDataStd_BooleanListDriver %{
@@ -1841,7 +1841,7 @@ class BinMDataStd_ExpressionDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExpressionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ExpressionDriver::~BinMDataStd_ExpressionDriver %{
@@ -1882,7 +1882,7 @@ class BinMDataStd_DirectoryDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_DirectoryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_DirectoryDriver::~BinMDataStd_DirectoryDriver %{
@@ -1923,7 +1923,7 @@ class BinMDataStd_ExtStringArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ExtStringArrayDriver::~BinMDataStd_ExtStringArrayDriver %{
@@ -1964,7 +1964,7 @@ class BinMDataStd_IntegerListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_IntegerListDriver::~BinMDataStd_IntegerListDriver %{
@@ -2005,7 +2005,7 @@ class BinMDataStd_NamedDataDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NamedDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_NamedDataDriver::~BinMDataStd_NamedDataDriver %{
@@ -2075,7 +2075,7 @@ class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_ReferenceListDriver::~BinMDataStd_ReferenceListDriver %{
@@ -2116,7 +2116,7 @@ class BinMDataStd_AsciiStringDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_AsciiStringDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMDataStd_AsciiStringDriver::~BinMDataStd_AsciiStringDriver %{

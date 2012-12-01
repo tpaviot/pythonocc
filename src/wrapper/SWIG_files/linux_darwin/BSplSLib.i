@@ -132,6 +132,9 @@ class BSplSLib {
 		%feature("autodoc","Interpolate(Standard_Integer UDegree, Standard_Integer VDegree, const UFlatKnots, const VFlatKnots, const UParameters, const VParameters) -> Standard_Integer");
 
 		static		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer &OutValue);
+		%feature("autodoc","FunctionMultiply(const Function, Standard_Integer UBSplineDegree, Standard_Integer VBSplineDegree, const UBSplineKnots, const VBSplineKnots, const UMults, const VMults, const Poles, const Weights, const UFlatKnots, const VFlatKnots, Standard_Integer UNewDegree, Standard_Integer VNewDegree) -> Standard_Integer");
+
+		static		void FunctionMultiply(const BSplSLib_EvaluatorFunction &Function, const Standard_Integer UBSplineDegree, const Standard_Integer VBSplineDegree, const TColStd_Array1OfReal &UBSplineKnots, const TColStd_Array1OfReal &VBSplineKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const Standard_Integer UNewDegree, const Standard_Integer VNewDegree, TColgp_Array2OfPnt & NewNumerator, TColStd_Array2OfReal & NewDenominator, Standard_Integer &OutValue);
 
 };
 %feature("shadow") BSplSLib::~BSplSLib %{
@@ -144,6 +147,33 @@ def __del__(self):
 %}
 
 %extend BSplSLib {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BSplSLib_EvaluatorFunction;
+class BSplSLib_EvaluatorFunction {
+	public:
+		%feature("autodoc","Evaluate(Standard_Integer theDerivativeRequest, Standard_Real theUParameter, Standard_Real theVParameter) -> [Standard_Real, Standard_Integer]");
+
+		virtual		void Evaluate(const Standard_Integer theDerivativeRequest, const Standard_Real theUParameter, const Standard_Real theVParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc","operator()(Standard_Integer theDerivativeRequest, Standard_Real theUParameter, Standard_Real theVParameter) -> [Standard_Real, Standard_Integer]");
+
+		void operator()(const Standard_Integer theDerivativeRequest, const Standard_Real theUParameter, const Standard_Real theVParameter, Standard_Real &OutValue, Standard_Integer &OutValue) const;
+
+};
+%feature("shadow") BSplSLib_EvaluatorFunction::~BSplSLib_EvaluatorFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BSplSLib_EvaluatorFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

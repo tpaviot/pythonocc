@@ -447,7 +447,7 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 };
 %extend BRepAlgo_EdgeConnector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_EdgeConnector::~BRepAlgo_EdgeConnector %{
@@ -517,7 +517,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::~BRepAlgo_DataMapNodeOfDataMapOfShapeInterference %{
@@ -573,6 +573,10 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Boolean & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeBoolean::~BRepAlgo_DataMapOfShapeBoolean %{
@@ -684,7 +688,7 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 };
 %extend BRepAlgo_AsDes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_AsDes::~BRepAlgo_AsDes %{
@@ -733,7 +737,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean::~BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean %{
@@ -1113,6 +1117,10 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 		Handle_TopOpeBRepDS_Interference & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepDS_Interference & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepAlgo_DataMapOfShapeInterference::~BRepAlgo_DataMapOfShapeInterference %{
@@ -1291,7 +1299,7 @@ class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_Se
 };
 %extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger::~BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger %{

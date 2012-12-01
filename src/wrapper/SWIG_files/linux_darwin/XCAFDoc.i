@@ -96,6 +96,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_XCAFDoc_Area;
+class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area(const Handle_XCAFDoc_Area &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area(const XCAFDoc_Area *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area & operator=(const Handle_XCAFDoc_Area &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Area DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_Area {
+	XCAFDoc_Area* GetObject() {
+	return (XCAFDoc_Area*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
 class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 	public:
@@ -318,44 +356,6 @@ def __del__(self):
 %}
 
 %extend Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_XCAFDoc_Area;
-class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area(const Handle_XCAFDoc_Area &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area(const XCAFDoc_Area *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area & operator=(const Handle_XCAFDoc_Area &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Area DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_Area {
-	XCAFDoc_Area* GetObject() {
-	return (XCAFDoc_Area*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XCAFDoc_Area {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -796,7 +796,7 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DocumentTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DocumentTool::~XCAFDoc_DocumentTool %{
@@ -887,6 +887,10 @@ class XCAFDoc_DataMapOfShapeLabel : public TCollection_BasicMap {
 		TDF_Label & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TDF_Label & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") XCAFDoc_DataMapOfShapeLabel::~XCAFDoc_DataMapOfShapeLabel %{
@@ -948,7 +952,7 @@ class XCAFDoc_Volume : public TDF_Attribute {
 };
 %extend XCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Volume::~XCAFDoc_Volume %{
@@ -1005,7 +1009,7 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTol::~XCAFDoc_DimTol %{
@@ -1091,7 +1095,7 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 };
 %extend XCAFDoc_DimTolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DimTolTool::~XCAFDoc_DimTolTool %{
@@ -1158,7 +1162,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		TDF_Label AddShape(const TopoDS_Shape S, const Standard_Boolean makeAssembly=1, const Standard_Boolean makePrepare=1);
 		%feature("autodoc", "1");
-		Standard_Boolean RemoveShape(const TDF_Label &L) const;
+		Standard_Boolean RemoveShape(const TDF_Label &L, const Standard_Boolean removeCompletely=1) const;
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1252,7 +1256,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeTool::~XCAFDoc_ShapeTool %{
@@ -1338,7 +1342,7 @@ class XCAFDoc_Datum : public TDF_Attribute {
 };
 %extend XCAFDoc_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Datum::~XCAFDoc_Datum %{
@@ -1437,7 +1441,7 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 };
 %extend XCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_LayerTool::~XCAFDoc_LayerTool %{
@@ -1530,7 +1534,7 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 };
 %extend XCAFDoc_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_GraphNode::~XCAFDoc_GraphNode %{
@@ -1592,7 +1596,7 @@ class XCAFDoc_Area : public TDF_Attribute {
 };
 %extend XCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Area::~XCAFDoc_Area %{
@@ -1656,7 +1660,7 @@ class XCAFDoc_Color : public TDF_Attribute {
 };
 %extend XCAFDoc_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Color::~XCAFDoc_Color %{
@@ -1707,7 +1711,7 @@ class XCAFDoc_Location : public TDF_Attribute {
 };
 %extend XCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Location::~XCAFDoc_Location %{
@@ -1766,7 +1770,7 @@ class XCAFDoc_Material : public TDF_Attribute {
 };
 %extend XCAFDoc_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Material::~XCAFDoc_Material %{
@@ -1884,7 +1888,7 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ShapeMapTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ShapeMapTool::~XCAFDoc_ShapeMapTool %{
@@ -1945,7 +1949,7 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 };
 %extend XCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_Centroid::~XCAFDoc_Centroid %{
@@ -1984,7 +1988,7 @@ class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 };
 %extend XCAFDoc_DataMapNodeOfDataMapOfShapeLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::~XCAFDoc_DataMapNodeOfDataMapOfShapeLabel %{
@@ -2085,7 +2089,7 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 };
 %extend XCAFDoc_ColorTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_ColorTool::~XCAFDoc_ColorTool %{
@@ -2122,7 +2126,7 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 };
 %extend XCAFDoc_SequenceNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_SequenceNodeOfGraphNodeSequence::~XCAFDoc_SequenceNodeOfGraphNodeSequence %{
@@ -2188,7 +2192,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 };
 %extend XCAFDoc_MaterialTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XCAFDoc_MaterialTool::~XCAFDoc_MaterialTool %{

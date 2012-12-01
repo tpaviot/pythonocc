@@ -1,0 +1,151 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	NMTDS_InterfPool.cdl
+-- Created:	Wed Feb 21 10:10:58 2007
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class InterfPool from NMTDS 
+
+	---Purpose: 
+
+uses
+    MapOfPassKeyBoolean  from NMTDS, 
+    ListOfPassKeyBoolean from NMTDS, 
+    PassKeyBoolean       from NMTDS,
+    InterfType           from NMTDS, 
+    --     
+    CArray1OfSSInterference from BOPTools,
+    CArray1OfESInterference from BOPTools,
+    CArray1OfVSInterference from BOPTools, 
+    CArray1OfEEInterference from BOPTools, 
+    CArray1OfVEInterference from BOPTools, 
+    CArray1OfVVInterference from BOPTools
+
+--raises
+
+is 
+    Create 
+    	returns InterfPool from NMTDS; 
+    ---C++: alias "Standard_EXPORT virtual ~NMTDS_InterfPool();"  
+
+ 
+    Add (me:out;   
+    	    aPKB : PassKeyBoolean from NMTDS;
+            aType: InterfType from NMTDS) 
+    	returns Boolean from Standard; 
+	
+    Add (me:out;   
+    	    aInd1 : Integer from Standard;
+    	    aInd2 : Integer from Standard; 
+            aType : InterfType from NMTDS) 
+    	returns Boolean from Standard;
+      
+    Add (me:out;   
+    	    aInd1 : Integer from Standard;
+    	    aInd2 : Integer from Standard; 
+	    bFlag : Boolean from Standard;    		     
+            aType : InterfType from NMTDS) 
+    	returns Boolean from Standard;
+
+    Contains(me; 
+    	    aPKB : PassKeyBoolean from NMTDS)
+    	returns Boolean from Standard; 
+     
+    Contains(me; 
+    	    aInd1 : Integer from Standard;
+    	    aInd2 : Integer from Standard) 
+    	returns Boolean from Standard; 
+     
+    Get(me) 
+	returns ListOfPassKeyBoolean from NMTDS; 
+    ---C++: return const & 	  
+
+    Get(me; 
+    	    aType : InterfType from NMTDS) 
+	returns ListOfPassKeyBoolean from NMTDS; 
+    ---C++: return const &  	 
+
+    Get(me; 
+    	    aInd : Integer from Standard) 
+	returns ListOfPassKeyBoolean from NMTDS; 
+    ---C++: return const & 
+      
+    Get(me; 
+    	    aInd : Integer from Standard; 
+    	    aType: InterfType from NMTDS) 
+	returns ListOfPassKeyBoolean from NMTDS; 
+    ---C++: return const &  
+    
+    -- 
+    -- Interferences 
+    -- 
+    SSInterferences (me:out)  
+	returns CArray1OfSSInterference from BOPTools; 
+    	---C++:  return  & 
+    	---Purpose: 
+    	--- Returns the reference to array Of F/F interferences 
+    	---
+    ESInterferences (me:out)  
+	returns CArray1OfESInterference from BOPTools; 
+    	---C++:  return  & 
+    	---Purpose: 
+    	--- Returns the reference to array Of E/F interferences 
+    	---
+    VSInterferences (me:out)  
+	returns CArray1OfVSInterference from BOPTools; 
+    	---C++:  return  &
+    	---Purpose: 
+    	--- Returns the reference to array Of V/F interferences 
+    	---
+    EEInterferences (me:out)  
+	returns CArray1OfEEInterference from BOPTools; 
+    	---C++:  return  &  
+    	---Purpose: 
+    	--- Returns the reference to arrray Of E/E interferences 
+    	---
+    VEInterferences (me:out)  
+	returns CArray1OfVEInterference from BOPTools; 
+    	---C++:  return  &  	 	
+    	---Purpose: 
+    	--- Returns the reference to arrray Of  V/E interferences 
+    	---
+    VVInterferences (me:out)  
+	returns CArray1OfVVInterference from BOPTools; 
+    	---C++:  return  &  	 	
+    	---Purpose: 
+    	--- Returns the reference to arrray Of  V/V interferences 
+    	---
+
+fields 
+    myTable : MapOfPassKeyBoolean from NMTDS [6] is protected; 
+    myList  : ListOfPassKeyBoolean from NMTDS is protected;
+    myMaxInd: Integer from Standard is protected; 
+    -- 
+    mySSInterferences  :  CArray1OfSSInterference from BOPTools is protected;
+    myESInterferences  :  CArray1OfESInterference from BOPTools is protected;
+    myVSInterferences  :  CArray1OfVSInterference from BOPTools is protected;
+    myEEInterferences  :  CArray1OfEEInterference from BOPTools is protected;
+    myVEInterferences  :  CArray1OfVEInterference from BOPTools is protected;
+    myVVInterferences  :  CArray1OfVVInterference from BOPTools is protected;   
+
+end InterfPool;

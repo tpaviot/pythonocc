@@ -25,22 +25,22 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_Geom2d_Geometry::DownCast;
 %rename(DownCast) Handle_Geom2d_Curve::DownCast;
-%rename(DownCast) Handle_Geom2d_OffsetCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Conic::DownCast;
 %rename(DownCast) Handle_Geom2d_Circle::DownCast;
 %rename(DownCast) Handle_Geom2d_Vector::DownCast;
 %rename(DownCast) Handle_Geom2d_BoundedCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Parabola::DownCast;
+%rename(DownCast) Handle_Geom2d_OffsetCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Transformation::DownCast;
 %rename(DownCast) Handle_Geom2d_UndefinedDerivative::DownCast;
 %rename(DownCast) Handle_Geom2d_Point::DownCast;
 %rename(DownCast) Handle_Geom2d_Hyperbola::DownCast;
 %rename(DownCast) Handle_Geom2d_Ellipse::DownCast;
 %rename(DownCast) Handle_Geom2d_BezierCurve::DownCast;
+%rename(DownCast) Handle_Geom2d_UndefinedValue::DownCast;
 %rename(DownCast) Handle_Geom2d_Line::DownCast;
 %rename(DownCast) Handle_Geom2d_AxisPlacement::DownCast;
 %rename(DownCast) Handle_Geom2d_VectorWithMagnitude::DownCast;
-%rename(DownCast) Handle_Geom2d_UndefinedValue::DownCast;
 %rename(DownCast) Handle_Geom2d_BSplineCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Direction::DownCast;
 %rename(DownCast) Handle_Geom2d_CartesianPoint::DownCast;

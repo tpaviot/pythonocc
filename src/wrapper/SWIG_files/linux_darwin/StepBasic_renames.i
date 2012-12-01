@@ -27,11 +27,11 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_ActionMethod::DownCast;
 %rename(DownCast) Handle_StepBasic_MeasureWithUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_PlaneAngleMeasureWithUnit::DownCast;
+%rename(DownCast) Handle_StepBasic_CertificationAssignment::DownCast;
+%rename(DownCast) Handle_StepBasic_ApprovalRelationship::DownCast;
 %rename(DownCast) Handle_StepBasic_NamedUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit::DownCast;
-%rename(DownCast) Handle_StepBasic_CertificationAssignment::DownCast;
-%rename(DownCast) Handle_StepBasic_ApprovalRelationship::DownCast;
 %rename(DownCast) Handle_StepBasic_DateRole::DownCast;
 %rename(DownCast) Handle_StepBasic_ActionRequestAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_ApprovalStatus::DownCast;

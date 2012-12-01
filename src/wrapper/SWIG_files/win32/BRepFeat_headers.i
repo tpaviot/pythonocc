@@ -62,6 +62,7 @@ $HeaderURL$
 #include<TopoDS_Edge.hxx>
 #include<gp_Dir.hxx>
 #include<TopTools_ListOfShape.hxx>
+#include<TopoDS_Compound.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Ax1.hxx>

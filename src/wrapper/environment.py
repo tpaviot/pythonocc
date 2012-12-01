@@ -150,21 +150,16 @@ elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','linux_darwin')
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    if OCC_ROOT!=None:
-        OCC_INC = os.path.join(OCC_ROOT,'inc')
-        OCC_LIB = os.path.join(OCC_ROOT,'lib')
-    else:
-        OCC_INC = '/usr/include/opencascade'
-        OCC_LIB = '/usr/lib'
+    OCC_INC = '/usr/local/include/oce'
+    OCC_LIB = '/usr/local/lib'
     SALOME_GEOM_LIB = '/usr/local/lib'
     SALOME_SMESH_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
-    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
+    PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
-                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
-                     ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]      
+                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]      
     SWIG_OPTS = ['-O','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
+                 '-w302,401,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%SWIG_OUT_DIR]
     ECA = []
     if bits==64:
@@ -189,7 +184,6 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_INC = '/usr/local/include/oce'
     OCC_LIB = '/usr/local/lib'
-      
     SALOME_GEOM_LIB = '/usr/local/lib/'
     SALOME_SMESH_LIB = '/usr/local/lib/'        
     GCC_XML_PATH = which('gccxml')

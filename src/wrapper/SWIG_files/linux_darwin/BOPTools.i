@@ -852,7 +852,7 @@ class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfShapeEnum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfShapeEnum::~BOPTools_ListNodeOfListOfShapeEnum %{
@@ -902,6 +902,8 @@ class BOPTools_CArray1OfVEInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfVEInterference::~BOPTools_CArray1OfVEInterference %{
@@ -948,7 +950,7 @@ class BOPTools_Tools {
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsBlocksCoinside(const BOPTools_PaveBlock &aPB1, const BOPTools_PaveBlock &aPB2);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsBlockInOnFace(const BOPTools_PaveBlock &aPB, const TopoDS_Face aF, IntTools_Context & aContext);
+		static		Standard_Boolean IsBlockInOnFace(const BOPTools_PaveBlock &aPB, const TopoDS_Face aF, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		void MapShapes(const TopoDS_Shape aS, TopTools_IndexedMapOfShape & aM);
 		%feature("autodoc", "1");
@@ -1429,7 +1431,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet %{
@@ -1540,6 +1542,8 @@ class BOPTools_PavePool {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_PavePool::~BOPTools_PavePool %{
@@ -1576,7 +1580,7 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_SequenceNodeOfSequenceOfCurves::~BOPTools_SequenceNodeOfSequenceOfCurves %{
@@ -1697,7 +1701,7 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger::~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger %{
@@ -1734,7 +1738,7 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCoupleOfInteger::~BOPTools_ListNodeOfListOfCoupleOfInteger %{
@@ -1790,6 +1794,10 @@ class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
 		const TColStd_IndexedMapOfInteger & FindFromKey(const BOPTools_PaveBlock &K) const;
 		%feature("autodoc", "1");
 		TColStd_IndexedMapOfInteger & ChangeFromKey(const BOPTools_PaveBlock &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const BOPTools_PaveBlock &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const BOPTools_PaveBlock &K);
 
 };
 %feature("shadow") BOPTools_IDMapOfPaveBlockIMapOfInteger::~BOPTools_IDMapOfPaveBlockIMapOfInteger %{
@@ -1826,7 +1834,7 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_SequenceNodeOfSequenceOfPaveBlock::~BOPTools_SequenceNodeOfSequenceOfPaveBlock %{
@@ -1876,6 +1884,8 @@ class BOPTools_CArray1OfEEInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfEEInterference::~BOPTools_CArray1OfEEInterference %{
@@ -1974,7 +1984,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger::~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger %{
@@ -2011,7 +2021,7 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCommonBlock::~BOPTools_ListNodeOfListOfCommonBlock %{
@@ -2061,6 +2071,8 @@ class BOPTools_CommonBlockPool {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CommonBlockPool::~BOPTools_CommonBlockPool %{
@@ -2161,9 +2173,9 @@ class BOPTools_PaveFiller {
 		%feature("autodoc", "1");
 		virtual		void ToCompletePerform();
 		%feature("autodoc", "1");
-		const IntTools_Context & Context() const;
+		void SetContext(const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
-		IntTools_Context & ChangeContext();
+		const Handle_IntTools_Context & Context() const;
 		%feature("autodoc", "1");
 		void SetInterferencePool(const BOPTools_InterferencePool &aPool);
 		%feature("autodoc", "1");
@@ -2269,69 +2281,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState;
-class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const Standard_Integer &K1, const Standard_Integer K2, const BooleanOperations_StateOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey1() {
-				return (Standard_Integer) $self->Key1();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey1(Standard_Integer value ) {
-				$self->Key1()=value;
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		BooleanOperations_StateOfShape & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
-	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState GetHandle() {
-	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState*) &$self;
-	}
-};
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BOPTools_VEInterference;
 class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -2398,6 +2347,10 @@ class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
 		const BOPTools_PaveSet & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		BOPTools_PaveSet & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
 
 };
 %feature("shadow") BOPTools_IndexedDataMapOfIntegerPaveSet::~BOPTools_IndexedDataMapOfIntegerPaveSet %{
@@ -2460,7 +2413,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo %{
@@ -2727,6 +2680,10 @@ class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
 		const BOPTools_IMapOfPaveBlock & FindFromKey(const BOPTools_PaveBlock &K) const;
 		%feature("autodoc", "1");
 		BOPTools_IMapOfPaveBlock & ChangeFromKey(const BOPTools_PaveBlock &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const BOPTools_PaveBlock &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const BOPTools_PaveBlock &K);
 
 };
 %feature("shadow") BOPTools_IDMapOfPaveBlockIMapOfPaveBlock::~BOPTools_IDMapOfPaveBlockIMapOfPaveBlock %{
@@ -2779,7 +2736,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState %{
@@ -2829,6 +2786,8 @@ class BOPTools_CArray1OfVVInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfVVInterference::~BOPTools_CArray1OfVVInterference %{
@@ -2917,6 +2876,10 @@ class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
 		const BooleanOperations_StateOfShape & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		BooleanOperations_StateOfShape & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
 
 };
 %feature("shadow") BOPTools_IndexedDataMapOfIntegerState::~BOPTools_IndexedDataMapOfIntegerState %{
@@ -3178,7 +3141,7 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_HArray2OfIntersectionStatus::~BOPTools_HArray2OfIntersectionStatus %{
@@ -3539,7 +3502,7 @@ class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfPaveBlock::~BOPTools_ListNodeOfListOfPaveBlock %{
@@ -3650,6 +3613,8 @@ class BOPTools_CArray1OfSSInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfSSInterference::~BOPTools_CArray1OfSSInterference %{
@@ -3730,6 +3695,8 @@ class BOPTools_CArray1OfInterferenceLine {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfInterferenceLine::~BOPTools_CArray1OfInterferenceLine %{
@@ -3813,7 +3780,7 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfCheckResults::~BOPTools_ListNodeOfListOfCheckResults %{
@@ -3859,6 +3826,69 @@ def __del__(self):
 %}
 
 %extend BOPTools_ListIteratorOfListOfCheckResults {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState;
+class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState(const Standard_Integer &K1, const Standard_Integer K2, const BooleanOperations_StateOfShape &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey1() {
+				return (Standard_Integer) $self->Key1();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey1(Standard_Integer value ) {
+				$self->Key1()=value;
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		BooleanOperations_StateOfShape & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
+	Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState GetHandle() {
+	return *(Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState*) &$self;
+	}
+};
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState::~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4006,13 +4036,13 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsConvexWire(const TopoDS_Wire aW);
 		%feature("autodoc", "1");
-		static		void RemoveSims(const TopoDS_Face aF, IntTools_Context & aContext);
+		static		void RemoveSims(const TopoDS_Face aF, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
-		static		void RemoveSims(const TopoDS_Shape aS, IntTools_Context & aContext);
+		static		void RemoveSims(const TopoDS_Shape aS, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		TopAbs_Orientation EdgeOrientation(const TopoDS_Edge aEx, const TopoDS_Face aF1, const TopoDS_Face aF2);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsSplitToReverse1(const TopoDS_Edge aE1, const TopoDS_Edge aE2, IntTools_Context & aContext);
+		static		Standard_Boolean IsSplitToReverse1(const TopoDS_Edge aE1, const TopoDS_Edge aE2, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		void DoSplitSEAMOnFace(const TopoDS_Edge aSp, const TopoDS_Face aF);
 		%feature("autodoc", "1");
@@ -4042,7 +4072,7 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		static		Standard_Boolean GetNormalToSurface(const Handle_Geom_Surface &aS, const Standard_Real U, const Standard_Real V, gp_Dir & aD);
 		%feature("autodoc", "1");
-		static		void GetPlanes(const TopoDS_Edge aSp, const TopoDS_Edge aE2, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap2, const TopoDS_Edge aE1, const TopoDS_Face aF1, TopAbs_State & aST1, IntTools_Context & aContext);
+		static		void GetPlanes(const TopoDS_Edge aSp, const TopoDS_Edge aE2, const TopTools_IndexedDataMapOfShapeListOfShape &aEFMap2, const TopoDS_Edge aE1, const TopoDS_Face aF1, TopAbs_State & aST1, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		TopAbs_Orientation Orientation(const TopoDS_Edge aE, const TopoDS_Face aF);
 		%feature("autodoc", "1");
@@ -4056,9 +4086,9 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		static		void PointNearEdge(const TopoDS_Edge aE, const TopoDS_Face aF, gp_Pnt2d & aP2D, gp_Pnt & aPx);
 		%feature("autodoc", "1");
-		static		void PointToCompare(const gp_Pnt aP1, const gp_Pnt aP2, const TopoDS_Face aF, gp_Pnt & aPx, IntTools_Context & aContext);
+		static		void PointToCompare(const gp_Pnt aP1, const gp_Pnt aP2, const TopoDS_Face aF, gp_Pnt & aPx, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
-		static		void GetPlane(const TopoDS_Edge aSp, const TopoDS_Edge aE1, const TopoDS_Face aF1, const TopoDS_Face aF2, TopAbs_State & aST, IntTools_Context & aContext);
+		static		void GetPlane(const TopoDS_Edge aSp, const TopoDS_Edge aE1, const TopoDS_Face aF1, const TopoDS_Face aF2, TopAbs_State & aST, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		void GetPointState(const TopoDS_Edge aSp, const TopoDS_Edge aEF2, const TopoDS_Face aF2Adj, const TopoDS_Face aF1, TopAbs_State & aST);
 		%feature("autodoc", "1");
@@ -4078,15 +4108,15 @@ class BOPTools_Tools3D {
 		%feature("autodoc", "1");
 		static		void InvertShape(const TopoDS_Shape aS, TopoDS_Shape & aSInv);
 		%feature("autodoc", "1");
-		static		TopAbs_State GetStatePartIN2D(const TopoDS_Edge aSp, const TopoDS_Edge aEF1, const TopoDS_Face aF1, const TopoDS_Face aF2, IntTools_Context & aContext);
+		static		TopAbs_State GetStatePartIN2D(const TopoDS_Edge aSp, const TopoDS_Edge aEF1, const TopoDS_Face aF1, const TopoDS_Face aF2, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean CheckSameDomainFaceInside(const TopoDS_Face theFace1, const TopoDS_Face theFace2, IntTools_Context & theContext);
+		static		Standard_Boolean CheckSameDomainFaceInside(const TopoDS_Face theFace1, const TopoDS_Face theFace2, const Handle_IntTools_Context &theContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean ComputeFaceState(const TopoDS_Face theFace, const TopoDS_Solid theRef, IntTools_Context & theContext, TopAbs_State & theState);
+		static		Standard_Boolean ComputeFaceState(const TopoDS_Face theFace, const TopoDS_Solid theRef, const Handle_IntTools_Context &theContext, TopAbs_State & theState);
 		%feature("autodoc", "1");
-		static		Standard_Boolean TreatedAsAnalytic(const Standard_Real aTx, const gp_Pnt aPx, const TopoDS_Edge aEx, const TopoDS_Face aFx, const TopoDS_Edge aE1, const TopoDS_Face aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
+		static		Standard_Boolean TreatedAsAnalytic(const Standard_Real aTx, const gp_Pnt aPx, const TopoDS_Edge aEx, const TopoDS_Face aFx, const TopoDS_Edge aE1, const TopoDS_Face aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
-		static		Standard_Boolean TreatedAsAnalytic(const TopoDS_Face aFx, const TopoDS_Edge aSpE1, const TopoDS_Face aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, IntTools_Context & aContext);
+		static		Standard_Boolean TreatedAsAnalytic(const TopoDS_Face aFx, const TopoDS_Edge aSpE1, const TopoDS_Face aF1, const Standard_Real aTolTangent, const Standard_Real aTolRadius, TopAbs_State & aState, const Handle_IntTools_Context &aContext);
 		%feature("autodoc", "1");
 		static		Standard_Boolean HasAnalyticSurfaceType(const TopoDS_Face aF);
 
@@ -4125,7 +4155,7 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfInterference::~BOPTools_ListNodeOfListOfInterference %{
@@ -4175,6 +4205,8 @@ class BOPTools_CArray1OfPave {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfPave::~BOPTools_CArray1OfPave %{
@@ -4227,7 +4259,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock::~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock %{
@@ -4345,6 +4377,8 @@ class BOPTools_CArray1OfESInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfESInterference::~BOPTools_CArray1OfESInterference %{
@@ -4394,6 +4428,8 @@ class BOPTools_CArray1OfVSInterference {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_CArray1OfVSInterference::~BOPTools_CArray1OfVSInterference %{
@@ -4664,6 +4700,10 @@ class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
 		const BooleanOperations_StateOfShape & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		BooleanOperations_StateOfShape & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BOPTools_IndexedDataMapOfShapeWithState::~BOPTools_IndexedDataMapOfShapeWithState %{
@@ -4756,6 +4796,10 @@ class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
 		const BOPTools_DEInfo & FindFromKey(const Standard_Integer &K) const;
 		%feature("autodoc", "1");
 		BOPTools_DEInfo & ChangeFromKey(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Standard_Integer &K);
 
 };
 %feature("shadow") BOPTools_IndexedDataMapOfIntegerDEInfo::~BOPTools_IndexedDataMapOfIntegerDEInfo %{
@@ -4853,7 +4897,7 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_ListNodeOfListOfPave::~BOPTools_ListNodeOfListOfPave %{
@@ -4980,7 +5024,7 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BOPTools_IndexedMapNodeOfIMapOfPaveBlock::~BOPTools_IndexedMapNodeOfIMapOfPaveBlock %{
@@ -5030,6 +5074,8 @@ class BOPTools_SplitShapesPool {
 		void SetBlockLength(const Standard_Integer aBL);
 		%feature("autodoc", "1");
 		Standard_Integer BlockLength() const;
+		%feature("autodoc", "1");
+		void Purge();
 
 };
 %feature("shadow") BOPTools_SplitShapesPool::~BOPTools_SplitShapesPool %{

@@ -446,7 +446,7 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 };
 %extend RWStepAP214_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWStepAP214_GeneralModule::~RWStepAP214_GeneralModule %{
@@ -984,7 +984,7 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWStepAP214_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") RWStepAP214_ReadWriteModule::~RWStepAP214_ReadWriteModule %{

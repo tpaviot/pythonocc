@@ -404,7 +404,7 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 };
 %extend IGESToBRep_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_ToolContainer::~IGESToBRep_ToolContainer %{
@@ -508,7 +508,7 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 };
 %extend IGESToBRep_Actor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_Actor::~IGESToBRep_Actor %{
@@ -606,7 +606,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 };
 %extend IGESToBRep_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESToBRep_IGESBoundary::~IGESToBRep_IGESBoundary %{

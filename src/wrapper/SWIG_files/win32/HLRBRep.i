@@ -526,39 +526,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
-		%feature("autodoc", "1");
-		HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
-		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Obje);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
-
-};
-%feature("shadow") HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter::~HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_ListOfBPoint;
 class HLRBRep_ListOfBPoint {
 	public:
@@ -807,7 +774,7 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 };
 %extend HLRBRep_AreaLimit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_AreaLimit::~HLRBRep_AreaLimit %{
@@ -898,7 +865,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_PolyAlgo::~HLRBRep_PolyAlgo %{
@@ -1393,7 +1360,7 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_InternalAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_InternalAlgo::~HLRBRep_InternalAlgo %{
@@ -1709,7 +1676,7 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_ListNodeOfListOfBPoint::~HLRBRep_ListNodeOfListOfBPoint %{
@@ -2309,7 +2276,7 @@ def __del__(self):
 
 
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
+class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter : public Intf_Polygon2d {
 	public:
 		%feature("autodoc", "1");
 		HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter(const Standard_Address &Curve, const Standard_Integer NbPnt, const IntRes2d_Domain &Domain, const Standard_Real Tol);
@@ -2318,21 +2285,15 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		void ComputeWithBox(const Standard_Address &Curve, const Bnd_Box2d &OtherBox);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation() const;
+		virtual		Standard_Real DeflectionOverEstimation() const;
 		%feature("autodoc", "1");
 		void SetDeflectionOverEstimation(const Standard_Real x);
 		%feature("autodoc", "1");
 		void Closed(const Standard_Boolean flag);
 		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
+		virtual		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -2870,7 +2831,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 };
 %extend HLRBRep_Algo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Algo::~HLRBRep_Algo %{
@@ -2992,7 +2953,7 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter::~HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter %{
@@ -3116,7 +3077,7 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPnt2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_ListNodeOfListOfBPnt2D::~HLRBRep_ListNodeOfListOfBPnt2D %{
@@ -3153,7 +3114,7 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_SequenceNodeOfSeqOfShapeBounds::~HLRBRep_SequenceNodeOfSeqOfShapeBounds %{
@@ -3909,7 +3870,7 @@ class HLRBRep_Data : public MMgt_TShared {
 };
 %extend HLRBRep_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRBRep_Data::~HLRBRep_Data %{
@@ -3922,41 +3883,6 @@ def __del__(self):
 %}
 
 %extend HLRBRep_Data {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
-class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  BeginOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  EndOfSeg(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &thePolygon, const Standard_Integer Index);
-
-};
-%feature("shadow") HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter::~HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 	void _kill_pointed() {
 		delete $self;
 	}

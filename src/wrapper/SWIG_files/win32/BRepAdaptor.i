@@ -278,7 +278,7 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 };
 %extend BRepAdaptor_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAdaptor_HArray1OfCurve::~BRepAdaptor_HArray1OfCurve %{
@@ -323,7 +323,7 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCompCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAdaptor_HCompCurve::~BRepAdaptor_HCompCurve %{
@@ -675,7 +675,7 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAdaptor_HCurve::~BRepAdaptor_HCurve %{
@@ -718,7 +718,7 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 };
 %extend BRepAdaptor_HCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAdaptor_HCurve2d::~BRepAdaptor_HCurve2d %{
@@ -862,7 +862,7 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 };
 %extend BRepAdaptor_HSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepAdaptor_HSurface::~BRepAdaptor_HSurface %{

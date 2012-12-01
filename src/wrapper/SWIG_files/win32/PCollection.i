@@ -305,7 +305,7 @@ class PCollection_IsNullTree : public Standard_Failure {
 };
 %extend PCollection_IsNullTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNullTree::~PCollection_IsNullTree %{
@@ -348,7 +348,7 @@ class PCollection_IsNotRoot : public Standard_Failure {
 };
 %extend PCollection_IsNotRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsNotRoot::~PCollection_IsNotRoot %{
@@ -391,7 +391,7 @@ class PCollection_IsContained : public Standard_Failure {
 };
 %extend PCollection_IsContained {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_IsContained::~PCollection_IsContained %{
@@ -540,7 +540,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 };
 %extend PCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_HAsciiString::~PCollection_HAsciiString %{
@@ -696,7 +696,7 @@ class PCollection_HExtendedString : public Standard_Persistent {
 };
 %extend PCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PCollection_HExtendedString::~PCollection_HExtendedString %{

@@ -201,7 +201,7 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 };
 %extend Adaptor2d_HCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor2d_HCurve2d::~Adaptor2d_HCurve2d %{
@@ -364,7 +364,7 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 };
 %extend Adaptor2d_HLine2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor2d_HLine2d::~Adaptor2d_HLine2d %{

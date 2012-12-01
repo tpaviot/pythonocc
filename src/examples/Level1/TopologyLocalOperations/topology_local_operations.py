@@ -83,7 +83,7 @@ def extrusion(event=None):
     # Build Face from Wire. NB: a face is required to generate a solid.
     #
     MKF = BRepBuilderAPI_MakeFace()
-    MKF.Init(surf,False)
+    MKF.Init(surf,False, 1e-6)
     MKF.Add(MW.Wire())
     FP = MKF.Face()
     BRepLib_BuildCurves3d(FP)
@@ -118,7 +118,7 @@ def brepfeat_prism(event=None):
     display.DisplayShape(wire.Wire())
     
     mkf = BRepBuilderAPI_MakeFace()
-    mkf.Init(srf, False)
+    mkf.Init(srf, False , 1e-6)
     mkf.Add(wire.Wire())
     mkf.Build()
     
@@ -311,7 +311,7 @@ def brep_feat_local_pipe(event=None):
     MW1.Add(BRepBuilderAPI_MakeEdge(aline,surf,0.,p1.Distance(p2)).Edge())
     
     MKF1 = BRepBuilderAPI_MakeFace() 
-    MKF1.Init(surf,False)
+    MKF1.Init(surf,False, 1e-6)
     MKF1.Add(MW1.Wire())
     
     FP = MKF1.Face()
@@ -358,7 +358,7 @@ def brep_feat_local_revolution(event=None):
     MW1.Add(BRepBuilderAPI_MakeEdge(aline,surf,0.,p1.Distance(p2)).Edge())
     
     MKF1 = BRepBuilderAPI_MakeFace() 
-    MKF1.Init(surf,False)
+    MKF1.Init(surf,False,1e-6)
     MKF1.Add(MW1.Wire())
     FP = MKF1.Face()
     BRepLib_BuildCurves3d(FP)
@@ -396,7 +396,7 @@ def brep_feat_extrusion_protrusion(event=None):
     MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
     
     MKF = BRepBuilderAPI_MakeFace() 
-    MKF.Init(surf1,False)
+    MKF.Init(surf1,False,1e-6)
     MKF.Add(MW.Wire())
     FP = MKF.Face()
     BRepLib_BuildCurves3d(FP)
@@ -435,7 +435,7 @@ def brep_feat_extrusion_protrusion(event=None):
     MW2.Add(BRepBuilderAPI_MakeEdge(aline,surf2,0.,p1.Distance(p2)).Edge())
 
     MKF2 = BRepBuilderAPI_MakeFace()
-    MKF2.Init(surf2,False)
+    MKF2.Init(surf2,False,1e-6)
     MKF2.Add(MW2.Wire())
     MKF2.Build()
     

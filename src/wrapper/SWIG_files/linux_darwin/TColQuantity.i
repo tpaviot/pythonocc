@@ -215,7 +215,7 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 };
 %extend TColQuantity_HArray1OfLength {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColQuantity_HArray1OfLength::~TColQuantity_HArray1OfLength %{
@@ -276,7 +276,7 @@ class TColQuantity_HArray2OfLength : public MMgt_TShared {
 };
 %extend TColQuantity_HArray2OfLength {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColQuantity_HArray2OfLength::~TColQuantity_HArray2OfLength %{

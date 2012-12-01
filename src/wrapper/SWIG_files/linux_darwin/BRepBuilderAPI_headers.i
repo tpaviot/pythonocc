@@ -28,6 +28,8 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<BRepBuilderAPI.hxx>
+#include<BRepBuilderAPI_BndBoxTreeSelector.hxx>
+#include<BRepBuilderAPI_CellFilter.hxx>
 #include<BRepBuilderAPI_Collect.hxx>
 #include<BRepBuilderAPI_Command.hxx>
 #include<BRepBuilderAPI_Copy.hxx>
@@ -52,6 +54,7 @@ $HeaderURL$
 #include<BRepBuilderAPI_ShellError.hxx>
 #include<BRepBuilderAPI_Transform.hxx>
 #include<BRepBuilderAPI_TransitionMode.hxx>
+#include<BRepBuilderAPI_VertexInspector.hxx>
 #include<BRepBuilderAPI_WireError.hxx>
 #include<Handle_BRepBuilderAPI_Sewing.hxx>
 
@@ -111,6 +114,7 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
+#include<Handle_Message_ProgressIndicator.hxx>
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Wire.hxx>
@@ -125,6 +129,8 @@ $HeaderURL$
 #include<Handle_Geom_Curve.hxx>
 #include<Handle_Geom2d_Curve.hxx>
 #include<Handle_Geom_Surface.hxx>
+#include<gp_XYZ.hxx>
+#include<Bnd_Box.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Lin2d.hxx>

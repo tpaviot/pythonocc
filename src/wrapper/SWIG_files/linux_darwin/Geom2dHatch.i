@@ -190,6 +190,10 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 		Geom2dHatch_ElementOfHatcher & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Geom2dHatch_ElementOfHatcher & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") Geom2dHatch_MapOfElementsOfElementsOfHatcher::~Geom2dHatch_MapOfElementsOfElementsOfHatcher %{
@@ -275,7 +279,7 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 };
 %extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dHatch_DataMapNodeOfHatchingsOfHatcher::~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher %{
@@ -361,6 +365,10 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 		Geom2dHatch_HatchingOfHatcher & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Geom2dHatch_HatchingOfHatcher & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") Geom2dHatch_HatchingsOfHatcher::~Geom2dHatch_HatchingsOfHatcher %{
@@ -478,7 +486,7 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 };
 %extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher::~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher %{

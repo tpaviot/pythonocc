@@ -68,7 +68,6 @@ def geomobject_from_topods(topods, pmc):
     # tt.GetLastFunction().GetObject().GetValue() # -> segfaults...
 
     gf = tt.GetLastFunction().GetObject() # GEOM_Function
-    import ipdb; ipdb.set_trace()
     gf.IsNull() # yep...
     gf.SetValue(shape) # segfault; this is the shape that tt.GetValue() will return!
 
@@ -86,13 +85,11 @@ pmc.register_operations(pmc.boolean_operations)
 v, lA, lB = map(lambda x: geomobject_from_topods(x, pmc), (vertex, lineA, lineB))
 
 try:
-    import ipdb; ipdb.set_trace()
     qq = pmc.boolean_operations.MakeBoolean(lA,lB,3)
     qqq = qq.GetObject().GetValue()
 except Exception, e:
     print e
-    import ipdb; ipdb.set_trace()
-
+    
 Display()(qqq)
 
 #   pmc.boolean_operations.MakePartition()

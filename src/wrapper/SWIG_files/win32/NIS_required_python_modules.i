@@ -32,5 +32,4 @@ import Standard
 import TColStd
 import NCollection
 import gp
-import Quantity
 };

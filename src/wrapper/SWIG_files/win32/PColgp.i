@@ -622,44 +622,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PColgp_HArray2OfDir2d;
-class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfDir2d();
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfDir2d(const Handle_PColgp_HArray2OfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfDir2d(const PColgp_HArray2OfDir2d *anItem);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfDir2d & operator=(const Handle_PColgp_HArray2OfDir2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColgp_HArray2OfDir2d & operator=(const PColgp_HArray2OfDir2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PColgp_HArray2OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColgp_HArray2OfDir2d {
-	PColgp_HArray2OfDir2d* GetObject() {
-	return (PColgp_HArray2OfDir2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PColgp_HArray2OfDir2d::~Handle_PColgp_HArray2OfDir2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PColgp_HArray2OfDir2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfVec;
 class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 	public:
@@ -1648,6 +1610,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PColgp_HArray2OfDir2d;
+class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfDir2d();
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfDir2d(const Handle_PColgp_HArray2OfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfDir2d(const PColgp_HArray2OfDir2d *anItem);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfDir2d & operator=(const Handle_PColgp_HArray2OfDir2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColgp_HArray2OfDir2d & operator=(const PColgp_HArray2OfDir2d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PColgp_HArray2OfDir2d DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColgp_HArray2OfDir2d {
+	PColgp_HArray2OfDir2d* GetObject() {
+	return (PColgp_HArray2OfDir2d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PColgp_HArray2OfDir2d::~Handle_PColgp_HArray2OfDir2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PColgp_HArray2OfDir2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -2013,7 +2013,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfXY::~PColgp_VArrayNodeOfFieldOfHArray1OfXY %{
@@ -2084,7 +2084,7 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfVec::~PColgp_HArray1OfVec %{
@@ -2178,7 +2178,7 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 };
 %extend PColgp_SeqNodeOfHSequenceOfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfDir::~PColgp_SeqNodeOfHSequenceOfDir %{
@@ -2278,7 +2278,7 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfCirc2d::~PColgp_HArray1OfCirc2d %{
@@ -2349,7 +2349,7 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfDir2d::~PColgp_HArray1OfDir2d %{
@@ -2434,7 +2434,7 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfVec2d::~PColgp_HArray2OfVec2d %{
@@ -2520,7 +2520,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfVec::~PColgp_VArrayNodeOfFieldOfHArray1OfVec %{
@@ -2591,7 +2591,7 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfDir::~PColgp_HArray1OfDir %{
@@ -2735,7 +2735,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d::~PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d %{
@@ -2972,7 +2972,7 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfLin2d::~PColgp_HArray2OfLin2d %{
@@ -3017,7 +3017,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfDir::~PColgp_VArrayNodeOfFieldOfHArray1OfDir %{
@@ -3062,7 +3062,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfVec::~PColgp_VArrayNodeOfFieldOfHArray2OfVec %{
@@ -3177,7 +3177,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfDir2d::~PColgp_VArrayNodeOfFieldOfHArray2OfDir2d %{
@@ -3350,7 +3350,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfDir::~PColgp_VArrayNodeOfFieldOfHArray2OfDir %{
@@ -3415,7 +3415,7 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 };
 %extend PColgp_SeqNodeOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfPnt::~PColgp_SeqNodeOfHSequenceOfPnt %{
@@ -3500,7 +3500,7 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfPnt2d::~PColgp_HArray2OfPnt2d %{
@@ -3565,7 +3565,7 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 };
 %extend PColgp_SeqNodeOfHSequenceOfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfXYZ::~PColgp_SeqNodeOfHSequenceOfXYZ %{
@@ -3674,7 +3674,7 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 };
 %extend PColgp_HSequenceOfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HSequenceOfVec::~PColgp_HSequenceOfVec %{
@@ -3745,7 +3745,7 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfVec2d::~PColgp_HArray1OfVec2d %{
@@ -3816,7 +3816,7 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfPnt2d::~PColgp_HArray1OfPnt2d %{
@@ -3887,7 +3887,7 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfLin2d::~PColgp_HArray1OfLin2d %{
@@ -3958,7 +3958,7 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfPnt::~PColgp_HArray1OfPnt %{
@@ -4067,7 +4067,7 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 };
 %extend PColgp_HSequenceOfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HSequenceOfDir::~PColgp_HSequenceOfDir %{
@@ -4112,7 +4112,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfVec2d::~PColgp_VArrayNodeOfFieldOfHArray2OfVec2d %{
@@ -4188,7 +4188,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfDir2d::~PColgp_VArrayNodeOfFieldOfHArray1OfDir2d %{
@@ -4314,7 +4314,7 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfPnt::~PColgp_HArray2OfPnt %{
@@ -4359,7 +4359,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfXYZ::~PColgp_VArrayNodeOfFieldOfHArray1OfXYZ %{
@@ -4485,7 +4485,7 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfDir::~PColgp_HArray2OfDir %{
@@ -4530,7 +4530,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfLin2d::~PColgp_VArrayNodeOfFieldOfHArray2OfLin2d %{
@@ -4616,7 +4616,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfVec2d::~PColgp_VArrayNodeOfFieldOfHArray1OfVec2d %{
@@ -4701,7 +4701,7 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfXYZ::~PColgp_HArray2OfXYZ %{
@@ -4746,7 +4746,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfPnt::~PColgp_VArrayNodeOfFieldOfHArray2OfPnt %{
@@ -4817,7 +4817,7 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfXYZ::~PColgp_HArray1OfXYZ %{
@@ -5114,7 +5114,7 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfXY::~PColgp_HArray2OfXY %{
@@ -5340,7 +5340,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfXYZ::~PColgp_VArrayNodeOfFieldOfHArray2OfXYZ %{
@@ -5449,7 +5449,7 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 };
 %extend PColgp_HSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HSequenceOfPnt::~PColgp_HSequenceOfPnt %{
@@ -5494,7 +5494,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d::~PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d %{
@@ -5539,7 +5539,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfPnt::~PColgp_VArrayNodeOfFieldOfHArray1OfPnt %{
@@ -5655,7 +5655,7 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfCirc2d::~PColgp_HArray2OfCirc2d %{
@@ -5770,7 +5770,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfLin2d::~PColgp_VArrayNodeOfFieldOfHArray1OfLin2d %{
@@ -5855,7 +5855,7 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfVec::~PColgp_HArray2OfVec %{
@@ -5900,7 +5900,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfXY::~PColgp_VArrayNodeOfFieldOfHArray2OfXY %{
@@ -5965,7 +5965,7 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 };
 %extend PColgp_SeqNodeOfHSequenceOfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_SeqNodeOfHSequenceOfVec::~PColgp_SeqNodeOfHSequenceOfVec %{
@@ -6074,7 +6074,7 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 };
 %extend PColgp_HSequenceOfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HSequenceOfXYZ::~PColgp_HSequenceOfXYZ %{
@@ -6244,7 +6244,7 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 };
 %extend PColgp_HArray1OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray1OfXY::~PColgp_HArray1OfXY %{
@@ -6358,7 +6358,7 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 };
 %extend PColgp_HArray2OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_HArray2OfDir2d::~PColgp_HArray2OfDir2d %{
@@ -6403,7 +6403,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d::~PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d %{
@@ -6479,7 +6479,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 };
 %extend PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d::~PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d %{

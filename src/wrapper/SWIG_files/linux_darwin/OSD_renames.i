@@ -28,7 +28,6 @@ $HeaderURL$
 %rename(DownCast) Handle_OSD_Signal::DownCast;
 %rename(DownCast) Handle_OSD_SIGBUS::DownCast;
 %rename(DownCast) Handle_OSD_Exception_INT_OVERFLOW::DownCast;
-%rename(DownCast) Handle_OSD_SystemFont::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_STACK_CHECK::DownCast;
 %rename(DownCast) Handle_OSD_SIGILL::DownCast;
 %rename(DownCast) Handle_OSD_Exception_INVALID_DISPOSITION::DownCast;
@@ -39,7 +38,6 @@ $HeaderURL$
 %rename(DownCast) Handle_OSD_Exception_STATUS_NO_MEMORY::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO::DownCast;
 %rename(DownCast) Handle_OSD_Exception_PRIV_INSTRUCTION::DownCast;
-%rename(DownCast) Handle_OSD_FontMgr::DownCast;
 %rename(DownCast) Handle_OSD_SIGKILL::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_INVALID_OPERATION::DownCast;
 %rename(DownCast) Handle_OSD_OSDError::DownCast;
@@ -63,6 +61,7 @@ $HeaderURL$
 %rename(NewInstance) OSD_Exception_PRIV_INSTRUCTION::NewInstance;
 %rename(Raise) OSD_Exception_FLT_UNDERFLOW::Raise;
 %rename(NewInstance) OSD_Exception_FLT_UNDERFLOW::NewInstance;
+%rename(PrintInfo) OSD_MemInfo::PrintInfo;
 %rename(Raise) OSD_Exception_CTRL_BREAK::Raise;
 %rename(NewInstance) OSD_Exception_CTRL_BREAK::NewInstance;
 %rename(Raise) OSD_Exception_ILLEGAL_INSTRUCTION::Raise;
@@ -100,7 +99,6 @@ $HeaderURL$
 %rename(GetExponent) OSD::GetExponent;
 %rename(GetMantissa) OSD::GetMantissa;
 %rename(UseSETranslator) OSD::UseSETranslator;
-%rename(GetInstance) OSD_FontMgr::GetInstance;
 %rename(Raise) OSD_Exception_INVALID_DISPOSITION::Raise;
 %rename(NewInstance) OSD_Exception_INVALID_DISPOSITION::NewInstance;
 %rename(Raise) OSD_Exception_FLT_STACK_CHECK::Raise;

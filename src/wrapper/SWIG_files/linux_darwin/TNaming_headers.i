@@ -120,5 +120,9 @@ $HeaderURL$
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_TopTools_HArray1OfShape.hxx>
+#include<TopoDS_Face.hxx>
+#include<TopoDS_Wire.hxx>
+#include<TopoDS_Solid.hxx>
+#include<TopoDS_Shell.hxx>
 #include<TDF_IDList.hxx>
 %}

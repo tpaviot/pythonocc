@@ -1,0 +1,88 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	GEOMAlgo_WireSplitter.cdl
+-- Created:	
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class WireSplitter from GEOMAlgo   
+    	inherits Algo from GEOMAlgo  
+
+    	---Purpose: 
+    	---  the algorithm to split multiconnexed set of edges  
+    	---  wires on a face onto simple connexed wires 
+	---  .
+uses
+    Face   from TopoDS,  
+    Vertex from TopoDS, 
+    Edge   from TopoDS, 
+    
+    SequenceOfPnt2d  from TColgp, 
+    SequenceOfShape  from TopTools,   
+    ListOfShape      from TopTools, 
+    
+    ListOfListOfShape from BOPTColStd, 
+    
+    EdgeInfo                           from BOP,
+    IndexedDataMapOfVertexListEdgeInfo from BOP
+
+--raises
+
+is 
+    Create   
+    	returns WireSplitter from GEOMAlgo; 
+    ---C++: alias "Standard_EXPORT virtual ~GEOMAlgo_WireSplitter();" 
+    	
+    SetFace  (me:out; 
+    	    	aF: Face from TopoDS); 
+    	 
+    SetEdges  (me:out; 
+		aLE:ListOfShape from  TopTools);    
+
+    Edges  (me)
+	 returns ListOfShape from  TopTools;  
+    ---C++:  return const &	    	
+     
+    Perform  (me:out) 
+    	is redefined; 
+
+    IsNothingToDo (me) 
+    	returns  Boolean from Standard;
+    
+    Face (me) 
+    	returns Face from TopoDS; 
+    ---C++:  return const &	    	 
+
+    Shapes (me) 
+    	returns  ListOfListOfShape from BOPTColStd; 
+    	---C++:  return const &	    		 
+	
+fields  
+    myFace       :  Face from TopoDS is protected; 
+    myIsDone     :  Boolean from Standard is protected;
+    myNothingToDo:  Boolean from Standard is protected;
+    myShapes     :  ListOfListOfShape from BOPTColStd is protected; 
+    mySmartMap   :  IndexedDataMapOfVertexListEdgeInfo from BOP is protected;  
+    myEdges      :  ListOfShape from  TopTools is protected; 
+    
+end WireSplitter;
+

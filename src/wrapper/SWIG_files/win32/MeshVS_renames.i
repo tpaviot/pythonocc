@@ -25,7 +25,6 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_MeshVS_DataMapNodeOfDataMapOfIntegerMeshEntityOwner::DownCast;
 %rename(DownCast) Handle_MeshVS_DataMapNodeOfDataMapOfHArray1OfSequenceOfInteger::DownCast;
-%rename(DownCast) Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::DownCast;
 %rename(DownCast) Handle_MeshVS_PrsBuilder::DownCast;
 %rename(DownCast) Handle_MeshVS_MeshPrsBuilder::DownCast;
 %rename(DownCast) Handle_MeshVS_DataSource::DownCast;
@@ -42,6 +41,7 @@ $HeaderURL$
 %rename(DownCast) Handle_MeshVS_DataMapNodeOfDataMapOfIntegerOwner::DownCast;
 %rename(DownCast) Handle_MeshVS_MeshEntityOwner::DownCast;
 %rename(DownCast) Handle_MeshVS_SensitivePolyhedron::DownCast;
+%rename(DownCast) Handle_MeshVS_SequenceNodeOfSequenceOfPrsBuilder::DownCast;
 %rename(DownCast) Handle_MeshVS_DataMapNodeOfDataMapOfIntegerVector::DownCast;
 %rename(DownCast) Handle_MeshVS_DeformedDataSource::DownCast;
 %rename(DownCast) Handle_MeshVS_TextPrsBuilder::DownCast;

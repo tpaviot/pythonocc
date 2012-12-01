@@ -27,6 +27,11 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
+import Standard
 import gp
 import TopoDS
+import TColStd
+import TDF
+import Geom2d
+import AIS
 };

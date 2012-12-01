@@ -135,14 +135,6 @@ enum OSD_OpenMode {
 	OSD_ReadWrite,
 	};
 
-enum OSD_FontAspect {
-	OSD_FA_Undefined,
-	OSD_FA_Regular,
-	OSD_FA_Bold,
-	OSD_FA_Italic,
-	OSD_FA_BoldItalic,
-	};
-
 enum OSD_KindFile {
 	OSD_FILE,
 	OSD_DIRECTORY,
@@ -154,6 +146,13 @@ enum OSD_KindFile {
 enum OSD_LoadMode {
 	OSD_RTLD_LAZY,
 	OSD_RTLD_NOW,
+	};
+
+enum OSD_LockType {
+	OSD_NoLock,
+	OSD_ReadLock,
+	OSD_WriteLock,
+	OSD_ExclusiveLock,
 	};
 
 enum OSD_OEMType {
@@ -169,13 +168,6 @@ enum OSD_OEMType {
 	OSD_VAX,
 	OSD_LIN,
 	OSD_AIX,
-	};
-
-enum OSD_LockType {
-	OSD_NoLock,
-	OSD_ReadLock,
-	OSD_WriteLock,
-	OSD_ExclusiveLock,
 	};
 
 
@@ -364,44 +356,6 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_Exception_INT_OVERFLOW {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_OSD_SystemFont;
-class Handle_OSD_SystemFont : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont();
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont(const Handle_OSD_SystemFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont(const OSD_SystemFont *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont & operator=(const Handle_OSD_SystemFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont & operator=(const OSD_SystemFont *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_SystemFont DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SystemFont {
-	OSD_SystemFont* GetObject() {
-	return (OSD_SystemFont*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_SystemFont::~Handle_OSD_SystemFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_SystemFont {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -782,44 +736,6 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_Exception_PRIV_INSTRUCTION {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_OSD_FontMgr;
-class Handle_OSD_FontMgr : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr();
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr(const Handle_OSD_FontMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr(const OSD_FontMgr *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr & operator=(const Handle_OSD_FontMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr & operator=(const OSD_FontMgr *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_FontMgr DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_FontMgr {
-	OSD_FontMgr* GetObject() {
-	return (OSD_FontMgr*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_FontMgr::~Handle_OSD_FontMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_FontMgr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1473,7 +1389,7 @@ class OSD_Exception : public Standard_Failure {
 };
 %extend OSD_Exception {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception::~OSD_Exception %{
@@ -1510,7 +1426,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_PRIV_INSTRUCTION::~OSD_Exception_PRIV_INSTRUCTION %{
@@ -1553,7 +1469,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_UNDERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_UNDERFLOW::~OSD_Exception_FLT_UNDERFLOW %{
@@ -1623,6 +1539,48 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_MemInfo;
+class OSD_MemInfo : public Standard_Transient {
+	public:
+		enum Counter {
+			MemPrivate,
+			MemVirtual,
+			MemWorkingSet,
+			MemWorkingSetPeak,
+			MemSwapUsage,
+			MemSwapUsagePeak,
+			MemCounter_NB,
+		};
+		%feature("autodoc", "1");
+		OSD_MemInfo();
+		%feature("autodoc", "1");
+		void Update();
+		%feature("autodoc", "1");
+		TCollection_AsciiString ToString() const;
+		%feature("autodoc", "1");
+		Standard_Size Value(const OSD_MemInfo::Counter theCounter) const;
+		%feature("autodoc", "1");
+		Standard_Size ValueMiB(const OSD_MemInfo::Counter theCounter) const;
+		%feature("autodoc", "1");
+		static		TCollection_AsciiString PrintInfo();
+
+};
+%feature("shadow") OSD_MemInfo::~OSD_MemInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_MemInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_Exception_CTRL_BREAK;
 class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 	public:
@@ -1647,7 +1605,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 %extend OSD_Exception_CTRL_BREAK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_CTRL_BREAK::~OSD_Exception_CTRL_BREAK %{
@@ -1690,7 +1648,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ILLEGAL_INSTRUCTION::~OSD_Exception_ILLEGAL_INSTRUCTION %{
@@ -1733,7 +1691,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 };
 %extend OSD_Exception_IN_PAGE_ERROR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_IN_PAGE_ERROR::~OSD_Exception_IN_PAGE_ERROR %{
@@ -1776,7 +1734,7 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 };
 %extend OSD_Exception_ACCESS_VIOLATION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ACCESS_VIOLATION::~OSD_Exception_ACCESS_VIOLATION %{
@@ -1819,7 +1777,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DIVIDE_BY_ZERO::~OSD_Exception_FLT_DIVIDE_BY_ZERO %{
@@ -1832,55 +1790,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_SystemFont;
-class OSD_SystemFont : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		OSD_SystemFont();
-		%feature("autodoc", "1");
-		OSD_SystemFont(const Handle_TCollection_HAsciiString &FontName, const OSD_FontAspect Aspect, const Handle_TCollection_HAsciiString &FilePath);
-		%feature("autodoc", "1");
-		OSD_SystemFont(const Handle_TCollection_HAsciiString &XLFD, const Handle_TCollection_HAsciiString &FilePath);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString FontName() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString FontPath() const;
-		%feature("autodoc", "1");
-		OSD_FontAspect FontAspect() const;
-		%feature("autodoc", "1");
-		Standard_Integer FontHeight() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_SystemFont {
-	Handle_OSD_SystemFont GetHandle() {
-	return *(Handle_OSD_SystemFont*) &$self;
-	}
-};
-%extend OSD_SystemFont {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") OSD_SystemFont::~OSD_SystemFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_SystemFont {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1911,7 +1820,7 @@ class OSD_OSDError : public Standard_Failure {
 };
 %extend OSD_OSDError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_OSDError::~OSD_OSDError %{
@@ -2073,7 +1982,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INVALID_OPERATION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INVALID_OPERATION::~OSD_Exception_FLT_INVALID_OPERATION %{
@@ -2240,7 +2149,7 @@ class OSD_Signal : public Standard_Failure {
 };
 %extend OSD_Signal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Signal::~OSD_Signal %{
@@ -2443,7 +2352,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_INT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INT_OVERFLOW::~OSD_Exception_INT_OVERFLOW %{
@@ -2486,7 +2395,7 @@ class OSD_SIGHUP : public OSD_Signal {
 };
 %extend OSD_SIGHUP {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGHUP::~OSD_SIGHUP %{
@@ -2529,6 +2438,8 @@ class OSD_Timer : public OSD_Chronometer {
 		virtual		void Stop();
 		%feature("autodoc", "1");
 		virtual		void Start();
+		%feature("autodoc", "1");
+		Standard_Real ElapsedTime();
 
 };
 %feature("shadow") OSD_Timer::~OSD_Timer %{
@@ -2571,7 +2482,7 @@ class OSD_SIGSYS : public OSD_Signal {
 };
 %extend OSD_SIGSYS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGSYS::~OSD_SIGSYS %{
@@ -2614,7 +2525,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INEXACT_RESULT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_INEXACT_RESULT::~OSD_Exception_FLT_INEXACT_RESULT %{
@@ -2679,43 +2590,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_FontMgr;
-class OSD_FontMgr : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		static		Handle_OSD_FontMgr GetInstance();
-		%feature("autodoc", "1");
-		OSD_NListOfSystemFont GetAvalableFonts() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_FontMgr {
-	Handle_OSD_FontMgr GetHandle() {
-	return *(Handle_OSD_FontMgr*) &$self;
-	}
-};
-%extend OSD_FontMgr {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") OSD_FontMgr::~OSD_FontMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_FontMgr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor OSD_Exception_INVALID_DISPOSITION;
 class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 	public:
@@ -2740,7 +2614,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 };
 %extend OSD_Exception_INVALID_DISPOSITION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INVALID_DISPOSITION::~OSD_Exception_INVALID_DISPOSITION %{
@@ -2783,7 +2657,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_STACK_CHECK {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_STACK_CHECK::~OSD_Exception_FLT_STACK_CHECK %{
@@ -2826,7 +2700,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_STACK_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_STACK_OVERFLOW::~OSD_Exception_STACK_OVERFLOW %{
@@ -2904,7 +2778,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 };
 %extend OSD_SIGQUIT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGQUIT::~OSD_SIGQUIT %{
@@ -2947,7 +2821,7 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 };
 %extend OSD_Exception_STATUS_NO_MEMORY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_STATUS_NO_MEMORY::~OSD_Exception_STATUS_NO_MEMORY %{
@@ -3033,7 +2907,7 @@ class OSD_SIGILL : public OSD_Signal {
 };
 %extend OSD_SIGILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGILL::~OSD_SIGILL %{
@@ -3168,7 +3042,7 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 %extend OSD_SIGKILL {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGKILL::~OSD_SIGKILL %{
@@ -3242,7 +3116,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_DENORMAL_OPERAND::~OSD_Exception_FLT_DENORMAL_OPERAND %{
@@ -3285,7 +3159,7 @@ class OSD_SIGBUS : public OSD_Signal {
 };
 %extend OSD_SIGBUS {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGBUS::~OSD_SIGBUS %{
@@ -3328,7 +3202,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_OVERFLOW {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_FLT_OVERFLOW::~OSD_Exception_FLT_OVERFLOW %{
@@ -3371,7 +3245,7 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 };
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_NONCONTINUABLE_EXCEPTION::~OSD_Exception_NONCONTINUABLE_EXCEPTION %{
@@ -3405,8 +3279,6 @@ class OSD_Host {
 		Standard_Integer AvailableMemory();
 		%feature("autodoc", "1");
 		TCollection_AsciiString InternetAddress();
-		%feature("autodoc", "1");
-		TCollection_AsciiString EthernetAddress();
 		%feature("autodoc", "1");
 		OSD_OEMType MachineType();
 		%feature("autodoc", "1");
@@ -3490,7 +3362,7 @@ class OSD_SIGINT : public OSD_Signal {
 };
 %extend OSD_SIGINT {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGINT::~OSD_SIGINT %{
@@ -3533,7 +3405,7 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_INT_DIVIDE_BY_ZERO::~OSD_Exception_INT_DIVIDE_BY_ZERO %{
@@ -3727,7 +3599,7 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 };
 %extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
@@ -3770,7 +3642,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 };
 %extend OSD_SIGSEGV {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") OSD_SIGSEGV::~OSD_SIGSEGV %{

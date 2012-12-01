@@ -25,8 +25,6 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_Standard_Transient::DownCast;
 %rename(DownCast) Handle_Standard_Failure::DownCast;
-%rename(DownCast) Handle_Standard_NumericError::DownCast;
-%rename(DownCast) Handle_Standard_Overflow::DownCast;
 %rename(DownCast) Handle_Standard_DomainError::DownCast;
 %rename(DownCast) Handle_Standard_RangeError::DownCast;
 %rename(DownCast) Handle_Standard_OutOfRange::DownCast;
@@ -34,6 +32,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Standard_NullValue::DownCast;
 %rename(DownCast) Handle_Standard_NoSuchObject::DownCast;
 %rename(DownCast) Handle_Standard_DimensionError::DownCast;
+%rename(DownCast) Handle_Standard_NumericError::DownCast;
 %rename(DownCast) Handle_Standard_DivideByZero::DownCast;
 %rename(DownCast) Handle_Standard_LicenseError::DownCast;
 %rename(DownCast) Handle_Standard_TooManyUsers::DownCast;
@@ -46,6 +45,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Standard_NullObject::DownCast;
 %rename(DownCast) Handle_Standard_AbortiveTransaction::DownCast;
 %rename(DownCast) Handle_Standard_ConstructionError::DownCast;
+%rename(DownCast) Handle_Standard_Overflow::DownCast;
 %rename(DownCast) Handle_Standard_DimensionMismatch::DownCast;
 %rename(DownCast) Handle_Standard_LicenseNotFound::DownCast;
 %rename(DownCast) Handle_Standard_ImmutableObject::DownCast;

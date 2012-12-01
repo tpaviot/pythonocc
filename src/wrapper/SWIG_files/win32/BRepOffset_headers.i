@@ -94,5 +94,6 @@ $HeaderURL$
 #include<BRepAlgo_Image.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
+#include<TopTools_IndexedMapOfShape.hxx>
 #include<Handle_Geom_Curve.hxx>
 %}

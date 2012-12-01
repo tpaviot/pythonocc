@@ -30,6 +30,6 @@ import GarbageCollector
 import Standard
 import TopoDS
 import gp
-import TCollection
 import TColgp
+import TCollection
 };

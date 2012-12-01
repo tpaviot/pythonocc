@@ -40,6 +40,7 @@ $HeaderURL$
 %rename(DownCast) Handle_ShapeUpgrade_SplitCurve::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_SplitCurve2d::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_SplitCurve2dContinuity::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_UnifySameDomain::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_SplitCurve3d::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_SplitCurve3dContinuity::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_ConvertCurve2dToBezier::DownCast;

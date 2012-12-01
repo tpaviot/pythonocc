@@ -609,7 +609,7 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		BRepLib_MakeFace(const gp_Torus C);
 		%feature("autodoc", "1");
-		BRepLib_MakeFace(const Handle_Geom_Surface &S);
+		BRepLib_MakeFace(const Handle_Geom_Surface &S, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		BRepLib_MakeFace(const gp_Pln P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
@@ -621,7 +621,7 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		BRepLib_MakeFace(const gp_Torus C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepLib_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		BRepLib_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		BRepLib_MakeFace(const TopoDS_Wire W, const Standard_Boolean OnlyPlane=0);
 		%feature("autodoc", "1");
@@ -641,9 +641,9 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound=1);
+		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Wire W);
 		%feature("autodoc", "1");
@@ -715,9 +715,9 @@ class BRepLib_FindSurface {
 		%feature("autodoc", "1");
 		BRepLib_FindSurface();
 		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
 		Standard_Boolean Found() const;
 		%feature("autodoc", "1");

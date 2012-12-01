@@ -412,7 +412,7 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 };
 %extend Law_ListNodeOfLaws {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_ListNodeOfLaws::~Law_ListNodeOfLaws %{
@@ -497,7 +497,7 @@ class Law_Function : public MMgt_TShared {
 };
 %extend Law_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Function::~Law_Function %{
@@ -536,7 +536,7 @@ class Law_BSpFunc : public Law_Function {
 };
 %extend Law_BSpFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_BSpFunc::~Law_BSpFunc %{
@@ -579,7 +579,7 @@ class Law_Interpol : public Law_BSpFunc {
 };
 %extend Law_Interpol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Interpol::~Law_Interpol %{
@@ -678,7 +678,7 @@ class Law_Composite : public Law_Function {
 };
 %extend Law_Composite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Composite::~Law_Composite %{
@@ -849,7 +849,7 @@ class Law_BSpline : public MMgt_TShared {
 };
 %extend Law_BSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_BSpline::~Law_BSpline %{
@@ -917,7 +917,7 @@ class Law_S : public Law_BSpFunc {
 };
 %extend Law_S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_S::~Law_S %{
@@ -1069,7 +1069,7 @@ class Law_Linear : public Law_Function {
 };
 %extend Law_Linear {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Linear::~Law_Linear %{
@@ -1125,7 +1125,7 @@ class Law_Constant : public Law_Function {
 };
 %extend Law_Constant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Law_Constant::~Law_Constant %{

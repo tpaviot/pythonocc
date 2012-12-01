@@ -506,7 +506,7 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment::~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment %{
@@ -599,7 +599,7 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint::~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint %{

@@ -33,10 +33,11 @@ import TopAbs
 import Bnd
 import TColStd
 import gp
-import GeomAPI
-import BRepClass3d
 import Geom
 import Geom2d
 import GeomAbs
+import GeomAPI
+import BRepClass3d
+import Geom2dHatch
 import TCollection
 };

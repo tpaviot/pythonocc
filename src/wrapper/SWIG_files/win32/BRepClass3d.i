@@ -148,6 +148,9 @@ class BRepClass3d_SolidExplorer {
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, gp_Vec & theVecD1U, gp_Vec & theVecD1V);
 		%feature("autodoc","FindAPointInTheFace(const F) -> [Standard_Real, Standard_Real]");
 
 		static		Standard_Boolean FindAPointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -162,6 +165,9 @@ class BRepClass3d_SolidExplorer {
 		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
 
 		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2) const;
+		%feature("autodoc","PointInTheFace(const F, const surf, Standard_Real u1, Standard_Real v1, Standard_Real u2, Standard_Real v2) -> [Standard_Real, Standard_Real, Standard_Real, Standard_Integer]");
+
+		Standard_Boolean PointInTheFace(const TopoDS_Face F, gp_Pnt & P, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, const Handle_BRepAdaptor_HSurface &surf, const Standard_Real u1, const Standard_Real v1, const Standard_Real u2, const Standard_Real v2, gp_Vec & theVecD1U, gp_Vec & theVecD1V) const;
 		%feature("autodoc", "1");
 		void InitShell();
 		%feature("autodoc", "1");
@@ -337,7 +343,7 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 };
 %extend BRepClass3d_DataMapNodeOfMapOfInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepClass3d_DataMapNodeOfMapOfInter::~BRepClass3d_DataMapNodeOfMapOfInter %{
@@ -383,6 +389,10 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 		Standard_Address & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Standard_Address & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
