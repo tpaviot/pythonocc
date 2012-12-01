@@ -24,11 +24,14 @@ higher is required,
 
 - SWIG 1.3.36 or higher,
 
-- OCE 0.10.0 : the latest oce release. You can either build oce from
+- OCE master branch (https://github.com/tpaviot/oce) ,
+
+/* Following paragraph is ready for the next OCE release
+- OCE 0.11.0 : the latest oce release. You can either build oce from
 sources (source code is hosted at https://github.com/tpaviot/oce), or download
 precompiled binary archives for many systems at
 https://github.com/tpaviot/oce/downloads
-
+*/
 - CMake 2.8 or higher (http://www.cmake.org)
 
 OPTIONAL GEOM SUPPORT:
@@ -36,19 +39,19 @@ OPTIONAL GEOM SUPPORT:
 pythonOCC optionnaly wraps the GEOM library, which provides parametric
 modeling features. If you want to benefit from this features, you first have
 to compile the GEOM library, availble from the src/contrib directory :
-$ cd pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0
+$ cd pythonocc/src/contrib/geom-6.3.1.8
 
 Create a work directory:
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0$ mkdir cmake-build
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0$
+pythonocc/src/contrib/geom-6.3.1.8$ mkdir cmake-build
+pythonocc/src/contrib/geom-6.3.1.8$
 
 Then cd to this directory:
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0$ cd cmake-build
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$
+pythonocc/src/contrib/geom-6.3.1.8$ cd cmake-build
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$
 
 You can use cmake in a terminal or from a GUI. Advanced users will use
 the terminal, if you're new to cmake we suggest to launch the GUI :
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$ cmake-gui ..
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$ cmake-gui ..
 
 From the GUI :
 * properly set up the oce include and libraries directory, according to
@@ -56,17 +59,17 @@ your system.
 * click 'configure'
 * then click 'generate'
 You can exit the GUI, and from the shell:
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$ make
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$ make
 or
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$ make -j2
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$ make -j2
 if you have 2 or more processors on your machine (compilation will be
 twice fast).
 
 When done ([100%] achieved), install the library :
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$ make install
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$ make install
 
 You may have to have admini provileges to install files. In this case,
-pythonocc/src/contrib/geom-6.5.0-for-oce0.10.0/cmake-build$ sudo make install
+pythonocc/src/contrib/geom-6.3.1.8/cmake-build$ sudo make install
 
 At the end of this optional step, the GEOM library is installed to your
 system and ready to be wrapped.
