@@ -262,11 +262,10 @@ $HeaderURL$
 #include<Handle_AlienImage_AlienImage.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_Array1OfInteger.hxx>
-#include<Aspect_Array1OfEdge.hxx>
 #include<TCollection_ExtendedString.hxx>
-#include<TColStd_Array1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_TColStd_HArray1OfByte.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 #include<Handle_Aspect_GraphicDevice.hxx>
 %}

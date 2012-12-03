@@ -704,7 +704,7 @@ class MoniTool_RealVal : public MMgt_TShared {
 };
 %extend MoniTool_RealVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_RealVal::~MoniTool_RealVal %{
@@ -743,7 +743,7 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 };
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_DataMapNodeOfDataMapOfShapeTransient::~MoniTool_DataMapNodeOfDataMapOfShapeTransient %{
@@ -822,7 +822,7 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 };
 %extend MoniTool_HSequenceOfElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_HSequenceOfElement::~MoniTool_HSequenceOfElement %{
@@ -906,7 +906,7 @@ class MoniTool_Timer : public MMgt_TShared {
 };
 %extend MoniTool_Timer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Timer::~MoniTool_Timer %{
@@ -943,7 +943,7 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 };
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_SequenceNodeOfSequenceOfElement::~MoniTool_SequenceNodeOfSequenceOfElement %{
@@ -980,7 +980,7 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 };
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_DataMapNodeOfDataMapOfTimer::~MoniTool_DataMapNodeOfDataMapOfTimer %{
@@ -1026,6 +1026,10 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") MoniTool_DataMapOfShapeTransient::~MoniTool_DataMapOfShapeTransient %{
@@ -1105,7 +1109,7 @@ class MoniTool_IntVal : public MMgt_TShared {
 };
 %extend MoniTool_IntVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_IntVal::~MoniTool_IntVal %{
@@ -1193,7 +1197,7 @@ class MoniTool_Element : public MMgt_TShared {
 };
 %extend MoniTool_Element {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Element::~MoniTool_Element %{
@@ -1239,6 +1243,10 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 		Handle_MoniTool_Timer & ChangeFind(const char * &K);
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer & operator()(const char * &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const char * &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const char * &K);
 
 };
 %feature("shadow") MoniTool_DataMapOfTimer::~MoniTool_DataMapOfTimer %{
@@ -1374,7 +1382,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 };
 %extend MoniTool_TypedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_TypedValue::~MoniTool_TypedValue %{
@@ -1417,7 +1425,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 };
 %extend MoniTool_TransientElem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_TransientElem::~MoniTool_TransientElem %{
@@ -1535,7 +1543,7 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 };
 %extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
@@ -1618,7 +1626,7 @@ class MoniTool_Profile : public MMgt_TShared {
 };
 %extend MoniTool_Profile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
@@ -1743,7 +1751,7 @@ class MoniTool_SignText : public MMgt_TShared {
 };
 %extend MoniTool_SignText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_SignText::~MoniTool_SignText %{
@@ -1776,7 +1784,7 @@ class MoniTool_SignShape : public MoniTool_SignText {
 };
 %extend MoniTool_SignShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_SignShape::~MoniTool_SignShape %{
@@ -1925,6 +1933,10 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 		const Handle_Standard_Transient & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") MoniTool_IndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapOfShapeTransient %{
@@ -2079,7 +2091,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 };
 %extend MoniTool_CaseData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_CaseData::~MoniTool_CaseData %{
@@ -2144,7 +2156,7 @@ class MoniTool_Option : public MMgt_TShared {
 };
 %extend MoniTool_Option {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MoniTool_Option::~MoniTool_Option %{

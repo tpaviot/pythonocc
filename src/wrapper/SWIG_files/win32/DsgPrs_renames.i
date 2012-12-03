@@ -32,8 +32,6 @@ $HeaderURL$
 %rename(Add) DsgPrs_DiameterPresentation::Add;
 %rename(Add) DsgPrs_AnglePresentation::Add;
 %rename(Add) DsgPrs_XYZPlanePresentation::Add;
-%rename(Add) DsgPrs_OffsetPresentation::Add;
-%rename(AddAxes) DsgPrs_OffsetPresentation::AddAxes;
 %rename(Add) DsgPrs_DatumPrs::Add;
 %rename(Ax2) DsgPrs_DatumTool::Ax2;
 %rename(Add) DsgPrs_TangentPresentation::Add;
@@ -41,6 +39,8 @@ $HeaderURL$
 %rename(Add) DsgPrs_Chamf2dPresentation::Add;
 %rename(Add) DsgPrs_ShadedPlanePresentation::Add;
 %rename(Add) DsgPrs_SymmetricPresentation::Add;
+%rename(Add) DsgPrs_OffsetPresentation::Add;
+%rename(AddAxes) DsgPrs_OffsetPresentation::AddAxes;
 %rename(Add) DsgPrs_PerpenPresentation::Add;
 %rename(ComputeSymbol) DsgPrs::ComputeSymbol;
 %rename(ComputePlanarFacesLengthPresentation) DsgPrs::ComputePlanarFacesLengthPresentation;

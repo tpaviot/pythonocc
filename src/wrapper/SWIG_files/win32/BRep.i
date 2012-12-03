@@ -900,7 +900,7 @@ class BRep_PointRepresentation : public MMgt_TShared {
 };
 %extend BRep_PointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointRepresentation::~BRep_PointRepresentation %{
@@ -1012,7 +1012,7 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 };
 %extend BRep_CurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveRepresentation::~BRep_CurveRepresentation %{
@@ -1060,7 +1060,7 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 };
 %extend BRep_GCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_GCurve::~BRep_GCurve %{
@@ -1097,7 +1097,7 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 };
 %extend BRep_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveOnSurface::~BRep_CurveOnSurface %{
@@ -1134,7 +1134,7 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 };
 %extend BRep_CurveOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveOnClosedSurface::~BRep_CurveOnClosedSurface %{
@@ -1171,7 +1171,7 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 };
 %extend BRep_ListNodeOfListOfPointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_ListNodeOfListOfPointRepresentation::~BRep_ListNodeOfListOfPointRepresentation %{
@@ -1208,7 +1208,7 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 };
 %extend BRep_PointsOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointsOnSurface::~BRep_PointsOnSurface %{
@@ -1252,7 +1252,7 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 };
 %extend BRep_PointOnCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointOnCurveOnSurface::~BRep_PointOnCurveOnSurface %{
@@ -1454,7 +1454,7 @@ class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 };
 %extend BRep_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnTriangulation::~BRep_PolygonOnTriangulation %{
@@ -1513,7 +1513,7 @@ class BRep_TEdge : public TopoDS_TEdge {
 };
 %extend BRep_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_TEdge::~BRep_TEdge %{
@@ -1627,7 +1627,7 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 };
 %extend BRep_CurveOn2Surfaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_CurveOn2Surfaces::~BRep_CurveOn2Surfaces %{
@@ -1684,7 +1684,7 @@ class BRep_TFace : public TopoDS_TFace {
 };
 %extend BRep_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_TFace::~BRep_TFace %{
@@ -1879,7 +1879,7 @@ class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 };
 %extend BRep_ListNodeOfListOfCurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_ListNodeOfListOfCurveRepresentation::~BRep_ListNodeOfListOfCurveRepresentation %{
@@ -1924,7 +1924,7 @@ class BRep_Curve3D : public BRep_GCurve {
 };
 %extend BRep_Curve3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_Curve3D::~BRep_Curve3D %{
@@ -1971,7 +1971,7 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 };
 %extend BRep_PolygonOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnSurface::~BRep_PolygonOnSurface %{
@@ -2022,7 +2022,7 @@ class BRep_TVertex : public TopoDS_TVertex {
 };
 %extend BRep_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_TVertex::~BRep_TVertex %{
@@ -2065,7 +2065,7 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 };
 %extend BRep_PointOnCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointOnCurve::~BRep_PointOnCurve %{
@@ -2108,7 +2108,7 @@ class BRep_PointOnSurface : public BRep_PointsOnSurface {
 };
 %extend BRep_PointOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PointOnSurface::~BRep_PointOnSurface %{
@@ -2212,7 +2212,7 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 };
 %extend BRep_PolygonOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnClosedSurface::~BRep_PolygonOnClosedSurface %{
@@ -2255,7 +2255,7 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 };
 %extend BRep_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_Polygon3D::~BRep_Polygon3D %{
@@ -2298,7 +2298,7 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 };
 %extend BRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRep_PolygonOnClosedTriangulation::~BRep_PolygonOnClosedTriangulation %{

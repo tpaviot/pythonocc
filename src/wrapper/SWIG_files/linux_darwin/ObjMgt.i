@@ -283,7 +283,7 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_SeqNodeOfPSeqOfExtRef::~ObjMgt_SeqNodeOfPSeqOfExtRef %{
@@ -392,7 +392,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %extend ObjMgt_PSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_PSeqOfExtRef::~ObjMgt_PSeqOfExtRef %{
@@ -437,7 +437,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %extend ObjMgt_ExternRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternRef::~ObjMgt_ExternRef %{
@@ -478,7 +478,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %extend ObjMgt_ExternShareable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ObjMgt_ExternShareable::~ObjMgt_ExternShareable %{

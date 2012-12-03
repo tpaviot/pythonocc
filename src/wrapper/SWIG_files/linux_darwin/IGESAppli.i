@@ -1062,7 +1062,7 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESAppli_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_ReadWriteModule::~IGESAppli_ReadWriteModule %{
@@ -1214,7 +1214,7 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESAppli_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_SpecificModule::~IGESAppli_SpecificModule %{
@@ -1259,7 +1259,7 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 };
 %extend IGESAppli_FiniteElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_FiniteElement::~IGESAppli_FiniteElement %{
@@ -1314,7 +1314,7 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_HArray1OfNode::~IGESAppli_HArray1OfNode %{
@@ -1383,7 +1383,7 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 };
 %extend IGESAppli_Flow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_Flow::~IGESAppli_Flow %{
@@ -1465,7 +1465,7 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_NodalResults::~IGESAppli_NodalResults %{
@@ -1508,7 +1508,7 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 };
 %extend IGESAppli_FlowLineSpec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_FlowLineSpec::~IGESAppli_FlowLineSpec %{
@@ -1645,7 +1645,7 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LevelToPWBLayerMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_LevelToPWBLayerMap::~IGESAppli_LevelToPWBLayerMap %{
@@ -1778,7 +1778,7 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PWBDrilledHole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_PWBDrilledHole::~IGESAppli_PWBDrilledHole %{
@@ -1825,7 +1825,7 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PartNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_PartNumber::~IGESAppli_PartNumber %{
@@ -1985,7 +1985,7 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESAppli_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_GeneralModule::~IGESAppli_GeneralModule %{
@@ -2060,7 +2060,7 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 };
 %extend IGESAppli_ElementResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_ElementResults::~IGESAppli_ElementResults %{
@@ -2148,7 +2148,7 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 };
 %extend IGESAppli_DrilledHole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_DrilledHole::~IGESAppli_DrilledHole %{
@@ -2191,7 +2191,7 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LevelFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_LevelFunction::~IGESAppli_LevelFunction %{
@@ -2258,7 +2258,7 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PipingFlow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_PipingFlow::~IGESAppli_PipingFlow %{
@@ -2393,7 +2393,7 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PWBArtworkStackup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_PWBArtworkStackup::~IGESAppli_PWBArtworkStackup %{
@@ -2444,7 +2444,7 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalDisplAndRot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_NodalDisplAndRot::~IGESAppli_NodalDisplAndRot %{
@@ -2536,7 +2536,7 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfFiniteElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_HArray1OfFiniteElement::~IGESAppli_HArray1OfFiniteElement %{
@@ -2577,7 +2577,7 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PinNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_PinNumber::~IGESAppli_PinNumber %{
@@ -2622,7 +2622,7 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_NodalConstraint::~IGESAppli_NodalConstraint %{
@@ -2706,7 +2706,7 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 };
 %extend IGESAppli_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_Node::~IGESAppli_Node %{
@@ -2862,7 +2862,7 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 };
 %extend IGESAppli_ReferenceDesignator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_ReferenceDesignator::~IGESAppli_ReferenceDesignator %{
@@ -2907,7 +2907,7 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 };
 %extend IGESAppli_RegionRestriction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_RegionRestriction::~IGESAppli_RegionRestriction %{
@@ -3038,7 +3038,7 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfFlow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_HArray1OfFlow::~IGESAppli_HArray1OfFlow %{
@@ -3087,7 +3087,7 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LineWidening {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESAppli_LineWidening::~IGESAppli_LineWidening %{

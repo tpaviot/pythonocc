@@ -34,6 +34,7 @@ import TopoDS
 import TCollection
 import BooleanOperations
 import BOPTColStd
+import IntTools
 import gp
 import BOPTools
 };

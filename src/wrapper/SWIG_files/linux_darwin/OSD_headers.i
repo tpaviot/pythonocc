@@ -47,7 +47,6 @@ $HeaderURL$
 #include<Handle_OSD_Exception_PRIV_INSTRUCTION.hxx>
 #include<Handle_OSD_Exception_STACK_OVERFLOW.hxx>
 #include<Handle_OSD_Exception_STATUS_NO_MEMORY.hxx>
-#include<Handle_OSD_FontMgr.hxx>
 #include<Handle_OSD_OSDError.hxx>
 #include<Handle_OSD_SIGBUS.hxx>
 #include<Handle_OSD_SIGHUP.hxx>
@@ -58,7 +57,6 @@ $HeaderURL$
 #include<Handle_OSD_SIGSEGV.hxx>
 #include<Handle_OSD_SIGSYS.hxx>
 #include<Handle_OSD_Signal.hxx>
-#include<Handle_OSD_SystemFont.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -91,8 +89,6 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
-#include<OSD_FontAspect.hxx>
-#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
@@ -102,7 +98,7 @@ $HeaderURL$
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
-#include<OSD_NListOfSystemFont.hxx>
+#include<OSD_MemInfo.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
@@ -128,7 +124,6 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
-#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
@@ -142,7 +137,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
-#include<Handle_TCollection_HAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Quantity_Date.hxx>
 #include<OSD.hxx>

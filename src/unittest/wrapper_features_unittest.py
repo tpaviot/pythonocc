@@ -36,10 +36,8 @@ class TestWrapperFeatures(unittest.TestCase):
         s = Standard_Transient()
         id_s = id(s)
         hash1_s = s.__hash__()
-        hash2_s = s.HashCode(pow(2,31)-1)
         self.assertNotEqual(id_s, hash1_s)
-        self.assertEqual(hash1_s,hash2_s)
-
+        
     def testList(self):
         '''
         Test python lists features

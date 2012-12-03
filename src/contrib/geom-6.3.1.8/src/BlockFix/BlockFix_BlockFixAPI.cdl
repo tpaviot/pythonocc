@@ -1,0 +1,67 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+--  File:	BlockFix_BlockFixAPI.cdl
+--  Created:	Tue Dec  7 17:56:09 2004
+--  Author:	Pavel Durandin
+
+class BlockFixAPI from BlockFix inherits TShared from MMgt
+
+	---Purpose: 
+
+uses
+
+    Shape from TopoDS,
+    ReShape from ShapeBuild 
+
+is
+    Create returns BlockFixAPI from BlockFix;
+    	---Purpose: Empty constructor
+	
+    SetShape(me: mutable; Shape: Shape from TopoDS);
+    	---Purpose: Sets the shape to be operated on
+	---C++: inline
+
+    Perform(me: mutable);
+    	---Purpose: 
+	
+    Shape(me) returns Shape from TopoDS;
+    	---Purpose: Returns resulting shape.
+	---C++: inline
+    
+    Context(me:mutable) returns ReShape from ShapeBuild;
+    	---Purpose: Returns modifiable context for storing the 
+	--          mofifications
+	---C++: inline
+    	---C++: return &
+    
+    Tolerance (me:mutable) returns Real;
+    	---Purpose: Returns modifiable tolerance of recognition
+    	---C++: inline
+    	---C++: return &
+
+fields
+    
+    myContext     : ReShape from ShapeBuild;
+    myShape       : Shape from TopoDS;
+    myTolerance   : Real from Standard;
+  
+end BlockFixAPI from BlockFix;

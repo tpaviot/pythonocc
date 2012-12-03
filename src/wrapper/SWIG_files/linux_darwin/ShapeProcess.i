@@ -296,7 +296,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %extend ShapeProcess_Operator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Operator::~ShapeProcess_Operator %{
@@ -329,7 +329,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %extend ShapeProcess_UOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_UOperator::~ShapeProcess_UOperator %{
@@ -428,7 +428,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_StackItemOfDictionaryOfOperator::~ShapeProcess_StackItemOfDictionaryOfOperator %{
@@ -526,6 +526,10 @@ class ShapeProcess_Context : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Message_Messenger Messenger() const;
 		%feature("autodoc", "1");
+		void SetProgress(const Handle_Message_ProgressIndicator &theProgress);
+		%feature("autodoc", "1");
+		Handle_Message_ProgressIndicator Progress() const;
+		%feature("autodoc", "1");
 		void SetTraceLevel(const Standard_Integer tracelev);
 		%feature("autodoc", "1");
 		Standard_Integer TraceLevel() const;
@@ -540,7 +544,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %extend ShapeProcess_Context {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_Context::~ShapeProcess_Context %{
@@ -609,7 +613,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %extend ShapeProcess_ShapeContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_ShapeContext::~ShapeProcess_ShapeContext %{
@@ -678,7 +682,7 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeProcess_DictionaryOfOperator::~ShapeProcess_DictionaryOfOperator %{

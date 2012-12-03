@@ -185,7 +185,7 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 };
 %extend ShapeConstruct_ProjectCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeConstruct_ProjectCurveOnSurface::~ShapeConstruct_ProjectCurveOnSurface %{

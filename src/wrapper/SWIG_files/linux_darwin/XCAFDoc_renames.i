@@ -24,13 +24,13 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_XCAFDoc_DocumentTool::DownCast;
+%rename(DownCast) Handle_XCAFDoc_Area::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DimTolTool::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Volume::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DimTol::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Centroid::DownCast;
 %rename(DownCast) Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence::DownCast;
-%rename(DownCast) Handle_XCAFDoc_Area::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Color::DownCast;
 %rename(DownCast) Handle_XCAFDoc_ColorTool::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Material::DownCast;

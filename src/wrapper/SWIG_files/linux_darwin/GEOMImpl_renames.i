@@ -25,6 +25,7 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_GEOMImpl_CircleDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_MeasureDriver::DownCast;
+%rename(DownCast) Handle_GEOMImpl_MarkerDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_FillingDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_ScaleDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_FaceDriver::DownCast;
@@ -53,6 +54,7 @@ $HeaderURL$
 %rename(DownCast) Handle_GEOMImpl_SphereDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_RevolutionDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_EllipseDriver::DownCast;
+%rename(DownCast) Handle_GEOMImpl_NSketcherDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_TorusDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_PlateDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_LineDriver::DownCast;
@@ -73,7 +75,6 @@ $HeaderURL$
 %rename(DownCast) Handle_GEOMImpl_VectorDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_CurveDriver::DownCast;
 %rename(DownCast) Handle_GEOMImpl_OffsetDriver::DownCast;
-%rename(DownCast) Handle_GEOMImpl_MarkerDriver::DownCast;
 %rename(GetID) GEOMImpl_PartitionDriver::GetID;
 %rename(GetID) GEOMImpl_MarkerDriver::GetID;
 %rename(GetID) GEOMImpl_ChamferDriver::GetID;
@@ -91,6 +92,9 @@ $HeaderURL$
 %rename(GlueFaces) GEOMImpl_GlueDriver::GlueFaces;
 %rename(GlueByList) GEOMImpl_GlueDriver::GlueByList;
 %rename(GetID) GEOMImpl_PlaneDriver::GetID;
+%rename(GetID) GEOMImpl_NSketcherDriver::GetID;
+%rename(SetGUI) GEOMImpl_ISketcherOperations::SetGUI;
+%rename(SetAISContext) GEOMImpl_ISketcherOperations::SetAISContext;
 %rename(GetPosition) GEOMImpl_IMeasureOperations::GetPosition;
 %rename(GetParameters) GEOMImpl_IHealingOperations::GetParameters;
 %rename(GetID) GEOMImpl_LineDriver::GetID;
@@ -114,6 +118,7 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_SketcherDriver::GetID;
 %rename(GetID) GEOMImpl_PolylineDriver::GetID;
 %rename(GetID) GEOMImpl_ConeDriver::GetID;
+%rename(GetID) GEOMImpl_ThickSolidDriver::GetID;
 %rename(GetID) GEOMImpl_RevolutionDriver::GetID;
 %rename(GetID) GEOMImpl_FaceDriver::GetID;
 %rename(GetSubShape) GEOMImpl_ILocalOperations::GetSubShape;
@@ -124,7 +129,6 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_VectorDriver::GetID;
 %rename(GetID) GEOMImpl_PipeDriver::GetID;
 %rename(CreatePipeWithDifferentSections) GEOMImpl_PipeDriver::CreatePipeWithDifferentSections;
-%rename(GetID) GEOMImpl_ThickSolidDriver::GetID;
 %rename(GetID) GEOMImpl_PlateDriver::GetID;
 %rename(GetID) GEOMImpl_ThruSectionsDriver::GetID;
 %rename(GetID) GEOMImpl_PrismDriver::GetID;

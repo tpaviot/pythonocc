@@ -1301,7 +1301,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 };
 %extend GeomFill_TrihedronLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
@@ -1344,7 +1344,7 @@ class GeomFill_TgtField : public MMgt_TShared {
 };
 %extend GeomFill_TgtField {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_TgtField::~GeomFill_TgtField %{
@@ -1451,7 +1451,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 };
 %extend GeomFill_Boundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_Boundary::~GeomFill_Boundary %{
@@ -1484,7 +1484,7 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 };
 %extend GeomFill_DegeneratedBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_DegeneratedBound::~GeomFill_DegeneratedBound %{
@@ -1525,7 +1525,7 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 };
 %extend GeomFill_TgtOnCoons {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_TgtOnCoons::~GeomFill_TgtOnCoons %{
@@ -1582,7 +1582,7 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Frenet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_Frenet::~GeomFill_Frenet %{
@@ -1749,7 +1749,7 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Darboux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_Darboux::~GeomFill_Darboux %{
@@ -1894,7 +1894,7 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 };
 %extend GeomFill_CoonsAlgPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_CoonsAlgPatch::~GeomFill_CoonsAlgPatch %{
@@ -1949,7 +1949,7 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_ConstantBiNormal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_ConstantBiNormal::~GeomFill_ConstantBiNormal %{
@@ -2078,7 +2078,7 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationLaw::~GeomFill_LocationLaw %{
@@ -2119,7 +2119,7 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationDraft {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationDraft::~GeomFill_LocationDraft %{
@@ -2260,7 +2260,7 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_TrihedronWithGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_TrihedronWithGuide::~GeomFill_TrihedronWithGuide %{
@@ -2317,7 +2317,7 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 };
 %extend GeomFill_GuideTrihedronAC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_GuideTrihedronAC::~GeomFill_GuideTrihedronAC %{
@@ -2467,7 +2467,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 };
 %extend GeomFill_CircularBlendFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_CircularBlendFunc::~GeomFill_CircularBlendFunc %{
@@ -2553,7 +2553,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_SectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_SectionLaw::~GeomFill_SectionLaw %{
@@ -2604,7 +2604,7 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Fixed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_Fixed::~GeomFill_Fixed %{
@@ -2659,7 +2659,7 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfLocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_HArray1OfLocationLaw::~GeomFill_HArray1OfLocationLaw %{
@@ -2805,7 +2805,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 };
 %extend GeomFill_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_SweepFunction::~GeomFill_SweepFunction %{
@@ -3163,7 +3163,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_UniformSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_UniformSection::~GeomFill_UniformSection %{
@@ -3240,7 +3240,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 };
 %extend GeomFill_SimpleBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_SimpleBound::~GeomFill_SimpleBound %{
@@ -3393,7 +3393,7 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 };
 %extend GeomFill_GuideTrihedronPlan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_GuideTrihedronPlan::~GeomFill_GuideTrihedronPlan %{
@@ -3448,7 +3448,7 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfSectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_HArray1OfSectionLaw::~GeomFill_HArray1OfSectionLaw %{
@@ -3656,7 +3656,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_EvolvedSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_EvolvedSection::~GeomFill_EvolvedSection %{
@@ -3711,7 +3711,7 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_DraftTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_DraftTrihedron::~GeomFill_DraftTrihedron %{
@@ -3794,7 +3794,7 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 };
 %extend GeomFill_BoundWithSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_BoundWithSurf::~GeomFill_BoundWithSurf %{
@@ -3868,7 +3868,7 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 };
 %extend GeomFill_SequenceNodeOfSequenceOfTrsf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_SequenceNodeOfSequenceOfTrsf::~GeomFill_SequenceNodeOfSequenceOfTrsf %{
@@ -3909,7 +3909,7 @@ class GeomFill_Line : public MMgt_TShared {
 };
 %extend GeomFill_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_Line::~GeomFill_Line %{
@@ -3984,7 +3984,7 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 };
 %extend GeomFill_CurveAndTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_CurveAndTrihedron::~GeomFill_CurveAndTrihedron %{
@@ -4041,7 +4041,7 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_CorrectedFrenet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_CorrectedFrenet::~GeomFill_CorrectedFrenet %{
@@ -4238,7 +4238,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomFill_LocationGuide::~GeomFill_LocationGuide %{

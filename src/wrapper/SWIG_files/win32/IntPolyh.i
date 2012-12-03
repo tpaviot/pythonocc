@@ -481,7 +481,7 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 };
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IntPolyh_SequenceNodeOfSeqOfStartPoints::~IntPolyh_SequenceNodeOfSeqOfStartPoints %{
@@ -616,6 +616,10 @@ class IntPolyh_Point {
 		void Dump() const;
 		%feature("autodoc", "1");
 		void Dump(const Standard_Integer i) const;
+		%feature("autodoc", "1");
+		void SetDegenerated(const Standard_Boolean theFlag);
+		%feature("autodoc", "1");
+		Standard_Boolean Degenerated() const;
 
 };
 %feature("shadow") IntPolyh_Point::~IntPolyh_Point %{

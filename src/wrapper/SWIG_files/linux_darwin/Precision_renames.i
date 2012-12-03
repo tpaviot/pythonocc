@@ -25,6 +25,7 @@ $HeaderURL$
 */
 %rename(Angular) Precision::Angular;
 %rename(Confusion) Precision::Confusion;
+%rename(SquareConfusion) Precision::SquareConfusion;
 %rename(Intersection) Precision::Intersection;
 %rename(Approximation) Precision::Approximation;
 %rename(Parametric) Precision::Parametric;

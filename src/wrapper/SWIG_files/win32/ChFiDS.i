@@ -748,7 +748,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 };
 %extend ChFiDS_Spine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_Spine::~ChFiDS_Spine %{
@@ -930,7 +930,7 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfRegularities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ListNodeOfRegularities::~ChFiDS_ListNodeOfRegularities %{
@@ -1060,7 +1060,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_FilSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_FilSpine::~ChFiDS_FilSpine %{
@@ -1113,7 +1113,7 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 };
 %extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe %{
@@ -1232,7 +1232,7 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_ChamfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ChamfSpine::~ChFiDS_ChamfSpine %{
@@ -1371,7 +1371,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 };
 %extend ChFiDS_SurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SurfData::~ChFiDS_SurfData %{
@@ -1500,7 +1500,7 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfListOfStripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ListNodeOfListOfStripe::~ChFiDS_ListNodeOfListOfStripe %{
@@ -1579,7 +1579,7 @@ class ChFiDS_HData : public MMgt_TShared {
 };
 %extend ChFiDS_HData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_HData::~ChFiDS_HData %{
@@ -1616,7 +1616,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSurfData::~ChFiDS_SequenceNodeOfSequenceOfSurfData %{
@@ -1817,7 +1817,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SequenceNodeOfSequenceOfSpine::~ChFiDS_SequenceNodeOfSequenceOfSpine %{
@@ -1955,7 +1955,7 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 };
 %extend ChFiDS_HElSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_HElSpine::~ChFiDS_HElSpine %{
@@ -2010,7 +2010,7 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 };
 %extend ChFiDS_SecHArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_SecHArray1::~ChFiDS_SecHArray1 %{
@@ -2250,7 +2250,7 @@ class ChFiDS_Stripe : public MMgt_TShared {
 };
 %extend ChFiDS_Stripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_Stripe::~ChFiDS_Stripe %{
@@ -2338,7 +2338,7 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfListOfHElSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ChFiDS_ListNodeOfListOfHElSpine::~ChFiDS_ListNodeOfListOfHElSpine %{
@@ -2429,6 +2429,10 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 		const ChFiDS_ListOfStripe & FindFromKey(const TopoDS_Vertex K) const;
 		%feature("autodoc", "1");
 		ChFiDS_ListOfStripe & ChangeFromKey(const TopoDS_Vertex K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Vertex K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Vertex K);
 
 };
 %feature("shadow") ChFiDS_IndexedDataMapOfVertexListOfStripe::~ChFiDS_IndexedDataMapOfVertexListOfStripe %{

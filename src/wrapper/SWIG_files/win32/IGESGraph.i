@@ -872,7 +872,7 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 };
 %extend IGESGraph_LineFontPredefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontPredefined::~IGESGraph_LineFontPredefined %{
@@ -915,7 +915,7 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 };
 %extend IGESGraph_HighLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HighLight::~IGESGraph_HighLight %{
@@ -997,7 +997,7 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 };
 %extend IGESGraph_Pick {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_Pick::~IGESGraph_Pick %{
@@ -1077,7 +1077,7 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 };
 %extend IGESGraph_IntercharacterSpacing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_IntercharacterSpacing::~IGESGraph_IntercharacterSpacing %{
@@ -1161,7 +1161,7 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingUnits {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DrawingUnits::~IGESGraph_DrawingUnits %{
@@ -1200,7 +1200,7 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESGraph_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_SpecificModule::~IGESGraph_SpecificModule %{
@@ -1304,7 +1304,7 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 };
 %extend IGESGraph_UniformRectGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_UniformRectGrid::~IGESGraph_UniformRectGrid %{
@@ -1398,7 +1398,7 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HArray1OfTextDisplayTemplate::~IGESGraph_HArray1OfTextDisplayTemplate %{
@@ -1519,7 +1519,7 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontDefTemplate::~IGESGraph_LineFontDefTemplate %{
@@ -1632,7 +1632,7 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESGraph_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_GeneralModule::~IGESGraph_GeneralModule %{
@@ -1719,7 +1719,7 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 };
 %extend IGESGraph_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_Color::~IGESGraph_Color %{
@@ -1811,7 +1811,7 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HArray1OfColor::~IGESGraph_HArray1OfColor %{
@@ -1874,7 +1874,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_TextDisplayTemplate::~IGESGraph_TextDisplayTemplate %{
@@ -2005,7 +2005,7 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 };
 %extend IGESGraph_DefinitionLevel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DefinitionLevel::~IGESGraph_DefinitionLevel %{
@@ -2046,7 +2046,7 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGraph_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_ReadWriteModule::~IGESGraph_ReadWriteModule %{
@@ -2130,7 +2130,7 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_NominalSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_NominalSize::~IGESGraph_NominalSize %{
@@ -2210,7 +2210,7 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_DrawingSize::~IGESGraph_DrawingSize %{
@@ -2273,7 +2273,7 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextFontDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_TextFontDef::~IGESGraph_TextFontDef %{
@@ -2447,7 +2447,7 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefPattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_LineFontDefPattern::~IGESGraph_LineFontDefPattern %{
@@ -2502,7 +2502,7 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextFontDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESGraph_HArray1OfTextFontDef::~IGESGraph_HArray1OfTextFontDef %{

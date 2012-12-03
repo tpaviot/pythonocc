@@ -42,6 +42,8 @@ from OCC.BRepAlgoAPI import *
 from OCC.LocOpe import *
 from OCC.TColgp import *
 
+TolDegen = 1e-6
+
 class TestTopologyLocalOperations(unittest.TestCase):    
     def test_extrusion(self):
         print 'Test: extrusion'
@@ -99,7 +101,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         # Build Face from Wire. NB: a face is required to generate a solid.
         #
         MKF = BRepBuilderAPI_MakeFace()
-        MKF.Init(surf,False)
+        MKF.Init(surf,False,TolDegen)
         MKF.Add(MW.Wire())
         FP = MKF.Face()
         BRepLib_BuildCurves3d(FP)
@@ -131,7 +133,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         wire.Build()
         
         mkf = BRepBuilderAPI_MakeFace()
-        mkf.Init(srf, False)
+        mkf.Init(srf, False, TolDegen)
         mkf.Add(wire.Wire())
         mkf.Build()
         self.assertTrue(mkf.IsDone())
@@ -290,7 +292,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MW1.Add(BRepBuilderAPI_MakeEdge(aline,surf,0.,p1.Distance(p2)).Edge())
         
         MKF1 = BRepBuilderAPI_MakeFace() 
-        MKF1.Init(surf,False)
+        MKF1.Init(surf,False, TolDegen)
         MKF1.Add(MW1.Wire())
         
         FP = MKF1.Face()
@@ -337,7 +339,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MW1.Add(BRepBuilderAPI_MakeEdge(aline,surf,0.,p1.Distance(p2)).Edge())
         
         MKF1 = BRepBuilderAPI_MakeFace() 
-        MKF1.Init(surf,False)
+        MKF1.Init(surf,False, TolDegen)
         MKF1.Add(MW1.Wire())
         FP = MKF1.Face()
         BRepLib_BuildCurves3d(FP)
@@ -375,7 +377,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
         
         MKF = BRepBuilderAPI_MakeFace() 
-        MKF.Init(surf1,False)
+        MKF.Init(surf1,False, TolDegen)
         MKF.Add(MW.Wire())
         FP = MKF.Face()
         BRepLib_BuildCurves3d(FP)
@@ -414,7 +416,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         MW2.Add(BRepBuilderAPI_MakeEdge(aline,surf2,0.,p1.Distance(p2)).Edge())
     
         MKF2 = BRepBuilderAPI_MakeFace()
-        MKF2.Init(surf2,False)
+        MKF2.Init(surf2,False, TolDegen)
         MKF2.Add(MW2.Wire())
         MKF2.Build()
         

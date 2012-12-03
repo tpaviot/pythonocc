@@ -179,7 +179,7 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMNaming_NamingDriver::~BinMNaming_NamingDriver %{
@@ -243,7 +243,7 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinMNaming_NamedShapeDriver::~BinMNaming_NamedShapeDriver %{

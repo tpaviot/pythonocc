@@ -49,6 +49,8 @@ $HeaderURL$
 
 %include BRepBuilderAPI_headers.i
 
+typedef NCollection_UBTree<int, Bnd_Box> BRepBuilderAPI_BndBoxTree;
+typedef NCollection_CellFilter<BRepBuilderAPI_VertexInspector> BRepBuilderAPI_CellFilter;
 
 enum BRepBuilderAPI_FaceError {
 	BRepBuilderAPI_FaceDone,
@@ -299,7 +301,7 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
-		void Perform();
+		void Perform(const Handle_Message_ProgressIndicator &thePI=0);
 		%feature("autodoc", "1");
 		const TopoDS_Shape  SewedShape() const;
 		%feature("autodoc", "1");
@@ -385,7 +387,7 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 };
 %extend BRepBuilderAPI_Sewing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBuilderAPI_Sewing::~BRepBuilderAPI_Sewing %{
@@ -609,6 +611,70 @@ def __del__(self):
 %}
 
 %extend BRepBuilderAPI_MakeEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBuilderAPI_BndBoxTreeSelector;
+class BRepBuilderAPI_BndBoxTreeSelector : public Selector {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_BndBoxTreeSelector();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Reject(const Bnd_Box &theBox) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Accept(const Standard_Integer &theObj);
+		%feature("autodoc", "1");
+		void ClearResList();
+		%feature("autodoc", "1");
+		void SetCurrent(const Bnd_Box &theBox);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & ResInd();
+
+};
+%feature("shadow") BRepBuilderAPI_BndBoxTreeSelector::~BRepBuilderAPI_BndBoxTreeSelector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBuilderAPI_BndBoxTreeSelector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepBuilderAPI_VertexInspector;
+class BRepBuilderAPI_VertexInspector : public NCollection_CellFilter_InspectorXYZ {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_VertexInspector(const Standard_Real theTol);
+		%feature("autodoc", "1");
+		void Add(const gp_XYZ thePnt);
+		%feature("autodoc", "1");
+		void ClearResList();
+		%feature("autodoc", "1");
+		void SetCurrent(const gp_XYZ theCurPnt);
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & ResInd();
+
+};
+%feature("shadow") BRepBuilderAPI_VertexInspector::~BRepBuilderAPI_VertexInspector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBuilderAPI_VertexInspector {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1014,7 +1080,7 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepBuilderAPI_MakeFace(const gp_Torus C);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S);
+		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		BRepBuilderAPI_MakeFace(const gp_Pln P, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
@@ -1026,7 +1092,7 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepBuilderAPI_MakeFace(const gp_Torus C, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
 		%feature("autodoc", "1");
-		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		BRepBuilderAPI_MakeFace(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		BRepBuilderAPI_MakeFace(const TopoDS_Wire W, const Standard_Boolean OnlyPlane=0);
 		%feature("autodoc", "1");
@@ -1046,9 +1112,9 @@ class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		void Init(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound=1);
+		void Init(const Handle_Geom_Surface &S, const Standard_Boolean Bound, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
-		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax);
+		void Init(const Handle_Geom_Surface &S, const Standard_Real UMin, const Standard_Real UMax, const Standard_Real VMin, const Standard_Real VMax, const Standard_Real TolDegen);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Wire W);
 		%feature("autodoc", "1");

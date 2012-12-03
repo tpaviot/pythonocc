@@ -2436,7 +2436,7 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StdMapNodeOfMapOfInteger::~TColStd_StdMapNodeOfMapOfInteger %{
@@ -2638,7 +2638,7 @@ class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TC
 };
 %extend TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient::~TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient %{
@@ -2677,7 +2677,7 @@ class TColStd_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapN
 };
 %extend TColStd_DataMapNodeOfDataMapOfTransientTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfTransientTransient::~TColStd_DataMapNodeOfDataMapOfTransientTransient %{
@@ -2718,7 +2718,7 @@ class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HPackedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HPackedMapOfInteger::~TColStd_HPackedMapOfInteger %{
@@ -2774,6 +2774,10 @@ class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") TColStd_DataMapOfIntegerInteger::~TColStd_DataMapOfIntegerInteger %{
@@ -2820,7 +2824,7 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StackNodeOfStackOfReal::~TColStd_StackNodeOfStackOfReal %{
@@ -2876,6 +2880,10 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Real & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") TColStd_DataMapOfIntegerReal::~TColStd_DataMapOfIntegerReal %{
@@ -3100,7 +3108,7 @@ class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfListOfInteger::~TColStd_HArray1OfListOfInteger %{
@@ -3230,7 +3238,7 @@ class TColStd_HSequenceOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfInteger::~TColStd_HSequenceOfInteger %{
@@ -3267,7 +3275,7 @@ class TColStd_ListNodeOfListOfAsciiString : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfListOfAsciiString::~TColStd_ListNodeOfListOfAsciiString %{
@@ -3381,7 +3389,7 @@ class TColStd_HArray2OfReal : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray2OfReal::~TColStd_HArray2OfReal %{
@@ -3444,7 +3452,7 @@ class TColStd_HSetOfReal : public MMgt_TShared {
 };
 %extend TColStd_HSetOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSetOfReal::~TColStd_HSetOfReal %{
@@ -3503,7 +3511,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfIntegerReal::~TColStd_DataMapNodeOfDataMapOfIntegerReal %{
@@ -3550,7 +3558,7 @@ class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StdMapNodeOfMapOfReal::~TColStd_StdMapNodeOfMapOfReal %{
@@ -3661,7 +3669,7 @@ class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfSetListOfSetOfInteger::~TColStd_ListNodeOfSetListOfSetOfInteger %{
@@ -3760,7 +3768,7 @@ class TColStd_StackNodeOfStackOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StackNodeOfStackOfTransient::~TColStd_StackNodeOfStackOfTransient %{
@@ -3815,7 +3823,7 @@ class TColStd_HArray1OfAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfAsciiString::~TColStd_HArray1OfAsciiString %{
@@ -3852,7 +3860,7 @@ class TColStd_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StdMapNodeOfMapOfAsciiString::~TColStd_StdMapNodeOfMapOfAsciiString %{
@@ -4043,7 +4051,7 @@ class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfAsciiString::~TColStd_HSequenceOfAsciiString %{
@@ -4169,7 +4177,7 @@ class TColStd_HArray1OfBoolean : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfBoolean::~TColStd_HArray1OfBoolean %{
@@ -4206,7 +4214,7 @@ class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNo
 };
 %extend TColStd_SequenceNodeOfSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfHExtendedString::~TColStd_SequenceNodeOfSequenceOfHExtendedString %{
@@ -4505,7 +4513,7 @@ class TColStd_HSequenceOfReal : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfReal::~TColStd_HSequenceOfReal %{
@@ -4593,7 +4601,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_IndexedMapNodeOfIndexedMapOfInteger::~TColStd_IndexedMapNodeOfIndexedMapOfInteger %{
@@ -4652,7 +4660,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode 
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfIntegerInteger::~TColStd_DataMapNodeOfDataMapOfIntegerInteger %{
@@ -4872,7 +4880,7 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray2OfBoolean::~TColStd_HArray2OfBoolean %{
@@ -5045,7 +5053,7 @@ class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StdMapNodeOfMapOfTransient::~TColStd_StdMapNodeOfMapOfTransient %{
@@ -5171,7 +5179,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_IndexedMapNodeOfIndexedMapOfReal::~TColStd_IndexedMapNodeOfIndexedMapOfReal %{
@@ -5218,7 +5226,7 @@ class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfListOfReal::~TColStd_ListNodeOfListOfReal %{
@@ -5380,6 +5388,10 @@ class TColStd_IndexedDataMapOfTransientTransient : public TCollection_BasicMap {
 		const Handle_Standard_Transient & FindFromKey(const Handle_Standard_Transient &K) const;
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & ChangeFromKey(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") TColStd_IndexedDataMapOfTransientTransient::~TColStd_IndexedDataMapOfTransientTransient %{
@@ -5479,7 +5491,7 @@ class TColStd_HArray1OfExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfExtendedString::~TColStd_HArray1OfExtendedString %{
@@ -5530,7 +5542,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_IndexedMapNodeOfIndexedMapOfTransient::~TColStd_IndexedMapNodeOfIndexedMapOfTransient %{
@@ -5636,7 +5648,7 @@ class TColStd_HArray1OfByte : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfByte::~TColStd_HArray1OfByte %{
@@ -5831,7 +5843,7 @@ class TColStd_HArray1OfCharacter : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfCharacter::~TColStd_HArray1OfCharacter %{
@@ -5880,7 +5892,7 @@ class TColStd_DataMapNodeOfDataMapOfAsciiStringInteger : public TCollection_MapN
 };
 %extend TColStd_DataMapNodeOfDataMapOfAsciiStringInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfAsciiStringInteger::~TColStd_DataMapNodeOfDataMapOfAsciiStringInteger %{
@@ -6181,7 +6193,7 @@ class TColStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode {
 };
 %extend TColStd_DataMapNodeOfDataMapOfStringInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfStringInteger::~TColStd_DataMapNodeOfDataMapOfStringInteger %{
@@ -6246,7 +6258,7 @@ class TColStd_HArray1OfReal : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfReal::~TColStd_HArray1OfReal %{
@@ -6358,7 +6370,7 @@ class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_QueueNodeOfQueueOfReal::~TColStd_QueueNodeOfQueueOfReal %{
@@ -6423,7 +6435,7 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfInteger::~TColStd_HArray1OfInteger %{
@@ -6470,7 +6482,7 @@ class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfSetListOfSetOfReal::~TColStd_ListNodeOfSetListOfSetOfReal %{
@@ -6623,7 +6635,7 @@ class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfHExtendedString::~TColStd_HSequenceOfHExtendedString %{
@@ -6803,7 +6815,7 @@ class TColStd_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfBoolean::~TColStd_SequenceNodeOfSequenceOfBoolean %{
@@ -6903,7 +6915,7 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 };
 %extend TColStd_HSetOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSetOfTransient::~TColStd_HSetOfTransient %{
@@ -6950,7 +6962,7 @@ class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_QueueNodeOfQueueOfInteger::~TColStd_QueueNodeOfQueueOfInteger %{
@@ -7294,7 +7306,7 @@ class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfListOfInteger::~TColStd_ListNodeOfListOfInteger %{
@@ -7331,7 +7343,7 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfSetListOfSetOfTransient::~TColStd_ListNodeOfSetListOfSetOfTransient %{
@@ -7472,7 +7484,7 @@ class TColStd_HSequenceOfHAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfHAsciiString::~TColStd_HSequenceOfHAsciiString %{
@@ -7597,7 +7609,7 @@ class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfAsciiString::~TColStd_SequenceNodeOfSequenceOfAsciiString %{
@@ -7741,6 +7753,10 @@ class TColStd_DataMapOfIntegerTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") TColStd_DataMapOfIntegerTransient::~TColStd_DataMapOfIntegerTransient %{
@@ -7777,7 +7793,7 @@ class TColStd_QueueNodeOfQueueOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_QueueNodeOfQueueOfTransient::~TColStd_QueueNodeOfQueueOfTransient %{
@@ -7832,7 +7848,7 @@ class TColStd_HArray1OfTransient : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray1OfTransient::~TColStd_HArray1OfTransient %{
@@ -7879,7 +7895,7 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_StackNodeOfStackOfInteger::~TColStd_StackNodeOfStackOfInteger %{
@@ -7953,7 +7969,7 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 };
 %extend TColStd_SequenceNodeOfSequenceOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfExtendedString::~TColStd_SequenceNodeOfSequenceOfExtendedString %{
@@ -7990,7 +8006,7 @@ class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfTransient::~TColStd_SequenceNodeOfSequenceOfTransient %{
@@ -8163,7 +8179,7 @@ class TColStd_HSequenceOfTransient : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfTransient::~TColStd_HSequenceOfTransient %{
@@ -8209,6 +8225,10 @@ class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 		TColStd_ListOfInteger & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		TColStd_ListOfInteger & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") TColStd_DataMapOfIntegerListOfInteger::~TColStd_DataMapOfIntegerListOfInteger %{
@@ -8341,7 +8361,7 @@ class TColStd_SequenceNodeOfSequenceOfHAsciiString : public TCollection_SeqNode 
 };
 %extend TColStd_SequenceNodeOfSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfHAsciiString::~TColStd_SequenceNodeOfSequenceOfHAsciiString %{
@@ -8486,7 +8506,7 @@ class TColStd_HSequenceOfExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSequenceOfExtendedString::~TColStd_HSequenceOfExtendedString %{
@@ -8547,7 +8567,7 @@ class TColStd_HArray2OfCharacter : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray2OfCharacter::~TColStd_HArray2OfCharacter %{
@@ -8720,7 +8740,7 @@ class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfReal::~TColStd_SequenceNodeOfSequenceOfReal %{
@@ -8820,7 +8840,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger::~TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger %{
@@ -8866,6 +8886,10 @@ class TColStd_DataMapOfTransientTransient : public TCollection_BasicMap {
 		Handle_Standard_Transient & ChangeFind(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		Handle_Standard_Transient & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") TColStd_DataMapOfTransientTransient::~TColStd_DataMapOfTransientTransient %{
@@ -8912,7 +8936,7 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfInteger::~TColStd_SequenceNodeOfSequenceOfInteger %{
@@ -8968,6 +8992,10 @@ class TColStd_DataMapOfAsciiStringInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_AsciiString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_AsciiString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_AsciiString &K);
 
 };
 %feature("shadow") TColStd_DataMapOfAsciiStringInteger::~TColStd_DataMapOfAsciiStringInteger %{
@@ -9016,7 +9044,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapNod
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_DataMapNodeOfDataMapOfIntegerTransient::~TColStd_DataMapNodeOfDataMapOfIntegerTransient %{
@@ -9084,7 +9112,7 @@ class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_ListNodeOfListOfTransient::~TColStd_ListNodeOfListOfTransient %{
@@ -9140,6 +9168,10 @@ class TColStd_DataMapOfStringInteger : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const TCollection_ExtendedString &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TCollection_ExtendedString &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TCollection_ExtendedString &K);
 
 };
 %feature("shadow") TColStd_DataMapOfStringInteger::~TColStd_DataMapOfStringInteger %{
@@ -9176,7 +9208,7 @@ class TColStd_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_SequenceNodeOfSequenceOfAddress::~TColStd_SequenceNodeOfSequenceOfAddress %{
@@ -9329,7 +9361,7 @@ class TColStd_HArray2OfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray2OfInteger::~TColStd_HArray2OfInteger %{
@@ -9433,7 +9465,7 @@ class TColStd_HSetOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HSetOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HSetOfInteger::~TColStd_HSetOfInteger %{
@@ -9665,7 +9697,7 @@ class TColStd_HArray2OfTransient : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TColStd_HArray2OfTransient::~TColStd_HArray2OfTransient %{

@@ -131,6 +131,7 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<Handle_XSControl_WorkSession.hxx>
 #include<Handle_StepData_StepModel.hxx>
+#include<TColStd_SequenceOfAsciiString.hxx>
 #include<Handle_Transfer_Binder.hxx>
 #include<Handle_Transfer_TransientProcess.hxx>
 #include<Handle_StepRepr_Representation.hxx>

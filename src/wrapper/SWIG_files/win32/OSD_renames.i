@@ -69,6 +69,7 @@ $HeaderURL$
 %rename(NewInstance) OSD_Exception_FLT_INEXACT_RESULT::NewInstance;
 %rename(Raise) OSD_Exception_FLT_STACK_CHECK::Raise;
 %rename(NewInstance) OSD_Exception_FLT_STACK_CHECK::NewInstance;
+%rename(PrintInfo) OSD_MemInfo::PrintInfo;
 %rename(Raise) OSD_Exception_FLT_UNDERFLOW::Raise;
 %rename(NewInstance) OSD_Exception_FLT_UNDERFLOW::NewInstance;
 %rename(Raise) OSD_Exception_IN_PAGE_ERROR::Raise;

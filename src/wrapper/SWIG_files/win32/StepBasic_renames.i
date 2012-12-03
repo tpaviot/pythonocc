@@ -28,12 +28,12 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_ApplicationContextElement::DownCast;
 %rename(DownCast) Handle_StepBasic_ProductCategory::DownCast;
 %rename(DownCast) Handle_StepBasic_SizeMember::DownCast;
-%rename(DownCast) Handle_StepBasic_NamedUnit::DownCast;
-%rename(DownCast) Handle_StepBasic_SiUnit::DownCast;
-%rename(DownCast) Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_SecurityClassification::DownCast;
 %rename(DownCast) Handle_StepBasic_CertificationAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_ApprovalRelationship::DownCast;
+%rename(DownCast) Handle_StepBasic_NamedUnit::DownCast;
+%rename(DownCast) Handle_StepBasic_SiUnit::DownCast;
+%rename(DownCast) Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnitAndRatioUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ApprovalAssignment::DownCast;
@@ -103,7 +103,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_DocumentReference::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnitAndVolumeUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_DateAssignment::DownCast;
-%rename(DownCast) Handle_StepBasic_IdentificationAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_Product::DownCast;
 %rename(DownCast) Handle_StepBasic_ActionMethod::DownCast;
 %rename(DownCast) Handle_StepBasic_GroupRelationship::DownCast;
@@ -152,6 +151,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_HArray1OfDocument::DownCast;
 %rename(DownCast) Handle_StepBasic_PhysicallyModeledProductDefinition::DownCast;
 %rename(DownCast) Handle_StepBasic_PlaneAngleUnit::DownCast;
+%rename(DownCast) Handle_StepBasic_IdentificationAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_ExternalIdentificationAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnitAndTimeUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_DerivedUnit::DownCast;

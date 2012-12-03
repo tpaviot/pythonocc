@@ -511,7 +511,7 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 };
 %extend Adaptor3d_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_TopolTool::~Adaptor3d_TopolTool %{
@@ -640,7 +640,7 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 };
 %extend Adaptor3d_HSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HSurface::~Adaptor3d_HSurface %{
@@ -733,7 +733,7 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 };
 %extend Adaptor3d_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HCurve::~Adaptor3d_HCurve %{
@@ -772,7 +772,7 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 };
 %extend Adaptor3d_HIsoCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HIsoCurve::~Adaptor3d_HIsoCurve %{
@@ -934,7 +934,7 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 };
 %extend Adaptor3d_HSurfaceOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HSurfaceOfLinearExtrusion::~Adaptor3d_HSurfaceOfLinearExtrusion %{
@@ -1104,7 +1104,7 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 };
 %extend Adaptor3d_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HVertex::~Adaptor3d_HVertex %{
@@ -1147,7 +1147,7 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 };
 %extend Adaptor3d_HOffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HOffsetCurve::~Adaptor3d_HOffsetCurve %{
@@ -1538,7 +1538,7 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 };
 %extend Adaptor3d_HCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HCurveOnSurface::~Adaptor3d_HCurveOnSurface %{
@@ -1773,7 +1773,7 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 };
 %extend Adaptor3d_HSurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Adaptor3d_HSurfaceOfRevolution::~Adaptor3d_HSurfaceOfRevolution %{

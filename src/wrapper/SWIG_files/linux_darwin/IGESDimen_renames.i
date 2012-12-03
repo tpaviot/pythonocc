@@ -41,7 +41,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESDimen_ReadWriteModule::DownCast;
 %rename(DownCast) Handle_IGESDimen_Protocol::DownCast;
 %rename(DownCast) Handle_IGESDimen_FlagNote::DownCast;
-%rename(DownCast) Handle_IGESDimen_DimensionUnits::DownCast;
 %rename(DownCast) Handle_IGESDimen_NewDimensionedGeometry::DownCast;
 %rename(DownCast) Handle_IGESDimen_SpecificModule::DownCast;
 %rename(DownCast) Handle_IGESDimen_SectionedArea::DownCast;
@@ -52,5 +51,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESDimen_LeaderArrow::DownCast;
 %rename(DownCast) Handle_IGESDimen_GeneralNote::DownCast;
 %rename(DownCast) Handle_IGESDimen_LinearDimension::DownCast;
+%rename(DownCast) Handle_IGESDimen_DimensionUnits::DownCast;
 %rename(Init) IGESDimen::Init;
 %rename(Protocol) IGESDimen::Protocol;

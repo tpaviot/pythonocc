@@ -52,6 +52,8 @@ $HeaderURL$
 %rename(DownCast) Handle_IFSelect_SelectFlag::DownCast;
 %rename(DownCast) Handle_IFSelect_PacketList::DownCast;
 %rename(DownCast) Handle_IFSelect_WorkLibrary::DownCast;
+%rename(DownCast) Handle_IFSelect_SelectExplore::DownCast;
+%rename(DownCast) Handle_IFSelect_SelectSignedSharing::DownCast;
 %rename(DownCast) Handle_IFSelect_SessionPilot::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectSuite::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectSignature::DownCast;
@@ -63,12 +65,10 @@ $HeaderURL$
 %rename(DownCast) Handle_IFSelect_SelectBase::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectEntityNumber::DownCast;
 %rename(DownCast) Handle_IFSelect_HSeqOfSelection::DownCast;
-%rename(DownCast) Handle_IFSelect_SelectExplore::DownCast;
 %rename(DownCast) Handle_IFSelect_ModelCopier::DownCast;
 %rename(DownCast) Handle_IFSelect_WorkSession::DownCast;
 %rename(DownCast) Handle_IFSelect_DispPerOne::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectShared::DownCast;
-%rename(DownCast) Handle_IFSelect_SelectSignedSharing::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectModelRoots::DownCast;
 %rename(DownCast) Handle_IFSelect_EditForm::DownCast;
 %rename(DownCast) Handle_IFSelect_DispPerFiles::DownCast;

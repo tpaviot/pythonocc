@@ -230,7 +230,7 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 };
 %extend GeomAdaptor_GHCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_GHCurve::~GeomAdaptor_GHCurve %{
@@ -269,7 +269,7 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 };
 %extend GeomAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_HCurve::~GeomAdaptor_HCurve %{
@@ -312,7 +312,7 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 };
 %extend GeomAdaptor_GHSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_GHSurface::~GeomAdaptor_GHSurface %{
@@ -351,7 +351,7 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 };
 %extend GeomAdaptor_HSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomAdaptor_HSurface::~GeomAdaptor_HSurface %{

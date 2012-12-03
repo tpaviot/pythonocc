@@ -266,6 +266,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepBasic_CertificationAssignment;
+class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment();
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment(const Handle_StepBasic_CertificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment(const StepBasic_CertificationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment & operator=(const Handle_StepBasic_CertificationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_CertificationAssignment & operator=(const StepBasic_CertificationAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepBasic_CertificationAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_CertificationAssignment {
+	StepBasic_CertificationAssignment* GetObject() {
+	return (StepBasic_CertificationAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepBasic_CertificationAssignment::~Handle_StepBasic_CertificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepBasic_CertificationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_ApprovalRelationship;
+class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship(const Handle_StepBasic_ApprovalRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship(const StepBasic_ApprovalRelationship *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship & operator=(const Handle_StepBasic_ApprovalRelationship &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalRelationship & operator=(const StepBasic_ApprovalRelationship *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepBasic_ApprovalRelationship DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ApprovalRelationship {
+	StepBasic_ApprovalRelationship* GetObject() {
+	return (StepBasic_ApprovalRelationship*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepBasic_ApprovalRelationship::~Handle_StepBasic_ApprovalRelationship %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepBasic_ApprovalRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_NamedUnit;
 class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	public:
@@ -374,82 +450,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_CertificationAssignment;
-class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment(const Handle_StepBasic_CertificationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment(const StepBasic_CertificationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment & operator=(const Handle_StepBasic_CertificationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_CertificationAssignment & operator=(const StepBasic_CertificationAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepBasic_CertificationAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_CertificationAssignment {
-	StepBasic_CertificationAssignment* GetObject() {
-	return (StepBasic_CertificationAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepBasic_CertificationAssignment::~Handle_StepBasic_CertificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepBasic_CertificationAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_ApprovalRelationship;
-class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRelationship();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRelationship(const Handle_StepBasic_ApprovalRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRelationship(const StepBasic_ApprovalRelationship *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRelationship & operator=(const Handle_StepBasic_ApprovalRelationship &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalRelationship & operator=(const StepBasic_ApprovalRelationship *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepBasic_ApprovalRelationship DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ApprovalRelationship {
-	StepBasic_ApprovalRelationship* GetObject() {
-	return (StepBasic_ApprovalRelationship*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepBasic_ApprovalRelationship::~Handle_StepBasic_ApprovalRelationship %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepBasic_ApprovalRelationship {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5540,7 +5540,7 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_MeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_MeasureWithUnit::~StepBasic_MeasureWithUnit %{
@@ -5573,7 +5573,7 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_PlaneAngleMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PlaneAngleMeasureWithUnit::~StepBasic_PlaneAngleMeasureWithUnit %{
@@ -5614,7 +5614,7 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 };
 %extend StepBasic_NameAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_NameAssignment::~StepBasic_NameAssignment %{
@@ -5659,7 +5659,7 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 };
 %extend StepBasic_DocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentReference::~StepBasic_DocumentReference %{
@@ -5708,7 +5708,7 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionFormation::~StepBasic_ProductDefinitionFormation %{
@@ -5753,7 +5753,7 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DateAndTimeAssignment::~StepBasic_DateAndTimeAssignment %{
@@ -5804,7 +5804,7 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 };
 %extend StepBasic_GeneralProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_GeneralProperty::~StepBasic_GeneralProperty %{
@@ -5845,7 +5845,7 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_NamedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_NamedUnit::~StepBasic_NamedUnit %{
@@ -5888,7 +5888,7 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ConversionBasedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnit::~StepBasic_ConversionBasedUnit %{
@@ -5925,7 +5925,7 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndAreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndAreaUnit::~StepBasic_ConversionBasedUnitAndAreaUnit %{
@@ -5974,7 +5974,7 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 };
 %extend StepBasic_DocumentUsageConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentUsageConstraint::~StepBasic_DocumentUsageConstraint %{
@@ -6060,7 +6060,7 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_TimeMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_TimeMeasureWithUnit::~StepBasic_TimeMeasureWithUnit %{
@@ -6109,7 +6109,7 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductCategory::~StepBasic_ProductCategory %{
@@ -6150,7 +6150,7 @@ class StepBasic_DateRole : public MMgt_TShared {
 };
 %extend StepBasic_DateRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DateRole::~StepBasic_DateRole %{
@@ -6252,7 +6252,7 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 };
 %extend StepBasic_VersionedActionRequest {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_VersionedActionRequest::~StepBasic_VersionedActionRequest %{
@@ -6287,7 +6287,7 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_RatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_RatioUnit::~StepBasic_RatioUnit %{
@@ -6379,7 +6379,7 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationLevel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SecurityClassificationLevel::~StepBasic_SecurityClassificationLevel %{
@@ -6420,7 +6420,7 @@ class StepBasic_Date : public MMgt_TShared {
 };
 %extend StepBasic_Date {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Date::~StepBasic_Date %{
@@ -6465,7 +6465,7 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContextElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApplicationContextElement::~StepBasic_ApplicationContextElement %{
@@ -6504,7 +6504,7 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 };
 %extend StepBasic_ProductDefinitionContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionContext::~StepBasic_ProductDefinitionContext %{
@@ -6537,7 +6537,7 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 };
 %extend StepBasic_DesignContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DesignContext::~StepBasic_DesignContext %{
@@ -6582,7 +6582,7 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestSolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ActionRequestSolution::~StepBasic_ActionRequestSolution %{
@@ -6637,7 +6637,7 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SiUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnit::~StepBasic_SiUnit %{
@@ -6674,7 +6674,7 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndPlaneAngleUnit::~StepBasic_SiUnitAndPlaneAngleUnit %{
@@ -6727,7 +6727,7 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentRelationship::~StepBasic_DocumentRelationship %{
@@ -6782,7 +6782,7 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 };
 %extend StepBasic_DocumentProductAssociation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentProductAssociation::~StepBasic_DocumentProductAssociation %{
@@ -6829,7 +6829,7 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 };
 %extend StepBasic_ObjectRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ObjectRole::~StepBasic_ObjectRole %{
@@ -6864,7 +6864,7 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_LengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_LengthUnit::~StepBasic_LengthUnit %{
@@ -6907,7 +6907,7 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 };
 %extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndThermodynamicTemperatureUnit::~StepBasic_SiUnitAndThermodynamicTemperatureUnit %{
@@ -6950,7 +6950,7 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndTimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndTimeUnit::~StepBasic_SiUnitAndTimeUnit %{
@@ -6993,7 +6993,7 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndMassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndMassUnit::~StepBasic_ConversionBasedUnitAndMassUnit %{
@@ -7059,7 +7059,7 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_AreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_AreaUnit::~StepBasic_AreaUnit %{
@@ -7104,7 +7104,7 @@ class StepBasic_Approval : public MMgt_TShared {
 };
 %extend StepBasic_Approval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Approval::~StepBasic_Approval %{
@@ -7159,7 +7159,7 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfProductContext::~StepBasic_HArray1OfProductContext %{
@@ -7212,7 +7212,7 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationProtocolDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApplicationProtocolDefinition::~StepBasic_ApplicationProtocolDefinition %{
@@ -7298,7 +7298,7 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_PlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PlaneAngleUnit::~StepBasic_PlaneAngleUnit %{
@@ -7431,7 +7431,7 @@ class StepBasic_Address : public MMgt_TShared {
 };
 %extend StepBasic_Address {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Address::~StepBasic_Address %{
@@ -7472,7 +7472,7 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalAssignment::~StepBasic_ApprovalAssignment %{
@@ -7566,7 +7566,7 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndTimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndTimeUnit::~StepBasic_ConversionBasedUnitAndTimeUnit %{
@@ -7609,7 +7609,7 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndPlaneAngleUnit::~StepBasic_ConversionBasedUnitAndPlaneAngleUnit %{
@@ -7656,7 +7656,7 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 };
 %extend StepBasic_ProductRelatedProductCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductRelatedProductCategory::~StepBasic_ProductRelatedProductCategory %{
@@ -7699,7 +7699,7 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 };
 %extend StepBasic_ConversionBasedUnitAndRatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndRatioUnit::~StepBasic_ConversionBasedUnitAndRatioUnit %{
@@ -7795,7 +7795,7 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 };
 %extend StepBasic_RoleAssociation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_RoleAssociation::~StepBasic_RoleAssociation %{
@@ -7836,7 +7836,7 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ContractAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ContractAssignment::~StepBasic_ContractAssignment %{
@@ -7887,7 +7887,7 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 };
 %extend StepBasic_WeekOfYearAndDayDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_WeekOfYearAndDayDate::~StepBasic_WeekOfYearAndDayDate %{
@@ -7928,7 +7928,7 @@ class StepBasic_Effectivity : public MMgt_TShared {
 };
 %extend StepBasic_Effectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Effectivity::~StepBasic_Effectivity %{
@@ -7967,7 +7967,7 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 };
 %extend StepBasic_ProductDefinitionEffectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionEffectivity::~StepBasic_ProductDefinitionEffectivity %{
@@ -8008,7 +8008,7 @@ class StepBasic_DocumentType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentType::~StepBasic_DocumentType %{
@@ -8063,7 +8063,7 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfOrganization::~StepBasic_HArray1OfOrganization %{
@@ -8104,7 +8104,7 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 };
 %extend StepBasic_EulerAngles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_EulerAngles::~StepBasic_EulerAngles %{
@@ -8151,7 +8151,7 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 };
 %extend StepBasic_CalendarDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_CalendarDate::~StepBasic_CalendarDate %{
@@ -8192,7 +8192,7 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_OrganizationRole::~StepBasic_OrganizationRole %{
@@ -8237,7 +8237,7 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnitElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DerivedUnitElement::~StepBasic_DerivedUnitElement %{
@@ -8272,7 +8272,7 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 };
 %extend StepBasic_ProductType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductType::~StepBasic_ProductType %{
@@ -8313,7 +8313,7 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalStatus::~StepBasic_ApprovalStatus %{
@@ -8374,7 +8374,7 @@ class StepBasic_LocalTime : public MMgt_TShared {
 };
 %extend StepBasic_LocalTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_LocalTime::~StepBasic_LocalTime %{
@@ -8417,7 +8417,7 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndMassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndMassUnit::~StepBasic_SiUnitAndMassUnit %{
@@ -8468,7 +8468,7 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 };
 %extend StepBasic_PersonalAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PersonalAddress::~StepBasic_PersonalAddress %{
@@ -8509,7 +8509,7 @@ class StepBasic_CertificationType : public MMgt_TShared {
 };
 %extend StepBasic_CertificationType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_CertificationType::~StepBasic_CertificationType %{
@@ -8550,7 +8550,7 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 };
 %extend StepBasic_MeasureValueMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_MeasureValueMember::~StepBasic_MeasureValueMember %{
@@ -8609,7 +8609,7 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionRelationship::~StepBasic_ProductDefinitionRelationship %{
@@ -8666,7 +8666,7 @@ class StepBasic_Product : public MMgt_TShared {
 };
 %extend StepBasic_Product {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Product::~StepBasic_Product %{
@@ -8705,7 +8705,7 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndVolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndVolumeUnit::~StepBasic_ConversionBasedUnitAndVolumeUnit %{
@@ -8758,7 +8758,7 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 };
 %extend StepBasic_CoordinatedUniversalTimeOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_CoordinatedUniversalTimeOffset::~StepBasic_CoordinatedUniversalTimeOffset %{
@@ -8805,7 +8805,7 @@ class StepBasic_Group : public MMgt_TShared {
 };
 %extend StepBasic_Group {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Group::~StepBasic_Group %{
@@ -8850,7 +8850,7 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalDateTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalDateTime::~StepBasic_ApprovalDateTime %{
@@ -8891,7 +8891,7 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalRole::~StepBasic_ApprovalRole %{
@@ -8946,7 +8946,7 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 };
 %extend StepBasic_GroupRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_GroupRelationship::~StepBasic_GroupRelationship %{
@@ -8987,7 +8987,7 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SecurityClassificationAssignment::~StepBasic_SecurityClassificationAssignment %{
@@ -9059,7 +9059,7 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 };
 %extend StepBasic_SizeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SizeMember::~StepBasic_SizeMember %{
@@ -9102,7 +9102,7 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndSolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndSolidAngleUnit::~StepBasic_SiUnitAndSolidAngleUnit %{
@@ -9137,7 +9137,7 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ThermodynamicTemperatureUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ThermodynamicTemperatureUnit::~StepBasic_ThermodynamicTemperatureUnit %{
@@ -9182,7 +9182,7 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DateAndTime::~StepBasic_DateAndTime %{
@@ -9233,7 +9233,7 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 };
 %extend StepBasic_OrganizationalAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_OrganizationalAddress::~StepBasic_OrganizationalAddress %{
@@ -9276,7 +9276,7 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndRatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndRatioUnit::~StepBasic_SiUnitAndRatioUnit %{
@@ -9333,7 +9333,7 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionFormationRelationship::~StepBasic_ProductDefinitionFormationRelationship %{
@@ -9376,7 +9376,7 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndAreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndAreaUnit::~StepBasic_SiUnitAndAreaUnit %{
@@ -9482,7 +9482,7 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfNamedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfNamedUnit::~StepBasic_HArray1OfNamedUnit %{
@@ -9523,7 +9523,7 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PersonAndOrganizationRole::~StepBasic_PersonAndOrganizationRole %{
@@ -9574,7 +9574,7 @@ class StepBasic_Action : public MMgt_TShared {
 };
 %extend StepBasic_Action {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Action::~StepBasic_Action %{
@@ -9638,7 +9638,7 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SolidAngleUnit::~StepBasic_SolidAngleUnit %{
@@ -9712,7 +9712,7 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndSolidAngleUnit::~StepBasic_ConversionBasedUnitAndSolidAngleUnit %{
@@ -9761,7 +9761,7 @@ class StepBasic_Certification : public MMgt_TShared {
 };
 %extend StepBasic_Certification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Certification::~StepBasic_Certification %{
@@ -9802,7 +9802,7 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 };
 %extend StepBasic_GroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_GroupAssignment::~StepBasic_GroupAssignment %{
@@ -9843,7 +9843,7 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ActionAssignment::~StepBasic_ActionAssignment %{
@@ -9886,7 +9886,7 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 };
 %extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionFormationWithSpecifiedSource::~StepBasic_ProductDefinitionFormationWithSpecifiedSource %{
@@ -9929,7 +9929,7 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndLengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ConversionBasedUnitAndLengthUnit::~StepBasic_ConversionBasedUnitAndLengthUnit %{
@@ -9974,7 +9974,7 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_OrganizationAssignment::~StepBasic_OrganizationAssignment %{
@@ -10017,7 +10017,7 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 };
 %extend StepBasic_OrdinalDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_OrdinalDate::~StepBasic_OrdinalDate %{
@@ -10058,7 +10058,7 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 };
 %extend StepBasic_ExternalSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ExternalSource::~StepBasic_ExternalSource %{
@@ -10099,7 +10099,7 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 };
 %extend StepBasic_DateTimeRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DateTimeRole::~StepBasic_DateTimeRole %{
@@ -10154,7 +10154,7 @@ class StepBasic_Document : public MMgt_TShared {
 };
 %extend StepBasic_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Document::~StepBasic_Document %{
@@ -10193,7 +10193,7 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 };
 %extend StepBasic_DocumentFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentFile::~StepBasic_DocumentFile %{
@@ -10238,7 +10238,7 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 };
 %extend StepBasic_ExternallyDefinedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ExternallyDefinedItem::~StepBasic_ExternallyDefinedItem %{
@@ -10287,7 +10287,7 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SecurityClassification::~StepBasic_SecurityClassification %{
@@ -10340,7 +10340,7 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinition::~StepBasic_ProductDefinition %{
@@ -10385,7 +10385,7 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 };
 %extend StepBasic_ProductDefinitionWithAssociatedDocuments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductDefinitionWithAssociatedDocuments::~StepBasic_ProductDefinitionWithAssociatedDocuments %{
@@ -10434,7 +10434,7 @@ class StepBasic_Contract : public MMgt_TShared {
 };
 %extend StepBasic_Contract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Contract::~StepBasic_Contract %{
@@ -10469,7 +10469,7 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_SolidAngleMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SolidAngleMeasureWithUnit::~StepBasic_SolidAngleMeasureWithUnit %{
@@ -10534,7 +10534,7 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 };
 %extend StepBasic_DimensionalExponents {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DimensionalExponents::~StepBasic_DimensionalExponents %{
@@ -10587,7 +10587,7 @@ class StepBasic_Organization : public MMgt_TShared {
 };
 %extend StepBasic_Organization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Organization::~StepBasic_Organization %{
@@ -10622,7 +10622,7 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_LengthMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_LengthMeasureWithUnit::~StepBasic_LengthMeasureWithUnit %{
@@ -10667,7 +10667,7 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRepresentationType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentRepresentationType::~StepBasic_DocumentRepresentationType %{
@@ -10712,7 +10712,7 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PersonAndOrganization::~StepBasic_PersonAndOrganization %{
@@ -10806,7 +10806,7 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndVolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndVolumeUnit::~StepBasic_SiUnitAndVolumeUnit %{
@@ -10847,7 +10847,7 @@ class StepBasic_ContractType : public MMgt_TShared {
 };
 %extend StepBasic_ContractType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ContractType::~StepBasic_ContractType %{
@@ -10902,7 +10902,7 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 };
 %extend StepBasic_ActionMethod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ActionMethod::~StepBasic_ActionMethod %{
@@ -10947,7 +10947,7 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_IdentificationAssignment::~StepBasic_IdentificationAssignment %{
@@ -10982,7 +10982,7 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_VolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_VolumeUnit::~StepBasic_VolumeUnit %{
@@ -11025,7 +11025,7 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 };
 %extend StepBasic_ProductContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductContext::~StepBasic_ProductContext %{
@@ -11080,7 +11080,7 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategoryRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductCategoryRelationship::~StepBasic_ProductCategoryRelationship %{
@@ -11121,7 +11121,7 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 };
 %extend StepBasic_EffectivityAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_EffectivityAssignment::~StepBasic_EffectivityAssignment %{
@@ -11174,7 +11174,7 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalRelationship::~StepBasic_ApprovalRelationship %{
@@ -11209,7 +11209,7 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_RatioMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_RatioMeasureWithUnit::~StepBasic_RatioMeasureWithUnit %{
@@ -11254,7 +11254,7 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PersonAndOrganizationAssignment::~StepBasic_PersonAndOrganizationAssignment %{
@@ -11299,7 +11299,7 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DateAssignment::~StepBasic_DateAssignment %{
@@ -11381,7 +11381,7 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalPersonOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApprovalPersonOrganization::~StepBasic_ApprovalPersonOrganization %{
@@ -11428,7 +11428,7 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_UncertaintyMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_UncertaintyMeasureWithUnit::~StepBasic_UncertaintyMeasureWithUnit %{
@@ -11473,7 +11473,7 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DerivedUnit::~StepBasic_DerivedUnit %{
@@ -11514,7 +11514,7 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 };
 %extend StepBasic_ExternalIdentificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ExternalIdentificationAssignment::~StepBasic_ExternalIdentificationAssignment %{
@@ -11549,7 +11549,7 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 };
 %extend StepBasic_DocumentProductEquivalence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DocumentProductEquivalence::~StepBasic_DocumentProductEquivalence %{
@@ -11635,7 +11635,7 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_MassMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_MassMeasureWithUnit::~StepBasic_MassMeasureWithUnit %{
@@ -11670,7 +11670,7 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_MassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_MassUnit::~StepBasic_MassUnit %{
@@ -11805,7 +11805,7 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProduct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfProduct::~StepBasic_HArray1OfProduct %{
@@ -11860,7 +11860,7 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfDocument::~StepBasic_HArray1OfDocument %{
@@ -11895,7 +11895,7 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 };
 %extend StepBasic_MechanicalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_MechanicalContext::~StepBasic_MechanicalContext %{
@@ -11950,7 +11950,7 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfPerson {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfPerson::~StepBasic_HArray1OfPerson %{
@@ -11985,7 +11985,7 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 };
 %extend StepBasic_PhysicallyModeledProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_PhysicallyModeledProductDefinition::~StepBasic_PhysicallyModeledProductDefinition %{
@@ -12078,7 +12078,7 @@ class StepBasic_Person : public MMgt_TShared {
 };
 %extend StepBasic_Person {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_Person::~StepBasic_Person %{
@@ -12119,7 +12119,7 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 };
 %extend StepBasic_ProductConceptContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ProductConceptContext::~StepBasic_ProductConceptContext %{
@@ -12160,7 +12160,7 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_CertificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_CertificationAssignment::~StepBasic_CertificationAssignment %{
@@ -12207,7 +12207,7 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_IdentificationRole::~StepBasic_IdentificationRole %{
@@ -12262,7 +12262,7 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfApproval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfApproval::~StepBasic_HArray1OfApproval %{
@@ -12297,7 +12297,7 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_TimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_TimeUnit::~StepBasic_TimeUnit %{
@@ -12352,7 +12352,7 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDerivedUnitElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfDerivedUnitElement::~StepBasic_HArray1OfDerivedUnitElement %{
@@ -12407,7 +12407,7 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfUncertaintyMeasureWithUnit::~StepBasic_HArray1OfUncertaintyMeasureWithUnit %{
@@ -12448,7 +12448,7 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ActionRequestAssignment::~StepBasic_ActionRequestAssignment %{
@@ -12540,7 +12540,7 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_ApplicationContext::~StepBasic_ApplicationContext %{
@@ -12587,7 +12587,7 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 };
 %extend StepBasic_CharacterizedObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_CharacterizedObject::~StepBasic_CharacterizedObject %{
@@ -12642,7 +12642,7 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_HArray1OfProductDefinition::~StepBasic_HArray1OfProductDefinition %{
@@ -12677,7 +12677,7 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 };
 %extend StepBasic_DigitalDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_DigitalDocument::~StepBasic_DigitalDocument %{
@@ -12720,7 +12720,7 @@ class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndLengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepBasic_SiUnitAndLengthUnit::~StepBasic_SiUnitAndLengthUnit %{

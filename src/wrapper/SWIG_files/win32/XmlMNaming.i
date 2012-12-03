@@ -158,7 +158,7 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMNaming_NamedShapeDriver::~XmlMNaming_NamedShapeDriver %{
@@ -324,7 +324,7 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamingDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMNaming_NamingDriver::~XmlMNaming_NamingDriver %{

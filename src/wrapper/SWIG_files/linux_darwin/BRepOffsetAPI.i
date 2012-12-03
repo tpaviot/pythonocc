@@ -157,6 +157,8 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
+		virtual		const TopTools_ListOfShape & Generated(const TopoDS_Shape S);
+		%feature("autodoc", "1");
 		Standard_Real G0Error() const;
 		%feature("autodoc", "1");
 		Standard_Real G1Error() const;
@@ -383,7 +385,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape %{
@@ -420,7 +422,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal::~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal %{
@@ -498,6 +500,31 @@ def __del__(self):
 %}
 
 %extend BRepOffsetAPI_SequenceOfSequenceOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepOffsetAPI_MiddlePath;
+class BRepOffsetAPI_MiddlePath : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepOffsetAPI_MiddlePath(const TopoDS_Shape aShape, const TopoDS_Shape StartShape, const TopoDS_Shape EndShape);
+		%feature("autodoc", "1");
+		virtual		void Build();
+
+};
+%feature("shadow") BRepOffsetAPI_MiddlePath::~BRepOffsetAPI_MiddlePath %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffsetAPI_MiddlePath {
 	void _kill_pointed() {
 		delete $self;
 	}

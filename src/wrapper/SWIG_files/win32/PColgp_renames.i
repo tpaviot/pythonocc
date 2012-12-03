@@ -38,7 +38,6 @@ $HeaderURL$
 %rename(DownCast) Handle_PColgp_HArray2OfXYZ::DownCast;
 %rename(DownCast) Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d::DownCast;
 %rename(DownCast) Handle_PColgp_HArray2OfPnt::DownCast;
-%rename(DownCast) Handle_PColgp_HArray2OfDir2d::DownCast;
 %rename(DownCast) Handle_PColgp_SeqNodeOfHSequenceOfVec::DownCast;
 %rename(DownCast) Handle_PColgp_HArray2OfVec::DownCast;
 %rename(DownCast) Handle_PColgp_HArray1OfVec2d::DownCast;
@@ -65,6 +64,7 @@ $HeaderURL$
 %rename(DownCast) Handle_PColgp_HSequenceOfPnt::DownCast;
 %rename(DownCast) Handle_PColgp_HSequenceOfVec::DownCast;
 %rename(DownCast) Handle_PColgp_HArray1OfVec::DownCast;
+%rename(DownCast) Handle_PColgp_HArray2OfDir2d::DownCast;
 %rename(DownCast) Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d::DownCast;
 %rename(DownCast) Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d::DownCast;
 %rename(DownCast) Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d::DownCast;

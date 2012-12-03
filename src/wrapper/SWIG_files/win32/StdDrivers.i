@@ -173,7 +173,7 @@ class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 };
 %extend StdDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdDrivers_DocumentStorageDriver::~StdDrivers_DocumentStorageDriver %{
@@ -210,7 +210,7 @@ class StdDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDrive
 };
 %extend StdDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StdDrivers_DocumentRetrievalDriver::~StdDrivers_DocumentRetrievalDriver %{

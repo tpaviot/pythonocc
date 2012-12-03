@@ -2242,7 +2242,7 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExtStringArrayRetrievalDriver::~MDataStd_ExtStringArrayRetrievalDriver %{
@@ -2285,7 +2285,7 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExpressionStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExpressionStorageDriver::~MDataStd_ExpressionStorageDriver %{
@@ -2328,7 +2328,7 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealStorageDriver::~MDataStd_RealStorageDriver %{
@@ -2371,7 +2371,7 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ReferenceArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ReferenceArrayRetrievalDriver::~MDataStd_ReferenceArrayRetrievalDriver %{
@@ -2414,7 +2414,7 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NameRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NameRetrievalDriver::~MDataStd_NameRetrievalDriver %{
@@ -2457,7 +2457,7 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntPackedMapStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntPackedMapStorageDriver::~MDataStd_IntPackedMapStorageDriver %{
@@ -2500,7 +2500,7 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_TreeNodeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_TreeNodeStorageDriver::~MDataStd_TreeNodeStorageDriver %{
@@ -2543,7 +2543,7 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExtStringArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExtStringArrayStorageDriver::~MDataStd_ExtStringArrayStorageDriver %{
@@ -2586,7 +2586,7 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExpressionRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExpressionRetrievalDriver::~MDataStd_ExpressionRetrievalDriver %{
@@ -2629,7 +2629,7 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_TickRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_TickRetrievalDriver::~MDataStd_TickRetrievalDriver %{
@@ -2672,7 +2672,7 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_CommentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_CommentStorageDriver::~MDataStd_CommentStorageDriver %{
@@ -2715,7 +2715,7 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_UAttributeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_UAttributeRetrievalDriver::~MDataStd_UAttributeRetrievalDriver %{
@@ -2758,7 +2758,7 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_DirectoryStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_DirectoryStorageDriver::~MDataStd_DirectoryStorageDriver %{
@@ -2801,7 +2801,7 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ReferenceListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ReferenceListStorageDriver::~MDataStd_ReferenceListStorageDriver %{
@@ -2844,7 +2844,7 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_BooleanListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_BooleanListRetrievalDriver::~MDataStd_BooleanListRetrievalDriver %{
@@ -2887,7 +2887,7 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealArrayRetrievalDriver::~MDataStd_RealArrayRetrievalDriver %{
@@ -2930,7 +2930,7 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_RealArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealArrayRetrievalDriver_1::~MDataStd_RealArrayRetrievalDriver_1 %{
@@ -2973,7 +2973,7 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerListRetrievalDriver::~MDataStd_IntegerListRetrievalDriver %{
@@ -3016,7 +3016,7 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_DirectoryRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_DirectoryRetrievalDriver::~MDataStd_DirectoryRetrievalDriver %{
@@ -3059,7 +3059,7 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_ByteArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ByteArrayRetrievalDriver_1::~MDataStd_ByteArrayRetrievalDriver_1 %{
@@ -3102,7 +3102,7 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_AsciiStringRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_AsciiStringRetrievalDriver::~MDataStd_AsciiStringRetrievalDriver %{
@@ -3145,7 +3145,7 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_BooleanListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_BooleanListStorageDriver::~MDataStd_BooleanListStorageDriver %{
@@ -3188,7 +3188,7 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NoteBookRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NoteBookRetrievalDriver::~MDataStd_NoteBookRetrievalDriver %{
@@ -3231,7 +3231,7 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerListStorageDriver::~MDataStd_IntegerListStorageDriver %{
@@ -3274,7 +3274,7 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_IntPackedMapRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntPackedMapRetrievalDriver_1::~MDataStd_IntPackedMapRetrievalDriver_1 %{
@@ -3317,7 +3317,7 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerArrayStorageDriver::~MDataStd_IntegerArrayStorageDriver %{
@@ -3360,7 +3360,7 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerRetrievalDriver::~MDataStd_IntegerRetrievalDriver %{
@@ -3403,7 +3403,7 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_BooleanArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_BooleanArrayStorageDriver::~MDataStd_BooleanArrayStorageDriver %{
@@ -3446,7 +3446,7 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ReferenceArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ReferenceArrayStorageDriver::~MDataStd_ReferenceArrayStorageDriver %{
@@ -3489,7 +3489,7 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NamedDataStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NamedDataStorageDriver::~MDataStd_NamedDataStorageDriver %{
@@ -3532,7 +3532,7 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerStorageDriver::~MDataStd_IntegerStorageDriver %{
@@ -3575,7 +3575,7 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NoteBookStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NoteBookStorageDriver::~MDataStd_NoteBookStorageDriver %{
@@ -3618,7 +3618,7 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_UAttributeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_UAttributeStorageDriver::~MDataStd_UAttributeStorageDriver %{
@@ -3661,7 +3661,7 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntPackedMapRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntPackedMapRetrievalDriver::~MDataStd_IntPackedMapRetrievalDriver %{
@@ -3704,7 +3704,7 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ByteArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ByteArrayRetrievalDriver::~MDataStd_ByteArrayRetrievalDriver %{
@@ -3747,7 +3747,7 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NameStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NameStorageDriver::~MDataStd_NameStorageDriver %{
@@ -3790,7 +3790,7 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RelationStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RelationStorageDriver::~MDataStd_RelationStorageDriver %{
@@ -3833,7 +3833,7 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExtStringListRetrievalDriver::~MDataStd_ExtStringListRetrievalDriver %{
@@ -3876,7 +3876,7 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealListStorageDriver::~MDataStd_RealListStorageDriver %{
@@ -3919,7 +3919,7 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealRetrievalDriver::~MDataStd_RealRetrievalDriver %{
@@ -3962,7 +3962,7 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_TickStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_TickStorageDriver::~MDataStd_TickStorageDriver %{
@@ -4005,7 +4005,7 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExtStringArrayRetrievalDriver_1::~MDataStd_ExtStringArrayRetrievalDriver_1 %{
@@ -4048,7 +4048,7 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_TreeNodeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_TreeNodeRetrievalDriver::~MDataStd_TreeNodeRetrievalDriver %{
@@ -4091,7 +4091,7 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealArrayStorageDriver::~MDataStd_RealArrayStorageDriver %{
@@ -4134,7 +4134,7 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_CommentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_CommentRetrievalDriver::~MDataStd_CommentRetrievalDriver %{
@@ -4177,7 +4177,7 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_AsciiStringStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_AsciiStringStorageDriver::~MDataStd_AsciiStringStorageDriver %{
@@ -4220,7 +4220,7 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_VariableStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_VariableStorageDriver::~MDataStd_VariableStorageDriver %{
@@ -4263,7 +4263,7 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ReferenceListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ReferenceListRetrievalDriver::~MDataStd_ReferenceListRetrievalDriver %{
@@ -4337,7 +4337,7 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ByteArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ByteArrayStorageDriver::~MDataStd_ByteArrayStorageDriver %{
@@ -4380,7 +4380,7 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerArrayRetrievalDriver_1::~MDataStd_IntegerArrayRetrievalDriver_1 %{
@@ -4423,7 +4423,7 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RealListRetrievalDriver::~MDataStd_RealListRetrievalDriver %{
@@ -4466,7 +4466,7 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_BooleanArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_BooleanArrayRetrievalDriver::~MDataStd_BooleanArrayRetrievalDriver %{
@@ -4509,7 +4509,7 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NamedDataRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_NamedDataRetrievalDriver::~MDataStd_NamedDataRetrievalDriver %{
@@ -4552,7 +4552,7 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_IntegerArrayRetrievalDriver::~MDataStd_IntegerArrayRetrievalDriver %{
@@ -4595,7 +4595,7 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExtStringListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_ExtStringListStorageDriver::~MDataStd_ExtStringListStorageDriver %{
@@ -4638,7 +4638,7 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RelationRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_RelationRetrievalDriver::~MDataStd_RelationRetrievalDriver %{
@@ -4681,7 +4681,7 @@ class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_VariableRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") MDataStd_VariableRetrievalDriver::~MDataStd_VariableRetrievalDriver %{

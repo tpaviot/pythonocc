@@ -188,7 +188,7 @@ class Viewer_View : public MMgt_TShared {
 };
 %extend Viewer_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_View::~Viewer_View %{
@@ -229,7 +229,7 @@ class Viewer_Viewer : public MMgt_TShared {
 };
 %extend Viewer_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_Viewer::~Viewer_Viewer %{
@@ -272,7 +272,7 @@ class Viewer_BadValue : public Standard_OutOfRange {
 };
 %extend Viewer_BadValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Viewer_BadValue::~Viewer_BadValue %{

@@ -191,7 +191,7 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionPoint::~Intf_SequenceNodeOfSeqOfSectionPoint %{
@@ -228,7 +228,7 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfSectionLine::~Intf_SequenceNodeOfSeqOfSectionLine %{
@@ -378,6 +378,37 @@ def __del__(self):
 %}
 
 %extend Intf_SectionPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_Polygon2d;
+class Intf_Polygon2d {
+	public:
+		%feature("autodoc", "1");
+		const Bnd_Box2d & Bounding() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Closed() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real DeflectionOverEstimation() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbSegments() const;
+		%feature("autodoc", "1");
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
+
+};
+%feature("shadow") Intf_Polygon2d::~Intf_Polygon2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_Polygon2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -810,7 +841,7 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 };
 %extend Intf_SequenceNodeOfSeqOfTangentZone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Intf_SequenceNodeOfSeqOfTangentZone::~Intf_SequenceNodeOfSeqOfTangentZone %{
@@ -851,6 +882,39 @@ def __del__(self):
 %}
 
 %extend Intf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Intf_InterferencePolygon2d;
+class Intf_InterferencePolygon2d : public Intf_Interference {
+	public:
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d();
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d(const Intf_Polygon2d &Obje1, const Intf_Polygon2d &Obje2);
+		%feature("autodoc", "1");
+		Intf_InterferencePolygon2d(const Intf_Polygon2d &Obje);
+		%feature("autodoc", "1");
+		void Perform(const Intf_Polygon2d &Obje1, const Intf_Polygon2d &Obje2);
+		%feature("autodoc", "1");
+		void Perform(const Intf_Polygon2d &Obje);
+		%feature("autodoc", "1");
+		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
+
+};
+%feature("shadow") Intf_InterferencePolygon2d::~Intf_InterferencePolygon2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Intf_InterferencePolygon2d {
 	void _kill_pointed() {
 		delete $self;
 	}

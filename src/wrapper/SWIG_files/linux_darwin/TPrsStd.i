@@ -556,7 +556,7 @@ class TPrsStd_Driver : public MMgt_TShared {
 };
 %extend TPrsStd_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_Driver::~TPrsStd_Driver %{
@@ -591,7 +591,7 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_NamedShapeDriver::~TPrsStd_NamedShapeDriver %{
@@ -659,7 +659,7 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_AxisDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_AxisDriver::~TPrsStd_AxisDriver %{
@@ -724,7 +724,7 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 };
 %extend TPrsStd_AISViewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_AISViewer::~TPrsStd_AISViewer %{
@@ -761,7 +761,7 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_PointDriver::~TPrsStd_PointDriver %{
@@ -798,7 +798,7 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_ConstraintDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_ConstraintDriver::~TPrsStd_ConstraintDriver %{
@@ -837,7 +837,7 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_DataMapNodeOfDataMapOfGUIDDriver::~TPrsStd_DataMapNodeOfDataMapOfGUIDDriver %{
@@ -966,7 +966,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 };
 %extend TPrsStd_AISPresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_AISPresentation::~TPrsStd_AISPresentation %{
@@ -1003,7 +1003,7 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_PlaneDriver::~TPrsStd_PlaneDriver %{
@@ -1040,7 +1040,7 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_GeometryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_GeometryDriver::~TPrsStd_GeometryDriver %{
@@ -1086,6 +1086,10 @@ class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
 		Handle_TPrsStd_Driver & ChangeFind(const Standard_GUID &K);
 		%feature("autodoc", "1");
 		Handle_TPrsStd_Driver & operator()(const Standard_GUID &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_GUID &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_GUID &K);
 
 };
 %feature("shadow") TPrsStd_DataMapOfGUIDDriver::~TPrsStd_DataMapOfGUIDDriver %{
@@ -1132,7 +1136,7 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 };
 %extend TPrsStd_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TPrsStd_DriverTable::~TPrsStd_DriverTable %{

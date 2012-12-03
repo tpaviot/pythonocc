@@ -35,7 +35,6 @@ $HeaderURL$
 #include<StdPrs_Plane.hxx>
 #include<StdPrs_Point.hxx>
 #include<StdPrs_PoleCurve.hxx>
-#include<StdPrs_ShadedPoleSurface.hxx>
 #include<StdPrs_ShadedShape.hxx>
 #include<StdPrs_ShadedSurface.hxx>
 #include<StdPrs_ToolPoint.hxx>
@@ -71,6 +70,7 @@ $HeaderURL$
 #include<Poly_Connect.hxx>
 #include<TColgp_Array1OfDir.hxx>
 #include<Handle_TopTools_HSequenceOfShape.hxx>
+#include<gp_Pnt2d.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
 #include<HLRAlgo_Projector.hxx>

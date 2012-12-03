@@ -116,7 +116,7 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 };
 %extend APIHeaderSection_EditHeader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") APIHeaderSection_EditHeader::~APIHeaderSection_EditHeader %{

@@ -52,3 +52,4 @@ $HeaderURL$
 %rename(PolesCoefficients) BSplSLib::PolesCoefficients;
 %rename(Resolution) BSplSLib::Resolution;
 %rename(Interpolate) BSplSLib::Interpolate;
+%rename(FunctionMultiply) BSplSLib::FunctionMultiply;

@@ -336,7 +336,7 @@ def __del__(self):
 
 
 %nodefaultctor Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
+class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter : public Intf_Polygon2d {
 	public:
 		%feature("autodoc", "1");
 		Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &Curve, const Standard_Integer NbPnt, const IntRes2d_Domain &Domain, const Standard_Real Tol);
@@ -345,21 +345,15 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 		%feature("autodoc", "1");
 		void ComputeWithBox(const Adaptor2d_Curve2d &Curve, const Bnd_Box2d &OtherBox);
 		%feature("autodoc", "1");
-		const Bnd_Box2d & Bounding() const;
-		%feature("autodoc", "1");
-		Standard_Real DeflectionOverEstimation() const;
+		virtual		Standard_Real DeflectionOverEstimation() const;
 		%feature("autodoc", "1");
 		void SetDeflectionOverEstimation(const Standard_Real x);
 		%feature("autodoc", "1");
 		void Closed(const Standard_Boolean flag);
 		%feature("autodoc", "1");
-		Standard_Boolean Closed() const;
+		virtual		Standard_Integer NbSegments() const;
 		%feature("autodoc", "1");
-		Standard_Integer NbSegments() const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  BeginOfSeg(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt2d  EndOfSeg(const Standard_Integer Index) const;
+		virtual		void Segment(const Standard_Integer theIndex, gp_Pnt2d & theBegin, gp_Pnt2d & theEnd) const;
 		%feature("autodoc", "1");
 		Standard_Real InfParameter() const;
 		%feature("autodoc", "1");
@@ -530,7 +524,7 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 };
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter::~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter %{
@@ -543,39 +537,6 @@ def __del__(self):
 %}
 
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter();
-		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje2);
-		%feature("autodoc", "1");
-		Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje);
-		%feature("autodoc", "1");
-		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje1, const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje2);
-		%feature("autodoc", "1");
-		void Perform(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &Obje);
-		%feature("autodoc", "1");
-		gp_Pnt2d Pnt2dValue(const Standard_Integer Index) const;
-
-};
-%feature("shadow") Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter::~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -733,41 +694,6 @@ def __del__(self):
 %}
 
 %extend Geom2dInt_TheIntConicCurveOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter();
-		%feature("autodoc", "1");
-		static		const Bnd_Box2d & Bounding(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Real DeflectionOverEstimation(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Boolean Closed(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		Standard_Integer NbSegments(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  BeginOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
-		%feature("autodoc", "1");
-		static		const gp_Pnt2d  EndOfSeg(const Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter &thePolygon, const Standard_Integer Index);
-
-};
-%feature("shadow") Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter::~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}

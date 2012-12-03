@@ -644,7 +644,7 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ColorToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_ColorToolDriver::~XmlMXCAFDoc_ColorToolDriver %{
@@ -685,7 +685,7 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DocumentToolDriver::~XmlMXCAFDoc_DocumentToolDriver %{
@@ -732,7 +732,7 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LocationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_LocationDriver::~XmlMXCAFDoc_LocationDriver %{
@@ -773,7 +773,7 @@ class XmlMXCAFDoc_MaterialToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_MaterialToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_MaterialToolDriver::~XmlMXCAFDoc_MaterialToolDriver %{
@@ -814,7 +814,7 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ColorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_ColorDriver::~XmlMXCAFDoc_ColorDriver %{
@@ -855,7 +855,7 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_GraphNodeDriver::~XmlMXCAFDoc_GraphNodeDriver %{
@@ -896,7 +896,7 @@ class XmlMXCAFDoc_DatumDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DatumDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DatumDriver::~XmlMXCAFDoc_DatumDriver %{
@@ -937,7 +937,7 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_VolumeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_VolumeDriver::~XmlMXCAFDoc_VolumeDriver %{
@@ -1003,7 +1003,7 @@ class XmlMXCAFDoc_MaterialDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_MaterialDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_MaterialDriver::~XmlMXCAFDoc_MaterialDriver %{
@@ -1044,7 +1044,7 @@ class XmlMXCAFDoc_DimTolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DimTolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DimTolDriver::~XmlMXCAFDoc_DimTolDriver %{
@@ -1085,7 +1085,7 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_AreaDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_AreaDriver::~XmlMXCAFDoc_AreaDriver %{
@@ -1126,7 +1126,7 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_LayerToolDriver::~XmlMXCAFDoc_LayerToolDriver %{
@@ -1167,7 +1167,7 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_ShapeToolDriver::~XmlMXCAFDoc_ShapeToolDriver %{
@@ -1208,7 +1208,7 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_CentroidDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_CentroidDriver::~XmlMXCAFDoc_CentroidDriver %{
@@ -1249,7 +1249,7 @@ class XmlMXCAFDoc_DimTolToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DimTolToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") XmlMXCAFDoc_DimTolToolDriver::~XmlMXCAFDoc_DimTolToolDriver %{

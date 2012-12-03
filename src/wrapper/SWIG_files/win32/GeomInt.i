@@ -108,7 +108,7 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 };
 %extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation::~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation %{

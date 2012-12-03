@@ -1,0 +1,102 @@
+//  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+//
+//  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+//  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+//
+//  This library is free software; you can redistribute it and/or
+//  modify it under the terms of the GNU Lesser General Public
+//  License as published by the Free Software Foundation; either
+//  version 2.1 of the License.
+//
+//  This library is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+//  Lesser General Public License for more details.
+//
+//  You should have received a copy of the GNU Lesser General Public
+//  License along with this library; if not, write to the Free Software
+//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+//
+//  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+//
+#ifndef _TopoDS_Shape_HeaderFile
+#include <TopoDS_Shape.hxx>
+#endif
+#ifndef _BOPTools_Pave_HeaderFile
+#include <BOPTools_Pave.hxx>
+#endif
+#ifndef _IntTools_ShrunkRange_HeaderFile
+#include <IntTools_ShrunkRange.hxx>
+#endif
+#ifndef _IntTools_Context_HeaderFile
+#include <IntTools_Context.hxx>
+#endif
+#ifndef _BOPTools_PavePool_HeaderFile
+#include <BOPTools_PavePool.hxx>
+#endif
+#ifndef _NMTTools_CommonBlockPool_HeaderFile
+#include <NMTTools_CommonBlockPool.hxx>
+#endif
+#ifndef _BOPTools_SplitShapesPool_HeaderFile
+#include <BOPTools_SplitShapesPool.hxx>
+#endif
+#ifndef _BOPTools_PaveBlock_HeaderFile
+#include <BOPTools_PaveBlock.hxx>
+#endif
+#ifndef _TopoDS_Vertex_HeaderFile
+#include <TopoDS_Vertex.hxx>
+#endif
+#ifndef _NMTTools_ListOfCommonBlock_HeaderFile
+#include <NMTTools_ListOfCommonBlock.hxx>
+#endif
+#ifndef _NMTTools_CommonBlock_HeaderFile
+#include <NMTTools_CommonBlock.hxx>
+#endif
+#ifndef _BOPTools_IDMapOfPaveBlockIMapOfPaveBlock_HeaderFile
+#include <BOPTools_IDMapOfPaveBlockIMapOfPaveBlock.hxx>
+#endif
+#ifndef _BOPTools_IDMapOfPaveBlockIMapOfInteger_HeaderFile
+#include <BOPTools_IDMapOfPaveBlockIMapOfInteger.hxx>
+#endif
+#ifndef _BooleanOperations_IndexedDataMapOfShapeInteger_HeaderFile
+#include <BooleanOperations_IndexedDataMapOfShapeInteger.hxx>
+#endif
+#ifndef _TColStd_ListOfInteger_HeaderFile
+#include <TColStd_ListOfInteger.hxx>
+#endif
+#ifndef _BOPTools_ListOfPaveBlock_HeaderFile
+#include <BOPTools_ListOfPaveBlock.hxx>
+#endif
+#ifndef _TopoDS_Face_HeaderFile
+#include <TopoDS_Face.hxx>
+#endif
+#ifndef _BOPTools_PaveSet_HeaderFile
+#include <BOPTools_PaveSet.hxx>
+#endif
+#ifndef _BOPTools_Curve_HeaderFile
+#include <BOPTools_Curve.hxx>
+#endif
+#ifndef _BOPTools_SSInterference_HeaderFile
+#include <BOPTools_SSInterference.hxx>
+#endif
+#ifndef _gp_Pnt_HeaderFile
+#include <gp_Pnt.hxx>
+#endif
+#ifndef _NMTTools_IndexedDataMapOfIndexedMapOfInteger_HeaderFile
+#include <NMTTools_IndexedDataMapOfIndexedMapOfInteger.hxx>
+#endif
+#ifndef _TopTools_ListOfShape_HeaderFile
+#include <TopTools_ListOfShape.hxx>
+#endif
+#ifndef _TopoDS_Edge_HeaderFile
+#include <TopoDS_Edge.hxx>
+#endif
+#ifndef _TopTools_DataMapOfShapeShape_HeaderFile
+#include <TopTools_DataMapOfShapeShape.hxx>
+#endif
+#ifndef _TColStd_MapOfInteger_HeaderFile
+#include <TColStd_MapOfInteger.hxx>
+#endif
+#ifndef _NMTTools_PaveFiller_HeaderFile
+#include <NMTTools_PaveFiller.hxx>
+#endif

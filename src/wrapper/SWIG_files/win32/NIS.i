@@ -528,7 +528,7 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 };
 %extend NIS_SurfaceDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
@@ -541,199 +541,6 @@ def __del__(self):
 %}
 
 %extend NIS_SurfaceDrawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NIS_InteractiveObject;
-class NIS_InteractiveObject : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Standard_Integer ID() const;
-		%feature("autodoc", "1");
-		NIS_Drawer::DrawType DrawType() const;
-		%feature("autodoc", "1");
-		const Handle_NIS_Drawer & SetDrawer(const Handle_NIS_Drawer &theDrawer, const Standard_Boolean setUpdated=1);
-		%feature("autodoc", "1");
-		const Handle_NIS_Drawer & GetDrawer() const;
-		%feature("autodoc", "1");
-		virtual		NIS_Drawer * DefaultDrawer(NIS_Drawer* theDrv) const;
-		%feature("autodoc", "1");
-		const Bnd_B3f & GetBox();
-		%feature("autodoc", "1");
-		Standard_Boolean IsTransparent() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHidden() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDisplayed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDynHilighted() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSelectable() const;
-		%feature("autodoc", "1");
-		virtual		void SetSelectable(const Standard_Boolean isSel=1) const;
-		%feature("autodoc", "1");
-		Standard_ShortReal Transparency() const;
-		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Real theValue=5.99999999999999977795539507496869191527366638184e-1);
-		%feature("autodoc", "1");
-		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		void Clone(const Handle_NCollection_BaseAllocator &theAll, Handle_NIS_InteractiveObject & theDest) const;
-		%feature("autodoc", "1");
-		void CloneWithID(const Handle_NCollection_BaseAllocator &arg0, Handle_NIS_InteractiveObject & arg1);
-		%feature("autodoc", "1");
-		virtual		Standard_Real Intersect(const gp_Ax1 theAxis, const Standard_Real theOver) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const NCollection_List<gp_XY> &thePolygon, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
-		%feature("autodoc", "1");
-		void * GetAttribute() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend NIS_InteractiveObject {
-	Handle_NIS_InteractiveObject GetHandle() {
-	return *(Handle_NIS_InteractiveObject*) &$self;
-	}
-};
-%extend NIS_InteractiveObject {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NIS_InteractiveObject {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NIS_Triangulated;
-class NIS_Triangulated : public NIS_InteractiveObject {
-	public:
-		enum PolygonType {
-			Polygon_Default,
-			Polygon_Line,
-			Polygon_Fill,
-		};
-		%feature("autodoc", "1");
-		NIS_Triangulated(const Standard_Integer nNodes=0, const Standard_Boolean is2D=0, const Handle_NCollection_BaseAllocator &theAlloc=0l);
-		%feature("autodoc", "1");
-		void SetPolygonsPrs(const Standard_Integer nPolygons, const Standard_Integer nNodes=0);
-		%feature("autodoc", "1");
-		void SetTriangulationPrs(const Standard_Integer nTriangles, const Standard_Integer nNodes=0);
-		%feature("autodoc", "1");
-		void SetLinePrs(const Standard_Integer nPoints, const Standard_Boolean isClosed, const Standard_Integer nNodes=0);
-		%feature("autodoc", "1");
-		void SetSegmentPrs(const Standard_Integer nSegments, const Standard_Integer nNodes=0);
-		%feature("autodoc", "1");
-		Standard_Boolean IsTriangulation() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPolygons() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsLine(Standard_Boolean & isLoop) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSegments() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		virtual		NIS_Drawer * DefaultDrawer(NIS_Drawer* arg0) const;
-		%feature("autodoc", "1");
-		void SetNode(const Standard_Integer ind, const gp_XYZ thePnt);
-		%feature("autodoc", "1");
-		void SetNode(const Standard_Integer ind, const gp_XY thePnt);
-		%feature("autodoc", "1");
-		void SetTriangle(const Standard_Integer ind, const Standard_Integer iNode0, const Standard_Integer iNode1, const Standard_Integer iNode2);
-		%feature("autodoc", "1");
-		void SetPolygon(const Standard_Integer ind, const Standard_Integer theSz);
-		%feature("autodoc", "1");
-		void SetLineNode(const Standard_Integer ind, const Standard_Integer iNode);
-		%feature("autodoc", "1");
-		Standard_Integer NNodes() const;
-		%feature("autodoc", "1");
-		Standard_Integer NTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NLineNodes() const;
-		%feature("autodoc", "1");
-		Standard_Integer NPolygons() const;
-		%feature("autodoc", "1");
-		const Standard_ShortReal * Node(const Standard_Integer ind) const;
-		%feature("autodoc", "1");
-		void SetPolygonNode(const Standard_Integer indPoly, const Standard_Integer ind, const Standard_Integer iNode);
-		%feature("autodoc", "1");
-		Standard_Integer PolygonNode(const Standard_Integer indPoly, const Standard_Integer ind) const;
-		%feature("autodoc", "1");
-		Standard_Integer NPolygonNodes(const Standard_Integer indPoly) const;
-		%feature("autodoc", "1");
-		void SetDrawPolygons(const Standard_Boolean isDrawPolygons);
-		%feature("autodoc", "1");
-		void SetPolygonType(const NIS_Triangulated::PolygonType theType);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &theColor);
-		%feature("autodoc", "1");
-		Quantity_Color GetColor(const NIS_Drawer::DrawType theDrawType) const;
-		%feature("autodoc", "1");
-		void SetHilightColor(const Quantity_Color &theColor);
-		%feature("autodoc", "1");
-		void SetDynHilightColor(const Quantity_Color &theColor);
-		%feature("autodoc", "1");
-		void SetLineWidth(const Standard_Real theWidth);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const NCollection_List<gp_XY> &thePolygon, const gp_Trsf theTrf, const Standard_Boolean isFullIn) const;
-		%feature("autodoc", "1");
-		static		int tri2d_line_intersect(const double *start, const double *dir, const float *V0, const float *V1, const float *V2, double* tInter);
-		%feature("autodoc", "1");
-		static		int seg2d_line_intersect(const gp_XYZ aStart, const gp_XYZ aDir, const double over2, const float *V0, const float *V1, double* tInter);
-		%feature("autodoc", "1");
-		static		int seg_box_intersect(const Bnd_B3f &theBox, const gp_Pnt *thePnt);
-		%feature("autodoc", "1");
-		static		int seg_box_included(const Bnd_B3f &theBox, const gp_Pnt *thePnt);
-		%feature("autodoc", "1");
-		static		int seg_polygon_intersect(const NCollection_List<gp_XY> &thePolygon, const gp_XY *thePnt);
-		%feature("autodoc", "1");
-		static		int seg_polygon_included(const NCollection_List<gp_XY> &thePolygon, const gp_XY *thePnt);
-		%feature("autodoc", "1");
-		static		void ComputeBox(Bnd_B3f & theBox, const Standard_Integer nNodes, const Standard_ShortReal *pNodes, const Standard_Integer nCoord);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsIn(const NCollection_List<gp_XY> &thePolygon, const gp_XY thePoint);
-		%feature("autodoc", "1");
-		virtual		void Delete() const;
-
-};
-%extend NIS_Triangulated {
-	Handle_NIS_Triangulated GetHandle() {
-	return *(Handle_NIS_Triangulated*) &$self;
-	}
-};
-%extend NIS_Triangulated {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") NIS_Triangulated::~NIS_Triangulated %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NIS_Triangulated {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -867,7 +674,7 @@ class NIS_InteractiveContext : public Standard_Transient {
 };
 %extend NIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_InteractiveContext::~NIS_InteractiveContext %{
@@ -880,6 +687,81 @@ def __del__(self):
 %}
 
 %extend NIS_InteractiveContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor NIS_InteractiveObject;
+class NIS_InteractiveObject : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Standard_Integer ID() const;
+		%feature("autodoc", "1");
+		NIS_Drawer::DrawType DrawType() const;
+		%feature("autodoc", "1");
+		const Handle_NIS_Drawer & SetDrawer(const Handle_NIS_Drawer &theDrawer, const Standard_Boolean setUpdated=1);
+		%feature("autodoc", "1");
+		const Handle_NIS_Drawer & GetDrawer() const;
+		%feature("autodoc", "1");
+		virtual		NIS_Drawer * DefaultDrawer(NIS_Drawer* theDrv) const;
+		%feature("autodoc", "1");
+		const Bnd_B3f & GetBox();
+		%feature("autodoc", "1");
+		Standard_Boolean IsTransparent() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHidden() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDisplayed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDynHilighted() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSelectable() const;
+		%feature("autodoc", "1");
+		virtual		void SetSelectable(const Standard_Boolean isSel=1) const;
+		%feature("autodoc", "1");
+		Standard_ShortReal Transparency() const;
+		%feature("autodoc", "1");
+		void SetTransparency(const Standard_Real theValue=5.99999999999999977795539507496869191527366638184e-1);
+		%feature("autodoc", "1");
+		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		void Clone(const Handle_NCollection_BaseAllocator &theAll, Handle_NIS_InteractiveObject & theDest) const;
+		%feature("autodoc", "1");
+		void CloneWithID(const Handle_NCollection_BaseAllocator &arg0, Handle_NIS_InteractiveObject & arg1);
+		%feature("autodoc", "1");
+		virtual		Standard_Real Intersect(const gp_Ax1 theAxis, const Standard_Real theOver) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Intersect(const NCollection_List<gp_XY> &thePolygon, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
+		%feature("autodoc", "1");
+		void * GetAttribute() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend NIS_InteractiveObject {
+	Handle_NIS_InteractiveObject GetHandle() {
+	return *(Handle_NIS_InteractiveObject*) &$self;
+	}
+};
+%extend NIS_InteractiveObject {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NIS_InteractiveObject {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -928,15 +810,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 		%feature("autodoc", "1");
 		NIS_Surface::DisplayMode GetDisplayMode() const;
 		%feature("autodoc", "1");
-		virtual		void Clone(const Handle_NCollection_BaseAllocator &theAll, Handle_NIS_InteractiveObject & theDest) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Intersect(const gp_Ax1 theAxis, const Standard_Real theOver) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Intersect(const Bnd_B3f &theBox, const gp_Trsf theTrf, const Standard_Boolean isFull) const;
-		%feature("autodoc", "1");
 		virtual		Standard_Boolean Intersect(const NCollection_List<gp_XY> &thePolygon, const gp_Trsf theTrf, const Standard_Boolean isFullIn) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend NIS_Surface {
@@ -946,7 +820,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 };
 %extend NIS_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_Surface::~NIS_Surface %{
@@ -1027,7 +901,7 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 };
 %extend NIS_TriangulatedDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
@@ -1064,7 +938,7 @@ class NIS_SelectFilter : public Standard_Transient {
 };
 %extend NIS_SelectFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_SelectFilter::~NIS_SelectFilter %{
@@ -1130,7 +1004,7 @@ class NIS_View : public V3d_OrthographicView {
 };
 %extend NIS_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_View::~NIS_View %{
@@ -1175,7 +1049,7 @@ class NIS_Allocator : public NCollection_IncAllocator {
 };
 %extend NIS_Allocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_Allocator::~NIS_Allocator %{

@@ -59,13 +59,6 @@ $HeaderURL$
 %rename(Bezier) IntPatch_HCurve2dTool::Bezier;
 %rename(BSpline) IntPatch_HCurve2dTool::BSpline;
 %rename(NbSamples) IntPatch_HCurve2dTool::NbSamples;
-%rename(Bounding) IntPatch_PolygoTool::Bounding;
-%rename(DeflectionOverEstimation) IntPatch_PolygoTool::DeflectionOverEstimation;
-%rename(Closed) IntPatch_PolygoTool::Closed;
-%rename(NbSegments) IntPatch_PolygoTool::NbSegments;
-%rename(BeginOfSeg) IntPatch_PolygoTool::BeginOfSeg;
-%rename(EndOfSeg) IntPatch_PolygoTool::EndOfSeg;
-%rename(Dump) IntPatch_PolygoTool::Dump;
 %rename(Bounding) IntPatch_PolyhedronTool::Bounding;
 %rename(ComponentsBounding) IntPatch_PolyhedronTool::ComponentsBounding;
 %rename(DeflectionOverEstimation) IntPatch_PolyhedronTool::DeflectionOverEstimation;

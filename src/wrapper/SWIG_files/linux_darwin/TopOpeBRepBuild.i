@@ -497,7 +497,7 @@ class TopOpeBRepBuild_Loop : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_Loop::~TopOpeBRepBuild_Loop %{
@@ -548,7 +548,7 @@ class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 };
 %extend TopOpeBRepBuild_Pave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_Pave::~TopOpeBRepBuild_Pave %{
@@ -731,6 +731,10 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
@@ -763,7 +767,7 @@ class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifie
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape E);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -798,7 +802,7 @@ class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClas
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape F);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape F);
 
 };
 %feature("shadow") TopOpeBRepBuild_ShellFaceClassifier::~TopOpeBRepBuild_ShellFaceClassifier %{
@@ -835,7 +839,7 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape E);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -850,67 +854,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_WireEdgeClassifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_ListOfLoop;
-class TopOpeBRepBuild_ListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfLoop();
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Append(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & First() const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-
-};
-%feature("shadow") TopOpeBRepBuild_ListOfLoop::~TopOpeBRepBuild_ListOfLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_ListOfLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1204,6 +1147,10 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 		const TopOpeBRepBuild_VertexInfo & FindFromKey(const TopoDS_Shape K) const;
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_VertexInfo & ChangeFromKey(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address FindFromKey1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFromKey1(const TopoDS_Shape K);
 
 };
 %feature("shadow") TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo::~TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo %{
@@ -1293,7 +1240,7 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfListOfLoop::~TopOpeBRepBuild_ListNodeOfListOfListOfLoop %{
@@ -1477,7 +1424,7 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 };
 %extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo::~TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo %{
@@ -1574,7 +1521,7 @@ class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfPave::~TopOpeBRepBuild_ListNodeOfListOfPave %{
@@ -2207,7 +2154,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_HBuilder::~TopOpeBRepBuild_HBuilder %{
@@ -2470,7 +2417,7 @@ class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapN
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape::~TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape %{
@@ -2483,6 +2430,67 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_ListOfLoop;
+class TopOpeBRepBuild_ListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfLoop();
+		%feature("autodoc", "1");
+		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Append(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & First() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+
+};
+%feature("shadow") TopOpeBRepBuild_ListOfLoop::~TopOpeBRepBuild_ListOfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_ListOfLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2552,7 +2560,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape %{
@@ -3113,7 +3121,7 @@ class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopOpeBRepBuild_ListNodeOfListOfLoop::~TopOpeBRepBuild_ListNodeOfListOfLoop %{

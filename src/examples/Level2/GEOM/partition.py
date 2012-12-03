@@ -1,5 +1,7 @@
 __author__ = 'jelle'
 
+import functools
+
 from OCC.Utils.Construct import *
 from OCC.Partition import *
 from OCC.TopAbs import *
@@ -13,7 +15,6 @@ liZ = make_line(gp_Pnt(0,0,-10), gp_Pnt(0,0,10))
 
 box = make_cube(gp_Pnt(-20,-20,-20), gp_Pnt(20,20,20))
 
-#wiXY = compound([liX,liY])
 pl1 = make_closed_polygon(gp_Pnt(-10,-10,0),
                            gp_Pnt(10,-10,0),
                             gp_Pnt(10,10,0),
@@ -32,11 +33,7 @@ f2 = make_face(pl2)
 
 spl = Partition_Spliter()
 spl.AddShape(f1)
-#spl.AddShape(f2)
-#spl.AddShape(liY)
 spl.AddTool(f2)
-#spl.KeepShapesInside(pl1)
-#spl.RemoveShapesInside(pl2)
 spl.Compute(TopAbs_SHAPE)
 shp = spl.Shape()
 
@@ -48,14 +45,7 @@ tp = Topo(shp)
 
 for i in tp.edges():
     disp(i)
-
-
-
-
 disp((pl1,pl2))
-#disp.start_display()
-
-import ipdb; ipdb.set_trace()
 
 print spl
 

@@ -174,7 +174,6 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Adaptor3d_Surface.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
@@ -187,6 +186,7 @@ $HeaderURL$
 #include<gp_Torus.hxx>
 #include<gp_Circ.hxx>
 #include<gp_Hypr.hxx>
+#include<Adaptor3d_Surface.hxx>
 #include<gp_Pnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>

@@ -266,8 +266,6 @@ class ModularBuilder(object):
         """
         Generate the file for dependencies.
         """
-        if self.MODULE_NAME=='GeomPlate' and sys.platform=='win32': #keep the file on the disk
-            return True
         if self.MODULE_NAME=='GEOM':
             self.MODULE_NAME='SGEOM'#back to the good name
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
@@ -920,15 +918,23 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
-        #
-        # Overload __hash__() method for objects that inherits from Standard_Transient
-        #
-        if (('Handle_%s'%class_name in self.ALREADY_EXPOSED) or HAVE_HASHCODE):
+
+        if HAVE_HASHCODE:
             self.fp.write("\n%")
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
             self.fp.write("\treturn $self->HashCode(2147483647);\n\t}\n};")
+        #
+        # Overload __hash__() method for objects that inherits from Standard_Transient
+        #
+        elif ('Handle_%s'%class_name in self.ALREADY_EXPOSED):
+            self.fp.write("\n%")
+            self.fp.write("extend %s {\n"%class_name)
+            handle_class_name = 'Handle_%s'%class_name
+            self.fp.write("\tStandard_Integer __hash__() {\n")
+            self.fp.write("\treturn HashCode((Standard_Address)$self,2147483647);\n\t}\n};")
+            
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
@@ -1160,11 +1166,15 @@ class ModularBuilder(object):
                           'SelectMgr_SelectionManager.hxx',
                           'Aspect_XWD.hxx',
                           'NCollection_EBTree.hxx','NCollection_CellFilter.hxx',
-                          'Standard_StdAllocator.hxx'
+                          'Standard_StdAllocator.hxx',
+                          'Image_PixelFieldOfDIndexedImage.hxx',
+                          'NCollection_Vec2.hxx','NCollection_Vec3.hxx','NCollection_Vec4.hxx'
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
+            HXX_TO_EXCLUDE.append('StdSelect_ViewerSelector2d.hxx')
+            HXX_TO_EXCLUDE.append('StdSelect_ViewerSelector3d.hxx')
         # Also remove all headers that contain 'Test' (for instance BOPTest.hxx').
         # These are just unit tests and missing from Debian Package
         if self.MODULE_NAME!='TopBas':

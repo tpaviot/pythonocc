@@ -397,9 +397,9 @@ $HeaderURL$
 #include<Handle_StepVisual_CurveStyleFontPattern.hxx>
 #include<Handle_StepVisual_CameraUsage.hxx>
 #include<Handle_StepVisual_TextStyleForDefinedFont.hxx>
-#include<Handle_StepVisual_Colour.hxx>
 #include<Handle_StepVisual_PresentationRepresentation.hxx>
 #include<Handle_StepVisual_CurveStyleFont.hxx>
+#include<Handle_StepVisual_Colour.hxx>
 #include<Handle_StepVisual_SurfaceStyleParameterLine.hxx>
 #include<Handle_StepVisual_ExternallyDefinedCurveFont.hxx>
 #include<Handle_StepVisual_PresentationStyleAssignment.hxx>

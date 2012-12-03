@@ -661,7 +661,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_Image::~Image_Image %{
@@ -732,7 +732,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DColorImage::~Image_DColorImage %{
@@ -769,7 +769,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_ColorImage::~Image_ColorImage %{
@@ -886,7 +886,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DIndexedImage::~Image_DIndexedImage %{
@@ -963,6 +963,10 @@ class Image_LookupTable : public TCollection_BasicMap {
 		Aspect_IndexPixel & ChangeFind(const Aspect_IndexPixel &K);
 		%feature("autodoc", "1");
 		Aspect_IndexPixel & operator()(const Aspect_IndexPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_IndexPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_IndexPixel &K);
 
 };
 %feature("shadow") Image_LookupTable::~Image_LookupTable %{
@@ -1001,7 +1005,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfLookupTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfLookupTable::~Image_DataMapNodeOfLookupTable %{
@@ -1168,6 +1172,10 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 		};
 		%feature("autodoc", "1");
 		Standard_Integer & operator()(const Aspect_ColorPixel &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Aspect_ColorPixel &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Aspect_ColorPixel &K);
 
 };
 %feature("shadow") Image_ColorPixelDataMap::~Image_ColorPixelDataMap %{
@@ -1272,7 +1280,7 @@ class Image_PixMap : public Aspect_PixMap {
 };
 %extend Image_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_PixMap::~Image_PixMap %{
@@ -1364,7 +1372,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_PseudoColorImage::~Image_PseudoColorImage %{
@@ -1413,7 +1421,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") Image_DataMapNodeOfColorPixelDataMap::~Image_DataMapNodeOfColorPixelDataMap %{

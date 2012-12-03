@@ -344,7 +344,7 @@ class PNaming_Naming : public PDF_Attribute {
 };
 %extend PNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_Naming::~PNaming_Naming %{
@@ -389,7 +389,7 @@ class PNaming_Naming_1 : public PDF_Attribute {
 };
 %extend PNaming_Naming_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_Naming_1::~PNaming_Naming_1 %{
@@ -460,7 +460,7 @@ class PNaming_NamedShape : public PDF_Attribute {
 };
 %extend PNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_NamedShape::~PNaming_NamedShape %{
@@ -574,7 +574,7 @@ class PNaming_Name_1 : public Standard_Persistent {
 };
 %extend PNaming_Name_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_Name_1::~PNaming_Name_1 %{
@@ -686,7 +686,7 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 };
 %extend PNaming_HArray1OfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_HArray1OfNamedShape::~PNaming_HArray1OfNamedShape %{
@@ -763,7 +763,7 @@ class PNaming_Name : public Standard_Persistent {
 };
 %extend PNaming_Name {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_Name::~PNaming_Name %{
@@ -810,7 +810,7 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{

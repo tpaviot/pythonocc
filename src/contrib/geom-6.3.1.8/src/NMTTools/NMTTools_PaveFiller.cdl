@@ -1,0 +1,534 @@
+--  Copyright (C) 2007-2008  CEA/DEN, EDF R&D, OPEN CASCADE
+--
+--  Copyright (C) 2003-2007  OPEN CASCADE, EADS/CCR, LIP6, CEA/DEN,
+--  CEDRAT, EDF R&D, LEG, PRINCIPIA R&D, BUREAU VERITAS
+--
+--  This library is free software; you can redistribute it and/or
+--  modify it under the terms of the GNU Lesser General Public
+--  License as published by the Free Software Foundation; either
+--  version 2.1 of the License.
+--
+--  This library is distributed in the hope that it will be useful,
+--  but WITHOUT ANY WARRANTY; without even the implied warranty of
+--  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+--  Lesser General Public License for more details.
+--
+--  You should have received a copy of the GNU Lesser General Public
+--  License along with this library; if not, write to the Free Software
+--  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA
+--
+--  See http://www.salome-platform.org/ or email : webmaster.salome@opencascade.com
+--
+-- File:	NMTTools_PaveFiller.cdl
+-- Created:	Fri Dec  5 14:35:00 2003
+-- Author:	Peter KURNEV
+--		<pkv@irinox>
+--
+class PaveFiller from NMTTools 
+
+	---Purpose: 
+
+uses   
+    DataMapOfIntegerInteger from TColStd,
+    ListOfInteger from TColStd,  
+    MapOfInteger from TColStd,  
+     
+    Pnt from gp,
+    ShapeEnum  from  TopAbs, 
+    Vertex     from  TopoDS, 
+    Face       from  TopoDS,  
+    Shape      from TopoDS, 
+    Edge       from  TopoDS, 
+    ListOfShape from TopTools,  
+    DataMapOfShapeShape from TopTools,
+    
+    Context     from IntTools, 
+    ShrunkRange from IntTools,
+    
+    IndexedDataMapOfShapeInteger from BooleanOperations, 
+
+    PavePool          from BOPTools, 
+    PaveBlock         from BOPTools,
+    ListOfPaveBlock   from BOPTools,
+    SplitShapesPool   from BOPTools, 
+    Pave              from BOPTools, 
+    PaveSet           from BOPTools, 
+    Curve             from BOPTools, 
+    SSInterference    from BOPTools, 
+    IDMapOfPaveBlockIMapOfPaveBlock from BOPTools, 
+    IDMapOfPaveBlockIMapOfInteger   from BOPTools, 
+    SSIntersectionAttribute         from BOPTools, 
+    
+    ShapesDataStructure  from NMTDS,  
+
+    PShapesDataStructure from NMTDS, 
+    Iterator             from NMTDS, 
+    PIterator from NMTDS, 
+    PInterfPool from NMTDS, 
+     
+    CommonBlockPool         from NMTTools, 
+    CommonBlock             from NMTTools, 
+    ListOfCommonBlock       from NMTTools, 
+    DataMapOfIntegerFaceInfo from NMTTools,
+    IndexedDataMapOfIndexedMapOfInteger from NMTTools  
+
+--raises
+
+is 
+    Create 
+    	returns PaveFiller from NMTTools;  
+    ---C++: alias "Standard_EXPORT virtual ~NMTTools_PaveFiller();"
+      
+  
+     
+    SetCompositeShape (me:out;  
+    	    aS:  Shape from TopoDS);  
+     
+    CompositeShape(me) 
+    	returns  Shape from TopoDS; 
+    	---C++:  return  const&  
+	
+	     
+    DS(me:out) 
+      	returns PShapesDataStructure from NMTDS;  
+ 
+    DSIt(me:out) 
+    	returns PIterator from NMTDS; 
+     
+    IP(me:out)  
+    	returns PInterfPool from NMTDS; 
+    --	 
+    Init       (me:out) 
+    	is virtual  protected; 
+	 
+    Clear   (me:out) 
+    	is virtual  protected;
+
+    Perform    (me:out) 
+	is virtual;   
+	 
+    PerformVV  (me:out) 
+    	is virtual protected;  
+     
+    PerformVE  (me:out) 
+    	is virtual protected; 
+     
+    PerformVF  (me:out) 
+    	is virtual protected; 
+
+    PerformEE (me:out) 
+    	is virtual protected; 
+      
+    PerformEF (me:out) 
+    	is virtual protected; 
+   
+    PerformFF (me:out) 
+    	is virtual protected; 
+     
+    MakeSplitEdges(me:out) 
+    	is protected;   
+     
+    PreparePaveBlocks (me:out; 
+    	    aType1: ShapeEnum  from  TopAbs; 
+    	    aType2: ShapeEnum  from  TopAbs) 
+    	is virtual protected; 
+     
+    CorrectShrunkRanges(me:out; 
+    	    aSide:  Integer  from  Standard; 
+    	    aPave:  Pave from BOPTools; 
+    	    aSR  :  out ShrunkRange  from  IntTools)
+    	is protected; 
+	 
+    PreparePaveBlocks (me:out;   
+    	    anE:Integer from Standard) 
+    	is virtual protected;  		  
+	
+     
+    PrepareEdges  (me:out) 
+    	is virtual protected;  
+     
+    --
+    -- Query section 
+    IsDone(me) 
+    	returns  Boolean from Standard; 
+
+    Context(me) 
+    	 returns Context from IntTools; 
+    	---C++:return const &	
+
+    ChangeContext(me:out) 
+    	 returns Context from IntTools;  
+    	---C++:return &	
+
+    PavePool(me) 
+    	returns  PavePool from BOPTools; 
+    	---C++:return const &	 
+
+    ChangePavePool(me:out) 
+    	returns  PavePool from BOPTools; 
+    	---C++:return &	
+
+    CommonBlockPool(me) 
+    	returns  CommonBlockPool from NMTTools; 
+    	---C++:return const &	 
+
+    ChangeCommonBlockPool(me:out) 
+    	returns  CommonBlockPool from NMTTools; 
+    	---C++:return &	
+
+    SplitShapesPool(me)  
+    	returns  SplitShapesPool from BOPTools;
+    	---C++:return const &	
+
+    ChangeSplitShapesPool(me:out)  
+    	returns  SplitShapesPool from BOPTools;
+    	---C++:return  &	
+     
+    FindSDVertex (me; 
+    	    	    nV:  Integer  from  Standard) 
+    	returns Integer from Standard; 
+
+    IsSuccessorsComputed (me;  
+    	    iF1:Integer from  Standard; 
+    	    iF2:Integer from  Standard) 
+    	returns  Boolean from Standard 
+    	is protected;  
+
+    IsBlocksCoinside (me; 
+    	    aPB1:PaveBlock from BOPTools;
+    	    aPB2:PaveBlock from BOPTools) 
+	returns Boolean from Standard 
+    	is protected; 
+     
+    RefinePavePool(me:out) 
+    	is protected;  
+
+    CheckFacePaves(me:out;  
+    	     aV : Vertex  from TopoDS;  
+     	     nF:  Integer from Standard) 
+    	returns Integer from Standard 
+    	is protected;  
+	 
+    ReplaceCommonBlocks (me:out; 
+	    aLCB: ListOfCommonBlock from NMTTools) 
+        is protected; 
+     
+    RemoveCommonBlocks (me:out; 
+	    aLCB: ListOfCommonBlock from NMTTools) 
+        is protected;
+     
+    SplitCommonBlocks (me:out; 
+	    aLCB: ListOfCommonBlock from NMTTools) 
+        is protected;  
+
+    SplitCommonBlock (me:out; 
+    	    aCB : CommonBlock from NMTTools; 
+	    aLCB: out ListOfCommonBlock from NMTTools) 
+        is protected; 
+
+    EECommonBlocks(me:out; 
+    	    aM:IDMapOfPaveBlockIMapOfPaveBlock from BOPTools) 
+    	is protected; 
+     
+    EFCommonBlocks(me:out;  
+    	     aMapCB:IDMapOfPaveBlockIMapOfInteger from BOPTools) 
+        is protected;  
+	 
+    EENewVertices (me:out;  
+    	    aM:IndexedDataMapOfShapeInteger from BooleanOperations) 
+    	is protected;  
+
+    EENewVertices (me:out;  
+    	    aV:Vertex from TopoDS;  
+    	    aM:IndexedDataMapOfShapeInteger from BooleanOperations) 
+    	is protected; 
+     
+    EFNewVertices (me:out; 
+    	    aM:IndexedDataMapOfShapeInteger from BooleanOperations) 
+    	is protected; 
+     
+    EFNewVertices (me:out; 
+    	    aV:Vertex from TopoDS;  
+    	    aM:IndexedDataMapOfShapeInteger from BooleanOperations) 
+    	is protected;   
+	 
+    UpdateCommonBlocks(me:out) 
+    	is protected;  
+     
+    UpdatePaveBlocks(me:out) 
+    	is protected; 
+	 
+    SplitIndex(me; 
+    	    aPB:PaveBlock from BOPTools) 
+	returns Integer from Standard  
+    	is protected;		     
+    	 
+    MakeBlocks(me:out) 
+    	is protected;   
+
+    -------------------------------------------------------------- 
+    ---	  
+    ---  Some API FUNCTIONS  
+    ---  	    	 
+    SplitsInFace(me:out; 
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+
+    SplitsInFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+    	
+    SplitsOnEdge(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nE2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+    	
+    SplitsOnFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+    	
+    SplitsOnFace(me:out;  
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+    	
+    SplitsInFace(me:out; 
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+     
+    SplitsInFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+     
+    SplitsOnEdge(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nE2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+     
+    SplitsOnFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+
+    SplitsOnFace(me:out;  
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+    --
+    SplitsFace  (me:out;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools) 
+    	returns Integer from Standard;  
+
+    SplitsFace  (me:out;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfInteger from TColStd) 
+    	returns Integer from Standard;  
+
+    CommonBlocksFace (me:out;  
+    	         nF  :Integer from Standard;  
+    	         aLCB:out ListOfCommonBlock from NMTTools) 
+    	returns Integer from Standard;   
+	
+    PrepareFace(me:out;  
+    	    nF  :  Integer from Standard; 
+    	    aF  : out Face from TopoDS); 
+     
+    -- 
+    RealPaveBlock(me:out;   
+    	    aPB:PaveBlock from BOPTools) 
+	returns PaveBlock from BOPTools; 
+    ---C++: return const & 	   
+    
+    RealPaveBlock(me:out;   
+    	    aPB:PaveBlock from BOPTools; 
+    	    aLB:out ListOfInteger from TColStd; 
+    	    aIsCommonBlock:out  Integer from Standard) 
+	returns PaveBlock from BOPTools; 
+    ---C++: return const & 	 
+     
+    RealSplitsFace  (me:out;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+	 
+    HasRealSplitsInOnFace (me:out; 
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard) 
+    	returns Boolean from Standard; 
+	 
+    RealSplitsInFace(me:out; 
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+     
+    RealSplitsInFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+     
+    RealSplitsOnEdge(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nE2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+     
+    RealSplitsOnFace(me:out; 
+    	         nE1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+
+    RealSplitsOnFace(me:out;  
+    	         aBid:Integer from Standard;  
+    	         nF1 :Integer from Standard;  
+    	         nF2 :Integer from Standard;  
+    	         aLs :out ListOfPaveBlock from BOPTools); 
+		  
+    PrepareSetForFace(me:out;   
+    	    	nF1 :Integer from Standard;  
+    	        nF2 :Integer from Standard;  
+		aLPB: ListOfPaveBlock from BOPTools;  
+    	    	aPSF:out PaveSet from BOPTools); 
+		 
+    PutPaveOnCurve(me:out;   
+    	    	aPSF: PaveSet from BOPTools; 
+		aTol: Real from Standard;  
+		aBC : out Curve from BOPTools); 
+	 
+
+ 
+    PutBoundPaveOnCurve (me:out; 
+    	    	    aBC :out Curve from BOPTools;	 
+     	    	    aFF :out SSInterference from BOPTools); 
+    	
+    PutBoundPaveOnCurve (me:out;  
+    	    	    aP  : Pnt from  gp; 
+		    aT  : Real from Standard; 			 
+    	    	    aBC :out Curve from BOPTools;	 
+     	    	    aFF :out SSInterference from BOPTools); 
+    	
+    FindPave            (me:out; 
+		    aP  : Pnt from gp;  
+    	    	    aTpV: Real from Standard;  
+    	    	    aPS : PaveSet from BOPTools; 
+		    aPV :out Pave from BOPTools) 
+    	returns Boolean from Standard; 
+	 
+    CheckIntermediatePoint(me:out;  
+    	    	    aPB : PaveBlock      from BOPTools;  
+    	    	    aPBR: PaveBlock      from BOPTools;  
+     	    	    aTol: Real  from  Standard) 
+    	returns Integer from Standard; 	
+		
+
+    IsExistingPaveBlock (me:out; 
+    	    	    aPB : PaveBlock       from BOPTools; 
+     	    	    aLPB: ListOfPaveBlock from BOPTools; 
+    	    	    aTol: Real  from  Standard) 
+    	returns Boolean from Standard;  
+	  
+    MakePCurves (me:out); 
+     
+    PerformVF1(me:out) 
+    	is protected;  
+	 
+    MakeAloneVertices(me:out) 
+    	is protected;   
+	 
+    AloneVertices(me)  
+    	returns IndexedDataMapOfIndexedMapOfInteger from NMTTools; 
+    ---C++: return const & 
+     
+    IsExistingPaveBlock (me:out; 
+    	    	    aPB : PaveBlock   from BOPTools; 
+     	    	    aLPB: ListOfShape from TopTools; 
+    	    	    aTol: Real  from  Standard) 
+    	returns Boolean from Standard;  
+
+    --
+    CheckCoincidence (me:out; 
+    	    	    aPB : PaveBlock   from BOPTools; 
+     	    	    aLPB: ListOfPaveBlock from BOPTools) 
+    	returns Boolean from Standard;  
+    -- 
+     
+    CheckIntermediatePoint(me:out;  
+    	    	    aPB : PaveBlock      from BOPTools;  
+    	    	    aE  : Edge from TopoDS;  
+     	    	    aTol: Real  from  Standard) 
+    	returns Integer from Standard; 	 
+
+    SharedEdges(me:out;  
+    	         nF1  :Integer from Standard;  
+    	         nF2  :Integer from Standard;  
+    	         aLNE :out ListOfInteger from TColStd; 
+    	         aLSE :out ListOfShape   from TopTools); 
+
+    FuseVertices(me; 
+    	aC:Shape from TopoDS; 
+	aDMVV:  out  DataMapOfShapeShape from TopTools);  
+    --
+    TreatPaveBlocks(me:out; 
+    	    theLCB:out ListOfCommonBlock from NMTTools); 
+	     
+    ChangePavePoolNew(me:out) 
+    	returns PavePool from BOPTools; 
+    ---C++:return &  
+
+    CheckCoincidence (me:out; 
+    	    	    aPB1 : PaveBlock   from BOPTools; 
+    	    	    aPB2 : PaveBlock   from BOPTools) 
+    	returns Boolean from Standard;   
+	
+--modified by NIZNHY-PKV Wed Feb 09 10:10:48 2011f	 
+    FillFaceInfo (me:out) 
+    	is protected;
+ 
+    CorrectTolR3D(me:out;   
+    	    	aFF     : SSInterference from BOPTools;  
+    	    	aMVStick: MapOfInteger from TColStd; 
+		aTolR3D:  out Real from Standard) 
+    	is protected; 
+--modified by NIZNHY-PKV Wed Feb 09 10:11:52 2011t	
+
+fields 
+    myDS               :  PShapesDataStructure from NMTDS   	is protected;   
+    myIsDone           :  Boolean from Standard                 is protected; 
+    myNbSources        :  Integer from Standard                 is protected;  
+    myNbEdges          :  Integer from Standard           	is protected;  
+
+    myPavePool         :  PavePool from BOPTools                is protected;     
+    myPavePoolNew      :  PavePool from BOPTools                is protected;  
+    myCommonBlockPool  :  CommonBlockPool from NMTTools         is protected;  
+    mySplitShapesPool  :  SplitShapesPool from BOPTools	        is protected;    
+    -- 
+    myContext          :  Context from IntTools                 is protected; 
+    mySectionAttribute :  SSIntersectionAttribute from BOPTools is protected; 
+    myAloneVertices    :  IndexedDataMapOfIndexedMapOfInteger from NMTTools is protected;   
+    --
+    myVSD              :  DataMapOfIntegerInteger from TColStd is protected; 
+    myDSIt             :  PIterator from NMTDS is protected;  
+    myCompositeShape   :  Shape from TopoDS is protected;
+    myIP               :  PInterfPool from NMTDS is protected;     
+--modified by NIZNHY-PKV Wed Feb 09 10:51:50 2011f 
+    myFaceInfo         :  DataMapOfIntegerFaceInfo from NMTTools is protected;
+--modified by NIZNHY-PKV Wed Feb 09 10:51:50 2011t
+end PaveFiller;

@@ -767,7 +767,7 @@ class TopoDS_HShape : public MMgt_TShared {
 };
 %extend TopoDS_HShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_HShape::~TopoDS_HShape %{
@@ -806,7 +806,7 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 };
 %extend TopoDS_ListNodeOfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_ListNodeOfListOfShape::~TopoDS_ListNodeOfListOfShape %{
@@ -1113,7 +1113,7 @@ class TopoDS_TShape : public MMgt_TShared {
 };
 %extend TopoDS_TShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TShape::~TopoDS_TShape %{
@@ -1146,7 +1146,7 @@ class TopoDS_TWire : public TopoDS_TShape {
 };
 %extend TopoDS_TWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TWire::~TopoDS_TWire %{
@@ -1291,7 +1291,7 @@ class TopoDS_TEdge : public TopoDS_TShape {
 };
 %extend TopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TEdge::~TopoDS_TEdge %{
@@ -1355,7 +1355,7 @@ class TopoDS_TFace : public TopoDS_TShape {
 };
 %extend TopoDS_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TFace::~TopoDS_TFace %{
@@ -1394,7 +1394,7 @@ class TopoDS_TShell : public TopoDS_TShape {
 };
 %extend TopoDS_TShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TShell::~TopoDS_TShell %{
@@ -1433,7 +1433,7 @@ class TopoDS_TCompound : public TopoDS_TShape {
 };
 %extend TopoDS_TCompound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TCompound::~TopoDS_TCompound %{
@@ -1468,7 +1468,7 @@ class TopoDS_TVertex : public TopoDS_TShape {
 };
 %extend TopoDS_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TVertex::~TopoDS_TVertex %{
@@ -1507,7 +1507,7 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 };
 %extend TopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TCompSolid::~TopoDS_TCompSolid %{
@@ -1571,7 +1571,7 @@ class TopoDS_TSolid : public TopoDS_TShape {
 };
 %extend TopoDS_TSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") TopoDS_TSolid::~TopoDS_TSolid %{

@@ -260,7 +260,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %extend IGESControl_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_ToolContainer::~IGESControl_ToolContainer %{
@@ -305,7 +305,7 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %extend IGESControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_Controller::~IGESControl_Controller %{
@@ -340,7 +340,7 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 };
 %extend IGESControl_AlgoContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_AlgoContainer::~IGESControl_AlgoContainer %{
@@ -379,7 +379,7 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 };
 %extend IGESControl_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_IGESBoundary::~IGESControl_IGESBoundary %{
@@ -500,7 +500,7 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend IGESControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") IGESControl_ActorWrite::~IGESControl_ActorWrite %{

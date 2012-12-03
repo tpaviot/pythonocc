@@ -33,7 +33,9 @@ $HeaderURL$
 #include<Intf.hxx>
 #include<Intf_Array1OfLin.hxx>
 #include<Intf_Interference.hxx>
+#include<Intf_InterferencePolygon2d.hxx>
 #include<Intf_PIType.hxx>
+#include<Intf_Polygon2d.hxx>
 #include<Intf_SectionLine.hxx>
 #include<Intf_SectionPoint.hxx>
 #include<Intf_SeqOfSectionLine.hxx>

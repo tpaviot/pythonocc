@@ -31,7 +31,6 @@ $HeaderURL$
 %rename(DownCast) Handle_V3d_View::DownCast;
 %rename(DownCast) Handle_V3d_PerspectiveView::DownCast;
 %rename(DownCast) Handle_V3d_AmbientLight::DownCast;
-%rename(DownCast) Handle_V3d_Camera::DownCast;
 %rename(DownCast) Handle_V3d_LayerMgr::DownCast;
 %rename(DownCast) Handle_V3d_CircularGrid::DownCast;
 %rename(DownCast) Handle_V3d_ColorScale::DownCast;

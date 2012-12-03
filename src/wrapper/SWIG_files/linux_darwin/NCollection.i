@@ -251,11 +251,11 @@ class NCollection_SparseArrayBase {
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
-		Standard_Integer Size() const;
+		Standard_Size Size() const;
 		%feature("autodoc", "1");
-		Standard_Boolean HasValue(const Standard_Integer theIndex) const;
+		Standard_Boolean HasValue(const Standard_Size theIndex) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UnsetValue(const Standard_Integer theIndex);
+		Standard_Boolean UnsetValue(const Standard_Size theIndex);
 
 };
 
@@ -355,7 +355,7 @@ class NCollection_BaseAllocator : public MMgt_TShared {
 };
 %extend NCollection_BaseAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_BaseAllocator::~NCollection_BaseAllocator %{
@@ -397,7 +397,7 @@ class NCollection_IncAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_IncAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_IncAllocator::~NCollection_IncAllocator %{
@@ -410,31 +410,6 @@ def __del__(self):
 %}
 
 %extend NCollection_IncAllocator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor NCollection_ListNode;
-class NCollection_ListNode {
-	public:
-		%feature("autodoc", "1");
-		NCollection_ListNode(NCollection_ListNode* theNext);
-		%feature("autodoc", "1");
-		NCollection_ListNode * Next() const;
-
-};
-%feature("shadow") NCollection_ListNode::~NCollection_ListNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend NCollection_ListNode {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -461,7 +436,7 @@ class NCollection_HeapAllocator : public NCollection_BaseAllocator {
 };
 %extend NCollection_HeapAllocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NCollection_HeapAllocator::~NCollection_HeapAllocator %{

@@ -161,7 +161,7 @@ def face(event=None):
     array.SetValue(2,2,P5);     
     array.SetValue(3,2,P6);    
     curve = GeomAPI_PointsToBSplineSurface(array,3,8,GeomAbs_C2,0.001).Surface()
-    RedFace = BRepBuilderAPI_MakeFace(curve)
+    RedFace = BRepBuilderAPI_MakeFace(curve, 1e-6)
     
     #The brown face    
     
@@ -194,7 +194,7 @@ def face(event=None):
     ##    
     BSplineSurf = GeomAPI_PointsToBSplineSurface(array2,3,8,GeomAbs_C2,0.001)
     ##    
-    aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface()).Face()
+    aFace = BRepBuilderAPI_MakeFace(BSplineSurf.Surface(), 1e-6).Face()
     ##
     ##//2d lines    
     P12d = gp_Pnt2d(0.9,0.1)

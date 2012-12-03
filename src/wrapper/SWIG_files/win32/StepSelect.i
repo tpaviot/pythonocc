@@ -306,7 +306,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend StepSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_WorkLibrary::~StepSelect_WorkLibrary %{
@@ -341,7 +341,7 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %extend StepSelect_FileModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_FileModifier::~StepSelect_FileModifier %{
@@ -380,7 +380,7 @@ class StepSelect_Activator : public IFSelect_Activator {
 };
 %extend StepSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_Activator::~StepSelect_Activator %{
@@ -419,7 +419,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend StepSelect_ModelModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_ModelModifier::~StepSelect_ModelModifier %{
@@ -458,7 +458,7 @@ class StepSelect_StepType : public IFSelect_Signature {
 };
 %extend StepSelect_StepType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_StepType::~StepSelect_StepType %{
@@ -508,7 +508,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %extend StepSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") StepSelect_FloatFormat::~StepSelect_FloatFormat %{

@@ -199,6 +199,8 @@ class BlockFix {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape S, const Standard_Real Tol);
 		%feature("autodoc", "1");
+		static		TopoDS_Shape RefillProblemFaces(const TopoDS_Shape S);
+		%feature("autodoc", "1");
 		static		TopoDS_Shape FixRanges(const TopoDS_Shape S, const Standard_Real Tol);
 
 };
@@ -255,7 +257,7 @@ class BlockFix_SphereSpaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_SphereSpaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BlockFix_SphereSpaceModifier::~BlockFix_SphereSpaceModifier %{
@@ -350,7 +352,7 @@ class BlockFix_PeriodicSurfaceModifier : public BRepTools_Modification {
 };
 %extend BlockFix_PeriodicSurfaceModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BlockFix_PeriodicSurfaceModifier::~BlockFix_PeriodicSurfaceModifier %{
@@ -472,7 +474,7 @@ class BlockFix_BlockFixAPI : public MMgt_TShared {
 };
 %extend BlockFix_BlockFixAPI {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BlockFix_BlockFixAPI::~BlockFix_BlockFixAPI %{

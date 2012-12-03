@@ -904,6 +904,10 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 		Handle_AIS2D_LocalContext & ChangeFind(const Standard_Integer &K);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalContext & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
 
 };
 %feature("shadow") AIS2D_DataMapOfLC::~AIS2D_DataMapOfLC %{
@@ -984,7 +988,7 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 };
 %extend AIS2D_LocalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_LocalStatus::~AIS2D_LocalStatus %{
@@ -1081,7 +1085,7 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 };
 %extend AIS2D_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_InteractiveObject::~AIS2D_InteractiveObject %{
@@ -1120,7 +1124,7 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfPrimAspects::~AIS2D_DataMapNodeOfDataMapOfPrimAspects %{
@@ -1195,7 +1199,7 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 };
 %extend AIS2D_GlobalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_GlobalStatus::~AIS2D_GlobalStatus %{
@@ -1326,7 +1330,7 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfLocStat::~AIS2D_DataMapNodeOfDataMapOfLocStat %{
@@ -1363,7 +1367,7 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 };
 %extend AIS2D_ListNodeOfListOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_ListNodeOfListOfIO::~AIS2D_ListNodeOfListOfIO %{
@@ -1422,7 +1426,7 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 };
 %extend AIS2D_ProjShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_ProjShape::~AIS2D_ProjShape %{
@@ -1487,8 +1491,6 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		void Load(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer SelMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
 		%feature("autodoc", "1");
 		void Erase(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1, const Standard_Boolean PutInCollector=1);
-		%feature("autodoc", "1");
-		void EraseMode(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aMode, const Standard_Boolean UpdateVwr=1);
 		%feature("autodoc", "1");
 		void EraseAll(const Standard_Boolean PutInCollector=1, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
@@ -1666,7 +1668,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 };
 %extend AIS2D_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_InteractiveContext::~AIS2D_InteractiveContext %{
@@ -1712,6 +1714,10 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 		Handle_AIS2D_GlobalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
 		%feature("autodoc", "1");
 		Handle_AIS2D_GlobalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_AIS2D_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_AIS2D_InteractiveObject &K);
 
 };
 %feature("shadow") AIS2D_DataMapOfIOStatus::~AIS2D_DataMapOfIOStatus %{
@@ -1748,7 +1754,7 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfIO::~AIS2D_SequenceNodeOfSequenceOfIO %{
@@ -1827,7 +1833,7 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_HSequenceOfIO::~AIS2D_HSequenceOfIO %{
@@ -1876,7 +1882,7 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfLC::~AIS2D_DataMapNodeOfDataMapOfLC %{
@@ -1922,6 +1928,10 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 		Handle_Prs2d_AspectRoot & ChangeFind(const Handle_Graphic2d_Primitive &K);
 		%feature("autodoc", "1");
 		Handle_Prs2d_AspectRoot & operator()(const Handle_Graphic2d_Primitive &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Graphic2d_Primitive &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Graphic2d_Primitive &K);
 
 };
 %feature("shadow") AIS2D_DataMapOfPrimAspects::~AIS2D_DataMapOfPrimAspects %{
@@ -1960,7 +1970,7 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_DataMapNodeOfDataMapOfIOStatus::~AIS2D_DataMapNodeOfDataMapOfIOStatus %{
@@ -2089,7 +2099,7 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_SequenceNodeOfSequenceOfPrimArchit::~AIS2D_SequenceNodeOfSequenceOfPrimArchit %{
@@ -2159,7 +2169,7 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 };
 %extend AIS2D_PrimitiveArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_PrimitiveArchit::~AIS2D_PrimitiveArchit %{
@@ -2238,7 +2248,7 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_HSequenceOfPrimArchit::~AIS2D_HSequenceOfPrimArchit %{
@@ -2335,7 +2345,7 @@ class AIS2D_LocalContext : public MMgt_TShared {
 };
 %extend AIS2D_LocalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") AIS2D_LocalContext::~AIS2D_LocalContext %{
@@ -2381,6 +2391,10 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 		Handle_AIS2D_LocalStatus & ChangeFind(const Handle_AIS2D_InteractiveObject &K);
 		%feature("autodoc", "1");
 		Handle_AIS2D_LocalStatus & operator()(const Handle_AIS2D_InteractiveObject &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_AIS2D_InteractiveObject &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_AIS2D_InteractiveObject &K);
 
 };
 %feature("shadow") AIS2D_DataMapOfLocStat::~AIS2D_DataMapOfLocStat %{

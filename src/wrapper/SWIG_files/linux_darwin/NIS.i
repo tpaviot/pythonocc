@@ -479,7 +479,7 @@ class NIS_View : public V3d_OrthographicView {
 };
 %extend NIS_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_View::~NIS_View %{
@@ -641,7 +641,7 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 };
 %extend NIS_SurfaceDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_SurfaceDrawer::~NIS_SurfaceDrawer %{
@@ -740,7 +740,7 @@ class NIS_InteractiveContext : public Standard_Transient {
 };
 %extend NIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_InteractiveContext::~NIS_InteractiveContext %{
@@ -818,7 +818,7 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 };
 %extend NIS_TriangulatedDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_TriangulatedDrawer::~NIS_TriangulatedDrawer %{
@@ -895,7 +895,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 };
 %extend NIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_InteractiveObject::~NIS_InteractiveObject %{
@@ -932,7 +932,7 @@ class NIS_SelectFilter : public Standard_Transient {
 };
 %extend NIS_SelectFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_SelectFilter::~NIS_SelectFilter %{
@@ -1011,7 +1011,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 };
 %extend NIS_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_Surface::~NIS_Surface %{
@@ -1059,7 +1059,7 @@ class NIS_Allocator : public NCollection_IncAllocator {
 };
 %extend NIS_Allocator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") NIS_Allocator::~NIS_Allocator %{

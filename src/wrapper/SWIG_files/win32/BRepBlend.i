@@ -466,7 +466,7 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 };
 %extend BRepBlend_AppFuncRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRoot::~BRepBlend_AppFuncRoot %{
@@ -499,7 +499,7 @@ class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRst::~BRepBlend_AppFuncRst %{
@@ -1082,7 +1082,7 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFunc::~BRepBlend_AppFunc %{
@@ -1218,7 +1218,7 @@ class BRepBlend_Line : public MMgt_TShared {
 };
 %extend BRepBlend_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_Line::~BRepBlend_Line %{
@@ -1255,7 +1255,7 @@ class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode 
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_SequenceNodeOfSequenceOfPointOnRst::~BRepBlend_SequenceNodeOfSequenceOfPointOnRst %{
@@ -1294,7 +1294,7 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRstRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_AppFuncRstRst::~BRepBlend_AppFuncRstRst %{
@@ -1638,7 +1638,7 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BRepBlend_SequenceNodeOfSequenceOfLine::~BRepBlend_SequenceNodeOfSequenceOfLine %{

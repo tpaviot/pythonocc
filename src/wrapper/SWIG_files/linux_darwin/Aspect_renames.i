@@ -34,7 +34,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Aspect_ColorCubeColorMap::DownCast;
 %rename(DownCast) Handle_Aspect_Driver::DownCast;
 %rename(DownCast) Handle_Aspect_WindowDriver::DownCast;
-%rename(DownCast) Handle_Aspect_PixMap::DownCast;
 %rename(DownCast) Handle_Aspect_DriverDefinitionError::DownCast;
 %rename(DownCast) Handle_Aspect_GraphicDeviceDefinitionError::DownCast;
 %rename(DownCast) Handle_Aspect_MarkMap::DownCast;

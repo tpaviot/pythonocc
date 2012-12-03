@@ -33,6 +33,7 @@ import Quantity
 import TCollection
 import Aspect
 import gp
+import Image
 import OSD
 import PlotMgt
 };

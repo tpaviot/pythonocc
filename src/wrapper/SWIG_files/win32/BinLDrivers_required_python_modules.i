@@ -28,7 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import TCollection
-import Standard
 import BinMDF
+import Standard
 import CDM
 };

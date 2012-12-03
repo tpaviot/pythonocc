@@ -408,7 +408,7 @@ class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfBoundedCurve::~PColPGeom2d_HArray1OfBoundedCurve %{
@@ -508,7 +508,7 @@ class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfBezierCurve::~PColPGeom2d_HArray1OfBezierCurve %{
@@ -666,7 +666,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve %{
@@ -778,7 +778,7 @@ class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfCurve::~PColPGeom2d_HArray1OfCurve %{
@@ -854,7 +854,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Ar
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve %{
@@ -901,7 +901,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve %{
@@ -972,7 +972,7 @@ class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
 };
 %extend PColPGeom2d_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_HArray1OfBSplineCurve::~PColPGeom2d_HArray1OfBSplineCurve %{
@@ -1060,7 +1060,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 };
 %extend PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve::~PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve %{

@@ -34,6 +34,7 @@ $HeaderURL$
 %rename(Update) BRepTools::Update;
 %rename(UpdateFaceUVPoints) BRepTools::UpdateFaceUVPoints;
 %rename(Clean) BRepTools::Clean;
+%rename(RemoveUnusedPCurves) BRepTools::RemoveUnusedPCurves;
 %rename(Triangulation) BRepTools::Triangulation;
 %rename(Compare) BRepTools::Compare;
 %rename(OuterWire) BRepTools::OuterWire;

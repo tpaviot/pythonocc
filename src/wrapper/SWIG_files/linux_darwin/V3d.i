@@ -551,44 +551,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_V3d_Camera;
-class Handle_V3d_Camera : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_V3d_Camera();
-		%feature("autodoc", "1");
-		Handle_V3d_Camera(const Handle_V3d_Camera &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Camera(const V3d_Camera *anItem);
-		%feature("autodoc", "1");
-		Handle_V3d_Camera & operator=(const Handle_V3d_Camera &aHandle);
-		%feature("autodoc", "1");
-		Handle_V3d_Camera & operator=(const V3d_Camera *anItem);
-		%feature("autodoc", "1");
-		static		Handle_V3d_Camera DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_V3d_Camera {
-	V3d_Camera* GetObject() {
-	return (V3d_Camera*)$self->Access();
-	}
-};
-%feature("shadow") Handle_V3d_Camera::~Handle_V3d_Camera %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_V3d_Camera {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_V3d_OrthographicView;
 class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	public:
@@ -888,7 +850,7 @@ class V3d_Light : public MMgt_TShared {
 };
 %extend V3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_Light::~V3d_Light %{
@@ -924,7 +886,7 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %extend V3d_AmbientLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_AmbientLight::~V3d_AmbientLight %{
@@ -970,7 +932,7 @@ class V3d_Plane : public MMgt_TShared {
 };
 %extend V3d_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_Plane::~V3d_Plane %{
@@ -983,85 +945,6 @@ def __del__(self):
 %}
 
 %extend V3d_Plane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor V3d_Camera;
-class V3d_Camera : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		V3d_Camera(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetAngle(const Quantity_PlaneAngle Angle);
-		%feature("autodoc", "1");
-		void SetAperture(const Quantity_PlaneAngle Angle);
-		%feature("autodoc", "1");
-		void SetTarget(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
-		%feature("autodoc", "1");
-		void SetRadius(const Quantity_Parameter Radius);
-		%feature("autodoc", "1");
-		void OnHideFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void OnSeeFace(const Handle_V3d_View &aView);
-		%feature("autodoc", "1");
-		void Tracking(const Handle_V3d_View &aView, const V3d_TypeOfPickCamera WathPick, const Standard_Integer Xpix, const Standard_Integer Ypix);
-		%feature("autodoc", "1");
-		void AerialPilot(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix);
-		%feature("autodoc", "1");
-		void EarthPilot(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix);
-		%feature("autodoc", "1");
-		void Move(const Quantity_Parameter Dist);
-		%feature("autodoc", "1");
-		void GoUp(const Quantity_Parameter Haut);
-		%feature("autodoc", "1");
-		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
-		%feature("autodoc", "1");
-		void Erase();
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Target() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Angle() const;
-		%feature("autodoc", "1");
-		Quantity_PlaneAngle Aperture() const;
-		%feature("autodoc", "1");
-		Quantity_Parameter Radius() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
-		%feature("autodoc", "1");
-		V3d_TypeOfPickCamera Pick(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend V3d_Camera {
-	Handle_V3d_Camera GetHandle() {
-	return *(Handle_V3d_Camera*) &$self;
-	}
-};
-%extend V3d_Camera {
-	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
-	}
-};
-%feature("shadow") V3d_Camera::~V3d_Camera %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend V3d_Camera {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1103,7 +986,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %extend V3d_ColorScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScale::~V3d_ColorScale %{
@@ -1156,7 +1039,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void SetBgGradientColors(const Quantity_NameOfColor Color1, const Quantity_NameOfColor Color2, const Aspect_GradientFillMethod FillStyle=Aspect_GFM_HOR, const Standard_Boolean update=0);
 		%feature("autodoc", "1");
-		void SetBgGradientStyle(const Aspect_GradientFillMethod AMethod=Aspect_GFM_HOR, const Standard_Boolean update=0) const;
+		void SetBgGradientStyle(const Aspect_GradientFillMethod AMethod=Aspect_GFM_HOR, const Standard_Boolean update=0);
 		%feature("autodoc", "1");
 		void SetBackgroundImage(const char * FileName, const Aspect_FillMethod FillStyle=Aspect_FM_CENTERED, const Standard_Boolean update=0);
 		%feature("autodoc", "1");
@@ -1220,7 +1103,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void TriedronEcho(const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
 		%feature("autodoc", "1");
-		void GraduatedTrihedronDisplay(const char * xname="X\000", const char * yname="Y\000", const char * zname="Z\000", const Standard_Boolean xdrawname=1, const Standard_Boolean ydrawname=1, const Standard_Boolean zdrawname=1, const Standard_Boolean xdrawvalues=1, const Standard_Boolean ydrawvalues=1, const Standard_Boolean zdrawvalues=1, const Standard_Boolean drawgrid=1, const Standard_Boolean drawaxes=1, const Standard_Integer nbx=3, const Standard_Integer nby=3, const Standard_Integer nbz=3, const Standard_Integer xoffset=10, const Standard_Integer yoffset=10, const Standard_Integer zoffset=10, const Standard_Integer xaxisoffset=30, const Standard_Integer yaxisoffset=30, const Standard_Integer zaxisoffset=30, const Standard_Boolean xdrawtickmarks=1, const Standard_Boolean ydrawtickmarks=1, const Standard_Boolean zdrawtickmarks=1, const Standard_Integer xtickmarklength=10, const Standard_Integer ytickmarklength=10, const Standard_Integer ztickmarklength=10, const Quantity_Color &gridcolor=Quantity_NOC_WHITE, const Quantity_Color &xnamecolor=Quantity_NOC_RED, const Quantity_Color &ynamecolor=Quantity_NOC_GREEN, const Quantity_Color &znamecolor=Quantity_NOC_BLUE1, const Quantity_Color &xcolor=Quantity_NOC_RED, const Quantity_Color &ycolor=Quantity_NOC_GREEN, const Quantity_Color &zcolor=Quantity_NOC_BLUE1, const char * fontOfNames="Arial", const OSD_FontAspect styleOfNames=OSD_FA_Bold, const Standard_Integer sizeOfNames=12, const char * fontOfValues="Arial", const OSD_FontAspect styleOfValues=OSD_FA_Regular, const Standard_Integer sizeOfValues=12);
+		void GraduatedTrihedronDisplay(const TCollection_ExtendedString &xname="X", const TCollection_ExtendedString &yname="Y", const TCollection_ExtendedString &zname="Z", const Standard_Boolean xdrawname=1, const Standard_Boolean ydrawname=1, const Standard_Boolean zdrawname=1, const Standard_Boolean xdrawvalues=1, const Standard_Boolean ydrawvalues=1, const Standard_Boolean zdrawvalues=1, const Standard_Boolean drawgrid=1, const Standard_Boolean drawaxes=1, const Standard_Integer nbx=3, const Standard_Integer nby=3, const Standard_Integer nbz=3, const Standard_Integer xoffset=10, const Standard_Integer yoffset=10, const Standard_Integer zoffset=10, const Standard_Integer xaxisoffset=30, const Standard_Integer yaxisoffset=30, const Standard_Integer zaxisoffset=30, const Standard_Boolean xdrawtickmarks=1, const Standard_Boolean ydrawtickmarks=1, const Standard_Boolean zdrawtickmarks=1, const Standard_Integer xtickmarklength=10, const Standard_Integer ytickmarklength=10, const Standard_Integer ztickmarklength=10, const Quantity_Color &gridcolor=Quantity_NOC_WHITE, const Quantity_Color &xnamecolor=Quantity_NOC_RED, const Quantity_Color &ynamecolor=Quantity_NOC_GREEN, const Quantity_Color &znamecolor=Quantity_NOC_BLUE1, const Quantity_Color &xcolor=Quantity_NOC_RED, const Quantity_Color &ycolor=Quantity_NOC_GREEN, const Quantity_Color &zcolor=Quantity_NOC_BLUE1, const TCollection_AsciiString &fontOfNames="Arial", const Font_FontAspect styleOfNames=Font_FA_Bold, const Standard_Integer sizeOfNames=12, const TCollection_AsciiString &fontOfValues="Arial", const Font_FontAspect styleOfValues=Font_FA_Regular, const Standard_Integer sizeOfValues=12);
 		%feature("autodoc", "1");
 		void GraduatedTrihedronErase();
 		%feature("autodoc", "1");
@@ -1510,13 +1393,13 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void ScreenCopy(const Handle_PlotMgt_PlotterDriver &aPlotterDriver, const Standard_Boolean fWhiteBackground=1, const Quantity_Factor aScale=1.0e+0);
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const char * theFile, const Image_TypeOfImage theBufferType=Image_TOI_RGB);
+		Standard_Boolean Dump(const char * theFile, const Graphic3d_BufferType &theBufferType=Graphic3d_BT_RGB);
 		%feature("autodoc", "1");
-		Standard_Boolean Dump(const char * theFile, const Aspect_FormatOfSheetPaper theFormat, const Image_TypeOfImage theBufferType=Image_TOI_RGB);
+		Standard_Boolean Dump(const char * theFile, const Aspect_FormatOfSheetPaper theFormat, const Graphic3d_BufferType &theBufferType=Graphic3d_BT_RGB);
 		%feature("autodoc", "1");
-		void Print(const Aspect_Handle hPrnDC=0, const Standard_Boolean showDialog=1, const Standard_Boolean showBackground=1, const char * filename=0) const;
+		Standard_Boolean Print(const Aspect_Handle hPrnDC=0, const Standard_Boolean showDialog=1, const Standard_Boolean showBackground=1, const char * filename=0, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH) const;
 		%feature("autodoc", "1");
-		Handle_Image_PixMap ToPixMap(const Standard_Integer theWidth, const Standard_Integer theHeight, const Image_TypeOfImage theBufferType=Image_TOI_RGB, const Standard_Boolean theForceCentered=1);
+		Standard_Boolean ToPixMap(Image_PixMap & theImage, const Standard_Integer theWidth, const Standard_Integer theHeight, const Graphic3d_BufferType &theBufferType=Graphic3d_BT_RGB, const Standard_Boolean theForceCentered=1);
 		%feature("autodoc", "1");
 		void SetProjModel(const V3d_TypeOfProjectionModel amOdel=V3d_TPM_SCREEN);
 		%feature("autodoc", "1");
@@ -1544,7 +1427,7 @@ class V3d_View : public Viewer_View {
 };
 %extend V3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_View::~V3d_View %{
@@ -1586,8 +1469,6 @@ class V3d_PositionLight : public V3d_Light {
 		%feature("autodoc", "1");
 		void Erase();
 		%feature("autodoc", "1");
-		virtual		V3d_TypeOfPickLight Pick(const Handle_V3d_View &aView, const Standard_Integer Xpix, const Standard_Integer Ypix) const;
-		%feature("autodoc", "1");
 		Quantity_Parameter Radius() const;
 		%feature("autodoc", "1");
 		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
@@ -1608,7 +1489,7 @@ class V3d_PositionLight : public V3d_Light {
 };
 %extend V3d_PositionLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_PositionLight::~V3d_PositionLight %{
@@ -1656,7 +1537,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V3d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_RectangularGrid::~V3d_RectangularGrid %{
@@ -1719,7 +1600,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %extend V3d_SpotLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_SpotLight::~V3d_SpotLight %{
@@ -1979,6 +1860,13 @@ class V3d_Viewer : public Viewer_Viewer {
 		void SetDefaultLights();
 		%feature("autodoc", "1");
 		void Init();
+		%feature("autodoc","AddZLayer() -> Standard_Integer");
+
+		Standard_Boolean AddZLayer(Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveZLayer(const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		void GetAllZLayers(TColStd_SequenceOfInteger & theLayerSeq) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1990,7 +1878,7 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %extend V3d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_Viewer::~V3d_Viewer %{
@@ -2038,7 +1926,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V3d_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_CircularGrid::~V3d_CircularGrid %{
@@ -2077,7 +1965,7 @@ class V3d_ColorScaleLayerItem : public Visual3d_LayerItem {
 };
 %extend V3d_ColorScaleLayerItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_ColorScaleLayerItem::~V3d_ColorScaleLayerItem %{
@@ -2120,7 +2008,7 @@ class V3d_UnMapped : public Standard_DomainError {
 };
 %extend V3d_UnMapped {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_UnMapped::~V3d_UnMapped %{
@@ -2171,7 +2059,7 @@ class V3d_LayerMgr : public MMgt_TShared {
 };
 %extend V3d_LayerMgr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_LayerMgr::~V3d_LayerMgr %{
@@ -2219,7 +2107,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 };
 %extend V3d_PositionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_PositionalLight::~V3d_PositionalLight %{
@@ -2260,7 +2148,7 @@ class V3d_OrthographicView : public V3d_View {
 };
 %extend V3d_OrthographicView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_OrthographicView::~V3d_OrthographicView %{
@@ -2334,7 +2222,7 @@ class V3d_PerspectiveView : public V3d_View {
 };
 %extend V3d_PerspectiveView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_PerspectiveView::~V3d_PerspectiveView %{
@@ -2390,7 +2278,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %extend V3d_DirectionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") V3d_DirectionalLight::~V3d_DirectionalLight %{

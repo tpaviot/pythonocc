@@ -30,6 +30,7 @@ $HeaderURL$
 %rename(DownCast) Handle_BRepMesh_FastDiscret::DownCast;
 %rename(DownCast) Handle_BRepMesh_DataStructureOfDelaun::DownCast;
 %rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfShapePairOfPolygon::DownCast;
+%rename(DownCast) Handle_BRepMesh_DiscretRoot::DownCast;
 %rename(DownCast) Handle_BRepMesh_FastDiscretFace::DownCast;
 %rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfVertexInteger::DownCast;
 %rename(DownCast) Handle_BRepMesh_ListNodeOfListOfVertex::DownCast;
@@ -38,10 +39,15 @@ $HeaderURL$
 %rename(DownCast) Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun::DownCast;
 %rename(DownCast) Handle_BRepMesh_IndexedMapNodeOfIndexedMapOfVertex::DownCast;
 %rename(DownCast) Handle_BRepMesh_ListNodeOfListOfXY::DownCast;
+%rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerListOfInteger::DownCast;
 %rename(DownCast) Handle_BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun::DownCast;
+%rename(DownCast) Handle_BRepMesh_IncrementalMesh::DownCast;
 %rename(DownCast) Handle_BRepMesh_DataMapNodeOfDataMapOfShapeReal::DownCast;
 %rename(Sort) BRepMesh_HeapSortIndexedVertexOfDelaun::Sort;
 %rename(Mesh) BRepMesh::Mesh;
+%rename(Discret) BRepMesh_IncrementalMesh::Discret;
+%rename(IsParallelDefault) BRepMesh_IncrementalMesh::IsParallelDefault;
+%rename(SetParallelDefault) BRepMesh_IncrementalMesh::SetParallelDefault;
 %rename(Orientation) BRepMesh_ShapeTool::Orientation;
 %rename(Bound) BRepMesh_ShapeTool::Bound;
 %rename(FirstVertex) BRepMesh_ShapeTool::FirstVertex;
@@ -56,6 +62,8 @@ $HeaderURL$
 %rename(Locate) BRepMesh_ShapeTool::Locate;
 %rename(Pnt) BRepMesh_ShapeTool::Pnt;
 %rename(AddInFace) BRepMesh_ShapeTool::AddInFace;
+%rename(RelativeEdgeDeflection) BRepMesh_FastDiscret::RelativeEdgeDeflection;
+%rename(BoxMaxDimension) BRepMesh_FastDiscret::BoxMaxDimension;
 %rename(D0) BRepMesh_GeomTool::D0;
 %rename(Normal) BRepMesh_GeomTool::Normal;
 %rename(Sort) BRepMesh_HeapSortVertexOfDelaun::Sort;

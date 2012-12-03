@@ -266,7 +266,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 };
 %extend GProp_UndefinedAxis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") GProp_UndefinedAxis::~GProp_UndefinedAxis %{

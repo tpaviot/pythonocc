@@ -428,7 +428,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 };
 %extend ShapeExtend_ComplexCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_ComplexCurve::~ShapeExtend_ComplexCurve %{
@@ -529,7 +529,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 };
 %extend ShapeExtend_WireData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_WireData::~ShapeExtend_WireData %{
@@ -575,6 +575,10 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & ChangeFind(const TopoDS_Shape K);
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
 
 };
 %feature("shadow") ShapeExtend_DataMapOfShapeListOfMsg::~ShapeExtend_DataMapOfShapeListOfMsg %{
@@ -615,7 +619,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 };
 %extend ShapeExtend_BasicMsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_BasicMsgRegistrator::~ShapeExtend_BasicMsgRegistrator %{
@@ -654,7 +658,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg %{
@@ -796,7 +800,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 };
 %extend ShapeExtend_CompositeSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_CompositeSurface::~ShapeExtend_CompositeSurface %{
@@ -907,7 +911,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 };
 %extend ShapeExtend_MsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_MsgRegistrator::~ShapeExtend_MsgRegistrator %{
@@ -946,7 +950,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg::~ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg %{
@@ -1023,6 +1027,10 @@ class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {
 		Message_ListOfMsg & ChangeFind(const Handle_Standard_Transient &K);
 		%feature("autodoc", "1");
 		Message_ListOfMsg & operator()(const Handle_Standard_Transient &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Handle_Standard_Transient &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Handle_Standard_Transient &K);
 
 };
 %feature("shadow") ShapeExtend_DataMapOfTransientListOfMsg::~ShapeExtend_DataMapOfTransientListOfMsg %{

@@ -666,7 +666,7 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPISeg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPISeg::~HLRAlgo_HArray1OfPISeg %{
@@ -705,7 +705,7 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
@@ -1006,7 +1006,7 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_EdgesBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_EdgesBlock::~HLRAlgo_EdgesBlock %{
@@ -1043,7 +1043,7 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_ListNodeOfListOfBPoint::~HLRAlgo_ListNodeOfListOfBPoint %{
@@ -1160,7 +1160,7 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_ListNodeOfInterferenceList::~HLRAlgo_ListNodeOfInterferenceList %{
@@ -1205,7 +1205,7 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_WiresBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_WiresBlock::~HLRAlgo_WiresBlock %{
@@ -1266,7 +1266,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyAlgo::~HLRAlgo_PolyAlgo %{
@@ -1315,7 +1315,7 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyShellData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyShellData::~HLRAlgo_PolyShellData %{
@@ -1425,7 +1425,7 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyData::~HLRAlgo_PolyData %{
@@ -1562,7 +1562,7 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPHDat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPHDat::~HLRAlgo_HArray1OfPHDat %{
@@ -1678,7 +1678,7 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfPINod::~HLRAlgo_HArray1OfPINod %{
@@ -1806,7 +1806,7 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
@@ -1925,7 +1925,7 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfTData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") HLRAlgo_HArray1OfTData::~HLRAlgo_HArray1OfTData %{

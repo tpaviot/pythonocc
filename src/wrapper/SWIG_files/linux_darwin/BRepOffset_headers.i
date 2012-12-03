@@ -69,6 +69,7 @@ $HeaderURL$
 #include<BRepOffsetAPI_MakePipe.hxx>
 #include<BRepOffsetAPI_MakePipeShell.hxx>
 #include<BRepOffsetAPI_MakeThickSolid.hxx>
+#include<BRepOffsetAPI_MiddlePath.hxx>
 #include<BRepOffsetAPI_NormalProjection.hxx>
 #include<BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal.hxx>
 #include<BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape.hxx>
@@ -90,6 +91,7 @@ $HeaderURL$
 #include<BRepOffset.hxx>
 #include<Handle_Geom_Surface.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
+#include<TopTools_IndexedMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<BRepAlgo_Image.hxx>
 #include<TopoDS_Wire.hxx>

@@ -144,8 +144,6 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 		%feature("autodoc", "1");
 		virtual		void Write(const Handle_CDM_Document &theDocument, const TCollection_ExtendedString &theFileName);
 		%feature("autodoc", "1");
-		Standard_Boolean IsError() const;
-		%feature("autodoc", "1");
 		virtual		Handle_BinMDF_ADriverTable AttributeDrivers(const Handle_CDM_MessageDriver &theMsgDriver);
 		%feature("autodoc", "1");
 		void AddSection(const TCollection_AsciiString &theName, const Standard_Boolean isPostRead=1);
@@ -160,7 +158,7 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend BinLDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinLDrivers_DocumentStorageDriver::~BinLDrivers_DocumentStorageDriver %{
@@ -254,7 +252,7 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend BinLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") BinLDrivers_DocumentRetrievalDriver::~BinLDrivers_DocumentRetrievalDriver %{
