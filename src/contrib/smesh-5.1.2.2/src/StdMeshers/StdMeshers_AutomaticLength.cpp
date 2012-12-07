@@ -117,7 +117,7 @@ namespace {
    */
   //================================================================================
 
-  const double a14divPI = 14. / PI;
+  const double a14divPI = 14. / M_PI;
 
   inline double segLength(double S0, double edgeLen, double minLen )
   {
