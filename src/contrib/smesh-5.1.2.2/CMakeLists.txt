@@ -24,40 +24,19 @@ INCLUDE_DIRECTORIES(../)
 ################
 INCLUDE(CMakeDetermineFortranCompiler)
 
-########################################
-# OpenCASCADE include and lib location #
-########################################
-FIND_PACKAGE(OCE)
-IF(OCE_FOUND)
-	INCLUDE_DIRECTORIES(${OCE_INCLUDE_DIRS})
-	MESSAGE("-- OCE include directory: ${OCC_INCLUDE_DIRS}")
-ELSE(OCE_FOUND)
-	# Find OpenCASCADE library, set include and lib path
-	IF(WIN32)
-    	# Under Windows, check the CASROOT env variable
-    	FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx 
-              	$ENV{CASROOT}\\inc)
-    			SET(OCC_LIB_PATH "$ENV{CASROOT}\\win32\\lib")
-    # Find the Standard_Real.hxx header in this path
-	ELSE(WIN32) #Unix
-    	FIND_PATH(OCC_INCLUDE_PATH Standard_Real.hxx $ENV{CASROOT}/inc $ENV{CASROOT}/include/oce)
-    	SET(OCC_LIB_PATH "$ENV{CASROOT}/lib")
-    	MESSAGE(${OCC_LIB_PATH})
-	ENDIF(WIN32)
-	# Tells CMake where are the required headers
-	INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-	LINK_DIRECTORIES(${OCC_LIB_PATH})
-	MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-	MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
-ENDIF(OCE_FOUND)
+################################
+# OCE include and lib location #
+################################
+SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
+SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
 
 # Check that these paths are ok
 MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCC_LIB_PATH}")
+MESSAGE("-- OpenCASCADE shared libraries directory: ${OCE_LIB_PATH}")
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCC_LIB_PATH})
+LINK_DIRECTORIES(${OCE_LIB_PATH})
 
 
 ############################
