@@ -24,16 +24,6 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_SMESH_MeshVSLink::DownCast;
-%rename(IsAlgo) SMESH_HypoFilter::IsAlgo;
-%rename(IsAuxiliary) SMESH_HypoFilter::IsAuxiliary;
-%rename(IsApplicableTo) SMESH_HypoFilter::IsApplicableTo;
-%rename(IsAssignedTo) SMESH_HypoFilter::IsAssignedTo;
-%rename(Is) SMESH_HypoFilter::Is;
-%rename(IsGlobal) SMESH_HypoFilter::IsGlobal;
-%rename(IsMoreLocalThan) SMESH_HypoFilter::IsMoreLocalThan;
-%rename(HasName) SMESH_HypoFilter::HasName;
-%rename(HasDim) SMESH_HypoFilter::HasDim;
-%rename(HasType) SMESH_HypoFilter::HasType;
 %rename(IsMedium) SMESH_MesherHelper::IsMedium;
 %rename(LoadNodeColumns) SMESH_MesherHelper::LoadNodeColumns;
 %rename(GetSubShapeByNode) SMESH_MesherHelper::GetSubShapeByNode;
@@ -62,6 +52,16 @@ $HeaderURL$
 %rename(GetShapeDiagonalSize) SMESH_Mesh::GetShapeDiagonalSize;
 %rename(PseudoShape) SMESH_Mesh::PseudoShape;
 %rename(New) SMESH_ComputeError::New;
+%rename(IsAlgo) SMESH_HypoFilter::IsAlgo;
+%rename(IsAuxiliary) SMESH_HypoFilter::IsAuxiliary;
+%rename(IsApplicableTo) SMESH_HypoFilter::IsApplicableTo;
+%rename(IsAssignedTo) SMESH_HypoFilter::IsAssignedTo;
+%rename(Is) SMESH_HypoFilter::Is;
+%rename(IsGlobal) SMESH_HypoFilter::IsGlobal;
+%rename(IsMoreLocalThan) SMESH_HypoFilter::IsMoreLocalThan;
+%rename(HasName) SMESH_HypoFilter::HasName;
+%rename(HasDim) SMESH_HypoFilter::HasDim;
+%rename(HasType) SMESH_HypoFilter::HasType;
 %rename(IsReversedSubMesh) SMESH_Algo::IsReversedSubMesh;
 %rename(EdgeLength) SMESH_Algo::EdgeLength;
 %rename(Continuity) SMESH_Algo::Continuity;

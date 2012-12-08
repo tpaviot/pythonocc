@@ -141,7 +141,7 @@ def constrained_filling(event=None):
         _edg = edg.Shape()
         display.DisplayShape(_edg)
     
-    f = BRepBuilderAPI_MakeFace(srf1)
+    f = BRepBuilderAPI_MakeFace(srf1, 1e-6)
     f.Build()
     shp = f.Shape()
     return shp

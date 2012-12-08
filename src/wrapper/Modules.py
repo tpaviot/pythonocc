@@ -586,10 +586,10 @@ SALOME_SMESH_MODULES = [('SMDSAbs',[],[]),
                                                          'SubMeshIndices','ChangeElementNodes',],\
                                          'SMESHDS_Hypothesis':['SMESHDS_Hypothesis'],
                                          'SMESHDS_GroupBase':['SMESHDS_GroupBase']}),
-                        ('SMESH',['SMDS','SelectBasics','Select3D','TColStd',\
-                                  'AIS','SelectMgr','MeshVS','PrsMgr','Graphic3d',\
+                        ('SMESH',['SMDS','SelectBasics','Select3D','Select2D','TColStd',\
+                                  'AIS','SelectMgr','StdSelect','MeshVS','PrsMgr','Graphic3d',\
                                   'Xw','MFT','Aspect','Quantity','Prs3d','Handle_TCollection',\
-                                  'OSD','Standard','Handle_Image','Handle_math'],\
+                                  'OSD','Font','Standard','Handle_Image','Handle_math'],\
                          ['SMESH_Comment','SMESH_OctreeNode','SMESH_MeshEditor',\
                                      'SMESH_0D_Algo','SMESH_1D_Algo','SMESH_2D_Algo','SMESH_3D_Algo','SMESH_Octree'],\
                          {'SMESH_Algo':['SMESH_Algo','GetNodeParamOnEdge','GetSortedNodesOnEdge'],\
