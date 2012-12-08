@@ -1,4 +1,4 @@
-# SGEOM cmake build file
+# SMESH cmake build file
 PROJECT(SMESH Fortran CXX)
 
 SET(SMESH_VERSION_MAJOR 5)
@@ -8,36 +8,49 @@ SET(SMESH_VERSION_TWEAK 2)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
+#####################
+# Set ABI SOVERSION #
+#####################
+SET(SMESH_ABI_SOVERSION 1)
+SET(SMESH_ABI_VERSION ${SMESH_ABI_SOVERSION}.0.0)
+
 SET(CMAKE_BUILD_TYPE "Release") # By default, build in release mode
 SET(BUILD_SHARED_LIBS ON)
 SET(LIBRARY_OUTPUT_PATH cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
 
+################################
+# OCE include and lib location #
+################################
+SET( OCE_INCLUDE_PATH /usr/local/include/oce CACHE
+  PATH "OCE headers location" )
+SET( OCE_LIB_PATH /usr/local/lib CACHE
+  PATH "OCE libraries location" )
+# Tells CMake where are the required headers
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
+LINK_DIRECTORIES(${OCE_LIB_PATH})
+
+#################
+# Release build #
+#################
+IF (NOT MSVC)
+  IF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+    SET( ${PROJECT_NAME}_BUILD_TYPE "Release" CACHE STRING "Build type" ) # By default set release build
+  ENDIF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+  SET( CMAKE_BUILD_TYPE ${${PROJECT_NAME}_BUILD_TYPE} CACHE INTERNAL "Build type,
+    immutable" FORCE )
+ENDIF(NOT MSVC)
+
 ##############################
 # Boost headers are required #
 ##############################
-INCLUDE_DIRECTORIES(../)
+INCLUDE_DIRECTORIES(../boost-1.52.0)
 
 ################
 # Check Fortran#
 ################
 INCLUDE(CMakeDetermineFortranCompiler)
-
-################################
-# OCE include and lib location #
-################################
-SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
-
-# Check that these paths are ok
-MESSAGE("-- OpenCASCADE include directory: ${OCC_INCLUDE_PATH}")
-MESSAGE("-- OpenCASCADE shared libraries directory: ${OCE_LIB_PATH}")
-
-# Tells CMake where are the required headers
-INCLUDE_DIRECTORIES(${OCC_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCE_LIB_PATH})
-
 
 ############################
 # Check 32/64 bit platform #
@@ -65,101 +78,73 @@ ELSE(UNIX)
   ENDIF(WIN32)
 ENDIF(UNIX)
 
-#########
-# SMDS #
-#########
-FILE(GLOB SMDS_source_files src/SMDS/*.cpp)
-INCLUDE_DIRECTORIES(src/SMDS)
-ADD_LIBRARY(SMDS SHARED ${SMDS_source_files})
-TARGET_LINK_LIBRARIES(SMDS TKernel)
+##########################
+# SMESH lib source files #
+##########################
+FILE(GLOB SMESH_LIB_SOURCE_FILES src/SMDS/SMDS*.cpp
+                                 src/Driver/*.cpp
+                                 src/DriverSTL/DriverSTL*.cpp
+                                 src/DriverDAT/DriverDAT*.cpp
+                                 src/DriverUNV/DriverUNV*.cpp src/DriverUNV/UNV24*.cpp
+                                 src/SMESHDS/*.cpp
+                                 src/SMESH/*.cpp src/Controls/*.cpp
+                                 src/StdMeshers/*.cpp src/MEFISTO2/*.cpp src/MEFISTO2/trte.f)
+INCLUDE_DIRECTORIES(src/SMDS src/Driver src/DriverSTL src/DriverDAT
+                    src/DriverUNV src/SMESHDS src/SMESH src/StdMeshers)
+ADD_LIBRARY(SMESH ${SMESH_LIB_SOURCE_FILES})
+TARGET_LINK_LIBRARIES(SMESH TKernel TKMath TKBRep TKG2d TKG3d TKMeshVS
+                            TKPrim TKGeomBase TKGeomAlgo TKTopAlgo TKShHealing TKAdvTools)
+IF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
+  TARGET_LINK_LIBRARIES(SMESH f2c)
+ENDIF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
+SET_TARGET_PROPERTIES(SMESH PROPERTIES
+      SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
+      VERSION ${${PROJECT_NAME}_ABI_VERSION})
 
-##########
-# Driver #
-##########
-FILE(GLOB Driver_source_files src/Driver/*.cpp)
-INCLUDE_DIRECTORIES(src/Driver)
-ADD_LIBRARY(Driver SHARED ${Driver_source_files})
+####################
+# Install location #
+####################
+IF( NOT DEFINED ${PROJECT_NAME}_INSTALL_PREFIX )
+  IF( WIN32 )
+    SET(${PROJECT_NAME}_INSTALL_PREFIX
+      "c:/${PROJECT_NAME}-${${PROJECT_NAME}_VERSION}")
+  ELSE( WIN32 )
+    SET(${PROJECT_NAME}_INSTALL_PREFIX
+      "/usr/local")
+  ENDIF( WIN32 )
+ENDIF( NOT DEFINED ${PROJECT_NAME}_INSTALL_PREFIX )
 
-#############
-# DriverSTL #
-#############
-FILE(GLOB DriverSTL_source_files src/DriverSTL/*.cpp)
-INCLUDE_DIRECTORIES(src/DriverSTL)
-ADD_LIBRARY(DriverSTL SHARED ${DriverSTL_source_files})
-TARGET_LINK_LIBRARIES(DriverSTL TKernel TKMath Driver SMDS)
-
-#############
-# DriverDAT #
-#############
-FILE(GLOB DriverDAT_source_files src/DriverDAT/*.cpp)
-INCLUDE_DIRECTORIES(src/DriverDAT)
-ADD_LIBRARY(DriverDAT SHARED ${DriverDAT_source_files})
-TARGET_LINK_LIBRARIES(DriverDAT SMDS Driver)
-
-#############
-# DriverUNV #
-#############
-FILE(GLOB DriverUNV_source_files src/DriverUNV/*.cpp)
-INCLUDE_DIRECTORIES(src/DriverUNV)
-ADD_LIBRARY(DriverUNV SHARED ${DriverUNV_source_files})
-TARGET_LINK_LIBRARIES(DriverUNV SMDS Driver)
-
-###########
-# SMESHDS #
-###########
-FILE(GLOB SMESHDS_source_files src/SMESHDS/*.cpp)
-INCLUDE_DIRECTORIES(src/SMESHDS)
-ADD_LIBRARY(SMESHDS SHARED ${SMESHDS_source_files})
-TARGET_LINK_LIBRARIES(SMESHDS SMDS TKernel TKMath TKBRep)
-
-#########
-# SMESH #
-#########
-FILE(GLOB SMESH_source_files src/SMESH/*.cpp src/Controls/*.cpp)
-INCLUDE_DIRECTORIES(src/SMESH)
-ADD_LIBRARY(SMESH SHARED ${SMESH_source_files})
-TARGET_LINK_LIBRARIES(SMESH SMDS SMESHDS TKernel TKMath TKG2d TKG3d TKMeshVS
-                      TKPrim TKGeomBase TKGeomAlgo TKBRep TKTopAlgo TKShHealing
-                      Driver DriverSTL DriverDAT DriverUNV)
-
-##############
-# StdMeshers #
-##############
-FILE(GLOB StdMeshers_source_files src/StdMeshers/*.cpp src/MEFISTO2/*.cpp src/MEFISTO2/trte.f)
-INCLUDE_DIRECTORIES(src/StdMeshers)
-
-ADD_LIBRARY(StdMeshers SHARED ${StdMeshers_source_files})
-IF(APPLE)
-TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools f2c)
-ELSE(APPLE)
-TARGET_LINK_LIBRARIES(StdMeshers SMESH TKernel TKMath TKAdvTools)
-ENDIF(APPLE)
+SET( ${PROJECT_NAME}_INSTALL_PREFIX ${${PROJECT_NAME}_INSTALL_PREFIX} CACHE
+  PATH "Install prefix prepended to target to create install location" )
+SET( CMAKE_INSTALL_PREFIX "${${PROJECT_NAME}_INSTALL_PREFIX}" CACHE INTERNAL "Prefix
+  prepended to install directories if target destination is not absolute,
+  immutable" FORCE )
 
 ###########
 # INSTALL #
 ###########
 IF(UNIX)
-    # Libraries are installed by default in /usr/local/lib
-    INSTALL(TARGETS SMDS Driver DriverSTL DriverDAT DriverUNV
-            SMESHDS SMESH StdMeshers
-            DESTINATION /usr/local/lib)
+    # Libraries are installed by default to /usr/local/lib
+    INSTALL(TARGETS SMESH DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
     # Headers are installed by default in /usr/local/include/smesh
     INSTALL(DIRECTORY inc/
-            DESTINATION /usr/local/include/smesh
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/include/smesh
             FILES_MATCHING PATTERN "*.*")
 ENDIF(UNIX)
+
 ########################
 # Packaging with CPack #
 ########################
-INCLUDE(InstallRequiredSystemLibraries)
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "SMESH library")
+SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENCE.lgpl.txt")
+SET(CPACK_SET_DESTDIR "ON")
 
 # Define version
 SET(CPACK_PACKAGE_VERSION_MAJOR ${SMESH_VERSION_MAJOR})
 SET(CPACK_PACKAGE_VERSION_MINOR ${SMESH_VERSION_MINOR})
 SET(CPACK_PACKAGE_VERSION_PATCH ${SMESH_VERSION_PATCH})
-SET(CPACK_PACKAGE_VERSION_TWEAK ${SMESH_VERSION_TWEAK})
-
-# Include license file
-#SET(CPACK_RESOURCE_FILE_LICENSE ./LICENCE.lgpl.txt)
+SET(CPACK_PACKAGE_NAME ${PROJECT_NAME} )
+SET(CPACK_PACKAGE_CONTACT "pythonocc mailing list <pythonocc-users@gna.org>")
+INCLUDE(InstallRequiredSystemLibraries)
 
 INCLUDE(CPack)
