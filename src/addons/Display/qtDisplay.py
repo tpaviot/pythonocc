@@ -128,7 +128,7 @@ class qtViewer3d(qtBaseViewer):
                          ord('F'): self._display.FitAll,
                          #ord('F'): self._display.ExportToImage("essai.BMP"),
                          #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-                         ord('G'): self._display.SetSelectionModeVertex
+                         #ord('G'): self._display.SetSelectionModeVertex
                          }
 
     def keyPressEvent(self,event):

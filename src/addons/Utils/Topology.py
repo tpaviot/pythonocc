@@ -36,6 +36,7 @@ from OCC.TopTools import *
 from OCC.BRepTools import *
 from OCC.BRep import *
 from OCC.KBE.types_lut import topo_lut, shape_lut
+from OCC.KBE.edge import Edge
 from OCC.Utils.Construct import vertex2pnt
 
 import sys, itertools
@@ -44,8 +45,9 @@ import sys, itertools
 
 class WireExplorer(object):
     '''   '''
-    def __init__(self, wire):
+    def __init__(self, wire, kbe_types=False):
         assert isinstance(wire, TopoDS_Wire), 'not a TopoDS_Wire'
+        self.kbe_types = kbe_types
         self.wire = wire
         self.wire_explorer = BRepTools_WireExplorer(self.wire)
         self.done = False
@@ -78,7 +80,11 @@ class WireExplorer(object):
         occ_iterator = TopTools_ListIteratorOfListOfShape(occ_seq)
         while occ_iterator.More():
             topo_to_add = topologyType(occ_iterator.Value())
-            seq.append(topo_to_add)
+            if self.kbe_types and edges:
+                edge = Edge(topo_to_add)
+                seq.append(edge)
+            else:
+                seq.append(topo_to_add)
             occ_iterator.Next()
         return iter(seq) 
         self.done = True 

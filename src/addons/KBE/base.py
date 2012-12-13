@@ -101,14 +101,8 @@ class KbeObject(object):
         """
         """
 
-        _check = {
-            'vertex':   BRepCheck_Vertex,
-            'edge':     BRepCheck_Edge,
-            'wire':     BRepCheck_Wire,
-            'face':     BRepCheck_Face,
-            'shell':    BRepCheck_Shell,
-            'solid':    BRepCheck_Solid,
-        }
+        _check = dict(vertex=BRepCheck_Vertex, edge=BRepCheck_Edge, wire=BRepCheck_Wire, face=BRepCheck_Face,
+            shell=BRepCheck_Shell, solid=BRepCheck_Solid)
         _test = _check[self.topo_type]
         # TODO: BRepCheck will be able to inform *what* actually is the matter,
         # though implementing this still is a bit of work...

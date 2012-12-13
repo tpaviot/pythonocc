@@ -401,7 +401,7 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
         display.DisplayShape(make_vertex(pnt))
     return pnt
 
-def intersect_shape_by_line(topods_shape, line):
+def intersect_shape_by_line(topods_shape, line, low_parameter=float("-inf"), hi_parameter=float("+inf")):
     """
     finds the intersection of a shape and a line
 
@@ -415,8 +415,9 @@ def intersect_shape_by_line(topods_shape, line):
     from OCC.IntCurvesFace import IntCurvesFace_ShapeIntersector
     iii = IntCurvesFace_ShapeIntersector()
     iii.Load(topods_shape, TOLERANCE)
-    iii.Perform(line, 0,1)
-    return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
+    iii.Perform(line, low_parameter, hi_parameter)
+    with assert_isdone(iii, "failed to computer shape / line intersection"):
+        return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
 
 
 #def split_edge(edge, pnt):
@@ -541,9 +542,9 @@ def minimum_distance(shp1, shp2):
     with assert_isdone(bdss, 'failed computing minimum distances'):
         min_dist = bdss.Value()
         min_dist_shp1, min_dist_shp2 = [],[]
-        for i in range(1,bdss.NbSolution()):
+        for i in range(1,bdss.NbSolution()+1):
             min_dist_shp1.append(bdss.PointOnShape1(i))
-            min_dist_shp1.append(bdss.PointOnShape2(i))
+            min_dist_shp2.append(bdss.PointOnShape2(i))
     return min_dist, min_dist_shp1, min_dist_shp2
 
 def vertex2pnt(vertex):
@@ -574,6 +575,11 @@ def to_adaptor_3d(curveType):
         raise TypeError('allowed types are Wire, Edge or a subclass of Geom_Curve\nGot a %s' % (curveType.__class__))
 
 def project_point_on_curve(crv, pnt):
+    if isinstance(crv, TopoDS_Shape):
+        # get the curve handle...
+        crv = adapt_edge_to_curve(crv).Curve().Curve()
+    else:
+        raise NotImplementedError('expected a TopoDS_Edge...')
     from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
     rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
     return rrr.LowerDistanceParameter(), rrr.NearestPoint()

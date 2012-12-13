@@ -30,7 +30,7 @@ import OCC.TopoDS
 import OCC.Visual3d
 from OCC import Prs3d
 from OCC.Prs3d import Prs3d_Arrow
-from OCC.Quantity import Quantity_Color
+from OCC.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
 import os, os.path, types, sys, subprocess, math, itertools
@@ -106,6 +106,9 @@ class BaseDriver(object):
                 pass
         self.View = self.View_handle.GetObject()
         self._inited = True
+        # some preferences;
+        # the selected elements gray by default... a pretty poor choice I think...
+        self.Context.SelectionColor(Quantity_NOC_ORANGE)
         
         # nessecary for text rendering
         try:
@@ -396,6 +399,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             
         for shape in shapes:
             shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
+            # standard material is ridiculously reflective...
+            shape_to_display.GetObject().SetMaterial(Graphic3d_NOM_SATIN)
             self.Context.SetColor(shape_to_display,color,0)
             ais_shapes.append(shape_to_display)
             if update:
@@ -444,6 +449,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             self.Context.ActivateStandardMode(topo_level)
         else:
             self.Context.ActivateStandardMode(mode)
+        self.Context.UpdateSelected()
 
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
@@ -490,6 +496,8 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             if self.Context.HasSelectedShape():
                 self.selected_shapes.append(self.Context.SelectedShape())
             self.Context.NextSelected()
+        # hilight newly selected unhighlight those no longer selected
+        self.Context.UpdateSelected()
         print "Current selection (%i instances):"%len(self.selected_shapes),self.selected_shapes
 
     def Rotation(self,X,Y):

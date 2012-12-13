@@ -20,25 +20,33 @@ from OCC.IGESCAFControl import *
 from OCC.IFSelect import *
 from OCC.TopoDS import *
 from OCC.BRep import *
-import os
+import os, collections
 
 class IGESExporter(object):
-    def __init__(self, filename=None,format="5.1"):
+    def __init__(self, filename=None,format="5.3"):
         # Format should be "5.1" or "5.3"
         self._shapes = []
         self._filename = filename
-        if format=="5.3":
+        if format=="5.1":
             self._brepmode = True
         else:
             self._brepmode = False
    
     def add_shape(self, aShape):
-        # First check the shape
-        if aShape.IsNull():
-            raise Assertion("IGESExporter Error: the shape is NULL")
-        else: 
-            self._shapes.append(aShape)
-   
+        def _add_shape(_shape):
+            # First check the shape
+            if _shape.IsNull():
+                raise Assertion("STEPExporter Error: the shape is NULL")
+            else:
+                self._shapes.append(_shape)
+
+        if issubclass(aShape.__class__, TopoDS_Shape):
+            _add_shape(aShape)
+
+        elif isinstance(aShape, collections.Iterable):
+            for i in aShape:
+                _add_shape(i)
+
     def write_file(self):
         IGESControl_Controller().Init()
         iges_writer = IGESControl_Writer("write.iges.unit",self._brepmode)

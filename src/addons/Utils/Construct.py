@@ -217,6 +217,7 @@ def make_wire(*args):
     # if we get an iterable, than add all edges to wire builder
     if isinstance(args[0], list) or isinstance(args[0], tuple):
         wire = BRepBuilderAPI_MakeWire()
+        #from OCC.TopTools import TopTools_ListOfShape
         for i in args[0]:
                 wire.Add(i)
         wire.Build()
@@ -376,7 +377,7 @@ def make_filling(profile, vec):
     from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeFilling
     return BRepOffsetAPI_MakeFilling()
 
-def make_loft(elements, ruled=False, tolerance=TOLERANCE):
+def make_loft(elements, ruled=False, tolerance=TOLERANCE, continuity=GeomAbs_C2, check_compatibility=True):
     from OCC.BRepOffsetAPI import BRepOffsetAPI_ThruSections
     sections = BRepOffsetAPI_ThruSections(False, ruled, tolerance)
     for i in elements:
@@ -386,7 +387,9 @@ def make_loft(elements, ruled=False, tolerance=TOLERANCE):
             sections.AddVertex(i)
         else:
             raise TypeError('elements is a list of TopoDS_Wire or TopoDS_Vertex, found a %s fool' % ( i.__class__ ))
-    sections.CheckCompatibility(True)
+
+    sections.CheckCompatibility(check_compatibility)
+    sections.SetContinuity(continuity)
     sections.Build()
     with assert_isdone(sections, 'failed lofting'):
         te = ShapeToTopology()
@@ -817,10 +820,9 @@ def face_normal(face):
         norm.Reverse()
     return norm
 
-def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000, show=False):
+def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000):
+    from OCC.Geom import Geom_RectangularTrimmedSurface
     _trim_plane = make_face( Geom_RectangularTrimmedSurface(_geom_plane.GetHandle(), lowerLimit, upperLimit, lowerLimit, upperLimit).GetHandle() )
-    if show:
-        display.DisplayShape(_trim_plane)
     return _trim_plane
 
 def find_plane_from_shape(shape, tolerance=-1):

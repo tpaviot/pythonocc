@@ -42,7 +42,7 @@ from OCC.STEPControl import *
 from OCC.Quantity import *
 from OCC.Utils.Topology import Topo
 from OCC.TopAbs import *
-import os
+import os, collections
 
 class STEPImporter(object):
     def __init__(self,filename=None):        
@@ -136,12 +136,22 @@ class STEPExporter(object):
         self.stepWriter.SetTolerance(tolerance)
     
     def add_shape(self, aShape):
+        import collections
         # First check the shape
-        if aShape.IsNull():
-            raise Assertion("STEPExporter Error: the shape is NULL")
-        else: 
-            self._shapes.append(aShape)
-    
+
+        def _add_shape(_shape):
+            if aShape.IsNull():
+                raise Assertion("STEPExporter Error: the shape is NULL")
+            else:
+                self._shapes.append(aShape)
+
+        if issubclass(aShape.__class__, TopoDS_Shape):
+            _add_shape(aShape)
+
+        elif isinstance(aShape, collections.Iterable):
+            for i in aShape:
+                _add_shape(i)
+
     def write_file(self):
         for shp in self._shapes:
             status = self.stepWriter.Transfer(shp, STEPControl_AsIs )

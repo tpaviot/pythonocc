@@ -93,7 +93,7 @@ class DiffGeomSurface(object):
     def tangent(self,u,v, recurse=False):
         dU, dV = gp_Dir(), gp_Dir()
         curv = self.curvature(u,v)
-        if curv.IsCurvatureDefined():
+        if curv.IsTangentUDefined() and curv.IsTangentVDefined():
             curv.TangentU(dU), curv.TangentV(dV)
             return dU, dV
         else:
@@ -452,6 +452,7 @@ class Face(KbeObject, TopoDS_Face):
         :param param:
         :return:
         """
+        from OCC.Adaptor3d import Adaptor3d_IsoCurve
         uv = 0 if u_or_v == 'u' else 1
         # TODO: REFACTOR, part of the Face class now...
         iso = Adaptor3d_IsoCurve(self.adaptor_handle.GetHandle(), uv, param)
