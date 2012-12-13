@@ -501,7 +501,7 @@ WIN_MODULES = [
              ('TPrsStd',['Aspect','Image','OSD','Font'],[]),
              ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity','Image','OSD', 'Font','Select2D', 'StdSelect'],[]),
              #('WNT',[],[]), gccxml error
-             ('Image',[],[]),
+             ('Image',[],[],{'Image_PixMap':['SizePixelBytes']}),
              ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d','Image','OSD','Font','Select2D','StdSelect'],[]),
              ]
 
@@ -607,7 +607,7 @@ else:
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
-    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','WNT','Aspect','Font','Handle_TCollection','Viewer'],[]),
+    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','Aspect','Font','Handle_TCollection','Viewer'],['Sketche']),
                        )
 
 #ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
