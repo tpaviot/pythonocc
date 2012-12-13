@@ -94,8 +94,6 @@ $HeaderURL$
 %rename(TextureName) Graphic3d_Texture1D::TextureName;
 %rename(NumberOfTextures) Graphic3d_Texture2D::NumberOfTextures;
 %rename(TextureName) Graphic3d_Texture2D::TextureName;
-%rename(Raise) Graphic3d_VectorError::Raise;
-%rename(NewInstance) Graphic3d_VectorError::NewInstance;
 %rename(Raise) Graphic3d_CycleError::Raise;
 %rename(NewInstance) Graphic3d_CycleError::NewInstance;
 %rename(Light) Graphic3d_GraphicDriver::Light;
@@ -121,6 +119,8 @@ $HeaderURL$
 %rename(NumberOfMaterials) Graphic3d_MaterialAspect::NumberOfMaterials;
 %rename(MaterialName) Graphic3d_MaterialAspect::MaterialName;
 %rename(MaterialType) Graphic3d_MaterialAspect::MaterialType;
+%rename(Raise) Graphic3d_VectorError::Raise;
+%rename(NewInstance) Graphic3d_VectorError::NewInstance;
 %rename(Limit) Graphic3d_StructureManager::Limit;
 %rename(CurrentId) Graphic3d_StructureManager::CurrentId;
 %rename(SetDefaultDegenerateModel) Graphic3d_AspectFillArea3d::SetDefaultDegenerateModel;

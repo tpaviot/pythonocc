@@ -27,6 +27,7 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepClass3d.hxx>
 #include<BRepClass3d_DataMapIteratorOfMapOfInter.hxx>
 #include<BRepClass3d_DataMapNodeOfMapOfInter.hxx>
 #include<BRepClass3d_Intersector3d.hxx>
@@ -108,4 +109,6 @@ $HeaderURL$
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TopoDS_Shell.hxx>
 #include<gp_Lin.hxx>
+#include<BRepClass3d.hxx>
+#include<TopoDS_Solid.hxx>
 %}

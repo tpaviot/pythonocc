@@ -86,14 +86,6 @@ enum OSD_SysType {
 	OSD_Aix,
 	};
 
-enum OSD_FontAspect {
-	OSD_FA_Undefined,
-	OSD_FA_Regular,
-	OSD_FA_Bold,
-	OSD_FA_Italic,
-	OSD_FA_BoldItalic,
-	};
-
 enum OSD_LockType {
 	OSD_NoLock,
 	OSD_ReadLock,
@@ -157,6 +149,12 @@ enum OSD_SingleProtection {
 	OSD_RWXD,
 	};
 
+enum OSD_OpenMode {
+	OSD_ReadOnly,
+	OSD_WriteOnly,
+	OSD_ReadWrite,
+	};
+
 enum OSD_OEMType {
 	OSD_Unavailable,
 	OSD_SUN,
@@ -170,12 +168,6 @@ enum OSD_OEMType {
 	OSD_VAX,
 	OSD_LIN,
 	OSD_AIX,
-	};
-
-enum OSD_OpenMode {
-	OSD_ReadOnly,
-	OSD_WriteOnly,
-	OSD_ReadWrite,
 	};
 
 
@@ -478,44 +470,6 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_Exception_CTRL_BREAK {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_OSD_FontMgr;
-class Handle_OSD_FontMgr : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr();
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr(const Handle_OSD_FontMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr(const OSD_FontMgr *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr & operator=(const Handle_OSD_FontMgr &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_FontMgr & operator=(const OSD_FontMgr *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_FontMgr DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_FontMgr {
-	OSD_FontMgr* GetObject() {
-	return (OSD_FontMgr*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_FontMgr::~Handle_OSD_FontMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_FontMgr {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1124,44 +1078,6 @@ def __del__(self):
 %}
 
 %extend Handle_OSD_SIGQUIT {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_OSD_SystemFont;
-class Handle_OSD_SystemFont : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont();
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont(const Handle_OSD_SystemFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont(const OSD_SystemFont *anItem);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont & operator=(const Handle_OSD_SystemFont &aHandle);
-		%feature("autodoc", "1");
-		Handle_OSD_SystemFont & operator=(const OSD_SystemFont *anItem);
-		%feature("autodoc", "1");
-		static		Handle_OSD_SystemFont DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_OSD_SystemFont {
-	OSD_SystemFont* GetObject() {
-	return (OSD_SystemFont*)$self->Access();
-	}
-};
-%feature("shadow") Handle_OSD_SystemFont::~Handle_OSD_SystemFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_OSD_SystemFont {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2247,6 +2163,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
+class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
+	public:
+		%feature("autodoc", "1");
+		OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
+		%feature("autodoc", "1");
+		OSD_Exception_ARRAY_BOUNDS_EXCEEDED(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED GetHandle() {
+	return *(Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED*) &$self;
+	}
+};
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor OSD_SharedLibrary;
 class OSD_SharedLibrary {
 	public:
@@ -2685,98 +2644,6 @@ def __del__(self):
 %}
 
 %extend OSD_Exception_STATUS_NO_MEMORY {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_SystemFont;
-class OSD_SystemFont : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		OSD_SystemFont();
-		%feature("autodoc", "1");
-		OSD_SystemFont(const Handle_TCollection_HAsciiString &FontName, const OSD_FontAspect Aspect, const Handle_TCollection_HAsciiString &FilePath);
-		%feature("autodoc", "1");
-		OSD_SystemFont(const Handle_TCollection_HAsciiString &XLFD, const Handle_TCollection_HAsciiString &FilePath);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString FontName() const;
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString FontPath() const;
-		%feature("autodoc", "1");
-		OSD_FontAspect FontAspect() const;
-		%feature("autodoc", "1");
-		Standard_Integer FontHeight() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_SystemFont {
-	Handle_OSD_SystemFont GetHandle() {
-	return *(Handle_OSD_SystemFont*) &$self;
-	}
-};
-%extend OSD_SystemFont {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") OSD_SystemFont::~OSD_SystemFont %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_SystemFont {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
-class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
-	public:
-		%feature("autodoc", "1");
-		OSD_Exception_ARRAY_BOUNDS_EXCEEDED();
-		%feature("autodoc", "1");
-		OSD_Exception_ARRAY_BOUNDS_EXCEEDED(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED GetHandle() {
-	return *(Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED*) &$self;
-	}
-};
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") OSD_Exception_ARRAY_BOUNDS_EXCEEDED::~OSD_Exception_ARRAY_BOUNDS_EXCEEDED %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3487,43 +3354,6 @@ def __del__(self):
 %}
 
 %extend OSD_Timer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_FontMgr;
-class OSD_FontMgr : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		static		Handle_OSD_FontMgr GetInstance();
-		%feature("autodoc", "1");
-		OSD_NListOfSystemFont GetAvalableFonts() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend OSD_FontMgr {
-	Handle_OSD_FontMgr GetHandle() {
-	return *(Handle_OSD_FontMgr*) &$self;
-	}
-};
-%extend OSD_FontMgr {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") OSD_FontMgr::~OSD_FontMgr %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_FontMgr {
 	void _kill_pointed() {
 		delete $self;
 	}

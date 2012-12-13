@@ -86,7 +86,6 @@ $HeaderURL$
 #include <Aspect_MarkMapEntry.hxx>
 #include <Aspect_MarkerStyle.hxx>
 #include <Aspect_MarkerStyleDefinitionError.hxx>
-#include <Aspect_PixMap.hxx>
 #include <Aspect_Pixel.hxx>
 #include <Aspect_PixmapDefinitionError.hxx>
 #include <Aspect_PixmapError.hxx>
@@ -175,6 +174,7 @@ $HeaderURL$
 #include <Graphic3d_AspectMarker3d.hxx>
 #include <Graphic3d_AspectText3d.hxx>
 #include <Graphic3d_AspectTextDefinitionError.hxx>
+#include <Graphic3d_BufferType.hxx>
 #include <Graphic3d_CBitFields16.hxx>
 #include <Graphic3d_CBitFields20.hxx>
 #include <Graphic3d_CBitFields4.hxx>
@@ -307,7 +307,6 @@ $HeaderURL$
 #include <Handle_Aspect_MarkMap.hxx>
 #include <Handle_Aspect_MarkMapDefinitionError.hxx>
 #include <Handle_Aspect_MarkerStyleDefinitionError.hxx>
-#include <Handle_Aspect_PixMap.hxx>
 #include <Handle_Aspect_PixmapDefinitionError.hxx>
 #include <Handle_Aspect_PixmapError.hxx>
 #include <Handle_Aspect_PolyStyleDefinitionError.hxx>

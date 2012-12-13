@@ -24,7 +24,6 @@ $HeaderURL$
 
 */
 %{
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -54,8 +53,6 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
@@ -138,4 +135,3 @@ $HeaderURL$
 %};
 
 %import Standard.i
-%import MMgt.i

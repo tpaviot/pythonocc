@@ -869,7 +869,7 @@ class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifie
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape E);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -935,7 +935,7 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape E);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape E);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 
@@ -2215,7 +2215,7 @@ class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClas
 		%feature("autodoc", "1");
 		virtual		void ResetElement(const TopoDS_Shape F);
 		%feature("autodoc", "1");
-		virtual		void CompareElement(const TopoDS_Shape F);
+		virtual		Standard_Boolean CompareElement(const TopoDS_Shape F);
 		%feature("autodoc", "1");
 		virtual		TopAbs_State State();
 

@@ -54,18 +54,12 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <Handle_TCollection_AVLBaseNode.hxx>
-#include <Handle_TCollection_HAsciiString.hxx>
-#include <Handle_TCollection_HExtendedString.hxx>
-#include <Handle_TCollection_MapNode.hxx>
-#include <Handle_TCollection_SeqNode.hxx>
 #include <MMgt_StackManager.hxx>
 #include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
 #include <Standard_Assert.hxx>
-#include <Standard_Atomic.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
 #include <Standard_CString.hxx>
@@ -125,7 +119,6 @@ $HeaderURL$
 #include <Standard_SStream.hxx>
 #include <Standard_ShortReal.hxx>
 #include <Standard_Size.hxx>
-#include <Standard_StdAllocator.hxx>
 #include <Standard_Storable.hxx>
 #include <Standard_Stream.hxx>
 #include <Standard_String.hxx>
@@ -133,7 +126,6 @@ $HeaderURL$
 #include <Standard_Time.hxx>
 #include <Standard_TooManyUsers.hxx>
 #include <Standard_Transient.hxx>
-#include <Standard_Transient_proto.hxx>
 #include <Standard_Type.hxx>
 #include <Standard_TypeDef.hxx>
 #include <Standard_TypeMismatch.hxx>
@@ -143,12 +135,7 @@ $HeaderURL$
 #include <Standard_WayOfLife.hxx>
 #include <Standard_ctype.hxx>
 #include <Standard_math.hxx>
-#include <TopAbs_Orientation.hxx>
-#include <TopAbs_ShapeEnum.hxx>
-#include <TopAbs_State.hxx>
 %};
 
 %import MMgt.i
-%import TCollection.i
 %import Standard.i
-%import TopAbs.i

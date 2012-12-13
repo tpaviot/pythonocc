@@ -27,32 +27,18 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<BRepClass_Edge.hxx>
-#include<BRepClass_FClass2dOfFClassifier.hxx>
-#include<BRepClass_FClassifier.hxx>
-#include<BRepClass_FaceClassifier.hxx>
-#include<BRepClass_FaceExplorer.hxx>
-#include<BRepClass_FacePassiveClassifier.hxx>
-#include<BRepClass_Intersector.hxx>
+#include<Font_FontAspect.hxx>
+#include<Font_FontMgr.hxx>
+#include<Font_NListOfSystemFont.hxx>
+#include<Font_SystemFont.hxx>
+#include<Handle_Font_FontMgr.hxx>
+#include<Handle_Font_SystemFont.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<BRepClass3d.hxx>
-#include<BRepClass3d_DataMapIteratorOfMapOfInter.hxx>
-#include<BRepClass3d_DataMapNodeOfMapOfInter.hxx>
-#include<BRepClass3d_Intersector3d.hxx>
-#include<BRepClass3d_MapOfInter.hxx>
-#include<BRepClass3d_SClassifier.hxx>
-#include<BRepClass3d_SolidClassifier.hxx>
-#include<BRepClass3d_SolidExplorer.hxx>
-#include<BRepClass3d_SolidPassiveClassifier.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<TopoDS_Edge.hxx>
-#include<TopoDS_Face.hxx>
-#include<gp_Lin2d.hxx>
-#include<gp_Dir2d.hxx>
-#include<gp_Pnt2d.hxx>
-#include<gp_Pnt.hxx>
+#include<Handle_Standard_Transient.hxx>
+#include<Handle_TCollection_HAsciiString.hxx>
 %}

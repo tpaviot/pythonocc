@@ -49,7 +49,6 @@ $HeaderURL$
 
 %include MeshVS_headers.i
 
-typedef MeshVS_TwoColors MeshVS_TwoColors;
 typedef MeshVS_Mesh * MeshVS_MeshPtr;
 typedef Standard_Integer MeshVS_BuilderPriority;
 typedef Standard_Integer MeshVS_DisplayModeFlags;

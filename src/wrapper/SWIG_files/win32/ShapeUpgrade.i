@@ -698,6 +698,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeUpgrade_UnifySameDomain;
+class Handle_ShapeUpgrade_UnifySameDomain : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain(const Handle_ShapeUpgrade_UnifySameDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain(const ShapeUpgrade_UnifySameDomain *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain & operator=(const Handle_ShapeUpgrade_UnifySameDomain &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_UnifySameDomain & operator=(const ShapeUpgrade_UnifySameDomain *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_UnifySameDomain DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_UnifySameDomain {
+	ShapeUpgrade_UnifySameDomain* GetObject() {
+	return (ShapeUpgrade_UnifySameDomain*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_UnifySameDomain::~Handle_ShapeUpgrade_UnifySameDomain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_UnifySameDomain {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve2dContinuity;
 class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_SplitCurve2d {
 	public:
@@ -1937,6 +1975,57 @@ def __del__(self):
 %}
 
 %extend ShapeUpgrade_SplitCurve2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor ShapeUpgrade_UnifySameDomain;
+class ShapeUpgrade_UnifySameDomain : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeUpgrade_UnifySameDomain();
+		%feature("autodoc", "1");
+		ShapeUpgrade_UnifySameDomain(const TopoDS_Shape aShape, const Standard_Boolean UnifyEdges=1, const Standard_Boolean UnifyFaces=1, const Standard_Boolean ConcatBSplines=0);
+		%feature("autodoc", "1");
+		void Initialize(const TopoDS_Shape aShape, const Standard_Boolean UnifyEdges=1, const Standard_Boolean UnifyFaces=1, const Standard_Boolean ConcatBSplines=0);
+		%feature("autodoc", "1");
+		void Build();
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Generated(const TopoDS_Shape aShape) const;
+		%feature("autodoc", "1");
+		void UnifyFaces();
+		%feature("autodoc", "1");
+		void UnifyEdges();
+		%feature("autodoc", "1");
+		void UnifyFacesAndEdges();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeUpgrade_UnifySameDomain {
+	Handle_ShapeUpgrade_UnifySameDomain GetHandle() {
+	return *(Handle_ShapeUpgrade_UnifySameDomain*) &$self;
+	}
+};
+%extend ShapeUpgrade_UnifySameDomain {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ShapeUpgrade_UnifySameDomain::~ShapeUpgrade_UnifySameDomain %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeUpgrade_UnifySameDomain {
 	void _kill_pointed() {
 		delete $self;
 	}

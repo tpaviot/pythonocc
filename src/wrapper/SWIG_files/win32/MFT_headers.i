@@ -113,7 +113,6 @@ $HeaderURL$
 #include<Aspect_MarkMapEntry.hxx>
 #include<Aspect_MarkerStyle.hxx>
 #include<Aspect_MarkerStyleDefinitionError.hxx>
-#include<Aspect_PixMap.hxx>
 #include<Aspect_Pixel.hxx>
 #include<Aspect_PixmapDefinitionError.hxx>
 #include<Aspect_PixmapError.hxx>

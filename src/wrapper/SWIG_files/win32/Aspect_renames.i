@@ -38,7 +38,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry::DownCast;
 %rename(DownCast) Handle_Aspect_Driver::DownCast;
 %rename(DownCast) Handle_Aspect_WindowDriver::DownCast;
-%rename(DownCast) Handle_Aspect_PixMap::DownCast;
 %rename(DownCast) Handle_Aspect_UndefinedMap::DownCast;
 %rename(DownCast) Handle_Aspect_GraphicDeviceDefinitionError::DownCast;
 %rename(DownCast) Handle_Aspect_WidthMapDefinitionError::DownCast;
