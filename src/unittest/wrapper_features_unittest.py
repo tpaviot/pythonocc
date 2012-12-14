@@ -263,7 +263,7 @@ class TestWrapperFeatures(unittest.TestCase):
         # check then that the value has not changed (it does if returned by ref)
         self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
     
-    def testEqOperator(self):
+    def testHashEqOperator(self):
         ''' test that the == wrapper is ok
         '''
         # test Standard
@@ -280,6 +280,19 @@ class TestWrapperFeatures(unittest.TestCase):
         items = [p1,line]
         res = items.index(line)
         self.assertEqual(res,1)
+
+    def testTopoDS_ShapeOperators(self):
+        shape_1 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+        shape_2 = BRepPrimAPI_MakeBox(10,20,30).Shape()
+        shape_3 = BRepPrimAPI_MakeSphere(20).Shape()
+        self.assertFalse(shape_1 == shape_2)
+        self.assertFalse(shape_2 == shape_3)
+        self.assertFalse(shape_3 == shape_1)
+        self.assertFalse(shape_2 == "some_string")
+        self.assertTrue(shape_1 != shape_2)
+        self.assertTrue(shape_2 != shape_3)
+        self.assertTrue(shape_3 != shape_1)
+        self.assertTrue(shape_2 != "some_string")
 
     def testNEqOperator(self):
         ''' test that the != wrapper is ok
