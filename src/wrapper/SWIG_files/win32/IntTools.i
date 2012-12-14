@@ -2884,6 +2884,8 @@ class IntTools_Context : public MMgt_TShared {
 		IntTools_SurfaceRangeLocalizeData & SurfaceData(const TopoDS_Face aF);
 		%feature("autodoc", "1");
 		BRepClass3d_SolidClassifier & SolidClassifier(const TopoDS_Solid aSolid);
+		%feature("autodoc", "1");
+		Geom2dHatch_Hatcher & Hatcher(const TopoDS_Face aF);
 		%feature("autodoc","ComputeVE(const aV, const aE) -> Standard_Real");
 
 		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue);

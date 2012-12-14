@@ -61,6 +61,14 @@ IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 	SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
 ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 
+IF (NOT MSVC)
+	IF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+		SET( ${PROJECT_NAME}_BUILD_TYPE "MinSizeRel" CACHE STRING "Build type" ) # By default set release build
+	ENDIF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
+	SET( CMAKE_BUILD_TYPE ${${PROJECT_NAME}_BUILD_TYPE} CACHE INTERNAL "Build type,
+		immutable" FORCE )
+ENDIF(NOT MSVC)
+
 ########
 # SWIG #
 ########
@@ -77,7 +85,7 @@ SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
 # Installation directory                     #
 # by default, installed to site-packages/OCC #
 ##############################################
-EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
+EXECUTE_PROCESS(COMMAND python2.6 -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
 SET(${PROJECT_NAME}_INSTALL_DIRECTORY ${python_lib}/OCC CACHE PATH "pythonOCC install directory" )
 
 # List of OCE shared libraries to link with
@@ -117,8 +125,9 @@ IF(${PROJECT_NAME}_WRAP_SMESH)
 	SET(SMESH_INCLUDE_PATH /usr/local/include/smesh CACHE PATH "smesh include path" )
 	SET(SMESH_LIB_PATH /usr/local/lib CACHE PATH "smesh library path" )
 	INCLUDE_DIRECTORIES(${SMESH_INCLUDE_PATH})
-	INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib)
-	SET(SMESH_LIBRARIES SMDS SMESHDS SMESH StdMeshers DriverDAT DriverSTL DriverUNV)
+	# include boost
+	INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/src/contrib/boost-1.52.0)
+	SET(SMESH_LIBRARIES SMESH)
 	LINK_DIRECTORIES(${SMESH_LIB_PATH})
 ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 

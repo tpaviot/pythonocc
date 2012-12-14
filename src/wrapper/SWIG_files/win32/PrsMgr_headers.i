@@ -117,7 +117,6 @@ $HeaderURL$
 #include<Aspect_MarkMapEntry.hxx>
 #include<Aspect_MarkerStyle.hxx>
 #include<Aspect_MarkerStyleDefinitionError.hxx>
-#include<Aspect_PixMap.hxx>
 #include<Aspect_Pixel.hxx>
 #include<Aspect_PixmapDefinitionError.hxx>
 #include<Aspect_PixmapError.hxx>
@@ -180,6 +179,10 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
+#include<Font_FontAspect.hxx>
+#include<Font_FontMgr.hxx>
+#include<Font_NListOfSystemFont.hxx>
+#include<Font_SystemFont.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
 #include<Graphic3d_Array1OfVertexC.hxx>
@@ -206,6 +209,7 @@ $HeaderURL$
 #include<Graphic3d_AspectMarker3d.hxx>
 #include<Graphic3d_AspectText3d.hxx>
 #include<Graphic3d_AspectTextDefinitionError.hxx>
+#include<Graphic3d_BufferType.hxx>
 #include<Graphic3d_CBitFields16.hxx>
 #include<Graphic3d_CBitFields20.hxx>
 #include<Graphic3d_CBitFields4.hxx>
@@ -316,10 +320,11 @@ $HeaderURL$
 #include<ImageUtility.hxx>
 #include<ImageUtility_XPR.hxx>
 #include<ImageUtility_XWUD.hxx>
+#include<Image_AlienPixMap.hxx>
 #include<Image_AveragePixelInterpolation.hxx>
 #include<Image_BalancedPixelInterpolation.hxx>
 #include<Image_BilinearPixelInterpolation.hxx>
-#include<Image_CRawBufferData.hxx>
+#include<Image_Color.hxx>
 #include<Image_ColorImage.hxx>
 #include<Image_ColorPixelDataMap.hxx>
 #include<Image_ColorPixelMapHasher.hxx>
@@ -330,13 +335,14 @@ $HeaderURL$
 #include<Image_DataMapIteratorOfLookupTable.hxx>
 #include<Image_DataMapNodeOfColorPixelDataMap.hxx>
 #include<Image_DataMapNodeOfLookupTable.hxx>
+#include<Image_Diff.hxx>
 #include<Image_DitheringMethod.hxx>
 #include<Image_FlipType.hxx>
-#include<Image_HPrivateImage.hxx>
 #include<Image_Image.hxx>
 #include<Image_IndexPixelMapHasher.hxx>
 #include<Image_LookupTable.hxx>
 #include<Image_PixMap.hxx>
+#include<Image_PixMapData.hxx>
 #include<Image_PixelAddress.hxx>
 #include<Image_PixelInterpolation.hxx>
 #include<Image_PixelRowOfDColorImage.hxx>
@@ -376,8 +382,6 @@ $HeaderURL$
 #include<OSD_File.hxx>
 #include<OSD_FileIterator.hxx>
 #include<OSD_FileNode.hxx>
-#include<OSD_FontAspect.hxx>
-#include<OSD_FontMgr.hxx>
 #include<OSD_FromWhere.hxx>
 #include<OSD_Function.hxx>
 #include<OSD_Host.hxx>
@@ -388,7 +392,6 @@ $HeaderURL$
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
 #include<OSD_MemInfo.hxx>
-#include<OSD_NListOfSystemFont.hxx>
 #include<OSD_OEMType.hxx>
 #include<OSD_OSDError.hxx>
 #include<OSD_OpenMode.hxx>
@@ -414,7 +417,6 @@ $HeaderURL$
 #include<OSD_Signals.hxx>
 #include<OSD_SingleProtection.hxx>
 #include<OSD_SysType.hxx>
-#include<OSD_SystemFont.hxx>
 #include<OSD_Thread.hxx>
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>

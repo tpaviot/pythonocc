@@ -27,13 +27,29 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
+#include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
+#include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
+#include<Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
+#include<Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
+#include<Handle_NMTDS_ListNodeOfListOfPassKey.hxx>
+#include<Handle_NMTDS_ListNodeOfListOfPassKeyBoolean.hxx>
+#include<Handle_NMTDS_StdMapNodeOfMapOfPassKey.hxx>
+#include<Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean.hxx>
 #include<NMTDS_BndSphere.hxx>
 #include<NMTDS_BndSphereTree.hxx>
 #include<NMTDS_BoxBndTree.hxx>
 #include<NMTDS_CArray1OfIndexRange.hxx>
 #include<NMTDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
+#include<NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
 #include<NMTDS_DataMapOfIntegerMapOfInteger.hxx>
 #include<NMTDS_IndexRange.hxx>
+#include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
+#include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape.hxx>
+#include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere.hxx>
+#include<NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox.hxx>
+#include<NMTDS_IndexedDataMapOfIntegerIndexedDataMapOfShapeInteger.hxx>
 #include<NMTDS_IndexedDataMapOfIntegerShape.hxx>
 #include<NMTDS_IndexedDataMapOfShapeBndSphere.hxx>
 #include<NMTDS_IndexedDataMapOfShapeBox.hxx>
@@ -42,33 +58,29 @@ $HeaderURL$
 #include<NMTDS_Iterator.hxx>
 #include<NMTDS_IteratorCheckerSI.hxx>
 #include<NMTDS_ListIteratorOfListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include<NMTDS_ListIteratorOfListOfPair.hxx>
-#include<NMTDS_ListIteratorOfListOfPairBoolean.hxx>
 #include<NMTDS_ListIteratorOfListOfPassKey.hxx>
 #include<NMTDS_ListIteratorOfListOfPassKeyBoolean.hxx>
+#include<NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
+#include<NMTDS_ListNodeOfListOfPassKey.hxx>
+#include<NMTDS_ListNodeOfListOfPassKeyBoolean.hxx>
 #include<NMTDS_ListOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include<NMTDS_ListOfPair.hxx>
-#include<NMTDS_ListOfPairBoolean.hxx>
 #include<NMTDS_ListOfPassKey.hxx>
 #include<NMTDS_ListOfPassKeyBoolean.hxx>
-#include<NMTDS_MapIteratorOfMapOfPairBoolean.hxx>
 #include<NMTDS_MapIteratorOfMapOfPassKey.hxx>
 #include<NMTDS_MapIteratorOfMapOfPassKeyBoolean.hxx>
-#include<NMTDS_MapOfPairBoolean.hxx>
 #include<NMTDS_MapOfPassKey.hxx>
 #include<NMTDS_MapOfPassKeyBoolean.hxx>
 #include<NMTDS_PInterfPool.hxx>
 #include<NMTDS_PIterator.hxx>
 #include<NMTDS_PShapesDataStructure.hxx>
-#include<NMTDS_Pair.hxx>
-#include<NMTDS_PairBoolean.hxx>
-#include<NMTDS_PairMapHasher.hxx>
 #include<NMTDS_PassKey.hxx>
 #include<NMTDS_PassKeyBoolean.hxx>
 #include<NMTDS_PassKeyMapHasher.hxx>
 #include<NMTDS_PassKeyShape.hxx>
 #include<NMTDS_PassKeyShapeMapHasher.hxx>
 #include<NMTDS_ShapesDataStructure.hxx>
+#include<NMTDS_StdMapNodeOfMapOfPassKey.hxx>
+#include<NMTDS_StdMapNodeOfMapOfPassKeyBoolean.hxx>
 #include<NMTDS_Tools.hxx>
 
 // Additional headers necessary for compilation.

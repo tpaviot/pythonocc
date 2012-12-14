@@ -199,8 +199,6 @@ class BlockFix {
 		%feature("autodoc", "1");
 		static		TopoDS_Shape RotateSphereSpace(const TopoDS_Shape S, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		static		TopoDS_Shape RefillProblemFaces(const TopoDS_Shape S);
-		%feature("autodoc", "1");
 		static		TopoDS_Shape FixRanges(const TopoDS_Shape S, const Standard_Real Tol);
 
 };

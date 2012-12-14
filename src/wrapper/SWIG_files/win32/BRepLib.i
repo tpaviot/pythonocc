@@ -546,9 +546,9 @@ class BRepLib_FindSurface {
 		%feature("autodoc", "1");
 		BRepLib_FindSurface();
 		%feature("autodoc", "1");
-		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		BRepLib_FindSurface(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0);
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001, const Standard_Boolean OnlyPlane=0, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
 		Standard_Boolean Found() const;
 		%feature("autodoc", "1");

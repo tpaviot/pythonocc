@@ -222,6 +222,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepClass3d_MapOfInter;
+class BRepClass3d_MapOfInter : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepClass3d_MapOfInter(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepClass3d_MapOfInter & Assign(const BRepClass3d_MapOfInter &Other);
+		%feature("autodoc", "1");
+		BRepClass3d_MapOfInter & operator=(const BRepClass3d_MapOfInter &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Address &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const Standard_Address & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const Standard_Address & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepClass3d_MapOfInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepClass3d_SolidPassiveClassifier;
 class BRepClass3d_SolidPassiveClassifier {
 	public:
@@ -362,40 +411,16 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepClass3d_MapOfInter;
-class BRepClass3d_MapOfInter : public TCollection_BasicMap {
+%nodefaultctor BRepClass3d;
+class BRepClass3d {
 	public:
 		%feature("autodoc", "1");
-		BRepClass3d_MapOfInter(const Standard_Integer NbBuckets=1);
+		BRepClass3d();
 		%feature("autodoc", "1");
-		BRepClass3d_MapOfInter & Assign(const BRepClass3d_MapOfInter &Other);
-		%feature("autodoc", "1");
-		BRepClass3d_MapOfInter & operator=(const BRepClass3d_MapOfInter &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const Standard_Address &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const Standard_Address & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const Standard_Address & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
+		static		TopoDS_Shell OuterShell(const TopoDS_Solid S);
 
 };
-%feature("shadow") BRepClass3d_MapOfInter::~BRepClass3d_MapOfInter %{
+%feature("shadow") BRepClass3d::~BRepClass3d %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -404,7 +429,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepClass3d_MapOfInter {
+%extend BRepClass3d {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -209,8 +209,8 @@ $HeaderURL$
 #include <math_Vector.hxx>
 %};
 
-%import TCollection.i
 %import MMgt.i
+%import TCollection.i
 %import Standard.i
 %import math.i
 %import GeomAbs.i

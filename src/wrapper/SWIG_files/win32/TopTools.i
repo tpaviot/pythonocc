@@ -3542,6 +3542,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopTools_MutexForShapeProvider;
+class TopTools_MutexForShapeProvider {
+	public:
+		%feature("autodoc", "1");
+		TopTools_MutexForShapeProvider();
+		%feature("autodoc", "1");
+		void CreateMutexesForSubShapes(const TopoDS_Shape theShape, const TopAbs_ShapeEnum theType);
+		%feature("autodoc", "1");
+		void CreateMutexForShape(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		Standard_Mutex * GetMutex(const TopoDS_Shape theShape) const;
+		%feature("autodoc", "1");
+		void RemoveAllMutexes();
+
+};
+%feature("shadow") TopTools_MutexForShapeProvider::~TopTools_MutexForShapeProvider %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopTools_MutexForShapeProvider {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopTools_SequenceNodeOfSequenceOfShape;
 class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 	public:

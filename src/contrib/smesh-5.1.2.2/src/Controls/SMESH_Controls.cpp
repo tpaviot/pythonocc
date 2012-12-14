@@ -332,7 +332,7 @@ double MinimumAngle::GetValue( const TSequenceOfXYZ& P )
     aMin = Min(aMin,A0);
   }
 
-  return aMin * 180.0 / PI;
+  return aMin * 180.0 / M_PI;
 }
 
 double MinimumAngle::GetBadRate( double Value, int nbNodes ) const
@@ -831,12 +831,12 @@ double Warping::ComputeA( const gp_XYZ& thePnt1,
   gp_XYZ N  = GI.Crossed( GJ );
 
   if ( N.Modulus() < gp::Resolution() )
-    return PI / 2;
+    return M_PI / 2;
 
   N.Normalize();
 
   double H = ( thePnt2 - theG ).Dot( N );
-  return asin( fabs( H / L ) ) * 180. / PI;
+  return asin( fabs( H / L ) ) * 180. / M_PI;
 }
 
 double Warping::GetBadRate( double Value, int /*nbNodes*/ ) const
@@ -915,14 +915,14 @@ double Skew::GetValue( const TSequenceOfXYZ& P )
     return 0.;
 
   // Compute skew
-  static double PI2 = PI / 2.;
+  static double PI2 = M_PI / 2.;
   if ( P.size() == 3 )
   {
     double A0 = fabs( PI2 - skewAngle( P( 3 ), P( 1 ), P( 2 ) ) );
     double A1 = fabs( PI2 - skewAngle( P( 1 ), P( 2 ), P( 3 ) ) );
     double A2 = fabs( PI2 - skewAngle( P( 2 ), P( 3 ), P( 1 ) ) );
 
-    return Max( A0, Max( A1, A2 ) ) * 180. / PI;
+    return Max( A0, Max( A1, A2 ) ) * 180. / M_PI;
   }
   else
   {
@@ -939,7 +939,7 @@ double Skew::GetValue( const TSequenceOfXYZ& P )
     if ( A < Precision::Angular() )
       return 0.;
 
-    return A * 180. / PI;
+    return A * 180. / M_PI;
   }
 }
 

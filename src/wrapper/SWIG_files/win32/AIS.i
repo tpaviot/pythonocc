@@ -2075,6 +2075,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_AIS_TexturedShape;
+class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
+	public:
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape();
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
+		%feature("autodoc", "1");
+		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_AIS_TexturedShape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_AIS_TexturedShape {
+	AIS_TexturedShape* GetObject() {
+	return (AIS_TexturedShape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_AIS_TexturedShape::~Handle_AIS_TexturedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_AIS_TexturedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_AIS_MidPointRelation;
 class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	public:
@@ -2221,44 +2259,6 @@ def __del__(self):
 %}
 
 %extend Handle_AIS_DataMapNodeOfDataMapOfSelStat {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_AIS_TexturedShape;
-class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
-	public:
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape();
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape(const Handle_AIS_TexturedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape(const AIS_TexturedShape *anItem);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape & operator=(const Handle_AIS_TexturedShape &aHandle);
-		%feature("autodoc", "1");
-		Handle_AIS_TexturedShape & operator=(const AIS_TexturedShape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_AIS_TexturedShape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_AIS_TexturedShape {
-	AIS_TexturedShape* GetObject() {
-	return (AIS_TexturedShape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_AIS_TexturedShape::~Handle_AIS_TexturedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_AIS_TexturedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2525,6 +2525,18 @@ class AIS_Drawer : public Prs3d_Drawer {
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_LineAspect VectorAspect();
 		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryDraw(const Standard_Boolean theIsEnabled);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		virtual		void SetFaceBoundaryAspect(const Handle_Prs3d_LineAspect &theAspect);
+		%feature("autodoc", "1");
+		virtual		Handle_Prs3d_LineAspect FaceBoundaryAspect();
+		%feature("autodoc", "1");
+		Standard_Boolean IsOwnFaceBoundaryDraw() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOwnFaceBoundaryAspect() const;
+		%feature("autodoc", "1");
 		Standard_Boolean HasDatumAspect() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_DatumAspect DatumAspect();
@@ -2576,59 +2588,6 @@ def __del__(self):
 %}
 
 %extend AIS_Drawer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_AttributeFilter;
-class AIS_AttributeFilter : public SelectMgr_Filter {
-	public:
-		%feature("autodoc", "1");
-		AIS_AttributeFilter();
-		%feature("autodoc", "1");
-		AIS_AttributeFilter(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		AIS_AttributeFilter(const Standard_Real aWidth);
-		%feature("autodoc", "1");
-		Standard_Boolean HasColor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasWidth() const;
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		void SetWidth(const Standard_Real aWid);
-		%feature("autodoc", "1");
-		void UnsetColor();
-		%feature("autodoc", "1");
-		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_AttributeFilter {
-	Handle_AIS_AttributeFilter GetHandle() {
-	return *(Handle_AIS_AttributeFilter*) &$self;
-	}
-};
-%extend AIS_AttributeFilter {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_AttributeFilter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2779,12 +2738,12 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		void SetAspect(const Handle_Prs3d_BasicAspect &anAspect, const Standard_Boolean globalChange=1);
 		%feature("autodoc", "1");
-		virtual		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0);
+		virtual		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasPolygonOffsets() const;
-		%feature("autodoc","PolygonOffsets() -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets() -> Standard_Integer");
 
-		virtual		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		virtual		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3182,6 +3141,49 @@ def __del__(self):
 %}
 
 %extend AIS_SequenceOfDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_Triangulation;
+class AIS_Triangulation : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_Triangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		void SetColors(const Handle_TColStd_HArray1OfInteger &aColor);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger GetColors() const;
+		%feature("autodoc", "1");
+		void SetTriangulation(const Handle_Poly_Triangulation &aTriangulation);
+		%feature("autodoc", "1");
+		Handle_Poly_Triangulation GetTriangulation() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Triangulation {
+	Handle_AIS_Triangulation GetHandle() {
+	return *(Handle_AIS_Triangulation*) &$self;
+	}
+};
+%extend AIS_Triangulation {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Triangulation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4760,6 +4762,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_AttributeFilter;
+class AIS_AttributeFilter : public SelectMgr_Filter {
+	public:
+		%feature("autodoc", "1");
+		AIS_AttributeFilter();
+		%feature("autodoc", "1");
+		AIS_AttributeFilter(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		AIS_AttributeFilter(const Standard_Real aWidth);
+		%feature("autodoc", "1");
+		Standard_Boolean HasColor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasWidth() const;
+		%feature("autodoc", "1");
+		void SetColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		void SetWidth(const Standard_Real aWid);
+		%feature("autodoc", "1");
+		void UnsetColor();
+		%feature("autodoc", "1");
+		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOk(const Handle_SelectMgr_EntityOwner &anObj) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_AttributeFilter {
+	Handle_AIS_AttributeFilter GetHandle() {
+	return *(Handle_AIS_AttributeFilter*) &$self;
+	}
+};
+%extend AIS_AttributeFilter {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_AttributeFilter::~AIS_AttributeFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_AttributeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_ListNodeOfListOfInteractive;
 class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 	public:
@@ -5461,49 +5516,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Triangulation;
-class AIS_Triangulation : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Triangulation(const Handle_Poly_Triangulation &aTriangulation);
-		%feature("autodoc", "1");
-		void SetColors(const Handle_TColStd_HArray1OfInteger &aColor);
-		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger GetColors() const;
-		%feature("autodoc", "1");
-		void SetTriangulation(const Handle_Poly_Triangulation &aTriangulation);
-		%feature("autodoc", "1");
-		Handle_Poly_Triangulation GetTriangulation() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Triangulation {
-	Handle_AIS_Triangulation GetHandle() {
-	return *(Handle_AIS_Triangulation*) &$self;
-	}
-};
-%extend AIS_Triangulation {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Triangulation::~AIS_Triangulation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Triangulation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_ListIteratorOfListOfInteractive;
 class AIS_ListIteratorOfListOfInteractive {
 	public:
@@ -6149,12 +6161,12 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void UnsetLocalAttributes(const Handle_AIS_InteractiveObject &anObj, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0, const Standard_Boolean updateviewer=1);
+		void SetPolygonOffsets(const Handle_AIS_InteractiveObject &anObj, const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
-		%feature("autodoc","PolygonOffsets(const anObj) -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets(const anObj) -> Standard_Integer");
 
-		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");

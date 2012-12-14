@@ -146,6 +146,7 @@ $HeaderURL$
 #include<Handle_Poly_PolygonOnTriangulation.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopTools_DataMapOfShapeReal.hxx>
+#include<TopTools_MutexForShapeProvider.hxx>
 #include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TColStd_ListOfInteger.hxx>
 #include<TopoDS_Vertex.hxx>

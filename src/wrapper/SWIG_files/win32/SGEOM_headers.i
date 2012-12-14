@@ -35,10 +35,10 @@ $HeaderURL$
 #include<SGEOM_DataMapOfAsciiStringTransient.hxx>
 #include<SGEOM_Engine.hxx>
 #include<SGEOM_Function.hxx>
-#include<SGEOM_GEOMImpl.hxx>
 #include<SGEOM_IOperations.hxx>
 #include<SGEOM_ISubShape.hxx>
 #include<SGEOM_Object.hxx>
+#include<SGEOM_Parameter.hxx>
 #include<SGEOM_PythonDump.hxx>
 #include<SGEOM_Solver.hxx>
 #include<SGEOM_SubShapeDriver.hxx>

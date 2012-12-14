@@ -24,20 +24,20 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfCurve::DownCast;
-%rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HArray2OfBoundedSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HArray1OfCurve::DownCast;
-%rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HArray1OfBoundedCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_HArray1OfBoundedSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HArray2OfBSplineSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HSequenceOfCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_HArray2OfBezierSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_HArray1OfBSplineCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_HArray1OfSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_HArray1OfBoundedCurve::DownCast;
+%rename(DownCast) Handle_TColGeom_HSequenceOfCurve::DownCast;
+%rename(DownCast) Handle_TColGeom_HSequenceOfBoundedCurve::DownCast;
+%rename(DownCast) Handle_TColGeom_HArray1OfCurve::DownCast;
+%rename(DownCast) Handle_TColGeom_SequenceNodeOfSequenceOfSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_HSequenceOfBoundedSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_HArray2OfBSplineSurface::DownCast;
+%rename(DownCast) Handle_TColGeom_HArray2OfBoundedSurface::DownCast;
 %rename(DownCast) Handle_TColGeom_HArray1OfBezierCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_HSequenceOfSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HArray1OfBSplineCurve::DownCast;
 %rename(DownCast) Handle_TColGeom_HArray2OfSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HSequenceOfBoundedSurface::DownCast;
-%rename(DownCast) Handle_TColGeom_HSequenceOfBoundedCurve::DownCast;

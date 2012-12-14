@@ -54,7 +54,7 @@ typedef SMDS_MeshNode const * SMDS_pNode;
 typedef SMDS_Iterator<SMDS_MeshElement const*> SMDS_ElemIterator;
 typedef SMDS_Iterator<const SMDS_MeshFace*> SMDS_FaceIterator;
 typedef SMDS_Iterator<const SMDS_MeshVolume*> SMDS_VolumeIterator;
-typedef NCollection_DataMap<int, SMDS_MeshElement*> SMDS_IdElementMap;
+typedef NCollection_DataMap<int, SMDS_MeshElement*, NCollection_DefaultHasher<int> > SMDS_IdElementMap;
 typedef SMDS_Iterator<const SMDS_MeshEdge*> SMDS_EdgeIterator;
 typedef SMDS_MeshElement const * SMDS_pElement;
 typedef SMDS_Iterator<const SMDS_MeshNode*> SMDS_NodeIterator;
@@ -67,6 +67,66 @@ enum SMDS_TypeOfPosition {
 	SMDS_TOP_3DSPACE,
 	};
 
+
+
+%nodefaultctor SMDS_Position;
+class SMDS_Position {
+	public:
+		%feature("autodoc", "1");
+		virtual		const double * Coords() const;
+		%feature("autodoc", "1");
+		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
+		%feature("autodoc", "1");
+		virtual		int GetDim() const;
+		%feature("autodoc", "1");
+		void SetShapeId(int );
+		%feature("autodoc", "1");
+		int GetShapeId() const;
+
+};
+%feature("shadow") SMDS_Position::~SMDS_Position %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_Position {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMDS_SpacePosition;
+class SMDS_SpacePosition : public SMDS_Position {
+	public:
+		%feature("autodoc", "1");
+		SMDS_SpacePosition(double =0, double =0, double =0);
+		%feature("autodoc", "1");
+		virtual		const double * Coords() const;
+		%feature("autodoc", "1");
+		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
+		%feature("autodoc", "1");
+		static		SMDS_PositionPtr originSpacePosition();
+
+};
+%feature("shadow") SMDS_SpacePosition::~SMDS_SpacePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_SpacePosition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor SMDS_MeshObject;
@@ -147,124 +207,11 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_MeshNode;
-class SMDS_MeshNode : public SMDS_MeshElement {
-	public:
-		%feature("autodoc", "1");
-		SMDS_MeshNode(double , double , double );
-		%feature("autodoc", "1");
-		virtual		void Print(std::ostream & OS) const;
-		%feature("autodoc", "1");
-		double X() const;
-		%feature("autodoc", "1");
-		double Y() const;
-		%feature("autodoc", "1");
-		double Z() const;
-		%feature("autodoc", "1");
-		void AddInverseElement(const SMDS_MeshElement *ME);
-		%feature("autodoc", "1");
-		void RemoveInverseElement(const SMDS_MeshElement *parent);
-		%feature("autodoc", "1");
-		void ClearInverseElements();
-		%feature("autodoc", "1");
-		bool emptyInverseElements();
-		%feature("autodoc", "1");
-		SMDS_ElemIteratorPtr GetInverseElementIterator(SMDSAbs_ElementType =SMDSAbs_All) const;
-		%feature("autodoc", "1");
-		int NbInverseElements(SMDSAbs_ElementType =SMDSAbs_All) const;
-		%feature("autodoc", "1");
-		void SetPosition(const SMDS_PositionPtr &aPos);
-		%feature("autodoc", "1");
-		const SMDS_PositionPtr & GetPosition() const;
-		%feature("autodoc", "1");
-		void setXYZ(double , double , double );
-		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * GetNode(const int arg0) const;
-
-};
-%feature("shadow") SMDS_MeshNode::~SMDS_MeshNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_MeshNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMDS_Position;
-class SMDS_Position {
-	public:
-		%feature("autodoc", "1");
-		virtual		const double * Coords() const;
-		%feature("autodoc", "1");
-		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
-		%feature("autodoc", "1");
-		virtual		int GetDim() const;
-		%feature("autodoc", "1");
-		void SetShapeId(int );
-		%feature("autodoc", "1");
-		int GetShapeId() const;
-
-};
-%feature("shadow") SMDS_Position::~SMDS_Position %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_Position {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor SMDS_SpacePosition;
-class SMDS_SpacePosition : public SMDS_Position {
-	public:
-		%feature("autodoc", "1");
-		SMDS_SpacePosition(double =0, double =0, double =0);
-		%feature("autodoc", "1");
-		virtual		const double * Coords() const;
-		%feature("autodoc", "1");
-		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
-		%feature("autodoc", "1");
-		static		SMDS_PositionPtr originSpacePosition();
-
-};
-%feature("shadow") SMDS_SpacePosition::~SMDS_SpacePosition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_SpacePosition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SMDS_MeshVolume;
 class SMDS_MeshVolume : public SMDS_MeshElement {
 	public:
 		%feature("autodoc", "1");
 		SMDS_MeshVolume();
-		%feature("autodoc", "1");
-		virtual		SMDSAbs_ElementType GetType() const;
 
 };
 %feature("shadow") SMDS_MeshVolume::~SMDS_MeshVolume %{
@@ -295,19 +242,7 @@ class SMDS_QuadraticVolumeOfNodes : public SMDS_MeshVolume {
 		%feature("autodoc", "1");
 		SMDS_QuadraticVolumeOfNodes(const SMDS_MeshNode *n1, const SMDS_MeshNode *n2, const SMDS_MeshNode *n3, const SMDS_MeshNode *n4, const SMDS_MeshNode *n5, const SMDS_MeshNode *n6, const SMDS_MeshNode *n7, const SMDS_MeshNode *n8, const SMDS_MeshNode *n12, const SMDS_MeshNode *n23, const SMDS_MeshNode *n34, const SMDS_MeshNode *n41, const SMDS_MeshNode *n56, const SMDS_MeshNode *n67, const SMDS_MeshNode *n78, const SMDS_MeshNode *n85, const SMDS_MeshNode *n15, const SMDS_MeshNode *n26, const SMDS_MeshNode *n37, const SMDS_MeshNode *n48);
 		%feature("autodoc", "1");
-		virtual		bool IsQuadratic() const;
-		%feature("autodoc", "1");
-		virtual		bool IsMediumNode(const SMDS_MeshNode *node) const;
-		%feature("autodoc", "1");
-		virtual		int NbNodes() const;
-		%feature("autodoc", "1");
-		virtual		int NbEdges() const;
-		%feature("autodoc", "1");
-		virtual		int NbFaces() const;
-		%feature("autodoc", "1");
 		virtual		void Print(std::ostream & OS) const;
-		%feature("autodoc", "1");
-		virtual		const SMDS_MeshNode * GetNode(const int ind) const;
 
 };
 %feature("shadow") SMDS_QuadraticVolumeOfNodes::~SMDS_QuadraticVolumeOfNodes %{
@@ -448,6 +383,37 @@ def __del__(self):
 %}
 
 %extend SMDS_Iterator<SMDS_MeshElement const*> {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMDS_EdgePosition;
+class SMDS_EdgePosition : public SMDS_Position {
+	public:
+		%feature("autodoc", "1");
+		SMDS_EdgePosition(const int aEdgeId=0, const double aUParam=0);
+		%feature("autodoc", "1");
+		virtual		const double * Coords() const;
+		%feature("autodoc", "1");
+		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
+		%feature("autodoc", "1");
+		void SetUParameter(double );
+		%feature("autodoc", "1");
+		double GetUParameter() const;
+
+};
+%feature("shadow") SMDS_EdgePosition::~SMDS_EdgePosition %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_EdgePosition {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -852,37 +818,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SMDS_EdgePosition;
-class SMDS_EdgePosition : public SMDS_Position {
-	public:
-		%feature("autodoc", "1");
-		SMDS_EdgePosition(const int aEdgeId=0, const double aUParam=0);
-		%feature("autodoc", "1");
-		virtual		const double * Coords() const;
-		%feature("autodoc", "1");
-		virtual		SMDS_TypeOfPosition GetTypeOfPosition() const;
-		%feature("autodoc", "1");
-		void SetUParameter(double );
-		%feature("autodoc", "1");
-		double GetUParameter() const;
-
-};
-%feature("shadow") SMDS_EdgePosition::~SMDS_EdgePosition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SMDS_EdgePosition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SMDS_VolumeOfFaces;
 class SMDS_VolumeOfFaces : public SMDS_MeshVolume {
 	public:
@@ -976,6 +911,61 @@ def __del__(self):
 %}
 
 %extend SMDS_QuadraticEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SMDS_MeshNode;
+class SMDS_MeshNode : public SMDS_MeshElement {
+	public:
+		%feature("autodoc", "1");
+		SMDS_MeshNode(double , double , double );
+		%feature("autodoc", "1");
+		virtual		void Print(std::ostream & OS) const;
+		%feature("autodoc", "1");
+		double X() const;
+		%feature("autodoc", "1");
+		double Y() const;
+		%feature("autodoc", "1");
+		double Z() const;
+		%feature("autodoc", "1");
+		void AddInverseElement(const SMDS_MeshElement *ME);
+		%feature("autodoc", "1");
+		void RemoveInverseElement(const SMDS_MeshElement *parent);
+		%feature("autodoc", "1");
+		void ClearInverseElements();
+		%feature("autodoc", "1");
+		bool emptyInverseElements();
+		%feature("autodoc", "1");
+		SMDS_ElemIteratorPtr GetInverseElementIterator(SMDSAbs_ElementType =SMDSAbs_All) const;
+		%feature("autodoc", "1");
+		int NbInverseElements(SMDSAbs_ElementType =SMDSAbs_All) const;
+		%feature("autodoc", "1");
+		void SetPosition(const SMDS_PositionPtr &aPos);
+		%feature("autodoc", "1");
+		const SMDS_PositionPtr & GetPosition() const;
+		%feature("autodoc", "1");
+		virtual		SMDSAbs_ElementType GetType() const;
+		%feature("autodoc", "1");
+		virtual		int NbNodes() const;
+		%feature("autodoc", "1");
+		void setXYZ(double , double , double );
+		%feature("autodoc", "1");
+		virtual		const SMDS_MeshNode * GetNode(const int arg0) const;
+
+};
+%feature("shadow") SMDS_MeshNode::~SMDS_MeshNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SMDS_MeshNode {
 	void _kill_pointed() {
 		delete $self;
 	}

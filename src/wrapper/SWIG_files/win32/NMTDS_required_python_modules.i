@@ -28,8 +28,11 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import TCollection
+import BooleanOperations
 import TColStd
-import gp
 import TopoDS
+import Bnd
+import gp
 import BOPTools
 };

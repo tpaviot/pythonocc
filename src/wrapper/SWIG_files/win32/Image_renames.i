@@ -23,19 +23,32 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Image_PixMap::DownCast;
+%rename(DownCast) Handle_Image_AlienPixMap::DownCast;
 %rename(DownCast) Handle_Image_Image::DownCast;
 %rename(DownCast) Handle_Image_DIndexedImage::DownCast;
 %rename(DownCast) Handle_Image_PseudoColorImage::DownCast;
 %rename(DownCast) Handle_Image_DataMapNodeOfLookupTable::DownCast;
-%rename(DownCast) Handle_Image_PixMap::DownCast;
 %rename(DownCast) Handle_Image_DColorImage::DownCast;
 %rename(DownCast) Handle_Image_ColorImage::DownCast;
+%rename(DownCast) Handle_Image_Diff::DownCast;
 %rename(DownCast) Handle_Image_DataMapNodeOfColorPixelDataMap::DownCast;
 %rename(HashCode) Image_ColorPixelMapHasher::HashCode;
 %rename(IsEqual) Image_ColorPixelMapHasher::IsEqual;
+%rename(Length) Image_ColorBGRAF::Length;
+%rename(IsBigEndianHost) Image_PixMap::IsBigEndianHost;
 %rename(Zoom) Image::Zoom;
 %rename(Rotate) Image::Rotate;
 %rename(Translate) Image::Translate;
 %rename(Affine) Image::Affine;
+%rename(Length) Image_ColorRGBA::Length;
 %rename(HashCode) Image_IndexPixelMapHasher::HashCode;
 %rename(IsEqual) Image_IndexPixelMapHasher::IsEqual;
+%rename(Length) Image_ColorRGB32::Length;
+%rename(Length) Image_ColorRGBAF::Length;
+%rename(Length) Image_ColorRGBF::Length;
+%rename(Length) Image_ColorBGRA::Length;
+%rename(Length) Image_ColorBGR::Length;
+%rename(Length) Image_ColorBGR32::Length;
+%rename(Length) Image_ColorBGRF::Length;
+%rename(Length) Image_ColorRGB::Length;

@@ -38,14 +38,15 @@ $HeaderURL$
 #include<GEOMImpl_CircleDriver.hxx>
 #include<GEOMImpl_ConeDriver.hxx>
 #include<GEOMImpl_CopyDriver.hxx>
+#include<GEOMImpl_CurveDriver.hxx>
 #include<GEOMImpl_CylinderDriver.hxx>
 #include<GEOMImpl_DiskDriver.hxx>
+#include<GEOMImpl_DraftDriver.hxx>
 #include<GEOMImpl_EllipseDriver.hxx>
 #include<GEOMImpl_ExportDriver.hxx>
 #include<GEOMImpl_FaceDriver.hxx>
 #include<GEOMImpl_Fillet1d.hxx>
 #include<GEOMImpl_Fillet1dDriver.hxx>
-#include<GEOMImpl_Fillet2dDriver.hxx>
 #include<GEOMImpl_FilletDriver.hxx>
 #include<GEOMImpl_FillingDriver.hxx>
 #include<GEOMImpl_Gen.hxx>
@@ -67,14 +68,15 @@ $HeaderURL$
 #include<GEOMImpl_ICircle.hxx>
 #include<GEOMImpl_ICone.hxx>
 #include<GEOMImpl_ICopy.hxx>
+#include<GEOMImpl_ICurve.hxx>
 #include<GEOMImpl_ICurvesOperations.hxx>
 #include<GEOMImpl_ICylinder.hxx>
 #include<GEOMImpl_IDisk.hxx>
+#include<GEOMImpl_IDraft.hxx>
 #include<GEOMImpl_IEllipse.hxx>
 #include<GEOMImpl_IFace.hxx>
 #include<GEOMImpl_IFillet.hxx>
 #include<GEOMImpl_IFillet1d.hxx>
-#include<GEOMImpl_IFillet2d.hxx>
 #include<GEOMImpl_IFilling.hxx>
 #include<GEOMImpl_IGlue.hxx>
 #include<GEOMImpl_IGroupOperations.hxx>
@@ -88,6 +90,7 @@ $HeaderURL$
 #include<GEOMImpl_IMeasure.hxx>
 #include<GEOMImpl_IMeasureOperations.hxx>
 #include<GEOMImpl_IMirror.hxx>
+#include<GEOMImpl_INSketcher.hxx>
 #include<GEOMImpl_IOffset.hxx>
 #include<GEOMImpl_IPartition.hxx>
 #include<GEOMImpl_IPipe.hxx>
@@ -96,6 +99,7 @@ $HeaderURL$
 #include<GEOMImpl_IPipeShellSect.hxx>
 #include<GEOMImpl_IPipeTShape.hxx>
 #include<GEOMImpl_IPlane.hxx>
+#include<GEOMImpl_IPlate.hxx>
 #include<GEOMImpl_IPoint.hxx>
 #include<GEOMImpl_IPolyline.hxx>
 #include<GEOMImpl_IPosition.hxx>
@@ -106,23 +110,28 @@ $HeaderURL$
 #include<GEOMImpl_IShapes.hxx>
 #include<GEOMImpl_IShapesOperations.hxx>
 #include<GEOMImpl_ISketcher.hxx>
+#include<GEOMImpl_ISketcherOperations.hxx>
 #include<GEOMImpl_ISphere.hxx>
 #include<GEOMImpl_ISpline.hxx>
+#include<GEOMImpl_IThickSolid.hxx>
 #include<GEOMImpl_IThruSections.hxx>
 #include<GEOMImpl_ITorus.hxx>
 #include<GEOMImpl_ITransformOperations.hxx>
 #include<GEOMImpl_ITranslate.hxx>
+#include<GEOMImpl_IVariableFillet.hxx>
 #include<GEOMImpl_IVector.hxx>
 #include<GEOMImpl_ImportDriver.hxx>
 #include<GEOMImpl_LineDriver.hxx>
 #include<GEOMImpl_MarkerDriver.hxx>
 #include<GEOMImpl_MeasureDriver.hxx>
 #include<GEOMImpl_MirrorDriver.hxx>
+#include<GEOMImpl_NSketcherDriver.hxx>
 #include<GEOMImpl_OffsetDriver.hxx>
 #include<GEOMImpl_PartitionDriver.hxx>
 #include<GEOMImpl_PipeDriver.hxx>
 #include<GEOMImpl_PipeTShapeDriver.hxx>
 #include<GEOMImpl_PlaneDriver.hxx>
+#include<GEOMImpl_PlateDriver.hxx>
 #include<GEOMImpl_PointDriver.hxx>
 #include<GEOMImpl_PolylineDriver.hxx>
 #include<GEOMImpl_PositionDriver.hxx>
@@ -135,10 +144,12 @@ $HeaderURL$
 #include<GEOMImpl_SketcherDriver.hxx>
 #include<GEOMImpl_SphereDriver.hxx>
 #include<GEOMImpl_SplineDriver.hxx>
+#include<GEOMImpl_ThickSolidDriver.hxx>
 #include<GEOMImpl_ThruSectionsDriver.hxx>
 #include<GEOMImpl_TorusDriver.hxx>
 #include<GEOMImpl_TranslateDriver.hxx>
 #include<GEOMImpl_Types.hxx>
+#include<GEOMImpl_VariableFilletDriver.hxx>
 #include<GEOMImpl_VectorDriver.hxx>
 
 // Additional headers necessary for compilation.
@@ -206,7 +217,6 @@ $HeaderURL$
 #include<Aspect_MarkMapEntry.hxx>
 #include<Aspect_MarkerStyle.hxx>
 #include<Aspect_MarkerStyleDefinitionError.hxx>
-#include<Aspect_PixMap.hxx>
 #include<Aspect_Pixel.hxx>
 #include<Aspect_PixmapDefinitionError.hxx>
 #include<Aspect_PixmapError.hxx>
@@ -745,4 +755,6 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
+#include<Sketcher_GUI.hxx>
+#include<Sketcher.hxx>
 %}
