@@ -96,6 +96,12 @@ enum Graphic3d_NameOfTexture2D {
 	Graphic3d_NOT_2D_UNKNOWN,
 	};
 
+enum Graphic3d_BufferType {
+	Graphic3d_BT_RGB,
+	Graphic3d_BT_RGBA,
+	Graphic3d_BT_Depth,
+	};
+
 enum Graphic3d_TypeOfPrimitive {
 	Graphic3d_TOP_UNDEFINED,
 	Graphic3d_TOP_POLYLINE,
@@ -3310,6 +3316,38 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_VertexN;
+class Graphic3d_VertexN : public Graphic3d_Vertex {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_VertexN();
+		%feature("autodoc", "1");
+		Graphic3d_VertexN(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Boolean FlagNormalise=1);
+		%feature("autodoc", "1");
+		Graphic3d_VertexN(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Boolean FlagNormalise=1);
+		%feature("autodoc", "1");
+		void SetNormal(const Standard_Real NXnew, const Standard_Real NYnew, const Standard_Real NZnew, const Standard_Boolean FlagNormalise=1);
+		%feature("autodoc","Normal() -> [Standard_Real, Standard_Real, Standard_Real]");
+
+		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") Graphic3d_VertexN::~Graphic3d_VertexN %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_VertexN {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_TextureRoot;
 class Graphic3d_TextureRoot : public MMgt_TShared {
 	public:
@@ -4087,49 +4125,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_VectorError;
-class Graphic3d_VectorError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VectorError();
-		%feature("autodoc", "1");
-		Graphic3d_VectorError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_VectorError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_VectorError {
-	Handle_Graphic3d_VectorError GetHandle() {
-	return *(Handle_Graphic3d_VectorError*) &$self;
-	}
-};
-%extend Graphic3d_VectorError {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_VectorError::~Graphic3d_VectorError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VectorError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfGroup;
 class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 	public:
@@ -4310,9 +4305,9 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real GetTextAngle() const;
 		%feature("autodoc", "1");
-		void SetTextFontAspect(const OSD_FontAspect AFontAspect);
+		void SetTextFontAspect(const Font_FontAspect AFontAspect);
 		%feature("autodoc", "1");
-		OSD_FontAspect GetTextFontAspect() const;
+		Font_FontAspect GetTextFontAspect() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4597,7 +4592,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		%feature("autodoc", "1");
 		virtual		void FBOChangeViewport(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr, const Standard_Integer width, const Standard_Integer height);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &view, Image_CRawBufferData & buffer);
+		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &theCView, Image_PixMap & theImage, const Graphic3d_BufferType &theBufferType);
 		%feature("autodoc", "1");
 		virtual		void SetGLLightEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
 		%feature("autodoc", "1");
@@ -5647,38 +5642,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_VertexN;
-class Graphic3d_VertexN : public Graphic3d_Vertex {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexN();
-		%feature("autodoc", "1");
-		Graphic3d_VertexN(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		Graphic3d_VertexN(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		void SetNormal(const Standard_Real NXnew, const Standard_Real NYnew, const Standard_Real NZnew, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc","Normal() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Graphic3d_VertexN::~Graphic3d_VertexN %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexN {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_ArrayOfTriangleStrips;
 class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -6319,6 +6282,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_VectorError;
+class Graphic3d_VectorError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_VectorError();
+		%feature("autodoc", "1");
+		Graphic3d_VectorError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_VectorError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_VectorError {
+	Handle_Graphic3d_VectorError GetHandle() {
+	return *(Handle_Graphic3d_VectorError*) &$self;
+	}
+};
+%extend Graphic3d_VectorError {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_VectorError::~Graphic3d_VectorError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_VectorError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_ArrayOfTriangleFans;
 class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -6668,7 +6674,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		%feature("autodoc", "1");
 		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
 		%feature("autodoc", "1");
-		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_Real aFactor=1.0e+0, const Standard_Real aUnits=0.0);
+		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean BackFace() const;
 		%feature("autodoc", "1");
@@ -6687,9 +6693,9 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		Aspect_TypeOfDegenerateModel DegenerateModel(Quantity_Ratio & aRatio) const;
 		%feature("autodoc", "1");
 		static		Aspect_TypeOfDegenerateModel DefaultDegenerateModel(Quantity_Ratio & aRatio);
-		%feature("autodoc","PolygonOffsets() -> [Standard_Integer, Standard_Real, Standard_Real]");
+		%feature("autodoc","PolygonOffsets() -> Standard_Integer");
 
-		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

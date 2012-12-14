@@ -603,7 +603,7 @@ bool _QuadFaceGrid::AddContinuousFace( const _QuadFaceGrid& other )
     int iMyCommon;
     if ( mySides.Contain( otherSide, &iMyCommon ) ) {
       // check if normals of two faces are collinear at all vertices of a otherSide
-      const double angleTol = PI / 180 / 2;
+      const double angleTol = M_PI / 180 / 2;
       int iV, nbV = otherSide.NbVertices(), nbCollinear = 0;
       for ( iV = 0; iV < nbV; ++iV )
       {

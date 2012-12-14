@@ -23,13 +23,21 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_NMTDS_StdMapNodeOfMapOfPassKey::DownCast;
+%rename(DownCast) Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::DownCast;
+%rename(DownCast) Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBndSphere::DownCast;
+%rename(DownCast) Handle_NMTDS_ListNodeOfListOfIndexedDataMapOfShapeAncestorsSuccessors::DownCast;
+%rename(DownCast) Handle_NMTDS_ListNodeOfListOfPassKey::DownCast;
+%rename(DownCast) Handle_NMTDS_DataMapNodeOfDataMapOfIntegerMapOfInteger::DownCast;
+%rename(DownCast) Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedDataMapOfShapeInteger::DownCast;
+%rename(DownCast) Handle_NMTDS_StdMapNodeOfMapOfPassKeyBoolean::DownCast;
+%rename(DownCast) Handle_NMTDS_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::DownCast;
+%rename(DownCast) Handle_NMTDS_ListNodeOfListOfPassKeyBoolean::DownCast;
 %rename(HashCode) NMTDS_PassKeyShapeMapHasher::HashCode;
 %rename(IsEqual) NMTDS_PassKeyShapeMapHasher::IsEqual;
 %rename(HashCode) NMTDS_PassKeyMapHasher::HashCode;
 %rename(IsEqual) NMTDS_PassKeyMapHasher::IsEqual;
 %rename(FillMVSD) NMTDS_Iterator::FillMVSD;
-%rename(HashCode) NMTDS_PairMapHasher::HashCode;
-%rename(IsEqual) NMTDS_PairMapHasher::IsEqual;
 %rename(TypeToInteger) NMTDS_Tools::TypeToInteger;
 %rename(HasBRep) NMTDS_Tools::HasBRep;
 %rename(ComputeVV) NMTDS_Tools::ComputeVV;

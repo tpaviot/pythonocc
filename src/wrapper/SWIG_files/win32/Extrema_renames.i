@@ -23,31 +23,31 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::DownCast;
 %rename(DownCast) Handle_Extrema_HArray1OfPOnSurf::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::DownCast;
+%rename(DownCast) Handle_Extrema_LCCacheOfLocateExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_CCacheOfExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_HArray1OfPOnCurv2d::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::DownCast;
+%rename(DownCast) Handle_Extrema_HArray1OfPOnCurv::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d::DownCast;
-%rename(DownCast) Handle_Extrema_LCCache2dOfLocateExtCC2d::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::DownCast;
 %rename(DownCast) Handle_Extrema_HArray2OfPOnCurv::DownCast;
-%rename(DownCast) Handle_Extrema_HArray2OfPOnSurf::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv::DownCast;
 %rename(DownCast) Handle_Extrema_HArray2OfPOnCurv2d::DownCast;
-%rename(DownCast) Handle_Extrema_HArray1OfPOnCurv2d::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC::DownCast;
-%rename(DownCast) Handle_Extrema_LCCacheOfLocateExtCC::DownCast;
-%rename(DownCast) Handle_Extrema_HArray1OfPOnCurv::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf::DownCast;
-%rename(DownCast) Handle_Extrema_CCacheOfExtCC::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d::DownCast;
 %rename(DownCast) Handle_Extrema_CCache2dOfExtCC2d::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::DownCast;
+%rename(DownCast) Handle_Extrema_HArray2OfPOnSurf::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_LCCache2dOfLocateExtCC2d::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::DownCast;
-%rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::DownCast;
+%rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf::DownCast;
 %rename(FirstParameter) Extrema_CurveTool::FirstParameter;
 %rename(LastParameter) Extrema_CurveTool::LastParameter;
 %rename(Continuity) Extrema_CurveTool::Continuity;

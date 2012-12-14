@@ -80,10 +80,6 @@ class TestFace_Sphere(unittest.TestCase):
         is_planar, pln = self.face.is_planar()
         self.assertEqual(is_planar, False)
 
-    def test_global_properties(self):
-        centre = self.face.GlobalProperties.centre()
-        self.assertEqual(centre, gp_Pnt(0.660189250701, 0.360663031426, 0.0))
-
 class TestVertex_Point(unittest.TestCase):
     def test_pnt(self):
         v1 = Vertex(1,1,1)

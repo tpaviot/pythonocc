@@ -142,4 +142,5 @@ $HeaderURL$
 #include<Graphic3d_MapOfStructure.hxx>
 #include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
+#include<Image_PixMap.hxx>
 %}

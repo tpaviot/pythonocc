@@ -1706,7 +1706,7 @@ class BRepMesh_FastDiscretFace : public MMgt_TShared {
 		%feature("autodoc", "1");
 		BRepMesh_FastDiscretFace(const Standard_Real theAngle, const Standard_Boolean theWithShare=1);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face theFace, const Handle_BRepMesh_FaceAttribute &theAttrib, const TopTools_DataMapOfShapeReal &theMapDefle);
+		void Add(const TopoDS_Face theFace, const Handle_BRepMesh_FaceAttribute &theAttrib, const TopTools_DataMapOfShapeReal &theMapDefle, const TopTools_MutexForShapeProvider &theMutexProvider);
 		%feature("autodoc", "1");
 		Standard_Real Control(const Handle_BRepAdaptor_HSurface &theCaro, const Standard_Real theDefFace, BRepMesh_ListOfVertex & theInternalV, TColStd_ListOfInteger & theBadTriangles, TColStd_ListOfInteger & theNulTriangles, BRepMesh_Delaun & theTrigu, const Standard_Boolean theIsFirst);
 		%feature("autodoc", "1");
@@ -2508,9 +2508,9 @@ def __del__(self):
 class BRepMesh_Classifier {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_Classifier(const TopoDS_Face F, const Standard_Real Tol, const BRepMesh_DataMapOfShapePairOfPolygon &edges, const TColStd_IndexedMapOfInteger &themap, const Handle_BRepMesh_DataStructureOfDelaun &Str, const Standard_Real Umin, const Standard_Real Umax, const Standard_Real Vmin, const Standard_Real Vmax);
+		BRepMesh_Classifier(const TopoDS_Face theFace, const Standard_Real theTolUV, const BRepMesh_DataMapOfShapePairOfPolygon &theEdges, const TColStd_IndexedMapOfInteger &theMap, const Handle_BRepMesh_DataStructureOfDelaun &theStructure, const Standard_Real theUmin, const Standard_Real theUmax, const Standard_Real theVmin, const Standard_Real theVmax);
 		%feature("autodoc", "1");
-		TopAbs_State Perform(const gp_Pnt2d Puv) const;
+		TopAbs_State Perform(const gp_Pnt2d thePoint) const;
 		%feature("autodoc", "1");
 		BRepMesh_Status State() const;
 		%feature("autodoc", "1");
@@ -2589,6 +2589,10 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 		void SetParallel(const Standard_Boolean theInParallel);
 		%feature("autodoc", "1");
 		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		void CreateMutexesForSubShapes(const TopoDS_Shape theShape, const TopAbs_ShapeEnum theType);
+		%feature("autodoc", "1");
+		void RemoveAllMutexes();
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles() const;
 		%feature("autodoc", "1");
@@ -3792,6 +3796,8 @@ def __del__(self):
 %nodefaultctor BRepMesh_Edge;
 class BRepMesh_Edge {
 	public:
+		%feature("autodoc", "1");
+		BRepMesh_Edge();
 		%feature("autodoc", "1");
 		BRepMesh_Edge(const Standard_Integer vDebut, const Standard_Integer vFin, const BRepMesh_DegreeOfFreedom canMove);
 		%feature("autodoc", "1");

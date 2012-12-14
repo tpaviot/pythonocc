@@ -31,7 +31,6 @@ $HeaderURL$
 %rename(DownCast) Handle_OSD_OSDError::DownCast;
 %rename(DownCast) Handle_OSD_SIGHUP::DownCast;
 %rename(DownCast) Handle_OSD_Exception_CTRL_BREAK::DownCast;
-%rename(DownCast) Handle_OSD_FontMgr::DownCast;
 %rename(DownCast) Handle_OSD_SIGINT::DownCast;
 %rename(DownCast) Handle_OSD_Exception_PRIV_INSTRUCTION::DownCast;
 %rename(DownCast) Handle_OSD_SIGKILL::DownCast;
@@ -48,7 +47,6 @@ $HeaderURL$
 %rename(DownCast) Handle_OSD_Exception_FLT_INEXACT_RESULT::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_DENORMAL_OPERAND::DownCast;
 %rename(DownCast) Handle_OSD_SIGQUIT::DownCast;
-%rename(DownCast) Handle_OSD_SystemFont::DownCast;
 %rename(DownCast) Handle_OSD_SIGSEGV::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO::DownCast;
 %rename(DownCast) Handle_OSD_Exception_FLT_STACK_CHECK::DownCast;
@@ -76,6 +74,8 @@ $HeaderURL$
 %rename(NewInstance) OSD_Exception_IN_PAGE_ERROR::NewInstance;
 %rename(Raise) OSD_OSDError::Raise;
 %rename(NewInstance) OSD_OSDError::NewInstance;
+%rename(Raise) OSD_Exception_ARRAY_BOUNDS_EXCEEDED::Raise;
+%rename(NewInstance) OSD_Exception_ARRAY_BOUNDS_EXCEEDED::NewInstance;
 %rename(Current) OSD_Thread::Current;
 %rename(Raise) OSD_SIGQUIT::Raise;
 %rename(NewInstance) OSD_SIGQUIT::NewInstance;
@@ -88,8 +88,6 @@ $HeaderURL$
 %rename(GetThreadCPU) OSD_Chronometer::GetThreadCPU;
 %rename(Raise) OSD_Exception_STATUS_NO_MEMORY::Raise;
 %rename(NewInstance) OSD_Exception_STATUS_NO_MEMORY::NewInstance;
-%rename(Raise) OSD_Exception_ARRAY_BOUNDS_EXCEEDED::Raise;
-%rename(NewInstance) OSD_Exception_ARRAY_BOUNDS_EXCEEDED::NewInstance;
 %rename(Raise) OSD_Exception_PRIV_INSTRUCTION::Raise;
 %rename(NewInstance) OSD_Exception_PRIV_INSTRUCTION::NewInstance;
 %rename(BuildTemporary) OSD_Directory::BuildTemporary;
@@ -123,7 +121,6 @@ $HeaderURL$
 %rename(AbsolutePath) OSD_Path::AbsolutePath;
 %rename(Raise) OSD_SIGHUP::Raise;
 %rename(NewInstance) OSD_SIGHUP::NewInstance;
-%rename(GetInstance) OSD_FontMgr::GetInstance;
 %rename(Raise) OSD_SIGILL::Raise;
 %rename(NewInstance) OSD_SIGILL::NewInstance;
 %rename(Raise) OSD_Exception_FLT_DENORMAL_OPERAND::Raise;

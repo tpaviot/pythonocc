@@ -23,10 +23,10 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch::DownCast;
-%rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode::DownCast;
 %rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfStrip::DownCast;
+%rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch::DownCast;
 %rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip::DownCast;
+%rename(DownCast) Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode::DownCast;
 %rename(Getmdnombr) AdvApp2Var_Data::Getmdnombr;
 %rename(Getminombr) AdvApp2Var_Data::Getminombr;
 %rename(Getmaovpar) AdvApp2Var_Data::Getmaovpar;

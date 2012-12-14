@@ -32,7 +32,7 @@ import subprocess
 #===============================================================================
 
 VERSION = '0.6dev'         # Define pythonOCC version
-GEOM_RELEASE = 'geom-5.1.5.9' # located in /src/contrib/
+GEOM_RELEASE = 'geom-6.3.1.8' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
 # UTILITIES
@@ -116,8 +116,8 @@ except:
 SWIG_OUT_DIR = os.path.join(os.getcwd(),'build','swig_output_%s_py%s%s'%(sys.platform,sys.version_info[0],sys.version_info[1]))
         
 if sys.platform=='win32':
-    OCC_INC = 'Z:\\oce-0.8.0-win\\include\\oce'
-    OCC_LIB = 'Z:\\oce-0.8.0-win\\Win32\\lib'
+    OCC_INC = 'Z:\\oce-0.11-win-msvc2008\\include'
+    OCC_LIB = 'Z:\\oce-0.11-win-msvc2008\\Win32\\lib'
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'wrapper','SWIG_files','win32')
     # Try to find OCC paths from environment analysis
 
@@ -210,7 +210,7 @@ PYTHON_LIB = sysconfig.get_python_lib()
 VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
-BOOST_INC = os.path.join(os.getcwd(),'contrib')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'wrapper','geom','inc_pythonocc')
+BOOST_INC = os.path.join(os.getcwd(),'contrib','boost-1.52.0')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','geom-6.3.1.8','inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'inc')
 

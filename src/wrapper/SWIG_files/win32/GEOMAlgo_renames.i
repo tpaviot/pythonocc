@@ -25,9 +25,23 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_GEOMAlgo_HAlgo::DownCast;
 %rename(DownCast) Handle_GEOMAlgo_Clsf::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_ListNodeOfListOfCoupleOfShapes::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeBox::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeReal::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyInteger::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyShapeListOfShape::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfPassKeyShapeShape::DownCast;
 %rename(DownCast) Handle_GEOMAlgo_ClsfBox::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfShapeShapeSet::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfPassKeyListOfShape::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeShapeInfo::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfRealListOfShape::DownCast;
 %rename(DownCast) Handle_GEOMAlgo_ClsfSurf::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfShapeState::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_IndexedDataMapNodeOfIndexedDataMapOfIntegerShape::DownCast;
 %rename(DownCast) Handle_GEOMAlgo_ClsfSolid::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_DataMapNodeOfDataMapOfOrientedShapeShape::DownCast;
+%rename(DownCast) Handle_GEOMAlgo_ListNodeOfListOfPnt::DownCast;
 %rename(HashCode) GEOMAlgo_PassKeyShapeMapHasher::HashCode;
 %rename(IsEqual) GEOMAlgo_PassKeyShapeMapHasher::IsEqual;
 %rename(CopySource) GEOMAlgo_FinderShapeOn::CopySource;
@@ -43,7 +57,6 @@ $HeaderURL$
 %rename(GetFaceOff) GEOMAlgo_Tools3D::GetFaceOff;
 %rename(GetEdgeOnFace) GEOMAlgo_Tools3D::GetEdgeOnFace;
 %rename(GetEdgeOff) GEOMAlgo_Tools3D::GetEdgeOff;
-%rename(PntInFace) GEOMAlgo_Tools3D::PntInFace;
 %rename(MakeVertex) GEOMAlgo_Gluer2::MakeVertex;
 %rename(MapBRepShapes) GEOMAlgo_Gluer2::MapBRepShapes;
 %rename(MapShapes) GEOMAlgo_Gluer2::MapShapes;
@@ -65,5 +78,4 @@ $HeaderURL$
 %rename(RefinePCurveForEdgeOnFace) GEOMAlgo_Tools::RefinePCurveForEdgeOnFace;
 %rename(IsUPeriodic) GEOMAlgo_Tools::IsUPeriodic;
 %rename(CorrectWires) GEOMAlgo_Tools::CorrectWires;
-%rename(BuildPCurveForEdgeOnFace) GEOMAlgo_Tools::BuildPCurveForEdgeOnFace;
 %rename(IsHole) GEOMAlgo_BuilderTools::IsHole;

@@ -72,11 +72,11 @@ $HeaderURL$
 %rename(DownCast) Handle_AIS_BadEdgeFilter::DownCast;
 %rename(DownCast) Handle_AIS_Circle::DownCast;
 %rename(DownCast) Handle_AIS_Shape::DownCast;
+%rename(DownCast) Handle_AIS_TexturedShape::DownCast;
 %rename(DownCast) Handle_AIS_MidPointRelation::DownCast;
 %rename(DownCast) Handle_AIS_Selection::DownCast;
 %rename(DownCast) Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::DownCast;
 %rename(DownCast) Handle_AIS_DataMapNodeOfDataMapOfSelStat::DownCast;
-%rename(DownCast) Handle_AIS_TexturedShape::DownCast;
 %rename(DownCast) Handle_AIS_IdenticRelation::DownCast;
 %rename(DownCast) Handle_AIS_ListNodeOfListOfInteractive::DownCast;
 %rename(DownCast) Handle_AIS_AngleDimension::DownCast;

@@ -967,44 +967,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Aspect_PixMap;
-class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap();
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Handle_Aspect_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_PixMap & operator=(const Aspect_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_PixMap {
-	Aspect_PixMap* GetObject() {
-	return (Aspect_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_PixMap::~Handle_Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Aspect_UndefinedMap;
 class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	public:
@@ -2611,52 +2573,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Aspect_PixMap;
-class Aspect_PixMap : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Color PixelColor(const Standard_Integer theX, const Standard_Integer theY) const;
-		%feature("autodoc", "1");
-		virtual		Aspect_Handle PixmapID() const;
-		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
-
-		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Integer Depth() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_PixMap {
-	Handle_Aspect_PixMap GetHandle() {
-	return *(Handle_Aspect_PixMap*) &$self;
-	}
-};
-%extend Aspect_PixMap {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_PixMap::~Aspect_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_PixMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfFontMapEntry;
 class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 	public:
@@ -4080,8 +3996,6 @@ class Aspect_Window : public MMgt_TShared {
 		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean DumpArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_PixMap ToPixMap() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Load(const char * aFilename) const;
 		%feature("autodoc", "1");

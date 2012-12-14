@@ -193,7 +193,7 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import Standard.i
 %import TCollection.i
+%import Standard.i
 %import GeomAbs.i
 %import gp.i
