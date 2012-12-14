@@ -225,7 +225,7 @@ class HTMLBody:
     def get_str(self):
         # get the location where pythonocc is running from
         import OCC
-        threejs_build_location = os.sep.join([OCC.__path__[0],'Display','WebGl','Three.js'])
+        threejs_build_location = os.sep.join([OCC.__path__[0],'Display','WebGl','three.min.js'])
         body_str = BODY.replace('@Three.jsPath@','%s'%threejs_build_location)
         body_str = body_str.replace('@VERSION@',OCC.VERSION)
         return body_str
