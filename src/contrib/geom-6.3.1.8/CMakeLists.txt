@@ -8,10 +8,10 @@ SET(GEOM_VERSION_PATCH 1)
 #SET(GEOM_VERSION_TWEAK 8)
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-#######################################
-# Set the same ABI SOVERSION than OCE #
-#######################################
-SET(GEOM_ABI_SOVERSION 4)
+######################
+# Set ABI SOVERSION  #
+######################
+SET(GEOM_ABI_SOVERSION 1)
 SET(GEOM_ABI_VERSION ${GEOM_ABI_SOVERSION}.0.0)
 
 SET(CMAKE_BUILD_TYPE "Release") # By default, build in release mode
