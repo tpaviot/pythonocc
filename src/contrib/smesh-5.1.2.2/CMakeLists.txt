@@ -1,6 +1,9 @@
 # SMESH cmake build file
-PROJECT(SMESH Fortran CXX)
-
+IF(WIN32)
+  PROJECT(SMESH CXX)
+ELSE(WIN32)
+  PROJECT(SMESH Fortran CXX)
+ENDIF(WIN32)
 SET(SMESH_VERSION_MAJOR 5)
 SET(SMESH_VERSION_MINOR 1)
 SET(SMESH_VERSION_PATCH 2)
@@ -50,7 +53,9 @@ INCLUDE_DIRECTORIES(../boost-1.52.0)
 ################
 # Check Fortran#
 ################
-INCLUDE(CMakeDetermineFortranCompiler)
+IF(UNIX)
+  INCLUDE(CMakeDetermineFortranCompiler)
+ENDIF(UNIX)
 
 ############################
 # Check 32/64 bit platform #
@@ -81,6 +86,17 @@ ENDIF(UNIX)
 ##########################
 # SMESH lib source files #
 ##########################
+IF(WIN32)
+FILE(GLOB SMESH_LIB_SOURCE_FILES src/SMDS/SMDS*.cpp
+                                 src/Driver/*.cpp
+                                 src/DriverSTL/DriverSTL*.cpp
+                                 src/DriverDAT/DriverDAT*.cpp
+                                 src/DriverUNV/DriverUNV*.cpp src/DriverUNV/UNV24*.cpp
+                                 src/SMESHDS/*.cpp
+                                 src/SMESH/*.cpp src/Controls/*.cpp
+                                 src/StdMeshers/*.cpp
+                                 src/MEFISTO2/aptrte.cpp src/MEFISTO2/MEFISTO2F.def)
+ELSE(WIN32)
 FILE(GLOB SMESH_LIB_SOURCE_FILES src/SMDS/SMDS*.cpp
                                  src/Driver/*.cpp
                                  src/DriverSTL/DriverSTL*.cpp
@@ -89,17 +105,23 @@ FILE(GLOB SMESH_LIB_SOURCE_FILES src/SMDS/SMDS*.cpp
                                  src/SMESHDS/*.cpp
                                  src/SMESH/*.cpp src/Controls/*.cpp
                                  src/StdMeshers/*.cpp src/MEFISTO2/*.cpp src/MEFISTO2/trte.f)
+ENDIF(WIN32)
 INCLUDE_DIRECTORIES(src/SMDS src/Driver src/DriverSTL src/DriverDAT
                     src/DriverUNV src/SMESHDS src/SMESH src/StdMeshers)
 ADD_LIBRARY(SMESH ${SMESH_LIB_SOURCE_FILES})
 TARGET_LINK_LIBRARIES(SMESH TKernel TKMath TKBRep TKG2d TKG3d TKMeshVS
                             TKPrim TKGeomBase TKGeomAlgo TKTopAlgo TKShHealing TKAdvTools)
-IF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
-  TARGET_LINK_LIBRARIES(SMESH f2c)
-ENDIF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
-SET_TARGET_PROPERTIES(SMESH PROPERTIES
-      SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
-      VERSION ${${PROJECT_NAME}_ABI_VERSION})
+IF(UNIX)
+  IF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
+    TARGET_LINK_LIBRARIES(SMESH f2c)
+  ENDIF (${CMAKE_Fortran_COMPILER} MATCHES "f77")
+  SET_TARGET_PROPERTIES(SMESH PROPERTIES
+        SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
+        VERSION ${${PROJECT_NAME}_ABI_VERSION})
+ENDIF(UNIX)
+IF(WIN32)
+  TARGET_LINK_LIBRARIES(SMESH MEFISTO2 MEFISTO2F)
+ENDIF(WIN32)
 
 ####################
 # Install location #
