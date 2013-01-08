@@ -57,11 +57,15 @@ INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 ##############################################################
 # 32/64 bit detection
 ###############################################################
-IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+IF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 	# If in 64bit mode, we have to define the _OCC64 variable
 	ADD_DEFINITIONS(-D_OCC64)
 	SET(CMAKE_SWIG_FLAGS ${CMAKE_SWIG_FLAGS} -D_OCC64)
+	SET(BIT 64)
+ELSE(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+	SET(BIT 32)
 ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+MESSAGE(STATUS "Build ${BIT}bit")
 
 IF (NOT MSVC)
 	IF( NOT DEFINED ${PROJECT_NAME}_BUILD_TYPE )
@@ -80,8 +84,16 @@ INCLUDE(${SWIG_USE_FILE})
 ################################
 # OCE include and lib location #
 ################################
-SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
+FIND_PACKAGE(OCE)
+IF(OCE_FOUND)
+  MESSAGE(STATUS "Found OCE-" ${OCE_VERSION})
+  IF(${OCE_VERSION} VERSION_LESS "0.11")
+     MESSAGE(ERROR "OCE version must be greater than 0.11")
+  ENDIF(${OCE_VERSION} VERSION_LESS "0.11")
+ELSEIF(OCE_FOUND)
+  SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
+  SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
+ENDIF(OCE_FOUND)
 
 ##############################################
 # Installation directory                     #
@@ -139,37 +151,60 @@ ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 IF(UNIX)
   IF(APPLE)
     ######### MacOSX ###########
-    MESSAGE(STATUS " -- MacOSX system detected")
 	INCLUDE_DIRECTORIES(/usr/X11R6/include)
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
     SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS)
+		-DCSFDB -DHAVE_CONFIG_H -DOCC_CONVERT_SIGNALS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
+    SET(PLATFORM Darwin)
   ELSE(APPLE)
     ######### Unix/Linux ###########
-    MESSAGE(STATUS " -- Unix/Linux system detected")
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
-    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DHAVE_CONFIG_H -DHAVE_LIMITS_H -DOCC_CONVERT_SIGNALS -DLIN -DLIN_INTEL -D_GNU_SOURCE=1)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512 -DCSFDB -DHAVE_CONFIG_H -DOCC_CONVERT_SIGNALS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/linux_darwin)
+    SET(PLATFORM Unix)
   ENDIF(APPLE)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
-    MESSAGE(STATUS " -- Windows system detected")
-    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB -DHAVE_CONFIG_H)
 	# specific windows defines for python version >=2.6.0
 	EXECUTE_PROCESS(COMMAND python -c "import sys;print (2,6)>=sys.version_info[:2]" OUTPUT_VARIABLE PYTHON_26_OR_HIGHER OUTPUT_STRIP_TRAILING_WHITESPACE)
 	IF(${PYTHON_26_OR_HIGHER} MATCHES "True")
 	  ADD_DEFINITIONS(-DHAVE_ACOSH -DHAVE_ASINH -DHAVE_ATANH)
 	ENDIF(${PYTHON_26_OR_HIGHER} MATCHES "True")
-    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512
-		-DCSFDB -DWIN32 -D_WINDOWS)
+    SET(CMAKE_SWIG_FLAGS -O -w302,401,314,509,512 -DCSFDB -DWIN32 -D_WINDOWS)
     SET(SWIG_FILES_PATH src/wrapper/SWIG_files/win32)
+    SET(PLATFORM win)
   ELSE(WIN32)
-    MESSAGE(STATUS " Unknown platform")
+    MESSAGE(STATUS "Unknown platform")
   ENDIF(WIN32)
 ENDIF(UNIX)
+MESSAGE(STATUS "Platform:" ${PLATFORM})
+
+################################################
+# Define output path for generated libraries:  #
+# platform/compiler-build_type-bits            #
+# for instance:                                #
+#     ./win32/bin/vc7.1-release-64             #
+#     ./win32/bin/vc9-debug-32                 #
+#     ./Unix/i386-debug-64                     #
+################################################
+IF(WIN32)
+  IF(MSVC) # The compiler used is MSVC
+    MESSAGE(STATUS "Found MSVC compiler: ${MSVC} ${MSVC_VERSION}")
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin/)
+  ELSEIF (BORLAND) # The compiler used is BORLAND
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ELSE()
+    SET(LIBRARY_OUTPUT_PATH win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ENDIF()
+  SET(EXECUTABLE_OUTPUT_PATH ${LIBRARY_OUTPUT_PATH})
+ELSE(WIN32)
+  SET(LIBRARY_OUTPUT_PATH ${PLATFORM}/${CMAKE_SYSTEM_PROCESSOR}-${CMAKE_BUILD_TYPE}-${BIT})
+ENDIF(WIN32)
+SET(CMAKE_SWIG_OUTDIR ${LIBRARY_OUTPUT_PATH})
+MESSAGE(STATUS "output_path: ${LIBRARY_OUTPUT_PATH}")
 
 ############################
 # OpenCASCADE Modules list #
@@ -208,7 +243,7 @@ ENDIF(${PROJECT_NAME}_WRAP_SMESH)
 # Wrapper Modules #
 ###################
 
-# OpenCASCADE
+# OpenCASCADE Community Edition
 FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/${SWIG_FILES_PATH})
 FOREACH(OCE_MODULE ${OCE_MODULES})
 	IF(OCEMODULES_WRAP_${OCE_MODULE})

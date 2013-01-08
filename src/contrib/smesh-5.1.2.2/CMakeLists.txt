@@ -19,9 +19,31 @@ SET(SMESH_ABI_VERSION ${SMESH_ABI_SOVERSION}.0.0)
 
 SET(CMAKE_BUILD_TYPE "Release") # By default, build in release mode
 SET(BUILD_SHARED_LIBS ON)
-SET(LIBRARY_OUTPUT_PATH cmake-build)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
+
+################################################
+# Define output path for generated libraries:  #
+# platform/compiler-build_type-bits            #
+# for instance:                                #
+#     ./win32/bin/vc7.1-release-64             #
+#     ./win32/bin/vc9-debug-32                 #
+#     ./Unix/i386-debug-64                     #
+################################################
+IF(WIN32)
+  IF(MSVC) # The compiler used is MSVC
+    MESSAGE(STATUS "Found MSVC compiler: ${MSVC} ${MSVC_VERSION}")
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin/)
+  ELSEIF (BORLAND) # The compiler used is BORLAND
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ELSE()
+    SET(LIBRARY_OUTPUT_PATH win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ENDIF()
+  SET(EXECUTABLE_OUTPUT_PATH ${LIBRARY_OUTPUT_PATH})
+ELSE(WIN32)
+  SET(LIBRARY_OUTPUT_PATH ${PLATFORM}/${CMAKE_SYSTEM_PROCESSOR}-${CMAKE_BUILD_TYPE}-${BIT})
+ENDIF(WIN32)
+MESSAGE(STATUS "output_path: ${LIBRARY_OUTPUT_PATH}")
 
 ################################
 # OCE include and lib location #
@@ -72,12 +94,12 @@ ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 ######################################################
 IF(UNIX)
     # Same settings are used for both MacOSX and Unix/Linux
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DHAVE_LIMITS_H -DCSFDB -DLIN -DOCC_CONVERT_SIGNALS)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
     MESSAGE("-- Windows system detected")
-    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB)
+    ADD_DEFINITIONS(-DWNT -DWIN32 -D_WINDOWS -DCSFDB -DHAVE_CONFIG_H)
   ELSE(WIN32)
     MESSAGE("Unknown platform")
   ENDIF(WIN32)
