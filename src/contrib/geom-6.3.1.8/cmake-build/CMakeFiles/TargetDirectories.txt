@@ -1,1 +1,0 @@
-/Users/thomas/Devel/pythonocc/src/contrib/geom-6.3.1.8/cmake-build/CMakeFiles/GEOM.dir
