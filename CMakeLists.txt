@@ -278,12 +278,16 @@ INCLUDE_DIRECTORIES(src/wrapper/Visualization)
 SET(VISUALIZATION_SOURCE_FILES
 	src/wrapper/Visualization/Visualization.i
 	src/wrapper/Visualization/Display3d.cpp
-	src/wrapper/Visualization/Display2d.cpp
-	src/wrapper/Visualization/NISDisplay3d.cpp
 	src/wrapper/Visualization/Tesselator.cpp
 	)
 SWIG_ADD_MODULE(Visualization python ${VISUALIZATION_SOURCE_FILES})
+IF(APPLE)
+# on OSX, always add /System/Library/Frameworks/Cocoa.framework, even
+# if GLX is enabled
+SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCE_LIBRARIES} /System/Library/Frameworks/Cocoa.framework)
+ELSE(APPLE)
 SWIG_LINK_LIBRARIES(Visualization ${PYTHON_LIBRARIES} ${OCE_LIBRARIES})
+ENDIF(APPLE)
 
 ################
 # Installation #

@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from OCC.TopoDS import *
 
 ##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
 ##
@@ -31,14 +30,11 @@ import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
+import OCC.NIS
+import OCC.Prs3d
 
-from OCC import Prs3d
+from OCC.TopoDS import *
 
-try:
-    import OCC.NIS
-    HAVE_NIS = False
-except ImportError:
-    HAVE_NIS = False
 
 def set_CSF_GraphicShr():
     # Sets the CSF_GraphicShr env var if not already set up
@@ -98,76 +94,6 @@ class BaseDriver(object):
             self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
         except:
             pass
-
-    
-        
-class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
-    def __init__(self, window_handle ):
-        BaseDriver.__init__(self,window_handle)
-        OCC.Visualization.Display2d.__init__(self)        
-    
-    def OnResize(self):
-        self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
-    
-    def DisplayShape(self, shapes, material=None, texture=None, angle=None, update=True, fitall=True ):
-        '''
-        display a TopoDS_* in the viewer
-        @param shapes:      shape or iterable of shapes 
-        ( where shape is a subclass of TopoDS_Shape ) 
-        @param material:    sets a custom material to the shape
-        @param texture:     add a texture to the shape
-        @param angle:       sets a custom deviation angle to the shape
-        @param update:      updates the viewer
-        @fitall:            whether the camera's viewpoint is updated or not...
-        '''
-        
-        ais_shapes = []
-        if issubclass(shapes.__class__, TopoDS_Shape):
-            shapes = [shapes]
-            SOLO = True
-        else:
-            SOLO = False            
-        for shape in shapes:
-            if material:#careful: != operator segfaults
-                #print 'material', material
-                self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
-                shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-                shape_to_display.SetMaterial(material)
-                if angle:
-                    shape_to_display.SetAngleAndDeviation(angle)
-                if texture:
-                    filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
-                    shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
-                    shape_to_display.SetTextureMapOn()
-                    shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
-                    shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
-                    shape_to_display.SetTextureOrigin(True, originU, originV)
-                    shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display.GetHandle())
-            else:
-                shape_to_display = OCC.AIS.AIS_Shape(shape)
-                if angle:
-                    shape_to_display.SetAngleAndDeviation(angle)
-                ais_shapes.append(shape_to_display.GetHandle())
-
-            self.Context.Display(shape_to_display.GetHandle())
-            
-            if fitall:
-                self.FitAll()
-        
-        if SOLO:
-            return ais_shapes[0]
-        else:
-            return ais_shapes
-
-if HAVE_NIS:
-    class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
-        def __init__(self, window_handle ):
-            BaseDriver.__init__(self,window_handle)
-            OCC.Visualization.NISDisplay3d.__init__(self)
-              
-        def OnResize(self):
-            self.View.MustBeResized()
         
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
@@ -251,9 +177,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             from OCC.TCollection import TCollection_ExtendedString as String
             return String(_str)
         
-        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
-        text_aspect = Prs3d.Prs3d_TextAspect()
-        Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
+        aPresentation = OCC.Prs3d.Prs3d_Presentation(self._struc_mgr)
+        text_aspect = OCC.Prs3d.Prs3d_TextAspect()
+        OCC.Prs3d.Prs3d_Text().Draw(aPresentation.GetHandle(),
                                  text_aspect.GetHandle(),
                                   to_string_extended(text_to_write),
                                    point)
@@ -262,10 +188,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         if update:
             self.Repaint()
         return aPresentation
-#        self.Context.Display(anAIS.GetHandle())
 
-        
-#    def DisplayShape(self, , *shapes):
     def DisplayShape(self, shapes, material=None, texture=None, update=False):
         '''
         '''

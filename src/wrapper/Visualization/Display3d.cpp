@@ -19,6 +19,7 @@
 
 #include "Visualization.h"
 
+
 Display3d::Display3d()
 {
 }
@@ -27,22 +28,27 @@ Display3d::~Display3d()
 {
 }
 
-void Display3d::Init(int window_handle)
+void Display3d::Init(long window_handle)
 {
-    printf(" ###### 3D rendering pipe initialisation #####\n");
+  printf(" ###### 3D rendering pipe initialisation #####\n");
 	printf("Display3d class initialization starting ...\n");
 	short hi = static_cast<short>(window_handle >> 16);
 	short lo = static_cast<short>(window_handle);
-	// Create Graphic Device and Window
+  // Create Graphic Device and Window
 	#ifdef WNT
       gd = new Graphic3d_WNTGraphicDevice();
-      printf("WNT Graphic device created.\n");
+      printf("WNT - Graphic device created.\n");
       myWindow = new WNT_Window( gd ,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo));
       printf("WNT window created.\n");
       myWindow->SetFlags(WDF_NOERASEBKGRND); //prevent flickering
-    #else
+  #elif defined(__APPLE__) && !defined(MACOSX_USE_GLX)
       gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
-      printf("Graphic device created.\n");
+      printf("OSX - Graphic device created.\n");
+      myWindow = new Cocoa_Window (reinterpret_cast<NSView *>(window_handle));
+      printf("Cocoa window created.\n");
+  #else
+      gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
+      printf("Unix/Linux - Graphic device created.\n");
       myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_3DQUALITY);
       printf("Xw_Window created.\n");
     #endif
@@ -56,7 +62,7 @@ void Display3d::Init(int window_handle)
 	// Create AISInteractiveViewer
 	myAISContext = new AIS_InteractiveContext(myV3dViewer);
 	printf("Interactive context created.\n");
-    printf("Display3d class successfully initialized.\n");
+  printf("Display3d class successfully initialized.\n");
 	printf(" ########################################\n");
 }
 
