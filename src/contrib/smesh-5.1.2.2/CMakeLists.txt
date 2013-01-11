@@ -22,29 +22,6 @@ SET(BUILD_SHARED_LIBS ON)
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 INCLUDE_DIRECTORIES(inc)
 
-################################################
-# Define output path for generated libraries:  #
-# platform/compiler-build_type-bits            #
-# for instance:                                #
-#     ./win32/bin/vc7.1-release-64             #
-#     ./win32/bin/vc9-debug-32                 #
-#     ./Unix/i386-debug-64                     #
-################################################
-IF(WIN32)
-  IF(MSVC) # The compiler used is MSVC
-    MESSAGE(STATUS "Found MSVC compiler: ${MSVC} ${MSVC_VERSION}")
-    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin/)
-  ELSEIF (BORLAND) # The compiler used is BORLAND
-    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/win${BIT}/bin/${CMAKE_BUILD_TYPE})
-  ELSE()
-    SET(LIBRARY_OUTPUT_PATH win${BIT}/bin/${CMAKE_BUILD_TYPE})
-  ENDIF()
-  SET(EXECUTABLE_OUTPUT_PATH ${LIBRARY_OUTPUT_PATH})
-ELSE(WIN32)
-  SET(LIBRARY_OUTPUT_PATH ${PLATFORM}/${CMAKE_SYSTEM_PROCESSOR}-${CMAKE_BUILD_TYPE}-${BIT})
-ENDIF(WIN32)
-MESSAGE(STATUS "output_path: ${LIBRARY_OUTPUT_PATH}")
-
 ################################
 # OCE include and lib location #
 ################################
@@ -85,8 +62,10 @@ ENDIF(UNIX)
 IF (${CMAKE_SIZEOF_VOID_P} MATCHES "8") # It is 64bit, 32 bit systems returns 4
     ADD_DEFINITIONS(-D_OCC64)
     MESSAGE("-- Build 64bit")
+    SET(BIT 64)
 ELSE (${CMAKE_SIZEOF_VOID_P} MATCHES "8")
     MESSAGE("-- Build 32bit")
+    SET(BIT 32)
 ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 
 ######################################################
@@ -94,7 +73,7 @@ ENDIF(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
 ######################################################
 IF(UNIX)
     # Same settings are used for both MacOSX and Unix/Linux
-    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DCSFDB -DOCC_CONVERT_SIGNALS)
+    ADD_DEFINITIONS(-DHAVE_CONFIG_H -DLIN -DCSFDB -DOCC_CONVERT_SIGNALS)
 ELSE(UNIX)
   IF(WIN32)
     ######### Windows ###########
@@ -144,6 +123,34 @@ ENDIF(UNIX)
 IF(WIN32)
   TARGET_LINK_LIBRARIES(SMESH MEFISTO2 MEFISTO2F)
 ENDIF(WIN32)
+
+################################################
+# Define output path for generated libraries:  #
+# platform/compiler-build_type-bits            #
+# for instance:                                #
+#     ./win32/bin/vc7.1-release-64             #
+#     ./win32/bin/vc9-debug-32                 #
+#     ./Unix/i386-debug-64                     #
+################################################
+IF(WIN32)
+  IF(MSVC) # The compiler used is MSVC
+    MESSAGE(STATUS "Found MSVC compiler: ${MSVC} ${MSVC_VERSION}")
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin/)
+  ELSEIF (BORLAND) # The compiler used is BORLAND
+    SET(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ELSE()
+    SET(LIBRARY_OUTPUT_PATH win${BIT}/bin/${CMAKE_BUILD_TYPE})
+  ENDIF()
+  SET(EXECUTABLE_OUTPUT_PATH ${LIBRARY_OUTPUT_PATH})
+ELSE(WIN32)
+  IF(APPLE)
+  SET(PLATFORM Darwin)
+    ELSE(APPLE)
+  SET(PLATFORM Unix)
+    ENDIF(APPLE)
+  SET(LIBRARY_OUTPUT_PATH ${PLATFORM}-${CMAKE_SYSTEM_PROCESSOR}-${CMAKE_BUILD_TYPE}-${BIT})
+ENDIF(WIN32)
+MESSAGE(STATUS "output_path: ${LIBRARY_OUTPUT_PATH}")
 
 ####################
 # Install location #
