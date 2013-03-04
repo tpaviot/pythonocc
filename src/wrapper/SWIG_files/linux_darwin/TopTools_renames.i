@@ -46,6 +46,7 @@ $HeaderURL$
 %rename(DownCast) Handle_TopTools_StdMapNodeOfMapOfShape::DownCast;
 %rename(DownCast) Handle_TopTools_StdMapNodeOfMapOfOrientedShape::DownCast;
 %rename(DownCast) Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape::DownCast;
+%rename(DownCast) Handle_TopTools_DataMapNodeOfDataMapOfShapeMapOfShape::DownCast;
 %rename(Dump) TopTools::Dump;
 %rename(Dummy) TopTools::Dummy;
 %rename(HashCode) TopTools_ShapeMapHasher::HashCode;

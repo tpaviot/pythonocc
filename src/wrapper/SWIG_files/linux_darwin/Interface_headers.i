@@ -135,6 +135,7 @@ $HeaderURL$
 #include<InterfaceGraphic.hxx>
 #include<InterfaceGraphic_Aspect.hxx>
 #include<InterfaceGraphic_Cextern.hxx>
+#include<InterfaceGraphic_Cocoa.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
 #include<InterfaceGraphic_Labels.hxx>
 #include<InterfaceGraphic_Portability.hxx>
