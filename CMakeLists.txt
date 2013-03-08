@@ -206,7 +206,13 @@ ELSE(WIN32)
 ENDIF(WIN32)
 # add an option to choose modules to compile
 FOREACH(OCE_MODULE ${OCE_MODULES})
-	OPTION_WITH_DEFAULT(OCEMODULES_WRAP_${OCE_MODULE} "Compile ${OCE_MODULE}" TRUE)
+	LIST(FIND OCE_ALL_BUILT_MODULES ${OCE_MODULE} module_index)
+	IF(module_index STREQUAL "-1")
+	    SET(have_module FALSE)
+	ELSE()
+	    SET(have_module TRUE)
+	ENDIF()
+	OPTION_WITH_DEFAULT(OCEMODULES_WRAP_${OCE_MODULE} "Compile ${OCE_MODULE}" ${have_module})
 ENDFOREACH(OCE_MODULE ${OCE_MODULES})
 
 ###############################
