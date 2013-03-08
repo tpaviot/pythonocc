@@ -81,11 +81,10 @@ ENDIF(NOT MSVC)
 FIND_PACKAGE(SWIG)
 INCLUDE(${SWIG_USE_FILE})
 
-################################
-# OCE include and lib location #
-################################
-SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
+#######
+# OCE #
+#######
+FIND_PACKAGE(OCE)
 
 ##############################################
 # Installation directory                     #
@@ -110,8 +109,7 @@ SET(OCE_LIBRARIES PTKernel
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
-INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCE_LIB_PATH})
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_DIRS})
 
 ##############
 # salomegeom #
