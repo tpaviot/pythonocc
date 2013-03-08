@@ -34,4 +34,5 @@ import OSD
 import AlienImage
 import TColStd
 import Aspect
+import Font
 };
