@@ -2633,7 +2633,7 @@ class BOP_ShellSolid : public BOP_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean CheckArgTypes() const;
 		%feature("autodoc", "1");
-		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
+		Standard_Boolean SplitFace(const Standard_Integer theFaceIndex, const TColStd_IndexedMapOfInteger &aFFIndicesMap, TopTools_DataMapOfShapeInteger & theMapOfEdgeIndex, TopTools_ListOfShape & theListOfFace) const;
 		%feature("autodoc", "1");
 		virtual		void SetHistoryCollector(const Handle_BOP_HistoryCollector &theHistory);
 

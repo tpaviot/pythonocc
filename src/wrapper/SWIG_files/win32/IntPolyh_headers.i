@@ -28,6 +28,7 @@ $HeaderURL$
 // Headers necessary to define wrapped classes.
 
 #include<Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints.hxx>
+#include<IntPolyh_Array.hxx>
 #include<IntPolyh_ArrayOfCouples.hxx>
 #include<IntPolyh_ArrayOfEdges.hxx>
 #include<IntPolyh_ArrayOfPoints.hxx>
