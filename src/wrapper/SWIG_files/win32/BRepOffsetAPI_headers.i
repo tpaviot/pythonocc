@@ -155,6 +155,7 @@ $HeaderURL$
 #include<TopTools_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeShape.hxx>
@@ -165,6 +166,7 @@ $HeaderURL$
 #include<TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
@@ -175,6 +177,7 @@ $HeaderURL$
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
+#include<TopTools_DataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeReal.hxx>
 #include<TopTools_DataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

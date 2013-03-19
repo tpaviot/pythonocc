@@ -46,6 +46,7 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
+#include<IntPolyh_Array.hxx>
 #include<IntPolyh_ArrayOfCouples.hxx>
 #include<IntPolyh_ArrayOfEdges.hxx>
 #include<IntPolyh_ArrayOfPoints.hxx>
