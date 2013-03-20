@@ -22,14 +22,10 @@ INCLUDE_DIRECTORIES(inc)
 ################################################################
 # OpenCASCADE Community Edition (OCE) include and lib location #
 ################################################################
-SET( OCE_INCLUDE_PATH /usr/local/include/oce CACHE
-  PATH "OCE headers location" )
-SET( OCE_LIB_PATH /usr/local/lib CACHE
-  PATH "OCE libraries location" )
 
+FIND_PACKAGE(OCE)
 # Tells CMake where are the required headers
-INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCE_LIB_PATH})
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_DIRS})
 
 ############################
 # Check 32/64 bit platform #
