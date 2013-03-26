@@ -91,7 +91,7 @@ SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
 # Installation directory                     #
 # by default, installed to site-packages/OCC #
 ##############################################
-EXECUTE_PROCESS(COMMAND python2.6 -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
+EXECUTE_PROCESS(COMMAND python -c "from distutils.sysconfig import get_python_lib; import os;print get_python_lib()" OUTPUT_VARIABLE python_lib OUTPUT_STRIP_TRAILING_WHITESPACE )
 SET(${PROJECT_NAME}_INSTALL_DIRECTORY ${python_lib}/OCC CACHE PATH "pythonOCC install directory" )
 
 # List of OCE shared libraries to link with
