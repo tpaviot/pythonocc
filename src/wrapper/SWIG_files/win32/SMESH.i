@@ -50,17 +50,17 @@ $HeaderURL$
 
 %include SMESH_headers.i
 
-typedef NCollection_DataMap<const SMDS_MeshElement*,NCollection_Sequence<const SMDS_MeshElement*> > SMESH_DataMapOfElemPtrSequenceOfElemPtr;
+typedef NCollection_DataMap<const SMDS_MeshElement*,NCollection_Sequence<const SMDS_MeshElement*>,NCollection_DefaultHasher<const SMDS_MeshElement*> > SMESH_DataMapOfElemPtrSequenceOfElemPtr;
 typedef NCollection_BaseCollection<SMDS_MeshElement const*> SMESH_BaseCollectionElemPtr;
 typedef NCollection_Sequence<SMDS_MeshElement const*> SMESH_SequenceOfElemPtr;
 typedef NCollection_BaseCollection<SMDS_MeshNode const*> SMESH_BaseCollectionNodePtr;
 typedef NCollection_Sequence<SMDS_MeshNode const*> SMESH_SequenceOfNode;
 typedef NCollection_BaseCollection<TopoDS_Shape> SMESH_BaseCollectionShape;
 typedef NCollection_BaseCollection<NCollection_Sequence<const SMDS_MeshElement*> > SMESH_BaseCollectionSequenceOfElemPtr;
-typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape> > SMESH_BaseCollectionIndexedMapOfShape;
+typedef NCollection_BaseCollection<NCollection_IndexedMap<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> > > SMESH_BaseCollectionIndexedMapOfShape;
 typedef SMDS_Iterator<SMESH_OctreeNode*> SMESH_OctreeNodeIterator;
-typedef NCollection_IndexedMap<TopoDS_Shape> SMESH_IndexedMapOfShape;
-typedef NCollection_IndexedDataMap<TopoDS_Shape,NCollection_IndexedMap<TopoDS_Shape> > SMESH_IndexedDataMapOfShapeIndexedMapOfShape;
+typedef NCollection_IndexedMap<TopoDS_Shape,NCollection_DefaultHasher<TopoDS_Shape> > SMESH_IndexedMapOfShape;
+typedef NCollection_IndexedDataMap<TopoDS_Shape,NCollection_IndexedMap<TopoDS_Shape, NCollection_DefaultHasher<TopoDS_Shape> >,NCollection_DefaultHasher<TopoDS_Shape> > SMESH_IndexedDataMapOfShapeIndexedMapOfShape;
 
 enum SMESH_ComputeErrorName {
 	COMPERR_OK,
@@ -152,7 +152,7 @@ class SMESH_MeshVSLink : public MeshVS_DataSource3D {
 };
 %extend SMESH_MeshVSLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(2147483647);
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
 %feature("shadow") SMESH_MeshVSLink::~SMESH_MeshVSLink %{
