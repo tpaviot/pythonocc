@@ -47,7 +47,12 @@ ENDMACRO( OPTION_WITH_DEFAULT OPTION_NAME OPTION_STRING OPTION_DEFAULT )
 ###################
 OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_GEOM "Wraps the GEOM library (enabling parametric modeling)" OFF)
 OPTION_WITH_DEFAULT(${PROJECT_NAME}_WRAP_SMESH "Wraps the SMESH library (enabling advanced meshing features" OFF)
-
+IF(WIN32)
+OPTION_WITH_DEFAULT(${PROJECT_NAME}_INSTALL_DLLS "Copy required dll to the python package (useful for the all_in_one distribution)" ON)
+ENDIF(WIN32)
+IF(${PROJECT_NAME}_INSTALL_DLLS)
+SET(OCE_BIN_PATH /usr/local/include/oce CACHE PATH "OCE dlls" )
+ENDIF(${PROJECT_NAME}_INSTALL_DLLS)
 ##########
 # Python #
 ##########
@@ -343,6 +348,18 @@ INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/AUTHORS DESTINATION ${${PROJECT_NAME}_
 INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/LICENSE DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
 # install __init__.py file
 INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/cmake/__init__.py DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY} )
+
+##################################
+# install dlls if needed (win32) #
+##################################
+IF(WIN32 AND ${PROJECT_NAME}_INSTALL_DLLS)
+  # alls dlls rely in the ${OCE_BIN_PATH}
+  FILE(GLOB ALL_DLLS_FILES ${OCE_BIN_PATH} *.dll)
+  MESSAGE(STATUS ${ALL_DLLS_FILES})
+  FILE(GLOB ONLY_DEBUG_DLLS_FILES ${OCE_BIN_PATH} *d.dll)
+  LIST(REMOVE_ITEM ALL_DLLS_FILES ${ONLY_DEBUG_DLLS_FILES})
+  INSTALL(FILES ${ALL_DLLS_FILES} DESTINATION ${${PROJECT_NAME}_INSTALL_DIRECTORY})
+ENDIF(WIN32 AND ${PROJECT_NAME}_INSTALL_DLLS)
 
 #######################
 # pythonOCC Packaging #
