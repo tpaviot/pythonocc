@@ -607,7 +607,7 @@ else:
     SALOME_SMESH_MODULES.append(('StdMeshers',['SMDS'],['StdMeshers_ProjectionUtils'],
                                  {'StdMeshers_Hexa_3D':['OppositeVertex'],
                                   'StdMeshers_MEFISTO_2D':['LoadPoints']}))
-    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','Aspect','Font','Handle_TCollection','Viewer'],['Sketche']),
+    SALOME_GEOM_MODULES.append(('Sketcher',['TColStd','Visual3d','Graphic3d','OSD','Aspect','Font','Handle_TCollection','Viewer'],['Sketcher_GUI']),
                        )
 
 #ALL_MODULES = MODULES + SALOME_GEOM_MODULES #+ SALOME_SMESH_MODULES
