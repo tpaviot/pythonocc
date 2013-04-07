@@ -2133,33 +2133,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Sketcher_GUI;
-class Sketcher_GUI {
-	public:
-		%feature("autodoc", "1");
-		virtual		void SetContext(Handle_AIS_InteractiveContext & theContext);
-		%feature("autodoc", "1");
-		virtual		void SetAx3(const gp_Ax3 theAx3);
-		%feature("autodoc", "1");
-		virtual		void SetSketcher_Object(Handle_Sketcher_Object & CurObject);
-
-};
-%feature("shadow") Sketcher_GUI::~Sketcher_GUI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Sketcher_GUI {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Sketcher_CommandBezierCurve;
 class Sketcher_CommandBezierCurve : public Sketcher_Command {
 	public:
