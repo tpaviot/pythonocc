@@ -55,7 +55,7 @@ class Relation(object):
         @param relation:                   Sympy equation
         '''
         
-        assert issubclass(relation.__class__, sympy.core.basic.Basic ), 'relation should be a subclass of sympy.core.basic.Basic, got a %s' % ( relation.__class__)
+        assert issubclass(relation.__class__, sympy.Basic ), 'relation should be a subclass of sympy.core.basic.Basic, got a %s' % ( relation.__class__)
         
         self._relation = relation
         self.parameters = parameters_instance
