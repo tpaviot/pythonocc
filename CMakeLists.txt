@@ -81,11 +81,10 @@ ENDIF(NOT MSVC)
 FIND_PACKAGE(SWIG)
 INCLUDE(${SWIG_USE_FILE})
 
-################################
-# OCE include and lib location #
-################################
-SET(OCE_INCLUDE_PATH /usr/local/include/oce CACHE PATH "OCE include path" )
-SET(OCE_LIB_PATH /usr/local/lib CACHE PATH "OCE lib path" )
+#######
+# OCE #
+#######
+FIND_PACKAGE(OCE)
 
 ##############################################
 # Installation directory                     #
@@ -110,8 +109,7 @@ SET(OCE_LIBRARIES PTKernel
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
-INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
-LINK_DIRECTORIES(${OCE_LIB_PATH})
+INCLUDE_DIRECTORIES(${OCE_INCLUDE_DIRS})
 
 ##############
 # salomegeom #
@@ -208,7 +206,13 @@ ELSE(WIN32)
 ENDIF(WIN32)
 # add an option to choose modules to compile
 FOREACH(OCE_MODULE ${OCE_MODULES})
-	OPTION_WITH_DEFAULT(OCEMODULES_WRAP_${OCE_MODULE} "Compile ${OCE_MODULE}" TRUE)
+	LIST(FIND OCE_ALL_BUILT_MODULES ${OCE_MODULE} module_index)
+	IF(module_index STREQUAL "-1")
+	    SET(have_module FALSE)
+	ELSE()
+	    SET(have_module TRUE)
+	ENDIF()
+	OPTION_WITH_DEFAULT(OCEMODULES_WRAP_${OCE_MODULE} "Compile ${OCE_MODULE}" ${have_module})
 ENDFOREACH(OCE_MODULE ${OCE_MODULES})
 
 ###############################
