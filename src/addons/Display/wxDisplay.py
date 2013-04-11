@@ -314,7 +314,6 @@ def Test3d():
             
         def runTests(self):
             self.canva._display.Test()
-            self.canva._display.DisplayMessage("po","po")
             
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()
@@ -326,62 +325,6 @@ def Test3d():
     app.SetTopWindow(frame)
     app.MainLoop()            
 
-def TestNIS3d():
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            menuBar = wx.MenuBar()
-            DemoMenu = wx.Menu()
-            demo_id = wx.NewId()
-            DemoMenu.Append(demo_id, "Run DoIt")
-            self.Bind(wx.EVT_MENU, self.doit, id=demo_id)
-            menuBar.Append(DemoMenu, "&Emmenthaler")
-            self.SetMenuBar(menuBar)
-        
-        def doit(self,event=None):
-            display = OCCViewer.NISViewer3d(self.GetHandle())
-            display.Create()
-            print "oui"
-            
-        def runTests(self):
-            self.canva._display.Test()
-            
-    #display = OCCViewer.NISViewer3d(0)
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    #wx.SafeYield()
-    #h = frame.GetHandle()
-    #display.SetWindow(h)
-    #display.Create()
-    #frame.canva.InitDriver()
-    #frame.Show(True)
-    #wx.SafeYield()
-
-    #frame.runTests()
-    app.SetTopWindow(frame)
-    app.MainLoop()     
-    
-def Test2d():
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay2d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            self.canva = wxViewer2d(self)
-            
-        def runTests(self):
-            self.canva._display.Test()
-            
-    app = wx.PySimpleApp()
-    wx.InitAllImageHandlers()
-    frame = AppFrame(None)
-    frame.Show(True)
-    wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
-    frame.canva.InitDriver()
-    frame.runTests()
-    app.SetTopWindow(frame)
-    app.MainLoop()            
-
+   
 if __name__=="__main__":
     Test3d()
-    #Test3d()

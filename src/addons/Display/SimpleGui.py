@@ -33,21 +33,15 @@ try:
     HAVE_QT = True
 except:
     HAVE_QT = False
-# Check python-xlib
-try:
-    from Xlib import display as display_xlib, X
-    HAVE_XLIB = True
-except:
-    HAVE_XLIB = False
+
 # Then define the default backend
 if HAVE_WX:
     DEFAULT_BACKEND = 'wx'
 elif HAVE_QT:
     DEFAULT_BACKEND = 'qt'
-elif HAVE_XLIB:
-    DEFAULT_BACKEND = 'x'
-else:
-    raise AssertionError('No backend.')
+else: #use Tk backend
+    DEFAULT_BACKEND = 'Tk'
+    import Tkinter
 # By default, used backend is the default_backend
 USED_BACKEND = DEFAULT_BACKEND
 
@@ -63,8 +57,6 @@ def set_backend(str_backend):
         raise Assertion('PyQt library not installed or not found.')
     elif str_backend == 'wx' and not HAVE_WX:
         raise Assertion('wxPython library not installed or not found.')
-    elif str_backend == 'x' and not HAVE_XLIB:
-        raise Assertion('python-xlib library not installed or not found.')
     else:
         USED_BACKEND = str_backend
 
@@ -167,21 +159,19 @@ def init_display():
             win.add_function_to_menu(*args, **kwargs)
         def start_display():
             app.exec_()
-        #app.exec_()
-    # python-xlib based simple GUI
-    elif USED_BACKEND == 'x':
-        from XDisplay import XOCCWindow
-        win = XOCCWindow(display_xlib.Display(),"pythonOCC-%s 3d viewer ('python-xlib' backend)"%VERSION)
-        display = win.occviewer
-        # set background image
-        display.SetBackgroundImage(get_bg_abs_filename())
+
+    elif USED_BACKEND == 'Tk':
+        from tkDisplay import tkViewer3d
+        app = Tkinter.Tk()
+        win = tkViewer3d(app)
+        win.InitDriver()
+        display = win._display
+        def start_display():
+            app.mainloop()
         def add_menu(*args, **kwargs):
-            print args#pass#frame.add_menu(*args, **kwargs)
-        def add_function_to_menu(menu_title, function):
-            #print args
-            win.register_function(function)#functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
-        def start_display():        
-            win.MainLoop()
+            pass
+        def add_function_to_menu(*args, **kwargs):
+            pass
     else:
         print "No compliant GUI library found. You must have either wxPython, PyQt or python-xlib installed."
         sys.exit(0)

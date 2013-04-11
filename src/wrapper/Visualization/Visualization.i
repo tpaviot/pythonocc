@@ -54,24 +54,6 @@ class Tesselator {
 	void SetDeviation(float aDeviation);
 };
 
-class Display2d {
- public:
-	%feature("autodoc", "1");
-	Display2d();
-	%feature("autodoc", "1");
-	~Display2d();
-	%feature("autodoc", "1");
-	void Init(const int handle);
-	%feature("autodoc", "1");
-	Handle_V2d_View& GetView();
-	%feature("autodoc", "1");
-	Handle_V2d_Viewer& GetViewer();
-	%feature("autodoc", "1");
-	Handle_AIS2D_InteractiveContext GetContext();
-	%feature("autodoc", "1");
-	void Test();
-};
-
 class Display3d {
  public:
 	%feature("autodoc", "1");
@@ -79,7 +61,7 @@ class Display3d {
 	%feature("autodoc", "1");
 	~Display3d();
 	%feature("autodoc", "1");
-	void Init(const int handle);
+	void Init(const long handle);
 	%feature("autodoc", "1");
 	Handle_V3d_View& GetView();
 	%feature("autodoc", "1");
@@ -88,21 +70,5 @@ class Display3d {
 	Handle_AIS_InteractiveContext GetContext();
 	%feature("autodoc", "1");
 	void Test();
-};
-
-class NISDisplay3d {
- public:
-	%feature("autodoc", "1");
-	NISDisplay3d();
-	%feature("autodoc", "1");
-	~NISDisplay3d();
-	%feature("autodoc", "1");
-	void Init(const int handle);
-	%feature("autodoc", "1");
-	Handle_NIS_View& GetView();
-	%feature("autodoc", "1");
-	Handle_V3d_Viewer& GetViewer();
-	%feature("autodoc", "1");
-	Handle_NIS_InteractiveContext GetContext();
 };
 
