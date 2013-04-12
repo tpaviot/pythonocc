@@ -1,3 +1,4 @@
+import locale
 from OCC.XCAFApp import *
 from OCC.STEPCAFControl import *
 from OCC.TDocStd import *
@@ -89,8 +90,16 @@ def step_export_layers_and_colors(event=None):
     writer.Transfer(h_doc, STEPControl_AsIs)
     pth = '.'
     print 'writing STEP file'
+    # workaround for an OCC bug: temporarily changing the locale in order to 
+    # avoid issues when exporting, see:
+    # http://tracker.dev.opencascade.org/view.php?id=22898
+    loc = locale.getlocale()
+    locale.setlocale(locale.LC_ALL, 'C')
     status = writer.Write(os.path.join(pth, 'step_layers_colors.step'))
     print 'status:', status
+    
+    # restoring the old locale
+    locale.setlocale(locale.LC_ALL, loc)
     
 def exit(event=None):
     sys.exit()
