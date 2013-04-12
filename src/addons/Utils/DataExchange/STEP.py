@@ -18,6 +18,7 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import os, os.path
+import locale
 from OCC.TopoDS import *
 from OCC.BRep import *
 from OCC.STEPControl import *
@@ -32,7 +33,6 @@ from OCC.TDocStd import *
 from OCC.TCollection import *
 from OCC.XCAFDoc import *
 from OCC.TDF import *
-#from OCC.TopoDS import *
 
 from OCC import XCAFApp, TDocStd, TCollection, XCAFDoc, BRepPrimAPI, Quantity, TopLoc, gp, TPrsStd, XCAFPrs
 
@@ -42,7 +42,6 @@ from OCC.STEPControl import *
 from OCC.Quantity import *
 from OCC.Utils.Topology import Topo
 from OCC.TopAbs import *
-import os
 
 class STEPImporter(object):
     def __init__(self,filename=None):        
@@ -143,13 +142,19 @@ class STEPExporter(object):
             self._shapes.append(aShape)
     
     def write_file(self):
+        # workaround for an OCC bug: temporarily changing the locale in order to 
+        # avoid issues when exporting, see:
+        # http://tracker.dev.opencascade.org/view.php?id=22898
+        loc = locale.getlocale()
+        locale.setlocale(locale.LC_ALL, 'C')
         for shp in self._shapes:
             status = self.stepWriter.Transfer(shp, STEPControl_AsIs )
         if status == IFSelect_RetDone:
             status = self.stepWriter.Write(self._filename)
         else:
             return False
-        
+        # restoring the old locale
+        locale.setlocale(locale.LC_ALL, loc)
         if self.verbose:
             self.stepWriter.PrintStatsTransfer()
         
@@ -319,9 +324,16 @@ class StepOCAF_Export(object):
         WS = XSControl_WorkSession()
         writer = STEPCAFControl_Writer( WS.GetHandle(), False )
         writer.Transfer(self.h_doc, STEPControl_AsIs)
+        # workaround for an OCC bug: temporarily changing the locale in order to 
+        # avoid issues when exporting, see:
+        # http://tracker.dev.opencascade.org/view.php?id=22898
+        loc = locale.getlocale()
+        locale.setlocale(locale.LC_ALL, 'C')
         print 'writing STEP file'
         status = writer.Write(self.filename)
         print 'status:', status
+        # restoring the old locale
+        locale.setlocale(locale.LC_ALL, loc)
 
 def TestImport():
     """
