@@ -1,4 +1,13 @@
 ==================================================================
+CHANGES FROM 0.6-alpha to 0.6-alpha2
+- fixed GEOM Sketecher wrapper
+- added InnoSetup script for Win packaging
+- fixes in the CMake builder
+- added Airfoil example
+- added native OSX cocoa-support
+- fixed locale issues in STEP export
+
+==================================================================
 CHANGES FROM 0.5 to 0.6-alpha
 - Upgrade OCE support to 0.8.0
 - Upgrade GEOM support to 6.3.1
