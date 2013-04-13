@@ -23,7 +23,6 @@
 ## $Author$
 ## $HeadURL$
 ##
-
 import os, os.path
 import sys
 sys.path.append("../..")
@@ -279,7 +278,11 @@ class ModularBuilder(object):
         dependencies_fp.write("%};\n\n")
         # Adding imports
         for module_name in self.module_dependencies:
-            dependencies_fp.write("%%import %s.i\n"%module_name)
+            if module_name == "math":
+                dependencies_fp.write("%")
+                dependencies_fp.write("import Math.i\n")
+            else:    
+                dependencies_fp.write("%%import %s.i\n"%module_name)
         dependencies_fp.close()
     
     def WriteHeaderFile(self): 
@@ -347,7 +350,7 @@ class ModularBuilder(object):
         #if len(self.MODULES_TO_IMPORT) == 0:
         #    return True
         if self.MODULE_NAME=='GEOM':
-            self.MODULE_NAME='SGEOM'
+            self.MODULE_NAME='SGEOM'   
         required_modules_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_required_python_modules.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(required_modules_fp)
         if not len(self.MODULES_TO_IMPORT)==0:
@@ -1103,11 +1106,20 @@ class ModularBuilder(object):
                 
     def InitBaseSwigFile(self):
         # create OCC.i script
-        self.occ_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s.i'%self.MODULE_NAME),"w")
+        if self.MODULE_NAME == 'math':
+            main_file_name = 'Math.i'
+        else:
+            main_file_name = '%s.i'%self.MODULE_NAME
+        print os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,main_file_name)
+        self.occ_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,main_file_name),"w")
         WriteLicenseHeader(self.occ_fp)
         write_windows_pragma(self.occ_fp)
         self.occ_fp.write("%module ")
-        self.occ_fp.write("%s\n"%self.MODULE_NAME)
+        if self.MODULE_NAME=='math':
+            self.occ_fp.write("Math\n")
+        else:
+            self.occ_fp.write("%s\n"%self.MODULE_NAME)
+
         # Add renames
         # self.occ_fp.write("\n\n%%include %s_renames.i"%self.MODULE_NAME)        
         # Write common header
