@@ -19,7 +19,7 @@ def ParseSketcherCommand(command):
                     Result = Result + str(notebook.get(parameter)) + " "
                     pass
                 else:
-                    raise RuntimeError, "Variable with name '" + parameter + "' doesn't exist!!!"
+                    raise RuntimeError("Variable with name '" + parameter + "' doesn't exist!!!")
                     pass
                 pass
             else:
@@ -53,11 +53,11 @@ class TestPAFAllAssociativeMethod(unittest.TestCase):
         for ops in dir(my_context):
             try:
                 if ops.split('_')[1] == 'operations':
-                    print '\n\n****** %s ******\n\n' % ( ops )
-                    print 'has the following methods:'
+                    print('\n\n****** %s ******\n\n' % ( ops ))
+                    print('has the following methods:')
                     for i in dir(getattr(my_context, ops)):
                         if not i.islower():
-                            print i
+                            print(i)
             except IndexError:
                 pass
         Cmd = "Sketch:F 0 0:TT 0 100:C 100 180:WW"

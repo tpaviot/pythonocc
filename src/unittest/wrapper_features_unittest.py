@@ -32,7 +32,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Check whether the __hash__ function is equal to HashCode()
         '''
-        print 'Test: __hash__ overloading'
+        print('Test: __hash__ overloading')
         s = Standard_Transient()
         id_s = id(s)
         hash1_s = s.__hash__()
@@ -42,7 +42,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Test python lists features
         '''
-        print 'Test: python lists'
+        print('Test: python lists')
         P1 = gp_Pnt(1,2,3)
         P2 = gp_Pnt(2,3,4)
         P3 = gp_Pnt(5,7,8)
@@ -70,7 +70,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Test python dict features
         '''
-        print 'Test: python dicts'
+        print('Test: python dicts')
         P1 = gp_Pnt(1,2,3)
         P2 = gp_Pnt(2,3,4)
         d={P1:'P1',P2:'P2'}
@@ -81,7 +81,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Checks the Topology.py utility script.
         '''
-        print 'Test: Topology'
+        print('Test: Topology')
         def get_shape():
             shape = BRepPrimAPI_MakeBox(10.,10.,10.).Shape()
             self.assertEqual(shape.IsNull(), False)
@@ -121,7 +121,7 @@ class TestWrapperFeatures(unittest.TestCase):
         >>> from OCC.Interface import *
         >>> Interface_Static_SetCVal("write.step.schema","AP203")
         '''
-        print 'Test : wrapper for C++ static methods'
+        print('Test : wrapper for C++ static methods')
         from OCC.STEPControl import STEPControl_Writer
         from OCC.Interface import Interface_Static_SetCVal, Interface_Static_CVal
         w = STEPControl_Writer() #needs to be inited otherwise the following does not work
@@ -136,7 +136,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Checks the Standard_Integer & byreference pass parameter
         '''
-        print 'Test: Standard_Integer & by reference transformator'
+        print('Test: Standard_Integer & by reference transformator')
         from OCC.gp import gp_Pnt
         P = gp_Pnt(1,2,3.2)
         self.assertEqual(P.Coord(),(1,2,3.2))
@@ -145,7 +145,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Checks the Standard_Integer & byreference return parameter
         '''
-        print 'Test: Standard_Integer & by reference transformator'
+        print('Test: Standard_Integer & by reference transformator')
         from OCC.ShapeFix import ShapeFix_Solid
         sfs = ShapeFix_Solid()
         sfs.SetFixShellMode(5)
@@ -155,7 +155,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Checks the Standard_Boolean & byreference return parameter
         '''
-        print 'Test: Standard_Boolean & by reference transformator'
+        print('Test: Standard_Boolean & by reference transformator')
         from OCC.ShapeFix import ShapeFix_Wire
         sfw = ShapeFix_Wire()
         sfw.SetModifyGeometryMode(True)
@@ -167,7 +167,7 @@ class TestWrapperFeatures(unittest.TestCase):
         '''
         Checks if the pickle python module works for TopoDS_Shapes
         '''
-        print 'Test: pickling of TopoDS_Shapes'
+        print('Test: pickling of TopoDS_Shapes')
         from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
         import pickle
         # Create the shape
@@ -179,7 +179,7 @@ class TestWrapperFeatures(unittest.TestCase):
         Checks that OCC objects can be subclassed, and passed as parameters. In this test, we create
         a MyPoint and MyVec class, inheriting from gp_Pnt and gp_Vec.
         '''
-        print 'Test: subclass'
+        print('Test: subclass')
         class MyPoint(gp_Pnt):
             def __init__(self,*kargs):
                 gp_Pnt.__init__(self,*kargs)
@@ -207,7 +207,7 @@ class TestWrapperFeatures(unittest.TestCase):
     def testProtectedConstructor(self):
         ''' test if the classes with protected constructors can be created
         '''
-        print 'Test: protected constructor'
+        print('Test: protected constructor')
         # 1st, class with no subclass
         from OCC.TopoDS import TopoDS_Builder
         tds_builder = TopoDS_Builder()
@@ -217,7 +217,7 @@ class TestWrapperFeatures(unittest.TestCase):
         ''' when a module returns an object defined in another module,
         this module should be automatically imported in scope
         '''
-        print 'Test: automatic import of dependent modules'
+        print('Test: automatic import of dependent modules')
         from OCC.GCE2d import GCE2d_MakeSegment
         from OCC.gp import gp_Pnt2d
         returned_object = GCE2d_MakeSegment(gp_Pnt2d(1,1),gp_Pnt2d(3,4)).Value()
@@ -251,8 +251,8 @@ class TestWrapperFeatures(unittest.TestCase):
         u,v=[0,0]
         lprop.SetParameters(u,v)
         pnt = lprop.Value()
-        print 'First point coords : ',pnt.Coord()
-        print surf.GetObject().Value(u,v).Coord()
+        print(('First point coords : ',pnt.Coord()))
+        print((surf.GetObject().Value(u,v).Coord()))
         # This one is [40.0,0.,0.]
         self.assertEqual(str(pnt.Coord()),'(40.0, 0.0, 0.0)')
         coords.append(pnt)        

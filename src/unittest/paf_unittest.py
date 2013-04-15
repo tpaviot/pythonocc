@@ -20,10 +20,10 @@ class TestPAF(unittest.TestCase):
         making sure arithmic works on the parameter object
         '''
         p.X = 10
-        self.assert_(p.X/2==5)
-        self.assert_(p.X*2==20)
-        self.assert_(p.X+2==12)
-        self.assert_(p.X-2==8)
+        self.assertTrue(p.X/2==5)
+        self.assertTrue(p.X*2==20)
+        self.assertTrue(p.X+2==12)
+        self.assertTrue(p.X-2==8)
     
     def test_Rule_simple(self):
         '''
@@ -47,7 +47,7 @@ class TestPAF(unittest.TestCase):
         # set new value for X: 5
         p.X = 5
         # the new Y value should be Y = 5*5+1 = 26
-        self.assert_(p.Y.value==26)
+        self.assertTrue(p.Y.value==26)
 
 def suite():
    suite = unittest.TestSuite()

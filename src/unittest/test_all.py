@@ -40,7 +40,7 @@ try:
     import paf_test_all_associative_method_unittest
     PAF_UNITTEST = True
 except:
-    print "Ignoring PAF unittests"
+    print("Ignoring PAF unittests")
     PAF_UNITTEST = False
 try:
     import SMESH_wrapper_features_unittest

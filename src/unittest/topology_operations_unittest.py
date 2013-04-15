@@ -35,7 +35,7 @@ from OCC.Utils.Construct import *
 
 class TestTopologyOperations(unittest.TestCase):    
     def test_fuse(self):
-        print 'Test: fuse'
+        print('Test: fuse')
         box1 = BRepPrimAPI_MakeBox(2,1,1).Shape()
         box2 = BRepPrimAPI_MakeBox(2,1,1).Shape()
         box1 = translate_topods_from_vector(box1, gp_Vec(.5,.5,0))
@@ -44,7 +44,7 @@ class TestTopologyOperations(unittest.TestCase):
         self.assertFalse(fuse.IsNull())
         
     def test_common(self):
-        print 'Test: common'
+        print('Test: common')
         # Create Box
         axe = gp_Ax2(gp_Pnt(10,10,10),gp_Dir(1,2,1))
         Box = BRepPrimAPI_MakeBox(axe,60,80,100).Shape()
@@ -55,7 +55,7 @@ class TestTopologyOperations(unittest.TestCase):
         self.assertFalse(CommonSurface.IsNull())
         
     def test_slicer(self):
-        print 'Test: slicer'
+        print('Test: slicer')
         # Param
         Zmin,Zmax,deltaZ = -100, 100, 5
         # Note: the shape can also come from a shape selected from InteractiveViewer
@@ -76,7 +76,7 @@ class TestTopologyOperations(unittest.TestCase):
             sections.append(section)
         
     def test_section(self):
-        print 'Test: section'
+        print('Test: section')
         Torus = BRepPrimAPI_MakeTorus(120,20).Shape()
         V1 = gp_Vec(1,1,1)
         radius = 120.0
@@ -94,7 +94,7 @@ class TestTopologyOperations(unittest.TestCase):
             sections.append(section)
         
     def test_fillet(self):
-        print 'Test: fillet'
+        print('Test: fillet')
         Box = BRepPrimAPI_MakeBox(gp_Pnt(-400,0,0),200,230,180).Shape()
         fillet = BRepFilletAPI_MakeFillet(Box)
         # Add fillet on each edge
@@ -129,7 +129,7 @@ class TestTopologyOperations(unittest.TestCase):
         self.assertFalse(blendedFusedSolids.IsNull())
         
     def test_cut(self):
-        print 'Test: cut'
+        print('Test: cut')
         # Create Box
         Box = BRepPrimAPI_MakeBox(200,60,60).Shape()
         # Create Sphere
@@ -139,7 +139,7 @@ class TestTopologyOperations(unittest.TestCase):
         self.assertFalse(Cut.IsNull())
         
     def test_variable_filleting(self):
-        print 'Test: varable filleting'
+        print('Test: varable filleting')
         # Create Box
         Box = BRepPrimAPI_MakeBox(200,200,200).Shape()
         # Fillet

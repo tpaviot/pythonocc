@@ -128,7 +128,7 @@ def make_face(shape):
 class TestGeometry(unittest.TestCase):
     
     def test_point_from_curve( self ):
-        print 'Test: point from curve'
+        print('Test: point from curve')
         radius, abscissa = 5., 3.                              
         C = Geom2d_Circle( gp_OX2d(), radius, 1 )
         GAC = Geom2dAdaptor_Curve( C.GetHandle() )
@@ -149,7 +149,7 @@ class TestGeometry(unittest.TestCase):
         i = 0
         for P in aSequence:
             i = i + 1
-            pstring = 'P' + `i` + ': Parameter :' + `UA.Parameter( i )`
+            pstring = 'P' + repr(i) + ': Parameter :' + repr(UA.Parameter( i ))
             YOffset = - 0.3;
             YOffset += 0.2 * ( i == 1 )
             YOffset += 0.4 * ( i == 4 )
@@ -157,7 +157,7 @@ class TestGeometry(unittest.TestCase):
             pnt = gp_Pnt( P.X(), P.Y(), 0 )
             
     def test_project_point_on_curve(self):
-        print 'Test: project point on curve'
+        print('Test: project point on curve')
         P = gp_Pnt(1,2,3)
         distance, radius = 5, 5
         
@@ -175,16 +175,16 @@ class TestGeometry(unittest.TestCase):
                 # do something with Q or distance here
                     
         
-        pstring = "N : at Distance : " + `PPC.LowerDistance()`       
+        pstring = "N : at Distance : " + repr(PPC.LowerDistance())       
         #display.DisplayPoint(N,pstring,0,0,0,1,0.5)
         for i in range(1,NbResults+1):
             Q = PPC.Point(i)
             distance = PPC.Distance(i)
-            pstring = "Q" + `i` + ": at Distance :" + `PPC.Distance(i)`
-            print pstring
+            pstring = "Q" + repr(i) + ": at Distance :" + repr(PPC.Distance(i))
+            print(pstring)
         
     def test_point_from_projections(self):
-        print 'Test: point from projections'
+        print('Test: point from projections')
         P = gp_Pnt(7,8,9)                                     
         radius = 5
         SP = Geom_SphericalSurface(gp_Ax3(gp_XOY()),radius)
@@ -195,15 +195,15 @@ class TestGeometry(unittest.TestCase):
             for i in range(1,NbResults+1):
                 Q = PPS.Point(i)
                 distance = PPS.Distance(i)
-        pstring = "N  : at Distance : " + `PPS.LowerDistance()`
+        pstring = "N  : at Distance : " + repr(PPS.LowerDistance())
         if NbResults > 0:
             for i in range(1,NbResults+1):
                 Q = PPS.Point(i)
                 distance = PPS.Distance(i)
-                pstring = "Q" + `i` + ": at Distance :" + `PPS.Distance(i)`
+                pstring = "Q" + repr(i) + ": at Distance :" + repr(PPS.Distance(i))
         
     def test_points_from_intersection(self):
-        print 'Test: points from intersection'
+        print('Test: points from intersection')
         PL = gp_Pln( gp_Ax3( gp_XOY() ) )
         MinorRadius, MajorRadius = 5, 8
         EL = gp_Elips( gp_YOZ(), MajorRadius, MinorRadius )
@@ -221,10 +221,10 @@ class TestGeometry(unittest.TestCase):
             if NbResults > 0:
                 for i in range( 1, NbResults + 1 ):
                     P = ICQ.Point( i );                                
-                    pstring = "P" + `i`
+                    pstring = "P" + repr(i)
         
     def test_parabola(self):
-        print 'Test: parabola'
+        print('Test: parabola')
         # P is the vertex point                  
         # P and D give the axis of symmetry     
         # 6 is the focal length of the parabola 
@@ -237,7 +237,7 @@ class TestGeometry(unittest.TestCase):
         aTrimmedCurve = Geom2d_TrimmedCurve(gParabola,-100,100,1)
                
     def test_axis(self):
-        print 'Test: axis'
+        print('Test: axis')
         P1 = gp_Pnt(2,3,4)                          
         D = gp_Dir(4,5,6)                           
         A = gp_Ax3(P1,D)                             
@@ -253,7 +253,7 @@ class TestGeometry(unittest.TestCase):
         A2YDirection = A2.YDirection()
     
     def test_bspline(self):
-        print 'Test: bspline'
+        print('Test: bspline')
         array = []
         array.append(gp_Pnt2d (0,0))
         array.append(gp_Pnt2d (1,2))
@@ -289,22 +289,22 @@ class TestGeometry(unittest.TestCase):
         i = 0
         for P in array:
             i = i+1
-            pstring = 'array'+`i`
+            pstring = 'array'+repr(i)
             make_vertex(P)
         for j in range(harray.Lower(), harray.Upper()+1):
             i = i+1
-            pstring = 'harray'+`i`
+            pstring = 'harray'+repr(i)
             P = harray.Value(j)
             make_vertex(P)
            
         for j in range(harray2.Lower(),harray2.Upper()+1):
             i = i+1
-            pstring = 'harray2'+`i`
+            pstring = 'harray2'+repr(i)
             P = harray2.Value(j)
             make_vertex(P)
 
     def test_curves2d_from_curves(self):
-        print 'Test: curves 2d from curves'
+        print('Test: curves 2d from curves')
         major, minor = 12, 4                                              
         axis = gp_OX2d()   
         ell = GCE2d_MakeEllipse(axis,major,minor)
@@ -313,7 +313,7 @@ class TestGeometry(unittest.TestCase):
         SPL = Geom2dConvert_CurveToBSplineCurve(TC.GetHandle(), Convert.Convert_TgtThetaOver2 )
     
     def test_curves2d_from_offset(self):
-        print 'Test: curves 2d from offset'
+        print('Test: curves 2d from offset')
         array =[]
         array.append(gp_Pnt2d(-4,0))
         array.append(gp_Pnt2d(-7,2))
@@ -333,7 +333,7 @@ class TestGeometry(unittest.TestCase):
         result2 = OC2.IsCN(2)
     
     def test_circles2d_from_curves(self):
-        print 'Test: circles2d from curves'
+        print('Test: circles2d from curves')
         P1 = gp_Pnt2d(9,6)                                                        
         P2 = gp_Pnt2d(10,4)                                                          
         P3 = gp_Pnt2d(6,7)
@@ -377,7 +377,7 @@ class TestGeometry(unittest.TestCase):
                 parsol,pararg = TR.Tangency2(k, pnt4)
          
     def test_surface_from_curves(self):
-        print 'Test: surfaces from curves'
+        print('Test: surfaces from curves')
         array = []
         array.append(gp_Pnt(-4,0,2 ))                                                                      
         array.append(gp_Pnt(-7,2,2 ))                                                                       
@@ -420,7 +420,7 @@ class TestGeometry(unittest.TestCase):
         aBSplineSurface3 = aGeomFill3.Surface()
     
     def test_pipes(self):
-        print 'Test: pipes'
+        print('Test: pipes')
         a1 = []
         a1.append(gp_Pnt(-4,0,2 ))                                                                      
         a1.append(gp_Pnt(-5,1,0 ))                                                                      
@@ -461,7 +461,7 @@ class TestGeometry(unittest.TestCase):
             aSurface2.GetObject().Translate(gp_Vec(5,5,0))
             
     def test_bezier_surfaces(self):
-        print 'Test: Bezier surfaces'
+        print('Test: Bezier surfaces')
         array1 = TColgp_Array2OfPnt (1,3,1,3)                              
         array2 = TColgp_Array2OfPnt (1,3,1,3)                              
         array3 = TColgp_Array2OfPnt (1,3,1,3)                            
@@ -530,7 +530,7 @@ class TestGeometry(unittest.TestCase):
         BSPLSURF.Translate(gp_Vec(0,0,2))
 
     def test_surfaces_from_offsets(self):
-        print 'Test: surfaces from offsets'
+        print('Test: surfaces from offsets')
         array1 = []
         array1.append(gp_Pnt (-4,5,5 ))                                           
         array1.append(gp_Pnt (-3,6,6 ))                                            
@@ -563,7 +563,7 @@ class TestGeometry(unittest.TestCase):
         face4 = make_face(GOS2.GetHandle())
         
     def test_surfaces_from_revolution(self):
-        print 'Test: surfaces from revolution'
+        print('Test: surfaces from revolution')
         array = []
         array.append(gp_Pnt(0,0,1))                                         
                
@@ -581,7 +581,7 @@ class TestGeometry(unittest.TestCase):
         self.assertFalse(face.IsNull())
      
     def test_distances(self):
-        print 'Test: distances'
+        print('Test: distances')
         array1 = []
         array1.append(gp_Pnt (-5,1,2))
         array1.append(gp_Pnt(-5,2,2))            

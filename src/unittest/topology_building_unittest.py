@@ -36,7 +36,7 @@ import unittest
 
 class TestTopologyBuilding(unittest.TestCase):
     def test_edge(self):
-        print 'Test: edge'
+        print('Test: edge')
         # The blud edge
         BlueEdge = BRepBuilderAPI_MakeEdge(gp_Pnt(-80,-50,-20),gp_Pnt(-30,-60,-60))
         
@@ -80,7 +80,7 @@ class TestTopologyBuilding(unittest.TestCase):
         V4 = ME.Vertex2()
     
     def test_wire(self):
-        print 'Test: wire'
+        print('Test: wire')
         #       The red wire is build from a single edge
         Elips = gp_Elips(gp_Ax2(gp_Pnt(250,0,0),gp_Dir(1,1,1)),160,90)
         Edge1 = BRepBuilderAPI_MakeEdge(Elips,0,math.pi/2).Edge()
@@ -116,7 +116,7 @@ class TestTopologyBuilding(unittest.TestCase):
         LastVertex = MW.Vertex()
         
     def test_face(self):
-        print 'Test: face'
+        print('Test: face')
         P1 = gp_Pnt()
         P2 = gp_Pnt()
         P3 = gp_Pnt()
@@ -196,7 +196,7 @@ class TestTopologyBuilding(unittest.TestCase):
         BRepLib_BuildCurves3d(PinkFace)
         
     def test_evolved_shape(self):
-        print 'Test: evolved shape'    
+        print('Test: evolved shape')    
         P = BRepBuilderAPI_MakePolygon()
         P.Add(gp_Pnt(0.,0.,0.))
         P.Add(gp_Pnt(200.,0.,0.))
@@ -209,7 +209,7 @@ class TestTopologyBuilding(unittest.TestCase):
         self.assertTrue(S.IsDone())
         
     def test_draft_angle(self):
-        print 'Test: draft angle'
+        print('Test: draft angle')
         S = BRepPrimAPI_MakeBox(200.,300.,150.).Shape()
         adraft = BRepOffsetAPI_DraftAngle(S)
         
@@ -217,7 +217,7 @@ class TestTopologyBuilding(unittest.TestCase):
         for f in topo.faces():
             surf = Handle_Geom_Plane_DownCast(BRep_Tool_Surface(f)).GetObject()
             dirf = surf.Pln().Axis().Direction()
-            print 'direction',dirf.Coord()
+            print('direction',dirf.Coord())
             ddd = gp_Dir(0,0,1)
             if dirf.IsNormal(ddd, Precision_Angular()):
                 adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp_XOY())))         
@@ -225,7 +225,7 @@ class TestTopologyBuilding(unittest.TestCase):
         self.assertTrue(adraft.IsDone())
     
     def test_through_sections(self):
-        print 'Test: through sections'
+        print('Test: through sections')
         c1 = gp_Circ(gp_Ax2(gp_Pnt(-100.,0.,-100.),gp_Dir(0.,0.,1.)),40.)
         W1 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c1).Edge()).Wire()
         
@@ -239,7 +239,7 @@ class TestTopologyBuilding(unittest.TestCase):
         W4 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c4).Edge()).Wire()
         
         generatorA = BRepOffsetAPI_ThruSections(False, True)
-        map(generatorA.AddWire, [W1,W2,W3,W4])
+        list(map(generatorA.AddWire, [W1,W2,W3,W4]))
         generatorA.Build()
         self.assertTrue(generatorA.IsDone())
         self.assertFalse(generatorA.Shape().IsNull())
@@ -257,13 +257,13 @@ class TestTopologyBuilding(unittest.TestCase):
         c4b= gp_Circ(gp_Ax2(gp_Pnt(200.,0.,200.),gp_Dir(0.,0.,1.)),40.)
         W4b = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c4b).Edge()).Wire()
         generatorB = BRepOffsetAPI_ThruSections(True, False)
-        map(generatorB.AddWire, [W1b,W2b,W3b,W4b])
+        list(map(generatorB.AddWire, [W1b,W2b,W3b,W4b]))
         generatorB.Build()
         self.assertTrue(generatorB.IsDone())
         self.assertFalse(generatorB.Shape().IsNull())
         
     def test_prism(self):
-        print 'Test: prism'        
+        print('Test: prism')        
         #Prism a vertex > result is an edge
         V1  = BRepBuilderAPI_MakeVertex(gp_Pnt(200.,200.,0.)) 
         S1  = BRepPrimAPI_MakePrism(V1.Shape(),gp_Vec(0.,0.,100.)) 

@@ -46,7 +46,7 @@ TolDegen = 1e-6
 
 class TestTopologyLocalOperations(unittest.TestCase):    
     def test_extrusion(self):
-        print 'Test: extrusion'
+        print('Test: extrusion')
         #
         # Make a box
         #
@@ -111,12 +111,12 @@ class TestTopologyLocalOperations(unittest.TestCase):
         res1 = MKP.Shape()
         
     def test_brepfeat_prism(self):
-        print 'Test: brepfeat prism'
+        print('Test: brepfeat prism')
         box = BRepPrimAPI_MakeBox(400,250,300).Shape()
         faces = Topo(box).faces()
         
         for i in range(5):
-            face = faces.next()
+            face = next(faces)
         
         srf = BRep_Tool_Surface(face)
         
@@ -150,11 +150,11 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(prism.IsDone())
 
     def test_thick_solid(self):
-        print 'Test: thick solid'
+        print('Test: thick solid')
         S = BRepPrimAPI_MakeBox(150,200,110).Shape()
         
         topo = Topo(S)
-        vert = topo.vertices().next()
+        vert = next(topo.vertices())
         
         shapes = TopTools_ListOfShape()
         for f in topo.faces_from_vertex(vert):
@@ -164,7 +164,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(_thick_solid.IsDone())
         
     def test_offset_cube(self):
-        print 'Test: offset cube'
+        print('Test: offset cube')
         # smoothed
         S1 = BRepPrimAPI_MakeBox(150,200,110).Shape()    
         offsetA = BRepOffsetAPI_MakeOffsetShape(S1,60,0.01)
@@ -175,7 +175,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(offsetB.IsDone())
         
     def test_split_shape(self):
-        print 'Test: split shape'
+        print('Test: split shape')
         S = BRepPrimAPI_MakeBox(gp_Pnt(-100,-60,-80),150,200,170).Shape()     
         
         asect = BRepAlgoAPI_Section(S, gp_Pln(1,2,1,-15),False)
@@ -194,15 +194,15 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(asplit.IsDone())
         
     def test_glue_solids(self):
-        print 'Test: glue solids'
+        print('Test: glue solids')
         # Without common edges 
         S1 = BRepPrimAPI_MakeBox(gp_Pnt(500.,500.,0.),gp_Pnt(100.,250.,300.)).Shape()
         facesA = Topo(S1).faces()
-        F1 = [facesA.next() for i in range(5)][-1]
+        F1 = [next(facesA) for i in range(5)][-1]
         
         S2 = BRepPrimAPI_MakeBox(gp_Pnt(400.,400.,300.),gp_Pnt(200.,300.,500.)).Shape()
         facesB = Topo(S2).faces()
-        F2 = [facesB.next() for i in range(4)][-1]
+        F2 = [next(facesB) for i in range(4)][-1]
         
         glue1 = BRepFeat_Gluer(S2,S1)
         glue1.Bind(F2,F1)
@@ -210,7 +210,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(glue1.IsDone())
         
     def test_glue_solids_edges(self):
-        print 'Test: glue solids edges'
+        print('Test: glue solids edges')
         # With common edges 
         S3 = BRepPrimAPI_MakeBox(500.,400.,300.).Shape()
         S4 = BRepPrimAPI_MakeBox(gp_Pnt(0.,0.,300.),gp_Pnt(200.,200.,500.)).Shape()
@@ -238,7 +238,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(glue2.IsDone())
 
     def test_brep_feat_rib(self):
-        print 'Test: brep_feat rib'
+        print('Test: brep_feat rib')
         mkw = BRepBuilderAPI_MakeWire()
         
         mkw.Add(BRepBuilderAPI_MakeEdge( gp_Pnt(0.,0.,0.), gp_Pnt(200.,0.,0.)).Edge())
@@ -268,11 +268,11 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(aform.IsDone())
         
     def test_brep_feat_local_pipe(self):
-        print 'Test: brep_feat local pipe'
+        print('Test: brep_feat local pipe')
         S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
         faces = Topo(S).faces()
-        faces.next()
-        F1 = faces.next()
+        next(faces)
+        F1 = next(faces)
         surf = BRep_Tool_Surface(F1)
         
         MW1 = BRepBuilderAPI_MakeWire() 
@@ -313,7 +313,7 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(MKPipe.IsDone())
         
     def test_brep_feat_local_revolution(self):
-        print 'Test: brep_feat local revolution'
+        print('Test: brep_feat local revolution')
         S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
         faces = list(Topo(S).faces())
         F1 = faces[2]
@@ -349,11 +349,11 @@ class TestTopologyLocalOperations(unittest.TestCase):
         self.assertTrue(MKrev.IsDone())
         
     def test_brep_feat_extrusion_protrusion(self):
-        print 'Test: brep_feat extrusion protusion'
+        print('Test: brep_feat extrusion protusion')
         #Extrusion 
         S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
         faces = Topo(S).faces()
-        F = faces.next()
+        F = next(faces)
         surf1 = BRep_Tool_Surface(F)
         
         Pl1 = Handle_Geom_Plane_DownCast(surf1).GetObject()
@@ -396,8 +396,8 @@ class TestTopologyLocalOperations(unittest.TestCase):
     #    display.DisplayShape(res1)
         
         # Protrusion
-        faces.next()  
-        F2 = faces.next()
+        next(faces)  
+        F2 = next(faces)
         surf2 = BRep_Tool_Surface(F2)
         Pl2 = Handle_Geom_Plane_DownCast(surf2).GetObject()
         D2 = Pl2.Pln().Axis().Direction().Reversed()
