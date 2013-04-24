@@ -99,7 +99,8 @@ class DynamicSimulationContext(ode.World):
         # Register a callback so that it's possible to move the view with the mouse
         # during the simulation.
         if yield_function is not None:
-            self.register_post_step_callback(yield_function)
+            if callable(yield_function):
+                self.register_post_step_callback(yield_function)
 
     def set_animation_frame_rate(self, frame_rate):
         ''' Define the frame rate, i.e. the number of frames displayed in one second of simulation.
@@ -239,14 +240,13 @@ class DynamicSimulationContext(ode.World):
                         # Not necessary by default : shape.store_cog_position([x,y,z])
                     # Then update the viewer to show new shapes position
                 self._display.Context.UpdateCurrentViewer()
-                self._display.FitAll()
 
             # Increment time
             self._perform_callbacks()
             # Then increment time and loop simulation
             t += self._delta_t
             print 't',t
-            print 'redisply, disp init',MUST_REDISPLAY, self._DISPLAY_INITIALIZED
+
             # increment the step index
             current_time_step_index += 1
         # When the simulation is finished, draw cog positions for each shape
