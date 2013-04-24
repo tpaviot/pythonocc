@@ -41,11 +41,6 @@ from OCC.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
 
-try:
-    import OCC.NIS
-    HAVE_NIS = False
-except ImportError:
-    HAVE_NIS = False
 
 def set_CSF_GraphicShr():
     "Sets the CSF_GraphicShr env var"
@@ -124,7 +119,7 @@ class BaseDriver(object):
             pass
 
 
-        
+
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)
@@ -339,9 +334,9 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
 
-        return self.DisplayShape(shapes, color=clr)
+        return  self.DisplayShape(shapes, color=clr)
 
-        
+
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
         self.Repaint()
@@ -366,26 +361,10 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def Pan(self,Dx,Dy):
         self.View.Pan(Dx,Dy)
     
-    def SetSelectionMode(self,mode = OCC.TopAbs.TopAbs_FACE):
+    def SetSelectionMode(self, mode=None):
         self.Context.CloseAllContexts()
         self.Context.OpenLocalContext()
         self.Context.ActivateStandardMode(mode)
-
-
-    def SetSelectionModeVertex(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_VERTEX)
-
-    def SetSelectionModeEdge(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_EDGE)
-
-    def SetSelectionModeFace(self):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(OCC.TopAbs.TopAbs_FACE)
 
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
