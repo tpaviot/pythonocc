@@ -193,7 +193,8 @@ def build_curve_network(event=None):
     '''
     print 'Importing IGES file...',
     pth = os.path.dirname(os.path.abspath(__file__))
-    pth = os.path.abspath(os.path.join(pth, '../../data/IGES/curve_geom_plate.igs'))
+    pth = os.path.abspath(os.path.join(pth, '../data/IGES/curve_geom_plate.igs'))
+    import ipdb; ipdb.set_trace()
     iges = IGESImporter(pth)
     iges.read_file()
     print 'done.'

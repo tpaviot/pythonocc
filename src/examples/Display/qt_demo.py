@@ -27,7 +27,7 @@ def simple_test(event=None):
 
 def simple_cylinder(event=None):
     s = BRepPrimAPI_MakeCylinder(60, 200)
-    display.DisplayShape(s.Shape())
+    display.DisplayShape(s.Shape(), update=True)
 
 # set up menus
 add_menu('qt tests')

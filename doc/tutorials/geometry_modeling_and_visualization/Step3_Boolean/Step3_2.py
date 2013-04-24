@@ -1,14 +1,14 @@
 # =============================================================================
 # Packages to import
 # =============================================================================
-import OCC.Display.SimpleGui 
 import sys
-from OCC import VERSION
-from OCC.Display.wxDisplay import wxViewer3d
-import OCC.gp 
-import OCC.BRepPrimAPI 
+
+import OCC.Display.SimpleGui
+import OCC.gp
+import OCC.BRepPrimAPI
 import OCC.BRepAlgoAPI
 import scipy
+
 # =============================================================================
 # Some geometric functionality needed
 # =============================================================================
@@ -290,7 +290,7 @@ def draw_sphere_1(event=None):
     MySphere = sphere_from_vector_and_radius(   PointZeroArray, 
                                                 Radius )
     MySphereShape = MySphere.Shape()
-    display.DisplayColoredShape( MySphereShape , 'RED' ) 
+    display.DisplayColoredShape( MySphereShape , 'RED' , update=True)
 
 def draw_sphere_2(event=None):
     # create sphere
@@ -301,7 +301,7 @@ def draw_sphere_2(event=None):
     MySphere = sphere_from_vector_and_radius(   MyPointAsArray, 
                                                 Radius / 1.2 )
     MySphereShape = MySphere.Shape()
-    display.DisplayColoredShape( MySphereShape , 'YELLOW' ) 
+    display.DisplayColoredShape( MySphereShape , 'YELLOW' , update=True)
 
 def draw_cylinder(event=None):
     # cylinder radius
@@ -321,7 +321,7 @@ def draw_cylinder(event=None):
                                                                 Length,
                                                                 Radius )
     MyCylinderShape = MyCylinder.Shape()
-    display.DisplayColoredShape( MyCylinderShape , 'BLUE' ) 
+    display.DisplayColoredShape( MyCylinderShape , 'BLUE' , update=True)
 
 def draw_cone(event=None):
     # cone radius 1
@@ -345,7 +345,7 @@ def draw_cone(event=None):
                                                             Radius2 )
 
     MyConeShape = MyCone.Shape()
-    display.DisplayColoredShape( MyConeShape , 'ORANGE' ) 
+    display.DisplayColoredShape( MyConeShape , 'ORANGE' , update=True)
 
 def draw_arrow(event=None):
     # Length of the Arrow
@@ -373,7 +373,7 @@ def draw_arrow(event=None):
                                 LenghtOfArrowHead,
                                 RadiusOfArrowHead )
 
-    display.DisplayColoredShape( MyArrowShape , 'BLACK' ) 
+    display.DisplayColoredShape( MyArrowShape , 'BLACK' , update=True)
 
 def draw_fused_spheres(event=None):
     # clear the display
@@ -399,7 +399,7 @@ def draw_fused_spheres(event=None):
     # Shape of combined spheres
     FusedSpheres = FusedSpheres.Shape()
     # Display 
-    display.DisplayColoredShape( FusedSpheres , 'RED' ) 
+    display.DisplayColoredShape( FusedSpheres , 'RED' , update=True)
 
 def draw_cutted_spheres_1(event=None):
     # clear the display
@@ -425,7 +425,7 @@ def draw_cutted_spheres_1(event=None):
     # Shape of combined spheres
     CuttedSpheres = CuttedSpheres.Shape()
     # Display 
-    display.DisplayColoredShape( CuttedSpheres , 'YELLOW' ) 
+    display.DisplayColoredShape( CuttedSpheres , 'YELLOW' , update=True)
 
 def draw_cutted_spheres_2(event=None):
     # clear the display
@@ -451,7 +451,7 @@ def draw_cutted_spheres_2(event=None):
     # Shape of combined spheres
     CuttedSpheres = CuttedSpheres.Shape()
     # Display 
-    display.DisplayColoredShape( CuttedSpheres , 'BLUE' ) 
+    display.DisplayColoredShape( CuttedSpheres , 'BLUE' , update=True)
 
 def draw_common_spheres(event=None):
     # clear the display
@@ -477,7 +477,7 @@ def draw_common_spheres(event=None):
     # Shape of combined spheres
     CommonSpheres = CommonSpheres.Shape()
     # Display 
-    display.DisplayColoredShape( CommonSpheres , 'GREEN' ) 
+    display.DisplayColoredShape( CommonSpheres , 'GREEN', update=True )
 
 
 def erase_all(event=None):
