@@ -324,6 +324,7 @@ def random_color():
 #===============================================================================
 
 def common_vertex(edg1, edg2):
+    from OCC.TopExp import TopExp
     te = TopExp()
     vert = TopoDS_Vertex()
     if te.CommonVertex(edg1, edg2, vert):
@@ -381,7 +382,7 @@ def point_in_solid(solid, pnt, tolerance=1e-5):
     if _in_solid.State()==TopAbs_IN:
         return True,'in'
 
-def intersection_from_three_planes( planeA, planeB, planeC, show=False):
+def intersection_from_three_planes( planeA, planeB, planeC):
     '''
     intersection from 3 planes 
     accepts both Geom_Plane and gp_Pln
@@ -390,18 +391,18 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
     @param planeC:
     @param show:
     '''
+    from OCC.IntAna import IntAna_Int3Pln
+    from OCC.Utils.Construct import  make_vertex
+
     planeA = planeA if not hasattr(planeA, 'Pln') else planeA.Pln()
     planeB = planeB if not hasattr(planeB, 'Pln') else planeB.Pln()
     planeC = planeC if not hasattr(planeC, 'Pln') else planeC.Pln()
-    
 
     intersection_planes = IntAna_Int3Pln( planeA,
                                            planeB,
                                             planeC
                                     )
     pnt = intersection_planes.Value()
-    if show:
-        display.DisplayShape(make_vertex(pnt))
     return pnt
 
 def intersect_shape_by_line(topods_shape, line, low_parameter=0.0, hi_parameter=float("+inf")):
@@ -465,6 +466,7 @@ def normal_vector_from_plane(plane, vec_length=1):
 # FIX
 #===============================================================================
 def fix_tolerance( shape, tolerance=TOLERANCE):
+    from OCC.ShapeFix import ShapeFix_ShapeTolerance
     ShapeFix_ShapeTolerance().SetTolerance(shape, tolerance)
     
 def fix_continuity(edge, continuity=1):
@@ -482,6 +484,7 @@ def resample_curve_with_uniform_deflection(curve, deflection=0.5, degreeMin=3, d
     @param curve: TopoDS_Wire, TopoDS_Edge, curve
     @param n_samples:
     '''
+    from OCC.GCPnts import GCPnts_UniformDeflection
     crv = to_adaptor_3d(curve)
     defl = GCPnts_UniformDeflection(crv, deflection)
     with assert_isdone(defl, 'failed to compute UniformDeflection'):

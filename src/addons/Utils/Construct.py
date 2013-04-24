@@ -28,6 +28,8 @@ from __future__ import with_statement
 # wrapped modules
 from OCC.BRep import BRep_Tool
 from OCC.BRepOffset import BRepOffset_Skin
+from OCC.Geom import Geom_TrimmedCurve
+from OCC.GeomConvert import GeomConvert_ApproxCurve
 from OCC.GeomLProp import *
 from OCC.BRepBuilderAPI import *
 from OCC.BRepPrimAPI import *
@@ -43,6 +45,7 @@ from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
 import warnings, operator, math
+from src.addons.Utils.Common import to_tcol_
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -648,6 +651,7 @@ def boolean_fuse(shapeToCutFrom, joiningShape):
     return shape
 
 def boolean_fuse_old(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgo import BRepAlgo_Fuse
     join = BRepAlgo_Fuse(shapeToCutFrom, joiningShape)
     shape = join.Shape()
     join.Delete()
@@ -675,6 +679,7 @@ def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
     '''return the trimmed wire that lies between `shapeLimit1` and `shapeLimit2`
     returns TopoDS_Edge
     '''
+
     adap = to_adaptor_3d(wire)
     bspl = adap.BSpline()
     if periodic:

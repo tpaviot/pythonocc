@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-from OCC.AIS import AIS_MultipleConnectedInteractive
-from OCC.TopoDS import *
 
-##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
+##Copyright 2008-2013 Thomas Paviot (tpaviot@gmail.com)
 ##
 ##This file is part of pythonOCC.
 ##
@@ -19,8 +17,16 @@ from OCC.TopoDS import *
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Utils.Common import to_string
-from OCC.Utils.Construct import color, gp_Dir
+import os
+import sys
+import math
+import itertools
+
+from OCC.AIS import AIS_MultipleConnectedInteractive
+from OCC.TopoDS import *
+from OCC.Utils.Common import to_string, color
+from OCC.Utils.Construct import gp_Dir
+from OCC.KBE.types_lut import topo_lut
 import OCC.Visualization
 import OCC.V3d
 import OCC.V2d
@@ -34,7 +40,6 @@ from OCC.Prs3d import Prs3d_Arrow
 from OCC.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
-import os, os.path, types, sys, subprocess, math, itertools
 
 try:
     import OCC.NIS
@@ -53,7 +58,7 @@ if not (sys.platform == 'win32'):
 
 modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX,
                          TopAbs.TopAbs_SHELL, TopAbs.TopAbs_SOLID, ])
-from OCC.KBE.types_lut import topo_lut
+
 
 class BaseDriver(object):
     """
