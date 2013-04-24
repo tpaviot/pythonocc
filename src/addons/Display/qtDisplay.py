@@ -56,11 +56,11 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
         if self._inited:
             self._display.OnResize()
 
-    def initializeGL(self):
-        import ipdb; ipdb.set_trace()
-
-    def paintGL(self):
-        import ipdb; ipdb.set_trace()
+    # def initializeGL(self):
+    #     import ipdb; ipdb.set_trace()
+    #
+    # def paintGL(self):
+    #     import ipdb; ipdb.set_trace()
 
     def paintEngine(self):
         return None

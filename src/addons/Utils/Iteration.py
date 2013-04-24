@@ -5,6 +5,8 @@ from OCC.BRep import BRep_Tool
 from OCC.Utils.Topology import WireExplorer, Topo
 from OCC.KBE.edge import Edge
 
+# TODO: needs unit testing
+
 class EdgePairsFromWire(object):
     '''
     helper class to loop through a wire and return ordered pairs of edges
