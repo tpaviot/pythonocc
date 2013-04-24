@@ -90,8 +90,9 @@ class ProcessObject(HasTraits):
         self._inputs.append(vnew)
         
     def _parent_label_changed(self, old_label, new_label):
-        ts = TDF.TDF_TagSource()
-        self.label = ts.NewChild(new_label)
+        # ts = TDF.TDF_TagSource()
+        # self.label = ts.NewChild(new_label)
+        self.label = self.parent_label.NewChild()
         
     def on_modify(self, vnew):
         if vnew:
