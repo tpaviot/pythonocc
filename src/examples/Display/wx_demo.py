@@ -20,7 +20,6 @@
 from OCC.BRepPrimAPI import *
 from OCC.Display.SimpleGui import *
 
-set_backend('wx')
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 #from OCC.Graphic3d import *

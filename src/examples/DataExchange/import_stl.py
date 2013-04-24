@@ -15,7 +15,7 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Utils.DataExchange.STL import STLImporter
+from OCC.DataExchange.STL import STLImporter
 from OCC.Display.SimpleGui import *
 
 # open/parse STL file and get the resulting TopoDS_Shape instance

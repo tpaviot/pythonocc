@@ -15,13 +15,13 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Utils.DataExchange.IGES import IGESImporter
+from OCC.DataExchange.IGES import IGESImporter
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
-my_iges_importer = IGESImporter("../../data/IGES/splines.igs")
+my_iges_importer = IGESImporter("../data/IGES/splines.igs")
 my_iges_importer.read_file()
 the_shapes = my_iges_importer.get_shapes()
 
-display.DisplayShape(the_shapes)
+display.DisplayShape(the_shapes, update=True)
 start_display()

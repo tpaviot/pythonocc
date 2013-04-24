@@ -18,7 +18,6 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.Display.SimpleGui import *
-set_backend('qt')
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 #from OCC.Graphic3d import *
@@ -31,7 +30,7 @@ def simple_test(event=None):
 
 def simple_cylinder(event=None):
     s = BRepPrimAPI_MakeCylinder(60, 200)
-    display.DisplayShape(s.Shape())
+    display.DisplayShape(s.Shape(), update=True)
 
 # set up menus
 add_menu('qt tests')

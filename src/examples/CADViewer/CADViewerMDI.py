@@ -18,7 +18,13 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys, os
-import wx
+
+try:
+    import wx
+except ImportError:
+    print "wx is required for this example but was not found"
+    sys.exit(1)
+
 from OCC.Display.wxDisplay import wxViewer3d
 from OCC import VERSION
 import time

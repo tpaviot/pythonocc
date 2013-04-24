@@ -58,7 +58,7 @@ mat_asp.SetReflectionModeOn(True)
 mat_asp.SetShininess(1)
 mat_asp.SetSpecular(1)
 
-box_ais = display.DisplayShape(box, mat_asp).GetObject()
+box_ais = display.DisplayShape(box, mat_asp, update=True).GetObject()
 attributes = box_ais.Attributes().GetObject()
 shd_asp = attributes.ShadingAspect().GetObject()
 shd_asp.SetMaterial(mat_asp, Aspect_TOFM_FRONT_SIDE)
