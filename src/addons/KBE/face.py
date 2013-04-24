@@ -15,10 +15,19 @@ __author__ = 'localadmin'
 #===============================================================================
 from OCC.KBE.base import Display, KbeObject, GlobalProperties
 from OCC.KBE.edge import Edge
-from OCC.Utils.Construct import gp_Vec, gp_Pnt, gp_Dir, gp_Pnt2d
-from OCC.Utils.Topology import Topo
+from OCC.Utils.Construct import *
 from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
+from OCC.GeomLProp import GeomLProp_SLProps
+from OCC.BRepCheck import BRepCheck_Face
+from OCC.BRepTools import BRepTools, BRepTools_UVBounds
+from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
+from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+from OCC.IntTools import IntTools_FaceFace
+from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+from OCC.GeomProjLib import GeomProjLib
+from OCC.Utils.Topology import Topo, WireExplorer
+
 
 '''
 
@@ -53,11 +62,31 @@ class DiffGeomSurface(object):
             curvatureType
         '''
         if not self._curvature_initiated:
-            from OCC.GeomLProp import GeomLProp_SLProps
-            self._curvature = GeomLProp_SLProps(self.instance.h_srf, u, v, 1, 1e-6)
-        else:
-            self._curvature.SetParameters(u,v)
-            self._curvature_initiated = True
+            self._curvature = GeomLProp_SLProps(self.instance.surface_handle, u, v, 1, 1e-6)
+
+        _domain = self.instance.domain()
+        if u in _domain or v in _domain:
+            print '<<<CORRECTING DOMAIN...>>>'
+            div = 1000
+            delta_u, delta_v = (_domain[0] - _domain[1])/div, (_domain[2] - _domain[3])/div
+
+            if u in _domain:
+                low, hi = u-_domain[0], u-_domain[1]
+                if low < hi:
+                    u = u - delta_u
+                else:
+                    u = u + delta_u
+
+            if v in _domain:
+                low, hi = v-_domain[2], v-_domain[3]
+                if low < hi:
+                    v = v - delta_v
+                else:
+                    v = v + delta_v
+
+
+        self._curvature.SetParameters(u,v)
+        self._curvature_initiated = True
 
         return self._curvature
 
@@ -81,38 +110,14 @@ class DiffGeomSurface(object):
         else:
             raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u,v))
 
-    def tangent(self,u,v, recurse=False):
+    def tangent(self,u,v):
         dU, dV = gp_Dir(), gp_Dir()
         curv = self.curvature(u,v)
-        if curv.IsCurvatureDefined():
+        if curv.IsTangentUDefined() and curv.IsTangentVDefined():
             curv.TangentU(dU), curv.TangentV(dV)
             return dU, dV
         else:
-            # most likely the curvature is just out of bounds...
-            # move it a little close to the center of the surface...
-            tol = 1e-2
-
-            print 'trying to fix shit...'
-
-            domain = self.instance.domain()
-            if u in domain:
-                uorv = 'u'
-            elif v in domain:
-                uorv = 'v'
-            else:
-                raise ValueError('no curvature defined while sample does not lie on border...')
-
-            if uorv is not None:
-                indx = domain.index(u) if uorv == 'u' else domain.index(v)
-                if indx in (1,3): # v
-                    v = v + tol if indx == 1 else v - tol
-                else:
-                    u = u + tol if indx == 0 else u - tol
-                print 'hopefully fixed it?'
-                if not recurse:
-                    self.tangent(u,v, True)
-                else:
-                    return None
+            return None, None
 
     def radius(self, u, v ):
         '''returns the radius at u
@@ -167,39 +172,6 @@ class DiffGeomSurface(object):
 
 
 #===============================================================================
-#    Surface.dress_up
-#===============================================================================
-
-class DressUpSurface(object):
-    def __init__(self, instance):
-        self.instance = instance
-
-    def fillet_vertex_distance(self, vertex, distance):
-        '''fillets 3 edges at a corner
-        '''
-        pass
-
-    def fillet_edge_radius(self, edge, radius):
-        '''fillets an edge
-        '''
-        pass
-
-    def chamfer_vertex_distance(self, vertex, distance):
-        '''chamfer 3 edges at a corner
-        '''
-        pass
-
-    def chamfer_edge_angle(self, edge, angle):
-        '''chamfers the faces on edge at angle
-        '''
-        pass
-
-    def chamfer_edge_distance_distance(self, edge, distance_this_face, distance_other_face):
-        '''chamfers the face incident on edge at a given distance
-        '''
-        pass
-
-#===============================================================================
 #    Surface.intersect
 #===============================================================================
 
@@ -223,7 +195,7 @@ class IntersectSurface(object):
             return uvw, bics.Point(), bics.Face(), bics.Transition()
 
 
-class Face(KbeObject):
+class Face(KbeObject, TopoDS_Face):
     """high level surface API
     object is a Face iff part of a Solid
     otherwise the same methods do apply, apart from the topology obviously
@@ -231,67 +203,93 @@ class Face(KbeObject):
     def __init__(self, face):
         '''
         '''
-        from OCC.TopoDS import  TopoDS_Face
         KbeObject.__init__(self, name='face')
-        self._topo_type = TopoDS_Face
-        self.topo = face
-
+        TopoDS_Face.__init__(self, face)
 
         # cooperative classes
-        self.GlobalProperties = GlobalProperties(self)
         self.DiffGeom = DiffGeomSurface(self)
 
         # STATE; whether cooperative classes are yet initialized
         self._curvature_initiated = False
         self._geometry_lookup_init = False
 
+        #===============================================================================
+        # properties
+        #===============================================================================
         self._h_srf           = None
         self._srf             = None
         self._adaptor         = None
         self._adaptor_handle  = None
         self._classify_uv     = None # cache the u,v classifier, no need to rebuild for every sample
+        self._topo            = None
 
         # aliasing of useful methods
-        self.is_u_periodic = self.adaptor.IsUPeriodic
-        self.is_v_periodic = self.adaptor.IsVPeriodic
-        self.is_u_closed   = self.adaptor.IsUClosed
-        self.is_v_closed   = self.adaptor.IsVClosed
-        self.is_u_rational = self.adaptor.IsURational
-        self.is_u_rational = self.adaptor.IsVRational
-        self.u_degree       = self.adaptor.UDegree
-        self.v_degree       = self.adaptor.VDegree
-        self.u_continuity   = self.adaptor.UContinuity
-        self.v_continuity   = self.adaptor.VContinuity
+        def is_u_periodic(self):
+            return self.adaptor.IsUPeriodic()
 
-        # meh, RuntimeError...
-        self.nb_u_knots     = self.adaptor.NbUKnots
-        self.nb_v_knots     = self.adaptor.NbVKnots
-        self.nb_u_poles     = self.adaptor.NbUPoles
-        self.nb_v_poles     = self.adaptor.NbVPoles
+        def is_v_periodic(self):
+            return self.adaptor.IsVPeriodic()
 
-    def show(self, *args, **kwargs):
-        # TODO: factor out once inheriting from KbeObject
-        Display()(self.topo, *args, **kwargs)
+        def is_u_closed(self):
+            return self.adaptor.IsUClosed()
 
-    def check(self):
-        '''
-        interesting for valdating the state of self
-        '''
-        from OCC.BRepCheck import BRepCheck_Face
-        bcf = BRepCheck_Face(self.topo)
-        return bcf
+        def is_v_closed(self):
+            return self.adaptor.IsVClosed()
+
+        def is_u_rational(self):
+            return self.adaptor.IsURational()
+
+        def is_u_rational(self):
+            return self.adaptor.IsVRational()
+
+        def u_degree(self):
+            return self.adaptor.UDegree()
+
+        def v_degree(self):
+            return self.adaptor.VDegree()
+
+        def u_continuity(self):
+            return self.adaptor.UContinuity()
+
+        def v_continuity  (self):
+            return self.adaptor.VContinuity()
+
+        # mehhh RuntimeError...
+        #def nb_u_knots     = self.adaptor.NbUKnots
+        #def nb_v_knots     = self.adaptor.NbVKnots
+        #def nb_u_poles     = self.adaptor.NbUPoles
+        #def nb_v_poles     = self.adaptor.NbVPoles
 
     def domain(self):
-        '''returns the u,v domain of the curve'''
-        from OCC.BRepTools import BRepTools
-        return BRepTools.UVBounds(self.topo)
+        '''the u,v domain of the curve
+        :return: UMin, UMax, VMin, VMax
+        '''
+        return BRepTools.UVBounds(self)
+
+    def mid_point(self):
+        """
+        :return: the parameter at the mid point of the face, and its corresponding gp_Pnt
+        """
+        u_min, u_max, v_min, v_max = self.domain()
+        u_mid = (u_min + u_max) / 2.
+        v_mid = (v_min + v_max) / 2.
+        pnt = self.parameter_to_point(u_mid, v_mid)
+        return ( (u_mid, v_mid),  self.adaptor.Value(u_mid, v_mid) )
+
+    @property
+    def topo(self):
+        if self._topo is not None:
+            return self._topo
+        else:
+            self._topo = Topo(self)
+            return self._topo
 
     @property
     def surface(self):
         if self._srf is not None and not self.is_dirty:
             pass
         else:
-            self._h_srf = BRep_Tool_Surface(self.topo)
+            self._h_srf = BRep_Tool_Surface(self)
             self._srf = self._h_srf.GetObject()
         return self._srf
 
@@ -308,8 +306,7 @@ class Face(KbeObject):
         if self._adaptor is not None and not self.is_dirty:
             pass
         else:
-            from OCC.BRepAdaptor import BRepAdaptor_Surface, BRepAdaptor_HSurface
-            self._adaptor = BRepAdaptor_Surface(self.topo)
+            self._adaptor = BRepAdaptor_Surface(self)
             self._adaptor_handle = BRepAdaptor_HSurface()
             self._adaptor_handle.Set(self._adaptor)
         return self._adaptor
@@ -335,37 +332,44 @@ class Face(KbeObject):
         '''if possible, close self'''
         raise NotImplementedError
 
-    @property
-    def type(self):
-        return 'face'
-
-    def kind(self):
-        if not self._geometry_lookup_init:
-            self._geometry_lookup = GeometryTypeLookup()
-            self._geometry_lookup_init = True
-        return self._geometry_lookup[self.topo]
-
     def is_closed(self):
-        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
         sa = ShapeAnalysis_Surface(self.surface_handle)
-        sa.GetBoxUF()
+        # sa.GetBoxUF()
         return sa.IsUClosed(), sa.IsVClosed()
 
-    def is_planar(self):
+    def is_planar(self, tol=TOLERANCE):
         '''checks if the surface is planar within a tolerance
         :return: bool, gp_Pln
         '''
-        aaa = GeomLib_IsPlanarSurface(self.surface_handle, self.tolerance)
-        if aaa.IsPlanar():
-            return aaa.IsPlanar(), aaa.Plan()
-        else:
-            return aaa.IsPlanar(), None
+        aaa = GeomLib_IsPlanarSurface(self.surface_handle, tol)
+        return aaa.IsPlanar()# , aaa.Plan()
+
+    def is_trimmed(self):
+        """
+        :return: True if the Wire delimiting the Face lies on the bounds of the surface
+        if this is not the case, the wire represents a contour that delimits the face [ think cookie cutter ]
+        and implies that the surface is trimmed
+        """
+        #if not(BRep_Tool().NaturalRestriction(self)):
+        #    return True
+        _round = lambda x: round(x,3)
+        a = map(_round, BRepTools_UVBounds(self))
+        b = map(_round, self.adaptor.Surface().Surface().GetObject().Bounds())
+        if a != b:
+            print 'a,b',a,b
+            return True
+        return False
+
+    def is_overlapping(self, other):
+        import ipdb; ipdb.set_trace()
+        overlap = IntTools_FaceFace()
+
 
     def on_trimmed(self, u, v):
         '''tests whether the surface at the u,v parameter has been trimmed
         '''
         if self._classify_uv is None:
-            self._classify_uv  = BRepTopAdaptor_FClass2d(self.topo, 1e-9)
+            self._classify_uv  = BRepTopAdaptor_FClass2d(self, 1e-9)
         uv  = gp_Pnt2d(u,v)
         if self._classify_uv.Perform(uv) == TopAbs_IN:
             return True
@@ -382,7 +386,6 @@ class Face(KbeObject):
         returns the uv value of a point on a surface
         @param pt:
         '''
-        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
         sas = ShapeAnalysis_Surface(self.surface_handle)
         uv  = sas.ValueOfUV(pt, self.tolerance)
         return uv.Coord()
@@ -401,11 +404,9 @@ class Face(KbeObject):
         :return: bool, GeomAbs_Shape if it has continuity, otherwise
          False, None
         """
-        edge = edge if not isinstance(edge,KbeObject) else edge.topo
-        face = face if not isinstance(face, KbeObject) else face.topo
         bt = BRep_Tool()
-        if bt.HasContinuity(edge, self.topo, face):
-            continuity = bt.Continuity(edge, self.topo, face)
+        if bt.HasContinuity(edge, self, face):
+            continuity = bt.Continuity(edge, self, face)
             return True, continuity
         else:
             return False, None
@@ -415,7 +416,7 @@ class Face(KbeObject):
 #    project curve, point on face
 #===============================================================================
 
-    def project_vertex( self, other ):
+    def project_vertex( self, pnt, tol=TOLERANCE):
         '''projects self with a point, curve, edge, face, solid
         method wraps dealing with the various topologies
 
@@ -423,21 +424,20 @@ class Face(KbeObject):
             returns uv, point
 
         '''
-        if isinstance(other, TopoDS_Face):
-            raise AssertionError, 'Cannot project a face on another face'
+        if isinstance(pnt, TopoDS_Vertex):
+            pnt = BRep_Tool.Pnt(pnt)
 
-        elif isinstance(other, TopoDS_Vertex):
-            pt = BRep_Tool.Pnt(other)
-            proj = GeomAPI_ProjectPointOnSurf(pt, self.surface_handle)
-            # SHOULD USE THIS!!!
-            #proj.LowerDistanceParameters()
-            ext = proj.Extrema()
-            for i in range(ext.NbExt()):
-                if proj.Point().Coord() == ext.Point(i).Value().Coord():
-                    result = ext.Point(i)
-            uv = result.Parameter()
-            pt = result.Value()
-            return uv, pt
+        #print "from OCC.ShapeAnalysis import ShapeAnalysis_Surface"
+#        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
+#
+#        ssa = ShapeAnalysis_Surface(self.surface_handle)
+#        ssa.NextValueOfUV()
+
+        proj = GeomAPI_ProjectPointOnSurf(pnt, self.surface_handle, tol)
+        uv = proj.LowerDistanceParameters()
+        proj_pnt = proj.NearestPoint()
+
+        return uv, proj_pnt
 
     def project_curve(self, other):
         # this way Geom_Circle and alike are valid too
@@ -447,25 +447,45 @@ class Face(KbeObject):
                 if isinstance(other, TopoDS_Edge):
                     # convert edge to curve
                     first, last = TopExp.FirstVertex(other), TopExp.LastVertex(other)
-                    lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(first, other)
+                    lbound, ubound  = BRep_Tool().Parameter(first, other), BRep_Tool().Parameter(last, other)
                     other = BRep_Tool.Curve(other, lbound, ubound).GetObject()
 
-                from OCC.GeomProjLib import GeomProjLib
                 return GeomProjLib().Project(other, self.surface_handle)
 
     def project_edge(self, edg):
-        return self.project_cur
+        if hasattr(edg, 'adaptor'):
+            return self.project_curve(self, self.adaptor)
+        return self.project_curve(self, to_adaptor_3d(edg))
+
+#    def iso_curve(self, u_or_v, param):
+#        """
+#        :return: an iso curve at parameter `param`
+#        :param u_or_v: "u" or "v"
+#        :param param:  the parameter where the iso curve lies
+#        """
+#        pass
 
     def iso_curve(self, u_or_v, param):
         """
-        :return: an iso curve at parameter `param`
-        :param u_or_v: "u" or "v"
-        :param param:  the parameter where the iso curve lies
+        get the iso curve from a u,v + parameter
+        :param u_or_v:
+        :param param:
+        :return:
         """
-        pass
+        from OCC.Adaptor3d import Adaptor3d_IsoCurve
+        uv = 0 if u_or_v == 'u' else 1
+        # TODO: REFACTOR, part of the Face class now...
+        iso = Adaptor3d_IsoCurve(self.adaptor_handle.GetHandle(), uv, param)
+        return iso
 
     def Edges(self):
-        return [Edge(i) for i in Topo(self.topo).edges()]
+        return [Edge(i) for i in WireExplorer(self.topo.wires().next()).ordered_edges()]
+
+    def __repr__(self):
+        return self.name
+
+    def __str__(self):
+        return self.__repr__()
 
 if __name__ == "__main__":
 
