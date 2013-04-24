@@ -21,6 +21,14 @@
 # This sample shows howto set display quality (higher or lower).
 # Be carful that improving quality results in higher memory consumption
 #
+
+"""
+
+TODO: interesting that you can see the visual difference switching back from the wireframe -> shaded
+view... not sure if intentional but it does show the difference very well
+
+"""
+
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 

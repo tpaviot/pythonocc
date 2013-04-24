@@ -586,7 +586,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
 #    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
 #    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
     sew = BRepBuilderAPI_Sewing(tolerance)
-    sew.SetFloatingEdgesMode(True)
+    # sew.SetFloatingEdgesMode(True)
     for shp in shapes:
         if isinstance(shp, list):
             for i in shp:
@@ -599,8 +599,6 @@ def sew_shapes( shapes, tolerance=0.001 ):
     print 'n free edges',sew.NbFreeEdges()
     print 'n multiple edges:',sew.NbMultipleEdges()
     result = ShapeToTopology()(sew.SewedShape())
-#     ???
-#    sew.Delete()
     return result
 
 #===============================================================================

@@ -196,7 +196,7 @@ class DynamicSimulationContext(ode.World):
         self._display.FitAll()
         while t<self._duration:
             #i = i+1
-            if self._COLLISION_DETECTION: 
+            if self._COLLISION_DETECTION:
                 self._space.collide((self,self._contactgroup), self._collision_callback)
             # step world
             if not quick:

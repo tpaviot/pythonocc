@@ -51,9 +51,11 @@ class wxBaseViewer(BaseClass):
         self.Bind( wx.EVT_MIDDLE_UP , self.OnMiddleUp)
         self.Bind( wx.EVT_MOTION , self.OnMotion)
         self.Bind( wx.EVT_KEY_DOWN ,self.OnKeyDown)
+        self.Bind(wx.EVT_MOUSEWHEEL, self.OnMouseWheel)
+
         self._display = None
         self._inited = False
-        
+
     def OnSize(self, event):
         if self._inited:
             self._display.OnResize()
@@ -84,7 +86,11 @@ class wxBaseViewer(BaseClass):
         pass
     def OnKeyDown(self,event):
         pass
-        
+
+    def OnMouseWheel(self, event):
+        pass
+
+
 class wxViewer2d(wxBaseViewer):
      def __init__(self, *kargs):
         wxBaseViewer.__init__(self, *kargs)
@@ -127,6 +133,7 @@ class wxNISViewer3d(wxBaseViewer):
             raise AssertionError("Please set the CSF_GraphicShr environment variable.")
         self._display = OCCViewer.NISViewer3d(self.GetHandle())
         self._display.Create()
+        import ipdb; ipdb.set_trace()
         #self._display.DisplayTriedron()
         #self._display.SetModeShaded()
         self._inited = True

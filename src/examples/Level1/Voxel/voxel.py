@@ -8,27 +8,27 @@ from OCC.Quantity import *
 
 sph = BRepPrimAPI_MakeSphere(12,12,12).Shape()
 jjj = [sph]
-xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(sph).Get()
+xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(sph)
 xL,yL,zL = xmax-xmin, ymax-ymin, zmax-zmin
 xN,yN,zN = 0.2,0.2,0.2
 
 print 'xmin, ymin, zmin,xL,yL,zL,xN,yN,zN', xmin, ymin, zmin,xL,yL,zL,xN,yN,zN
 
 
-voxels = Voxel_ROctBoolDS()
-#voxels = Voxel_BoolDS()
+# voxels = Voxel_ROctBoolDS()
+voxels = Voxel_BoolDS()
 #voxels = Voxel_ColorDS()
 
-#voxels = Voxel_BoolDS(0,0,0,
-#                       1,1,1,
-#                        xN,yN,zN )
+voxels = Voxel_BoolDS(0,0,0,
+                      1,1,1,
+                       int(xN),int(yN),int(zN) )
 
 fcp = Voxel_FastConverter(sph, voxels) #, 1, 10,10,10, 1)
 
-fcp = Voxel_FastConverter(sph, voxels)
+# fcp = Voxel_FastConverter(sph, voxels)
+import ipdb; ipdb.set_trace()
 fcp.Convert()
 
-import ipdb; ipdb.set_trace()
 
 voxprs = Voxel_Prs()
 voxprs.SetBoolVoxels(voxels)

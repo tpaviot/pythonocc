@@ -62,11 +62,31 @@ class DiffGeomSurface(object):
             curvatureType
         '''
         if not self._curvature_initiated:
-
             self._curvature = GeomLProp_SLProps(self.instance.surface_handle, u, v, 1, 1e-6)
-        else:
-            self._curvature.SetParameters(u,v)
-            self._curvature_initiated = True
+
+        _domain = self.instance.domain()
+        if u in _domain or v in _domain:
+            print '<<<CORRECTING DOMAIN...>>>'
+            div = 1000
+            delta_u, delta_v = (_domain[0] - _domain[1])/div, (_domain[2] - _domain[3])/div
+
+            if u in _domain:
+                low, hi = u-_domain[0], u-_domain[1]
+                if low < hi:
+                    u = u - delta_u
+                else:
+                    u = u + delta_u
+
+            if v in _domain:
+                low, hi = v-_domain[2], v-_domain[3]
+                if low < hi:
+                    v = v - delta_v
+                else:
+                    v = v + delta_v
+
+
+        self._curvature.SetParameters(u,v)
+        self._curvature_initiated = True
 
         return self._curvature
 
@@ -90,7 +110,7 @@ class DiffGeomSurface(object):
         else:
             raise ValueError('normal is not defined at u,v: {0}, {1}'.format(u,v))
 
-    def tangent(self,u,v, recurse=False):
+    def tangent(self,u,v):
         dU, dV = gp_Dir(), gp_Dir()
         curv = self.curvature(u,v)
         if curv.IsTangentUDefined() and curv.IsTangentVDefined():
@@ -314,7 +334,7 @@ class Face(KbeObject, TopoDS_Face):
 
     def is_closed(self):
         sa = ShapeAnalysis_Surface(self.surface_handle)
-        sa.GetBoxUF()
+        # sa.GetBoxUF()
         return sa.IsUClosed(), sa.IsVClosed()
 
     def is_planar(self, tol=TOLERANCE):

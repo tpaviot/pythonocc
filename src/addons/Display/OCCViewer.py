@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from OCC.AIS import AIS_MultipleConnectedInteractive
 from OCC.TopoDS import *
 
 ##Copyright 2008-2011 Thomas Paviot (tpaviot@gmail.com)
@@ -118,64 +119,64 @@ class BaseDriver(object):
             pass
 
         
-class Viewer2d(BaseDriver, OCC.Visualization.Display2d):   
-    def __init__(self, window_handle ):
-        BaseDriver.__init__(self,window_handle)
-        OCC.Visualization.Display2d.__init__(self)        
-    
-    def OnResize(self):
-        self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
-    
-    def DisplayShape(self, shapes, material=None, texture=None, angle=None, update=True, fitall=True ):
-        '''
-        display a TopoDS_* in the viewer
-        @param shapes:      shape or iterable of shapes 
-        ( where shape is a subclass of TopoDS_Shape ) 
-        @param material:    sets a custom material to the shape
-        @param texture:     add a texture to the shape
-        @param angle:       sets a custom deviation angle to the shape
-        @param update:      updates the viewer
-        @fitall:            whether the camera's viewpoint is updated or not...
-        '''
-        
-        ais_shapes = []
-        if issubclass(shapes.__class__, TopoDS_Shape):
-            shapes = [shapes]
-            SOLO = True
-        else:
-            SOLO = False            
-        for shape in shapes:
-            if material:#careful: != operator segfaults
-                #print 'material', material
-                self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
-                shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
-                shape_to_display.SetMaterial(material)
-                if angle:
-                    shape_to_display.SetAngleAndDeviation(angle)
-                if texture:
-                    filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
-                    shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
-                    shape_to_display.SetTextureMapOn()
-                    shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
-                    shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
-                    shape_to_display.SetTextureOrigin(True, originU, originV)
-                    shape_to_display.SetDisplayMode(3);
-                    ais_shapes.append(shape_to_display.GetHandle())
-            else:
-                shape_to_display = OCC.AIS.AIS_Shape(shape)
-                if angle:
-                    shape_to_display.SetAngleAndDeviation(angle)
-                ais_shapes.append(shape_to_display.GetHandle())
-
-            self.Context.Display(shape_to_display.GetHandle())
-            
-            if fitall:
-                self.FitAll()
-        
-        if SOLO:
-            return ais_shapes[0]
-        else:
-            return ais_shapes
+# class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
+#     def __init__(self, window_handle ):
+#         BaseDriver.__init__(self,window_handle)
+#         OCC.Visualization.Display2d.__init__(self)
+#
+#     def OnResize(self):
+#         self.View.MustBeResized(OCC.V2d.V2d_TOWRE_ENLARGE_SPACE)
+#
+#     def DisplayShape(self, shapes, material=None, texture=None, angle=None, update=True, fitall=True ):
+#         '''
+#         display a TopoDS_* in the viewer
+#         @param shapes:      shape or iterable of shapes
+#         ( where shape is a subclass of TopoDS_Shape )
+#         @param material:    sets a custom material to the shape
+#         @param texture:     add a texture to the shape
+#         @param angle:       sets a custom deviation angle to the shape
+#         @param update:      updates the viewer
+#         @fitall:            whether the camera's viewpoint is updated or not...
+#         '''
+#
+#         ais_shapes = []
+#         if issubclass(shapes.__class__, TopoDS_Shape):
+#             shapes = [shapes]
+#             SOLO = True
+#         else:
+#             SOLO = False
+#         for shape in shapes:
+#             if material:#careful: != operator segfaults
+#                 #print 'material', material
+#                 self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
+#                 shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
+#                 shape_to_display.SetMaterial(material)
+#                 if angle:
+#                     shape_to_display.SetAngleAndDeviation(angle)
+#                 if texture:
+#                     filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
+#                     shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
+#                     shape_to_display.SetTextureMapOn()
+#                     shape_to_display.SetTextureScale(True, toScaleU, toScaleV)
+#                     shape_to_display.SetTextureRepeat(True, toRepeatU, toRepeatV)
+#                     shape_to_display.SetTextureOrigin(True, originU, originV)
+#                     shape_to_display.SetDisplayMode(3);
+#                     ais_shapes.append(shape_to_display.GetHandle())
+#             else:
+#                 shape_to_display = OCC.AIS.AIS_Shape(shape)
+#                 if angle:
+#                     shape_to_display.SetAngleAndDeviation(angle)
+#                 ais_shapes.append(shape_to_display.GetHandle())
+#
+#             self.Context.Display(shape_to_display.GetHandle())
+#
+#             if fitall:
+#                 self.FitAll()
+#
+#         if SOLO:
+#             return ais_shapes[0]
+#         else:
+#             return ais_shapes
 
 if HAVE_NIS:
     class NISViewer3d(BaseDriver, OCC.Visualization.NISDisplay3d):
@@ -309,17 +310,17 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def DisplayShape(self, shapes, material=None, texture=None, color=None, transparency=None, update=False):
         '''
         '''
-        
+
         if issubclass(shapes.__class__, TopoDS_Shape):
             shapes = [shapes]
             SOLO = True
         else:
             SOLO = False
-            
+
         ais_shapes = []
 
         for shape in shapes:
-            if material or texture:#careful: != operator segfaults
+            if material or texture:
                 if texture:
                     self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
                     shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
@@ -333,88 +334,100 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 elif material:
                     shape_to_display = OCC.AIS.AIS_Shape(shape)
                     shape_to_display.SetMaterial(material)
-                ais_shapes.append(shape_to_display.GetHandle())
             else:
                 # TODO: can we use .Set to attach all TopoDS_Shapes to this AIS_Shape instance?
                 shape_to_display = OCC.AIS.AIS_Shape(shape)
 
-                if material is None:
-                    #The default material is too shiny to show the object
-                    #color well, so I set it to something less reflective
-                    shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
+            ais_shapes.append(shape_to_display.GetHandle())
 
-                if color:
-                    if isinstance(color, Quantity_Color):
-                        shape_to_display.SetColor(color)
-                    elif isinstance(color, (tuple, list)):
-                        from OCC.Utils.Common import color as quantity_color
-                        clr = quantity_color(*color)
-                        self.Context.SetColor(shape_to_display.GetHandle(), clr, 0)
-                        #shape_to_display.SetColor(quantity_color(*color))
+        if not SOLO:
+            #===============================================================================
+            # computing graphic properties is expensive
+            # if an iterable is found, so cluster all TopoDS_Shape under a AIS_MultipleConnectedInteractive
+            #===============================================================================
+            shape_to_display = AIS_MultipleConnectedInteractive()
+            for i in ais_shapes:
+                shape_to_display.Connect(i)
 
-                if transparency:
-                    shape_to_display.SetTransparency(transparency)
+        #===============================================================================
+        # set the graphic properties
+        #===============================================================================
 
-                ais_shapes.append(shape_to_display.GetHandle())
+        if material is None:
+            #The default material is too shiny to show the object
+            #color well, so I set it to something less reflective
+            shape_to_display.SetMaterial(Graphic3d_NOM_SATIN)
 
+        if color:
+            if isinstance(color, Quantity_Color):
+                pass
+            elif isinstance(color, (tuple, list)):
+                from OCC.Utils.Common import color as quantity_color
+                color = quantity_color(*color)
 
-            if update:
-                # only update when explicitely told to do so
-                self.Context.Display(shape_to_display.GetHandle(), True)
-                # especially this call takes up a lot of time...
-                self.FitAll()
-            else:
-                self.Context.Display(shape_to_display.GetHandle(), False)
+            for shp in ais_shapes:
+                self.Context.SetColor(shp, color, 0)
+
+        if transparency:
+            shape_to_display.SetTransparency(transparency)
+        if update:
+            # only update when explicitely told to do so
+            self.Context.Display(shape_to_display.GetHandle(), True)
+            # especially this call takes up a lot of time...
+            self.FitAll()
+        else:
+            self.Context.Display(shape_to_display.GetHandle(), False)
 
         if SOLO:
-            return  ais_shapes[0]
+            return ais_shapes[0]
         else:
-            return ais_shapes
+            return shape_to_display
+
 
     def DisplayColoredShape(self, shapes, color='YELLOW', update=False, ):
-        ais_shapes = []
-
         if isinstance(color, str):
             dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
                           'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,
                           'RED':OCC.Quantity.Quantity_NOC_RED,
                           'GREEN':OCC.Quantity.Quantity_NOC_GREEN,
                           'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW,
-                          # new
                           'CYAN':OCC.Quantity.Quantity_NOC_CYAN1,
                           'WHITE':OCC.Quantity.Quantity_NOC_WHITE,
                           'BLACK':OCC.Quantity.Quantity_NOC_BLACK,
                           'ORANGE':OCC.Quantity.Quantity_NOC_ORANGE, }
-            color = dict_color[color]
+            clr = Quantity_Color( dict_color[color] )
         elif isinstance(color, Quantity_Color):
-            pass
+            clr = color
         else:
             raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
 
-        if issubclass(shapes.__class__, TopoDS_Shape):
-            shapes = [shapes]
-            SOLO = True
-        else:
-            SOLO = False
-            
-        for shape in shapes:
-            shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
-            # standard material is ridiculously reflective...
-            shape_to_display.GetObject().SetMaterial(Graphic3d_NOM_SATIN)
-            self.Context.SetColor(shape_to_display,color,0)
-            ais_shapes.append(shape_to_display)
-            if update:
-                self.Context.Display(shape_to_display, True)
-                self.FitAll()
-            else:
-                # don't update the view when shape_to_display is added
-                # comes in handy when adding lots and lots of objects 
-                self.Context.Display(shape_to_display, False)
-  
-        if SOLO:
-            return ais_shapes[0]
-        else:
-            return ais_shapes
+        return  self.DisplayShape(shapes, color=clr)
+
+        #
+        # if issubclass(shapes.__class__, TopoDS_Shape):
+        #     shapes = [shapes]
+        #     SOLO = True
+        # else:
+        #     SOLO = False
+        #
+        # for shape in shapes:
+        #     shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
+        #     # standard material is ridiculously reflective...
+        #     shape_to_display.GetObject().SetMaterial(Graphic3d_NOM_SATIN)
+        #     self.Context.SetColor(shape_to_display,color,0)
+        #     ais_shapes.append(shape_to_display)
+        #     if update:
+        #         self.Context.Display(shape_to_display, True)
+        #         self.FitAll()
+        #     else:
+        #         # don't update the view when shape_to_display is added
+        #         # comes in handy when adding lots and lots of objects
+        #         self.Context.Display(shape_to_display, False)
+        #
+        # if SOLO:
+        #     return ais_shapes[0]
+        # else:
+        #     return ais_shapes
         
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)

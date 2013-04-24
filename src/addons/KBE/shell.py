@@ -1,5 +1,6 @@
 from .base import KbeObject, GlobalProperties
 from .face import Face
+from .wire import Wire
 
 from OCC.TopoDS import TopoDS_Shell
 
@@ -61,12 +62,15 @@ class Shell(KbeObject, TopoDS_Shell):
 
         :return:
         """
-        return (Face(f) for f in Topo(self).faces())
+        return Topo(self, True).faces()
 
     def Wires(self):
         """
 
         :return:
         """
-        return (Wire(w) for w in Topo(self))
+        return Topo(self, True).wires()
+
+    def Edges(self):
+        return Topo(self, True).edges()
 

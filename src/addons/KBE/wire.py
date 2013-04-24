@@ -1,5 +1,6 @@
 from OCC.KBE.base import KbeObject
-from OCC.TopoDS import TopoDS_Wire
+from OCC.TopoDS import TopoDS_Wire, TopoDS_wire
+
 
 class Wire(KbeObject, TopoDS_Wire):
     '''
@@ -12,4 +13,4 @@ class Wire(KbeObject, TopoDS_Wire):
         KbeObject.__init__(self, 'wire')
         TopoDS_Wire.__init__(self, wire)
 
-    BRepAdaptor_CompCurve
+    # BRepAdaptor_CompCurve

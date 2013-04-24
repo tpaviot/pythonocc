@@ -477,6 +477,13 @@ class Edge(KbeObject, TopoDS_Edge):
         else:
             return False
 
+    def as_vec(self):
+        if self.is_line():
+            first, last = map( vertex2pnt, [self.first_vertex(), self.last_vertex()] )
+            return gp_Vec(first, last)
+        else:
+            raise ValueError("edge is not a line, hence no meaningful vector can be returned")
+
 #===============================================================================
 #    Curve.
 #===============================================================================

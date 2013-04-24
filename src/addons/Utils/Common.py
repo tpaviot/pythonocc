@@ -68,7 +68,7 @@ def roundlist(li, n_decimals=3):
 
 TOLERANCE = 1e-6
 
-def get_boundingbox(shape, tol=1e-12):
+def get_boundingbox(shape, tol=TOLERANCE, vec=False):
     '''
     :param shape: TopoDS_Shape such as TopoDS_Face
     :param tol: tolerance
@@ -77,8 +77,12 @@ def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
     bbox.SetGap(tol)
     #BRepBndLib_AddClose(shape, bbox)
-    BRepBndLib_Add(shape, bbox)
-    return bbox
+    tmp = BRepBndLib_Add(shape, bbox)
+    xmin, ymin, zmin, xmax, ymax, zmax = bbox.Get()
+    if vec is False:
+        return xmin, ymin, zmin, xmax, ymax, zmax
+    else:
+        return gp_Vec(xmin, ymin, zmin), gp_Vec( xmax, ymax, zmax )
 
 def smooth_pnts(pnts):
     smooth = [pnts[0]]
@@ -344,8 +348,7 @@ def center_boundingbox(shape):
     @param shape: TopoDS_* instance
     returns a gp_Pnt instance 
     '''
-    bbox = get_boundingbox(shape, 1e-6)
-    xmin,ymin,zmin, xmax, ymax, zmax = bbox.Get()
+    xmin,ymin,zmin, xmax, ymax, zmax = get_boundingbox(shape, 1e-6)
     return midpoint(gp_Pnt(xmin,ymin,zmin), gp_Pnt(xmax,ymax,zmax))
 
 def point_in_boundingbox(solid, pnt, tolerance=1e-5):
@@ -401,12 +404,15 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
         display.DisplayShape(make_vertex(pnt))
     return pnt
 
-def intersect_shape_by_line(topods_shape, line, low_parameter=float("-inf"), hi_parameter=float("+inf")):
+def intersect_shape_by_line(topods_shape, line, low_parameter=0.0, hi_parameter=float("+inf")):
     """
     finds the intersection of a shape and a line
 
     :param shape: any TopoDS_*
     :param line: gp_Lin
+    :param low_parameter:
+    :param hi_parameter:
+
     :return: a list with a number of tuples that corresponds to the number of intersections found
     the tuple contains ( gp_Pnt, TopoDS_Face, u,v,w ), respectively the intersection point, the intersecting face
     and the u,v,w parameters of the intersection point
@@ -415,9 +421,11 @@ def intersect_shape_by_line(topods_shape, line, low_parameter=float("-inf"), hi_
     from OCC.IntCurvesFace import IntCurvesFace_ShapeIntersector
     iii = IntCurvesFace_ShapeIntersector()
     iii.Load(topods_shape, TOLERANCE)
-    iii.Perform(line, low_parameter, hi_parameter)
+    iii.PerformNearest(line, low_parameter, hi_parameter)
+
     with assert_isdone(iii, "failed to computer shape / line intersection"):
-        return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
+        return (iii.Pnt(1), iii.Face(1), iii.UParameter(1), iii.VParameter(1), iii.WParameter(1))
+        # return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
 
 
 #def split_edge(edge, pnt):

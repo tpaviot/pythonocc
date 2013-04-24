@@ -41,13 +41,13 @@ def rotating_cube_1_axis(event=None):
     aCubeTrsf = gp_Trsf()
     angle = 0.0
     display.FitAll()
-    for i in range(2000):
+    for i in range(200):
         aCubeTrsf.SetRotation(Ax1,angle)
         aCubeToploc = TopLoc_Location(aCubeTrsf)
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
-        angle += 0.001
-        time.sleep(0.001)
+        angle += 0.01
+        time.sleep(0.01)
 
 def rotating_cube_2_axis(event=None):
     ais_boxshp = build_shape()
@@ -64,10 +64,9 @@ def rotating_cube_2_axis(event=None):
         aCubeToploc = TopLoc_Location(aCubeTrsf*aCubeTrsf2)
         display.Context.SetLocation(ais_boxshp,aCubeToploc)
         display.Context.UpdateCurrentViewer()
-        angle += 0.001
+        angle += 0.01
         time.sleep(0.05)
-        import ipdb; ipdb.set_trace()
-    
+
 if __name__ == '__main__':
     add_menu('animation')
     add_function_to_menu('animation', rotating_cube_1_axis)

@@ -52,9 +52,10 @@ def file_to_shape(pth):
     assert ext in ['.iges', '.igs', '.stp', '.step', '.brep', '.stl'], '%s is not an readable format' % ( ext )
     
     if ext in ['.iges', '.igs']:
-        __i = IGESControl_Controller(); __i.Init()
+        __i = IGESControl_Controller()
+        __i.Init()
         reader = IGESControl_Reader()
-    
+
     elif ext in ['.step','.stp']:
         reader = STEPControl_Reader()
     

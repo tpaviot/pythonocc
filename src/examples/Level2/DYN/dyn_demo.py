@@ -352,7 +352,7 @@ def hinge(event=None):
         prev_center = center
 
     # get the 1st block, the one one the ground...
-    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube).Get()
+    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube)
     # set the lower block in motion
     vec1 = (12, 88, 0)
     first.setLinearVel(vec1)
@@ -435,7 +435,7 @@ def adhesion(event=None):
         prev_center = center
 
     # get the 1st block, the one one the ground...
-    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube).Get()
+    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube)
     # set the middle block in motion
     vec1 = (160, 66, 0)
     #vec1 = (1.20, 0.66, 0)
