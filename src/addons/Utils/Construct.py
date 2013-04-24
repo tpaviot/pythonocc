@@ -45,7 +45,7 @@ from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
 import warnings, operator, math
-from src.addons.Utils.Common import to_tcol_
+
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -845,6 +845,7 @@ def fit_plane_through_face_vertices(_face):
     """
     from OCC.GeomPlate import GeomPlate_BuildAveragePlane
     from OCC.Utils.Topology import Topo
+    from OCC.Utils.Common import to_tcol
 
 
     uvs_from_vertices = [_face.project_vertex(vertex2pnt(i)) for i in Topo(_face).vertices()]
