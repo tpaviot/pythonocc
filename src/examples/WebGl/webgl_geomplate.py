@@ -15,25 +15,22 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 import os
+import types
+import sys
+
 from OCC.Utils.Construct import make_closed_polygon, make_n_sided, make_vertex, make_face, make_wire
-
 from OCC.gp import *
-from OCC.BRepBuilderAPI import *
-
 from OCC.Utils.Topology import WireExplorer, Topo
 from OCC.BRepAdaptor import *
 from OCC.BRep import *
 from OCC.ShapeAnalysis import *
 from OCC.GeomLProp import *
-
-import types, sys, time
-
-from OCC.Utils.DataExchange.IGES import IGESImporter
+from OCC.DataExchange.IGES import IGESImporter
 from OCC.BRepFill import *
 from OCC.GeomPlate import *
-from OCC.GEOMAlgo import *
-
 from OCC.Display.WebGl import webgl_renderer
+from scipy.optimize import fsolve
+
 
 def geom_plate(event=None):
     p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,100,0),gp_Pnt(0,100,100),gp_Pnt(0,0,100),gp_Pnt(50,50,50)
@@ -152,15 +149,6 @@ class RadiusConstrainedSurface():
         fsolve(self.radius, 1, maxfev=1000)
         return self.plate
 
-
-def solve_radius(event=None):
-    p1,p2,p3,p4,p5 = gp_Pnt(0,0,0),gp_Pnt(0,10,0),gp_Pnt(0,10,10),gp_Pnt(0,0,10),gp_Pnt(5,5,5)
-    poly = make_closed_polygon([p1,p2,p3,p4])
-    for i in arange(0.1,3.,0.2).tolist():
-        rcs = RadiusConstrainedSurface(display, poly, p5, i )
-        face = rcs.solve()
-        print 'Goal: %s radius: %s' % ( i, rcs.curr_radius )
-        time.sleep(0.5)
 
 #===============================================================================
 # 
