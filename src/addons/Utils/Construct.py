@@ -26,8 +26,11 @@ This modules makes the construction of geometry a little easier
 
 from __future__ import with_statement
 # wrapped modules
+import warnings
 from OCC.BRep import BRep_Tool
+from OCC.BRepAlgo import BRepAlgo_Cut, BRepAlgo_Fuse
 from OCC.BRepOffset import BRepOffset_Skin
+from OCC.GeomConvert import GeomConvert_ApproxCurve
 from OCC.GeomLProp import *
 from OCC.ShapeFix import *
 from OCC.BRepOffsetAPI import *
@@ -49,7 +52,7 @@ from OCC.Geom import *
 # high level
 from OCC.Utils.Common import *
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.types_lut import GeometryLookup, ShapeToTopology
+from OCC.KBE.types_lut import ShapeToTopology
 
 from functools import wraps
 
@@ -687,10 +690,8 @@ def face_normal(face):
         norm.Reverse()
     return norm
 
-def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000, show=False):
+def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000):
     _trim_plane = make_face( Geom_RectangularTrimmedSurface(_geom_plane.GetHandle(), lowerLimit, upperLimit, lowerLimit, upperLimit).GetHandle() )
-    if show:
-        display.DisplayShape(_trim_plane)
     return _trim_plane
 
 def find_plane_from_shape(shape, tolerance=TOLERANCE):
