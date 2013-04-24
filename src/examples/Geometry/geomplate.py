@@ -38,7 +38,6 @@ from OCC.Display.SimpleGui import init_display
 from OCC.DataExchange.IGES import IGESImporter
 from OCC.BRepFill import *
 from OCC.GeomPlate import *
-from OCC.GEOMAlgo import *
 
 display, start_display, add_menu, add_function_to_menu = init_display()
 
@@ -94,7 +93,7 @@ def build_plate(polygon, points):
     
     uMin, uMax, vMin, vMax = srf.GetObject().Bounds()
     
-    return make_face(plate.Surface(), uMin, uMax, vMin, vMax)
+    return make_face(plate.Surface(), uMin, uMax, vMin, vMax, 1e-4)
 
 def radius_at_uv(face, u, v):
     '''
@@ -214,7 +213,7 @@ def build_curve_network(event=None):
     '''
     print 'Importing IGES file...',
     pth = os.path.dirname(os.path.abspath(__file__))
-    pth = os.path.abspath(os.path.join(pth, '../../data/IGES/curve_geom_plate.igs'))
+    pth = os.path.abspath(os.path.join(pth, '../data/IGES/curve_geom_plate.igs'))
     iges = IGESImporter(pth)
     iges.read_file()
     print 'done.'
@@ -226,6 +225,7 @@ def build_curve_network(event=None):
     print 'done.'
     display.EraseAll()
     display.DisplayShape(edges_list)
+    display.DisplayShape(face)
     display.FitAll()
     print 'Cutting out of edges...',
     # Make a wire from outer edges

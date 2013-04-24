@@ -18,11 +18,9 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
-from OCC.Geom2d import *
 from OCC.Geom import *
 from OCC.FairCurve import *
 
-from OCC.Utils.Construct import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 from OCC.Utils.Construct import make_edge
@@ -64,9 +62,13 @@ def faircurve(event=None):
         display.DisplayShape(make_edge(bc, pl.GetHandle()), update=True)
         time.sleep(0.21)
 
+def exit(event=None):
+    sys.exit(0)
+
 if __name__ == "__main__":
     add_menu('fair curve')
     add_function_to_menu('fair curve', faircurve)
+    add_function_to_menu('fair curve', exit)
     start_display()
 
 
