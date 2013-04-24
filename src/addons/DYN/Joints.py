@@ -42,7 +42,7 @@ class DynamicHingeJoint(ode.HingeJoint):
     """
     def _init__(self,dyn_context):
         self.dyn_context = dyn_context
-        ode.HingeJoint.__init__(self,*kargs)
+        ode.HingeJoint.__init__(self)
         
     def set_anchor(self,gp_point_center):
         ''' Set the anchor of the ball joint
