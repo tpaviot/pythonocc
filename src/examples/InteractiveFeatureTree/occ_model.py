@@ -18,11 +18,11 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from enthought.traits.api import (HasTraits, Property, Bool, 
+from traits.api import (HasTraits, Property, Bool,
                         on_trait_change, cached_property, Instance,
                         List, Str, Enum)
 
-from enthought.traits.ui.api import View, Item
+from traitsui.api import View, Item
 
 from utils import Tuple, EditorTraits, Int, Float, Range
 

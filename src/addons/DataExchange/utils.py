@@ -46,7 +46,7 @@ def shape_to_file(shape, pth, filename, format='iges'):
 
 def file_to_shape(pth):
     '''get a Shape from an .iges or .step file'''
-    assert os.path.isfile(pth), '%s is not a valid directory' % (pth)
+    assert os.path.isfile(pth), '%s is not a valid file' % (pth)
     ext = os.path.splitext(pth)[1]
     print 'ext', ext
     assert ext in ['.iges', '.igs', '.stp', '.step', '.brep', '.stl'], '%s is not an readable format' % ( ext )

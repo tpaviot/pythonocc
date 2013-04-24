@@ -75,7 +75,8 @@ def get_bg_abs_filename():
     else:
         return bg_abs_filename
 
-def safe_yield(USED_BACKEND):
+def safe_yield():
+    global USED_BACKEND
     if USED_BACKEND == 'wx':
         import wx
         wx.SafeYield()
@@ -89,7 +90,7 @@ def safe_yield(USED_BACKEND):
         QtGui.QApplication.processEvents()
 
 def init_display():
-    global display, add_menu, add_function_to_menu, start_display, app, win
+    global display, add_menu, add_function_to_menu, start_display, app, win, USED_BACKEND
 
     USED_BACKEND = get_backend()
 

@@ -18,11 +18,9 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 from OCC.gp import *
-from OCC.Geom2d import *
 from OCC.Geom import *
 from OCC.FairCurve import *
 
-from OCC.Utils.Construct import *
 from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 from OCC.Utils.Construct import make_edge

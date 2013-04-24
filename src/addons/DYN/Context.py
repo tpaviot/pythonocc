@@ -220,7 +220,6 @@ class DynamicSimulationContext(ode.World):
                         xg=shape.x_g#
                         yg=shape.y_g# COG coordinated in the local referential
                         zg=shape.z_g#
-                        print 'xg,yg,zg',xg,yg,zg
                         u=x-(xg*a11+yg*a12+zg*a13)
                         v=y-(xg*a21+yg*a22+zg*a23)#COG coordinate in the global referential
                         w=z-(xg*a31+yg*a32+zg*a33)
@@ -245,7 +244,6 @@ class DynamicSimulationContext(ode.World):
             self._perform_callbacks()
             # Then increment time and loop simulation
             t += self._delta_t
-            print 't',t
 
             # increment the step index
             current_time_step_index += 1
