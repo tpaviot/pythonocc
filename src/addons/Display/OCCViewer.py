@@ -350,7 +350,13 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def SetSelectionMode(self, mode=None):
         self.Context.CloseAllContexts()
         self.Context.OpenLocalContext()
-        self.Context.ActivateStandardMode(mode)
+        topo_level = modes.next()
+        print 'current topology selection mode:', topo_lut[topo_level]
+        if mode is None:
+            self.Context.ActivateStandardMode(topo_level)
+        else:
+            self.Context.ActivateStandardMode(mode)
+        self.Context.UpdateSelected()
     
     def SetSelectionModeVertex(self):
         self.SetSelectionMode(OCC.TopAbs.TopAbs_VERTEX)
