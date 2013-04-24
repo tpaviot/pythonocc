@@ -26,35 +26,26 @@ This modules makes the construction of geometry a little easier
 
 from __future__ import with_statement
 # wrapped modules
-import warnings
 from OCC.BRep import BRep_Tool
-from OCC.BRepAlgo import BRepAlgo_Cut, BRepAlgo_Fuse
 from OCC.BRepOffset import BRepOffset_Skin
+from OCC.Geom import Geom_TrimmedCurve
 from OCC.GeomConvert import GeomConvert_ApproxCurve
 from OCC.GeomLProp import *
-from OCC.ShapeFix import *
-from OCC.BRepOffsetAPI import *
 from OCC.BRepBuilderAPI import *
-from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
-from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
 from OCC.BRepPrimAPI import *
 from OCC.GeomAbs import *
 from OCC.TopAbs import *
 from OCC.TopoDS import *
 from OCC.gp import *
-from OCC.BRepFill import *
-from OCC.GeomPlate import *
-from OCC.BRepAdaptor import *
-from OCC.GeomFill import *
-from OCC.TopTools import *
-from OCC.Geom import *
 
 # high level
 from OCC.Utils.Common import *
 from OCC.Utils.Context import assert_isdone
-from OCC.KBE.types_lut import ShapeToTopology
+from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 
 from functools import wraps
+import warnings, operator, math
+from src.addons.Utils.Common import to_tcol_
 
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
@@ -92,6 +83,10 @@ def gp_Pnt_set_state(self, state):
     '''
     self.__init__(*state)
 
+def gp_Pnt_equal(self, other):
+    print 'jelle contains!!!'
+    return self.IsEqual(other, TOLERANCE)
+
 def gp_pnt_print(self):
     return '< gp_Pnt: {0}, {1}, {2} >'.format(*self.Coord())
 
@@ -99,6 +94,43 @@ def gp_vec_print(self):
     x,y,z = self.Coord()
     magn = self.Magnitude()
     return '< gp_Vec: {0}, {1}, {2}, magnitude: {3} >'.format(x,y,z, magn)
+
+def gp_ax1_print(self):
+    pX, pY, pZ = self.Location().Coord()
+    dX, dY, dZ = self.Direction().Coord()
+    return "< gp_Ax1: location: {pX}, {pY}, {pZ}, direction: {dX}, {dY}, {dZ} >".format(**vars())
+
+def gp_trsf_print(self):
+    _f = lambda x: [self.Value(x,i) for i in range(1,5)]
+    a,b,c,d = _f(1)
+    e,f,g,h = _f(2)
+    i,j,k,l = _f(3)
+    return "< gp_Trsf:\n {a:.3f}, {b:.3f}, {c:.3f}, {d:.3f}\n {e:.3f}, {f:.3f}, {g:.3f}, {h:.3f}\n {i:.3f}, {j:.3f}, {k:.3f}, {l:.3f} >".format(**vars())
+
+def gp_quat_print(self):
+    w,x,y,z = self.W(), self.X(), self.Y(), self.Z()
+    vec = gp_Vec()
+    angle = math.degrees(self.GetVectorAndAngle(vec))
+    return "< gp_Quaternion: w:{w}, x:{x}, y:{y}, z:{z} >\nvector:{vec} angle:{angle}".format(**vars())
+
+def _apply(pnt, other, _operator):
+    if isinstance(other, gp_Pnt):
+        return gp_Pnt(*map(lambda x: _operator(*x), zip(pnt.Coord(), other.Coord())))
+    else:
+        return gp_Pnt(*map(lambda x: _operator(x, other), pnt.Coord()))
+
+def gp_pnt_add(self, other):
+    return _apply(self, other, operator.add)
+
+def gp_pnt_sub(self, other):
+    return _apply(self, other, operator.sub)
+
+def gp_pnt_mul(self, other):
+    return _apply(self, other, operator.mul)
+
+def gp_pnt_div(self, other):
+    return _apply(self, other, operator.div)
+
 
 # easier conversion between data types
 gp_Vec.as_pnt  = vector_to_point
@@ -111,11 +143,24 @@ gp_Pnt.__getstate__ = gp_Pnt_get_state
 gp_Pnt.__setstate__ = gp_Pnt_set_state
 gp_Vec.__getstate__ = gp_Pnt_get_state
 gp_Vec.__setstate__ = gp_Pnt_set_state
+# equality, not identity comparison
+gp_Pnt.__eq__ = gp_Pnt_equal
 # print gp_Pnt() should return something informative...
 gp_Vec.__repr__ = gp_vec_print
 gp_Vec.__str__ = gp_vec_print
 gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
+gp_Ax1.__repr__ = gp_ax1_print
+gp_Ax1.__str__ = gp_ax1_print
+gp_Trsf.__repr__ = gp_trsf_print
+gp_Trsf.__str__ = gp_trsf_print
+gp_Quaternion.__repr__ = gp_quat_print
+gp_Quaternion.__str__ = gp_quat_print
+#gp_Pnt.__eq__ = gp_equal
+gp_Pnt.__add__ = gp_pnt_add
+gp_Pnt.__sub__ = gp_pnt_sub
+gp_Pnt.__mul__ = gp_pnt_mul
+gp_Pnt.__div__ = gp_pnt_div
 
 #===============================================================================
 # ---TOPOLOGY---
@@ -146,6 +191,14 @@ def make_face(*args):
         face.Delete()
         return result
 
+@wraps(BRepBuilderAPI_MakeEdge2d)
+def make_edge2d(*args):
+    edge = BRepBuilderAPI_MakeEdge2d(*args)
+    with assert_isdone(edge, 'failed to produce edge'):
+        result = edge.Edge()
+        edge.Delete()
+    return result
+
 @wraps(BRepBuilderAPI_MakeEdge)
 def make_edge(*args):
     edge = BRepBuilderAPI_MakeEdge(*args)
@@ -167,6 +220,7 @@ def make_wire(*args):
     # if we get an iterable, than add all edges to wire builder
     if isinstance(args[0], list) or isinstance(args[0], tuple):
         wire = BRepBuilderAPI_MakeWire()
+        #from OCC.TopTools import TopTools_ListOfShape
         for i in args[0]:
                 wire.Add(i)
         wire.Build()
@@ -236,6 +290,7 @@ def make_evolved(spine, profile):
         return evol.Evolved()
     
 def make_pipe(spine, profile):
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipe
     pipe = BRepOffsetAPI_MakePipe(spine, profile)
     with assert_isdone(pipe, 'failed building pipe'):
         pipe.Build()
@@ -254,13 +309,18 @@ def make_prism_shell(profile, vec):
     '''
     makes a finite prism
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipeShell
     return BRepOffsetAPI_MakePipeShell()
 
-def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offsetMode=BRepOffset_Skin, intersection=False, selfintersection=False, joinType=GeomAbs_Arc):
+def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE,
+                      offsetMode=BRepOffset_Skin, intersection=False,
+                      selfintersection=False, joinType=GeomAbs_Arc):
+    # TODO: refactor assert_isdone
     '''
     builds an offsetted shell from a shape
     construct an offsetted version of the shape
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeOffsetShape
     try:
         offset = BRepOffsetAPI_MakeOffsetShape(shapeToOffset,
                                                offsetDistance,
@@ -270,11 +330,15 @@ def make_offset_shape(shapeToOffset, offsetDistance, tolerance=TOLERANCE, offset
                                                    selfintersection,
                                                     joinType
                                                     )
-        return offset.Shape()
+        if offset.IsDone():
+            return offset.Shape()
+        else:
+            return None
     except RuntimeError('failed to offset shape'):
         return None
 
 def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
+    # TODO: refactor assert_isdone
     '''
     builds a offsetted wire or face from a wire or face
     construct an offsetted version of the shape
@@ -289,12 +353,16 @@ def make_offset(wire_or_face, offsetDistance, altitude=0, joinType=GeomAbs_Arc):
     note: a shape that has a negative offsetDistance will return
     a sharp corner
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeOffset
     _joints = [ GeomAbs_Arc, GeomAbs_Tangent, GeomAbs_Intersection ]
     assert joinType in _joints, '%s is not one of %s' ( joinType, _joints)
     try:
         offset = BRepOffsetAPI_MakeOffset(wire_or_face,joinType)
         offset.Perform(offsetDistance, altitude)
-        return ST(offset.Shape())
+        if offset.IsDone():
+            return ST(offset.Shape())
+        else:
+            return None
     except RuntimeError('failed to offset shape'):
         return None
 
@@ -302,15 +370,18 @@ def make_draft(profile, vec):
     '''
     makes a finite prism
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeDraft
     return BRepOffsetAPI_MakeDraft()
 
 def make_filling(profile, vec):
     '''
     makes a n-sided patch from constraints
     '''
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakeFilling
     return BRepOffsetAPI_MakeFilling()
 
-def make_loft(elements, ruled=False, tolerance=TOLERANCE):
+def make_loft(elements, ruled=False, tolerance=TOLERANCE, continuity=GeomAbs_C2, check_compatibility=True):
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_ThruSections
     sections = BRepOffsetAPI_ThruSections(False, ruled, tolerance)
     for i in elements:
         if isinstance(i, TopoDS_Wire):
@@ -319,12 +390,18 @@ def make_loft(elements, ruled=False, tolerance=TOLERANCE):
             sections.AddVertex(i)
         else:
             raise TypeError('elements is a list of TopoDS_Wire or TopoDS_Vertex, found a %s fool' % ( i.__class__ ))
-    sections.CheckCompatibility(True)
+
+    sections.CheckCompatibility(check_compatibility)
+    sections.SetContinuity(continuity)
     sections.Build()
     with assert_isdone(sections, 'failed lofting'):
         te = ShapeToTopology()
         loft = te(sections.Shape())
         return loft
+
+def make_ruled(edgeA, edgeB):
+    from OCC.BRepFill import BRepFill_Face
+    return BRepFill_Face(edgeA, edgeB)
 
 #===============================================================================
 # ---CONVENIENCE---
@@ -352,8 +429,33 @@ def make_plane(center=gp_Pnt(0,0,0),
     return face
 
 
+def make_oriented_box(v_corner, v_x, v_y, v_z):
+    """
+    produces an oriented box
+    oriented meaning here that the x,y,z axis do not have to be cartesian aligned
+
+    :param v_corner: the lower corner
+    :param v_x: gp_Vec that describes the X-axis
+    :param v_y: gp_Vec that describes the Y-axis
+    :param v_z: gp_Vec that describes the Z-axis
+    :return: TopoDS_Solid
+    """
+    from OCC.BRepOffsetAPI import BRepOffsetAPI_MakePipe
+    verts = map(lambda x: x.as_pnt(), [v_corner, v_corner+v_x, v_corner+v_x+v_y, v_corner+v_y])
+    p = make_polygon(verts, closed=True)
+    li = make_line(v_corner.as_pnt(), (v_corner+v_z).as_pnt())
+    ooo = BRepOffsetAPI_MakePipe(p,li)
+    ooo.Build()
+    shp = ooo.Shape()
+
+    bottom = make_face(p)
+    top = translate_topods_from_vector(bottom, v_z, True)
+    oriented_bbox = make_solid(sew_shapes([bottom, shp, top]))
+    return oriented_bbox
+
+
 @wraps(BRepPrimAPI_MakeBox)
-def make_cube(*args):
+def make_box(*args):
     box = BRepPrimAPI_MakeBox(*args)
     box.Build()
     with assert_isdone(box, 'failed to built a cube...'):
@@ -401,25 +503,31 @@ def make_n_sided(edges, points, continuity=GeomAbs_C0):
     :param continuity: GeomAbs_0, 1, 2
     :return: TopoDS_Face
     """
-    n_sided = BRepFill_Filling()
-    n_sided.SetApproxParam(6, 40)
-    n_sided.SetResolParam(3, 20, 20, False)
+    from OCC.BRepFill import BRepFill_Filling
+    n_sided = BRepFill_Filling(NbIter=6)
+    #n_sided.SetApproxParam( 6, 40)
+    #n_sided.SetResolParam( 3, 20, 20, False)
     for edg in edges:
         n_sided.Add(edg, continuity)
     for pt in points:
         n_sided.Add(pt)
     n_sided.Build()
-    face  = n_sided.Face()
+    #if n_sided.IsDone():
+    face  = n_sided.Face()  
     return face
-
+    
 def make_n_sections(edges):
+    from OCC.TopTools import TopTools_SequenceOfShape
+    from OCC.BRepFill import BRepFill_NSections
     seq = TopTools_SequenceOfShape()
     for i in edges:
         seq.Append(i)
     n_sec = BRepFill_NSections(seq)
+    return n_sec
 
 
 def make_coons(edges):
+    from OCC.GeomFill import GeomFill_BSplineCurves, GeomFill_StretchStyle
     bt = BRep_Tool()
     if len(edges) == 4:
         spl1, spl2, spl3, spl4 = edges #[curve_to_bspline(bt.Curve(i)[0]) for i in edges]
@@ -436,10 +544,11 @@ def make_coons(edges):
 
 def make_constrained_surface_from_edges(edges):
     '''
-    
     DOESNT RESPECT BOUNDARIES
-    
     '''
+    from OCC.BRepAdaptor import BRepAdaptor_HCurve
+    from OCC.GeomPlate import GeomPlate_MakeApprox, GeomPlate_BuildPlateSurface
+    from OCC.BRepFill import BRepFill_CurveConstraint
     bpSrf = GeomPlate_BuildPlateSurface(3,15,2)
     for edg in edges:
         c = BRepAdaptor_HCurve()
@@ -480,7 +589,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
 #    sew = BRepBuilderAPI_Sewing(tolerance, True, True, True, False)
 #    sew = BRepBuilderAPI_Sewing(1e-3, True, False, False, False)
     sew = BRepBuilderAPI_Sewing(tolerance)
-    sew.SetFloatingEdgesMode(True)
+    # sew.SetFloatingEdgesMode(True)
     for shp in shapes:
         if isinstance(shp, list):
             for i in shp:
@@ -492,10 +601,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
     print 'n deleted faces:',sew.NbDeletedFaces()
     print 'n free edges',sew.NbFreeEdges()
     print 'n multiple edges:',sew.NbMultipleEdges()
-    
-    result = sew.SewedShape()
-#     ???
-#    sew.Delete()
+    result = ShapeToTopology()(sew.SewedShape())
     return result
 
 #===============================================================================
@@ -503,6 +609,7 @@ def sew_shapes( shapes, tolerance=0.001 ):
 #===============================================================================
 
 def boolean_cut(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
     try:
         cut = BRepAlgoAPI_Cut(shapeToCutFrom, cuttingShape)
         print 'can work?', cut.BuilderCanWork()
@@ -527,6 +634,7 @@ def boolean_cut(shapeToCutFrom, cuttingShape):
         return shapeToCutFrom
 
 def boolean_cut_old(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgo import BRepAlgo_Cut
     cut = BRepAlgo_Cut(shapeToCutFrom, cuttingShape)
     #cut.RefineEdges()
     #cut.FuseEdges()
@@ -534,6 +642,7 @@ def boolean_cut_old(shapeToCutFrom, cuttingShape):
     return shp
 
 def boolean_fuse(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
     join = BRepAlgoAPI_Fuse(shapeToCutFrom, joiningShape)
     join.RefineEdges()
     join.FuseEdges()
@@ -542,15 +651,35 @@ def boolean_fuse(shapeToCutFrom, joiningShape):
     return shape
 
 def boolean_fuse_old(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgo import BRepAlgo_Fuse
     join = BRepAlgo_Fuse(shapeToCutFrom, joiningShape)
     shape = join.Shape()
     join.Delete()
     return shape
 
+def splitter(shape, profile):
+    '''split a *shape* using a *profile*
+    :returns the splitted shape
+    '''
+    try:
+        from OCC.GEOMAlgo import GEOMAlgo_Splitter
+    except ImportError:
+        msg = "GEOM wrapper is necesary to access advanced constructs"
+        warnings.warn(msg)
+        return None
+    splitter = GEOMAlgo_Splitter()
+    splitter.AddShape(shape)
+    splitter.AddTool(profile)
+    splitter.Perform()
+    splitter_shape = splitter.Shape()
+    return splitter_shape
+
+
 def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
     '''return the trimmed wire that lies between `shapeLimit1` and `shapeLimit2`
     returns TopoDS_Edge
     '''
+
     adap = to_adaptor_3d(wire)
     bspl = adap.BSpline()
     if periodic:
@@ -571,6 +700,7 @@ def trim_wire(wire, shapeLimit1, shapeLimit2, periodic=False):
 #===============================================================================
 
 def fix_shape(shp, tolerance=1e-3):
+    from OCC.ShapeFix import ShapeFix_Shape
     te = ShapeToTopology()
     fix = ShapeFix_Shape(shp)
     fix.SetFixFreeShellMode(True)
@@ -581,6 +711,7 @@ def fix_shape(shp, tolerance=1e-3):
     return fix.Shape()
 
 def fix_face(shp, tolerance=1e-3):
+    from OCC.ShapeFix import ShapeFix_Face
     fix = ShapeFix_Face(shp)
     fix.SetMaxTolerance(tolerance)
     fix.Perform()
@@ -596,12 +727,14 @@ def translate_topods_from_vector(brep_or_iterable, vec, copy=False):
     @param vec:     the vector defining the translation
     @param copy:    copies to brep if True
     '''
+    from OCC.KBE.types_lut import ShapeToTopology
+    st = ShapeToTopology()
     trns = gp_Trsf()
     trns.SetTranslation(vec)
     if issubclass(brep_or_iterable.__class__, TopoDS_Shape):
         brep_trns = BRepBuilderAPI_Transform(brep_or_iterable, trns, copy)
         brep_trns.Build()
-        return brep_trns.Shape()
+        return st(brep_trns.Shape())
     else:
         return  [translate_topods_from_vector(brep_or_iterable, vec, copy) for i in brep_or_iterable]
 
@@ -691,14 +824,55 @@ def face_normal(face):
     return norm
 
 def face_from_plane(_geom_plane, lowerLimit=-1000, upperLimit=1000):
+    from OCC.Geom import Geom_RectangularTrimmedSurface
     _trim_plane = make_face( Geom_RectangularTrimmedSurface(_geom_plane.GetHandle(), lowerLimit, upperLimit, lowerLimit, upperLimit).GetHandle() )
     return _trim_plane
 
-def find_plane_from_shape(shape, tolerance=TOLERANCE):
+def find_plane_from_shape(shape, tolerance=-1):
     try:
-        return BRepBuilderAPI_FindPlane(shape, tolerance).Plane().GetObject()
+        fpl = BRepBuilderAPI_FindPlane(shape, tolerance)
+        if fpl.Found():
+            return fpl.Plane().GetObject()
+        else:
+            return None
     except:
         raise AssertionError('couldnt find plane in %s' % (shape))
+
+def fit_plane_through_face_vertices(_face):
+    """
+    :param _face:   OCC.KBE.face.Face instance
+    :return:        Geom_Plane
+    """
+    from OCC.GeomPlate import GeomPlate_BuildAveragePlane
+    from OCC.Utils.Topology import Topo
+
+
+    uvs_from_vertices = [_face.project_vertex(vertex2pnt(i)) for i in Topo(_face).vertices()]
+    normals = [gp_Vec(_face.DiffGeom.normal(*uv[0])) for uv in uvs_from_vertices]
+    points = [i[1] for i in uvs_from_vertices]
+
+    NORMALS = TColgp_SequenceOfVec()
+    [NORMALS.Append(i) for i in normals]
+    POINTS = to_tcol_(points, TColgp_HArray1OfPnt)
+
+    pl = GeomPlate_BuildAveragePlane(NORMALS, POINTS).Plane().GetObject()
+    vec = gp_Vec(pl.Location(), _face.GlobalProperties.centre())
+    pt = (pl.Location().as_vec() + vec).as_pnt()
+    pl.SetLocation(pt)
+    return pl
+
+def project_edge_onto_plane(edg, plane):
+    """
+    p'bably BRepOffsetAPI_NormalProjection would be a good option too, it expects
+
+    :param edg:     kbe.edge.Edge
+    :param plane:   Geom_Plane
+    :return:        TopoDS_Edge projected on the plane
+    """
+    from OCC.GeomProjLib import GeomProjLib_ProjectOnPlane
+    proj = GeomProjLib_ProjectOnPlane(edg.adaptor.Curve().Curve(), plane.GetHandle(), plane.Axis().Direction(), 1 )
+    return make_edge(proj)
+
 
 def curve_to_bspline(crv_handle, tolerance=TOLERANCE, continuity=GeomAbs_C1, sections=300, degree=12):
     approx_curve = GeomConvert_ApproxCurve(crv_handle, tolerance, continuity, sections, degree)
@@ -714,7 +888,43 @@ def compound(topo):
     comp = TopoDS_Compound()
     bd.MakeCompound(comp)
     for i in topo:
-        print i
         bd.Add(comp,i)
     return comp
 
+def geodesic_path(pntA, pntB, edgA, edgB, kbe_face, n_segments=20, _tolerance=0.1, n_iter=20):
+    """
+    :param pntA:        point to start from
+    :param pntB:        point to move towards
+    :param edgA:        edge to start from
+    :param edgB:        edge to move towards
+    :param kbe_face:    kbe.face.Face on which `edgA` and `edgB` lie
+    :param n_segments:  the number of segments the geodesic is built from
+    :param _tolerance:  tolerance when the geodesic is converged
+    :param n_iter:      maximum number of iterations
+    :return:            TopoDS_Edge
+    """
+    from OCC.Utils.Common import smooth_pnts
+    uvA, srf_pnt_A = kbe_face.project_vertex(pntA)
+    uvB, srf_pnt_B = kbe_face.project_vertex(pntB)
+
+    path = []
+    for i in range(n_segments):
+        t = i / float(n_segments)
+        u = uvA[0] + t*(uvB[0] - uvA[0])
+        v = uvA[1] + t*(uvB[1] - uvA[1])
+        path.append(kbe_face.parameter_to_point(u,v))
+
+    project_pnts = lambda x: [kbe_face.project_vertex(i)[1] for i in x]
+    poly_length = lambda x: sum([x[i].Distance(x[i+1]) for i in range(len(x)-1)]) / len(x)
+
+    length = poly_length(path)
+
+    n = 0
+    while True:
+        path = smooth_pnts(path)
+        path = project_pnts(path)
+        newlength = poly_length(path)
+        if abs(newlength-length) < _tolerance or n == n_iter:
+            crv = points_to_bspline(path)
+            return make_edge(crv)
+        n+=1
