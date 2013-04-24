@@ -17,49 +17,56 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys,os, os.path
+import sys
+import os, os.path
 from OCC import VERSION
 
-#===============================================================================
-# TODO: resizing of the window is only performed on QT...
-#===============================================================================
 
-global USED_BACKEND
-USED_BACKEND = None
+def get_backend():
+    """
 
-def load_gui_toolkit():
-    # a little biase if you have traitsui, than lets use that backend
-    # Check PyQt4
+    loads a backend
+    backends are loaded in order of preference
+    since python comes with Tk included, but that PySide or PyQt4 is much preferred
+    ( which is a bias of the PythonOCC developers )
+
+    """
+
+    # Check PyQt
     try:
-        global QtCore, QtGui
         from PyQt4 import QtCore, QtGui
-        print 'using PyQt4 as SimpleGui toolkit'
-        return 'qt'
-    except Exception:
+        return 'pyqt4'
+    except:
         pass
 
-    # check wx
     try:
-        global wx
+        from PySide import QtCore, QtGui
+        return 'pyside'
+    except:
+        pass
+    # Check wxPython
+    try:
         import wx
-        print 'using wx as SimpleGui toolkit'
         return 'wx'
-    except Exception:
+    except:
         pass
 
-    # Check python-xlib
-    try:
-        global display_xlib, X
-        from Xlib import display as display_xlib, X
-        print 'using Xlib as SimpleGui toolkit'
-        return 'x'
-    except Exception:
-        raise AssertionError('No GUI toolkit found. you will need either PyQt4, wx, or Xlib. the latter is osx / linux only')
+    if sys.platform == 'darwin':
+        # Tk is not an option, since we on osx a modern Cocoa backend is required
+        raise ValueError("PythonOCC needs PySide of PyQt4 as a gui backend. wxPython 2.9, using cocoa is an option, but not recommended")
+
+    else:
+        # use Tk backend as a fall back...
+        # note, this is X11 territory, so no go area for osx... since this relies on the Cocoa backend
+        try:
+            import Tkinter
+            return 'tkinter'
+        except:
+            raise ValueError("No compliant GUI library found. You must have either PySide, PyQt4, wxPython or Tkinter installed.")
+            sys.exit(1)
 
 def get_bg_abs_filename():
-    '''
-    returns the absolute file name for the file default_background.bmp
-    :raises: NameError when the file is not found
+    ''' Returns the absolute file name for the file default_background.bmp
     '''
     occ_package = sys.modules['OCC']
     bg_abs_filename = os.path.join(occ_package.__path__[0],'Display','default_background.bmp')
@@ -68,28 +75,27 @@ def get_bg_abs_filename():
     else:
         return bg_abs_filename
 
-def safe_yield():
-    global USED_BACKEND
+def safe_yield(USED_BACKEND):
     if USED_BACKEND == 'wx':
+        import wx
         wx.SafeYield()
-    elif USED_BACKEND == 'qt':
-        # this bit of magic allows for an interactive viewer
-        # while debugging with pdb.set_trace()
-        # I love it!
+    elif USED_BACKEND == 'pyqt4':
+        from PyQt4 import QtGui
+        #QtCore.processEvents()
         QtGui.QApplication.processEvents()
-            
-def init_display(screenX=1024, screenY=768):
-    """
-    initializes the display
-    
-    :param screenX: screen resolution y axis
-    :param screenY: screen resolution y axis
-    :return: OCCViewer.Viewer3d instance
-    """
-    global display, add_menu, add_function_to_menu, start_display, app, win, USED_BACKEND
-    USED_BACKEND = load_gui_toolkit()
+    elif USED_BACKEND == 'pyside':
+        from PySide import QtGui
+        #QtCore.processEvents()
+        QtGui.QApplication.processEvents()
+
+def init_display():
+    global display, add_menu, add_function_to_menu, start_display, app, win
+
+    USED_BACKEND = get_backend()
+
     # wxPython based simple GUI
     if USED_BACKEND == 'wx':
+        import wx
         from wxDisplay import wxViewer3d
         
         class AppFrame(wx.Frame):
@@ -118,8 +124,7 @@ def init_display(screenX=1024, screenY=768):
         wx.InitAllImageHandlers()
         win = AppFrame(None)
         win.Show(True)
-        #wx.SafeYield()
-        wx.Yield()
+        wx.SafeYield()
         win.canva.InitDriver()
         app.SetTopWindow(win)
         display = win.canva._display
@@ -132,27 +137,55 @@ def init_display(screenX=1024, screenY=768):
             app.MainLoop()
         
     # PyQt based simple GUI
-    elif USED_BACKEND == 'qt':
+    elif USED_BACKEND == 'pyqt4' or USED_BACKEND=='pyside':
+
+        # dont really get why its nessecary to import yet again... sigh...
+        if USED_BACKEND == "pyqt4":
+            from PyQt4 import QtGui, QtCore
+        else:
+            from PySide import QtGui, QtCore
+
         from qtDisplay import qtViewer3d
         class MainWindow(QtGui.QMainWindow):
             def __init__(self, *args):
                 apply(QtGui.QMainWindow.__init__,(self,)+args)
                 self.canva = qtViewer3d(self)
                 self.setWindowTitle("pythonOCC-%s 3d viewer ('qt' backend)"%VERSION)
-                self.resize(screenX,screenY)
+                self.resize(1024,768)
                 self.setCentralWidget(self.canva)
-                self.menuBar = self.menuBar()
+                if not sys.platform == 'darwin':
+                    self.menu_bar = self.menuBar()
+                else:
+                    # create a parentless menubar
+                    # see: http://stackoverflow.com/questions/11375176/qmenubar-and-qmenu-doesnt-show-in-mac-os-x?lq=1
+                    # noticeable is that the menu ( alas ) is created in the topleft of the screen, just
+                    # next to the apple icon
+                    # still does ugly things like showing the "Python" menu in bold
+                    self.menu_bar = QtGui.QMenuBar()
                 self._menus = {}
                 self._menu_methods = {}
+                # place the window in the center of the screen, at half the screen size
+                self.centerOnScreen()
+
+            def centerOnScreen (self):
+                '''Centers the window on the screen.'''
+                resolution = QtGui.QDesktopWidget().screenGeometry()
+                self.move(
+                            (resolution.width() / 2) - (self.frameSize().width() / 2),
+                            (resolution.height() / 2) - (self.frameSize().height() / 2)
+                )
 
             def add_menu(self, menu_name):
-                _menu = self.menuBar.addMenu("&"+menu_name)
+                _menu = self.menu_bar.addMenu("&"+menu_name)
                 self._menus[menu_name]=_menu
                 
             def add_function_to_menu(self, menu_name, _callable):
                 assert callable(_callable), 'the function supplied is not callable'
                 try:
                     _action = QtGui.QAction(_callable.__name__.replace('_', ' ').lower(), self)
+                    # if not, the "exit" action is now shown...
+                    # Qt is trying so hard to be native cocoa'ish that its a nuisance
+                    _action.setMenuRole(QtGui.QAction.NoRole)
                     self.connect(_action, QtCore.SIGNAL("triggered()"), _callable)
                     self._menus[menu_name].addAction(_action)
                 except KeyError:
@@ -168,34 +201,31 @@ def init_display(screenX=1024, screenY=768):
         def add_function_to_menu(*args, **kwargs):
             win.add_function_to_menu(*args, **kwargs)
         def start_display():
+            win.raise_() # make the application float to the top
             app.exec_()
-        #app.exec_()
-    # python-xlib based simple GUI
-    elif USED_BACKEND == 'x':
-        from XDisplay import XOCCWindow
-        win = XOCCWindow(display_xlib.Display(),"pythonOCC-%s 3d viewer ('python-xlib' backend)"%VERSION)
-        display = win.occviewer
-        # set background image
-        display.SetBackgroundImage(get_bg_abs_filename())
+
+    elif USED_BACKEND == 'Tk':
+        import Tkinter
+        from tkDisplay import tkViewer3d
+        app = Tkinter.Tk()
+        win = tkViewer3d(app)
+        win.InitDriver()
+        display = win._display
+        def start_display():
+            app.mainloop()
         def add_menu(*args, **kwargs):
-            print args#pass#frame.add_menu(*args, **kwargs)
-        def add_function_to_menu(menu_title, function):
-            #print args
-            win.register_function(function)#functions.append(args[1])#pass#frame.add_function_to_menu(*args, **kwargs)
-        def start_display():        
-            win.MainLoop()
-    else:
-        print "No compliant GUI library found. You must have either wxPython, PyQt or python-xlib installed."
-        sys.exit(0)
+            pass
+        def add_function_to_menu(*args, **kwargs):
+            pass
     return display, start_display, add_menu, add_function_to_menu
     
 if __name__ == '__main__':
     init_display()
     from OCC.BRepPrimAPI import *
     def sphere(event=None):
-        display.DisplayShape(BRepPrimAPI_MakeSphere(1).Shape())        
+        display.DisplayShape(BRepPrimAPI_MakeSphere(1).Shape(), update=True)
     def cube(event=None):
-        display.DisplayShape(BRepPrimAPI_MakeBox(1,1,1).Shape())        
+        display.DisplayShape(BRepPrimAPI_MakeBox(1,1,1).Shape(), update=True)
     def exit(event=None):
         sys.exit()    
     add_menu('primitives')
