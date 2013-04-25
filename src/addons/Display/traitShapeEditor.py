@@ -19,24 +19,28 @@
 # Draft implementation of a custom editor for Enthought Traits GUI,
 # simply assign the editor to a Traited list of Topo_DS shapes and off you go.
 
-__author__ = 'Henrik Rudstrom'
 
-from enthought.traits.has_traits import HasTraits
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
-from enthought.traits.trait_types import Any, Button, List, Instance, Str, Bool
-from enthought.traits.ui.editor import Editor
-from enthought.traits.ui.editor_factory import EditorFactory
 from itertools import izip
+import random, os
+
+try:
+    if os.environ["ETS_TOOLKIT"] == "wx":
+        print "ETS_TOOLKIT variable has been set to wx, though this example explicitly uses the Qt backed\
+        setting the backend to Qt4..."
+except KeyError:
+    pass
+
+os.environ["ETS_TOOLKIT"] = "qt4"
+# abstracts PyQt4 and PySide
+from pyface.qt import QtGui
+
+from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+from traitsui.api import Item, View, EditorFactory, Editor
 from OCC.gp import gp_Trsf, gp_Vec
 from OCC.TopLoc import TopLoc_Location
 from OCC.Display.qtDisplay import qtViewer3d
 from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
 from OCC.Display import OCCViewer
-from OCC import PAF
-import OCC
-import random
-from PyQt4 import Qt
 
 class TraitOCCViewer3d(OCCViewer.Viewer3d):
     '''
@@ -55,6 +59,7 @@ class TraitOCCViewer3d(OCCViewer.Viewer3d):
             ais = OCCViewer.Viewer3d.DisplayShape(self, shapes, **kwargs)
             self.ShapeMap[shapes] = ais
 
+
     def EraseShape(self, shape):
         if shape not in self.ShapeMap:
              raise Exception("shape not in shapemap")
@@ -69,7 +74,7 @@ class OCCTraitViewer(qtViewer3d):
         self.editor = editor
         
         self._initialized = False
-        self.setSizePolicy(Qt.QSizePolicy(Qt.QSizePolicy.Expanding, Qt.QSizePolicy.Expanding));
+        self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding));
         self.setMinimumHeight(100)
         self.setMinimumWidth(150)
         
@@ -110,7 +115,7 @@ class OCCEditor(Editor):
     selection = List(Any)
     display = Instance(OCCViewer)
     initialized = Bool
-    
+
     def init ( self, parent):
         self.control = OCCTraitViewer(self, self.selection)
         self.sync_value(self.name, 'shapes', 'both', is_list=True)
@@ -118,12 +123,23 @@ class OCCEditor(Editor):
             self.sync_value(self.factory.selection, 'selection', 'both', is_list=True)
         if self.factory.display:
             self.sync_value(self.factory.display, 'display', 'both')
-    
+
+    def set_size_policy(self, *args, **kwargs):
+        """
+        no idea what it does, but is called...
+        i guess should give some hints...
+
+        :param args:
+        :param kwargs:
+        """
+        pass
+
     def _shapes_changed(self, name, nothing, change):
         '''update shapes when list is replaced'''
         self.control._display.EraseAll()
         for s in change:
             self.control._display.DisplayShape(s)
+        self.control._display.FitAll()
             
     def _shapes_items_changed(self, name, nothing, change):
         '''update display when the list is modified'''
@@ -131,6 +147,7 @@ class OCCEditor(Editor):
             self.control._display.DisplayShape(s)
         for s in change.removed:
             self.control._display.EraseShape(s)
+        self.control._display.FitAll()
 
 
 
@@ -179,8 +196,16 @@ if __name__ == '__main__':
                 self.shapes.append(brep)
      
         def _remove_stuff_changed(self, old, new):
-            for shape in self.selection:
-                self.shapes.remove(shape)
-                
-                
+            if len(self.selection) >= 1:
+                for shape in self.selection:
+                    self.shapes.remove(shape)
+                self.selection = []
+            else:
+                print "nothing selected so removing an arbitrary number of shapes"
+                for i in range(random.randint(1, 8)):
+                    if len(self.shapes) > 0:
+                        self.shapes.pop()
+                    else:
+                        print "you should add some if you want me to remove stuff..."
+
     Example(shapes=[]).configure_traits()
