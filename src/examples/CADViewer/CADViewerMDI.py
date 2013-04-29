@@ -32,7 +32,7 @@ class ViewerFrame(wx.MDIChildFrame):
         extension = os.path.basename(filename).split(".").pop().lower()
         start_time = time.time()
         if extension =="step" or extension == "stp":
-            from OCC.Utils.DataExchange.STEP import STEPImporter
+            from OCC.DataExchange.STEP import STEPImporter
             stepReader = STEPImporter(str(filename))
             stepReader.read_file()
             shape = stepReader.get_shapes()

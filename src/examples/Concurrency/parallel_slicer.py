@@ -16,7 +16,7 @@ else:
    import processing
 
 def get_brep():
-    from OCC.Utils.DataExchange.utils import file_to_shape
+    from OCC.DataExchange.utils import file_to_shape
     pth = os.path.split(os.path.abspath(__file__))[0]
     pth = os.path.abspath( os.path.join(pth, '../../../../data/_3dmodels/Pump_Bottom.brep') )
     return file_to_shape(pth)

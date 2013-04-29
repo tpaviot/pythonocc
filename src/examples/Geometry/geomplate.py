@@ -35,7 +35,7 @@ from OCC.GeomLProp import *
 import types, sys, time
 
 from OCC.Display.SimpleGui import init_display
-from OCC.Utils.DataExchange.IGES import IGESImporter
+from OCC.DataExchange.IGES import IGESImporter
 from OCC.BRepFill import *
 from OCC.GeomPlate import *
 from OCC.GEOMAlgo import *
