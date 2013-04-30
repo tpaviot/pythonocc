@@ -1,11 +1,9 @@
-from .base import KbeObject, GlobalProperties
-from .face import Face
-from .wire import Wire
-
 from OCC.TopoDS import TopoDS_Shell
-
 from OCC.Utils.Topology import Topo
 
+from base import KbeObject, GlobalProperties
+from face import Face
+from wire import Wire
 
 class DressUp(object):
     def __init__(self, instance):
@@ -35,7 +33,6 @@ class DressUp(object):
         '''chamfers the face incident on edge at a given distance
         '''
         pass
-
 
 class Shell(KbeObject, TopoDS_Shell):
     _n = 0
@@ -73,4 +70,3 @@ class Shell(KbeObject, TopoDS_Shell):
 
     def Edges(self):
         return Topo(self, True).edges()
-

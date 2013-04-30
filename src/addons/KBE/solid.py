@@ -1,7 +1,8 @@
 from OCC.TopoDS import TopoDS_Solid
+from OCC.Utils.Topology import Topo
+
 from base import GlobalProperties, KbeObject
 from shell import Shell
-from OCC.Utils.Topology import Topo
 
 
 class Solid(KbeObject, TopoDS_Solid):
@@ -13,17 +14,9 @@ class Solid(KbeObject, TopoDS_Solid):
         self.GlobalProperties = GlobalProperties(self)
         self.DressUp = DressUp(self)
 
-
-#    def parameter_to_coordinate(self, coord):
-#        '''
-#        returns the index of the face closest to the world coordinate `coord`
-#        '''
-#        raise NotImplementedError
-
     #===============================================================================
     #    Solid.boolean
     #===============================================================================
-
     def add(self, other_solid):
         '''adds another_solid to self
         '''
@@ -51,4 +44,3 @@ class Solid(KbeObject, TopoDS_Solid):
         '''descriptor of the parameter controlling the precision of the tesselation
         '''
         raise NotImplementedError
-

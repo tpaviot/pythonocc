@@ -1,22 +1,11 @@
-from OCC.BRep import BRep_Tool_Surface
+from OCC.BRep import BRep_Tool_Surface, BRep_Tool
 from OCC.BRepIntCurveSurface import BRepIntCurveSurface_Inter
-from OCC.BRepTools import BRepTools
 from OCC.BRepTopAdaptor import BRepTopAdaptor_FClass2d
 from OCC.Geom import Geom_Curve
 from OCC.GeomAPI import GeomAPI_ProjectPointOnSurf
 from OCC.GeomLib import GeomLib_IsPlanarSurface
 from OCC.TopAbs import TopAbs_IN
 from OCC.TopExp import TopExp
-
-__author__ = 'localadmin'
-#===============================================================================
-#    Surface.local_properties
-#    curvature, tangency etc.
-#===============================================================================
-from OCC.KBE.base import Display, KbeObject, GlobalProperties
-from OCC.KBE.edge import Edge
-from OCC.Utils.Construct import *
-from OCC.BRep import  BRep_Tool
 from OCC.TopoDS import  *
 from OCC.GeomLProp import GeomLProp_SLProps
 from OCC.BRepCheck import BRepCheck_Face
@@ -26,8 +15,12 @@ from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.IntTools import IntTools_FaceFace
 from OCC.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.GeomProjLib import GeomProjLib
-from OCC.Utils.Topology import Topo, WireExplorer
+from OCC.Adaptor3d import Adaptor3d_IsoCurve
 
+from OCC.KBE.base import Display, KbeObject, GlobalProperties
+from OCC.KBE.edge import Edge
+from OCC.Utils.Construct import *
+from OCC.Utils.Topology import Topo, WireExplorer
 
 '''
 
@@ -43,7 +36,6 @@ frenet frame
 
 
 '''
-
 
 class DiffGeomSurface(object):
     def __init__(self, instance):
@@ -170,11 +162,9 @@ class DiffGeomSurface(object):
         """
         pass
 
-
 #===============================================================================
 #    Surface.intersect
 #===============================================================================
-
 class IntersectSurface(object):
     def __init__(self, instance):
         self.instance = instance
@@ -253,12 +243,6 @@ class Face(KbeObject, TopoDS_Face):
 
         def v_continuity  (self):
             return self.adaptor.VContinuity()
-
-        # mehhh RuntimeError...
-        #def nb_u_knots     = self.adaptor.NbUKnots
-        #def nb_v_knots     = self.adaptor.NbVKnots
-        #def nb_u_poles     = self.adaptor.NbUPoles
-        #def nb_v_poles     = self.adaptor.NbVPoles
 
     def domain(self):
         '''the u,v domain of the curve
@@ -342,7 +326,7 @@ class Face(KbeObject, TopoDS_Face):
         :return: bool, gp_Pln
         '''
         aaa = GeomLib_IsPlanarSurface(self.surface_handle, tol)
-        return aaa.IsPlanar()# , aaa.Plan()
+        return aaa.IsPlanar()
 
     def is_trimmed(self):
         """
@@ -350,8 +334,6 @@ class Face(KbeObject, TopoDS_Face):
         if this is not the case, the wire represents a contour that delimits the face [ think cookie cutter ]
         and implies that the surface is trimmed
         """
-        #if not(BRep_Tool().NaturalRestriction(self)):
-        #    return True
         _round = lambda x: round(x,3)
         a = map(_round, BRepTools_UVBounds(self))
         b = map(_round, self.adaptor.Surface().Surface().GetObject().Bounds())
@@ -361,7 +343,6 @@ class Face(KbeObject, TopoDS_Face):
         return False
 
     def is_overlapping(self, other):
-        #import ipdb; ipdb.set_trace()
         overlap = IntTools_FaceFace()
 
 
@@ -427,12 +408,6 @@ class Face(KbeObject, TopoDS_Face):
         if isinstance(pnt, TopoDS_Vertex):
             pnt = BRep_Tool.Pnt(pnt)
 
-        #print "from OCC.ShapeAnalysis import ShapeAnalysis_Surface"
-#        from OCC.ShapeAnalysis import ShapeAnalysis_Surface
-#
-#        ssa = ShapeAnalysis_Surface(self.surface_handle)
-#        ssa.NextValueOfUV()
-
         proj = GeomAPI_ProjectPointOnSurf(pnt, self.surface_handle, tol)
         uv = proj.LowerDistanceParameters()
         proj_pnt = proj.NearestPoint()
@@ -457,14 +432,6 @@ class Face(KbeObject, TopoDS_Face):
             return self.project_curve(self, self.adaptor)
         return self.project_curve(self, to_adaptor_3d(edg))
 
-#    def iso_curve(self, u_or_v, param):
-#        """
-#        :return: an iso curve at parameter `param`
-#        :param u_or_v: "u" or "v"
-#        :param param:  the parameter where the iso curve lies
-#        """
-#        pass
-
     def iso_curve(self, u_or_v, param):
         """
         get the iso curve from a u,v + parameter
@@ -472,7 +439,6 @@ class Face(KbeObject, TopoDS_Face):
         :param param:
         :return:
         """
-        from OCC.Adaptor3d import Adaptor3d_IsoCurve
         uv = 0 if u_or_v == 'u' else 1
         # TODO: REFACTOR, part of the Face class now...
         iso = Adaptor3d_IsoCurve(self.adaptor_handle.GetHandle(), uv, param)
@@ -488,10 +454,6 @@ class Face(KbeObject, TopoDS_Face):
         return self.__repr__()
 
 if __name__ == "__main__":
-
     from OCC.BRepPrimAPI import BRepPrimAPI_MakeSphere
     sph = BRepPrimAPI_MakeSphere(1,1).Face()
     fc = Face(sph)
-
-
-

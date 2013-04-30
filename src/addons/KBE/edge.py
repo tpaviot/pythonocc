@@ -1,17 +1,9 @@
-from OCC.BRep import BRep_Tool
 from OCC.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_HCurve
 from OCC.GCPnts import  GCPnts_UniformAbscissa
 from OCC.Geom import Geom_OffsetCurve, Geom_TrimmedCurve
-from OCC.KBE.base import KbeObject
 from OCC.TopExp import TopExp
 from OCC.TopoDS import  TopoDS_Edge, TopoDS_Vertex, TopoDS_Face
 from OCC.gp import *
-# high-level
-from OCC.Utils.Common import vertex2pnt, minimum_distance
-from OCC.Utils.Construct import make_edge, fix_continuity
-from OCC.Utils.Context import assert_isdone
-from OCC.KBE.vertex import Vertex
-from OCC.KBE.types_lut import geom_lut
 from OCC.GeomLProp import GeomLProp_CurveTool
 from OCC.BRepLProp import BRepLProp_CLProps
 from OCC.GeomLib import GeomLib
@@ -19,6 +11,14 @@ from OCC.GCPnts import GCPnts_AbscissaPoint
 from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
 from OCC.ShapeAnalysis import ShapeAnalysis_Edge
 from OCC.BRep import *
+
+# high-level
+from OCC.Utils.Common import vertex2pnt, minimum_distance
+from OCC.Utils.Construct import make_edge, fix_continuity
+from OCC.Utils.Context import assert_isdone
+from OCC.KBE.vertex import Vertex
+from OCC.KBE.types_lut import geom_lut
+from OCC.KBE.base import KbeObject
 
 class IntersectCurve(object):
     def __init__(self, instance):
@@ -38,13 +38,9 @@ class IntersectCurve(object):
                 pnts.append(face_curve_intersect.Pnt())
             return pnts
 
-
-
-
 class DiffGeomCurve(object):
     def __init__(self, instance):
         self.instance = instance
-        #self._local_props = BRepLProp_CLProps(self.instance.adaptor, self.instance.degree(), self.instance.tolerance)
         self._local_props = BRepLProp_CLProps(self.instance.adaptor, 2, self.instance.tolerance)
         # initialize with random parameter: 0
 
@@ -65,7 +61,7 @@ class DiffGeomCurve(object):
         return pnt
 
     def curvature(self, u):
-        # UGLYYYYYYYYYYYY
+        # ugly
         self._curvature.SetParameter(u)
         return self._curvature.Curvature()
 
@@ -94,24 +90,6 @@ class DiffGeomCurve(object):
             self._curvature.Normal(ddd)
             return ddd
         except:
-#            gp_Vec d1u, d2u;
-
-#            Handle_Geom_Curve aCurv=aCertainCurve;
-#
-#            Standard_Real u=aCertainValue;
-#
-#            // get 1st and 2nd derivative in u
-#
-#            aCurv->D2(u, aPnt, d1u, d2u);
-#
-#            Standard_Real nu_dot = d1u.Dot(d2u)/d1u.Magnitude();
-#
-#            gp_Vec t_vec = d1u.Divided(d1u.Magnitude());
-#
-#            // compute the main normal (not the bi normal)
-#
-#            gp_Vec mainn = d2u-(nu_dot*t_vec);
-
             raise ValueError('no normal was found')
 
     def derivative(self, u, n):
@@ -131,12 +109,9 @@ class DiffGeomCurve(object):
     def points_from_tangential_deflection(self):
         pass
 
-
-
 #===============================================================================
 #    Curve.Construct
 #===============================================================================
-
 class ConstructFromCurve():
     def __init__(self, instance):
         self.instance = instance
@@ -189,9 +164,6 @@ class Edge(KbeObject, TopoDS_Edge):
 
         # GeomLProp object
         self._curvature = None
-        #self._local_properties()
-
-        # some aliasing of useful methods
 
     def is_closed(self):
         return self.adaptor.IsClosed()
@@ -219,7 +191,6 @@ class Edge(KbeObject, TopoDS_Edge):
 
     def nb_poles(self):
         return self.adaptor.NbPoles()
-
 
     @property
     def curve(self):
@@ -321,10 +292,6 @@ class Edge(KbeObject, TopoDS_Edge):
         @param lbound:
         @param ubound:
         '''
-#        if self.is_periodic:
-#            pass
-#        else:
-#            warnings.warn('the wire to be trimmed is not closed, hence cannot be made periodic')
         a,b = sorted([lbound,ubound])
         tr = Geom_TrimmedCurve(self.adaptor.Curve().Curve(), a,b).GetHandle()
         return Edge(make_edge(tr))
@@ -344,7 +311,6 @@ class Edge(KbeObject, TopoDS_Edge):
 #===============================================================================
 #    Curve.
 #===============================================================================
-
     def closest(self, other):
         return minimum_distance(self.brep, other)
 
@@ -428,19 +394,6 @@ class Edge(KbeObject, TopoDS_Edge):
         '''descriptor setting or getting the coordinate of a control point at indx'''
         raise NotImplementedError
 
-
-#    @property
-#    def periodic(self):
-#        return self.adaptor.IsPeriodic()
-#
-#    @periodic.setter
-#    def periodic(self, _bool):
-#        _bool = bool(_bool)
-#        if self.is_closed:
-#            self.adaptor.BSpline()
-#        else:
-#            raise warnings.warn('cannot set periodicity on a non-closed edge')
-
     def control_point(self, indx, pt=None):
         '''gets or sets the coordinate of the control point
         '''
@@ -455,15 +408,6 @@ class Edge(KbeObject, TopoDS_Edge):
     def __ne__(self, other):
         return not(self.__eq__(other))
 
-#    def __cmp__(self, other):
-#        return self.__eq__(other)
-
-#    def __contains__(self, item):
-#        print 'in list?'
-#        import ipdb; ipdb.set_trace()
-#        return 0
-#
-#
     def first_vertex(self):
         # TODO: should return Vertex, not TopoDS_Vertex
         return TopExp.FirstVertex(self)
@@ -584,8 +528,6 @@ class Edge(KbeObject, TopoDS_Edge):
         http://www.opencascade.org/org/forum/thread_1125/
         '''
         show = super(Edge, self).show()
-        #if not poles and not vertices and not knots:
-        #    show()
 
     def update(self, context):
         '''updates the graphic presentation when called

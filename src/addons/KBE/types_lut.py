@@ -32,56 +32,6 @@ class ShapeToTopology(object):
     def __getitem__(self, item):
         return self(item)
 
-#class ClassifyTopology(object):
-#    '''
-#    returns what type `topoType` is
-#
-#    const
-#
-#    @param topoType:
-#
-#    fundamental types to inherit from:
-#        TopoDS_Shape
-#        Adaptor3d_Curve
-#        Adaptor2d_Curve2d
-#        #gce_root
-#
-#    '''
-#    def __init__(self):
-#        '''
-#        constructs a lookup of all (reasonbly) possible geometric OCC types
-#        '''
-#        self.topoTypes = [TopoDS_Vertex,]
-#
-#        self.adaptorTypes =[]
-#        self.gpTypes = []
-#
-#        self.topo_lookup    = TopologyTypeLookup()
-#        self.adaptor_lookup = AdaptorTypeLookup()
-#        self.gp_lookup      = GpTypeLookup()
-#
-#        from OCC import TopoDS, gp, Adaptor2d, Adaptor3d
-#
-#    def __getitem__(self, other):
-#        for i in _possible:
-#            if isinstance(topoType, i):
-#                return i
-#
-#    def is_adaptor_curve_type(self, other):
-#        issubclass(other.__class__, Adaptor2d_Curve2d) or isinstance(other.__class__, Adaptor3d_Curve)
-#
-#    def is_adaptor_surface_type(self, other):
-#        issubclass(other.__class__, Adaptor3d_Surface)
-#
-#    def is_adaptor_type(self, other):
-#        return True if self.is_adaptor_curve_type(other) or  self.is_adaptor_surface_type(other) else False
-#
-#    def is_topods_type(self, other):
-#        issubclass(other.__class__, TopoDS_Shape)
-#
-#    def is_gp_type(self, other):
-#        return True if other.__class__.__name__.split('_')[0] == 'gp' or 'jajaja' else False
-
 class EnumLookup(object):
     """
     perform bi-directional lookup of Enums'...
@@ -215,4 +165,3 @@ def shape_is_cylinder(face):
         return False
     else:
         return True
-
