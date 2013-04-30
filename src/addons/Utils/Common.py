@@ -39,20 +39,21 @@ from __future__ import with_statement
 
 from OCC.Bnd import *
 from OCC.BRepBndLib import *
+from OCC.GCPnts import GCPnts_UniformDeflection
+from OCC.Geom import Handle_Geom_Curve
+from OCC.IntAna import IntAna_Int3Pln
+from OCC.ShapeFix import ShapeFix_ShapeTolerance
 from OCC.TColgp import *
-from OCC.TColGeom import *
 from OCC.TColStd import *
-from OCC.TCollection import *
 from OCC.BRepAdaptor import *
 from OCC.BRepAlgoAPI import *
 from OCC.GeomAPI import *
+from OCC.TopExp import TopExp
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
-from OCC.BRepOffsetAPI import *
 from OCC.TopoDS import *
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.types_lut import ShapeToTopology
-from OCC.Quantity import *
 from OCC.GProp import GProp_GProps
 from OCC.GeomAbs import *
 
@@ -86,16 +87,16 @@ def _Tcol_dim_1(li, _type):
     pts.thisown = False
     return pts
 
-def _Tcol_dim_2(li, _type):
-    '''function factory for 2-dimensional TCol* types'''
-    length_nested = len(li[0])-1
-    pts = _type(0, len(li)-1, 0, length_nested)
-    pts.thisown = False
-    return pts
-    for n1,i in enumerate(li):
-        for n2,j in enumerate(i):
-            pts.SetValue(n1,n2,j)
-    return pts
+# def _Tcol_dim_2(li, _type):
+#     '''function factory for 2-dimensional TCol* types'''
+#     length_nested = len(li[0])-1
+#     pts = _type(0, len(li)-1, 0, length_nested)
+#     pts.thisown = False
+#     return pts
+#     for n1,i in enumerate(li):
+#         for n2,j in enumerate(i):
+#             pts.SetValue(n1,n2,j)
+#     return pts
 
 def point_list_to_TColgp_Array1OfPnt(li):
     pts = TColgp_Array1OfPnt(0, len(li)-1)
@@ -363,8 +364,6 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
                                             planeC
                                     )
     pnt = intersection_planes.Value()
-    if show:
-        display.DisplayShape(make_vertex(pnt))
     return pnt
 
 #def split_edge(edge, pnt):
