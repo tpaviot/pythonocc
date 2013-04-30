@@ -248,7 +248,7 @@ class Face(KbeObject, TopoDS_Face):
         '''the u,v domain of the curve
         :return: UMin, UMax, VMin, VMax
         '''
-        return BRepTools.UVBounds(self)
+        return BRepTools_UVBounds(self)
 
     def mid_point(self):
         """
