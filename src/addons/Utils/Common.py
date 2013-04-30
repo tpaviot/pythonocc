@@ -150,6 +150,8 @@ def boolean_fuse(shapeToCutFrom, joiningShape):
     join.Destroy()
     return shape
 
+def color(r,g,b):
+    return Quantity_Color(r,g,b, Quantity_TOC_RGB)
 #===============================================================================
 # --- INTERPOLATION ---
 #===============================================================================
