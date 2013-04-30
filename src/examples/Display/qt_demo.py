@@ -17,14 +17,10 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from OCC.Display.SimpleGui import *
-set_backend('qt')
-display, start_display, add_menu, add_function_to_menu = init_display()
-
-#from OCC.Graphic3d import *
 from OCC.BRepPrimAPI import *
-#from OCC.Utils.Image import Texture
-#import os, os.path
+from OCC.Display.SimpleGui import *
+
+display, start_display, add_menu, add_function_to_menu = init_display('pyqt4')
 
 def simple_test(event=None):
     display.Test()
@@ -41,6 +37,4 @@ add_function_to_menu('qt tests',simple_cylinder)
 #
 # Display settings
 #
-display.View_Iso()
-display.FitAll()
 start_display()
