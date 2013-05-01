@@ -42,4 +42,5 @@ ts = TDF.TDF_TagSource()
 #
 # We'll add all shapes under this node in the label tree 
 #
-shape_root = ts.NewChild(root)
+# shape_root = ts.NewChild(root)
+shape_root = root.NewChild()
