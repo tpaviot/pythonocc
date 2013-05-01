@@ -1,6 +1,3 @@
-from __future__ import with_statement
-
-
 # -*- coding: iso-8859-1 -*-
 #! /usr/bin/python
 
@@ -37,29 +34,39 @@ from __future__ import with_statement
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
 
+import random
+
 from OCC.Bnd import *
 from OCC.BRepBndLib import *
-from OCC.GCPnts import GCPnts_UniformDeflection
-from OCC.Geom import Handle_Geom_Curve
-from OCC.IntAna import IntAna_Int3Pln
-from OCC.ShapeFix import ShapeFix_ShapeTolerance
 from OCC.TColgp import *
 from OCC.TColStd import *
 from OCC.BRepAdaptor import *
-from OCC.BRepAlgoAPI import *
 from OCC.GeomAPI import *
-from OCC.TopExp import TopExp
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 from OCC.TopoDS import *
 from OCC.Utils.Context import assert_isdone
 from OCC.KBE.types_lut import ShapeToTopology
+from OCC.Quantity import *
 from OCC.GProp import GProp_GProps
 from OCC.GeomAbs import *
+from OCC import Graphic3d
+
+
+#===============================================================================
+# No PythonOCC dependencies...
+#===============================================================================
+
+def roundlist(li, n_decimals=3):
+    return [round(i,n_decimals) for i in li]
+
+#===============================================================================
+# CONSTANTS
+#===============================================================================
 
 TOLERANCE = 1e-6
 
-def get_boundingbox(shape, tol=1e-12):
+def get_boundingbox(shape, tol=TOLERANCE, vec=False):
     '''
     :param shape: TopoDS_Shape such as TopoDS_Face
     :param tol: tolerance
@@ -68,16 +75,40 @@ def get_boundingbox(shape, tol=1e-12):
     bbox = Bnd_Box()
     bbox.SetGap(tol)
     #BRepBndLib_AddClose(shape, bbox)
-    BRepBndLib_Add(shape, bbox)
-    return bbox
+    tmp = BRepBndLib_Add(shape, bbox)
+    xmin, ymin, zmin, xmax, ymax, zmax = bbox.Get()
+    if vec is False:
+        return xmin, ymin, zmin, xmax, ymax, zmax
+    else:
+        return gp_Vec(xmin, ymin, zmin), gp_Vec( xmax, ymax, zmax )
+
+def smooth_pnts(pnts):
+    smooth = [pnts[0]]
+    for i in range(1, len(pnts)-1):
+        prev = pnts[i-1]
+        this = pnts[i]
+        next = pnts[i+1]
+        pt = (prev+this+next) / 3.0
+        smooth.append(pt)
+    smooth.append(pnts[-1])
+    return smooth
 
 #===============================================================================
 # Data type utilities
 #===============================================================================
 
+def color(r,g,b):
+    return Quantity_Color(r,g,b, Quantity_TOC_RGB)
+
 def to_string(_string):
     from OCC.TCollection import  TCollection_ExtendedString
     return TCollection_ExtendedString(_string)
+
+def to_tcol_(_list, type):
+    array = type(1, len(_list)+1)
+    for n,i in enumerate(_list):
+        array.SetValue(n+1,i)
+    return array.GetHandle()
 
 def _Tcol_dim_1(li, _type):
     '''function factory for 1-dimensional TCol* types'''
@@ -111,6 +142,7 @@ def point2d_list_to_TColgp_Array1OfPnt2d(li):
 # --- BOOLEAN OPERATIONS AS FUNCTIONS ---
 #===============================================================================
 def boolean_cut(shapeToCutFrom, cuttingShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Cut
     try:
         cut = BRepAlgoAPI_Cut(shapeToCutFrom, cuttingShape)
         print 'can work?', cut.BuilderCanWork()
@@ -143,6 +175,7 @@ def boolean_cut_old(shapeToCutFrom, cuttingShape):
     return shp
 
 def boolean_fuse(shapeToCutFrom, joiningShape):
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
     join = BRepAlgoAPI_Fuse(shapeToCutFrom, joiningShape)
     join.RefineEdges()
     join.FuseEdges()
@@ -150,8 +183,6 @@ def boolean_fuse(shapeToCutFrom, joiningShape):
     join.Destroy()
     return shape
 
-def color(r,g,b):
-    return Quantity_Color(r,g,b, Quantity_TOC_RGB)
 #===============================================================================
 # --- INTERPOLATION ---
 #===============================================================================
@@ -168,6 +199,7 @@ def filter_points_by_distance( list_of_point, distance=0.1):
             tmp.append(a)
     return tmp
     
+
 def points_to_bspline(pnts):
     '''
     
@@ -270,7 +302,6 @@ def random_vec():
     return gp_Vec(x,y,z)
 
 def random_colored_material_aspect():
-    from OCC import Graphic3d
     import random
     #asp = Graphic3d.Graphic3d_MaterialAspect()
     #cc = asp.Color()
@@ -283,12 +314,15 @@ def random_colored_material_aspect():
     return Graphic3d.Graphic3d_MaterialAspect(getattr(Graphic3d, color))
     #return asp
 
+def random_color():
+    return color(random.random(),random.random(),random.random())
 
 #===============================================================================
 # --- BUILD PATCHES ---
 #===============================================================================
 
 def common_vertex(edg1, edg2):
+    from OCC.TopExp import TopExp
     te = TopExp()
     vert = TopoDS_Vertex()
     if te.CommonVertex(edg1, edg2, vert):
@@ -313,8 +347,7 @@ def center_boundingbox(shape):
     @param shape: TopoDS_* instance
     returns a gp_Pnt instance 
     '''
-    bbox = get_boundingbox(shape, 1e-6)
-    xmin,ymin,zmin, xmax, ymax, zmax = bbox.Get()
+    xmin,ymin,zmin, xmax, ymax, zmax = get_boundingbox(shape, 1e-6)
     return midpoint(gp_Pnt(xmin,ymin,zmin), gp_Pnt(xmax,ymax,zmax))
 
 def point_in_boundingbox(solid, pnt, tolerance=1e-5):
@@ -347,7 +380,7 @@ def point_in_solid(solid, pnt, tolerance=1e-5):
     if _in_solid.State()==TopAbs_IN:
         return True,'in'
 
-def intersection_from_three_planes( planeA, planeB, planeC, show=False):
+def intersection_from_three_planes( planeA, planeB, planeC):
     '''
     intersection from 3 planes 
     accepts both Geom_Plane and gp_Pln
@@ -356,10 +389,11 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
     @param planeC:
     @param show:
     '''
-    planeA = planeA if not isinstance(planeA, gp_Pln) else planeA.Pln()
-    planeB = planeB if not isinstance(planeB, gp_Pln) else planeB.Pln()
-    planeC = planeC if not isinstance(planeC, gp_Pln) else planeC.Pln()
-    
+    from OCC.IntAna import IntAna_Int3Pln
+
+    planeA = planeA if not hasattr(planeA, 'Pln') else planeA.Pln()
+    planeB = planeB if not hasattr(planeB, 'Pln') else planeB.Pln()
+    planeC = planeC if not hasattr(planeC, 'Pln') else planeC.Pln()
 
     intersection_planes = IntAna_Int3Pln( planeA,
                                            planeB,
@@ -367,6 +401,30 @@ def intersection_from_three_planes( planeA, planeB, planeC, show=False):
                                     )
     pnt = intersection_planes.Value()
     return pnt
+
+def intersect_shape_by_line(topods_shape, line, low_parameter=0.0, hi_parameter=float("+inf")):
+    """
+    finds the intersection of a shape and a line
+
+    :param shape: any TopoDS_*
+    :param line: gp_Lin
+    :param low_parameter:
+    :param hi_parameter:
+
+    :return: a list with a number of tuples that corresponds to the number of intersections found
+    the tuple contains ( gp_Pnt, TopoDS_Face, u,v,w ), respectively the intersection point, the intersecting face
+    and the u,v,w parameters of the intersection point
+    :raise:
+    """
+    from OCC.IntCurvesFace import IntCurvesFace_ShapeIntersector
+    iii = IntCurvesFace_ShapeIntersector()
+    iii.Load(topods_shape, TOLERANCE)
+    iii.PerformNearest(line, low_parameter, hi_parameter)
+
+    with assert_isdone(iii, "failed to computer shape / line intersection"):
+        return (iii.Pnt(1), iii.Face(1), iii.UParameter(1), iii.VParameter(1), iii.WParameter(1))
+        # return [(iii.Pnt(i), iii.Face(i), iii.UParameter(i), iii.VParameter(i), iii.WParameter(i)) for i in range(1, iii.NbPnt()+1)]
+
 
 #def split_edge(edge, pnt):
 #    '''
@@ -405,6 +463,7 @@ def normal_vector_from_plane(plane, vec_length=1):
 # FIX
 #===============================================================================
 def fix_tolerance( shape, tolerance=TOLERANCE):
+    from OCC.ShapeFix import ShapeFix_ShapeTolerance
     ShapeFix_ShapeTolerance().SetTolerance(shape, tolerance)
     
 def fix_continuity(edge, continuity=1):
@@ -422,6 +481,7 @@ def resample_curve_with_uniform_deflection(curve, deflection=0.5, degreeMin=3, d
     @param curve: TopoDS_Wire, TopoDS_Edge, curve
     @param n_samples:
     '''
+    from OCC.GCPnts import GCPnts_UniformDeflection
     crv = to_adaptor_3d(curve)
     defl = GCPnts_UniformDeflection(crv, deflection)
     with assert_isdone(defl, 'failed to compute UniformDeflection'):
@@ -490,9 +550,9 @@ def minimum_distance(shp1, shp2):
     with assert_isdone(bdss, 'failed computing minimum distances'):
         min_dist = bdss.Value()
         min_dist_shp1, min_dist_shp2 = [],[]
-        for i in range(1,bdss.NbSolution()):
+        for i in range(1,bdss.NbSolution()+1):
             min_dist_shp1.append(bdss.PointOnShape1(i))
-            min_dist_shp1.append(bdss.PointOnShape2(i))
+            min_dist_shp2.append(bdss.PointOnShape2(i))
     return min_dist, min_dist_shp1, min_dist_shp2
 
 def vertex2pnt(vertex):
@@ -515,7 +575,7 @@ def to_adaptor_3d(curveType):
         return BRepAdaptor_Curve(curveType)
     elif issubclass(curveType.__class__, Geom_Curve):
         return GeomAdaptor_Curve(curveType.GetHandle())
-    elif isinstance(curveType, Handle_Geom_Curve):
+    elif hasattr(curveType, 'GetObject'):
         _crv = curveType.GetObject()
         if issubclass(_crv.__class__, Geom_Curve):
             return GeomAdaptor_Curve(curveType)
@@ -523,9 +583,27 @@ def to_adaptor_3d(curveType):
         raise TypeError('allowed types are Wire, Edge or a subclass of Geom_Curve\nGot a %s' % (curveType.__class__))
 
 def project_point_on_curve(crv, pnt):
+    if isinstance(crv, TopoDS_Shape):
+        # get the curve handle...
+        crv = adapt_edge_to_curve(crv).Curve().Curve()
+    else:
+        raise NotImplementedError('expected a TopoDS_Edge...')
     from OCC.GeomAPI import GeomAPI_ProjectPointOnCurve
     rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
     return rrr.LowerDistanceParameter(), rrr.NearestPoint()
+
+def project_point_on_plane( plane, point ):
+    '''
+    project point on plane
+    @param plane: Geom_Plane
+    @param point: gp_Pnt
+    '''
+    from OCC.ProjLib import ProjLib
+    pl = plane.Pln()
+    ppp = ProjLib()
+    aa, bb  = ppp.Project(pl, point).Coord()
+    point = plane.Value(aa,bb)
+    return point
 
 def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, max_order=12):
     '''
@@ -539,3 +617,15 @@ def wire_to_curve(wire, tolerance=TOLERANCE, order=GeomAbs_C2, max_segment=200, 
     approx = Approx_Curve3d(hadap.GetHandle(), tolerance, order, max_segment, max_order)
     with assert_isdone(approx, 'not able to compute approximation from wire'):
         return approx.Curve().GetObject()
+
+def adapt_edge_to_curve(edg):
+    '''
+    returns a curve adaptor from an edge
+    @param edg: TopoDS_Edge
+    '''
+    return BRepAdaptor_Curve(edg)
+
+def adapt_edge_to_hcurve(edg):
+    c = BRepAdaptor_HCurve()
+    c.ChangeCurve().Initialize(edg)
+    return c
