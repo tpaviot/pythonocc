@@ -43,7 +43,9 @@ class qtBaseViewer(QtGui.QWidget):
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
         self.setFocusPolicy(QtCore.Qt.WheelFocus)#Strong focus
+        # On X11, setting this attribute will disable all double buffering
         self.setAttribute(QtCore.Qt.WA_PaintOnScreen)
+        # setting this flag implicitly disables double buffering for the widget
         self.setAttribute(QtCore.Qt.WA_NoSystemBackground)
 
     def GetHandle(self):
@@ -81,6 +83,7 @@ class qtViewer3d(qtBaseViewer):
         def set_shade_mode():
             self._display.DisableAntiAliasing()
             self._display.SetModeShaded()
+
         self._key_map = {
                          ord('W'): self._display.SetModeWireFrame,
                          ord('S'): set_shade_mode,
@@ -91,7 +94,7 @@ class qtViewer3d(qtBaseViewer):
                          ord('F'): self._display.FitAll,
                          #ord('F'): self._display.ExportToImage("essai.BMP"),
                          #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
-                         ord('G'): self._display.SetSelectionModeVertex
+                         ord('G'): self._display.SetSelectionMode
                          }
 
     def keyPressEvent(self,event):
