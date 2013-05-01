@@ -79,8 +79,7 @@ class DynamicShape(ode.Body):
         self._space = self._parent_context.get_collision_space()
     
     def use_bounding_box(self):
-        bbox = get_boundingbox(self._shape, EPSILON)
-        xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
+        xmin,ymin,zmin, xmax,ymax,zmax  = get_boundingbox(self._shape, EPSILON)
         dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
         self._collision_geometry = ode.GeomBox(self._space, lengths=(dx,dy,dz))
         self._collision_geometry.setBody(self)
@@ -91,8 +90,7 @@ class DynamicShape(ode.Body):
         if the TopoDS_Shape is a sphere, then the radius of the ode.GeomSphere will be the radius
         of the sphere
         '''
-        bbox = get_boundingbox(self._shape, EPSILON)
-        xmin,ymin,zmin, xmax,ymax,zmax = bbox.Get()
+        xmin,ymin,zmin, xmax,ymax,zmax = get_boundingbox(self._shape, EPSILON)
         dx,dy,dz = xmax-xmin, ymax-ymin, zmax-zmin
         r = (dx+dy+dz)/6.# /3 gives the mean diameter, so divide by 2 for the radius
         self._collision_geometry = ode.GeomSphere(self._space, radius = r)
