@@ -35,7 +35,7 @@ display.DisplayShape(s.Shape(),material)
 #
 ax = gp_Ax2(gp_Pnt(0, 200, 0), gp_Dir(0, 0, 100))
 s = BRepPrimAPI_MakeCylinder(ax, 60, 200)
-display.DisplayShape(s.Shape())
+display.DisplayShape(s.Shape(), update=True)
 
 display.View_Iso()
 display.FitAll()

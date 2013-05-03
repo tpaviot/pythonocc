@@ -19,7 +19,6 @@
 
 from OCC.gp import *
 from OCC.AIS import *
-from OCC.TCollection import TCollection_ExtendedString
 from OCC.Utils.Construct import make_edge
 from OCC.Utils.Common import to_string
 

@@ -320,7 +320,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             raise ValueError('color should either be a string ( "BLUE" ) or a Quantity_Color(0.1, 0.8, 0.1) got %s' % color)
 
-        return  self.DisplayShape(shapes, color=clr)
+        return  self.DisplayShape(shapes, color=clr, update=update)
 
 
     def DisplayTriedron(self):

@@ -22,8 +22,7 @@ from OCC.Display.SimpleGui import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 
 from OCC.AIS import *
-from OCC.BRepPrimAPI import *
-from OCC.Utils.Topology import Topo
+from OCC.BRepPrimAPI import BRepPrimAPI_MakeBox
 
 #
 # Create a box
