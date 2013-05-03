@@ -17,6 +17,7 @@
 
 from OCC.Display.WebGl import webgl_renderer
 from OCC.BRepPrimAPI import *
+from OCC.BRepAlgoAPI import *
 from OCC.Utils.Construct import *
     
 def fuse(event=None):
