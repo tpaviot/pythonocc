@@ -29,9 +29,7 @@ from OCC.Utils.Construct import gp_Dir
 from OCC.KBE.types_lut import topo_lut
 import OCC.Visualization
 import OCC.V3d
-import OCC.V2d
 import OCC.AIS
-import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
@@ -53,7 +51,7 @@ modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_V
 
 class BaseDriver(object):
     """
-    The base driver class for both Driver2d and Driver3d classes
+    The base driver class
     """
     def __init__(self, window_handle):
         self._window_handle = window_handle
@@ -100,11 +98,7 @@ class BaseDriver(object):
         self.Context.SelectionColor(Quantity_NOC_ORANGE)
         
         # nessecary for text rendering
-        try:
-            self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
-        except AttributeError:
-            # Viewer2d doesnt have MainPrsMgr attr
-            pass
+        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
 
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
