@@ -34,6 +34,7 @@ from OCC.gp import *
 viewer_handle = display.GetViewer()
 viewer = viewer_handle.GetObject()
 
+
 #
 # First remove all lights from current viewer
 #

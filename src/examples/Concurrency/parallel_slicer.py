@@ -1,15 +1,10 @@
 from OCC.gp import *
-from OCC.BRepPrimAPI import *
 from OCC.BRepAlgoAPI import *
-from OCC.TopOpeBRepTool import *
 from OCC.BRepBuilderAPI import *
-from OCC.Geom import *
-from OCC.TopoDS import *
 
 from OCC.Display.SimpleGui import *
-display, start_display, add_menu, add_function_to_menu = init_display()
 
-import time, numpy, os, pickle, sys
+import time, numpy, os, sys
 if sys.version_info[:3] >= (2,6,0):
    import multiprocessing as processing
 else:
@@ -18,7 +13,7 @@ else:
 def get_brep():
     from OCC.DataExchange.utils import file_to_shape
     pth = os.path.split(os.path.abspath(__file__))[0]
-    pth = os.path.abspath( os.path.join(pth, '../../../../data/_3dmodels/Pump_Bottom.brep') )
+    pth = os.path.abspath( os.path.join(pth, '../../../data/_3dmodels/Pump_Bottom.brep') )
     return file_to_shape(pth)
 
 def vectorized_slicer( li ):
@@ -36,7 +31,6 @@ def vectorized_slicer( li ):
             _slices.append( section.Shape() )
         else:
             pass
-            #print 'damn it'
         section.Destroy()
         
     return _slices
@@ -46,8 +40,7 @@ from OCC.Utils.Common import get_boundingbox
 def run( n_procs, compare_by_number_of_processors=False ):
 
     shape = get_brep()
-    display.DisplayShape(shape)
-    x_min, y_min, z_min, x_max, y_max, z_max = get_boundingbox(shape).Get() 
+    x_min, y_min, z_min, x_max, y_max, z_max = get_boundingbox(shape)
     z_delta = abs( z_min - z_max )
 
     # compute bounding box!
@@ -108,10 +101,13 @@ def run( n_procs, compare_by_number_of_processors=False ):
     print '\n\n\n DONE SLICING ON %i CORES \n\n\n'%nprocs
     time.sleep(3)
     
-    for result_shp in _results:
-        print 'result_shp',result_shp
-        for i in result_shp:
-            display.DisplayShape(i, update=False)
+    # Display result
+    display, start_display, add_menu, add_function_to_menu = init_display()
+    print 'displaying original shape'
+    display.DisplayShape(shape)
+    for n, result_shp in enumerate(_results):
+        print 'displaying results from process {0}'.format(n)
+        display.DisplayShape(result_shp, update=True)
     
     # update viewer when all is added:
     display.Repaint()

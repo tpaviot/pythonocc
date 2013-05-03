@@ -20,7 +20,7 @@
 import os
 
 import sys
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtCore, QtGui, QtOpenGL
 import OCCViewer
 
 class point(object):
@@ -34,11 +34,11 @@ class point(object):
        self.x = obj.x()
        self.y = obj.y()
 
-class qtBaseViewer(QtGui.QWidget):
+class qtBaseViewer(QtOpenGL.QGLWidget):
     ''' The base Qt Widget for an OCC viewer
     '''
     def __init__(self, parent = None):
-        QtGui.QWidget.__init__(self,parent)
+        QtOpenGL.QGLWidget.__init__(self,parent)
         self._display = None
         self._inited = False
         self.setMouseTracking(True) #enable Mouse Tracking
@@ -54,6 +54,7 @@ class qtBaseViewer(QtGui.QWidget):
     def resizeEvent(self, event):
         if self._inited:
             self._display.OnResize()
+
     def paintEngine(self):
         return None
 
@@ -92,8 +93,6 @@ class qtViewer3d(qtBaseViewer):
                          ord('Q'): self._display.SetModeQuickHLR,
                          ord('E'): self._display.SetModeExactHLR,
                          ord('F'): self._display.FitAll,
-                         #ord('F'): self._display.ExportToImage("essai.BMP"),
-                         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
                          ord('G'): self._display.SetSelectionMode
                          }
 

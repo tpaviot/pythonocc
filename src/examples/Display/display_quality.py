@@ -45,11 +45,12 @@ print "Deviation Angle Hidden Line Removal: %f"%da_hlr
 #
 # Improve quality by a factor 10
 #
-ais_context.SetDeviationCoefficient(dc/10.)
-ais_context.SetDeviationAngle(da/10.)
-ais_context.SetHLRDeviationCoefficient(dc_hlr/10.)
-ais_context.SetHLRAngle(da_hlr/10.)
-print "Quality display improved by a factor 10"
+factor = 20.0
+ais_context.SetDeviationCoefficient(dc/factor)
+ais_context.SetDeviationAngle(da/factor)
+ais_context.SetHLRDeviationCoefficient(dc_hlr/factor)
+ais_context.SetHLRAngle(da_hlr/factor)
+print "Quality display improved by a factor {0}".format(factor)
 #
 # Displays a cylinder
 #

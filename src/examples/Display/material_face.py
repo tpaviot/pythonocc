@@ -45,7 +45,7 @@ s = BRepPrimAPI_MakeBox(200, 100, 50).Shape()
 #
 faces = Topo(s).faces()
 for face in faces:    
-    display.DisplayShape(face,material_iterator.next())
+    display.DisplayShape(face,material_iterator.next(), update=True)
 
 display.View_Iso()
 display.FitAll()
