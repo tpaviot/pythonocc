@@ -18,10 +18,10 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from enthought.traits.api import HasTraits, Instance, Event, \
+from traits.api import HasTraits, Instance, Event, \
             List, Str, Button, Enum
 
-from enthought.traits.ui.api import CustomEditor, View, Item, TreeEditor, TreeNode,\
+from traitsui.api import CustomEditor, View, Item, TreeEditor, TreeNode,\
             VSplit, HSplit
 
 from OCC.Display.wxDisplay import wxViewer3d
@@ -34,9 +34,6 @@ import wx
 
 
 import os
-CSF_GraphicShr = r"/usr/local/lib/libTKOpenGl.so" #OK for linux
-if os.path.exists(CSF_GraphicShr) and os.environ['CSF_GraphicShr'] != '': #slightly safer
-    os.environ['CSF_GraphicShr'] = CSF_GraphicShr
 
 
 class MyCanvas(wxViewer3d):

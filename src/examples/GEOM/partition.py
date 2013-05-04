@@ -13,7 +13,7 @@ liX = make_line(gp_Pnt(-10,0,0), gp_Pnt(10,0,0))
 liY = make_line(gp_Pnt(0,-10,0), gp_Pnt(0,10,0))
 liZ = make_line(gp_Pnt(0,0,-10), gp_Pnt(0,0,10))
 
-box = make_cube(gp_Pnt(-20,-20,-20), gp_Pnt(20,20,20))
+box = make_box(gp_Pnt(-20,-20,-20), gp_Pnt(20,20,20))
 
 pl1 = make_closed_polygon(gp_Pnt(-10,-10,0),
                            gp_Pnt(10,-10,0),

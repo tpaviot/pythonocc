@@ -17,19 +17,17 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+import ode
+
 from OCC.BRepPrimAPI import *
-from OCC.GC import *
-from OCC.Geom import *
 from OCC.gp import *
-from OCC.BRepBuilderAPI import *
 from OCC.Utils.Construct import translate_topods_from_vector, make_plane
-from OCC.DYN.Context import DynamicSimulationContext, DynamicShape
+from OCC.DYN.Context import DynamicSimulationContext
 from OCC.TopoDS import *
 from OCC.BRep import *
 from OCC.BRepTools import *
-import ode
-
 from OCC.Display.SimpleGui import *
+
 display, start_display, add_menu, add_function_to_menu = init_display()
     
         
@@ -88,7 +86,12 @@ def falling_torus_torus(event=None):
     dyn_context.set_simulation_duration(20) #1s forthe simulation
     dyn_context.set_time_step(0.01)
     dyn_context.start_open_loop()
-    
+
+
+from OCC.DataExchange.utils import file_to_shape
+
+
+
 def falling_pump(event=None):
     def load_brep(filename):
     # Load the shape from a file
@@ -96,15 +99,20 @@ def falling_pump(event=None):
         builder = BRep_Builder()
         BRepTools_Read(aShape,str(filename),builder)
         return aShape
- 
+
     # Just a copy/paste of the torus code
     display.EraseAll()
     dyn_context = DynamicSimulationContext()
     dyn_context.set_display(display, safe_yield)
     dyn_context.enable_collision_detection()
     dyn_context.enable_gravity()
-    
-    s1 = load_brep('../../data/BREP/40_pump_body.brep')
+
+    _pth = os.path.abspath(
+                            os.path.join( os.path.split(os.path.abspath(__file__))[0],
+                             '../data/brep/Pump_Bottom.brep')
+    )
+    s1 = file_to_shape(_pth)
+
     d = dyn_context.register_shape(s1,enable_collision_detection=True,use_trimesh=True)
  
     # The plane (note: this plane is not a dynamic shape, it's just displayed)

@@ -185,11 +185,10 @@ def collisions(event=None):
         PL = gp_Pln(P1,gp_Dir(V1))                     
         aPlane = GC_MakePlane(PL).Value()
         aSurface = Geom_RectangularTrimmedSurface( aPlane, -100., 100., -60., 60., 1, 1 )
-        face = BRepBuilderAPI_MakeFace(aSurface.GetHandle())
-        face.Build()
+        face = make_face(aSurface.GetHandle(), 1e-6)
         floor = ode.GeomPlane(dyn_context._space, (0,0,1), -100)
         references.append(floor)
-        display.DisplayColoredShape(face.Shape(),'RED')
+        display.DisplayColoredShape(face,'RED')
         display.FitAll()
     
     floor()
@@ -345,7 +344,7 @@ def hinge(event=None):
         prev_center = center
 
     # get the 1st block, the one one the ground...
-    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube).Get()
+    xmin, ymin, zmin, xmax, ymax, zmax = get_boundingbox(cube)
     # set the lower block in motion
     vec1 = (12, 88, 0)
     first.setLinearVel(vec1)
@@ -363,8 +362,6 @@ def hinge(event=None):
     # create a floor...
     floor = ode.GeomPlane(dyn_context._space, (0,0,1), zmin)
     def f():
-        print 'first:',first.getPosition()
-        print 'velo:', first.getLinearVel()
         XXX = 0.15 * N
         first.setLinearVel((0, XXX,0))
         dyn_shape.setLinearVel((0,-XXX,0))

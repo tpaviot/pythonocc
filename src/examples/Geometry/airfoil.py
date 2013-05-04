@@ -21,7 +21,7 @@
 # Explanations for this script can be found at
 # http://pythonocc.wordpress.com/2013/04/01/using-external-airfoil-data-to-create-a-solid-wing/
 #
-import re, urllib2
+import urllib2
  
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeFace
 from OCC.BRepPrimAPI import BRepPrimAPI_MakePrism
@@ -29,8 +29,9 @@ from OCC.Geom2dAPI import Geom2dAPI_PointsToBSpline
 from OCC.GeomAPI import GeomAPI_To3d
 from OCC.gp import gp_Pnt, gp_Vec, gp_Pnt2d, gp_Pln, gp_Dir
 from OCC.TColgp import TColgp_Array1OfPnt2d
-from OCC.Utils.Construct import make_wire, make_edge, make_vertex
- 
+from OCC.Utils.Construct import make_wire, make_edge
+
+
 class UiucAirfoil:
     """
     Airfoil with a section from the UIUC database

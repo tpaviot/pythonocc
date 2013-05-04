@@ -18,11 +18,11 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
-from enthought.traits.api import (Range as _Range, 
+from traits.api import (Range as _Range,
                                   Tuple as _Tuple,
                                   Int as _Int,
                                   Float as _Float)
-from enthought.traits.ui.api import TupleEditor
+from traitsui.api import TupleEditor
 
 class EditorTraits(object):
     """
