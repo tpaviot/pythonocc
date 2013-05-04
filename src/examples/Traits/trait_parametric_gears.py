@@ -22,14 +22,13 @@ from OCC.Display import SimpleGui, OCCViewer
 from OCC.PAF.Context import ParametricModelingContext
 from OCC.PAF.Parametric import Parameters, Rule, Relation, symb
 from math import pi
-from trait_editor import OCCTraitViewer
+from OCC.Display.traitDisplay import OCCTraitViewer
+
 from sympy import *
-from enthought.traits.ui.editor import Editor
-from enthought.traits.trait_types import Instance, Bool, Button, Int, Str, Float
-from enthought.traits.ui.editor_factory import EditorFactory
-from enthought.traits.has_traits import HasTraits
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
+
+from traitsui.api import EditorFactory, Editor
+from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+from traitsui.api import Item, View
 
 class PAFContextEditor(Editor):
     display = Instance(OCCViewer)
@@ -50,8 +49,17 @@ class PAFContextEditor(Editor):
         '''when display has been set on the first paint event'''
         self.context.set_display(self.control._display)
         print 'Display initialiazed'
-        
-     
+
+    def set_size_policy(self, *args, **kwargs):
+        """
+        no idea what it does, but is called...
+        i guess should give some hints...
+
+        :param args:
+        :param kwargs:
+        """
+        pass
+ 
 class ToolkitEditorFactory ( EditorFactory ):
     context = Str
     display = Str
