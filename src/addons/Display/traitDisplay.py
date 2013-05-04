@@ -35,6 +35,7 @@ os.environ["ETS_TOOLKIT"] = "qt4"
 from pyface.qt import QtGui
 
 from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+from traitsui.api import EditorFactory, Editor
 
 class TraitOCCViewer3d(OCCViewer.Viewer3d):
     '''

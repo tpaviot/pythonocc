@@ -25,7 +25,7 @@ from OCC.Display.qtDisplay import qtViewer3d
 from OCC.Display import OCCViewer
 
 from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
-from traitsui.api import Item, View, EditorFactory, Editor
+from traitsui.api import Item, View
 
 class Example(HasTraits):
     shapes = List
