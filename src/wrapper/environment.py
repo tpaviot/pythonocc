@@ -31,7 +31,7 @@ import subprocess
 # VARIABLES
 #===============================================================================
 
-VERSION = '0.6-alpha2'         # Define pythonOCC version
+VERSION = '0.6-beta'         # Define pythonOCC version
 GEOM_RELEASE = 'geom-6.3.1.8' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
