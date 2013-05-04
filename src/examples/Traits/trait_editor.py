@@ -15,121 +15,62 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
-from enthought.traits.has_traits import HasTraits
-
-from enthought.traits.ui.item import Item
-from enthought.traits.ui.view import View
-from enthought.traits.trait_types import Any, Int, Bool, Button, Event, Str,\
-    Instance, List
-from enthought.traits.ui.editors.custom_editor import CustomEditor
-from OCC.Display.qtDisplay import qtViewer3d
-from OCC.BRepPrimAPI import BRepPrimAPI_MakeCylinder
-import enthought.traits.ui.qt4
-from enthought.traits.ui.editor import Editor
-from enthought.traits.ui.editor_factory import EditorFactory
-from OCC.gp import gp_Trsf, gp_Vec
-from OCC.TopLoc import TopLoc_Location
 import random
 
-import sys
-from PyQt4 import QtCore, QtGui, Qt
+from OCC.Display.traitDisplay import OCCEditorFactory
+from OCC.BRepPrimAPI import *
+from OCC.gp import gp_Trsf, gp_Vec
+from OCC.TopLoc import TopLoc_Location
+from OCC.Display.qtDisplay import qtViewer3d
+from OCC.Display import OCCViewer
 
-class OCCTraitViewer(qtViewer3d):
-    def __init__(self, editor=None,selection=None, **kwargs):
-        super(OCCTraitViewer, self).__init__(**kwargs)
-        self.editor = editor
-        if selection:
-            self.selection = selection
-        elif hasattr(editor, 'selection'):
-            self.selection = editor.selection
-        else:
-            self.selection = []
-        self._initialized = False
-        self._shape_map = {}
-        self.setSizePolicy(Qt.QSizePolicy(Qt.QSizePolicy.Expanding, Qt.QSizePolicy.Expanding));
-        self.setMinimumHeight(200)
-        self.setMinimumWidth(320)
+from traits.api import HasTraits, Any, Button, List, Instance, Str, Bool
+from traitsui.api import Item, View, EditorFactory, Editor
 
-    def paintEvent(self, event):
-        # Display can only be initialized when window is shown.
-        # Showing windows etc is all magically done by traits
-        # Initializing on the first paint event.
-        # (resizeEvent and showEvent are too early)
-        if not self._initialized:
-            self.InitDriver()
-            self._initialized = True
-            self.editor.initialized = True
+class Example(HasTraits):
+    shapes = List
 
-        super(OCCTraitViewer, self).paintEvent(event)
+    add_stuff = Button
+    remove_stuff = Button
+
+    #these are synced with the OCCEditor, name is refered to in OCCEditorFactory
+    selection = List
+    display = Instance(OCCViewer)
     
-    def add_shape_to_viewer(self,shape_to_display):
-        ais_shape_handle = self._display.DisplayShape(shape_to_display)
-        self._shape_map[shape_to_display] = ais_shape_handle
-        
-    def erase_shape_from_viewer(self,shape):
-        if shape not in self._shape_map:
-             raise Exception("shape not in shapemap")
-        self._display.Context.Erase(self._shape_map[shape])
-        del self._shape_map[shape]
+    view = View(
+        #set editor for the shapelist
+        #optional selection and display can set to the string name of the display instance and selection list
+        Item('shapes', editor=OCCEditorFactory(selection='selection', display='display'), show_label=False),
 
-    def mouseReleaseEvent(self, event):
-        super(OCCTraitViewer, self).mouseReleaseEvent(event)
-        #not the nicest solution but heck.
-        if len(self.selection) < 1:
-            self.selection.append(self._display.selected_shape)
-        else: 
-            self.selection[0] = self._display.selected_shape
-         
-class OCCEditor(Editor):
-    shapes = List(Any)
-    selection = List(Any)
+
+        Item('add_stuff', show_label=False),
+        Item('remove_stuff', show_label=False),
+        width= 0.8, 
+        height=0.8, 
+        resizable=True
+    )
     
-    def init ( self, parent):
-        self.control = OCCTraitViewer(self.selection)
-        self.sync_value(self.name, 'shapes', 'both', is_list=True)
-        self.sync_value(self.factory.selection, 'selection', 'both', is_list=True)
+    def _selection_items_changed(self, name, undefined, list_change):
+        print "selection trait changed", list_change.added, self.display
     
-    def _shapes_items_changed(self, name, nothing, change):
-        for s in change.added:
-            self.control.add_shape_to_viewer(s)
-        for s in change.removed:
-            self.control.erase_shape_from_viewer(s)
-
-class ToolkitEditorFactory ( EditorFactory ):
-    selection = Any
-    def _get_simple_editor_class(self):
-        return OCCEditor
-
-OCCEditorFactory = ToolkitEditorFactory
-if __name__ == '__main__':
-    class Example(HasTraits):
-        shapes = List
-        selection = List
-        add_random_cylinder = Button
-        remove_cylinder = Button
-        view = View(
-            Item('shapes', editor=OCCEditorFactory(selection='selection'), show_label=False),
-            Item('add_random_cylinder', show_label=False),
-            Item('remove_cylinder', show_label=False),
-            width= 0.8, 
-            height=0.8, 
-            resizable=True
-        )
-        
-        def _selection_items_changed(self, name, undefined, list_change):
-            print "selection trait changed", list_change.added
-        
-        def _add_random_cylinder_changed(self, old, new):
+    def _add_stuff_changed(self, old, new):
+        for i in xrange(20):
             brep = BRepPrimAPI_MakeCylinder(random.random()*50, random.random()*50).Shape()
             trsf = gp_Trsf()
             trsf.SetTranslation(gp_Vec(random.random()*100, random.random()*100, random.random()*100))
             brep.Move(TopLoc_Location(trsf))
             self.shapes.append(brep)
-     
-        def _remove_cylinder_changed(self, old, new):
-            for s in self.selection:
-                if s is None: 
-                    continue
-                self.shapes.remove(s)
-                
-    Example(shapes=[]).configure_traits()
+ 
+    def _remove_stuff_changed(self, old, new):
+        if len(self.selection) >= 1:
+            for shape in self.selection:
+                self.shapes.remove(shape)
+        else:
+            print "nothing selected so removing an arbitrary number of shapes"
+            for i in range(random.randint(1, 8)):
+                if len(self.shapes) > 0:
+                    self.shapes.pop()
+                else:
+                    print "you should add some if you want me to remove stuff..."
+
+Example(shapes=[]).configure_traits()
