@@ -71,7 +71,7 @@ def get_bg_abs_filename():
         return bg_abs_filename
 
 def init_display(backend_str = None):
-    global display, add_menu, add_function_to_menu, start_display, app, win
+    global display, add_menu, add_function_to_menu, start_display, app, win, USED_BACKEND
 
     if not backend_str:
         USED_BACKEND = get_backend()

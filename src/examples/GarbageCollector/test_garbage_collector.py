@@ -3,7 +3,7 @@ from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.TopExp import *
 from OCC.TopAbs import TopAbs_FACE
-from OCC.TopoDS import *
+
 
 def mem(size="rss"):
     """Generalization; memory sizes: rss, rsz, vsz."""
