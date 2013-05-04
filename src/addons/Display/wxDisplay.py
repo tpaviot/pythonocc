@@ -195,7 +195,7 @@ class wxViewer3d(wxBaseViewer):
             self._display.Repaint()
             
     def ZoomAll(self, evt):
-        self._display.Zoom_FitAll()
+        self._display.FitAll()
 
     def Repaint(self, evt):
        if self._inited:
