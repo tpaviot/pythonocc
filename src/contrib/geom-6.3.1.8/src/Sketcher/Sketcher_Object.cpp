@@ -32,7 +32,7 @@
 #include <TDataXtd_Plane.hxx>
 
 #include <TNaming_Builder.hxx>
-#include <TNaming_NamedShape.HXX>
+#include <TNaming_NamedShape.hxx>
 
 #include <AIS_Shape.hxx>
 

@@ -116,7 +116,7 @@ FILE(GLOB libGEOM_source_files src/NMTDS/NMTDS_*.cpp
                                src/NMTTools/NMTTools_*.cpp
                                src/GEOMAlgo/GEOMAlgo_*.cpp
                                src/GEOM/GEOM_*.cpp
-                               src/ARCHIMEDE/Archimede_VolumeSection.cpp
+                               src/Archimede/Archimede_VolumeSection.cpp
                                src/BlockFix/BlockFix*.cpp
                                src/ExchangeBREP/ExchangeBREP_Export.cpp src/ExchangeBREP/ExchangeBREP_Import.cpp
                                src/ExchangeCSFDB/ExchangeCSFDB_Export.cpp src/ExchangeCSFDB/ExchangeCSFDB_Import.cpp
@@ -125,7 +125,7 @@ FILE(GLOB libGEOM_source_files src/NMTDS/NMTDS_*.cpp
                                src/ExchangeSTL/ExchangeSTL_Export.cpp
                                src/ExchangeVRML/ExchangeVRML_Export.cpp
                                src/ShHealOper/ShHealOper_*.cpp
-                               src/SKETCHER/Sketcher*.cpp
+                               src/Sketcher/Sketcher*.cpp
                                src/GEOMImpl/GEOMImpl_*.cpp
                                src/Partition/Partition_*.cpp
                                )
@@ -141,7 +141,7 @@ TARGET_LINK_LIBRARIES(GEOM TKernel TKBRep TKBO TKMath
                            TKPShape PTKernel TKShapeSchema
                            TKIGES TKSTEPBase TKSTEP TKSTL TKVRML
                            TKPrim TKFillet TKOffset TKFeat
-                           TKV3d
+                           TKV3d dl
                            )
 SET_TARGET_PROPERTIES(GEOM PROPERTIES
       SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
