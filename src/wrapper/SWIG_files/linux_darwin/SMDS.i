@@ -51,7 +51,7 @@ $HeaderURL$
 %include SMDS_headers.i
 
 typedef SMDS_MeshNode const * SMDS_pNode;
-typedef SMDS_Iterator<const SMDS_MeshElement*> SMDS_ElemIterator;
+typedef SMDS_Iterator<SMDS_MeshElement const*> SMDS_ElemIterator;
 typedef SMDS_Iterator<const SMDS_MeshFace*> SMDS_FaceIterator;
 typedef SMDS_Iterator<const SMDS_MeshVolume*> SMDS_VolumeIterator;
 typedef NCollection_DataMap<int, SMDS_MeshElement*, NCollection_DefaultHasher<int> > SMDS_IdElementMap;

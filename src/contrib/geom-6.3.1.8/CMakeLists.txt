@@ -141,7 +141,7 @@ TARGET_LINK_LIBRARIES(GEOM TKernel TKBRep TKBO TKMath
                            TKPShape PTKernel TKShapeSchema
                            TKIGES TKSTEPBase TKSTEP TKSTL TKVRML
                            TKPrim TKFillet TKOffset TKFeat
-                           TKV3d dl
+                           TKV3d ${CMAKE_DL_LIBS}
                            )
 SET_TARGET_PROPERTIES(GEOM PROPERTIES
       SOVERSION ${${PROJECT_NAME}_ABI_SOVERSION}
