@@ -67,6 +67,7 @@ from OCC.TColgp import *
 from OCC.GeomFill import *
 
 from OCC.Display.SimpleGui import *
+from OCC.Utils.Common import *
 display, start_display, add_menu, add_function_to_menu = init_display()
 import time, sys
 
@@ -872,6 +873,53 @@ def distances(event=None):
     display.DisplayShape(make_vertex(a))
     display.DisplayShape(make_vertex(b), update=True )
 
+def generCurve(crv):
+    array=[]
+    for p in crv:
+        array.append(gp_Pnt(p[0],p[1],p[2]))
+        
+    start_tangent=gp_Vec(array[0],array[1])
+    end_tangent=gp_Vec(array[-2],array[-1])
+
+    SPL1 = interpolate_points_to_spline(array,start_tangent,end_tangent)
+    
+    return SPL1
+
+def getSurface(SPL1,SPL2):
+    aGeomFill1 = GeomFill_BSplineCurves(SPL1,
+                                        SPL2,
+                                        GeomFill_StretchStyle)
+    
+    aBSplineSurface1 = aGeomFill1.Surface()
+    
+    return aBSplineSurface1
+
+def test_intersections(even=None):
+    
+    crv1=[(0,0,1),(0,.25,1),(0,.75,1),(0,1,1),(0,1.25,1)]
+    SPL1=generCurve(crv1)
+    
+    crv2=[(0,0,0),(0,.25,0),(0,.75,0),(0,1,0),(0,1.25,0)]
+    SPL2=generCurve(crv2)
+    
+    crv3=[(-1,0,0.5),(-1,.25,0.5),(-1,.75,0.5),(-1,1,0.5),(-1,1.25,0.5)]
+    SPL3=generCurve(crv3)
+    
+    crv4=[(1,0,0.5),(1,.25,0.5),(1,.75,0.5),(1,1,0.5),(1,1.25,0.5)]
+    SPL4=generCurve(crv4)
+    
+    s1=getSurface(SPL1,SPL2)
+    display.DisplayShape(make_face(s1),update=True)
+    s2=getSurface(SPL3,SPL4)
+    display.DisplayShape(make_face(s2),update=True)
+    
+    Intrc=GeomAPI_IntSS(s1,s2,1.0e-9)
+    
+    print "Intrc.IsDone()=",Intrc.IsDone()
+    print "Intrc.NbLines()=",Intrc.NbLines()
+
+    iNtrsction=Intrc.Line(0)
+
 def exit(event=None):
     sys.exit() 
 
@@ -894,6 +942,7 @@ if __name__ == '__main__':
                   surfaces_from_offsets,
                   surfaces_from_revolution,
                   distances,
+                  test_intersections,
                   exit
                   ]:
             add_function_to_menu('geometry', f)

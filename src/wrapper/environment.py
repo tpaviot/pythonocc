@@ -32,7 +32,7 @@ import subprocess
 #===============================================================================
 
 VERSION = '0.6-beta'         # Define pythonOCC version
-GEOM_RELEASE = 'geom-6.3.1.8' # located in /src/contrib/
+GEOM_RELEASE = 'geom-6.3.1.9' # located in /src/contrib/
 SMESH_RELEASE = 'smesh-5.1.2.2' # located in /src/contrib
 #===============================================================================
 # UTILITIES
@@ -211,6 +211,6 @@ VISUALIZATION_PATH = os.path.join(os.getcwd(),'Visualization')
 MISC_PATH = os.path.join(os.getcwd(),'Misc')
 CONFIG_H_PATH = OCC_ROOT
 BOOST_INC = os.path.join(os.getcwd(),'contrib','boost-1.52.0')
-SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','geom-6.3.1.8','inc_pythonocc')
+SALOME_GEOM_INC = os.path.join(os.getcwd(),'contrib','%s'%GEOM_RELEASE,'inc_pythonocc')
 SALOME_SMESH_INC = os.path.join(os.getcwd(),'contrib','%s'%SMESH_RELEASE,'inc')
 

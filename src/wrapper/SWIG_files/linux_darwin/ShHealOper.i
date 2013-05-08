@@ -388,7 +388,7 @@ class ShHealOper_FillHoles : public ShHealOper_Tool {
 		%feature("autodoc", "1");
 		virtual		void Init(const TopoDS_Shape theShape);
 		%feature("autodoc", "1");
-		void InitParameters(Standard_Integer =3, Standard_Integer =5, Standard_Integer =12, Standard_Real =1.00000000000000004792173602385929598312941379845e-4, Standard_Real =1.00000000000000008180305391403130954586231382564e-5, Standard_Real =1.0000000000000000208166817117216851329430937767e-2, Standard_Real =1.0000000000000000208166817117216851329430937767e-2, Standard_Integer =8, Standard_Integer =9);
+		void InitParameters(Standard_Integer =3, Standard_Integer =5, Standard_Integer =12, Standard_Real =1.00000000000000004792173602385929598312941379845142364502e-4, Standard_Real =1.00000000000000008180305391403130954586231382563710212708e-5, Standard_Real =1.00000000000000002081668171172168513294309377670288085938e-2, Standard_Real =1.00000000000000002081668171172168513294309377670288085938e-2, Standard_Integer =8, Standard_Integer =9);
 		%feature("autodoc", "1");
 		Standard_Boolean Fill();
 		%feature("autodoc", "1");

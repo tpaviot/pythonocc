@@ -89,43 +89,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Partition_Loop2d;
-class Partition_Loop2d {
-	public:
-		%feature("autodoc", "1");
-		Partition_Loop2d();
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Face F);
-		%feature("autodoc", "1");
-		void AddConstEdge(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void AddSectionEdge(const TopoDS_Edge E);
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewWires() const;
-		%feature("autodoc", "1");
-		void WiresToFaces(const BRepAlgo_Image &EdgeImage);
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & NewFaces() const;
-
-};
-%feature("shadow") Partition_Loop2d::~Partition_Loop2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Partition_Loop2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Partition_Loop3d;
 class Partition_Loop3d {
 	public:
@@ -189,6 +152,43 @@ def __del__(self):
 %}
 
 %extend Partition_Loop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Partition_Loop2d;
+class Partition_Loop2d {
+	public:
+		%feature("autodoc", "1");
+		Partition_Loop2d();
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Face F);
+		%feature("autodoc", "1");
+		void AddConstEdge(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void AddSectionEdge(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewWires() const;
+		%feature("autodoc", "1");
+		void WiresToFaces(const BRepAlgo_Image &EdgeImage);
+		%feature("autodoc", "1");
+		const TopTools_ListOfShape & NewFaces() const;
+
+};
+%feature("shadow") Partition_Loop2d::~Partition_Loop2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Partition_Loop2d {
 	void _kill_pointed() {
 		delete $self;
 	}

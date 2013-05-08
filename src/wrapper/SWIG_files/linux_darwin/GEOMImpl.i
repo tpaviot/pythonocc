@@ -5090,6 +5090,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor GEOMImpl_RotateDriver;
+class GEOMImpl_RotateDriver : public TFunction_Driver {
+	public:
+		%feature("autodoc", "1");
+		GEOMImpl_RotateDriver();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
+		%feature("autodoc", "1");
+		virtual		void Validate(TFunction_Logbook & arg0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
+
+};
+%extend GEOMImpl_RotateDriver {
+	Handle_GEOMImpl_RotateDriver GetHandle() {
+	return *(Handle_GEOMImpl_RotateDriver*) &$self;
+	}
+};
+%extend GEOMImpl_RotateDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GEOMImpl_RotateDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GEOMImpl_SphereDriver;
 class GEOMImpl_SphereDriver : public TFunction_Driver {
 	public:
@@ -5415,51 +5460,6 @@ def __del__(self):
 %}
 
 %extend GEOMImpl_IShapes {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GEOMImpl_RotateDriver;
-class GEOMImpl_RotateDriver : public TFunction_Driver {
-	public:
-		%feature("autodoc", "1");
-		GEOMImpl_RotateDriver();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Execute(TFunction_Logbook & log) const;
-		%feature("autodoc", "1");
-		virtual		void Validate(TFunction_Logbook & arg0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MustExecute(const TFunction_Logbook &arg0) const;
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsKind(const Handle_Standard_Type &AType) const;
-
-};
-%extend GEOMImpl_RotateDriver {
-	Handle_GEOMImpl_RotateDriver GetHandle() {
-	return *(Handle_GEOMImpl_RotateDriver*) &$self;
-	}
-};
-%extend GEOMImpl_RotateDriver {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") GEOMImpl_RotateDriver::~GEOMImpl_RotateDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GEOMImpl_RotateDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

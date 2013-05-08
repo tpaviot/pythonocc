@@ -107,9 +107,9 @@ $HeaderURL$
 %rename(GetID) GEOMImpl_ExportDriver::GetID;
 %rename(GetID) GEOMImpl_BooleanDriver::GetID;
 %rename(GetID) GEOMImpl_3DSketcherDriver::GetID;
+%rename(GetID) GEOMImpl_RotateDriver::GetID;
 %rename(GetID) GEOMImpl_SphereDriver::GetID;
 %rename(GetID) GEOMImpl_VariableFilletDriver::GetID;
-%rename(GetID) GEOMImpl_RotateDriver::GetID;
 %rename(GetID) GEOMImpl_ProjectionDriver::GetID;
 %rename(GetID) GEOMImpl_BoxDriver::GetID;
 %rename(GetID) GEOMImpl_ImportDriver::GetID;
