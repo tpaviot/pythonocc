@@ -147,6 +147,15 @@ bool StdMeshers_RadialPrism_3D::CheckHypothesis(SMESH_Mesh&                     
 //purpose  : 
 //=======================================================================
 
+TopoDS_Shell OuterShell(const TopoDS_Solid& S)
+{
+  TopExp_Explorer its(S,TopAbs_SHELL);
+  if (its.More())
+    return TopoDS::Shell(its.Current());
+  else
+    return TopoDS_Shell();
+}
+
 bool StdMeshers_RadialPrism_3D::Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& aShape)
 {
   TopExp_Explorer exp;
@@ -159,7 +168,7 @@ bool StdMeshers_RadialPrism_3D::Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& a
 
   // get 2 shells
   TopoDS_Solid solid = TopoDS::Solid( aShape );
-  TopoDS_Shell outerShell = BRepTools::OuterShell( solid );
+  TopoDS_Shell outerShell = OuterShell( solid );
   TopoDS_Shape innerShell;
   int nbShells = 0;
   for ( TopoDS_Iterator It (solid); It.More(); It.Next(), ++nbShells )
