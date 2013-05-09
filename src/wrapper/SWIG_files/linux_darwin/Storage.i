@@ -1760,6 +1760,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor Storage_HArrayOfSchema;
+class Storage_HArrayOfSchema : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_Schema &V);
+		%feature("autodoc", "1");
+		void Init(const Handle_Storage_Schema &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Storage_Schema &Value);
+		%feature("autodoc", "1");
+		const Handle_Storage_Schema & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_Storage_Schema & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const Storage_ArrayOfSchema & Array1() const;
+		%feature("autodoc", "1");
+		Storage_ArrayOfSchema & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Storage_HArrayOfSchema {
+	Handle_Storage_HArrayOfSchema GetHandle() {
+	return *(Handle_Storage_HArrayOfSchema*) &$self;
+	}
+};
+%extend Storage_HArrayOfSchema {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Storage_HArrayOfSchema {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Storage_CallBack;
 class Storage_CallBack : public MMgt_TShared {
 	public:
@@ -1828,61 +1883,6 @@ def __del__(self):
 %}
 
 %extend Storage_DefaultCallBack {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Storage_HArrayOfSchema;
-class Storage_HArrayOfSchema : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Storage_HArrayOfSchema(const Standard_Integer Low, const Standard_Integer Up, const Handle_Storage_Schema &V);
-		%feature("autodoc", "1");
-		void Init(const Handle_Storage_Schema &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Storage_Schema &Value);
-		%feature("autodoc", "1");
-		const Handle_Storage_Schema & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_Storage_Schema & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const Storage_ArrayOfSchema & Array1() const;
-		%feature("autodoc", "1");
-		Storage_ArrayOfSchema & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Storage_HArrayOfSchema {
-	Handle_Storage_HArrayOfSchema GetHandle() {
-	return *(Handle_Storage_HArrayOfSchema*) &$self;
-	}
-};
-%extend Storage_HArrayOfSchema {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Storage_HArrayOfSchema::~Storage_HArrayOfSchema %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Storage_HArrayOfSchema {
 	void _kill_pointed() {
 		delete $self;
 	}

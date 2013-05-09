@@ -66,14 +66,6 @@ enum AIS_KindOfUnit {
 	AIS_TOU_TIME,
 	};
 
-enum AIS_StatusOfPick {
-	AIS_SOP_Error,
-	AIS_SOP_NothingSelected,
-	AIS_SOP_Removed,
-	AIS_SOP_OneSelected,
-	AIS_SOP_SeveralSelected,
-	};
-
 enum AIS_KindOfDimension {
 	AIS_KOD_NONE,
 	AIS_KOD_LENGTH,
@@ -151,8 +143,6 @@ enum AIS_TypeOfAttribute {
 enum AIS_DisplayMode {
 	AIS_WireFrame,
 	AIS_Shaded,
-	AIS_QuickHLR,
-	AIS_ExactHLR,
 	};
 
 enum AIS_StatusOfDetection {
@@ -190,6 +180,14 @@ enum AIS_TypeOfPlane {
 	AIS_TOPL_XYPlane,
 	AIS_TOPL_XZPlane,
 	AIS_TOPL_YZPlane,
+	};
+
+enum AIS_StatusOfPick {
+	AIS_SOP_Error,
+	AIS_SOP_NothingSelected,
+	AIS_SOP_Removed,
+	AIS_SOP_OneSelected,
+	AIS_SOP_SeveralSelected,
 	};
 
 enum AIS_StandardDatum {
@@ -2443,6 +2441,10 @@ class AIS_Drawer : public Prs3d_Drawer {
 		%feature("autodoc", "1");
 		virtual		void SetHLRAngle(const Standard_Real anAngle);
 		%feature("autodoc", "1");
+		virtual		void SetTypeOfHLR(const Prs3d_TypeOfHLR theTypeOfHLR);
+		%feature("autodoc", "1");
+		virtual		Prs3d_TypeOfHLR TypeOfHLR() const;
+		%feature("autodoc", "1");
 		virtual		Standard_Real DeviationCoefficient() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Real HLRDeviationCoefficient() const;
@@ -2719,10 +2721,6 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		void State(const Standard_Integer TheState);
 		%feature("autodoc", "1");
 		Standard_Integer State() const;
-		%feature("autodoc", "1");
-		virtual		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
-		%feature("autodoc", "1");
-		virtual		Aspect_TypeOfDegenerateModel DegenerateModel(Quantity_Ratio & aRatio) const;
 		%feature("autodoc", "1");
 		void SetTransformation(const Handle_Geom_Transformation &aTranformation, const Standard_Boolean postConcatenate=0, const Standard_Boolean updateSelection=1);
 		%feature("autodoc", "1");
@@ -3243,302 +3241,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_ConnectedInteractive;
-class AIS_ConnectedInteractive : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConnection() const;
-		%feature("autodoc", "1");
-		const Handle_AIS_InteractiveObject & ConnectedTo() const;
-		%feature("autodoc", "1");
-		void Disconnect();
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation();
-		%feature("autodoc", "1");
-		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_ConnectedInteractive {
-	Handle_AIS_ConnectedInteractive GetHandle() {
-	return *(Handle_AIS_ConnectedInteractive*) &$self;
-	}
-};
-%extend AIS_ConnectedInteractive {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ConnectedInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_ConnectedShape;
-class AIS_ConnectedShape : public AIS_ConnectedInteractive {
-	public:
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape();
-
-};
-%extend AIS_ConnectedShape {
-	Handle_AIS_ConnectedShape GetHandle() {
-	return *(Handle_AIS_ConnectedShape*) &$self;
-	}
-};
-%extend AIS_ConnectedShape {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_ConnectedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_Shape;
-class AIS_Shape : public AIS_InteractiveObject {
-	public:
-		%feature("autodoc", "1");
-		AIS_Shape(const TopoDS_Shape shap);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
-		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptShapeDecomposition() const;
-		%feature("autodoc", "1");
-		void Set(const TopoDS_Shape ashap);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationCoefficient();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnDeviationAngle();
-		%feature("autodoc", "1");
-		Standard_Boolean SetOwnHLRDeviationAngle();
-		%feature("autodoc", "1");
-		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
-		%feature("autodoc", "1");
-		void SetAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		Standard_Real UserAngle() const;
-		%feature("autodoc", "1");
-		void SetOwnDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
-		%feature("autodoc", "1");
-		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
-		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
-
-		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
-		%feature("autodoc", "1");
-		virtual		void UnsetColor();
-		%feature("autodoc", "1");
-		virtual		void SetWidth(const Standard_Real aValue);
-		%feature("autodoc", "1");
-		virtual		void UnsetWidth();
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
-		%feature("autodoc", "1");
-		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
-		%feature("autodoc", "1");
-		virtual		void UnsetMaterial();
-		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
-		%feature("autodoc", "1");
-		virtual		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		const Bnd_Box & BoundingBox();
-		%feature("autodoc", "1");
-		virtual		Quantity_NameOfColor Color() const;
-		%feature("autodoc", "1");
-		virtual		void Color(Quantity_Color & aColor) const;
-		%feature("autodoc", "1");
-		virtual		Graphic3d_NameOfMaterial Material() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Transparency() const;
-		%feature("autodoc", "1");
-		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
-		%feature("autodoc", "1");
-		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
-		%feature("autodoc", "1");
-		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_Shape {
-	Handle_AIS_Shape GetHandle() {
-	return *(Handle_AIS_Shape*) &$self;
-	}
-};
-%extend AIS_Shape {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_Shape::~AIS_Shape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_Shape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_TexturedShape;
-class AIS_TexturedShape : public AIS_Shape {
-	public:
-		%feature("autodoc", "1");
-		AIS_TexturedShape(const TopoDS_Shape shap);
-		%feature("autodoc", "1");
-		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
-		%feature("autodoc", "1");
-		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
-		%feature("autodoc", "1");
-		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
-		%feature("autodoc", "1");
-		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
-		%feature("autodoc", "1");
-		void SetTextureMapOn();
-		%feature("autodoc", "1");
-		void SetTextureMapOff();
-		%feature("autodoc", "1");
-		void EnableTextureModulate();
-		%feature("autodoc", "1");
-		void DisableTextureModulate();
-		%feature("autodoc", "1");
-		void UpdateAttributes();
-		%feature("autodoc", "1");
-		Standard_Boolean TextureMapState() const;
-		%feature("autodoc", "1");
-		Standard_Real URepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		char * TextureFile() const;
-		%feature("autodoc", "1");
-		Standard_Real VRepeat() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ShowTriangles() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureUOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureVOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleU() const;
-		%feature("autodoc", "1");
-		Standard_Real TextureScaleV() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureScale() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureOrigin() const;
-		%feature("autodoc", "1");
-		Standard_Boolean TextureModulate() const;
-
-};
-%extend AIS_TexturedShape {
-	Handle_AIS_TexturedShape GetHandle() {
-	return *(Handle_AIS_TexturedShape*) &$self;
-	}
-};
-%extend AIS_TexturedShape {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_TexturedShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_SequenceOfInteractive;
 class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 	public:
@@ -3712,6 +3414,65 @@ def __del__(self):
 %}
 
 %extend AIS_AttributeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_ConnectedInteractive;
+class AIS_ConnectedInteractive : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConnectedInteractive(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation3d=PrsMgr_TOP_AllView);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConnection() const;
+		%feature("autodoc", "1");
+		const Handle_AIS_InteractiveObject & ConnectedTo() const;
+		%feature("autodoc", "1");
+		void Disconnect();
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation();
+		%feature("autodoc", "1");
+		virtual		void UpdateLocation(const Handle_SelectMgr_Selection &aSel);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_ConnectedInteractive {
+	Handle_AIS_ConnectedInteractive GetHandle() {
+	return *(Handle_AIS_ConnectedInteractive*) &$self;
+	}
+};
+%extend AIS_ConnectedInteractive {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_ConnectedInteractive::~AIS_ConnectedInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ConnectedInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4345,8 +4106,6 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 		%feature("autodoc", "1");
 		void DisconnectAll();
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
-		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Prs3d_Presentation &aPresentation);
@@ -4669,6 +4428,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_Chamf2dDimension;
+class AIS_Chamf2dDimension : public AIS_Relation {
+	public:
+		%feature("autodoc", "1");
+		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		%feature("autodoc", "1");
+		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfDimension KindOfDimension() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsMovable() const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_Chamf2dDimension {
+	Handle_AIS_Chamf2dDimension GetHandle() {
+	return *(Handle_AIS_Chamf2dDimension*) &$self;
+	}
+};
+%extend AIS_Chamf2dDimension {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_Chamf2dDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_DataMapOfIOStatus;
 class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 	public:
@@ -4977,6 +4779,71 @@ def __del__(self):
 %}
 
 %extend AIS_DimensionOwner {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_PlaneTrihedron;
+class AIS_PlaneTrihedron : public AIS_InteractiveObject {
+	public:
+		%feature("autodoc", "1");
+		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_Geom_Plane Component();
+		%feature("autodoc", "1");
+		void SetComponent(const Handle_Geom_Plane &aPlane);
+		%feature("autodoc", "1");
+		Handle_AIS_Line XAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Line YAxis() const;
+		%feature("autodoc", "1");
+		Handle_AIS_Point Position() const;
+		%feature("autodoc", "1");
+		void SetLength(const Standard_Real theLength);
+		%feature("autodoc", "1");
+		Standard_Real GetLength() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		void SetXLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		void SetYLabel(const TCollection_AsciiString &aLabel);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_PlaneTrihedron {
+	Handle_AIS_PlaneTrihedron GetHandle() {
+	return *(Handle_AIS_PlaneTrihedron*) &$self;
+	}
+};
+%extend AIS_PlaneTrihedron {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_PlaneTrihedron {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5590,43 +5457,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
-class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
-		%feature("autodoc", "1");
-		Handle_AIS_InteractiveObject & Key() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
-	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
-	}
-};
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_StdMapNodeOfMapOfInteractive {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
 class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	public:
@@ -5658,6 +5488,43 @@ def __del__(self):
 %}
 
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
+class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		AIS_StdMapNodeOfMapOfInteractive(const Handle_AIS_InteractiveObject &K, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		Handle_AIS_InteractiveObject & Key() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Handle_AIS_StdMapNodeOfMapOfInteractive GetHandle() {
+	return *(Handle_AIS_StdMapNodeOfMapOfInteractive*) &$self;
+	}
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_StdMapNodeOfMapOfInteractive::~AIS_StdMapNodeOfMapOfInteractive %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_StdMapNodeOfMapOfInteractive {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5771,34 +5638,110 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_Chamf2dDimension;
-class AIS_Chamf2dDimension : public AIS_Relation {
+%nodefaultctor AIS_Shape;
+class AIS_Shape : public AIS_InteractiveObject {
 	public:
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText);
+		AIS_Shape(const TopoDS_Shape shap);
 		%feature("autodoc", "1");
-		AIS_Chamf2dDimension(const TopoDS_Shape aFShape, const Handle_Geom_Plane &aPlane, const Standard_Real aVal, const TCollection_ExtendedString &aText, const gp_Pnt aPosition, const DsgPrs_ArrowSide aSymbolPrs, const Standard_Real anArrowSize=0.0);
+		virtual		Standard_Integer Signature() const;
 		%feature("autodoc", "1");
-		virtual		AIS_KindOfDimension KindOfDimension() const;
+		virtual		AIS_KindOfInteractive Type() const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsMovable() const;
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		void Set(const TopoDS_Shape ashap);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationCoefficient();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnDeviationAngle();
+		%feature("autodoc", "1");
+		Standard_Boolean SetOwnHLRDeviationAngle();
+		%feature("autodoc", "1");
+		void SetOwnDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationCoefficient(const Standard_Real aCoefficient);
+		%feature("autodoc", "1");
+		void SetAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		Standard_Real UserAngle() const;
+		%feature("autodoc", "1");
+		void SetOwnDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetHLRAngleAndDeviation(const Standard_Real anAngle);
+		%feature("autodoc", "1");
+		void SetOwnHLRDeviationAngle(const Standard_Real anAngle);
+		%feature("autodoc","OwnDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationCoefficient() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationCoefficient(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc","OwnHLRDeviationAngle() -> [Standard_Real, Standard_Real]");
+
+		Standard_Boolean OwnHLRDeviationAngle(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		void SetTypeOfHLR(const Prs3d_TypeOfHLR theTypeOfHLR);
+		%feature("autodoc", "1");
+		Prs3d_TypeOfHLR TypeOfHLR() const;
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		virtual		void UnsetColor();
+		%feature("autodoc", "1");
+		virtual		void SetWidth(const Standard_Real aValue);
+		%feature("autodoc", "1");
+		virtual		void UnsetWidth();
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_NameOfMaterial aName);
+		%feature("autodoc", "1");
+		virtual		void SetMaterial(const Graphic3d_MaterialAspect &aName);
+		%feature("autodoc", "1");
+		virtual		void UnsetMaterial();
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		const Bnd_Box & BoundingBox();
+		%feature("autodoc", "1");
+		virtual		Quantity_NameOfColor Color() const;
+		%feature("autodoc", "1");
+		virtual		void Color(Quantity_Color & aColor) const;
+		%feature("autodoc", "1");
+		virtual		Graphic3d_NameOfMaterial Material() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Transparency() const;
+		%feature("autodoc", "1");
+		static		TopAbs_ShapeEnum SelectionType(const Standard_Integer aDecompositionMode);
+		%feature("autodoc", "1");
+		static		Standard_Integer SelectionMode(const TopAbs_ShapeEnum aShapeType);
+		%feature("autodoc", "1");
+		static		Standard_Real GetDeflection(const TopoDS_Shape aShape, const Handle_Prs3d_Drawer &aDrawer);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_Chamf2dDimension {
-	Handle_AIS_Chamf2dDimension GetHandle() {
-	return *(Handle_AIS_Chamf2dDimension*) &$self;
+%extend AIS_Shape {
+	Handle_AIS_Shape GetHandle() {
+	return *(Handle_AIS_Shape*) &$self;
 	}
 };
-%extend AIS_Chamf2dDimension {
+%extend AIS_Shape {
 	Standard_Integer __hash__() {
 	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") AIS_Chamf2dDimension::~AIS_Chamf2dDimension %{
+%feature("shadow") AIS_Shape::~AIS_Shape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5807,82 +5750,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS_Chamf2dDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor AIS_GlobalStatus;
-class AIS_GlobalStatus : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		AIS_GlobalStatus();
-		%feature("autodoc", "1");
-		AIS_GlobalStatus(const AIS_DisplayStatus aStat, const Standard_Integer aDispMode, const Standard_Integer aSelMode, const Standard_Boolean ishilighted=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
-		%feature("autodoc", "1");
-		void SetGraphicStatus(const AIS_DisplayStatus aStat);
-		%feature("autodoc", "1");
-		void AddDisplayMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void AddSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void SetLayerIndex(const Standard_Integer AnIndex);
-		%feature("autodoc", "1");
-		void SetHilightStatus(const Standard_Boolean aStat);
-		%feature("autodoc", "1");
-		void SetHilightColor(const Quantity_NameOfColor aCol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsSubIntensityOn() const;
-		%feature("autodoc", "1");
-		void SubIntensityOn();
-		%feature("autodoc", "1");
-		void SubIntensityOff();
-		%feature("autodoc", "1");
-		void RemoveDisplayMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void RemoveSelectionMode(const Standard_Integer aMode);
-		%feature("autodoc", "1");
-		void ClearSelectionModes();
-		%feature("autodoc", "1");
-		AIS_DisplayStatus GraphicStatus() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & DisplayedModes() const;
-		%feature("autodoc", "1");
-		const TColStd_ListOfInteger & SelectionModes() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsHilighted() const;
-		%feature("autodoc", "1");
-		Quantity_NameOfColor HilightColor() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend AIS_GlobalStatus {
-	Handle_AIS_GlobalStatus GetHandle() {
-	return *(Handle_AIS_GlobalStatus*) &$self;
-	}
-};
-%extend AIS_GlobalStatus {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend AIS_GlobalStatus {
+%extend AIS_Shape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6039,10 +5907,6 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		void SetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
 		void UnsetTransparency(const Handle_AIS_InteractiveObject &aniobj, const Standard_Boolean updateviewer=1);
-		%feature("autodoc", "1");
-		void SetDegenerateModel(const Handle_AIS_InteractiveObject &aniobj, const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
-		%feature("autodoc", "1");
-		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel, const Quantity_Ratio aSkipRatio=0.0);
 		%feature("autodoc", "1");
 		void SetLocalAttributes(const Handle_AIS_InteractiveObject &aniobj, const Handle_AIS_Drawer &aDrawer, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -6452,56 +6316,74 @@ def __del__(self):
 };
 
 
-%nodefaultctor AIS_PlaneTrihedron;
-class AIS_PlaneTrihedron : public AIS_InteractiveObject {
+%nodefaultctor AIS_TexturedShape;
+class AIS_TexturedShape : public AIS_Shape {
 	public:
 		%feature("autodoc", "1");
-		AIS_PlaneTrihedron(const Handle_Geom_Plane &aPlane);
+		AIS_TexturedShape(const TopoDS_Shape shap);
 		%feature("autodoc", "1");
-		Handle_Geom_Plane Component();
+		virtual		void SetTextureFileName(const TCollection_AsciiString &TextureFileName);
 		%feature("autodoc", "1");
-		void SetComponent(const Handle_Geom_Plane &aPlane);
+		virtual		void SetTextureRepeat(const Standard_Boolean RepeatYN, const Standard_Real URepeat=1.0e+0, const Standard_Real VRepeat=1.0e+0);
 		%feature("autodoc", "1");
-		Handle_AIS_Line XAxis() const;
+		virtual		void SetTextureOrigin(const Standard_Boolean SetTextureOriginYN, const Standard_Real UOrigin=0.0, const Standard_Real VOrigin=0.0);
 		%feature("autodoc", "1");
-		Handle_AIS_Line YAxis() const;
+		virtual		void SetTextureScale(const Standard_Boolean SetTextureScaleYN, const Standard_Real ScaleU=1.0e+0, const Standard_Real ScaleV=1.0e+0);
 		%feature("autodoc", "1");
-		Handle_AIS_Point Position() const;
+		virtual		void ShowTriangles(const Standard_Boolean ShowTrianglesYN=0);
 		%feature("autodoc", "1");
-		void SetLength(const Standard_Real theLength);
+		void SetTextureMapOn();
 		%feature("autodoc", "1");
-		Standard_Real GetLength() const;
+		void SetTextureMapOff();
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean AcceptDisplayMode(const Standard_Integer aMode) const;
+		void EnableTextureModulate();
 		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
+		void DisableTextureModulate();
 		%feature("autodoc", "1");
-		virtual		Standard_Integer Signature() const;
+		void UpdateAttributes();
 		%feature("autodoc", "1");
-		virtual		AIS_KindOfInteractive Type() const;
+		Standard_Boolean TextureMapState() const;
 		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_NameOfColor aColor);
+		Standard_Real URepeat() const;
 		%feature("autodoc", "1");
-		virtual		void SetColor(const Quantity_Color &aColor);
+		Standard_Boolean TextureRepeat() const;
 		%feature("autodoc", "1");
-		void SetXLabel(const TCollection_AsciiString &aLabel);
+		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
-		void SetYLabel(const TCollection_AsciiString &aLabel);
+		char * TextureFile() const;
+		%feature("autodoc", "1");
+		Standard_Real VRepeat() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ShowTriangles() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureUOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureVOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleU() const;
+		%feature("autodoc", "1");
+		Standard_Real TextureScaleV() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureScale() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureOrigin() const;
+		%feature("autodoc", "1");
+		Standard_Boolean TextureModulate() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend AIS_PlaneTrihedron {
-	Handle_AIS_PlaneTrihedron GetHandle() {
-	return *(Handle_AIS_PlaneTrihedron*) &$self;
+%extend AIS_TexturedShape {
+	Handle_AIS_TexturedShape GetHandle() {
+	return *(Handle_AIS_TexturedShape*) &$self;
 	}
 };
-%extend AIS_PlaneTrihedron {
+%extend AIS_TexturedShape {
 	Standard_Integer __hash__() {
 	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") AIS_PlaneTrihedron::~AIS_PlaneTrihedron %{
+%feature("shadow") AIS_TexturedShape::~AIS_TexturedShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -6510,7 +6392,7 @@ def __del__(self):
 		pass
 %}
 
-%extend AIS_PlaneTrihedron {
+%extend AIS_TexturedShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6621,8 +6503,6 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 		void Set(const TopoDS_Shape ashap);
 		%feature("autodoc", "1");
 		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		virtual		void Compute(const Handle_PrsMgr_PresentationManager2d &aPresentationManager, const Handle_Graphic2d_GraphicObject &aPresentation, const Standard_Integer aMode=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -7023,6 +6903,57 @@ def __del__(self):
 };
 
 
+%nodefaultctor AIS_ConnectedShape;
+class AIS_ConnectedShape : public AIS_ConnectedInteractive {
+	public:
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_Shape &aInteractiveShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		AIS_ConnectedShape(const Handle_AIS_ConnectedShape &aConnectedShape, const PrsMgr_TypeOfPresentation3d aTypeOfPresentation=PrsMgr_TOP_ProjectorDependant);
+		%feature("autodoc", "1");
+		virtual		AIS_KindOfInteractive Type() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer Signature() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AcceptShapeDecomposition() const;
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIObj);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Handle_AIS_InteractiveObject &anotherIobj, const TopLoc_Location &aLocation);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_ConnectedShape {
+	Handle_AIS_ConnectedShape GetHandle() {
+	return *(Handle_AIS_ConnectedShape*) &$self;
+	}
+};
+%extend AIS_ConnectedShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_ConnectedShape::~AIS_ConnectedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_ConnectedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor AIS_LengthDimension;
 class AIS_LengthDimension : public AIS_Relation {
 	public:
@@ -7083,6 +7014,81 @@ def __del__(self):
 %}
 
 %extend AIS_LengthDimension {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor AIS_GlobalStatus;
+class AIS_GlobalStatus : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		AIS_GlobalStatus();
+		%feature("autodoc", "1");
+		AIS_GlobalStatus(const AIS_DisplayStatus aStat, const Standard_Integer aDispMode, const Standard_Integer aSelMode, const Standard_Boolean ishilighted=0, const Quantity_NameOfColor TheHiCol=Quantity_NOC_WHITE, const Standard_Integer aLayerIndex=0);
+		%feature("autodoc", "1");
+		void SetGraphicStatus(const AIS_DisplayStatus aStat);
+		%feature("autodoc", "1");
+		void AddDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void AddSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void SetLayerIndex(const Standard_Integer AnIndex);
+		%feature("autodoc", "1");
+		void SetHilightStatus(const Standard_Boolean aStat);
+		%feature("autodoc", "1");
+		void SetHilightColor(const Quantity_NameOfColor aCol);
+		%feature("autodoc", "1");
+		Standard_Boolean IsSubIntensityOn() const;
+		%feature("autodoc", "1");
+		void SubIntensityOn();
+		%feature("autodoc", "1");
+		void SubIntensityOff();
+		%feature("autodoc", "1");
+		void RemoveDisplayMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void RemoveSelectionMode(const Standard_Integer aMode);
+		%feature("autodoc", "1");
+		void ClearSelectionModes();
+		%feature("autodoc", "1");
+		AIS_DisplayStatus GraphicStatus() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & DisplayedModes() const;
+		%feature("autodoc", "1");
+		const TColStd_ListOfInteger & SelectionModes() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsHilighted() const;
+		%feature("autodoc", "1");
+		Quantity_NameOfColor HilightColor() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsDModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsSModeIn(const Standard_Integer aMode) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend AIS_GlobalStatus {
+	Handle_AIS_GlobalStatus GetHandle() {
+	return *(Handle_AIS_GlobalStatus*) &$self;
+	}
+};
+%extend AIS_GlobalStatus {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") AIS_GlobalStatus::~AIS_GlobalStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend AIS_GlobalStatus {
 	void _kill_pointed() {
 		delete $self;
 	}

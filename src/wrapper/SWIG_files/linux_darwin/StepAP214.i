@@ -242,44 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepAP214_AutoDesignPresentedItem;
-class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_PresentedItem {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignPresentedItem();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignPresentedItem(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignPresentedItem(const StepAP214_AutoDesignPresentedItem *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignPresentedItem & operator=(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignPresentedItem & operator=(const StepAP214_AutoDesignPresentedItem *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_AutoDesignPresentedItem DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AutoDesignPresentedItem {
-	StepAP214_AutoDesignPresentedItem* GetObject() {
-	return (StepAP214_AutoDesignPresentedItem*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_AutoDesignPresentedItem::~Handle_StepAP214_AutoDesignPresentedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_AutoDesignPresentedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepAP214_HArray1OfApprovalItem;
 class Handle_StepAP214_HArray1OfApprovalItem : public Handle_MMgt_TShared {
 	public:
@@ -850,6 +812,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepAP214_AutoDesignPresentedItem;
+class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_PresentedItem {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem(const StepAP214_AutoDesignPresentedItem *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem & operator=(const Handle_StepAP214_AutoDesignPresentedItem &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignPresentedItem & operator=(const StepAP214_AutoDesignPresentedItem *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_AutoDesignPresentedItem DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AutoDesignPresentedItem {
+	StepAP214_AutoDesignPresentedItem* GetObject() {
+	return (StepAP214_AutoDesignPresentedItem*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_AutoDesignPresentedItem::~Handle_StepAP214_AutoDesignPresentedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_AutoDesignPresentedItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepAP214_AppliedExternalIdentificationAssignment;
 class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_StepBasic_ExternalIdentificationAssignment {
 	public:
@@ -920,6 +920,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepAP214_AutoDesignOrganizationAssignment;
+class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment();
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment(const StepAP214_AutoDesignOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const StepAP214_AutoDesignOrganizationAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepAP214_AutoDesignOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
+	StepAP214_AutoDesignOrganizationAssignment* GetObject() {
+	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepAP214_AutoDesignOrganizationAssignment::~Handle_StepAP214_AutoDesignOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1642,44 +1680,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepAP214_AppliedApprovalAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepAP214_AutoDesignOrganizationAssignment;
-class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasic_OrganizationAssignment {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment();
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment(const StepAP214_AutoDesignOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const Handle_StepAP214_AutoDesignOrganizationAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepAP214_AutoDesignOrganizationAssignment & operator=(const StepAP214_AutoDesignOrganizationAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepAP214_AutoDesignOrganizationAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
-	StepAP214_AutoDesignOrganizationAssignment* GetObject() {
-	return (StepAP214_AutoDesignOrganizationAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepAP214_AutoDesignOrganizationAssignment::~Handle_StepAP214_AutoDesignOrganizationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepAP214_AutoDesignOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2495,6 +2495,47 @@ def __del__(self):
 %}
 
 %extend StepAP214_ApprovalItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP214_AppliedExternalIdentificationAssignment;
+class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_ExternalIdentificationAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP214_AppliedExternalIdentificationAssignment();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aIdentificationAssignment_AssignedId, const Handle_StepBasic_IdentificationRole &aIdentificationAssignment_Role, const Handle_StepBasic_ExternalSource &aExternalIdentificationAssignment_Source, const Handle_StepAP214_HArray1OfExternalIdentificationItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP214_HArray1OfExternalIdentificationItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP214_HArray1OfExternalIdentificationItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP214_AppliedExternalIdentificationAssignment {
+	Handle_StepAP214_AppliedExternalIdentificationAssignment GetHandle() {
+	return *(Handle_StepAP214_AppliedExternalIdentificationAssignment*) &$self;
+	}
+};
+%extend StepAP214_AppliedExternalIdentificationAssignment {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP214_AppliedExternalIdentificationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4795,47 +4836,6 @@ def __del__(self):
 %}
 
 %extend StepAP214_AutoDesignDatedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP214_AppliedExternalIdentificationAssignment;
-class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_ExternalIdentificationAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP214_AppliedExternalIdentificationAssignment();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aIdentificationAssignment_AssignedId, const Handle_StepBasic_IdentificationRole &aIdentificationAssignment_Role, const Handle_StepBasic_ExternalSource &aExternalIdentificationAssignment_Source, const Handle_StepAP214_HArray1OfExternalIdentificationItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP214_HArray1OfExternalIdentificationItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP214_HArray1OfExternalIdentificationItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	Handle_StepAP214_AppliedExternalIdentificationAssignment GetHandle() {
-	return *(Handle_StepAP214_AppliedExternalIdentificationAssignment*) &$self;
-	}
-};
-%extend StepAP214_AppliedExternalIdentificationAssignment {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepAP214_AppliedExternalIdentificationAssignment::~StepAP214_AppliedExternalIdentificationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP214_AppliedExternalIdentificationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}

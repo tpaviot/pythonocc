@@ -520,45 +520,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TCollection_SeqNode;
-class TCollection_SeqNode : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TCollection_SeqNode(const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		TCollection_SeqNodePtr & Next() const;
-		%feature("autodoc", "1");
-		TCollection_SeqNodePtr & Previous() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TCollection_SeqNode {
-	Handle_TCollection_SeqNode GetHandle() {
-	return *(Handle_TCollection_SeqNode*) &$self;
-	}
-};
-%extend TCollection_SeqNode {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TCollection_SeqNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TCollection_BasicMapIterator;
 class TCollection_BasicMapIterator {
 	public:
@@ -682,6 +643,45 @@ def __del__(self):
 };
 %extend TCollection_Array2Descriptor {
 	TCollection_Array2Descriptor () {}
+};
+
+
+%nodefaultctor TCollection_SeqNode;
+class TCollection_SeqNode : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TCollection_SeqNode(const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		TCollection_SeqNodePtr & Next() const;
+		%feature("autodoc", "1");
+		TCollection_SeqNodePtr & Previous() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TCollection_SeqNode {
+	Handle_TCollection_SeqNode GetHandle() {
+	return *(Handle_TCollection_SeqNode*) &$self;
+	}
+};
+%extend TCollection_SeqNode {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TCollection_SeqNode::~TCollection_SeqNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TCollection_SeqNode {
+	void _kill_pointed() {
+		delete $self;
+	}
 };
 
 
@@ -1056,7 +1056,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_ExtCharacter Value(const Standard_Integer where) const;
 		%feature("autodoc", "1");
-		TCollection_ExtendedString String() const;
+		const TCollection_ExtendedString & String() const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{

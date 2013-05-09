@@ -280,6 +280,8 @@ class BRepAlgo {
 		%feature("autodoc", "1");
 		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
+		static		TopoDS_Edge ConcatenateWireC0(const TopoDS_Wire Wire);
+		%feature("autodoc", "1");
 		static		Standard_Boolean IsValid(const TopoDS_Shape S);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsValid(const TopTools_ListOfShape &theArgs, const TopoDS_Shape theResult, const Standard_Boolean closedSolid=0, const Standard_Boolean GeomCtrl=1);
@@ -756,59 +758,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepAlgo_TopOpe;
-class BRepAlgo_TopOpe {
-	public:
-		%feature("autodoc", "1");
-		BRepAlgo_TopOpe();
-		%feature("autodoc", "1");
-		void Init();
-		%feature("autodoc", "1");
-		void Load(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Load(TopoDS_Shape & S1, TopoDS_Shape & S2);
-		%feature("autodoc", "1");
-		void Intersect();
-		%feature("autodoc", "1");
-		void Intersect(const TopoDS_Shape S1, const TopoDS_Shape S2);
-		%feature("autodoc", "1");
-		void ToCompleteIntersection();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & GetSectionEdgeSet();
-		%feature("autodoc", "1");
-		void SuppressEdgeSet();
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Merge(const TopAbs_State state1, const TopAbs_State state2);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Merge(const TopAbs_State state1);
-		%feature("autodoc", "1");
-		Standard_Boolean PaveBlocksNotEmpty();
-		%feature("autodoc", "1");
-		const BOP_PBuilder & Builder() const;
-		%feature("autodoc", "1");
-		const BOPTools_PDSFiller & DSFiller() const;
-		%feature("autodoc", "1");
-		const Handle_BOP_HistoryCollector & History() const;
-		%feature("autodoc", "1");
-		void Destroy();
-
-};
-%feature("shadow") BRepAlgo_TopOpe::~BRepAlgo_TopOpe %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepAlgo_TopOpe {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepAlgo_DSAccess;
 class BRepAlgo_DSAccess {
 	public:
@@ -1029,10 +978,6 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape E, TopoDS_Shape & F) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape E) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape E) const;
 
 };
 %feature("shadow") BRepAlgo_Section::~BRepAlgo_Section %{

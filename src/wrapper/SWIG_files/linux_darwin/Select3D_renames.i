@@ -36,8 +36,8 @@ $HeaderURL$
 %rename(DownCast) Handle_Select3D_ListNodeOfListOfSensitiveTriangle::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveTriangulation::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveGroup::DownCast;
-%rename(DownCast) Handle_Select3D_SensitivePoint::DownCast;
 %rename(DownCast) Handle_Select3D_SensitiveSegment::DownCast;
+%rename(DownCast) Handle_Select3D_SensitivePoint::DownCast;
 %rename(DownCast) Handle_Select3D_SequenceNodeOfSensitiveEntitySequence::DownCast;
 %rename(DumpBox) Select3D_SensitiveEntity::DumpBox;
 %rename(Status) Select3D_SensitiveTriangle::Status;

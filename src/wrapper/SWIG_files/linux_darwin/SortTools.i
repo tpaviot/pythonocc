@@ -152,31 +152,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SortTools_StraightInsertionSortOfReal;
-class SortTools_StraightInsertionSortOfReal {
-	public:
-		%feature("autodoc", "1");
-		SortTools_StraightInsertionSortOfReal();
-		%feature("autodoc", "1");
-		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
-
-};
-%feature("shadow") SortTools_StraightInsertionSortOfReal::~SortTools_StraightInsertionSortOfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SortTools_StraightInsertionSortOfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SortTools_QuickSortOfInteger;
 class SortTools_QuickSortOfInteger {
 	public:
@@ -246,6 +221,31 @@ def __del__(self):
 %}
 
 %extend SortTools_ShellSortOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SortTools_StraightInsertionSortOfReal;
+class SortTools_StraightInsertionSortOfReal {
+	public:
+		%feature("autodoc", "1");
+		SortTools_StraightInsertionSortOfReal();
+		%feature("autodoc", "1");
+		static		void Sort(TColStd_Array1OfReal & TheArray, const TCollection_CompareOfReal &Comp);
+
+};
+%feature("shadow") SortTools_StraightInsertionSortOfReal::~SortTools_StraightInsertionSortOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SortTools_StraightInsertionSortOfReal {
 	void _kill_pointed() {
 		delete $self;
 	}

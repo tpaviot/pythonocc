@@ -277,39 +277,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
-class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &curve1, const Adaptor2d_Curve2d &curve2);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-
-};
-%feature("shadow") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter::~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Geom2dInt_IntConicCurveOfGInter;
 class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
@@ -511,6 +478,39 @@ def __del__(self):
 %}
 
 %extend Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
+class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter(const Adaptor2d_Curve2d &curve1, const Adaptor2d_Curve2d &curve2);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+
+};
+%feature("shadow") Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter::~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
 	void _kill_pointed() {
 		delete $self;
 	}

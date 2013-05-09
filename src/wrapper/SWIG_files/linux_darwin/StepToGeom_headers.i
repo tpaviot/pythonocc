@@ -214,6 +214,8 @@ $HeaderURL$
 #include<Handle_StepGeom_CartesianTransformationOperator3d.hxx>
 #include<gp_Trsf.hxx>
 #include<Handle_Geom_Parabola.hxx>
+#include<Handle_StepGeom_CylindricalSurface.hxx>
+#include<Handle_Geom_CylindricalSurface.hxx>
 #include<Handle_StepGeom_SurfaceOfRevolution.hxx>
 #include<Handle_Geom_SurfaceOfRevolution.hxx>
 #include<Handle_Geom_CartesianPoint.hxx>
@@ -221,8 +223,6 @@ $HeaderURL$
 #include<Handle_StepGeom_BSplineCurve.hxx>
 #include<Handle_StepGeom_SphericalSurface.hxx>
 #include<Handle_Geom_SphericalSurface.hxx>
-#include<Handle_StepGeom_Curve.hxx>
-#include<Handle_Geom_Curve.hxx>
 #include<Handle_StepGeom_CartesianTransformationOperator2d.hxx>
 #include<gp_Trsf2d.hxx>
 #include<Handle_StepGeom_ConicalSurface.hxx>
@@ -231,10 +231,10 @@ $HeaderURL$
 #include<Handle_Geom_RectangularTrimmedSurface.hxx>
 #include<Handle_StepGeom_BSplineSurface.hxx>
 #include<Handle_Geom_BSplineSurface.hxx>
-#include<Handle_StepGeom_CylindricalSurface.hxx>
-#include<Handle_Geom_CylindricalSurface.hxx>
 #include<Handle_Geom2d_Hyperbola.hxx>
 #include<Handle_Geom_Circle.hxx>
+#include<Handle_StepGeom_Curve.hxx>
+#include<Handle_Geom_Curve.hxx>
 #include<Handle_StepGeom_Axis2Placement3d.hxx>
 #include<Handle_Geom_Axis2Placement.hxx>
 #include<Handle_Geom2d_Curve.hxx>

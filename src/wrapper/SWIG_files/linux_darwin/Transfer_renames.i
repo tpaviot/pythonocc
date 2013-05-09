@@ -24,6 +24,8 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_Transfer_HSequenceOfFinder::DownCast;
+%rename(DownCast) Handle_Transfer_Binder::DownCast;
+%rename(DownCast) Handle_Transfer_VoidBinder::DownCast;
 %rename(DownCast) Handle_Transfer_Finder::DownCast;
 %rename(DownCast) Handle_Transfer_ActorOfProcessForTransient::DownCast;
 %rename(DownCast) Handle_Transfer_DispatchControl::DownCast;
@@ -31,7 +33,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Transfer_ActorOfProcessForFinder::DownCast;
 %rename(DownCast) Handle_Transfer_TransientMapper::DownCast;
 %rename(DownCast) Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient::DownCast;
-%rename(DownCast) Handle_Transfer_Binder::DownCast;
 %rename(DownCast) Handle_Transfer_SimpleBinderOfTransient::DownCast;
 %rename(DownCast) Handle_Transfer_ProcessForTransient::DownCast;
 %rename(DownCast) Handle_Transfer_TransientProcess::DownCast;
@@ -48,7 +49,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Transfer_HSequenceOfBinder::DownCast;
 %rename(DownCast) Handle_Transfer_MultipleBinder::DownCast;
 %rename(DownCast) Handle_Transfer_MapContainer::DownCast;
-%rename(DownCast) Handle_Transfer_VoidBinder::DownCast;
 %rename(DownCast) Handle_Transfer_ResultFromModel::DownCast;
 %rename(DownCast) Handle_Transfer_TransientListBinder::DownCast;
 %rename(DownCast) Handle_Transfer_TransferDeadLoop::DownCast;

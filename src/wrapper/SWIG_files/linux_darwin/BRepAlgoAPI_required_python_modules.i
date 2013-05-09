@@ -27,9 +27,7 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopoDS
-import BOP
 import Standard
+import TopoDS
 import TopTools
-import Geom2d
 };

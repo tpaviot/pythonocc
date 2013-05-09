@@ -999,6 +999,50 @@ def __del__(self):
 };
 
 
+%nodefaultctor PGeom2d_Conic;
+class PGeom2d_Conic : public PGeom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		void Position(const gp_Ax22d aPosition);
+		%feature("autodoc", "1");
+		gp_Ax22d Position() const;
+		%feature("autodoc", "1");
+		PGeom2d_Conic(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		const gp_Ax22d  _CSFDB_GetPGeom2d_Conicposition() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PGeom2d_Conic {
+	Handle_PGeom2d_Conic GetHandle() {
+	return *(Handle_PGeom2d_Conic*) &$self;
+	}
+};
+%extend PGeom2d_Conic {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PGeom2d_Conic::~PGeom2d_Conic %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PGeom2d_Conic {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend PGeom2d_Conic {
+	PGeom2d_Conic () {}
+};
+
+
 %nodefaultctor PGeom2d_Vector;
 class PGeom2d_Vector : public PGeom2d_Geometry {
 	public:
@@ -1080,50 +1124,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor PGeom2d_Conic;
-class PGeom2d_Conic : public PGeom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		void Position(const gp_Ax22d aPosition);
-		%feature("autodoc", "1");
-		gp_Ax22d Position() const;
-		%feature("autodoc", "1");
-		PGeom2d_Conic(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		const gp_Ax22d  _CSFDB_GetPGeom2d_Conicposition() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PGeom2d_Conic {
-	Handle_PGeom2d_Conic GetHandle() {
-	return *(Handle_PGeom2d_Conic*) &$self;
-	}
-};
-%extend PGeom2d_Conic {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") PGeom2d_Conic::~PGeom2d_Conic %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PGeom2d_Conic {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend PGeom2d_Conic {
-	PGeom2d_Conic () {}
-};
-
-
 %nodefaultctor PGeom2d_Circle;
 class PGeom2d_Circle : public PGeom2d_Conic {
 	public:
@@ -1141,6 +1141,8 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 		Standard_Real _CSFDB_GetPGeom2d_Circleradius() const;
 		%feature("autodoc", "1");
 		void _CSFDB_SetPGeom2d_Circleradius(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend PGeom2d_Circle {

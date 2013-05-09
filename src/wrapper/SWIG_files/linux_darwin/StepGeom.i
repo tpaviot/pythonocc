@@ -3635,35 +3635,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_PcurveOrSurface;
-class StepGeom_PcurveOrSurface : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_PcurveOrSurface();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Pcurve Pcurve() const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_Surface Surface() const;
-
-};
-%feature("shadow") StepGeom_PcurveOrSurface::~StepGeom_PcurveOrSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_PcurveOrSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_GeometricRepresentationItem;
 class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -4221,6 +4192,53 @@ def __del__(self):
 %}
 
 %extend StepGeom_UniformSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_Ellipse;
+class StepGeom_Ellipse : public StepGeom_Conic {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Ellipse();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition);
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition, const Standard_Real aSemiAxis1, const Standard_Real aSemiAxis2);
+		%feature("autodoc", "1");
+		void SetSemiAxis1(const Standard_Real aSemiAxis1);
+		%feature("autodoc", "1");
+		Standard_Real SemiAxis1() const;
+		%feature("autodoc", "1");
+		void SetSemiAxis2(const Standard_Real aSemiAxis2);
+		%feature("autodoc", "1");
+		Standard_Real SemiAxis2() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepGeom_Ellipse {
+	Handle_StepGeom_Ellipse GetHandle() {
+	return *(Handle_StepGeom_Ellipse*) &$self;
+	}
+};
+%extend StepGeom_Ellipse {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepGeom_Ellipse::~StepGeom_Ellipse %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_Ellipse {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5740,61 +5758,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_Array2OfSurfacePatch;
-class StepGeom_Array2OfSurfacePatch {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Handle_StepGeom_SurfacePatch &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
-		%feature("autodoc", "1");
-		const StepGeom_Array2OfSurfacePatch & operator=(const StepGeom_Array2OfSurfacePatch &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") StepGeom_Array2OfSurfacePatch::~StepGeom_Array2OfSurfacePatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_Array2OfSurfacePatch {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_ToroidalSurface;
 class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 	public:
@@ -7127,53 +7090,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepGeom_Ellipse;
-class StepGeom_Ellipse : public StepGeom_Conic {
-	public:
-		%feature("autodoc", "1");
-		StepGeom_Ellipse();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition);
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aName, const StepGeom_Axis2Placement &aPosition, const Standard_Real aSemiAxis1, const Standard_Real aSemiAxis2);
-		%feature("autodoc", "1");
-		void SetSemiAxis1(const Standard_Real aSemiAxis1);
-		%feature("autodoc", "1");
-		Standard_Real SemiAxis1() const;
-		%feature("autodoc", "1");
-		void SetSemiAxis2(const Standard_Real aSemiAxis2);
-		%feature("autodoc", "1");
-		Standard_Real SemiAxis2() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepGeom_Ellipse {
-	Handle_StepGeom_Ellipse GetHandle() {
-	return *(Handle_StepGeom_Ellipse*) &$self;
-	}
-};
-%extend StepGeom_Ellipse {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepGeom_Ellipse::~StepGeom_Ellipse %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepGeom_Ellipse {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepGeom_HArray2OfSurfacePatch;
 class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 	public:
@@ -7270,6 +7186,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepGeom_PcurveOrSurface;
+class StepGeom_PcurveOrSurface : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_PcurveOrSurface();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Pcurve Pcurve() const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_Surface Surface() const;
+
+};
+%feature("shadow") StepGeom_PcurveOrSurface::~StepGeom_PcurveOrSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_PcurveOrSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepGeom_QuasiUniformSurface;
 class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 	public:
@@ -7356,6 +7301,61 @@ def __del__(self):
 %}
 
 %extend StepGeom_UniformCurveAndRationalBSplineCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepGeom_Array2OfSurfacePatch;
+class StepGeom_Array2OfSurfacePatch {
+	public:
+		%feature("autodoc", "1");
+		StepGeom_Array2OfSurfacePatch(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		StepGeom_Array2OfSurfacePatch(const Handle_StepGeom_SurfacePatch &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Handle_StepGeom_SurfacePatch &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const StepGeom_Array2OfSurfacePatch & Assign(const StepGeom_Array2OfSurfacePatch &Other);
+		%feature("autodoc", "1");
+		const StepGeom_Array2OfSurfacePatch & operator=(const StepGeom_Array2OfSurfacePatch &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Handle_StepGeom_SurfacePatch &Value);
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Handle_StepGeom_SurfacePatch & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%feature("shadow") StepGeom_Array2OfSurfacePatch::~StepGeom_Array2OfSurfacePatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepGeom_Array2OfSurfacePatch {
 	void _kill_pointed() {
 		delete $self;
 	}

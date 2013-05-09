@@ -75,7 +75,6 @@ $HeaderURL$
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
-#include <Handle_TopTools_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include <Handle_TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
@@ -100,6 +99,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -186,7 +186,6 @@ $HeaderURL$
 #include <TopTools_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include <TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include <TopTools_DataMapIteratorOfDataMapOfShapeListOfShape.hxx>
-#include <TopTools_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include <TopTools_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include <TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include <TopTools_DataMapIteratorOfDataMapOfShapeShape.hxx>
@@ -197,7 +196,6 @@ $HeaderURL$
 #include <TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include <TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include <TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
-#include <TopTools_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include <TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include <TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include <TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
@@ -208,7 +206,6 @@ $HeaderURL$
 #include <TopTools_DataMapOfShapeInteger.hxx>
 #include <TopTools_DataMapOfShapeListOfInteger.hxx>
 #include <TopTools_DataMapOfShapeListOfShape.hxx>
-#include <TopTools_DataMapOfShapeMapOfShape.hxx>
 #include <TopTools_DataMapOfShapeReal.hxx>
 #include <TopTools_DataMapOfShapeSequenceOfShape.hxx>
 #include <TopTools_DataMapOfShapeShape.hxx>

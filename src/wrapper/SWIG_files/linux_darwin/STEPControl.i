@@ -63,44 +63,6 @@ enum STEPControl_StepModelType {
 
 
 
-%nodefaultctor Handle_STEPControl_ActorRead;
-class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
-	public:
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead();
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
-		%feature("autodoc", "1");
-		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
-		%feature("autodoc", "1");
-		static		Handle_STEPControl_ActorRead DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_STEPControl_ActorRead {
-	STEPControl_ActorRead* GetObject() {
-	return (STEPControl_ActorRead*)$self->Access();
-	}
-};
-%feature("shadow") Handle_STEPControl_ActorRead::~Handle_STEPControl_ActorRead %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_STEPControl_ActorRead {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_STEPControl_Controller;
 class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 	public:
@@ -133,6 +95,44 @@ def __del__(self):
 %}
 
 %extend Handle_STEPControl_Controller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_STEPControl_ActorRead;
+class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProcess {
+	public:
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead();
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead(const Handle_STEPControl_ActorRead &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead(const STEPControl_ActorRead *anItem);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const Handle_STEPControl_ActorRead &aHandle);
+		%feature("autodoc", "1");
+		Handle_STEPControl_ActorRead & operator=(const STEPControl_ActorRead *anItem);
+		%feature("autodoc", "1");
+		static		Handle_STEPControl_ActorRead DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_STEPControl_ActorRead {
+	STEPControl_ActorRead* GetObject() {
+	return (STEPControl_ActorRead*)$self->Access();
+	}
+};
+%feature("shadow") Handle_STEPControl_ActorRead::~Handle_STEPControl_ActorRead %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_STEPControl_ActorRead {
 	void _kill_pointed() {
 		delete $self;
 	}

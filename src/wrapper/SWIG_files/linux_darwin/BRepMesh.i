@@ -276,6 +276,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute;
+class Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute();
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute(const Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute(const BRepMesh_DataMapNodeOfDataMapOfFaceAttribute *anItem);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute &aHandle);
+		%feature("autodoc", "1");
+		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute & operator=(const BRepMesh_DataMapNodeOfDataMapOfFaceAttribute *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute {
+	BRepMesh_DataMapNodeOfDataMapOfFaceAttribute* GetObject() {
+	return (BRepMesh_DataMapNodeOfDataMapOfFaceAttribute*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute::~Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BRepMesh_DataStructureOfDelaun;
 class Handle_BRepMesh_DataStructureOfDelaun : public Handle_MMgt_TShared {
 	public:
@@ -536,44 +574,6 @@ def __del__(self):
 %}
 
 %extend Handle_BRepMesh_DataMapNodeOfDataMapOfIntegerPnt {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute;
-class Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute();
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute(const Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute(const BRepMesh_DataMapNodeOfDataMapOfFaceAttribute *anItem);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute & operator=(const Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute &aHandle);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute & operator=(const BRepMesh_DataMapNodeOfDataMapOfFaceAttribute *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute {
-	BRepMesh_DataMapNodeOfDataMapOfFaceAttribute* GetObject() {
-	return (BRepMesh_DataMapNodeOfDataMapOfFaceAttribute*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute::~Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BRepMesh_DataMapNodeOfDataMapOfFaceAttribute {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1620,6 +1620,156 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_DiscretRoot;
+class BRepMesh_DiscretRoot : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		void SetDeflection(const Standard_Real theDeflection);
+		%feature("autodoc", "1");
+		Standard_Real Deflection() const;
+		%feature("autodoc", "1");
+		void SetAngle(const Standard_Real theAngle);
+		%feature("autodoc", "1");
+		Standard_Real Angle() const;
+		%feature("autodoc", "1");
+		void SetShape(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Shape() const;
+		%feature("autodoc", "1");
+		virtual		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepMesh_DiscretRoot {
+	Handle_BRepMesh_DiscretRoot GetHandle() {
+	return *(Handle_BRepMesh_DiscretRoot*) &$self;
+	}
+};
+%extend BRepMesh_DiscretRoot {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepMesh_DiscretRoot::~BRepMesh_DiscretRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_DiscretRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepMesh_FastDiscret;
+class BRepMesh_FastDiscret : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_FastDiscret(const Standard_Real defle, const Standard_Real angle, const Bnd_Box &B, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
+		%feature("autodoc", "1");
+		BRepMesh_FastDiscret(const Standard_Real defle, const TopoDS_Shape shape, const Bnd_Box &B, const Standard_Real angle, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
+		%feature("autodoc", "1");
+		void Perform(const TopoDS_Shape shape);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Face face, const TopTools_IndexedDataMapOfShapeListOfShape &ancestor);
+		%feature("autodoc", "1");
+		void Process(const TopoDS_Face face) const;
+		%feature("autodoc", "1");
+		void operator()(const TopoDS_Face face) const;
+		%feature("autodoc", "1");
+		BRepMesh_Status CurrentFaceStatus() const;
+		%feature("autodoc","RelativeEdgeDeflection(const edge, Standard_Real defle, Standard_Real dtotale) -> Standard_Real");
+
+		static		Standard_Real RelativeEdgeDeflection(const TopoDS_Edge edge, const Standard_Real defle, const Standard_Real dtotale, Standard_Real &OutValue);
+		%feature("autodoc","BoxMaxDimension(const box) -> Standard_Real");
+
+		static		void BoxMaxDimension(const Bnd_Box &box, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		void SetParallel(const Standard_Boolean theInParallel);
+		%feature("autodoc", "1");
+		Standard_Boolean IsParallel() const;
+		%feature("autodoc", "1");
+		void CreateMutexesForSubShapes(const TopoDS_Shape theShape, const TopAbs_ShapeEnum theType);
+		%feature("autodoc", "1");
+		void RemoveAllMutexes();
+		%feature("autodoc", "1");
+		Standard_Integer NbTriangles() const;
+		%feature("autodoc", "1");
+		const BRepMesh_Triangle & Triangle(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbEdges() const;
+		%feature("autodoc", "1");
+		const BRepMesh_Edge & Edge(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbVertices() const;
+		%feature("autodoc", "1");
+		const BRepMesh_Vertex & Vertex(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Pnt(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void VerticesOfDomain(BRepMesh_MapOfInteger & Indices) const;
+		%feature("autodoc", "1");
+		void EdgesOfDomain(BRepMesh_MapOfInteger & Indices) const;
+		%feature("autodoc", "1");
+		void TrianglesOfDomain(BRepMesh_MapOfInteger & Indices) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoint3d() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Point3d(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Real GetDeflection() const;
+		%feature("autodoc", "1");
+		Standard_Real GetAngle() const;
+		%feature("autodoc", "1");
+		Standard_Boolean WithShare() const;
+		%feature("autodoc", "1");
+		Standard_Boolean InShape() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ShapeTrigu() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetFaceAttribute(const TopoDS_Face face, Handle_BRepMesh_FaceAttribute & fattrib) const;
+		%feature("autodoc", "1");
+		void RemoveFaceAttribute(const TopoDS_Face face);
+		%feature("autodoc", "1");
+		const TopTools_DataMapOfShapeReal & GetMapOfDefEdge() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend BRepMesh_FastDiscret {
+	Handle_BRepMesh_FastDiscret GetHandle() {
+	return *(Handle_BRepMesh_FastDiscret*) &$self;
+	}
+};
+%extend BRepMesh_FastDiscret {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") BRepMesh_FastDiscret::~BRepMesh_FastDiscret %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_FastDiscret {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfShapeReal;
 class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	public:
@@ -1751,55 +1901,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepMesh_DiscretRoot;
-class BRepMesh_DiscretRoot : public Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		void SetDeflection(const Standard_Real theDeflection);
-		%feature("autodoc", "1");
-		Standard_Real Deflection() const;
-		%feature("autodoc", "1");
-		void SetAngle(const Standard_Real theAngle);
-		%feature("autodoc", "1");
-		Standard_Real Angle() const;
-		%feature("autodoc", "1");
-		void SetShape(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Shape() const;
-		%feature("autodoc", "1");
-		virtual		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend BRepMesh_DiscretRoot {
-	Handle_BRepMesh_DiscretRoot GetHandle() {
-	return *(Handle_BRepMesh_DiscretRoot*) &$self;
-	}
-};
-%extend BRepMesh_DiscretRoot {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") BRepMesh_DiscretRoot::~BRepMesh_DiscretRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_DiscretRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepMesh_Vertex;
 class BRepMesh_Vertex {
 	public:
@@ -1912,55 +2013,6 @@ def __del__(self):
 %}
 
 %extend BRepMesh_IncrementalMesh {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepMesh_DataMapOfFaceAttribute;
-class BRepMesh_DataMapOfFaceAttribute : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfFaceAttribute(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfFaceAttribute & Assign(const BRepMesh_DataMapOfFaceAttribute &Other);
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfFaceAttribute & operator=(const BRepMesh_DataMapOfFaceAttribute &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Face K, const Handle_BRepMesh_FaceAttribute &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		const Handle_BRepMesh_FaceAttribute & Find(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		const Handle_BRepMesh_FaceAttribute & operator()(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Handle_BRepMesh_FaceAttribute & ChangeFind(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		Handle_BRepMesh_FaceAttribute & operator()(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Face K);
-
-};
-%feature("shadow") BRepMesh_DataMapOfFaceAttribute::~BRepMesh_DataMapOfFaceAttribute %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_DataMapOfFaceAttribute {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2163,55 +2215,6 @@ def __del__(self):
 %}
 
 %extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepMesh_DataMapOfShapePairOfPolygon;
-class BRepMesh_DataMapOfShapePairOfPolygon : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfShapePairOfPolygon(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfShapePairOfPolygon & Assign(const BRepMesh_DataMapOfShapePairOfPolygon &Other);
-		%feature("autodoc", "1");
-		BRepMesh_DataMapOfShapePairOfPolygon & operator=(const BRepMesh_DataMapOfShapePairOfPolygon &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const BRepMesh_PairOfPolygon &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const BRepMesh_PairOfPolygon & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const BRepMesh_PairOfPolygon & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		BRepMesh_PairOfPolygon & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		BRepMesh_PairOfPolygon & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepMesh_DataMapOfShapePairOfPolygon::~BRepMesh_DataMapOfShapePairOfPolygon %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_DataMapOfShapePairOfPolygon {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2535,92 +2538,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepMesh_FastDiscret;
-class BRepMesh_FastDiscret : public MMgt_TShared {
+%nodefaultctor BRepMesh_DataMapOfFaceAttribute;
+class BRepMesh_DataMapOfFaceAttribute : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		BRepMesh_FastDiscret(const Standard_Real defle, const Standard_Real angle, const Bnd_Box &B, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
+		BRepMesh_DataMapOfFaceAttribute(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		BRepMesh_FastDiscret(const Standard_Real defle, const TopoDS_Shape shape, const Bnd_Box &B, const Standard_Real angle, const Standard_Boolean withShare=1, const Standard_Boolean inshape=0, const Standard_Boolean relative=0, const Standard_Boolean shapetrigu=0);
+		BRepMesh_DataMapOfFaceAttribute & Assign(const BRepMesh_DataMapOfFaceAttribute &Other);
 		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape shape);
+		BRepMesh_DataMapOfFaceAttribute & operator=(const BRepMesh_DataMapOfFaceAttribute &Other);
 		%feature("autodoc", "1");
-		void Add(const TopoDS_Face face, const TopTools_IndexedDataMapOfShapeListOfShape &ancestor);
+		void ReSize(const Standard_Integer NbBuckets);
 		%feature("autodoc", "1");
-		void Process(const TopoDS_Face face) const;
+		void Clear();
 		%feature("autodoc", "1");
-		void operator()(const TopoDS_Face face) const;
+		Standard_Boolean Bind(const TopoDS_Face K, const Handle_BRepMesh_FaceAttribute &I);
 		%feature("autodoc", "1");
-		BRepMesh_Status CurrentFaceStatus() const;
-		%feature("autodoc","RelativeEdgeDeflection(const edge, Standard_Real defle, Standard_Real dtotale) -> Standard_Real");
-
-		static		Standard_Real RelativeEdgeDeflection(const TopoDS_Edge edge, const Standard_Real defle, const Standard_Real dtotale, Standard_Real &OutValue);
-		%feature("autodoc","BoxMaxDimension(const box) -> Standard_Real");
-
-		static		void BoxMaxDimension(const Bnd_Box &box, Standard_Real &OutValue);
+		Standard_Boolean IsBound(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		void SetParallel(const Standard_Boolean theInParallel);
+		Standard_Boolean UnBind(const TopoDS_Face K);
 		%feature("autodoc", "1");
-		Standard_Boolean IsParallel() const;
+		const Handle_BRepMesh_FaceAttribute & Find(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		void CreateMutexesForSubShapes(const TopoDS_Shape theShape, const TopAbs_ShapeEnum theType);
+		const Handle_BRepMesh_FaceAttribute & operator()(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		void RemoveAllMutexes();
+		Handle_BRepMesh_FaceAttribute & ChangeFind(const TopoDS_Face K);
 		%feature("autodoc", "1");
-		Standard_Integer NbTriangles() const;
+		Handle_BRepMesh_FaceAttribute & operator()(const TopoDS_Face K);
 		%feature("autodoc", "1");
-		const BRepMesh_Triangle & Triangle(const Standard_Integer Index) const;
+		Standard_Address Find1(const TopoDS_Face K) const;
 		%feature("autodoc", "1");
-		Standard_Integer NbEdges() const;
-		%feature("autodoc", "1");
-		const BRepMesh_Edge & Edge(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbVertices() const;
-		%feature("autodoc", "1");
-		const BRepMesh_Vertex & Vertex(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Pnt(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void VerticesOfDomain(BRepMesh_MapOfInteger & Indices) const;
-		%feature("autodoc", "1");
-		void EdgesOfDomain(BRepMesh_MapOfInteger & Indices) const;
-		%feature("autodoc", "1");
-		void TrianglesOfDomain(BRepMesh_MapOfInteger & Indices) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoint3d() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Point3d(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Real GetDeflection() const;
-		%feature("autodoc", "1");
-		Standard_Real GetAngle() const;
-		%feature("autodoc", "1");
-		Standard_Boolean WithShare() const;
-		%feature("autodoc", "1");
-		Standard_Boolean InShape() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ShapeTrigu() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetFaceAttribute(const TopoDS_Face face, Handle_BRepMesh_FaceAttribute & fattrib) const;
-		%feature("autodoc", "1");
-		void RemoveFaceAttribute(const TopoDS_Face face);
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeReal & GetMapOfDefEdge() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Standard_Address ChangeFind1(const TopoDS_Face K);
 
 };
-%extend BRepMesh_FastDiscret {
-	Handle_BRepMesh_FastDiscret GetHandle() {
-	return *(Handle_BRepMesh_FastDiscret*) &$self;
-	}
-};
-%extend BRepMesh_FastDiscret {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") BRepMesh_FastDiscret::~BRepMesh_FastDiscret %{
+%feature("shadow") BRepMesh_DataMapOfFaceAttribute::~BRepMesh_DataMapOfFaceAttribute %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2629,7 +2580,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepMesh_FastDiscret {
+%extend BRepMesh_DataMapOfFaceAttribute {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2955,6 +2906,55 @@ def __del__(self):
 %}
 
 %extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepMesh_DataMapOfShapePairOfPolygon;
+class BRepMesh_DataMapOfShapePairOfPolygon : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_DataMapOfShapePairOfPolygon(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepMesh_DataMapOfShapePairOfPolygon & Assign(const BRepMesh_DataMapOfShapePairOfPolygon &Other);
+		%feature("autodoc", "1");
+		BRepMesh_DataMapOfShapePairOfPolygon & operator=(const BRepMesh_DataMapOfShapePairOfPolygon &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const BRepMesh_PairOfPolygon &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const BRepMesh_PairOfPolygon & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const BRepMesh_PairOfPolygon & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		BRepMesh_PairOfPolygon & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		BRepMesh_PairOfPolygon & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepMesh_DataMapOfShapePairOfPolygon::~BRepMesh_DataMapOfShapePairOfPolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_DataMapOfShapePairOfPolygon {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3584,7 +3584,7 @@ class BRepMesh_FastDiscretFace : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real Control(const Handle_BRepAdaptor_HSurface &theCaro, const Standard_Real theDefFace, BRepMesh_ListOfVertex & theInternalV, TColStd_ListOfInteger & theBadTriangles, TColStd_ListOfInteger & theNulTriangles, BRepMesh_Delaun & theTrigu, const Standard_Boolean theIsFirst);
 		%feature("autodoc", "1");
-		static		gp_XY FindUV(const TopoDS_Vertex theV, const gp_Pnt2d theXY, const Standard_Integer theIp, const Handle_BRepAdaptor_HSurface &theSFace, const Standard_Real theMinDist, BRepMesh_DataMapOfIntegerListOfXY & theLocation2dMap);
+		static		gp_XY FindUV(const TopoDS_Vertex theV, const gp_Pnt2d theXY, const Standard_Integer theIp, const Handle_BRepAdaptor_HSurface &theSFace, const Standard_Real theMinDist, const Handle_BRepMesh_FaceAttribute &theFaceAttribute, BRepMesh_DataMapOfIntegerListOfXY & theLocation2dMap);
 		%feature("autodoc", "1");
 		const BRepMesh_Triangle & Triangle(const Standard_Integer theIndex) const;
 		%feature("autodoc", "1");
@@ -3951,6 +3951,33 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
+class BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_ElemHasherOfDataStructureOfDelaun();
+		%feature("autodoc", "1");
+		static		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
+		%feature("autodoc", "1");
+		static		Standard_Boolean IsEqual(const BRepMesh_Triangle &K1, const BRepMesh_Triangle &K2);
+
+};
+%feature("shadow") BRepMesh_ElemHasherOfDataStructureOfDelaun::~BRepMesh_ElemHasherOfDataStructureOfDelaun %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_ListIteratorOfListOfVertex;
 class BRepMesh_ListIteratorOfListOfVertex {
 	public:
@@ -3978,33 +4005,6 @@ def __del__(self):
 %}
 
 %extend BRepMesh_ListIteratorOfListOfVertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepMesh_ElemHasherOfDataStructureOfDelaun;
-class BRepMesh_ElemHasherOfDataStructureOfDelaun {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_ElemHasherOfDataStructureOfDelaun();
-		%feature("autodoc", "1");
-		static		Standard_Integer HashCode(const BRepMesh_Triangle &K, const Standard_Integer Upper);
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEqual(const BRepMesh_Triangle &K1, const BRepMesh_Triangle &K2);
-
-};
-%feature("shadow") BRepMesh_ElemHasherOfDataStructureOfDelaun::~BRepMesh_ElemHasherOfDataStructureOfDelaun %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_ElemHasherOfDataStructureOfDelaun {
 	void _kill_pointed() {
 		delete $self;
 	}

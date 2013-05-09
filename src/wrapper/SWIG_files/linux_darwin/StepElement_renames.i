@@ -26,6 +26,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepElement_ElementDescriptor::DownCast;
 %rename(DownCast) Handle_StepElement_Surface3dElementDescriptor::DownCast;
 %rename(DownCast) Handle_StepElement_HArray1OfCurveElementSectionDefinition::DownCast;
+%rename(DownCast) Handle_StepElement_SurfaceElementPurposeMember::DownCast;
 %rename(DownCast) Handle_StepElement_HArray1OfVolumeElementPurposeMember::DownCast;
 %rename(DownCast) Handle_StepElement_SurfaceSectionField::DownCast;
 %rename(DownCast) Handle_StepElement_HArray1OfSurfaceSection::DownCast;
@@ -52,7 +53,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepElement_CurveElementPurposeMember::DownCast;
 %rename(DownCast) Handle_StepElement_ElementAspectMember::DownCast;
 %rename(DownCast) Handle_StepElement_CurveElementFreedomMember::DownCast;
-%rename(DownCast) Handle_StepElement_SurfaceElementPurposeMember::DownCast;
 %rename(DownCast) Handle_StepElement_Volume3dElementDescriptor::DownCast;
 %rename(DownCast) Handle_StepElement_SurfaceSectionFieldVarying::DownCast;
 %rename(DownCast) Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember::DownCast;

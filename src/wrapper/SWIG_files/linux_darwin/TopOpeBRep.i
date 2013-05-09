@@ -650,62 +650,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRep_Hctxff2d;
-class TopOpeBRep_Hctxff2d : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRep_Hctxff2d();
-		%feature("autodoc", "1");
-		void SetFaces(const TopoDS_Face F1, const TopoDS_Face F2);
-		%feature("autodoc", "1");
-		void SetHSurfaces(const Handle_BRepAdaptor_HSurface &S1, const Handle_BRepAdaptor_HSurface &S2);
-		%feature("autodoc", "1");
-		void SetTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
-		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
-
-		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real GetMaxTolerance() const;
-		%feature("autodoc", "1");
-		const TopoDS_Face  Face(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Handle_BRepAdaptor_HSurface HSurface(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SurfacesSameOriented() const;
-		%feature("autodoc", "1");
-		Standard_Boolean FacesSameOriented() const;
-		%feature("autodoc", "1");
-		Standard_Boolean FaceSameOrientedWithRef(const Standard_Integer I) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TopOpeBRep_Hctxff2d {
-	Handle_TopOpeBRep_Hctxff2d GetHandle() {
-	return *(Handle_TopOpeBRep_Hctxff2d*) &$self;
-	}
-};
-%extend TopOpeBRep_Hctxff2d {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TopOpeBRep_Hctxff2d::~TopOpeBRep_Hctxff2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRep_Hctxff2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRep_ListNodeOfListOfBipoint;
 class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 	public:
@@ -1163,6 +1107,62 @@ def __del__(self):
 %}
 
 %extend TopOpeBRep_FacesFiller {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRep_Hctxff2d;
+class TopOpeBRep_Hctxff2d : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRep_Hctxff2d();
+		%feature("autodoc", "1");
+		void SetFaces(const TopoDS_Face F1, const TopoDS_Face F2);
+		%feature("autodoc", "1");
+		void SetHSurfaces(const Handle_BRepAdaptor_HSurface &S1, const Handle_BRepAdaptor_HSurface &S2);
+		%feature("autodoc", "1");
+		void SetTolerances(const Standard_Real Tol1, const Standard_Real Tol2);
+		%feature("autodoc","GetTolerances() -> [Standard_Real, Standard_Real]");
+
+		void GetTolerances(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real GetMaxTolerance() const;
+		%feature("autodoc", "1");
+		const TopoDS_Face  Face(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Handle_BRepAdaptor_HSurface HSurface(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SurfacesSameOriented() const;
+		%feature("autodoc", "1");
+		Standard_Boolean FacesSameOriented() const;
+		%feature("autodoc", "1");
+		Standard_Boolean FaceSameOrientedWithRef(const Standard_Integer I) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TopOpeBRep_Hctxff2d {
+	Handle_TopOpeBRep_Hctxff2d GetHandle() {
+	return *(Handle_TopOpeBRep_Hctxff2d*) &$self;
+	}
+};
+%extend TopOpeBRep_Hctxff2d {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TopOpeBRep_Hctxff2d::~TopOpeBRep_Hctxff2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRep_Hctxff2d {
 	void _kill_pointed() {
 		delete $self;
 	}

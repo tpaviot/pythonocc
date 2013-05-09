@@ -204,6 +204,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor ProjLib_SequenceOfHSequenceOfPnt;
+class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_SequenceOfHSequenceOfPnt();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void Append(ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void Prepend(ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & First() const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") ProjLib_SequenceOfHSequenceOfPnt::~ProjLib_SequenceOfHSequenceOfPnt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ProjLib_SequenceOfHSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ProjLib_CompProjectedCurve;
 class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 	public:
@@ -277,71 +342,6 @@ def __del__(self):
 %}
 
 %extend ProjLib_CompProjectedCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ProjLib_SequenceOfHSequenceOfPnt;
-class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_SequenceOfHSequenceOfPnt();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ProjLib_SequenceOfHSequenceOfPnt & Assign(const ProjLib_SequenceOfHSequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		const ProjLib_SequenceOfHSequenceOfPnt & operator=(const ProjLib_SequenceOfHSequenceOfPnt &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void Append(ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void Prepend(ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & First() const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ProjLib_SequenceOfHSequenceOfPnt & S);
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_TColgp_HSequenceOfPnt &I);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_TColgp_HSequenceOfPnt & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") ProjLib_SequenceOfHSequenceOfPnt::~ProjLib_SequenceOfHSequenceOfPnt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ProjLib_SequenceOfHSequenceOfPnt {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -983,6 +983,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor ProjLib_HCompProjectedCurve;
+class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
+	public:
+		%feature("autodoc", "1");
+		ProjLib_HCompProjectedCurve();
+		%feature("autodoc", "1");
+		ProjLib_HCompProjectedCurve(const ProjLib_CompProjectedCurve &C);
+		%feature("autodoc", "1");
+		void Set(const ProjLib_CompProjectedCurve &C);
+		%feature("autodoc", "1");
+		virtual		const Adaptor2d_Curve2d & Curve2d() const;
+		%feature("autodoc", "1");
+		ProjLib_CompProjectedCurve & ChangeCurve2d();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ProjLib_HCompProjectedCurve {
+	Handle_ProjLib_HCompProjectedCurve GetHandle() {
+	return *(Handle_ProjLib_HCompProjectedCurve*) &$self;
+	}
+};
+%extend ProjLib_HCompProjectedCurve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ProjLib_HCompProjectedCurve::~ProjLib_HCompProjectedCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ProjLib_HCompProjectedCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ProjLib_ProjectOnPlane;
 class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 	public:
@@ -1068,49 +1111,6 @@ def __del__(self):
 %}
 
 %extend ProjLib_ProjectOnPlane {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ProjLib_HCompProjectedCurve;
-class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
-	public:
-		%feature("autodoc", "1");
-		ProjLib_HCompProjectedCurve();
-		%feature("autodoc", "1");
-		ProjLib_HCompProjectedCurve(const ProjLib_CompProjectedCurve &C);
-		%feature("autodoc", "1");
-		void Set(const ProjLib_CompProjectedCurve &C);
-		%feature("autodoc", "1");
-		virtual		const Adaptor2d_Curve2d & Curve2d() const;
-		%feature("autodoc", "1");
-		ProjLib_CompProjectedCurve & ChangeCurve2d();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ProjLib_HCompProjectedCurve {
-	Handle_ProjLib_HCompProjectedCurve GetHandle() {
-	return *(Handle_ProjLib_HCompProjectedCurve*) &$self;
-	}
-};
-%extend ProjLib_HCompProjectedCurve {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") ProjLib_HCompProjectedCurve::~ProjLib_HCompProjectedCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ProjLib_HCompProjectedCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

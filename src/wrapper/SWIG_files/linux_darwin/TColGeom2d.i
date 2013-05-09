@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_TColGeom2d_HArray1OfGeometry;
-class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry();
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry(const TColGeom2d_HArray1OfGeometry *anItem);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry & operator=(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColGeom2d_HArray1OfGeometry & operator=(const TColGeom2d_HArray1OfGeometry *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TColGeom2d_HArray1OfGeometry DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColGeom2d_HArray1OfGeometry {
-	TColGeom2d_HArray1OfGeometry* GetObject() {
-	return (TColGeom2d_HArray1OfGeometry*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TColGeom2d_HArray1OfGeometry::~Handle_TColGeom2d_HArray1OfGeometry %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TColGeom2d_HArray1OfGeometry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TColGeom2d_HSequenceOfGeometry;
 class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 	public:
@@ -464,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_TColGeom2d_HArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TColGeom2d_HArray1OfGeometry;
+class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry();
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry(const TColGeom2d_HArray1OfGeometry *anItem);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry & operator=(const Handle_TColGeom2d_HArray1OfGeometry &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColGeom2d_HArray1OfGeometry & operator=(const TColGeom2d_HArray1OfGeometry *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TColGeom2d_HArray1OfGeometry DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColGeom2d_HArray1OfGeometry {
+	TColGeom2d_HArray1OfGeometry* GetObject() {
+	return (TColGeom2d_HArray1OfGeometry*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TColGeom2d_HArray1OfGeometry::~Handle_TColGeom2d_HArray1OfGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TColGeom2d_HArray1OfGeometry {
 	void _kill_pointed() {
 		delete $self;
 	}

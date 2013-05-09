@@ -166,82 +166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeUpgrade_SplitSurface;
-class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface(const Handle_ShapeUpgrade_SplitSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface(const ShapeUpgrade_SplitSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface & operator=(const Handle_ShapeUpgrade_SplitSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurface & operator=(const ShapeUpgrade_SplitSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurface {
-	ShapeUpgrade_SplitSurface* GetObject() {
-	return (ShapeUpgrade_SplitSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitSurface::~Handle_ShapeUpgrade_SplitSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceAngle;
-class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle();
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle(const ShapeUpgrade_SplitSurfaceAngle *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const ShapeUpgrade_SplitSurfaceAngle *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeUpgrade_SplitSurfaceAngle DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeUpgrade_SplitSurfaceAngle {
-	ShapeUpgrade_SplitSurfaceAngle* GetObject() {
-	return (ShapeUpgrade_SplitSurfaceAngle*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceAngle::~Handle_ShapeUpgrade_SplitSurfaceAngle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeUpgrade_SplitSurfaceAngle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeUpgrade_EdgeDivide;
 class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -312,6 +236,82 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeUpgrade_ClosedEdgeDivide {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurface;
+class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurface();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurface(const Handle_ShapeUpgrade_SplitSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurface(const ShapeUpgrade_SplitSurface *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurface & operator=(const Handle_ShapeUpgrade_SplitSurface &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurface & operator=(const ShapeUpgrade_SplitSurface *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitSurface DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurface {
+	ShapeUpgrade_SplitSurface* GetObject() {
+	return (ShapeUpgrade_SplitSurface*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitSurface::~Handle_ShapeUpgrade_SplitSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeUpgrade_SplitSurfaceAngle;
+class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSurface {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceAngle();
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceAngle(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceAngle(const ShapeUpgrade_SplitSurfaceAngle *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const Handle_ShapeUpgrade_SplitSurfaceAngle &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeUpgrade_SplitSurfaceAngle & operator=(const ShapeUpgrade_SplitSurfaceAngle *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeUpgrade_SplitSurfaceAngle DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeUpgrade_SplitSurfaceAngle {
+	ShapeUpgrade_SplitSurfaceAngle* GetObject() {
+	return (ShapeUpgrade_SplitSurfaceAngle*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeUpgrade_SplitSurfaceAngle::~Handle_ShapeUpgrade_SplitSurfaceAngle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeUpgrade_SplitSurfaceAngle {
 	void _kill_pointed() {
 		delete $self;
 	}

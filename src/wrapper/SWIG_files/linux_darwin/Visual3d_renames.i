@@ -25,6 +25,7 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_Visual3d_SequenceNodeOfSequenceOfPickPath::DownCast;
 %rename(DownCast) Handle_Visual3d_PickError::DownCast;
+%rename(DownCast) Handle_Visual3d_View::DownCast;
 %rename(DownCast) Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane::DownCast;
 %rename(DownCast) Handle_Visual3d_ZClippingDefinitionError::DownCast;
 %rename(DownCast) Handle_Visual3d_TransformError::DownCast;
@@ -50,7 +51,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Visual3d_ContextPickDefinitionError::DownCast;
 %rename(DownCast) Handle_Visual3d_ViewOrientationDefinitionError::DownCast;
 %rename(DownCast) Handle_Visual3d_ViewDefinitionError::DownCast;
-%rename(DownCast) Handle_Visual3d_View::DownCast;
 %rename(Raise) Visual3d_ViewMappingDefinitionError::Raise;
 %rename(NewInstance) Visual3d_ViewMappingDefinitionError::NewInstance;
 %rename(Raise) Visual3d_TransformError::Raise;
@@ -81,18 +81,7 @@ $HeaderURL$
 %rename(ClearDraw) Visual3d_TransientManager::ClearDraw;
 %rename(BeginAddDraw) Visual3d_TransientManager::BeginAddDraw;
 %rename(EndAddDraw) Visual3d_TransientManager::EndAddDraw;
-%rename(BeginPolyline) Visual3d_TransientManager::BeginPolyline;
-%rename(BeginPolygon) Visual3d_TransientManager::BeginPolygon;
-%rename(BeginTriangleMesh) Visual3d_TransientManager::BeginTriangleMesh;
-%rename(BeginMarker) Visual3d_TransientManager::BeginMarker;
-%rename(BeginBezier) Visual3d_TransientManager::BeginBezier;
-%rename(AddVertex) Visual3d_TransientManager::AddVertex;
-%rename(ClosePrimitive) Visual3d_TransientManager::ClosePrimitive;
-%rename(DrawText) Visual3d_TransientManager::DrawText;
 %rename(DrawStructure) Visual3d_TransientManager::DrawStructure;
-%rename(SetPrimitivesAspect) Visual3d_TransientManager::SetPrimitivesAspect;
-%rename(MinMaxValues) Visual3d_TransientManager::MinMaxValues;
-%rename(SetTransform) Visual3d_TransientManager::SetTransform;
 %rename(Raise) Visual3d_PickError::Raise;
 %rename(NewInstance) Visual3d_PickError::NewInstance;
 %rename(Limit) Visual3d_ClipPlane::Limit;

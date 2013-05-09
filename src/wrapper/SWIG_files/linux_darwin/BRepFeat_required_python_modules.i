@@ -27,9 +27,9 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import TopTools
 import Standard
 import TopoDS
+import TopTools
 import Geom
 import LocOpe
 };

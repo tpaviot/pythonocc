@@ -619,6 +619,59 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepBuilderAPI_MakePolygon;
+class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
+	public:
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon();
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const Standard_Boolean Close=0);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4, const Standard_Boolean Close=0);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const TopoDS_Vertex V3, const Standard_Boolean Close=0);
+		%feature("autodoc", "1");
+		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const TopoDS_Vertex V3, const TopoDS_Vertex V4, const Standard_Boolean Close=0);
+		%feature("autodoc", "1");
+		void Add(const gp_Pnt P);
+		%feature("autodoc", "1");
+		void Add(const TopoDS_Vertex V);
+		%feature("autodoc", "1");
+		Standard_Boolean Added() const;
+		%feature("autodoc", "1");
+		void Close();
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  FirstVertex() const;
+		%feature("autodoc", "1");
+		const TopoDS_Vertex  LastVertex() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		const TopoDS_Edge  Edge() const;
+		%feature("autodoc", "1");
+		const TopoDS_Wire  Wire() const;
+
+};
+%feature("shadow") BRepBuilderAPI_MakePolygon::~BRepBuilderAPI_MakePolygon %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBuilderAPI_MakePolygon {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepBuilderAPI_FindPlane;
 class BRepBuilderAPI_FindPlane {
 	public:
@@ -892,59 +945,6 @@ def __del__(self):
 %}
 
 %extend BRepBuilderAPI_GTransform {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBuilderAPI_MakePolygon;
-class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
-	public:
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon();
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const Standard_Boolean Close=0);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const gp_Pnt P1, const gp_Pnt P2, const gp_Pnt P3, const gp_Pnt P4, const Standard_Boolean Close=0);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const TopoDS_Vertex V3, const Standard_Boolean Close=0);
-		%feature("autodoc", "1");
-		BRepBuilderAPI_MakePolygon(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const TopoDS_Vertex V3, const TopoDS_Vertex V4, const Standard_Boolean Close=0);
-		%feature("autodoc", "1");
-		void Add(const gp_Pnt P);
-		%feature("autodoc", "1");
-		void Add(const TopoDS_Vertex V);
-		%feature("autodoc", "1");
-		Standard_Boolean Added() const;
-		%feature("autodoc", "1");
-		void Close();
-		%feature("autodoc", "1");
-		const TopoDS_Vertex  FirstVertex() const;
-		%feature("autodoc", "1");
-		const TopoDS_Vertex  LastVertex() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  Edge() const;
-		%feature("autodoc", "1");
-		const TopoDS_Wire  Wire() const;
-
-};
-%feature("shadow") BRepBuilderAPI_MakePolygon::~BRepBuilderAPI_MakePolygon %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBuilderAPI_MakePolygon {
 	void _kill_pointed() {
 		delete $self;
 	}

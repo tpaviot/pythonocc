@@ -27,10 +27,8 @@ $HeaderURL$
 #include <Handle_MMgt_TShared.hxx>
 #include <Handle_PrsMgr_PresentableObject.hxx>
 #include <Handle_PrsMgr_Presentation.hxx>
-#include <Handle_PrsMgr_Presentation2d.hxx>
 #include <Handle_PrsMgr_Presentation3d.hxx>
 #include <Handle_PrsMgr_PresentationManager.hxx>
-#include <Handle_PrsMgr_PresentationManager2d.hxx>
 #include <Handle_PrsMgr_PresentationManager3d.hxx>
 #include <Handle_PrsMgr_Prs.hxx>
 #include <Handle_PrsMgr_SequenceNodeOfPresentations.hxx>
@@ -84,11 +82,9 @@ $HeaderURL$
 #include <PrsMgr_PresentableObject.hxx>
 #include <PrsMgr_PresentableObjectPointer.hxx>
 #include <PrsMgr_Presentation.hxx>
-#include <PrsMgr_Presentation2d.hxx>
 #include <PrsMgr_Presentation3d.hxx>
 #include <PrsMgr_Presentation3dPointer.hxx>
 #include <PrsMgr_PresentationManager.hxx>
-#include <PrsMgr_PresentationManager2d.hxx>
 #include <PrsMgr_PresentationManager3d.hxx>
 #include <PrsMgr_Presentations.hxx>
 #include <PrsMgr_Prs.hxx>
@@ -206,6 +202,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>

@@ -38,7 +38,6 @@ $HeaderURL$
 %rename(Triangulation) BRepTools::Triangulation;
 %rename(Compare) BRepTools::Compare;
 %rename(OuterWire) BRepTools::OuterWire;
-%rename(OuterShell) BRepTools::OuterShell;
 %rename(Map3DEdges) BRepTools::Map3DEdges;
 %rename(IsReallyClosed) BRepTools::IsReallyClosed;
 %rename(Dump) BRepTools::Dump;

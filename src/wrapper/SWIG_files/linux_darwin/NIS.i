@@ -128,44 +128,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_NIS_SelectFilter;
-class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter();
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
-		%feature("autodoc", "1");
-		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
-		%feature("autodoc", "1");
-		static		Handle_NIS_SelectFilter DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_NIS_SelectFilter {
-	NIS_SelectFilter* GetObject() {
-	return (NIS_SelectFilter*)$self->Access();
-	}
-};
-%feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_NIS_SelectFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_NIS_TriangulatedDrawer;
 class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 	public:
@@ -198,6 +160,44 @@ def __del__(self):
 %}
 
 %extend Handle_NIS_TriangulatedDrawer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_NIS_SelectFilter;
+class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter();
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter(const Handle_NIS_SelectFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter(const NIS_SelectFilter *anItem);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const Handle_NIS_SelectFilter &aHandle);
+		%feature("autodoc", "1");
+		Handle_NIS_SelectFilter & operator=(const NIS_SelectFilter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_NIS_SelectFilter DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_NIS_SelectFilter {
+	NIS_SelectFilter* GetObject() {
+	return (NIS_SelectFilter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_NIS_SelectFilter::~Handle_NIS_SelectFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_NIS_SelectFilter {
 	void _kill_pointed() {
 		delete $self;
 	}

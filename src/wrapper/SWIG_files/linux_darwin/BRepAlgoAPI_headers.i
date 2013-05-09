@@ -27,7 +27,9 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<BRepAlgoAPI.hxx>
 #include<BRepAlgoAPI_BooleanOperation.hxx>
+#include<BRepAlgoAPI_Check.hxx>
 #include<BRepAlgoAPI_Common.hxx>
 #include<BRepAlgoAPI_Cut.hxx>
 #include<BRepAlgoAPI_Fuse.hxx>
@@ -39,8 +41,8 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<TopoDS_Shape.hxx>
-#include<BOPTools_DSFiller.hxx>
+#include<BOPAlgo_PaveFiller.hxx>
+#include<BRepAlgoAPI.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_Geom_Surface.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 %}

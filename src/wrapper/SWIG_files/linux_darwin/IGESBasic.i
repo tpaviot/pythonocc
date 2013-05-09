@@ -242,44 +242,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESBasic_Name;
-class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Name();
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Name(const Handle_IGESBasic_Name &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Name(const IGESBasic_Name *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Name & operator=(const Handle_IGESBasic_Name &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESBasic_Name & operator=(const IGESBasic_Name *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESBasic_Name DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESBasic_Name {
-	IGESBasic_Name* GetObject() {
-	return (IGESBasic_Name*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESBasic_Name::~Handle_IGESBasic_Name %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESBasic_Name {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfIGESEntity;
 class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared {
 	public:
@@ -616,6 +578,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESBasic_HArray1OfHArray1OfXY {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESBasic_Name;
+class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name();
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name(const Handle_IGESBasic_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name(const IGESBasic_Name *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name & operator=(const Handle_IGESBasic_Name &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESBasic_Name & operator=(const IGESBasic_Name *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESBasic_Name DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESBasic_Name {
+	IGESBasic_Name* GetObject() {
+	return (IGESBasic_Name*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESBasic_Name::~Handle_IGESBasic_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESBasic_Name {
 	void _kill_pointed() {
 		delete $self;
 	}

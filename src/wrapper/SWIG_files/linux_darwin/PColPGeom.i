@@ -280,6 +280,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
+class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve();
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve(const PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
+	PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve* GetObject() {
+	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve::~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_PStandard_ArrayNode {
 	public:
@@ -730,44 +768,6 @@ def __del__(self):
 %}
 
 %extend Handle_PColPGeom_HArray2OfSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
-class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve();
-		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve(const PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve & operator=(const PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
-	PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve* GetObject() {
-	return (PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve::~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -34,5 +34,4 @@ import TColGeom
 import Geom
 import gp
 import TopAbs
-import BOP
 };

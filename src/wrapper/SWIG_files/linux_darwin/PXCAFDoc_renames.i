@@ -29,10 +29,10 @@ $HeaderURL$
 %rename(DownCast) Handle_PXCAFDoc_GraphNodeSequence::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_GraphNode::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_DocumentTool::DownCast;
-%rename(DownCast) Handle_PXCAFDoc_MaterialTool::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_ShapeTool::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_Volume::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_Area::DownCast;
+%rename(DownCast) Handle_PXCAFDoc_MaterialTool::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_LayerTool::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_Material::DownCast;
 %rename(DownCast) Handle_PXCAFDoc_ColorTool::DownCast;

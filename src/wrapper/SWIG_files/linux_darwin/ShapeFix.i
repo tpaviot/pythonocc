@@ -318,6 +318,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
+class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	ShapeFix_DataMapNodeOfDataMapOfShapeBox2d* GetObject() {
+	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
 class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
 	public:
@@ -388,44 +426,6 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeFix_Wireframe {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
-class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d();
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d & operator=(const ShapeFix_DataMapNodeOfDataMapOfShapeBox2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
-	ShapeFix_DataMapNodeOfDataMapOfShapeBox2d* GetObject() {
-	return (ShapeFix_DataMapNodeOfDataMapOfShapeBox2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d::~Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1432,6 +1432,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeFix_SequenceOfWireSegment;
+class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		ShapeFix_SequenceOfWireSegment();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const ShapeFix_SequenceOfWireSegment & Assign(const ShapeFix_SequenceOfWireSegment &Other);
+		%feature("autodoc", "1");
+		const ShapeFix_SequenceOfWireSegment & operator=(const ShapeFix_SequenceOfWireSegment &Other);
+		%feature("autodoc", "1");
+		void Append(const ShapeFix_WireSegment &T);
+		%feature("autodoc", "1");
+		void Append(ShapeFix_SequenceOfWireSegment & S);
+		%feature("autodoc", "1");
+		void Prepend(const ShapeFix_WireSegment &T);
+		%feature("autodoc", "1");
+		void Prepend(ShapeFix_SequenceOfWireSegment & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const ShapeFix_WireSegment &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const ShapeFix_WireSegment &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
+		%feature("autodoc", "1");
+		const ShapeFix_WireSegment & First() const;
+		%feature("autodoc", "1");
+		const ShapeFix_WireSegment & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
+		%feature("autodoc", "1");
+		const ShapeFix_WireSegment & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const ShapeFix_WireSegment & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const ShapeFix_WireSegment &I);
+		%feature("autodoc", "1");
+		ShapeFix_WireSegment & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		ShapeFix_WireSegment & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") ShapeFix_SequenceOfWireSegment::~ShapeFix_SequenceOfWireSegment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeFix_SequenceOfWireSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeFix_DataMapOfShapeBox2d;
 class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 	public:
@@ -1779,71 +1844,6 @@ def __del__(self):
 %}
 
 %extend ShapeFix_ShapeTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeFix_SequenceOfWireSegment;
-class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ShapeFix_SequenceOfWireSegment();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ShapeFix_SequenceOfWireSegment & Assign(const ShapeFix_SequenceOfWireSegment &Other);
-		%feature("autodoc", "1");
-		const ShapeFix_SequenceOfWireSegment & operator=(const ShapeFix_SequenceOfWireSegment &Other);
-		%feature("autodoc", "1");
-		void Append(const ShapeFix_WireSegment &T);
-		%feature("autodoc", "1");
-		void Append(ShapeFix_SequenceOfWireSegment & S);
-		%feature("autodoc", "1");
-		void Prepend(const ShapeFix_WireSegment &T);
-		%feature("autodoc", "1");
-		void Prepend(ShapeFix_SequenceOfWireSegment & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const ShapeFix_WireSegment &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const ShapeFix_WireSegment &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
-		%feature("autodoc", "1");
-		const ShapeFix_WireSegment & First() const;
-		%feature("autodoc", "1");
-		const ShapeFix_WireSegment & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ShapeFix_SequenceOfWireSegment & S);
-		%feature("autodoc", "1");
-		const ShapeFix_WireSegment & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const ShapeFix_WireSegment & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const ShapeFix_WireSegment &I);
-		%feature("autodoc", "1");
-		ShapeFix_WireSegment & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		ShapeFix_WireSegment & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") ShapeFix_SequenceOfWireSegment::~ShapeFix_SequenceOfWireSegment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeFix_SequenceOfWireSegment {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -29,8 +29,8 @@ $HeaderURL$
 %rename(DownCast) Handle_Dynamic_IntegerParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_SequenceOfMethodDefinitions::DownCast;
 %rename(DownCast) Handle_Dynamic_VariableNode::DownCast;
-%rename(DownCast) Handle_Dynamic_FuzzyDefinitionsDictionary::DownCast;
 %rename(DownCast) Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions::DownCast;
+%rename(DownCast) Handle_Dynamic_SequenceNodeOfSeqOfClasses::DownCast;
 %rename(DownCast) Handle_Dynamic_FuzzyClass::DownCast;
 %rename(DownCast) Handle_Dynamic_FuzzyDefinition::DownCast;
 %rename(DownCast) Handle_Dynamic_Method::DownCast;
@@ -46,11 +46,11 @@ $HeaderURL$
 %rename(DownCast) Handle_Dynamic_ObjectParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_VariableGroup::DownCast;
 %rename(DownCast) Handle_Dynamic_CompositVariableInstance::DownCast;
+%rename(DownCast) Handle_Dynamic_FuzzyDefinitionsDictionary::DownCast;
 %rename(DownCast) Handle_Dynamic_InstanceParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_SequenceOfClasses::DownCast;
 %rename(DownCast) Handle_Dynamic_MethodDefinitionsDictionary::DownCast;
 %rename(DownCast) Handle_Dynamic_SequenceOfMethods::DownCast;
-%rename(DownCast) Handle_Dynamic_SequenceNodeOfSeqOfClasses::DownCast;
 %rename(DownCast) Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions::DownCast;
 %rename(DownCast) Handle_Dynamic_DynamicClass::DownCast;
 %rename(DownCast) Handle_Dynamic_DynamicDerivedClass::DownCast;

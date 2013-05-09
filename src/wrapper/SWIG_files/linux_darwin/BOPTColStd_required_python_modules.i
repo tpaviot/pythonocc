@@ -27,10 +27,4 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import TopoDS
-import TColStd
-import TCollection
-import gp
-import TopTools
 };

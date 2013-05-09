@@ -1291,6 +1291,9 @@ def __del__(self):
 
 
 %nodefaultctor TDocStd_Document;
+
+
+%nodefaultdtor TDocStd_Document;
 class TDocStd_Document : public CDM_Document {
 	public:
 		%feature("autodoc", "1");
@@ -1395,21 +1398,6 @@ class TDocStd_Document : public CDM_Document {
 	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") TDocStd_Document::~TDocStd_Document %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDocStd_Document {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
 
 %nodefaultctor TDocStd_SequenceOfApplicationDelta;
 class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {

@@ -408,6 +408,7 @@ $HeaderURL$
 #include<Handle_StepBasic_PlaneAngleMeasureWithUnit.hxx>
 #include<Handle_StepBasic_ConversionBasedUnitAndLengthUnit.hxx>
 #include<Handle_StepBasic_SecurityClassificationLevel.hxx>
+#include<Handle_StepBasic_LocalTime.hxx>
 #include<Handle_StepBasic_CertificationType.hxx>
 #include<Handle_StepBasic_DerivedUnitElement.hxx>
 #include<Handle_StepBasic_ProductDefinitionEffectivity.hxx>
@@ -440,7 +441,6 @@ $HeaderURL$
 #include<Handle_StepBasic_SiUnitAndRatioUnit.hxx>
 #include<Handle_StepBasic_ConversionBasedUnitAndMassUnit.hxx>
 #include<Handle_StepBasic_ActionMethod.hxx>
-#include<Handle_StepBasic_LocalTime.hxx>
 #include<Handle_StepBasic_ActionRequestAssignment.hxx>
 #include<Handle_StepBasic_ConversionBasedUnit.hxx>
 #include<Handle_StepBasic_ObjectRole.hxx>

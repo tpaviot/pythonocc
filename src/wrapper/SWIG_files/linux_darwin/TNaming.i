@@ -617,61 +617,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_Name;
-class TNaming_Name {
-	public:
-		%feature("autodoc", "1");
-		TNaming_Name();
-		%feature("autodoc", "1");
-		void Type(const TNaming_NameType aType);
-		%feature("autodoc", "1");
-		void ShapeType(const TopAbs_ShapeEnum aType);
-		%feature("autodoc", "1");
-		void Shape(const TopoDS_Shape theShape);
-		%feature("autodoc", "1");
-		void Append(const Handle_TNaming_NamedShape &arg);
-		%feature("autodoc", "1");
-		void StopNamedShape(const Handle_TNaming_NamedShape &arg);
-		%feature("autodoc", "1");
-		void Index(const Standard_Integer I);
-		%feature("autodoc", "1");
-		void ContextLabel(const TDF_Label &theLab);
-		%feature("autodoc", "1");
-		TNaming_NameType Type() const;
-		%feature("autodoc", "1");
-		TopAbs_ShapeEnum ShapeType() const;
-		%feature("autodoc", "1");
-		TopoDS_Shape Shape() const;
-		%feature("autodoc", "1");
-		const TNaming_ListOfNamedShape & Arguments() const;
-		%feature("autodoc", "1");
-		Handle_TNaming_NamedShape StopNamedShape() const;
-		%feature("autodoc", "1");
-		Standard_Integer Index() const;
-		%feature("autodoc", "1");
-		const TDF_Label & ContextLabel() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Solve(const TDF_Label &aLab, const TDF_LabelMap &Valid) const;
-		%feature("autodoc", "1");
-		void Paste(TNaming_Name & into, const Handle_TDF_RelocationTable &RT) const;
-
-};
-%feature("shadow") TNaming_Name::~TNaming_Name %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_Name {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TNaming_UsedShapes;
 class TNaming_UsedShapes : public TDF_Attribute {
 	public:
@@ -1282,55 +1227,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TNaming_Scope;
-class TNaming_Scope {
-	public:
-		%feature("autodoc", "1");
-		TNaming_Scope();
-		%feature("autodoc", "1");
-		TNaming_Scope(const Standard_Boolean WithValid);
-		%feature("autodoc", "1");
-		TNaming_Scope(TDF_LabelMap & valid);
-		%feature("autodoc", "1");
-		Standard_Boolean WithValid() const;
-		%feature("autodoc", "1");
-		void WithValid(const Standard_Boolean mode);
-		%feature("autodoc", "1");
-		void ClearValid();
-		%feature("autodoc", "1");
-		void Valid(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void ValidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
-		%feature("autodoc", "1");
-		void Unvalid(const TDF_Label &L);
-		%feature("autodoc", "1");
-		void UnvalidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValid(const TDF_Label &L) const;
-		%feature("autodoc", "1");
-		const TDF_LabelMap & GetValid() const;
-		%feature("autodoc", "1");
-		TDF_LabelMap & ChangeValid();
-		%feature("autodoc", "1");
-		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS) const;
-
-};
-%feature("shadow") TNaming_Scope::~TNaming_Scope %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TNaming_Scope {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TNaming_RefShape;
 class TNaming_RefShape {
 	public:
@@ -1856,6 +1752,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor TNaming_Name;
+class TNaming_Name {
+	public:
+		%feature("autodoc", "1");
+		TNaming_Name();
+		%feature("autodoc", "1");
+		void Type(const TNaming_NameType aType);
+		%feature("autodoc", "1");
+		void ShapeType(const TopAbs_ShapeEnum aType);
+		%feature("autodoc", "1");
+		void Shape(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		void Append(const Handle_TNaming_NamedShape &arg);
+		%feature("autodoc", "1");
+		void StopNamedShape(const Handle_TNaming_NamedShape &arg);
+		%feature("autodoc", "1");
+		void Index(const Standard_Integer I);
+		%feature("autodoc", "1");
+		void ContextLabel(const TDF_Label &theLab);
+		%feature("autodoc", "1");
+		TNaming_NameType Type() const;
+		%feature("autodoc", "1");
+		TopAbs_ShapeEnum ShapeType() const;
+		%feature("autodoc", "1");
+		TopoDS_Shape Shape() const;
+		%feature("autodoc", "1");
+		const TNaming_ListOfNamedShape & Arguments() const;
+		%feature("autodoc", "1");
+		Handle_TNaming_NamedShape StopNamedShape() const;
+		%feature("autodoc", "1");
+		Standard_Integer Index() const;
+		%feature("autodoc", "1");
+		const TDF_Label & ContextLabel() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Solve(const TDF_Label &aLab, const TDF_LabelMap &Valid) const;
+		%feature("autodoc", "1");
+		void Paste(TNaming_Name & into, const Handle_TDF_RelocationTable &RT) const;
+
+};
+%feature("shadow") TNaming_Name::~TNaming_Name %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_Name {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TNaming_ListIteratorOfListOfMapOfShape;
 class TNaming_ListIteratorOfListOfMapOfShape {
 	public:
@@ -1924,6 +1875,55 @@ def __del__(self):
 %}
 
 %extend TNaming_OldShapeIterator {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TNaming_Scope;
+class TNaming_Scope {
+	public:
+		%feature("autodoc", "1");
+		TNaming_Scope();
+		%feature("autodoc", "1");
+		TNaming_Scope(const Standard_Boolean WithValid);
+		%feature("autodoc", "1");
+		TNaming_Scope(TDF_LabelMap & valid);
+		%feature("autodoc", "1");
+		Standard_Boolean WithValid() const;
+		%feature("autodoc", "1");
+		void WithValid(const Standard_Boolean mode);
+		%feature("autodoc", "1");
+		void ClearValid();
+		%feature("autodoc", "1");
+		void Valid(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void ValidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
+		%feature("autodoc", "1");
+		void Unvalid(const TDF_Label &L);
+		%feature("autodoc", "1");
+		void UnvalidChildren(const TDF_Label &L, const Standard_Boolean withroot=1);
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid(const TDF_Label &L) const;
+		%feature("autodoc", "1");
+		const TDF_LabelMap & GetValid() const;
+		%feature("autodoc", "1");
+		TDF_LabelMap & ChangeValid();
+		%feature("autodoc", "1");
+		TopoDS_Shape CurrentShape(const Handle_TNaming_NamedShape &NS) const;
+
+};
+%feature("shadow") TNaming_Scope::~TNaming_Scope %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TNaming_Scope {
 	void _kill_pointed() {
 		delete $self;
 	}

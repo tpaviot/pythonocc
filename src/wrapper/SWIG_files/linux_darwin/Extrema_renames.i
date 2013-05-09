@@ -40,10 +40,11 @@ $HeaderURL$
 %rename(DownCast) Handle_Extrema_LCCacheOfLocateExtCC::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d::DownCast;
+%rename(DownCast) Handle_Extrema_HArray1OfPOnSurf::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d::DownCast;
-%rename(DownCast) Handle_Extrema_HArray1OfPOnSurf::DownCast;
 %rename(DownCast) Handle_Extrema_LCCache2dOfLocateExtCC2d::DownCast;
+%rename(DownCast) Handle_Extrema_HArray2OfPOnSurfParams::DownCast;
 %rename(DownCast) Handle_Extrema_HArray2OfPOnSurf::DownCast;
 %rename(DownCast) Handle_Extrema_HArray2OfPOnCurv2d::DownCast;
 %rename(DownCast) Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC::DownCast;

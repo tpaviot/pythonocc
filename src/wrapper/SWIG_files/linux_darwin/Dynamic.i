@@ -288,44 +288,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
-class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary();
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Dynamic_FuzzyDefinitionsDictionary *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Dynamic_FuzzyDefinitionsDictionary DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
-	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
-	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Dynamic_FuzzyDefinitionsDictionary::~Handle_Dynamic_FuzzyDefinitionsDictionary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TCollection_SeqNode {
 	public:
@@ -358,6 +320,44 @@ def __del__(self):
 %}
 
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfClasses;
+class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses();
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Dynamic_SequenceNodeOfSeqOfClasses DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
+	Dynamic_SequenceNodeOfSeqOfClasses* GetObject() {
+	return (Dynamic_SequenceNodeOfSeqOfClasses*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfClasses::~Handle_Dynamic_SequenceNodeOfSeqOfClasses %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -934,6 +934,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
+class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary();
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary(const Dynamic_FuzzyDefinitionsDictionary *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Handle_Dynamic_FuzzyDefinitionsDictionary &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_FuzzyDefinitionsDictionary & operator=(const Dynamic_FuzzyDefinitionsDictionary *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Dynamic_FuzzyDefinitionsDictionary DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	Dynamic_FuzzyDefinitionsDictionary* GetObject() {
+	return (Dynamic_FuzzyDefinitionsDictionary*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Dynamic_FuzzyDefinitionsDictionary::~Handle_Dynamic_FuzzyDefinitionsDictionary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Dynamic_FuzzyDefinitionsDictionary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Dynamic_InstanceParameter;
 class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 	public:
@@ -1080,44 +1118,6 @@ def __del__(self):
 %}
 
 %extend Handle_Dynamic_SequenceOfMethods {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfClasses;
-class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses();
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Handle_Dynamic_SequenceNodeOfSeqOfClasses &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_SequenceNodeOfSeqOfClasses & operator=(const Dynamic_SequenceNodeOfSeqOfClasses *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Dynamic_SequenceNodeOfSeqOfClasses DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
-	Dynamic_SequenceNodeOfSeqOfClasses* GetObject() {
-	return (Dynamic_SequenceNodeOfSeqOfClasses*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Dynamic_SequenceNodeOfSeqOfClasses::~Handle_Dynamic_SequenceNodeOfSeqOfClasses %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
 	void _kill_pointed() {
 		delete $self;
 	}

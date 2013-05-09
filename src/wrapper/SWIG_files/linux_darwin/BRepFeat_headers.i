@@ -31,7 +31,6 @@ $HeaderURL$
 #include<BRepFeat_Builder.hxx>
 #include<BRepFeat_Form.hxx>
 #include<BRepFeat_Gluer.hxx>
-#include<BRepFeat_LocalOperation.hxx>
 #include<BRepFeat_MakeCylindricalHole.hxx>
 #include<BRepFeat_MakeDPrism.hxx>
 #include<BRepFeat_MakeLinearForm.hxx>
@@ -51,18 +50,18 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<TopoDS_Shape.hxx>
+#include<TopTools_ListOfShape.hxx>
+#include<TopoDS_Face.hxx>
 #include<gp_Ax1.hxx>
 #include<BRepFeat.hxx>
 #include<TColgp_SequenceOfPnt.hxx>
 #include<gp_Pnt.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<TopoDS_Face.hxx>
 #include<TopoDS_Solid.hxx>
 #include<TColGeom_SequenceOfCurve.hxx>
 #include<TopoDS_Wire.hxx>
 #include<TopoDS_Edge.hxx>
 #include<gp_Dir.hxx>
-#include<TopTools_ListOfShape.hxx>
 #include<TopoDS_Compound.hxx>
 #include<Handle_Geom_Plane.hxx>
 #include<gp_Vec.hxx>

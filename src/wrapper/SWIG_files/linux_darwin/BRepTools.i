@@ -690,8 +690,6 @@ class BRepTools {
 		%feature("autodoc", "1");
 		static		TopoDS_Wire OuterWire(const TopoDS_Face F);
 		%feature("autodoc", "1");
-		static		TopoDS_Shell OuterShell(const TopoDS_Solid S);
-		%feature("autodoc", "1");
 		static		void Map3DEdges(const TopoDS_Shape S, TopTools_IndexedMapOfShape & M);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsReallyClosed(const TopoDS_Edge E, const TopoDS_Face F);

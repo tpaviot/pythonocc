@@ -234,6 +234,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepOffset_DataMapOfShapeMapOfShape;
+class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		BRepOffset_DataMapOfShapeMapOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		BRepOffset_DataMapOfShapeMapOfShape & Assign(const BRepOffset_DataMapOfShapeMapOfShape &Other);
+		%feature("autodoc", "1");
+		BRepOffset_DataMapOfShapeMapOfShape & operator=(const BRepOffset_DataMapOfShapeMapOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_MapOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopTools_MapOfShape & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopTools_MapOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") BRepOffset_DataMapOfShapeMapOfShape::~BRepOffset_DataMapOfShapeMapOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepOffset_DataMapOfShapeMapOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepOffset_Analyse;
 class BRepOffset_Analyse {
 	public:
@@ -747,55 +796,6 @@ def __del__(self):
 %}
 
 %extend BRepOffset_MakeLoops {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepOffset_DataMapOfShapeMapOfShape;
-class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeMapOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeMapOfShape & Assign(const BRepOffset_DataMapOfShapeMapOfShape &Other);
-		%feature("autodoc", "1");
-		BRepOffset_DataMapOfShapeMapOfShape & operator=(const BRepOffset_DataMapOfShapeMapOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopTools_MapOfShape &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopTools_MapOfShape & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TopTools_MapOfShape & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") BRepOffset_DataMapOfShapeMapOfShape::~BRepOffset_DataMapOfShapeMapOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepOffset_DataMapOfShapeMapOfShape {
 	void _kill_pointed() {
 		delete $self;
 	}

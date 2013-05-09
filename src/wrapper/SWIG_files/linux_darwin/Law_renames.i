@@ -23,8 +23,8 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Law_ListNodeOfLaws::DownCast;
 %rename(DownCast) Handle_Law_Function::DownCast;
+%rename(DownCast) Handle_Law_ListNodeOfLaws::DownCast;
 %rename(DownCast) Handle_Law_BSpFunc::DownCast;
 %rename(DownCast) Handle_Law_Interpol::DownCast;
 %rename(DownCast) Handle_Law_BSpline::DownCast;

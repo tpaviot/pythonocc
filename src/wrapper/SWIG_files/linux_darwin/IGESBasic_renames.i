@@ -28,7 +28,6 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESBasic_ReadWriteModule::DownCast;
 %rename(DownCast) Handle_IGESBasic_SingleParent::DownCast;
 %rename(DownCast) Handle_IGESBasic_ExternalRefLibName::DownCast;
-%rename(DownCast) Handle_IGESBasic_Name::DownCast;
 %rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfIGESEntity::DownCast;
 %rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfInteger::DownCast;
 %rename(DownCast) Handle_IGESBasic_SingularSubfigure::DownCast;
@@ -38,6 +37,7 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESBasic_Hierarchy::DownCast;
 %rename(DownCast) Handle_IGESBasic_ExternalRefFileIndex::DownCast;
 %rename(DownCast) Handle_IGESBasic_HArray1OfHArray1OfXY::DownCast;
+%rename(DownCast) Handle_IGESBasic_Name::DownCast;
 %rename(DownCast) Handle_IGESBasic_OrderedGroup::DownCast;
 %rename(DownCast) Handle_IGESBasic_ExternalRefName::DownCast;
 %rename(DownCast) Handle_IGESBasic_SubfigureDef::DownCast;

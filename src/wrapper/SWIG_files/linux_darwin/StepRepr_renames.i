@@ -30,8 +30,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepRepr_CompositeShapeAspect::DownCast;
 %rename(DownCast) Handle_StepRepr_ProductConcept::DownCast;
 %rename(DownCast) Handle_StepRepr_ShapeAspectRelationship::DownCast;
-%rename(DownCast) Handle_StepRepr_ProductDefinitionUsage::DownCast;
-%rename(DownCast) Handle_StepRepr_MakeFromUsageOption::DownCast;
 %rename(DownCast) Handle_StepRepr_RepresentationRelationship::DownCast;
 %rename(DownCast) Handle_StepRepr_ShapeRepresentationRelationship::DownCast;
 %rename(DownCast) Handle_StepRepr_RepresentationRelationshipWithTransformation::DownCast;
@@ -39,6 +37,8 @@ $HeaderURL$
 %rename(DownCast) Handle_StepRepr_DataEnvironment::DownCast;
 %rename(DownCast) Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation::DownCast;
 %rename(DownCast) Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation::DownCast;
+%rename(DownCast) Handle_StepRepr_ProductDefinitionUsage::DownCast;
+%rename(DownCast) Handle_StepRepr_MakeFromUsageOption::DownCast;
 %rename(DownCast) Handle_StepRepr_AssemblyComponentUsage::DownCast;
 %rename(DownCast) Handle_StepRepr_QuantifiedAssemblyComponentUsage::DownCast;
 %rename(DownCast) Handle_StepRepr_RepresentationItem::DownCast;

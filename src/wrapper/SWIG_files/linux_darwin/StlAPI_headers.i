@@ -36,6 +36,6 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<TopoDS_Shape.hxx>
 #include<StlAPI.hxx>
+#include<TopoDS_Shape.hxx>
 %}

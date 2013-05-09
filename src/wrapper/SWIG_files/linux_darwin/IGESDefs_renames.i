@@ -23,7 +23,6 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_IGESDefs_Protocol::DownCast;
 %rename(DownCast) Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate::DownCast;
 %rename(DownCast) Handle_IGESDefs_GeneralModule::DownCast;
 %rename(DownCast) Handle_IGESDefs_SpecificModule::DownCast;
@@ -31,6 +30,7 @@ $HeaderURL$
 %rename(DownCast) Handle_IGESDefs_AttributeTable::DownCast;
 %rename(DownCast) Handle_IGESDefs_GenericData::DownCast;
 %rename(DownCast) Handle_IGESDefs_TabularData::DownCast;
+%rename(DownCast) Handle_IGESDefs_Protocol::DownCast;
 %rename(DownCast) Handle_IGESDefs_AssociativityDef::DownCast;
 %rename(DownCast) Handle_IGESDefs_AttributeDef::DownCast;
 %rename(DownCast) Handle_IGESDefs_UnitsData::DownCast;

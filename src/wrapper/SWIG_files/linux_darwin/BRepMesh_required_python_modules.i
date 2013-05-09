@@ -31,8 +31,8 @@ import Standard
 import TopoDS
 import gp
 import Poly
+import TopTools
 import TopAbs
 import Bnd
 import TCollection
-import TopTools
 };

@@ -94,7 +94,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -108,7 +107,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>

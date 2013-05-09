@@ -29,8 +29,8 @@ $HeaderURL$
 import GarbageCollector
 import Aspect
 import Quantity
-import Standard
 import Prs3d
+import Standard
 import TColStd
 import Graphic3d
 import Geom
@@ -40,9 +40,9 @@ import TCollection
 import DsgPrs
 import SelectMgr
 import Poly
+import StdSelect
 import Bnd
 import TopAbs
-import StdSelect
 import TopLoc
 import V3d
 import PrsMgr

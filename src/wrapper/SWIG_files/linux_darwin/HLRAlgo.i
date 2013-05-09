@@ -714,45 +714,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRAlgo_PolyInternalNode;
-class HLRAlgo_PolyInternalNode : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalNode();
-		%feature("autodoc", "1");
-		Standard_Address Indices() const;
-		%feature("autodoc", "1");
-		Standard_Address RValues() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRAlgo_PolyInternalNode {
-	Handle_HLRAlgo_PolyInternalNode GetHandle() {
-	return *(Handle_HLRAlgo_PolyInternalNode*) &$self;
-	}
-};
-%extend HLRAlgo_PolyInternalNode {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_PolyInternalNode {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRAlgo_Array1OfPINod;
 class HLRAlgo_Array1OfPINod {
 	public:
@@ -1444,6 +1405,81 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRAlgo_PolyInternalData;
+class HLRAlgo_PolyInternalData : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
+		%feature("autodoc", "1");
+		void UpdateLinks(Standard_Address & TData, Standard_Address & PISeg, Standard_Address & PINod);
+		%feature("autodoc", "1");
+		Standard_Integer AddNode(const Standard_Address Nod1RValues, const Standard_Address Nod2RValues, Standard_Address & PINod1, Standard_Address & PINod2, const Standard_Real coef1, const Standard_Real X3, const Standard_Real Y3, const Standard_Real Z3);
+		%feature("autodoc", "1");
+		void UpdateLinks(const Standard_Integer ip1, const Standard_Integer ip2, const Standard_Integer ip3, Standard_Address & TData1, Standard_Address & TData2, Standard_Address & PISeg1, Standard_Address & PISeg2, Standard_Address & PINod1, Standard_Address & PINod2);
+		%feature("autodoc", "1");
+		void Dump() const;
+		%feature("autodoc", "1");
+		void IncTData(Standard_Address & TData1, Standard_Address & TData2);
+		%feature("autodoc", "1");
+		void IncPISeg(Standard_Address & PISeg1, Standard_Address & PISeg2);
+		%feature("autodoc", "1");
+		void IncPINod(Standard_Address & PINod1, Standard_Address & PINod2);
+		%feature("autodoc", "1");
+		void DecTData();
+		%feature("autodoc", "1");
+		void DecPISeg();
+		%feature("autodoc", "1");
+		void DecPINod();
+		%feature("autodoc", "1");
+		Standard_Integer NbTData() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPISeg() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPINod() const;
+		%feature("autodoc", "1");
+		Standard_Boolean Planar() const;
+		%feature("autodoc", "1");
+		void Planar(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		Standard_Boolean IntOutL() const;
+		%feature("autodoc", "1");
+		void IntOutL(const Standard_Boolean B);
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfTData & TData() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPISeg & PISeg() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Array1OfPINod & PINod() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyInternalData {
+	Handle_HLRAlgo_PolyInternalData GetHandle() {
+	return *(Handle_HLRAlgo_PolyInternalData*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalData {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_PolyInternalData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRAlgo_ListIteratorOfListOfBPoint;
 class HLRAlgo_ListIteratorOfListOfBPoint {
 	public:
@@ -1471,55 +1507,6 @@ def __del__(self):
 %}
 
 %extend HLRAlgo_ListIteratorOfListOfBPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRAlgo_Interference;
-class HLRAlgo_Interference {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_Interference();
-		%feature("autodoc", "1");
-		HLRAlgo_Interference(const HLRAlgo_Intersection &Inters, const HLRAlgo_Coincidence &Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
-		%feature("autodoc", "1");
-		void Intersection(const HLRAlgo_Intersection &I);
-		%feature("autodoc", "1");
-		void Boundary(const HLRAlgo_Coincidence &B);
-		%feature("autodoc", "1");
-		void Orientation(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		void Transition(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		void BoundaryTransition(const TopAbs_Orientation Or);
-		%feature("autodoc", "1");
-		const HLRAlgo_Intersection & Intersection() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Intersection & ChangeIntersection();
-		%feature("autodoc", "1");
-		const HLRAlgo_Coincidence & Boundary() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Coincidence & ChangeBoundary();
-		%feature("autodoc", "1");
-		TopAbs_Orientation Orientation() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation Transition() const;
-		%feature("autodoc", "1");
-		TopAbs_Orientation BoundaryTransition() const;
-
-};
-%feature("shadow") HLRAlgo_Interference::~HLRAlgo_Interference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_Interference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1642,6 +1629,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRAlgo_PolyInternalNode;
+class HLRAlgo_PolyInternalNode : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_PolyInternalNode();
+		%feature("autodoc", "1");
+		Standard_Address Indices() const;
+		%feature("autodoc", "1");
+		Standard_Address RValues() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend HLRAlgo_PolyInternalNode {
+	Handle_HLRAlgo_PolyInternalNode GetHandle() {
+	return *(Handle_HLRAlgo_PolyInternalNode*) &$self;
+	}
+};
+%extend HLRAlgo_PolyInternalNode {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") HLRAlgo_PolyInternalNode::~HLRAlgo_PolyInternalNode %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_PolyInternalNode {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRAlgo_HArray1OfPINod;
 class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 	public:
@@ -1750,81 +1776,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRAlgo_PolyInternalData;
-class HLRAlgo_PolyInternalData : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		HLRAlgo_PolyInternalData(const Standard_Integer nbNod, const Standard_Integer nbTri);
-		%feature("autodoc", "1");
-		void UpdateLinks(Standard_Address & TData, Standard_Address & PISeg, Standard_Address & PINod);
-		%feature("autodoc", "1");
-		Standard_Integer AddNode(const Standard_Address Nod1RValues, const Standard_Address Nod2RValues, Standard_Address & PINod1, Standard_Address & PINod2, const Standard_Real coef1, const Standard_Real X3, const Standard_Real Y3, const Standard_Real Z3);
-		%feature("autodoc", "1");
-		void UpdateLinks(const Standard_Integer ip1, const Standard_Integer ip2, const Standard_Integer ip3, Standard_Address & TData1, Standard_Address & TData2, Standard_Address & PISeg1, Standard_Address & PISeg2, Standard_Address & PINod1, Standard_Address & PINod2);
-		%feature("autodoc", "1");
-		void Dump() const;
-		%feature("autodoc", "1");
-		void IncTData(Standard_Address & TData1, Standard_Address & TData2);
-		%feature("autodoc", "1");
-		void IncPISeg(Standard_Address & PISeg1, Standard_Address & PISeg2);
-		%feature("autodoc", "1");
-		void IncPINod(Standard_Address & PINod1, Standard_Address & PINod2);
-		%feature("autodoc", "1");
-		void DecTData();
-		%feature("autodoc", "1");
-		void DecPISeg();
-		%feature("autodoc", "1");
-		void DecPINod();
-		%feature("autodoc", "1");
-		Standard_Integer NbTData() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPISeg() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPINod() const;
-		%feature("autodoc", "1");
-		Standard_Boolean Planar() const;
-		%feature("autodoc", "1");
-		void Planar(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		Standard_Boolean IntOutL() const;
-		%feature("autodoc", "1");
-		void IntOutL(const Standard_Boolean B);
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfTData & TData() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPISeg & PISeg() const;
-		%feature("autodoc", "1");
-		HLRAlgo_Array1OfPINod & PINod() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend HLRAlgo_PolyInternalData {
-	Handle_HLRAlgo_PolyInternalData GetHandle() {
-	return *(Handle_HLRAlgo_PolyInternalData*) &$self;
-	}
-};
-%extend HLRAlgo_PolyInternalData {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") HLRAlgo_PolyInternalData::~HLRAlgo_PolyInternalData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRAlgo_PolyInternalData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRAlgo_TriangleData;
 class HLRAlgo_TriangleData {
 	public:
@@ -1883,6 +1834,55 @@ def __del__(self):
 %}
 
 %extend HLRAlgo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRAlgo_Interference;
+class HLRAlgo_Interference {
+	public:
+		%feature("autodoc", "1");
+		HLRAlgo_Interference();
+		%feature("autodoc", "1");
+		HLRAlgo_Interference(const HLRAlgo_Intersection &Inters, const HLRAlgo_Coincidence &Bound, const TopAbs_Orientation Orient, const TopAbs_Orientation Trans, const TopAbs_Orientation BTrans);
+		%feature("autodoc", "1");
+		void Intersection(const HLRAlgo_Intersection &I);
+		%feature("autodoc", "1");
+		void Boundary(const HLRAlgo_Coincidence &B);
+		%feature("autodoc", "1");
+		void Orientation(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		void Transition(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		void BoundaryTransition(const TopAbs_Orientation Or);
+		%feature("autodoc", "1");
+		const HLRAlgo_Intersection & Intersection() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Intersection & ChangeIntersection();
+		%feature("autodoc", "1");
+		const HLRAlgo_Coincidence & Boundary() const;
+		%feature("autodoc", "1");
+		HLRAlgo_Coincidence & ChangeBoundary();
+		%feature("autodoc", "1");
+		TopAbs_Orientation Orientation() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation Transition() const;
+		%feature("autodoc", "1");
+		TopAbs_Orientation BoundaryTransition() const;
+
+};
+%feature("shadow") HLRAlgo_Interference::~HLRAlgo_Interference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRAlgo_Interference {
 	void _kill_pointed() {
 		delete $self;
 	}

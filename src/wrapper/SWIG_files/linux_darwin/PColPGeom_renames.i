@@ -29,6 +29,7 @@ $HeaderURL$
 %rename(DownCast) Handle_PColPGeom_HArray1OfBoundedSurface::DownCast;
 %rename(DownCast) Handle_PColPGeom_HArray2OfBoundedSurface::DownCast;
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface::DownCast;
+%rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve::DownCast;
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve::DownCast;
 %rename(DownCast) Handle_PColPGeom_HArray2OfBezierSurface::DownCast;
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface::DownCast;
@@ -41,5 +42,4 @@ $HeaderURL$
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface::DownCast;
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve::DownCast;
 %rename(DownCast) Handle_PColPGeom_HArray2OfSurface::DownCast;
-%rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve::DownCast;
 %rename(DownCast) Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface::DownCast;

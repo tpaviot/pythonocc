@@ -53,6 +53,12 @@ typedef NCollection_BaseCollection<TColgp_SequenceOfPnt> Prs3d_BaseCollListOfSeq
 typedef NCollection_List<TColgp_SequenceOfPnt> Prs3d_NListOfSequenceOfPnt;
 typedef NCollection_TListIterator<TColgp_SequenceOfPnt> Prs3d_NListIteratorOfListOfSequenceOfPnt;
 
+enum Prs3d_TypeOfHLR {
+	Prs3d_TOH_NotSet,
+	Prs3d_TOH_PolyAlgo,
+	Prs3d_TOH_Algo,
+	};
+
 enum Prs3d_TypeOfLinePicking {
 	Prs3d_TOLP_Point,
 	Prs3d_TOLP_Segment,
@@ -1405,6 +1411,10 @@ class Prs3d_Drawer : public MMgt_TShared {
 		virtual		void SetIsoOnPlane(const Standard_Boolean OnOff);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsoOnPlane() const;
+		%feature("autodoc", "1");
+		virtual		void SetTypeOfHLR(const Prs3d_TypeOfHLR theTypeOfHLR);
+		%feature("autodoc", "1");
+		virtual		Prs3d_TypeOfHLR TypeOfHLR() const;
 		%feature("autodoc", "1");
 		virtual		Handle_Prs3d_IsoAspect UIsoAspect();
 		%feature("autodoc", "1");

@@ -28,9 +28,8 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
-import Graphic2d
 import Graphic3d
+import Prs3d
 import gp
 import TopLoc
-import Prs3d
 };

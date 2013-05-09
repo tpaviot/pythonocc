@@ -23,16 +23,16 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_Image_PixMap::DownCast;
 %rename(DownCast) Handle_Image_Image::DownCast;
 %rename(DownCast) Handle_Image_DColorImage::DownCast;
-%rename(DownCast) Handle_Image_PixMap::DownCast;
 %rename(DownCast) Handle_Image_AlienPixMap::DownCast;
 %rename(DownCast) Handle_Image_DIndexedImage::DownCast;
 %rename(DownCast) Handle_Image_PseudoColorImage::DownCast;
 %rename(DownCast) Handle_Image_DataMapNodeOfLookupTable::DownCast;
 %rename(DownCast) Handle_Image_Diff::DownCast;
-%rename(DownCast) Handle_Image_DataMapNodeOfColorPixelDataMap::DownCast;
 %rename(DownCast) Handle_Image_ColorImage::DownCast;
+%rename(DownCast) Handle_Image_DataMapNodeOfColorPixelDataMap::DownCast;
 %rename(IsBigEndianHost) Image_PixMap::IsBigEndianHost;
 %rename(SizePixelBytes) Image_PixMap::SizePixelBytes;
 %rename(HashCode) Image_IndexPixelMapHasher::HashCode;

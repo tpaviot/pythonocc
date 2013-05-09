@@ -81,13 +81,13 @@ $HeaderURL$
 %rename(DownCast) Handle_IFSelect_SignMultiple::DownCast;
 %rename(DownCast) Handle_IFSelect_GraphCounter::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectDiff::DownCast;
+%rename(DownCast) Handle_IFSelect_Editor::DownCast;
+%rename(DownCast) Handle_IFSelect_ParamEditor::DownCast;
 %rename(DownCast) Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers::DownCast;
 %rename(DownCast) Handle_IFSelect_SignAncestor::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectRootComps::DownCast;
 %rename(DownCast) Handle_IFSelect_SignValidity::DownCast;
 %rename(DownCast) Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel::DownCast;
-%rename(DownCast) Handle_IFSelect_Editor::DownCast;
-%rename(DownCast) Handle_IFSelect_ParamEditor::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectRange::DownCast;
 %rename(DownCast) Handle_IFSelect_SelectRoots::DownCast;
 %rename(DownCast) Handle_IFSelect_DispPerCount::DownCast;

@@ -622,29 +622,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom_Transformation;
-class Handle_Geom_Transformation : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Geom_ConicalSurface;
+class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation();
+		Handle_Geom_ConicalSurface();
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation(const Handle_Geom_Transformation &aHandle);
+		Handle_Geom_ConicalSurface(const Handle_Geom_ConicalSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation(const Geom_Transformation *anItem);
+		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation & operator=(const Handle_Geom_Transformation &aHandle);
+		Handle_Geom_ConicalSurface & operator=(const Handle_Geom_ConicalSurface &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_Transformation & operator=(const Geom_Transformation *anItem);
+		Handle_Geom_ConicalSurface & operator=(const Geom_ConicalSurface *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom_Transformation DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom_ConicalSurface DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom_Transformation {
-	Geom_Transformation* GetObject() {
-	return (Geom_Transformation*)$self->Access();
+%extend Handle_Geom_ConicalSurface {
+	Geom_ConicalSurface* GetObject() {
+	return (Geom_ConicalSurface*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Geom_Transformation::~Handle_Geom_Transformation %{
+%feature("shadow") Handle_Geom_ConicalSurface::~Handle_Geom_ConicalSurface %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -653,7 +653,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Geom_Transformation {
+%extend Handle_Geom_ConicalSurface {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1230,44 +1230,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom_ConicalSurface;
-class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface();
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface(const Handle_Geom_ConicalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface(const Geom_ConicalSurface *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface & operator=(const Handle_Geom_ConicalSurface &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom_ConicalSurface & operator=(const Geom_ConicalSurface *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom_ConicalSurface DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom_ConicalSurface {
-	Geom_ConicalSurface* GetObject() {
-	return (Geom_ConicalSurface*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom_ConicalSurface::~Handle_Geom_ConicalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom_ConicalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Geom_OffsetSurface;
 class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 	public:
@@ -1344,29 +1306,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom_BSplineCurve;
-class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
+%nodefaultctor Handle_Geom_Transformation;
+class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve();
+		Handle_Geom_Transformation();
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve(const Handle_Geom_BSplineCurve &aHandle);
+		Handle_Geom_Transformation(const Handle_Geom_Transformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve(const Geom_BSplineCurve *anItem);
+		Handle_Geom_Transformation(const Geom_Transformation *anItem);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve & operator=(const Handle_Geom_BSplineCurve &aHandle);
+		Handle_Geom_Transformation & operator=(const Handle_Geom_Transformation &aHandle);
 		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve & operator=(const Geom_BSplineCurve *anItem);
+		Handle_Geom_Transformation & operator=(const Geom_Transformation *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Geom_BSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Geom_Transformation DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Geom_BSplineCurve {
-	Geom_BSplineCurve* GetObject() {
-	return (Geom_BSplineCurve*)$self->Access();
+%extend Handle_Geom_Transformation {
+	Geom_Transformation* GetObject() {
+	return (Geom_Transformation*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Geom_BSplineCurve::~Handle_Geom_BSplineCurve %{
+%feature("shadow") Handle_Geom_Transformation::~Handle_Geom_Transformation %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1375,7 +1337,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Geom_BSplineCurve {
+%extend Handle_Geom_Transformation {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1566,6 +1528,44 @@ def __del__(self):
 %}
 
 %extend Handle_Geom_UndefinedDerivative {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Geom_BSplineCurve;
+class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve();
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve(const Handle_Geom_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve(const Geom_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve & operator=(const Handle_Geom_BSplineCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve & operator=(const Geom_BSplineCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom_BSplineCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom_BSplineCurve {
+	Geom_BSplineCurve* GetObject() {
+	return (Geom_BSplineCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom_BSplineCurve::~Handle_Geom_BSplineCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom_BSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4411,6 +4411,8 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		void Resolution(const Standard_Real Tolerance3D, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_Geometry Copy() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Handle_Geom_BSplineCurve &theOther, const Standard_Real thePreci) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

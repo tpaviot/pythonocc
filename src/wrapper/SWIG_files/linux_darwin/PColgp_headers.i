@@ -177,11 +177,11 @@ $HeaderURL$
 #include<gp_XY.hxx>
 #include<Storage_stCONSTclCOM.hxx>
 #include<gp_Pnt.hxx>
-#include<gp_Lin2d.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec.hxx>
 #include<gp_Vec2d.hxx>
 #include<gp_XYZ.hxx>
+#include<gp_Lin2d.hxx>
 #include<gp_Dir2d.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Circ2d.hxx>

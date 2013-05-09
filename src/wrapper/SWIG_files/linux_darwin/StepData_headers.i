@@ -161,9 +161,9 @@ $HeaderURL$
 #include<Handle_Standard_Transient.hxx>
 #include<TColStd_SequenceOfAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
-#include<Handle_Standard_Type.hxx>
 #include<Handle_Interface_InterfaceModel.hxx>
 #include<Interface_EntityIterator.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<Handle_Interface_Check.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>

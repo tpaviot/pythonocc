@@ -37,6 +37,7 @@ $HeaderURL$
 %rename(Knots) BSplCLib::Knots;
 %rename(KnotForm) BSplCLib::KnotForm;
 %rename(MultForm) BSplCLib::MultForm;
+%rename(KnotAnalysis) BSplCLib::KnotAnalysis;
 %rename(Reparametrize) BSplCLib::Reparametrize;
 %rename(Reverse) BSplCLib::Reverse;
 %rename(IsRational) BSplCLib::IsRational;

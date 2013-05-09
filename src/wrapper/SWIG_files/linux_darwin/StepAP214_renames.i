@@ -28,7 +28,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepAP214_AutoDesignApprovalAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_AppliedSecurityClassificationAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_ExternallyDefinedClass::DownCast;
-%rename(DownCast) Handle_StepAP214_AutoDesignPresentedItem::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfApprovalItem::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfSecurityClassificationItem::DownCast;
 %rename(DownCast) Handle_StepAP214_AppliedPersonAndOrganizationAssignment::DownCast;
@@ -44,8 +43,10 @@ $HeaderURL$
 %rename(DownCast) Handle_StepAP214_HArray1OfGroupItem::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfOrganizationItem::DownCast;
 %rename(DownCast) Handle_StepAP214_AutoDesignActualDateAndTimeAssignment::DownCast;
+%rename(DownCast) Handle_StepAP214_AutoDesignPresentedItem::DownCast;
 %rename(DownCast) Handle_StepAP214_AppliedExternalIdentificationAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfAutoDesignReferencingItem::DownCast;
+%rename(DownCast) Handle_StepAP214_AutoDesignOrganizationAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect::DownCast;
 %rename(DownCast) Handle_StepAP214_AutoDesignActualDateAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem::DownCast;
@@ -65,6 +66,5 @@ $HeaderURL$
 %rename(DownCast) Handle_StepAP214_HArray1OfExternalIdentificationItem::DownCast;
 %rename(DownCast) Handle_StepAP214_AppliedPresentedItem::DownCast;
 %rename(DownCast) Handle_StepAP214_AppliedApprovalAssignment::DownCast;
-%rename(DownCast) Handle_StepAP214_AutoDesignOrganizationAssignment::DownCast;
 %rename(DownCast) Handle_StepAP214_HArray1OfPersonAndOrganizationItem::DownCast;
 %rename(Protocol) StepAP214::Protocol;

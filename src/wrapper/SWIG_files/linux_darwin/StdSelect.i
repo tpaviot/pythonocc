@@ -122,82 +122,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StdSelect_SensitiveText2d;
-class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d();
-		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d(const Handle_StdSelect_SensitiveText2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d(const StdSelect_SensitiveText2d *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d & operator=(const Handle_StdSelect_SensitiveText2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_SensitiveText2d & operator=(const StdSelect_SensitiveText2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StdSelect_SensitiveText2d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_SensitiveText2d {
-	StdSelect_SensitiveText2d* GetObject() {
-	return (StdSelect_SensitiveText2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StdSelect_SensitiveText2d::~Handle_StdSelect_SensitiveText2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StdSelect_SensitiveText2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StdSelect_TextProjector2d;
-class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d();
-		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d(const Handle_StdSelect_TextProjector2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d(const StdSelect_TextProjector2d *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d & operator=(const Handle_StdSelect_TextProjector2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_TextProjector2d & operator=(const StdSelect_TextProjector2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StdSelect_TextProjector2d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_TextProjector2d {
-	StdSelect_TextProjector2d* GetObject() {
-	return (StdSelect_TextProjector2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StdSelect_TextProjector2d::~Handle_StdSelect_TextProjector2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StdSelect_TextProjector2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StdSelect_EdgeFilter;
 class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -230,44 +154,6 @@ def __del__(self):
 %}
 
 %extend Handle_StdSelect_EdgeFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StdSelect_ViewerSelector2d;
-class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d();
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d(const Handle_StdSelect_ViewerSelector2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d(const StdSelect_ViewerSelector2d *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d & operator=(const Handle_StdSelect_ViewerSelector2d &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_ViewerSelector2d & operator=(const StdSelect_ViewerSelector2d *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StdSelect_ViewerSelector2d DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_ViewerSelector2d {
-	StdSelect_ViewerSelector2d* GetObject() {
-	return (StdSelect_ViewerSelector2d*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StdSelect_ViewerSelector2d::~Handle_StdSelect_ViewerSelector2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StdSelect_ViewerSelector2d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -350,44 +236,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StdSelect_Shape;
-class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
-	public:
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape();
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape(const Handle_StdSelect_Shape &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape(const StdSelect_Shape *anItem);
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape & operator=(const Handle_StdSelect_Shape &aHandle);
-		%feature("autodoc", "1");
-		Handle_StdSelect_Shape & operator=(const StdSelect_Shape *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StdSelect_Shape DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StdSelect_Shape {
-	StdSelect_Shape* GetObject() {
-	return (StdSelect_Shape*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StdSelect_Shape::~Handle_StdSelect_Shape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StdSelect_Shape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StdSelect_ShapeTypeFilter;
 class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -420,6 +268,44 @@ def __del__(self):
 %}
 
 %extend Handle_StdSelect_ShapeTypeFilter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StdSelect_Shape;
+class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
+	public:
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape();
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape(const Handle_StdSelect_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape(const StdSelect_Shape *anItem);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape & operator=(const Handle_StdSelect_Shape &aHandle);
+		%feature("autodoc", "1");
+		Handle_StdSelect_Shape & operator=(const StdSelect_Shape *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StdSelect_Shape DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StdSelect_Shape {
+	StdSelect_Shape* GetObject() {
+	return (StdSelect_Shape*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StdSelect_Shape::~Handle_StdSelect_Shape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StdSelect_Shape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -716,43 +602,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdSelect_Prs;
-class StdSelect_Prs : public Prs3d_Presentation {
-	public:
-		%feature("autodoc", "1");
-		StdSelect_Prs(const Handle_Graphic3d_StructureManager &aStructureManager);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_StructureManager & Manager() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdSelect_Prs {
-	Handle_StdSelect_Prs GetHandle() {
-	return *(Handle_StdSelect_Prs*) &$self;
-	}
-};
-%extend StdSelect_Prs {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StdSelect_Prs::~StdSelect_Prs %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdSelect_Prs {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdSelect_BRepSelectionTool;
 class StdSelect_BRepSelectionTool {
 	public:
@@ -854,49 +703,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdSelect_TextProjector2d;
-class StdSelect_TextProjector2d : public Select2D_Projector {
-	public:
-		%feature("autodoc", "1");
-		StdSelect_TextProjector2d(const Handle_V2d_View &aView);
-		%feature("autodoc", "1");
-		void Set(const Handle_V2d_View &aView);
-		%feature("autodoc", "1");
-		void Set(const gp_Trsf2d atrsf);
-		%feature("autodoc", "1");
-		virtual		void Convert(const gp_Pnt2d aPointIn, gp_Pnt2d & aPointOut) const;
-		%feature("autodoc", "1");
-		virtual		void Convert(const TCollection_ExtendedString &aText, const Standard_Real XPos, const Standard_Real YPos, gp_Pnt2d & MinPoint, gp_Pnt2d & MaxPoint, const Standard_Integer afont=-0x00000000000000001) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdSelect_TextProjector2d {
-	Handle_StdSelect_TextProjector2d GetHandle() {
-	return *(Handle_StdSelect_TextProjector2d*) &$self;
-	}
-};
-%extend StdSelect_TextProjector2d {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StdSelect_TextProjector2d::~StdSelect_TextProjector2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdSelect_TextProjector2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdSelect_EdgeFilter;
 class StdSelect_EdgeFilter : public SelectMgr_Filter {
 	public:
@@ -940,54 +746,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StdSelect_SensitiveText2d;
-class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		StdSelect_SensitiveText2d(const Handle_SelectBasics_EntityOwner &anOwnerId, const TCollection_ExtendedString &aString, const Standard_Real XPox, const Standard_Real YPos, const Standard_Real Angle=0, const Standard_Integer aFontIndex=-0x00000000000000001);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NeedsConversion() const;
-		%feature("autodoc", "1");
-		virtual		void Convert(const Handle_Select2D_Projector &aTextProj);
-		%feature("autodoc", "1");
-		virtual		void Areas(SelectBasics_ListOfBox2d & aresult);
-		%feature("autodoc","Matches(Standard_Real X, Standard_Real Y, Standard_Real aTol) -> Standard_Real");
-
-		virtual		Standard_Boolean Matches(const Standard_Real X, const Standard_Real Y, const Standard_Real aTol, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Standard_Real XMin, const Standard_Real YMin, const Standard_Real XMax, const Standard_Real YMax, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const TColgp_Array1OfPnt2d &Polyline, const Bnd_Box2d &aBox, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StdSelect_SensitiveText2d {
-	Handle_StdSelect_SensitiveText2d GetHandle() {
-	return *(Handle_StdSelect_SensitiveText2d*) &$self;
-	}
-};
-%extend StdSelect_SensitiveText2d {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StdSelect_SensitiveText2d::~StdSelect_SensitiveText2d %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StdSelect_SensitiveText2d {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StdSelect_Shape;
 class StdSelect_Shape : public PrsMgr_PresentableObject {
 	public:
@@ -1021,6 +779,43 @@ def __del__(self):
 %}
 
 %extend StdSelect_Shape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StdSelect_Prs;
+class StdSelect_Prs : public Prs3d_Presentation {
+	public:
+		%feature("autodoc", "1");
+		StdSelect_Prs(const Handle_Graphic3d_StructureManager &aStructureManager);
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_StructureManager & Manager() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StdSelect_Prs {
+	Handle_StdSelect_Prs GetHandle() {
+	return *(Handle_StdSelect_Prs*) &$self;
+	}
+};
+%extend StdSelect_Prs {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StdSelect_Prs::~StdSelect_Prs %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StdSelect_Prs {
 	void _kill_pointed() {
 		delete $self;
 	}

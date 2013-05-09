@@ -33,7 +33,6 @@ $HeaderURL$
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState::DownCast;
-%rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_HDataStructure::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint::DownCast;
@@ -41,9 +40,9 @@ $HeaderURL$
 %rename(DownCast) Handle_TopOpeBRepDS_ShapeShapeInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape::DownCast;
+%rename(DownCast) Handle_TopOpeBRepDS_ListNodeOfListOfInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_SolidSurfaceInterference::DownCast;
-%rename(DownCast) Handle_TopOpeBRepDS_ListNodeOfListOfInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_Check::DownCast;
@@ -52,6 +51,7 @@ $HeaderURL$
 %rename(DownCast) Handle_TopOpeBRepDS_GapTool::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_EdgeVertexInterference::DownCast;
 %rename(DownCast) Handle_TopOpeBRepDS_CurvePointInterference::DownCast;
+%rename(DownCast) Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference::DownCast;
 %rename(MakeEdgeInterference) TopOpeBRepDS_InterferenceTool::MakeEdgeInterference;
 %rename(MakeCurveInterference) TopOpeBRepDS_InterferenceTool::MakeCurveInterference;
 %rename(DuplicateCurvePointInterference) TopOpeBRepDS_InterferenceTool::DuplicateCurvePointInterference;

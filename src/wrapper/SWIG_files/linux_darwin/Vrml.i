@@ -50,6 +50,11 @@ $HeaderURL$
 %include Vrml_headers.i
 
 
+enum Vrml_ShapeType {
+	Vrml_UNKNOWN_SHAPE_TYPE,
+	Vrml_SOLID,
+	};
+
 enum Vrml_SFImageNumber {
 	Vrml_NULL,
 	Vrml_ONE,
@@ -61,11 +66,6 @@ enum Vrml_SFImageNumber {
 enum Vrml_FaceType {
 	Vrml_UNKNOWN_FACE_TYPE,
 	Vrml_CONVEX,
-	};
-
-enum Vrml_ShapeType {
-	Vrml_UNKNOWN_SHAPE_TYPE,
-	Vrml_SOLID,
 	};
 
 enum Vrml_VertexOrdering {

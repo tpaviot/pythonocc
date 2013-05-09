@@ -23,12 +23,12 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_BinMXCAFDoc_VolumeDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_MaterialDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_DimTolDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_ColorToolDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_DocumentToolDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_GraphNodeDriver::DownCast;
-%rename(DownCast) Handle_BinMXCAFDoc_VolumeDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_LocationDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_ShapeToolDriver::DownCast;
 %rename(DownCast) Handle_BinMXCAFDoc_CentroidDriver::DownCast;

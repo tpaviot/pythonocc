@@ -630,31 +630,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepAP214;
-class RWStepAP214 {
-	public:
-		%feature("autodoc", "1");
-		RWStepAP214();
-		%feature("autodoc", "1");
-		static		void Init();
-
-};
-%feature("shadow") RWStepAP214::~RWStepAP214 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepAP214 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepAP214_RWRepItemGroup;
 class RWStepAP214_RWRepItemGroup {
 	public:
@@ -910,6 +885,31 @@ def __del__(self):
 %}
 
 %extend RWStepAP214_RWAppliedOrganizationAssignment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepAP214;
+class RWStepAP214 {
+	public:
+		%feature("autodoc", "1");
+		RWStepAP214();
+		%feature("autodoc", "1");
+		static		void Init();
+
+};
+%feature("shadow") RWStepAP214::~RWStepAP214 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepAP214 {
 	void _kill_pointed() {
 		delete $self;
 	}

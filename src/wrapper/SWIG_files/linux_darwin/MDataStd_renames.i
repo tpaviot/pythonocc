@@ -27,6 +27,7 @@ $HeaderURL$
 %rename(DownCast) Handle_MDataStd_RealArrayRetrievalDriver_1::DownCast;
 %rename(DownCast) Handle_MDataStd_ByteArrayRetrievalDriver_1::DownCast;
 %rename(DownCast) Handle_MDataStd_ReferenceListStorageDriver::DownCast;
+%rename(DownCast) Handle_MDataStd_ByteArrayStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntegerListStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_BooleanListRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ExtStringArrayRetrievalDriver_1::DownCast;
@@ -37,7 +38,6 @@ $HeaderURL$
 %rename(DownCast) Handle_MDataStd_TickRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_DirectoryStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_NoteBookRetrievalDriver::DownCast;
-%rename(DownCast) Handle_MDataStd_RealStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_AsciiStringStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_AsciiStringRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntPackedMapRetrievalDriver_1::DownCast;
@@ -51,12 +51,12 @@ $HeaderURL$
 %rename(DownCast) Handle_MDataStd_TreeNodeStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_NameRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ExpressionRetrievalDriver::DownCast;
-%rename(DownCast) Handle_MDataStd_IntPackedMapRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_RealArrayRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ReferenceArrayRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_NamedDataRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ExtStringArrayRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_NameStorageDriver::DownCast;
+%rename(DownCast) Handle_MDataStd_RealStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntegerRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_BooleanArrayStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntPackedMapStorageDriver::DownCast;
@@ -72,12 +72,12 @@ $HeaderURL$
 %rename(DownCast) Handle_MDataStd_VariableStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntegerArrayRetrievalDriver_1::DownCast;
 %rename(DownCast) Handle_MDataStd_RealRetrievalDriver::DownCast;
-%rename(DownCast) Handle_MDataStd_ByteArrayStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_CommentStorageDriver::DownCast;
-%rename(DownCast) Handle_MDataStd_IntegerArrayStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ReferenceListRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MDataStd_IntegerArrayStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_IntegerArrayRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_ByteArrayRetrievalDriver::DownCast;
+%rename(DownCast) Handle_MDataStd_IntPackedMapRetrievalDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_TickStorageDriver::DownCast;
 %rename(DownCast) Handle_MDataStd_VariableRetrievalDriver::DownCast;
 %rename(AddStorageDrivers) MDataStd::AddStorageDrivers;

@@ -57,6 +57,39 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
+#include<Image.hxx>
+#include<Image_AlienPixMap.hxx>
+#include<Image_AveragePixelInterpolation.hxx>
+#include<Image_BalancedPixelInterpolation.hxx>
+#include<Image_BilinearPixelInterpolation.hxx>
+#include<Image_Color.hxx>
+#include<Image_ColorImage.hxx>
+#include<Image_ColorPixelDataMap.hxx>
+#include<Image_ColorPixelMapHasher.hxx>
+#include<Image_Convertor.hxx>
+#include<Image_DColorImage.hxx>
+#include<Image_DIndexedImage.hxx>
+#include<Image_DataMapIteratorOfColorPixelDataMap.hxx>
+#include<Image_DataMapIteratorOfLookupTable.hxx>
+#include<Image_DataMapNodeOfColorPixelDataMap.hxx>
+#include<Image_DataMapNodeOfLookupTable.hxx>
+#include<Image_Diff.hxx>
+#include<Image_DitheringMethod.hxx>
+#include<Image_FlipType.hxx>
+#include<Image_Image.hxx>
+#include<Image_IndexPixelMapHasher.hxx>
+#include<Image_LookupTable.hxx>
+#include<Image_PixMap.hxx>
+#include<Image_PixMapData.hxx>
+#include<Image_PixMap_Handle.hxx>
+#include<Image_PixelAddress.hxx>
+#include<Image_PixelFieldOfDColorImage.hxx>
+#include<Image_PixelInterpolation.hxx>
+#include<Image_PixelRowOfDColorImage.hxx>
+#include<Image_PixelRowOfDIndexedImage.hxx>
+#include<Image_PlanarPixelInterpolation.hxx>
+#include<Image_PseudoColorImage.hxx>
+#include<Image_TypeOfImage.hxx>
 
 // Needed headers necessary for compilation.
 

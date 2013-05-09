@@ -23,6 +23,7 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_GeomFill_HSequenceOfAx2::DownCast;
 %rename(DownCast) Handle_GeomFill_Boundary::DownCast;
 %rename(DownCast) Handle_GeomFill_TrihedronLaw::DownCast;
 %rename(DownCast) Handle_GeomFill_TrihedronWithGuide::DownCast;
@@ -34,6 +35,7 @@ $HeaderURL$
 %rename(DownCast) Handle_GeomFill_CurveAndTrihedron::DownCast;
 %rename(DownCast) Handle_GeomFill_CircularBlendFunc::DownCast;
 %rename(DownCast) Handle_GeomFill_SimpleBound::DownCast;
+%rename(DownCast) Handle_GeomFill_SequenceNodeOfSequenceOfAx2::DownCast;
 %rename(DownCast) Handle_GeomFill_DraftTrihedron::DownCast;
 %rename(DownCast) Handle_GeomFill_LocationDraft::DownCast;
 %rename(DownCast) Handle_GeomFill_BoundWithSurf::DownCast;
@@ -47,6 +49,7 @@ $HeaderURL$
 %rename(DownCast) Handle_GeomFill_LocationGuide::DownCast;
 %rename(DownCast) Handle_GeomFill_GuideTrihedronAC::DownCast;
 %rename(DownCast) Handle_GeomFill_CorrectedFrenet::DownCast;
+%rename(DownCast) Handle_GeomFill_DiscreteTrihedron::DownCast;
 %rename(DownCast) Handle_GeomFill_SweepFunction::DownCast;
 %rename(DownCast) Handle_GeomFill_UniformSection::DownCast;
 %rename(DownCast) Handle_GeomFill_SequenceNodeOfSequenceOfTrsf::DownCast;

@@ -24,11 +24,11 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_XCAFDoc_DocumentTool::DownCast;
-%rename(DownCast) Handle_XCAFDoc_Area::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DimTolTool::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Volume::DownCast;
 %rename(DownCast) Handle_XCAFDoc_DimTol::DownCast;
+%rename(DownCast) Handle_XCAFDoc_Area::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Centroid::DownCast;
 %rename(DownCast) Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence::DownCast;
 %rename(DownCast) Handle_XCAFDoc_Color::DownCast;
@@ -84,6 +84,8 @@ $HeaderURL$
 %rename(IsCompound) XCAFDoc_ShapeTool::IsCompound;
 %rename(IsSubShape) XCAFDoc_ShapeTool::IsSubShape;
 %rename(GetShape) XCAFDoc_ShapeTool::GetShape;
+%rename(SetAutoNaming) XCAFDoc_ShapeTool::SetAutoNaming;
+%rename(AutoNaming) XCAFDoc_ShapeTool::AutoNaming;
 %rename(GetUsers) XCAFDoc_ShapeTool::GetUsers;
 %rename(GetLocation) XCAFDoc_ShapeTool::GetLocation;
 %rename(GetReferredShape) XCAFDoc_ShapeTool::GetReferredShape;
@@ -121,6 +123,7 @@ $HeaderURL$
 %rename(Get) XCAFDoc_Centroid::Get;
 %rename(Set) XCAFDoc_ColorTool::Set;
 %rename(GetID) XCAFDoc_ColorTool::GetID;
+%rename(GetColor) XCAFDoc_ColorTool::GetColor;
 %rename(Set) XCAFDoc_MaterialTool::Set;
 %rename(GetID) XCAFDoc_MaterialTool::GetID;
 %rename(GetDensityForShape) XCAFDoc_MaterialTool::GetDensityForShape;

@@ -77,6 +77,9 @@ $HeaderURL$
 #include<Aspect_ColorScale.hxx>
 #include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
+#include<Aspect_DisplayConnection.hxx>
+#include<Aspect_DisplayConnectionDefinitionError.hxx>
+#include<Aspect_DisplayConnection_Handle.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
 #include<Aspect_DriverDefinitionError.hxx>
@@ -97,9 +100,7 @@ $HeaderURL$
 #include<Aspect_GradientBackground.hxx>
 #include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
-#include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
-#include<Aspect_GraphicDriver.hxx>
 #include<Aspect_Grid.hxx>
 #include<Aspect_GridDrawMode.hxx>
 #include<Aspect_GridType.hxx>
@@ -151,7 +152,6 @@ $HeaderURL$
 #include<Aspect_TypeOfColorSpace.hxx>
 #include<Aspect_TypeOfConstraint.hxx>
 #include<Aspect_TypeOfDeflection.hxx>
-#include<Aspect_TypeOfDegenerateModel.hxx>
 #include<Aspect_TypeOfDisplayText.hxx>
 #include<Aspect_TypeOfDrawMode.hxx>
 #include<Aspect_TypeOfEdge.hxx>
@@ -180,20 +180,7 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<Font_FontAspect.hxx>
-#include<Font_FontMgr.hxx>
-#include<Font_NListOfSystemFont.hxx>
-#include<Font_SystemFont.hxx>
 #include<Image.hxx>
-#include<ImageUtility.hxx>
-#include<ImageUtility_X11Display.hxx>
-#include<ImageUtility_X11Dump.hxx>
-#include<ImageUtility_X11GC.hxx>
-#include<ImageUtility_X11Window.hxx>
-#include<ImageUtility_X11XImage.hxx>
-#include<ImageUtility_XPR.hxx>
-#include<ImageUtility_XWD.hxx>
-#include<ImageUtility_XWUD.hxx>
 #include<Image_AlienPixMap.hxx>
 #include<Image_AveragePixelInterpolation.hxx>
 #include<Image_BalancedPixelInterpolation.hxx>
@@ -217,6 +204,7 @@ $HeaderURL$
 #include<Image_LookupTable.hxx>
 #include<Image_PixMap.hxx>
 #include<Image_PixMapData.hxx>
+#include<Image_PixMap_Handle.hxx>
 #include<Image_PixelAddress.hxx>
 #include<Image_PixelFieldOfDColorImage.hxx>
 #include<Image_PixelInterpolation.hxx>
@@ -225,21 +213,6 @@ $HeaderURL$
 #include<Image_PlanarPixelInterpolation.hxx>
 #include<Image_PseudoColorImage.hxx>
 #include<Image_TypeOfImage.hxx>
-#include<MFT.hxx>
-#include<MFT_CommandDescriptor.hxx>
-#include<MFT_FileHandle.hxx>
-#include<MFT_FilePosition.hxx>
-#include<MFT_FileRecord.hxx>
-#include<MFT_FontManager.hxx>
-#include<MFT_FontManagerDefinitionError.hxx>
-#include<MFT_FontManagerError.hxx>
-#include<MFT_ListOfFontHandle.hxx>
-#include<MFT_ListOfFontName.hxx>
-#include<MFT_ListOfFontReference.hxx>
-#include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_TextManager.hxx>
-#include<MFT_TypeOfCommand.hxx>
-#include<MFT_TypeOfValue.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -277,7 +250,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -291,7 +263,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -311,22 +282,7 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WhoAmI.hxx>
-#include<Xw.hxx>
-#include<Xw_ColorMap.hxx>
-#include<Xw_Driver.hxx>
-#include<Xw_FontMap.hxx>
-#include<Xw_GraphicDevice.hxx>
-#include<Xw_HListOfMFTFonts.hxx>
-#include<Xw_IconBox.hxx>
-#include<Xw_ListOfMFTFonts.hxx>
-#include<Xw_MarkMap.hxx>
-#include<Xw_TextManager.hxx>
-#include<Xw_TypeMap.hxx>
-#include<Xw_TypeOfMapping.hxx>
-#include<Xw_TypeOfVisual.hxx>
-#include<Xw_WidthMap.hxx>
 #include<Xw_Window.hxx>
-#include<Xw_WindowQuality.hxx>
 
 // Needed headers necessary for compilation.
 

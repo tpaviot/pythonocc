@@ -26,10 +26,10 @@ $HeaderURL$
 %rename(DownCast) Handle_ShapeUpgrade_Tool::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_FaceDivide::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_FaceDivideArea::DownCast;
-%rename(DownCast) Handle_ShapeUpgrade_SplitSurface::DownCast;
-%rename(DownCast) Handle_ShapeUpgrade_SplitSurfaceAngle::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_EdgeDivide::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_ClosedEdgeDivide::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurface::DownCast;
+%rename(DownCast) Handle_ShapeUpgrade_SplitSurfaceAngle::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_RemoveLocations::DownCast;
 %rename(DownCast) Handle_ShapeUpgrade_RemoveInternalWires::DownCast;

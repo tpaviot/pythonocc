@@ -521,6 +521,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Plate_SequenceOfPinpointConstraint;
+class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Plate_SequenceOfPinpointConstraint();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Plate_SequenceOfPinpointConstraint & Assign(const Plate_SequenceOfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		const Plate_SequenceOfPinpointConstraint & operator=(const Plate_SequenceOfPinpointConstraint &Other);
+		%feature("autodoc", "1");
+		void Append(const Plate_PinpointConstraint &T);
+		%feature("autodoc", "1");
+		void Append(Plate_SequenceOfPinpointConstraint & S);
+		%feature("autodoc", "1");
+		void Prepend(const Plate_PinpointConstraint &T);
+		%feature("autodoc", "1");
+		void Prepend(Plate_SequenceOfPinpointConstraint & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Plate_PinpointConstraint &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Plate_PinpointConstraint &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & First() const;
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &I);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Plate_SequenceOfPinpointConstraint::~Plate_SequenceOfPinpointConstraint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Plate_SequenceOfPinpointConstraint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
 class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
 	public:
@@ -729,71 +794,6 @@ def __del__(self):
 %}
 
 %extend Plate_D2 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Plate_SequenceOfPinpointConstraint;
-class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Plate_SequenceOfPinpointConstraint();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Plate_SequenceOfPinpointConstraint & Assign(const Plate_SequenceOfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		const Plate_SequenceOfPinpointConstraint & operator=(const Plate_SequenceOfPinpointConstraint &Other);
-		%feature("autodoc", "1");
-		void Append(const Plate_PinpointConstraint &T);
-		%feature("autodoc", "1");
-		void Append(Plate_SequenceOfPinpointConstraint & S);
-		%feature("autodoc", "1");
-		void Prepend(const Plate_PinpointConstraint &T);
-		%feature("autodoc", "1");
-		void Prepend(Plate_SequenceOfPinpointConstraint & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Plate_PinpointConstraint &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Plate_PinpointConstraint &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & First() const;
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Plate_SequenceOfPinpointConstraint & S);
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Plate_PinpointConstraint & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Plate_PinpointConstraint &I);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Plate_PinpointConstraint & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Plate_SequenceOfPinpointConstraint::~Plate_SequenceOfPinpointConstraint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Plate_SequenceOfPinpointConstraint {
 	void _kill_pointed() {
 		delete $self;
 	}

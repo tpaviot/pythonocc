@@ -30,9 +30,9 @@ import GarbageCollector
 import Standard
 import gp
 import Quantity
-import OSD
-import AlienImage
-import TColStd
 import Aspect
-import Font
+import OSD
+import TCollection
+import Image
+import TColStd
 };

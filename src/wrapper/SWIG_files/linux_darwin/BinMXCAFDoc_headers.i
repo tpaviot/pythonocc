@@ -89,7 +89,7 @@ $HeaderURL$
 #include<Handle_CDM_MessageDriver.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<BinObjMgt_Persistent.hxx>
+#include<TopLoc_Location.hxx>
 #include<BinMXCAFDoc.hxx>
 #include<Handle_BinMDF_ADriverTable.hxx>
-#include<TopLoc_Location.hxx>
 %}

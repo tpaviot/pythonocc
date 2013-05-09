@@ -25,10 +25,10 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_FreeBoundData::DownCast;
-%rename(DownCast) Handle_ShapeAnalysis_HSequenceOfFreeBounds::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_TransferParameters::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_TransferParametersProj::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal::DownCast;
+%rename(DownCast) Handle_ShapeAnalysis_HSequenceOfFreeBounds::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_Wire::DownCast;
 %rename(DownCast) Handle_ShapeAnalysis_Surface::DownCast;
 %rename(ConnectEdgesToWires) ShapeAnalysis_FreeBounds::ConnectEdgesToWires;

@@ -25,8 +25,8 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString::DownCast;
 %rename(DownCast) Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString::DownCast;
-%rename(DownCast) Handle_Resource_NoSuchResource::DownCast;
 %rename(DownCast) Handle_Resource_Manager::DownCast;
+%rename(DownCast) Handle_Resource_NoSuchResource::DownCast;
 %rename(Sort) Resource_QuickSortOfArray1::Sort;
 %rename(Raise) Resource_NoSuchResource::Raise;
 %rename(NewInstance) Resource_NoSuchResource::NewInstance;

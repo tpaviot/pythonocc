@@ -312,6 +312,8 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		void SetMode(const Standard_Boolean IsFrenet=0);
 		%feature("autodoc", "1");
+		void SetDiscreteMode();
+		%feature("autodoc", "1");
 		void SetMode(const gp_Ax2 Axe);
 		%feature("autodoc", "1");
 		void SetMode(const gp_Dir BiNormal);
@@ -335,6 +337,8 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		BRepBuilderAPI_PipeError GetStatus() const;
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAngular=1.00000000000000002081668171172168513294309377670288085938e-2);
+		%feature("autodoc", "1");
+		void SetForceApproxC1(const Standard_Boolean ForceApproxC1);
 		%feature("autodoc", "1");
 		void SetTransitionMode(const BRepBuilderAPI_TransitionMode Mode=BRepBuilderAPI_Transformed);
 		%feature("autodoc", "1");
@@ -785,6 +789,8 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 	public:
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakePipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile);
+		%feature("autodoc", "1");
+		BRepOffsetAPI_MakePipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile, const GeomFill_Trihedron aMode, const Standard_Boolean ForceApproxC1=0);
 		%feature("autodoc", "1");
 		const BRepFill_Pipe & Pipe() const;
 		%feature("autodoc", "1");

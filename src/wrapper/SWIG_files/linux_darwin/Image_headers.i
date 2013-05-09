@@ -58,6 +58,7 @@ $HeaderURL$
 #include<Image_LookupTable.hxx>
 #include<Image_PixMap.hxx>
 #include<Image_PixMapData.hxx>
+#include<Image_PixMap_Handle.hxx>
 #include<Image_PixelAddress.hxx>
 #include<Image_PixelFieldOfDColorImage.hxx>
 #include<Image_PixelInterpolation.hxx>
@@ -69,15 +70,6 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
-#include<ImageUtility.hxx>
-#include<ImageUtility_X11Display.hxx>
-#include<ImageUtility_X11Dump.hxx>
-#include<ImageUtility_X11GC.hxx>
-#include<ImageUtility_X11Window.hxx>
-#include<ImageUtility_X11XImage.hxx>
-#include<ImageUtility_XPR.hxx>
-#include<ImageUtility_XWD.hxx>
-#include<ImageUtility_XWUD.hxx>
 
 // Needed headers necessary for compilation.
 

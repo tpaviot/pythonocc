@@ -29,11 +29,11 @@ $HeaderURL$
 import GarbageCollector
 import Standard
 import AppParCurves
+import math
+import Approx
 import gp
 import Adaptor3d
 import IntSurf
-import math
-import Approx
 import TColStd
 import IntPatch
 import TopAbs

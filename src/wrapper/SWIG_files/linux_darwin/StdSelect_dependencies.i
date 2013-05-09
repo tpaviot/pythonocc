@@ -44,10 +44,8 @@ $HeaderURL$
 #include <Handle_Prs3d_TextAspect.hxx>
 #include <Handle_PrsMgr_PresentableObject.hxx>
 #include <Handle_PrsMgr_Presentation.hxx>
-#include <Handle_PrsMgr_Presentation2d.hxx>
 #include <Handle_PrsMgr_Presentation3d.hxx>
 #include <Handle_PrsMgr_PresentationManager.hxx>
-#include <Handle_PrsMgr_PresentationManager2d.hxx>
 #include <Handle_PrsMgr_PresentationManager3d.hxx>
 #include <Handle_PrsMgr_Prs.hxx>
 #include <Handle_PrsMgr_SequenceNodeOfPresentations.hxx>
@@ -55,13 +53,6 @@ $HeaderURL$
 #include <Handle_Quantity_DateDefinitionError.hxx>
 #include <Handle_Quantity_HArray1OfColor.hxx>
 #include <Handle_Quantity_PeriodDefinitionError.hxx>
-#include <Handle_Select2D_Projector.hxx>
-#include <Handle_Select2D_SensitiveArc.hxx>
-#include <Handle_Select2D_SensitiveBox.hxx>
-#include <Handle_Select2D_SensitiveCircle.hxx>
-#include <Handle_Select2D_SensitiveEntity.hxx>
-#include <Handle_Select2D_SensitivePoint.hxx>
-#include <Handle_Select2D_SensitiveSegment.hxx>
 #include <Handle_SelectMgr_AndFilter.hxx>
 #include <Handle_SelectMgr_CompositionFilter.hxx>
 #include <Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive.hxx>
@@ -141,17 +132,16 @@ $HeaderURL$
 #include <Prs3d_ShapeTool.hxx>
 #include <Prs3d_Text.hxx>
 #include <Prs3d_TextAspect.hxx>
+#include <Prs3d_TypeOfHLR.hxx>
 #include <Prs3d_TypeOfLinePicking.hxx>
 #include <PrsMgr_KindOfPrs.hxx>
 #include <PrsMgr_ModedPresentation.hxx>
 #include <PrsMgr_PresentableObject.hxx>
 #include <PrsMgr_PresentableObjectPointer.hxx>
 #include <PrsMgr_Presentation.hxx>
-#include <PrsMgr_Presentation2d.hxx>
 #include <PrsMgr_Presentation3d.hxx>
 #include <PrsMgr_Presentation3dPointer.hxx>
 #include <PrsMgr_PresentationManager.hxx>
-#include <PrsMgr_PresentationManager2d.hxx>
 #include <PrsMgr_PresentationManager3d.hxx>
 #include <PrsMgr_Presentations.hxx>
 #include <PrsMgr_Prs.hxx>
@@ -251,14 +241,6 @@ $HeaderURL$
 #include <Quantity_VolumeFlow.hxx>
 #include <Quantity_Weight.hxx>
 #include <Quantity_Work.hxx>
-#include <Select2D_Projector.hxx>
-#include <Select2D_SensitiveArc.hxx>
-#include <Select2D_SensitiveBox.hxx>
-#include <Select2D_SensitiveCircle.hxx>
-#include <Select2D_SensitiveEntity.hxx>
-#include <Select2D_SensitivePoint.hxx>
-#include <Select2D_SensitiveSegment.hxx>
-#include <Select2D_TypeOfSelection.hxx>
 #include <SelectMgr_AndFilter.hxx>
 #include <SelectMgr_CompareResults.hxx>
 #include <SelectMgr_CompositionFilter.hxx>
@@ -302,6 +284,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -381,7 +364,6 @@ $HeaderURL$
 %};
 
 %import Prs3d.i
-%import Select2D.i
 %import SelectMgr.i
 %import TCollection.i
 %import PrsMgr.i

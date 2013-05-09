@@ -27,10 +27,4 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import TColStd
-import TCollection
-import Quantity
-import Aspect
-import MFT
 };

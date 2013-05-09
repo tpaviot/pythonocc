@@ -23,9 +23,9 @@ $Author$
 $HeaderURL$
 
 */
+%rename(DownCast) Handle_IGESToBRep_AlgoContainer::DownCast;
 %rename(DownCast) Handle_IGESToBRep_Actor::DownCast;
 %rename(DownCast) Handle_IGESToBRep_IGESBoundary::DownCast;
-%rename(DownCast) Handle_IGESToBRep_AlgoContainer::DownCast;
 %rename(DownCast) Handle_IGESToBRep_ToolContainer::DownCast;
 %rename(Init) IGESToBRep::Init;
 %rename(SetAlgoContainer) IGESToBRep::SetAlgoContainer;

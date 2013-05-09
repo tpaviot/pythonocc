@@ -101,11 +101,11 @@ $HeaderURL$
 #include<TDF_LabelMap.hxx>
 #include<TDF_Label.hxx>
 #include<TDF_LabelList.hxx>
-#include<Handle_TDF_RelocationTable.hxx>
 #include<Handle_TDF_Attribute.hxx>
 #include<Handle_TDF_AttributeDelta.hxx>
 #include<Handle_TDF_DeltaOnAddition.hxx>
 #include<Handle_TDF_DeltaOnRemoval.hxx>
+#include<Handle_TDF_RelocationTable.hxx>
 #include<Handle_TDF_DataSet.hxx>
 #include<TopTools_MapOfShape.hxx>
 #include<TColStd_IndexedDataMapOfTransientTransient.hxx>

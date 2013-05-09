@@ -1662,47 +1662,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
-class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address &S, const gp_Lin C);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		const gp_Pnt  Point() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		const Standard_Address & AuxillarSurface() const;
-		%feature("autodoc", "1");
-		const gp_Lin  AuxillarCurve() const;
-
-};
-%feature("shadow") HLRBRep_TheCSFunctionOfInterCSurf::~HLRBRep_TheCSFunctionOfInterCSurf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_TheCSFunctionOfInterCSurf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_BiPnt2D;
 class HLRBRep_BiPnt2D {
 	public:
@@ -1763,6 +1722,8 @@ class HLRBRep_Curve {
 		BRepAdaptor_Curve & Curve();
 		%feature("autodoc", "1");
 		void Curve(const TopoDS_Edge E);
+		%feature("autodoc", "1");
+		const BRepAdaptor_Curve & GetCurve() const;
 		%feature("autodoc", "1");
 		Standard_Real Parameter2d(const Standard_Real P3d) const;
 		%feature("autodoc", "1");
@@ -1832,7 +1793,11 @@ class HLRBRep_Curve {
 		%feature("autodoc", "1");
 		void Poles(TColgp_Array1OfPnt2d & TP) const;
 		%feature("autodoc", "1");
+		void Poles(const Handle_Geom_BSplineCurve &aCurve, TColgp_Array1OfPnt2d & TP) const;
+		%feature("autodoc", "1");
 		void PolesAndWeights(TColgp_Array1OfPnt2d & TP, TColStd_Array1OfReal & TW) const;
+		%feature("autodoc", "1");
+		void PolesAndWeights(const Handle_Geom_BSplineCurve &aCurve, TColgp_Array1OfPnt2d & TP, TColStd_Array1OfReal & TW) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbKnots() const;
 		%feature("autodoc", "1");
@@ -2264,100 +2229,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor HLRBRep_ListOfBPnt2D;
-class HLRBRep_ListOfBPnt2D {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ListOfBPnt2D();
-		%feature("autodoc", "1");
-		void Assign(const HLRBRep_ListOfBPnt2D &Other);
-		%feature("autodoc", "1");
-		void operator=(const HLRBRep_ListOfBPnt2D &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const HLRBRep_BiPnt2D &I);
-		%feature("autodoc", "1");
-		void Prepend(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & theIt);
-		%feature("autodoc", "1");
-		void Prepend(HLRBRep_ListOfBPnt2D & Other);
-		%feature("autodoc", "1");
-		void Append(const HLRBRep_BiPnt2D &I);
-		%feature("autodoc", "1");
-		void Append(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & theIt);
-		%feature("autodoc", "1");
-		void Append(HLRBRep_ListOfBPnt2D & Other);
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & First() const;
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(HLRBRep_ListIteratorOfListOfBPnt2D & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & It);
-		%feature("autodoc", "1");
-		void InsertBefore(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & It);
-		%feature("autodoc", "1");
-		void InsertAfter(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
-
-};
-%feature("shadow") HLRBRep_ListOfBPnt2D::~HLRBRep_ListOfBPnt2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ListOfBPnt2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
-class HLRBRep_ListIteratorOfListOfBPnt2D {
-	public:
-		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D();
-		%feature("autodoc", "1");
-		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
-		%feature("autodoc", "1");
-		void Initialize(const HLRBRep_ListOfBPnt2D &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		HLRBRep_BiPnt2D & Value() const;
-
-};
-%feature("shadow") HLRBRep_ListIteratorOfListOfBPnt2D::~HLRBRep_ListIteratorOfListOfBPnt2D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend HLRBRep_ListIteratorOfListOfBPnt2D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor HLRBRep_Array1OfEData;
 class HLRBRep_Array1OfEData {
 	public:
@@ -2708,6 +2579,67 @@ def __del__(self):
 };
 
 
+%nodefaultctor HLRBRep_ListOfBPnt2D;
+class HLRBRep_ListOfBPnt2D {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ListOfBPnt2D();
+		%feature("autodoc", "1");
+		void Assign(const HLRBRep_ListOfBPnt2D &Other);
+		%feature("autodoc", "1");
+		void operator=(const HLRBRep_ListOfBPnt2D &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const HLRBRep_BiPnt2D &I);
+		%feature("autodoc", "1");
+		void Prepend(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & theIt);
+		%feature("autodoc", "1");
+		void Prepend(HLRBRep_ListOfBPnt2D & Other);
+		%feature("autodoc", "1");
+		void Append(const HLRBRep_BiPnt2D &I);
+		%feature("autodoc", "1");
+		void Append(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & theIt);
+		%feature("autodoc", "1");
+		void Append(HLRBRep_ListOfBPnt2D & Other);
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & First() const;
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(HLRBRep_ListIteratorOfListOfBPnt2D & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & It);
+		%feature("autodoc", "1");
+		void InsertBefore(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const HLRBRep_BiPnt2D &I, HLRBRep_ListIteratorOfListOfBPnt2D & It);
+		%feature("autodoc", "1");
+		void InsertAfter(HLRBRep_ListOfBPnt2D & Other, HLRBRep_ListIteratorOfListOfBPnt2D & It);
+
+};
+%feature("shadow") HLRBRep_ListOfBPnt2D::~HLRBRep_ListOfBPnt2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ListOfBPnt2D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
 class HLRBRep_ThePolyhedronToolOfInterCSurf {
 	public:
@@ -2820,6 +2752,39 @@ def __del__(self):
 %}
 
 %extend HLRBRep_SLPropsATool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
+class HLRBRep_ListIteratorOfListOfBPnt2D {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D();
+		%feature("autodoc", "1");
+		HLRBRep_ListIteratorOfListOfBPnt2D(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		void Initialize(const HLRBRep_ListOfBPnt2D &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		HLRBRep_BiPnt2D & Value() const;
+
+};
+%feature("shadow") HLRBRep_ListIteratorOfListOfBPnt2D::~HLRBRep_ListIteratorOfListOfBPnt2D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_ListIteratorOfListOfBPnt2D {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3100,6 +3065,47 @@ def __del__(self):
 %}
 
 %extend HLRBRep_CurveTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
+class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		HLRBRep_TheCSFunctionOfInterCSurf(const Standard_Address &S, const gp_Lin C);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		const gp_Pnt  Point() const;
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		const Standard_Address & AuxillarSurface() const;
+		%feature("autodoc", "1");
+		const gp_Lin  AuxillarCurve() const;
+
+};
+%feature("shadow") HLRBRep_TheCSFunctionOfInterCSurf::~HLRBRep_TheCSFunctionOfInterCSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend HLRBRep_TheCSFunctionOfInterCSurf {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -27,38 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_PlotMgt_HListOfMFTFonts.hxx>
-#include<Handle_PlotMgt_HListOfPlotterParameter.hxx>
-#include<Handle_PlotMgt_ImageDriver.hxx>
-#include<Handle_PlotMgt_Plotter.hxx>
-#include<Handle_PlotMgt_PlotterAccessError.hxx>
-#include<Handle_PlotMgt_PlotterDefinitionError.hxx>
-#include<Handle_PlotMgt_PlotterDriver.hxx>
-#include<Handle_PlotMgt_PlotterParameter.hxx>
-#include<Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
-#include<Handle_PlotMgt_TextManager.hxx>
-#include<PlotMgt.hxx>
-#include<PlotMgt_HListOfMFTFonts.hxx>
-#include<PlotMgt_HListOfPlotterParameter.hxx>
-#include<PlotMgt_ImageDriver.hxx>
-#include<PlotMgt_ImageFormat.hxx>
-#include<PlotMgt_ListOfMFTFonts.hxx>
-#include<PlotMgt_ListOfPlotterParameter.hxx>
-#include<PlotMgt_PaperFormat.hxx>
-#include<PlotMgt_Plotter.hxx>
-#include<PlotMgt_PlotterAccessError.hxx>
-#include<PlotMgt_PlotterDefinitionError.hxx>
-#include<PlotMgt_PlotterDriver.hxx>
-#include<PlotMgt_PlotterDriverPtr.hxx>
-#include<PlotMgt_PlotterParameter.hxx>
-#include<PlotMgt_PlotterTools.hxx>
-#include<PlotMgt_PlottingType.hxx>
-#include<PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
-#include<PlotMgt_TextManager.hxx>
-#include<PlotMgt_TypeOfOrigin.hxx>
-#include<PlotMgt_TypeOfPlotterParameter.hxx>
-#include<PlotMgt_TypeOfQuality.hxx>
-#include<PlotMgt_fill.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -99,7 +67,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -113,7 +80,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -136,17 +102,4 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<TCollection_AsciiString.hxx>
-#include<OSD_File.hxx>
-#include<Handle_TColStd_HSequenceOfAsciiString.hxx>
-#include<TShort_Array1OfShortReal.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<Handle_TColStd_HSequenceOfInteger.hxx>
-#include<Handle_Aspect_ColorMap.hxx>
-#include<Handle_Aspect_WidthMap.hxx>
-#include<Handle_Aspect_TypeMap.hxx>
-#include<Handle_Aspect_FontMap.hxx>
-#include<Handle_MFT_FontManager.hxx>
-#include<PlotMgt.hxx>
 %}

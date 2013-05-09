@@ -52,6 +52,33 @@ $HeaderURL$
 
 
 
+%nodefaultctor StlAPI;
+class StlAPI {
+	public:
+		%feature("autodoc", "1");
+		StlAPI();
+		%feature("autodoc", "1");
+		static		void Write(const TopoDS_Shape aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
+		%feature("autodoc", "1");
+		static		void Read(TopoDS_Shape & aShape, const char * aFile);
+
+};
+%feature("shadow") StlAPI::~StlAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StlAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StlAPI_Writer;
 class StlAPI_Writer {
 	public:
@@ -124,33 +151,6 @@ def __del__(self):
 %}
 
 %extend StlAPI_Reader {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StlAPI;
-class StlAPI {
-	public:
-		%feature("autodoc", "1");
-		StlAPI();
-		%feature("autodoc", "1");
-		static		void Write(const TopoDS_Shape aShape, const char * aFile, const Standard_Boolean aAsciiMode=1);
-		%feature("autodoc", "1");
-		static		void Read(TopoDS_Shape & aShape, const char * aFile);
-
-};
-%feature("shadow") StlAPI::~StlAPI %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StlAPI {
 	void _kill_pointed() {
 		delete $self;
 	}

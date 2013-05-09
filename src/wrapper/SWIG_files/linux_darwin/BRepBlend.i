@@ -876,6 +876,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepBlend_SurfCurvEvolRadInv;
+class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
+	public:
+		%feature("autodoc", "1");
+		BRepBlend_SurfCurvEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg, const Handle_Law_Function &Evol);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer Choix);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
+		%feature("autodoc", "1");
+		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
+
+};
+%feature("shadow") BRepBlend_SurfCurvEvolRadInv::~BRepBlend_SurfCurvEvolRadInv %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepBlend_SurfCurvEvolRadInv {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepBlend_AppSurface;
 class BRepBlend_AppSurface : public AppBlend_Approx {
 	public:
@@ -1457,47 +1498,6 @@ def __del__(self):
 %}
 
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepBlend_SurfCurvEvolRadInv;
-class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
-	public:
-		%feature("autodoc", "1");
-		BRepBlend_SurfCurvEvolRadInv(const Handle_Adaptor3d_HSurface &S, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HCurve &Cg, const Handle_Law_Function &Evol);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer Choix);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		void Set(const Handle_Adaptor2d_HCurve2d &Rst);
-		%feature("autodoc", "1");
-		virtual		void GetTolerance(math_Vector & Tolerance, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		virtual		void GetBounds(math_Vector & InfBound, math_Vector & SupBound) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsSolution(const math_Vector &Sol, const Standard_Real Tol);
-
-};
-%feature("shadow") BRepBlend_SurfCurvEvolRadInv::~BRepBlend_SurfCurvEvolRadInv %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepBlend_SurfCurvEvolRadInv {
 	void _kill_pointed() {
 		delete $self;
 	}

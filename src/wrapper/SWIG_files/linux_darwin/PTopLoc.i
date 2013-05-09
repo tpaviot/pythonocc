@@ -128,6 +128,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor PTopLoc_Location;
+class PTopLoc_Location {
+	public:
+		%feature("autodoc", "1");
+		PTopLoc_Location();
+		%feature("autodoc", "1");
+		PTopLoc_Location(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
+		%feature("autodoc", "1");
+		Standard_Boolean IsIdentity() const;
+		%feature("autodoc", "1");
+		Handle_PTopLoc_Datum3D Datum3D() const;
+		%feature("autodoc", "1");
+		Standard_Integer Power() const;
+		%feature("autodoc", "1");
+		PTopLoc_Location Next() const;
+		%feature("autodoc", "1");
+		Handle_PTopLoc_ItemLocation _CSFDB_GetPTopLoc_LocationmyData() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
+
+};
+%feature("shadow") PTopLoc_Location::~PTopLoc_Location %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PTopLoc_Location {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PTopLoc_Datum3D;
 class PTopLoc_Datum3D : public Standard_Persistent {
 	public:
@@ -165,43 +202,6 @@ def __del__(self):
 %}
 
 %extend PTopLoc_Datum3D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PTopLoc_Location;
-class PTopLoc_Location {
-	public:
-		%feature("autodoc", "1");
-		PTopLoc_Location();
-		%feature("autodoc", "1");
-		PTopLoc_Location(const Handle_PTopLoc_Datum3D &D, const Standard_Integer P, const PTopLoc_Location &N);
-		%feature("autodoc", "1");
-		Standard_Boolean IsIdentity() const;
-		%feature("autodoc", "1");
-		Handle_PTopLoc_Datum3D Datum3D() const;
-		%feature("autodoc", "1");
-		Standard_Integer Power() const;
-		%feature("autodoc", "1");
-		PTopLoc_Location Next() const;
-		%feature("autodoc", "1");
-		Handle_PTopLoc_ItemLocation _CSFDB_GetPTopLoc_LocationmyData() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPTopLoc_LocationmyData(const Handle_PTopLoc_ItemLocation &p);
-
-};
-%feature("shadow") PTopLoc_Location::~PTopLoc_Location %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PTopLoc_Location {
 	void _kill_pointed() {
 		delete $self;
 	}

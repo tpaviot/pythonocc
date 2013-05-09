@@ -508,6 +508,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
+class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Handle_PNaming_NamedShape &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Handle_PNaming_NamedShape _CSFDB_GetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue(const Handle_PNaming_NamedShape &p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape GetHandle() {
+	return *(Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*) &$self;
+	}
+};
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PNaming_Name_1;
 class PNaming_Name_1 : public Standard_Persistent {
 	public:
@@ -776,53 +823,6 @@ def __del__(self):
 %}
 
 %extend PNaming_Name {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
-class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape();
-		%feature("autodoc", "1");
-		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Handle_PNaming_NamedShape &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PNaming_NamedShape &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Handle_PNaming_NamedShape _CSFDB_GetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPNaming_VArrayNodeOfFieldOfHArray1OfNamedShapemyValue(const Handle_PNaming_NamedShape &p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
-	Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape GetHandle() {
-	return *(Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape*) &$self;
-	}
-};
-%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape::~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	void _kill_pointed() {
 		delete $self;
 	}

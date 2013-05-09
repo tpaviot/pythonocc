@@ -645,43 +645,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
-class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const TColGeom2d_SequenceOfGeometry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		TColGeom2d_SequenceOfGeometry & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
-	Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry GetHandle() {
-	return *(Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry*) &$self;
-	}
-};
-%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor MAT2d_BiInt;
 class MAT2d_BiInt {
 	public:
@@ -1825,6 +1788,43 @@ def __del__(self):
 %}
 
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
+class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry(const TColGeom2d_SequenceOfGeometry &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		TColGeom2d_SequenceOfGeometry & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry GetHandle() {
+	return *(Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry*) &$self;
+	}
+};
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry::~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	void _kill_pointed() {
 		delete $self;
 	}

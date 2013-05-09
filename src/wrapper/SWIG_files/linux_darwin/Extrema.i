@@ -64,6 +64,13 @@ enum Extrema_ExtAlgo {
 	Extrema_ExtAlgo_Tree,
 	};
 
+enum Extrema_ElementType {
+	Extrema_Node,
+	Extrema_UIsoEdge,
+	Extrema_VIsoEdge,
+	Extrema_Face,
+	};
+
 
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
@@ -712,6 +719,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Extrema_HArray1OfPOnSurf;
+class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf(const Extrema_HArray1OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf & operator=(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray1OfPOnSurf & operator=(const Extrema_HArray1OfPOnSurf *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_HArray1OfPOnSurf DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray1OfPOnSurf {
+	Extrema_HArray1OfPOnSurf* GetObject() {
+	return (Extrema_HArray1OfPOnSurf*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_HArray1OfPOnSurf::~Handle_Extrema_HArray1OfPOnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_HArray1OfPOnSurf {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -788,44 +833,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Extrema_HArray1OfPOnSurf;
-class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf();
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf(const Extrema_HArray1OfPOnSurf *anItem);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf & operator=(const Handle_Extrema_HArray1OfPOnSurf &aHandle);
-		%feature("autodoc", "1");
-		Handle_Extrema_HArray1OfPOnSurf & operator=(const Extrema_HArray1OfPOnSurf *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Extrema_HArray1OfPOnSurf DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Extrema_HArray1OfPOnSurf {
-	Extrema_HArray1OfPOnSurf* GetObject() {
-	return (Extrema_HArray1OfPOnSurf*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Extrema_HArray1OfPOnSurf::~Handle_Extrema_HArray1OfPOnSurf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Extrema_HArray1OfPOnSurf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Extrema_LCCache2dOfLocateExtCC2d;
 class Handle_Extrema_LCCache2dOfLocateExtCC2d : public Handle_Standard_Transient {
 	public:
@@ -858,6 +865,44 @@ def __del__(self):
 %}
 
 %extend Handle_Extrema_LCCache2dOfLocateExtCC2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Extrema_HArray2OfPOnSurfParams;
+class Handle_Extrema_HArray2OfPOnSurfParams : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurfParams();
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurfParams(const Handle_Extrema_HArray2OfPOnSurfParams &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurfParams(const Extrema_HArray2OfPOnSurfParams *anItem);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurfParams & operator=(const Handle_Extrema_HArray2OfPOnSurfParams &aHandle);
+		%feature("autodoc", "1");
+		Handle_Extrema_HArray2OfPOnSurfParams & operator=(const Extrema_HArray2OfPOnSurfParams *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Extrema_HArray2OfPOnSurfParams DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Extrema_HArray2OfPOnSurfParams {
+	Extrema_HArray2OfPOnSurfParams* GetObject() {
+	return (Extrema_HArray2OfPOnSurfParams*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Extrema_HArray2OfPOnSurfParams::~Handle_Extrema_HArray2OfPOnSurfParams %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Extrema_HArray2OfPOnSurfParams {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1047,6 +1092,46 @@ def __del__(self):
 %}
 
 %extend Extrema_POnCurv2d {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_POnSurf;
+class Extrema_POnSurf {
+	public:
+		%feature("autodoc", "1");
+		Extrema_POnSurf();
+		%feature("autodoc", "1");
+		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt P);
+		%feature("autodoc", "1");
+		const gp_Pnt  Value() const;
+		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
+
+		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
+		%feature("autodoc", "1");
+		const gp_Pnt  _CSFDB_GetExtrema_POnSurfmyP() const;
+
+};
+%feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_POnSurf {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2025,6 +2110,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor Extrema_Array2OfPOnSurfParams;
+class Extrema_Array2OfPOnSurfParams {
+	public:
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnSurfParams(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnSurfParams(const Extrema_POnSurfParams &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnSurfParams &V);
+		%feature("autodoc", "1");
+		void Destroy();
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurfParams & Assign(const Extrema_Array2OfPOnSurfParams &Other);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurfParams & operator=(const Extrema_Array2OfPOnSurfParams &Other);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnSurfParams &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnSurfParams & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		const Extrema_POnSurfParams & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurfParams & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		Extrema_POnSurfParams & operator()(const Standard_Integer Row, const Standard_Integer Col);
+
+};
+%feature("shadow") Extrema_Array2OfPOnSurfParams::~Extrema_Array2OfPOnSurfParams %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_Array2OfPOnSurfParams {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Extrema_LocEPCOfLocateExtPC;
 class Extrema_LocEPCOfLocateExtPC {
 	public:
@@ -2879,6 +3019,60 @@ def __del__(self):
 %}
 
 %extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_POnSurfParams;
+class Extrema_POnSurfParams : public Extrema_POnSurf {
+	public:
+		%feature("autodoc", "1");
+		Extrema_POnSurfParams();
+		%feature("autodoc", "1");
+		Extrema_POnSurfParams(const Standard_Real theU, const Standard_Real theV, const gp_Pnt thePnt);
+		%feature("autodoc", "1");
+		void SetSqrDistance(const Standard_Real theSqrDistance);
+		%feature("autodoc", "1");
+		Standard_Real GetSqrDistance() const;
+		%feature("autodoc", "1");
+		void SetElementType(const Extrema_ElementType theElementType);
+		%feature("autodoc", "1");
+		Extrema_ElementType GetElementType() const;
+		%feature("autodoc", "1");
+		void SetIndices(const Standard_Integer theIndexU, const Standard_Integer theIndexV);
+		%feature("autodoc","GetIndices() -> [Standard_Integer, Standard_Integer]");
+
+		void GetIndices(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetExtrema_POnSurfParamsmySqrDistance() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfParamsmySqrDistance(const Standard_Real p);
+		%feature("autodoc", "1");
+		Extrema_ElementType _CSFDB_GetExtrema_POnSurfParamsmyElementType() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfParamsmyElementType(const Extrema_ElementType p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetExtrema_POnSurfParamsmyIndexU() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfParamsmyIndexU(const Standard_Integer p);
+		%feature("autodoc", "1");
+		Standard_Integer _CSFDB_GetExtrema_POnSurfParamsmyIndexV() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetExtrema_POnSurfParamsmyIndexV(const Standard_Integer p);
+
+};
+%feature("shadow") Extrema_POnSurfParams::~Extrema_POnSurfParams %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_POnSurfParams {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4406,46 +4600,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Extrema_POnSurf;
-class Extrema_POnSurf {
-	public:
-		%feature("autodoc", "1");
-		Extrema_POnSurf();
-		%feature("autodoc", "1");
-		Extrema_POnSurf(const Standard_Real U, const Standard_Real V, const gp_Pnt P);
-		%feature("autodoc", "1");
-		const gp_Pnt  Value() const;
-		%feature("autodoc","Parameter() -> [Standard_Real, Standard_Real]");
-
-		void Parameter(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyU() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyU(const Standard_Real p);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetExtrema_POnSurfmyV() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetExtrema_POnSurfmyV(const Standard_Real p);
-		%feature("autodoc", "1");
-		const gp_Pnt  _CSFDB_GetExtrema_POnSurfmyP() const;
-
-};
-%feature("shadow") Extrema_POnSurf::~Extrema_POnSurf %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Extrema_POnSurf {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_SeqNode {
 	public:
@@ -5833,28 +5987,52 @@ def __del__(self):
 };
 
 
-%nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
-class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
+%nodefaultctor Extrema_HArray2OfPOnSurfParams;
+class Extrema_HArray2OfPOnSurfParams : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Extrema_SequenceNodeOfSequenceOfPOnCurv2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		Extrema_HArray2OfPOnSurfParams(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
 		%feature("autodoc", "1");
-		Extrema_POnCurv2d & Value() const;
+		Extrema_HArray2OfPOnSurfParams(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2, const Extrema_POnSurfParams &V);
+		%feature("autodoc", "1");
+		void Init(const Extrema_POnSurfParams &V);
+		%feature("autodoc", "1");
+		Standard_Integer ColLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer RowLength() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer LowerRow() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperCol() const;
+		%feature("autodoc", "1");
+		Standard_Integer UpperRow() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Extrema_POnSurfParams &Value);
+		%feature("autodoc", "1");
+		const Extrema_POnSurfParams & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		%feature("autodoc", "1");
+		Extrema_POnSurfParams & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		%feature("autodoc", "1");
+		const Extrema_Array2OfPOnSurfParams & Array2() const;
+		%feature("autodoc", "1");
+		Extrema_Array2OfPOnSurfParams & ChangeArray2();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
-	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d GetHandle() {
-	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d*) &$self;
+%extend Extrema_HArray2OfPOnSurfParams {
+	Handle_Extrema_HArray2OfPOnSurfParams GetHandle() {
+	return *(Handle_Extrema_HArray2OfPOnSurfParams*) &$self;
 	}
 };
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+%extend Extrema_HArray2OfPOnSurfParams {
 	Standard_Integer __hash__() {
 	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
+%feature("shadow") Extrema_HArray2OfPOnSurfParams::~Extrema_HArray2OfPOnSurfParams %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5863,7 +6041,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+%extend Extrema_HArray2OfPOnSurfParams {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -6198,6 +6376,43 @@ def __del__(self):
 %}
 
 %extend Extrema_CCFOfECCOfExtCC {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
+class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Extrema_SequenceNodeOfSequenceOfPOnCurv2d(const Extrema_POnCurv2d &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Extrema_POnCurv2d & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d GetHandle() {
+	return *(Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d*) &$self;
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Extrema_SequenceNodeOfSequenceOfPOnCurv2d::~Extrema_SequenceNodeOfSequenceOfPOnCurv2d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
 	void _kill_pointed() {
 		delete $self;
 	}

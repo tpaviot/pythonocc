@@ -27,8 +27,18 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_PS_Driver.hxx>
-#include<PS_Driver.hxx>
+#include<PShort_FieldOfHArray1OfShortReal.hxx>
+#include<PShort_FieldOfHArray2OfShortReal.hxx>
+#include<PShort_HArray1OfShortReal.hxx>
+#include<PShort_HArray2OfShortReal.hxx>
+#include<PShort_HSequenceOfShortReal.hxx>
+#include<PShort_SeqExplorerOfHSequenceOfShortReal.hxx>
+#include<PShort_SeqNodeOfHSequenceOfShortReal.hxx>
+#include<PShort_VArrayNodeOfFieldOfHArray1OfShortReal.hxx>
+#include<PShort_VArrayNodeOfFieldOfHArray2OfShortReal.hxx>
+#include<PShort_VArrayTNodeOfFieldOfHArray1OfShortReal.hxx>
+#include<PShort_VArrayTNodeOfFieldOfHArray2OfShortReal.hxx>
+#include<PStandard_ArrayNode.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -54,6 +64,9 @@ $HeaderURL$
 #include<Aspect_ColorScale.hxx>
 #include<Aspect_Convert.hxx>
 #include<Aspect_Display.hxx>
+#include<Aspect_DisplayConnection.hxx>
+#include<Aspect_DisplayConnectionDefinitionError.hxx>
+#include<Aspect_DisplayConnection_Handle.hxx>
 #include<Aspect_Drawable.hxx>
 #include<Aspect_Driver.hxx>
 #include<Aspect_DriverDefinitionError.hxx>
@@ -74,9 +87,7 @@ $HeaderURL$
 #include<Aspect_GradientBackground.hxx>
 #include<Aspect_GradientFillMethod.hxx>
 #include<Aspect_GraphicCallbackProc.hxx>
-#include<Aspect_GraphicDevice.hxx>
 #include<Aspect_GraphicDeviceDefinitionError.hxx>
-#include<Aspect_GraphicDriver.hxx>
 #include<Aspect_Grid.hxx>
 #include<Aspect_GridDrawMode.hxx>
 #include<Aspect_GridType.hxx>
@@ -128,7 +139,6 @@ $HeaderURL$
 #include<Aspect_TypeOfColorSpace.hxx>
 #include<Aspect_TypeOfConstraint.hxx>
 #include<Aspect_TypeOfDeflection.hxx>
-#include<Aspect_TypeOfDegenerateModel.hxx>
 #include<Aspect_TypeOfDisplayText.hxx>
 #include<Aspect_TypeOfDrawMode.hxx>
 #include<Aspect_TypeOfEdge.hxx>
@@ -157,21 +167,6 @@ $HeaderURL$
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<MFT.hxx>
-#include<MFT_CommandDescriptor.hxx>
-#include<MFT_FileHandle.hxx>
-#include<MFT_FilePosition.hxx>
-#include<MFT_FileRecord.hxx>
-#include<MFT_FontManager.hxx>
-#include<MFT_FontManagerDefinitionError.hxx>
-#include<MFT_FontManagerError.hxx>
-#include<MFT_ListOfFontHandle.hxx>
-#include<MFT_ListOfFontName.hxx>
-#include<MFT_ListOfFontReference.hxx>
-#include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_TextManager.hxx>
-#include<MFT_TypeOfCommand.hxx>
-#include<MFT_TypeOfValue.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -209,7 +204,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -223,7 +217,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -267,6 +260,4 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<Handle_PlotMgt_Plotter.hxx>
 %}

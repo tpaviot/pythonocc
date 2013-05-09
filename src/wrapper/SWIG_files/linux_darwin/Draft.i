@@ -256,55 +256,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Draft_DataMapOfFaceFaceInfo;
-class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		Draft_DataMapOfFaceFaceInfo(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		Draft_DataMapOfFaceFaceInfo & Assign(const Draft_DataMapOfFaceFaceInfo &Other);
-		%feature("autodoc", "1");
-		Draft_DataMapOfFaceFaceInfo & operator=(const Draft_DataMapOfFaceFaceInfo &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Face K, const Draft_FaceInfo &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		const Draft_FaceInfo & Find(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		const Draft_FaceInfo & operator()(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Draft_FaceInfo & ChangeFind(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		Draft_FaceInfo & operator()(const TopoDS_Face K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Face K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Face K);
-
-};
-%feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Draft_DataMapOfFaceFaceInfo {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Draft_DataMapOfEdgeEdgeInfo;
 class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 	public:
@@ -373,37 +324,6 @@ def __del__(self):
 %}
 
 %extend Draft {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
-class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		Draft_DataMapIteratorOfDataMapOfFaceFaceInfo();
-		%feature("autodoc", "1");
-		Draft_DataMapIteratorOfDataMapOfFaceFaceInfo(const Draft_DataMapOfFaceFaceInfo &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const Draft_DataMapOfFaceFaceInfo &aMap);
-		%feature("autodoc", "1");
-		const TopoDS_Face  Key() const;
-		%feature("autodoc", "1");
-		const Draft_FaceInfo & Value() const;
-
-};
-%feature("shadow") Draft_DataMapIteratorOfDataMapOfFaceFaceInfo::~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -482,6 +402,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
+class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		Draft_DataMapIteratorOfDataMapOfFaceFaceInfo();
+		%feature("autodoc", "1");
+		Draft_DataMapIteratorOfDataMapOfFaceFaceInfo(const Draft_DataMapOfFaceFaceInfo &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const Draft_DataMapOfFaceFaceInfo &aMap);
+		%feature("autodoc", "1");
+		const TopoDS_Face  Key() const;
+		%feature("autodoc", "1");
+		const Draft_FaceInfo & Value() const;
+
+};
+%feature("shadow") Draft_DataMapIteratorOfDataMapOfFaceFaceInfo::~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode {
 	public:
@@ -521,30 +472,40 @@ def __del__(self):
 };
 
 
-%nodefaultctor Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
-class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
+%nodefaultctor Draft_DataMapOfFaceFaceInfo;
+class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 	public:
 		%feature("autodoc", "1");
-		Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const TopoDS_Edge K, const Draft_EdgeInfo &I, const TCollection_MapNodePtr &n);
+		Draft_DataMapOfFaceFaceInfo(const Standard_Integer NbBuckets=1);
 		%feature("autodoc", "1");
-		TopoDS_Edge  Key() const;
+		Draft_DataMapOfFaceFaceInfo & Assign(const Draft_DataMapOfFaceFaceInfo &Other);
 		%feature("autodoc", "1");
-		Draft_EdgeInfo & Value() const;
+		Draft_DataMapOfFaceFaceInfo & operator=(const Draft_DataMapOfFaceFaceInfo &Other);
 		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Face K, const Draft_FaceInfo &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Face K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Face K);
+		%feature("autodoc", "1");
+		const Draft_FaceInfo & Find(const TopoDS_Face K) const;
+		%feature("autodoc", "1");
+		const Draft_FaceInfo & operator()(const TopoDS_Face K) const;
+		%feature("autodoc", "1");
+		Draft_FaceInfo & ChangeFind(const TopoDS_Face K);
+		%feature("autodoc", "1");
+		Draft_FaceInfo & operator()(const TopoDS_Face K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Face K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Face K);
 
 };
-%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
-	Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo GetHandle() {
-	return *(Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo*) &$self;
-	}
-};
-%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
+%feature("shadow") Draft_DataMapOfFaceFaceInfo::~Draft_DataMapOfFaceFaceInfo %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -553,7 +514,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+%extend Draft_DataMapOfFaceFaceInfo {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -616,6 +577,45 @@ def __del__(self):
 %}
 
 %extend Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
+class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo(const TopoDS_Edge K, const Draft_EdgeInfo &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc", "1");
+		TopoDS_Edge  Key() const;
+		%feature("autodoc", "1");
+		Draft_EdgeInfo & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo GetHandle() {
+	return *(Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo*) &$self;
+	}
+};
+%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo::~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	void _kill_pointed() {
 		delete $self;
 	}

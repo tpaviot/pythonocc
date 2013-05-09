@@ -1549,6 +1549,7 @@ class OSD_MemInfo : public Standard_Transient {
 			MemWorkingSetPeak,
 			MemSwapUsage,
 			MemSwapUsagePeak,
+			MemHeapUsage,
 			MemCounter_NB,
 		};
 		%feature("autodoc", "1");
@@ -2168,34 +2169,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor OSD_Real2String;
-class OSD_Real2String {
-	public:
-		%feature("autodoc", "1");
-		OSD_Real2String();
-		%feature("autodoc", "1");
-		Standard_Boolean RealToCString(const Standard_Real aReal, Standard_PCharacter & aString) const;
-		%feature("autodoc","CStringToReal(Standard_CString aString) -> Standard_Real");
-
-		Standard_Boolean CStringToReal(const char * aString, Standard_Real &OutValue);
-
-};
-%feature("shadow") OSD_Real2String::~OSD_Real2String %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Real2String {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor OSD_FileNode;
 class OSD_FileNode {
 	public:
@@ -2550,7 +2523,7 @@ class OSD {
 		%feature("autodoc", "1");
 		OSD();
 		%feature("autodoc", "1");
-		static		void SetSignal(const Standard_Boolean aFloatingSignal=1);
+		static		void SetSignal(const Standard_Boolean theFloatingSignal=1);
 		%feature("autodoc", "1");
 		static		Standard_Integer AvailableMemory();
 		%feature("autodoc", "1");
@@ -2568,10 +2541,6 @@ class OSD {
 		static		Standard_Integer GetExponent(const Standard_Real aReal);
 		%feature("autodoc", "1");
 		static		Standard_Real GetMantissa(const Standard_Real aReal);
-		%feature("autodoc", "1");
-		static		void UseSETranslator(const Standard_Boolean useSE);
-		%feature("autodoc", "1");
-		static		Standard_Boolean UseSETranslator();
 
 };
 %feature("shadow") OSD::~OSD %{
@@ -3055,37 +3024,6 @@ def __del__(self):
 %}
 
 %extend OSD_SIGKILL {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor OSD_Localizer;
-class OSD_Localizer {
-	public:
-		%feature("autodoc", "1");
-		OSD_Localizer(const Standard_Integer Category, const char * Locale);
-		%feature("autodoc", "1");
-		void Restore();
-		%feature("autodoc", "1");
-		void SetLocale(const Standard_Integer Category, const char * Locale);
-		%feature("autodoc", "1");
-		char * Locale() const;
-		%feature("autodoc", "1");
-		Standard_Integer Category() const;
-
-};
-%feature("shadow") OSD_Localizer::~OSD_Localizer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend OSD_Localizer {
 	void _kill_pointed() {
 		delete $self;
 	}

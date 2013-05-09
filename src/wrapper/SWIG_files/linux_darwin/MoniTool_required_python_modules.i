@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import TopoDS
 import OSD
-import TCollection
 import TColStd
+import TCollection
 import Dico
 };

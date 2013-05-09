@@ -159,8 +159,6 @@ $HeaderURL$
 #include<HLRBRep.hxx>
 #include<TopoDS_Edge.hxx>
 #include<Handle_HLRAlgo_EdgesBlock.hxx>
-#include<math_Vector.hxx>
-#include<math_Matrix.hxx>
 #include<gp_Vec2d.hxx>
 #include<TColgp_Array1OfPnt2d.hxx>
 #include<IntSurf_Quadric.hxx>
@@ -170,6 +168,8 @@ $HeaderURL$
 #include<HLRAlgo_ListIteratorOfInterferenceList.hxx>
 #include<Handle_Geom2d_BezierCurve.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
+#include<math_Vector.hxx>
+#include<math_Matrix.hxx>
 #include<Intf_Array1OfLin.hxx>
 #include<TopoDS_Face.hxx>
 #include<HLRAlgo_InterferenceList.hxx>

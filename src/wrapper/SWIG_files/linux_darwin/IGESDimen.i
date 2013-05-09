@@ -3228,43 +3228,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESDimen_ToolCurveDimension;
-class IGESDimen_ToolCurveDimension {
-	public:
-		%feature("autodoc", "1");
-		IGESDimen_ToolCurveDimension();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESDimen_CurveDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESDimen_CurveDimension &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESDimen_CurveDimension &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESDimen_CurveDimension &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESDimen_CurveDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESDimen_CurveDimension &entfrom, const Handle_IGESDimen_CurveDimension &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESDimen_CurveDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESDimen_ToolCurveDimension::~IGESDimen_ToolCurveDimension %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESDimen_ToolCurveDimension {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESDimen_AngularDimension;
 class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 	public:
@@ -3517,6 +3480,43 @@ def __del__(self):
 %}
 
 %extend IGESDimen_ToolDimensionDisplayData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESDimen_ToolCurveDimension;
+class IGESDimen_ToolCurveDimension {
+	public:
+		%feature("autodoc", "1");
+		IGESDimen_ToolCurveDimension();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESDimen_CurveDimension &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESDimen_CurveDimension &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESDimen_CurveDimension &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESDimen_CurveDimension &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESDimen_CurveDimension &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESDimen_CurveDimension &entfrom, const Handle_IGESDimen_CurveDimension &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESDimen_CurveDimension &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESDimen_ToolCurveDimension::~IGESDimen_ToolCurveDimension %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESDimen_ToolCurveDimension {
 	void _kill_pointed() {
 		delete $self;
 	}

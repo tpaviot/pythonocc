@@ -81,9 +81,6 @@ $HeaderURL$
 %rename(DownCast) Handle_AIS_AngleDimension::DownCast;
 %rename(DownCast) Handle_AIS_PlaneTrihedron::DownCast;
 %rename(DownCast) Handle_AIS_Chamf3dDimension::DownCast;
-%rename(SelectionType) AIS_Shape::SelectionType;
-%rename(SelectionMode) AIS_Shape::SelectionMode;
-%rename(GetDeflection) AIS_Shape::GetDeflection;
 %rename(Nearest) AIS::Nearest;
 %rename(Farest) AIS::Farest;
 %rename(ComputeGeometry) AIS::ComputeGeometry;
@@ -115,6 +112,9 @@ $HeaderURL$
 %rename(Extent) AIS_Selection::Extent;
 %rename(Single) AIS_Selection::Single;
 %rename(Index) AIS_Selection::Index;
+%rename(SelectionType) AIS_Shape::SelectionType;
+%rename(SelectionMode) AIS_Shape::SelectionMode;
+%rename(GetDeflection) AIS_Shape::GetDeflection;
 %rename(GetLineColor) AIS_GraphicTool::GetLineColor;
 %rename(GetLineWidth) AIS_GraphicTool::GetLineWidth;
 %rename(GetLineType) AIS_GraphicTool::GetLineType;

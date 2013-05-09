@@ -143,7 +143,13 @@ class Font_FontMgr : public MMgt_TShared {
 		%feature("autodoc", "1");
 		static		Handle_Font_FontMgr GetInstance();
 		%feature("autodoc", "1");
-		Font_NListOfSystemFont GetAvalableFonts() const;
+		const Font_NListOfSystemFont & GetAvailableFonts() const;
+		%feature("autodoc", "1");
+		void GetAvailableFontsNames(TColStd_SequenceOfHAsciiString & theFontsNames) const;
+		%feature("autodoc", "1");
+		Handle_Font_SystemFont GetFont(const Handle_TCollection_HAsciiString &theFontName, const Font_FontAspect theFontAspect, const Standard_Integer theFontSize) const;
+		%feature("autodoc", "1");
+		Handle_Font_SystemFont FindFont(const Handle_TCollection_HAsciiString &theFontName, const Font_FontAspect theFontAspect, const Standard_Integer theFontSize) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -180,9 +186,9 @@ class Font_SystemFont : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Font_SystemFont();
 		%feature("autodoc", "1");
-		Font_SystemFont(const Handle_TCollection_HAsciiString &FontName, const Font_FontAspect Aspect, const Handle_TCollection_HAsciiString &FilePath);
+		Font_SystemFont(const Handle_TCollection_HAsciiString &theFontName, const Font_FontAspect theFontAspect, const Handle_TCollection_HAsciiString &theFilePath);
 		%feature("autodoc", "1");
-		Font_SystemFont(const Handle_TCollection_HAsciiString &XLFD, const Handle_TCollection_HAsciiString &FilePath);
+		Font_SystemFont(const Handle_TCollection_HAsciiString &theXLFD, const Handle_TCollection_HAsciiString &theFilePath);
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString FontName() const;
 		%feature("autodoc", "1");
@@ -193,6 +199,8 @@ class Font_SystemFont : public MMgt_TShared {
 		Standard_Integer FontHeight() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsValid() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Handle_Font_SystemFont &theOtherFont) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

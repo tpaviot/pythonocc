@@ -777,6 +777,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepToGeom_MakeCylindricalSurface;
+class StepToGeom_MakeCylindricalSurface {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCylindricalSurface();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_CylindricalSurface &SS, Handle_Geom_CylindricalSurface & CS);
+
+};
+%feature("shadow") StepToGeom_MakeCylindricalSurface::~StepToGeom_MakeCylindricalSurface %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeCylindricalSurface {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepToGeom_MakeSurfaceOfRevolution;
 class StepToGeom_MakeSurfaceOfRevolution {
 	public:
@@ -896,31 +921,6 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeSphericalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepToGeom_MakeCurve;
-class StepToGeom_MakeCurve {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeCurve();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_Curve &SC, Handle_Geom_Curve & CC);
-
-};
-%feature("shadow") StepToGeom_MakeCurve::~StepToGeom_MakeCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1052,31 +1052,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepToGeom_MakeCylindricalSurface;
-class StepToGeom_MakeCylindricalSurface {
-	public:
-		%feature("autodoc", "1");
-		StepToGeom_MakeCylindricalSurface();
-		%feature("autodoc", "1");
-		static		Standard_Boolean Convert(const Handle_StepGeom_CylindricalSurface &SS, Handle_Geom_CylindricalSurface & CS);
-
-};
-%feature("shadow") StepToGeom_MakeCylindricalSurface::~StepToGeom_MakeCylindricalSurface %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepToGeom_MakeCylindricalSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepToGeom_MakeHyperbola2d;
 class StepToGeom_MakeHyperbola2d {
 	public:
@@ -1121,6 +1096,31 @@ def __del__(self):
 %}
 
 %extend StepToGeom_MakeCircle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepToGeom_MakeCurve;
+class StepToGeom_MakeCurve {
+	public:
+		%feature("autodoc", "1");
+		StepToGeom_MakeCurve();
+		%feature("autodoc", "1");
+		static		Standard_Boolean Convert(const Handle_StepGeom_Curve &SC, Handle_Geom_Curve & CC);
+
+};
+%feature("shadow") StepToGeom_MakeCurve::~StepToGeom_MakeCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepToGeom_MakeCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

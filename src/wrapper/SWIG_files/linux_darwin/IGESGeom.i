@@ -1380,6 +1380,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESGeom_Boundary;
+class IGESGeom_Boundary : public IGESData_IGESEntity {
+	public:
+		%feature("autodoc", "1");
+		IGESGeom_Boundary();
+		%feature("autodoc", "1");
+		void Init(const Standard_Integer aType, const Standard_Integer aPreference, const Handle_IGESData_IGESEntity &aSurface, const Handle_IGESData_HArray1OfIGESEntity &allModelCurves, const Handle_TColStd_HArray1OfInteger &allSenses, const Handle_IGESBasic_HArray1OfHArray1OfIGESEntity &allParameterCurves);
+		%feature("autodoc", "1");
+		Standard_Integer BoundaryType() const;
+		%feature("autodoc", "1");
+		Standard_Integer PreferenceType() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity Surface() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbModelSpaceCurves() const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity ModelSpaceCurve(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer Sense(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Standard_Integer NbParameterCurves(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_HArray1OfIGESEntity ParameterCurves(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_IGESData_IGESEntity ParameterCurve(const Standard_Integer Index, const Standard_Integer Num) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESGeom_Boundary {
+	Handle_IGESGeom_Boundary GetHandle() {
+	return *(Handle_IGESGeom_Boundary*) &$self;
+	}
+};
+%extend IGESGeom_Boundary {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESGeom_Boundary::~IGESGeom_Boundary %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESGeom_Boundary {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESGeom_BSplineSurface;
 class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 	public:
@@ -3217,61 +3272,6 @@ def __del__(self):
 %}
 
 %extend IGESGeom_ToolPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESGeom_Boundary;
-class IGESGeom_Boundary : public IGESData_IGESEntity {
-	public:
-		%feature("autodoc", "1");
-		IGESGeom_Boundary();
-		%feature("autodoc", "1");
-		void Init(const Standard_Integer aType, const Standard_Integer aPreference, const Handle_IGESData_IGESEntity &aSurface, const Handle_IGESData_HArray1OfIGESEntity &allModelCurves, const Handle_TColStd_HArray1OfInteger &allSenses, const Handle_IGESBasic_HArray1OfHArray1OfIGESEntity &allParameterCurves);
-		%feature("autodoc", "1");
-		Standard_Integer BoundaryType() const;
-		%feature("autodoc", "1");
-		Standard_Integer PreferenceType() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity Surface() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbModelSpaceCurves() const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity ModelSpaceCurve(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer Sense(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Standard_Integer NbParameterCurves(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_HArray1OfIGESEntity ParameterCurves(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_IGESData_IGESEntity ParameterCurve(const Standard_Integer Index, const Standard_Integer Num) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESGeom_Boundary {
-	Handle_IGESGeom_Boundary GetHandle() {
-	return *(Handle_IGESGeom_Boundary*) &$self;
-	}
-};
-%extend IGESGeom_Boundary {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IGESGeom_Boundary::~IGESGeom_Boundary %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESGeom_Boundary {
 	void _kill_pointed() {
 		delete $self;
 	}

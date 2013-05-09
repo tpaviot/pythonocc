@@ -287,35 +287,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
-class DBC_VArrayTNodeOfVArrayOfInteger {
-	public:
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger();
-		%feature("autodoc", "1");
-		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend DBC_VArrayTNodeOfVArrayOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
 class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	public:
@@ -339,6 +310,35 @@ def __del__(self):
 %}
 
 %extend DBC_VArrayTNodeOfVArrayOfExtCharacter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
+class DBC_VArrayTNodeOfVArrayOfInteger {
+	public:
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger();
+		%feature("autodoc", "1");
+		DBC_VArrayTNodeOfVArrayOfInteger(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+
+};
+%feature("shadow") DBC_VArrayTNodeOfVArrayOfInteger::~DBC_VArrayTNodeOfVArrayOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend DBC_VArrayTNodeOfVArrayOfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

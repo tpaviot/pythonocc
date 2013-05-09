@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_IGESDefs_Protocol;
-class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol();
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol(const Handle_IGESDefs_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol(const IGESDefs_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol & operator=(const Handle_IGESDefs_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESDefs_Protocol & operator=(const IGESDefs_Protocol *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESDefs_Protocol DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESDefs_Protocol {
-	IGESDefs_Protocol* GetObject() {
-	return (IGESDefs_Protocol*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESDefs_Protocol::~Handle_IGESDefs_Protocol %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESDefs_Protocol {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
 class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
 	public:
@@ -350,6 +312,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESDefs_TabularData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESDefs_Protocol;
+class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol();
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol(const Handle_IGESDefs_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol(const IGESDefs_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol & operator=(const Handle_IGESDefs_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESDefs_Protocol & operator=(const IGESDefs_Protocol *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESDefs_Protocol DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESDefs_Protocol {
+	IGESDefs_Protocol* GetObject() {
+	return (IGESDefs_Protocol*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESDefs_Protocol::~Handle_IGESDefs_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESDefs_Protocol {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -27,7 +27,4 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
-import Quantity
-import Aspect
 };

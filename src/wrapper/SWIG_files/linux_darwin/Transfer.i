@@ -111,6 +111,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Transfer_Binder;
+class Handle_Transfer_Binder : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder();
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder(const Handle_Transfer_Binder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder(const Transfer_Binder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder & operator=(const Handle_Transfer_Binder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_Binder & operator=(const Transfer_Binder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_Binder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_Binder {
+	Transfer_Binder* GetObject() {
+	return (Transfer_Binder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_Binder::~Handle_Transfer_Binder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_Binder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Transfer_VoidBinder;
+class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
+	public:
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder();
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder(const Handle_Transfer_VoidBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder(const Transfer_VoidBinder *anItem);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder & operator=(const Handle_Transfer_VoidBinder &aHandle);
+		%feature("autodoc", "1");
+		Handle_Transfer_VoidBinder & operator=(const Transfer_VoidBinder *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Transfer_VoidBinder DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Transfer_VoidBinder {
+	Transfer_VoidBinder* GetObject() {
+	return (Transfer_VoidBinder*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Transfer_VoidBinder::~Handle_Transfer_VoidBinder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Transfer_VoidBinder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Transfer_Finder;
 class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	public:
@@ -371,44 +447,6 @@ def __del__(self):
 %}
 
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_Binder;
-class Handle_Transfer_Binder : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder();
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder(const Handle_Transfer_Binder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder(const Transfer_Binder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder & operator=(const Handle_Transfer_Binder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_Binder & operator=(const Transfer_Binder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_Binder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_Binder {
-	Transfer_Binder* GetObject() {
-	return (Transfer_Binder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_Binder::~Handle_Transfer_Binder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_Binder {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1017,44 +1055,6 @@ def __del__(self):
 %}
 
 %extend Handle_Transfer_MapContainer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Transfer_VoidBinder;
-class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
-	public:
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder();
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder(const Handle_Transfer_VoidBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder(const Transfer_VoidBinder *anItem);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder & operator=(const Handle_Transfer_VoidBinder &aHandle);
-		%feature("autodoc", "1");
-		Handle_Transfer_VoidBinder & operator=(const Transfer_VoidBinder *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Transfer_VoidBinder DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Transfer_VoidBinder {
-	Transfer_VoidBinder* GetObject() {
-	return (Transfer_VoidBinder*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Transfer_VoidBinder::~Handle_Transfer_VoidBinder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Transfer_VoidBinder {
 	void _kill_pointed() {
 		delete $self;
 	}

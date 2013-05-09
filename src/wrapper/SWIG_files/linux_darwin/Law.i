@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_Law_ListNodeOfLaws;
-class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws();
-		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws(const Handle_Law_ListNodeOfLaws &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws(const Law_ListNodeOfLaws *anItem);
-		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws & operator=(const Handle_Law_ListNodeOfLaws &aHandle);
-		%feature("autodoc", "1");
-		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Law_ListNodeOfLaws DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Law_ListNodeOfLaws {
-	Law_ListNodeOfLaws* GetObject() {
-	return (Law_ListNodeOfLaws*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Law_ListNodeOfLaws::~Handle_Law_ListNodeOfLaws %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Law_ListNodeOfLaws {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Law_Function;
 class Handle_Law_Function : public Handle_MMgt_TShared {
 	public:
@@ -122,6 +84,44 @@ def __del__(self):
 %}
 
 %extend Handle_Law_Function {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Law_ListNodeOfLaws;
+class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Law_ListNodeOfLaws();
+		%feature("autodoc", "1");
+		Handle_Law_ListNodeOfLaws(const Handle_Law_ListNodeOfLaws &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_ListNodeOfLaws(const Law_ListNodeOfLaws *anItem);
+		%feature("autodoc", "1");
+		Handle_Law_ListNodeOfLaws & operator=(const Handle_Law_ListNodeOfLaws &aHandle);
+		%feature("autodoc", "1");
+		Handle_Law_ListNodeOfLaws & operator=(const Law_ListNodeOfLaws *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Law_ListNodeOfLaws DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Law_ListNodeOfLaws {
+	Law_ListNodeOfLaws* GetObject() {
+	return (Law_ListNodeOfLaws*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Law_ListNodeOfLaws::~Handle_Law_ListNodeOfLaws %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Law_ListNodeOfLaws {
 	void _kill_pointed() {
 		delete $self;
 	}

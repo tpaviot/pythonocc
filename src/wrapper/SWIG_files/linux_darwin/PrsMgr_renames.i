@@ -27,8 +27,6 @@ $HeaderURL$
 %rename(DownCast) Handle_PrsMgr_PresentationManager::DownCast;
 %rename(DownCast) Handle_PrsMgr_PresentationManager3d::DownCast;
 %rename(DownCast) Handle_PrsMgr_Presentation::DownCast;
-%rename(DownCast) Handle_PrsMgr_Presentation2d::DownCast;
 %rename(DownCast) Handle_PrsMgr_PresentableObject::DownCast;
-%rename(DownCast) Handle_PrsMgr_PresentationManager2d::DownCast;
 %rename(DownCast) Handle_PrsMgr_SequenceNodeOfPresentations::DownCast;
 %rename(DownCast) Handle_PrsMgr_Presentation3d::DownCast;

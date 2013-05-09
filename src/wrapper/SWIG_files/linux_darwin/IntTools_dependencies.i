@@ -63,7 +63,6 @@ $HeaderURL$
 #include <Handle_Adaptor3d_HSurfaceOfRevolution.hxx>
 #include <Handle_Adaptor3d_HVertex.hxx>
 #include <Handle_Adaptor3d_TopolTool.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -98,14 +97,13 @@ $HeaderURL$
 #include <Handle_TCollection_HExtendedString.hxx>
 #include <Handle_TCollection_MapNode.hxx>
 #include <Handle_TCollection_SeqNode.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -186,7 +184,6 @@ $HeaderURL$
 
 %import Adaptor3d.i
 %import TCollection.i
-%import MMgt.i
 %import Standard.i
 %import TopAbs.i
 %import GeomAbs.i

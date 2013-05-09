@@ -546,44 +546,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IntTools_Context;
-class Handle_IntTools_Context : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntTools_Context();
-		%feature("autodoc", "1");
-		Handle_IntTools_Context(const Handle_IntTools_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntTools_Context(const IntTools_Context *anItem);
-		%feature("autodoc", "1");
-		Handle_IntTools_Context & operator=(const Handle_IntTools_Context &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntTools_Context & operator=(const IntTools_Context *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntTools_Context DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntTools_Context {
-	IntTools_Context* GetObject() {
-	return (IntTools_Context*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntTools_Context::~Handle_IntTools_Context %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntTools_Context {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
 class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TCollection_SeqNode {
 	public:
@@ -1320,42 +1282,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_Range;
-class IntTools_Range {
-	public:
-		%feature("autodoc", "1");
-		IntTools_Range();
-		%feature("autodoc", "1");
-		IntTools_Range(const Standard_Real aFirst, const Standard_Real aLast);
-		%feature("autodoc", "1");
-		void SetFirst(const Standard_Real aFirst);
-		%feature("autodoc", "1");
-		void SetLast(const Standard_Real aLast);
-		%feature("autodoc", "1");
-		Standard_Real First() const;
-		%feature("autodoc", "1");
-		Standard_Real Last() const;
-		%feature("autodoc","Range() -> [Standard_Real, Standard_Real]");
-
-		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") IntTools_Range::~IntTools_Range %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_Range {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntTools_SequenceOfPntOn2Faces;
 class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 	public:
@@ -1945,6 +1871,42 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntTools_Range;
+class IntTools_Range {
+	public:
+		%feature("autodoc", "1");
+		IntTools_Range();
+		%feature("autodoc", "1");
+		IntTools_Range(const Standard_Real aFirst, const Standard_Real aLast);
+		%feature("autodoc", "1");
+		void SetFirst(const Standard_Real aFirst);
+		%feature("autodoc", "1");
+		void SetLast(const Standard_Real aLast);
+		%feature("autodoc", "1");
+		Standard_Real First() const;
+		%feature("autodoc", "1");
+		Standard_Real Last() const;
+		%feature("autodoc","Range() -> [Standard_Real, Standard_Real]");
+
+		void Range(Standard_Real &OutValue, Standard_Real &OutValue) const;
+
+};
+%feature("shadow") IntTools_Range::~IntTools_Range %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntTools_Range {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntTools_StdMapNodeOfMapOfCurveSample;
 class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 	public:
@@ -2271,9 +2233,9 @@ class IntTools_EdgeFace {
 		%feature("autodoc", "1");
 		void SetRange(const Standard_Real aFirst, const Standard_Real aLast);
 		%feature("autodoc", "1");
-		void SetContext(const Handle_IntTools_Context &theContext);
+		void SetContext(const Handle_BOPInt_Context &theContext);
 		%feature("autodoc", "1");
-		const Handle_IntTools_Context & Context() const;
+		const Handle_BOPInt_Context & Context() const;
 		%feature("autodoc", "1");
 		void Perform();
 		%feature("autodoc", "1");
@@ -2706,9 +2668,9 @@ class IntTools_BeanFaceIntersector {
 		%feature("autodoc", "1");
 		void Init(const BRepAdaptor_Curve &theCurve, const BRepAdaptor_Surface &theSurface, const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve, const Standard_Real theUMinParameter, const Standard_Real theUMaxParameter, const Standard_Real theVMinParameter, const Standard_Real theVMaxParameter, const Standard_Real theBeanTolerance, const Standard_Real theFaceTolerance);
 		%feature("autodoc", "1");
-		void SetContext(const Handle_IntTools_Context &theContext);
+		void SetContext(const Handle_BOPInt_Context &theContext);
 		%feature("autodoc", "1");
-		const Handle_IntTools_Context & Context() const;
+		const Handle_BOPInt_Context & Context() const;
 		%feature("autodoc", "1");
 		void SetBeanParameters(const Standard_Real theFirstParOnCurve, const Standard_Real theLastParOnCurve);
 		%feature("autodoc", "1");
@@ -2989,49 +2951,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_ShrunkRange;
-class IntTools_ShrunkRange {
-	public:
-		%feature("autodoc", "1");
-		IntTools_ShrunkRange();
-		%feature("autodoc", "1");
-		IntTools_ShrunkRange(const TopoDS_Edge aE, const TopoDS_Vertex aV1, const TopoDS_Vertex aV2, const IntTools_Range &aR, const Handle_IntTools_Context &ICtx);
-		%feature("autodoc", "1");
-		void SetContext(const Handle_IntTools_Context &aContext);
-		%feature("autodoc", "1");
-		const Handle_IntTools_Context & Context() const;
-		%feature("autodoc", "1");
-		void SetShrunkRange(const IntTools_Range &aR);
-		%feature("autodoc", "1");
-		const IntTools_Range & ShrunkRange() const;
-		%feature("autodoc", "1");
-		const Bnd_Box & BndBox() const;
-		%feature("autodoc", "1");
-		const TopoDS_Edge  Edge() const;
-		%feature("autodoc", "1");
-		void Perform();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Integer ErrorStatus() const;
-
-};
-%feature("shadow") IntTools_ShrunkRange::~IntTools_ShrunkRange %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_ShrunkRange {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntTools_MapIteratorOfMapOfCurveSample;
 class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterator {
 	public:
@@ -3247,55 +3166,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_Curve;
-class IntTools_Curve {
-	public:
-		%feature("autodoc", "1");
-		IntTools_Curve();
-		%feature("autodoc", "1");
-		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		void SetCurve(const Handle_Geom_Curve &Curve3d);
-		%feature("autodoc", "1");
-		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
-		%feature("autodoc", "1");
-		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
-		%feature("autodoc", "1");
-		const Handle_Geom_Curve & Curve() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & FirstCurve2d() const;
-		%feature("autodoc", "1");
-		const Handle_Geom2d_Curve & SecondCurve2d() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasBounds() const;
-		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
-
-		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
-		%feature("autodoc","D0() -> Standard_Real");
-
-		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType Type() const;
-
-};
-%feature("shadow") IntTools_Curve::~IntTools_Curve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_Curve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntTools_DataMapOfCurveSampleBox;
 class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 	public:
@@ -3345,87 +3215,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IntTools_Context;
-class IntTools_Context : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		IntTools_Context();
-		%feature("autodoc", "1");
-		IntTools_FClass2d & FClass2d(const TopoDS_Face aF);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnSurf & ProjPS(const TopoDS_Face aF);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve & ProjPC(const TopoDS_Edge aE);
-		%feature("autodoc", "1");
-		GeomAPI_ProjectPointOnCurve & ProjPT(const Handle_Geom_Curve &aC);
-		%feature("autodoc", "1");
-		IntTools_SurfaceRangeLocalizeData & SurfaceData(const TopoDS_Face aF);
-		%feature("autodoc", "1");
-		BRepClass3d_SolidClassifier & SolidClassifier(const TopoDS_Solid aSolid);
-		%feature("autodoc", "1");
-		Geom2dHatch_Hatcher & Hatcher(const TopoDS_Face aF);
-		%feature("autodoc","ComputeVE(const aV, const aE) -> Standard_Real");
-
-		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue);
-		%feature("autodoc","ComputeVE(const aV, const aE) -> [Standard_Real, Standard_Real]");
-
-		Standard_Integer ComputeVE(const TopoDS_Vertex aV, const TopoDS_Edge aE, Standard_Real &OutValue, Standard_Boolean & bToUpdateVertex, Standard_Real &OutValue);
-		%feature("autodoc","ComputeVS(const aV, const aF) -> [Standard_Real, Standard_Real]");
-
-		Standard_Integer ComputeVS(const TopoDS_Vertex aV, const TopoDS_Face aF, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		TopAbs_State StatePointFace(const TopoDS_Face aF, const gp_Pnt2d aP2D);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPointInFace(const TopoDS_Face aF, const gp_Pnt2d aP2D);
-		%feature("autodoc", "1");
-		Standard_Boolean IsPointInOnFace(const TopoDS_Face aF, const gp_Pnt2d aP2D);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValidPointForFace(const gp_Pnt aP3D, const TopoDS_Face aF, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValidPointForFaces(const gp_Pnt aP3D, const TopoDS_Face aF1, const TopoDS_Face aF2, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValidBlockForFace(const Standard_Real aT1, const Standard_Real aT2, const IntTools_Curve &aIC, const TopoDS_Face aF, const Standard_Real aTol);
-		%feature("autodoc", "1");
-		Standard_Boolean IsValidBlockForFaces(const Standard_Real aT1, const Standard_Real aT2, const IntTools_Curve &aIC, const TopoDS_Face aF1, const TopoDS_Face aF2, const Standard_Real aTol);
-		%feature("autodoc","IsVertexOnLine(const aV, const aIC, Standard_Real aTolC) -> Standard_Real");
-
-		Standard_Boolean IsVertexOnLine(const TopoDS_Vertex aV, const IntTools_Curve &aIC, const Standard_Real aTolC, Standard_Real &OutValue);
-		%feature("autodoc","IsVertexOnLine(const aV, Standard_Real aTolV, const aIC, Standard_Real aTolC) -> Standard_Real");
-
-		Standard_Boolean IsVertexOnLine(const TopoDS_Vertex aV, const Standard_Real aTolV, const IntTools_Curve &aIC, const Standard_Real aTolC, Standard_Real &OutValue);
-		%feature("autodoc","ProjectPointOnEdge(const aP, const aE) -> Standard_Real");
-
-		Standard_Boolean ProjectPointOnEdge(const gp_Pnt aP, const TopoDS_Edge aE, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntTools_Context {
-	Handle_IntTools_Context GetHandle() {
-	return *(Handle_IntTools_Context*) &$self;
-	}
-};
-%extend IntTools_Context {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IntTools_Context::~IntTools_Context %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntTools_Context {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IntTools_FaceFace;
 class IntTools_FaceFace {
 	public:
@@ -3456,9 +3245,9 @@ class IntTools_FaceFace {
 		%feature("autodoc", "1");
 		void SetList(IntSurf_ListOfPntOn2S & ListOfPnts);
 		%feature("autodoc", "1");
-		void SetContext(const Handle_IntTools_Context &aContext);
+		void SetContext(const Handle_BOPInt_Context &aContext);
 		%feature("autodoc", "1");
-		const Handle_IntTools_Context & Context() const;
+		const Handle_BOPInt_Context & Context() const;
 
 };
 %feature("shadow") IntTools_FaceFace::~IntTools_FaceFace %{
@@ -3545,6 +3334,55 @@ def __del__(self):
 %}
 
 %extend IntTools_CurveRangeSample {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IntTools_Curve;
+class IntTools_Curve {
+	public:
+		%feature("autodoc", "1");
+		IntTools_Curve();
+		%feature("autodoc", "1");
+		IntTools_Curve(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		void SetCurves(const Handle_Geom_Curve &Curve3d, const Handle_Geom2d_Curve &FirstCurve2d, const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		void SetCurve(const Handle_Geom_Curve &Curve3d);
+		%feature("autodoc", "1");
+		void SetFirstCurve2d(const Handle_Geom2d_Curve &FirstCurve2d);
+		%feature("autodoc", "1");
+		void SetSecondCurve2d(const Handle_Geom2d_Curve &SecondCurve2d);
+		%feature("autodoc", "1");
+		const Handle_Geom_Curve & Curve() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & FirstCurve2d() const;
+		%feature("autodoc", "1");
+		const Handle_Geom2d_Curve & SecondCurve2d() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasBounds() const;
+		%feature("autodoc","Bounds() -> [Standard_Real, Standard_Real]");
+
+		void Bounds(Standard_Real &OutValue, Standard_Real &OutValue, gp_Pnt & aP1, gp_Pnt & aP2) const;
+		%feature("autodoc","D0() -> Standard_Real");
+
+		Standard_Boolean D0(Standard_Real &OutValue, gp_Pnt & aP1) const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType Type() const;
+
+};
+%feature("shadow") IntTools_Curve::~IntTools_Curve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntTools_Curve {
 	void _kill_pointed() {
 		delete $self;
 	}

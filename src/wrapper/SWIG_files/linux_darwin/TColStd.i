@@ -622,29 +622,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TColStd_HArray1OfInteger;
-class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
+%nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
+class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
 	public:
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger();
+		Handle_TColStd_StackNodeOfStackOfTransient();
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger(const Handle_TColStd_HArray1OfInteger &aHandle);
+		Handle_TColStd_StackNodeOfStackOfTransient(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger(const TColStd_HArray1OfInteger *anItem);
+		Handle_TColStd_StackNodeOfStackOfTransient(const TColStd_StackNodeOfStackOfTransient *anItem);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & operator=(const Handle_TColStd_HArray1OfInteger &aHandle);
+		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfInteger & operator=(const TColStd_HArray1OfInteger *anItem);
+		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const TColStd_StackNodeOfStackOfTransient *anItem);
 		%feature("autodoc", "1");
-		static		Handle_TColStd_HArray1OfInteger DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_TColStd_StackNodeOfStackOfTransient DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_TColStd_HArray1OfInteger {
-	TColStd_HArray1OfInteger* GetObject() {
-	return (TColStd_HArray1OfInteger*)$self->Access();
+%extend Handle_TColStd_StackNodeOfStackOfTransient {
+	TColStd_StackNodeOfStackOfTransient* GetObject() {
+	return (TColStd_StackNodeOfStackOfTransient*)$self->Access();
 	}
 };
-%feature("shadow") Handle_TColStd_HArray1OfInteger::~Handle_TColStd_HArray1OfInteger %{
+%feature("shadow") Handle_TColStd_StackNodeOfStackOfTransient::~Handle_TColStd_StackNodeOfStackOfTransient %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -653,7 +653,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_TColStd_HArray1OfInteger {
+%extend Handle_TColStd_StackNodeOfStackOfTransient {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1458,44 +1458,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
-class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient();
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient(const TColStd_StackNodeOfStackOfTransient *anItem);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const Handle_TColStd_StackNodeOfStackOfTransient &aHandle);
-		%feature("autodoc", "1");
-		Handle_TColStd_StackNodeOfStackOfTransient & operator=(const TColStd_StackNodeOfStackOfTransient *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TColStd_StackNodeOfStackOfTransient DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TColStd_StackNodeOfStackOfTransient {
-	TColStd_StackNodeOfStackOfTransient* GetObject() {
-	return (TColStd_StackNodeOfStackOfTransient*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TColStd_StackNodeOfStackOfTransient::~Handle_TColStd_StackNodeOfStackOfTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TColStd_StackNodeOfStackOfTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TColStd_HArray2OfTransient;
 class Handle_TColStd_HArray2OfTransient : public Handle_MMgt_TShared {
 	public:
@@ -2250,6 +2212,44 @@ def __del__(self):
 %}
 
 %extend Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TColStd_HArray1OfInteger;
+class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger();
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger(const Handle_TColStd_HArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger(const TColStd_HArray1OfInteger *anItem);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & operator=(const Handle_TColStd_HArray1OfInteger &aHandle);
+		%feature("autodoc", "1");
+		Handle_TColStd_HArray1OfInteger & operator=(const TColStd_HArray1OfInteger *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TColStd_HArray1OfInteger DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TColStd_HArray1OfInteger {
+	TColStd_HArray1OfInteger* GetObject() {
+	return (TColStd_HArray1OfInteger*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TColStd_HArray1OfInteger::~Handle_TColStd_HArray1OfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TColStd_HArray1OfInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3676,53 +3676,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
-class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		TColStd_ListNodeOfSetListOfSetOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Real GetValue() {
-				return (Standard_Real) $self->Value();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetValue(Standard_Real value ) {
-				$self->Value()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	Handle_TColStd_ListNodeOfSetListOfSetOfReal GetHandle() {
-	return *(Handle_TColStd_ListNodeOfSetListOfSetOfReal*) &$self;
-	}
-};
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TColStd_ListNodeOfSetListOfSetOfReal::~TColStd_ListNodeOfSetListOfSetOfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColStd_ListNodeOfSetListOfSetOfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TColStd_Array1OfCharacter;
 class TColStd_Array1OfCharacter {
 	public:
@@ -5096,6 +5049,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor TColStd_StackIteratorOfStackOfInteger;
+class TColStd_StackIteratorOfStackOfInteger {
+	public:
+		%feature("autodoc", "1");
+		TColStd_StackIteratorOfStackOfInteger();
+		%feature("autodoc", "1");
+		TColStd_StackIteratorOfStackOfInteger(const TColStd_StackOfInteger &S);
+		%feature("autodoc", "1");
+		void Initialize(const TColStd_StackOfInteger &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Standard_Integer & Value() const;
+
+};
+%feature("shadow") TColStd_StackIteratorOfStackOfInteger::~TColStd_StackIteratorOfStackOfInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColStd_StackIteratorOfStackOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfStringInteger;
 class TColStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_BasicMapIterator {
 	public:
@@ -5980,6 +5966,65 @@ def __del__(self):
 %}
 
 %extend TColStd_Array1OfListOfInteger {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TColStd_DataMapOfIntegerInteger;
+class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TColStd_DataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TColStd_DataMapOfIntegerInteger & Assign(const TColStd_DataMapOfIntegerInteger &Other);
+		%feature("autodoc", "1");
+		TColStd_DataMapOfIntegerInteger & operator=(const TColStd_DataMapOfIntegerInteger &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Integer &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		const Standard_Integer & Find(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		const Standard_Integer & operator()(const Standard_Integer &K) const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetChangeFind(const Standard_Integer &K) {
+				return (Standard_Integer) $self->ChangeFind(K);
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetChangeFind(Standard_Integer value ,const Standard_Integer &K) {
+				$self->ChangeFind(K)=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Standard_Integer & operator()(const Standard_Integer &K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const Standard_Integer &K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const Standard_Integer &K);
+
+};
+%feature("shadow") TColStd_DataMapOfIntegerInteger::~TColStd_DataMapOfIntegerInteger %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColStd_DataMapOfIntegerInteger {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7940,39 +7985,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColStd_StackIteratorOfStackOfInteger;
-class TColStd_StackIteratorOfStackOfInteger {
-	public:
-		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfInteger();
-		%feature("autodoc", "1");
-		TColStd_StackIteratorOfStackOfInteger(const TColStd_StackOfInteger &S);
-		%feature("autodoc", "1");
-		void Initialize(const TColStd_StackOfInteger &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Standard_Integer & Value() const;
-
-};
-%feature("shadow") TColStd_StackIteratorOfStackOfInteger::~TColStd_StackIteratorOfStackOfInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColStd_StackIteratorOfStackOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfExtendedString;
 class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNode {
 	public:
@@ -8898,6 +8910,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
+class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		TColStd_ListNodeOfSetListOfSetOfReal(const Standard_Real &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Real GetValue() {
+				return (Standard_Real) $self->Value();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetValue(Standard_Real value ) {
+				$self->Value()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	Handle_TColStd_ListNodeOfSetListOfSetOfReal GetHandle() {
+	return *(Handle_TColStd_ListNodeOfSetListOfSetOfReal*) &$self;
+	}
+};
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TColStd_ListNodeOfSetListOfSetOfReal::~TColStd_ListNodeOfSetListOfSetOfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColStd_ListNodeOfSetListOfSetOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TColStd_Array1OfExtendedString;
 class TColStd_Array1OfExtendedString {
 	public:
@@ -8992,65 +9051,6 @@ def __del__(self):
 %}
 
 %extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TColStd_DataMapOfIntegerInteger;
-class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TColStd_DataMapOfIntegerInteger(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TColStd_DataMapOfIntegerInteger & Assign(const TColStd_DataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		TColStd_DataMapOfIntegerInteger & operator=(const TColStd_DataMapOfIntegerInteger &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const Standard_Integer &K, const Standard_Integer &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		const Standard_Integer & Find(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		const Standard_Integer & operator()(const Standard_Integer &K) const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetChangeFind(const Standard_Integer &K) {
-				return (Standard_Integer) $self->ChangeFind(K);
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetChangeFind(Standard_Integer value ,const Standard_Integer &K) {
-				$self->ChangeFind(K)=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Standard_Integer & operator()(const Standard_Integer &K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const Standard_Integer &K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const Standard_Integer &K);
-
-};
-%feature("shadow") TColStd_DataMapOfIntegerInteger::~TColStd_DataMapOfIntegerInteger %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColStd_DataMapOfIntegerInteger {
 	void _kill_pointed() {
 		delete $self;
 	}

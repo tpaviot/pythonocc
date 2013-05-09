@@ -58,7 +58,6 @@ $HeaderURL$
 #include<AdvApprox_ApproxAFunction.hxx>
 #include<Handle_Geom2d_BSplineCurve.hxx>
 #include<TColgp_Array1OfPnt.hxx>
-#include<gp_Mat.hxx>
 #include<GeomLib.hxx>
 #include<gp_Ax2.hxx>
 #include<gp_GTrsf2d.hxx>
@@ -70,4 +69,5 @@ $HeaderURL$
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_SequenceOfReal.hxx>
 #include<Adaptor3d_Curve.hxx>
+#include<gp_Mat.hxx>
 %}

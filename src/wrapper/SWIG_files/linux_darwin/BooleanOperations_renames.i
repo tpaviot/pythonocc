@@ -23,5 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger::DownCast;
-%rename(DownCast) Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors::DownCast;

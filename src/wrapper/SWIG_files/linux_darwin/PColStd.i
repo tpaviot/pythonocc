@@ -1657,6 +1657,53 @@ def __del__(self):
 };
 
 
+%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
+class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
+	public:
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal();
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Standard_Real &aValue);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Real &aValue);
+		%feature("autodoc", "1");
+		Standard_Address Value() const;
+		%feature("autodoc", "1");
+		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		Standard_Real _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue(const Standard_Real p);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal GetHandle() {
+	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal*) &$self;
+	}
+};
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfReal::~PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PColStd_FieldOfHArray2OfReal;
 class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 	public:
@@ -2242,53 +2289,6 @@ def __del__(self):
 %}
 
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
-class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
-	public:
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal();
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Standard_Real &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Real &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-		%feature("autodoc", "1");
-		PColStd_VArrayNodeOfFieldOfHArray2OfReal(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		Standard_Real _CSFDB_GetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetPColStd_VArrayNodeOfFieldOfHArray2OfRealmyValue(const Standard_Real p);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal GetHandle() {
-	return *(Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal*) &$self;
-	}
-};
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") PColStd_VArrayNodeOfFieldOfHArray2OfReal::~PColStd_VArrayNodeOfFieldOfHArray2OfReal %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
 	void _kill_pointed() {
 		delete $self;
 	}

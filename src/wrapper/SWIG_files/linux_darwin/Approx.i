@@ -254,6 +254,73 @@ def __del__(self):
 };
 
 
+%nodefaultctor Approx_CurvlinFunc;
+class Approx_CurvlinFunc : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Approx_CurvlinFunc(const Handle_Adaptor3d_HCurve &C, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void SetTol(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		void Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
+		%feature("autodoc", "1");
+		void Length();
+		%feature("autodoc", "1");
+		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real FirstU, const Standard_Real LasrU) const;
+		%feature("autodoc", "1");
+		Standard_Real GetLength() const;
+		%feature("autodoc", "1");
+		Standard_Real GetUParameter(Adaptor3d_Curve & C, const Standard_Real S, const Standard_Integer NumberOfCurve) const;
+		%feature("autodoc", "1");
+		Standard_Real GetSParameter(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		Standard_Boolean EvalCase1(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result) const;
+		%feature("autodoc", "1");
+		Standard_Boolean EvalCase2(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result) const;
+		%feature("autodoc", "1");
+		Standard_Boolean EvalCase3(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Approx_CurvlinFunc {
+	Handle_Approx_CurvlinFunc GetHandle() {
+	return *(Handle_Approx_CurvlinFunc*) &$self;
+	}
+};
+%extend Approx_CurvlinFunc {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Approx_CurvlinFunc::~Approx_CurvlinFunc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Approx_CurvlinFunc {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Approx_Curve3d;
 class Approx_Curve3d {
 	public:
@@ -834,73 +901,6 @@ def __del__(self):
 %}
 
 %extend Approx_CurveOnSurface {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Approx_CurvlinFunc;
-class Approx_CurvlinFunc : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor3d_HCurve &C, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Approx_CurvlinFunc(const Handle_Adaptor2d_HCurve2d &C2D1, const Handle_Adaptor2d_HCurve2d &C2D2, const Handle_Adaptor3d_HSurface &S1, const Handle_Adaptor3d_HSurface &S2, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void SetTol(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
-		%feature("autodoc", "1");
-		void Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol);
-		%feature("autodoc", "1");
-		void Length();
-		%feature("autodoc", "1");
-		Standard_Real Length(Adaptor3d_Curve & C, const Standard_Real FirstU, const Standard_Real LasrU) const;
-		%feature("autodoc", "1");
-		Standard_Real GetLength() const;
-		%feature("autodoc", "1");
-		Standard_Real GetUParameter(Adaptor3d_Curve & C, const Standard_Real S, const Standard_Integer NumberOfCurve) const;
-		%feature("autodoc", "1");
-		Standard_Real GetSParameter(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		Standard_Boolean EvalCase1(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result) const;
-		%feature("autodoc", "1");
-		Standard_Boolean EvalCase2(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result) const;
-		%feature("autodoc", "1");
-		Standard_Boolean EvalCase3(const Standard_Real S, const Standard_Integer Order, TColStd_Array1OfReal & Result);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Approx_CurvlinFunc {
-	Handle_Approx_CurvlinFunc GetHandle() {
-	return *(Handle_Approx_CurvlinFunc*) &$self;
-	}
-};
-%extend Approx_CurvlinFunc {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Approx_CurvlinFunc::~Approx_CurvlinFunc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Approx_CurvlinFunc {
 	void _kill_pointed() {
 		delete $self;
 	}

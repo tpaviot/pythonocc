@@ -32,8 +32,5 @@ import Standard
 import TopOpeBRepBuild
 import TopTools
 import TopOpeBRepDS
-import BOP
-import BOPTools
-import Geom2d
 import TColStd
 };

@@ -374,7 +374,6 @@ $HeaderURL$
 #include<Handle_StepGeom_BoundedCurve.hxx>
 #include<Handle_StepGeom_PointReplica.hxx>
 #include<Handle_StepGeom_DegeneratePcurve.hxx>
-#include<Handle_StepGeom_Surface.hxx>
 #include<Handle_StepGeom_EvaluatedDegeneratePcurve.hxx>
 #include<Handle_StepGeom_GeometricRepresentationContext.hxx>
 #include<Handle_StepGeom_RectangularTrimmedSurface.hxx>
@@ -445,6 +444,7 @@ $HeaderURL$
 #include<Handle_StepGeom_Placement.hxx>
 #include<Handle_StepGeom_OffsetCurve3d.hxx>
 #include<Handle_StepGeom_QuasiUniformSurface.hxx>
+#include<Handle_StepGeom_Surface.hxx>
 #include<Handle_StepGeom_BSplineSurfaceWithKnots.hxx>
 #include<Handle_StepGeom_Polyline.hxx>
 #include<Handle_StepGeom_BezierSurface.hxx>

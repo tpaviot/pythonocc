@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_BinMXCAFDoc_VolumeDriver;
+class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver();
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver(const BinMXCAFDoc_VolumeDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver & operator=(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_BinMXCAFDoc_VolumeDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_BinMXCAFDoc_VolumeDriver {
+	BinMXCAFDoc_VolumeDriver* GetObject() {
+	return (BinMXCAFDoc_VolumeDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_BinMXCAFDoc_VolumeDriver::~Handle_BinMXCAFDoc_VolumeDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_BinMXCAFDoc_VolumeDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_BinMXCAFDoc_MaterialDriver;
 class Handle_BinMXCAFDoc_MaterialDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -236,44 +274,6 @@ def __del__(self):
 %}
 
 %extend Handle_BinMXCAFDoc_GraphNodeDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_BinMXCAFDoc_VolumeDriver;
-class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver();
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver(const BinMXCAFDoc_VolumeDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver & operator=(const Handle_BinMXCAFDoc_VolumeDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_BinMXCAFDoc_VolumeDriver & operator=(const BinMXCAFDoc_VolumeDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_BinMXCAFDoc_VolumeDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_BinMXCAFDoc_VolumeDriver {
-	BinMXCAFDoc_VolumeDriver* GetObject() {
-	return (BinMXCAFDoc_VolumeDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_BinMXCAFDoc_VolumeDriver::~Handle_BinMXCAFDoc_VolumeDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_BinMXCAFDoc_VolumeDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1073,31 +1073,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BinMXCAFDoc;
-class BinMXCAFDoc {
-	public:
-		%feature("autodoc", "1");
-		BinMXCAFDoc();
-		%feature("autodoc", "1");
-		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
-
-};
-%feature("shadow") BinMXCAFDoc::~BinMXCAFDoc %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BinMXCAFDoc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BinMXCAFDoc_LocationDriver;
 class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 	public:
@@ -1262,6 +1237,31 @@ def __del__(self):
 %}
 
 %extend BinMXCAFDoc_ShapeToolDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BinMXCAFDoc;
+class BinMXCAFDoc {
+	public:
+		%feature("autodoc", "1");
+		BinMXCAFDoc();
+		%feature("autodoc", "1");
+		static		void AddDrivers(const Handle_BinMDF_ADriverTable &theDriverTable, const Handle_CDM_MessageDriver &theMsgDrv);
+
+};
+%feature("shadow") BinMXCAFDoc::~BinMXCAFDoc %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BinMXCAFDoc {
 	void _kill_pointed() {
 		delete $self;
 	}

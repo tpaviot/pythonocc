@@ -395,6 +395,8 @@ $HeaderURL$
 #include<Handle_StepShape_RevolvedFaceSolid.hxx>
 #include<Handle_StepShape_DimensionalCharacteristicRepresentation.hxx>
 #include<Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation.hxx>
+#include<Handle_StepShape_EdgeCurve.hxx>
+#include<Interface_ShareTool.hxx>
 #include<Handle_StepShape_EdgeBasedWireframeShapeRepresentation.hxx>
 #include<Handle_StepShape_OrientedClosedShell.hxx>
 #include<Handle_StepShape_PrecisionQualifier.hxx>
@@ -415,11 +417,11 @@ $HeaderURL$
 #include<Handle_StepShape_Face.hxx>
 #include<Handle_StepShape_CsgSolid.hxx>
 #include<Handle_StepShape_VertexLoop.hxx>
-#include<Handle_StepShape_SweptAreaSolid.hxx>
 #include<Handle_StepShape_FacetedBrepAndBrepWithVoids.hxx>
 #include<Handle_StepShape_ClosedShell.hxx>
 #include<Handle_StepShape_ShapeRepresentation.hxx>
 #include<Handle_StepShape_ManifoldSurfaceShapeRepresentation.hxx>
+#include<Handle_StepShape_SweptAreaSolid.hxx>
 #include<Handle_StepShape_OrientedOpenShell.hxx>
 #include<Handle_StepShape_ConnectedEdgeSet.hxx>
 #include<Handle_StepShape_HalfSpaceSolid.hxx>
@@ -432,7 +434,6 @@ $HeaderURL$
 #include<Handle_StepShape_ExtrudedFaceSolid.hxx>
 #include<Handle_StepShape_Vertex.hxx>
 #include<Handle_StepShape_CsgShapeRepresentation.hxx>
-#include<Handle_StepShape_AngularLocation.hxx>
 #include<Handle_StepShape_OrientedPath.hxx>
 #include<Handle_StepShape_LoopAndPath.hxx>
 #include<Handle_StepShape_ShapeDefinitionRepresentation.hxx>
@@ -444,15 +445,14 @@ $HeaderURL$
 #include<Handle_StepShape_SolidModel.hxx>
 #include<Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation.hxx>
 #include<Handle_StepShape_EdgeLoop.hxx>
-#include<Interface_ShareTool.hxx>
 #include<Handle_StepShape_TypeQualifier.hxx>
 #include<Handle_StepShape_RightAngularWedge.hxx>
 #include<Handle_StepShape_ConnectedFaceSet.hxx>
 #include<Handle_StepShape_FacetedBrepShapeRepresentation.hxx>
 #include<Handle_StepShape_LimitsAndFits.hxx>
 #include<Handle_StepShape_Torus.hxx>
+#include<Handle_StepShape_AngularLocation.hxx>
 #include<Handle_StepShape_DimensionalLocationWithPath.hxx>
-#include<Handle_StepShape_EdgeCurve.hxx>
 #include<Handle_StepShape_RightCircularCylinder.hxx>
 #include<Handle_StepShape_SeamEdge.hxx>
 #include<Handle_StepShape_RightCircularCone.hxx>

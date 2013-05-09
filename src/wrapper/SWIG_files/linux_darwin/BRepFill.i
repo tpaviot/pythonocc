@@ -998,6 +998,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
+class BRepFill_ListIteratorOfListOfOffsetWire {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_ListIteratorOfListOfOffsetWire();
+		%feature("autodoc", "1");
+		BRepFill_ListIteratorOfListOfOffsetWire(const BRepFill_ListOfOffsetWire &L);
+		%feature("autodoc", "1");
+		void Initialize(const BRepFill_ListOfOffsetWire &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		BRepFill_OffsetWire & Value() const;
+
+};
+%feature("shadow") BRepFill_ListIteratorOfListOfOffsetWire::~BRepFill_ListIteratorOfListOfOffsetWire %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_ListIteratorOfListOfOffsetWire {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepFill_ApproxSeewing;
 class BRepFill_ApproxSeewing {
 	public:
@@ -1449,39 +1482,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_OffsetAncestors;
-class BRepFill_OffsetAncestors {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_OffsetAncestors();
-		%feature("autodoc", "1");
-		BRepFill_OffsetAncestors(BRepFill_OffsetWire & Paral);
-		%feature("autodoc", "1");
-		void Perform(BRepFill_OffsetWire & Paral);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean HasAncestor(const TopoDS_Edge S1) const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Ancestor(const TopoDS_Edge S1) const;
-
-};
-%feature("shadow") BRepFill_OffsetAncestors::~BRepFill_OffsetAncestors %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_OffsetAncestors {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor BRepFill_DataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_BasicMap {
 	public:
@@ -1683,6 +1683,39 @@ def __del__(self):
 %}
 
 %extend BRepFill_CompatibleWires {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor BRepFill_OffsetAncestors;
+class BRepFill_OffsetAncestors {
+	public:
+		%feature("autodoc", "1");
+		BRepFill_OffsetAncestors();
+		%feature("autodoc", "1");
+		BRepFill_OffsetAncestors(BRepFill_OffsetWire & Paral);
+		%feature("autodoc", "1");
+		void Perform(BRepFill_OffsetWire & Paral);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Boolean HasAncestor(const TopoDS_Edge S1) const;
+		%feature("autodoc", "1");
+		const TopoDS_Shape  Ancestor(const TopoDS_Edge S1) const;
+
+};
+%feature("shadow") BRepFill_OffsetAncestors::~BRepFill_OffsetAncestors %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepFill_OffsetAncestors {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1966,7 +1999,7 @@ class BRepFill_Pipe {
 		%feature("autodoc", "1");
 		BRepFill_Pipe();
 		%feature("autodoc", "1");
-		BRepFill_Pipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile, const Standard_Boolean GeneratePartCase=0);
+		BRepFill_Pipe(const TopoDS_Wire Spine, const TopoDS_Shape Profile, const GeomFill_Trihedron aMode=GeomFill_IsCorrectedFrenet, const Standard_Boolean ForceApproxC1=0, const Standard_Boolean GeneratePartCase=0);
 		%feature("autodoc", "1");
 		void Perform(const TopoDS_Wire Spine, const TopoDS_Shape Profile, const Standard_Boolean GeneratePartCase=0);
 		%feature("autodoc", "1");
@@ -2005,24 +2038,22 @@ def __del__(self):
 };
 
 
-%nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
-class BRepFill_ListIteratorOfListOfOffsetWire {
+%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
+class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_ListIteratorOfListOfOffsetWire();
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
 		%feature("autodoc", "1");
-		BRepFill_ListIteratorOfListOfOffsetWire(const BRepFill_ListOfOffsetWire &L);
+		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
 		%feature("autodoc", "1");
-		void Initialize(const BRepFill_ListOfOffsetWire &L);
+		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
 		%feature("autodoc", "1");
-		Standard_Boolean More() const;
+		const Handle_MAT_Node & Key() const;
 		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		BRepFill_OffsetWire & Value() const;
+		const TopTools_DataMapOfShapeShape & Value() const;
 
 };
-%feature("shadow") BRepFill_ListIteratorOfListOfOffsetWire::~BRepFill_ListIteratorOfListOfOffsetWire %{
+%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2031,7 +2062,7 @@ def __del__(self):
 		pass
 %}
 
-%extend BRepFill_ListIteratorOfListOfOffsetWire {
+%extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2287,6 +2318,8 @@ class BRepFill_PipeShell : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Set(const Standard_Boolean Frenet=0);
 		%feature("autodoc", "1");
+		void SetDiscrete();
+		%feature("autodoc", "1");
 		void Set(const gp_Ax2 Axe);
 		%feature("autodoc", "1");
 		void Set(const gp_Dir BiNormal);
@@ -2294,6 +2327,8 @@ class BRepFill_PipeShell : public MMgt_TShared {
 		Standard_Boolean Set(const TopoDS_Shape SpineSupport);
 		%feature("autodoc", "1");
 		void Set(const TopoDS_Wire AuxiliarySpine, const Standard_Boolean CurvilinearEquivalence=1, const Standard_Boolean KeepContact=0);
+		%feature("autodoc", "1");
+		void SetForceApproxC1(const Standard_Boolean ForceApproxC1);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Shape Profile, const Standard_Boolean WithContact=0, const Standard_Boolean WithCorrection=0);
 		%feature("autodoc", "1");
@@ -2716,7 +2751,9 @@ class BRepFill_Sweep {
 		%feature("autodoc", "1");
 		void SetAngularControl(const Standard_Real AngleMin=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real AngleMax=6.0e+0);
 		%feature("autodoc", "1");
-		void Build(const BRepFill_TransitionStyle Transition=BRepFill_Modified, const GeomFill_ApproxStyle Approx=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=11, const Standard_Integer Segmax=30);
+		void SetForceApproxC1(const Standard_Boolean ForceApproxC1);
+		%feature("autodoc", "1");
+		void Build(const BRepFill_TransitionStyle Transition=BRepFill_Modified, const GeomAbs_Shape Continuity=GeomAbs_C2, const GeomFill_ApproxStyle Approx=GeomFill_Location, const Standard_Integer Degmax=11, const Standard_Integer Segmax=30);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -3254,37 +3291,6 @@ def __del__(self):
 %}
 
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
-class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape();
-		%feature("autodoc", "1");
-		BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const BRepFill_DataMapOfNodeDataMapOfShapeShape &aMap);
-		%feature("autodoc", "1");
-		const Handle_MAT_Node & Key() const;
-		%feature("autodoc", "1");
-		const TopTools_DataMapOfShapeShape & Value() const;
-
-};
-%feature("shadow") BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape::~BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape {
 	void _kill_pointed() {
 		delete $self;
 	}

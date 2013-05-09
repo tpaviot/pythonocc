@@ -962,6 +962,132 @@ def __del__(self):
 };
 
 
+%nodefaultctor MoniTool_Profile;
+class MoniTool_Profile : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_Profile();
+		%feature("autodoc", "1");
+		void AddOption(const Handle_MoniTool_Option &option, const char * name="");
+		%feature("autodoc", "1");
+		Handle_MoniTool_Option Option(const char * name) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString OptionList() const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString TypedValueList() const;
+		%feature("autodoc", "1");
+		void NewConf(const char * confname);
+		%feature("autodoc", "1");
+		void AddConf(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean HasConf(const char * confname) const;
+		%feature("autodoc", "1");
+		Handle_TColStd_HSequenceOfAsciiString ConfList() const;
+		%feature("autodoc", "1");
+		Standard_Boolean ClearConf(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean AddFromOtherConf(const char * confname, const char * otherconf);
+		%feature("autodoc", "1");
+		Standard_Boolean SetFromCurrent(const char * confname);
+		%feature("autodoc", "1");
+		Standard_Boolean AddSwitch(const char * confname, const char * optname, const char * casename="");
+		%feature("autodoc", "1");
+		Standard_Boolean RemoveSwitch(const char * confname, const char * optname);
+		%feature("autodoc", "1");
+		void SwitchList(const char * confname, Handle_TColStd_HSequenceOfAsciiString & optlist, Handle_TColStd_HSequenceOfAsciiString & caselist) const;
+		%feature("autodoc", "1");
+		Standard_Boolean SetCurrent(const char * confname);
+		%feature("autodoc", "1");
+		void RecordCurrent();
+		%feature("autodoc", "1");
+		const TCollection_AsciiString & Current() const;
+		%feature("autodoc", "1");
+		TCollection_AsciiString CaseName(const char * optname, const Standard_Boolean proper=0) const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient CaseValue(const char * optname) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Value(const char * optname, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		void SetTypedValues(const Standard_Boolean proper=0, const char * name="") const;
+		%feature("autodoc", "1");
+		void SetFast(const char * confname="");
+		%feature("autodoc", "1");
+		void ClearFast();
+		%feature("autodoc", "1");
+		Standard_Boolean FastValue(const char * optname, Handle_Standard_Transient & val) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_Profile {
+	Handle_MoniTool_Profile GetHandle() {
+	return *(Handle_MoniTool_Profile*) &$self;
+	}
+};
+%extend MoniTool_Profile {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_Profile {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_Stat;
+class MoniTool_Stat {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_Stat(const char * title="");
+		%feature("autodoc", "1");
+		MoniTool_Stat(const MoniTool_Stat &other);
+		%feature("autodoc", "1");
+		static		MoniTool_Stat & Current();
+		%feature("autodoc", "1");
+		Standard_Integer Open(const Standard_Integer nb=100);
+		%feature("autodoc", "1");
+		void OpenMore(const Standard_Integer id, const Standard_Integer nb);
+		%feature("autodoc", "1");
+		void Add(const Standard_Integer nb=1);
+		%feature("autodoc", "1");
+		void AddSub(const Standard_Integer nb=1);
+		%feature("autodoc", "1");
+		void AddEnd();
+		%feature("autodoc", "1");
+		void Close(const Standard_Integer id);
+		%feature("autodoc", "1");
+		Standard_Integer Level() const;
+		%feature("autodoc", "1");
+		Standard_Real Percent(const Standard_Integer fromlev=0) const;
+
+};
+%feature("shadow") MoniTool_Stat::~MoniTool_Stat %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_Stat {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
 class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 	public:
@@ -1122,49 +1248,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_IntVal {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_Stat;
-class MoniTool_Stat {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_Stat(const char * title="");
-		%feature("autodoc", "1");
-		MoniTool_Stat(const MoniTool_Stat &other);
-		%feature("autodoc", "1");
-		static		MoniTool_Stat & Current();
-		%feature("autodoc", "1");
-		Standard_Integer Open(const Standard_Integer nb=100);
-		%feature("autodoc", "1");
-		void OpenMore(const Standard_Integer id, const Standard_Integer nb);
-		%feature("autodoc", "1");
-		void Add(const Standard_Integer nb=1);
-		%feature("autodoc", "1");
-		void AddSub(const Standard_Integer nb=1);
-		%feature("autodoc", "1");
-		void AddEnd();
-		%feature("autodoc", "1");
-		void Close(const Standard_Integer id);
-		%feature("autodoc", "1");
-		Standard_Integer Level() const;
-		%feature("autodoc", "1");
-		Standard_Real Percent(const Standard_Integer fromlev=0) const;
-
-};
-%feature("shadow") MoniTool_Stat::~MoniTool_Stat %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_Stat {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1503,142 +1586,6 @@ def __del__(self):
 %}
 
 %extend MoniTool_SequenceOfElement {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
-class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
-		%feature("autodoc", "1");
-		TopoDS_Shape  Key1() const;
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey2() {
-				return (Standard_Integer) $self->Key2();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey2(Standard_Integer value ) {
-				$self->Key2()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		TCollection_MapNodePtr & Next2() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
-	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
-	}
-};
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MoniTool_Profile;
-class MoniTool_Profile : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		MoniTool_Profile();
-		%feature("autodoc", "1");
-		void AddOption(const Handle_MoniTool_Option &option, const char * name="");
-		%feature("autodoc", "1");
-		Handle_MoniTool_Option Option(const char * name) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString OptionList() const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString TypedValueList() const;
-		%feature("autodoc", "1");
-		void NewConf(const char * confname);
-		%feature("autodoc", "1");
-		void AddConf(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean HasConf(const char * confname) const;
-		%feature("autodoc", "1");
-		Handle_TColStd_HSequenceOfAsciiString ConfList() const;
-		%feature("autodoc", "1");
-		Standard_Boolean ClearConf(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean AddFromOtherConf(const char * confname, const char * otherconf);
-		%feature("autodoc", "1");
-		Standard_Boolean SetFromCurrent(const char * confname);
-		%feature("autodoc", "1");
-		Standard_Boolean AddSwitch(const char * confname, const char * optname, const char * casename="");
-		%feature("autodoc", "1");
-		Standard_Boolean RemoveSwitch(const char * confname, const char * optname);
-		%feature("autodoc", "1");
-		void SwitchList(const char * confname, Handle_TColStd_HSequenceOfAsciiString & optlist, Handle_TColStd_HSequenceOfAsciiString & caselist) const;
-		%feature("autodoc", "1");
-		Standard_Boolean SetCurrent(const char * confname);
-		%feature("autodoc", "1");
-		void RecordCurrent();
-		%feature("autodoc", "1");
-		const TCollection_AsciiString & Current() const;
-		%feature("autodoc", "1");
-		TCollection_AsciiString CaseName(const char * optname, const Standard_Boolean proper=0) const;
-		%feature("autodoc", "1");
-		Handle_Standard_Transient CaseValue(const char * optname) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Value(const char * optname, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		void SetTypedValues(const Standard_Boolean proper=0, const char * name="") const;
-		%feature("autodoc", "1");
-		void SetFast(const char * confname="");
-		%feature("autodoc", "1");
-		void ClearFast();
-		%feature("autodoc", "1");
-		Standard_Boolean FastValue(const char * optname, Handle_Standard_Transient & val) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MoniTool_Profile {
-	Handle_MoniTool_Profile GetHandle() {
-	return *(Handle_MoniTool_Profile*) &$self;
-	}
-};
-%extend MoniTool_Profile {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") MoniTool_Profile::~MoniTool_Profile %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MoniTool_Profile {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2200,6 +2147,59 @@ def __del__(self):
 %}
 
 %extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
+class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient(const TopoDS_Shape K1, const Standard_Integer K2, const Handle_Standard_Transient &I, const TCollection_MapNodePtr &n1, const TCollection_MapNodePtr &n2);
+		%feature("autodoc", "1");
+		TopoDS_Shape  Key1() const;
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey2() {
+				return (Standard_Integer) $self->Key2();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey2(Standard_Integer value ) {
+				$self->Key2()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		TCollection_MapNodePtr & Next2() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient GetHandle() {
+	return *(Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient*) &$self;
+	}
+};
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient::~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	void _kill_pointed() {
 		delete $self;
 	}

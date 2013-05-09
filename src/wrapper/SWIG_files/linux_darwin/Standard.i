@@ -51,10 +51,13 @@ $HeaderURL$
 
 typedef time_t Standard_Time;
 typedef unsigned char Standard_Byte;
+typedef wchar_t Standard_WideChar;
 typedef jmp_buf Standard_JmpBuf;
 typedef Standard_Persistent * Standard_OId;
 typedef double Standard_Real;
 typedef char const * Standard_CString;
+typedef uint16_t Standard_Utf16Char;
+typedef char Standard_Utf8Char;
 typedef short int const * Standard_ExtString;
 typedef Standard_ErrorHandler * Standard_PErrorHandler;
 typedef char Standard_Character;
@@ -62,7 +65,9 @@ typedef unsigned int Standard_Boolean;
 typedef float Standard_ShortReal;
 typedef int Standard_Integer;
 typedef short int Standard_ExtCharacter;
+typedef unsigned char Standard_Utf8UChar;
 typedef size_t Standard_Size;
+typedef uint32_t Standard_Utf32Char;
 typedef GUID Standard_UUID;
 typedef Standard_Byte * Standard_PByte;
 typedef Standard_ExtCharacter * Standard_PExtCharacter;
@@ -1110,44 +1115,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Standard_Type;
-class Handle_Standard_Type : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Standard_Type();
-		%feature("autodoc", "1");
-		Handle_Standard_Type(const Handle_Standard_Type &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Type(const Standard_Type *anItem);
-		%feature("autodoc", "1");
-		Handle_Standard_Type & operator=(const Handle_Standard_Type &aHandle);
-		%feature("autodoc", "1");
-		Handle_Standard_Type & operator=(const Standard_Type *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Standard_Type DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Standard_Type {
-	Standard_Type* GetObject() {
-	return (Standard_Type*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Standard_Type::~Handle_Standard_Type %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Standard_Type {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Standard_Overflow;
 class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	public:
@@ -1294,6 +1261,44 @@ def __del__(self):
 %}
 
 %extend Handle_Standard_Underflow {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Standard_Type;
+class Handle_Standard_Type : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Standard_Type();
+		%feature("autodoc", "1");
+		Handle_Standard_Type(const Handle_Standard_Type &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Type(const Standard_Type *anItem);
+		%feature("autodoc", "1");
+		Handle_Standard_Type & operator=(const Handle_Standard_Type &aHandle);
+		%feature("autodoc", "1");
+		Handle_Standard_Type & operator=(const Standard_Type *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Standard_Type DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Standard_Type {
+	Standard_Type* GetObject() {
+	return (Standard_Type*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Standard_Type::~Handle_Standard_Type %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Standard_Type {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1650,6 +1655,31 @@ def __del__(self):
 %}
 
 %extend Standard_NullValue {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Standard_CLocaleSentry;
+class Standard_CLocaleSentry {
+	public:
+		%feature("autodoc", "1");
+		Standard_CLocaleSentry();
+		%feature("autodoc", "1");
+		static		locale_t GetCLocale();
+
+};
+%feature("shadow") Standard_CLocaleSentry::~Standard_CLocaleSentry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_CLocaleSentry {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2439,6 +2469,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Standard_OutOfMemory;
+class Standard_OutOfMemory : public Standard_ProgramError {
+	public:
+		%feature("autodoc", "1");
+		Standard_OutOfMemory();
+		%feature("autodoc", "1");
+		Standard_OutOfMemory(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Standard_OutOfMemory NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Standard_OutOfMemory {
+	Handle_Standard_OutOfMemory GetHandle() {
+	return *(Handle_Standard_OutOfMemory*) &$self;
+	}
+};
+%extend Standard_OutOfMemory {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Standard_OutOfMemory {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Standard_LicenseError;
 class Standard_LicenseError : public Standard_Failure {
 	public:
@@ -3108,49 +3181,6 @@ def __del__(self):
 %}
 
 %extend Standard_DivideByZero {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Standard_OutOfMemory;
-class Standard_OutOfMemory : public Standard_ProgramError {
-	public:
-		%feature("autodoc", "1");
-		Standard_OutOfMemory();
-		%feature("autodoc", "1");
-		Standard_OutOfMemory(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Standard_OutOfMemory NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Standard_OutOfMemory {
-	Handle_Standard_OutOfMemory GetHandle() {
-	return *(Handle_Standard_OutOfMemory*) &$self;
-	}
-};
-%extend Standard_OutOfMemory {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Standard_OutOfMemory::~Standard_OutOfMemory %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Standard_OutOfMemory {
 	void _kill_pointed() {
 		delete $self;
 	}

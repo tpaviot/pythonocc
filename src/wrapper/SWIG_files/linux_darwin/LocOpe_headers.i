@@ -39,7 +39,6 @@ $HeaderURL$
 #include<LocOpe.hxx>
 #include<LocOpe_BuildShape.hxx>
 #include<LocOpe_BuildWires.hxx>
-#include<LocOpe_Builder.hxx>
 #include<LocOpe_CSIntersector.hxx>
 #include<LocOpe_CurveShapeIntersector.hxx>
 #include<LocOpe_DPrism.hxx>

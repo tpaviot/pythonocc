@@ -193,6 +193,7 @@ $HeaderURL$
 #include<GeomFill_Curved.hxx>
 #include<GeomFill_Darboux.hxx>
 #include<GeomFill_DegeneratedBound.hxx>
+#include<GeomFill_DiscreteTrihedron.hxx>
 #include<GeomFill_DraftTrihedron.hxx>
 #include<GeomFill_EvolvedSection.hxx>
 #include<GeomFill_Filling.hxx>
@@ -206,6 +207,7 @@ $HeaderURL$
 #include<GeomFill_GuideTrihedronPlan.hxx>
 #include<GeomFill_HArray1OfLocationLaw.hxx>
 #include<GeomFill_HArray1OfSectionLaw.hxx>
+#include<GeomFill_HSequenceOfAx2.hxx>
 #include<GeomFill_Line.hxx>
 #include<GeomFill_LocFunction.hxx>
 #include<GeomFill_LocationDraft.hxx>
@@ -221,7 +223,9 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
+#include<GeomFill_SequenceNodeOfSequenceOfAx2.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
+#include<GeomFill_SequenceOfAx2.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>
@@ -446,7 +450,6 @@ $HeaderURL$
 #include<TopTools_DataMapIteratorOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeListOfShape.hxx>
-#include<TopTools_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapIteratorOfDataMapOfShapeShape.hxx>
@@ -457,7 +460,6 @@ $HeaderURL$
 #include<TopTools_DataMapNodeOfDataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeListOfShape.hxx>
-#include<TopTools_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeReal.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapNodeOfDataMapOfShapeShape.hxx>
@@ -468,7 +470,6 @@ $HeaderURL$
 #include<TopTools_DataMapOfShapeInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfInteger.hxx>
 #include<TopTools_DataMapOfShapeListOfShape.hxx>
-#include<TopTools_DataMapOfShapeMapOfShape.hxx>
 #include<TopTools_DataMapOfShapeReal.hxx>
 #include<TopTools_DataMapOfShapeSequenceOfShape.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>

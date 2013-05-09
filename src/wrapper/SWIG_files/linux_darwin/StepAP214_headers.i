@@ -619,6 +619,7 @@ $HeaderURL$
 #include<Handle_StepRepr_PropertyDefinition.hxx>
 #include<Handle_StepShape_ShapeRepresentation.hxx>
 #include<Handle_StepBasic_SecurityClassification.hxx>
+#include<Handle_StepBasic_IdentificationRole.hxx>
 #include<Handle_StepBasic_ApprovalPersonOrganization.hxx>
 #include<Handle_StepBasic_Effectivity.hxx>
 #include<Handle_StepBasic_Document.hxx>
@@ -643,5 +644,4 @@ $HeaderURL$
 #include<Handle_StepRepr_ShapeAspectRelationship.hxx>
 #include<Handle_StepBasic_PhysicallyModeledProductDefinition.hxx>
 #include<Handle_StepBasic_ProductDefinitionEffectivity.hxx>
-#include<Handle_StepBasic_IdentificationRole.hxx>
 %}

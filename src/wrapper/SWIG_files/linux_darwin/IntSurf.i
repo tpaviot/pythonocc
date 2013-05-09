@@ -396,6 +396,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
+class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		IntSurf_PntOn2S & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
+	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
+	}
+};
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntSurf_Quadric;
 class IntSurf_Quadric {
 	public:
@@ -1088,43 +1125,6 @@ def __del__(self):
 %}
 
 %extend IntSurf_ListIteratorOfListOfPntOn2S {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
-class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		IntSurf_SequenceNodeOfSequenceOfPntOn2S(const IntSurf_PntOn2S &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		IntSurf_PntOn2S & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S GetHandle() {
-	return *(Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S*) &$self;
-	}
-};
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IntSurf_SequenceNodeOfSequenceOfPntOn2S::~IntSurf_SequenceNodeOfSequenceOfPntOn2S %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	void _kill_pointed() {
 		delete $self;
 	}

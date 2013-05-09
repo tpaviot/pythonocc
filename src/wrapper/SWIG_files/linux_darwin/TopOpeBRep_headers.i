@@ -247,14 +247,14 @@ $HeaderURL$
 #include<TCollection_AsciiString.hxx>
 #include<TopOpeBRepTool_ShapeExplorer.hxx>
 #include<TopOpeBRepDS_Transition.hxx>
-#include<TopoDS_Face.hxx>
-#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TopOpeBRepDS_Point.hxx>
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<Handle_BRepTopAdaptor_TopolTool.hxx>
+#include<TopoDS_Face.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<TopOpeBRepDS_ListIteratorOfListOfInterference.hxx>
+#include<Handle_BRepAdaptor_HSurface.hxx>
 #include<TopOpeBRep.hxx>
 #include<gp_Pnt2d.hxx>
 #include<IntSurf_PntOn2S.hxx>

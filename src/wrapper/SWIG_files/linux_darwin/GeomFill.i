@@ -60,6 +60,7 @@ enum GeomFill_Trihedron {
 	GeomFill_IsGuidePlan,
 	GeomFill_IsGuideACWithContact,
 	GeomFill_IsGuidePlanWithContact,
+	GeomFill_IsDiscreteTrihedron,
 	};
 
 enum GeomFill_ApproxStyle {
@@ -80,6 +81,44 @@ enum GeomFill_PipeError {
 	GeomFill_ImpossibleContact,
 	};
 
+
+
+%nodefaultctor Handle_GeomFill_HSequenceOfAx2;
+class Handle_GeomFill_HSequenceOfAx2 : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2();
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2(const Handle_GeomFill_HSequenceOfAx2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2(const GeomFill_HSequenceOfAx2 *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2 & operator=(const Handle_GeomFill_HSequenceOfAx2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2 & operator=(const GeomFill_HSequenceOfAx2 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomFill_HSequenceOfAx2 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_HSequenceOfAx2 {
+	GeomFill_HSequenceOfAx2* GetObject() {
+	return (GeomFill_HSequenceOfAx2*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomFill_HSequenceOfAx2::~Handle_GeomFill_HSequenceOfAx2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomFill_HSequenceOfAx2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_GeomFill_Boundary;
@@ -494,6 +533,44 @@ def __del__(self):
 %}
 
 %extend Handle_GeomFill_SimpleBound {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfAx2;
+class Handle_GeomFill_SequenceNodeOfSequenceOfAx2 : public Handle_TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfAx2();
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfAx2(const Handle_GeomFill_SequenceNodeOfSequenceOfAx2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfAx2(const GeomFill_SequenceNodeOfSequenceOfAx2 *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfAx2 & operator=(const Handle_GeomFill_SequenceNodeOfSequenceOfAx2 &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_SequenceNodeOfSequenceOfAx2 & operator=(const GeomFill_SequenceNodeOfSequenceOfAx2 *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomFill_SequenceNodeOfSequenceOfAx2 DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfAx2 {
+	GeomFill_SequenceNodeOfSequenceOfAx2* GetObject() {
+	return (GeomFill_SequenceNodeOfSequenceOfAx2*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomFill_SequenceNodeOfSequenceOfAx2::~Handle_GeomFill_SequenceNodeOfSequenceOfAx2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomFill_SequenceNodeOfSequenceOfAx2 {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -994,6 +1071,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_GeomFill_DiscreteTrihedron;
+class Handle_GeomFill_DiscreteTrihedron : public Handle_GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		Handle_GeomFill_DiscreteTrihedron();
+		%feature("autodoc", "1");
+		Handle_GeomFill_DiscreteTrihedron(const Handle_GeomFill_DiscreteTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DiscreteTrihedron(const GeomFill_DiscreteTrihedron *anItem);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DiscreteTrihedron & operator=(const Handle_GeomFill_DiscreteTrihedron &aHandle);
+		%feature("autodoc", "1");
+		Handle_GeomFill_DiscreteTrihedron & operator=(const GeomFill_DiscreteTrihedron *anItem);
+		%feature("autodoc", "1");
+		static		Handle_GeomFill_DiscreteTrihedron DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_GeomFill_DiscreteTrihedron {
+	GeomFill_DiscreteTrihedron* GetObject() {
+	return (GeomFill_DiscreteTrihedron*)$self->Access();
+	}
+};
+%feature("shadow") Handle_GeomFill_DiscreteTrihedron::~Handle_GeomFill_DiscreteTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_GeomFill_DiscreteTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_GeomFill_SweepFunction;
 class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	public:
@@ -1391,6 +1506,101 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_TrihedronLaw;
+class GeomFill_TrihedronLaw : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		%feature("autodoc", "1");
+		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
+		%feature("autodoc", "1");
+		virtual		GeomFill_PipeError ErrorStatus() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D1(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & BiNormal, gp_Vec & DBiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean D2(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & DTangent, gp_Vec & D2Tangent, gp_Vec & Normal, gp_Vec & DNormal, gp_Vec & D2Normal, gp_Vec & BiNormal, gp_Vec & DBiNormal, gp_Vec & D2BiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
+		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
+
+		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsConstant() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_TrihedronLaw {
+	Handle_GeomFill_TrihedronLaw GetHandle() {
+	return *(Handle_GeomFill_TrihedronLaw*) &$self;
+	}
+};
+%extend GeomFill_TrihedronLaw {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_TrihedronLaw {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_DiscreteTrihedron;
+class GeomFill_DiscreteTrihedron : public GeomFill_TrihedronLaw {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_DiscreteTrihedron();
+		%feature("autodoc", "1");
+		void Init();
+
+};
+%extend GeomFill_DiscreteTrihedron {
+	Handle_GeomFill_DiscreteTrihedron GetHandle() {
+	return *(Handle_GeomFill_DiscreteTrihedron*) &$self;
+	}
+};
+%extend GeomFill_DiscreteTrihedron {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GeomFill_DiscreteTrihedron::~GeomFill_DiscreteTrihedron %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_DiscreteTrihedron {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_Profiler;
 class GeomFill_Profiler {
 	public:
@@ -1554,15 +1764,13 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomFill_TrihedronLaw;
-class GeomFill_TrihedronLaw : public MMgt_TShared {
+%nodefaultctor GeomFill_Darboux;
+class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 	public:
 		%feature("autodoc", "1");
-		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
+		GeomFill_Darboux();
 		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
-		%feature("autodoc", "1");
-		virtual		GeomFill_PipeError ErrorStatus() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean D0(const Standard_Real Param, gp_Vec & Tangent, gp_Vec & Normal, gp_Vec & BiNormal);
 		%feature("autodoc", "1");
@@ -1574,11 +1782,6 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
-		virtual		void SetInterval(const Standard_Real First, const Standard_Real Last);
-		%feature("autodoc","GetInterval() -> [Standard_Real, Standard_Real]");
-
-		void GetInterval(Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConstant() const;
@@ -1586,39 +1789,6 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 		virtual		Standard_Boolean IsOnlyBy3dCurve() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomFill_TrihedronLaw {
-	Handle_GeomFill_TrihedronLaw GetHandle() {
-	return *(Handle_GeomFill_TrihedronLaw*) &$self;
-	}
-};
-%extend GeomFill_TrihedronLaw {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") GeomFill_TrihedronLaw::~GeomFill_TrihedronLaw %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomFill_TrihedronLaw {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomFill_Darboux;
-class GeomFill_Darboux : public GeomFill_TrihedronLaw {
-	public:
-		%feature("autodoc", "1");
-		GeomFill_Darboux();
 
 };
 %extend GeomFill_Darboux {
@@ -1805,6 +1975,8 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 		%feature("autodoc", "1");
 		GeomFill_CorrectedFrenet();
 		%feature("autodoc", "1");
+		GeomFill_CorrectedFrenet(const Standard_Boolean ForEvaluation);
+		%feature("autodoc", "1");
 		virtual		Handle_GeomFill_TrihedronLaw Copy() const;
 		%feature("autodoc", "1");
 		virtual		void SetCurve(const Handle_Adaptor3d_HCurve &C);
@@ -1820,6 +1992,8 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 		virtual		Standard_Integer NbIntervals(const GeomAbs_Shape S) const;
 		%feature("autodoc", "1");
 		virtual		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S) const;
+		%feature("autodoc", "1");
+		GeomFill_Trihedron EvaluateBestMode();
 		%feature("autodoc", "1");
 		virtual		void GetAverageLaw(gp_Vec & ATangent, gp_Vec & ANormal, gp_Vec & ABiNormal);
 		%feature("autodoc", "1");
@@ -2604,6 +2778,85 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_HSequenceOfAx2;
+class GeomFill_HSequenceOfAx2 : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_HSequenceOfAx2();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const gp_Ax2 anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_GeomFill_HSequenceOfAx2 &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Ax2 anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_GeomFill_HSequenceOfAx2 &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const gp_Ax2 anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_GeomFill_HSequenceOfAx2 &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const gp_Ax2 anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_GeomFill_HSequenceOfAx2 &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2 Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const gp_Ax2 anItem);
+		%feature("autodoc", "1");
+		const gp_Ax2  Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		gp_Ax2  ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfAx2 & Sequence() const;
+		%feature("autodoc", "1");
+		GeomFill_SequenceOfAx2 & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_GeomFill_HSequenceOfAx2 ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_HSequenceOfAx2 {
+	Handle_GeomFill_HSequenceOfAx2 GetHandle() {
+	return *(Handle_GeomFill_HSequenceOfAx2*) &$self;
+	}
+};
+%extend GeomFill_HSequenceOfAx2 {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GeomFill_HSequenceOfAx2::~GeomFill_HSequenceOfAx2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_HSequenceOfAx2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_SequenceOfTrsf;
 class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 	public:
@@ -2902,6 +3155,8 @@ class GeomFill_Sweep {
 		void SetDomain(const Standard_Real First, const Standard_Real Last, const Standard_Real SectionFirst, const Standard_Real SectionLast);
 		%feature("autodoc", "1");
 		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real TolAngular=1.0e+0);
+		%feature("autodoc", "1");
+		void SetForceApproxC1(const Standard_Boolean ForceApproxC1);
 		%feature("autodoc", "1");
 		Standard_Boolean ExchangeUV() const;
 		%feature("autodoc", "1");
@@ -3658,6 +3913,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomFill_SequenceNodeOfSequenceOfAx2;
+class GeomFill_SequenceNodeOfSequenceOfAx2 : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceNodeOfSequenceOfAx2(const gp_Ax2 I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		gp_Ax2  Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomFill_SequenceNodeOfSequenceOfAx2 {
+	Handle_GeomFill_SequenceNodeOfSequenceOfAx2 GetHandle() {
+	return *(Handle_GeomFill_SequenceNodeOfSequenceOfAx2*) &$self;
+	}
+};
+%extend GeomFill_SequenceNodeOfSequenceOfAx2 {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GeomFill_SequenceNodeOfSequenceOfAx2::~GeomFill_SequenceNodeOfSequenceOfAx2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_SequenceNodeOfSequenceOfAx2 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomFill_AppSweep;
 class GeomFill_AppSweep : public AppBlend_Approx {
 	public:
@@ -4148,6 +4440,71 @@ def __del__(self):
 %}
 
 %extend GeomFill_Fixed {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomFill_SequenceOfAx2;
+class GeomFill_SequenceOfAx2 : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		GeomFill_SequenceOfAx2();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfAx2 & Assign(const GeomFill_SequenceOfAx2 &Other);
+		%feature("autodoc", "1");
+		const GeomFill_SequenceOfAx2 & operator=(const GeomFill_SequenceOfAx2 &Other);
+		%feature("autodoc", "1");
+		void Append(const gp_Ax2 T);
+		%feature("autodoc", "1");
+		void Append(GeomFill_SequenceOfAx2 & S);
+		%feature("autodoc", "1");
+		void Prepend(const gp_Ax2 T);
+		%feature("autodoc", "1");
+		void Prepend(GeomFill_SequenceOfAx2 & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const gp_Ax2 I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, GeomFill_SequenceOfAx2 & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const gp_Ax2 T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, GeomFill_SequenceOfAx2 & S);
+		%feature("autodoc", "1");
+		const gp_Ax2  First() const;
+		%feature("autodoc", "1");
+		const gp_Ax2  Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, GeomFill_SequenceOfAx2 & S);
+		%feature("autodoc", "1");
+		const gp_Ax2  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const gp_Ax2  operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Ax2 I);
+		%feature("autodoc", "1");
+		gp_Ax2  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		gp_Ax2  operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") GeomFill_SequenceOfAx2::~GeomFill_SequenceOfAx2 %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomFill_SequenceOfAx2 {
 	void _kill_pointed() {
 		delete $self;
 	}

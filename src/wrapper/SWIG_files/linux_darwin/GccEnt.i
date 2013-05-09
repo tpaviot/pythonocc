@@ -98,47 +98,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GccEnt_QualifiedLin;
-class GccEnt_QualifiedLin {
-	public:
-		%feature("autodoc", "1");
-		GccEnt_QualifiedLin(const gp_Lin2d Qualified, const GccEnt_Position Qualifier);
-		%feature("autodoc", "1");
-		gp_Lin2d Qualified() const;
-		%feature("autodoc", "1");
-		GccEnt_Position Qualifier() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsUnqualified() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEnclosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsOutside() const;
-		%feature("autodoc", "1");
-		GccEnt_QualifiedLin();
-		%feature("autodoc", "1");
-		GccEnt_Position _CSFDB_GetGccEnt_QualifiedLinTheQualifier() const;
-		%feature("autodoc", "1");
-		void _CSFDB_SetGccEnt_QualifiedLinTheQualifier(const GccEnt_Position p);
-		%feature("autodoc", "1");
-		const gp_Lin2d  _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
-
-};
-%feature("shadow") GccEnt_QualifiedLin::~GccEnt_QualifiedLin %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GccEnt_QualifiedLin {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GccEnt_Array1OfPosition;
 class GccEnt_Array1OfPosition {
 	public:
@@ -184,6 +143,47 @@ def __del__(self):
 %}
 
 %extend GccEnt_Array1OfPosition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GccEnt_QualifiedLin;
+class GccEnt_QualifiedLin {
+	public:
+		%feature("autodoc", "1");
+		GccEnt_QualifiedLin(const gp_Lin2d Qualified, const GccEnt_Position Qualifier);
+		%feature("autodoc", "1");
+		gp_Lin2d Qualified() const;
+		%feature("autodoc", "1");
+		GccEnt_Position Qualifier() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsUnqualified() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEnclosed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsOutside() const;
+		%feature("autodoc", "1");
+		GccEnt_QualifiedLin();
+		%feature("autodoc", "1");
+		GccEnt_Position _CSFDB_GetGccEnt_QualifiedLinTheQualifier() const;
+		%feature("autodoc", "1");
+		void _CSFDB_SetGccEnt_QualifiedLinTheQualifier(const GccEnt_Position p);
+		%feature("autodoc", "1");
+		const gp_Lin2d  _CSFDB_GetGccEnt_QualifiedLinTheQualified() const;
+
+};
+%feature("shadow") GccEnt_QualifiedLin::~GccEnt_QualifiedLin %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GccEnt_QualifiedLin {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -27,17 +27,10 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
+#include<Graphic3d.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>
-#include<Graphic3d_Array1OfVertexC.hxx>
-#include<Graphic3d_Array1OfVertexN.hxx>
-#include<Graphic3d_Array1OfVertexNC.hxx>
-#include<Graphic3d_Array1OfVertexNT.hxx>
 #include<Graphic3d_Array2OfVertex.hxx>
-#include<Graphic3d_Array2OfVertexC.hxx>
-#include<Graphic3d_Array2OfVertexN.hxx>
-#include<Graphic3d_Array2OfVertexNC.hxx>
-#include<Graphic3d_Array2OfVertexNT.hxx>
 #include<Graphic3d_ArrayOfPoints.hxx>
 #include<Graphic3d_ArrayOfPolygons.hxx>
 #include<Graphic3d_ArrayOfPolylines.hxx>
@@ -61,7 +54,6 @@ $HeaderURL$
 #include<Graphic3d_CBounds.hxx>
 #include<Graphic3d_CGraduatedTrihedron.hxx>
 #include<Graphic3d_CGroup.hxx>
-#include<Graphic3d_CInitTexture.hxx>
 #include<Graphic3d_CLight.hxx>
 #include<Graphic3d_CPick.hxx>
 #include<Graphic3d_CPlane.hxx>
@@ -73,7 +65,6 @@ $HeaderURL$
 #include<Graphic3d_CycleError.hxx>
 #include<Graphic3d_DataStructureManager.hxx>
 #include<Graphic3d_ExportFormat.hxx>
-#include<Graphic3d_GraphicDevice.hxx>
 #include<Graphic3d_GraphicDriver.hxx>
 #include<Graphic3d_Group.hxx>
 #include<Graphic3d_GroupAspect.hxx>
@@ -83,6 +74,7 @@ $HeaderURL$
 #include<Graphic3d_HSetOfGroup.hxx>
 #include<Graphic3d_HorizontalTextAlignment.hxx>
 #include<Graphic3d_InitialisationError.hxx>
+#include<Graphic3d_LevelOfTextureAnisotropy.hxx>
 #include<Graphic3d_ListIteratorOfListOfPArray.hxx>
 #include<Graphic3d_ListIteratorOfListOfShortReal.hxx>
 #include<Graphic3d_ListIteratorOfSetListOfSetOfGroup.hxx>
@@ -96,7 +88,6 @@ $HeaderURL$
 #include<Graphic3d_MaterialAspect.hxx>
 #include<Graphic3d_MaterialDefinitionError.hxx>
 #include<Graphic3d_NListOfHAsciiString.hxx>
-#include<Graphic3d_NameOfFont.hxx>
 #include<Graphic3d_NameOfMaterial.hxx>
 #include<Graphic3d_NameOfTexture1D.hxx>
 #include<Graphic3d_NameOfTexture2D.hxx>
@@ -133,6 +124,7 @@ $HeaderURL$
 #include<Graphic3d_Texture2Dplane.hxx>
 #include<Graphic3d_TextureEnv.hxx>
 #include<Graphic3d_TextureMap.hxx>
+#include<Graphic3d_TextureParams.hxx>
 #include<Graphic3d_TextureRoot.hxx>
 #include<Graphic3d_TransModeFlags.hxx>
 #include<Graphic3d_TransformError.hxx>
@@ -145,14 +137,14 @@ $HeaderURL$
 #include<Graphic3d_TypeOfReflection.hxx>
 #include<Graphic3d_TypeOfStructure.hxx>
 #include<Graphic3d_TypeOfTexture.hxx>
+#include<Graphic3d_TypeOfTextureFilter.hxx>
 #include<Graphic3d_TypeOfTextureMode.hxx>
+#include<Graphic3d_Vec2.hxx>
+#include<Graphic3d_Vec3.hxx>
+#include<Graphic3d_Vec4.hxx>
 #include<Graphic3d_Vector.hxx>
 #include<Graphic3d_VectorError.hxx>
 #include<Graphic3d_Vertex.hxx>
-#include<Graphic3d_VertexC.hxx>
-#include<Graphic3d_VertexN.hxx>
-#include<Graphic3d_VertexNC.hxx>
-#include<Graphic3d_VertexNT.hxx>
 #include<Graphic3d_VerticalTextAlignment.hxx>
 #include<Handle_Graphic3d_ArrayOfPoints.hxx>
 #include<Handle_Graphic3d_ArrayOfPolygons.hxx>
@@ -171,7 +163,6 @@ $HeaderURL$
 #include<Handle_Graphic3d_AspectTextDefinitionError.hxx>
 #include<Handle_Graphic3d_CycleError.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>
-#include<Handle_Graphic3d_GraphicDevice.hxx>
 #include<Handle_Graphic3d_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Group.hxx>
 #include<Handle_Graphic3d_GroupDefinitionError.hxx>
@@ -202,27 +193,13 @@ $HeaderURL$
 #include<Handle_Graphic3d_Texture2Dplane.hxx>
 #include<Handle_Graphic3d_TextureEnv.hxx>
 #include<Handle_Graphic3d_TextureMap.hxx>
+#include<Handle_Graphic3d_TextureParams.hxx>
 #include<Handle_Graphic3d_TextureRoot.hxx>
 #include<Handle_Graphic3d_TransformError.hxx>
 #include<Handle_Graphic3d_VectorError.hxx>
 
 // Additional headers necessary for compilation.
 
-#include<MFT.hxx>
-#include<MFT_CommandDescriptor.hxx>
-#include<MFT_FileHandle.hxx>
-#include<MFT_FilePosition.hxx>
-#include<MFT_FileRecord.hxx>
-#include<MFT_FontManager.hxx>
-#include<MFT_FontManagerDefinitionError.hxx>
-#include<MFT_FontManagerError.hxx>
-#include<MFT_ListOfFontHandle.hxx>
-#include<MFT_ListOfFontName.hxx>
-#include<MFT_ListOfFontReference.hxx>
-#include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_TextManager.hxx>
-#include<MFT_TypeOfCommand.hxx>
-#include<MFT_TypeOfValue.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -260,7 +237,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -274,7 +250,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -343,15 +318,12 @@ $HeaderURL$
 #include<Quantity_Color.hxx>
 #include<gp_Dir.hxx>
 #include<gp_Pnt2d.hxx>
-#include<Handle_AlienImage_AlienImage.hxx>
-#include<Handle_TColStd_HArray1OfReal.hxx>
 #include<TColStd_Array2OfReal.hxx>
 #include<Handle_TColStd_HArray1OfByte.hxx>
-#include<TColStd_Array1OfInteger.hxx>
-#include<TColStd_SequenceOfInteger.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Image_PixMap.hxx>
-#include<Handle_Aspect_GraphicDriver.hxx>
+#include<TColStd_Array1OfInteger.hxx>
+#include<TColStd_SequenceOfInteger.hxx>
+#include<Graphic3d.hxx>
 %}

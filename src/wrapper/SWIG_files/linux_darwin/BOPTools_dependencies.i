@@ -24,24 +24,6 @@ $HeaderURL$
 
 */
 %{
-#include <BooleanOperations_AncestorsAndSuccessors.hxx>
-#include <BooleanOperations_AncestorsSeqAndSuccessorsSeq.hxx>
-#include <BooleanOperations_Explorer.hxx>
-#include <BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include <BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger.hxx>
-#include <BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include <BooleanOperations_IndexedDataMapOfShapeInteger.hxx>
-#include <BooleanOperations_KindOfInterference.hxx>
-#include <BooleanOperations_KindOfIntersection.hxx>
-#include <BooleanOperations_OnceExplorer.hxx>
-#include <BooleanOperations_PShapeAndInterferences.hxx>
-#include <BooleanOperations_PShapesDataStructure.hxx>
-#include <BooleanOperations_ShapeAndInterferences.hxx>
-#include <BooleanOperations_ShapesDataStructure.hxx>
-#include <BooleanOperations_StateOfShape.hxx>
-#include <Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include <Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger.hxx>
-#include <Handle_MMgt_TShared.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -71,19 +53,13 @@ $HeaderURL$
 #include <Handle_Standard_Type.hxx>
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
-#include <Handle_TCollection_AVLBaseNode.hxx>
-#include <Handle_TCollection_HAsciiString.hxx>
-#include <Handle_TCollection_HExtendedString.hxx>
-#include <Handle_TCollection_MapNode.hxx>
-#include <Handle_TCollection_SeqNode.hxx>
-#include <MMgt_StackManager.hxx>
-#include <MMgt_TShared.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
 #include <Standard_AncestorIterator.hxx>
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -162,8 +138,5 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import TCollection.i
-%import MMgt.i
 %import Standard.i
 %import TopAbs.i
-%import BooleanOperations.i

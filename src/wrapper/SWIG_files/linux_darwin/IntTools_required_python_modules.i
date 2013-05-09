@@ -36,8 +36,5 @@ import gp
 import Geom
 import Geom2d
 import GeomAbs
-import GeomAPI
-import BRepClass3d
-import Geom2dHatch
 import TCollection
 };

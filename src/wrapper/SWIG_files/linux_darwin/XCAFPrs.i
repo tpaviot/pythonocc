@@ -371,6 +371,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor XCAFPrs_Driver;
+class XCAFPrs_Driver : public TPrsStd_Driver {
+	public:
+		%feature("autodoc", "1");
+		XCAFPrs_Driver();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFPrs_Driver {
+	Handle_XCAFPrs_Driver GetHandle() {
+	return *(Handle_XCAFPrs_Driver*) &$self;
+	}
+};
+%extend XCAFPrs_Driver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XCAFPrs_Driver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XCAFPrs_DataMapOfShapeStyle;
 class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 	public:
@@ -484,45 +523,6 @@ def __del__(self):
 %}
 
 %extend XCAFPrs_DataMapNodeOfDataMapOfStyleTransient {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XCAFPrs_Driver;
-class XCAFPrs_Driver : public TPrsStd_Driver {
-	public:
-		%feature("autodoc", "1");
-		XCAFPrs_Driver();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Update(const TDF_Label &L, Handle_AIS_InteractiveObject & ais);
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XCAFPrs_Driver {
-	Handle_XCAFPrs_Driver GetHandle() {
-	return *(Handle_XCAFPrs_Driver*) &$self;
-	}
-};
-%extend XCAFPrs_Driver {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") XCAFPrs_Driver::~XCAFPrs_Driver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XCAFPrs_Driver {
 	void _kill_pointed() {
 		delete $self;
 	}

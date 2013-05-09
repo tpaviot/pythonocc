@@ -1570,71 +1570,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor SelectMgr_SequenceOfFilter;
-class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		SelectMgr_SequenceOfFilter();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfFilter & Assign(const SelectMgr_SequenceOfFilter &Other);
-		%feature("autodoc", "1");
-		const SelectMgr_SequenceOfFilter & operator=(const SelectMgr_SequenceOfFilter &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_SelectMgr_Filter &T);
-		%feature("autodoc", "1");
-		void Append(SelectMgr_SequenceOfFilter & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_SelectMgr_Filter &T);
-		%feature("autodoc", "1");
-		void Prepend(SelectMgr_SequenceOfFilter & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_Filter &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_Filter &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Filter & First() const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Filter & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Filter & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_SelectMgr_Filter & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_Filter &I);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Filter & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_SelectMgr_Filter & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") SelectMgr_SequenceOfFilter::~SelectMgr_SequenceOfFilter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend SelectMgr_SequenceOfFilter {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
 class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
 	public:
@@ -1709,6 +1644,71 @@ def __del__(self):
 %}
 
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor SelectMgr_SequenceOfFilter;
+class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		SelectMgr_SequenceOfFilter();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const SelectMgr_SequenceOfFilter & Assign(const SelectMgr_SequenceOfFilter &Other);
+		%feature("autodoc", "1");
+		const SelectMgr_SequenceOfFilter & operator=(const SelectMgr_SequenceOfFilter &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_SelectMgr_Filter &T);
+		%feature("autodoc", "1");
+		void Append(SelectMgr_SequenceOfFilter & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_SelectMgr_Filter &T);
+		%feature("autodoc", "1");
+		void Prepend(SelectMgr_SequenceOfFilter & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_SelectMgr_Filter &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_SelectMgr_Filter &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Filter & First() const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Filter & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, SelectMgr_SequenceOfFilter & S);
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Filter & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_SelectMgr_Filter & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_SelectMgr_Filter &I);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Filter & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_SelectMgr_Filter & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") SelectMgr_SequenceOfFilter::~SelectMgr_SequenceOfFilter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend SelectMgr_SequenceOfFilter {
 	void _kill_pointed() {
 		delete $self;
 	}

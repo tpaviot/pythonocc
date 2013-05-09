@@ -552,44 +552,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Select3D_SensitivePoint;
-class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
-	public:
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitivePoint();
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitivePoint(const Handle_Select3D_SensitivePoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitivePoint(const Select3D_SensitivePoint *anItem);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitivePoint & operator=(const Handle_Select3D_SensitivePoint &aHandle);
-		%feature("autodoc", "1");
-		Handle_Select3D_SensitivePoint & operator=(const Select3D_SensitivePoint *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Select3D_SensitivePoint DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Select3D_SensitivePoint {
-	Select3D_SensitivePoint* GetObject() {
-	return (Select3D_SensitivePoint*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Select3D_SensitivePoint::~Handle_Select3D_SensitivePoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Select3D_SensitivePoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Select3D_SensitiveSegment;
 class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -622,6 +584,44 @@ def __del__(self):
 %}
 
 %extend Handle_Select3D_SensitiveSegment {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Select3D_SensitivePoint;
+class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
+	public:
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitivePoint();
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitivePoint(const Handle_Select3D_SensitivePoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitivePoint(const Select3D_SensitivePoint *anItem);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitivePoint & operator=(const Handle_Select3D_SensitivePoint &aHandle);
+		%feature("autodoc", "1");
+		Handle_Select3D_SensitivePoint & operator=(const Select3D_SensitivePoint *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Select3D_SensitivePoint DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Select3D_SensitivePoint {
+	Select3D_SensitivePoint* GetObject() {
+	return (Select3D_SensitivePoint*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Select3D_SensitivePoint::~Handle_Select3D_SensitivePoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Select3D_SensitivePoint {
 	void _kill_pointed() {
 		delete $self;
 	}

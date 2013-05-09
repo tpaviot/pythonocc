@@ -27,18 +27,16 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_Viewer_BadValue.hxx>
-#include<Handle_Viewer_View.hxx>
-#include<Handle_Viewer_Viewer.hxx>
-#include<Viewer_BadValue.hxx>
-#include<Viewer_View.hxx>
-#include<Viewer_Viewer.hxx>
+#include<ViewerTest.hxx>
+#include<ViewerTest_DoubleMapIteratorOfDoubleMapOfInteractiveAndName.hxx>
+#include<ViewerTest_DoubleMapNodeOfDoubleMapOfInteractiveAndName.hxx>
+#include<ViewerTest_DoubleMapOfInteractiveAndName.hxx>
+#include<ViewerTest_EventManager.hxx>
+#include<ViewerTest_Tool.hxx>
 
 // Additional headers necessary for compilation.
 
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
 %}

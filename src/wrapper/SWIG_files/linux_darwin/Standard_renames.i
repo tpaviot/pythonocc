@@ -45,11 +45,11 @@ $HeaderURL$
 %rename(DownCast) Handle_Standard_ConstructionError::DownCast;
 %rename(DownCast) Handle_Standard_DimensionMismatch::DownCast;
 %rename(DownCast) Handle_Standard_OutOfMemory::DownCast;
-%rename(DownCast) Handle_Standard_Type::DownCast;
 %rename(DownCast) Handle_Standard_Overflow::DownCast;
 %rename(DownCast) Handle_Standard_NegativeValue::DownCast;
 %rename(DownCast) Handle_Standard_ImmutableObject::DownCast;
 %rename(DownCast) Handle_Standard_Underflow::DownCast;
+%rename(DownCast) Handle_Standard_Type::DownCast;
 %rename(DownCast) Handle_Standard_MultiplyDefined::DownCast;
 %rename(DownCast) Handle_Standard_TooManyUsers::DownCast;
 %rename(Raise) Standard_Failure::Raise;
@@ -63,6 +63,7 @@ $HeaderURL$
 %rename(NewInstance) Standard_RangeError::NewInstance;
 %rename(Raise) Standard_NullValue::Raise;
 %rename(NewInstance) Standard_NullValue::NewInstance;
+%rename(GetCLocale) Standard_CLocaleSentry::GetCLocale;
 %rename(Raise) Standard_NumericError::Raise;
 %rename(NewInstance) Standard_NumericError::NewInstance;
 %rename(Raise) Standard_NoMoreObject::Raise;
@@ -85,6 +86,8 @@ $HeaderURL$
 %rename(NewInstance) Standard_ImmutableObject::NewInstance;
 %rename(Raise) Standard_AbortiveTransaction::Raise;
 %rename(NewInstance) Standard_AbortiveTransaction::NewInstance;
+%rename(Raise) Standard_OutOfMemory::Raise;
+%rename(NewInstance) Standard_OutOfMemory::NewInstance;
 %rename(Raise) Standard_LicenseError::Raise;
 %rename(NewInstance) Standard_LicenseError::NewInstance;
 %rename(Raise) Standard_TooManyUsers::Raise;
@@ -114,5 +117,3 @@ $HeaderURL$
 %rename(NewInstance) Standard_OutOfRange::NewInstance;
 %rename(Raise) Standard_DivideByZero::Raise;
 %rename(NewInstance) Standard_DivideByZero::NewInstance;
-%rename(Raise) Standard_OutOfMemory::Raise;
-%rename(NewInstance) Standard_OutOfMemory::NewInstance;

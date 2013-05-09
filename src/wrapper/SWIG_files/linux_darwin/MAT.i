@@ -361,6 +361,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MAT_TListNodeOfListOfEdge;
+class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge();
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge(const MAT_TListNodeOfListOfEdge *anItem);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge & operator=(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
+		%feature("autodoc", "1");
+		Handle_MAT_TListNodeOfListOfEdge & operator=(const MAT_TListNodeOfListOfEdge *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MAT_TListNodeOfListOfEdge DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MAT_TListNodeOfListOfEdge {
+	MAT_TListNodeOfListOfEdge* GetObject() {
+	return (MAT_TListNodeOfListOfEdge*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MAT_TListNodeOfListOfEdge::~Handle_MAT_TListNodeOfListOfEdge %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MAT_TListNodeOfListOfEdge {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MAT_Graph;
 class Handle_MAT_Graph : public Handle_MMgt_TShared {
 	public:
@@ -545,44 +583,6 @@ def __del__(self):
 %}
 
 %extend Handle_MAT_Arc {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MAT_TListNodeOfListOfEdge;
-class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge();
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge(const MAT_TListNodeOfListOfEdge *anItem);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge & operator=(const Handle_MAT_TListNodeOfListOfEdge &aHandle);
-		%feature("autodoc", "1");
-		Handle_MAT_TListNodeOfListOfEdge & operator=(const MAT_TListNodeOfListOfEdge *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MAT_TListNodeOfListOfEdge DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MAT_TListNodeOfListOfEdge {
-	MAT_TListNodeOfListOfEdge* GetObject() {
-	return (MAT_TListNodeOfListOfEdge*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MAT_TListNodeOfListOfEdge::~Handle_MAT_TListNodeOfListOfEdge %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MAT_TListNodeOfListOfEdge {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1253,6 +1253,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBasicElt;
+class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		MAT_DataMapNodeOfDataMapOfIntegerBasicElt(const Standard_Integer &K, const Handle_MAT_BasicElt &I, const TCollection_MapNodePtr &n);
+		%feature("autodoc","1");
+		%extend {
+				Standard_Integer GetKey() {
+				return (Standard_Integer) $self->Key();
+				}
+		};
+		%feature("autodoc","1");
+		%extend {
+				void SetKey(Standard_Integer value ) {
+				$self->Key()=value;
+				}
+		};
+		%feature("autodoc", "1");
+		Handle_MAT_BasicElt & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
+	Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt GetHandle() {
+	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt*) &$self;
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor MAT_ListOfBisector;
 class MAT_ListOfBisector : public MMgt_TShared {
 	public:
@@ -1332,55 +1381,6 @@ def __del__(self):
 %}
 
 %extend MAT_ListOfBisector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor MAT_DataMapNodeOfDataMapOfIntegerBasicElt;
-class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		MAT_DataMapNodeOfDataMapOfIntegerBasicElt(const Standard_Integer &K, const Handle_MAT_BasicElt &I, const TCollection_MapNodePtr &n);
-		%feature("autodoc","1");
-		%extend {
-				Standard_Integer GetKey() {
-				return (Standard_Integer) $self->Key();
-				}
-		};
-		%feature("autodoc","1");
-		%extend {
-				void SetKey(Standard_Integer value ) {
-				$self->Key()=value;
-				}
-		};
-		%feature("autodoc", "1");
-		Handle_MAT_BasicElt & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
-	Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt GetHandle() {
-	return *(Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt*) &$self;
-	}
-};
-%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") MAT_DataMapNodeOfDataMapOfIntegerBasicElt::~MAT_DataMapNodeOfDataMapOfIntegerBasicElt %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	void _kill_pointed() {
 		delete $self;
 	}

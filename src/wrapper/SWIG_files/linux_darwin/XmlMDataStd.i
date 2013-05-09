@@ -204,44 +204,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XmlMDataStd_ExtStringArrayDriver;
-class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ExtStringArrayDriver();
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ExtStringArrayDriver(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ExtStringArrayDriver(const XmlMDataStd_ExtStringArrayDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const XmlMDataStd_ExtStringArrayDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XmlMDataStd_ExtStringArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XmlMDataStd_ExtStringArrayDriver {
-	XmlMDataStd_ExtStringArrayDriver* GetObject() {
-	return (XmlMDataStd_ExtStringArrayDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XmlMDataStd_ExtStringArrayDriver::~Handle_XmlMDataStd_ExtStringArrayDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XmlMDataStd_ExtStringArrayDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XmlMDataStd_AsciiStringDriver;
 class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -996,6 +958,44 @@ def __del__(self):
 %}
 
 %extend Handle_XmlMDataStd_VariableDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XmlMDataStd_ExtStringArrayDriver;
+class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver();
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver(const XmlMDataStd_ExtStringArrayDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const Handle_XmlMDataStd_ExtStringArrayDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_XmlMDataStd_ExtStringArrayDriver & operator=(const XmlMDataStd_ExtStringArrayDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XmlMDataStd_ExtStringArrayDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XmlMDataStd_ExtStringArrayDriver {
+	XmlMDataStd_ExtStringArrayDriver* GetObject() {
+	return (XmlMDataStd_ExtStringArrayDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XmlMDataStd_ExtStringArrayDriver::~Handle_XmlMDataStd_ExtStringArrayDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XmlMDataStd_ExtStringArrayDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1807,6 +1807,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor XmlMDataStd_ReferenceListDriver;
+class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
+	public:
+		%feature("autodoc", "1");
+		XmlMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDataStd_ReferenceListDriver {
+	Handle_XmlMDataStd_ReferenceListDriver GetHandle() {
+	return *(Handle_XmlMDataStd_ReferenceListDriver*) &$self;
+	}
+};
+%extend XmlMDataStd_ReferenceListDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDataStd_ReferenceListDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlMDataStd_BooleanArrayDriver;
 class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -2006,47 +2047,6 @@ def __del__(self):
 %}
 
 %extend XmlMDataStd_NoteBookDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDataStd_ReferenceListDriver;
-class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
-	public:
-		%feature("autodoc", "1");
-		XmlMDataStd_ReferenceListDriver(const Handle_CDM_MessageDriver &theMessageDriver);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Paste(const XmlObjMgt_Persistent &Source, const Handle_TDF_Attribute &Target, XmlObjMgt_RRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Source, XmlObjMgt_Persistent & Target, XmlObjMgt_SRelocationTable & RelocTable) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDataStd_ReferenceListDriver {
-	Handle_XmlMDataStd_ReferenceListDriver GetHandle() {
-	return *(Handle_XmlMDataStd_ReferenceListDriver*) &$self;
-	}
-};
-%extend XmlMDataStd_ReferenceListDriver {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDataStd_ReferenceListDriver::~XmlMDataStd_ReferenceListDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDataStd_ReferenceListDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

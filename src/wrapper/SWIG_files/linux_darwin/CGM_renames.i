@@ -23,4 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_CGM_Driver::DownCast;

@@ -32,11 +32,11 @@ $HeaderURL$
 %rename(DownCast) Handle_StepData_SelectMember::DownCast;
 %rename(DownCast) Handle_StepData_SelectReal::DownCast;
 %rename(DownCast) Handle_StepData_ECDescr::DownCast;
+%rename(DownCast) Handle_StepData_Protocol::DownCast;
+%rename(DownCast) Handle_StepData_FileProtocol::DownCast;
 %rename(DownCast) Handle_StepData_UndefinedEntity::DownCast;
 %rename(DownCast) Handle_StepData_SelectInt::DownCast;
 %rename(DownCast) Handle_StepData_PDescr::DownCast;
-%rename(DownCast) Handle_StepData_Protocol::DownCast;
-%rename(DownCast) Handle_StepData_FileProtocol::DownCast;
 %rename(DownCast) Handle_StepData_StepModel::DownCast;
 %rename(DownCast) Handle_StepData_StepReaderData::DownCast;
 %rename(DownCast) Handle_StepData_DescrProtocol::DownCast;

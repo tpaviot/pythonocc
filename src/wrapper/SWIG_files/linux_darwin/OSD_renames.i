@@ -98,7 +98,6 @@ $HeaderURL$
 %rename(IsDivisible) OSD::IsDivisible;
 %rename(GetExponent) OSD::GetExponent;
 %rename(GetMantissa) OSD::GetMantissa;
-%rename(UseSETranslator) OSD::UseSETranslator;
 %rename(Raise) OSD_Exception_INVALID_DISPOSITION::Raise;
 %rename(NewInstance) OSD_Exception_INVALID_DISPOSITION::NewInstance;
 %rename(Raise) OSD_Exception_FLT_STACK_CHECK::Raise;

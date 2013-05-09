@@ -1534,69 +1534,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor LocOpe_Builder;
-class LocOpe_Builder {
-	public:
-		%feature("autodoc", "1");
-		LocOpe_Builder();
-		%feature("autodoc", "1");
-		LocOpe_Builder(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		LocOpe_Builder(const TopoDS_Shape S, const TopoDS_Shape Tool);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const TopoDS_Shape Tool);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape Tool, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void Perform(const TopTools_ListOfShape &LShape, const TopTools_ListOfShape &LTool, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void BuildPartsOfTool();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & PartsOfTool() const;
-		%feature("autodoc", "1");
-		void RemovePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void ActivatePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void PerformResult();
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsInvDone() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  ResultingShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  OriginalShape() const;
-		%feature("autodoc", "1");
-		const TopoDS_Shape  Tool() const;
-		%feature("autodoc", "1");
-		const Handle_BOP_HistoryCollector & History() const;
-		%feature("autodoc", "1");
-		void InvalidateParts();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & Edges() const;
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & TgtEdges() const;
-
-};
-%feature("shadow") LocOpe_Builder::~LocOpe_Builder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend LocOpe_Builder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor LocOpe_SequenceOfPntFace;
 class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 	public:

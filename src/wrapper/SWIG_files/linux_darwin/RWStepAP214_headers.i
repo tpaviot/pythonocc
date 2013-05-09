@@ -338,7 +338,6 @@ $HeaderURL$
 #include<Handle_StepAP214_AutoDesignGroupAssignment.hxx>
 #include<Handle_StepAP214_AppliedApprovalAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignPresentedItem.hxx>
-#include<RWStepAP214.hxx>
 #include<Handle_StepAP214_RepItemGroup.hxx>
 #include<Handle_StepAP214_AppliedSecurityClassificationAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignActualDateAssignment.hxx>
@@ -348,6 +347,7 @@ $HeaderURL$
 #include<Handle_StepAP214_AppliedExternalIdentificationAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignSecurityClassificationAssignment.hxx>
 #include<Handle_StepAP214_AppliedOrganizationAssignment.hxx>
+#include<RWStepAP214.hxx>
 #include<Handle_StepAP214_ExternallyDefinedClass.hxx>
 #include<Handle_StepAP214_AutoDesignDateAndPersonAssignment.hxx>
 #include<Handle_StepAP214_AutoDesignActualDateAndTimeAssignment.hxx>

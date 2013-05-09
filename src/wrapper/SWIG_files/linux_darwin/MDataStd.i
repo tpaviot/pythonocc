@@ -204,6 +204,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
+class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver(const Handle_MDataStd_ByteArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver(const MDataStd_ByteArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver & operator=(const Handle_MDataStd_ByteArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_ByteArrayStorageDriver & operator=(const MDataStd_ByteArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDataStd_ByteArrayStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDataStd_ByteArrayStorageDriver {
+	MDataStd_ByteArrayStorageDriver* GetObject() {
+	return (MDataStd_ByteArrayStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDataStd_ByteArrayStorageDriver::~Handle_MDataStd_ByteArrayStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDataStd_ByteArrayStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MDataStd_IntegerListStorageDriver;
 class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -578,44 +616,6 @@ def __del__(self):
 %}
 
 %extend Handle_MDataStd_NoteBookRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MDataStd_RealStorageDriver;
-class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDataStd_RealStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_RealStorageDriver(const Handle_MDataStd_RealStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_RealStorageDriver(const MDataStd_RealStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDataStd_RealStorageDriver & operator=(const Handle_MDataStd_RealStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_RealStorageDriver & operator=(const MDataStd_RealStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDataStd_RealStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDataStd_RealStorageDriver {
-	MDataStd_RealStorageDriver* GetObject() {
-	return (MDataStd_RealStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDataStd_RealStorageDriver::~Handle_MDataStd_RealStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDataStd_RealStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1116,44 +1116,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
-class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntPackedMapRetrievalDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntPackedMapRetrievalDriver(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntPackedMapRetrievalDriver(const MDataStd_IntPackedMapRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const MDataStd_IntPackedMapRetrievalDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDataStd_IntPackedMapRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
-	MDataStd_IntPackedMapRetrievalDriver* GetObject() {
-	return (MDataStd_IntPackedMapRetrievalDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver::~Handle_MDataStd_IntPackedMapRetrievalDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver;
 class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1338,6 +1300,44 @@ def __del__(self):
 %}
 
 %extend Handle_MDataStd_NameStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MDataStd_RealStorageDriver;
+class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver(const Handle_MDataStd_RealStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver(const MDataStd_RealStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver & operator=(const Handle_MDataStd_RealStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_RealStorageDriver & operator=(const MDataStd_RealStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDataStd_RealStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDataStd_RealStorageDriver {
+	MDataStd_RealStorageDriver* GetObject() {
+	return (MDataStd_RealStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDataStd_RealStorageDriver::~Handle_MDataStd_RealStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDataStd_RealStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1914,44 +1914,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
-class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDataStd_ByteArrayStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_ByteArrayStorageDriver(const Handle_MDataStd_ByteArrayStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_ByteArrayStorageDriver(const MDataStd_ByteArrayStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDataStd_ByteArrayStorageDriver & operator=(const Handle_MDataStd_ByteArrayStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_ByteArrayStorageDriver & operator=(const MDataStd_ByteArrayStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDataStd_ByteArrayStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDataStd_ByteArrayStorageDriver {
-	MDataStd_ByteArrayStorageDriver* GetObject() {
-	return (MDataStd_ByteArrayStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDataStd_ByteArrayStorageDriver::~Handle_MDataStd_ByteArrayStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDataStd_ByteArrayStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MDataStd_CommentStorageDriver;
 class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1990,44 +1952,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
-class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntegerArrayStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntegerArrayStorageDriver(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntegerArrayStorageDriver(const MDataStd_IntegerArrayStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const MDataStd_IntegerArrayStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDataStd_IntegerArrayStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDataStd_IntegerArrayStorageDriver {
-	MDataStd_IntegerArrayStorageDriver* GetObject() {
-	return (MDataStd_IntegerArrayStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDataStd_IntegerArrayStorageDriver::~Handle_MDataStd_IntegerArrayStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDataStd_IntegerArrayStorageDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_MDataStd_ReferenceListRetrievalDriver;
 class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -2060,6 +1984,44 @@ def __del__(self):
 %}
 
 %extend Handle_MDataStd_ReferenceListRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
+class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver(const MDataStd_IntegerArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const Handle_MDataStd_IntegerArrayStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntegerArrayStorageDriver & operator=(const MDataStd_IntegerArrayStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDataStd_IntegerArrayStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDataStd_IntegerArrayStorageDriver {
+	MDataStd_IntegerArrayStorageDriver* GetObject() {
+	return (MDataStd_IntegerArrayStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDataStd_IntegerArrayStorageDriver::~Handle_MDataStd_IntegerArrayStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDataStd_IntegerArrayStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2136,6 +2098,44 @@ def __del__(self):
 %}
 
 %extend Handle_MDataStd_ByteArrayRetrievalDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
+class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver();
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver(const MDataStd_IntPackedMapRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const Handle_MDataStd_IntPackedMapRetrievalDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDataStd_IntPackedMapRetrievalDriver & operator=(const MDataStd_IntPackedMapRetrievalDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDataStd_IntPackedMapRetrievalDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
+	MDataStd_IntPackedMapRetrievalDriver* GetObject() {
+	return (MDataStd_IntPackedMapRetrievalDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDataStd_IntPackedMapRetrievalDriver::~Handle_MDataStd_IntPackedMapRetrievalDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDataStd_IntPackedMapRetrievalDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

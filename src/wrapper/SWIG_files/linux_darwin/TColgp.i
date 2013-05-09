@@ -2175,61 +2175,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TColgp_HArray1OfVec;
-class TColgp_HArray1OfVec : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec V);
-		%feature("autodoc", "1");
-		void Init(const gp_Vec V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const gp_Vec Value);
-		%feature("autodoc", "1");
-		const gp_Vec  Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		gp_Vec  ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const TColgp_Array1OfVec & Array1() const;
-		%feature("autodoc", "1");
-		TColgp_Array1OfVec & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TColgp_HArray1OfVec {
-	Handle_TColgp_HArray1OfVec GetHandle() {
-	return *(Handle_TColgp_HArray1OfVec*) &$self;
-	}
-};
-%extend TColgp_HArray1OfVec {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TColgp_HArray1OfVec::~TColgp_HArray1OfVec %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TColgp_HArray1OfVec {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfXY;
 class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 	public:
@@ -4954,6 +4899,61 @@ def __del__(self):
 %}
 
 %extend TColgp_HSequenceOfPnt {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TColgp_HArray1OfVec;
+class TColgp_HArray1OfVec : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		TColgp_HArray1OfVec(const Standard_Integer Low, const Standard_Integer Up, const gp_Vec V);
+		%feature("autodoc", "1");
+		void Init(const gp_Vec V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const gp_Vec Value);
+		%feature("autodoc", "1");
+		const gp_Vec  Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		gp_Vec  ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const TColgp_Array1OfVec & Array1() const;
+		%feature("autodoc", "1");
+		TColgp_Array1OfVec & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TColgp_HArray1OfVec {
+	Handle_TColgp_HArray1OfVec GetHandle() {
+	return *(Handle_TColgp_HArray1OfVec*) &$self;
+	}
+};
+%extend TColgp_HArray1OfVec {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TColgp_HArray1OfVec::~TColgp_HArray1OfVec %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TColgp_HArray1OfVec {
 	void _kill_pointed() {
 		delete $self;
 	}

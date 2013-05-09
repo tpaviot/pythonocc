@@ -471,6 +471,204 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopOpeBRepBuild_AreaBuilder;
+class TopOpeBRepBuild_AreaBuilder {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_AreaBuilder();
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_AreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
+		%feature("autodoc", "1");
+		Standard_Integer InitArea();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreArea() const;
+		%feature("autodoc", "1");
+		void NextArea();
+		%feature("autodoc", "1");
+		Standard_Integer InitLoop();
+		%feature("autodoc", "1");
+		Standard_Boolean MoreLoop() const;
+		%feature("autodoc", "1");
+		void NextLoop();
+		%feature("autodoc", "1");
+		const Handle_TopOpeBRepBuild_Loop & Loop() const;
+		%feature("autodoc", "1");
+		virtual		void ADD_Loop_TO_LISTOFLoop(const Handle_TopOpeBRepBuild_Loop &L, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s=0) const;
+		%feature("autodoc", "1");
+		virtual		void REM_Loop_FROM_LISTOFLoop(TopOpeBRepBuild_ListIteratorOfListOfLoop & ITLOL, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s=0) const;
+		%feature("autodoc", "1");
+		virtual		void ADD_LISTOFLoop_TO_LISTOFLoop(TopOpeBRepBuild_ListOfLoop & LOL1, TopOpeBRepBuild_ListOfLoop & LOL2, const Standard_Address s=0, const Standard_Address s1=0, const Standard_Address s2=0) const;
+
+};
+%feature("shadow") TopOpeBRepBuild_AreaBuilder::~TopOpeBRepBuild_AreaBuilder %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_AreaBuilder {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape;
+class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape();
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape(const TopOpeBRepBuild_ListOfShapeListOfShape &L);
+		%feature("autodoc", "1");
+		void Initialize(const TopOpeBRepBuild_ListOfShapeListOfShape &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ShapeListOfShape & Value() const;
+
+};
+%feature("shadow") TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape::~TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_ListOfLoop;
+class TopOpeBRepBuild_ListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfLoop();
+		%feature("autodoc", "1");
+		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I);
+		%feature("autodoc", "1");
+		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Append(TopOpeBRepBuild_ListOfLoop & Other);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & First() const;
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepBuild_Loop & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
+
+};
+%feature("shadow") TopOpeBRepBuild_ListOfLoop::~TopOpeBRepBuild_ListOfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_ListOfLoop {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_LoopClassifier;
+class TopOpeBRepBuild_LoopClassifier {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		TopAbs_State Compare(const Handle_TopOpeBRepBuild_Loop &L1, const Handle_TopOpeBRepBuild_Loop &L2);
+
+};
+%feature("shadow") TopOpeBRepBuild_LoopClassifier::~TopOpeBRepBuild_LoopClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_LoopClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_PaveClassifier;
+class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_PaveClassifier(const TopoDS_Shape E);
+		%feature("autodoc", "1");
+		void SetFirstParameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		void ClosedVertices(const Standard_Boolean B);
+		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol) -> Standard_Integer");
+
+		static		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
+
+};
+%feature("shadow") TopOpeBRepBuild_PaveClassifier::~TopOpeBRepBuild_PaveClassifier %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_PaveClassifier {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopOpeBRepBuild_Loop;
 class TopOpeBRepBuild_Loop : public MMgt_TShared {
 	public:
@@ -561,143 +759,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_Pave {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_AreaBuilder;
-class TopOpeBRepBuild_AreaBuilder {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_AreaBuilder();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_AreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		void InitAreaBuilder(TopOpeBRepBuild_LoopSet & LS, TopOpeBRepBuild_LoopClassifier & LC, const Standard_Boolean ForceClass=0);
-		%feature("autodoc", "1");
-		Standard_Integer InitArea();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreArea() const;
-		%feature("autodoc", "1");
-		void NextArea();
-		%feature("autodoc", "1");
-		Standard_Integer InitLoop();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreLoop() const;
-		%feature("autodoc", "1");
-		void NextLoop();
-		%feature("autodoc", "1");
-		const Handle_TopOpeBRepBuild_Loop & Loop() const;
-		%feature("autodoc", "1");
-		virtual		void ADD_Loop_TO_LISTOFLoop(const Handle_TopOpeBRepBuild_Loop &L, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s=0) const;
-		%feature("autodoc", "1");
-		virtual		void REM_Loop_FROM_LISTOFLoop(TopOpeBRepBuild_ListIteratorOfListOfLoop & ITLOL, TopOpeBRepBuild_ListOfLoop & LOL, const Standard_Address s=0) const;
-		%feature("autodoc", "1");
-		virtual		void ADD_LISTOFLoop_TO_LISTOFLoop(TopOpeBRepBuild_ListOfLoop & LOL1, TopOpeBRepBuild_ListOfLoop & LOL2, const Standard_Address s=0, const Standard_Address s1=0, const Standard_Address s2=0) const;
-
-};
-%feature("shadow") TopOpeBRepBuild_AreaBuilder::~TopOpeBRepBuild_AreaBuilder %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_AreaBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape;
-class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape(const TopOpeBRepBuild_ListOfShapeListOfShape &L);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepBuild_ListOfShapeListOfShape &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ShapeListOfShape & Value() const;
-
-};
-%feature("shadow") TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape::~TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_LoopClassifier;
-class TopOpeBRepBuild_LoopClassifier {
-	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
-		%feature("autodoc", "1");
-		virtual		TopAbs_State Compare(const Handle_TopOpeBRepBuild_Loop &L1, const Handle_TopOpeBRepBuild_Loop &L2);
-
-};
-%feature("shadow") TopOpeBRepBuild_LoopClassifier::~TopOpeBRepBuild_LoopClassifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_LoopClassifier {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_PaveClassifier;
-class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_PaveClassifier(const TopoDS_Shape E);
-		%feature("autodoc", "1");
-		void SetFirstParameter(const Standard_Real P);
-		%feature("autodoc", "1");
-		void ClosedVertices(const Standard_Boolean B);
-		%feature("autodoc","AdjustCase(Standard_Real p1, TopAbs_Orientation o, Standard_Real first, Standard_Real period, Standard_Real tol) -> Standard_Integer");
-
-		static		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
-
-};
-%feature("shadow") TopOpeBRepBuild_PaveClassifier::~TopOpeBRepBuild_PaveClassifier %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_PaveClassifier {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1485,6 +1546,67 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TopOpeBRepBuild_ListOfListOfLoop;
+class TopOpeBRepBuild_ListOfListOfLoop {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfListOfLoop();
+		%feature("autodoc", "1");
+		void Assign(const TopOpeBRepBuild_ListOfListOfLoop &Other);
+		%feature("autodoc", "1");
+		void operator=(const TopOpeBRepBuild_ListOfListOfLoop &Other);
+		%feature("autodoc", "1");
+		Standard_Integer Extent() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		void Prepend(const TopOpeBRepBuild_ListOfLoop &I);
+		%feature("autodoc", "1");
+		void Prepend(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Prepend(TopOpeBRepBuild_ListOfListOfLoop & Other);
+		%feature("autodoc", "1");
+		void Append(const TopOpeBRepBuild_ListOfLoop &I);
+		%feature("autodoc", "1");
+		void Append(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & theIt);
+		%feature("autodoc", "1");
+		void Append(TopOpeBRepBuild_ListOfListOfLoop & Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfLoop & First() const;
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfLoop & Last() const;
+		%feature("autodoc", "1");
+		void RemoveFirst();
+		%feature("autodoc", "1");
+		void Remove(TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertBefore(TopOpeBRepBuild_ListOfListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
+		%feature("autodoc", "1");
+		void InsertAfter(TopOpeBRepBuild_ListOfListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
+
+};
+%feature("shadow") TopOpeBRepBuild_ListOfListOfLoop::~TopOpeBRepBuild_ListOfListOfLoop %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_ListOfListOfLoop {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2436,67 +2558,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_ListOfLoop;
-class TopOpeBRepBuild_ListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfLoop();
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepBuild_ListOfLoop &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I);
-		%feature("autodoc", "1");
-		void Append(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Append(TopOpeBRepBuild_ListOfLoop & Other);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & First() const;
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepBuild_Loop & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const Handle_TopOpeBRepBuild_Loop &I, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopOpeBRepBuild_ListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfLoop & It);
-
-};
-%feature("shadow") TopOpeBRepBuild_ListOfLoop::~TopOpeBRepBuild_ListOfLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_ListOfLoop {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_ShellFaceSet;
 class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
 	public:
@@ -3036,67 +3097,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepBuild_BlockBuilder {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepBuild_ListOfListOfLoop;
-class TopOpeBRepBuild_ListOfListOfLoop {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfListOfLoop();
-		%feature("autodoc", "1");
-		void Assign(const TopOpeBRepBuild_ListOfListOfLoop &Other);
-		%feature("autodoc", "1");
-		void operator=(const TopOpeBRepBuild_ListOfListOfLoop &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Extent() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		void Prepend(const TopOpeBRepBuild_ListOfLoop &I);
-		%feature("autodoc", "1");
-		void Prepend(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Prepend(TopOpeBRepBuild_ListOfListOfLoop & Other);
-		%feature("autodoc", "1");
-		void Append(const TopOpeBRepBuild_ListOfLoop &I);
-		%feature("autodoc", "1");
-		void Append(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & theIt);
-		%feature("autodoc", "1");
-		void Append(TopOpeBRepBuild_ListOfListOfLoop & Other);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfLoop & First() const;
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfLoop & Last() const;
-		%feature("autodoc", "1");
-		void RemoveFirst();
-		%feature("autodoc", "1");
-		void Remove(TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertBefore(TopOpeBRepBuild_ListOfListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(const TopOpeBRepBuild_ListOfLoop &I, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
-		%feature("autodoc", "1");
-		void InsertAfter(TopOpeBRepBuild_ListOfListOfLoop & Other, TopOpeBRepBuild_ListIteratorOfListOfListOfLoop & It);
-
-};
-%feature("shadow") TopOpeBRepBuild_ListOfListOfLoop::~TopOpeBRepBuild_ListOfListOfLoop %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_ListOfListOfLoop {
 	void _kill_pointed() {
 		delete $self;
 	}

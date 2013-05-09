@@ -58,6 +58,7 @@ $HeaderURL$
 #include <Handle_Standard_TypeMismatch.hxx>
 #include <Handle_Standard_Underflow.hxx>
 #include <Handle_V3d_AmbientLight.hxx>
+#include <Handle_V3d_BadValue.hxx>
 #include <Handle_V3d_CircularGrid.hxx>
 #include <Handle_V3d_ColorScale.hxx>
 #include <Handle_V3d_ColorScaleLayerItem.hxx>
@@ -128,12 +129,16 @@ $HeaderURL$
 #include <NCollection_SparseArray.hxx>
 #include <NCollection_SparseArrayBase.hxx>
 #include <NCollection_Stack.hxx>
+#include <NCollection_StdAllocator.hxx>
 #include <NCollection_StdBase.hxx>
+#include <NCollection_String.hxx>
 #include <NCollection_TListIterator.hxx>
 #include <NCollection_TListNode.hxx>
 #include <NCollection_TypeDef.hxx>
 #include <NCollection_UBTree.hxx>
 #include <NCollection_UBTreeFiller.hxx>
+#include <NCollection_UtfIterator.hxx>
+#include <NCollection_UtfString.hxx>
 #include <NCollection_Vector.hxx>
 #include <Quantity_AbsorbedDose.hxx>
 #include <Quantity_Acceleration.hxx>
@@ -235,6 +240,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -309,6 +315,7 @@ $HeaderURL$
 #include <Standard_ctype.hxx>
 #include <Standard_math.hxx>
 #include <V3d_AmbientLight.hxx>
+#include <V3d_BadValue.hxx>
 #include <V3d_CircularGrid.hxx>
 #include <V3d_ColorScale.hxx>
 #include <V3d_ColorScaleLayerItem.hxx>

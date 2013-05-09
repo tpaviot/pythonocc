@@ -30,10 +30,10 @@ $HeaderURL$
 %rename(DownCast) Handle_Geom2d_Vector::DownCast;
 %rename(DownCast) Handle_Geom2d_BoundedCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Parabola::DownCast;
-%rename(DownCast) Handle_Geom2d_OffsetCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Transformation::DownCast;
 %rename(DownCast) Handle_Geom2d_UndefinedDerivative::DownCast;
 %rename(DownCast) Handle_Geom2d_Point::DownCast;
+%rename(DownCast) Handle_Geom2d_OffsetCurve::DownCast;
 %rename(DownCast) Handle_Geom2d_Hyperbola::DownCast;
 %rename(DownCast) Handle_Geom2d_Ellipse::DownCast;
 %rename(DownCast) Handle_Geom2d_BezierCurve::DownCast;

@@ -629,6 +629,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDataStd_IntPackedMap;
+class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap();
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_IntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_IntPackedMap {
+	TDataStd_IntPackedMap* GetObject() {
+	return (TDataStd_IntPackedMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_IntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
 class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 	public:
@@ -737,44 +775,6 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_IntegerList {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntPackedMap;
-class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_DeltaOnModification {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap();
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_DeltaOnModificationOfIntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
-	TDataStd_DeltaOnModificationOfIntPackedMap* GetObject() {
-	return (TDataStd_DeltaOnModificationOfIntPackedMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntPackedMap::~Handle_TDataStd_DeltaOnModificationOfIntPackedMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -971,6 +971,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntPackedMap;
+class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_DeltaOnModification {
+	public:
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap();
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const Handle_TDataStd_DeltaOnModificationOfIntPackedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_TDataStd_DeltaOnModificationOfIntPackedMap & operator=(const TDataStd_DeltaOnModificationOfIntPackedMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_DeltaOnModificationOfIntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
+	TDataStd_DeltaOnModificationOfIntPackedMap* GetObject() {
+	return (TDataStd_DeltaOnModificationOfIntPackedMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TDataStd_DeltaOnModificationOfIntPackedMap::~Handle_TDataStd_DeltaOnModificationOfIntPackedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TDataStd_Expression;
 class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	public:
@@ -1155,44 +1193,6 @@ def __del__(self):
 %}
 
 %extend Handle_TDataStd_BooleanArray {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TDataStd_IntPackedMap;
-class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap();
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const Handle_TDataStd_IntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap(const TDataStd_IntPackedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap & operator=(const Handle_TDataStd_IntPackedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_TDataStd_IntPackedMap & operator=(const TDataStd_IntPackedMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_IntPackedMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TDataStd_IntPackedMap {
-	TDataStd_IntPackedMap* GetObject() {
-	return (TDataStd_IntPackedMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TDataStd_IntPackedMap::~Handle_TDataStd_IntPackedMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TDataStd_IntPackedMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3399,67 +3399,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_Integer;
-class TDataStd_Integer : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Integer Set(const TDF_Label &label, const Standard_Integer value);
-		%feature("autodoc", "1");
-		void Set(const Standard_Integer V);
-		%feature("autodoc", "1");
-		Standard_Integer Get() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsCaptured() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &With);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		TDataStd_Integer();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Integer {
-	Handle_TDataStd_Integer GetHandle() {
-	return *(Handle_TDataStd_Integer*) &$self;
-	}
-};
-%extend TDataStd_Integer {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Integer {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
 class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 	public:
@@ -5280,6 +5219,67 @@ def __del__(self):
 %}
 
 %extend TDataStd_ExtStringArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Integer;
+class TDataStd_Integer : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Integer Set(const TDF_Label &label, const Standard_Integer value);
+		%feature("autodoc", "1");
+		void Set(const Standard_Integer V);
+		%feature("autodoc", "1");
+		Standard_Integer Get() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsCaptured() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &With);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		TDataStd_Integer();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Integer {
+	Handle_TDataStd_Integer GetHandle() {
+	return *(Handle_TDataStd_Integer*) &$self;
+	}
+};
+%extend TDataStd_Integer {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Integer::~TDataStd_Integer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Integer {
 	void _kill_pointed() {
 		delete $self;
 	}

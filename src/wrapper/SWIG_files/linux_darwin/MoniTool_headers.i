@@ -84,11 +84,11 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<TopoDS_Shape.hxx>
-#include<Handle_Standard_Type.hxx>
+#include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 #include<TCollection_AsciiString.hxx>
+#include<Handle_Standard_Type.hxx>
 #include<Handle_Message_Messenger.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
-#include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 #include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_XY.hxx>

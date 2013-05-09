@@ -964,44 +964,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_IGESSelect_Dumper;
-class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESSelect_Dumper();
-		%feature("autodoc", "1");
-		Handle_IGESSelect_Dumper(const Handle_IGESSelect_Dumper &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_Dumper(const IGESSelect_Dumper *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_Dumper & operator=(const Handle_IGESSelect_Dumper &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESSelect_Dumper & operator=(const IGESSelect_Dumper *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESSelect_Dumper DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESSelect_Dumper {
-	IGESSelect_Dumper* GetObject() {
-	return (IGESSelect_Dumper*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESSelect_Dumper::~Handle_IGESSelect_Dumper %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESSelect_Dumper {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_IGESSelect_CounterOfLevelNumber;
 class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounter {
 	public:
@@ -1148,6 +1110,44 @@ def __del__(self):
 %}
 
 %extend Handle_IGESSelect_SelectBasicGeom {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_IGESSelect_Dumper;
+class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESSelect_Dumper();
+		%feature("autodoc", "1");
+		Handle_IGESSelect_Dumper(const Handle_IGESSelect_Dumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_Dumper(const IGESSelect_Dumper *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_Dumper & operator=(const Handle_IGESSelect_Dumper &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESSelect_Dumper & operator=(const IGESSelect_Dumper *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESSelect_Dumper DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESSelect_Dumper {
+	IGESSelect_Dumper* GetObject() {
+	return (IGESSelect_Dumper*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESSelect_Dumper::~Handle_IGESSelect_Dumper %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESSelect_Dumper {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1923,45 +1923,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSelect_SignStatus;
-class IGESSelect_SignStatus : public IFSelect_Signature {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_SignStatus();
-		%feature("autodoc", "1");
-		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_SignStatus {
-	Handle_IGESSelect_SignStatus GetHandle() {
-	return *(Handle_IGESSelect_SignStatus*) &$self;
-	}
-};
-%extend IGESSelect_SignStatus {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_SignStatus {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESSelect_UpdateCreationDate;
 class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	public:
@@ -2083,6 +2044,45 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESSelect_ComputeStatus;
+class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_ComputeStatus();
+		%feature("autodoc", "1");
+		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		TCollection_AsciiString Label() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_ComputeStatus {
+	Handle_IGESSelect_ComputeStatus GetHandle() {
+	return *(Handle_IGESSelect_ComputeStatus*) &$self;
+	}
+};
+%extend IGESSelect_ComputeStatus {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_ComputeStatus {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESSelect_IGESTypeForm;
 class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 	public:
@@ -2116,6 +2116,45 @@ def __del__(self):
 %}
 
 %extend IGESSelect_IGESTypeForm {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSelect_SignStatus;
+class IGESSelect_SignStatus : public IFSelect_Signature {
+	public:
+		%feature("autodoc", "1");
+		IGESSelect_SignStatus();
+		%feature("autodoc", "1");
+		virtual		char * Value(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Matches(const Handle_Standard_Transient &ent, const Handle_Interface_InterfaceModel &model, const TCollection_AsciiString &text, const Standard_Boolean exact) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSelect_SignStatus {
+	Handle_IGESSelect_SignStatus GetHandle() {
+	return *(Handle_IGESSelect_SignStatus*) &$self;
+	}
+};
+%extend IGESSelect_SignStatus {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSelect_SignStatus::~IGESSelect_SignStatus %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSelect_SignStatus {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3106,45 +3145,6 @@ def __del__(self):
 %}
 
 %extend IGESSelect_FloatFormat {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSelect_ComputeStatus;
-class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
-	public:
-		%feature("autodoc", "1");
-		IGESSelect_ComputeStatus();
-		%feature("autodoc", "1");
-		virtual		void Performing(IFSelect_ContextModif & ctx, const Handle_IGESData_IGESModel &target, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		TCollection_AsciiString Label() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSelect_ComputeStatus {
-	Handle_IGESSelect_ComputeStatus GetHandle() {
-	return *(Handle_IGESSelect_ComputeStatus*) &$self;
-	}
-};
-%extend IGESSelect_ComputeStatus {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IGESSelect_ComputeStatus::~IGESSelect_ComputeStatus %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSelect_ComputeStatus {
 	void _kill_pointed() {
 		delete $self;
 	}

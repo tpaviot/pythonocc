@@ -52,11 +52,48 @@ $HeaderURL$
 
 
 
+%nodefaultctor BRepAlgoAPI_Check;
+class BRepAlgoAPI_Check {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgoAPI_Check();
+		%feature("autodoc", "1");
+		BRepAlgoAPI_Check(const TopoDS_Shape theS, const Standard_Boolean bTestSE=1, const Standard_Boolean bTestSI=1);
+		%feature("autodoc", "1");
+		BRepAlgoAPI_Check(const TopoDS_Shape theS1, const TopoDS_Shape theS2, const BOPAlgo_Operation theOp=BOPAlgo_UNKNOWN, const Standard_Boolean bTestSE=1, const Standard_Boolean bTestSI=1);
+		%feature("autodoc", "1");
+		void SetData(const TopoDS_Shape theS, const Standard_Boolean bTestSE=1, const Standard_Boolean bTestSI=1);
+		%feature("autodoc", "1");
+		void SetData(const TopoDS_Shape theS1, const TopoDS_Shape theS2, const BOPAlgo_Operation theOp=BOPAlgo_UNKNOWN, const Standard_Boolean bTestSE=1, const Standard_Boolean bTestSI=1);
+		%feature("autodoc", "1");
+		void Perform();
+		%feature("autodoc", "1");
+		Standard_Boolean IsValid();
+		%feature("autodoc", "1");
+		const BOPAlgo_ListOfCheckResult & Result();
+
+};
+%feature("shadow") BRepAlgoAPI_Check::~BRepAlgoAPI_Check %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgoAPI_Check {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepAlgoAPI_BooleanOperation;
 class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		void SetOperation(const BOP_Operation anOp);
+		void SetOperation(const BOPAlgo_Operation anOp);
 		%feature("autodoc", "1");
 		virtual		void Build();
 		%feature("autodoc", "1");
@@ -64,7 +101,7 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		const TopoDS_Shape  Shape2() const;
 		%feature("autodoc", "1");
-		BOP_Operation Operation() const;
+		BOPAlgo_Operation Operation() const;
 		%feature("autodoc", "1");
 		Standard_Boolean FuseEdges() const;
 		%feature("autodoc", "1");
@@ -118,7 +155,7 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF);
+		BRepAlgoAPI_Fuse(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPAlgo_PaveFiller &aDSF);
 
 };
 %feature("shadow") BRepAlgoAPI_Fuse::~BRepAlgoAPI_Fuse %{
@@ -137,11 +174,36 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepAlgoAPI;
+class BRepAlgoAPI {
+	public:
+		%feature("autodoc", "1");
+		BRepAlgoAPI();
+		%feature("autodoc", "1");
+		static		void DumpOper(const char * theFilePath, const TopoDS_Shape theShape1, const TopoDS_Shape theShape2, const TopoDS_Shape theResult, const BOPAlgo_Operation theOperation, const Standard_Boolean isNonValidArgs);
+
+};
+%feature("shadow") BRepAlgoAPI::~BRepAlgoAPI %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepAlgoAPI {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepAlgoAPI_Section;
 class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 	public:
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Section(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean PerformNow=1);
+		BRepAlgoAPI_Section(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPAlgo_PaveFiller &aDSF, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Section(const TopoDS_Shape Sh1, const TopoDS_Shape Sh2, const Standard_Boolean PerformNow=1);
 		%feature("autodoc", "1");
@@ -176,10 +238,6 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 		Standard_Boolean HasAncestorFaceOn1(const TopoDS_Shape E, TopoDS_Shape & F) const;
 		%feature("autodoc", "1");
 		Standard_Boolean HasAncestorFaceOn2(const TopoDS_Shape E, TopoDS_Shape & F) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn1(const TopoDS_Shape E) const;
-		%feature("autodoc", "1");
-		Handle_Geom2d_Curve PCurveOn2(const TopoDS_Shape E) const;
 
 };
 %feature("shadow") BRepAlgoAPI_Section::~BRepAlgoAPI_Section %{
@@ -204,7 +262,7 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF, const Standard_Boolean bFWD=1);
+		BRepAlgoAPI_Cut(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPAlgo_PaveFiller &aDSF, const Standard_Boolean bFWD=1);
 
 };
 %feature("shadow") BRepAlgoAPI_Cut::~BRepAlgoAPI_Cut %{
@@ -229,7 +287,7 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 		%feature("autodoc", "1");
 		BRepAlgoAPI_Common(const TopoDS_Shape S1, const TopoDS_Shape S2);
 		%feature("autodoc", "1");
-		BRepAlgoAPI_Common(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPTools_DSFiller &aDSF);
+		BRepAlgoAPI_Common(const TopoDS_Shape S1, const TopoDS_Shape S2, const BOPAlgo_PaveFiller &aDSF);
 
 };
 %feature("shadow") BRepAlgoAPI_Common::~BRepAlgoAPI_Common %{

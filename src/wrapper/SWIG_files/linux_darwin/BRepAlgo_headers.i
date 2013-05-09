@@ -51,7 +51,6 @@ $HeaderURL$
 #include<BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger.hxx>
 #include<BRepAlgo_SequenceOfSequenceOfInteger.hxx>
 #include<BRepAlgo_Tool.hxx>
-#include<BRepAlgo_TopOpe.hxx>
 #include<Handle_BRepAlgo_AsDes.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean.hxx>
 #include<Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference.hxx>
@@ -114,12 +113,16 @@ $HeaderURL$
 #include<NCollection_SparseArray.hxx>
 #include<NCollection_SparseArrayBase.hxx>
 #include<NCollection_Stack.hxx>
+#include<NCollection_StdAllocator.hxx>
 #include<NCollection_StdBase.hxx>
+#include<NCollection_String.hxx>
 #include<NCollection_TListIterator.hxx>
 #include<NCollection_TListNode.hxx>
 #include<NCollection_TypeDef.hxx>
 #include<NCollection_UBTree.hxx>
 #include<NCollection_UBTreeFiller.hxx>
+#include<NCollection_UtfIterator.hxx>
+#include<NCollection_UtfString.hxx>
 #include<NCollection_Vector.hxx>
 
 // Needed headers necessary for compilation.
@@ -129,10 +132,10 @@ $HeaderURL$
 #include<TopTools_MapOfShape.hxx>
 #include<BRepAlgo.hxx>
 #include<TopoDS_Wire.hxx>
+#include<TopoDS_Edge.hxx>
 #include<TopTools_ListOfShape.hxx>
 #include<Handle_TopOpeBRepBuild_HBuilder.hxx>
 #include<TopoDS_Face.hxx>
-#include<TopoDS_Edge.hxx>
 #include<TopTools_DataMapOfShapeShape.hxx>
 #include<Handle_TopOpeBRepDS_Interference.hxx>
 #include<Adaptor3d_Curve.hxx>
@@ -140,6 +143,5 @@ $HeaderURL$
 #include<Handle_TopOpeBRepDS_HDataStructure.hxx>
 #include<gp_Pln.hxx>
 #include<Handle_Geom_Surface.hxx>
-#include<Handle_Geom2d_Curve.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
 %}

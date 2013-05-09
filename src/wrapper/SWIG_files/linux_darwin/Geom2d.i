@@ -318,44 +318,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Geom2d_OffsetCurve;
-class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
-	public:
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve();
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
-		%feature("autodoc", "1");
-		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Geom2d_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Geom2d_OffsetCurve {
-	Geom2d_OffsetCurve* GetObject() {
-	return (Geom2d_OffsetCurve*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Geom2d_OffsetCurve::~Handle_Geom2d_OffsetCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Geom2d_OffsetCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Geom2d_Transformation;
 class Handle_Geom2d_Transformation : public Handle_MMgt_TShared {
 	public:
@@ -464,6 +426,44 @@ def __del__(self):
 %}
 
 %extend Handle_Geom2d_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Geom2d_OffsetCurve;
+class Handle_Geom2d_OffsetCurve : public Handle_Geom2d_Curve {
+	public:
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve();
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve(const Handle_Geom2d_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve(const Geom2d_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve & operator=(const Handle_Geom2d_OffsetCurve &aHandle);
+		%feature("autodoc", "1");
+		Handle_Geom2d_OffsetCurve & operator=(const Geom2d_OffsetCurve *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Geom2d_OffsetCurve DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Geom2d_OffsetCurve {
+	Geom2d_OffsetCurve* GetObject() {
+	return (Geom2d_OffsetCurve*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Geom2d_OffsetCurve::~Handle_Geom2d_OffsetCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Geom2d_OffsetCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1004,6 +1004,99 @@ def __del__(self):
 };
 
 
+%nodefaultctor Geom2d_Point;
+class Geom2d_Point : public Geom2d_Geometry {
+	public:
+		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
+
+		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
+		%feature("autodoc", "1");
+		virtual		gp_Pnt2d Pnt2d() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real X() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Real Y() const;
+		%feature("autodoc", "1");
+		Standard_Real Distance(const Handle_Geom2d_Point &Other) const;
+		%feature("autodoc", "1");
+		Standard_Real SquareDistance(const Handle_Geom2d_Point &Other) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Geom2d_Point {
+	Handle_Geom2d_Point GetHandle() {
+	return *(Handle_Geom2d_Point*) &$self;
+	}
+};
+%extend Geom2d_Point {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Geom2d_Point::~Geom2d_Point %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2d_Point {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Geom2d_CartesianPoint;
+class Geom2d_CartesianPoint : public Geom2d_Point {
+	public:
+		%feature("autodoc", "1");
+		Geom2d_CartesianPoint(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		Geom2d_CartesianPoint(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		void SetCoord(const Standard_Real X, const Standard_Real Y);
+		%feature("autodoc", "1");
+		void SetPnt2d(const gp_Pnt2d P);
+		%feature("autodoc", "1");
+		void SetX(const Standard_Real X);
+		%feature("autodoc", "1");
+		void SetY(const Standard_Real Y);
+		%feature("autodoc", "1");
+		virtual		void Transform(const gp_Trsf2d T);
+		%feature("autodoc", "1");
+		virtual		Handle_Geom2d_Geometry Copy() const;
+
+};
+%extend Geom2d_CartesianPoint {
+	Handle_Geom2d_CartesianPoint GetHandle() {
+	return *(Handle_Geom2d_CartesianPoint*) &$self;
+	}
+};
+%extend Geom2d_CartesianPoint {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Geom2d_CartesianPoint::~Geom2d_CartesianPoint %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Geom2d_CartesianPoint {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Geom2d_UndefinedValue;
 class Geom2d_UndefinedValue : public Standard_DomainError {
 	public:
@@ -1169,52 +1262,6 @@ def __del__(self):
 %}
 
 %extend Geom2d_Line {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2d_Point;
-class Geom2d_Point : public Geom2d_Geometry {
-	public:
-		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt2d Pnt2d() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real X() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		Standard_Real Distance(const Handle_Geom2d_Point &Other) const;
-		%feature("autodoc", "1");
-		Standard_Real SquareDistance(const Handle_Geom2d_Point &Other) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_Point {
-	Handle_Geom2d_Point GetHandle() {
-	return *(Handle_Geom2d_Point*) &$self;
-	}
-};
-%extend Geom2d_Point {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Geom2d_Point::~Geom2d_Point %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2d_Point {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1484,64 +1531,6 @@ def __del__(self):
 %}
 
 %extend Geom2d_Transformation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Geom2d_CartesianPoint;
-class Geom2d_CartesianPoint : public Geom2d_Point {
-	public:
-		%feature("autodoc", "1");
-		Geom2d_CartesianPoint(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		Geom2d_CartesianPoint(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real X, const Standard_Real Y);
-		%feature("autodoc", "1");
-		void SetPnt2d(const gp_Pnt2d P);
-		%feature("autodoc", "1");
-		void SetX(const Standard_Real X);
-		%feature("autodoc", "1");
-		void SetY(const Standard_Real Y);
-		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		gp_Pnt2d Pnt2d() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real X() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Real Y() const;
-		%feature("autodoc", "1");
-		virtual		void Transform(const gp_Trsf2d T);
-		%feature("autodoc", "1");
-		virtual		Handle_Geom2d_Geometry Copy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Geom2d_CartesianPoint {
-	Handle_Geom2d_CartesianPoint GetHandle() {
-	return *(Handle_Geom2d_CartesianPoint*) &$self;
-	}
-};
-%extend Geom2d_CartesianPoint {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Geom2d_CartesianPoint::~Geom2d_CartesianPoint %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Geom2d_CartesianPoint {
 	void _kill_pointed() {
 		delete $self;
 	}

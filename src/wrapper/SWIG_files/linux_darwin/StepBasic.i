@@ -1862,44 +1862,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepBasic_RatioUnit;
-class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit(const Handle_StepBasic_RatioUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit(const StepBasic_RatioUnit *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit & operator=(const Handle_StepBasic_RatioUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_RatioUnit & operator=(const StepBasic_RatioUnit *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepBasic_RatioUnit DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_RatioUnit {
-	StepBasic_RatioUnit* GetObject() {
-	return (StepBasic_RatioUnit*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepBasic_RatioUnit::~Handle_StepBasic_RatioUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepBasic_RatioUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_DocumentRepresentationType;
 class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 	public:
@@ -2046,44 +2008,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepBasic_DateAndTime {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepBasic_SiUnitAndPlaneAngleUnit;
-class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_SiUnitAndPlaneAngleUnit();
-		%feature("autodoc", "1");
-		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepBasic_SiUnitAndPlaneAngleUnit DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
-	StepBasic_SiUnitAndPlaneAngleUnit* GetObject() {
-	return (StepBasic_SiUnitAndPlaneAngleUnit*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepBasic_SiUnitAndPlaneAngleUnit::~Handle_StepBasic_SiUnitAndPlaneAngleUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2546,6 +2470,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepBasic_RatioUnit;
+class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit(const Handle_StepBasic_RatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit(const StepBasic_RatioUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit & operator=(const Handle_StepBasic_RatioUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_RatioUnit & operator=(const StepBasic_RatioUnit *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepBasic_RatioUnit DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_RatioUnit {
+	StepBasic_RatioUnit* GetObject() {
+	return (StepBasic_RatioUnit*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepBasic_RatioUnit::~Handle_StepBasic_RatioUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepBasic_RatioUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepBasic_MeasureValueMember;
 class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	public:
@@ -2996,6 +2958,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepBasic_SizeMember {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_SiUnitAndPlaneAngleUnit;
+class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit();
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const Handle_StepBasic_SiUnitAndPlaneAngleUnit &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_SiUnitAndPlaneAngleUnit & operator=(const StepBasic_SiUnitAndPlaneAngleUnit *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepBasic_SiUnitAndPlaneAngleUnit DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
+	StepBasic_SiUnitAndPlaneAngleUnit* GetObject() {
+	return (StepBasic_SiUnitAndPlaneAngleUnit*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepBasic_SiUnitAndPlaneAngleUnit::~Handle_StepBasic_SiUnitAndPlaneAngleUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4940,44 +4940,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepBasic_ActionAssignment;
-class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionAssignment();
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionAssignment(const Handle_StepBasic_ActionAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionAssignment(const StepBasic_ActionAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionAssignment & operator=(const Handle_StepBasic_ActionAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ActionAssignment & operator=(const StepBasic_ActionAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepBasic_ActionAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepBasic_ActionAssignment {
-	StepBasic_ActionAssignment* GetObject() {
-	return (StepBasic_ActionAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepBasic_ActionAssignment::~Handle_StepBasic_ActionAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepBasic_ActionAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepBasic_WeekOfYearAndDayDate;
 class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	public:
@@ -5428,6 +5390,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepBasic_DateTimeRole {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepBasic_ActionAssignment;
+class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment();
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment(const Handle_StepBasic_ActionAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment(const StepBasic_ActionAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment & operator=(const Handle_StepBasic_ActionAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ActionAssignment & operator=(const StepBasic_ActionAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepBasic_ActionAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepBasic_ActionAssignment {
+	StepBasic_ActionAssignment* GetObject() {
+	return (StepBasic_ActionAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepBasic_ActionAssignment::~Handle_StepBasic_ActionAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepBasic_ActionAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7078,51 +7078,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepBasic_Approval;
-class StepBasic_Approval : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_Approval();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_ApprovalStatus &aStatus, const Handle_TCollection_HAsciiString &aLevel);
-		%feature("autodoc", "1");
-		void SetStatus(const Handle_StepBasic_ApprovalStatus &aStatus);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ApprovalStatus Status() const;
-		%feature("autodoc", "1");
-		void SetLevel(const Handle_TCollection_HAsciiString &aLevel);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Level() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_Approval {
-	Handle_StepBasic_Approval GetHandle() {
-	return *(Handle_StepBasic_Approval*) &$self;
-	}
-};
-%extend StepBasic_Approval {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_Approval::~StepBasic_Approval %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_Approval {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepBasic_HArray1OfProductContext;
 class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 	public:
@@ -7814,47 +7769,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepBasic_ContractAssignment;
-class StepBasic_ContractAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_ContractAssignment();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Contract &aAssignedContract);
-		%feature("autodoc", "1");
-		Handle_StepBasic_Contract AssignedContract() const;
-		%feature("autodoc", "1");
-		void SetAssignedContract(const Handle_StepBasic_Contract &AssignedContract);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_ContractAssignment {
-	Handle_StepBasic_ContractAssignment GetHandle() {
-	return *(Handle_StepBasic_ContractAssignment*) &$self;
-	}
-};
-%extend StepBasic_ContractAssignment {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_ContractAssignment::~StepBasic_ContractAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_ContractAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepBasic_WeekOfYearAndDayDate;
 class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 	public:
@@ -8285,6 +8199,51 @@ def __del__(self):
 %}
 
 %extend StepBasic_ProductType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepBasic_Approval;
+class StepBasic_Approval : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_Approval();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_ApprovalStatus &aStatus, const Handle_TCollection_HAsciiString &aLevel);
+		%feature("autodoc", "1");
+		void SetStatus(const Handle_StepBasic_ApprovalStatus &aStatus);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ApprovalStatus Status() const;
+		%feature("autodoc", "1");
+		void SetLevel(const Handle_TCollection_HAsciiString &aLevel);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Level() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_Approval {
+	Handle_StepBasic_Approval GetHandle() {
+	return *(Handle_StepBasic_Approval*) &$self;
+	}
+};
+%extend StepBasic_Approval {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_Approval::~StepBasic_Approval %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_Approval {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -8959,6 +8918,47 @@ def __del__(self):
 %}
 
 %extend StepBasic_GroupRelationship {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepBasic_ContractAssignment;
+class StepBasic_ContractAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_ContractAssignment();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Contract &aAssignedContract);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Contract AssignedContract() const;
+		%feature("autodoc", "1");
+		void SetAssignedContract(const Handle_StepBasic_Contract &AssignedContract);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_ContractAssignment {
+	Handle_StepBasic_ContractAssignment GetHandle() {
+	return *(Handle_StepBasic_ContractAssignment*) &$self;
+	}
+};
+%extend StepBasic_ContractAssignment {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_ContractAssignment::~StepBasic_ContractAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_ContractAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -9657,6 +9657,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepBasic_MassMeasureWithUnit;
+class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_MassMeasureWithUnit();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_MassMeasureWithUnit {
+	Handle_StepBasic_MassMeasureWithUnit GetHandle() {
+	return *(Handle_StepBasic_MassMeasureWithUnit*) &$self;
+	}
+};
+%extend StepBasic_MassMeasureWithUnit {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_MassMeasureWithUnit::~StepBasic_MassMeasureWithUnit %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_MassMeasureWithUnit {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepBasic_PersonOrganizationSelect;
 class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 	public:
@@ -10306,104 +10341,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepBasic_ProductDefinition;
-class StepBasic_ProductDefinition : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_ProductDefinition();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductDefinitionFormation &aFormation, const Handle_StepBasic_ProductDefinitionContext &aFrameOfReference);
-		%feature("autodoc", "1");
-		void SetId(const Handle_TCollection_HAsciiString &aId);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Id() const;
-		%feature("autodoc", "1");
-		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
-		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Description() const;
-		%feature("autodoc", "1");
-		void SetFormation(const Handle_StepBasic_ProductDefinitionFormation &aFormation);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionFormation Formation() const;
-		%feature("autodoc", "1");
-		void SetFrameOfReference(const Handle_StepBasic_ProductDefinitionContext &aFrameOfReference);
-		%feature("autodoc", "1");
-		Handle_StepBasic_ProductDefinitionContext FrameOfReference() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_ProductDefinition {
-	Handle_StepBasic_ProductDefinition GetHandle() {
-	return *(Handle_StepBasic_ProductDefinition*) &$self;
-	}
-};
-%extend StepBasic_ProductDefinition {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_ProductDefinition::~StepBasic_ProductDefinition %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_ProductDefinition {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepBasic_ProductDefinitionWithAssociatedDocuments;
-class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_ProductDefinition {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_ProductDefinitionWithAssociatedDocuments();
-		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductDefinitionFormation &aFormation, const Handle_StepBasic_ProductDefinitionContext &aFrame, const Handle_StepBasic_HArray1OfDocument &aDocIds);
-		%feature("autodoc", "1");
-		Handle_StepBasic_HArray1OfDocument DocIds() const;
-		%feature("autodoc", "1");
-		void SetDocIds(const Handle_StepBasic_HArray1OfDocument &DocIds);
-		%feature("autodoc", "1");
-		Standard_Integer NbDocIds() const;
-		%feature("autodoc", "1");
-		Handle_StepBasic_Document DocIdsValue(const Standard_Integer num) const;
-		%feature("autodoc", "1");
-		void SetDocIdsValue(const Standard_Integer num, const Handle_StepBasic_Document &adoc);
-
-};
-%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
-	Handle_StepBasic_ProductDefinitionWithAssociatedDocuments GetHandle() {
-	return *(Handle_StepBasic_ProductDefinitionWithAssociatedDocuments*) &$self;
-	}
-};
-%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_ProductDefinitionWithAssociatedDocuments::~StepBasic_ProductDefinitionWithAssociatedDocuments %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepBasic_Contract;
 class StepBasic_Contract : public MMgt_TShared {
 	public:
@@ -10641,36 +10578,44 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepBasic_DocumentRepresentationType;
-class StepBasic_DocumentRepresentationType : public MMgt_TShared {
+%nodefaultctor StepBasic_ProductDefinition;
+class StepBasic_ProductDefinition : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		StepBasic_DocumentRepresentationType();
+		StepBasic_ProductDefinition();
 		%feature("autodoc", "1");
-		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_Document &aRepresentedDocument);
+		virtual		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductDefinitionFormation &aFormation, const Handle_StepBasic_ProductDefinitionContext &aFrameOfReference);
 		%feature("autodoc", "1");
-		Handle_TCollection_HAsciiString Name() const;
+		void SetId(const Handle_TCollection_HAsciiString &aId);
 		%feature("autodoc", "1");
-		void SetName(const Handle_TCollection_HAsciiString &Name);
+		Handle_TCollection_HAsciiString Id() const;
 		%feature("autodoc", "1");
-		Handle_StepBasic_Document RepresentedDocument() const;
+		void SetDescription(const Handle_TCollection_HAsciiString &aDescription);
 		%feature("autodoc", "1");
-		void SetRepresentedDocument(const Handle_StepBasic_Document &RepresentedDocument);
+		Handle_TCollection_HAsciiString Description() const;
+		%feature("autodoc", "1");
+		void SetFormation(const Handle_StepBasic_ProductDefinitionFormation &aFormation);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionFormation Formation() const;
+		%feature("autodoc", "1");
+		void SetFrameOfReference(const Handle_StepBasic_ProductDefinitionContext &aFrameOfReference);
+		%feature("autodoc", "1");
+		Handle_StepBasic_ProductDefinitionContext FrameOfReference() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%extend StepBasic_DocumentRepresentationType {
-	Handle_StepBasic_DocumentRepresentationType GetHandle() {
-	return *(Handle_StepBasic_DocumentRepresentationType*) &$self;
+%extend StepBasic_ProductDefinition {
+	Handle_StepBasic_ProductDefinition GetHandle() {
+	return *(Handle_StepBasic_ProductDefinition*) &$self;
 	}
 };
-%extend StepBasic_DocumentRepresentationType {
+%extend StepBasic_ProductDefinition {
 	Standard_Integer __hash__() {
 	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-%feature("shadow") StepBasic_DocumentRepresentationType::~StepBasic_DocumentRepresentationType %{
+%feature("shadow") StepBasic_ProductDefinition::~StepBasic_ProductDefinition %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -10679,7 +10624,52 @@ def __del__(self):
 		pass
 %}
 
-%extend StepBasic_DocumentRepresentationType {
+%extend StepBasic_ProductDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepBasic_ProductDefinitionWithAssociatedDocuments;
+class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_ProductDefinition {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_ProductDefinitionWithAssociatedDocuments();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aId, const Handle_TCollection_HAsciiString &aDescription, const Handle_StepBasic_ProductDefinitionFormation &aFormation, const Handle_StepBasic_ProductDefinitionContext &aFrame, const Handle_StepBasic_HArray1OfDocument &aDocIds);
+		%feature("autodoc", "1");
+		Handle_StepBasic_HArray1OfDocument DocIds() const;
+		%feature("autodoc", "1");
+		void SetDocIds(const Handle_StepBasic_HArray1OfDocument &DocIds);
+		%feature("autodoc", "1");
+		Standard_Integer NbDocIds() const;
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document DocIdsValue(const Standard_Integer num) const;
+		%feature("autodoc", "1");
+		void SetDocIdsValue(const Standard_Integer num, const Handle_StepBasic_Document &adoc);
+
+};
+%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
+	Handle_StepBasic_ProductDefinitionWithAssociatedDocuments GetHandle() {
+	return *(Handle_StepBasic_ProductDefinitionWithAssociatedDocuments*) &$self;
+	}
+};
+%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_ProductDefinitionWithAssociatedDocuments::~StepBasic_ProductDefinitionWithAssociatedDocuments %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_ProductDefinitionWithAssociatedDocuments {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -11001,6 +10991,51 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepBasic_DocumentRepresentationType;
+class StepBasic_DocumentRepresentationType : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_DocumentRepresentationType();
+		%feature("autodoc", "1");
+		void Init(const Handle_TCollection_HAsciiString &aName, const Handle_StepBasic_Document &aRepresentedDocument);
+		%feature("autodoc", "1");
+		Handle_TCollection_HAsciiString Name() const;
+		%feature("autodoc", "1");
+		void SetName(const Handle_TCollection_HAsciiString &Name);
+		%feature("autodoc", "1");
+		Handle_StepBasic_Document RepresentedDocument() const;
+		%feature("autodoc", "1");
+		void SetRepresentedDocument(const Handle_StepBasic_Document &RepresentedDocument);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_DocumentRepresentationType {
+	Handle_StepBasic_DocumentRepresentationType GetHandle() {
+	return *(Handle_StepBasic_DocumentRepresentationType*) &$self;
+	}
+};
+%extend StepBasic_DocumentRepresentationType {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_DocumentRepresentationType::~StepBasic_DocumentRepresentationType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_DocumentRepresentationType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepBasic_ProductContext;
 class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 	public:
@@ -11222,51 +11257,6 @@ def __del__(self):
 %}
 
 %extend StepBasic_RatioMeasureWithUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepBasic_PersonAndOrganizationAssignment;
-class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_PersonAndOrganizationAssignment();
-		%feature("autodoc", "1");
-		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
-		%feature("autodoc", "1");
-		void SetAssignedPersonAndOrganization(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization);
-		%feature("autodoc", "1");
-		Handle_StepBasic_PersonAndOrganization AssignedPersonAndOrganization() const;
-		%feature("autodoc", "1");
-		void SetRole(const Handle_StepBasic_PersonAndOrganizationRole &aRole);
-		%feature("autodoc", "1");
-		Handle_StepBasic_PersonAndOrganizationRole Role() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_PersonAndOrganizationAssignment {
-	Handle_StepBasic_PersonAndOrganizationAssignment GetHandle() {
-	return *(Handle_StepBasic_PersonAndOrganizationAssignment*) &$self;
-	}
-};
-%extend StepBasic_PersonAndOrganizationAssignment {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_PersonAndOrganizationAssignment::~StepBasic_PersonAndOrganizationAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_PersonAndOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -11613,41 +11603,6 @@ def __del__(self):
 %}
 
 %extend StepBasic_Array1OfNamedUnit {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepBasic_MassMeasureWithUnit;
-class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
-	public:
-		%feature("autodoc", "1");
-		StepBasic_MassMeasureWithUnit();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepBasic_MassMeasureWithUnit {
-	Handle_StepBasic_MassMeasureWithUnit GetHandle() {
-	return *(Handle_StepBasic_MassMeasureWithUnit*) &$self;
-	}
-};
-%extend StepBasic_MassMeasureWithUnit {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepBasic_MassMeasureWithUnit::~StepBasic_MassMeasureWithUnit %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepBasic_MassMeasureWithUnit {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -12553,6 +12508,51 @@ def __del__(self):
 %}
 
 %extend StepBasic_ApplicationContext {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepBasic_PersonAndOrganizationAssignment;
+class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepBasic_PersonAndOrganizationAssignment();
+		%feature("autodoc", "1");
+		virtual		void Init(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization, const Handle_StepBasic_PersonAndOrganizationRole &aRole);
+		%feature("autodoc", "1");
+		void SetAssignedPersonAndOrganization(const Handle_StepBasic_PersonAndOrganization &aAssignedPersonAndOrganization);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganization AssignedPersonAndOrganization() const;
+		%feature("autodoc", "1");
+		void SetRole(const Handle_StepBasic_PersonAndOrganizationRole &aRole);
+		%feature("autodoc", "1");
+		Handle_StepBasic_PersonAndOrganizationRole Role() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepBasic_PersonAndOrganizationAssignment {
+	Handle_StepBasic_PersonAndOrganizationAssignment GetHandle() {
+	return *(Handle_StepBasic_PersonAndOrganizationAssignment*) &$self;
+	}
+};
+%extend StepBasic_PersonAndOrganizationAssignment {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepBasic_PersonAndOrganizationAssignment::~StepBasic_PersonAndOrganizationAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepBasic_PersonAndOrganizationAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}

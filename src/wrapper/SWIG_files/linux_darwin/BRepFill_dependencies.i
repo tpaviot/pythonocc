@@ -71,6 +71,7 @@ $HeaderURL$
 #include <GeomFill_Curved.hxx>
 #include <GeomFill_Darboux.hxx>
 #include <GeomFill_DegeneratedBound.hxx>
+#include <GeomFill_DiscreteTrihedron.hxx>
 #include <GeomFill_DraftTrihedron.hxx>
 #include <GeomFill_EvolvedSection.hxx>
 #include <GeomFill_Filling.hxx>
@@ -84,6 +85,7 @@ $HeaderURL$
 #include <GeomFill_GuideTrihedronPlan.hxx>
 #include <GeomFill_HArray1OfLocationLaw.hxx>
 #include <GeomFill_HArray1OfSectionLaw.hxx>
+#include <GeomFill_HSequenceOfAx2.hxx>
 #include <GeomFill_Line.hxx>
 #include <GeomFill_LocFunction.hxx>
 #include <GeomFill_LocationDraft.hxx>
@@ -99,7 +101,9 @@ $HeaderURL$
 #include <GeomFill_SectionGenerator.hxx>
 #include <GeomFill_SectionLaw.hxx>
 #include <GeomFill_SectionPlacement.hxx>
+#include <GeomFill_SequenceNodeOfSequenceOfAx2.hxx>
 #include <GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
+#include <GeomFill_SequenceOfAx2.hxx>
 #include <GeomFill_SequenceOfTrsf.hxx>
 #include <GeomFill_SimpleBound.hxx>
 #include <GeomFill_SnglrFunc.hxx>
@@ -151,6 +155,7 @@ $HeaderURL$
 #include <Handle_GeomFill_CurveAndTrihedron.hxx>
 #include <Handle_GeomFill_Darboux.hxx>
 #include <Handle_GeomFill_DegeneratedBound.hxx>
+#include <Handle_GeomFill_DiscreteTrihedron.hxx>
 #include <Handle_GeomFill_DraftTrihedron.hxx>
 #include <Handle_GeomFill_EvolvedSection.hxx>
 #include <Handle_GeomFill_Fixed.hxx>
@@ -159,12 +164,14 @@ $HeaderURL$
 #include <Handle_GeomFill_GuideTrihedronPlan.hxx>
 #include <Handle_GeomFill_HArray1OfLocationLaw.hxx>
 #include <Handle_GeomFill_HArray1OfSectionLaw.hxx>
+#include <Handle_GeomFill_HSequenceOfAx2.hxx>
 #include <Handle_GeomFill_Line.hxx>
 #include <Handle_GeomFill_LocationDraft.hxx>
 #include <Handle_GeomFill_LocationGuide.hxx>
 #include <Handle_GeomFill_LocationLaw.hxx>
 #include <Handle_GeomFill_NSections.hxx>
 #include <Handle_GeomFill_SectionLaw.hxx>
+#include <Handle_GeomFill_SequenceNodeOfSequenceOfAx2.hxx>
 #include <Handle_GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
 #include <Handle_GeomFill_SimpleBound.hxx>
 #include <Handle_GeomFill_SweepFunction.hxx>
@@ -226,6 +233,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>

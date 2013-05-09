@@ -2094,6 +2094,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor IGESSolid_ToolShell;
+class IGESSolid_ToolShell {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ToolShell();
+		%feature("autodoc", "1");
+		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
+		%feature("autodoc", "1");
+		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
+
+};
+%feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ToolShell {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IGESSolid_Shell;
 class IGESSolid_Shell : public IGESData_IGESEntity {
 	public:
@@ -2786,47 +2823,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor IGESSolid_ReadWriteModule;
-class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ReadWriteModule();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
-		%feature("autodoc", "1");
-		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend IGESSolid_ReadWriteModule {
-	Handle_IGESSolid_ReadWriteModule GetHandle() {
-	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
-	}
-};
-%extend IGESSolid_ReadWriteModule {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ReadWriteModule {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor IGESSolid_VertexList;
 class IGESSolid_VertexList : public IGESData_IGESEntity {
 	public:
@@ -2862,6 +2858,47 @@ def __del__(self):
 %}
 
 %extend IGESSolid_VertexList {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor IGESSolid_ReadWriteModule;
+class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
+	public:
+		%feature("autodoc", "1");
+		IGESSolid_ReadWriteModule();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseIGES(const Standard_Integer typenum, const Standard_Integer formnum) const;
+		%feature("autodoc", "1");
+		virtual		void ReadOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
+		%feature("autodoc", "1");
+		virtual		void WriteOwnParams(const Standard_Integer CN, const Handle_IGESData_IGESEntity &ent, IGESData_IGESWriter & IW) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend IGESSolid_ReadWriteModule {
+	Handle_IGESSolid_ReadWriteModule GetHandle() {
+	return *(Handle_IGESSolid_ReadWriteModule*) &$self;
+	}
+};
+%extend IGESSolid_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") IGESSolid_ReadWriteModule::~IGESSolid_ReadWriteModule %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IGESSolid_ReadWriteModule {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2991,43 +3028,6 @@ def __del__(self):
 %}
 
 %extend IGESSolid_HArray1OfFace {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IGESSolid_ToolShell;
-class IGESSolid_ToolShell {
-	public:
-		%feature("autodoc", "1");
-		IGESSolid_ToolShell();
-		%feature("autodoc", "1");
-		void ReadOwnParams(const Handle_IGESSolid_Shell &ent, const Handle_IGESData_IGESReaderData &IR, IGESData_ParamReader & PR) const;
-		%feature("autodoc", "1");
-		void WriteOwnParams(const Handle_IGESSolid_Shell &ent, IGESData_IGESWriter & IW) const;
-		%feature("autodoc", "1");
-		void OwnShared(const Handle_IGESSolid_Shell &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		IGESData_DirChecker DirChecker(const Handle_IGESSolid_Shell &ent) const;
-		%feature("autodoc", "1");
-		void OwnCheck(const Handle_IGESSolid_Shell &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		void OwnCopy(const Handle_IGESSolid_Shell &entfrom, const Handle_IGESSolid_Shell &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		void OwnDump(const Handle_IGESSolid_Shell &ent, const IGESData_IGESDumper &dumper, const Handle_Message_Messenger &S, const Standard_Integer own) const;
-
-};
-%feature("shadow") IGESSolid_ToolShell::~IGESSolid_ToolShell %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IGESSolid_ToolShell {
 	void _kill_pointed() {
 		delete $self;
 	}

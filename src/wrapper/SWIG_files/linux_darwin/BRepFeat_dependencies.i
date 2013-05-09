@@ -24,6 +24,29 @@ $HeaderURL$
 
 */
 %{
+#include <BOPAlgo_Algo.hxx>
+#include <BOPAlgo_ArgumentAnalyzer.hxx>
+#include <BOPAlgo_BOP.hxx>
+#include <BOPAlgo_Builder.hxx>
+#include <BOPAlgo_BuilderArea.hxx>
+#include <BOPAlgo_BuilderFace.hxx>
+#include <BOPAlgo_BuilderShape.hxx>
+#include <BOPAlgo_BuilderSolid.hxx>
+#include <BOPAlgo_CheckResult.hxx>
+#include <BOPAlgo_CheckStatus.hxx>
+#include <BOPAlgo_CheckerSI.hxx>
+#include <BOPAlgo_ListOfCheckResult.hxx>
+#include <BOPAlgo_Operation.hxx>
+#include <BOPAlgo_PArgumentAnalyzer.hxx>
+#include <BOPAlgo_PBOP.hxx>
+#include <BOPAlgo_PBuilder.hxx>
+#include <BOPAlgo_PPaveFiller.hxx>
+#include <BOPAlgo_PWireEdgeSet.hxx>
+#include <BOPAlgo_PaveFiller.hxx>
+#include <BOPAlgo_SectionAttribute.hxx>
+#include <BOPAlgo_Tools.hxx>
+#include <BOPAlgo_WireEdgeSet.hxx>
+#include <BOPAlgo_WireSplitter.hxx>
 #include <BRepBuilderAPI_BndBoxTreeSelector.hxx>
 #include <BRepBuilderAPI_CellFilter.hxx>
 #include <BRepBuilderAPI_Collect.hxx>
@@ -93,7 +116,6 @@ $HeaderURL$
 #include <Handle_Standard_Underflow.hxx>
 #include <LocOpe_BuildShape.hxx>
 #include <LocOpe_BuildWires.hxx>
-#include <LocOpe_Builder.hxx>
 #include <LocOpe_CSIntersector.hxx>
 #include <LocOpe_CurveShapeIntersector.hxx>
 #include <LocOpe_DPrism.hxx>
@@ -131,6 +153,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -209,7 +232,8 @@ $HeaderURL$
 #include <TopAbs_State.hxx>
 %};
 
-%import BRepBuilderAPI.i
+%import BOPAlgo.i
 %import Standard.i
 %import TopAbs.i
+%import BRepBuilderAPI.i
 %import LocOpe.i

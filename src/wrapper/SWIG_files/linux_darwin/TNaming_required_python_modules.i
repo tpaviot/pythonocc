@@ -30,7 +30,7 @@ import GarbageCollector
 import Standard
 import TopoDS
 import TDF
-import TopAbs
 import TopTools
 import TopLoc
+import TopAbs
 };

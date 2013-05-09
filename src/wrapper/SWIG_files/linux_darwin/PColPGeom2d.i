@@ -485,32 +485,20 @@ def __del__(self):
 };
 
 
-%nodefaultctor PColPGeom2d_FieldOfHArray1OfCurve;
-class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
+%nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
+class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		PColPGeom2d_FieldOfHArray1OfCurve();
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve();
 		%feature("autodoc", "1");
-		PColPGeom2d_FieldOfHArray1OfCurve(const Standard_Integer Size);
+		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve(const Handle_PGeom2d_BSplineCurve &aValue);
 		%feature("autodoc", "1");
-		PColPGeom2d_FieldOfHArray1OfCurve(const PColPGeom2d_FieldOfHArray1OfCurve &Varray);
+		void SetValue(const Handle_PGeom2d_BSplineCurve &aValue);
 		%feature("autodoc", "1");
-		void Resize(const Standard_Integer Size);
-		%feature("autodoc", "1");
-		void Assign(const PColPGeom2d_FieldOfHArray1OfCurve &Other);
-		%feature("autodoc", "1");
-		void operator=(const PColPGeom2d_FieldOfHArray1OfCurve &Other);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_Curve &Value);
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Handle_PGeom2d_Curve & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void Destroy();
+		Standard_Address Value() const;
 
 };
-%feature("shadow") PColPGeom2d_FieldOfHArray1OfCurve::~PColPGeom2d_FieldOfHArray1OfCurve %{
+%feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -519,7 +507,7 @@ def __del__(self):
 		pass
 %}
 
-%extend PColPGeom2d_FieldOfHArray1OfCurve {
+%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -591,35 +579,6 @@ def __del__(self):
 %}
 
 %extend PColPGeom2d_HArray1OfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
-class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
-	public:
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve();
-		%feature("autodoc", "1");
-		PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve(const Handle_PGeom2d_BSplineCurve &aValue);
-		%feature("autodoc", "1");
-		void SetValue(const Handle_PGeom2d_BSplineCurve &aValue);
-		%feature("autodoc", "1");
-		Standard_Address Value() const;
-
-};
-%feature("shadow") PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve::~PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -708,6 +667,47 @@ def __del__(self):
 %}
 
 %extend PColPGeom2d_FieldOfHArray1OfBezierCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor PColPGeom2d_FieldOfHArray1OfCurve;
+class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
+	public:
+		%feature("autodoc", "1");
+		PColPGeom2d_FieldOfHArray1OfCurve();
+		%feature("autodoc", "1");
+		PColPGeom2d_FieldOfHArray1OfCurve(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		PColPGeom2d_FieldOfHArray1OfCurve(const PColPGeom2d_FieldOfHArray1OfCurve &Varray);
+		%feature("autodoc", "1");
+		void Resize(const Standard_Integer Size);
+		%feature("autodoc", "1");
+		void Assign(const PColPGeom2d_FieldOfHArray1OfCurve &Other);
+		%feature("autodoc", "1");
+		void operator=(const PColPGeom2d_FieldOfHArray1OfCurve &Other);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_PGeom2d_Curve &Value);
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Curve & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		Handle_PGeom2d_Curve & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void Destroy();
+
+};
+%feature("shadow") PColPGeom2d_FieldOfHArray1OfCurve::~PColPGeom2d_FieldOfHArray1OfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PColPGeom2d_FieldOfHArray1OfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

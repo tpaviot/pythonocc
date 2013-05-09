@@ -673,6 +673,84 @@ def __del__(self):
 };
 
 
+%nodefaultctor math_FunctionSet;
+class math_FunctionSet {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Delete();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+
+};
+%feature("shadow") math_FunctionSet::~math_FunctionSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_FunctionSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor math_NewtonFunctionRoot;
+class math_NewtonFunctionRoot {
+	public:
+		%feature("autodoc", "1");
+		math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		math_NewtonFunctionRoot(const Standard_Real A, const Standard_Real B, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations=100);
+		%feature("autodoc", "1");
+		void Perform(math_FunctionWithDerivative & F, const Standard_Real Guess);
+		%feature("autodoc", "1");
+		Standard_Boolean IsDone() const;
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Derivative() const;
+		%feature("autodoc", "1");
+		Standard_Real Value() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIterations() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+
+};
+%feature("shadow") math_NewtonFunctionRoot::~math_NewtonFunctionRoot %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend math_NewtonFunctionRoot {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor math_FunctionAllRoots;
 class math_FunctionAllRoots {
 	public:
@@ -1467,40 +1545,15 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_FunctionSet;
-class math_FunctionSet {
+%nodefaultctor math_FunctionSetWithDerivatives;
+class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	public:
-		%feature("autodoc", "1");
-		virtual		void Delete();
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbVariables() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbEquations() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-
-};
-%feature("shadow") math_FunctionSet::~math_FunctionSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_FunctionSet {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor math_FunctionSetWithDerivatives;
-class math_FunctionSetWithDerivatives : public math_FunctionSet {
-	public:
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
 		%feature("autodoc", "1");
@@ -1683,53 +1736,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor math_NewtonFunctionRoot;
-class math_NewtonFunctionRoot {
-	public:
-		%feature("autodoc", "1");
-		math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_NewtonFunctionRoot(math_FunctionWithDerivative & F, const Standard_Real Guess, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Real A, const Standard_Real B, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		math_NewtonFunctionRoot(const Standard_Real A, const Standard_Real B, const Standard_Real EpsX, const Standard_Real EpsF, const Standard_Integer NbIterations=100);
-		%feature("autodoc", "1");
-		void Perform(math_FunctionWithDerivative & F, const Standard_Real Guess);
-		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Derivative() const;
-		%feature("autodoc", "1");
-		Standard_Real Value() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIterations() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-
-};
-%feature("shadow") math_NewtonFunctionRoot::~math_NewtonFunctionRoot %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend math_NewtonFunctionRoot {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor math_Uzawa;
 class math_Uzawa {
 	public:
@@ -1899,13 +1905,13 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const Standard_Integer NbIterations=100);
 		%feature("autodoc", "1");
-		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const math_Vector &infBound, const math_Vector &supBound, const Standard_Integer NbIterations=100);
+		math_FunctionSetRoot(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &Tolerance, const math_Vector &infBound, const math_Vector &supBound, const Standard_Integer NbIterations=100, const Standard_Boolean theStopOnDivergent=0);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
 		void SetTolerance(const math_Vector &Tolerance);
 		%feature("autodoc", "1");
-		void Perform(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &infBound, const math_Vector &supBound);
+		void Perform(math_FunctionSetWithDerivatives & F, const math_Vector &StartingPoint, const math_Vector &infBound, const math_Vector &supBound, const Standard_Boolean theStopOnDivergent=0);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsSolutionReached(math_FunctionSetWithDerivatives & F);
 		%feature("autodoc", "1");
@@ -1934,6 +1940,8 @@ class math_FunctionSetRoot {
 			self->Dump(s);
 			return s.str();}
 		};
+		%feature("autodoc", "1");
+		Standard_Boolean IsDivergent() const;
 
 };
 %feature("shadow") math_FunctionSetRoot::~math_FunctionSetRoot %{

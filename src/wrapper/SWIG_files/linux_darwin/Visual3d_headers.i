@@ -116,21 +116,39 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
-#include<MFT.hxx>
-#include<MFT_CommandDescriptor.hxx>
-#include<MFT_FileHandle.hxx>
-#include<MFT_FilePosition.hxx>
-#include<MFT_FileRecord.hxx>
-#include<MFT_FontManager.hxx>
-#include<MFT_FontManagerDefinitionError.hxx>
-#include<MFT_FontManagerError.hxx>
-#include<MFT_ListOfFontHandle.hxx>
-#include<MFT_ListOfFontName.hxx>
-#include<MFT_ListOfFontReference.hxx>
-#include<MFT_SequenceNodeOfListOfFontHandle.hxx>
-#include<MFT_TextManager.hxx>
-#include<MFT_TypeOfCommand.hxx>
-#include<MFT_TypeOfValue.hxx>
+#include<Image.hxx>
+#include<Image_AlienPixMap.hxx>
+#include<Image_AveragePixelInterpolation.hxx>
+#include<Image_BalancedPixelInterpolation.hxx>
+#include<Image_BilinearPixelInterpolation.hxx>
+#include<Image_Color.hxx>
+#include<Image_ColorImage.hxx>
+#include<Image_ColorPixelDataMap.hxx>
+#include<Image_ColorPixelMapHasher.hxx>
+#include<Image_Convertor.hxx>
+#include<Image_DColorImage.hxx>
+#include<Image_DIndexedImage.hxx>
+#include<Image_DataMapIteratorOfColorPixelDataMap.hxx>
+#include<Image_DataMapIteratorOfLookupTable.hxx>
+#include<Image_DataMapNodeOfColorPixelDataMap.hxx>
+#include<Image_DataMapNodeOfLookupTable.hxx>
+#include<Image_Diff.hxx>
+#include<Image_DitheringMethod.hxx>
+#include<Image_FlipType.hxx>
+#include<Image_Image.hxx>
+#include<Image_IndexPixelMapHasher.hxx>
+#include<Image_LookupTable.hxx>
+#include<Image_PixMap.hxx>
+#include<Image_PixMapData.hxx>
+#include<Image_PixMap_Handle.hxx>
+#include<Image_PixelAddress.hxx>
+#include<Image_PixelFieldOfDColorImage.hxx>
+#include<Image_PixelInterpolation.hxx>
+#include<Image_PixelRowOfDColorImage.hxx>
+#include<Image_PixelRowOfDIndexedImage.hxx>
+#include<Image_PlanarPixelInterpolation.hxx>
+#include<Image_PseudoColorImage.hxx>
+#include<Image_TypeOfImage.hxx>
 #include<OSD.hxx>
 #include<OSD_Chronometer.hxx>
 #include<OSD_Directory.hxx>
@@ -168,7 +186,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -182,7 +199,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -202,22 +218,7 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WhoAmI.hxx>
-#include<Xw.hxx>
-#include<Xw_ColorMap.hxx>
-#include<Xw_Driver.hxx>
-#include<Xw_FontMap.hxx>
-#include<Xw_GraphicDevice.hxx>
-#include<Xw_HListOfMFTFonts.hxx>
-#include<Xw_IconBox.hxx>
-#include<Xw_ListOfMFTFonts.hxx>
-#include<Xw_MarkMap.hxx>
-#include<Xw_TextManager.hxx>
-#include<Xw_TypeMap.hxx>
-#include<Xw_TypeOfMapping.hxx>
-#include<Xw_TypeOfVisual.hxx>
-#include<Xw_WidthMap.hxx>
 #include<Xw_Window.hxx>
-#include<Xw_WindowQuality.hxx>
 
 // Needed headers necessary for compilation.
 
@@ -235,14 +236,10 @@ $HeaderURL$
 #include<TCollection_ExtendedString.hxx>
 #include<TCollection_AsciiString.hxx>
 #include<Graphic3d_MapOfStructure.hxx>
-#include<Handle_Aspect_GraphicDriver.hxx>
 #include<Handle_Graphic3d_Plotter.hxx>
 #include<Image_PixMap.hxx>
-#include<Handle_Graphic3d_AspectLine3d.hxx>
-#include<Handle_Graphic3d_AspectFillArea3d.hxx>
-#include<Handle_Graphic3d_AspectText3d.hxx>
-#include<Handle_Graphic3d_AspectMarker3d.hxx>
-#include<Handle_Aspect_GraphicDevice.hxx>
+#include<Handle_Graphic3d_GraphicDriver.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
+#include<Graphic3d_CView.hxx>
 #include<Handle_Graphic3d_DataStructureManager.hxx>
 %}

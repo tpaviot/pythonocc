@@ -26,15 +26,7 @@ $HeaderURL$
 %{
 #include <Graphic3d_Array1OfVector.hxx>
 #include <Graphic3d_Array1OfVertex.hxx>
-#include <Graphic3d_Array1OfVertexC.hxx>
-#include <Graphic3d_Array1OfVertexN.hxx>
-#include <Graphic3d_Array1OfVertexNC.hxx>
-#include <Graphic3d_Array1OfVertexNT.hxx>
 #include <Graphic3d_Array2OfVertex.hxx>
-#include <Graphic3d_Array2OfVertexC.hxx>
-#include <Graphic3d_Array2OfVertexN.hxx>
-#include <Graphic3d_Array2OfVertexNC.hxx>
-#include <Graphic3d_Array2OfVertexNT.hxx>
 #include <Graphic3d_ArrayOfPoints.hxx>
 #include <Graphic3d_ArrayOfPolygons.hxx>
 #include <Graphic3d_ArrayOfPolylines.hxx>
@@ -58,7 +50,6 @@ $HeaderURL$
 #include <Graphic3d_CBounds.hxx>
 #include <Graphic3d_CGraduatedTrihedron.hxx>
 #include <Graphic3d_CGroup.hxx>
-#include <Graphic3d_CInitTexture.hxx>
 #include <Graphic3d_CLight.hxx>
 #include <Graphic3d_CPick.hxx>
 #include <Graphic3d_CPlane.hxx>
@@ -70,7 +61,6 @@ $HeaderURL$
 #include <Graphic3d_CycleError.hxx>
 #include <Graphic3d_DataStructureManager.hxx>
 #include <Graphic3d_ExportFormat.hxx>
-#include <Graphic3d_GraphicDevice.hxx>
 #include <Graphic3d_GraphicDriver.hxx>
 #include <Graphic3d_Group.hxx>
 #include <Graphic3d_GroupAspect.hxx>
@@ -80,6 +70,7 @@ $HeaderURL$
 #include <Graphic3d_HSetOfGroup.hxx>
 #include <Graphic3d_HorizontalTextAlignment.hxx>
 #include <Graphic3d_InitialisationError.hxx>
+#include <Graphic3d_LevelOfTextureAnisotropy.hxx>
 #include <Graphic3d_ListIteratorOfListOfPArray.hxx>
 #include <Graphic3d_ListIteratorOfListOfShortReal.hxx>
 #include <Graphic3d_ListIteratorOfSetListOfSetOfGroup.hxx>
@@ -93,7 +84,6 @@ $HeaderURL$
 #include <Graphic3d_MaterialAspect.hxx>
 #include <Graphic3d_MaterialDefinitionError.hxx>
 #include <Graphic3d_NListOfHAsciiString.hxx>
-#include <Graphic3d_NameOfFont.hxx>
 #include <Graphic3d_NameOfMaterial.hxx>
 #include <Graphic3d_NameOfTexture1D.hxx>
 #include <Graphic3d_NameOfTexture2D.hxx>
@@ -130,6 +120,7 @@ $HeaderURL$
 #include <Graphic3d_Texture2Dplane.hxx>
 #include <Graphic3d_TextureEnv.hxx>
 #include <Graphic3d_TextureMap.hxx>
+#include <Graphic3d_TextureParams.hxx>
 #include <Graphic3d_TextureRoot.hxx>
 #include <Graphic3d_TransModeFlags.hxx>
 #include <Graphic3d_TransformError.hxx>
@@ -142,14 +133,14 @@ $HeaderURL$
 #include <Graphic3d_TypeOfReflection.hxx>
 #include <Graphic3d_TypeOfStructure.hxx>
 #include <Graphic3d_TypeOfTexture.hxx>
+#include <Graphic3d_TypeOfTextureFilter.hxx>
 #include <Graphic3d_TypeOfTextureMode.hxx>
+#include <Graphic3d_Vec2.hxx>
+#include <Graphic3d_Vec3.hxx>
+#include <Graphic3d_Vec4.hxx>
 #include <Graphic3d_Vector.hxx>
 #include <Graphic3d_VectorError.hxx>
 #include <Graphic3d_Vertex.hxx>
-#include <Graphic3d_VertexC.hxx>
-#include <Graphic3d_VertexN.hxx>
-#include <Graphic3d_VertexNC.hxx>
-#include <Graphic3d_VertexNT.hxx>
 #include <Graphic3d_VerticalTextAlignment.hxx>
 #include <Handle_Graphic3d_ArrayOfPoints.hxx>
 #include <Handle_Graphic3d_ArrayOfPolygons.hxx>
@@ -168,7 +159,6 @@ $HeaderURL$
 #include <Handle_Graphic3d_AspectTextDefinitionError.hxx>
 #include <Handle_Graphic3d_CycleError.hxx>
 #include <Handle_Graphic3d_DataStructureManager.hxx>
-#include <Handle_Graphic3d_GraphicDevice.hxx>
 #include <Handle_Graphic3d_GraphicDriver.hxx>
 #include <Handle_Graphic3d_Group.hxx>
 #include <Handle_Graphic3d_GroupDefinitionError.hxx>
@@ -199,6 +189,7 @@ $HeaderURL$
 #include <Handle_Graphic3d_Texture2Dplane.hxx>
 #include <Handle_Graphic3d_TextureEnv.hxx>
 #include <Handle_Graphic3d_TextureMap.hxx>
+#include <Handle_Graphic3d_TextureParams.hxx>
 #include <Handle_Graphic3d_TextureRoot.hxx>
 #include <Handle_Graphic3d_TransformError.hxx>
 #include <Handle_Graphic3d_VectorError.hxx>
@@ -378,6 +369,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>

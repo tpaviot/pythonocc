@@ -26,6 +26,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepVisual_PresentationRepresentation::DownCast;
 %rename(DownCast) Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation::DownCast;
 %rename(DownCast) Handle_StepVisual_CompositeText::DownCast;
+%rename(DownCast) Handle_StepVisual_FillAreaStyle::DownCast;
 %rename(DownCast) Handle_StepVisual_SurfaceStyleSegmentationCurve::DownCast;
 %rename(DownCast) Handle_StepVisual_AnnotationText::DownCast;
 %rename(DownCast) Handle_StepVisual_Invisibility::DownCast;
@@ -40,6 +41,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepVisual_OverRidingStyledItem::DownCast;
 %rename(DownCast) Handle_StepVisual_ContextDependentOverRidingStyledItem::DownCast;
 %rename(DownCast) Handle_StepVisual_PresentationSize::DownCast;
+%rename(DownCast) Handle_StepVisual_PresentationSet::DownCast;
 %rename(DownCast) Handle_StepVisual_SurfaceStyleSilhouette::DownCast;
 %rename(DownCast) Handle_StepVisual_PlanarExtent::DownCast;
 %rename(DownCast) Handle_StepVisual_PlanarBox::DownCast;
@@ -51,17 +53,15 @@ $HeaderURL$
 %rename(DownCast) Handle_StepVisual_CameraImage::DownCast;
 %rename(DownCast) Handle_StepVisual_CameraImage2dWithScale::DownCast;
 %rename(DownCast) Handle_StepVisual_PresentationLayerAssignment::DownCast;
-%rename(DownCast) Handle_StepVisual_FillAreaStyleColour::DownCast;
+%rename(DownCast) Handle_StepVisual_PreDefinedColour::DownCast;
+%rename(DownCast) Handle_StepVisual_DraughtingPreDefinedColour::DownCast;
 %rename(DownCast) Handle_StepVisual_TextStyle::DownCast;
 %rename(DownCast) Handle_StepVisual_TextStyleWithBoxCharacteristics::DownCast;
 %rename(DownCast) Handle_StepVisual_SurfaceSideStyle::DownCast;
 %rename(DownCast) Handle_StepVisual_CurveStyleFont::DownCast;
 %rename(DownCast) Handle_StepVisual_PointStyle::DownCast;
 %rename(DownCast) Handle_StepVisual_HArray1OfDirectionCountSelect::DownCast;
-%rename(DownCast) Handle_StepVisual_PreDefinedColour::DownCast;
-%rename(DownCast) Handle_StepVisual_DraughtingPreDefinedColour::DownCast;
-%rename(DownCast) Handle_StepVisual_FillAreaStyle::DownCast;
-%rename(DownCast) Handle_StepVisual_PresentationSet::DownCast;
+%rename(DownCast) Handle_StepVisual_FillAreaStyleColour::DownCast;
 %rename(DownCast) Handle_StepVisual_ColourSpecification::DownCast;
 %rename(DownCast) Handle_StepVisual_ColourRgb::DownCast;
 %rename(DownCast) Handle_StepVisual_ExternallyDefinedTextFont::DownCast;
@@ -75,6 +75,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepVisual_PresentedItem::DownCast;
 %rename(DownCast) Handle_StepVisual_Template::DownCast;
 %rename(DownCast) Handle_StepVisual_AreaInSet::DownCast;
+%rename(DownCast) Handle_StepVisual_PresentationStyleAssignment::DownCast;
 %rename(DownCast) Handle_StepVisual_TextStyleForDefinedFont::DownCast;
 %rename(DownCast) Handle_StepVisual_HArray1OfPresentationStyleAssignment::DownCast;
 %rename(DownCast) Handle_StepVisual_PreDefinedTextFont::DownCast;
@@ -98,7 +99,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepVisual_DraughtingAnnotationOccurrence::DownCast;
 %rename(DownCast) Handle_StepVisual_HArray1OfStyleContextSelect::DownCast;
 %rename(DownCast) Handle_StepVisual_CameraUsage::DownCast;
-%rename(DownCast) Handle_StepVisual_PresentationStyleAssignment::DownCast;
 %rename(DownCast) Handle_StepVisual_PresentationStyleByContext::DownCast;
 %rename(DownCast) Handle_StepVisual_HArray1OfSurfaceStyleElementSelect::DownCast;
 %rename(DownCast) Handle_StepVisual_SurfaceStyleControlGrid::DownCast;

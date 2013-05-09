@@ -23,17 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_MFT_SequenceNodeOfListOfFontHandle::DownCast;
-%rename(DownCast) Handle_MFT_TextManager::DownCast;
-%rename(DownCast) Handle_MFT_FontManager::DownCast;
-%rename(DownCast) Handle_MFT_FontManagerError::DownCast;
-%rename(DownCast) Handle_MFT_FontManagerDefinitionError::DownCast;
-%rename(Raise) MFT_FontManagerError::Raise;
-%rename(NewInstance) MFT_FontManagerError::NewInstance;
-%rename(IsKnown) MFT_FontManager::IsKnown;
-%rename(Font) MFT_FontManager::Font;
-%rename(FontNumber) MFT_FontManager::FontNumber;
-%rename(MaxCommandValues) MFT_FontManager::MaxCommandValues;
-%rename(Restore) MFT_FontManager::Restore;
-%rename(Raise) MFT_FontManagerDefinitionError::Raise;
-%rename(NewInstance) MFT_FontManagerDefinitionError::NewInstance;

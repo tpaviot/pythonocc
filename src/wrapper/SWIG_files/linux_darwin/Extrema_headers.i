@@ -33,6 +33,7 @@ $HeaderURL$
 #include<Extrema_Array2OfPOnCurv.hxx>
 #include<Extrema_Array2OfPOnCurv2d.hxx>
 #include<Extrema_Array2OfPOnSurf.hxx>
+#include<Extrema_Array2OfPOnSurfParams.hxx>
 #include<Extrema_CCFOfECC2dOfExtCC2d.hxx>
 #include<Extrema_CCFOfECCOfExtCC.hxx>
 #include<Extrema_CCFOfELCC2dOfLocateExtCC2d.hxx>
@@ -53,6 +54,7 @@ $HeaderURL$
 #include<Extrema_EPCOfELPCOfLocateExtPC2d.hxx>
 #include<Extrema_EPCOfExtPC.hxx>
 #include<Extrema_EPCOfExtPC2d.hxx>
+#include<Extrema_ElementType.hxx>
 #include<Extrema_ExtAlgo.hxx>
 #include<Extrema_ExtCC.hxx>
 #include<Extrema_ExtCC2d.hxx>
@@ -86,6 +88,7 @@ $HeaderURL$
 #include<Extrema_HArray2OfPOnCurv.hxx>
 #include<Extrema_HArray2OfPOnCurv2d.hxx>
 #include<Extrema_HArray2OfPOnSurf.hxx>
+#include<Extrema_HArray2OfPOnSurfParams.hxx>
 #include<Extrema_HUBTreeOfSphere.hxx>
 #include<Extrema_LCCache2dOfLocateExtCC2d.hxx>
 #include<Extrema_LCCacheOfLocateExtCC.hxx>
@@ -106,6 +109,7 @@ $HeaderURL$
 #include<Extrema_POnCurv.hxx>
 #include<Extrema_POnCurv2d.hxx>
 #include<Extrema_POnSurf.hxx>
+#include<Extrema_POnSurfParams.hxx>
 #include<Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC.hxx>
 #include<Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d.hxx>
 #include<Extrema_SeqPCOfPCFOfEPCOfExtPC.hxx>
@@ -144,6 +148,7 @@ $HeaderURL$
 #include<Handle_Extrema_HArray2OfPOnCurv.hxx>
 #include<Handle_Extrema_HArray2OfPOnCurv2d.hxx>
 #include<Handle_Extrema_HArray2OfPOnSurf.hxx>
+#include<Handle_Extrema_HArray2OfPOnSurfParams.hxx>
 #include<Handle_Extrema_LCCache2dOfLocateExtCC2d.hxx>
 #include<Handle_Extrema_LCCacheOfLocateExtCC.hxx>
 #include<Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC.hxx>
@@ -174,6 +179,7 @@ $HeaderURL$
 
 #include<Handle_Standard_Transient.hxx>
 #include<gp_Pnt2d.hxx>
+#include<gp_Pnt.hxx>
 #include<Adaptor3d_Curve.hxx>
 #include<math_Vector.hxx>
 #include<math_Matrix.hxx>
@@ -187,7 +193,6 @@ $HeaderURL$
 #include<gp_Circ.hxx>
 #include<gp_Hypr.hxx>
 #include<Adaptor3d_Surface.hxx>
-#include<gp_Pnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>

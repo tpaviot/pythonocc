@@ -704,6 +704,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor CDM_MapOfDocument;
+class CDM_MapOfDocument : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		CDM_MapOfDocument(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		CDM_MapOfDocument & Assign(const CDM_MapOfDocument &Other);
+		%feature("autodoc", "1");
+		CDM_MapOfDocument & operator=(const CDM_MapOfDocument &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Add(const Handle_CDM_Document &aKey);
+		%feature("autodoc", "1");
+		Standard_Boolean Contains(const Handle_CDM_Document &aKey) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Remove(const Handle_CDM_Document &aKey);
+
+};
+%feature("shadow") CDM_MapOfDocument::~CDM_MapOfDocument %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDM_MapOfDocument {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor CDM_DataMapIteratorOfPresentationDirectory;
 class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIterator {
 	public:
@@ -1320,43 +1357,6 @@ def __del__(self):
 %}
 
 %extend CDM_ListOfDocument {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor CDM_MapOfDocument;
-class CDM_MapOfDocument : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		CDM_MapOfDocument(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		CDM_MapOfDocument & Assign(const CDM_MapOfDocument &Other);
-		%feature("autodoc", "1");
-		CDM_MapOfDocument & operator=(const CDM_MapOfDocument &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Add(const Handle_CDM_Document &aKey);
-		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Handle_CDM_Document &aKey) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Remove(const Handle_CDM_Document &aKey);
-
-};
-%feature("shadow") CDM_MapOfDocument::~CDM_MapOfDocument %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDM_MapOfDocument {
 	void _kill_pointed() {
 		delete $self;
 	}

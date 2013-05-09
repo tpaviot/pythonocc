@@ -58,13 +58,13 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<Handle_TColgp_HSequenceOfPnt.hxx>
 #include<Handle_Adaptor3d_HSurface.hxx>
 #include<Handle_Adaptor3d_HCurve.hxx>
 #include<gp_Pnt2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<Handle_Adaptor2d_HCurve2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
-#include<Handle_TColgp_HSequenceOfPnt.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>

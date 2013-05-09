@@ -129,44 +129,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_ShapeAnalysis_HSequenceOfFreeBounds;
-class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ShapeAnalysis_HSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
-	ShapeAnalysis_HSequenceOfFreeBounds* GetObject() {
-	return (ShapeAnalysis_HSequenceOfFreeBounds*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ShapeAnalysis_HSequenceOfFreeBounds::~Handle_ShapeAnalysis_HSequenceOfFreeBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ShapeAnalysis_TransferParameters;
 class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	public:
@@ -275,6 +237,44 @@ def __del__(self):
 %}
 
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ShapeAnalysis_HSequenceOfFreeBounds;
+class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds();
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aHandle);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds & operator=(const ShapeAnalysis_HSequenceOfFreeBounds *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ShapeAnalysis_HSequenceOfFreeBounds DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
+	ShapeAnalysis_HSequenceOfFreeBounds* GetObject() {
+	return (ShapeAnalysis_HSequenceOfFreeBounds*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ShapeAnalysis_HSequenceOfFreeBounds::~Handle_ShapeAnalysis_HSequenceOfFreeBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -755,6 +755,85 @@ def __del__(self):
 };
 
 
+%nodefaultctor ShapeAnalysis_HSequenceOfFreeBounds;
+class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		ShapeAnalysis_HSequenceOfFreeBounds();
+		%feature("autodoc", "1");
+		Standard_Boolean IsEmpty() const;
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		void Append(const Handle_ShapeAnalysis_FreeBoundData &anItem);
+		%feature("autodoc", "1");
+		void Append(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &anItem);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
+		%feature("autodoc", "1");
+		void Reverse();
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer anIndex, const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer anIndex, const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
+		%feature("autodoc", "1");
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds Split(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
+		%feature("autodoc", "1");
+		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const ShapeAnalysis_SequenceOfFreeBounds & Sequence() const;
+		%feature("autodoc", "1");
+		ShapeAnalysis_SequenceOfFreeBounds & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_ShapeAnalysis_HSequenceOfFreeBounds ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend ShapeAnalysis_HSequenceOfFreeBounds {
+	Handle_ShapeAnalysis_HSequenceOfFreeBounds GetHandle() {
+	return *(Handle_ShapeAnalysis_HSequenceOfFreeBounds*) &$self;
+	}
+};
+%extend ShapeAnalysis_HSequenceOfFreeBounds {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") ShapeAnalysis_HSequenceOfFreeBounds::~ShapeAnalysis_HSequenceOfFreeBounds %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ShapeAnalysis_HSequenceOfFreeBounds {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ShapeAnalysis_Edge;
 class ShapeAnalysis_Edge {
 	public:
@@ -1115,85 +1194,6 @@ def __del__(self):
 %}
 
 %extend ShapeAnalysis_FreeBoundData {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ShapeAnalysis_HSequenceOfFreeBounds;
-class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		ShapeAnalysis_HSequenceOfFreeBounds();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_ShapeAnalysis_FreeBoundData &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ShapeAnalysis_FreeBoundData &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_ShapeAnalysis_HSequenceOfFreeBounds &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_ShapeAnalysis_FreeBoundData &anItem);
-		%feature("autodoc", "1");
-		const Handle_ShapeAnalysis_FreeBoundData & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_FreeBoundData & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const ShapeAnalysis_SequenceOfFreeBounds & Sequence() const;
-		%feature("autodoc", "1");
-		ShapeAnalysis_SequenceOfFreeBounds & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_ShapeAnalysis_HSequenceOfFreeBounds ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend ShapeAnalysis_HSequenceOfFreeBounds {
-	Handle_ShapeAnalysis_HSequenceOfFreeBounds GetHandle() {
-	return *(Handle_ShapeAnalysis_HSequenceOfFreeBounds*) &$self;
-	}
-};
-%extend ShapeAnalysis_HSequenceOfFreeBounds {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") ShapeAnalysis_HSequenceOfFreeBounds::~ShapeAnalysis_HSequenceOfFreeBounds %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ShapeAnalysis_HSequenceOfFreeBounds {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -27,7 +27,6 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_IntTools_Context.hxx>
 #include<Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox.hxx>
 #include<Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox.hxx>
 #include<Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress.hxx>
@@ -53,7 +52,6 @@ $HeaderURL$
 #include<IntTools_CommonPrt.hxx>
 #include<IntTools_Compare.hxx>
 #include<IntTools_CompareRange.hxx>
-#include<IntTools_Context.hxx>
 #include<IntTools_Curve.hxx>
 #include<IntTools_CurveRangeLocalizeData.hxx>
 #include<IntTools_CurveRangeSample.hxx>
@@ -101,7 +99,6 @@ $HeaderURL$
 #include<IntTools_SequenceOfPntOn2Faces.hxx>
 #include<IntTools_SequenceOfRanges.hxx>
 #include<IntTools_SequenceOfRoots.hxx>
-#include<IntTools_ShrunkRange.hxx>
 #include<IntTools_StdMapNodeOfMapOfCurveSample.hxx>
 #include<IntTools_StdMapNodeOfMapOfSurfaceSample.hxx>
 #include<IntTools_SurfaceRangeLocalizeData.hxx>
@@ -182,14 +179,14 @@ $HeaderURL$
 #include<Handle_GeomAdaptor_HSurface.hxx>
 #include<Handle_IntPatch_Line.hxx>
 #include<TopoDS_Face.hxx>
+#include<Handle_BOPInt_Context.hxx>
 #include<BRepAdaptor_Surface.hxx>
 #include<BRepAdaptor_Curve.hxx>
 #include<TopoDS_Vertex.hxx>
 #include<TopoDS_Wire.hxx>
 #include<gp_Dir.hxx>
 #include<Handle_Geom_Curve.hxx>
-#include<Handle_Geom2d_Curve.hxx>
-#include<TopoDS_Solid.hxx>
 #include<IntSurf_ListOfPntOn2S.hxx>
+#include<Handle_Geom2d_Curve.hxx>
 #include<IntTools.hxx>
 %}

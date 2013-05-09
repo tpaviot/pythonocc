@@ -400,6 +400,82 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepData_Protocol;
+class Handle_StepData_Protocol : public Handle_Interface_Protocol {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol();
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol(const Handle_StepData_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol(const StepData_Protocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol & operator=(const Handle_StepData_Protocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_Protocol & operator=(const StepData_Protocol *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepData_Protocol DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_Protocol {
+	StepData_Protocol* GetObject() {
+	return (StepData_Protocol*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepData_Protocol::~Handle_StepData_Protocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepData_Protocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepData_FileProtocol;
+class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol();
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol(const Handle_StepData_FileProtocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol(const StepData_FileProtocol *anItem);
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol & operator=(const Handle_StepData_FileProtocol &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepData_FileProtocol & operator=(const StepData_FileProtocol *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepData_FileProtocol DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepData_FileProtocol {
+	StepData_FileProtocol* GetObject() {
+	return (StepData_FileProtocol*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepData_FileProtocol::~Handle_StepData_FileProtocol %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepData_FileProtocol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepData_UndefinedEntity;
 class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 	public:
@@ -508,82 +584,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepData_PDescr {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepData_Protocol;
-class Handle_StepData_Protocol : public Handle_Interface_Protocol {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol();
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol(const Handle_StepData_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol(const StepData_Protocol *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol & operator=(const Handle_StepData_Protocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_Protocol & operator=(const StepData_Protocol *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepData_Protocol DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_Protocol {
-	StepData_Protocol* GetObject() {
-	return (StepData_Protocol*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepData_Protocol::~Handle_StepData_Protocol %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepData_Protocol {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepData_FileProtocol;
-class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol();
-		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol(const Handle_StepData_FileProtocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol(const StepData_FileProtocol *anItem);
-		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol & operator=(const Handle_StepData_FileProtocol &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepData_FileProtocol & operator=(const StepData_FileProtocol *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepData_FileProtocol DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepData_FileProtocol {
-	StepData_FileProtocol* GetObject() {
-	return (StepData_FileProtocol*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepData_FileProtocol::~Handle_StepData_FileProtocol %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepData_FileProtocol {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1208,77 +1208,6 @@ def __del__(self):
 %}
 
 %extend StepData_HeaderTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepData_SelectType;
-class StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Standard_Boolean Matches(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		void SetValue(const Handle_Standard_Transient &ent);
-		%feature("autodoc", "1");
-		void Nullify();
-		%feature("autodoc", "1");
-		const Handle_Standard_Transient & Value() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsNull() const;
-		%feature("autodoc", "1");
-		Handle_Standard_Type Type() const;
-		%feature("autodoc", "1");
-		Standard_Integer CaseNumber() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_PDescr Description() const;
-		%feature("autodoc", "1");
-		virtual		Handle_StepData_SelectMember NewMember() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
-		%feature("autodoc", "1");
-		Standard_Integer CaseMember() const;
-		%feature("autodoc", "1");
-		Handle_StepData_SelectMember Member() const;
-		%feature("autodoc", "1");
-		char * SelectName() const;
-		%feature("autodoc", "1");
-		Standard_Integer Int() const;
-		%feature("autodoc", "1");
-		void SetInt(const Standard_Integer val);
-		%feature("autodoc", "1");
-		Standard_Integer Integer() const;
-		%feature("autodoc", "1");
-		void SetInteger(const Standard_Integer val, const char * name="");
-		%feature("autodoc", "1");
-		Standard_Boolean Boolean() const;
-		%feature("autodoc", "1");
-		void SetBoolean(const Standard_Boolean val, const char * name="");
-		%feature("autodoc", "1");
-		StepData_Logical Logical() const;
-		%feature("autodoc", "1");
-		void SetLogical(const StepData_Logical val, const char * name="");
-		%feature("autodoc", "1");
-		Standard_Real Real() const;
-		%feature("autodoc", "1");
-		void SetReal(const Standard_Real val, const char * name="");
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-
-};
-%feature("shadow") StepData_SelectType::~StepData_SelectType %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepData_SelectType {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2393,49 +2322,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepData_DescrGeneral;
-class StepData_DescrGeneral : public StepData_GeneralModule {
-	public:
-		%feature("autodoc", "1");
-		StepData_DescrGeneral(const Handle_StepData_Protocol &proto);
-		%feature("autodoc", "1");
-		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
-		%feature("autodoc", "1");
-		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
-		%feature("autodoc", "1");
-		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepData_DescrGeneral {
-	Handle_StepData_DescrGeneral GetHandle() {
-	return *(Handle_StepData_DescrGeneral*) &$self;
-	}
-};
-%extend StepData_DescrGeneral {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepData_DescrGeneral::~StepData_DescrGeneral %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepData_DescrGeneral {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepData;
 class StepData {
 	public:
@@ -2848,6 +2734,77 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepData_SelectType;
+class StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Standard_Boolean Matches(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		void SetValue(const Handle_Standard_Transient &ent);
+		%feature("autodoc", "1");
+		void Nullify();
+		%feature("autodoc", "1");
+		const Handle_Standard_Transient & Value() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsNull() const;
+		%feature("autodoc", "1");
+		Handle_Standard_Type Type() const;
+		%feature("autodoc", "1");
+		Standard_Integer CaseNumber() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_PDescr Description() const;
+		%feature("autodoc", "1");
+		virtual		Handle_StepData_SelectMember NewMember() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseMem(const Handle_StepData_SelectMember &ent) const;
+		%feature("autodoc", "1");
+		Standard_Integer CaseMember() const;
+		%feature("autodoc", "1");
+		Handle_StepData_SelectMember Member() const;
+		%feature("autodoc", "1");
+		char * SelectName() const;
+		%feature("autodoc", "1");
+		Standard_Integer Int() const;
+		%feature("autodoc", "1");
+		void SetInt(const Standard_Integer val);
+		%feature("autodoc", "1");
+		Standard_Integer Integer() const;
+		%feature("autodoc", "1");
+		void SetInteger(const Standard_Integer val, const char * name="");
+		%feature("autodoc", "1");
+		Standard_Boolean Boolean() const;
+		%feature("autodoc", "1");
+		void SetBoolean(const Standard_Boolean val, const char * name="");
+		%feature("autodoc", "1");
+		StepData_Logical Logical() const;
+		%feature("autodoc", "1");
+		void SetLogical(const StepData_Logical val, const char * name="");
+		%feature("autodoc", "1");
+		Standard_Real Real() const;
+		%feature("autodoc", "1");
+		void SetReal(const Standard_Real val, const char * name="");
+		%feature("autodoc", "1");
+		virtual		void Destroy();
+
+};
+%feature("shadow") StepData_SelectType::~StepData_SelectType %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepData_SelectType {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepData_FreeFormEntity;
 class StepData_FreeFormEntity : public MMgt_TShared {
 	public:
@@ -3044,6 +3001,49 @@ def __del__(self):
 %}
 
 %extend StepData_StepWriter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepData_DescrGeneral;
+class StepData_DescrGeneral : public StepData_GeneralModule {
+	public:
+		%feature("autodoc", "1");
+		StepData_DescrGeneral(const Handle_StepData_Protocol &proto);
+		%feature("autodoc", "1");
+		virtual		void FillSharedCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, Interface_EntityIterator & iter) const;
+		%feature("autodoc", "1");
+		virtual		void CheckCase(const Standard_Integer CN, const Handle_Standard_Transient &ent, const Interface_ShareTool &shares, Handle_Interface_Check & ach) const;
+		%feature("autodoc", "1");
+		virtual		void CopyCase(const Standard_Integer CN, const Handle_Standard_Transient &entfrom, const Handle_Standard_Transient &entto, Interface_CopyTool & TC) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean NewVoid(const Standard_Integer CN, Handle_Standard_Transient & ent) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepData_DescrGeneral {
+	Handle_StepData_DescrGeneral GetHandle() {
+	return *(Handle_StepData_DescrGeneral*) &$self;
+	}
+};
+%extend StepData_DescrGeneral {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepData_DescrGeneral::~StepData_DescrGeneral %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepData_DescrGeneral {
 	void _kill_pointed() {
 		delete $self;
 	}

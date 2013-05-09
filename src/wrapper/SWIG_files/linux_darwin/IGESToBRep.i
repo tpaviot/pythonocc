@@ -52,6 +52,44 @@ $HeaderURL$
 
 
 
+%nodefaultctor Handle_IGESToBRep_AlgoContainer;
+class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer();
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const Handle_IGESToBRep_AlgoContainer &aHandle);
+		%feature("autodoc", "1");
+		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IGESToBRep_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IGESToBRep_AlgoContainer {
+	IGESToBRep_AlgoContainer* GetObject() {
+	return (IGESToBRep_AlgoContainer*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IGESToBRep_AlgoContainer {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IGESToBRep_Actor;
 class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 	public:
@@ -122,44 +160,6 @@ def __del__(self):
 %}
 
 %extend Handle_IGESToBRep_IGESBoundary {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IGESToBRep_AlgoContainer;
-class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer();
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const Handle_IGESToBRep_AlgoContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer(const IGESToBRep_AlgoContainer *anItem);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer & operator=(const Handle_IGESToBRep_AlgoContainer &aHandle);
-		%feature("autodoc", "1");
-		Handle_IGESToBRep_AlgoContainer & operator=(const IGESToBRep_AlgoContainer *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IGESToBRep_AlgoContainer DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IGESToBRep_AlgoContainer {
-	IGESToBRep_AlgoContainer* GetObject() {
-	return (IGESToBRep_AlgoContainer*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IGESToBRep_AlgoContainer::~Handle_IGESToBRep_AlgoContainer %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IGESToBRep_AlgoContainer {
 	void _kill_pointed() {
 		delete $self;
 	}

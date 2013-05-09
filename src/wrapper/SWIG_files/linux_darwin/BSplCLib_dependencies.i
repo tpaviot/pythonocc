@@ -24,6 +24,15 @@ $HeaderURL$
 
 */
 %{
+#include <GeomAbs_BSplKnotDistribution.hxx>
+#include <GeomAbs_CurveForm.hxx>
+#include <GeomAbs_CurveType.hxx>
+#include <GeomAbs_IsoType.hxx>
+#include <GeomAbs_JoinType.hxx>
+#include <GeomAbs_Shape.hxx>
+#include <GeomAbs_SurfaceForm.hxx>
+#include <GeomAbs_SurfaceType.hxx>
+#include <GeomAbs_UVSense.hxx>
 #include <Handle_Standard_AbortiveTransaction.hxx>
 #include <Handle_Standard_ConstructionError.hxx>
 #include <Handle_Standard_DimensionError.hxx>
@@ -59,6 +68,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -135,3 +145,4 @@ $HeaderURL$
 %};
 
 %import Standard.i
+%import GeomAbs.i

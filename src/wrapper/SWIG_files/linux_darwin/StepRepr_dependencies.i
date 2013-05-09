@@ -237,6 +237,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -518,7 +519,7 @@ $HeaderURL$
 %};
 
 %import MMgt.i
-%import StepBasic.i
 %import TCollection.i
+%import StepBasic.i
 %import Standard.i
 %import StepData.i

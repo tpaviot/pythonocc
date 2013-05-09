@@ -214,6 +214,9 @@ $HeaderURL$
 #include<IGESData_IGESWriter.hxx>
 #include<gp_XYZ.hxx>
 #include<gp_Pnt.hxx>
+#include<Handle_IGESData_HArray1OfIGESEntity.hxx>
+#include<Handle_TColStd_HArray1OfInteger.hxx>
+#include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
 #include<Handle_TColStd_HArray1OfReal.hxx>
 #include<Handle_TColStd_HArray2OfReal.hxx>
 #include<Handle_TColgp_HArray2OfXYZ.hxx>
@@ -231,9 +234,6 @@ $HeaderURL$
 #include<IGESGeom.hxx>
 #include<Handle_IGESBasic_HArray2OfHArray1OfReal.hxx>
 #include<Handle_TColgp_HArray1OfXYZ.hxx>
-#include<Handle_IGESData_HArray1OfIGESEntity.hxx>
 #include<gp_GTrsf.hxx>
 #include<Handle_IGESBasic_SubfigureDef.hxx>
-#include<Handle_TColStd_HArray1OfInteger.hxx>
-#include<Handle_IGESBasic_HArray1OfHArray1OfIGESEntity.hxx>
 %}

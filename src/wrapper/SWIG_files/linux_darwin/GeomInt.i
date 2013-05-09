@@ -162,65 +162,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
-class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
-	public:
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox();
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &PS);
-		%feature("autodoc", "1");
-		void SetImplicitSurface(const IntSurf_Quadric &IS);
-		%feature("autodoc", "1");
-		void Set(const Standard_Real Tol);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbVariables() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer NbEquations() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
-		%feature("autodoc", "1");
-		Standard_Real Root() const;
-		%feature("autodoc", "1");
-		Standard_Real Tolerance() const;
-		%feature("autodoc", "1");
-		const gp_Pnt  Point() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsTangent();
-		%feature("autodoc", "1");
-		const gp_Vec  Direction3d();
-		%feature("autodoc", "1");
-		const gp_Dir2d  Direction2d();
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & PSurface() const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & ISurface() const;
-
-};
-%feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -642,6 +583,65 @@ def __del__(self):
 %}
 
 %extend GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
+class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
+	public:
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox();
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const Handle_Adaptor3d_HSurface &PS, const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Handle_Adaptor3d_HSurface &PS);
+		%feature("autodoc", "1");
+		void SetImplicitSurface(const IntSurf_Quadric &IS);
+		%feature("autodoc", "1");
+		void Set(const Standard_Real Tol);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbVariables() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer NbEquations() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Value(const math_Vector &X, math_Vector & F);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Derivatives(const math_Vector &X, math_Matrix & D);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Values(const math_Vector &X, math_Vector & F, math_Matrix & D);
+		%feature("autodoc", "1");
+		Standard_Real Root() const;
+		%feature("autodoc", "1");
+		Standard_Real Tolerance() const;
+		%feature("autodoc", "1");
+		const gp_Pnt  Point() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsTangent();
+		%feature("autodoc", "1");
+		const gp_Vec  Direction3d();
+		%feature("autodoc", "1");
+		const gp_Dir2d  Direction2d();
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HSurface & PSurface() const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & ISurface() const;
+
+};
+%feature("shadow") GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox::~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
 	void _kill_pointed() {
 		delete $self;
 	}

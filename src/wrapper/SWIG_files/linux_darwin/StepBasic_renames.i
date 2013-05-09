@@ -69,12 +69,10 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_EffectivityAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_ProductDefinitionFormation::DownCast;
 %rename(DownCast) Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource::DownCast;
-%rename(DownCast) Handle_StepBasic_RatioUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_DocumentRepresentationType::DownCast;
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_DateAndTime::DownCast;
-%rename(DownCast) Handle_StepBasic_SiUnitAndPlaneAngleUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_PersonAndOrganizationRole::DownCast;
 %rename(DownCast) Handle_StepBasic_PersonAndOrganizationAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_DocumentProductAssociation::DownCast;
@@ -87,6 +85,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_Address::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnitAndRatioUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_HArray1OfProduct::DownCast;
+%rename(DownCast) Handle_StepBasic_RatioUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_MeasureValueMember::DownCast;
 %rename(DownCast) Handle_StepBasic_SolidAngleMeasureWithUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_NameAssignment::DownCast;
@@ -99,6 +98,7 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnitAndVolumeUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ConversionBasedUnitAndMassUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_SizeMember::DownCast;
+%rename(DownCast) Handle_StepBasic_SiUnitAndPlaneAngleUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_ThermodynamicTemperatureUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_SecurityClassificationLevel::DownCast;
 %rename(DownCast) Handle_StepBasic_DocumentReference::DownCast;
@@ -150,7 +150,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_ProductConceptContext::DownCast;
 %rename(DownCast) Handle_StepBasic_SiUnitAndTimeUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_DocumentFile::DownCast;
-%rename(DownCast) Handle_StepBasic_ActionAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_WeekOfYearAndDayDate::DownCast;
 %rename(DownCast) Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit::DownCast;
 %rename(DownCast) Handle_StepBasic_Action::DownCast;
@@ -163,5 +162,6 @@ $HeaderURL$
 %rename(DownCast) Handle_StepBasic_ApplicationContext::DownCast;
 %rename(DownCast) Handle_StepBasic_GeneralProperty::DownCast;
 %rename(DownCast) Handle_StepBasic_DateTimeRole::DownCast;
+%rename(DownCast) Handle_StepBasic_ActionAssignment::DownCast;
 %rename(DownCast) Handle_StepBasic_ExternallyDefinedItem::DownCast;
 %rename(DownCast) Handle_StepBasic_GroupAssignment::DownCast;

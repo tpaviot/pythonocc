@@ -23,15 +23,3 @@ $Author$
 $HeaderURL$
 
 */
-%rename(DownCast) Handle_Xw_HListOfMFTFonts::DownCast;
-%rename(DownCast) Handle_Xw_ColorMap::DownCast;
-%rename(DownCast) Handle_Xw_TextManager::DownCast;
-%rename(DownCast) Handle_Xw_Driver::DownCast;
-%rename(DownCast) Handle_Xw_WidthMap::DownCast;
-%rename(DownCast) Handle_Xw_GraphicDevice::DownCast;
-%rename(DownCast) Handle_Xw_FontMap::DownCast;
-%rename(DownCast) Handle_Xw_MarkMap::DownCast;
-%rename(DownCast) Handle_Xw_Window::DownCast;
-%rename(DownCast) Handle_Xw_IconBox::DownCast;
-%rename(DownCast) Handle_Xw_TypeMap::DownCast;
-%rename(SetTrace) Xw::SetTrace;

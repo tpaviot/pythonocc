@@ -61,8 +61,6 @@ $HeaderURL$
 #include<IntRes2d_Domain.hxx>
 #include<gp_Pnt2d.hxx>
 #include<Extrema_POnCurv2d.hxx>
-#include<math_Vector.hxx>
-#include<math_Matrix.hxx>
 #include<gp_Lin2d.hxx>
 #include<gp_Circ2d.hxx>
 #include<gp_Elips2d.hxx>
@@ -70,5 +68,7 @@ $HeaderURL$
 #include<gp_Hypr2d.hxx>
 #include<gp_Vec2d.hxx>
 #include<TColStd_Array1OfReal.hxx>
+#include<math_Vector.hxx>
+#include<math_Matrix.hxx>
 #include<Bnd_Box2d.hxx>
 %}

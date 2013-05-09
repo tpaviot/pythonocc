@@ -38,7 +38,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Geom_Axis1Placement::DownCast;
 %rename(DownCast) Handle_Geom_SequenceNodeOfSequenceOfSurface::DownCast;
 %rename(DownCast) Handle_Geom_Axis2Placement::DownCast;
-%rename(DownCast) Handle_Geom_Transformation::DownCast;
+%rename(DownCast) Handle_Geom_ConicalSurface::DownCast;
 %rename(DownCast) Handle_Geom_Hyperbola::DownCast;
 %rename(DownCast) Handle_Geom_Point::DownCast;
 %rename(DownCast) Handle_Geom_Parabola::DownCast;
@@ -54,15 +54,15 @@ $HeaderURL$
 %rename(DownCast) Handle_Geom_OffsetCurve::DownCast;
 %rename(DownCast) Handle_Geom_HSequenceOfBSplineSurface::DownCast;
 %rename(DownCast) Handle_Geom_RectangularTrimmedSurface::DownCast;
-%rename(DownCast) Handle_Geom_ConicalSurface::DownCast;
 %rename(DownCast) Handle_Geom_OffsetSurface::DownCast;
 %rename(DownCast) Handle_Geom_BezierSurface::DownCast;
-%rename(DownCast) Handle_Geom_BSplineCurve::DownCast;
+%rename(DownCast) Handle_Geom_Transformation::DownCast;
 %rename(DownCast) Handle_Geom_Line::DownCast;
 %rename(DownCast) Handle_Geom_Direction::DownCast;
 %rename(DownCast) Handle_Geom_HSequenceOfSurface::DownCast;
 %rename(DownCast) Handle_Geom_BezierCurve::DownCast;
 %rename(DownCast) Handle_Geom_UndefinedDerivative::DownCast;
+%rename(DownCast) Handle_Geom_BSplineCurve::DownCast;
 %rename(DownCast) Handle_Geom_Ellipse::DownCast;
 %rename(DownCast) Handle_Geom_SurfaceOfRevolution::DownCast;
 %rename(DownCast) Handle_Geom_Plane::DownCast;

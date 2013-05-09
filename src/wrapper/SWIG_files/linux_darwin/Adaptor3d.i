@@ -666,6 +666,99 @@ def __del__(self):
 };
 
 
+%nodefaultctor Adaptor3d_HCurve;
+class Adaptor3d_HCurve : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		Adaptor3d_Curve & GetCurve();
+		%feature("autodoc", "1");
+		Standard_Real FirstParameter() const;
+		%feature("autodoc", "1");
+		Standard_Real LastParameter() const;
+		%feature("autodoc", "1");
+		GeomAbs_Shape Continuity() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbIntervals(const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
+		%feature("autodoc", "1");
+		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsClosed() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsPeriodic() const;
+		%feature("autodoc", "1");
+		Standard_Real Period() const;
+		%feature("autodoc", "1");
+		gp_Pnt Value(const Standard_Real U) const;
+		%feature("autodoc", "1");
+		void D0(const Standard_Real U, gp_Pnt & P) const;
+		%feature("autodoc", "1");
+		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
+		%feature("autodoc", "1");
+		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
+		%feature("autodoc", "1");
+		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
+		%feature("autodoc", "1");
+		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
+		%feature("autodoc", "1");
+		Standard_Real Resolution(const Standard_Real R3d) const;
+		%feature("autodoc", "1");
+		GeomAbs_CurveType GetType() const;
+		%feature("autodoc", "1");
+		gp_Lin Line() const;
+		%feature("autodoc", "1");
+		gp_Circ Circle() const;
+		%feature("autodoc", "1");
+		gp_Elips Ellipse() const;
+		%feature("autodoc", "1");
+		gp_Hypr Hyperbola() const;
+		%feature("autodoc", "1");
+		gp_Parab Parabola() const;
+		%feature("autodoc", "1");
+		Standard_Integer Degree() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsRational() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbPoles() const;
+		%feature("autodoc", "1");
+		Standard_Integer NbKnots() const;
+		%feature("autodoc", "1");
+		Handle_Geom_BezierCurve Bezier() const;
+		%feature("autodoc", "1");
+		Handle_Geom_BSplineCurve BSpline() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Adaptor3d_HCurve {
+	Handle_Adaptor3d_HCurve GetHandle() {
+	return *(Handle_Adaptor3d_HCurve*) &$self;
+	}
+};
+%extend Adaptor3d_HCurve {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Adaptor3d_HCurve::~Adaptor3d_HCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Adaptor3d_HCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Adaptor3d_Surface;
 class Adaptor3d_Surface {
 	public:
@@ -818,99 +911,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Adaptor3d_HCurve;
-class Adaptor3d_HCurve : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		const Adaptor3d_Curve & Curve() const;
-		%feature("autodoc", "1");
-		virtual		Adaptor3d_Curve & GetCurve();
-		%feature("autodoc", "1");
-		Standard_Real FirstParameter() const;
-		%feature("autodoc", "1");
-		Standard_Real LastParameter() const;
-		%feature("autodoc", "1");
-		GeomAbs_Shape Continuity() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbIntervals(const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		void Intervals(TColStd_Array1OfReal & T, const GeomAbs_Shape S);
-		%feature("autodoc", "1");
-		Handle_Adaptor3d_HCurve Trim(const Standard_Real First, const Standard_Real Last, const Standard_Real Tol) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsClosed() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsPeriodic() const;
-		%feature("autodoc", "1");
-		Standard_Real Period() const;
-		%feature("autodoc", "1");
-		gp_Pnt Value(const Standard_Real U) const;
-		%feature("autodoc", "1");
-		void D0(const Standard_Real U, gp_Pnt & P) const;
-		%feature("autodoc", "1");
-		void D1(const Standard_Real U, gp_Pnt & P, gp_Vec & V) const;
-		%feature("autodoc", "1");
-		void D2(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2) const;
-		%feature("autodoc", "1");
-		void D3(const Standard_Real U, gp_Pnt & P, gp_Vec & V1, gp_Vec & V2, gp_Vec & V3) const;
-		%feature("autodoc", "1");
-		gp_Vec DN(const Standard_Real U, const Standard_Integer N) const;
-		%feature("autodoc", "1");
-		Standard_Real Resolution(const Standard_Real R3d) const;
-		%feature("autodoc", "1");
-		GeomAbs_CurveType GetType() const;
-		%feature("autodoc", "1");
-		gp_Lin Line() const;
-		%feature("autodoc", "1");
-		gp_Circ Circle() const;
-		%feature("autodoc", "1");
-		gp_Elips Ellipse() const;
-		%feature("autodoc", "1");
-		gp_Hypr Hyperbola() const;
-		%feature("autodoc", "1");
-		gp_Parab Parabola() const;
-		%feature("autodoc", "1");
-		Standard_Integer Degree() const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsRational() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbPoles() const;
-		%feature("autodoc", "1");
-		Standard_Integer NbKnots() const;
-		%feature("autodoc", "1");
-		Handle_Geom_BezierCurve Bezier() const;
-		%feature("autodoc", "1");
-		Handle_Geom_BSplineCurve BSpline() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Adaptor3d_HCurve {
-	Handle_Adaptor3d_HCurve GetHandle() {
-	return *(Handle_Adaptor3d_HCurve*) &$self;
-	}
-};
-%extend Adaptor3d_HCurve {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Adaptor3d_HCurve::~Adaptor3d_HCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Adaptor3d_HCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Adaptor3d_HIsoCurve;
 class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 	public:
@@ -921,7 +921,13 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 		%feature("autodoc", "1");
 		void Set(const Adaptor3d_IsoCurve &C);
 		%feature("autodoc", "1");
+		virtual		const Adaptor3d_Curve & Curve() const;
+		%feature("autodoc", "1");
+		virtual		Adaptor3d_Curve & GetCurve();
+		%feature("autodoc", "1");
 		Adaptor3d_IsoCurve & ChangeCurve();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Adaptor3d_HIsoCurve {

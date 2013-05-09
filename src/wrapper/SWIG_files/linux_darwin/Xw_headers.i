@@ -27,33 +27,7 @@ $HeaderURL$
 
 // Headers necessary to define wrapped classes.
 
-#include<Handle_Xw_ColorMap.hxx>
-#include<Handle_Xw_Driver.hxx>
-#include<Handle_Xw_FontMap.hxx>
-#include<Handle_Xw_GraphicDevice.hxx>
-#include<Handle_Xw_HListOfMFTFonts.hxx>
-#include<Handle_Xw_IconBox.hxx>
-#include<Handle_Xw_MarkMap.hxx>
-#include<Handle_Xw_TextManager.hxx>
-#include<Handle_Xw_TypeMap.hxx>
-#include<Handle_Xw_WidthMap.hxx>
-#include<Handle_Xw_Window.hxx>
-#include<Xw.hxx>
-#include<Xw_ColorMap.hxx>
-#include<Xw_Driver.hxx>
-#include<Xw_FontMap.hxx>
-#include<Xw_GraphicDevice.hxx>
-#include<Xw_HListOfMFTFonts.hxx>
-#include<Xw_IconBox.hxx>
-#include<Xw_ListOfMFTFonts.hxx>
-#include<Xw_MarkMap.hxx>
-#include<Xw_TextManager.hxx>
-#include<Xw_TypeMap.hxx>
-#include<Xw_TypeOfMapping.hxx>
-#include<Xw_TypeOfVisual.hxx>
-#include<Xw_WidthMap.hxx>
 #include<Xw_Window.hxx>
-#include<Xw_WindowQuality.hxx>
 
 // Additional headers necessary for compilation.
 
@@ -94,7 +68,6 @@ $HeaderURL$
 #include<OSD_Host.hxx>
 #include<OSD_KindFile.hxx>
 #include<OSD_LoadMode.hxx>
-#include<OSD_Localizer.hxx>
 #include<OSD_LockType.hxx>
 #include<OSD_MAllocHook.hxx>
 #include<OSD_MailBox.hxx>
@@ -108,7 +81,6 @@ $HeaderURL$
 #include<OSD_Printer.hxx>
 #include<OSD_Process.hxx>
 #include<OSD_Protection.hxx>
-#include<OSD_Real2String.hxx>
 #include<OSD_SIGBUS.hxx>
 #include<OSD_SIGHUP.hxx>
 #include<OSD_SIGILL.hxx>
@@ -152,24 +124,4 @@ $HeaderURL$
 
 // Needed headers necessary for compilation.
 
-#include<Handle_Standard_Transient.hxx>
-#include<Handle_Aspect_GraphicDriver.hxx>
-#include<Handle_MFT_FontManager.hxx>
-#include<TShort_Array1OfShortReal.hxx>
-#include<TCollection_ExtendedString.hxx>
-#include<Aspect_WidthMapEntry.hxx>
-#include<Handle_Aspect_WidthMap.hxx>
-#include<Aspect_ColorMapEntry.hxx>
-#include<Handle_Aspect_ColorMap.hxx>
-#include<Quantity_Color.hxx>
-#include<Aspect_Background.hxx>
-#include<Aspect_GradientBackground.hxx>
-#include<Image_PixMap.hxx>
-#include<Aspect_FontMapEntry.hxx>
-#include<Handle_Aspect_FontMap.hxx>
-#include<Aspect_TypeMapEntry.hxx>
-#include<Handle_Aspect_TypeMap.hxx>
-#include<Aspect_MarkMapEntry.hxx>
-#include<Handle_Aspect_MarkMap.hxx>
-#include<Xw.hxx>
 %}

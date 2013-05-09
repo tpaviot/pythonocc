@@ -110,12 +110,16 @@ $HeaderURL$
 #include <NCollection_SparseArray.hxx>
 #include <NCollection_SparseArrayBase.hxx>
 #include <NCollection_Stack.hxx>
+#include <NCollection_StdAllocator.hxx>
 #include <NCollection_StdBase.hxx>
+#include <NCollection_String.hxx>
 #include <NCollection_TListIterator.hxx>
 #include <NCollection_TListNode.hxx>
 #include <NCollection_TypeDef.hxx>
 #include <NCollection_UBTree.hxx>
 #include <NCollection_UBTreeFiller.hxx>
+#include <NCollection_UtfIterator.hxx>
+#include <NCollection_UtfString.hxx>
 #include <NCollection_Vector.hxx>
 #include <Standard_AbortiveTransaction.hxx>
 #include <Standard_Address.hxx>
@@ -123,6 +127,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>

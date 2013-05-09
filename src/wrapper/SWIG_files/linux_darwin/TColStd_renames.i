@@ -38,7 +38,7 @@ $HeaderURL$
 %rename(DownCast) Handle_TColStd_DataMapNodeOfDataMapOfTransientTransient::DownCast;
 %rename(DownCast) Handle_TColStd_StdMapNodeOfMapOfInteger::DownCast;
 %rename(DownCast) Handle_TColStd_ListNodeOfSetListOfSetOfInteger::DownCast;
-%rename(DownCast) Handle_TColStd_HArray1OfInteger::DownCast;
+%rename(DownCast) Handle_TColStd_StackNodeOfStackOfTransient::DownCast;
 %rename(DownCast) Handle_TColStd_HArray1OfTransient::DownCast;
 %rename(DownCast) Handle_TColStd_HSequenceOfReal::DownCast;
 %rename(DownCast) Handle_TColStd_DataMapNodeOfDataMapOfIntegerTransient::DownCast;
@@ -60,7 +60,6 @@ $HeaderURL$
 %rename(DownCast) Handle_TColStd_HSequenceOfAsciiString::DownCast;
 %rename(DownCast) Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal::DownCast;
 %rename(DownCast) Handle_TColStd_HArray1OfExtendedString::DownCast;
-%rename(DownCast) Handle_TColStd_StackNodeOfStackOfTransient::DownCast;
 %rename(DownCast) Handle_TColStd_HArray2OfTransient::DownCast;
 %rename(DownCast) Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger::DownCast;
 %rename(DownCast) Handle_TColStd_SequenceNodeOfSequenceOfAsciiString::DownCast;
@@ -81,6 +80,7 @@ $HeaderURL$
 %rename(DownCast) Handle_TColStd_SequenceNodeOfSequenceOfTransient::DownCast;
 %rename(DownCast) Handle_TColStd_StdMapNodeOfMapOfReal::DownCast;
 %rename(DownCast) Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger::DownCast;
+%rename(DownCast) Handle_TColStd_HArray1OfInteger::DownCast;
 %rename(DownCast) Handle_TColStd_HArray1OfAsciiString::DownCast;
 %rename(DownCast) Handle_TColStd_DataMapNodeOfDataMapOfAsciiStringInteger::DownCast;
 %rename(DownCast) Handle_TColStd_SequenceNodeOfSequenceOfAddress::DownCast;

@@ -178,6 +178,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_IntPatch_TheIWLineOfTheIWalking;
+class Handle_IntPatch_TheIWLineOfTheIWalking : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking();
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking(const IntPatch_TheIWLineOfTheIWalking *anItem);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
+		%feature("autodoc", "1");
+		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const IntPatch_TheIWLineOfTheIWalking *anItem);
+		%feature("autodoc", "1");
+		static		Handle_IntPatch_TheIWLineOfTheIWalking DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_IntPatch_TheIWLineOfTheIWalking {
+	IntPatch_TheIWLineOfTheIWalking* GetObject() {
+	return (IntPatch_TheIWLineOfTheIWalking*)$self->Access();
+	}
+};
+%feature("shadow") Handle_IntPatch_TheIWLineOfTheIWalking::~Handle_IntPatch_TheIWLineOfTheIWalking %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_IntPatch_TheIWLineOfTheIWalking {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds;
 class Handle_IntPatch_SequenceNodeOfSequenceOfSegmentOfTheSOnBounds : public Handle_TCollection_SeqNode {
 	public:
@@ -400,44 +438,6 @@ def __del__(self):
 %}
 
 %extend Handle_IntPatch_SequenceNodeOfSequenceOfPoint {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_IntPatch_TheIWLineOfTheIWalking;
-class Handle_IntPatch_TheIWLineOfTheIWalking : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking();
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking(const IntPatch_TheIWLineOfTheIWalking *anItem);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const Handle_IntPatch_TheIWLineOfTheIWalking &aHandle);
-		%feature("autodoc", "1");
-		Handle_IntPatch_TheIWLineOfTheIWalking & operator=(const IntPatch_TheIWLineOfTheIWalking *anItem);
-		%feature("autodoc", "1");
-		static		Handle_IntPatch_TheIWLineOfTheIWalking DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_IntPatch_TheIWLineOfTheIWalking {
-	IntPatch_TheIWLineOfTheIWalking* GetObject() {
-	return (IntPatch_TheIWLineOfTheIWalking*)$self->Access();
-	}
-};
-%feature("shadow") Handle_IntPatch_TheIWLineOfTheIWalking::~Handle_IntPatch_TheIWLineOfTheIWalking %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_IntPatch_TheIWLineOfTheIWalking {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -25,8 +25,8 @@ $HeaderURL$
 */
 %rename(DownCast) Handle_NIS_Drawer::DownCast;
 %rename(DownCast) Handle_NIS_SurfaceDrawer::DownCast;
-%rename(DownCast) Handle_NIS_SelectFilter::DownCast;
 %rename(DownCast) Handle_NIS_TriangulatedDrawer::DownCast;
+%rename(DownCast) Handle_NIS_SelectFilter::DownCast;
 %rename(DownCast) Handle_NIS_InteractiveObject::DownCast;
 %rename(DownCast) Handle_NIS_Triangulated::DownCast;
 %rename(DownCast) Handle_NIS_Surface::DownCast;

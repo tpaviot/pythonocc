@@ -24,14 +24,11 @@ $HeaderURL$
 
 */
 %rename(DownCast) Handle_StdSelect_Prs::DownCast;
-%rename(DownCast) Handle_StdSelect_SensitiveText2d::DownCast;
-%rename(DownCast) Handle_StdSelect_TextProjector2d::DownCast;
 %rename(DownCast) Handle_StdSelect_EdgeFilter::DownCast;
-%rename(DownCast) Handle_StdSelect_ViewerSelector2d::DownCast;
 %rename(DownCast) Handle_StdSelect_ViewerSelector3d::DownCast;
 %rename(DownCast) Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs::DownCast;
-%rename(DownCast) Handle_StdSelect_Shape::DownCast;
 %rename(DownCast) Handle_StdSelect_ShapeTypeFilter::DownCast;
+%rename(DownCast) Handle_StdSelect_Shape::DownCast;
 %rename(DownCast) Handle_StdSelect_FaceFilter::DownCast;
 %rename(DownCast) Handle_StdSelect_BRepOwner::DownCast;
 %rename(Load) StdSelect_BRepSelectionTool::Load;

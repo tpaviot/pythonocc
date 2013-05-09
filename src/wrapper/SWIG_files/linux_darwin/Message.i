@@ -866,6 +866,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
+class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		Message_ProgressScale & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
+	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
+	}
+};
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Message_SequenceNodeOfSequenceOfProgressScale {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Message_ProgressSentry;
 class Message_ProgressSentry {
 	public:
@@ -1020,43 +1057,6 @@ def __del__(self):
 %}
 
 %extend Message_MsgFile {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
-class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		Message_SequenceNodeOfSequenceOfProgressScale(const Message_ProgressScale &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		Message_ProgressScale & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Handle_Message_SequenceNodeOfSequenceOfProgressScale GetHandle() {
-	return *(Handle_Message_SequenceNodeOfSequenceOfProgressScale*) &$self;
-	}
-};
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Message_SequenceNodeOfSequenceOfProgressScale::~Message_SequenceNodeOfSequenceOfProgressScale %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Message_SequenceNodeOfSequenceOfProgressScale {
 	void _kill_pointed() {
 		delete $self;
 	}

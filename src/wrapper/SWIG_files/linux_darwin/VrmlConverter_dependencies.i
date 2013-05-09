@@ -45,6 +45,9 @@ $HeaderURL$
 #include <Aspect_ColorScale.hxx>
 #include <Aspect_Convert.hxx>
 #include <Aspect_Display.hxx>
+#include <Aspect_DisplayConnection.hxx>
+#include <Aspect_DisplayConnectionDefinitionError.hxx>
+#include <Aspect_DisplayConnection_Handle.hxx>
 #include <Aspect_Drawable.hxx>
 #include <Aspect_Driver.hxx>
 #include <Aspect_DriverDefinitionError.hxx>
@@ -65,9 +68,7 @@ $HeaderURL$
 #include <Aspect_GradientBackground.hxx>
 #include <Aspect_GradientFillMethod.hxx>
 #include <Aspect_GraphicCallbackProc.hxx>
-#include <Aspect_GraphicDevice.hxx>
 #include <Aspect_GraphicDeviceDefinitionError.hxx>
-#include <Aspect_GraphicDriver.hxx>
 #include <Aspect_Grid.hxx>
 #include <Aspect_GridDrawMode.hxx>
 #include <Aspect_GridType.hxx>
@@ -119,7 +120,6 @@ $HeaderURL$
 #include <Aspect_TypeOfColorSpace.hxx>
 #include <Aspect_TypeOfConstraint.hxx>
 #include <Aspect_TypeOfDeflection.hxx>
-#include <Aspect_TypeOfDegenerateModel.hxx>
 #include <Aspect_TypeOfDisplayText.hxx>
 #include <Aspect_TypeOfDrawMode.hxx>
 #include <Aspect_TypeOfEdge.hxx>
@@ -161,6 +161,7 @@ $HeaderURL$
 #include <Handle_Aspect_ColorMapDefinitionError.hxx>
 #include <Handle_Aspect_ColorRampColorMap.hxx>
 #include <Handle_Aspect_ColorScale.hxx>
+#include <Handle_Aspect_DisplayConnectionDefinitionError.hxx>
 #include <Handle_Aspect_Driver.hxx>
 #include <Handle_Aspect_DriverDefinitionError.hxx>
 #include <Handle_Aspect_DriverError.hxx>
@@ -169,9 +170,7 @@ $HeaderURL$
 #include <Handle_Aspect_FontMapDefinitionError.hxx>
 #include <Handle_Aspect_FontStyleDefinitionError.hxx>
 #include <Handle_Aspect_GenericColorMap.hxx>
-#include <Handle_Aspect_GraphicDevice.hxx>
 #include <Handle_Aspect_GraphicDeviceDefinitionError.hxx>
-#include <Handle_Aspect_GraphicDriver.hxx>
 #include <Handle_Aspect_Grid.hxx>
 #include <Handle_Aspect_IdentDefinitionError.hxx>
 #include <Handle_Aspect_LineStyleDefinitionError.hxx>
@@ -334,6 +333,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>

@@ -194,6 +194,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepVisual_FillAreaStyle;
+class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle();
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle(const Handle_StepVisual_FillAreaStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle(const StepVisual_FillAreaStyle *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle & operator=(const Handle_StepVisual_FillAreaStyle &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_FillAreaStyle & operator=(const StepVisual_FillAreaStyle *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_FillAreaStyle DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_FillAreaStyle {
+	StepVisual_FillAreaStyle* GetObject() {
+	return (StepVisual_FillAreaStyle*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_FillAreaStyle::~Handle_StepVisual_FillAreaStyle %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_FillAreaStyle {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleSegmentationCurve;
 class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShared {
 	public:
@@ -726,6 +764,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepVisual_PresentationSet;
+class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet(const Handle_StepVisual_PresentationSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet(const StepVisual_PresentationSet *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet & operator=(const Handle_StepVisual_PresentationSet &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationSet & operator=(const StepVisual_PresentationSet *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_PresentationSet DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationSet {
+	StepVisual_PresentationSet* GetObject() {
+	return (StepVisual_PresentationSet*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_PresentationSet::~Handle_StepVisual_PresentationSet %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_PresentationSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleSilhouette;
 class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	public:
@@ -1144,29 +1220,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_FillAreaStyleColour;
-class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
+%nodefaultctor Handle_StepVisual_PreDefinedColour;
+class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour();
+		Handle_StepVisual_PreDefinedColour();
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour(const Handle_StepVisual_FillAreaStyleColour &aHandle);
+		Handle_StepVisual_PreDefinedColour(const Handle_StepVisual_PreDefinedColour &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour(const StepVisual_FillAreaStyleColour *anItem);
+		Handle_StepVisual_PreDefinedColour(const StepVisual_PreDefinedColour *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour & operator=(const Handle_StepVisual_FillAreaStyleColour &aHandle);
+		Handle_StepVisual_PreDefinedColour & operator=(const Handle_StepVisual_PreDefinedColour &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyleColour & operator=(const StepVisual_FillAreaStyleColour *anItem);
+		Handle_StepVisual_PreDefinedColour & operator=(const StepVisual_PreDefinedColour *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_FillAreaStyleColour DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_PreDefinedColour DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_FillAreaStyleColour {
-	StepVisual_FillAreaStyleColour* GetObject() {
-	return (StepVisual_FillAreaStyleColour*)$self->Access();
+%extend Handle_StepVisual_PreDefinedColour {
+	StepVisual_PreDefinedColour* GetObject() {
+	return (StepVisual_PreDefinedColour*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_FillAreaStyleColour::~Handle_StepVisual_FillAreaStyleColour %{
+%feature("shadow") Handle_StepVisual_PreDefinedColour::~Handle_StepVisual_PreDefinedColour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1175,7 +1251,45 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_FillAreaStyleColour {
+%extend Handle_StepVisual_PreDefinedColour {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_DraughtingPreDefinedColour;
+class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_PreDefinedColour {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour();
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour(const Handle_StepVisual_DraughtingPreDefinedColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour(const StepVisual_DraughtingPreDefinedColour *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const Handle_StepVisual_DraughtingPreDefinedColour &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const StepVisual_DraughtingPreDefinedColour *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_DraughtingPreDefinedColour DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_DraughtingPreDefinedColour {
+	StepVisual_DraughtingPreDefinedColour* GetObject() {
+	return (StepVisual_DraughtingPreDefinedColour*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_DraughtingPreDefinedColour::~Handle_StepVisual_DraughtingPreDefinedColour %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_DraughtingPreDefinedColour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1410,29 +1524,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepVisual_PreDefinedColour;
-class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
+%nodefaultctor Handle_StepVisual_FillAreaStyleColour;
+class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedColour();
+		Handle_StepVisual_FillAreaStyleColour();
 		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedColour(const Handle_StepVisual_PreDefinedColour &aHandle);
+		Handle_StepVisual_FillAreaStyleColour(const Handle_StepVisual_FillAreaStyleColour &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedColour(const StepVisual_PreDefinedColour *anItem);
+		Handle_StepVisual_FillAreaStyleColour(const StepVisual_FillAreaStyleColour *anItem);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedColour & operator=(const Handle_StepVisual_PreDefinedColour &aHandle);
+		Handle_StepVisual_FillAreaStyleColour & operator=(const Handle_StepVisual_FillAreaStyleColour &aHandle);
 		%feature("autodoc", "1");
-		Handle_StepVisual_PreDefinedColour & operator=(const StepVisual_PreDefinedColour *anItem);
+		Handle_StepVisual_FillAreaStyleColour & operator=(const StepVisual_FillAreaStyleColour *anItem);
 		%feature("autodoc", "1");
-		static		Handle_StepVisual_PreDefinedColour DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_StepVisual_FillAreaStyleColour DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_StepVisual_PreDefinedColour {
-	StepVisual_PreDefinedColour* GetObject() {
-	return (StepVisual_PreDefinedColour*)$self->Access();
+%extend Handle_StepVisual_FillAreaStyleColour {
+	StepVisual_FillAreaStyleColour* GetObject() {
+	return (StepVisual_FillAreaStyleColour*)$self->Access();
 	}
 };
-%feature("shadow") Handle_StepVisual_PreDefinedColour::~Handle_StepVisual_PreDefinedColour %{
+%feature("shadow") Handle_StepVisual_FillAreaStyleColour::~Handle_StepVisual_FillAreaStyleColour %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1441,121 +1555,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_StepVisual_PreDefinedColour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_DraughtingPreDefinedColour;
-class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_PreDefinedColour {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_DraughtingPreDefinedColour();
-		%feature("autodoc", "1");
-		Handle_StepVisual_DraughtingPreDefinedColour(const Handle_StepVisual_DraughtingPreDefinedColour &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_DraughtingPreDefinedColour(const StepVisual_DraughtingPreDefinedColour *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const Handle_StepVisual_DraughtingPreDefinedColour &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_DraughtingPreDefinedColour & operator=(const StepVisual_DraughtingPreDefinedColour *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_DraughtingPreDefinedColour DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_DraughtingPreDefinedColour {
-	StepVisual_DraughtingPreDefinedColour* GetObject() {
-	return (StepVisual_DraughtingPreDefinedColour*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_DraughtingPreDefinedColour::~Handle_StepVisual_DraughtingPreDefinedColour %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_DraughtingPreDefinedColour {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_FillAreaStyle;
-class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle();
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle(const Handle_StepVisual_FillAreaStyle &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle(const StepVisual_FillAreaStyle *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle & operator=(const Handle_StepVisual_FillAreaStyle &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_FillAreaStyle & operator=(const StepVisual_FillAreaStyle *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_FillAreaStyle DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_FillAreaStyle {
-	StepVisual_FillAreaStyle* GetObject() {
-	return (StepVisual_FillAreaStyle*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_FillAreaStyle::~Handle_StepVisual_FillAreaStyle %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_FillAreaStyle {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PresentationSet;
-class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet(const Handle_StepVisual_PresentationSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet(const StepVisual_PresentationSet *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet & operator=(const Handle_StepVisual_PresentationSet &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationSet & operator=(const StepVisual_PresentationSet *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationSet DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationSet {
-	StepVisual_PresentationSet* GetObject() {
-	return (StepVisual_PresentationSet*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationSet::~Handle_StepVisual_PresentationSet %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationSet {
+%extend Handle_StepVisual_FillAreaStyleColour {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2050,6 +2050,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_AreaInSet {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
+class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment();
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationStyleAssignment & operator=(const StepVisual_PresentationStyleAssignment *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepVisual_PresentationStyleAssignment DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepVisual_PresentationStyleAssignment {
+	StepVisual_PresentationStyleAssignment* GetObject() {
+	return (StepVisual_PresentationStyleAssignment*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepVisual_PresentationStyleAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2924,44 +2962,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepVisual_CameraUsage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
-class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment();
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment(const StepVisual_PresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment & operator=(const Handle_StepVisual_PresentationStyleAssignment &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationStyleAssignment & operator=(const StepVisual_PresentationStyleAssignment *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepVisual_PresentationStyleAssignment DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepVisual_PresentationStyleAssignment {
-	StepVisual_PresentationStyleAssignment* GetObject() {
-	return (StepVisual_PresentationStyleAssignment*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepVisual_PresentationStyleAssignment::~Handle_StepVisual_PresentationStyleAssignment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepVisual_PresentationStyleAssignment {
 	void _kill_pointed() {
 		delete $self;
 	}

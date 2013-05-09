@@ -49,19 +49,17 @@ $HeaderURL$
 
 %include Graphic3d_headers.i
 
+typedef NCollection_Vec4<float> Graphic3d_Vec4;
 typedef CALL_DEF_PICK Graphic3d_CPick;
 typedef Graphic3d_Structure * Graphic3d_StructPtr;
-typedef CALL_DEF_VIEW Graphic3d_CView;
 typedef Standard_Integer Graphic3d_TransModeFlags;
-typedef CALL_DEF_STRUCTURE Graphic3d_CStructure;
+typedef NCollection_Vec2<float> Graphic3d_Vec2;
 typedef Graphic3d_FrameBuffer * Graphic3d_PtrFrameBuffer;
-typedef CALL_DEF_GROUP Graphic3d_CGroup;
 typedef CALL_DEF_LIGHT Graphic3d_CLight;
 typedef CALL_DEF_BOUNDS Graphic3d_CBounds;
 typedef CALL_DEF_USERDRAW Graphic3d_CUserDraw;
-typedef CALL_DEF_INIT_TEXTURE Graphic3d_CInitTexture;
 typedef CALL_DEF_TRANSFORM_PERSISTENCE Graphic3d_CTransPersStruct;
-typedef CALL_DEF_TEXTURE Graphic3d_CTexture;
+typedef NCollection_Vec3<float> Graphic3d_Vec3;
 typedef NCollection_List<Handle_TCollection_HAsciiString> Graphic3d_NListOfHAsciiString;
 typedef CALL_DEF_PARRAY * Graphic3d_PrimitiveArray;
 typedef CALL_DEF_PLANE Graphic3d_CPlane;
@@ -99,6 +97,12 @@ enum Graphic3d_NameOfTexture2D {
 enum Graphic3d_TypeOfMaterial {
 	Graphic3d_MATERIAL_ASPECT,
 	Graphic3d_MATERIAL_PHYSIC,
+	};
+
+enum Graphic3d_TypeOfTextureFilter {
+	Graphic3d_TOTF_NEAREST,
+	Graphic3d_TOTF_BILINEAR,
+	Graphic3d_TOTF_TRILINEAR,
 	};
 
 enum Graphic3d_BufferType {
@@ -252,6 +256,13 @@ enum Graphic3d_NameOfTexturePlane {
 	Graphic3d_NOTP_YZ,
 	Graphic3d_NOTP_ZX,
 	Graphic3d_NOTP_UNKNOWN,
+	};
+
+enum Graphic3d_LevelOfTextureAnisotropy {
+	Graphic3d_LOTA_OFF,
+	Graphic3d_LOTA_FAST,
+	Graphic3d_LOTA_MIDDLE,
+	Graphic3d_LOTA_QUALITY,
 	};
 
 enum Graphic3d_TypeOfComposition {
@@ -445,6 +456,44 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_DataStructureManager {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Graphic3d_VectorError;
+class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError(const Handle_Graphic3d_VectorError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError(const Graphic3d_VectorError *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError & operator=(const Handle_Graphic3d_VectorError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_VectorError & operator=(const Graphic3d_VectorError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_VectorError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_VectorError {
+	Graphic3d_VectorError* GetObject() {
+	return (Graphic3d_VectorError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_VectorError::~Handle_Graphic3d_VectorError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_VectorError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -711,82 +760,6 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_StructureManager {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Graphic3d_VectorError;
-class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_VectorError();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_VectorError(const Handle_Graphic3d_VectorError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_VectorError(const Graphic3d_VectorError *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_VectorError & operator=(const Handle_Graphic3d_VectorError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_VectorError & operator=(const Graphic3d_VectorError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_VectorError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_VectorError {
-	Graphic3d_VectorError* GetObject() {
-	return (Graphic3d_VectorError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_VectorError::~Handle_Graphic3d_VectorError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_VectorError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Graphic3d_ArrayOfTriangles;
-class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimitives {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfTriangles();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfTriangles(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfTriangles(const Graphic3d_ArrayOfTriangles *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfTriangles & operator=(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfTriangles & operator=(const Graphic3d_ArrayOfTriangles *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_ArrayOfTriangles DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_ArrayOfTriangles {
-	Graphic3d_ArrayOfTriangles* GetObject() {
-	return (Graphic3d_ArrayOfTriangles*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_ArrayOfTriangles::~Handle_Graphic3d_ArrayOfTriangles %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_ArrayOfTriangles {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1288,7 +1261,7 @@ def __del__(self):
 
 
 %nodefaultctor Handle_Graphic3d_GraphicDriver;
-class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
+class Handle_Graphic3d_GraphicDriver : public Handle_MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		Handle_Graphic3d_GraphicDriver();
@@ -1319,44 +1292,6 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_GraphicDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Graphic3d_GraphicDevice;
-class Handle_Graphic3d_GraphicDevice : public Handle_Xw_GraphicDevice {
-	public:
-		%feature("autodoc", "1");
-		Handle_Graphic3d_GraphicDevice();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_GraphicDevice(const Handle_Graphic3d_GraphicDevice &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_GraphicDevice(const Graphic3d_GraphicDevice *anItem);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_GraphicDevice & operator=(const Handle_Graphic3d_GraphicDevice &aHandle);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_GraphicDevice & operator=(const Graphic3d_GraphicDevice *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Graphic3d_GraphicDevice DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Graphic3d_GraphicDevice {
-	Graphic3d_GraphicDevice* GetObject() {
-	return (Graphic3d_GraphicDevice*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Graphic3d_GraphicDevice::~Handle_Graphic3d_GraphicDevice %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Graphic3d_GraphicDevice {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1895,6 +1830,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Graphic3d_ArrayOfTriangles;
+class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles(const Graphic3d_ArrayOfTriangles *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles & operator=(const Handle_Graphic3d_ArrayOfTriangles &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfTriangles & operator=(const Graphic3d_ArrayOfTriangles *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_ArrayOfTriangles DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_ArrayOfTriangles {
+	Graphic3d_ArrayOfTriangles* GetObject() {
+	return (Graphic3d_ArrayOfTriangles*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_ArrayOfTriangles::~Handle_Graphic3d_ArrayOfTriangles %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_ArrayOfTriangles {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup;
 class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection_MapNode {
 	public:
@@ -1927,6 +1900,44 @@ def __del__(self):
 %}
 
 %extend Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Graphic3d_TextureParams;
+class Handle_Graphic3d_TextureParams : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureParams();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureParams(const Handle_Graphic3d_TextureParams &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureParams(const Graphic3d_TextureParams *anItem);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureParams & operator=(const Handle_Graphic3d_TextureParams &aHandle);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_TextureParams & operator=(const Graphic3d_TextureParams *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_TextureParams DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Graphic3d_TextureParams {
+	Graphic3d_TextureParams* GetObject() {
+	return (Graphic3d_TextureParams*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Graphic3d_TextureParams::~Handle_Graphic3d_TextureParams %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Graphic3d_TextureParams {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2330,6 +2341,8 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
 		%feature("autodoc", "1");
+		Standard_Integer AddVertex(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z);
+		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const gp_Pnt aVertice, const Quantity_Color &aColor);
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const gp_Pnt aVertice, const Standard_Integer aColor);
@@ -2337,6 +2350,8 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		Standard_Integer AddVertex(const gp_Pnt aVertice, const gp_Dir aNormal);
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ);
+		%feature("autodoc", "1");
+		Standard_Integer AddVertex(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z, const Standard_ShortReal NX, const Standard_ShortReal NY, const Standard_ShortReal NZ);
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const gp_Pnt aVertice, const gp_Dir aNormal, const Quantity_Color &aColor);
 		%feature("autodoc", "1");
@@ -2346,9 +2361,13 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real TX, const Standard_Real TY);
 		%feature("autodoc", "1");
+		Standard_Integer AddVertex(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z, const Standard_ShortReal TX, const Standard_ShortReal TY);
+		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const gp_Pnt aVertice, const gp_Dir aNormal, const gp_Pnt2d aTexel);
 		%feature("autodoc", "1");
 		Standard_Integer AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Real TX, const Standard_Real TY);
+		%feature("autodoc", "1");
+		Standard_Integer AddVertex(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z, const Standard_ShortReal NX, const Standard_ShortReal NY, const Standard_ShortReal NZ, const Standard_ShortReal TX, const Standard_ShortReal TY);
 		%feature("autodoc", "1");
 		Standard_Integer AddBound(const Standard_Integer edgeNumber);
 		%feature("autodoc", "1");
@@ -2364,7 +2383,7 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetVertice(const Standard_Integer anIndex, const gp_Pnt aVertice);
 		%feature("autodoc", "1");
-		void SetVertice(const Standard_Integer anIndex, const Standard_Real X, const Standard_Real Y, const Standard_Real Z);
+		void SetVertice(const Standard_Integer anIndex, const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z);
 		%feature("autodoc", "1");
 		void SetVertexColor(const Standard_Integer anIndex, const Quantity_Color &aColor);
 		%feature("autodoc", "1");
@@ -2442,12 +2461,6 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer ItemNumber() const;
 		%feature("autodoc", "1");
-		static		void Enable();
-		%feature("autodoc", "1");
-		static		void Disable();
-		%feature("autodoc", "1");
-		static		Standard_Boolean IsEnable();
-		%feature("autodoc", "1");
 		Standard_Boolean IsValid();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
@@ -2479,6 +2492,309 @@ def __del__(self):
 };
 %extend Graphic3d_ArrayOfPrimitives {
 	Graphic3d_ArrayOfPrimitives () {}
+};
+
+
+%nodefaultctor Graphic3d_GraphicDriver;
+class Graphic3d_GraphicDriver : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Begin(const Aspect_DisplayConnection_Handle &theDisplayConnection);
+		%feature("autodoc", "1");
+		virtual		void End();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer InquireLightLimit();
+		%feature("autodoc", "1");
+		virtual		void InquireMat(const Graphic3d_CView &ACView, TColStd_Array2OfReal & AMatO, TColStd_Array2OfReal & AMatM);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer InquirePlaneLimit();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer InquireViewLimit();
+		%feature("autodoc", "1");
+		virtual		void Blink(const Graphic3d_CStructure &ACStructure, const Standard_Boolean Create);
+		%feature("autodoc", "1");
+		virtual		void BoundaryBox(const Graphic3d_CStructure &ACStructure, const Standard_Boolean Create);
+		%feature("autodoc", "1");
+		virtual		void HighlightColor(const Graphic3d_CStructure &ACStructure, const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B, const Standard_Boolean Create);
+		%feature("autodoc", "1");
+		virtual		void NameSetStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void ClearGroup(const Graphic3d_CGroup &ACGroup);
+		%feature("autodoc", "1");
+		virtual		void FaceContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
+		%feature("autodoc", "1");
+		virtual		void Group(Graphic3d_CGroup & ACGroup);
+		%feature("autodoc", "1");
+		virtual		void LineContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
+		%feature("autodoc", "1");
+		virtual		void MarkerContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
+		%feature("autodoc", "1");
+		virtual		void MarkerContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert, const Standard_Integer AMarkWidth, const Standard_Integer AMarkHeight, const Handle_TColStd_HArray1OfByte &ATexture);
+		%feature("autodoc", "1");
+		virtual		void RemoveGroup(const Graphic3d_CGroup &ACGroup);
+		%feature("autodoc", "1");
+		virtual		void TextContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
+		%feature("autodoc", "1");
+		virtual		void ClearStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void Connect(const Graphic3d_CStructure &AFather, const Graphic3d_CStructure &ASon);
+		%feature("autodoc", "1");
+		virtual		void ContextStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void Disconnect(const Graphic3d_CStructure &AFather, const Graphic3d_CStructure &ASon);
+		%feature("autodoc", "1");
+		virtual		void DisplayStructure(const Graphic3d_CView &ACView, const Graphic3d_CStructure &ACStructure, const Standard_Integer APriority);
+		%feature("autodoc", "1");
+		virtual		void EraseStructure(const Graphic3d_CView &ACView, const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void RemoveStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void Structure(Graphic3d_CStructure & ACStructure);
+		%feature("autodoc", "1");
+		virtual		void ActivateView(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void AntiAliasing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
+		%feature("autodoc", "1");
+		virtual		void Background(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void GradientBackground(const Graphic3d_CView &ACView, const Quantity_Color &AColor1, const Quantity_Color &AColor2, const Aspect_GradientFillMethod FillStyle);
+		%feature("autodoc", "1");
+		virtual		void BackgroundImage(const char * FileName, const Graphic3d_CView &ACView, const Aspect_FillMethod FillStyle);
+		%feature("autodoc", "1");
+		virtual		void SetBgImageStyle(const Graphic3d_CView &ACView, const Aspect_FillMethod FillStyle);
+		%feature("autodoc", "1");
+		virtual		void SetBgGradientStyle(const Graphic3d_CView &ACView, const Aspect_GradientFillMethod FillStyle);
+		%feature("autodoc", "1");
+		virtual		void ClipLimit(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
+		%feature("autodoc", "1");
+		virtual		void DeactivateView(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void DepthCueing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
+		%feature("autodoc","ProjectRaster(const ACView, Standard_ShortReal AX, Standard_ShortReal AY, Standard_ShortReal AZ) -> [Standard_Integer, Standard_Integer]");
+
+		virtual		Standard_Boolean ProjectRaster(const Graphic3d_CView &ACView, const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean UnProjectRaster(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean UnProjectRasterWithRay(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ, Standard_ShortReal & DX, Standard_ShortReal & DY, Standard_ShortReal & DZ);
+		%feature("autodoc", "1");
+		virtual		void RatioWindow(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void Redraw(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Standard_Integer x=0, const Standard_Integer y=0, const Standard_Integer width=0, const Standard_Integer height=0);
+		%feature("autodoc", "1");
+		virtual		void RemoveView(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void SetLight(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void SetPlane(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void SetVisualisation(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void TransformStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void Transparency(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
+		%feature("autodoc", "1");
+		virtual		void Update(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean View(Graphic3d_CView & ACView);
+		%feature("autodoc", "1");
+		virtual		void ViewMapping(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
+		%feature("autodoc", "1");
+		virtual		void ViewOrientation(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
+		%feature("autodoc", "1");
+		virtual		void Environment(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void Marker(const Graphic3d_CGroup &ACGroup, const Graphic3d_Vertex &APoint);
+		%feature("autodoc", "1");
+		virtual		void MarkerSet(const Graphic3d_CGroup &ACGroup, const Graphic3d_Array1OfVertex &ListVertex);
+		%feature("autodoc", "1");
+		virtual		void Text(const Graphic3d_CGroup &ACGroup, const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax=1);
+		%feature("autodoc", "1");
+		virtual		void Text(const Graphic3d_CGroup &ACGroup, const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax=1);
+		%feature("autodoc", "1");
+		virtual		void Text(const Graphic3d_CGroup &ACGroup, const TCollection_ExtendedString &AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax=1);
+		%feature("autodoc", "1");
+		virtual		void Text(const Graphic3d_CGroup &ACGroup, const TCollection_ExtendedString &AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax=1);
+		%feature("autodoc", "1");
+		virtual		void PrimitiveArray(const Graphic3d_CGroup &ACGroup, const Graphic3d_PrimitiveArray &parray, const Standard_Boolean EvalMinMax=1);
+		%feature("autodoc", "1");
+		virtual		void UserDraw(const Graphic3d_CGroup &ACGroup, const Graphic3d_CUserDraw &AUserDraw);
+		%feature("autodoc", "1");
+		virtual		void EnableVBO(const Standard_Boolean status);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean MemoryInfo(Standard_Size & theFreeBytes, TCollection_AsciiString & theInfo) const;
+		%feature("autodoc", "1");
+		virtual		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
+		%feature("autodoc", "1");
+		virtual		void TriedronDisplay(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const Standard_Boolean AsWireframe=1);
+		%feature("autodoc", "1");
+		virtual		void TriedronErase(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void TriedronEcho(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
+		%feature("autodoc", "1");
+		virtual		void GraduatedTrihedronDisplay(const Graphic3d_CView &view, const Graphic3d_CGraduatedTrihedron &cubic);
+		%feature("autodoc", "1");
+		virtual		void GraduatedTrihedronErase(const Graphic3d_CView &view);
+		%feature("autodoc", "1");
+		virtual		void GraduatedTrihedronMinMaxValues(const Standard_ShortReal xmin, const Standard_ShortReal ymin, const Standard_ShortReal zmin, const Standard_ShortReal xmax, const Standard_ShortReal ymax, const Standard_ShortReal zmax);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BeginAddMode(const Graphic3d_CView &ACView);
+		%feature("autodoc", "1");
+		virtual		void EndAddMode();
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean SetImmediateModeDrawToFront(const Graphic3d_CView &theCView, const Standard_Boolean theDrawToFrontBuffer);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BeginImmediatMode(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Standard_Boolean DoubleBuffer, const Standard_Boolean RetainMode);
+		%feature("autodoc", "1");
+		virtual		void ClearImmediatMode(const Graphic3d_CView &ACView, const Standard_Boolean aFlush=1);
+		%feature("autodoc", "1");
+		virtual		void DrawStructure(const Graphic3d_CStructure &ACStructure);
+		%feature("autodoc", "1");
+		virtual		void EndImmediatMode(const Standard_Integer Synchronize);
+		%feature("autodoc", "1");
+		virtual		void Layer(Aspect_CLayer2d & ACLayer);
+		%feature("autodoc", "1");
+		virtual		void RemoveLayer(const Aspect_CLayer2d &ACLayer);
+		%feature("autodoc", "1");
+		virtual		void BeginLayer(const Aspect_CLayer2d &ACLayer);
+		%feature("autodoc", "1");
+		virtual		void BeginPolygon2d();
+		%feature("autodoc", "1");
+		virtual		void BeginPolyline2d();
+		%feature("autodoc", "1");
+		virtual		void ClearLayer(const Aspect_CLayer2d &ACLayer);
+		%feature("autodoc", "1");
+		virtual		void Draw(const Standard_ShortReal X, const Standard_ShortReal Y);
+		%feature("autodoc", "1");
+		virtual		void Edge(const Standard_ShortReal X, const Standard_ShortReal Y);
+		%feature("autodoc", "1");
+		virtual		void EndLayer();
+		%feature("autodoc", "1");
+		virtual		void EndPolygon2d();
+		%feature("autodoc", "1");
+		virtual		void EndPolyline2d();
+		%feature("autodoc", "1");
+		virtual		void Move(const Standard_ShortReal X, const Standard_ShortReal Y);
+		%feature("autodoc", "1");
+		virtual		void Rectangle(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Width, const Standard_ShortReal Height);
+		%feature("autodoc", "1");
+		virtual		void SetColor(const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B);
+		%feature("autodoc", "1");
+		virtual		void SetTransparency(const Standard_ShortReal ATransparency);
+		%feature("autodoc", "1");
+		virtual		void UnsetTransparency();
+		%feature("autodoc", "1");
+		virtual		void SetLineAttributes(const Standard_Integer Type, const Standard_ShortReal Width);
+		%feature("autodoc", "1");
+		virtual		void SetTextAttributes(const char * Font, const Standard_Integer Type, const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B);
+		%feature("autodoc", "1");
+		virtual		void Text(const char * AText, const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal AHeight);
+		%feature("autodoc", "1");
+		virtual		Standard_ShortReal DefaultTextHeight() const;
+		%feature("autodoc", "1");
+		virtual		void TextSize(const char * AText, const Standard_ShortReal AHeight, Standard_ShortReal & AWidth, Standard_ShortReal & AnAscent, Standard_ShortReal & ADescent) const;
+		%feature("autodoc", "1");
+		virtual		void SetBackFacingModel(const Graphic3d_CView &aView);
+		%feature("autodoc", "1");
+		virtual		void SetDepthTestEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsDepthTestEnabled(const Graphic3d_CView &view) const;
+		%feature("autodoc", "1");
+		virtual		void ReadDepths(const Graphic3d_CView &view, const Standard_Integer x, const Standard_Integer y, const Standard_Integer width, const Standard_Integer height, const Standard_Address buffer) const;
+		%feature("autodoc", "1");
+		virtual		Graphic3d_PtrFrameBuffer FBOCreate(const Graphic3d_CView &view, const Standard_Integer width, const Standard_Integer height);
+		%feature("autodoc", "1");
+		virtual		void FBORelease(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr);
+		%feature("autodoc","FBOGetDimensions(const view, Graphic3d_PtrFrameBuffer fboPtr) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
+
+		virtual		void FBOGetDimensions(const Graphic3d_CView &view, const Graphic3d_PtrFrameBuffer fboPtr, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
+		%feature("autodoc", "1");
+		virtual		void FBOChangeViewport(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr, const Standard_Integer width, const Standard_Integer height);
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &theCView, Image_PixMap & theImage, const Graphic3d_BufferType &theBufferType);
+		%feature("autodoc", "1");
+		virtual		void SetGLLightEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean IsGLLightEnabled(const Graphic3d_CView &view) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Print(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH, const Standard_Real theScaleFactor=1.0e+0) const;
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType, const Standard_Integer theWidth, const Standard_Integer theHeight, const Graphic3d_CView &theView, const Aspect_CLayer2d &theLayerUnder, const Aspect_CLayer2d &theLayerOver, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351440429688e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0);
+		%feature("autodoc", "1");
+		virtual		void AddZLayer(const Graphic3d_CView &theCView, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		void RemoveZLayer(const Graphic3d_CView &theCView, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		void UnsetZLayer(const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		void ChangeZLayer(const Graphic3d_CStructure &theCStructure, const Standard_Integer theLayerId);
+		%feature("autodoc", "1");
+		virtual		void ChangeZLayer(const Graphic3d_CStructure &theCStructure, const Graphic3d_CView &theCView, const Standard_Integer theNewLayerId);
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetZLayer(const Graphic3d_CStructure &theCStructure) const;
+		%feature("autodoc", "1");
+		static		Standard_Integer Light(const Graphic3d_CLight &ACLight, const Standard_Boolean Update);
+		%feature("autodoc", "1");
+		static		Standard_Integer Plane(const Graphic3d_CPlane &ACPlane, const Standard_Boolean Update);
+		%feature("autodoc", "1");
+		void PrintBoolean(const char * AComment, const Standard_Boolean AValue) const;
+		%feature("autodoc", "1");
+		void PrintCGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintCLight(const Graphic3d_CLight &ACLight, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintCPick(const Graphic3d_CPick &ACPick, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintCPlane(const Graphic3d_CPlane &ACPlane, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintCStructure(const Graphic3d_CStructure &ACStructure, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintCView(const Graphic3d_CView &ACView, const Standard_Integer AField) const;
+		%feature("autodoc", "1");
+		void PrintFunction(const char * AFunc) const;
+		%feature("autodoc", "1");
+		void PrintInteger(const char * AComment, const Standard_Integer AValue) const;
+		%feature("autodoc", "1");
+		void PrintIResult(const char * AFunc, const Standard_Integer AResult) const;
+		%feature("autodoc", "1");
+		void PrintShortReal(const char * AComment, const Standard_ShortReal AValue) const;
+		%feature("autodoc", "1");
+		void PrintMatrix(const char * AComment, const TColStd_Array2OfReal &AMatrix) const;
+		%feature("autodoc", "1");
+		void PrintString(const char * AComment, const char * AString) const;
+		%feature("autodoc", "1");
+		void SetTrace(const Standard_Integer ALevel);
+		%feature("autodoc", "1");
+		Standard_Integer Trace() const;
+		%feature("autodoc", "1");
+		const Aspect_DisplayConnection_Handle & GetDisplayConnection() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_GraphicDriver {
+	Handle_Graphic3d_GraphicDriver GetHandle() {
+	return *(Handle_Graphic3d_GraphicDriver*) &$self;
+	}
+};
+%extend Graphic3d_GraphicDriver {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_GraphicDriver::~Graphic3d_GraphicDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_GraphicDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
 };
 
 
@@ -2662,46 +2978,70 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Array2OfVertexC;
-class Graphic3d_Array2OfVertexC {
+%nodefaultctor Graphic3d_HSequenceOfStructure;
+class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexC(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Graphic3d_HSequenceOfStructure();
 		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexC(const Graphic3d_VertexC &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
+		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexC &V);
+		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Destroy();
+		void Clear();
 		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexC & Assign(const Graphic3d_Array2OfVertexC &Other);
+		void Append(const Handle_Graphic3d_Structure &anItem);
 		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexC & operator=(const Graphic3d_Array2OfVertexC &Other);
+		void Append(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
+		void Prepend(const Handle_Graphic3d_Structure &anItem);
 		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
+		void Prepend(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
+		void Reverse();
 		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
 		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
+		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
 		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
 		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexC &Value);
+		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
 		%feature("autodoc", "1");
-		const Graphic3d_VertexC & Value(const Standard_Integer Row, const Standard_Integer Col) const;
+		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
 		%feature("autodoc", "1");
-		const Graphic3d_VertexC & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
+		Handle_Graphic3d_HSequenceOfStructure Split(const Standard_Integer anIndex);
 		%feature("autodoc", "1");
-		Graphic3d_VertexC & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
+		void SetValue(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
 		%feature("autodoc", "1");
-		Graphic3d_VertexC & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		const Handle_Graphic3d_Structure & Value(const Standard_Integer anIndex) const;
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Structure & ChangeValue(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer anIndex);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfStructure & Sequence() const;
+		%feature("autodoc", "1");
+		Graphic3d_SequenceOfStructure & ChangeSequence();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_HSequenceOfStructure ShallowCopy() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Graphic3d_Array2OfVertexC::~Graphic3d_Array2OfVertexC %{
+%extend Graphic3d_HSequenceOfStructure {
+	Handle_Graphic3d_HSequenceOfStructure GetHandle() {
+	return *(Handle_Graphic3d_HSequenceOfStructure*) &$self;
+	}
+};
+%extend Graphic3d_HSequenceOfStructure {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2710,33 +3050,21 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_Array2OfVertexC {
+%extend Graphic3d_HSequenceOfStructure {
 	void _kill_pointed() {
 		delete $self;
 	}
 };
 
 
-%nodefaultctor Graphic3d_ArrayOfPolylines;
-class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
+%nodefaultctor Graphic3d_CView;
+class Graphic3d_CView {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Graphic3d_CView();
 
 };
-%extend Graphic3d_ArrayOfPolylines {
-	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
-	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
-	}
-};
-%extend Graphic3d_ArrayOfPolylines {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
+%feature("shadow") Graphic3d_CView::~Graphic3d_CView %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -2745,7 +3073,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_ArrayOfPolylines {
+%extend Graphic3d_CView {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2779,71 +3107,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_ListIteratorOfSetListOfSetOfGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_SequenceOfGroup;
-class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_SequenceOfGroup();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfGroup & Assign(const Graphic3d_SequenceOfGroup &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfGroup & operator=(const Graphic3d_SequenceOfGroup &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Graphic3d_Group &T);
-		%feature("autodoc", "1");
-		void Append(Graphic3d_SequenceOfGroup & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Graphic3d_Group &T);
-		%feature("autodoc", "1");
-		void Prepend(Graphic3d_SequenceOfGroup & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Graphic3d_Group &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Graphic3d_Group &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & First() const;
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Graphic3d_Group &I);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_Group & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_Group & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Graphic3d_SequenceOfGroup::~Graphic3d_SequenceOfGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_SequenceOfGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2907,19 +3170,19 @@ class Graphic3d_TextureRoot : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Destroy() const;
 		%feature("autodoc", "1");
-		Standard_Boolean IsDone() const;
+		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
 		const OSD_Path & Path() const;
 		%feature("autodoc", "1");
 		Graphic3d_TypeOfTexture Type() const;
 		%feature("autodoc", "1");
-		void LoadTexture(const Handle_AlienImage_AlienImage &anImage);
+		TCollection_AsciiString GetId() const;
 		%feature("autodoc", "1");
-		Standard_Integer TextureId() const;
+		virtual		Image_PixMap_Handle GetImage() const;
 		%feature("autodoc", "1");
-		Handle_AlienImage_AlienImage Image() const;
+		const Handle_Graphic3d_TextureParams & GetParams() const;
 		%feature("autodoc", "1");
-		Handle_TColStd_HArray1OfReal GetTexUpperBounds() const;
+		static		TCollection_AsciiString TexturesFolder();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2974,6 +3237,10 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 		void DisableRepeat();
 		%feature("autodoc", "1");
 		Standard_Boolean IsRepeat() const;
+		%feature("autodoc", "1");
+		Graphic3d_LevelOfTextureAnisotropy AnisoFilter() const;
+		%feature("autodoc", "1");
+		void SetAnisoFilter(const Graphic3d_LevelOfTextureAnisotropy theLevel);
 
 };
 %extend Graphic3d_TextureMap {
@@ -3013,7 +3280,7 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 		%feature("autodoc", "1");
 		static		Standard_Integer NumberOfTextures();
 		%feature("autodoc", "1");
-		static		char * TextureName(const Standard_Integer aRank);
+		static		TCollection_AsciiString TextureName(const Standard_Integer theRank);
 
 };
 %extend Graphic3d_Texture2D {
@@ -3049,25 +3316,25 @@ def __del__(self):
 class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Texture2Dplane(const Handle_Graphic3d_StructureManager &SM, const char * FileName);
+		Graphic3d_Texture2Dplane(const TCollection_AsciiString &theFileName);
 		%feature("autodoc", "1");
-		Graphic3d_Texture2Dplane(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTexture2D NOT);
+		Graphic3d_Texture2Dplane(const Graphic3d_NameOfTexture2D theNOT);
 		%feature("autodoc", "1");
 		void SetPlaneS(const Standard_ShortReal A, const Standard_ShortReal B, const Standard_ShortReal C, const Standard_ShortReal D);
 		%feature("autodoc", "1");
 		void SetPlaneT(const Standard_ShortReal A, const Standard_ShortReal B, const Standard_ShortReal C, const Standard_ShortReal D);
 		%feature("autodoc", "1");
-		void SetPlane(const Graphic3d_NameOfTexturePlane APlane);
+		void SetPlane(const Graphic3d_NameOfTexturePlane thePlane);
 		%feature("autodoc", "1");
-		void SetScaleS(const Standard_ShortReal val);
+		void SetScaleS(const Standard_ShortReal theVal);
 		%feature("autodoc", "1");
-		void SetScaleT(const Standard_ShortReal val);
+		void SetScaleT(const Standard_ShortReal theVal);
 		%feature("autodoc", "1");
-		void SetTranslateS(const Standard_ShortReal val);
+		void SetTranslateS(const Standard_ShortReal theVal);
 		%feature("autodoc", "1");
-		void SetTranslateT(const Standard_ShortReal val);
+		void SetTranslateT(const Standard_ShortReal theVal);
 		%feature("autodoc", "1");
-		void SetRotation(const Standard_ShortReal val);
+		void SetRotation(const Standard_ShortReal theVal);
 		%feature("autodoc", "1");
 		Graphic3d_NameOfTexturePlane Plane() const;
 		%feature("autodoc", "1");
@@ -3075,15 +3342,15 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 		%feature("autodoc", "1");
 		void PlaneT(Standard_ShortReal & A, Standard_ShortReal & B, Standard_ShortReal & C, Standard_ShortReal & D) const;
 		%feature("autodoc", "1");
-		void TranslateS(Standard_ShortReal & val) const;
+		void TranslateS(Standard_ShortReal & theVal) const;
 		%feature("autodoc", "1");
-		void TranslateT(Standard_ShortReal & val) const;
+		void TranslateT(Standard_ShortReal & theVal) const;
 		%feature("autodoc", "1");
-		void ScaleS(Standard_ShortReal & val) const;
+		void ScaleS(Standard_ShortReal & theVal) const;
 		%feature("autodoc", "1");
-		void ScaleT(Standard_ShortReal & val) const;
+		void ScaleT(Standard_ShortReal & theVal) const;
 		%feature("autodoc", "1");
-		void Rotation(Standard_ShortReal & val) const;
+		void Rotation(Standard_ShortReal & theVal) const;
 
 };
 %extend Graphic3d_Texture2Dplane {
@@ -3286,7 +3553,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 		%feature("autodoc", "1");
 		static		Graphic3d_Vertex Transforms(const TColStd_Array2OfReal &ATrsf, const Graphic3d_Vertex &Coord);
 		%feature("autodoc", "1");
-		Standard_Address CStructure() const;
+		Graphic3d_CStructure * CStructure();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3317,46 +3584,14 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Array2OfVertexNT;
-class Graphic3d_Array2OfVertexNT {
+%nodefaultctor Graphic3d_CStructure;
+class Graphic3d_CStructure {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNT(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNT(const Graphic3d_VertexNT &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexNT &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexNT & Assign(const Graphic3d_Array2OfVertexNT &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexNT & operator=(const Graphic3d_Array2OfVertexNT &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexNT &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & operator()(const Standard_Integer Row, const Standard_Integer Col);
+		Graphic3d_CStructure();
 
 };
-%feature("shadow") Graphic3d_Array2OfVertexNT::~Graphic3d_Array2OfVertexNT %{
+%feature("shadow") Graphic3d_CStructure::~Graphic3d_CStructure %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3365,58 +3600,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_Array2OfVertexNT {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_Array1OfVertexN;
-class Graphic3d_Array1OfVertexN {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexN(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexN(const Graphic3d_VertexN &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexN &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexN & Assign(const Graphic3d_Array1OfVertexN &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexN & operator=(const Graphic3d_Array1OfVertexN &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Graphic3d_VertexN &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexN & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexN & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexN & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Graphic3d_VertexN & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Graphic3d_Array1OfVertexN::~Graphic3d_Array1OfVertexN %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Array1OfVertexN {
+%extend Graphic3d_CStructure {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3466,57 +3650,34 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_CBitFields8;
-class Graphic3d_CBitFields8 {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_CBitFields8();
-
-};
-%feature("shadow") Graphic3d_CBitFields8::~Graphic3d_CBitFields8 %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_CBitFields8 {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_Vertex;
-class Graphic3d_Vertex {
+class Graphic3d_Vertex : public TEL_POINT {
 	public:
 		%feature("autodoc", "1");
 		Graphic3d_Vertex();
 		%feature("autodoc", "1");
 		Graphic3d_Vertex(const Graphic3d_Vertex &APoint);
 		%feature("autodoc", "1");
+		Graphic3d_Vertex(const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ);
+		%feature("autodoc", "1");
 		Graphic3d_Vertex(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ);
 		%feature("autodoc", "1");
-		void SetCoord(const Standard_Real Xnew, const Standard_Real Ynew, const Standard_Real Znew);
+		void SetCoord(const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ);
 		%feature("autodoc", "1");
-		void SetXCoord(const Standard_Real Xnew);
+		void SetCoord(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ);
 		%feature("autodoc", "1");
-		void SetYCoord(const Standard_Real Ynew);
-		%feature("autodoc", "1");
-		void SetZCoord(const Standard_Real Znew);
+		void Coord(Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ) const;
 		%feature("autodoc","Coord() -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		void Coord(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Real X() const;
+		Standard_ShortReal X() const;
 		%feature("autodoc", "1");
-		Standard_Real Y() const;
+		Standard_ShortReal Y() const;
 		%feature("autodoc", "1");
-		Standard_Real Z() const;
+		Standard_ShortReal Z() const;
 		%feature("autodoc", "1");
-		static		Standard_Real Distance(const Graphic3d_Vertex &AV1, const Graphic3d_Vertex &AV2);
+		Standard_ShortReal Distance(const Graphic3d_Vertex &AOther) const;
 
 };
 %feature("shadow") Graphic3d_Vertex::~Graphic3d_Vertex %{
@@ -3529,125 +3690,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_Vertex {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_Array2OfVertexNC;
-class Graphic3d_Array2OfVertexNC {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNC(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexNC(const Graphic3d_VertexNC &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexNC &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexNC & Assign(const Graphic3d_Array2OfVertexNC &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexNC & operator=(const Graphic3d_Array2OfVertexNC &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexNC &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNC & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNC & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") Graphic3d_Array2OfVertexNC::~Graphic3d_Array2OfVertexNC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Array2OfVertexNC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_VertexN;
-class Graphic3d_VertexN : public Graphic3d_Vertex {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexN();
-		%feature("autodoc", "1");
-		Graphic3d_VertexN(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		Graphic3d_VertexN(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		void SetNormal(const Standard_Real NXnew, const Standard_Real NYnew, const Standard_Real NZnew, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc","Normal() -> [Standard_Real, Standard_Real, Standard_Real]");
-
-		void Normal(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Graphic3d_VertexN::~Graphic3d_VertexN %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexN {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_VertexNT;
-class Graphic3d_VertexNT : public Graphic3d_VertexN {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT();
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Standard_Real ATX, const Standard_Real ATY=0.0, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		void SetTextureCoordinate(const Standard_Real ATX, const Standard_Real ATY=0.0);
-		%feature("autodoc","TextureCoordinate() -> [Standard_Real, Standard_Real]");
-
-		void TextureCoordinate(Standard_Real &OutValue, Standard_Real &OutValue) const;
-
-};
-%feature("shadow") Graphic3d_VertexNT::~Graphic3d_VertexNT %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexNT {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3727,6 +3769,29 @@ def __del__(self):
 %}
 
 %extend Graphic3d_HSequenceOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_CGroup;
+class Graphic3d_CGroup {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_CGroup();
+
+};
+%feature("shadow") Graphic3d_CGroup::~Graphic3d_CGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_CGroup {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3829,6 +3894,116 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_ArrayOfPolylines;
+class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ArrayOfPolylines(const Standard_Integer maxVertexs, const Standard_Integer maxBounds=0, const Standard_Integer maxEdges=0, const Standard_Boolean hasVColors=0, const Standard_Boolean hasBColors=0, const Standard_Boolean hasEdgeInfos=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Handle_Graphic3d_ArrayOfPolylines GetHandle() {
+	return *(Handle_Graphic3d_ArrayOfPolylines*) &$self;
+	}
+};
+%extend Graphic3d_ArrayOfPolylines {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_ArrayOfPolylines::~Graphic3d_ArrayOfPolylines %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ArrayOfPolylines {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_Texture1D;
+class Graphic3d_Texture1D : public Graphic3d_TextureMap {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_NameOfTexture1D Name() const;
+		%feature("autodoc", "1");
+		static		Standard_Integer NumberOfTextures();
+		%feature("autodoc", "1");
+		static		TCollection_AsciiString TextureName(const Standard_Integer aRank);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_Texture1D {
+	Handle_Graphic3d_Texture1D GetHandle() {
+	return *(Handle_Graphic3d_Texture1D*) &$self;
+	}
+};
+%extend Graphic3d_Texture1D {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_Texture1D::~Graphic3d_Texture1D %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_Texture1D {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend Graphic3d_Texture1D {
+	Graphic3d_Texture1D () {}
+};
+
+
+%nodefaultctor Graphic3d_ListIteratorOfListOfPArray;
+class Graphic3d_ListIteratorOfListOfPArray {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_ListIteratorOfListOfPArray();
+		%feature("autodoc", "1");
+		Graphic3d_ListIteratorOfListOfPArray(const Graphic3d_ListOfPArray &L);
+		%feature("autodoc", "1");
+		void Initialize(const Graphic3d_ListOfPArray &L);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		Handle_Graphic3d_ArrayOfPrimitives & Value() const;
+
+};
+%feature("shadow") Graphic3d_ListIteratorOfListOfPArray::~Graphic3d_ListIteratorOfListOfPArray %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_ListIteratorOfListOfPArray {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_MapOfStructure;
 class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 	public:
@@ -3866,126 +4041,28 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Array1OfVertexNC;
-class Graphic3d_Array1OfVertexNC {
+%nodefaultctor Graphic3d_Texture2Dmanual;
+class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexNC(const Standard_Integer Low, const Standard_Integer Up);
+		Graphic3d_Texture2Dmanual(const TCollection_AsciiString &theFileName);
 		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexNC(const Graphic3d_VertexNC &Item, const Standard_Integer Low, const Standard_Integer Up);
+		Graphic3d_Texture2Dmanual(const Graphic3d_NameOfTexture2D theNOT);
 		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexNC &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexNC & Assign(const Graphic3d_Array1OfVertexNC &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexNC & operator=(const Graphic3d_Array1OfVertexNC &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Graphic3d_VertexNC &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNC & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNC & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC & operator()(const Standard_Integer Index);
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
-%feature("shadow") Graphic3d_Array1OfVertexNC::~Graphic3d_Array1OfVertexNC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Array1OfVertexNC {
-	void _kill_pointed() {
-		delete $self;
+%extend Graphic3d_Texture2Dmanual {
+	Handle_Graphic3d_Texture2Dmanual GetHandle() {
+	return *(Handle_Graphic3d_Texture2Dmanual*) &$self;
 	}
 };
-
-
-%nodefaultctor Graphic3d_Array1OfVertexNT;
-class Graphic3d_Array1OfVertexNT {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexNT(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexNT(const Graphic3d_VertexNT &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexNT &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexNT & Assign(const Graphic3d_Array1OfVertexNT &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexNT & operator=(const Graphic3d_Array1OfVertexNT &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Graphic3d_VertexNT &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexNT & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNT & operator()(const Standard_Integer Index);
-
-};
-%feature("shadow") Graphic3d_Array1OfVertexNT::~Graphic3d_Array1OfVertexNT %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Array1OfVertexNT {
-	void _kill_pointed() {
-		delete $self;
+%extend Graphic3d_Texture2Dmanual {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
 	}
 };
-
-
-%nodefaultctor Graphic3d_ListIteratorOfListOfPArray;
-class Graphic3d_ListIteratorOfListOfPArray {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_ListIteratorOfListOfPArray();
-		%feature("autodoc", "1");
-		Graphic3d_ListIteratorOfListOfPArray(const Graphic3d_ListOfPArray &L);
-		%feature("autodoc", "1");
-		void Initialize(const Graphic3d_ListOfPArray &L);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPrimitives & Value() const;
-
-};
-%feature("shadow") Graphic3d_ListIteratorOfListOfPArray::~Graphic3d_ListIteratorOfListOfPArray %{
+%feature("shadow") Graphic3d_Texture2Dmanual::~Graphic3d_Texture2Dmanual %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -3994,7 +4071,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_ListIteratorOfListOfPArray {
+%extend Graphic3d_Texture2Dmanual {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4061,6 +4138,79 @@ def __del__(self):
 %}
 
 %extend Graphic3d_CBitFields4 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d_TextureParams;
+class Graphic3d_TextureParams : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_TextureParams();
+		%feature("autodoc", "1");
+		void Destroy() const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsModulate() const;
+		%feature("autodoc", "1");
+		void SetModulate(const Standard_Boolean theToModulate);
+		%feature("autodoc", "1");
+		Standard_Boolean IsRepeat() const;
+		%feature("autodoc", "1");
+		void SetRepeat(const Standard_Boolean theToRepeat);
+		%feature("autodoc", "1");
+		Graphic3d_TypeOfTextureFilter Filter() const;
+		%feature("autodoc", "1");
+		void SetFilter(const Graphic3d_TypeOfTextureFilter theFilter);
+		%feature("autodoc", "1");
+		Graphic3d_LevelOfTextureAnisotropy AnisoFilter() const;
+		%feature("autodoc", "1");
+		void SetAnisoFilter(const Graphic3d_LevelOfTextureAnisotropy theLevel);
+		%feature("autodoc", "1");
+		Standard_ShortReal Rotation() const;
+		%feature("autodoc", "1");
+		void SetRotation(const Standard_ShortReal theAngleDegrees);
+		%feature("autodoc", "1");
+		const Graphic3d_Vec2 & Scale() const;
+		%feature("autodoc", "1");
+		void SetScale(const Graphic3d_Vec2 theScale);
+		%feature("autodoc", "1");
+		const Graphic3d_Vec2 & Translation() const;
+		%feature("autodoc", "1");
+		void SetTranslation(const Graphic3d_Vec2 theVec);
+		%feature("autodoc", "1");
+		Graphic3d_TypeOfTextureMode GenMode() const;
+		%feature("autodoc", "1");
+		const Graphic3d_Vec4 & GenPlaneS() const;
+		%feature("autodoc", "1");
+		const Graphic3d_Vec4 & GenPlaneT() const;
+		%feature("autodoc", "1");
+		void SetGenMode(const Graphic3d_TypeOfTextureMode theMode, const Graphic3d_Vec4 thePlaneS, const Graphic3d_Vec4 thePlaneT);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Graphic3d_TextureParams {
+	Handle_Graphic3d_TextureParams GetHandle() {
+	return *(Handle_Graphic3d_TextureParams*) &$self;
+	}
+};
+%extend Graphic3d_TextureParams {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Graphic3d_TextureParams::~Graphic3d_TextureParams %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_TextureParams {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4468,6 +4618,39 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
+class Graphic3d_SetIteratorOfSetOfGroup {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_SetIteratorOfSetOfGroup();
+		%feature("autodoc", "1");
+		Graphic3d_SetIteratorOfSetOfGroup(const Graphic3d_SetOfGroup &S);
+		%feature("autodoc", "1");
+		void Initialize(const Graphic3d_SetOfGroup &S);
+		%feature("autodoc", "1");
+		Standard_Boolean More() const;
+		%feature("autodoc", "1");
+		void Next();
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & Value() const;
+
+};
+%feature("shadow") Graphic3d_SetIteratorOfSetOfGroup::~Graphic3d_SetIteratorOfSetOfGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_SetIteratorOfSetOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_ListNodeOfListOfPArray;
 class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 	public:
@@ -4580,37 +4763,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_VertexC;
-class Graphic3d_VertexC : public Graphic3d_Vertex {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexC();
-		%feature("autodoc", "1");
-		Graphic3d_VertexC(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Quantity_Color &AColor);
-		%feature("autodoc", "1");
-		Graphic3d_VertexC(const Graphic3d_Vertex &APoint, const Quantity_Color &AColor);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &ColorNew);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-
-};
-%feature("shadow") Graphic3d_VertexC::~Graphic3d_VertexC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexC {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_ArrayOfQuadrangleStrips;
 class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -4701,15 +4853,15 @@ def __del__(self):
 class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const char * aFileName);
+		Graphic3d_TextureEnv(const TCollection_AsciiString &theFileName);
 		%feature("autodoc", "1");
-		Graphic3d_TextureEnv(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTextureEnv aName);
+		Graphic3d_TextureEnv(const Graphic3d_NameOfTextureEnv theName);
 		%feature("autodoc", "1");
 		Graphic3d_NameOfTextureEnv Name() const;
 		%feature("autodoc", "1");
 		static		Standard_Integer NumberOfTextures();
 		%feature("autodoc", "1");
-		static		char * TextureName(const Standard_Integer aRank);
+		static		TCollection_AsciiString TextureName(const Standard_Integer theRank);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4773,59 +4925,19 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Texture1D;
-class Graphic3d_Texture1D : public Graphic3d_TextureMap {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_NameOfTexture1D Name() const;
-		%feature("autodoc", "1");
-		static		Standard_Integer NumberOfTextures();
-		%feature("autodoc", "1");
-		static		char * TextureName(const Standard_Integer aRank);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_Texture1D {
-	Handle_Graphic3d_Texture1D GetHandle() {
-	return *(Handle_Graphic3d_Texture1D*) &$self;
-	}
-};
-%extend Graphic3d_Texture1D {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_Texture1D::~Graphic3d_Texture1D %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Texture1D {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Graphic3d_Texture1D {
-	Graphic3d_Texture1D () {}
-};
-
-
 %nodefaultctor Graphic3d_Texture1Dsegment;
 class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const char * FileName);
+		Graphic3d_Texture1Dsegment(const TCollection_AsciiString &theFileName);
 		%feature("autodoc", "1");
-		Graphic3d_Texture1Dsegment(const Handle_Graphic3d_StructureManager &VM, const Graphic3d_NameOfTexture1D NOT);
+		Graphic3d_Texture1Dsegment(const Graphic3d_NameOfTexture1D theNOT);
 		%feature("autodoc", "1");
-		void SetSegment(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal Z1, const Standard_ShortReal X2, const Standard_ShortReal Y2, const Standard_ShortReal Z2);
+		void SetSegment(const Standard_ShortReal theX1, const Standard_ShortReal theY1, const Standard_ShortReal theZ1, const Standard_ShortReal theX2, const Standard_ShortReal theY2, const Standard_ShortReal theZ2);
 		%feature("autodoc", "1");
-		void Segment(Standard_ShortReal & X1, Standard_ShortReal & Y1, Standard_ShortReal & Z1, Standard_ShortReal & X2, Standard_ShortReal & Y2, Standard_ShortReal & Z2) const;
+		void Segment(Standard_ShortReal & theX1, Standard_ShortReal & theY1, Standard_ShortReal & theZ1, Standard_ShortReal & theX2, Standard_ShortReal & theY2, Standard_ShortReal & theZ2) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Graphic3d_Texture1Dsegment {
@@ -5054,6 +5166,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Graphic3d_SequenceOfGroup;
+class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d_SequenceOfGroup();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfGroup & Assign(const Graphic3d_SequenceOfGroup &Other);
+		%feature("autodoc", "1");
+		const Graphic3d_SequenceOfGroup & operator=(const Graphic3d_SequenceOfGroup &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Graphic3d_Group &T);
+		%feature("autodoc", "1");
+		void Append(Graphic3d_SequenceOfGroup & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Graphic3d_Group &T);
+		%feature("autodoc", "1");
+		void Prepend(Graphic3d_SequenceOfGroup & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Graphic3d_Group &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Graphic3d_Group &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & First() const;
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Graphic3d_SequenceOfGroup & S);
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Graphic3d_Group & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Graphic3d_Group &I);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Graphic3d_Group & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Graphic3d_SequenceOfGroup::~Graphic3d_SequenceOfGroup %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d_SequenceOfGroup {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Graphic3d_ArrayOfTriangleFans;
 class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -5083,37 +5260,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_ArrayOfTriangleFans {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_VertexNC;
-class Graphic3d_VertexNC : public Graphic3d_VertexN {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC();
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC(const Standard_Real AX, const Standard_Real AY, const Standard_Real AZ, const Standard_Real ANX, const Standard_Real ANY, const Standard_Real ANZ, const Quantity_Color &AColor, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		Graphic3d_VertexNC(const Graphic3d_Vertex &APoint, const Graphic3d_Vector &AVector, const Quantity_Color &AColor, const Standard_Boolean FlagNormalise=1);
-		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &ColorNew);
-		%feature("autodoc", "1");
-		Quantity_Color Color() const;
-
-};
-%feature("shadow") Graphic3d_VertexNC::~Graphic3d_VertexNC %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_VertexNC {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5204,42 +5350,14 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Array1OfVertexC;
-class Graphic3d_Array1OfVertexC {
+%nodefaultctor Graphic3d_CBitFields8;
+class Graphic3d_CBitFields8 {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexC(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		Graphic3d_Array1OfVertexC(const Graphic3d_VertexC &Item, const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexC &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		Standard_Boolean IsAllocated() const;
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexC & Assign(const Graphic3d_Array1OfVertexC &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array1OfVertexC & operator=(const Graphic3d_Array1OfVertexC &Other);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Graphic3d_VertexC &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexC & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexC & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexC & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Graphic3d_VertexC & operator()(const Standard_Integer Index);
+		Graphic3d_CBitFields8();
 
 };
-%feature("shadow") Graphic3d_Array1OfVertexC::~Graphic3d_Array1OfVertexC %{
+%feature("shadow") Graphic3d_CBitFields8::~Graphic3d_CBitFields8 %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5248,7 +5366,32 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_Array1OfVertexC {
+%extend Graphic3d_CBitFields8 {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Graphic3d;
+class Graphic3d {
+	public:
+		%feature("autodoc", "1");
+		Graphic3d();
+		%feature("autodoc", "1");
+		static		Handle_Graphic3d_GraphicDriver InitGraphicDriver(const Aspect_DisplayConnection_Handle &theDisplayConnection);
+
+};
+%feature("shadow") Graphic3d::~Graphic3d %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Graphic3d {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5292,70 +5435,14 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_HSequenceOfStructure;
-class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
+%nodefaultctor Graphic3d_CTexture;
+class Graphic3d_CTexture {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_HSequenceOfStructure();
-		%feature("autodoc", "1");
-		Standard_Boolean IsEmpty() const;
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		void Append(const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void Append(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Reverse();
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer anIndex, const Handle_Graphic3d_HSequenceOfStructure &aSequence);
-		%feature("autodoc", "1");
-		void Exchange(const Standard_Integer anIndex, const Standard_Integer anOtherIndex);
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure Split(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer anIndex, const Handle_Graphic3d_Structure &anItem);
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Structure & Value(const Standard_Integer anIndex) const;
-		%feature("autodoc", "1");
-		Handle_Graphic3d_Structure & ChangeValue(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer anIndex);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer fromIndex, const Standard_Integer toIndex);
-		%feature("autodoc", "1");
-		const Graphic3d_SequenceOfStructure & Sequence() const;
-		%feature("autodoc", "1");
-		Graphic3d_SequenceOfStructure & ChangeSequence();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_HSequenceOfStructure ShallowCopy() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
+		Graphic3d_CTexture();
 
 };
-%extend Graphic3d_HSequenceOfStructure {
-	Handle_Graphic3d_HSequenceOfStructure GetHandle() {
-	return *(Handle_Graphic3d_HSequenceOfStructure*) &$self;
-	}
-};
-%extend Graphic3d_HSequenceOfStructure {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_HSequenceOfStructure::~Graphic3d_HSequenceOfStructure %{
+%feature("shadow") Graphic3d_CTexture::~Graphic3d_CTexture %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -5364,7 +5451,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Graphic3d_HSequenceOfStructure {
+%extend Graphic3d_CTexture {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5447,7 +5534,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetTransform(const Handle_Graphic3d_Structure &AStructure, const TColStd_Array2OfReal &ATrsf);
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice GraphicDevice() const;
+		const Handle_Graphic3d_GraphicDriver & GraphicDriver() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Identification() const;
 		%feature("autodoc", "1");
@@ -5486,76 +5573,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
-class Graphic3d_SetIteratorOfSetOfGroup {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_SetIteratorOfSetOfGroup();
-		%feature("autodoc", "1");
-		Graphic3d_SetIteratorOfSetOfGroup(const Graphic3d_SetOfGroup &S);
-		%feature("autodoc", "1");
-		void Initialize(const Graphic3d_SetOfGroup &S);
-		%feature("autodoc", "1");
-		Standard_Boolean More() const;
-		%feature("autodoc", "1");
-		void Next();
-		%feature("autodoc", "1");
-		const Handle_Graphic3d_Group & Value() const;
-
-};
-%feature("shadow") Graphic3d_SetIteratorOfSetOfGroup::~Graphic3d_SetIteratorOfSetOfGroup %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_SetIteratorOfSetOfGroup {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_Texture2Dmanual;
-class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Texture2Dmanual(const Handle_Graphic3d_StructureManager &SM, const char * FileName);
-		%feature("autodoc", "1");
-		Graphic3d_Texture2Dmanual(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTexture2D NOT);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_Texture2Dmanual {
-	Handle_Graphic3d_Texture2Dmanual GetHandle() {
-	return *(Handle_Graphic3d_Texture2Dmanual*) &$self;
-	}
-};
-%extend Graphic3d_Texture2Dmanual {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_Texture2Dmanual::~Graphic3d_Texture2Dmanual %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Texture2Dmanual {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_AspectFillArea3d;
 class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 	public:
@@ -5586,10 +5603,6 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		%feature("autodoc", "1");
 		void SetTextureMapOff();
 		%feature("autodoc", "1");
-		static		void SetDefaultDegenerateModel(const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
-		%feature("autodoc", "1");
-		void SetDegenerateModel(const Aspect_TypeOfDegenerateModel aModel=Aspect_TDM_WIREFRAME, const Quantity_Ratio aRatio=0.0);
-		%feature("autodoc", "1");
 		void SetPolygonOffsets(const Standard_Integer aMode, const Standard_ShortReal aFactor=1.0e+0, const Standard_ShortReal aUnits=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean BackFace() const;
@@ -5605,10 +5618,6 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		Handle_Graphic3d_TextureMap TextureMap() const;
 		%feature("autodoc", "1");
 		Standard_Boolean TextureMapState() const;
-		%feature("autodoc", "1");
-		Aspect_TypeOfDegenerateModel DegenerateModel(Quantity_Ratio & aRatio) const;
-		%feature("autodoc", "1");
-		static		Aspect_TypeOfDegenerateModel DefaultDegenerateModel(Quantity_Ratio & aRatio);
 		%feature("autodoc","PolygonOffsets() -> Standard_Integer");
 
 		void PolygonOffsets(Standard_Integer &OutValue, Standard_ShortReal & aFactor, Standard_ShortReal & aUnits) const;
@@ -5668,16 +5677,6 @@ class Graphic3d_Group : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void MarkerSet(const Graphic3d_Array1OfVertex &ListVertex, const Standard_Boolean EvalMinMax=1);
 		%feature("autodoc", "1");
-		void Polygon(const Graphic3d_Array1OfVertex &ListVertex, const Graphic3d_TypeOfPolygon AType=Graphic3d_TOP_CONVEX, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		void PolygonSet(const TColStd_Array1OfInteger &Bounds, const Graphic3d_Array1OfVertex &ListVertex, const Graphic3d_TypeOfPolygon AType=Graphic3d_TOP_CONVEX, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		void Polyline(const Graphic3d_Vertex &APT1, const Graphic3d_Vertex &APT2, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		void Polyline(const Graphic3d_Array1OfVertex &ListVertex, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		void Polyline(const Graphic3d_Array1OfVertexC &ListVertex, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
 		void Text(const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax=1);
 		%feature("autodoc", "1");
 		void Text(const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax=1);
@@ -5688,21 +5687,7 @@ class Graphic3d_Group : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddPrimitiveArray(const Handle_Graphic3d_ArrayOfPrimitives &elem, const Standard_Boolean EvalMinMax=1);
 		%feature("autodoc", "1");
-		void RemovePrimitiveArray(const Standard_Integer aRank);
-		%feature("autodoc", "1");
-		void RemovePrimitiveArrays();
-		%feature("autodoc", "1");
 		void UserDraw(const Standard_Address AnObject, const Standard_Boolean EvalMinMax=1, const Standard_Boolean ContainsFacet=0);
-		%feature("autodoc", "1");
-		Standard_Integer ArrayNumber() const;
-		%feature("autodoc", "1");
-		void InitDefinedArray();
-		%feature("autodoc", "1");
-		void NextDefinedArray();
-		%feature("autodoc", "1");
-		Standard_Boolean MoreDefinedArray();
-		%feature("autodoc", "1");
-		Handle_Graphic3d_ArrayOfPrimitives DefinedArray() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsGroupPrimitivesAspectSet(const Graphic3d_GroupAspect theAspect) const;
 		%feature("autodoc", "1");
@@ -5720,10 +5705,6 @@ class Graphic3d_Group : public MMgt_TShared {
 		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Graphic3d_Structure Structure() const;
-		%feature("autodoc", "1");
-		void BeginPrimitives();
-		%feature("autodoc", "1");
-		void EndPrimitives();
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6000,9 +5981,9 @@ def __del__(self):
 class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 	public:
 		%feature("autodoc", "1");
-		Graphic3d_Texture1Dmanual(const Handle_Graphic3d_StructureManager &SM, const char * FileName);
+		Graphic3d_Texture1Dmanual(const TCollection_AsciiString &theFileName);
 		%feature("autodoc", "1");
-		Graphic3d_Texture1Dmanual(const Handle_Graphic3d_StructureManager &SM, const Graphic3d_NameOfTexture1D NOT);
+		Graphic3d_Texture1Dmanual(const Graphic3d_NameOfTexture1D theNOT);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -6191,402 +6172,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Graphic3d_Array2OfVertexN;
-class Graphic3d_Array2OfVertexN {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexN(const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		Graphic3d_Array2OfVertexN(const Graphic3d_VertexN &Item, const Standard_Integer R1, const Standard_Integer R2, const Standard_Integer C1, const Standard_Integer C2);
-		%feature("autodoc", "1");
-		void Init(const Graphic3d_VertexN &V);
-		%feature("autodoc", "1");
-		void Destroy();
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexN & Assign(const Graphic3d_Array2OfVertexN &Other);
-		%feature("autodoc", "1");
-		const Graphic3d_Array2OfVertexN & operator=(const Graphic3d_Array2OfVertexN &Other);
-		%feature("autodoc", "1");
-		Standard_Integer ColLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer RowLength() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer LowerRow() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperCol() const;
-		%feature("autodoc", "1");
-		Standard_Integer UpperRow() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Row, const Standard_Integer Col, const Graphic3d_VertexN &Value);
-		%feature("autodoc", "1");
-		const Graphic3d_VertexN & Value(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		const Graphic3d_VertexN & operator()(const Standard_Integer Row, const Standard_Integer Col) const;
-		%feature("autodoc", "1");
-		Graphic3d_VertexN & ChangeValue(const Standard_Integer Row, const Standard_Integer Col);
-		%feature("autodoc", "1");
-		Graphic3d_VertexN & operator()(const Standard_Integer Row, const Standard_Integer Col);
-
-};
-%feature("shadow") Graphic3d_Array2OfVertexN::~Graphic3d_Array2OfVertexN %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_Array2OfVertexN {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_GraphicDriver;
-class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
-	public:
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Begin(const char * ADisplay);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Begin(const Aspect_Display ADisplay);
-		%feature("autodoc", "1");
-		virtual		void End();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer InquireLightLimit();
-		%feature("autodoc", "1");
-		virtual		void InquireMat(const Graphic3d_CView &ACView, TColStd_Array2OfReal & AMatO, TColStd_Array2OfReal & AMatM);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer InquirePlaneLimit();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer InquireViewLimit();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean InquireTextureAvailable();
-		%feature("autodoc", "1");
-		virtual		void Blink(const Graphic3d_CStructure &ACStructure, const Standard_Boolean Create);
-		%feature("autodoc", "1");
-		virtual		void BoundaryBox(const Graphic3d_CStructure &ACStructure, const Standard_Boolean Create);
-		%feature("autodoc", "1");
-		virtual		void HighlightColor(const Graphic3d_CStructure &ACStructure, const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B, const Standard_Boolean Create);
-		%feature("autodoc", "1");
-		virtual		void NameSetStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void ClearGroup(const Graphic3d_CGroup &ACGroup);
-		%feature("autodoc", "1");
-		virtual		void CloseGroup(const Graphic3d_CGroup &ACGroup);
-		%feature("autodoc", "1");
-		virtual		void FaceContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
-		%feature("autodoc", "1");
-		virtual		void Group(Graphic3d_CGroup & ACGroup);
-		%feature("autodoc", "1");
-		virtual		void LineContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
-		%feature("autodoc", "1");
-		virtual		void MarkerContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
-		%feature("autodoc", "1");
-		virtual		void MarkerContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert, const Standard_Integer AMarkWidth, const Standard_Integer AMarkHeight, const Handle_TColStd_HArray1OfByte &ATexture);
-		%feature("autodoc", "1");
-		virtual		void OpenGroup(const Graphic3d_CGroup &ACGroup);
-		%feature("autodoc", "1");
-		virtual		void RemoveGroup(const Graphic3d_CGroup &ACGroup);
-		%feature("autodoc", "1");
-		virtual		void TextContextGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer NoInsert);
-		%feature("autodoc", "1");
-		virtual		void ClearStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void Connect(const Graphic3d_CStructure &AFather, const Graphic3d_CStructure &ASon);
-		%feature("autodoc", "1");
-		virtual		void ContextStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void Disconnect(const Graphic3d_CStructure &AFather, const Graphic3d_CStructure &ASon);
-		%feature("autodoc", "1");
-		virtual		void DisplayStructure(const Graphic3d_CView &ACView, const Graphic3d_CStructure &ACStructure, const Standard_Integer APriority);
-		%feature("autodoc", "1");
-		virtual		void EraseStructure(const Graphic3d_CView &ACView, const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void RemoveStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void Structure(Graphic3d_CStructure & ACStructure);
-		%feature("autodoc", "1");
-		virtual		void ActivateView(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void AntiAliasing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
-		%feature("autodoc", "1");
-		virtual		void Background(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void GradientBackground(const Graphic3d_CView &ACView, const Quantity_Color &AColor1, const Quantity_Color &AColor2, const Aspect_GradientFillMethod FillStyle);
-		%feature("autodoc", "1");
-		virtual		void BackgroundImage(const char * FileName, const Graphic3d_CView &ACView, const Aspect_FillMethod FillStyle);
-		%feature("autodoc", "1");
-		virtual		void SetBgImageStyle(const Graphic3d_CView &ACView, const Aspect_FillMethod FillStyle);
-		%feature("autodoc", "1");
-		virtual		void SetBgGradientStyle(const Graphic3d_CView &ACView, const Aspect_GradientFillMethod FillStyle);
-		%feature("autodoc", "1");
-		virtual		void ClipLimit(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
-		%feature("autodoc", "1");
-		virtual		void DeactivateView(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void DepthCueing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
-		%feature("autodoc","ProjectRaster(const ACView, Standard_ShortReal AX, Standard_ShortReal AY, Standard_ShortReal AZ) -> [Standard_Integer, Standard_Integer]");
-
-		virtual		Standard_Boolean ProjectRaster(const Graphic3d_CView &ACView, const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean UnProjectRaster(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean UnProjectRasterWithRay(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ, Standard_ShortReal & DX, Standard_ShortReal & DY, Standard_ShortReal & DZ);
-		%feature("autodoc", "1");
-		virtual		void RatioWindow(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void Redraw(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Standard_Integer x=0, const Standard_Integer y=0, const Standard_Integer width=0, const Standard_Integer height=0);
-		%feature("autodoc", "1");
-		virtual		void RemoveView(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void SetLight(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void SetPlane(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void SetVisualisation(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void TransformStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void DegenerateStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void Transparency(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
-		%feature("autodoc", "1");
-		virtual		void Update(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean View(Graphic3d_CView & ACView);
-		%feature("autodoc", "1");
-		virtual		void ViewMapping(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
-		%feature("autodoc", "1");
-		virtual		void ViewOrientation(const Graphic3d_CView &ACView, const Standard_Boolean AWait);
-		%feature("autodoc", "1");
-		virtual		void Environment(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void Marker(const Graphic3d_CGroup &ACGroup, const Graphic3d_Vertex &APoint, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void MarkerSet(const Graphic3d_CGroup &ACGroup, const Graphic3d_Array1OfVertex &ListVertex, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void Polygon(const Graphic3d_CGroup &ACGroup, const Graphic3d_Array1OfVertex &ListVertex, const Graphic3d_TypeOfPolygon AType=Graphic3d_TOP_CONVEX, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void Text(const Graphic3d_CGroup &ACGroup, const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void Text(const Graphic3d_CGroup &ACGroup, const char * AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void Text(const Graphic3d_CGroup &ACGroup, const TCollection_ExtendedString &AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle, const Graphic3d_TextPath ATp, const Graphic3d_HorizontalTextAlignment AHta, const Graphic3d_VerticalTextAlignment AVta, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void Text(const Graphic3d_CGroup &ACGroup, const TCollection_ExtendedString &AText, const Graphic3d_Vertex &APoint, const Standard_Real AHeight, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void PrimitiveArray(const Graphic3d_CGroup &ACGroup, const Graphic3d_PrimitiveArray &parray, const Standard_Boolean EvalMinMax=1);
-		%feature("autodoc", "1");
-		virtual		void UserDraw(const Graphic3d_CGroup &ACGroup, const Graphic3d_CUserDraw &AUserDraw);
-		%feature("autodoc", "1");
-		virtual		void EnableVBO(const Standard_Boolean status);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean MemoryInfo(Standard_Size & theFreeBytes, TCollection_AsciiString & theInfo) const;
-		%feature("autodoc", "1");
-		virtual		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
-		%feature("autodoc", "1");
-		virtual		void TriedronDisplay(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const Standard_Boolean AsWireframe=1);
-		%feature("autodoc", "1");
-		virtual		void TriedronErase(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void TriedronEcho(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronEcho AType=Aspect_TOTE_NONE);
-		%feature("autodoc", "1");
-		virtual		void GraduatedTrihedronDisplay(const Graphic3d_CView &view, const Graphic3d_CGraduatedTrihedron &cubic);
-		%feature("autodoc", "1");
-		virtual		void GraduatedTrihedronErase(const Graphic3d_CView &view);
-		%feature("autodoc", "1");
-		virtual		void GraduatedTrihedronMinMaxValues(const Standard_ShortReal xmin, const Standard_ShortReal ymin, const Standard_ShortReal zmin, const Standard_ShortReal xmax, const Standard_ShortReal ymax, const Standard_ShortReal zmax);
-		%feature("autodoc", "1");
-		virtual		void BeginAnimation(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void EndAnimation(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BeginAddMode(const Graphic3d_CView &ACView);
-		%feature("autodoc", "1");
-		virtual		void EndAddMode();
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BeginImmediatMode(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Standard_Boolean DoubleBuffer, const Standard_Boolean RetainMode);
-		%feature("autodoc", "1");
-		virtual		void BeginPolyline();
-		%feature("autodoc", "1");
-		virtual		void ClearImmediatMode(const Graphic3d_CView &ACView, const Standard_Boolean aFlush=1);
-		%feature("autodoc", "1");
-		virtual		void Draw(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z);
-		%feature("autodoc", "1");
-		virtual		void DrawStructure(const Graphic3d_CStructure &ACStructure);
-		%feature("autodoc", "1");
-		virtual		void EndImmediatMode(const Standard_Integer Synchronize);
-		%feature("autodoc", "1");
-		virtual		void EndPolyline();
-		%feature("autodoc", "1");
-		virtual		void Move(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Z);
-		%feature("autodoc", "1");
-		virtual		void SetLineColor(const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B);
-		%feature("autodoc", "1");
-		virtual		void SetLineType(const Standard_Integer Type);
-		%feature("autodoc", "1");
-		virtual		void SetLineWidth(const Standard_ShortReal Width);
-		%feature("autodoc", "1");
-		virtual		void SetMinMax(const Standard_ShortReal X1, const Standard_ShortReal Y1, const Standard_ShortReal Z1, const Standard_ShortReal X2, const Standard_ShortReal Y2, const Standard_ShortReal Z2);
-		%feature("autodoc", "1");
-		virtual		void Transform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CreateTexture(const Graphic3d_TypeOfTexture Type, const Handle_AlienImage_AlienImage &Image, const char * FileName, const Handle_TColStd_HArray1OfReal &TexUpperBounds) const;
-		%feature("autodoc", "1");
-		virtual		void DestroyTexture(const Standard_Integer TexId) const;
-		%feature("autodoc", "1");
-		virtual		void ModifyTexture(const Standard_Integer TexId, const Graphic3d_CInitTexture &AValue) const;
-		%feature("autodoc", "1");
-		virtual		void Layer(Aspect_CLayer2d & ACLayer);
-		%feature("autodoc", "1");
-		virtual		void RemoveLayer(const Aspect_CLayer2d &ACLayer);
-		%feature("autodoc", "1");
-		virtual		void BeginLayer(const Aspect_CLayer2d &ACLayer);
-		%feature("autodoc", "1");
-		virtual		void BeginPolygon2d();
-		%feature("autodoc", "1");
-		virtual		void BeginPolyline2d();
-		%feature("autodoc", "1");
-		virtual		void ClearLayer(const Aspect_CLayer2d &ACLayer);
-		%feature("autodoc", "1");
-		virtual		void Draw(const Standard_ShortReal X, const Standard_ShortReal Y);
-		%feature("autodoc", "1");
-		virtual		void Edge(const Standard_ShortReal X, const Standard_ShortReal Y);
-		%feature("autodoc", "1");
-		virtual		void EndLayer();
-		%feature("autodoc", "1");
-		virtual		void EndPolygon2d();
-		%feature("autodoc", "1");
-		virtual		void EndPolyline2d();
-		%feature("autodoc", "1");
-		virtual		void Move(const Standard_ShortReal X, const Standard_ShortReal Y);
-		%feature("autodoc", "1");
-		virtual		void Rectangle(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal Width, const Standard_ShortReal Height);
-		%feature("autodoc", "1");
-		virtual		void SetColor(const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B);
-		%feature("autodoc", "1");
-		virtual		void SetTransparency(const Standard_ShortReal ATransparency);
-		%feature("autodoc", "1");
-		virtual		void UnsetTransparency();
-		%feature("autodoc", "1");
-		virtual		void SetLineAttributes(const Standard_Integer Type, const Standard_ShortReal Width);
-		%feature("autodoc", "1");
-		virtual		void SetTextAttributes(const char * Font, const Standard_Integer Type, const Standard_ShortReal R, const Standard_ShortReal G, const Standard_ShortReal B);
-		%feature("autodoc", "1");
-		virtual		void Text(const char * AText, const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal AHeight);
-		%feature("autodoc", "1");
-		virtual		Standard_ShortReal DefaultTextHeight() const;
-		%feature("autodoc", "1");
-		virtual		void TextSize(const char * AText, const Standard_ShortReal AHeight, Standard_ShortReal & AWidth, Standard_ShortReal & AnAscent, Standard_ShortReal & ADescent) const;
-		%feature("autodoc", "1");
-		virtual		void SetBackFacingModel(const Graphic3d_CView &aView);
-		%feature("autodoc", "1");
-		virtual		void SetDepthTestEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsDepthTestEnabled(const Graphic3d_CView &view) const;
-		%feature("autodoc", "1");
-		virtual		void ReadDepths(const Graphic3d_CView &view, const Standard_Integer x, const Standard_Integer y, const Standard_Integer width, const Standard_Integer height, const Standard_Address buffer) const;
-		%feature("autodoc", "1");
-		virtual		Graphic3d_PtrFrameBuffer FBOCreate(const Graphic3d_CView &view, const Standard_Integer width, const Standard_Integer height);
-		%feature("autodoc", "1");
-		virtual		void FBORelease(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr);
-		%feature("autodoc","FBOGetDimensions(const view, Graphic3d_PtrFrameBuffer fboPtr) -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
-
-		virtual		void FBOGetDimensions(const Graphic3d_CView &view, const Graphic3d_PtrFrameBuffer fboPtr, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
-		%feature("autodoc", "1");
-		virtual		void FBOChangeViewport(const Graphic3d_CView &view, Graphic3d_PtrFrameBuffer & fboPtr, const Standard_Integer width, const Standard_Integer height);
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BufferDump(const Graphic3d_CView &theCView, Image_PixMap & theImage, const Graphic3d_BufferType &theBufferType);
-		%feature("autodoc", "1");
-		virtual		void SetGLLightEnabled(const Graphic3d_CView &view, const Standard_Boolean isEnabled) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean IsGLLightEnabled(const Graphic3d_CView &view) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Print(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH, const Standard_Real theScaleFactor=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType, const Standard_Integer theWidth, const Standard_Integer theHeight, const Graphic3d_CView &theView, const Aspect_CLayer2d &theLayerUnder, const Aspect_CLayer2d &theLayerOver, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351440429688e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0);
-		%feature("autodoc", "1");
-		virtual		void RemovePrimitiveArray(const Graphic3d_CGroup &theCGroup, const Graphic3d_PrimitiveArray &thePArray);
-		%feature("autodoc", "1");
-		virtual		void AddZLayer(const Graphic3d_CView &theCView, const Standard_Integer theLayerId);
-		%feature("autodoc", "1");
-		virtual		void RemoveZLayer(const Graphic3d_CView &theCView, const Standard_Integer theLayerId);
-		%feature("autodoc", "1");
-		virtual		void UnsetZLayer(const Standard_Integer theLayerId);
-		%feature("autodoc", "1");
-		virtual		void ChangeZLayer(const Graphic3d_CStructure &theCStructure, const Standard_Integer theLayerId);
-		%feature("autodoc", "1");
-		virtual		void ChangeZLayer(const Graphic3d_CStructure &theCStructure, const Graphic3d_CView &theCView, const Standard_Integer theNewLayerId);
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetZLayer(const Graphic3d_CStructure &theCStructure) const;
-		%feature("autodoc", "1");
-		static		Standard_Integer Light(const Graphic3d_CLight &ACLight, const Standard_Boolean Update);
-		%feature("autodoc", "1");
-		static		Standard_Integer Plane(const Graphic3d_CPlane &ACPlane, const Standard_Boolean Update);
-		%feature("autodoc", "1");
-		void PrintBoolean(const char * AComment, const Standard_Boolean AValue) const;
-		%feature("autodoc", "1");
-		void PrintCGroup(const Graphic3d_CGroup &ACGroup, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintCLight(const Graphic3d_CLight &ACLight, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintCPick(const Graphic3d_CPick &ACPick, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintCPlane(const Graphic3d_CPlane &ACPlane, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintCStructure(const Graphic3d_CStructure &ACStructure, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintCView(const Graphic3d_CView &ACView, const Standard_Integer AField) const;
-		%feature("autodoc", "1");
-		void PrintFunction(const char * AFunc) const;
-		%feature("autodoc", "1");
-		void PrintInteger(const char * AComment, const Standard_Integer AValue) const;
-		%feature("autodoc", "1");
-		void PrintIResult(const char * AFunc, const Standard_Integer AResult) const;
-		%feature("autodoc", "1");
-		void PrintShortReal(const char * AComment, const Standard_ShortReal AValue) const;
-		%feature("autodoc", "1");
-		void PrintMatrix(const char * AComment, const TColStd_Array2OfReal &AMatrix) const;
-		%feature("autodoc", "1");
-		void PrintString(const char * AComment, const char * AString) const;
-		%feature("autodoc", "1");
-		void SetTrace(const Standard_Integer ALevel);
-		%feature("autodoc", "1");
-		Standard_Integer Trace() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_GraphicDriver {
-	Handle_Graphic3d_GraphicDriver GetHandle() {
-	return *(Handle_Graphic3d_GraphicDriver*) &$self;
-	}
-};
-%extend Graphic3d_GraphicDriver {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_GraphicDriver::~Graphic3d_GraphicDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_GraphicDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Graphic3d_PickIdDefinitionError;
 class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 	public:
@@ -6680,47 +6265,6 @@ def __del__(self):
 %}
 
 %extend Graphic3d_Vector {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Graphic3d_GraphicDevice;
-class Graphic3d_GraphicDevice : public Xw_GraphicDevice {
-	public:
-		%feature("autodoc", "1");
-		Graphic3d_GraphicDevice(const char * Connexion, const Xw_TypeOfMapping Mapping=Xw_TOM_COLORCUBE, const Standard_Integer Ncolors=0, const Standard_Boolean UseDefault=1);
-		%feature("autodoc", "1");
-		Graphic3d_GraphicDevice(const Aspect_Display DisplayHandle);
-		%feature("autodoc", "1");
-		virtual		void Destroy();
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Graphic3d_GraphicDevice {
-	Handle_Graphic3d_GraphicDevice GetHandle() {
-	return *(Handle_Graphic3d_GraphicDevice*) &$self;
-	}
-};
-%extend Graphic3d_GraphicDevice {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Graphic3d_GraphicDevice::~Graphic3d_GraphicDevice %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Graphic3d_GraphicDevice {
 	void _kill_pointed() {
 		delete $self;
 	}

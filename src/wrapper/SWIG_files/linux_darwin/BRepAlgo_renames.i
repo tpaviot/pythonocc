@@ -30,5 +30,6 @@ $HeaderURL$
 %rename(DownCast) Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference::DownCast;
 %rename(Deboucle3D) BRepAlgo_Tool::Deboucle3D;
 %rename(ConcatenateWire) BRepAlgo::ConcatenateWire;
+%rename(ConcatenateWireC0) BRepAlgo::ConcatenateWireC0;
 %rename(IsValid) BRepAlgo::IsValid;
 %rename(IsTopologicallyValid) BRepAlgo::IsTopologicallyValid;

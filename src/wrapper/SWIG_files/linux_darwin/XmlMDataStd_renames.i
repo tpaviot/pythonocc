@@ -27,7 +27,6 @@ $HeaderURL$
 %rename(DownCast) Handle_XmlMDataStd_BooleanListDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_ExpressionDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_RealListDriver::DownCast;
-%rename(DownCast) Handle_XmlMDataStd_ExtStringArrayDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_AsciiStringDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_CommentDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_ReferenceArrayDriver::DownCast;
@@ -48,6 +47,7 @@ $HeaderURL$
 %rename(DownCast) Handle_XmlMDataStd_RelationDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_NameDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_VariableDriver::DownCast;
+%rename(DownCast) Handle_XmlMDataStd_ExtStringArrayDriver::DownCast;
 %rename(DownCast) Handle_XmlMDataStd_RealArrayDriver::DownCast;
 %rename(AddDrivers) XmlMDataStd::AddDrivers;
 %rename(SetDocumentVersion) XmlMDataStd::SetDocumentVersion;

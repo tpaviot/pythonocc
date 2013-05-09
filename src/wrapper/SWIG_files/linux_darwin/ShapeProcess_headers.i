@@ -204,6 +204,7 @@ $HeaderURL$
 #include<GeomFill_Curved.hxx>
 #include<GeomFill_Darboux.hxx>
 #include<GeomFill_DegeneratedBound.hxx>
+#include<GeomFill_DiscreteTrihedron.hxx>
 #include<GeomFill_DraftTrihedron.hxx>
 #include<GeomFill_EvolvedSection.hxx>
 #include<GeomFill_Filling.hxx>
@@ -217,6 +218,7 @@ $HeaderURL$
 #include<GeomFill_GuideTrihedronPlan.hxx>
 #include<GeomFill_HArray1OfLocationLaw.hxx>
 #include<GeomFill_HArray1OfSectionLaw.hxx>
+#include<GeomFill_HSequenceOfAx2.hxx>
 #include<GeomFill_Line.hxx>
 #include<GeomFill_LocFunction.hxx>
 #include<GeomFill_LocationDraft.hxx>
@@ -232,7 +234,9 @@ $HeaderURL$
 #include<GeomFill_SectionGenerator.hxx>
 #include<GeomFill_SectionLaw.hxx>
 #include<GeomFill_SectionPlacement.hxx>
+#include<GeomFill_SequenceNodeOfSequenceOfAx2.hxx>
 #include<GeomFill_SequenceNodeOfSequenceOfTrsf.hxx>
+#include<GeomFill_SequenceOfAx2.hxx>
 #include<GeomFill_SequenceOfTrsf.hxx>
 #include<GeomFill_SimpleBound.hxx>
 #include<GeomFill_SnglrFunc.hxx>

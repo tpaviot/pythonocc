@@ -90,6 +90,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_MDocStd_XLinkStorageDriver;
+class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
+	public:
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver();
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver(const Handle_MDocStd_XLinkStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver(const MDocStd_XLinkStorageDriver *anItem);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver & operator=(const Handle_MDocStd_XLinkStorageDriver &aHandle);
+		%feature("autodoc", "1");
+		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *anItem);
+		%feature("autodoc", "1");
+		static		Handle_MDocStd_XLinkStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_MDocStd_XLinkStorageDriver {
+	MDocStd_XLinkStorageDriver* GetObject() {
+	return (MDocStd_XLinkStorageDriver*)$self->Access();
+	}
+};
+%feature("shadow") Handle_MDocStd_XLinkStorageDriver::~Handle_MDocStd_XLinkStorageDriver %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_MDocStd_XLinkStorageDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
 class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
@@ -160,44 +198,6 @@ def __del__(self):
 %}
 
 %extend Handle_MDocStd_XLinkRetrievalDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_MDocStd_XLinkStorageDriver;
-class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
-	public:
-		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver();
-		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver(const Handle_MDocStd_XLinkStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver(const MDocStd_XLinkStorageDriver *anItem);
-		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver & operator=(const Handle_MDocStd_XLinkStorageDriver &aHandle);
-		%feature("autodoc", "1");
-		Handle_MDocStd_XLinkStorageDriver & operator=(const MDocStd_XLinkStorageDriver *anItem);
-		%feature("autodoc", "1");
-		static		Handle_MDocStd_XLinkStorageDriver DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_MDocStd_XLinkStorageDriver {
-	MDocStd_XLinkStorageDriver* GetObject() {
-	return (MDocStd_XLinkStorageDriver*)$self->Access();
-	}
-};
-%feature("shadow") Handle_MDocStd_XLinkStorageDriver::~Handle_MDocStd_XLinkStorageDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_MDocStd_XLinkStorageDriver {
 	void _kill_pointed() {
 		delete $self;
 	}

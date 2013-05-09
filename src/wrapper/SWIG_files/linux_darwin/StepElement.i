@@ -50,6 +50,14 @@ $HeaderURL$
 %include StepElement_headers.i
 
 
+enum StepElement_EnumeratedSurfaceElementPurpose {
+	StepElement_MembraneDirect,
+	StepElement_MembraneShear,
+	StepElement_BendingDirect,
+	StepElement_BendingTorsion,
+	StepElement_NormalToPlaneShear,
+	};
+
 enum StepElement_ElementOrder {
 	StepElement_Linear,
 	StepElement_Quadratic,
@@ -94,14 +102,6 @@ enum StepElement_ElementVolume {
 
 enum StepElement_EnumeratedVolumeElementPurpose {
 	StepElement_StressDisplacement,
-	};
-
-enum StepElement_EnumeratedSurfaceElementPurpose {
-	StepElement_MembraneDirect,
-	StepElement_MembraneShear,
-	StepElement_BendingDirect,
-	StepElement_BendingTorsion,
-	StepElement_NormalToPlaneShear,
 	};
 
 enum StepElement_CurveEdge {
@@ -223,6 +223,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepElement_HArray1OfCurveElementSectionDefinition {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepElement_SurfaceElementPurposeMember;
+class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_SelectNamed {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember();
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember(const StepElement_SurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember & operator=(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepElement_SurfaceElementPurposeMember & operator=(const StepElement_SurfaceElementPurposeMember *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepElement_SurfaceElementPurposeMember DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepElement_SurfaceElementPurposeMember {
+	StepElement_SurfaceElementPurposeMember* GetObject() {
+	return (StepElement_SurfaceElementPurposeMember*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepElement_SurfaceElementPurposeMember::~Handle_StepElement_SurfaceElementPurposeMember %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepElement_SurfaceElementPurposeMember {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1211,44 +1249,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepElement_CurveElementFreedomMember {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepElement_SurfaceElementPurposeMember;
-class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_SelectNamed {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember();
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember(const StepElement_SurfaceElementPurposeMember *anItem);
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember & operator=(const Handle_StepElement_SurfaceElementPurposeMember &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepElement_SurfaceElementPurposeMember & operator=(const StepElement_SurfaceElementPurposeMember *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepElement_SurfaceElementPurposeMember DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepElement_SurfaceElementPurposeMember {
-	StepElement_SurfaceElementPurposeMember* GetObject() {
-	return (StepElement_SurfaceElementPurposeMember*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepElement_SurfaceElementPurposeMember::~Handle_StepElement_SurfaceElementPurposeMember %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepElement_SurfaceElementPurposeMember {
 	void _kill_pointed() {
 		delete $self;
 	}

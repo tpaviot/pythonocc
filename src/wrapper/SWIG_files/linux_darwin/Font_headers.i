@@ -30,6 +30,7 @@ $HeaderURL$
 #include<Font_FontAspect.hxx>
 #include<Font_FontMgr.hxx>
 #include<Font_NListOfSystemFont.hxx>
+#include<Font_NameOfFont.hxx>
 #include<Font_SystemFont.hxx>
 #include<Handle_Font_FontMgr.hxx>
 #include<Handle_Font_SystemFont.hxx>
@@ -40,5 +41,6 @@ $HeaderURL$
 // Needed headers necessary for compilation.
 
 #include<Handle_Standard_Transient.hxx>
+#include<TColStd_SequenceOfHAsciiString.hxx>
 #include<Handle_TCollection_HAsciiString.hxx>
 %}

@@ -280,44 +280,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_PXCAFDoc_MaterialTool;
-class Handle_PXCAFDoc_MaterialTool : public Handle_PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_MaterialTool();
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_MaterialTool(const Handle_PXCAFDoc_MaterialTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_MaterialTool(const PXCAFDoc_MaterialTool *anItem);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_MaterialTool & operator=(const Handle_PXCAFDoc_MaterialTool &aHandle);
-		%feature("autodoc", "1");
-		Handle_PXCAFDoc_MaterialTool & operator=(const PXCAFDoc_MaterialTool *anItem);
-		%feature("autodoc", "1");
-		static		Handle_PXCAFDoc_MaterialTool DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_PXCAFDoc_MaterialTool {
-	PXCAFDoc_MaterialTool* GetObject() {
-	return (PXCAFDoc_MaterialTool*)$self->Access();
-	}
-};
-%feature("shadow") Handle_PXCAFDoc_MaterialTool::~Handle_PXCAFDoc_MaterialTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_PXCAFDoc_MaterialTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_PXCAFDoc_ShapeTool;
 class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 	public:
@@ -426,6 +388,44 @@ def __del__(self):
 %}
 
 %extend Handle_PXCAFDoc_Area {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_PXCAFDoc_MaterialTool;
+class Handle_PXCAFDoc_MaterialTool : public Handle_PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool();
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool(const Handle_PXCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool(const PXCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool & operator=(const Handle_PXCAFDoc_MaterialTool &aHandle);
+		%feature("autodoc", "1");
+		Handle_PXCAFDoc_MaterialTool & operator=(const PXCAFDoc_MaterialTool *anItem);
+		%feature("autodoc", "1");
+		static		Handle_PXCAFDoc_MaterialTool DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_PXCAFDoc_MaterialTool {
+	PXCAFDoc_MaterialTool* GetObject() {
+	return (PXCAFDoc_MaterialTool*)$self->Access();
+	}
+};
+%feature("shadow") Handle_PXCAFDoc_MaterialTool::~Handle_PXCAFDoc_MaterialTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_PXCAFDoc_MaterialTool {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1128,6 +1128,43 @@ def __del__(self):
 };
 
 
+%nodefaultctor PXCAFDoc_DocumentTool;
+class PXCAFDoc_DocumentTool : public PDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		PXCAFDoc_DocumentTool();
+		%feature("autodoc", "1");
+		PXCAFDoc_DocumentTool(const Storage_stCONSTclCOM &a);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend PXCAFDoc_DocumentTool {
+	Handle_PXCAFDoc_DocumentTool GetHandle() {
+	return *(Handle_PXCAFDoc_DocumentTool*) &$self;
+	}
+};
+%extend PXCAFDoc_DocumentTool {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend PXCAFDoc_DocumentTool {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor PXCAFDoc_ShapeTool;
 class PXCAFDoc_ShapeTool : public PDF_Attribute {
 	public:
@@ -1456,43 +1493,6 @@ def __del__(self):
 %}
 
 %extend PXCAFDoc_GraphNodeSequence {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor PXCAFDoc_DocumentTool;
-class PXCAFDoc_DocumentTool : public PDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		PXCAFDoc_DocumentTool();
-		%feature("autodoc", "1");
-		PXCAFDoc_DocumentTool(const Storage_stCONSTclCOM &a);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend PXCAFDoc_DocumentTool {
-	Handle_PXCAFDoc_DocumentTool GetHandle() {
-	return *(Handle_PXCAFDoc_DocumentTool*) &$self;
-	}
-};
-%extend PXCAFDoc_DocumentTool {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") PXCAFDoc_DocumentTool::~PXCAFDoc_DocumentTool %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend PXCAFDoc_DocumentTool {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -31,8 +31,8 @@ import Standard
 import TopoDS
 import SelectBasics
 import Prs3d
-import Graphic3d
 import TopAbs
 import Select3D
+import Graphic3d
 import TCollection
 };

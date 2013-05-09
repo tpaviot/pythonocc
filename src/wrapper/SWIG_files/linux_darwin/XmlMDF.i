@@ -635,47 +635,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor XmlMDF_ADriverTable;
-class XmlMDF_ADriverTable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_ADriverTable();
-		%feature("autodoc", "1");
-		void AddDriver(const Handle_XmlMDF_ADriver &anHDriver);
-		%feature("autodoc", "1");
-		const XmlMDF_TypeADriverMap & GetDrivers() const;
-		%feature("autodoc", "1");
-		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_XmlMDF_ADriver & anHDriver) const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend XmlMDF_ADriverTable {
-	Handle_XmlMDF_ADriverTable GetHandle() {
-	return *(Handle_XmlMDF_ADriverTable*) &$self;
-	}
-};
-%extend XmlMDF_ADriverTable {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_ADriverTable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor XmlMDF_ReferenceDriver;
 class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 	public:
@@ -711,6 +670,47 @@ def __del__(self):
 %}
 
 %extend XmlMDF_ReferenceDriver {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor XmlMDF_ADriverTable;
+class XmlMDF_ADriverTable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_ADriverTable();
+		%feature("autodoc", "1");
+		void AddDriver(const Handle_XmlMDF_ADriver &anHDriver);
+		%feature("autodoc", "1");
+		const XmlMDF_TypeADriverMap & GetDrivers() const;
+		%feature("autodoc", "1");
+		Standard_Boolean GetDriver(const Handle_Standard_Type &aType, Handle_XmlMDF_ADriver & anHDriver) const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XmlMDF_ADriverTable {
+	Handle_XmlMDF_ADriverTable GetHandle() {
+	return *(Handle_XmlMDF_ADriverTable*) &$self;
+	}
+};
+%extend XmlMDF_ADriverTable {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") XmlMDF_ADriverTable::~XmlMDF_ADriverTable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_ADriverTable {
 	void _kill_pointed() {
 		delete $self;
 	}

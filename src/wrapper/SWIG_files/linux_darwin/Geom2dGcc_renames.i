@@ -40,6 +40,10 @@ $HeaderURL$
 %rename(GetIntervals) Geom2dGcc_MyCurveTool::GetIntervals;
 %rename(GetInterval) Geom2dGcc_MyCurveTool::GetInterval;
 %rename(SetCurrentInterval) Geom2dGcc_MyCurveTool::SetCurrentInterval;
+%rename(Unqualified) Geom2dGcc::Unqualified;
+%rename(Enclosing) Geom2dGcc::Enclosing;
+%rename(Enclosed) Geom2dGcc::Enclosed;
+%rename(Outside) Geom2dGcc::Outside;
 %rename(FirstParameter) Geom2dGcc_CurveTool::FirstParameter;
 %rename(LastParameter) Geom2dGcc_CurveTool::LastParameter;
 %rename(EpsX) Geom2dGcc_CurveTool::EpsX;
@@ -48,7 +52,3 @@ $HeaderURL$
 %rename(D1) Geom2dGcc_CurveTool::D1;
 %rename(D2) Geom2dGcc_CurveTool::D2;
 %rename(D3) Geom2dGcc_CurveTool::D3;
-%rename(Unqualified) Geom2dGcc::Unqualified;
-%rename(Enclosing) Geom2dGcc::Enclosing;
-%rename(Enclosed) Geom2dGcc::Enclosed;
-%rename(Outside) Geom2dGcc::Outside;

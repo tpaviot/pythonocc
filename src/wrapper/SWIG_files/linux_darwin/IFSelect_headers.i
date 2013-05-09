@@ -254,14 +254,14 @@ $HeaderURL$
 #include<IFGraph_SubPartsIterator.hxx>
 #include<Handle_Interface_Protocol.hxx>
 #include<Interface_CheckIterator.hxx>
-#include<Interface_CopyTool.hxx>
+#include<Handle_Interface_HGraph.hxx>
 #include<Handle_Interface_Check.hxx>
+#include<Interface_CopyTool.hxx>
 #include<Handle_TColStd_HSequenceOfAsciiString.hxx>
 #include<Handle_Dico_DictionaryOfInteger.hxx>
 #include<Handle_Dico_DictionaryOfTransient.hxx>
 #include<Handle_MoniTool_SignText.hxx>
 #include<TColStd_SequenceOfInteger.hxx>
-#include<Handle_Interface_HGraph.hxx>
 #include<Handle_TColStd_HSequenceOfInteger.hxx>
 #include<TColStd_SequenceOfTransient.hxx>
 %}

@@ -52,44 +52,6 @@ $HeaderURL$
 
 
 
-%nodefaultctor Handle_ObjMgt_SeqNodeOfPSeqOfExtRef;
-class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
-	public:
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
-		%feature("autodoc", "1");
-		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
-		%feature("autodoc", "1");
-		static		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
-
-};
-%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	ObjMgt_SeqNodeOfPSeqOfExtRef* GetObject() {
-	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
-	}
-};
-%feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_ObjMgt_ExternRef;
 class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	public:
@@ -160,6 +122,44 @@ def __del__(self):
 %}
 
 %extend Handle_ObjMgt_ExternShareable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_ObjMgt_SeqNodeOfPSeqOfExtRef;
+class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
+	public:
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef();
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const Handle_ObjMgt_SeqNodeOfPSeqOfExtRef &aHandle);
+		%feature("autodoc", "1");
+		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef & operator=(const ObjMgt_SeqNodeOfPSeqOfExtRef *anItem);
+		%feature("autodoc", "1");
+		static		Handle_ObjMgt_SeqNodeOfPSeqOfExtRef DownCast(const Handle_Standard_Persistent &AnObject);
+
+};
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
+	ObjMgt_SeqNodeOfPSeqOfExtRef* GetObject() {
+	return (ObjMgt_SeqNodeOfPSeqOfExtRef*)$self->Access();
+	}
+};
+%feature("shadow") Handle_ObjMgt_SeqNodeOfPSeqOfExtRef::~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
 	void _kill_pointed() {
 		delete $self;
 	}

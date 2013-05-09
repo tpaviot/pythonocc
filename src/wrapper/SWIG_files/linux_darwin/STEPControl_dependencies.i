@@ -267,6 +267,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -399,7 +400,7 @@ $HeaderURL$
 #include <XSControl_Writer.hxx>
 %};
 
-%import Transfer.i
 %import XSControl.i
+%import Transfer.i
 %import Standard.i
 %import IFSelect.i

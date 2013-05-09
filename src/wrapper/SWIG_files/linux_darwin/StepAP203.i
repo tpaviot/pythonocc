@@ -1278,33 +1278,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor StepAP203_CertifiedItem;
-class StepAP203_CertifiedItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_CertifiedItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_SuppliedPartRelationship SuppliedPartRelationship() const;
-
-};
-%feature("shadow") StepAP203_CertifiedItem::~StepAP203_CertifiedItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP203_CertifiedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor StepAP203_HArray1OfContractedItem;
 class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 	public:
@@ -1530,47 +1503,6 @@ def __del__(self):
 %}
 
 %extend StepAP203_Array1OfContractedItem {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepAP203_StartWork;
-class StepAP203_StartWork : public StepBasic_ActionAssignment {
-	public:
-		%feature("autodoc", "1");
-		StepAP203_StartWork();
-		%feature("autodoc", "1");
-		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
-		%feature("autodoc", "1");
-		Handle_StepAP203_HArray1OfWorkItem Items() const;
-		%feature("autodoc", "1");
-		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepAP203_StartWork {
-	Handle_StepAP203_StartWork GetHandle() {
-	return *(Handle_StepAP203_StartWork*) &$self;
-	}
-};
-%extend StepAP203_StartWork {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepAP203_StartWork::~StepAP203_StartWork %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepAP203_StartWork {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1933,6 +1865,47 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepAP203_StartWork;
+class StepAP203_StartWork : public StepBasic_ActionAssignment {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_StartWork();
+		%feature("autodoc", "1");
+		void Init(const Handle_StepBasic_Action &aActionAssignment_AssignedAction, const Handle_StepAP203_HArray1OfWorkItem &aItems);
+		%feature("autodoc", "1");
+		Handle_StepAP203_HArray1OfWorkItem Items() const;
+		%feature("autodoc", "1");
+		void SetItems(const Handle_StepAP203_HArray1OfWorkItem &Items);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepAP203_StartWork {
+	Handle_StepAP203_StartWork GetHandle() {
+	return *(Handle_StepAP203_StartWork*) &$self;
+	}
+};
+%extend StepAP203_StartWork {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepAP203_StartWork::~StepAP203_StartWork %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP203_StartWork {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepAP203_HArray1OfPersonOrganizationItem;
 class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 	public:
@@ -2262,6 +2235,33 @@ def __del__(self):
 %}
 
 %extend StepAP203_StartRequest {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor StepAP203_CertifiedItem;
+class StepAP203_CertifiedItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepAP203_CertifiedItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_SuppliedPartRelationship SuppliedPartRelationship() const;
+
+};
+%feature("shadow") StepAP203_CertifiedItem::~StepAP203_CertifiedItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepAP203_CertifiedItem {
 	void _kill_pointed() {
 		delete $self;
 	}

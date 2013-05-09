@@ -96,44 +96,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_XCAFDoc_Area;
-class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area();
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area(const Handle_XCAFDoc_Area &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area(const XCAFDoc_Area *anItem);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area & operator=(const Handle_XCAFDoc_Area &aHandle);
-		%feature("autodoc", "1");
-		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
-		%feature("autodoc", "1");
-		static		Handle_XCAFDoc_Area DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_XCAFDoc_Area {
-	XCAFDoc_Area* GetObject() {
-	return (XCAFDoc_Area*)$self->Access();
-	}
-};
-%feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_XCAFDoc_Area {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
 class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 	public:
@@ -280,6 +242,44 @@ def __del__(self):
 %}
 
 %extend Handle_XCAFDoc_DimTol {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_XCAFDoc_Area;
+class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area();
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area(const Handle_XCAFDoc_Area &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area(const XCAFDoc_Area *anItem);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area & operator=(const Handle_XCAFDoc_Area &aHandle);
+		%feature("autodoc", "1");
+		Handle_XCAFDoc_Area & operator=(const XCAFDoc_Area *anItem);
+		%feature("autodoc", "1");
+		static		Handle_XCAFDoc_Area DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_XCAFDoc_Area {
+	XCAFDoc_Area* GetObject() {
+	return (XCAFDoc_Area*)$self->Access();
+	}
+};
+%feature("shadow") Handle_XCAFDoc_Area::~Handle_XCAFDoc_Area %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_XCAFDoc_Area {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -786,6 +786,8 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
+		virtual		void Destroy();
+		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -1166,6 +1168,10 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
+		static		void SetAutoNaming(const Standard_Boolean V);
+		%feature("autodoc", "1");
+		static		Standard_Boolean AutoNaming();
+		%feature("autodoc", "1");
 		void ComputeShapes(const TDF_Label &L);
 		%feature("autodoc", "1");
 		void ComputeSimpleShapes();
@@ -1397,9 +1403,15 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Boolean UnSetOneLayer(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
 		%feature("autodoc", "1");
+		Standard_Boolean UnSetOneLayer(const TDF_Label &L, const TDF_Label &aLayerL) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsSet(const TDF_Label &L, const TCollection_ExtendedString &aLayer) const;
 		%feature("autodoc", "1");
+		Standard_Boolean IsSet(const TDF_Label &L, const TDF_Label &aLayerL) const;
+		%feature("autodoc", "1");
 		Standard_Boolean GetLayers(const TDF_Label &L, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
+		%feature("autodoc", "1");
+		Standard_Boolean GetLayers(const TDF_Label &L, TDF_LabelSequence & aLayerLS);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TDF_Label &L);
 		%feature("autodoc", "1");
@@ -1417,9 +1429,15 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Boolean UnSetOneLayer(const TopoDS_Shape Sh, const TCollection_ExtendedString &aLayer);
 		%feature("autodoc", "1");
+		Standard_Boolean UnSetOneLayer(const TopoDS_Shape Sh, const TDF_Label &aLayerL);
+		%feature("autodoc", "1");
 		Standard_Boolean IsSet(const TopoDS_Shape Sh, const TCollection_ExtendedString &aLayer);
 		%feature("autodoc", "1");
+		Standard_Boolean IsSet(const TopoDS_Shape Sh, const TDF_Label &aLayerL);
+		%feature("autodoc", "1");
 		Standard_Boolean GetLayers(const TopoDS_Shape Sh, Handle_TColStd_HSequenceOfExtendedString & aLayerS);
+		%feature("autodoc", "1");
+		Standard_Boolean GetLayers(const TopoDS_Shape Sh, TDF_LabelSequence & aLayerLS);
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfExtendedString GetLayers(const TopoDS_Shape Sh);
 		%feature("autodoc", "1");
@@ -1635,7 +1653,7 @@ class XCAFDoc_Color : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void Set(const Standard_Real R, const Standard_Real G, const Standard_Real B);
 		%feature("autodoc", "1");
-		Quantity_Color GetColor() const;
+		const Quantity_Color & GetColor() const;
 		%feature("autodoc", "1");
 		Quantity_NameOfColor GetNOC() const;
 		%feature("autodoc","GetRGB() -> [Standard_Real, Standard_Real, Standard_Real]");
@@ -1691,7 +1709,7 @@ class XCAFDoc_Location : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void Set(const TopLoc_Location &Loc);
 		%feature("autodoc", "1");
-		TopLoc_Location Get() const;
+		const TopLoc_Location & Get() const;
 		%feature("autodoc", "1");
 		virtual		const Standard_GUID & ID() const;
 		%feature("autodoc", "1");
@@ -2043,7 +2061,7 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSet(const TDF_Label &L, const XCAFDoc_ColorType type) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetColor(const TDF_Label &L, const XCAFDoc_ColorType type, TDF_Label & colorL);
+		static		Standard_Boolean GetColor(const TDF_Label &L, const XCAFDoc_ColorType type, TDF_Label & colorL);
 		%feature("autodoc", "1");
 		Standard_Boolean GetColor(const TDF_Label &L, const XCAFDoc_ColorType type, Quantity_Color & color);
 		%feature("autodoc", "1");

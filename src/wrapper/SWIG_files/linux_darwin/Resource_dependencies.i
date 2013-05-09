@@ -67,6 +67,7 @@ $HeaderURL$
 #include <Standard_Assert.hxx>
 #include <Standard_Boolean.hxx>
 #include <Standard_Byte.hxx>
+#include <Standard_CLocaleSentry.hxx>
 #include <Standard_CString.hxx>
 #include <Standard_Character.hxx>
 #include <Standard_ConstructionError.hxx>
@@ -143,5 +144,5 @@ $HeaderURL$
 %};
 
 %import TCollection.i
-%import Standard.i
 %import MMgt.i
+%import Standard.i

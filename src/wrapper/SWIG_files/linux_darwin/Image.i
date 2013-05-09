@@ -49,6 +49,7 @@ $HeaderURL$
 
 %include Image_headers.i
 
+typedef Handle_Image_PixMap Image_PixMap_Handle;
 typedef Aspect_Pixel * Image_PixelAddress;
 
 enum Image_TypeOfImage {
@@ -72,6 +73,44 @@ enum Image_DitheringMethod {
 	Image_DM_ErrorDiffusion,
 	};
 
+
+
+%nodefaultctor Handle_Image_PixMap;
+class Handle_Image_PixMap : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_PixMap();
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_PixMap {
+	Image_PixMap* GetObject() {
+	return (Image_PixMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_PixMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
 
 
 %nodefaultctor Handle_Image_Image;
@@ -144,44 +183,6 @@ def __del__(self):
 %}
 
 %extend Handle_Image_DColorImage {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Image_PixMap;
-class Handle_Image_PixMap : public Handle_Standard_Transient {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_PixMap();
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Handle_Image_PixMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_PixMap & operator=(const Image_PixMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_PixMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_PixMap {
-	Image_PixMap* GetObject() {
-	return (Image_PixMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_PixMap::~Handle_Image_PixMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_PixMap {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -378,44 +379,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
-class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap();
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap(const Image_DataMapNodeOfColorPixelDataMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Image_DataMapNodeOfColorPixelDataMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
-	Image_DataMapNodeOfColorPixelDataMap* GetObject() {
-	return (Image_DataMapNodeOfColorPixelDataMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Image_DataMapNodeOfColorPixelDataMap::~Handle_Image_DataMapNodeOfColorPixelDataMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Image_ColorImage;
 class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 	public:
@@ -448,6 +411,44 @@ def __del__(self):
 %}
 
 %extend Handle_Image_ColorImage {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
+class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap();
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap(const Image_DataMapNodeOfColorPixelDataMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Handle_Image_DataMapNodeOfColorPixelDataMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Image_DataMapNodeOfColorPixelDataMap & operator=(const Image_DataMapNodeOfColorPixelDataMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Image_DataMapNodeOfColorPixelDataMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
+	Image_DataMapNodeOfColorPixelDataMap* GetObject() {
+	return (Image_DataMapNodeOfColorPixelDataMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Image_DataMapNodeOfColorPixelDataMap::~Handle_Image_DataMapNodeOfColorPixelDataMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Image_DataMapNodeOfColorPixelDataMap {
 	void _kill_pointed() {
 		delete $self;
 	}

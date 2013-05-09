@@ -459,44 +459,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference;
-class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference(const TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
-	TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference* GetObject() {
-	return (TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference::~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface;
 class Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface : public Handle_TCollection_MapNode {
 	public:
@@ -763,6 +725,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_TopOpeBRepDS_ListNodeOfListOfInterference;
+class Handle_TopOpeBRepDS_ListNodeOfListOfInterference : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_ListNodeOfListOfInterference();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_ListNodeOfListOfInterference(const Handle_TopOpeBRepDS_ListNodeOfListOfInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_ListNodeOfListOfInterference(const TopOpeBRepDS_ListNodeOfListOfInterference *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_ListNodeOfListOfInterference & operator=(const Handle_TopOpeBRepDS_ListNodeOfListOfInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_ListNodeOfListOfInterference & operator=(const TopOpeBRepDS_ListNodeOfListOfInterference *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopOpeBRepDS_ListNodeOfListOfInterference DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_ListNodeOfListOfInterference {
+	TopOpeBRepDS_ListNodeOfListOfInterference* GetObject() {
+	return (TopOpeBRepDS_ListNodeOfListOfInterference*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopOpeBRepDS_ListNodeOfListOfInterference::~Handle_TopOpeBRepDS_ListNodeOfListOfInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopOpeBRepDS_ListNodeOfListOfInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference;
 class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : public Handle_TCollection_MapNode {
 	public:
@@ -833,44 +833,6 @@ def __del__(self):
 %}
 
 %extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_TopOpeBRepDS_ListNodeOfListOfInterference;
-class Handle_TopOpeBRepDS_ListNodeOfListOfInterference : public Handle_TCollection_MapNode {
-	public:
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_ListNodeOfListOfInterference();
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_ListNodeOfListOfInterference(const Handle_TopOpeBRepDS_ListNodeOfListOfInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_ListNodeOfListOfInterference(const TopOpeBRepDS_ListNodeOfListOfInterference *anItem);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_ListNodeOfListOfInterference & operator=(const Handle_TopOpeBRepDS_ListNodeOfListOfInterference &aHandle);
-		%feature("autodoc", "1");
-		Handle_TopOpeBRepDS_ListNodeOfListOfInterference & operator=(const TopOpeBRepDS_ListNodeOfListOfInterference *anItem);
-		%feature("autodoc", "1");
-		static		Handle_TopOpeBRepDS_ListNodeOfListOfInterference DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_TopOpeBRepDS_ListNodeOfListOfInterference {
-	TopOpeBRepDS_ListNodeOfListOfInterference* GetObject() {
-	return (TopOpeBRepDS_ListNodeOfListOfInterference*)$self->Access();
-	}
-};
-%feature("shadow") Handle_TopOpeBRepDS_ListNodeOfListOfInterference::~Handle_TopOpeBRepDS_ListNodeOfListOfInterference %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_TopOpeBRepDS_ListNodeOfListOfInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1175,6 +1137,44 @@ def __del__(self):
 %}
 
 %extend Handle_TopOpeBRepDS_CurvePointInterference {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference;
+class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public Handle_TCollection_MapNode {
+	public:
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference();
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference(const TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference *anItem);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference & operator=(const Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference &aHandle);
+		%feature("autodoc", "1");
+		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference & operator=(const TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference *anItem);
+		%feature("autodoc", "1");
+		static		Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
+	TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference* GetObject() {
+	return (TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference*)$self->Access();
+	}
+};
+%feature("shadow") Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference::~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2955,6 +2955,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfCurve;
+class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfMapOfCurve();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_DataMapIteratorOfMapOfCurve(const TopOpeBRepDS_MapOfCurve &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const TopOpeBRepDS_MapOfCurve &aMap);
+		%feature("autodoc", "1");
+		const Standard_Integer & Key() const;
+		%feature("autodoc", "1");
+		const TopOpeBRepDS_CurveData & Value() const;
+
+};
+%feature("shadow") TopOpeBRepDS_DataMapIteratorOfMapOfCurve::~TopOpeBRepDS_DataMapIteratorOfMapOfCurve %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepDS_DataMapIteratorOfMapOfCurve {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_Check;
 class TopOpeBRepDS_Check : public MMgt_TShared {
 	public:
@@ -3067,6 +3098,31 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopOpeBRepDS_SurfaceData;
+class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceData();
+		%feature("autodoc", "1");
+		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
+
+};
+%feature("shadow") TopOpeBRepDS_SurfaceData::~TopOpeBRepDS_SurfaceData %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepDS_SurfaceData {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference;
 class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public TCollection_MapNode {
 	public:
@@ -3100,31 +3156,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_SurfaceData;
-class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceData();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_SurfaceData(const TopOpeBRepDS_Surface &S);
-
-};
-%feature("shadow") TopOpeBRepDS_SurfaceData::~TopOpeBRepDS_SurfaceData %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepDS_SurfaceData {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4159,37 +4190,6 @@ def __del__(self):
 %}
 
 %extend TopOpeBRepDS_DataMapNodeOfMapOfCurve {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor TopOpeBRepDS_DataMapIteratorOfMapOfCurve;
-class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfMapOfCurve();
-		%feature("autodoc", "1");
-		TopOpeBRepDS_DataMapIteratorOfMapOfCurve(const TopOpeBRepDS_MapOfCurve &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const TopOpeBRepDS_MapOfCurve &aMap);
-		%feature("autodoc", "1");
-		const Standard_Integer & Key() const;
-		%feature("autodoc", "1");
-		const TopOpeBRepDS_CurveData & Value() const;
-
-};
-%feature("shadow") TopOpeBRepDS_DataMapIteratorOfMapOfCurve::~TopOpeBRepDS_DataMapIteratorOfMapOfCurve %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepDS_DataMapIteratorOfMapOfCurve {
 	void _kill_pointed() {
 		delete $self;
 	}

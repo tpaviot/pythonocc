@@ -106,6 +106,9 @@ class BSplCLib {
 		static		BSplCLib_KnotDistribution KnotForm(const TColStd_Array1OfReal &Knots, const Standard_Integer FromK1, const Standard_Integer ToK2);
 		%feature("autodoc", "1");
 		static		BSplCLib_MultDistribution MultForm(const TColStd_Array1OfInteger &Mults, const Standard_Integer FromK1, const Standard_Integer ToK2);
+		%feature("autodoc","KnotAnalysis(Standard_Integer Degree, Standard_Boolean Periodic, const CKnots, const CMults) -> Standard_Integer");
+
+		static		void KnotAnalysis(const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &CKnots, const TColStd_Array1OfInteger &CMults, GeomAbs_BSplKnotDistribution & KnotForm, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		static		void Reparametrize(const Standard_Real U1, const Standard_Real U2, TColStd_Array1OfReal & Knots);
 		%feature("autodoc", "1");

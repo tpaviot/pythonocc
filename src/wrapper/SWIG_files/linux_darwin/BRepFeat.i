@@ -98,14 +98,38 @@ enum BRepFeat_StatusError {
 
 
 %nodefaultctor BRepFeat_Builder;
-class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
+class BRepFeat_Builder : public BOPAlgo_BOP {
 	public:
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S);
+		BRepFeat_Builder();
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const TopoDS_Shape T);
+		virtual		void Clear();
 		%feature("autodoc", "1");
-		virtual		const TopTools_ListOfShape & Modified(const TopoDS_Shape F);
+		void Init(const TopoDS_Shape theShape);
+		%feature("autodoc", "1");
+		void Init(const TopoDS_Shape theShape, const TopoDS_Shape theTool);
+		%feature("autodoc", "1");
+		void SetOperation(const Standard_Integer theFuse);
+		%feature("autodoc", "1");
+		void SetOperation(const Standard_Integer theFuse, const Standard_Boolean theFlag);
+		%feature("autodoc", "1");
+		void PartsOfTool(TopTools_ListOfShape & theLT);
+		%feature("autodoc", "1");
+		void KeepParts(const TopTools_ListOfShape &theIm);
+		%feature("autodoc", "1");
+		void KeepPart(const TopoDS_Shape theS);
+		%feature("autodoc", "1");
+		void PerformResult();
+		%feature("autodoc", "1");
+		void RebuildFaces();
+		%feature("autodoc", "1");
+		void RebuildEdge(const TopoDS_Shape theE, const TopoDS_Face theF, const BOPCol_MapOfShape &theME, BOPCol_ListOfShape & aLEIm);
+		%feature("autodoc", "1");
+		void CheckSolidImages();
+		%feature("autodoc", "1");
+		void FillRemoved();
+		%feature("autodoc", "1");
+		void FillRemoved(const TopoDS_Shape theS, BOPCol_MapOfShape & theM);
 
 };
 %feature("shadow") BRepFeat_Builder::~BRepFeat_Builder %{
@@ -122,9 +146,6 @@ def __del__(self):
 		delete $self;
 	}
 };
-%extend BRepFeat_Builder {
-	BRepFeat_Builder () {}
-};
 
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
@@ -132,10 +153,6 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 	public:
 		%feature("autodoc", "1");
 		BRepFeat_MakeCylindricalHole();
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		BRepFeat_MakeCylindricalHole(const TopoDS_Shape S, const gp_Ax1 Axis);
 		%feature("autodoc", "1");
 		void Init(const gp_Ax1 Axis);
 		%feature("autodoc", "1");
@@ -153,7 +170,7 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 		%feature("autodoc", "1");
 		BRepFeat_Status Status() const;
 		%feature("autodoc", "1");
-		virtual		void Build();
+		void Build();
 
 };
 %feature("shadow") BRepFeat_MakeCylindricalHole::~BRepFeat_MakeCylindricalHole %{
@@ -343,47 +360,6 @@ def __del__(self):
 %}
 
 %extend BRepFeat_MakePrism {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepFeat_LocalOperation;
-class BRepFeat_LocalOperation : public BRepFeat_Builder {
-	public:
-		%feature("autodoc", "1");
-		BRepFeat_LocalOperation();
-		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		BRepFeat_LocalOperation(const TopoDS_Shape S, const TopoDS_Shape T);
-		%feature("autodoc", "1");
-		void Perform(const TopoDS_Shape T, const TopTools_ListOfShape &L, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void Perform(const TopTools_ListOfShape &LS, const TopTools_ListOfShape &LT, const Standard_Boolean Fuse);
-		%feature("autodoc", "1");
-		void BuildPartsOfTool();
-		%feature("autodoc", "1");
-		const TopTools_ListOfShape & PartsOfTool() const;
-		%feature("autodoc", "1");
-		void RemovePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		void ActivatePart(const TopoDS_Shape S);
-		%feature("autodoc", "1");
-		virtual		void Build();
-
-};
-%feature("shadow") BRepFeat_LocalOperation::~BRepFeat_LocalOperation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepFeat_LocalOperation {
 	void _kill_pointed() {
 		delete $self;
 	}

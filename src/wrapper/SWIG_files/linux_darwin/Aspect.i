@@ -56,6 +56,7 @@ typedef CALL_DEF_LAYER Aspect_CLayer2d;
 typedef void * Aspect_RenderingContext;
 typedef long unsigned int Aspect_Handle;
 typedef void * Aspect_Display;
+typedef Handle_Aspect_DisplayConnection Aspect_DisplayConnection_Handle;
 
 enum Aspect_InteriorStyle {
 	Aspect_IS_EMPTY,
@@ -364,15 +365,6 @@ enum Aspect_WidthOfLine {
 	Aspect_WOL_USERDEFINED,
 	};
 
-enum Aspect_TypeOfDegenerateModel {
-	Aspect_TDM_NONE,
-	Aspect_TDM_TINY,
-	Aspect_TDM_WIREFRAME,
-	Aspect_TDM_MARKER,
-	Aspect_TDM_BBOX,
-	Aspect_TDM_AUTO,
-	};
-
 enum Aspect_TypeOfFacingModel {
 	Aspect_TOFM_BOTH_SIDE,
 	Aspect_TOFM_BACK_SIDE,
@@ -467,6 +459,44 @@ def __del__(self):
 %}
 
 %extend Handle_Aspect_AspectLineDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Aspect_DisplayConnection;
+class Handle_Aspect_DisplayConnection : public Handle_Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnection();
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnection(const Handle_Aspect_DisplayConnection &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnection(const Aspect_DisplayConnection *anItem);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnection & operator=(const Handle_Aspect_DisplayConnection &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnection & operator=(const Aspect_DisplayConnection *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_DisplayConnection DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Aspect_DisplayConnection {
+	Aspect_DisplayConnection* GetObject() {
+	return (Aspect_DisplayConnection*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Aspect_DisplayConnection::~Handle_Aspect_DisplayConnection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Aspect_DisplayConnection {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -853,6 +883,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Aspect_UndefinedMap;
+class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Aspect_UndefinedMap();
+		%feature("autodoc", "1");
+		Handle_Aspect_UndefinedMap(const Handle_Aspect_UndefinedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_UndefinedMap(const Aspect_UndefinedMap *anItem);
+		%feature("autodoc", "1");
+		Handle_Aspect_UndefinedMap & operator=(const Handle_Aspect_UndefinedMap &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_UndefinedMap & operator=(const Aspect_UndefinedMap *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_UndefinedMap DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Aspect_UndefinedMap {
+	Aspect_UndefinedMap* GetObject() {
+	return (Aspect_UndefinedMap*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Aspect_UndefinedMap::~Handle_Aspect_UndefinedMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Aspect_UndefinedMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Aspect_GraphicDeviceDefinitionError;
 class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -961,6 +1029,44 @@ def __del__(self):
 %}
 
 %extend Handle_Aspect_Grid {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Aspect_DisplayConnectionDefinitionError;
+class Handle_Aspect_DisplayConnectionDefinitionError : public Handle_Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnectionDefinitionError();
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnectionDefinitionError(const Handle_Aspect_DisplayConnectionDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnectionDefinitionError(const Aspect_DisplayConnectionDefinitionError *anItem);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnectionDefinitionError & operator=(const Handle_Aspect_DisplayConnectionDefinitionError &aHandle);
+		%feature("autodoc", "1");
+		Handle_Aspect_DisplayConnectionDefinitionError & operator=(const Aspect_DisplayConnectionDefinitionError *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_DisplayConnectionDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Aspect_DisplayConnectionDefinitionError {
+	Aspect_DisplayConnectionDefinitionError* GetObject() {
+	return (Aspect_DisplayConnectionDefinitionError*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Aspect_DisplayConnectionDefinitionError::~Handle_Aspect_DisplayConnectionDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Aspect_DisplayConnectionDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1575,44 +1681,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Aspect_UndefinedMap;
-class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_UndefinedMap();
-		%feature("autodoc", "1");
-		Handle_Aspect_UndefinedMap(const Handle_Aspect_UndefinedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_UndefinedMap(const Aspect_UndefinedMap *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_UndefinedMap & operator=(const Handle_Aspect_UndefinedMap &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_UndefinedMap & operator=(const Aspect_UndefinedMap *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_UndefinedMap DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_UndefinedMap {
-	Aspect_UndefinedMap* GetObject() {
-	return (Aspect_UndefinedMap*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_UndefinedMap::~Handle_Aspect_UndefinedMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_UndefinedMap {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_Aspect_ColorRampColorMap;
 class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 	public:
@@ -1721,44 +1789,6 @@ def __del__(self):
 %}
 
 %extend Handle_Aspect_PixmapDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Aspect_MarkMapDefinitionError;
-class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_MarkMapDefinitionError();
-		%feature("autodoc", "1");
-		Handle_Aspect_MarkMapDefinitionError(const Handle_Aspect_MarkMapDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_MarkMapDefinitionError(const Aspect_MarkMapDefinitionError *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_MarkMapDefinitionError & operator=(const Handle_Aspect_MarkMapDefinitionError &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_MarkMapDefinitionError & operator=(const Aspect_MarkMapDefinitionError *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_MarkMapDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_MarkMapDefinitionError {
-	Aspect_MarkMapDefinitionError* GetObject() {
-	return (Aspect_MarkMapDefinitionError*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_MarkMapDefinitionError::~Handle_Aspect_MarkMapDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_MarkMapDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1955,29 +1985,29 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_Aspect_GraphicDriver;
-class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
+%nodefaultctor Handle_Aspect_MarkMapDefinitionError;
+class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver();
+		Handle_Aspect_MarkMapDefinitionError();
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver(const Handle_Aspect_GraphicDriver &aHandle);
+		Handle_Aspect_MarkMapDefinitionError(const Handle_Aspect_MarkMapDefinitionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver(const Aspect_GraphicDriver *anItem);
+		Handle_Aspect_MarkMapDefinitionError(const Aspect_MarkMapDefinitionError *anItem);
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver & operator=(const Handle_Aspect_GraphicDriver &aHandle);
+		Handle_Aspect_MarkMapDefinitionError & operator=(const Handle_Aspect_MarkMapDefinitionError &aHandle);
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver & operator=(const Aspect_GraphicDriver *anItem);
+		Handle_Aspect_MarkMapDefinitionError & operator=(const Aspect_MarkMapDefinitionError *anItem);
 		%feature("autodoc", "1");
-		static		Handle_Aspect_GraphicDriver DownCast(const Handle_Standard_Transient &AnObject);
+		static		Handle_Aspect_MarkMapDefinitionError DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Handle_Aspect_GraphicDriver {
-	Aspect_GraphicDriver* GetObject() {
-	return (Aspect_GraphicDriver*)$self->Access();
+%extend Handle_Aspect_MarkMapDefinitionError {
+	Aspect_MarkMapDefinitionError* GetObject() {
+	return (Aspect_MarkMapDefinitionError*)$self->Access();
 	}
 };
-%feature("shadow") Handle_Aspect_GraphicDriver::~Handle_Aspect_GraphicDriver %{
+%feature("shadow") Handle_Aspect_MarkMapDefinitionError::~Handle_Aspect_MarkMapDefinitionError %{
 def __del__(self):
 	try:
 		self.thisown = False
@@ -1986,7 +2016,7 @@ def __del__(self):
 		pass
 %}
 
-%extend Handle_Aspect_GraphicDriver {
+%extend Handle_Aspect_MarkMapDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2101,44 +2131,6 @@ def __del__(self):
 %}
 
 %extend Handle_Aspect_SequenceNodeOfSequenceOfColor {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Aspect_GraphicDevice;
-class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice();
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice(const Handle_Aspect_GraphicDevice &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice(const Aspect_GraphicDevice *anItem);
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice & operator=(const Handle_Aspect_GraphicDevice &aHandle);
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice & operator=(const Aspect_GraphicDevice *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_GraphicDevice DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Aspect_GraphicDevice {
-	Aspect_GraphicDevice* GetObject() {
-	return (Aspect_GraphicDevice*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Aspect_GraphicDevice::~Handle_Aspect_GraphicDevice %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Aspect_GraphicDevice {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2364,41 +2356,6 @@ def __del__(self):
 %}
 
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_GraphicDevice;
-class Aspect_GraphicDevice : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		Handle_Aspect_GraphicDriver GraphicDriver() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_GraphicDevice {
-	Handle_Aspect_GraphicDevice GetHandle() {
-	return *(Handle_Aspect_GraphicDevice*) &$self;
-	}
-};
-%extend Aspect_GraphicDevice {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_GraphicDevice::~Aspect_GraphicDevice %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_GraphicDevice {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2941,7 +2898,7 @@ class Aspect_Driver : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetWidthMap(const Handle_Aspect_WidthMap &aWidthMap);
 		%feature("autodoc", "1");
-		void SetFontMap(const Handle_Aspect_FontMap &aFontMap, const Standard_Boolean useMFT=1);
+		void SetFontMap(const Handle_Aspect_FontMap &aFontMap);
 		%feature("autodoc", "1");
 		void SetMarkMap(const Handle_Aspect_MarkMap &aMarkMap);
 		%feature("autodoc", "1");
@@ -3029,8 +2986,6 @@ class Aspect_Driver : public MMgt_TShared {
 
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean UseMFT() const;
-		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
@@ -3097,49 +3052,6 @@ def __del__(self):
 %}
 
 %extend Aspect_AspectFillAreaDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_DriverDefinitionError;
-class Aspect_DriverDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Aspect_DriverDefinitionError();
-		%feature("autodoc", "1");
-		Aspect_DriverDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_DriverDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_DriverDefinitionError {
-	Handle_Aspect_DriverDefinitionError GetHandle() {
-	return *(Handle_Aspect_DriverDefinitionError*) &$self;
-	}
-};
-%extend Aspect_DriverDefinitionError {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_DriverDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3368,6 +3280,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Aspect_DisplayConnectionDefinitionError;
+class Aspect_DisplayConnectionDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Aspect_DisplayConnectionDefinitionError();
+		%feature("autodoc", "1");
+		Aspect_DisplayConnectionDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_DisplayConnectionDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_DisplayConnectionDefinitionError {
+	Handle_Aspect_DisplayConnectionDefinitionError GetHandle() {
+	return *(Handle_Aspect_DisplayConnectionDefinitionError*) &$self;
+	}
+};
+%extend Aspect_DisplayConnectionDefinitionError {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Aspect_DisplayConnectionDefinitionError::~Aspect_DisplayConnectionDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_DisplayConnectionDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Aspect_TypeMap;
 class Aspect_TypeMap : public MMgt_TShared {
 	public:
@@ -3493,6 +3448,49 @@ def __del__(self):
 %}
 
 %extend Aspect_MarkMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Aspect_DriverDefinitionError;
+class Aspect_DriverDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Aspect_DriverDefinitionError();
+		%feature("autodoc", "1");
+		Aspect_DriverDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_DriverDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_DriverDefinitionError {
+	Handle_Aspect_DriverDefinitionError GetHandle() {
+	return *(Handle_Aspect_DriverDefinitionError*) &$self;
+	}
+};
+%extend Aspect_DriverDefinitionError {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Aspect_DriverDefinitionError::~Aspect_DriverDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_DriverDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3979,6 +3977,41 @@ def __del__(self):
 };
 
 
+%nodefaultctor Aspect_DisplayConnection;
+class Aspect_DisplayConnection : public Standard_Transient {
+	public:
+		%feature("autodoc", "1");
+		Aspect_DisplayConnection();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_DisplayConnection {
+	Handle_Aspect_DisplayConnection GetHandle() {
+	return *(Handle_Aspect_DisplayConnection*) &$self;
+	}
+};
+%extend Aspect_DisplayConnection {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Aspect_DisplayConnection::~Aspect_DisplayConnection %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_DisplayConnection {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Aspect_MarkMapDefinitionError;
 class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4253,6 +4286,49 @@ def __del__(self):
 };
 
 
+%nodefaultctor Aspect_PolyStyleDefinitionError;
+class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
+	public:
+		%feature("autodoc", "1");
+		Aspect_PolyStyleDefinitionError();
+		%feature("autodoc", "1");
+		Aspect_PolyStyleDefinitionError(const char * AString);
+		%feature("autodoc", "1");
+		static		void Raise(const char * aMessage="");
+		%feature("autodoc", "1");
+		static		void Raise(Standard_SStream & aReason);
+		%feature("autodoc", "1");
+		static		Handle_Aspect_PolyStyleDefinitionError NewInstance(const char * aMessage="");
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Aspect_PolyStyleDefinitionError {
+	Handle_Aspect_PolyStyleDefinitionError GetHandle() {
+	return *(Handle_Aspect_PolyStyleDefinitionError*) &$self;
+	}
+};
+%extend Aspect_PolyStyleDefinitionError {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_PolyStyleDefinitionError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Aspect_FontMapEntry;
 class Aspect_FontMapEntry {
 	public:
@@ -4423,21 +4499,15 @@ def __del__(self):
 class Aspect_Window : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		virtual		void SetBackground(const Aspect_Background &ABack);
+		void SetBackground(const Aspect_Background &ABack);
 		%feature("autodoc", "1");
-		virtual		void SetBackground(const Quantity_NameOfColor BackColor);
+		void SetBackground(const Quantity_NameOfColor theNameOfColor);
 		%feature("autodoc", "1");
-		virtual		void SetBackground(const Quantity_Color &color);
+		void SetBackground(const Quantity_Color &color);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean SetBackground(const char * aName, const Aspect_FillMethod aMethod=Aspect_FM_CENTERED);
+		void SetBackground(const Aspect_GradientBackground &ABackground);
 		%feature("autodoc", "1");
-		virtual		void SetBackground(const Aspect_Handle aBitmap);
-		%feature("autodoc", "1");
-		virtual		void SetBackground(const Aspect_GradientBackground &ABackground);
-		%feature("autodoc", "1");
-		virtual		void SetDoubleBuffer(const Standard_Boolean DBmode);
-		%feature("autodoc", "1");
-		virtual		void Flush() const;
+		void SetBackground(const Quantity_Color &theFirstColor, const Quantity_Color &theSecondColor, const Aspect_GradientFillMethod theFillMethod);
 		%feature("autodoc", "1");
 		virtual		void Map() const;
 		%feature("autodoc", "1");
@@ -4449,33 +4519,11 @@ class Aspect_Window : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Destroy();
 		%feature("autodoc", "1");
-		virtual		void Clear() const;
-		%feature("autodoc", "1");
-		virtual		void ClearArea(const Standard_Integer XCenter, const Standard_Integer YCenter, const Standard_Integer Width, const Standard_Integer Height) const;
-		%feature("autodoc", "1");
-		virtual		void Restore() const;
-		%feature("autodoc", "1");
-		virtual		void RestoreArea(const Standard_Integer XCenter, const Standard_Integer YCenter, const Standard_Integer Width, const Standard_Integer Height) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Dump(const char * aFilename, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean DumpArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height, const Standard_Real aGammaValue=1.0e+0) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean Load(const char * aFilename) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean LoadArea(const char * aFilename, const Standard_Integer Xc, const Standard_Integer Yc, const Standard_Integer Width, const Standard_Integer Height) const;
-		%feature("autodoc", "1");
 		Aspect_Background Background() const;
-		%feature("autodoc", "1");
-		char * BackgroundImage() const;
 		%feature("autodoc", "1");
 		Aspect_FillMethod BackgroundFillMethod() const;
 		%feature("autodoc", "1");
 		Aspect_GradientBackground GradientBackground() const;
-		%feature("autodoc", "1");
-		Aspect_Handle HBackground() const;
-		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDevice GraphicDevice() const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsMapped() const;
 		%feature("autodoc", "1");
@@ -4484,35 +4532,12 @@ class Aspect_Window : public MMgt_TShared {
 		void SetVirtual(const Standard_Boolean theVirtual);
 		%feature("autodoc", "1");
 		virtual		Quantity_Ratio Ratio() const;
-		%feature("autodoc","Position() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Position() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
 
 		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","Size() -> [Standard_Real, Standard_Real]");
-
-		virtual		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc","Size() -> [Standard_Integer, Standard_Integer]");
 
 		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc","MMSize() -> [Standard_Real, Standard_Real]");
-
-		virtual		void MMSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Quantity_Parameter Convert(const Standard_Integer PV) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer Convert(const Quantity_Parameter DV) const;
-		%feature("autodoc","Convert(Standard_Integer PX, Standard_Integer PY) -> [Standard_Real, Standard_Real]");
-
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
-		%feature("autodoc","Convert(Quantity_Parameter DX, Quantity_Parameter DY) -> [Standard_Integer, Standard_Integer]");
-
-		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean BackingStore() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean DoubleBuffer() const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4537,49 +4562,6 @@ def __del__(self):
 %}
 
 %extend Aspect_Window {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_PolyStyleDefinitionError;
-class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
-	public:
-		%feature("autodoc", "1");
-		Aspect_PolyStyleDefinitionError();
-		%feature("autodoc", "1");
-		Aspect_PolyStyleDefinitionError(const char * AString);
-		%feature("autodoc", "1");
-		static		void Raise(const char * aMessage="");
-		%feature("autodoc", "1");
-		static		void Raise(Standard_SStream & aReason);
-		%feature("autodoc", "1");
-		static		Handle_Aspect_PolyStyleDefinitionError NewInstance(const char * aMessage="");
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_PolyStyleDefinitionError {
-	Handle_Aspect_PolyStyleDefinitionError GetHandle() {
-	return *(Handle_Aspect_PolyStyleDefinitionError*) &$self;
-	}
-};
-%extend Aspect_PolyStyleDefinitionError {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_PolyStyleDefinitionError::~Aspect_PolyStyleDefinitionError %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_PolyStyleDefinitionError {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -4623,71 +4605,6 @@ def __del__(self):
 %}
 
 %extend Aspect_DriverError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Aspect_SequenceOfFontMapEntry;
-class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		Aspect_SequenceOfFontMapEntry();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const Aspect_SequenceOfFontMapEntry & Assign(const Aspect_SequenceOfFontMapEntry &Other);
-		%feature("autodoc", "1");
-		const Aspect_SequenceOfFontMapEntry & operator=(const Aspect_SequenceOfFontMapEntry &Other);
-		%feature("autodoc", "1");
-		void Append(const Aspect_FontMapEntry &T);
-		%feature("autodoc", "1");
-		void Append(Aspect_SequenceOfFontMapEntry & S);
-		%feature("autodoc", "1");
-		void Prepend(const Aspect_FontMapEntry &T);
-		%feature("autodoc", "1");
-		void Prepend(Aspect_SequenceOfFontMapEntry & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Aspect_FontMapEntry &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Aspect_FontMapEntry &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
-		%feature("autodoc", "1");
-		const Aspect_FontMapEntry & First() const;
-		%feature("autodoc", "1");
-		const Aspect_FontMapEntry & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
-		%feature("autodoc", "1");
-		const Aspect_FontMapEntry & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Aspect_FontMapEntry & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Aspect_FontMapEntry &I);
-		%feature("autodoc", "1");
-		Aspect_FontMapEntry & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Aspect_FontMapEntry & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") Aspect_SequenceOfFontMapEntry::~Aspect_SequenceOfFontMapEntry %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_SequenceOfFontMapEntry {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -5716,6 +5633,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor Aspect_SequenceOfFontMapEntry;
+class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		Aspect_SequenceOfFontMapEntry();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const Aspect_SequenceOfFontMapEntry & Assign(const Aspect_SequenceOfFontMapEntry &Other);
+		%feature("autodoc", "1");
+		const Aspect_SequenceOfFontMapEntry & operator=(const Aspect_SequenceOfFontMapEntry &Other);
+		%feature("autodoc", "1");
+		void Append(const Aspect_FontMapEntry &T);
+		%feature("autodoc", "1");
+		void Append(Aspect_SequenceOfFontMapEntry & S);
+		%feature("autodoc", "1");
+		void Prepend(const Aspect_FontMapEntry &T);
+		%feature("autodoc", "1");
+		void Prepend(Aspect_SequenceOfFontMapEntry & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Aspect_FontMapEntry &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Aspect_FontMapEntry &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
+		%feature("autodoc", "1");
+		const Aspect_FontMapEntry & First() const;
+		%feature("autodoc", "1");
+		const Aspect_FontMapEntry & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, Aspect_SequenceOfFontMapEntry & S);
+		%feature("autodoc", "1");
+		const Aspect_FontMapEntry & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Aspect_FontMapEntry & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Aspect_FontMapEntry &I);
+		%feature("autodoc", "1");
+		Aspect_FontMapEntry & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Aspect_FontMapEntry & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") Aspect_SequenceOfFontMapEntry::~Aspect_SequenceOfFontMapEntry %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Aspect_SequenceOfFontMapEntry {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Aspect_SequenceOfWidthMapEntry;
 class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 	public:
@@ -5778,42 +5760,6 @@ def __del__(self):
 	void _kill_pointed() {
 		delete $self;
 	}
-};
-
-
-%nodefaultctor Aspect_GraphicDriver;
-class Aspect_GraphicDriver : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Aspect_GraphicDriver {
-	Handle_Aspect_GraphicDriver GetHandle() {
-	return *(Handle_Aspect_GraphicDriver*) &$self;
-	}
-};
-%extend Aspect_GraphicDriver {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Aspect_GraphicDriver::~Aspect_GraphicDriver %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Aspect_GraphicDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-%extend Aspect_GraphicDriver {
-	Aspect_GraphicDriver () {}
 };
 
 

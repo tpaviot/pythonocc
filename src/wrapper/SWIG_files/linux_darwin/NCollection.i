@@ -49,13 +49,22 @@ $HeaderURL$
 
 %include NCollection_headers.i
 
+typedef NCollection_UtfIterator<wchar_t> NCollection_UtfWideIter;
+typedef NCollection_UtfString<unsigned short> NCollection_Utf16String;
+typedef NCollection_UtfIterator<short unsigned int> NCollection_Utf16Iter;
+typedef NCollection_UtfString<char> NCollection_Utf8String;
 typedef NCollection_BaseCollection<double> NCollection_BaseCollReal;
+typedef NCollection_UtfIterator<char> NCollection_Utf8Iter;
 typedef NCollection_BaseCollection<unsigned int> NCollection_BaseCollBoolean;
 typedef NCollection_BaseCollection<Handle_Standard_Transient> NCollection_BaseCollTransient;
 typedef NCollection_BaseCollection<TCollection_ExtendedString> NCollection_BaseCollExtendedString;
+typedef NCollection_UtfIterator<unsigned int> NCollection_Utf32Iter;
 typedef NCollection_BaseCollection<TCollection_AsciiString> NCollection_BaseCollAsciiString;
 typedef NCollection_BaseCollection<int> NCollection_BaseCollInteger;
 typedef NCollection_BaseCollection<char> NCollection_BaseCollCharacter;
+typedef NCollection_UtfString<unsigned int> NCollection_Utf32String;
+typedef NCollection_Utf8String NCollection_String;
+typedef NCollection_UtfString<wchar_t> NCollection_UtfWideString;
 
 
 
@@ -204,6 +213,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor NCollection_StdAllocator<void>;
+class NCollection_StdAllocator<void> {
+	public:
+		%feature("autodoc", "1");
+		NCollection_StdAllocator();
+		%feature("autodoc", "1");
+		NCollection_StdAllocator(const Handle_NCollection_BaseAllocator &theAlloc);
+		%feature("autodoc", "1");
+		NCollection_StdAllocator(const NCollection_StdAllocator<void> &X);
+		%feature("autodoc", "1");
+		const Handle_NCollection_BaseAllocator & Allocator() const;
+
+};
+%feature("shadow") NCollection_StdAllocator<void>::~NCollection_StdAllocator<void> %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NCollection_StdAllocator<void> {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor NCollection_BaseMap;
 class NCollection_BaseMap {
 	public:
@@ -259,6 +297,8 @@ class NCollection_SparseArrayBase {
 
 };
 
+
+
 %nodefaultctor NCollection_BaseSequence;
 class NCollection_BaseSequence {
 	public:
@@ -288,17 +328,27 @@ def __del__(self):
 
 
 %nodefaultctor NCollection_BaseVector;
-
-
-%nodefaultdtor NCollection_BaseVector;
 class NCollection_BaseVector {
 	public:
 		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
 		void Clear();
 
-};%extend NCollection_BaseVector {
+};
+%feature("shadow") NCollection_BaseVector::~NCollection_BaseVector %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend NCollection_BaseVector {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+%extend NCollection_BaseVector {
 	NCollection_BaseVector () {}
 };
 
@@ -329,6 +379,7 @@ def __del__(self):
 %extend NCollection_BaseList {
 	NCollection_BaseList () {}
 };
+
 
 
 %nodefaultctor NCollection_BaseAllocator;

@@ -59,16 +59,16 @@ enum Visual3d_TypeOfSurfaceDetail {
 	Visual3d_TOD_ALL,
 	};
 
-enum Visual3d_TypeOfOrder {
-	Visual3d_TOO_TOPFIRST,
-	Visual3d_TOO_BOTTOMFIRST,
-	};
-
 enum Visual3d_TypeOfModel {
 	Visual3d_TOM_NONE,
 	Visual3d_TOM_INTERP_COLOR,
 	Visual3d_TOM_FACET,
 	Visual3d_TOM_VERTEX,
+	};
+
+enum Visual3d_TypeOfOrder {
+	Visual3d_TOO_TOPFIRST,
+	Visual3d_TOO_BOTTOMFIRST,
 	};
 
 enum Visual3d_TypeOfBackfacingModel {
@@ -172,6 +172,44 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_PickError {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_Visual3d_View;
+class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
+	public:
+		%feature("autodoc", "1");
+		Handle_Visual3d_View();
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View(const Visual3d_View *anItem);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View & operator=(const Handle_Visual3d_View &aHandle);
+		%feature("autodoc", "1");
+		Handle_Visual3d_View & operator=(const Visual3d_View *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Visual3d_View DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Visual3d_View {
+	Visual3d_View* GetObject() {
+	return (Visual3d_View*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Visual3d_View::~Handle_Visual3d_View %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Visual3d_View {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -1122,44 +1160,6 @@ def __del__(self):
 %}
 
 %extend Handle_Visual3d_ViewDefinitionError {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Visual3d_View;
-class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
-	public:
-		%feature("autodoc", "1");
-		Handle_Visual3d_View();
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Handle_Visual3d_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View(const Visual3d_View *anItem);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & operator=(const Handle_Visual3d_View &aHandle);
-		%feature("autodoc", "1");
-		Handle_Visual3d_View & operator=(const Visual3d_View *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Visual3d_View DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Visual3d_View {
-	Visual3d_View* GetObject() {
-	return (Visual3d_View*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Visual3d_View::~Handle_Visual3d_View %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Visual3d_View {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -3021,14 +3021,6 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		void ViewOrientationReset();
 		%feature("autodoc", "1");
-		void SetAnimationModeOn(const Standard_Boolean degenerate=0);
-		%feature("autodoc", "1");
-		void SetAnimationModeOff();
-		%feature("autodoc", "1");
-		Standard_Boolean AnimationModeIsOn() const;
-		%feature("autodoc", "1");
-		Standard_Boolean DegenerateModeIsOn() const;
-		%feature("autodoc", "1");
 		void SetComputedMode(const Standard_Boolean aMode);
 		%feature("autodoc", "1");
 		Standard_Boolean ComputedMode() const;
@@ -3108,7 +3100,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		Standard_Address CView() const;
 		%feature("autodoc", "1");
-		Handle_Aspect_GraphicDriver GraphicDriver() const;
+		const Handle_Graphic3d_GraphicDriver & GraphicDriver() const;
 		%feature("autodoc", "1");
 		void Plot(const Handle_Graphic3d_Plotter &APlotter) const;
 		%feature("autodoc", "1");
@@ -3196,43 +3188,7 @@ class Visual3d_TransientManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		static		void EndAddDraw();
 		%feature("autodoc", "1");
-		static		void BeginPolyline();
-		%feature("autodoc", "1");
-		static		void BeginPolygon();
-		%feature("autodoc", "1");
-		static		void BeginTriangleMesh();
-		%feature("autodoc", "1");
-		static		void BeginMarker();
-		%feature("autodoc", "1");
-		static		void BeginBezier();
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real W, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void AddVertex(const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real NX, const Standard_Real NY, const Standard_Real NZ, const Standard_Boolean AFlag=1);
-		%feature("autodoc", "1");
-		static		void ClosePrimitive();
-		%feature("autodoc", "1");
-		static		void DrawText(const TCollection_ExtendedString &AText, const Standard_Real X, const Standard_Real Y, const Standard_Real Z, const Standard_Real AHeight, const Quantity_PlaneAngle AAngle=0.0, const Graphic3d_TextPath ATp=Graphic3d_TP_RIGHT, const Graphic3d_HorizontalTextAlignment AHta=Graphic3d_HTA_LEFT, const Graphic3d_VerticalTextAlignment AVta=Graphic3d_VTA_BOTTOM);
-		%feature("autodoc", "1");
 		static		void DrawStructure(const Handle_Graphic3d_Structure &AStructure);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectLine3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectFillArea3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectText3d &CTX);
-		%feature("autodoc", "1");
-		static		void SetPrimitivesAspect(const Handle_Graphic3d_AspectMarker3d &CTX);
-		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc","MinMaxValues() -> [Standard_Real, Standard_Real, Standard_Real, Standard_Real]");
-
-		static		void MinMaxValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		static		void SetTransform(const TColStd_Array2OfReal &AMatrix, const Graphic3d_TypeOfComposition AType=Graphic3d_TOC_REPLACE);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3412,7 +3368,7 @@ def __del__(self):
 class Visual3d_ViewManager : public Graphic3d_StructureManager {
 	public:
 		%feature("autodoc", "1");
-		Visual3d_ViewManager(const Handle_Aspect_GraphicDevice &aDevice);
+		Visual3d_ViewManager(const Handle_Graphic3d_GraphicDriver &theDriver);
 		%feature("autodoc", "1");
 		void Activate();
 		%feature("autodoc", "1");
