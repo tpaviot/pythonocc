@@ -241,7 +241,8 @@ class ModularBuilder(object):
                            'TIDSortedElemSet', 'TElemOfElemListMap',
                            'TNodeNodeMap', 'EventListener',
                            'EventListenerData', 'TLinkNodeMap',
-                           'MapShapeNbElems', 'size']:
+                           'MapShapeNbElems', 'size', 'locale',
+                           'TEL', 'BOPCol']:
             return True
         if module_name == 'GEOM':
             module_name = 'SGEOM'
@@ -1175,7 +1176,8 @@ class ModularBuilder(object):
                           'Standard_StdAllocator.hxx',
                           'Image_PixelFieldOfDIndexedImage.hxx',
                           'NCollection_Vec2.hxx', 'NCollection_Vec3.hxx',
-                          'NCollection_Vec4.hxx'
+                          'NCollection_Vec4.hxx',
+                          'Font_FTFont.hxx', 'Font_FTLibrary.hxx'
                           ]
         if sys.platform != 'win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx')  # error with gccxml under Linux
