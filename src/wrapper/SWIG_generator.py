@@ -234,7 +234,7 @@ class ModularBuilder(object):
                            'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
                            'TElemOfElemListMap','TNodeNodeMap','EventListener',\
                            'EventListenerData','TLinkNodeMap','MapShapeNbElems',\
-                           'size']:
+                           'size','locale','TEL','BOPCol']:
             return True
         if module_name=='GEOM':
             module_name='SGEOM'
@@ -1168,7 +1168,7 @@ class ModularBuilder(object):
                           'NCollection_EBTree.hxx','NCollection_CellFilter.hxx',
                           'Standard_StdAllocator.hxx',
                           'Image_PixelFieldOfDIndexedImage.hxx',
-                          'NCollection_Vec2.hxx','NCollection_Vec3.hxx','NCollection_Vec4.hxx'
+                          'NCollection_Vec2.hxx','NCollection_Vec3.hxx','NCollection_Vec4.hxx',
                           ]
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
