@@ -61,7 +61,6 @@ from OCC.Quantity import *
 from OCC.GeomConvert import *
 from OCC.TColGeom import *
 from OCC.BRepBuilderAPI import *
-from OCC.Graphic2d import *
 from OCC.TCollection import *
 from OCC.Graphic3d import *
 from OCC.BRepPrimAPI import *
