@@ -26,7 +26,6 @@
   #include <Graphic3d_WNTGraphicDevice.hxx>
   #include <WNT_GraphicDevice.hxx>
 #elif defined(__APPLE__) && !defined(MACOSX_USE_GLX)
-  #include <Graphic3d_GraphicDevice.hxx>
   #include <Cocoa_Window.hxx>
 #else
   #include <cstdlib>
@@ -40,13 +39,10 @@
 #include <NIS_InteractiveContext.hxx>
 #include <NIS_View.hxx>
 #include <NIS_Surface.hxx>
-#include <AIS2D_InteractiveContext.hxx>
 #include <BRepPrimAPI_MakeBox.hxx>
 #include <Graphic3d_MaterialAspect.hxx>
 #include <V3d_Viewer.hxx>
 #include <V3d_View.hxx>
-#include <V2d_Viewer.hxx>
-#include <V2d_View.hxx>
 #include <AIS_Shape.hxx>
 #include <AIS_TexturedShape.hxx>
 #include <Graphic3d_TextureEnv.hxx>
@@ -54,8 +50,9 @@
 #include <Prs3d_TextAspect.hxx>
 #include <Prs3d_Text.hxx>
 #include <Prs3d_Presentation.hxx>
-#include <Graphic3d_NameOfFont.hxx>
+#include <Graphic3d.hxx>
 #include <AIS_Drawer.hxx>
+#include <Aspect_DisplayConnection.hxx>
 
 class Display3d 
 {	
@@ -77,7 +74,6 @@ protected:
      Handle_Graphic3d_WNTGraphicDevice gd;
    #elif defined(__APPLE__) && !defined(MACOSX_USE_GLX)
      Handle_Cocoa_Window myWindow;
-     Handle_Graphic3d_GraphicDevice gd;
    #else
      Handle_Xw_Window myWindow;
      Handle_Graphic3d_GraphicDevice gd;

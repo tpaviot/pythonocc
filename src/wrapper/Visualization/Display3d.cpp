@@ -28,6 +28,12 @@ Display3d::~Display3d()
 {
 }
 
+static Handle(Graphic3d_GraphicDriver)& GetGraphicDriver()
+{
+  static Handle(Graphic3d_GraphicDriver) aGraphicDriver;
+  return aGraphicDriver;
+}
+
 void Display3d::Init(long window_handle)
 {
   printf(" ###### 3D rendering pipe initialisation #####\n");
@@ -42,8 +48,6 @@ void Display3d::Init(long window_handle)
       printf("WNT window created.\n");
       myWindow->SetFlags(WDF_NOERASEBKGRND); //prevent flickering
   #elif defined(__APPLE__) && !defined(MACOSX_USE_GLX)
-      gd = new Graphic3d_GraphicDevice(std::getenv("DISPLAY"));
-      printf("OSX - Graphic device created.\n");
       myWindow = new Cocoa_Window (reinterpret_cast<NSView *>(window_handle));
       printf("Cocoa window created.\n");
   #else
@@ -52,8 +56,14 @@ void Display3d::Init(long window_handle)
       myWindow =new Xw_Window(gd,static_cast<Standard_Integer>(hi),static_cast<Standard_Integer>(lo),Xw_WQ_3DQUALITY);
       printf("Xw_Window created.\n");
     #endif
+    // Create graphic driver
+    Handle(Aspect_DisplayConnection) aDisplayConnection = new Aspect_DisplayConnection();
+    if (GetGraphicDriver().IsNull())
+    {
+    GetGraphicDriver() = Graphic3d::InitGraphicDriver (aDisplayConnection);
+    }
     // Create V3dViewer and V3d_View
-    myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
+    myV3dViewer = new V3d_Viewer(GetGraphicDriver(), (short* const)"viewer");
     printf("Viewer created.\n");
     myV3dViewer->Init();
     printf("Viewer initialized.\n");
