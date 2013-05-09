@@ -93,7 +93,7 @@ class GeomConvert_CompBezierSurfacesToBSplineSurface {
 		%feature("autodoc", "1");
 		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const Standard_Real Tolerance, const Standard_Boolean RemoveKnots=1);
 		%feature("autodoc", "1");
-		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845e-4);
+		GeomConvert_CompBezierSurfacesToBSplineSurface(const TColGeom_Array2OfBezierSurface &Beziers, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const GeomAbs_Shape UContinuity=GeomAbs_C0, const GeomAbs_Shape VContinuity=GeomAbs_C0, const Standard_Real Tolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		Standard_Integer NbUKnots() const;
 		%feature("autodoc", "1");
@@ -193,7 +193,7 @@ class GeomConvert {
 		%feature("autodoc", "1");
 		static		void ConcatC1(TColGeom_Array1OfBSplineCurve & ArrayOfCurves, const TColStd_Array1OfReal &ArrayOfToler, Handle_TColStd_HArray1OfInteger & ArrayOfIndices, Handle_TColGeom_HArray1OfBSplineCurve & ArrayOfConcatenated, const Standard_Boolean ClosedG1Flag, const Standard_Real ClosedTolerance, const Standard_Real AngularTolerance);
 		%feature("autodoc", "1");
-		static		void C0BSplineToC1BSplineCurve(Handle_Geom_BSplineCurve & BS, const Standard_Real tolerance, const Standard_Real AngularTolerance=9.99999999999999954748111825886258685613938723691e-8);
+		static		void C0BSplineToC1BSplineCurve(Handle_Geom_BSplineCurve & BS, const Standard_Real tolerance, const Standard_Real AngularTolerance=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc", "1");
 		static		void C0BSplineToArrayOfC1BSplineCurve(const Handle_Geom_BSplineCurve &BS, Handle_TColGeom_HArray1OfBSplineCurve & tabBS, const Standard_Real tolerance);
 		%feature("autodoc", "1");

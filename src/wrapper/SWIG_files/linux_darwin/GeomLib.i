@@ -250,7 +250,7 @@ def __del__(self):
 class GeomLib_IsPlanarSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		GeomLib_IsPlanarSurface(const Handle_Geom_Surface &S, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc", "1");
 		Standard_Boolean IsPlanar() const;
 		%feature("autodoc", "1");
@@ -405,7 +405,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		static		void ExtendSurfByLength(Handle_Geom_BoundedSurface & Surf, const Standard_Real Length, const Standard_Integer Cont, const Standard_Boolean InU, const Standard_Boolean After);
 		%feature("autodoc", "1");
-		static		void AxeOfInertia(const TColgp_Array1OfPnt &Points, gp_Ax2 & Axe, Standard_Boolean & IsSingular, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		static		void AxeOfInertia(const TColgp_Array1OfPnt &Points, gp_Ax2 & Axe, Standard_Boolean & IsSingular, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc","Inertia(const Points) -> [Standard_Real, Standard_Real, Standard_Real]");
 
 		static		void Inertia(const TColgp_Array1OfPnt &Points, gp_Pnt & Bary, gp_Dir & XDir, gp_Dir & YDir, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -414,7 +414,7 @@ class GeomLib {
 		%feature("autodoc", "1");
 		static		void DensifyArray1OfReal(const Standard_Integer MinNumPoints, const TColStd_Array1OfReal &InParameters, Handle_TColStd_HArray1OfReal & OutParameters);
 		%feature("autodoc", "1");
-		static		void FuseIntervals(const TColStd_Array1OfReal &Interval1, const TColStd_Array1OfReal &Interval2, TColStd_SequenceOfReal & Fusion, const Standard_Real Confusion=1.00000000000000006228159145777985641889706869279e-9);
+		static		void FuseIntervals(const TColStd_Array1OfReal &Interval1, const TColStd_Array1OfReal &Interval2, TColStd_SequenceOfReal & Fusion, const Standard_Real Confusion=1.00000000000000006228159145777985641889706869278597878292e-9);
 		%feature("autodoc","EvalMaxParametricDistance(const Curve, const AReferenceCurve, Standard_Real Tolerance, const Parameters) -> Standard_Real");
 
 		static		void EvalMaxParametricDistance(const Adaptor3d_Curve &Curve, const Adaptor3d_Curve &AReferenceCurve, const Standard_Real Tolerance, const TColStd_Array1OfReal &Parameters, Standard_Real &OutValue);

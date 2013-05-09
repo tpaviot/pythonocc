@@ -930,7 +930,7 @@ def __del__(self):
 class AIS2D_LocalStatus : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		AIS2D_LocalStatus(const Standard_Boolean isTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DMode=-0x000000001, const Standard_Integer SMode=-0x000000001, const AIS2D_TypeOfDetection HMode=AIS2D_TOD_PRIMITIVE, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor HighlCol=Quantity_NOC_WHITE);
+		AIS2D_LocalStatus(const Standard_Boolean isTemporary=1, const Standard_Boolean Decompose=0, const Standard_Integer DMode=-0x00000000000000001, const Standard_Integer SMode=-0x00000000000000001, const AIS2D_TypeOfDetection HMode=AIS2D_TOD_PRIMITIVE, const Standard_Boolean SubIntensity=0, const Quantity_NameOfColor HighlCol=Quantity_NOC_WHITE);
 		%feature("autodoc", "1");
 		Standard_Boolean Decomposed() const;
 		%feature("autodoc", "1");
@@ -1488,7 +1488,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Display(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer aDispMode, const Standard_Integer aSelectMode, const Standard_Boolean UpdateVwr=1, const Standard_Boolean AllowDecomp=1);
 		%feature("autodoc", "1");
-		void Load(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer SelMode=-0x000000001, const Standard_Boolean AllowDecomp=0);
+		void Load(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer SelMode=-0x00000000000000001, const Standard_Boolean AllowDecomp=0);
 		%feature("autodoc", "1");
 		void Erase(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean UpdateVwr=1, const Standard_Boolean PutInCollector=1);
 		%feature("autodoc", "1");
@@ -1500,7 +1500,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DisplaySelected(const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
-		Standard_Boolean KeepTemporary(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x000000001);
+		Standard_Boolean KeepTemporary(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Integer InWhichLocal=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void Redisplay(const Handle_AIS2D_InteractiveObject &anIObj, const Standard_Boolean updateVwr=1, const Standard_Boolean allModes=0);
 		%feature("autodoc", "1");
@@ -1560,7 +1560,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer OpenLocalContext(const Standard_Boolean UseDispObj=1, const Standard_Boolean AllowDecomposit=1, const Standard_Boolean AcceptEraseOfObj=0);
 		%feature("autodoc", "1");
-		void CloseLocalContext(const Standard_Integer ind=-0x000000001, const Standard_Boolean updateVwr=1);
+		void CloseLocalContext(const Standard_Integer ind=-0x00000000000000001, const Standard_Boolean updateVwr=1);
 		%feature("autodoc", "1");
 		Standard_Integer IndexOfCurrentLocal() const;
 		%feature("autodoc", "1");

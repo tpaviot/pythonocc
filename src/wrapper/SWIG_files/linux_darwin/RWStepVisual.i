@@ -342,35 +342,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
-class RWStepVisual_RWPresentedItemRepresentation {
-	public:
-		%feature("autodoc", "1");
-		RWStepVisual_RWPresentedItemRepresentation();
-		%feature("autodoc", "1");
-		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
-		%feature("autodoc", "1");
-		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
-
-};
-%feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend RWStepVisual_RWPresentedItemRepresentation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
 class RWStepVisual_RWSurfaceStyleUsage {
 	public:
@@ -1223,6 +1194,35 @@ def __del__(self):
 %}
 
 %extend RWStepVisual_RWSurfaceStyleFillArea {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
+class RWStepVisual_RWPresentedItemRepresentation {
+	public:
+		%feature("autodoc", "1");
+		RWStepVisual_RWPresentedItemRepresentation();
+		%feature("autodoc", "1");
+		void ReadStep(const Handle_StepData_StepReaderData &data, const Standard_Integer num, Handle_Interface_Check & ach, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void WriteStep(StepData_StepWriter & SW, const Handle_StepVisual_PresentedItemRepresentation &ent) const;
+		%feature("autodoc", "1");
+		void Share(const Handle_StepVisual_PresentedItemRepresentation &ent, Interface_EntityIterator & iter) const;
+
+};
+%feature("shadow") RWStepVisual_RWPresentedItemRepresentation::~RWStepVisual_RWPresentedItemRepresentation %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend RWStepVisual_RWPresentedItemRepresentation {
 	void _kill_pointed() {
 		delete $self;
 	}

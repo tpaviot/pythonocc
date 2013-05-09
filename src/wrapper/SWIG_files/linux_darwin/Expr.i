@@ -736,6 +736,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Expr_Exponentiate;
+class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
+	public:
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate();
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate(const Handle_Expr_Exponentiate &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate(const Expr_Exponentiate *anItem);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate & operator=(const Handle_Expr_Exponentiate &aHandle);
+		%feature("autodoc", "1");
+		Handle_Expr_Exponentiate & operator=(const Expr_Exponentiate *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Expr_Exponentiate DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Expr_Exponentiate {
+	Expr_Exponentiate* GetObject() {
+	return (Expr_Exponentiate*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Expr_Exponentiate::~Handle_Expr_Exponentiate %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Expr_Exponentiate {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Expr_ArgSinh;
 class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 	public:
@@ -1756,44 +1794,6 @@ def __del__(self):
 %}
 
 %extend Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Expr_Exponentiate;
-class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
-	public:
-		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate();
-		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate(const Handle_Expr_Exponentiate &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate(const Expr_Exponentiate *anItem);
-		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate & operator=(const Handle_Expr_Exponentiate &aHandle);
-		%feature("autodoc", "1");
-		Handle_Expr_Exponentiate & operator=(const Expr_Exponentiate *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Expr_Exponentiate DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Expr_Exponentiate {
-	Expr_Exponentiate* GetObject() {
-	return (Expr_Exponentiate*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Expr_Exponentiate::~Handle_Expr_Exponentiate %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Expr_Exponentiate {
 	void _kill_pointed() {
 		delete $self;
 	}

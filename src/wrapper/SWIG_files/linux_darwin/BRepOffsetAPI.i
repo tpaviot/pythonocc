@@ -133,9 +133,9 @@ def __del__(self):
 class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeFilling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
+		BRepOffsetAPI_MakeFilling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
 		%feature("autodoc", "1");
-		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1);
 		%feature("autodoc", "1");
 		void SetResolParam(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
@@ -334,7 +334,7 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 		%feature("autodoc", "1");
 		BRepBuilderAPI_PipeError GetStatus() const;
 		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAngular=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void SetTransitionMode(const BRepBuilderAPI_TransitionMode Mode=BRepBuilderAPI_Transformed);
 		%feature("autodoc", "1");
@@ -599,9 +599,9 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeEvolved();
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeEvolved(const TopoDS_Wire Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		BRepOffsetAPI_MakeEvolved(const TopoDS_Wire Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc", "1");
-		BRepOffsetAPI_MakeEvolved(const TopoDS_Face Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		BRepOffsetAPI_MakeEvolved(const TopoDS_Face Spine, const TopoDS_Wire Profil, const GeomAbs_JoinType Join=GeomAbs_Arc, const Standard_Boolean AxeProf=1, const Standard_Boolean Solid=0, const Standard_Boolean ProfOnSpine=0, const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc", "1");
 		const BRepFill_Evolved & Evolved() const;
 		%feature("autodoc", "1");
@@ -685,9 +685,9 @@ def __del__(self):
 class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 	public:
 		%feature("autodoc", "1");
-		BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
+		BRepOffsetAPI_ThruSections(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723690807819366e-7);
 		%feature("autodoc", "1");
-		void Init(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723691e-7);
+		void Init(const Standard_Boolean isSolid=0, const Standard_Boolean ruled=0, const Standard_Real pres3d=9.99999999999999954748111825886258685613938723690807819366e-7);
 		%feature("autodoc", "1");
 		void AddWire(const TopoDS_Wire wire);
 		%feature("autodoc", "1");
@@ -819,7 +819,7 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 		%feature("autodoc", "1");
 		BRepOffsetAPI_MakeDraft(const TopoDS_Shape Shape, const gp_Dir Dir, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		void SetOptions(const BRepBuilderAPI_TransitionMode Style=BRepBuilderAPI_RightCorner, const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=3.0e+0);
+		void SetOptions(const BRepBuilderAPI_TransitionMode Style=BRepBuilderAPI_RightCorner, const Standard_Real AngleMin=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real AngleMax=3.0e+0);
 		%feature("autodoc", "1");
 		void SetDraft(const Standard_Boolean IsInternal=0);
 		%feature("autodoc", "1");

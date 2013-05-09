@@ -1472,6 +1472,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor BRepMesh_ComparatorOfIndexedVertexOfDelaun;
+class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
+	public:
+		%feature("autodoc", "1");
+		BRepMesh_ComparatorOfIndexedVertexOfDelaun(const gp_XY theDir, const Standard_Real TheTol, const Handle_BRepMesh_DataStructureOfDelaun &HDS);
+		%feature("autodoc", "1");
+		Standard_Boolean IsLower(const Standard_Integer Left, const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsGreater(const Standard_Integer Left, const Standard_Integer Right) const;
+		%feature("autodoc", "1");
+		Standard_Boolean IsEqual(const Standard_Integer Left, const Standard_Integer Right) const;
+
+};
+%feature("shadow") BRepMesh_ComparatorOfIndexedVertexOfDelaun::~BRepMesh_ComparatorOfIndexedVertexOfDelaun %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend BRepMesh_ComparatorOfIndexedVertexOfDelaun {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY;
 class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNode {
 	public:
@@ -3709,35 +3738,6 @@ def __del__(self):
 %}
 
 %extend BRepMesh_VertexTool {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor BRepMesh_ComparatorOfIndexedVertexOfDelaun;
-class BRepMesh_ComparatorOfIndexedVertexOfDelaun {
-	public:
-		%feature("autodoc", "1");
-		BRepMesh_ComparatorOfIndexedVertexOfDelaun(const gp_XY theDir, const Standard_Real TheTol, const Handle_BRepMesh_DataStructureOfDelaun &HDS);
-		%feature("autodoc", "1");
-		Standard_Boolean IsLower(const Standard_Integer Left, const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsGreater(const Standard_Integer Left, const Standard_Integer Right) const;
-		%feature("autodoc", "1");
-		Standard_Boolean IsEqual(const Standard_Integer Left, const Standard_Integer Right) const;
-
-};
-%feature("shadow") BRepMesh_ComparatorOfIndexedVertexOfDelaun::~BRepMesh_ComparatorOfIndexedVertexOfDelaun %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend BRepMesh_ComparatorOfIndexedVertexOfDelaun {
 	void _kill_pointed() {
 		delete $self;
 	}

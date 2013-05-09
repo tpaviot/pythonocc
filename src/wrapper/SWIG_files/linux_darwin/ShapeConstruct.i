@@ -132,9 +132,9 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Status(const ShapeExtend_Status Status) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Perform(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x000000001);
+		virtual		Standard_Boolean Perform(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x00000000000000001);
 		%feature("autodoc", "1");
-		Standard_Boolean PerformByProjLib(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x000000001);
+		Standard_Boolean PerformByProjLib(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d, const GeomAbs_Shape continuity=GeomAbs_C1, const Standard_Integer maxdeg=12, const Standard_Integer nbinterval=-0x00000000000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean PerformAdvanced(Handle_Geom_Curve & c3d, const Standard_Real First, const Standard_Real Last, Handle_Geom2d_Curve & c2d);
 		%feature("autodoc", "1");
@@ -171,7 +171,7 @@ def __del__(self):
 class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 	public:
 		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		ShapeConstruct_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
 		%feature("autodoc", "1");
@@ -208,7 +208,7 @@ def __del__(self):
 class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		ShapeConstruct_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt &Poles);
 		%feature("autodoc", "1");

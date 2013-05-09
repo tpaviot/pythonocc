@@ -748,7 +748,7 @@ class ShapeCustom_Curve {
 		%feature("autodoc", "1");
 		void Init(const Handle_Geom_Curve &C);
 		%feature("autodoc", "1");
-		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
+		Handle_Geom_Curve ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x00000000000000001);
 
 };
 %feature("shadow") ShapeCustom_Curve::~ShapeCustom_Curve %{
@@ -781,7 +781,7 @@ class ShapeCustom_Surface {
 		%feature("autodoc", "1");
 		Handle_Geom_Surface ConvertToAnalytical(const Standard_Real tol, const Standard_Boolean substitute);
 		%feature("autodoc", "1");
-		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x000000001);
+		Handle_Geom_Surface ConvertToPeriodic(const Standard_Boolean substitute, const Standard_Real preci=-0x00000000000000001);
 
 };
 %feature("shadow") ShapeCustom_Surface::~ShapeCustom_Surface %{

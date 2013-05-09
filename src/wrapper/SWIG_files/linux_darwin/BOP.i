@@ -2906,11 +2906,11 @@ class BOP_CorrectTolerances {
 		%feature("autodoc", "1");
 		BOP_CorrectTolerances();
 		%feature("autodoc", "1");
-		static		void CorrectTolerances(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectTolerances(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
-		static		void CorrectCurveOnSurface(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectCurveOnSurface(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
-		static		void CorrectPointOnCurve(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectPointOnCurve(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 
 };
 %feature("shadow") BOP_CorrectTolerances::~BOP_CorrectTolerances %{

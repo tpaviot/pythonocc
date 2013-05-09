@@ -6387,9 +6387,9 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean MemoryInfo(Standard_Size & theFreeBytes, TCollection_AsciiString & theInfo) const;
 		%feature("autodoc", "1");
-		virtual		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.00000000000000044408920985006261616945266723633e-1, const Standard_Real AxisDiametr=5.00000000000000027755575615628913510590791702271e-2, const Standard_Integer NbFacettes=12);
+		virtual		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
 		%feature("autodoc", "1");
-		virtual		void TriedronDisplay(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755341e-2, const Standard_Boolean AsWireframe=1);
+		virtual		void TriedronDisplay(const Graphic3d_CView &ACView, const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const Standard_Boolean AsWireframe=1);
 		%feature("autodoc", "1");
 		virtual		void TriedronErase(const Graphic3d_CView &ACView);
 		%feature("autodoc", "1");
@@ -6508,7 +6508,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Print(const Graphic3d_CView &ACView, const Aspect_CLayer2d &ACUnderLayer, const Aspect_CLayer2d &ACOverLayer, const Aspect_Handle hPrnDC, const Standard_Boolean showBackground, const char * filename, const Aspect_PrintAlgo printAlgorithm=Aspect_PA_STRETCH, const Standard_Real theScaleFactor=1.0e+0) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType, const Standard_Integer theWidth, const Standard_Integer theHeight, const Graphic3d_CView &theView, const Aspect_CLayer2d &theLayerUnder, const Aspect_CLayer2d &theLayerOver, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0);
+		virtual		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType, const Standard_Integer theWidth, const Standard_Integer theHeight, const Graphic3d_CView &theView, const Aspect_CLayer2d &theLayerUnder, const Aspect_CLayer2d &theLayerOver, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351440429688e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0);
 		%feature("autodoc", "1");
 		virtual		void RemovePrimitiveArray(const Graphic3d_CGroup &theCGroup, const Graphic3d_PrimitiveArray &thePArray);
 		%feature("autodoc", "1");

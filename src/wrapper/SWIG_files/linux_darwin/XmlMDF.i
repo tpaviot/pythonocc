@@ -358,6 +358,37 @@ def __del__(self):
 };
 
 
+%nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
+class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
+	public:
+		%feature("autodoc", "1");
+		XmlMDF_DataMapIteratorOfTypeADriverMap();
+		%feature("autodoc", "1");
+		XmlMDF_DataMapIteratorOfTypeADriverMap(const XmlMDF_TypeADriverMap &aMap);
+		%feature("autodoc", "1");
+		void Initialize(const XmlMDF_TypeADriverMap &aMap);
+		%feature("autodoc", "1");
+		const Handle_Standard_Type & Key() const;
+		%feature("autodoc", "1");
+		const Handle_XmlMDF_ADriver & Value() const;
+
+};
+%feature("shadow") XmlMDF_DataMapIteratorOfTypeADriverMap::~XmlMDF_DataMapIteratorOfTypeADriverMap %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor XmlMDF_TypeADriverMap;
 class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 	public:
@@ -680,37 +711,6 @@ def __del__(self):
 %}
 
 %extend XmlMDF_ReferenceDriver {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
-class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
-	public:
-		%feature("autodoc", "1");
-		XmlMDF_DataMapIteratorOfTypeADriverMap();
-		%feature("autodoc", "1");
-		XmlMDF_DataMapIteratorOfTypeADriverMap(const XmlMDF_TypeADriverMap &aMap);
-		%feature("autodoc", "1");
-		void Initialize(const XmlMDF_TypeADriverMap &aMap);
-		%feature("autodoc", "1");
-		const Handle_Standard_Type & Key() const;
-		%feature("autodoc", "1");
-		const Handle_XmlMDF_ADriver & Value() const;
-
-};
-%feature("shadow") XmlMDF_DataMapIteratorOfTypeADriverMap::~XmlMDF_DataMapIteratorOfTypeADriverMap %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend XmlMDF_DataMapIteratorOfTypeADriverMap {
 	void _kill_pointed() {
 		delete $self;
 	}

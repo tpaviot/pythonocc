@@ -252,7 +252,7 @@ class Voxel_CollisionDetection {
 		%feature("autodoc", "1");
 		void KeepCollisions(const Standard_Boolean keep);
 		%feature("autodoc", "1");
-		Standard_Boolean Voxelize(const Standard_Integer ishape=-0x000000001);
+		Standard_Boolean Voxelize(const Standard_Integer ishape=-0x00000000000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean Compute();
 		%feature("autodoc", "1");
@@ -477,11 +477,11 @@ def __del__(self):
 class Voxel_FastConverter {
 	public:
 		%feature("autodoc", "1");
-		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_BoolDS & voxels, const Standard_Real delfection=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
-		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ColorDS & voxels, const Standard_Real delfection=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc", "1");
-		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ROctBoolDS & voxels, const Standard_Real delfection=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
+		Voxel_FastConverter(const TopoDS_Shape shape, Voxel_ROctBoolDS & voxels, const Standard_Real delfection=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Integer nbx=10, const Standard_Integer nby=10, const Standard_Integer nbz=10, const Standard_Integer nbthreads=1);
 		%feature("autodoc","Convert(Standard_Integer ithread=1) -> Standard_Integer");
 
 		Standard_Boolean Convert(Standard_Integer &OutValue, const Standard_Integer ithread=1);

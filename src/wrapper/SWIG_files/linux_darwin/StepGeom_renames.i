@@ -54,11 +54,11 @@ $HeaderURL$
 %rename(DownCast) Handle_StepGeom_Polyline::DownCast;
 %rename(DownCast) Handle_StepGeom_SurfaceReplica::DownCast;
 %rename(DownCast) Handle_StepGeom_HArray1OfTrimmingSelect::DownCast;
+%rename(DownCast) Handle_StepGeom_HArray2OfSurfacePatch::DownCast;
 %rename(DownCast) Handle_StepGeom_BSplineCurveWithKnots::DownCast;
 %rename(DownCast) Handle_StepGeom_BSplineSurfaceWithKnots::DownCast;
 %rename(DownCast) Handle_StepGeom_SeamCurve::DownCast;
 %rename(DownCast) Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx::DownCast;
-%rename(DownCast) Handle_StepGeom_HArray2OfSurfacePatch::DownCast;
 %rename(DownCast) Handle_StepGeom_CartesianTransformationOperator3d::DownCast;
 %rename(DownCast) Handle_StepGeom_HArray1OfCartesianPoint::DownCast;
 %rename(DownCast) Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext::DownCast;

@@ -2980,15 +2980,15 @@ class Aspect_Driver : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void DrawText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
 		%feature("autodoc", "1");
-		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.00000000000000005551115123125782702118158340454e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
+		virtual		void DrawPolyText(const TCollection_ExtendedString &aText, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Quantity_Ratio aMarge=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_ShortReal anAngle=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID);
 		%feature("autodoc", "1");
 		virtual		void DrawPoint(const Standard_ShortReal X, const Standard_ShortReal Y);
 		%feature("autodoc", "1");
 		virtual		void DrawMarker(const Standard_Integer aMarker, const Standard_ShortReal Xpos, const Standard_ShortReal Ypos, const Standard_ShortReal Width, const Standard_ShortReal Height, const Standard_ShortReal Angle=0.0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
+		virtual		Standard_Boolean DrawArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.283184999999999575948095298372209072113037109375e+0);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.28318499999999957594809529837220907211303710938e+0);
+		virtual		Standard_Boolean DrawPolyArc(const Standard_ShortReal X, const Standard_ShortReal Y, const Standard_ShortReal anXradius, const Standard_ShortReal anYradius, const Standard_ShortReal aStartAngle=0.0, const Standard_ShortReal anOpenAngle=6.283184999999999575948095298372209072113037109375e+0);
 		%feature("autodoc", "1");
 		virtual		void BeginPolyline(const Standard_Integer aNumber);
 		%feature("autodoc", "1");
@@ -5572,11 +5572,11 @@ class Aspect_WindowDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		virtual		void PositionOfBuffer(const Standard_Integer aRetainBuffer, Standard_ShortReal & aPivotX, Standard_ShortReal & aPivotY) const;
 		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x00000000000000001) const;
 		%feature("autodoc", "1");
-		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x000000001) const;
+		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, Standard_ShortReal & anXoffset, Standard_ShortReal & anYoffset, const Standard_Integer aFontIndex=-0x00000000000000001) const;
 		%feature("autodoc", "1");
-		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
+		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x00000000000000001) const;
 		%feature("autodoc","ColorBoundIndexs() -> [Standard_Integer, Standard_Integer]");
 
 		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
@@ -6100,9 +6100,9 @@ class Aspect_ColorScale : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetFormat(const TCollection_AsciiString &aFormat);
 		%feature("autodoc", "1");
-		void SetLabel(const TCollection_ExtendedString &aLabel, const Standard_Integer anIndex=-0x000000001);
+		void SetLabel(const TCollection_ExtendedString &aLabel, const Standard_Integer anIndex=-0x00000000000000001);
 		%feature("autodoc", "1");
-		void SetColor(const Quantity_Color &aColor, const Standard_Integer anIndex=-0x000000001);
+		void SetColor(const Quantity_Color &aColor, const Standard_Integer anIndex=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void SetLabels(const TColStd_SequenceOfExtendedString &aSeq);
 		%feature("autodoc", "1");

@@ -333,9 +333,9 @@ def __del__(self):
 class math_BFGS {
 	public:
 		%feature("autodoc", "1");
-		math_BFGS(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408929e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BFGS(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408928783610463e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_BFGS(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408929e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BFGS(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408928783610463e-8, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -534,9 +534,9 @@ def __del__(self):
 class math_Powell {
 	public:
 		%feature("autodoc", "1");
-		math_Powell(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_Powell(math_MultipleVarFunction & F, const math_Vector &StartingPoint, const math_Matrix &StartingDirections, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_Powell(math_MultipleVarFunction & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_Powell(math_MultipleVarFunction & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");
@@ -755,7 +755,7 @@ def __del__(self):
 class math_Gauss {
 	public:
 		%feature("autodoc", "1");
-		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
+		math_Gauss(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -800,9 +800,9 @@ class math_SVD {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		void Solve(const math_Vector &B, math_Vector & X, const Standard_Real Eps=9.99999999999999954748111825886258685613938723690807819366e-7) const;
 		%feature("autodoc", "1");
-		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
+		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723690807819366e-7) const;
 		%feature("autodoc", "1");
 		%feature("autodoc", "1");
 		%extend{
@@ -1570,11 +1570,11 @@ def __del__(self):
 class math_Householder {
 	public:
 		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		math_Householder(const math_Matrix &A, const math_Matrix &B, const Standard_Integer lowerArow, const Standard_Integer upperArow, const Standard_Integer lowerAcol, const Standard_Integer upperAcol, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
-		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787e-21);
+		math_Householder(const math_Matrix &A, const math_Vector &B, const Standard_Real EPS=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1640,11 +1640,11 @@ def __del__(self):
 class math_BrentMinimum {
 	public:
 		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BrentMinimum(const Standard_Real TolX, const Standard_Real Fbx, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BrentMinimum(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx, const Standard_Real TolX, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		void Perform(math_Function & F, const Standard_Real Ax, const Standard_Real Bx, const Standard_Real Cx);
 		%feature("autodoc", "1");
@@ -1734,9 +1734,9 @@ def __del__(self):
 class math_Uzawa {
 	public:
 		%feature("autodoc", "1");
-		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723691e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=500);
+		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=500);
 		%feature("autodoc", "1");
-		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723691e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=500);
+		math_Uzawa(const math_Matrix &Cont, const math_Vector &Secont, const math_Vector &StartingPoint, const Standard_Integer Nci, const Standard_Integer Nce, const Standard_Real EpsLix=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Real EpsLic=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=500);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1854,7 +1854,7 @@ def __del__(self):
 class math_BracketedRoot {
 	public:
 		%feature("autodoc", "1");
-		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_BracketedRoot(math_Function & F, const Standard_Real Bound1, const Standard_Real Bound2, const Standard_Real Tolerance, const Standard_Integer NbIterations=100, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -2077,7 +2077,7 @@ def __del__(self):
 class math_GaussLeastSquare {
 	public:
 		%feature("autodoc", "1");
-		math_GaussLeastSquare(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
+		math_GaussLeastSquare(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -2158,7 +2158,7 @@ def __del__(self):
 class math_Crout {
 	public:
 		%feature("autodoc", "1");
-		math_Crout(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787e-21);
+		math_Crout(const math_Matrix &A, const Standard_Real MinPivot=9.99999999999999945153271454209571651729503702787392447108e-21);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -2199,9 +2199,9 @@ def __del__(self):
 class math_FRPR {
 	public:
 		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const math_Vector &StartingPoint, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
-		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.9999999999999997988664762925561536725284350613e-13);
+		math_FRPR(math_MultipleVarFunctionWithGradient & F, const Standard_Real Tolerance, const Standard_Integer NbIterations=200, const Standard_Real ZEPS=9.99999999999999979886647629255615367252843506129522666015e-13);
 		%feature("autodoc", "1");
 		virtual		void Delete();
 		%feature("autodoc", "1");

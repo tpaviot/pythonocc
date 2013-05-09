@@ -2029,6 +2029,56 @@ def __del__(self):
 };
 
 
+%nodefaultctor IntPatch_ArcFunction;
+class IntPatch_ArcFunction : public math_FunctionWithDerivative {
+	public:
+		%feature("autodoc", "1");
+		IntPatch_ArcFunction();
+		%feature("autodoc", "1");
+		void SetQuadric(const IntSurf_Quadric &Q);
+		%feature("autodoc", "1");
+		void Set(const Handle_Adaptor2d_HCurve2d &A);
+		%feature("autodoc", "1");
+		void Set(const Handle_Adaptor3d_HSurface &S);
+		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
+
+		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
+		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
+
+		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
+		%feature("autodoc", "1");
+		Standard_Integer NbSamples() const;
+		%feature("autodoc", "1");
+		virtual		Standard_Integer GetStateNumber();
+		%feature("autodoc", "1");
+		const gp_Pnt  Valpoint(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const IntSurf_Quadric & Quadric() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor2d_HCurve2d & Arc() const;
+		%feature("autodoc", "1");
+		const Handle_Adaptor3d_HSurface & Surface() const;
+
+};
+%feature("shadow") IntPatch_ArcFunction::~IntPatch_ArcFunction %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend IntPatch_ArcFunction {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor IntPatch_WLine;
 class IntPatch_WLine : public IntPatch_Line {
 	public:
@@ -2244,56 +2294,6 @@ def __del__(self):
 %}
 
 %extend IntPatch_SequenceOfIWLineOfTheIWalking {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor IntPatch_ArcFunction;
-class IntPatch_ArcFunction : public math_FunctionWithDerivative {
-	public:
-		%feature("autodoc", "1");
-		IntPatch_ArcFunction();
-		%feature("autodoc", "1");
-		void SetQuadric(const IntSurf_Quadric &Q);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor2d_HCurve2d &A);
-		%feature("autodoc", "1");
-		void Set(const Handle_Adaptor3d_HSurface &S);
-		%feature("autodoc","Value(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Value(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Derivative(Standard_Real X) -> Standard_Real");
-
-		virtual		Standard_Boolean Derivative(const Standard_Real X, Standard_Real &OutValue);
-		%feature("autodoc","Values(Standard_Real X) -> [Standard_Real, Standard_Real]");
-
-		virtual		Standard_Boolean Values(const Standard_Real X, Standard_Real &OutValue, Standard_Real &OutValue);
-		%feature("autodoc", "1");
-		Standard_Integer NbSamples() const;
-		%feature("autodoc", "1");
-		virtual		Standard_Integer GetStateNumber();
-		%feature("autodoc", "1");
-		const gp_Pnt  Valpoint(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const IntSurf_Quadric & Quadric() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor2d_HCurve2d & Arc() const;
-		%feature("autodoc", "1");
-		const Handle_Adaptor3d_HSurface & Surface() const;
-
-};
-%feature("shadow") IntPatch_ArcFunction::~IntPatch_ArcFunction %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend IntPatch_ArcFunction {
 	void _kill_pointed() {
 		delete $self;
 	}

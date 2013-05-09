@@ -1457,7 +1457,7 @@ class StepData_Field {
 		%feature("autodoc", "1");
 		void SetString(const char * val="");
 		%feature("autodoc", "1");
-		void SetEnum(const Standard_Integer val=-0x000000001, const char * text="");
+		void SetEnum(const Standard_Integer val=-0x00000000000000001, const char * text="");
 		%feature("autodoc", "1");
 		void SetSelectMember(const Handle_StepData_SelectMember &val);
 		%feature("autodoc", "1");

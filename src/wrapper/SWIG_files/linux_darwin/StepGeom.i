@@ -1279,6 +1279,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
+class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch();
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch & operator=(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepGeom_HArray2OfSurfacePatch & operator=(const StepGeom_HArray2OfSurfacePatch *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepGeom_HArray2OfSurfacePatch DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	StepGeom_HArray2OfSurfacePatch* GetObject() {
+	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepGeom_HArray2OfSurfacePatch::~Handle_StepGeom_HArray2OfSurfacePatch %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepGeom_HArray2OfSurfacePatch {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_StepGeom_BSplineCurveWithKnots;
 class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -1425,44 +1463,6 @@ def __del__(self):
 %}
 
 %extend Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
-class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch();
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch(const StepGeom_HArray2OfSurfacePatch *anItem);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch & operator=(const Handle_StepGeom_HArray2OfSurfacePatch &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepGeom_HArray2OfSurfacePatch & operator=(const StepGeom_HArray2OfSurfacePatch *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepGeom_HArray2OfSurfacePatch DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
-	StepGeom_HArray2OfSurfacePatch* GetObject() {
-	return (StepGeom_HArray2OfSurfacePatch*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepGeom_HArray2OfSurfacePatch::~Handle_StepGeom_HArray2OfSurfacePatch %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepGeom_HArray2OfSurfacePatch {
 	void _kill_pointed() {
 		delete $self;
 	}

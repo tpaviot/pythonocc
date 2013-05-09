@@ -1530,7 +1530,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 		%feature("autodoc", "1");
 		Standard_Boolean CheckSmallEdges(TopTools_MapOfShape & theSmallEdges, TopTools_DataMapOfShapeListOfShape & theEdgeToFaces, TopTools_DataMapOfShapeListOfShape & theFaceWithSmall, TopTools_MapOfShape & theMultyEdges);
 		%feature("autodoc", "1");
-		Standard_Boolean MergeSmallEdges(TopTools_MapOfShape & theSmallEdges, TopTools_DataMapOfShapeListOfShape & theEdgeToFaces, TopTools_DataMapOfShapeListOfShape & theFaceWithSmall, TopTools_MapOfShape & theMultyEdges, const Standard_Boolean theModeDrop=0, const Standard_Real theLimitAngle=-0x000000001);
+		Standard_Boolean MergeSmallEdges(TopTools_MapOfShape & theSmallEdges, TopTools_DataMapOfShapeListOfShape & theEdgeToFaces, TopTools_DataMapOfShapeListOfShape & theFaceWithSmall, TopTools_MapOfShape & theMultyEdges, const Standard_Boolean theModeDrop=0, const Standard_Real theLimitAngle=-0x00000000000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean StatusWireGaps(const ShapeExtend_Status status) const;
 		%feature("autodoc", "1");
@@ -1591,7 +1591,7 @@ class ShapeFix {
 		%feature("autodoc", "1");
 		static		Standard_Boolean SameParameter(const TopoDS_Shape shape, const Standard_Boolean enforce, const Standard_Real preci=0.0, const Handle_Message_ProgressIndicator &theProgress=0);
 		%feature("autodoc", "1");
-		static		void EncodeRegularity(const TopoDS_Shape shape, const Standard_Real tolang=1.0000000000000000364321973154977415791655470656e-10);
+		static		void EncodeRegularity(const TopoDS_Shape shape, const Standard_Real tolang=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		static		TopoDS_Shape RemoveSmallEdges(TopoDS_Shape & shape, const Standard_Real Tolerance, Handle_ShapeBuild_ReShape & context);
 		%feature("autodoc", "1");

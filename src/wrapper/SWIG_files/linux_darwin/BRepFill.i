@@ -1205,9 +1205,9 @@ def __del__(self):
 class BRepFill_Filling {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_Filling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
+		BRepFill_Filling(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Integer MaxDeg=8, const Standard_Integer MaxSegments=9);
 		%feature("autodoc", "1");
-		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		void SetConstrParam(const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1);
 		%feature("autodoc", "1");
 		void SetResolParam(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=15, const Standard_Integer NbIter=2, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
@@ -1660,7 +1660,7 @@ class BRepFill_CompatibleWires {
 		%feature("autodoc", "1");
 		void Init(const TopTools_SequenceOfShape &Sections);
 		%feature("autodoc", "1");
-		void SetPercent(const Standard_Real percent=1.0000000000000000208166817117216851329430937767e-2);
+		void SetPercent(const Standard_Real percent=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Boolean WithRotation=1);
 		%feature("autodoc", "1");
@@ -1703,7 +1703,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DeleteTransform();
 		%feature("autodoc", "1");
-		Standard_Integer NbHoles(const Standard_Real Tol=9.99999999999999954748111825886258685613938723691e-8);
+		Standard_Integer NbHoles(const Standard_Real Tol=9.99999999999999954748111825886258685613938723690807819366e-8);
 		%feature("autodoc", "1");
 		void Holes(TColStd_Array1OfInteger & Interval) const;
 		%feature("autodoc", "1");
@@ -1724,7 +1724,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsClosed() const;
 		%feature("autodoc", "1");
-		Standard_Integer IsG1(const Standard_Integer Index, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4) const;
+		Standard_Integer IsG1(const Standard_Integer Index, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723690807819366e-8, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4) const;
 		%feature("autodoc", "1");
 		void D0(const Standard_Real Abscissa, TopoDS_Shape & Section);
 		%feature("autodoc","Parameter(Standard_Real Abscissa) -> [Standard_Integer, Standard_Real]");
@@ -2246,9 +2246,9 @@ def __del__(self):
 class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1);
 		%feature("autodoc", "1");
-		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		BRepFill_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2309,9 +2309,9 @@ class BRepFill_PipeShell : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GeomFill_PipeError GetStatus() const;
 		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		void SetTolerance(const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real BoundTol=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAngular=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
-		void SetTransition(const BRepFill_TransitionStyle Mode=BRepFill_Modified, const Standard_Real Angmin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real Angmax=6.0e+0);
+		void SetTransition(const BRepFill_TransitionStyle Mode=BRepFill_Modified, const Standard_Real Angmin=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real Angmax=6.0e+0);
 		%feature("autodoc", "1");
 		void Simulate(const Standard_Integer NumberOfSection, TopTools_ListOfShape & Sections);
 		%feature("autodoc", "1");
@@ -2587,7 +2587,7 @@ class BRepFill_Draft {
 		%feature("autodoc", "1");
 		BRepFill_Draft(const TopoDS_Shape Shape, const gp_Dir Dir, const Standard_Real Angle);
 		%feature("autodoc", "1");
-		void SetOptions(const BRepFill_TransitionStyle Style=BRepFill_Right, const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=3.0e+0);
+		void SetOptions(const BRepFill_TransitionStyle Style=BRepFill_Right, const Standard_Real AngleMin=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real AngleMax=3.0e+0);
 		%feature("autodoc", "1");
 		void SetDraft(const Standard_Boolean IsInternal=0);
 		%feature("autodoc", "1");
@@ -2712,9 +2712,9 @@ class BRepFill_Sweep {
 		%feature("autodoc", "1");
 		void SetBounds(const TopoDS_Wire FirstShape, const TopoDS_Wire LastShape);
 		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0000000000000000208166817117216851329430937767e-2);
+		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real TolAngular=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
-		void SetAngularControl(const Standard_Real AngleMin=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real AngleMax=6.0e+0);
+		void SetAngularControl(const Standard_Real AngleMin=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real AngleMax=6.0e+0);
 		%feature("autodoc", "1");
 		void Build(const BRepFill_TransitionStyle Transition=BRepFill_Modified, const GeomFill_ApproxStyle Approx=GeomFill_Location, const GeomAbs_Shape Continuity=GeomAbs_C2, const Standard_Integer Degmax=11, const Standard_Integer Segmax=30);
 		%feature("autodoc", "1");
@@ -3295,9 +3295,9 @@ def __del__(self):
 class BRepFill_ComputeCLine {
 	public:
 		%feature("autodoc", "1");
-		BRepFill_ComputeCLine(const BRepFill_MultiLine &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		BRepFill_ComputeCLine(const BRepFill_MultiLine &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		BRepFill_ComputeCLine(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		BRepFill_ComputeCLine(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		void Perform(const BRepFill_MultiLine &Line);
 		%feature("autodoc", "1");

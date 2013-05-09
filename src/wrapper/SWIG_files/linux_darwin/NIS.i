@@ -444,7 +444,7 @@ class NIS_View : public V3d_OrthographicView {
 		%feature("autodoc", "1");
 		void SetDynHilightSelected(const Standard_Boolean theHilight=1);
 		%feature("autodoc", "1");
-		Standard_Boolean FitAll3d(const Quantity_Coefficient theCoef=1.0000000000000000208166817117216851329430937767e-2);
+		Standard_Boolean FitAll3d(const Quantity_Coefficient theCoef=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		Bnd_B3f GetBndBox() const;
 		%feature("autodoc","GetBndBox() -> [Standard_Integer, Standard_Integer, Standard_Integer, Standard_Integer]");
@@ -867,7 +867,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_ShortReal Transparency() const;
 		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Real theValue=5.99999999999999977795539507496869191527366638184e-1);
+		void SetTransparency(const Standard_Real theValue=5.9999999999999997779553950749686919152736663818359375e-1);
 		%feature("autodoc", "1");
 		void UnsetTransparency();
 		%feature("autodoc", "1");

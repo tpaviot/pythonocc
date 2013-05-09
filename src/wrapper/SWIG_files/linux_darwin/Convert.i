@@ -281,7 +281,7 @@ def __del__(self):
 class Convert_CompBezierCurves2dToBSplineCurve2d {
 	public:
 		%feature("autodoc", "1");
-		Convert_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		Convert_CompBezierCurves2dToBSplineCurve2d(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt2d &Poles);
 		%feature("autodoc", "1");
@@ -415,7 +415,7 @@ def __del__(self):
 class Convert_CompBezierCurvesToBSplineCurve {
 	public:
 		%feature("autodoc", "1");
-		Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		Convert_CompBezierCurvesToBSplineCurve(const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		void AddCurve(const TColgp_Array1OfPnt &Poles);
 		%feature("autodoc", "1");

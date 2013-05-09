@@ -2901,7 +2901,7 @@ class GeomFill_Sweep {
 		%feature("autodoc", "1");
 		void SetDomain(const Standard_Real First, const Standard_Real Last, const Standard_Real SectionFirst, const Standard_Real SectionLast);
 		%feature("autodoc", "1");
-		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real TolAngular=1.0e+0);
+		void SetTolerance(const Standard_Real Tol3d, const Standard_Real BoundTol=1.0e+0, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real TolAngular=1.0e+0);
 		%feature("autodoc", "1");
 		Standard_Boolean ExchangeUV() const;
 		%feature("autodoc", "1");

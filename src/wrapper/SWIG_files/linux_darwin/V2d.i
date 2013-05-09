@@ -449,9 +449,9 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Zoom(const Quantity_Factor Zoom);
 		%feature("autodoc", "1");
-		void Zoom(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
+		void Zoom(const Standard_Integer aX1, const Standard_Integer aY1, const Standard_Integer aX2, const Standard_Integer aY2, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351440429688e-3);
 		%feature("autodoc", "1");
-		void Zoom(const Standard_Integer aX, const Standard_Integer aY, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351e-3);
+		void Zoom(const Standard_Integer aX, const Standard_Integer aY, const Quantity_Ratio aCoefficient=5.00000000000000010408340855860842566471546888351440429688e-3);
 		%feature("autodoc", "1");
 		void Magnify(const Handle_V2d_View &anOriginView, const Standard_Integer X1, const Standard_Integer Y1, const Standard_Integer X2, const Standard_Integer Y2);
 		%feature("autodoc", "1");

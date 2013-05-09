@@ -5511,7 +5511,7 @@ class IFSelect_WorkSession : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_IFSelect_PacketList EvalSplit() const;
 		%feature("autodoc", "1");
-		Interface_EntityIterator SentList(const Standard_Integer count=-0x000000001) const;
+		Interface_EntityIterator SentList(const Standard_Integer count=-0x00000000000000001) const;
 		%feature("autodoc", "1");
 		Standard_Integer MaxSendingCount() const;
 		%feature("autodoc", "1");
@@ -5688,7 +5688,7 @@ class IFSelect_Activator : public MMgt_TShared {
 		%feature("autodoc", "1");
 		static		Standard_Integer Mode(const char * command);
 		%feature("autodoc", "1");
-		static		Handle_TColStd_HSequenceOfAsciiString Commands(const Standard_Integer mode=-0x000000001, const char * command="");
+		static		Handle_TColStd_HSequenceOfAsciiString Commands(const Standard_Integer mode=-0x00000000000000001, const char * command="");
 		%feature("autodoc", "1");
 		virtual		IFSelect_ReturnStatus Do(const Standard_Integer number, const Handle_IFSelect_SessionPilot &pilot);
 		%feature("autodoc", "1");

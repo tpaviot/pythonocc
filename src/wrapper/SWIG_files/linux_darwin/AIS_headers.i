@@ -655,6 +655,7 @@ $HeaderURL$
 #include<Handle_PrsMgr_PresentationManager2d.hxx>
 #include<Handle_Graphic2d_GraphicObject.hxx>
 #include<Handle_SelectMgr_Selection.hxx>
+#include<TCollection_AsciiString.hxx>
 #include<Handle_Geom_Line.hxx>
 #include<Handle_Geom_Point.hxx>
 #include<TopoDS_Edge.hxx>
@@ -683,5 +684,4 @@ $HeaderURL$
 #include<Handle_V3d_Viewer.hxx>
 #include<SelectMgr_IndexedMapOfOwner.hxx>
 #include<Handle_StdSelect_ViewerSelector3d.hxx>
-#include<TCollection_AsciiString.hxx>
 %}

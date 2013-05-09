@@ -4453,6 +4453,61 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepVisual_HArray1OfFillStyleSelect;
+class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
+		%feature("autodoc", "1");
+		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_FillStyleSelect &V);
+		%feature("autodoc", "1");
+		void Init(const StepVisual_FillStyleSelect &V);
+		%feature("autodoc", "1");
+		Standard_Integer Length() const;
+		%feature("autodoc", "1");
+		Standard_Integer Lower() const;
+		%feature("autodoc", "1");
+		Standard_Integer Upper() const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
+		%feature("autodoc", "1");
+		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		const StepVisual_Array1OfFillStyleSelect & Array1() const;
+		%feature("autodoc", "1");
+		StepVisual_Array1OfFillStyleSelect & ChangeArray1();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend StepVisual_HArray1OfFillStyleSelect {
+	Handle_StepVisual_HArray1OfFillStyleSelect GetHandle() {
+	return *(Handle_StepVisual_HArray1OfFillStyleSelect*) &$self;
+	}
+};
+%extend StepVisual_HArray1OfFillStyleSelect {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_HArray1OfFillStyleSelect {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepVisual_OverRidingStyledItem;
 class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 	public:
@@ -5684,6 +5739,35 @@ def __del__(self):
 };
 
 
+%nodefaultctor StepVisual_LayeredItem;
+class StepVisual_LayeredItem : public StepData_SelectType {
+	public:
+		%feature("autodoc", "1");
+		StepVisual_LayeredItem();
+		%feature("autodoc", "1");
+		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
+		%feature("autodoc", "1");
+		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
+		%feature("autodoc", "1");
+		Handle_StepRepr_RepresentationItem RepresentationItem() const;
+
+};
+%feature("shadow") StepVisual_LayeredItem::~StepVisual_LayeredItem %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend StepVisual_LayeredItem {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor StepVisual_Array1OfFillStyleSelect;
 class StepVisual_Array1OfFillStyleSelect {
 	public:
@@ -6385,35 +6469,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_Array1OfPresentationStyleAssignment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_LayeredItem;
-class StepVisual_LayeredItem : public StepData_SelectType {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_LayeredItem();
-		%feature("autodoc", "1");
-		virtual		Standard_Integer CaseNum(const Handle_Standard_Transient &ent) const;
-		%feature("autodoc", "1");
-		Handle_StepVisual_PresentationRepresentation PresentationRepresentation() const;
-		%feature("autodoc", "1");
-		Handle_StepRepr_RepresentationItem RepresentationItem() const;
-
-};
-%feature("shadow") StepVisual_LayeredItem::~StepVisual_LayeredItem %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_LayeredItem {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -7209,61 +7264,6 @@ def __del__(self):
 %}
 
 %extend StepVisual_SurfaceStyleControlGrid {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor StepVisual_HArray1OfFillStyleSelect;
-class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up);
-		%feature("autodoc", "1");
-		StepVisual_HArray1OfFillStyleSelect(const Standard_Integer Low, const Standard_Integer Up, const StepVisual_FillStyleSelect &V);
-		%feature("autodoc", "1");
-		void Init(const StepVisual_FillStyleSelect &V);
-		%feature("autodoc", "1");
-		Standard_Integer Length() const;
-		%feature("autodoc", "1");
-		Standard_Integer Lower() const;
-		%feature("autodoc", "1");
-		Standard_Integer Upper() const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const StepVisual_FillStyleSelect &Value);
-		%feature("autodoc", "1");
-		const StepVisual_FillStyleSelect & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		StepVisual_FillStyleSelect & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		const StepVisual_Array1OfFillStyleSelect & Array1() const;
-		%feature("autodoc", "1");
-		StepVisual_Array1OfFillStyleSelect & ChangeArray1();
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend StepVisual_HArray1OfFillStyleSelect {
-	Handle_StepVisual_HArray1OfFillStyleSelect GetHandle() {
-	return *(Handle_StepVisual_HArray1OfFillStyleSelect*) &$self;
-	}
-};
-%extend StepVisual_HArray1OfFillStyleSelect {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") StepVisual_HArray1OfFillStyleSelect::~StepVisual_HArray1OfFillStyleSelect %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend StepVisual_HArray1OfFillStyleSelect {
 	void _kill_pointed() {
 		delete $self;
 	}

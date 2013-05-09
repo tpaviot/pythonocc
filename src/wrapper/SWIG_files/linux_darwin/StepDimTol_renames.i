@@ -38,8 +38,8 @@ $HeaderURL$
 %rename(DownCast) Handle_StepDimTol_TotalRunoutTolerance::DownCast;
 %rename(DownCast) Handle_StepDimTol_ConcentricityTolerance::DownCast;
 %rename(DownCast) Handle_StepDimTol_ParallelismTolerance::DownCast;
-%rename(DownCast) Handle_StepDimTol_StraightnessTolerance::DownCast;
 %rename(DownCast) Handle_StepDimTol_FlatnessTolerance::DownCast;
+%rename(DownCast) Handle_StepDimTol_StraightnessTolerance::DownCast;
 %rename(DownCast) Handle_StepDimTol_DatumReference::DownCast;
 %rename(DownCast) Handle_StepDimTol_DatumFeature::DownCast;
 %rename(DownCast) Handle_StepDimTol_CircularRunoutTolerance::DownCast;

@@ -658,9 +658,9 @@ def __del__(self):
 class Approx_FitAndDivide {
 	public:
 		%feature("autodoc", "1");
-		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide(const AppCont_Function &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		Approx_FitAndDivide(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		void Perform(const AppCont_Function &Line);
 		%feature("autodoc", "1");
@@ -760,9 +760,9 @@ def __del__(self):
 class Approx_FitAndDivide2d {
 	public:
 		%feature("autodoc", "1");
-		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide2d(const AppCont_Function2d &Line, const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
-		Approx_FitAndDivide2d(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
+		Approx_FitAndDivide2d(const Standard_Integer degreemin=3, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tolerance2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Boolean cutting=0, const AppParCurves_Constraint FirstC=AppParCurves_TangencyPoint, const AppParCurves_Constraint LastC=AppParCurves_TangencyPoint);
 		%feature("autodoc", "1");
 		void Perform(const AppCont_Function2d &Line);
 		%feature("autodoc", "1");

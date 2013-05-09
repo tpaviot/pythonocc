@@ -278,7 +278,7 @@ class BRepAlgo {
 		%feature("autodoc", "1");
 		BRepAlgo();
 		%feature("autodoc", "1");
-		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845e-4);
+		static		TopoDS_Wire ConcatenateWire(const TopoDS_Wire Wire, const GeomAbs_Shape Option, const Standard_Real AngularTolerance=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsValid(const TopoDS_Shape S);
 		%feature("autodoc", "1");

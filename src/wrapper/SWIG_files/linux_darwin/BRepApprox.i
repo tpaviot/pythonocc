@@ -531,7 +531,7 @@ def __del__(self):
 class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -828,15 +828,15 @@ def __del__(self):
 class BRepApprox_TheComputeLineBezierOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineBezierOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineBezierOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
 		void Perform(const BRepApprox_TheMultiLineOfApprox &Line);
 		%feature("autodoc", "1");
@@ -960,7 +960,7 @@ def __del__(self):
 class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.0000000000000000364321973154977415791655470656e-10);
+		BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &SSP, AppParCurves_MultiCurve & SCurv, const Standard_Integer FirstPoint, const Standard_Integer LastPoint, const Handle_AppParCurves_HArray1OfConstraintCouple &Constraints, const math_Matrix &Bern, const math_Matrix &DerivativeBern, const Standard_Real Tolerance=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
@@ -1197,17 +1197,17 @@ def __del__(self):
 class BRepApprox_TheComputeLineOfApprox {
 	public:
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineOfApprox(const BRepApprox_TheMultiLineOfApprox &Line, const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineOfApprox(const math_Vector &Parameters, const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
-		BRepApprox_TheComputeLineOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		BRepApprox_TheComputeLineOfApprox(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
 		void Interpol(const BRepApprox_TheMultiLineOfApprox &Line);
 		%feature("autodoc", "1");
-		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723691e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
+		void Init(const Standard_Integer degreemin=4, const Standard_Integer degreemax=8, const Standard_Real Tolerance3d=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real Tolerance2d=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Integer NbIterations=5, const Standard_Boolean cutting=1, const Approx_ParametrizationType parametrization=Approx_ChordLength, const Standard_Boolean Squares=0);
 		%feature("autodoc", "1");
 		void Perform(const BRepApprox_TheMultiLineOfApprox &Line);
 		%feature("autodoc", "1");

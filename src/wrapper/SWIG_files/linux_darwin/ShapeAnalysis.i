@@ -408,9 +408,9 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Geom_Curve VIso(const Standard_Real V);
 		%feature("autodoc", "1");
-		Standard_Boolean IsUClosed(const Standard_Real preci=-0x000000001);
+		Standard_Boolean IsUClosed(const Standard_Real preci=-0x00000000000000001);
 		%feature("autodoc", "1");
-		Standard_Boolean IsVClosed(const Standard_Real preci=-0x000000001);
+		Standard_Boolean IsVClosed(const Standard_Real preci=-0x00000000000000001);
 		%feature("autodoc", "1");
 		gp_Pnt2d ValueOfUV(const gp_Pnt P3D, const Standard_Real preci);
 		%feature("autodoc", "1");
@@ -794,11 +794,11 @@ class ShapeAnalysis_Edge {
 		%feature("autodoc", "1");
 		Standard_Boolean GetEndTangent2d(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Boolean atEnd, gp_Pnt2d & pos, gp_Vec2d & tang, const Standard_Real dparam=0.0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithCurve3d(const TopoDS_Edge edge, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		Standard_Boolean CheckVerticesWithCurve3d(const TopoDS_Edge edge, const Standard_Real preci=-0x00000000000000001, const Standard_Integer vtx=0);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const TopoDS_Face face, const Standard_Real preci=-0x00000000000000001, const Standard_Integer vtx=0);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Real preci=-0x000000001, const Standard_Integer vtx=0);
+		Standard_Boolean CheckVerticesWithPCurve(const TopoDS_Edge edge, const Handle_Geom_Surface &surface, const TopLoc_Location &location, const Standard_Real preci=-0x00000000000000001, const Standard_Integer vtx=0);
 		%feature("autodoc","CheckVertexTolerance(const edge, const face) -> [Standard_Real, Standard_Real]");
 
 		Standard_Boolean CheckVertexTolerance(const TopoDS_Edge edge, const TopoDS_Face face, Standard_Real &OutValue, Standard_Real &OutValue);
@@ -874,7 +874,7 @@ class ShapeAnalysis_Curve {
 		%feature("autodoc", "1");
 		static		Standard_Boolean GetSamplePoints(const Handle_Geom_Curve &curve, const Standard_Real first, const Standard_Real last, TColgp_SequenceOfPnt & seq);
 		%feature("autodoc", "1");
-		static		Standard_Boolean IsClosed(const Handle_Geom_Curve &curve, const Standard_Real preci=-0x000000001);
+		static		Standard_Boolean IsClosed(const Handle_Geom_Curve &curve, const Standard_Real preci=-0x00000000000000001);
 		%feature("autodoc", "1");
 		static		Standard_Boolean IsPeriodic(const Handle_Geom_Curve &curve);
 		%feature("autodoc", "1");

@@ -1196,7 +1196,7 @@ class IGESData_IGESEntity : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void InitStatus(const Standard_Integer blank, const Standard_Integer subordinate, const Standard_Integer useflag, const Standard_Integer hierarchy);
 		%feature("autodoc", "1");
-		void SetLabel(const Handle_TCollection_HAsciiString &label, const Standard_Integer sub=-0x000000001);
+		void SetLabel(const Handle_TCollection_HAsciiString &label, const Standard_Integer sub=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void InitMisc(const Handle_IGESData_IGESEntity &str, const Handle_IGESData_LabelDisplayEntity &lab, const Standard_Integer weightnum);
 		%feature("autodoc", "1");
@@ -1601,7 +1601,7 @@ class IGESData_IGESDumper {
 		%feature("autodoc", "1");
 		void PrintShort(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S) const;
 		%feature("autodoc", "1");
-		void Dump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own, const Standard_Integer attached=-0x000000001) const;
+		void Dump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own, const Standard_Integer attached=-0x00000000000000001) const;
 		%feature("autodoc", "1");
 		void OwnDump(const Handle_IGESData_IGESEntity &ent, const Handle_Message_Messenger &S, const Standard_Integer own) const;
 
@@ -2918,7 +2918,7 @@ class IGESData_DirChecker {
 		%feature("autodoc", "1");
 		void Color(const IGESData_DefType crit);
 		%feature("autodoc", "1");
-		void GraphicsIgnored(const Standard_Integer hierarchy=-0x000000001);
+		void GraphicsIgnored(const Standard_Integer hierarchy=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void BlankStatusIgnored();
 		%feature("autodoc", "1");
@@ -3068,7 +3068,7 @@ class IGESData_GlobalSection {
 		%feature("autodoc", "1");
 		Standard_Boolean HasApplicationProtocol() const;
 		%feature("autodoc", "1");
-		static		Handle_TCollection_HAsciiString NewDateString(const Standard_Integer year, const Standard_Integer month, const Standard_Integer day, const Standard_Integer hour, const Standard_Integer minut, const Standard_Integer second, const Standard_Integer mode=-0x000000001);
+		static		Handle_TCollection_HAsciiString NewDateString(const Standard_Integer year, const Standard_Integer month, const Standard_Integer day, const Standard_Integer hour, const Standard_Integer minut, const Standard_Integer second, const Standard_Integer mode=-0x00000000000000001);
 		%feature("autodoc", "1");
 		static		Handle_TCollection_HAsciiString NewDateString(const Handle_TCollection_HAsciiString &date, const Standard_Integer mode=1);
 		%feature("autodoc", "1");

@@ -894,7 +894,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 		%feature("autodoc", "1");
 		void UnsetMaterial();
 		%feature("autodoc", "1");
-		void SetTransparency(const Standard_Real aValue=5.99999999999999977795539507496869191527366638184e-1);
+		void SetTransparency(const Standard_Real aValue=5.9999999999999997779553950749686919152736663818359375e-1);
 		%feature("autodoc", "1");
 		Standard_Real Transparency() const;
 		%feature("autodoc", "1");

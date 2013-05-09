@@ -3148,7 +3148,7 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		Interface_MSG(const char * key, const Standard_Integer i1, const Standard_Integer i2);
 		%feature("autodoc", "1");
-		Interface_MSG(const char * key, const Standard_Real r1, const Standard_Integer intervals=-0x000000001);
+		Interface_MSG(const char * key, const Standard_Real r1, const Standard_Integer intervals=-0x00000000000000001);
 		%feature("autodoc", "1");
 		Interface_MSG(const char * key, const char * str);
 		%feature("autodoc", "1");
@@ -3202,7 +3202,7 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		static		char * Blanks(const Standard_Integer count);
 		%feature("autodoc", "1");
-		static		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x000000001);
+		static		void Print(Standard_OStream & S, const char * val, const Standard_Integer max, const Standard_Integer just=-0x00000000000000001);
 
 };
 %feature("shadow") Interface_MSG::~Interface_MSG %{
@@ -3627,7 +3627,7 @@ class Interface_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Print(const Handle_Message_Messenger &S, const Standard_Integer level, const Standard_Integer final=1) const;
 		%feature("autodoc", "1");
-		void Trace(const Standard_Integer level=-0x000000001, const Standard_Integer final=1) const;
+		void Trace(const Standard_Integer level=-0x00000000000000001, const Standard_Integer final=1) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

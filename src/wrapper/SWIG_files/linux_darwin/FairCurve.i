@@ -115,9 +115,9 @@ def __del__(self):
 class FairCurve_Newton : public math_NewtonMinimum {
 	public:
 		%feature("autodoc", "1");
-		FairCurve_Newton(math_MultipleVarFunctionWithHessian & F, const math_Vector &StartingPoint, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real CriteriumTolerance=1.0000000000000000208166817117216851329430937767e-2, const Standard_Integer NbIterations=40, const Standard_Real Convexity=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean WithSingularity=1);
+		FairCurve_Newton(math_MultipleVarFunctionWithHessian & F, const math_Vector &StartingPoint, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723690807819366e-8, const Standard_Real CriteriumTolerance=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Integer NbIterations=40, const Standard_Real Convexity=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Boolean WithSingularity=1);
 		%feature("autodoc", "1");
-		FairCurve_Newton(math_MultipleVarFunctionWithHessian & F, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Real Tolerance=9.99999999999999954748111825886258685613938723691e-8, const Standard_Integer NbIterations=40, const Standard_Real Convexity=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean WithSingularity=1);
+		FairCurve_Newton(math_MultipleVarFunctionWithHessian & F, const Standard_Real SpatialTolerance=9.99999999999999954748111825886258685613938723690807819366e-8, const Standard_Real Tolerance=9.99999999999999954748111825886258685613938723690807819366e-8, const Standard_Integer NbIterations=40, const Standard_Real Convexity=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Boolean WithSingularity=1);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsConverged() const;
 
@@ -167,7 +167,7 @@ class FairCurve_Batten {
 		void SetSlidingFactor(const Standard_Real SlidingFactor);
 		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
 
-		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
+		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.00000000000000002081668171172168513294309377670288085938e-3);
 		%feature("autodoc", "1");
 		Standard_Real SlidingOfReference() const;
 		%feature("autodoc", "1");
@@ -353,7 +353,7 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		void SetPhysicalRatio(const Standard_Real Ratio);
 		%feature("autodoc","Compute(Standard_Integer NbIterations=50, Standard_Real Tolerance=1.000000) -> FairCurve_AnalysisCode");
 
-		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.0000000000000000208166817117216851329430937767e-3);
+		virtual		Standard_Boolean Compute(FairCurve_AnalysisCode &OutValue, const Standard_Integer NbIterations=50, const Standard_Real Tolerance=1.00000000000000002081668171172168513294309377670288085938e-3);
 		%feature("autodoc", "1");
 		Standard_Real GetCurvature1() const;
 		%feature("autodoc", "1");

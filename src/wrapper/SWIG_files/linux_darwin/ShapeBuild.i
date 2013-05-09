@@ -226,9 +226,9 @@ class ShapeBuild_Vertex {
 		%feature("autodoc", "1");
 		ShapeBuild_Vertex();
 		%feature("autodoc", "1");
-		TopoDS_Vertex CombineVertex(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
+		TopoDS_Vertex CombineVertex(const TopoDS_Vertex V1, const TopoDS_Vertex V2, const Standard_Real tolFactor=1.0000999999999999889865875957184471189975738525390625e+0) const;
 		%feature("autodoc", "1");
-		TopoDS_Vertex CombineVertex(const gp_Pnt pnt1, const gp_Pnt pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.00009999999999998898658759571844711899757385254e+0) const;
+		TopoDS_Vertex CombineVertex(const gp_Pnt pnt1, const gp_Pnt pnt2, const Standard_Real tol1, const Standard_Real tol2, const Standard_Real tolFactor=1.0000999999999999889865875957184471189975738525390625e+0) const;
 
 };
 %feature("shadow") ShapeBuild_Vertex::~ShapeBuild_Vertex %{

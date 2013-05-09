@@ -266,9 +266,9 @@ def __del__(self):
 class BRepBuilderAPI_Sewing : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		BRepBuilderAPI_Sewing(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
+		BRepBuilderAPI_Sewing(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
 		%feature("autodoc", "1");
-		void Init(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723691e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
+		void Init(const Standard_Real tolerance=9.99999999999999954748111825886258685613938723690807819366e-7, const Standard_Boolean option1=1, const Standard_Boolean option2=1, const Standard_Boolean option3=1, const Standard_Boolean option4=0);
 		%feature("autodoc", "1");
 		void Load(const TopoDS_Shape shape);
 		%feature("autodoc", "1");
@@ -625,9 +625,9 @@ class BRepBuilderAPI_FindPlane {
 		%feature("autodoc", "1");
 		BRepBuilderAPI_FindPlane();
 		%feature("autodoc", "1");
-		BRepBuilderAPI_FindPlane(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001);
+		BRepBuilderAPI_FindPlane(const TopoDS_Shape S, const Standard_Real Tol=-0x00000000000000001);
 		%feature("autodoc", "1");
-		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x000000001);
+		void Init(const TopoDS_Shape S, const Standard_Real Tol=-0x00000000000000001);
 		%feature("autodoc", "1");
 		Standard_Boolean Found() const;
 		%feature("autodoc", "1");

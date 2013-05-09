@@ -1095,9 +1095,9 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Standard_Boolean IsActivePlane(const Handle_V3d_Plane &aPlane) const;
 		%feature("autodoc", "1");
-		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.00000000000000044408920985006261616945266723633e-1, const Standard_Real AxisDiametr=5.00000000000000027755575615628913510590791702271e-2, const Standard_Integer NbFacettes=12);
+		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
 		%feature("autodoc", "1");
-		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755341e-2, const V3d_TypeOfVisualization AMode=V3d_WIREFRAME);
+		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const V3d_TypeOfVisualization AMode=V3d_WIREFRAME);
 		%feature("autodoc", "1");
 		void TriedronErase();
 		%feature("autodoc", "1");
@@ -1187,11 +1187,11 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void SetAxialScale(const Standard_Real Sx, const Standard_Real Sy, const Standard_Real Sz);
 		%feature("autodoc", "1");
-		void FitAll(const Quantity_Coefficient Coef=1.0000000000000000208166817117216851329430937767e-2, const Standard_Boolean FitZ=0, const Standard_Boolean update=1);
+		void FitAll(const Quantity_Coefficient Coef=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Boolean FitZ=0, const Standard_Boolean update=1);
 		%feature("autodoc", "1");
 		void ZFitAll(const Quantity_Coefficient Coef=1.0e+0);
 		%feature("autodoc", "1");
-		void DepthFitAll(const Quantity_Coefficient Aspect=1.0000000000000000208166817117216851329430937767e-2, const Quantity_Coefficient Margin=1.0000000000000000208166817117216851329430937767e-2);
+		void DepthFitAll(const Quantity_Coefficient Aspect=1.00000000000000002081668171172168513294309377670288085938e-2, const Quantity_Coefficient Margin=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void FitAll(const V3d_Coordinate Umin, const V3d_Coordinate Vmin, const V3d_Coordinate Umax, const V3d_Coordinate Vmax);
 		%feature("autodoc", "1");
@@ -1560,9 +1560,9 @@ def __del__(self):
 class V3d_SpotLight : public V3d_PositionLight {
 	public:
 		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, const V3d_TypeOfOrientation Direction=V3d_XnegYnegZpos, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.2359900000000003661426717371796257793903350830078125e-1);
 		%feature("autodoc", "1");
-		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.23599000000000036614267173717962577939033508301e-1);
+		V3d_SpotLight(const Handle_V3d_Viewer &VM, const V3d_Coordinate Xt, const V3d_Coordinate Yt, const V3d_Coordinate Zt, const V3d_Coordinate Xp, const V3d_Coordinate Yp, const V3d_Coordinate Zp, const Quantity_NameOfColor Color=Quantity_NOC_WHITE, const Quantity_Coefficient Attenuation1=1.0e+0, const Quantity_Coefficient Attenuation2=0.0, const Quantity_Coefficient Concentration=1.0e+0, const Quantity_PlaneAngle Angle=5.2359900000000003661426717371796257793903350830078125e-1);
 		%feature("autodoc", "1");
 		virtual		void SetPosition(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z);
 		%feature("autodoc", "1");

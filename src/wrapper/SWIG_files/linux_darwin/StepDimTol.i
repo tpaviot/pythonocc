@@ -628,44 +628,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Handle_StepDimTol_StraightnessTolerance;
-class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
-	public:
-		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance();
-		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance(const Handle_StepDimTol_StraightnessTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance(const StepDimTol_StraightnessTolerance *anItem);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance & operator=(const Handle_StepDimTol_StraightnessTolerance &aHandle);
-		%feature("autodoc", "1");
-		Handle_StepDimTol_StraightnessTolerance & operator=(const StepDimTol_StraightnessTolerance *anItem);
-		%feature("autodoc", "1");
-		static		Handle_StepDimTol_StraightnessTolerance DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_StepDimTol_StraightnessTolerance {
-	StepDimTol_StraightnessTolerance* GetObject() {
-	return (StepDimTol_StraightnessTolerance*)$self->Access();
-	}
-};
-%feature("shadow") Handle_StepDimTol_StraightnessTolerance::~Handle_StepDimTol_StraightnessTolerance %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_StepDimTol_StraightnessTolerance {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Handle_StepDimTol_FlatnessTolerance;
 class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -698,6 +660,44 @@ def __del__(self):
 %}
 
 %extend Handle_StepDimTol_FlatnessTolerance {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor Handle_StepDimTol_StraightnessTolerance;
+class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
+	public:
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance();
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance(const Handle_StepDimTol_StraightnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance(const StepDimTol_StraightnessTolerance *anItem);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance & operator=(const Handle_StepDimTol_StraightnessTolerance &aHandle);
+		%feature("autodoc", "1");
+		Handle_StepDimTol_StraightnessTolerance & operator=(const StepDimTol_StraightnessTolerance *anItem);
+		%feature("autodoc", "1");
+		static		Handle_StepDimTol_StraightnessTolerance DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_StepDimTol_StraightnessTolerance {
+	StepDimTol_StraightnessTolerance* GetObject() {
+	return (StepDimTol_StraightnessTolerance*)$self->Access();
+	}
+};
+%feature("shadow") Handle_StepDimTol_StraightnessTolerance::~Handle_StepDimTol_StraightnessTolerance %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_StepDimTol_StraightnessTolerance {
 	void _kill_pointed() {
 		delete $self;
 	}

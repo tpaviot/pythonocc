@@ -660,11 +660,11 @@ class StdPrs_DeflectionCurve : public Prs3d_Root {
 		%feature("autodoc", "1");
 		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Handle_Prs3d_Drawer &aDrawer, const Standard_Boolean drawCurve=1);
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Standard_Real aLimit, const Standard_Real anAngle=2.00000000000000011102230246251565404236316680908e-1, const Standard_Boolean drawCurve=1);
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Standard_Real aLimit, const Standard_Real anAngle=2.00000000000000011102230246251565404236316680908203125e-1, const Standard_Boolean drawCurve=1);
 		%feature("autodoc", "1");
 		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real aDeflection, const Handle_Prs3d_Drawer &aDrawer, TColgp_SequenceOfPnt & Points, const Standard_Boolean drawCurve=1);
 		%feature("autodoc", "1");
-		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection, TColgp_SequenceOfPnt & Points, const Standard_Real anAngle=2.00000000000000011102230246251565404236316680908e-1, const Standard_Boolean drawCurve=1);
+		static		void Add(const Handle_Prs3d_Presentation &aPresentation, Adaptor3d_Curve & aCurve, const Standard_Real U1, const Standard_Real U2, const Standard_Real aDeflection, TColgp_SequenceOfPnt & Points, const Standard_Real anAngle=2.00000000000000011102230246251565404236316680908203125e-1, const Standard_Boolean drawCurve=1);
 
 };
 %feature("shadow") StdPrs_DeflectionCurve::~StdPrs_DeflectionCurve %{

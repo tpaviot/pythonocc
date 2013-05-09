@@ -27,7 +27,7 @@ $HeaderURL$
 %pythoncode {
 #importing required modules
 import GarbageCollector
-import Standard
 import TDF
+import Standard
 import BinMDF
 };

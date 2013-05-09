@@ -632,9 +632,9 @@ def __del__(self):
 class GeomPlate_PointConstraint : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const gp_Pnt Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		GeomPlate_PointConstraint(const gp_Pnt Pt, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
-		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		GeomPlate_PointConstraint(const Standard_Real U, const Standard_Real V, const Handle_Geom_Surface &Surf, const Standard_Integer Order, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1);
 		%feature("autodoc", "1");
 		void SetOrder(const Standard_Integer Order);
 		%feature("autodoc", "1");
@@ -701,9 +701,9 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 		%feature("autodoc", "1");
 		GeomPlate_CurveConstraint();
 		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1);
+		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurveOnSurface &Boundary, const Standard_Integer Order, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1);
 		%feature("autodoc", "1");
-		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845e-4);
+		GeomPlate_CurveConstraint(const Handle_Adaptor3d_HCurve &Boundary, const Standard_Integer Tang, const Standard_Integer NPt=10, const Standard_Real TolDist=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		void SetOrder(const Standard_Integer Order);
 		%feature("autodoc", "1");
@@ -1114,9 +1114,9 @@ def __del__(self):
 class GeomPlate_MakeApprox {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
+		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const AdvApp2Var_Criterion &PlateCrit, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.100000000000000088817841970012523233890533447265625e+0);
 		%feature("autodoc", "1");
-		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.10000000000000008881784197001252323389053344727e+0);
+		GeomPlate_MakeApprox(const Handle_GeomPlate_Surface &SurfPlate, const Standard_Real Tol3d, const Standard_Integer Nbmax, const Standard_Integer dgmax, const Standard_Real dmax, const Standard_Integer CritOrder=0, const GeomAbs_Shape Continuity=GeomAbs_C1, const Standard_Real EnlargeCoeff=1.100000000000000088817841970012523233890533447265625e+0);
 		%feature("autodoc", "1");
 		Handle_Geom_BSplineSurface Surface() const;
 		%feature("autodoc", "1");
@@ -1206,15 +1206,52 @@ def __del__(self):
 };
 
 
+%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
+class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
+	public:
+		%feature("autodoc", "1");
+		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
+		%feature("autodoc", "1");
+		GeomPlate_Aij & Value() const;
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
+	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
+	}
+};
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend GeomPlate_SequenceNodeOfSequenceOfAij {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor GeomPlate_BuildPlateSurface;
 class GeomPlate_BuildPlateSurface {
 	public:
 		%feature("autodoc", "1");
-		GeomPlate_BuildPlateSurface(const Handle_TColStd_HArray1OfInteger &NPoints, const Handle_GeomPlate_HArray1OfHCurveOnSurface &TabCurve, const Handle_TColStd_HArray1OfInteger &Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
+		GeomPlate_BuildPlateSurface(const Handle_TColStd_HArray1OfInteger &NPoints, const Handle_GeomPlate_HArray1OfHCurveOnSurface &TabCurve, const Handle_TColStd_HArray1OfInteger &Tang, const Standard_Integer Degree, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
-		GeomPlate_BuildPlateSurface(const Handle_Geom_Surface &Surf, const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
+		GeomPlate_BuildPlateSurface(const Handle_Geom_Surface &Surf, const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
-		GeomPlate_BuildPlateSurface(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382564e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845e-4, const Standard_Real TolAng=1.0000000000000000208166817117216851329430937767e-2, const Standard_Real TolCurv=1.00000000000000005551115123125782702118158340454e-1, const Standard_Boolean Anisotropie=0);
+		GeomPlate_BuildPlateSurface(const Standard_Integer Degree=3, const Standard_Integer NbPtsOnCur=10, const Standard_Integer NbIter=3, const Standard_Real Tol2d=1.00000000000000008180305391403130954586231382563710212708e-5, const Standard_Real Tol3d=1.00000000000000004792173602385929598312941379845142364502e-4, const Standard_Real TolAng=1.00000000000000002081668171172168513294309377670288085938e-2, const Standard_Real TolCurv=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Boolean Anisotropie=0);
 		%feature("autodoc", "1");
 		void Init();
 		%feature("autodoc", "1");
@@ -1363,43 +1400,6 @@ def __del__(self):
 %}
 
 %extend GeomPlate_PlateG1Criterion {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
-class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
-	public:
-		%feature("autodoc", "1");
-		GeomPlate_SequenceNodeOfSequenceOfAij(const GeomPlate_Aij &I, const TCollection_SeqNodePtr &n, const TCollection_SeqNodePtr &p);
-		%feature("autodoc", "1");
-		GeomPlate_Aij & Value() const;
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	Handle_GeomPlate_SequenceNodeOfSequenceOfAij GetHandle() {
-	return *(Handle_GeomPlate_SequenceNodeOfSequenceOfAij*) &$self;
-	}
-};
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") GeomPlate_SequenceNodeOfSequenceOfAij::~GeomPlate_SequenceNodeOfSequenceOfAij %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend GeomPlate_SequenceNodeOfSequenceOfAij {
 	void _kill_pointed() {
 		delete $self;
 	}

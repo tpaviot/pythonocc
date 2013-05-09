@@ -2660,7 +2660,7 @@ def __del__(self):
 class MeshVS_VectorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_VectorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const Standard_Real MaxLength, const Quantity_Color &VectorColor, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_VectorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Vector), const Standard_Boolean IsSimplePrs=0);
+		MeshVS_VectorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const Standard_Real MaxLength, const Quantity_Color &VectorColor, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_VectorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x00000000000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Vector), const Standard_Boolean IsSimplePrs=0);
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer theDisplayMode) const;
 		%feature("autodoc", "1");
@@ -2939,7 +2939,7 @@ def __del__(self):
 class MeshVS_NodalColorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_NodalColorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_NodalColorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_NodalColor));
+		MeshVS_NodalColorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_NodalColorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x00000000000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_NodalColor));
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer DisplayMode) const;
 		%feature("autodoc", "1");
@@ -3229,7 +3229,7 @@ def __del__(self):
 class MeshVS_TextPrsBuilder : public MeshVS_PrsBuilder {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_TextPrsBuilder(const Handle_MeshVS_Mesh &Parent, const Standard_Real Height, const Quantity_Color &Color, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_TextDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Text));
+		MeshVS_TextPrsBuilder(const Handle_MeshVS_Mesh &Parent, const Standard_Real Height, const Quantity_Color &Color, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_TextDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x00000000000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Text));
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer theDisplayMode) const;
 		%feature("autodoc", "1");
@@ -3790,7 +3790,7 @@ def __del__(self):
 class MeshVS_ElementalColorPrsBuilder : public MeshVS_PrsBuilder {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_ElementalColorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_ElementalColorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_ElemColor));
+		MeshVS_ElementalColorPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_ElementalColorDataPrs), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x00000000000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_ElemColor));
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer DisplayMode) const;
 		%feature("autodoc", "1");
@@ -4272,7 +4272,7 @@ def __del__(self):
 class MeshVS_MeshPrsBuilder : public MeshVS_PrsBuilder {
 	public:
 		%feature("autodoc", "1");
-		MeshVS_MeshPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_Shrink), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Mesh));
+		MeshVS_MeshPrsBuilder(const Handle_MeshVS_Mesh &Parent, const MeshVS_DisplayModeFlags &Flags=MeshVS_DisplayModeFlags const &(::MeshVS_DMF_Shrink), const Handle_MeshVS_DataSource &DS=0, const Standard_Integer Id=-0x00000000000000001, const MeshVS_BuilderPriority &Priority=MeshVS_BuilderPriority const &(::MeshVS_BP_Mesh));
 		%feature("autodoc", "1");
 		virtual		void Build(const Handle_Prs3d_Presentation &Prs, const TColStd_PackedMapOfInteger &IDs, TColStd_PackedMapOfInteger & IDsToExclude, const Standard_Boolean IsElement, const Standard_Integer DisplayMode) const;
 		%feature("autodoc", "1");

@@ -41,6 +41,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Expr_Different::DownCast;
 %rename(DownCast) Handle_Expr_BinaryExpression::DownCast;
 %rename(DownCast) Handle_Expr_Division::DownCast;
+%rename(DownCast) Handle_Expr_Exponentiate::DownCast;
 %rename(DownCast) Handle_Expr_ArgSinh::DownCast;
 %rename(DownCast) Handle_Expr_PolyExpression::DownCast;
 %rename(DownCast) Handle_Expr_Exponential::DownCast;
@@ -68,7 +69,6 @@ $HeaderURL$
 %rename(DownCast) Handle_Expr_GreaterThan::DownCast;
 %rename(DownCast) Handle_Expr_Cosh::DownCast;
 %rename(DownCast) Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown::DownCast;
-%rename(DownCast) Handle_Expr_Exponentiate::DownCast;
 %rename(DownCast) Handle_Expr_GeneralFunction::DownCast;
 %rename(DownCast) Handle_Expr_NamedFunction::DownCast;
 %rename(DownCast) Handle_Expr_SystemRelation::DownCast;

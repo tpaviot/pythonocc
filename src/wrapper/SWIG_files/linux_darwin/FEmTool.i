@@ -888,7 +888,7 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Prepare();
 		%feature("autodoc", "1");
-		virtual		void Solve(const math_Vector &B, const math_Vector &Init, math_Vector & X, math_Vector & Residual, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408929e-8, const Standard_Integer NbIterations=50) const;
+		virtual		void Solve(const math_Vector &B, const math_Vector &Init, math_Vector & X, math_Vector & Residual, const Standard_Real Tolerance=1.00000000000000002092256083012847267532663408928783610463e-8, const Standard_Integer NbIterations=50) const;
 		%feature("autodoc", "1");
 		virtual		void Multiplied(const math_Vector &X, math_Vector & MX) const;
 		%feature("autodoc", "1");

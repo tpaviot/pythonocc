@@ -382,7 +382,7 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetBoundingBox(const Standard_Integer aMinX=0, const Standard_Integer aMinY=0, const Standard_Integer aMaxX=1000, const Standard_Integer aMaxY=1000);
 		%feature("autodoc", "1");
-		void SetFontMatrix(const Standard_Real M1=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M2=0.0, const Standard_Real M3=0.0, const Standard_Real M4=1.0000000000000000208166817117216851329430937767e-3, const Standard_Real M5=0.0, const Standard_Real M6=0.0);
+		void SetFontMatrix(const Standard_Real M1=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real M2=0.0, const Standard_Real M3=0.0, const Standard_Real M4=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Real M5=0.0, const Standard_Real M6=0.0);
 		%feature("autodoc", "1");
 		void SetPaintType(const Standard_Integer aValue=0);
 		%feature("autodoc", "1");
@@ -392,7 +392,7 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ComputeBoundingBox();
 		%feature("autodoc", "1");
-		void SetFontAttribs(const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aPrecision=2.00000000000000004163336342344337026588618755341e-2, const Standard_Boolean aCapsHeight=0);
+		void SetFontAttribs(const Quantity_Length aWidth, const Quantity_Length aHeight, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aPrecision=2.00000000000000004163336342344337026588618755340576171875e-2, const Standard_Boolean aCapsHeight=0);
 		%feature("autodoc", "1");
 		void DrawText(const Handle_MFT_TextManager &aTextManager, const char * aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
 		%feature("autodoc", "1");

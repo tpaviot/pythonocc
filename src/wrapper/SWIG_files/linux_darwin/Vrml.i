@@ -480,7 +480,7 @@ def __del__(self):
 class Vrml_Switch {
 	public:
 		%feature("autodoc", "1");
-		Vrml_Switch(const Standard_Integer aWhichChild=-0x000000001);
+		Vrml_Switch(const Standard_Integer aWhichChild=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void SetWhichChild(const Standard_Integer aWhichChild);
 		%feature("autodoc", "1");
@@ -2087,7 +2087,7 @@ def __del__(self):
 class Vrml_PointSet {
 	public:
 		%feature("autodoc", "1");
-		Vrml_PointSet(const Standard_Integer aStartIndex=0, const Standard_Integer aNumPoints=-0x000000001);
+		Vrml_PointSet(const Standard_Integer aStartIndex=0, const Standard_Integer aNumPoints=-0x00000000000000001);
 		%feature("autodoc", "1");
 		void SetStartIndex(const Standard_Integer aStartIndex);
 		%feature("autodoc", "1");

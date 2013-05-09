@@ -820,6 +820,44 @@ def __del__(self):
 };
 
 
+%nodefaultctor Handle_Dynamic_ObjectParameter;
+class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
+	public:
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter();
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter(const Handle_Dynamic_ObjectParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *anItem);
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter & operator=(const Handle_Dynamic_ObjectParameter &aHandle);
+		%feature("autodoc", "1");
+		Handle_Dynamic_ObjectParameter & operator=(const Dynamic_ObjectParameter *anItem);
+		%feature("autodoc", "1");
+		static		Handle_Dynamic_ObjectParameter DownCast(const Handle_Standard_Transient &AnObject);
+
+};
+%extend Handle_Dynamic_ObjectParameter {
+	Dynamic_ObjectParameter* GetObject() {
+	return (Dynamic_ObjectParameter*)$self->Access();
+	}
+};
+%feature("shadow") Handle_Dynamic_ObjectParameter::~Handle_Dynamic_ObjectParameter %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Handle_Dynamic_ObjectParameter {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Handle_Dynamic_VariableGroup;
 class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	public:
@@ -1308,44 +1346,6 @@ def __del__(self):
 %}
 
 %extend Handle_Dynamic_CompositMethod {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor Handle_Dynamic_ObjectParameter;
-class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
-	public:
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter();
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter(const Handle_Dynamic_ObjectParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter(const Dynamic_ObjectParameter *anItem);
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter & operator=(const Handle_Dynamic_ObjectParameter &aHandle);
-		%feature("autodoc", "1");
-		Handle_Dynamic_ObjectParameter & operator=(const Dynamic_ObjectParameter *anItem);
-		%feature("autodoc", "1");
-		static		Handle_Dynamic_ObjectParameter DownCast(const Handle_Standard_Transient &AnObject);
-
-};
-%extend Handle_Dynamic_ObjectParameter {
-	Dynamic_ObjectParameter* GetObject() {
-	return (Dynamic_ObjectParameter*)$self->Access();
-	}
-};
-%feature("shadow") Handle_Dynamic_ObjectParameter::~Handle_Dynamic_ObjectParameter %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Handle_Dynamic_ObjectParameter {
 	void _kill_pointed() {
 		delete $self;
 	}
@@ -2530,57 +2530,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor Dynamic_Variable;
-class Dynamic_Variable : public MMgt_TShared {
-	public:
-		%feature("autodoc", "1");
-		Dynamic_Variable();
-		%feature("autodoc", "1");
-		void Parameter(const Handle_Dynamic_Parameter &aparameter);
-		%feature("autodoc", "1");
-		Handle_Dynamic_Parameter Parameter() const;
-		%feature("autodoc", "1");
-		void Mode(const Dynamic_ModeEnum amode);
-		%feature("autodoc", "1");
-		Dynamic_ModeEnum Mode() const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend Dynamic_Variable {
-	Handle_Dynamic_Variable GetHandle() {
-	return *(Handle_Dynamic_Variable*) &$self;
-	}
-};
-%extend Dynamic_Variable {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") Dynamic_Variable::~Dynamic_Variable %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend Dynamic_Variable {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor Dynamic_DynamicInstance;
 class Dynamic_DynamicInstance : public MMgt_TShared {
 	public:
@@ -2777,13 +2726,62 @@ def __del__(self):
 };
 
 
+%nodefaultctor Dynamic_Variable;
+class Dynamic_Variable : public MMgt_TShared {
+	public:
+		%feature("autodoc", "1");
+		Dynamic_Variable();
+		%feature("autodoc", "1");
+		void Parameter(const Handle_Dynamic_Parameter &aparameter);
+		%feature("autodoc", "1");
+		Handle_Dynamic_Parameter Parameter() const;
+		%feature("autodoc", "1");
+		void Mode(const Dynamic_ModeEnum amode);
+		%feature("autodoc", "1");
+		Dynamic_ModeEnum Mode() const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend Dynamic_Variable {
+	Handle_Dynamic_Variable GetHandle() {
+	return *(Handle_Dynamic_Variable*) &$self;
+	}
+};
+%extend Dynamic_Variable {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") Dynamic_Variable::~Dynamic_Variable %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend Dynamic_Variable {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor Dynamic_AbstractVariableInstance;
 class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 	public:
 		%feature("autodoc", "1");
 		virtual		void Variable(const Handle_Dynamic_Variable &avariable);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
 
 };
 %extend Dynamic_AbstractVariableInstance {

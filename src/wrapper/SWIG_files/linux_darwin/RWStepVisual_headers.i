@@ -356,7 +356,6 @@ $HeaderURL$
 #include<Handle_StepVisual_CameraModelD2.hxx>
 #include<Handle_StepVisual_SurfaceStyleSilhouette.hxx>
 #include<Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation.hxx>
-#include<Handle_StepVisual_PresentedItemRepresentation.hxx>
 #include<Handle_StepVisual_SurfaceStyleUsage.hxx>
 #include<Handle_StepVisual_PreDefinedColour.hxx>
 #include<Handle_StepVisual_PreDefinedCurveFont.hxx>
@@ -387,6 +386,7 @@ $HeaderURL$
 #include<Handle_StepVisual_TemplateInstance.hxx>
 #include<Handle_StepVisual_TextLiteral.hxx>
 #include<Handle_StepVisual_SurfaceStyleFillArea.hxx>
+#include<Handle_StepVisual_PresentedItemRepresentation.hxx>
 #include<Handle_StepVisual_ViewVolume.hxx>
 #include<Handle_StepVisual_DraughtingPreDefinedCurveFont.hxx>
 #include<Handle_StepVisual_CurveStyle.hxx>

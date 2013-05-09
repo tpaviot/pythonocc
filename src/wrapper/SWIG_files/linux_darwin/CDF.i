@@ -759,37 +759,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor CDF_DirectoryIterator;
-class CDF_DirectoryIterator {
-	public:
-		%feature("autodoc", "1");
-		CDF_DirectoryIterator();
-		%feature("autodoc", "1");
-		CDF_DirectoryIterator(const Handle_CDF_Directory &aDirectory);
-		%feature("autodoc", "1");
-		Standard_Boolean MoreDocument();
-		%feature("autodoc", "1");
-		void NextDocument();
-		%feature("autodoc", "1");
-		Handle_CDM_Document Document();
-
-};
-%feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend CDF_DirectoryIterator {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor CDF_Store;
 class CDF_Store {
 	public:
@@ -875,6 +844,37 @@ def __del__(self):
 %}
 
 %extend CDF_Store {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor CDF_DirectoryIterator;
+class CDF_DirectoryIterator {
+	public:
+		%feature("autodoc", "1");
+		CDF_DirectoryIterator();
+		%feature("autodoc", "1");
+		CDF_DirectoryIterator(const Handle_CDF_Directory &aDirectory);
+		%feature("autodoc", "1");
+		Standard_Boolean MoreDocument();
+		%feature("autodoc", "1");
+		void NextDocument();
+		%feature("autodoc", "1");
+		Handle_CDM_Document Document();
+
+};
+%feature("shadow") CDF_DirectoryIterator::~CDF_DirectoryIterator %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend CDF_DirectoryIterator {
 	void _kill_pointed() {
 		delete $self;
 	}

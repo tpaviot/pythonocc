@@ -111,9 +111,9 @@ class BRepGProp {
 		%feature("autodoc", "1");
 		static		Standard_Real VolumeProperties(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps, const Standard_Boolean OnlyClosed=0);
 		%feature("autodoc", "1");
-		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const Standard_Real Eps=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 		%feature("autodoc", "1");
-		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const gp_Pln thePln, const Standard_Real Eps=1.0000000000000000208166817117216851329430937767e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
+		static		Standard_Real VolumePropertiesGK(const TopoDS_Shape S, GProp_GProps & VProps, const gp_Pln thePln, const Standard_Real Eps=1.00000000000000002081668171172168513294309377670288085938e-3, const Standard_Boolean OnlyClosed=0, const Standard_Boolean IsUseSpan=0, const Standard_Boolean CGFlag=0, const Standard_Boolean IFlag=0);
 
 };
 %feature("shadow") BRepGProp::~BRepGProp %{

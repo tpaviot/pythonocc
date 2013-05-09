@@ -211,7 +211,7 @@ def __del__(self):
 class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_ChBuilder(const TopoDS_Shape S, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
+		ChFi3d_ChBuilder(const TopoDS_Shape S, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void Add(const TopoDS_Edge E);
 		%feature("autodoc", "1");
@@ -290,7 +290,7 @@ def __del__(self):
 class ChFi3d_FilBuilder : public ChFi3d_Builder {
 	public:
 		%feature("autodoc", "1");
-		ChFi3d_FilBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.0000000000000000208166817117216851329430937767e-2);
+		ChFi3d_FilBuilder(const TopoDS_Shape S, const ChFi3d_FilletShape FShape=ChFi3d_Rational, const Standard_Real Ta=1.00000000000000002081668171172168513294309377670288085938e-2);
 		%feature("autodoc", "1");
 		void SetFilletShape(const ChFi3d_FilletShape FShape);
 		%feature("autodoc", "1");

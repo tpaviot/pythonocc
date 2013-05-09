@@ -2492,15 +2492,15 @@ class Graphic2d_View : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Aspect_TypeOfDeflection TypeOfDeflection() const;
 		%feature("autodoc", "1");
-		void SetDeflection(const Quantity_Length aDeflection=1.0000000000000000208166817117216851329430937767e-3);
+		void SetDeflection(const Quantity_Length aDeflection=1.00000000000000002081668171172168513294309377670288085938e-3);
 		%feature("autodoc", "1");
 		Standard_Real Deflection() const;
 		%feature("autodoc", "1");
-		void SetDeflectionCoefficient(const Standard_Real aCoefficient=3.29999999999999998195887584984120621811598539352e-4);
+		void SetDeflectionCoefficient(const Standard_Real aCoefficient=3.29999999999999998195887584984120621811598539352416992188e-4);
 		%feature("autodoc", "1");
 		Standard_Real DeflectionCoefficient() const;
 		%feature("autodoc", "1");
-		void SetTextPrecision(const Standard_Real aPrecision=1.50000000000000003122502256758252769941464066505e-3);
+		void SetTextPrecision(const Standard_Real aPrecision=1.50000000000000003122502256758252769941464066505432128906e-3);
 		%feature("autodoc", "1");
 		Standard_Real TextPrecision() const;
 		%feature("autodoc","Convert(const aViewMapping, Standard_Real aDrawPositionX, Standard_Real aDrawPositionY, Standard_Real aXPosition, Standard_Real aYPosition, Standard_Real aScale) -> [Standard_Real, Standard_Real]");
@@ -2688,7 +2688,7 @@ def __del__(self):
 class Graphic2d_FramedText : public Graphic2d_Text {
 	public:
 		%feature("autodoc", "1");
-		Graphic2d_FramedText(const Handle_Graphic2d_GraphicObject &aGraphicObject, const TCollection_ExtendedString &aText, const Standard_Real X, const Standard_Real Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Quantity_Factor aScale=1.0e+0);
+		Graphic2d_FramedText(const Handle_Graphic2d_GraphicObject &aGraphicObject, const TCollection_ExtendedString &aText, const Standard_Real X, const Standard_Real Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.000000000000000055511151231257827021181583404541015625e-1, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Quantity_Factor aScale=1.0e+0);
 		%feature("autodoc", "1");
 		void SetFrameColorIndex(const Standard_Integer anIndex=0);
 		%feature("autodoc", "1");
@@ -3227,7 +3227,7 @@ def __del__(self):
 class Graphic2d_HidingText : public Graphic2d_Text {
 	public:
 		%feature("autodoc", "1");
-		Graphic2d_HidingText(const Handle_Graphic2d_GraphicObject &aGraphicObject, const TCollection_ExtendedString &aText, const Standard_Real X, const Standard_Real Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Quantity_Factor aScale=1.0e+0);
+		Graphic2d_HidingText(const Handle_Graphic2d_GraphicObject &aGraphicObject, const TCollection_ExtendedString &aText, const Standard_Real X, const Standard_Real Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.000000000000000055511151231257827021181583404541015625e-1, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Quantity_Factor aScale=1.0e+0);
 		%feature("autodoc", "1");
 		void SetFrameColorIndex(const Standard_Integer anIndex=0);
 		%feature("autodoc", "1");
@@ -3577,9 +3577,9 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 		%feature("autodoc", "1");
 		void DrawText(const TCollection_ExtendedString &aText, const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anAngle=0.0, const Standard_Real aDeltaX=0.0, const Standard_Real aDeltaY=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Graphic2d_TypeOfAlignment anAlignment=Graphic2d_TOA_LEFT);
 		%feature("autodoc", "1");
-		void DrawPolyText(const TCollection_ExtendedString &aText, const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real aDeltaX=0.0, const Standard_Real aDeltaY=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Graphic2d_TypeOfAlignment anAlignment=Graphic2d_TOA_LEFT);
+		void DrawPolyText(const TCollection_ExtendedString &aText, const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Real aDeltaX=0.0, const Standard_Real aDeltaY=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Graphic2d_TypeOfAlignment anAlignment=Graphic2d_TOA_LEFT);
 		%feature("autodoc", "1");
-		void DrawFramedText(const TCollection_ExtendedString &aText, const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.00000000000000005551115123125782702118158340454e-1, const Standard_Real aDeltaX=0.0, const Standard_Real aDeltaY=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Graphic2d_TypeOfAlignment anAlignment=Graphic2d_TOA_LEFT);
+		void DrawFramedText(const TCollection_ExtendedString &aText, const Quantity_Length X, const Quantity_Length Y, const Quantity_PlaneAngle anAngle=0.0, const Quantity_Ratio aMargin=1.000000000000000055511151231257827021181583404541015625e-1, const Standard_Real aDeltaX=0.0, const Standard_Real aDeltaY=0.0, const Aspect_TypeOfText aType=Aspect_TOT_SOLID, const Graphic2d_TypeOfAlignment anAlignment=Graphic2d_TOA_LEFT);
 		%feature("autodoc", "1");
 		void SetTextAttrib(const Standard_Integer ColorIndex, const Standard_Integer FontIndex, const Quantity_PlaneAngle aSlant=0.0, const Quantity_Factor aHScale=1.0e+0, const Quantity_Factor aWScale=1.0e+0, const Standard_Boolean isUnderlined=0, const Standard_Boolean isZoomable=1);
 		%feature("autodoc", "1");

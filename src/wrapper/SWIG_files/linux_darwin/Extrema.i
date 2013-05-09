@@ -1252,9 +1252,9 @@ def __del__(self):
 class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCFOfELCCOfLocateExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfELCCOfLocateExtCC(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCFOfELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfELCCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -1816,11 +1816,11 @@ class Extrema_ExtCC2d {
 		%feature("autodoc", "1");
 		Extrema_ExtCC2d();
 		%feature("autodoc", "1");
-		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor2d_Curve2d &C2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void Perform(const Adaptor2d_Curve2d &C1, const Standard_Real U1, const Standard_Real U2);
 		%feature("autodoc", "1");
@@ -1978,9 +1978,9 @@ def __del__(self):
 class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCLocFOfLocECC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
@@ -2774,11 +2774,11 @@ def __del__(self):
 class Extrema_ExtCC {
 	public:
 		%feature("autodoc", "1");
-		Extrema_ExtCC(const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtCC(const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.0000000000000000364321973154977415791655470656e-10, const Standard_Real TolC2=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real U1, const Standard_Real U2, const Standard_Real V1, const Standard_Real V2, const Standard_Real TolC1=1.00000000000000003643219731549774157916554706559963960899e-10, const Standard_Real TolC2=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -3096,11 +3096,11 @@ class Extrema_ExtPC {
 		%feature("autodoc", "1");
 		Extrema_ExtPC();
 		%feature("autodoc", "1");
-		Extrema_ExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void Perform(const gp_Pnt P);
 		%feature("autodoc", "1");
@@ -3774,9 +3774,9 @@ def __del__(self):
 class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCFOfECC2dOfExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfECC2dOfExtCC2d(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCFOfECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfECC2dOfExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
@@ -4165,9 +4165,9 @@ def __del__(self):
 class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfELCC2dOfLocateExtCC2d(const Adaptor2d_Curve2d &C1, const Adaptor2d_Curve2d &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor2d_Curve2d &C);
 		%feature("autodoc", "1");
@@ -4216,9 +4216,9 @@ def __del__(self):
 class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECCOfLocateExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCLocFOfLocECCOfLocateExtCC(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCLocFOfLocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCLocFOfLocECCOfLocateExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");
@@ -4489,11 +4489,11 @@ class Extrema_ExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_ExtPC2d();
 		%feature("autodoc", "1");
-		Extrema_ExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void Perform(const gp_Pnt2d P);
 		%feature("autodoc", "1");
@@ -5137,11 +5137,11 @@ class Extrema_ELPCOfLocateExtPC {
 		%feature("autodoc", "1");
 		Extrema_ELPCOfLocateExtPC();
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ELPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ELPCOfLocateExtPC(const gp_Pnt P, const Adaptor3d_Curve &C, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor3d_Curve &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void Perform(const gp_Pnt P);
 		%feature("autodoc", "1");
@@ -5435,11 +5435,11 @@ class Extrema_ELPCOfLocateExtPC2d {
 		%feature("autodoc", "1");
 		Extrema_ELPCOfLocateExtPC2d();
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ELPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_ELPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_ELPCOfLocateExtPC2d(const gp_Pnt2d P, const Adaptor2d_Curve2d &C, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.0000000000000000364321973154977415791655470656e-10);
+		void Initialize(const Adaptor2d_Curve2d &C, const Standard_Real Uinf, const Standard_Real Usup, const Standard_Real TolF=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void Perform(const gp_Pnt2d P);
 		%feature("autodoc", "1");
@@ -6157,9 +6157,9 @@ def __del__(self):
 class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 	public:
 		%feature("autodoc", "1");
-		Extrema_CCFOfECCOfExtCC(const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfECCOfExtCC(const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
-		Extrema_CCFOfECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.0000000000000000364321973154977415791655470656e-10);
+		Extrema_CCFOfECCOfExtCC(const Adaptor3d_Curve &C1, const Adaptor3d_Curve &C2, const Standard_Real thetol=1.00000000000000003643219731549774157916554706559963960899e-10);
 		%feature("autodoc", "1");
 		void SetCurve(const Standard_Integer theRank, const Adaptor3d_Curve &C);
 		%feature("autodoc", "1");

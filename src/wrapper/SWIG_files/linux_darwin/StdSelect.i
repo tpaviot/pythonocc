@@ -759,9 +759,9 @@ class StdSelect_BRepSelectionTool {
 		%feature("autodoc", "1");
 		StdSelect_BRepSelectionTool();
 		%feature("autodoc", "1");
-		static		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Real theDeflection, const Standard_Real theDeviationAngle, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Real theDeflection, const Standard_Real theDeviationAngle, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x00000000000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
-		static		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Real theDeflection, const Standard_Real theDeviationAngle, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
+		static		void Load(const Handle_SelectMgr_Selection &aSelection, const Handle_SelectMgr_SelectableObject &Origin, const TopoDS_Shape aShape, const TopAbs_ShapeEnum aType, const Standard_Real theDeflection, const Standard_Real theDeviationAngle, const Standard_Boolean AutoTriangulation=1, const Standard_Integer aPriority=-0x00000000000000001, const Standard_Integer NbPOnEdge=9, const Standard_Real MaximalParameter=500);
 		%feature("autodoc", "1");
 		static		Standard_Integer GetStandardPriority(const TopoDS_Shape aShap, const TopAbs_ShapeEnum aType);
 		%feature("autodoc", "1");
@@ -866,7 +866,7 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 		%feature("autodoc", "1");
 		virtual		void Convert(const gp_Pnt2d aPointIn, gp_Pnt2d & aPointOut) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const TCollection_ExtendedString &aText, const Standard_Real XPos, const Standard_Real YPos, gp_Pnt2d & MinPoint, gp_Pnt2d & MaxPoint, const Standard_Integer afont=-0x000000001) const;
+		virtual		void Convert(const TCollection_ExtendedString &aText, const Standard_Real XPos, const Standard_Real YPos, gp_Pnt2d & MinPoint, gp_Pnt2d & MaxPoint, const Standard_Integer afont=-0x00000000000000001) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -944,7 +944,7 @@ def __del__(self):
 class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 	public:
 		%feature("autodoc", "1");
-		StdSelect_SensitiveText2d(const Handle_SelectBasics_EntityOwner &anOwnerId, const TCollection_ExtendedString &aString, const Standard_Real XPox, const Standard_Real YPos, const Standard_Real Angle=0, const Standard_Integer aFontIndex=-0x000000001);
+		StdSelect_SensitiveText2d(const Handle_SelectBasics_EntityOwner &anOwnerId, const TCollection_ExtendedString &aString, const Standard_Real XPox, const Standard_Real YPos, const Standard_Real Angle=0, const Standard_Integer aFontIndex=-0x00000000000000001);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean NeedsConversion() const;
 		%feature("autodoc", "1");

@@ -4522,69 +4522,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TDataStd_Comment;
-class TDataStd_Comment : public TDF_Attribute {
-	public:
-		%feature("autodoc", "1");
-		static		const Standard_GUID & GetID();
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Comment Set(const TDF_Label &label);
-		%feature("autodoc", "1");
-		static		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
-		%feature("autodoc", "1");
-		TDataStd_Comment();
-		%feature("autodoc", "1");
-		void Set(const TCollection_ExtendedString &S);
-		%feature("autodoc", "1");
-		const TCollection_ExtendedString & Get() const;
-		%feature("autodoc", "1");
-		virtual		const Standard_GUID & ID() const;
-		%feature("autodoc", "1");
-		virtual		void Restore(const Handle_TDF_Attribute &with);
-		%feature("autodoc", "1");
-		virtual		Handle_TDF_Attribute NewEmpty() const;
-		%feature("autodoc", "1");
-		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
-		%feature("autodoc", "1");
-		%feature("autodoc", "1");
-		%extend{
-			std::string DumpToString() {
-			std::stringstream s;
-			self->Dump(s);
-			return s.str();}
-		};
-		%feature("autodoc", "1");
-		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
-		%feature("autodoc", "1");
-		virtual		const Handle_Standard_Type & DynamicType() const;
-
-};
-%extend TDataStd_Comment {
-	Handle_TDataStd_Comment GetHandle() {
-	return *(Handle_TDataStd_Comment*) &$self;
-	}
-};
-%extend TDataStd_Comment {
-	Standard_Integer __hash__() {
-	return HashCode((Standard_Address)$self,2147483647);
-	}
-};
-%feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TDataStd_Comment {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TDataStd_Name;
 class TDataStd_Name : public TDF_Attribute {
 	public:
@@ -4854,6 +4791,69 @@ def __del__(self):
 %}
 
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
+%nodefaultctor TDataStd_Comment;
+class TDataStd_Comment : public TDF_Attribute {
+	public:
+		%feature("autodoc", "1");
+		static		const Standard_GUID & GetID();
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Comment Set(const TDF_Label &label);
+		%feature("autodoc", "1");
+		static		Handle_TDataStd_Comment Set(const TDF_Label &label, const TCollection_ExtendedString &string);
+		%feature("autodoc", "1");
+		TDataStd_Comment();
+		%feature("autodoc", "1");
+		void Set(const TCollection_ExtendedString &S);
+		%feature("autodoc", "1");
+		const TCollection_ExtendedString & Get() const;
+		%feature("autodoc", "1");
+		virtual		const Standard_GUID & ID() const;
+		%feature("autodoc", "1");
+		virtual		void Restore(const Handle_TDF_Attribute &with);
+		%feature("autodoc", "1");
+		virtual		Handle_TDF_Attribute NewEmpty() const;
+		%feature("autodoc", "1");
+		virtual		void Paste(const Handle_TDF_Attribute &into, const Handle_TDF_RelocationTable &RT) const;
+		%feature("autodoc", "1");
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
+		%feature("autodoc", "1");
+		virtual		Standard_Boolean AfterRetrieval(const Standard_Boolean forceIt=0);
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend TDataStd_Comment {
+	Handle_TDataStd_Comment GetHandle() {
+	return *(Handle_TDataStd_Comment*) &$self;
+	}
+};
+%extend TDataStd_Comment {
+	Standard_Integer __hash__() {
+	return HashCode((Standard_Address)$self,2147483647);
+	}
+};
+%feature("shadow") TDataStd_Comment::~TDataStd_Comment %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TDataStd_Comment {
 	void _kill_pointed() {
 		delete $self;
 	}

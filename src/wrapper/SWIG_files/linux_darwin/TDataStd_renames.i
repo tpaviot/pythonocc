@@ -111,8 +111,6 @@ $HeaderURL$
 %rename(Set) TDataStd_Tick::Set;
 %rename(GetID) TDataStd_ReferenceArray::GetID;
 %rename(Set) TDataStd_ReferenceArray::Set;
-%rename(GetID) TDataStd_Comment::GetID;
-%rename(Set) TDataStd_Comment::Set;
 %rename(GetID) TDataStd_Name::GetID;
 %rename(Set) TDataStd_Name::Set;
 %rename(Find) TDataStd_Directory::Find;
@@ -122,6 +120,8 @@ $HeaderURL$
 %rename(GetID) TDataStd_Directory::GetID;
 %rename(GetID) TDataStd_RealList::GetID;
 %rename(Set) TDataStd_RealList::Set;
+%rename(GetID) TDataStd_Comment::GetID;
+%rename(Set) TDataStd_Comment::Set;
 %rename(GetID) TDataStd_Variable::GetID;
 %rename(Set) TDataStd_Variable::Set;
 %rename(GetID) TDataStd_Real::GetID;

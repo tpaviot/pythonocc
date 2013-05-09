@@ -3033,9 +3033,9 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		Standard_Boolean ComputedMode() const;
 		%feature("autodoc", "1");
-		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.00000000000000044408920985006261616945266723633e-1, const Standard_Real AxisDiametr=5.00000000000000027755575615628913510590791702271e-2, const Standard_Integer NbFacettes=12);
+		void ZBufferTriedronSetup(const Quantity_NameOfColor XColor=Quantity_NOC_RED, const Quantity_NameOfColor YColor=Quantity_NOC_GREEN, const Quantity_NameOfColor ZColor=Quantity_NOC_BLUE1, const Standard_Real SizeRatio=8.000000000000000444089209850062616169452667236328125e-1, const Standard_Real AxisDiametr=5.000000000000000277555756156289135105907917022705078125e-2, const Standard_Integer NbFacettes=12);
 		%feature("autodoc", "1");
-		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755341e-2, const Standard_Boolean AsWireframe=1);
+		void TriedronDisplay(const Aspect_TypeOfTriedronPosition APosition=Aspect_TOTP_CENTER, const Quantity_NameOfColor AColor=Quantity_NOC_WHITE, const Standard_Real AScale=2.00000000000000004163336342344337026588618755340576171875e-2, const Standard_Boolean AsWireframe=1);
 		%feature("autodoc", "1");
 		void TriedronErase();
 		%feature("autodoc", "1");
@@ -3147,7 +3147,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 		%feature("autodoc", "1");
 		Standard_Boolean IsGLLightEnabled() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType=Graphic3d_ST_BSP_Tree, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0) const;
+		Standard_Boolean Export(const char * theFileName, const Graphic3d_ExportFormat theFormat, const Graphic3d_SortType theSortType=Graphic3d_ST_BSP_Tree, const Standard_Real thePrecision=5.00000000000000010408340855860842566471546888351440429688e-3, const Standard_Address theProgressBarFunc=0, const Standard_Address theProgressObject=0) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

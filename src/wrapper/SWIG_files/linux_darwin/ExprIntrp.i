@@ -733,6 +733,71 @@ def __del__(self):
 };
 
 
+%nodefaultctor ExprIntrp_SequenceOfNamedExpression;
+class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
+	public:
+		%feature("autodoc", "1");
+		ExprIntrp_SequenceOfNamedExpression();
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		const ExprIntrp_SequenceOfNamedExpression & Assign(const ExprIntrp_SequenceOfNamedExpression &Other);
+		%feature("autodoc", "1");
+		const ExprIntrp_SequenceOfNamedExpression & operator=(const ExprIntrp_SequenceOfNamedExpression &Other);
+		%feature("autodoc", "1");
+		void Append(const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void Append(ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void Prepend(const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void Prepend(ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
+		%feature("autodoc", "1");
+		void InsertBefore(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, const Handle_Expr_NamedExpression &T);
+		%feature("autodoc", "1");
+		void InsertAfter(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & First() const;
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & Last() const;
+		%feature("autodoc", "1");
+		void Split(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & Value(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		const Handle_Expr_NamedExpression & operator()(const Standard_Integer Index) const;
+		%feature("autodoc", "1");
+		void SetValue(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & ChangeValue(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		Handle_Expr_NamedExpression & operator()(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer Index);
+		%feature("autodoc", "1");
+		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
+
+};
+%feature("shadow") ExprIntrp_SequenceOfNamedExpression::~ExprIntrp_SequenceOfNamedExpression %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend ExprIntrp_SequenceOfNamedExpression {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor ExprIntrp_StackOfNames;
 class ExprIntrp_StackOfNames {
 	public:
@@ -1083,71 +1148,6 @@ def __del__(self):
 %}
 
 %extend ExprIntrp_StackOfGeneralRelation {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
-%nodefaultctor ExprIntrp_SequenceOfNamedExpression;
-class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
-	public:
-		%feature("autodoc", "1");
-		ExprIntrp_SequenceOfNamedExpression();
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		const ExprIntrp_SequenceOfNamedExpression & Assign(const ExprIntrp_SequenceOfNamedExpression &Other);
-		%feature("autodoc", "1");
-		const ExprIntrp_SequenceOfNamedExpression & operator=(const ExprIntrp_SequenceOfNamedExpression &Other);
-		%feature("autodoc", "1");
-		void Append(const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void Append(ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void Prepend(const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void Prepend(ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
-		%feature("autodoc", "1");
-		void InsertBefore(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, const Handle_Expr_NamedExpression &T);
-		%feature("autodoc", "1");
-		void InsertAfter(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & First() const;
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & Last() const;
-		%feature("autodoc", "1");
-		void Split(const Standard_Integer Index, ExprIntrp_SequenceOfNamedExpression & S);
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & Value(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		const Handle_Expr_NamedExpression & operator()(const Standard_Integer Index) const;
-		%feature("autodoc", "1");
-		void SetValue(const Standard_Integer Index, const Handle_Expr_NamedExpression &I);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & ChangeValue(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		Handle_Expr_NamedExpression & operator()(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer Index);
-		%feature("autodoc", "1");
-		void Remove(const Standard_Integer FromIndex, const Standard_Integer ToIndex);
-
-};
-%feature("shadow") ExprIntrp_SequenceOfNamedExpression::~ExprIntrp_SequenceOfNamedExpression %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend ExprIntrp_SequenceOfNamedExpression {
 	void _kill_pointed() {
 		delete $self;
 	}

@@ -704,55 +704,6 @@ def __del__(self):
 };
 
 
-%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
-class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
-	public:
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
-		%feature("autodoc", "1");
-		void ReSize(const Standard_Integer NbBuckets);
-		%feature("autodoc", "1");
-		void Clear();
-		%feature("autodoc", "1");
-		Standard_Boolean Bind(const TopoDS_Shape K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
-		%feature("autodoc", "1");
-		Standard_Boolean IsBound(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Boolean UnBind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
-		%feature("autodoc", "1");
-		Standard_Address Find1(const TopoDS_Shape K) const;
-		%feature("autodoc", "1");
-		Standard_Address ChangeFind1(const TopoDS_Shape K);
-
-};
-%feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
-def __del__(self):
-	try:
-		self.thisown = False
-		GarbageCollector.garbage.collect_object(self)
-	except:
-		pass
-%}
-
-%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
-	void _kill_pointed() {
-		delete $self;
-	}
-};
-
-
 %nodefaultctor TopOpeBRepBuild_CompositeClassifier;
 class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifier {
 	public:
@@ -1989,6 +1940,55 @@ def __del__(self):
 };
 
 
+%nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
+class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
+	public:
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape(const Standard_Integer NbBuckets=1);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & Assign(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape & operator=(const TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape &Other);
+		%feature("autodoc", "1");
+		void ReSize(const Standard_Integer NbBuckets);
+		%feature("autodoc", "1");
+		void Clear();
+		%feature("autodoc", "1");
+		Standard_Boolean Bind(const TopoDS_Shape K, const TopOpeBRepBuild_ListOfShapeListOfShape &I);
+		%feature("autodoc", "1");
+		Standard_Boolean IsBound(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Boolean UnBind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		const TopOpeBRepBuild_ListOfShapeListOfShape & Find(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		const TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape & ChangeFind(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		TopOpeBRepBuild_ListOfShapeListOfShape & operator()(const TopoDS_Shape K);
+		%feature("autodoc", "1");
+		Standard_Address Find1(const TopoDS_Shape K) const;
+		%feature("autodoc", "1");
+		Standard_Address ChangeFind1(const TopoDS_Shape K);
+
+};
+%feature("shadow") TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape::~TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape %{
+def __del__(self):
+	try:
+		self.thisown = False
+		GarbageCollector.garbage.collect_object(self)
+	except:
+		pass
+%}
+
+%extend TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape {
+	void _kill_pointed() {
+		delete $self;
+	}
+};
+
+
 %nodefaultctor TopOpeBRepBuild_GTopo;
 class TopOpeBRepBuild_GTopo {
 	public:
@@ -2736,11 +2736,11 @@ class TopOpeBRepBuild_Tools {
 		%feature("autodoc", "1");
 		static		void CorrectFace2d(const TopoDS_Shape oldFace, TopoDS_Shape & corrFace, const TopTools_IndexedMapOfOrientedShape &aSourceShapes, TopTools_IndexedDataMapOfShapeShape & aMapOfCorrect2dEdges);
 		%feature("autodoc", "1");
-		static		void CorrectTolerances(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectTolerances(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
-		static		void CorrectCurveOnSurface(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectCurveOnSurface(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
-		static		void CorrectPointOnCurve(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845e-4);
+		static		void CorrectPointOnCurve(const TopoDS_Shape aS, const Standard_Real aTolMax=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		static		Standard_Boolean CheckFaceClosed2d(const TopoDS_Face theFace);
 

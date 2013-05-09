@@ -840,7 +840,7 @@ class ProjLib_ComputeApproxOnPolarSurface {
 		%feature("autodoc", "1");
 		ProjLib_ComputeApproxOnPolarSurface();
 		%feature("autodoc", "1");
-		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845e-4);
+		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol=1.00000000000000004792173602385929598312941379845142364502e-4);
 		%feature("autodoc", "1");
 		ProjLib_ComputeApproxOnPolarSurface(const Handle_Adaptor2d_HCurve2d &InitCurve2d, const Handle_Adaptor3d_HCurve &C, const Handle_Adaptor3d_HSurface &S, const Standard_Real Tol);
 		%feature("autodoc", "1");
@@ -960,7 +960,7 @@ class ProjLib_PrjResolve {
 		%feature("autodoc", "1");
 		ProjLib_PrjResolve(const Adaptor3d_Curve &C, const Adaptor3d_Surface &S, const Standard_Integer Fix);
 		%feature("autodoc", "1");
-		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d Tol, const gp_Pnt2d Inf, const gp_Pnt2d Sup, const Standard_Real FTol=-0x000000001, const Standard_Boolean StrictInside=0);
+		void Perform(const Standard_Real t, const Standard_Real U, const Standard_Real V, const gp_Pnt2d Tol, const gp_Pnt2d Inf, const gp_Pnt2d Sup, const Standard_Real FTol=-0x00000000000000001, const Standard_Boolean StrictInside=0);
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");

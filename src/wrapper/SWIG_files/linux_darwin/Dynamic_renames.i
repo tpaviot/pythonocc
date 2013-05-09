@@ -43,6 +43,7 @@ $HeaderURL$
 %rename(DownCast) Handle_Dynamic_SequenceOfFuzzyDefinitions::DownCast;
 %rename(DownCast) Handle_Dynamic_ParameterNode::DownCast;
 %rename(DownCast) Handle_Dynamic_VariableInstance::DownCast;
+%rename(DownCast) Handle_Dynamic_ObjectParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_VariableGroup::DownCast;
 %rename(DownCast) Handle_Dynamic_CompositVariableInstance::DownCast;
 %rename(DownCast) Handle_Dynamic_InstanceParameter::DownCast;
@@ -56,5 +57,4 @@ $HeaderURL$
 %rename(DownCast) Handle_Dynamic_BooleanParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_StringParameter::DownCast;
 %rename(DownCast) Handle_Dynamic_CompositMethod::DownCast;
-%rename(DownCast) Handle_Dynamic_ObjectParameter::DownCast;
 %rename(Mode) Dynamic::Mode;
