@@ -137,8 +137,6 @@ $HeaderURL$
 #include<InterfaceGraphic_Cocoa.hxx>
 #include<InterfaceGraphic_Graphic3d.hxx>
 #include<InterfaceGraphic_PrimitiveArray.hxx>
-#include<InterfaceGraphic_X11.hxx>
-#include<InterfaceGraphic_XWD.hxx>
 #include<InterfaceGraphic_telem.hxx>
 #include<InterfaceGraphic_tgl_all.hxx>
 

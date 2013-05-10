@@ -204,6 +204,11 @@ $HeaderURL$
 #include<Aspect_WindowError.hxx>
 #include<Bnd_Box.hxx>
 #include<Bnd_Box2d.hxx>
+#include<Font_FontAspect.hxx>
+#include<Font_FontMgr.hxx>
+#include<Font_NListOfSystemFont.hxx>
+#include<Font_NameOfFont.hxx>
+#include<Font_SystemFont.hxx>
 #include<Graphic3d.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>

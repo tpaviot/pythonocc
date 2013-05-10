@@ -116,6 +116,11 @@ $HeaderURL$
 
 // Additional headers necessary for compilation.
 
+#include<Font_FontAspect.hxx>
+#include<Font_FontMgr.hxx>
+#include<Font_NListOfSystemFont.hxx>
+#include<Font_NameOfFont.hxx>
+#include<Font_SystemFont.hxx>
 #include<Image.hxx>
 #include<Image_AlienPixMap.hxx>
 #include<Image_AveragePixelInterpolation.hxx>
