@@ -104,7 +104,7 @@ SET(OCE_LIBRARIES PTKernel
                   TKOpenGl TKPCAF TKPLCAF TKPrim TKPShape TKService TKShapeSchema
                   TKShHealing TKStdLSchema TKStdSchema TKSTEP TKSTEP209 TKSTEPAttr
                   TKSTEPBase TKSTL TKTObj TKTopAlgo
-                  TKV2d TKV3d TKVRML TKXCAF TKXCAFSchema
+                  TKV3d TKVRML TKXCAF TKXCAFSchema
                   TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
                   TKXmlXCAF TKXSBase TKVoxel
                   TKXSDRAW)
