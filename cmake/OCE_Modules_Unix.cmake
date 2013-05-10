@@ -343,7 +343,6 @@ LIST(APPEND OCE_MODULES
 	XmlObjMgt
 	XmlTObjDrivers
 	XmlXCAFDrivers
-	Xw
 	gce
 	gp
 	math
