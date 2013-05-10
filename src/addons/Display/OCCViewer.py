@@ -17,24 +17,25 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import print_function
+
 import os
 import sys
 import math
 import itertools
 
 from OCC.AIS import AIS_MultipleConnectedInteractive
-from OCC.TopoDS import *
+from OCC.TopoDS import TopoDS_Shape
 from OCC.Utils.Common import to_string, color
 from OCC.Utils.Construct import gp_Dir
 from OCC.KBE.types_lut import topo_lut
+from OCC.TopAbs import TopAbs_VERTEX, TopAbs_EDGE, TopAbs_FACE, TopAbs_SHELL, TopAbs_SOLID
 import OCC.Visualization
 import OCC.V3d
 import OCC.AIS
 import OCC.Quantity
-import OCC.TopoDS
 import OCC.Visual3d
-from OCC import Prs3d
-from OCC.Prs3d import Prs3d_Arrow
+from OCC.Prs3d import Prs3d_Arrow, Prs3d_Presentation, Prs3d_TextAspect, Prs3d_Text
 from OCC.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
 
@@ -46,8 +47,8 @@ def set_CSF_GraphicShr():
 if not (sys.platform == 'win32'):
     set_CSF_GraphicShr()
 
-modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX,
-                         TopAbs.TopAbs_SHELL, TopAbs.TopAbs_SOLID, ])
+modes = itertools.cycle([TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX,
+                         TopAbs_SHELL, TopAbs_SOLID, ])
 
 class BaseDriver(object):
     """
@@ -57,131 +58,131 @@ class BaseDriver(object):
         self._window_handle = window_handle
         self._inited = False
         self._local_context_opened = False
-        self.Context_handle = None
-        self.Viewer_handle = None
-        self.View_handle = None
-        self.Context = None
-        self.Viewer = None
-        self.View = None
-        self.selected_shape = None
-        self.selected_shapes = []       
+        self._context_handle = None
+        self._viewer_handle = None
+        self._view_handle = None
+        self._context = None
+        self._viewer = None
+        self._view = None
+        self._selected_shape = None
+        self._selected_shapes = []       
     
-    def MoveTo(self,X,Y):
-        self.Context.MoveTo(X,Y,self.View_handle)
+    def move_to(self, x, y):
+        self._context.MoveTo(x, y, self._view_handle)
       
-    def FitAll(self):
-        self.View.ZFitAll()
-        self.View.FitAll()
+    def fit_all(self):
+        self._view.ZFitAll()
+        self._view.FitAll()
     
-    def SetWindow(self,window_handle):
+    def set_window(self, window_handle):
         self._window_handle = window_handle
         
-    def Create(self, create_default_lights = True):
+    def create(self, create_default_lights = True):
         if sys.platform!='win32':
             try:
                 os.environ['DISPLAY']
             except KeyError:
                 raise AssertionError("Please set the DISPLAY environment variable.")
         self.Init(self._window_handle)
-        self.Context_handle = self.GetContext()
-        self.Viewer_handle = self.GetViewer()
-        self.View_handle = self.GetView()
-        self.Context = self.Context_handle.GetObject()
-        self.Viewer = self.Viewer_handle.GetObject()
+        self._context_handle = self.GetContext()
+        self._viewer_handle = self.GetViewer()
+        self._view_handle = self.GetView()
+        self._context = self._context_handle.GetObject()
+        self._viewer = self._viewer_handle.GetObject()
         if create_default_lights:
-            self.Viewer.SetDefaultLights()
-            self.Viewer.SetLightOn()
-        self.View = self.View_handle.GetObject()
+            self._viewer.SetDefaultLights()
+            self._viewer.SetLightOn()
+        self._view = self._view_handle.GetObject()
         self._inited = True
         # some preferences;
         # the selected elements gray by default... a pretty poor choice I think...
-        self.Context.SelectionColor(Quantity_NOC_ORANGE)
+        self._context.SelectionColor(Quantity_NOC_ORANGE)
         
         # nessecary for text rendering
-        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
+        self._struct_mgr = self._context.MainPrsMgr().GetObject().StructureManager()
 
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
         BaseDriver.__init__(self,window_handle)
         OCC.Visualization.Display3d.__init__(self)
-        self.selected_shape = None
+        self._selected_shape = None
 
-    def SetDoubleBuffer(self, onoroff):
+    def set_double_buffer(self, onoroff):
         """enables double buffering
         when shapes are moved in the viewer
         a very shaky picture is drawn, since double buffering [ a rudimentary OGL capability ]
         is disabled by default. Which is a bad default choice, fixed here..."""
-        self.View.Window().GetObject().SetDoubleBuffer(bool(onoroff))
+        self._view.Window().GetObject().SetDoubleBuffer(bool(onoroff))
 
-    def OnResize(self):
-        self.View.MustBeResized()
+    def on_resize(self):
+        self._view.MustBeResized()
 
-    def ResetView(self):
-        self.View.Reset()
+    def reset_view(self):
+        self._view.Reset()
     
-    def Repaint(self):
-        self.Viewer.Redraw()
+    def repaint(self):
+        self._viewer.Redraw()
         
-    def SetModeWireFrame(self):
-        self.View.SetComputedMode(False)
-        self.Context.SetDisplayMode(OCC.AIS.AIS_WireFrame)
+    def set_mode_wire_frame(self):
+        self._view.SetComputedMode(False)
+        self._context.SetDisplayMode(OCC.AIS.AIS_WireFrame)
 
-    def SetModeShaded(self):
-        self.View.SetComputedMode(False)
+    def set_mode_shaded(self):
+        self._view.SetComputedMode(False)
         if sys.platform=='win32':
-            self.View.SetAntialiasingOff()
-        self.Context.SetDisplayMode(OCC.AIS.AIS_Shaded)
+            self._view.SetAntialiasingOff()
+        self._context.SetDisplayMode(OCC.AIS.AIS_Shaded)
      
-    def SetModeQuickHLR(self):
-        self.View.SetComputedMode(True)
-        self.Context.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
+    def set_mode_quick_HLR(self):
+        self._view.SetComputedMode(True)
+        self._context.SetDisplayMode(OCC.AIS.AIS_QuickHLR)
     
-    def SetModeExactHLR(self):
-        self.View.SetComputedMode(True)
-        self.Context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
+    def set_mode_exact_HLR(self):
+        self._view.SetComputedMode(True)
+        self._context.SetDisplayMode(OCC.AIS.AIS_ExactHLR)
         
-    def SetOrthographic(self, _bool):
+    def set_orthographic(self, _bool):
         '''
         sets whether this view is a orthographic or perspective view
         @param _bool:
         '''
         pass
         
-    def View_Top(self):
-        self.View.SetProj(OCC.V3d.V3d_Zpos) 
+    def view_top(self):
+        self._view.SetProj(OCC.V3d.V3d_Zpos) 
 
-    def View_Bottom(self):
-        self.View.SetProj(OCC.V3d.V3d_Zneg)
+    def view_bottom(self):
+        self._view.SetProj(OCC.V3d.V3d_Zneg)
         
     def View_Left(self):
-        self.View.SetProj(OCC.V3d.V3d_Xneg)
+        self._view.SetProj(OCC.V3d.V3d_Xneg)
 
-    def View_Right(self):
-        self.View.SetProj(OCC.V3d.V3d_Xpos)
+    def view_right(self):
+        self._view.SetProj(OCC.V3d.V3d_Xpos)
 
-    def View_Front(self):
-        self.View.SetProj(OCC.V3d.V3d_Yneg)
+    def view_front(self):
+        self._view.SetProj(OCC.V3d.V3d_Yneg)
 
-    def View_Rear(self):
-        self.View.SetProj(OCC.V3d.V3d_Ypos)
+    def view_rear(self):
+        self._view.SetProj(OCC.V3d.V3d_Ypos)
 
-    def View_Iso(self):
-        self.View.SetProj(OCC.V3d.V3d_XposYnegZpos)
+    def view_iso(self):
+        self._view.SetProj(OCC.V3d.V3d_XposYnegZpos)
         
-    def ExportToImage(self,Filename):
-        self.View.Dump(Filename)
+    def export_to_image(self, filename):
+        self._view.Dump(filename)
 
-    def SetBackgroundImage(self, filename, Stretch = True):
+    def set_background_image(self, filename, stretch = True):
         if not os.path.isfile(filename):
             raise IOError("image file %s not found."%filename)
-        if (Stretch):
-            self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
+        if stretch:
+            self._view.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_STRETCH, True)
         else:
-            self.View.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
+            self._view.SetBackgroundImage(filename, OCC.Aspect.Aspect_FM_NONE, True )
 
-    def DisplayVector(self, vec, pnt, update=False):
+    def display_vector(self, vec, pnt, update=False):
         if self._inited:
-            aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
+            aPresentation = Prs3d_Presentation(self._struc_mgr)
             arrow = Prs3d_Arrow()
             arrow.Draw(
                 aPresentation.GetHandle(),
@@ -193,22 +194,22 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
             aPresentation.Display()
             # it would be more coherent if a AIS_InteractiveObject would be returned
             if update:
-                self.Repaint()
+                self.repaint()
             return aPresentation
 
-    def DisplayMessage(self,point,text_to_write, message_color=None, update=False):
+    def display_message(self,point,text_to_write, message_color=None, update=False):
         """
         :point: a gp_Pnt instance
         :text_to_write: a string
         :message_color: triple with the range 0-1
         """
-        aPresentation = Prs3d.Prs3d_Presentation(self._struc_mgr)
-        text_aspect = Prs3d.Prs3d_TextAspect()
+        aPresentation = Prs3d_Presentation(self._struc_mgr)
+        text_aspect = Prs3d_TextAspect()
 
         if message_color is not None:
             text_aspect.SetColor(color(*message_color))
 
-        text = Prs3d.Prs3d_Text()
+        text = Prs3d_Text()
         text.Draw(aPresentation.GetHandle(),
                      text_aspect.GetHandle(),
                           to_string(text_to_write),
@@ -216,11 +217,11 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         aPresentation.Display()
         # TODO: it would be more coherent if a AIS_InteractiveObject would be returned
         if update:
-            self.Repaint()
+            self.repaint()
         return aPresentation
 
 
-    def DisplayShape(self, shapes, material=None, texture=None, color=None, transparency=None, update=False):
+    def display_shape(self, shapes, material=None, texture=None, color=None, transparency=None, update=False):
         '''
         '''
 
@@ -235,7 +236,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         for shape in shapes:
             if material or texture:
                 if texture:
-                    self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
+                    self._view.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
                     shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
                     filename, toScaleU, toScaleV, toRepeatU, toRepeatV, originU, originV = texture.GetProperties()
                     shape_to_display.SetTextureFileName(OCC.TCollection.TCollection_AsciiString(filename))
@@ -279,17 +280,17 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 color = quantity_color(*color)
 
             for shp in ais_shapes:
-                self.Context.SetColor(shp, color, 0)
+                self._context.SetColor(shp, color, 0)
 
         if transparency:
             shape_to_display.SetTransparency(transparency)
         if update:
             # only update when explicitely told to do so
-            self.Context.Display(shape_to_display.GetHandle(), True)
+            self._context.Display(shape_to_display.GetHandle(), True)
             # especially this call takes up a lot of time...
-            self.FitAll()
+            self.fit_all()
         else:
-            self.Context.Display(shape_to_display.GetHandle(), False)
+            self._context.Display(shape_to_display.GetHandle(), False)
 
         if SOLO:
             return ais_shapes[0]
@@ -317,113 +318,112 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         return  self.DisplayShape(shapes, color=clr, update=update)
 
 
-    def DisplayTriedron(self):
-        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
-        self.Repaint()
+    def display_triedron(self):
+        self._view.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
+        self.repaint()
     
-    def EnableAntiAliasing(self):
-        self.View.SetAntialiasingOn()
-        self.Repaint()
+    def enable_antialiasing(self):
+        self._view.SetAntialiasingOn()
+        self.repaint()
 
-    def DisableAntiAliasing(self):
-        self.View.SetAntialiasingOff()
-        self.Repaint()
+    def disable_antialiasing(self):
+        self._view.SetAntialiasingOff()
+        self.repaint()
     
-    def EraseAll(self):
+    def erase_all(self):
         self._objects_displayed = []
         # nessecary to remove text added by DisplayMessage
-        self.Context.PurgeDisplay()
-        self.Context.EraseAll()
+        self._context.PurgeDisplay()
+        self._context.EraseAll()
         
-    def Tumble(self,NumImages,Animation = True):
-        self.View.Tumble(NumImages, Animation)
+    def tumble(self, num_images, animation = True):
+        self._view.Tumble(num_images, animation)
         
-    def Pan(self,Dx,Dy):
-        self.View.Pan(Dx,Dy)
+    def pan(self, dx, dy):
+        self._view.Pan(dx, dy)
     
-    def SetSelectionMode(self, mode=None):
-        self.Context.CloseAllContexts()
-        self.Context.OpenLocalContext()
+    def set_selection_mode(self, mode=None):
+        self._context.CloseAllContexts()
+        self._context.OpenLocalContext()
         topo_level = modes.next()
-        print 'current topology selection mode:', topo_lut[topo_level]
+        print('current topology selection mode:', topo_lut[topo_level])
         if mode is None:
-            self.Context.ActivateStandardMode(topo_level)
+            self._context.ActivateStandardMode(topo_level)
         else:
-            self.Context.ActivateStandardMode(mode)
-        self.Context.UpdateSelected()
+            self._context.ActivateStandardMode(mode)
+        self._context.UpdateSelected()
     
-    def SetSelectionModeVertex(self):
+    def set_selection_mode_vertex(self):
         self.SetSelectionMode(OCC.TopAbs.TopAbs_VERTEX)
 
-    def SetSelectionModeEdge(self):
+    def set_selection_mode_edge(self):
         self.SetSelectionMode(OCC.TopAbs.TopAbs_EDGE)
 
-    def SetSelectionModeFace(self):
+    def set_selection_mode_face(self):
         self.SetSelectionMode(OCC.TopAbs.TopAbs_FACE)
 
-    def SetSelectionModeShape(self):
-        self.Context.CloseAllContexts()
+    def set_selection_mode_shape(self):
+        self._context.CloseAllContexts()
 
-    def SetSelectionModeNeutral(self):
-        self.Context.CloseAllContexts()
+    def set_selection_mode_neutral(self):
+        self._context.CloseAllContexts()
     
-    def GetSelectedShapes(self):
-        return self.selected_shapes
+    def get_selected_shapes(self):
+        return self._selected_shapes
     
-    def GetSelectedShape(self):
+    def get_selected_shape(self):
         """
         Returns the current selected shape
         """
-        return self.selected_shape
+        return self._selected_shape
     
-    def SelectArea(self,Xmin,Ymin,Xmax,Ymax):
-        self.Context.Select(Xmin,Ymin,Xmax,Ymax,self.View_handle)
-        self.Context.InitSelected()
+    def select_area(self, x_min, y_min, x_max, y_max):
+        self._context.Select( x_min, y_min, x_max, y_max, self._view_handle)
+        self._context.InitSelected()
         # reinit the selected_shapes list
-        self.selected_shapes = []
-        while self.Context.MoreSelected():
-            if self.Context.HasSelectedShape(): 
-                self.selected_shapes.append(self.Context.SelectedShape())
-            self.Context.NextSelected()
-        print "Current selection (%i instances):"%len(self.selected_shapes),self.selected_shapes
+        self._selected_shapes = []
+        while self._context.MoreSelected():
+            if self._context.HasSelectedShape(): 
+                self._selected_shapes.append(self._context.SelectedShape())
+            self._context.NextSelected()
+        print("Current selection (%i instances):"%len(self._selected_shapes),self._selected_shapes)
 
-    def Select(self,X,Y):
-        self.Context.Select()
-        self.Context.InitSelected()
-        if self.Context.MoreSelected():
-            if self.Context.HasSelectedShape():
-                self.selected_shape = self.Context.SelectedShape()
-                print "Current selection (single):",self.selected_shape
+    def Select(self):
+        self._context.Select()
+        self._context.InitSelected()
+        if self._context.MoreSelected():
+            if self._context.HasSelectedShape():
+                self._selected_shape = self._context.SelectedShape()
+                print("Current selection (single):", self._selected_shape)
         else:
-            self.selected_shape = None
+            self._selected_shape = None
 
-    def ShiftSelect(self,X,Y):
-        self.Context.ShiftSelect()
-        self.Context.InitSelected()
-
-        self.selected_shapes = []
-        while self.Context.MoreSelected():
-            if self.Context.HasSelectedShape():
-                self.selected_shapes.append(self.Context.SelectedShape())
-            self.Context.NextSelected()
+    def shift_select(self):
+        self._context.ShiftSelect()
+        self._context.InitSelected()
+        self._selected_shapes = []
+        while self._context.MoreSelected():
+            if self._context.HasSelectedShape():
+                self._selected_shapes.append(self._context.SelectedShape())
+            self._context.NextSelected()
         # hilight newly selected unhighlight those no longer selected
-        self.Context.UpdateSelected()
-        print "Current selection (%i instances):"%len(self.selected_shapes),self.selected_shapes
+        self._context.UpdateSelected()
+        print("Current selection (%i instances):"%len(self._selected_shapes), self._selected_shapes)
 
-    def Rotation(self,X,Y):
-        self.View.Rotation(X,Y)
+    def rotation(self, X, Y):
+        self._view.Rotation(X, Y)
     
-    def DynamicZoom(self,X1,Y1,X2,Y2):
-        self.View.Zoom(X1,Y1,X2,Y2)
+    def dynamic_zoom(self,X1 ,Y1, X2, Y2):
+        self._view.Zoom(X1, Y1, X2, Y2)
         
-    def ZoomFactor(self,zoom_factor):
-        self.View.SetZoom(zoom_factor)
+    def zoom_factor(self, zoom_factor):
+        self._view.SetZoom(zoom_factor)
     
-    def ZoomArea(self,X1,Y1,X2,Y2):
-        self.View.WindowFit(X1,Y1,X2,Y2)
+    def zoom_area(self, x1, y1, x2, y2):
+        self._view.WindowFit(x1, y1, x2, y2)
     
-    def Zoom(self,X,Y):
-        self.View.Zoom(X,Y)
+    def zoom(self, x, y):
+        self._view.Zoom(x, y)
     
-    def StartRotation(self,X,Y):
-        self.View.StartRotation(X,Y)
+    def start_rotation(self, x, y):
+        self._view.StartRotation(x, y)
