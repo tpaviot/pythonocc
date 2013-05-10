@@ -270,7 +270,7 @@ COMMON_MODULES = [
 #################################
 ####### Math stuff ##############
 #################################
-           ('math',['Handle_TCollection'],['math_NewtonFunctionSetRoot','math_NewtonMinimum']),
+           ('math',['Handle_TCollection'],['math_NewtonFunctionSetRoot','math_FunctionSetRoot','math_NewtonMinimum']),
            ('Law',[],[],{'Law_Interpolate':['ClearTangents']}),
 ##################################
 ######## Fillet ##################
