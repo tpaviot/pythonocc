@@ -326,7 +326,7 @@ COMMON_MODULES = [
             ('SelectBasics',[],[]),
             #('V2d',['Handle_TCollection'],[]),
             ('Viewer',[],[]),
-            ('V3d',['Handle_TCollection','Aspect','Quantity','Xw','Graphic3d','MFT','OSD','Image'],[],
+            ('V3d',['Handle_TCollection','Aspect','Quantity','Graphic3d','MFT','OSD','Image'],[],
              {'V3d_View':['GetGraduatedTrihedron']}),
             ('Dynamic',['TCollection'],[]),
             ('Materials',['TCollection_AsciiString'],[]),
@@ -483,11 +483,9 @@ COMMON_MODULES = [
 # Visualization part is OS specific #
 #####################################
 WIN_MODULES = [
-             #('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
              ('Graphic3d',['gp'],['Graphic3d_GraphicDevice','Handle_Graphic3d_GraphicDevice'],\
              {'Graphic3d_Group':['SetGroupPrimitivesAspect'],'Handle_Graphic3d_GraphicDevice':['DownCast'],\
              'Graphic3d_AspectText3d':['Values'],'Graphic3d_GraphicDriver':['GetGraduatedTrihedron']}),
-             #('Prs2d',['Graphic3d','Bnd_Box','Aspect','Handle_TCollection'],[]),             
              ('Prs3d',['TopoDS','Graphic3d','Bnd_Box','Aspect','Handle_TCollection','Image','OSD','Font'],[]),
              ('PrsMgr',['Graphic3d','gp','Aspect','Handle_TCollection','Image','OSD','Font'],[]),
              ('SelectMgr',['TCollection','Prs3d','Graphic3d','Aspect','Quantity','Image','OSD','Font'],[]),
@@ -502,41 +500,39 @@ WIN_MODULES = [
              ('Visual3d',[],[],{'Visual3d_View':['GetGraduatedTrihedron']}),
              ('TPrsStd',['Aspect','Image','OSD','Font'],[]),
              ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity','Image','OSD',  'StdSelect'],[]),
-             #('WNT',[],[]), gccxml error
              ('Image',[],[],{'Image_PixMap':['SizePixelBytes']}),
              ('MeshVS',['Aspect','Graphic3d','PrsMgr','Prs3d','Image','OSD','StdSelect'],[]),
              ]
 
 UNIX_MODULES = [
-                    ('Xw',['OSD','TCollection'],[]),
-                    #('Graphic2d',[],[],{'Graphic2d_TransientManager':['Transform']}),
                     ('Graphic3d',['OSD','MFT','gp'],[],{'Graphic3d_Group':['SetGroupPrimitivesAspect'],
                                                         'Graphic3d_GraphicDriver':['GetGraduatedTrihedron'],
                                                         'Graphic3d_AspectText3d':['Values']}),#OCC650PATCH : removed Graudted Triedron}),
-                    ('Prs3d',['OSD','MFT','Xw','Graphic3d','Bnd_Box','Aspect','Handle_TCollection','Image',
+                    ('Prs3d',['OSD','MFT','Graphic3d','Bnd_Box','Aspect','Handle_TCollection','Image',
                               'TopoDS_Edge','TopoDS_Vertex','TopoDS_Face'],[]),#OCC650PATCH:Aded Image
-                    ('PrsMgr',['OSD','MFT','Xw','Graphic3d','gp','Aspect','Handle_TCollection','Image'],[]),#OCC650PATCH Added Image
-                    ('SelectMgr',['OSD','MFT','Xw','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d'],[],
-                     {'SelectMgr_SelectionManager':['Status'],'SelectMgr_ViewerSelector':['Status']}),#OCC650PATCH Added Image, removed sm_Status
-                    ('StdSelect',['OSD','MFT','Xw','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d','SelectBasics','Image','OSD'],[],
+                    ('PrsMgr',['OSD','MFT','Graphic3d','gp','Aspect','Handle_TCollection','Image'],[]),#OCC650PATCH Added Image
+                    ('SelectMgr',['OSD','MFT','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d'],[],
+                     {'SelectMgr_SelectionManager':['Status'],'SelectMgr_ViewerSelector':['Status']}),
+                    ('StdSelect',['OSD','MFT','TCollection','Graphic3d','Aspect','Quantity','Image','Prs3d','SelectBasics','Image','OSD'],[],
                      {'StdSelect_Shape':['Shape'],'StdSelect_BRepOwner':['Set']}),
                     ('DsgPrs',['Image'],[],{'DsgPrs_RadiusPresentation':['Add']}),
-                    ('AIS',['OSD','MFT','Xw','Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image'],[],
+                    ('AIS',['OSD','MFT','Graphic3d','TopoDS_Vertex','Aspect','SelectBasics','PrsMgr','Image'],[],
                      {"AIS_LocalContext":["Reactivate"],
-                      'AIS_InteractiveContext':['Status']}),#OCC650PATCH removed status 
-                    ('Voxel',['OSD','MFT','Xw','Quantity','gp','Graphic3d','Aspect',\
+                      'AIS_InteractiveContext':['Status']}), 
+                    ('Voxel',['OSD','MFT','Quantity','gp','Graphic3d','Aspect',\
                               'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics','Image','StdSelect','Handle_StdSelect'],[]),#OCC650PAtH Added Image
-                    ('Visual3d',['OSD','MFT','Xw','Image'],[],{'Visual3d_View':['GetGraduatedTrihedron']}),
-                    ('TPrsStd',['OSD','MFT','Xw','Aspect','Image'],[]),
+                    ('Visual3d',['OSD','MFT','Image'],[],{'Visual3d_View':['GetGraduatedTrihedron']}),
+                    ('TPrsStd',['OSD','MFT','Aspect','Image'],[]),
                     ('XCAFPrs',['Aspect','MFT','TDF','OSD','Graphic3d',\
-                                'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr','Image',\
+                                'SelectBasics','SelectMgr','Quantity','Prs3d','PrsMgr','Image',\
                                 'StdSelect','Handle_StdSelect'],[]),
-                    ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer','Graphic3d','OSD','Xw',
+                    ('NIS',['Aspect','TColStd','TCollection','Quantity','Viewer','Graphic3d','OSD',
                             'Visual3d','Image','MFT'],['NIS_Triangulated'],{'NIS_InteractiveContext':['GetDrawers']}),
-                    ('MeshVS',['OSD','MFT','Xw','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image','StdSelect','Handle_StdSelect'],[]),
+                    ('MeshVS',['OSD','MFT','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image','StdSelect','Handle_StdSelect'],[]),
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection','Aspect'],[]),
                    ]
+
 #
 # SalomeGEOM modules
 #
