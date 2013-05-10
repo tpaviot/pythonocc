@@ -533,7 +533,6 @@ $HeaderURL$
 #include<Quantity_VolumeFlow.hxx>
 #include<Quantity_Weight.hxx>
 #include<Quantity_Work.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

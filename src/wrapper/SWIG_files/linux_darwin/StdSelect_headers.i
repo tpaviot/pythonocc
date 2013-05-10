@@ -557,7 +557,6 @@ $HeaderURL$
 #include<TCollection_SeqNode.hxx>
 #include<TCollection_SeqNodePtr.hxx>
 #include<TCollection_Side.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

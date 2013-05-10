@@ -557,7 +557,6 @@ $HeaderURL$
 #include<SelectBasics_SequenceOfOwner.hxx>
 #include<SelectBasics_SortAlgo.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

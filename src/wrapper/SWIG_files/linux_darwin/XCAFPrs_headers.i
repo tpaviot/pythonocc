@@ -691,7 +691,6 @@ $HeaderURL$
 #include<TDF_TagSource.hxx>
 #include<TDF_Tool.hxx>
 #include<TDF_Transaction.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

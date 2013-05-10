@@ -640,7 +640,6 @@ $HeaderURL$
 #include<StdSelect_TypeOfEdge.hxx>
 #include<StdSelect_TypeOfFace.hxx>
 #include<StdSelect_TypeOfResult.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

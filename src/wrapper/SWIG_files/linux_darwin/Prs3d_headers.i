@@ -433,7 +433,6 @@ $HeaderURL$
 #include<TopoDS_Edge.hxx>
 #include<TopoDS_Face.hxx>
 #include<TopoDS_Vertex.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

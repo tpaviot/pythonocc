@@ -35,4 +35,5 @@ import OSD
 import TCollection
 import Image
 import TColStd
+import Font
 };

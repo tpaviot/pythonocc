@@ -28,6 +28,7 @@ $HeaderURL$
 #importing required modules
 import GarbageCollector
 import Standard
+import BOPAlgo
 import TopoDS
 import TopTools
 };

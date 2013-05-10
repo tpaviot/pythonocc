@@ -609,7 +609,6 @@ $HeaderURL$
 #include<StdSelect_TypeOfEdge.hxx>
 #include<StdSelect_TypeOfFace.hxx>
 #include<StdSelect_TypeOfResult.hxx>
-#include<Xw_Window.hxx>
 #include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>

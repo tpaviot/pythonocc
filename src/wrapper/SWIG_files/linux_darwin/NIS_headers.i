@@ -708,7 +708,6 @@ $HeaderURL$
 #include<Visual3d_ViewOrientationDefinitionError.hxx>
 #include<Visual3d_ViewPtr.hxx>
 #include<Visual3d_ZClippingDefinitionError.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 

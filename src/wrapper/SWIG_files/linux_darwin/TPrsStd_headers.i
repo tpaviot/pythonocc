@@ -282,7 +282,6 @@ $HeaderURL$
 #include<OSD_ThreadFunction.hxx>
 #include<OSD_Timer.hxx>
 #include<OSD_WhoAmI.hxx>
-#include<Xw_Window.hxx>
 
 // Needed headers necessary for compilation.
 
