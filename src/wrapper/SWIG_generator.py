@@ -1195,7 +1195,8 @@ class ModularBuilder(object):
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Cextern.hxx')
             HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
             HXX_TO_EXCLUDE.append('OSD_WNT_1.hxx')
-            for hxx_file in HXX_FILES: # Under Windows, remove all X11/Xfw headers
+        if (sys.platform == 'win32' or sys.platform == 'darwin'):
+            for hxx_file in HXX_FILES: # Under Windows and OSX, remove all X11/Xfw headers
                 if ('X11' in hxx_file) or ('XWD' in hxx_file):
                     HXX_TO_EXCLUDE.append(hxx_file)
         if len(HXX_FILES)==0:
