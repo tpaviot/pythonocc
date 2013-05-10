@@ -234,7 +234,7 @@ class ModularBuilder(object):
                            'NLinkNodeMap','pair<SMDS','NLink','TIDSortedElemSet',\
                            'TElemOfElemListMap','TNodeNodeMap','EventListener',\
                            'EventListenerData','TLinkNodeMap','MapShapeNbElems',\
-                           'size','locale','TEL','BOPCol']:
+                           'size','locale','TEL','Draw']:
             return True
         if module_name=='GEOM':
             module_name='SGEOM'

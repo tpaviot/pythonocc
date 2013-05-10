@@ -531,6 +531,8 @@ UNIX_MODULES = [
                     ('MeshVS',['OSD','MFT','Graphic3d','Aspect','Prs3d','Quantity','PrsMgr','Image','StdSelect','Handle_StdSelect','Font'],[]),
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection','Aspect'],[]),
+                    ('XSDRAWSTLVRML',['Image', 'AIS','Graphic3d','Aspect','SelectMgr','StdSelect','Select3D','TColStd','Prs3d','SelectBasics',\
+                    'Quantity','Font'],[]),
                    ]
 
 #

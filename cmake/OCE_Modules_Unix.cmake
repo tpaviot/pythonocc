@@ -331,6 +331,7 @@ LIST(APPEND OCE_MODULES
 	XCAFPrs
 	XSAlgo
 	XSControl
+	XSDRAWSTLVRML
 	XmlDrivers
 	XmlLDrivers
 	XmlMDF

@@ -106,12 +106,14 @@ SET(OCE_LIBRARIES PTKernel
                   TKSTEPBase TKSTL TKTObj TKTopAlgo
                   TKV2d TKV3d TKVRML TKXCAF TKXCAFSchema
                   TKXDEIGES TKXDESTEP TKXMesh TKXml TKXmlL TKXmlTObj
-                  TKXmlXCAF TKXSBase TKVoxel)
+                  TKXmlXCAF TKXSBase TKVoxel
+                  TKXSDRAW)
 
 # Tells CMake where are the required headers
 INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
 INCLUDE_DIRECTORIES(${OCE_INCLUDE_PATH})
 LINK_DIRECTORIES(${OCE_LIB_PATH})
+LINK_DIRECTORIES(${OCE_LIB_PATH}/oce-0.13-dev)
 
 ##############
 # salomegeom #
