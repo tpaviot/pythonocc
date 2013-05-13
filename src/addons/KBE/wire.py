@@ -12,5 +12,3 @@ class Wire(KbeObject, TopoDS_Wire):
         assert isinstance(wire, TopoDS_wire), 'need a TopoDS_Wire, got a %s'% wire.__class__
         KbeObject.__init__(self, 'wire')
         TopoDS_Wire.__init__(self, wire)
-
-    # BRepAdaptor_CompCurve

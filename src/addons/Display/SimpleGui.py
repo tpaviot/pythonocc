@@ -51,13 +51,8 @@ def get_backend():
     except:
         pass
 
-    if sys.platform == 'darwin':
-        # Tk is not an option, since we on osx a modern Cocoa backend is required
-        raise ValueError("PythonOCC needs PySide of PyQt4 as a gui backend. wxPython 2.9, using cocoa is an option, but not recommended")
-
+    # use Tk backend as a fall back...
     else:
-        # use Tk backend as a fall back...
-        # note, this is X11 territory, so no go area for osx... since this relies on the Cocoa backend
         try:
             import Tkinter
             return 'tkinter'
@@ -75,25 +70,16 @@ def get_bg_abs_filename():
     else:
         return bg_abs_filename
 
-def safe_yield():
-    global USED_BACKEND
-    if USED_BACKEND == 'wx':
-        import wx
-        wx.SafeYield()
-    elif USED_BACKEND == 'pyqt4':
-        from PyQt4 import QtGui
-        #QtCore.processEvents()
-        QtGui.QApplication.processEvents()
-    elif USED_BACKEND == 'pyside':
-        from PySide import QtGui
-        #QtCore.processEvents()
-        QtGui.QApplication.processEvents()
-
-def init_display():
+def init_display(backend_str = None):
     global display, add_menu, add_function_to_menu, start_display, app, win, USED_BACKEND
 
-    USED_BACKEND = get_backend()
-
+    if not backend_str:
+        USED_BACKEND = get_backend()
+    elif backend_str in ['wx','pyqt4','pyside','tkinter']:
+        USED_BACKEND = backend_str
+    else:
+        raise ValueError("You should pass either 'wx','pyqt4','pyside' or'tkinter' to the init_display function.")
+        sys.exit(1)
     # wxPython based simple GUI
     if USED_BACKEND == 'wx':
         import wx
@@ -141,7 +127,7 @@ def init_display():
     elif USED_BACKEND == 'pyqt4' or USED_BACKEND=='pyside':
 
         # dont really get why its nessecary to import yet again... sigh...
-        if USED_BACKEND == "pyqt4":
+        if USED_BACKEND == 'pyqt4':
             from PyQt4 import QtGui, QtCore
         else:
             from PySide import QtGui, QtCore
@@ -205,7 +191,7 @@ def init_display():
             win.raise_() # make the application float to the top
             app.exec_()
 
-    elif USED_BACKEND == 'Tk':
+    elif USED_BACKEND == 'tkinter':
         import Tkinter
         from tkDisplay import tkViewer3d
         app = Tkinter.Tk()
@@ -221,7 +207,7 @@ def init_display():
     return display, start_display, add_menu, add_function_to_menu
     
 if __name__ == '__main__':
-    init_display()
+    init_display('tkinter')
     from OCC.BRepPrimAPI import *
     def sphere(event=None):
         display.DisplayShape(BRepPrimAPI_MakeSphere(1).Shape(), update=True)

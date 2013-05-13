@@ -629,4 +629,3 @@ def adapt_edge_to_hcurve(edg):
     c = BRepAdaptor_HCurve()
     c.ChangeCurve().Initialize(edg)
     return c
-

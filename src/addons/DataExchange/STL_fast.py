@@ -1,9 +1,13 @@
 import os
 from OCC.RWStl import RWStl
-from OCC.MeshVS import MeshVS_Mesh
 from OCC.OSD import OSD_Path
 from OCC.TCollection import TCollection_AsciiString
-
+from OCC.Graphic3d import Graphic3d_MaterialAspect, Graphic3d_NOM_SATIN
+from OCC.MeshVS import MeshVS_Mesh, MeshVS_MeshPrsBuilder, MeshVS_DA_FrontMaterial, MeshVS_DA_DisplayNodes, MeshVS_DA_ShowEdges, MeshVS_DA_SmoothShading, MeshVS_DA_Reflection
+try:
+    from OCC.SMESH import SMESH_Gen, SMESH_MeshVSLink
+except ImportError:
+    raise AssertionError("SMESH wrapper is required to use the STL_fast module")
 
 #===============================================================================
 # Currently -alas- the fast STL mesh loader relies on SMESH as a dependency
@@ -45,14 +49,6 @@ from OCC.TCollection import TCollection_AsciiString
 #
 #      myDoc->m_AISContext->Display(aMesh);
 
-
-
-import os
-from OCC.Graphic3d import Graphic3d_MaterialAspect, Graphic3d_NOM_SATIN
-from OCC.MeshVS import MeshVS_Mesh, MeshVS_MeshPrsBuilder, MeshVS_DA_FrontMaterial, MeshVS_DA_DisplayNodes, MeshVS_DA_ShowEdges, MeshVS_DA_SmoothShading, MeshVS_DA_Reflection
-from OCC.SMESH import SMESH_Gen, SMESH_MeshVSLink
-
-
 def get_fast_stl_mesh_from_path(_path):
     """
     open/parse STL file and get the resulting TopoDS_Shape instance
@@ -66,7 +62,6 @@ def get_fast_stl_mesh_from_path(_path):
     # test for a minimal number of mesh vertices
     if mesh.NbNodes() < 1:
         raise ValueError("stl file {0} contains no geometry".format(_path))
-
     aDS = SMESH_MeshVSLink(mesh)
     aMeshVS = MeshVS_Mesh(True)
     DMF = 2 # to wrap; 1 is wireframe
@@ -89,16 +84,12 @@ def get_fast_stl_mesh_from_path(_path):
     #    mesh_drawer.SetColor(3,Quantity_Color(Quantity_NOC_BLACK))# 3 means Edge color
     # Markers in green
     #    mesh_drawer.SetColor(13,Quantity_Color(Quantity_NOC_GREEN))
-    print 'got it, just setting params'
     mesh_drawer.SetMaterial(MeshVS_DA_FrontMaterial, Graphic3d_MaterialAspect(Graphic3d_NOM_SATIN))
     mesh_drawer.SetBoolean( MeshVS_DA_DisplayNodes, False)
     mesh_drawer.SetBoolean( MeshVS_DA_ShowEdges, False)
     mesh_drawer.SetBoolean( MeshVS_DA_SmoothShading, True)
-#    mesh_drawer.SetBoolean( MeshVS_DA_SmoothShading, False)
     mesh_drawer.SetBoolean( MeshVS_DA_Reflection, True)
     #    mesh_drawer.SetColor( MeshVS_DA_InteriorColor, Quantity_Color(Quantity_NOC_AZURE))
     #    mesh_drawer.SetBoolean(MeshVS_DA_ColorReflection, True)
     msh = mesh_to_display.GetObject()
-    print 'msh:', msh
     return msh
-

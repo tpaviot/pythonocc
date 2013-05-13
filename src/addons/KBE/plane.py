@@ -2,10 +2,6 @@ from OCC.Geom import Geom_Plane
 from OCC.GeomAPI import GeomAPI_IntCS, GeomAPI_IntSS
 from OCC.gp import gp_Pln
 
-IntAna_Quadric # gp_* / gp_* intersect
-IntAna_QuadQuadGeo
-Extrema_ExtPElC
-
 class Plane(object): # HalfSpace
     def __init__(self, pln):
 
@@ -35,8 +31,3 @@ class Plane(object): # HalfSpace
 
     def project_surface():
         pass
-
-
-
-
-

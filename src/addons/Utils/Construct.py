@@ -46,7 +46,6 @@ from OCC.KBE.types_lut import shape_lut, curve_lut, surface_lut, topo_lut
 from functools import wraps
 import warnings, operator, math
 
-
 EPSILON = TOLERANCE = 1e-6
 ST = ShapeToTopology()
 

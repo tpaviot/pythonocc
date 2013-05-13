@@ -84,26 +84,6 @@ class wxBaseViewer(BaseClass):
         pass
     def OnKeyDown(self,event):
         pass
-        
-class wxViewer2d(wxBaseViewer):
-     def __init__(self, *kargs):
-        wxBaseViewer.__init__(self, *kargs)
-        print "wxViewer2d inited"
-        
-     def InitDriver(self):
-        """
-        This method is called after __init__ in the wxBaseViewer class
-        """
-        self._display = OCCViewer.Viewer2d(self.GetHandle())
-        self._display.Create()
-        self._inited = True
-    
-     def OnMotion(self, evt):
-        print "Motion!!"
-        pt = evt.GetPosition()
-        print pt.x, pt.y
-        self._display.MoveTo(pt.x,pt.y)
-
     
 class wxNISViewer3d(wxBaseViewer):
     def __init__(self, *kargs):
@@ -215,7 +195,7 @@ class wxViewer3d(wxBaseViewer):
             self._display.Repaint()
             
     def ZoomAll(self, evt):
-        self._display.Zoom_FitAll()
+        self._display.FitAll()
 
     def Repaint(self, evt):
        if self._inited:

@@ -38,7 +38,6 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
     ''' The base Qt Widget for an OCC viewer
     '''
     def __init__(self, parent = None):
-        # QtGui.QWidget.__init__(self,parent)
         QtOpenGL.QGLWidget.__init__(self,parent)
         self._display = None
         self._inited = False
@@ -55,12 +54,6 @@ class qtBaseViewer(QtOpenGL.QGLWidget):
     def resizeEvent(self, event):
         if self._inited:
             self._display.OnResize()
-
-    # def initializeGL(self):
-    #     import ipdb; ipdb.set_trace()
-    #
-    # def paintGL(self):
-    #     import ipdb; ipdb.set_trace()
 
     def paintEngine(self):
         return None
@@ -100,8 +93,6 @@ class qtViewer3d(qtBaseViewer):
                          ord('Q'): self._display.SetModeQuickHLR,
                          ord('E'): self._display.SetModeExactHLR,
                          ord('F'): self._display.FitAll,
-                         #ord('F'): self._display.ExportToImage("essai.BMP"),
-                         #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
                          ord('G'): self._display.SetSelectionMode
                          }
 

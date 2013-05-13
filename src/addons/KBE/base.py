@@ -209,5 +209,3 @@ class GlobalProperties(object):
         [ has an implementation at hb-robo-code ]
         """
         pass
-
-

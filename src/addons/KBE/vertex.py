@@ -1,18 +1,13 @@
 
-#from OCC.Utils.Construct import make_vertex
 from OCC.BRepPrimAPI import *
-
 from OCC.Utils.Construct import make_vertex
-
 from OCC.Utils.Common import TOLERANCE, vertex2pnt
 from OCC.gp import gp_Pnt, gp_Trsf
 from OCC.TopoDS import TopoDS_Vertex
-from base import KbeObject
 from OCC.BRepTools import  BRepTools_TrsfModification
+from OCC.ShapeBuild import ShapeBuild_ReShape
 
-
-def make_vertex(*args):
-    return BRepBuilderAPI_MakeVertex(*args)
+from base import KbeObject
 
 class Vertex(KbeObject, TopoDS_Vertex):
     """
@@ -34,10 +29,8 @@ class Vertex(KbeObject, TopoDS_Vertex):
         """
         # TODO: perhaps should take an argument until which topological level
         # topological entities bound to the vertex should be updated too...
-        from OCC.ShapeBuild import ShapeBuild_ReShape
         reshape = ShapeBuild_ReShape()
         reshape.Replace(self._vertex, make_vertex(self._pnt))
-        #self = Vertex(*self._pnt.Coord())
         
     @staticmethod
     def from_vertex(cls, pnt):
@@ -60,7 +53,6 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def x(self, val):
         self._pnt.SetX(val)
         self._update()
-        #self.is_dirty = 1
 
     @property
     def y(self):
@@ -70,7 +62,6 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def y(self, val):
         self._pnt.SetY(val)
         self._update()
-        #self.is_dirty = 1
 
     @property
     def z(self):
@@ -80,7 +71,6 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def z(self, val):
         self._pnt.SetZ(val)
         self._update()
-        #self.is_dirty = 1
 
     @property
     def xyz(self):
@@ -90,8 +80,6 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def xyz(self, *val):
         self._pnt.SetXYZ(*val)
         self._update()
-        #self.is_dirty = 1
-
 
     def __repr__(self):
         return self.name
@@ -103,7 +91,7 @@ class Vertex(KbeObject, TopoDS_Vertex):
 
     @property
     def as_dir(self):
-        '''returns a gp_Vec version of self'''
+        '''returns a gp_Dir version of self'''
         return gp_Dir(*self._pnt.Coord())
 
     @property
@@ -119,7 +107,3 @@ class Vertex(KbeObject, TopoDS_Vertex):
     def as_2d(self):
         '''returns a gp_Pnt2d version of self'''
         return gp_Pnt2d(*self._pnt.Coord()[:2])
-
-    
-
-    

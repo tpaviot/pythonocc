@@ -29,9 +29,7 @@ from OCC.Utils.Construct import gp_Dir
 from OCC.KBE.types_lut import topo_lut
 import OCC.Visualization
 import OCC.V3d
-import OCC.V2d
 import OCC.AIS
-import OCC.AIS2D
 import OCC.Quantity
 import OCC.TopoDS
 import OCC.Visual3d
@@ -39,8 +37,6 @@ from OCC import Prs3d
 from OCC.Prs3d import Prs3d_Arrow
 from OCC.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Graphic3d import Graphic3d_NOM_SATIN
-
-
 
 def set_CSF_GraphicShr():
     "Sets the CSF_GraphicShr env var"
@@ -50,14 +46,12 @@ def set_CSF_GraphicShr():
 if not (sys.platform == 'win32'):
     set_CSF_GraphicShr()
 
-
 modes = itertools.cycle([TopAbs.TopAbs_FACE, TopAbs.TopAbs_EDGE, TopAbs.TopAbs_VERTEX,
                          TopAbs.TopAbs_SHELL, TopAbs.TopAbs_SOLID, ])
 
-
 class BaseDriver(object):
     """
-    The base driver class for both Driver2d and Driver3d classes
+    The base driver class
     """
     def __init__(self, window_handle):
         self._window_handle = window_handle
@@ -76,12 +70,8 @@ class BaseDriver(object):
         self.Context.MoveTo(X,Y,self.View_handle)
       
     def FitAll(self):
-        if hasattr(self.View, 'Fitall'):
-            # Viewer2d
-            self.View.Fitall()
-        else:
-            self.View.ZFitAll()
-            self.View.FitAll()
+        self.View.ZFitAll()
+        self.View.FitAll()
     
     def SetWindow(self,window_handle):
         self._window_handle = window_handle
@@ -99,12 +89,8 @@ class BaseDriver(object):
         self.Context = self.Context_handle.GetObject()
         self.Viewer = self.Viewer_handle.GetObject()
         if create_default_lights:
-            try:
-                self.Viewer.SetDefaultLights()
-                self.Viewer.SetLightOn()
-            except AttributeError:
-                # Viewer2d doesnt have SetDefaultLights attr
-                pass
+            self.Viewer.SetDefaultLights()
+            self.Viewer.SetLightOn()
         self.View = self.View_handle.GetObject()
         self._inited = True
         # some preferences;
@@ -112,13 +98,7 @@ class BaseDriver(object):
         self.Context.SelectionColor(Quantity_NOC_ORANGE)
         
         # nessecary for text rendering
-        try:
-            self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
-        except AttributeError:
-            # Viewer2d doesnt have MainPrsMgr attr
-            pass
-
-
+        self._struc_mgr = self.Context.MainPrsMgr().GetObject().StructureManager()
 
 class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     def __init__(self, window_handle ):
@@ -371,7 +351,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         else:
             self.Context.ActivateStandardMode(mode)
         self.Context.UpdateSelected()
-
+    
     def SetSelectionModeShape(self):
         self.Context.CloseAllContexts()
 
@@ -438,4 +418,3 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
     
     def StartRotation(self,X,Y):
         self.View.StartRotation(X,Y)
-    
