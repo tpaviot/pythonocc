@@ -23,7 +23,7 @@ PROJECT(${PROJECT_NAME})
 SET(${PROJECT_NAME}_VERSION_MAJOR 0)
 SET(${PROJECT_NAME}_VERSION_MINOR 6)
 #  Empty for official releases, set to -dev, -rc1, etc for development releases
-SET(${PROJECT_NAME}_VERSION_DEVEL -alpha)
+SET(${PROJECT_NAME}_VERSION_DEVEL -rc1)
 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
