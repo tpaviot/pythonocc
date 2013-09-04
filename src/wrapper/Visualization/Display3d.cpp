@@ -56,7 +56,9 @@ void Display3d::Init(long window_handle)
     myV3dViewer = new V3d_Viewer( gd , (short* const)"viewer" );
     printf("Viewer created.\n");
     myV3dViewer->Init();
+    printf("Viewer initialized.\n");
     myV3dView = myV3dViewer->CreateView();	
+    printf("View created\n");
     myV3dView->SetWindow(myWindow);
     if (!myWindow->IsMapped()) myWindow->Map();
 	// Create AISInteractiveViewer

@@ -22,21 +22,9 @@ import sys
 import wx
 import OCCViewer
 
-if sys.platform == 'darwin' or sys.platform == 'linux2':
-    BaseClass = wx.Panel
-else:
-    import wx.glcanvas
-    BaseClass = wx.glcanvas.GLCanvas
-    attribList = (wx.glcanvas.WX_GL_RGBA, # RGBA
-                  wx.glcanvas.WX_GL_DOUBLEBUFFER, # Double Buffered
-                  )
-
-class wxBaseViewer(BaseClass):
+class wxBaseViewer(wx.Panel):
     def __init__(self, parent = None):
-        if BaseClass == wx.Panel:
-            BaseClass.__init__(self,parent)
-        else:
-            BaseClass.__init__(self,parent,attribList=attribList)
+        wx.Panel.__init__(self,parent)
         self.Bind( wx.EVT_SIZE , self.OnSize)
         self.Bind( wx.EVT_IDLE , self.OnIdle)
         self.Bind( wx.EVT_MOVE , self.OnMove)
