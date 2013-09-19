@@ -87,7 +87,7 @@ Standard_EXPORT class Tesselator
                Standard_Real aScaleU,
                Standard_Real aScaleV,
                Standard_Real aRotationAngle);
-
+      Tesselator(TopoDS_Shape aShape);
       ~Tesselator();
       void Tesselate();
       void TesselateWithUVCoords();
@@ -98,6 +98,7 @@ Standard_EXPORT class Tesselator
       float* NormalsList();
       float* TextureCoordinatesList();
       void ExportShapeToJSON(char *filename);
+      void ExportShapeToX3D(char *filename, int diffR=1, int diffG=0, int diffB=0);
       int ObjGetTriangleCount();
       int ObjGetVertexCount();
       int ObjGetNormalCount();
