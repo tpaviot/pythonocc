@@ -365,7 +365,7 @@ void Tesselator::ExportShapeToX3D(char * filename, int diffR, int diffG, int dif
     X3Dfile << "<Head>\n";
     X3Dfile << "<meta name='generator' content='pythonOCC, http://www.pythonocc.org'/>\n";
     X3Dfile << "</Head>\n";
-    X3Dfile << "<Scene><Shape><Appearance><Material diffuseColor='" <<diffR << " "<<diffG << " "<<diffB <<"'></Material></Appearance>";
+    X3Dfile << "<Scene><Shape><Appearance><Material DEF='Shape_Mat' diffuseColor='" <<diffR << " "<<diffG << " "<<diffB <<"'></Material></Appearance>";
     // export faces indices
     X3Dfile << "\n<IndexedFaceSet coordIndex='";
     for (int i=0;i<tot_triangle_count;i++) {
