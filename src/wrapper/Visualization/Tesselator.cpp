@@ -359,21 +359,22 @@ void Tesselator::ExportShapeToX3D(char * filename, int diffR, int diffG, int dif
     int *normals_idx = new int[3];
     X3Dfile.open (filename);
     // write header
-    X3Dfile << "<?xml version='1.0' encoding='UTF-8'?>\n" ;
+    X3Dfile << "<?xml version='1.0' encoding='UTF-8'?>" ;
     X3Dfile << "<!DOCTYPE X3D PUBLIC 'ISO//Web3D//DTD X3D 3.1//EN' 'http://www.web3d.org/specifications/x3d-3.1.dtd'>";
-    X3Dfile << "<X3D>\n";
-    X3Dfile << "<Head>\n";
-    X3Dfile << "<meta name='generator' content='pythonOCC, http://www.pythonocc.org'/>\n";
-    X3Dfile << "</Head>\n";
-    X3Dfile << "<Scene><Shape><Appearance><Material DEF='Shape_Mat' diffuseColor='" <<diffR << " "<<diffG << " "<<diffB <<"'></Material></Appearance>";
+    X3Dfile << "<X3D>";
+    X3Dfile << "<Head>";
+    X3Dfile << "<meta name='generator' content='pythonOCC, http://www.pythonocc.org'/>";
+    X3Dfile << "</Head>";
+    X3Dfile << "<Scene><Shape><Appearance><Material DEF='Shape_Mat' diffuseColor='0.65 0.65 0.65' ";
+    X3Dfile << "shininess='0.9' specularColor='1 1 1'></Material></Appearance>";
     // export faces indices
-    X3Dfile << "\n<IndexedFaceSet coordIndex='";
+    X3Dfile << "<IndexedFaceSet coordIndex='";
     for (int i=0;i<tot_triangle_count;i++) {
         ObjGetTriangle(i, vertices_idx, texcoords_idx, normals_idx);
         // vertex indices
         X3Dfile << i*3 << " " << 1+i*3 << " " << 2+i*3 << " -1 ";
     } 
-    X3Dfile << "' solid='false'>\n";
+    X3Dfile << "' solid='false'>";
     // write points coordinates
     X3Dfile << "<Coordinate point='";
     for (int i=0;i<tot_triangle_count;i++) {
@@ -387,7 +388,7 @@ void Tesselator::ExportShapeToX3D(char * filename, int diffR, int diffG, int dif
         X3Dfile << locVertexcoord[vertices_idx[2]]<<" "<<locVertexcoord[vertices_idx[2]+1]<<" "
             << locVertexcoord[vertices_idx[2]+2]<<" ";
     }
-    X3Dfile << "'/>\n";
+    X3Dfile << "' containerField='coord'></Coordinate>";
     // write normals
     X3Dfile << "<Normal vector='";
     for (int i=0;i<tot_triangle_count;i++) {
@@ -402,7 +403,7 @@ void Tesselator::ExportShapeToX3D(char * filename, int diffR, int diffG, int dif
         X3Dfile << locNormalcoord[normals_idx[2]]<<" "<<locNormalcoord[normals_idx[2]+1]<<" "
             << locNormalcoord[normals_idx[2]+2] << " ";
     }
-    X3Dfile << "'/>\n";
+    X3Dfile << "' containerField='normal'></Normal>";
     // close all markups
     X3Dfile << "</IndexedFaceSet></Shape></Scene></X3D>\n"; 
     X3Dfile.close();
