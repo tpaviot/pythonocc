@@ -44,7 +44,7 @@
 
 #include <BRepAdaptor_Curve.hxx>
 #include <BRepBuilderAPI_MakeEdge.hxx>
-#include <BRepTools.hxx>
+#include <BRepClass3d.hxx>
 #include <TopExp_Explorer.hxx>
 #include <TopoDS.hxx>
 #include <TopoDS_Shell.hxx>
@@ -159,7 +159,7 @@ bool StdMeshers_RadialPrism_3D::Compute(SMESH_Mesh& aMesh, const TopoDS_Shape& a
 
   // get 2 shells
   TopoDS_Solid solid = TopoDS::Solid( aShape );
-  TopoDS_Shell outerShell = BRepTools::OuterShell( solid );
+  TopoDS_Shell outerShell = BRepClass3d::OuterShell( solid );
   TopoDS_Shape innerShell;
   int nbShells = 0;
   for ( TopoDS_Iterator It (solid); It.More(); It.Next(), ++nbShells )
